@@ -1,0 +1,187 @@
+package filter
+
+import (
+    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i361c59c66bb7e477a88ead7c5a67567e4e997f4d894a54ba9e072484ba7b83e6 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/applytopitemsfilter"
+    i37e17448ebc3c88d0d568891a6a197d87b83301cfd1f5ac2e5ecd4cbd27fead1 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/applyfontcolorfilter"
+    i4e34fe940e728eb7850075738d7e53292cccb6a4e341ef12bf32be59cec52a59 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/applybottomitemsfilter"
+    i6e765936f672b9f83a474ef2df99b618cc00b4b8f9611c0f0bd2c71bf9d996f4 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/clear"
+    i7b8e11c3e13cc29e60e05c7a93c0e721e488611ea6b275c7f14bd9eb2024424d "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/applybottompercentfilter"
+    i7ec0979b141deaf9e8c06a54957e0b767a0d4073438da611add9d8be6674e3d4 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/applycellcolorfilter"
+    i83798e0dc53921050c45b8378700a0300a0aa620603edffa729c9154aeb12ae9 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/applydynamicfilter"
+    i86c63d77e75b907a65db65d104488e99c50d2ffd1b18402c6778fd4eee11c529 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/applycustomfilter"
+    i9351ada88d8f833003cd009a69dfaa9bf39e91b79b90be867afa22f4211d3fc4 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/applyiconfilter"
+    ib9b678a6142ab4d7270bcaba151ff35c7971bd42a6caa29906cd0ceb2c4a15b2 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/apply"
+    ibbdc929a240a59a714772b7f8e7e089397d74208a4f2d7454e1c55c145dbb5e0 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/applytoppercentfilter"
+    ief856482f2d134a9efe38be849364abfebe3d62f31aa9dc78422dc6b1f07a7d3 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/applyvaluesfilter"
+)
+
+type FilterRequestBuilder struct {
+    pathParameters map[string]string;
+    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    urlTemplate string;
+}
+type FilterRequestBuilderGetQueryParameters struct {
+    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    Expand []string;
+    Select_escpaped []string;
+}
+func (m *FilterRequestBuilder) Apply()(*ib9b678a6142ab4d7270bcaba151ff35c7971bd42a6caa29906cd0ceb2c4a15b2.ApplyRequestBuilder) {
+    return ib9b678a6142ab4d7270bcaba151ff35c7971bd42a6caa29906cd0ceb2c4a15b2.NewApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *FilterRequestBuilder) ApplyBottomItemsFilter()(*i4e34fe940e728eb7850075738d7e53292cccb6a4e341ef12bf32be59cec52a59.ApplyBottomItemsFilterRequestBuilder) {
+    return i4e34fe940e728eb7850075738d7e53292cccb6a4e341ef12bf32be59cec52a59.NewApplyBottomItemsFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *FilterRequestBuilder) ApplyBottomPercentFilter()(*i7b8e11c3e13cc29e60e05c7a93c0e721e488611ea6b275c7f14bd9eb2024424d.ApplyBottomPercentFilterRequestBuilder) {
+    return i7b8e11c3e13cc29e60e05c7a93c0e721e488611ea6b275c7f14bd9eb2024424d.NewApplyBottomPercentFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *FilterRequestBuilder) ApplyCellColorFilter()(*i7ec0979b141deaf9e8c06a54957e0b767a0d4073438da611add9d8be6674e3d4.ApplyCellColorFilterRequestBuilder) {
+    return i7ec0979b141deaf9e8c06a54957e0b767a0d4073438da611add9d8be6674e3d4.NewApplyCellColorFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *FilterRequestBuilder) ApplyCustomFilter()(*i86c63d77e75b907a65db65d104488e99c50d2ffd1b18402c6778fd4eee11c529.ApplyCustomFilterRequestBuilder) {
+    return i86c63d77e75b907a65db65d104488e99c50d2ffd1b18402c6778fd4eee11c529.NewApplyCustomFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *FilterRequestBuilder) ApplyDynamicFilter()(*i83798e0dc53921050c45b8378700a0300a0aa620603edffa729c9154aeb12ae9.ApplyDynamicFilterRequestBuilder) {
+    return i83798e0dc53921050c45b8378700a0300a0aa620603edffa729c9154aeb12ae9.NewApplyDynamicFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *FilterRequestBuilder) ApplyFontColorFilter()(*i37e17448ebc3c88d0d568891a6a197d87b83301cfd1f5ac2e5ecd4cbd27fead1.ApplyFontColorFilterRequestBuilder) {
+    return i37e17448ebc3c88d0d568891a6a197d87b83301cfd1f5ac2e5ecd4cbd27fead1.NewApplyFontColorFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *FilterRequestBuilder) ApplyIconFilter()(*i9351ada88d8f833003cd009a69dfaa9bf39e91b79b90be867afa22f4211d3fc4.ApplyIconFilterRequestBuilder) {
+    return i9351ada88d8f833003cd009a69dfaa9bf39e91b79b90be867afa22f4211d3fc4.NewApplyIconFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *FilterRequestBuilder) ApplyTopItemsFilter()(*i361c59c66bb7e477a88ead7c5a67567e4e997f4d894a54ba9e072484ba7b83e6.ApplyTopItemsFilterRequestBuilder) {
+    return i361c59c66bb7e477a88ead7c5a67567e4e997f4d894a54ba9e072484ba7b83e6.NewApplyTopItemsFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *FilterRequestBuilder) ApplyTopPercentFilter()(*ibbdc929a240a59a714772b7f8e7e089397d74208a4f2d7454e1c55c145dbb5e0.ApplyTopPercentFilterRequestBuilder) {
+    return ibbdc929a240a59a714772b7f8e7e089397d74208a4f2d7454e1c55c145dbb5e0.NewApplyTopPercentFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *FilterRequestBuilder) ApplyValuesFilter()(*ief856482f2d134a9efe38be849364abfebe3d62f31aa9dc78422dc6b1f07a7d3.ApplyValuesFilterRequestBuilder) {
+    return ief856482f2d134a9efe38be849364abfebe3d62f31aa9dc78422dc6b1f07a7d3.NewApplyValuesFilterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *FilterRequestBuilder) Clear()(*i6e765936f672b9f83a474ef2df99b618cc00b4b8f9611c0f0bd2c71bf9d996f4.ClearRequestBuilder) {
+    return i6e765936f672b9f83a474ef2df99b618cc00b4b8f9611c0f0bd2c71bf9d996f4.NewClearRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func NewFilterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FilterRequestBuilder) {
+    m := &FilterRequestBuilder{
+    }
+    m.urlTemplate = "https://graph.microsoft.com/v1.0/workbooks/{driveItem_id}/workbook/names/{workbookNamedItem_id}/worksheet/tables/{workbookTable_id}/columns/{workbookTableColumn_id}/filter{?select,expand}";
+    urlTplParams := make(map[string]string)
+    if pathParameters != nil {
+        for idx, item := range pathParameters {
+            urlTplParams[idx] = item
+        }
+    }
+    m.pathParameters = pathParameters;
+    m.requestAdapter = requestAdapter;
+    return m
+}
+func NewFilterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FilterRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewFilterRequestBuilderInternal(urlParams, requestAdapter)
+}
+func (m *FilterRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
+    if h != nil {
+        err := h(requestInfo.Headers)
+        if err != nil {
+            return nil, err
+        }
+    }
+    if o != nil {
+        err := requestInfo.AddRequestOptions(o)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+func (m *FilterRequestBuilder) CreateGetRequestInformation(q func (value *FilterRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
+    if q != nil {
+        qParams := new(FilterRequestBuilderGetQueryParameters)
+        err := q(qParams)
+        if err != nil {
+            return nil, err
+        }
+        err = qParams.AddQueryParameters(requestInfo.QueryParameters)
+        if err != nil {
+            return nil, err
+        }
+    }
+    if h != nil {
+        err := h(requestInfo.Headers)
+        if err != nil {
+            return nil, err
+        }
+    }
+    if o != nil {
+        err := requestInfo.AddRequestOptions(o)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+func (m *FilterRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFilter, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if h != nil {
+        err := h(requestInfo.Headers)
+        if err != nil {
+            return nil, err
+        }
+    }
+    if o != nil {
+        err := requestInfo.AddRequestOptions(o)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+func (m *FilterRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
+    requestInfo, err := m.CreateDeleteRequestInformation(h, o);
+    if err != nil {
+        return err
+    }
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, responseHandler)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+func (m *FilterRequestBuilder) Get(q func (value *FilterRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFilter, error) {
+    requestInfo, err := m.CreateGetRequestInformation(q, h, o);
+    if err != nil {
+        return nil, err
+    }
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewWorkbookFilter() }, responseHandler)
+    if err != nil {
+        return nil, err
+    }
+    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFilter), nil
+}
+func (m *FilterRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFilter, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
+    if err != nil {
+        return err
+    }
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, responseHandler)
+    if err != nil {
+        return err
+    }
+    return nil
+}
