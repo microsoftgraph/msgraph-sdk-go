@@ -6,35 +6,52 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// Builds and executes requests for operations under \security\secureScoreControlProfiles\{secureScoreControlProfile-id}
 type SecureScoreControlProfileRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Get secureScoreControlProfiles from security
 type SecureScoreControlProfileRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
 }
+// Instantiates a new SecureScoreControlProfileRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewSecureScoreControlProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecureScoreControlProfileRequestBuilder) {
     m := &SecureScoreControlProfileRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/security/secureScoreControlProfiles/{secureScoreControlProfile_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new SecureScoreControlProfileRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewSecureScoreControlProfileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecureScoreControlProfileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSecureScoreControlProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Delete navigation property secureScoreControlProfiles for security
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
 func (m *SecureScoreControlProfileRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -54,6 +71,11 @@ func (m *SecureScoreControlProfileRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
+// Get secureScoreControlProfiles from security
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
 func (m *SecureScoreControlProfileRequestBuilder) CreateGetRequestInformation(q func (value *SecureScoreControlProfileRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -84,6 +106,11 @@ func (m *SecureScoreControlProfileRequestBuilder) CreateGetRequestInformation(q 
     }
     return requestInfo, nil
 }
+// Update the navigation property secureScoreControlProfiles in security
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *SecureScoreControlProfileRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfile, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,6 +131,11 @@ func (m *SecureScoreControlProfileRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
+// Delete navigation property secureScoreControlProfiles for security
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *SecureScoreControlProfileRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(h, o);
     if err != nil {
@@ -115,6 +147,12 @@ func (m *SecureScoreControlProfileRequestBuilder) Delete(h func (value map[strin
     }
     return nil
 }
+// Get secureScoreControlProfiles from security
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *SecureScoreControlProfileRequestBuilder) Get(q func (value *SecureScoreControlProfileRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfile, error) {
     requestInfo, err := m.CreateGetRequestInformation(q, h, o);
     if err != nil {
@@ -126,6 +164,12 @@ func (m *SecureScoreControlProfileRequestBuilder) Get(q func (value *SecureScore
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfile), nil
 }
+// Update the navigation property secureScoreControlProfiles in security
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *SecureScoreControlProfileRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfile, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
     if err != nil {

@@ -10,35 +10,52 @@ import (
     ife4420e6455763857b613268e3d3785e668107d3a5ab62b0e7e8d16095dbe82a "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/worksheet/charts/item/axes/seriesaxis/majorgridlines"
 )
 
+// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\axes\seriesAxis
 type SeriesAxisRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Represents the series axis of a 3-dimensional chart. Read-only.
 type SeriesAxisRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
 }
+// Instantiates a new SeriesAxisRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewSeriesAxisRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SeriesAxisRequestBuilder) {
     m := &SeriesAxisRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/worksheet/charts/{workbookChart_id}/axes/seriesAxis{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new SeriesAxisRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewSeriesAxisRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SeriesAxisRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSeriesAxisRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Represents the series axis of a 3-dimensional chart. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
 func (m *SeriesAxisRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -58,6 +75,11 @@ func (m *SeriesAxisRequestBuilder) CreateDeleteRequestInformation(h func (value 
     }
     return requestInfo, nil
 }
+// Represents the series axis of a 3-dimensional chart. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
 func (m *SeriesAxisRequestBuilder) CreateGetRequestInformation(q func (value *SeriesAxisRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,6 +110,11 @@ func (m *SeriesAxisRequestBuilder) CreateGetRequestInformation(q func (value *Se
     }
     return requestInfo, nil
 }
+// Represents the series axis of a 3-dimensional chart. Read-only.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *SeriesAxisRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxis, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,6 +135,11 @@ func (m *SeriesAxisRequestBuilder) CreatePatchRequestInformation(body *i4a838ef1
     }
     return requestInfo, nil
 }
+// Represents the series axis of a 3-dimensional chart. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *SeriesAxisRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(h, o);
     if err != nil {
@@ -122,6 +154,12 @@ func (m *SeriesAxisRequestBuilder) Delete(h func (value map[string]string) (err 
 func (m *SeriesAxisRequestBuilder) Format()(*i508a7c2d2dcbf117bb6ed00e2659b0427afc2f451f435358de3e83ce9beecccc.FormatRequestBuilder) {
     return i508a7c2d2dcbf117bb6ed00e2659b0427afc2f451f435358de3e83ce9beecccc.NewFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Represents the series axis of a 3-dimensional chart. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *SeriesAxisRequestBuilder) Get(q func (value *SeriesAxisRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxis, error) {
     requestInfo, err := m.CreateGetRequestInformation(q, h, o);
     if err != nil {
@@ -139,6 +177,12 @@ func (m *SeriesAxisRequestBuilder) MajorGridlines()(*ife4420e6455763857b613268e3
 func (m *SeriesAxisRequestBuilder) MinorGridlines()(*if691c61ba8aebe49a95329a9fab069bf178580721fb64dba3628d708506d444d.MinorGridlinesRequestBuilder) {
     return if691c61ba8aebe49a95329a9fab069bf178580721fb64dba3628d708506d444d.NewMinorGridlinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Represents the series axis of a 3-dimensional chart. Read-only.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *SeriesAxisRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxis, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
     if err != nil {

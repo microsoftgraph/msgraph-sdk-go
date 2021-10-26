@@ -5,18 +5,25 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type LogNorm_InvRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     mean *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    // 
     probability *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    // 
     standardDev *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
+// Instantiates a new logNorm_InvRequestBody and sets the default values.
 func NewLogNorm_InvRequestBody()(*LogNorm_InvRequestBody) {
     m := &LogNorm_InvRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LogNorm_InvRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *LogNorm_InvRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the mean property value. 
 func (m *LogNorm_InvRequestBody) GetMean()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *LogNorm_InvRequestBody) GetMean()(*i4a838ef194e4c99e9f2c63ba10dab9cb120
         return m.mean
     }
 }
+// Gets the probability property value. 
 func (m *LogNorm_InvRequestBody) GetProbability()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *LogNorm_InvRequestBody) GetProbability()(*i4a838ef194e4c99e9f2c63ba10da
         return m.probability
     }
 }
+// Gets the standardDev property value. 
 func (m *LogNorm_InvRequestBody) GetStandardDev()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *LogNorm_InvRequestBody) GetStandardDev()(*i4a838ef194e4c99e9f2c63ba10da
         return m.standardDev
     }
 }
+// The deserialization information for the current model
 func (m *LogNorm_InvRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["mean"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,6 +87,9 @@ func (m *LogNorm_InvRequestBody) GetFieldDeserializers()(map[string]func(interfa
 func (m *LogNorm_InvRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *LogNorm_InvRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("mean", m.GetMean())
@@ -103,15 +117,27 @@ func (m *LogNorm_InvRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *LogNorm_InvRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the mean property value. 
+// Parameters:
+//  - value : Value to set for the mean property.
 func (m *LogNorm_InvRequestBody) SetMean(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.mean = value
 }
+// Sets the probability property value. 
+// Parameters:
+//  - value : Value to set for the probability property.
 func (m *LogNorm_InvRequestBody) SetProbability(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.probability = value
 }
+// Sets the standardDev property value. 
+// Parameters:
+//  - value : Value to set for the standardDev property.
 func (m *LogNorm_InvRequestBody) SetStandardDev(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.standardDev = value
 }

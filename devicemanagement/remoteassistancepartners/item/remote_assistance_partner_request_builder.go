@@ -8,38 +8,55 @@ import (
     ic5bdfe2606f3a79c6b660d0c71f836d999ab15327deb77f1ed5d14f148669db1 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/remoteassistancepartners/item/beginonboarding"
 )
 
+// Builds and executes requests for operations under \deviceManagement\remoteAssistancePartners\{remoteAssistancePartner-id}
 type RemoteAssistancePartnerRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// The remote assist partners.
 type RemoteAssistancePartnerRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
 }
 func (m *RemoteAssistancePartnerRequestBuilder) BeginOnboarding()(*ic5bdfe2606f3a79c6b660d0c71f836d999ab15327deb77f1ed5d14f148669db1.BeginOnboardingRequestBuilder) {
     return ic5bdfe2606f3a79c6b660d0c71f836d999ab15327deb77f1ed5d14f148669db1.NewBeginOnboardingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Instantiates a new RemoteAssistancePartnerRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewRemoteAssistancePartnerRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoteAssistancePartnerRequestBuilder) {
     m := &RemoteAssistancePartnerRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new RemoteAssistancePartnerRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewRemoteAssistancePartnerRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoteAssistancePartnerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRemoteAssistancePartnerRequestBuilderInternal(urlParams, requestAdapter)
 }
+// The remote assist partners.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
 func (m *RemoteAssistancePartnerRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,6 +76,11 @@ func (m *RemoteAssistancePartnerRequestBuilder) CreateDeleteRequestInformation(h
     }
     return requestInfo, nil
 }
+// The remote assist partners.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
 func (m *RemoteAssistancePartnerRequestBuilder) CreateGetRequestInformation(q func (value *RemoteAssistancePartnerRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,6 +111,11 @@ func (m *RemoteAssistancePartnerRequestBuilder) CreateGetRequestInformation(q fu
     }
     return requestInfo, nil
 }
+// The remote assist partners.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *RemoteAssistancePartnerRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RemoteAssistancePartner, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,6 +136,11 @@ func (m *RemoteAssistancePartnerRequestBuilder) CreatePatchRequestInformation(bo
     }
     return requestInfo, nil
 }
+// The remote assist partners.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *RemoteAssistancePartnerRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(h, o);
     if err != nil {
@@ -123,6 +155,12 @@ func (m *RemoteAssistancePartnerRequestBuilder) Delete(h func (value map[string]
 func (m *RemoteAssistancePartnerRequestBuilder) Disconnect()(*i29fbcbcb8e56dedcb7c4ccd053be8c6ac9c1cbee92fcef32794ed684b5ade934.DisconnectRequestBuilder) {
     return i29fbcbcb8e56dedcb7c4ccd053be8c6ac9c1cbee92fcef32794ed684b5ade934.NewDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// The remote assist partners.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *RemoteAssistancePartnerRequestBuilder) Get(q func (value *RemoteAssistancePartnerRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RemoteAssistancePartner, error) {
     requestInfo, err := m.CreateGetRequestInformation(q, h, o);
     if err != nil {
@@ -134,6 +172,12 @@ func (m *RemoteAssistancePartnerRequestBuilder) Get(q func (value *RemoteAssista
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RemoteAssistancePartner), nil
 }
+// The remote assist partners.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *RemoteAssistancePartnerRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RemoteAssistancePartner, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
     if err != nil {

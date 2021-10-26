@@ -4,17 +4,22 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type PolicyBase struct {
     DirectoryObject
+    // Description for this policy. Required.
     description *string;
+    // Display name for this policy. Required.
     displayName *string;
 }
+// Instantiates a new policyBase and sets the default values.
 func NewPolicyBase()(*PolicyBase) {
     m := &PolicyBase{
         DirectoryObject: *NewDirectoryObject(),
     }
     return m
 }
+// Gets the description property value. Description for this policy. Required.
 func (m *PolicyBase) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -22,6 +27,7 @@ func (m *PolicyBase) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the displayName property value. Display name for this policy. Required.
 func (m *PolicyBase) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -29,6 +35,7 @@ func (m *PolicyBase) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// The deserialization information for the current model
 func (m *PolicyBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,6 +59,9 @@ func (m *PolicyBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *PolicyBase) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *PolicyBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.DirectoryObject.Serialize(writer)
     if err != nil {
@@ -71,9 +81,15 @@ func (m *PolicyBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
+// Sets the description property value. Description for this policy. Required.
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *PolicyBase) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the displayName property value. Display name for this policy. Required.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *PolicyBase) SetDisplayName(value *string)() {
     m.displayName = value
 }

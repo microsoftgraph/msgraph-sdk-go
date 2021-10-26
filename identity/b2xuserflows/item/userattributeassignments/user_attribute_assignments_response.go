@@ -5,17 +5,23 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type UserAttributeAssignmentsResponse struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     nextLink *string;
+    // 
     value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttributeAssignment;
 }
+// Instantiates a new userAttributeAssignmentsResponse and sets the default values.
 func NewUserAttributeAssignmentsResponse()(*UserAttributeAssignmentsResponse) {
     m := &UserAttributeAssignmentsResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAttributeAssignmentsResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *UserAttributeAssignmentsResponse) GetAdditionalData()(map[string]interf
         return m.additionalData
     }
 }
+// Gets the nextLink property value. 
 func (m *UserAttributeAssignmentsResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *UserAttributeAssignmentsResponse) GetNextLink()(*string) {
         return m.nextLink
     }
 }
+// Gets the value property value. 
 func (m *UserAttributeAssignmentsResponse) GetValue()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttributeAssignment) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *UserAttributeAssignmentsResponse) GetValue()([]i4a838ef194e4c99e9f2c63b
         return m.value
     }
 }
+// The deserialization information for the current model
 func (m *UserAttributeAssignmentsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["@odata.nextLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,6 +73,9 @@ func (m *UserAttributeAssignmentsResponse) GetFieldDeserializers()(map[string]fu
 func (m *UserAttributeAssignmentsResponse) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *UserAttributeAssignmentsResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
@@ -90,12 +102,21 @@ func (m *UserAttributeAssignmentsResponse) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *UserAttributeAssignmentsResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the nextLink property value. 
+// Parameters:
+//  - value : Value to set for the nextLink property.
 func (m *UserAttributeAssignmentsResponse) SetNextLink(value *string)() {
     m.nextLink = value
 }
+// Sets the value property value. 
+// Parameters:
+//  - value : Value to set for the value property.
 func (m *UserAttributeAssignmentsResponse) SetValue(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttributeAssignment)() {
     m.value = value
 }

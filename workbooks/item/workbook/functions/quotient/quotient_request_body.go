@@ -5,17 +5,23 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type QuotientRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     denominator *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    // 
     numerator *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
+// Instantiates a new quotientRequestBody and sets the default values.
 func NewQuotientRequestBody()(*QuotientRequestBody) {
     m := &QuotientRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *QuotientRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *QuotientRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the denominator property value. 
 func (m *QuotientRequestBody) GetDenominator()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *QuotientRequestBody) GetDenominator()(*i4a838ef194e4c99e9f2c63ba10dab9c
         return m.denominator
     }
 }
+// Gets the numerator property value. 
 func (m *QuotientRequestBody) GetNumerator()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *QuotientRequestBody) GetNumerator()(*i4a838ef194e4c99e9f2c63ba10dab9cb1
         return m.numerator
     }
 }
+// The deserialization information for the current model
 func (m *QuotientRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["denominator"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,6 +69,9 @@ func (m *QuotientRequestBody) GetFieldDeserializers()(map[string]func(interface{
 func (m *QuotientRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *QuotientRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("denominator", m.GetDenominator())
@@ -81,12 +93,21 @@ func (m *QuotientRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *QuotientRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the denominator property value. 
+// Parameters:
+//  - value : Value to set for the denominator property.
 func (m *QuotientRequestBody) SetDenominator(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.denominator = value
 }
+// Sets the numerator property value. 
+// Parameters:
+//  - value : Value to set for the numerator property.
 func (m *QuotientRequestBody) SetNumerator(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.numerator = value
 }

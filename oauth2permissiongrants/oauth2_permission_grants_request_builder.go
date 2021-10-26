@@ -7,41 +7,65 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// Builds and executes requests for operations under \oauth2PermissionGrants
 type Oauth2PermissionGrantsRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Get entities from oauth2PermissionGrants
 type Oauth2PermissionGrantsRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Include count of items
     Count *bool;
+    // Expand related entities
     Expand []string;
+    // Filter items by property values
     Filter *string;
+    // Order items by property values
     Orderby []string;
+    // Search items by search phrases
     Search *string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
+    // Skip the first n items
     Skip *int32;
+    // Show only the first n items
     Top *int32;
 }
+// Instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewOauth2PermissionGrantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*Oauth2PermissionGrantsRequestBuilder) {
     m := &Oauth2PermissionGrantsRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/oauth2PermissionGrants{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewOauth2PermissionGrantsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*Oauth2PermissionGrantsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOauth2PermissionGrantsRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Get entities from oauth2PermissionGrants
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
 func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformation(q func (value *Oauth2PermissionGrantsRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -72,6 +96,11 @@ func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformation(q fun
     }
     return requestInfo, nil
 }
+// Add new entity to oauth2PermissionGrants
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *Oauth2PermissionGrantsRequestBuilder) CreatePostRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OAuth2PermissionGrant, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +121,16 @@ func (m *Oauth2PermissionGrantsRequestBuilder) CreatePostRequestInformation(body
     }
     return requestInfo, nil
 }
+// Builds and executes requests for operations under \oauth2PermissionGrants\microsoft.graph.delta()
 func (m *Oauth2PermissionGrantsRequestBuilder) Delta()(*id70fcb07167e43609e5e3e97414842aa6abab48a5deb7b682bf9fbce71fcd500.DeltaRequestBuilder) {
     return id70fcb07167e43609e5e3e97414842aa6abab48a5deb7b682bf9fbce71fcd500.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Get entities from oauth2PermissionGrants
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *Oauth2PermissionGrantsRequestBuilder) Get(q func (value *Oauth2PermissionGrantsRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*Oauth2PermissionGrantsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(q, h, o);
     if err != nil {
@@ -106,6 +142,12 @@ func (m *Oauth2PermissionGrantsRequestBuilder) Get(q func (value *Oauth2Permissi
     }
     return res.(*Oauth2PermissionGrantsResponse), nil
 }
+// Add new entity to oauth2PermissionGrants
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *Oauth2PermissionGrantsRequestBuilder) Post(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OAuth2PermissionGrant, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OAuth2PermissionGrant, error) {
     requestInfo, err := m.CreatePostRequestInformation(body, h, o);
     if err != nil {

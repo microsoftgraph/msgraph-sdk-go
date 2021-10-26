@@ -18,35 +18,52 @@ import (
     id67049e3fa5525a6ba50b6b8bc9f60107ac06f61256f8cf55bb655b4552ecd21 "github.com/microsoftgraph/msgraph-sdk-go/me/onenote/resources/item"
 )
 
+// Builds and executes requests for operations under \me\onenote
 type OnenoteRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Read-only.
 type OnenoteRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
 }
+// Instantiates a new OnenoteRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewOnenoteRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenoteRequestBuilder) {
     m := &OnenoteRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/me/onenote{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new OnenoteRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewOnenoteRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenoteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOnenoteRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
 func (m *OnenoteRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,6 +83,11 @@ func (m *OnenoteRequestBuilder) CreateDeleteRequestInformation(h func (value map
     }
     return requestInfo, nil
 }
+// Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
 func (m *OnenoteRequestBuilder) CreateGetRequestInformation(q func (value *OnenoteRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,6 +118,11 @@ func (m *OnenoteRequestBuilder) CreateGetRequestInformation(q func (value *Oneno
     }
     return requestInfo, nil
 }
+// Read-only.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *OnenoteRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Onenote, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,6 +143,11 @@ func (m *OnenoteRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e
     }
     return requestInfo, nil
 }
+// Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *OnenoteRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(h, o);
     if err != nil {
@@ -127,6 +159,12 @@ func (m *OnenoteRequestBuilder) Delete(h func (value map[string]string) (err err
     }
     return nil
 }
+// Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *OnenoteRequestBuilder) Get(q func (value *OnenoteRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Onenote, error) {
     requestInfo, err := m.CreateGetRequestInformation(q, h, o);
     if err != nil {
@@ -141,12 +179,13 @@ func (m *OnenoteRequestBuilder) Get(q func (value *OnenoteRequestBuilderGetQuery
 func (m *OnenoteRequestBuilder) Notebooks()(*i97f70d655aa735279e41729aa6800f01397d2d7e8d41164003eff9b47387d3a5.NotebooksRequestBuilder) {
     return i97f70d655aa735279e41729aa6800f01397d2d7e8d41164003eff9b47387d3a5.NewNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.onenote.notebooks.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) NotebooksById(id string)(*i1927275756e9aeb82a189ce572418c67c8a998c4353590bc94f2a62a876dae2d.NotebookRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["notebook_id"] = id
@@ -156,12 +195,13 @@ func (m *OnenoteRequestBuilder) NotebooksById(id string)(*i1927275756e9aeb82a189
 func (m *OnenoteRequestBuilder) Operations()(*iac72d35f9c20cb360839134d86d535f87e1cdbe10b719f8c792d8017c06edd1d.OperationsRequestBuilder) {
     return iac72d35f9c20cb360839134d86d535f87e1cdbe10b719f8c792d8017c06edd1d.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.onenote.operations.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) OperationsById(id string)(*i2b8ad7bd2ae87c92c8852bbeef996852d7685df93cb12b50d58ecc094ecfd124.OnenoteOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onenoteOperation_id"] = id
@@ -171,18 +211,25 @@ func (m *OnenoteRequestBuilder) OperationsById(id string)(*i2b8ad7bd2ae87c92c885
 func (m *OnenoteRequestBuilder) Pages()(*iae2d6340b64994bda52b72186cf936e932db0b6d72196a85d99b8d63141db19b.PagesRequestBuilder) {
     return iae2d6340b64994bda52b72186cf936e932db0b6d72196a85d99b8d63141db19b.NewPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.onenote.pages.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) PagesById(id string)(*i9ffb03d414d6abd9f024bf2d1f19d7b7fa97959d1245465fdaef4d163ddd6de4.OnenotePageRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onenotePage_id"] = id
     }
     return i9ffb03d414d6abd9f024bf2d1f19d7b7fa97959d1245465fdaef4d163ddd6de4.NewOnenotePageRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Read-only.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *OnenoteRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Onenote, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
     if err != nil {
@@ -197,12 +244,13 @@ func (m *OnenoteRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120
 func (m *OnenoteRequestBuilder) Resources()(*ic51747a34f2e47436a56cc441d712037e581ac2bd968645ce4fe67a401a2f4bf.ResourcesRequestBuilder) {
     return ic51747a34f2e47436a56cc441d712037e581ac2bd968645ce4fe67a401a2f4bf.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.onenote.resources.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) ResourcesById(id string)(*id67049e3fa5525a6ba50b6b8bc9f60107ac06f61256f8cf55bb655b4552ecd21.OnenoteResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onenoteResource_id"] = id
@@ -212,12 +260,13 @@ func (m *OnenoteRequestBuilder) ResourcesById(id string)(*id67049e3fa5525a6ba50b
 func (m *OnenoteRequestBuilder) SectionGroups()(*id71911f826ddd0ad6edad424ad81ad5b822e25039b7e26730ec6b2f6de37ad3b.SectionGroupsRequestBuilder) {
     return id71911f826ddd0ad6edad424ad81ad5b822e25039b7e26730ec6b2f6de37ad3b.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.onenote.sectionGroups.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) SectionGroupsById(id string)(*i1941888ff368eb1fd130194825ce82fb010616c26e7af09e43370fa6bb2cfd71.SectionGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["sectionGroup_id"] = id
@@ -227,12 +276,13 @@ func (m *OnenoteRequestBuilder) SectionGroupsById(id string)(*i1941888ff368eb1fd
 func (m *OnenoteRequestBuilder) Sections()(*i54a3bfcdd648d6ee47e87c311695b29c4737b8921bb8f2a506c0864844df5dba.SectionsRequestBuilder) {
     return i54a3bfcdd648d6ee47e87c311695b29c4737b8921bb8f2a506c0864844df5dba.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.onenote.sections.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) SectionsById(id string)(*ibe60e1baafd5c0c7f830c971df51a300df66822516c0cfcd8a43fd2adc385c80.OnenoteSectionRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["onenoteSection_id"] = id

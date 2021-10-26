@@ -4,18 +4,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type GroupSettingTemplate struct {
     DirectoryObject
+    // Description of the template.
     description *string;
+    // Display name of the template.
     displayName *string;
+    // Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
     values []SettingTemplateValue;
 }
+// Instantiates a new groupSettingTemplate and sets the default values.
 func NewGroupSettingTemplate()(*GroupSettingTemplate) {
     m := &GroupSettingTemplate{
         DirectoryObject: *NewDirectoryObject(),
     }
     return m
 }
+// Gets the description property value. Description of the template.
 func (m *GroupSettingTemplate) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *GroupSettingTemplate) GetDescription()(*string) {
         return m.description
     }
 }
+// Gets the displayName property value. Display name of the template.
 func (m *GroupSettingTemplate) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *GroupSettingTemplate) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
 func (m *GroupSettingTemplate) GetValues()([]SettingTemplateValue) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *GroupSettingTemplate) GetValues()([]SettingTemplateValue) {
         return m.values
     }
 }
+// The deserialization information for the current model
 func (m *GroupSettingTemplate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,6 +81,9 @@ func (m *GroupSettingTemplate) GetFieldDeserializers()(map[string]func(interface
 func (m *GroupSettingTemplate) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GroupSettingTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.DirectoryObject.Serialize(writer)
     if err != nil {
@@ -102,12 +114,21 @@ func (m *GroupSettingTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
+// Sets the description property value. Description of the template.
+// Parameters:
+//  - value : Value to set for the description property.
 func (m *GroupSettingTemplate) SetDescription(value *string)() {
     m.description = value
 }
+// Sets the displayName property value. Display name of the template.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *GroupSettingTemplate) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
+// Parameters:
+//  - value : Value to set for the values property.
 func (m *GroupSettingTemplate) SetValues(value []SettingTemplateValue)() {
     m.values = value
 }

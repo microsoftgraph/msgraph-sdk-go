@@ -4,19 +4,26 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type CloudCommunications struct {
     Entity
+    // 
     callRecords []CallRecord;
+    // 
     calls []Call;
+    // 
     onlineMeetings []OnlineMeeting;
+    // 
     presences []Presence;
 }
+// Instantiates a new cloudCommunications and sets the default values.
 func NewCloudCommunications()(*CloudCommunications) {
     m := &CloudCommunications{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the callRecords property value. 
 func (m *CloudCommunications) GetCallRecords()([]CallRecord) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *CloudCommunications) GetCallRecords()([]CallRecord) {
         return m.callRecords
     }
 }
+// Gets the calls property value. 
 func (m *CloudCommunications) GetCalls()([]Call) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *CloudCommunications) GetCalls()([]Call) {
         return m.calls
     }
 }
+// Gets the onlineMeetings property value. 
 func (m *CloudCommunications) GetOnlineMeetings()([]OnlineMeeting) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *CloudCommunications) GetOnlineMeetings()([]OnlineMeeting) {
         return m.onlineMeetings
     }
 }
+// Gets the presences property value. 
 func (m *CloudCommunications) GetPresences()([]Presence) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *CloudCommunications) GetPresences()([]Presence) {
         return m.presences
     }
 }
+// The deserialization information for the current model
 func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["callRecords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,6 +111,9 @@ func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(interface{
 func (m *CloudCommunications) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *CloudCommunications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -151,15 +165,27 @@ func (m *CloudCommunications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
+// Sets the callRecords property value. 
+// Parameters:
+//  - value : Value to set for the callRecords property.
 func (m *CloudCommunications) SetCallRecords(value []CallRecord)() {
     m.callRecords = value
 }
+// Sets the calls property value. 
+// Parameters:
+//  - value : Value to set for the calls property.
 func (m *CloudCommunications) SetCalls(value []Call)() {
     m.calls = value
 }
+// Sets the onlineMeetings property value. 
+// Parameters:
+//  - value : Value to set for the onlineMeetings property.
 func (m *CloudCommunications) SetOnlineMeetings(value []OnlineMeeting)() {
     m.onlineMeetings = value
 }
+// Sets the presences property value. 
+// Parameters:
+//  - value : Value to set for the presences property.
 func (m *CloudCommunications) SetPresences(value []Presence)() {
     m.presences = value
 }

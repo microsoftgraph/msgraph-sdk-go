@@ -8,38 +8,56 @@ import (
     if979997025f9bcf25495cdd28d651f7f48cd2e97ca3c95f88d9cef1ff2b1f8f1 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/calendar/events/item/calendar/getschedule"
 )
 
+// Builds and executes requests for operations under \groups\{group-id}\calendar\events\{event-id}\calendar
 type CalendarRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// The calendar that contains the event. Navigation property. Read-only.
 type CalendarRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
-    Expand []string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
 }
+// Builds and executes requests for operations under \groups\{group-id}\calendar\events\{event-id}\calendar\microsoft.graph.allowedCalendarSharingRoles(User='{User}')
+// Parameters:
+//  - User : Usage: User={User}
 func (m *CalendarRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*ibfdd2ee0a4c86bee37d156d57ad144544f4b1a9707e36e3f254729405e5688cc.AllowedCalendarSharingRolesWithUserRequestBuilder) {
     return ibfdd2ee0a4c86bee37d156d57ad144544f4b1a9707e36e3f254729405e5688cc.NewAllowedCalendarSharingRolesWithUserRequestBuilderInternal(m.pathParameters, m.requestAdapter, user);
 }
+// Instantiates a new CalendarRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewCalendarRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarRequestBuilder) {
     m := &CalendarRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/groups/{group_id}/calendar/events/{event_id}/calendar{?select,expand}";
+    m.urlTemplate = "https://graph.microsoft.com/v1.0/groups/{group_id}/calendar/events/{event_id}/calendar{?select}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new CalendarRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewCalendarRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarRequestBuilderInternal(urlParams, requestAdapter)
 }
+// The calendar that contains the event. Navigation property. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
 func (m *CalendarRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -59,6 +77,11 @@ func (m *CalendarRequestBuilder) CreateDeleteRequestInformation(h func (value ma
     }
     return requestInfo, nil
 }
+// The calendar that contains the event. Navigation property. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
 func (m *CalendarRequestBuilder) CreateGetRequestInformation(q func (value *CalendarRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,6 +112,11 @@ func (m *CalendarRequestBuilder) CreateGetRequestInformation(q func (value *Cale
     }
     return requestInfo, nil
 }
+// The calendar that contains the event. Navigation property. Read-only.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *CalendarRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Calendar, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,6 +137,11 @@ func (m *CalendarRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194
     }
     return requestInfo, nil
 }
+// The calendar that contains the event. Navigation property. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *CalendarRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(h, o);
     if err != nil {
@@ -120,6 +153,12 @@ func (m *CalendarRequestBuilder) Delete(h func (value map[string]string) (err er
     }
     return nil
 }
+// The calendar that contains the event. Navigation property. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *CalendarRequestBuilder) Get(q func (value *CalendarRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Calendar, error) {
     requestInfo, err := m.CreateGetRequestInformation(q, h, o);
     if err != nil {
@@ -134,6 +173,12 @@ func (m *CalendarRequestBuilder) Get(q func (value *CalendarRequestBuilderGetQue
 func (m *CalendarRequestBuilder) GetSchedule()(*if979997025f9bcf25495cdd28d651f7f48cd2e97ca3c95f88d9cef1ff2b1f8f1.GetScheduleRequestBuilder) {
     return if979997025f9bcf25495cdd28d651f7f48cd2e97ca3c95f88d9cef1ff2b1f8f1.NewGetScheduleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// The calendar that contains the event. Navigation property. Read-only.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *CalendarRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Calendar, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
     if err != nil {

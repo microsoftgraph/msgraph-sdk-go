@@ -5,23 +5,34 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type Chat struct {
     Entity
+    // Specifies the type of chat. Possible values are:group, oneOnOne and meeting.
     chatType *ChatType;
+    // Date and time at which the chat was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // A collection of all the apps in the chat. Nullable.
     installedApps []TeamsAppInstallation;
+    // Date and time at which the chat was renamed or list of members were last changed. Read-only.
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // A collection of all the members in the chat. Nullable.
     members []ConversationMember;
+    // A collection of all the messages in the chat. Nullable.
     messages []ChatMessage;
+    // 
     tabs []TeamsTab;
+    // (Optional) Subject or topic for the chat. Only available for group chats.
     topic *string;
 }
+// Instantiates a new chat and sets the default values.
 func NewChat()(*Chat) {
     m := &Chat{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the chatType property value. Specifies the type of chat. Possible values are:group, oneOnOne and meeting.
 func (m *Chat) GetChatType()(*ChatType) {
     if m == nil {
         return nil
@@ -29,6 +40,7 @@ func (m *Chat) GetChatType()(*ChatType) {
         return m.chatType
     }
 }
+// Gets the createdDateTime property value. Date and time at which the chat was created. Read-only.
 func (m *Chat) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -36,6 +48,7 @@ func (m *Chat) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
         return m.createdDateTime
     }
 }
+// Gets the installedApps property value. A collection of all the apps in the chat. Nullable.
 func (m *Chat) GetInstalledApps()([]TeamsAppInstallation) {
     if m == nil {
         return nil
@@ -43,6 +56,7 @@ func (m *Chat) GetInstalledApps()([]TeamsAppInstallation) {
         return m.installedApps
     }
 }
+// Gets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
 func (m *Chat) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -50,6 +64,7 @@ func (m *Chat) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
         return m.lastUpdatedDateTime
     }
 }
+// Gets the members property value. A collection of all the members in the chat. Nullable.
 func (m *Chat) GetMembers()([]ConversationMember) {
     if m == nil {
         return nil
@@ -57,6 +72,7 @@ func (m *Chat) GetMembers()([]ConversationMember) {
         return m.members
     }
 }
+// Gets the messages property value. A collection of all the messages in the chat. Nullable.
 func (m *Chat) GetMessages()([]ChatMessage) {
     if m == nil {
         return nil
@@ -64,6 +80,7 @@ func (m *Chat) GetMessages()([]ChatMessage) {
         return m.messages
     }
 }
+// Gets the tabs property value. 
 func (m *Chat) GetTabs()([]TeamsTab) {
     if m == nil {
         return nil
@@ -71,6 +88,7 @@ func (m *Chat) GetTabs()([]TeamsTab) {
         return m.tabs
     }
 }
+// Gets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.
 func (m *Chat) GetTopic()(*string) {
     if m == nil {
         return nil
@@ -78,6 +96,7 @@ func (m *Chat) GetTopic()(*string) {
         return m.topic
     }
 }
+// The deserialization information for the current model
 func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["chatType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,6 +185,9 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
 func (m *Chat) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -242,27 +264,51 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     }
     return nil
 }
+// Sets the chatType property value. Specifies the type of chat. Possible values are:group, oneOnOne and meeting.
+// Parameters:
+//  - value : Value to set for the chatType property.
 func (m *Chat) SetChatType(value *ChatType)() {
     m.chatType = value
 }
+// Sets the createdDateTime property value. Date and time at which the chat was created. Read-only.
+// Parameters:
+//  - value : Value to set for the createdDateTime property.
 func (m *Chat) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
+// Sets the installedApps property value. A collection of all the apps in the chat. Nullable.
+// Parameters:
+//  - value : Value to set for the installedApps property.
 func (m *Chat) SetInstalledApps(value []TeamsAppInstallation)() {
     m.installedApps = value
 }
+// Sets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
+// Parameters:
+//  - value : Value to set for the lastUpdatedDateTime property.
 func (m *Chat) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastUpdatedDateTime = value
 }
+// Sets the members property value. A collection of all the members in the chat. Nullable.
+// Parameters:
+//  - value : Value to set for the members property.
 func (m *Chat) SetMembers(value []ConversationMember)() {
     m.members = value
 }
+// Sets the messages property value. A collection of all the messages in the chat. Nullable.
+// Parameters:
+//  - value : Value to set for the messages property.
 func (m *Chat) SetMessages(value []ChatMessage)() {
     m.messages = value
 }
+// Sets the tabs property value. 
+// Parameters:
+//  - value : Value to set for the tabs property.
 func (m *Chat) SetTabs(value []TeamsTab)() {
     m.tabs = value
 }
+// Sets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.
+// Parameters:
+//  - value : Value to set for the topic property.
 func (m *Chat) SetTopic(value *string)() {
     m.topic = value
 }

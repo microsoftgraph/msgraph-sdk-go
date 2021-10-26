@@ -10,15 +10,22 @@ import (
     ia4901faaa220d8b6be706f330e0193ae8c90aa01be808c23003a85d85ae2b4c2 "github.com/microsoftgraph/msgraph-sdk-go/me/planner/plans/item/tasks/item/assignedtotaskboardformat"
 )
 
+// Builds and executes requests for operations under \me\planner\plans\{plannerPlan-id}\tasks\{plannerTask-id}
 type PlannerTaskRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Read-only. Nullable. Collection of tasks in the plan.
 type PlannerTaskRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
 }
 func (m *PlannerTaskRequestBuilder) AssignedToTaskBoardFormat()(*ia4901faaa220d8b6be706f330e0193ae8c90aa01be808c23003a85d85ae2b4c2.AssignedToTaskBoardFormatRequestBuilder) {
     return ia4901faaa220d8b6be706f330e0193ae8c90aa01be808c23003a85d85ae2b4c2.NewAssignedToTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -26,25 +33,35 @@ func (m *PlannerTaskRequestBuilder) AssignedToTaskBoardFormat()(*ia4901faaa220d8
 func (m *PlannerTaskRequestBuilder) BucketTaskBoardFormat()(*i836547f56c5bab968e32ced82473170aa68da4cce9b385f81fc7b5ac83e6aee8.BucketTaskBoardFormatRequestBuilder) {
     return i836547f56c5bab968e32ced82473170aa68da4cce9b385f81fc7b5ac83e6aee8.NewBucketTaskBoardFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Instantiates a new PlannerTaskRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewPlannerTaskRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerTaskRequestBuilder) {
     m := &PlannerTaskRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/me/planner/plans/{plannerPlan_id}/tasks/{plannerTask_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new PlannerTaskRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewPlannerTaskRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerTaskRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerTaskRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Read-only. Nullable. Collection of tasks in the plan.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
 func (m *PlannerTaskRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -64,6 +81,11 @@ func (m *PlannerTaskRequestBuilder) CreateDeleteRequestInformation(h func (value
     }
     return requestInfo, nil
 }
+// Read-only. Nullable. Collection of tasks in the plan.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
 func (m *PlannerTaskRequestBuilder) CreateGetRequestInformation(q func (value *PlannerTaskRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -94,6 +116,11 @@ func (m *PlannerTaskRequestBuilder) CreateGetRequestInformation(q func (value *P
     }
     return requestInfo, nil
 }
+// Read-only. Nullable. Collection of tasks in the plan.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *PlannerTaskRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTask, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,6 +141,11 @@ func (m *PlannerTaskRequestBuilder) CreatePatchRequestInformation(body *i4a838ef
     }
     return requestInfo, nil
 }
+// Read-only. Nullable. Collection of tasks in the plan.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *PlannerTaskRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(h, o);
     if err != nil {
@@ -128,6 +160,12 @@ func (m *PlannerTaskRequestBuilder) Delete(h func (value map[string]string) (err
 func (m *PlannerTaskRequestBuilder) Details()(*i90cc7a61f42bbc57a911343647a07ad232e665daa550b6d8da51503c6cf69d79.DetailsRequestBuilder) {
     return i90cc7a61f42bbc57a911343647a07ad232e665daa550b6d8da51503c6cf69d79.NewDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Read-only. Nullable. Collection of tasks in the plan.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *PlannerTaskRequestBuilder) Get(q func (value *PlannerTaskRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTask, error) {
     requestInfo, err := m.CreateGetRequestInformation(q, h, o);
     if err != nil {
@@ -139,6 +177,12 @@ func (m *PlannerTaskRequestBuilder) Get(q func (value *PlannerTaskRequestBuilder
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTask), nil
 }
+// Read-only. Nullable. Collection of tasks in the plan.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *PlannerTaskRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTask, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
     if err != nil {

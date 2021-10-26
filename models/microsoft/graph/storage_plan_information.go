@@ -4,16 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type StoragePlanInformation struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Indicates whether there are higher storage quota plans available. Read-only.
     upgradeAvailable *bool;
 }
+// Instantiates a new storagePlanInformation and sets the default values.
 func NewStoragePlanInformation()(*StoragePlanInformation) {
     m := &StoragePlanInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StoragePlanInformation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -21,6 +26,7 @@ func (m *StoragePlanInformation) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the upgradeAvailable property value. Indicates whether there are higher storage quota plans available. Read-only.
 func (m *StoragePlanInformation) GetUpgradeAvailable()(*bool) {
     if m == nil {
         return nil
@@ -28,6 +34,7 @@ func (m *StoragePlanInformation) GetUpgradeAvailable()(*bool) {
         return m.upgradeAvailable
     }
 }
+// The deserialization information for the current model
 func (m *StoragePlanInformation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["upgradeAvailable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -43,6 +50,9 @@ func (m *StoragePlanInformation) GetFieldDeserializers()(map[string]func(interfa
 func (m *StoragePlanInformation) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *StoragePlanInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("upgradeAvailable", m.GetUpgradeAvailable())
@@ -58,9 +68,15 @@ func (m *StoragePlanInformation) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *StoragePlanInformation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the upgradeAvailable property value. Indicates whether there are higher storage quota plans available. Read-only.
+// Parameters:
+//  - value : Value to set for the upgradeAvailable property.
 func (m *StoragePlanInformation) SetUpgradeAvailable(value *bool)() {
     m.upgradeAvailable = value
 }

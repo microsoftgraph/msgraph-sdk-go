@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type SecurityNetworkProtocol int
 
 const (

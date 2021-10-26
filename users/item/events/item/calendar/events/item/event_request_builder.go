@@ -13,15 +13,20 @@ import (
     ide27e74c199c4ed31731e015398b5329f715db419fc60f48778f05e8ff88a1df "github.com/microsoftgraph/msgraph-sdk-go/users/item/events/item/calendar/events/item/accept"
 )
 
+// Builds and executes requests for operations under \users\{user-id}\events\{event-id}\calendar\events\{event-id1}
 type EventRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// The events in the calendar. Navigation property. Read-only.
 type EventRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
-    Expand []string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
 }
 func (m *EventRequestBuilder) Accept()(*ide27e74c199c4ed31731e015398b5329f715db419fc60f48778f05e8ff88a1df.AcceptRequestBuilder) {
     return ide27e74c199c4ed31731e015398b5329f715db419fc60f48778f05e8ff88a1df.NewAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -29,25 +34,35 @@ func (m *EventRequestBuilder) Accept()(*ide27e74c199c4ed31731e015398b5329f715db4
 func (m *EventRequestBuilder) Cancel()(*i7145f20186cb6a19dad77ea53a64623e5e87bf5ffdc5f69914d07f2b0acd2139.CancelRequestBuilder) {
     return i7145f20186cb6a19dad77ea53a64623e5e87bf5ffdc5f69914d07f2b0acd2139.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Instantiates a new EventRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewEventRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventRequestBuilder) {
     m := &EventRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/users/{user_id}/events/{event_id}/calendar/events/{event_id1}{?select,expand}";
+    m.urlTemplate = "https://graph.microsoft.com/v1.0/users/{user_id}/events/{event_id}/calendar/events/{event_id1}{?select}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new EventRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewEventRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEventRequestBuilderInternal(urlParams, requestAdapter)
 }
+// The events in the calendar. Navigation property. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
 func (m *EventRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,6 +82,11 @@ func (m *EventRequestBuilder) CreateDeleteRequestInformation(h func (value map[s
     }
     return requestInfo, nil
 }
+// The events in the calendar. Navigation property. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
 func (m *EventRequestBuilder) CreateGetRequestInformation(q func (value *EventRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,6 +117,11 @@ func (m *EventRequestBuilder) CreateGetRequestInformation(q func (value *EventRe
     }
     return requestInfo, nil
 }
+// The events in the calendar. Navigation property. Read-only.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *EventRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,6 +145,11 @@ func (m *EventRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c
 func (m *EventRequestBuilder) Decline()(*id6c016dfcb13018f5f086abd7a3d4d95a8dde24bcf6a5cabd0bbadfac22dca64.DeclineRequestBuilder) {
     return id6c016dfcb13018f5f086abd7a3d4d95a8dde24bcf6a5cabd0bbadfac22dca64.NewDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// The events in the calendar. Navigation property. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *EventRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(h, o);
     if err != nil {
@@ -137,6 +167,12 @@ func (m *EventRequestBuilder) DismissReminder()(*i1e469eebfb59a350cc0a5aa0220e8b
 func (m *EventRequestBuilder) Forward()(*iac1d1ce417e71f1b53446e0553a13a7d8ab17df5c441be82613c674fc5aaa0f2.ForwardRequestBuilder) {
     return iac1d1ce417e71f1b53446e0553a13a7d8ab17df5c441be82613c674fc5aaa0f2.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// The events in the calendar. Navigation property. Read-only.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *EventRequestBuilder) Get(q func (value *EventRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event, error) {
     requestInfo, err := m.CreateGetRequestInformation(q, h, o);
     if err != nil {
@@ -148,6 +184,12 @@ func (m *EventRequestBuilder) Get(q func (value *EventRequestBuilderGetQueryPara
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event), nil
 }
+// The events in the calendar. Navigation property. Read-only.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *EventRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
     if err != nil {

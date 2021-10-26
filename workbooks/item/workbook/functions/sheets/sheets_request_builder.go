@@ -6,21 +6,30 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\functions\microsoft.graph.sheets
 type SheetsRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Union type wrapper for classes workbookFunctionResult
 type SheetsResponse struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Union type representation for type workbookFunctionResult
     workbookFunctionResult *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctionResult;
 }
+// Instantiates a new sheetsResponse and sets the default values.
 func NewSheetsResponse()(*SheetsResponse) {
     m := &SheetsResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SheetsResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,6 +37,7 @@ func (m *SheetsResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the workbookFunctionResult property value. Union type representation for type workbookFunctionResult
 func (m *SheetsResponse) GetWorkbookFunctionResult()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctionResult) {
     if m == nil {
         return nil
@@ -35,6 +45,7 @@ func (m *SheetsResponse) GetWorkbookFunctionResult()(*i4a838ef194e4c99e9f2c63ba1
         return m.workbookFunctionResult
     }
 }
+// The deserialization information for the current model
 func (m *SheetsResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["workbookFunctionResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -50,6 +61,9 @@ func (m *SheetsResponse) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *SheetsResponse) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *SheetsResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("workbookFunctionResult", m.GetWorkbookFunctionResult())
@@ -65,31 +79,48 @@ func (m *SheetsResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *SheetsResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the workbookFunctionResult property value. Union type representation for type workbookFunctionResult
+// Parameters:
+//  - value : Value to set for the workbookFunctionResult property.
 func (m *SheetsResponse) SetWorkbookFunctionResult(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctionResult)() {
     m.workbookFunctionResult = value
 }
+// Instantiates a new SheetsRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewSheetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SheetsRequestBuilder) {
     m := &SheetsRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.sheets";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new SheetsRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewSheetsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SheetsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSheetsRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Invoke action sheets
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *SheetsRequestBuilder) CreatePostRequestInformation(body *SheetsRequestBody, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,6 +141,12 @@ func (m *SheetsRequestBuilder) CreatePostRequestInformation(body *SheetsRequestB
     }
     return requestInfo, nil
 }
+// Invoke action sheets
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *SheetsRequestBuilder) Post(body *SheetsRequestBody, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*SheetsResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(body, h, o);
     if err != nil {

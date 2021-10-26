@@ -5,17 +5,23 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type LogRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     base *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    // 
     number *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
+// Instantiates a new logRequestBody and sets the default values.
 func NewLogRequestBody()(*LogRequestBody) {
     m := &LogRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LogRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *LogRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the base property value. 
 func (m *LogRequestBody) GetBase()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *LogRequestBody) GetBase()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1
         return m.base
     }
 }
+// Gets the number property value. 
 func (m *LogRequestBody) GetNumber()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *LogRequestBody) GetNumber()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.number
     }
 }
+// The deserialization information for the current model
 func (m *LogRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["base"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,6 +69,9 @@ func (m *LogRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *LogRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *LogRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("base", m.GetBase())
@@ -81,12 +93,21 @@ func (m *LogRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *LogRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the base property value. 
+// Parameters:
+//  - value : Value to set for the base property.
 func (m *LogRequestBody) SetBase(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.base = value
 }
+// Sets the number property value. 
+// Parameters:
+//  - value : Value to set for the number property.
 func (m *LogRequestBody) SetNumber(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.number = value
 }

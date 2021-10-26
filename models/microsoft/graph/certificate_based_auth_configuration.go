@@ -4,16 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type CertificateBasedAuthConfiguration struct {
     Entity
+    // Collection of certificate authorities which creates a trusted certificate chain.
     certificateAuthorities []CertificateAuthority;
 }
+// Instantiates a new certificateBasedAuthConfiguration and sets the default values.
 func NewCertificateBasedAuthConfiguration()(*CertificateBasedAuthConfiguration) {
     m := &CertificateBasedAuthConfiguration{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the certificateAuthorities property value. Collection of certificate authorities which creates a trusted certificate chain.
 func (m *CertificateBasedAuthConfiguration) GetCertificateAuthorities()([]CertificateAuthority) {
     if m == nil {
         return nil
@@ -21,6 +25,7 @@ func (m *CertificateBasedAuthConfiguration) GetCertificateAuthorities()([]Certif
         return m.certificateAuthorities
     }
 }
+// The deserialization information for the current model
 func (m *CertificateBasedAuthConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["certificateAuthorities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -40,6 +45,9 @@ func (m *CertificateBasedAuthConfiguration) GetFieldDeserializers()(map[string]f
 func (m *CertificateBasedAuthConfiguration) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *CertificateBasedAuthConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -58,6 +66,9 @@ func (m *CertificateBasedAuthConfiguration) Serialize(writer i04eb5309aeaafadd28
     }
     return nil
 }
+// Sets the certificateAuthorities property value. Collection of certificate authorities which creates a trusted certificate chain.
+// Parameters:
+//  - value : Value to set for the certificateAuthorities property.
 func (m *CertificateBasedAuthConfiguration) SetCertificateAuthorities(value []CertificateAuthority)() {
     m.certificateAuthorities = value
 }

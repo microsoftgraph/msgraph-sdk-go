@@ -4,16 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type EntitlementManagement struct {
     Entity
+    // 
     accessPackageAssignmentApprovals []Approval;
 }
+// Instantiates a new entitlementManagement and sets the default values.
 func NewEntitlementManagement()(*EntitlementManagement) {
     m := &EntitlementManagement{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the accessPackageAssignmentApprovals property value. 
 func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approval) {
     if m == nil {
         return nil
@@ -21,6 +25,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approval
         return m.accessPackageAssignmentApprovals
     }
 }
+// The deserialization information for the current model
 func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageAssignmentApprovals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -40,6 +45,9 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
 func (m *EntitlementManagement) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -58,6 +66,9 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
+// Sets the accessPackageAssignmentApprovals property value. 
+// Parameters:
+//  - value : Value to set for the accessPackageAssignmentApprovals property.
 func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Approval)() {
     m.accessPackageAssignmentApprovals = value
 }

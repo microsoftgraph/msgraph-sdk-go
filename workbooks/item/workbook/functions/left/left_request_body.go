@@ -5,17 +5,23 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type LeftRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     numChars *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    // 
     text *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
+// Instantiates a new leftRequestBody and sets the default values.
 func NewLeftRequestBody()(*LeftRequestBody) {
     m := &LeftRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LeftRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *LeftRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the numChars property value. 
 func (m *LeftRequestBody) GetNumChars()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *LeftRequestBody) GetNumChars()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89
         return m.numChars
     }
 }
+// Gets the text property value. 
 func (m *LeftRequestBody) GetText()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *LeftRequestBody) GetText()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c
         return m.text
     }
 }
+// The deserialization information for the current model
 func (m *LeftRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["numChars"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,6 +69,9 @@ func (m *LeftRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *LeftRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *LeftRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("numChars", m.GetNumChars())
@@ -81,12 +93,21 @@ func (m *LeftRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *LeftRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the numChars property value. 
+// Parameters:
+//  - value : Value to set for the numChars property.
 func (m *LeftRequestBody) SetNumChars(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.numChars = value
 }
+// Sets the text property value. 
+// Parameters:
+//  - value : Value to set for the text property.
 func (m *LeftRequestBody) SetText(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.text = value
 }

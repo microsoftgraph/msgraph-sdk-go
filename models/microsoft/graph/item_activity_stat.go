@@ -5,25 +5,38 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type ItemActivityStat struct {
     Entity
+    // Statistics about the access actions in this interval. Read-only.
     access *ItemActionStat;
+    // Exposes the itemActivities represented in this itemActivityStat resource.
     activities []ItemActivity;
+    // Statistics about the create actions in this interval. Read-only.
     create *ItemActionStat;
+    // Statistics about the delete actions in this interval. Read-only.
     delete *ItemActionStat;
+    // Statistics about the edit actions in this interval. Read-only.
     edit *ItemActionStat;
+    // When the interval ends. Read-only.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // Indicates that the statistics in this interval are based on incomplete data. Read-only.
     incompleteData *IncompleteData;
+    // Indicates whether the item is 'trending.' Read-only.
     isTrending *bool;
+    // Statistics about the move actions in this interval. Read-only.
     move *ItemActionStat;
+    // When the interval starts. Read-only.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
+// Instantiates a new itemActivityStat and sets the default values.
 func NewItemActivityStat()(*ItemActivityStat) {
     m := &ItemActivityStat{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the access property value. Statistics about the access actions in this interval. Read-only.
 func (m *ItemActivityStat) GetAccess()(*ItemActionStat) {
     if m == nil {
         return nil
@@ -31,6 +44,7 @@ func (m *ItemActivityStat) GetAccess()(*ItemActionStat) {
         return m.access
     }
 }
+// Gets the activities property value. Exposes the itemActivities represented in this itemActivityStat resource.
 func (m *ItemActivityStat) GetActivities()([]ItemActivity) {
     if m == nil {
         return nil
@@ -38,6 +52,7 @@ func (m *ItemActivityStat) GetActivities()([]ItemActivity) {
         return m.activities
     }
 }
+// Gets the create property value. Statistics about the create actions in this interval. Read-only.
 func (m *ItemActivityStat) GetCreate()(*ItemActionStat) {
     if m == nil {
         return nil
@@ -45,6 +60,7 @@ func (m *ItemActivityStat) GetCreate()(*ItemActionStat) {
         return m.create
     }
 }
+// Gets the delete property value. Statistics about the delete actions in this interval. Read-only.
 func (m *ItemActivityStat) GetDelete()(*ItemActionStat) {
     if m == nil {
         return nil
@@ -52,6 +68,7 @@ func (m *ItemActivityStat) GetDelete()(*ItemActionStat) {
         return m.delete
     }
 }
+// Gets the edit property value. Statistics about the edit actions in this interval. Read-only.
 func (m *ItemActivityStat) GetEdit()(*ItemActionStat) {
     if m == nil {
         return nil
@@ -59,6 +76,7 @@ func (m *ItemActivityStat) GetEdit()(*ItemActionStat) {
         return m.edit
     }
 }
+// Gets the endDateTime property value. When the interval ends. Read-only.
 func (m *ItemActivityStat) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -66,6 +84,7 @@ func (m *ItemActivityStat) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return m.endDateTime
     }
 }
+// Gets the incompleteData property value. Indicates that the statistics in this interval are based on incomplete data. Read-only.
 func (m *ItemActivityStat) GetIncompleteData()(*IncompleteData) {
     if m == nil {
         return nil
@@ -73,6 +92,7 @@ func (m *ItemActivityStat) GetIncompleteData()(*IncompleteData) {
         return m.incompleteData
     }
 }
+// Gets the isTrending property value. Indicates whether the item is 'trending.' Read-only.
 func (m *ItemActivityStat) GetIsTrending()(*bool) {
     if m == nil {
         return nil
@@ -80,6 +100,7 @@ func (m *ItemActivityStat) GetIsTrending()(*bool) {
         return m.isTrending
     }
 }
+// Gets the move property value. Statistics about the move actions in this interval. Read-only.
 func (m *ItemActivityStat) GetMove()(*ItemActionStat) {
     if m == nil {
         return nil
@@ -87,6 +108,7 @@ func (m *ItemActivityStat) GetMove()(*ItemActionStat) {
         return m.move
     }
 }
+// Gets the startDateTime property value. When the interval starts. Read-only.
 func (m *ItemActivityStat) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -94,6 +116,7 @@ func (m *ItemActivityStat) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return m.startDateTime
     }
 }
+// The deserialization information for the current model
 func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["access"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,6 +208,9 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *ItemActivityStat) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ItemActivityStat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -257,33 +283,63 @@ func (m *ItemActivityStat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
+// Sets the access property value. Statistics about the access actions in this interval. Read-only.
+// Parameters:
+//  - value : Value to set for the access property.
 func (m *ItemActivityStat) SetAccess(value *ItemActionStat)() {
     m.access = value
 }
+// Sets the activities property value. Exposes the itemActivities represented in this itemActivityStat resource.
+// Parameters:
+//  - value : Value to set for the activities property.
 func (m *ItemActivityStat) SetActivities(value []ItemActivity)() {
     m.activities = value
 }
+// Sets the create property value. Statistics about the create actions in this interval. Read-only.
+// Parameters:
+//  - value : Value to set for the create property.
 func (m *ItemActivityStat) SetCreate(value *ItemActionStat)() {
     m.create = value
 }
+// Sets the delete property value. Statistics about the delete actions in this interval. Read-only.
+// Parameters:
+//  - value : Value to set for the delete property.
 func (m *ItemActivityStat) SetDelete(value *ItemActionStat)() {
     m.delete = value
 }
+// Sets the edit property value. Statistics about the edit actions in this interval. Read-only.
+// Parameters:
+//  - value : Value to set for the edit property.
 func (m *ItemActivityStat) SetEdit(value *ItemActionStat)() {
     m.edit = value
 }
+// Sets the endDateTime property value. When the interval ends. Read-only.
+// Parameters:
+//  - value : Value to set for the endDateTime property.
 func (m *ItemActivityStat) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
+// Sets the incompleteData property value. Indicates that the statistics in this interval are based on incomplete data. Read-only.
+// Parameters:
+//  - value : Value to set for the incompleteData property.
 func (m *ItemActivityStat) SetIncompleteData(value *IncompleteData)() {
     m.incompleteData = value
 }
+// Sets the isTrending property value. Indicates whether the item is 'trending.' Read-only.
+// Parameters:
+//  - value : Value to set for the isTrending property.
 func (m *ItemActivityStat) SetIsTrending(value *bool)() {
     m.isTrending = value
 }
+// Sets the move property value. Statistics about the move actions in this interval. Read-only.
+// Parameters:
+//  - value : Value to set for the move property.
 func (m *ItemActivityStat) SetMove(value *ItemActionStat)() {
     m.move = value
 }
+// Sets the startDateTime property value. When the interval starts. Read-only.
+// Parameters:
+//  - value : Value to set for the startDateTime property.
 func (m *ItemActivityStat) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }

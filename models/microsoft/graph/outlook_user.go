@@ -4,16 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type OutlookUser struct {
     Entity
+    // A list of categories defined for the user.
     masterCategories []OutlookCategory;
 }
+// Instantiates a new outlookUser and sets the default values.
 func NewOutlookUser()(*OutlookUser) {
     m := &OutlookUser{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) GetMasterCategories()([]OutlookCategory) {
     if m == nil {
         return nil
@@ -21,6 +25,7 @@ func (m *OutlookUser) GetMasterCategories()([]OutlookCategory) {
         return m.masterCategories
     }
 }
+// The deserialization information for the current model
 func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["masterCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -40,6 +45,9 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *OutlookUser) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -58,6 +66,9 @@ func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
+// Sets the masterCategories property value. A list of categories defined for the user.
+// Parameters:
+//  - value : Value to set for the masterCategories property.
 func (m *OutlookUser) SetMasterCategories(value []OutlookCategory)() {
     m.masterCategories = value
 }

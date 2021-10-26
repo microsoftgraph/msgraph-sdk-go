@@ -8,35 +8,52 @@ import (
     i234879cc3034be020e249426c785102ae7bec5c8ba1668c85add223ce0abeda9 "github.com/microsoftgraph/msgraph-sdk-go/users/item/planner/plans/item/buckets/item/tasks/item"
 )
 
+// Builds and executes requests for operations under \users\{user-id}\planner\plans\{plannerPlan-id}\buckets\{plannerBucket-id}
 type PlannerBucketRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Read-only. Nullable. Collection of buckets in the plan.
 type PlannerBucketRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
 }
+// Instantiates a new PlannerBucketRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewPlannerBucketRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerBucketRequestBuilder) {
     m := &PlannerBucketRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/users/{user_id}/planner/plans/{plannerPlan_id}/buckets/{plannerBucket_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new PlannerBucketRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewPlannerBucketRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlannerBucketRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerBucketRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Read-only. Nullable. Collection of buckets in the plan.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
 func (m *PlannerBucketRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -56,6 +73,11 @@ func (m *PlannerBucketRequestBuilder) CreateDeleteRequestInformation(h func (val
     }
     return requestInfo, nil
 }
+// Read-only. Nullable. Collection of buckets in the plan.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
 func (m *PlannerBucketRequestBuilder) CreateGetRequestInformation(q func (value *PlannerBucketRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -86,6 +108,11 @@ func (m *PlannerBucketRequestBuilder) CreateGetRequestInformation(q func (value 
     }
     return requestInfo, nil
 }
+// Read-only. Nullable. Collection of buckets in the plan.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *PlannerBucketRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucket, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,6 +133,11 @@ func (m *PlannerBucketRequestBuilder) CreatePatchRequestInformation(body *i4a838
     }
     return requestInfo, nil
 }
+// Read-only. Nullable. Collection of buckets in the plan.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *PlannerBucketRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(h, o);
     if err != nil {
@@ -117,6 +149,12 @@ func (m *PlannerBucketRequestBuilder) Delete(h func (value map[string]string) (e
     }
     return nil
 }
+// Read-only. Nullable. Collection of buckets in the plan.
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *PlannerBucketRequestBuilder) Get(q func (value *PlannerBucketRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucket, error) {
     requestInfo, err := m.CreateGetRequestInformation(q, h, o);
     if err != nil {
@@ -128,6 +166,12 @@ func (m *PlannerBucketRequestBuilder) Get(q func (value *PlannerBucketRequestBui
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucket), nil
 }
+// Read-only. Nullable. Collection of buckets in the plan.
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *PlannerBucketRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucket, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
     if err != nil {
@@ -142,12 +186,13 @@ func (m *PlannerBucketRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab
 func (m *PlannerBucketRequestBuilder) Tasks()(*i75c42040d434a16046490a6497e6d5512051f4a69777c3de8d0e3a0bfec040a5.TasksRequestBuilder) {
     return i75c42040d434a16046490a6497e6d5512051f4a69777c3de8d0e3a0bfec040a5.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.planner.plans.item.buckets.item.tasks.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *PlannerBucketRequestBuilder) TasksById(id string)(*i234879cc3034be020e249426c785102ae7bec5c8ba1668c85add223ce0abeda9.PlannerTaskRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["plannerTask_id"] = id

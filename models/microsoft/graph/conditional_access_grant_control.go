@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type ConditionalAccessGrantControl int
 
 const (

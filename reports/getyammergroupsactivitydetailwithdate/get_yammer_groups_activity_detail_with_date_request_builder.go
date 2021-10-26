@@ -6,20 +6,27 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// Builds and executes requests for operations under \reports\microsoft.graph.getYammerGroupsActivityDetail(date={date})
 type GetYammerGroupsActivityDetailWithDateRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Instantiates a new GetYammerGroupsActivityDetailWithDateRequestBuilder and sets the default values.
+// Parameters:
+//  - date : Usage: date={date}
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewGetYammerGroupsActivityDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *string)(*GetYammerGroupsActivityDetailWithDateRequestBuilder) {
     m := &GetYammerGroupsActivityDetailWithDateRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/reports/microsoft.graph.getYammerGroupsActivityDetail(date={date})";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if date != nil {
         urlTplParams["date"] = *date
@@ -28,11 +35,19 @@ func NewGetYammerGroupsActivityDetailWithDateRequestBuilderInternal(pathParamete
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new GetYammerGroupsActivityDetailWithDateRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewGetYammerGroupsActivityDetailWithDateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetYammerGroupsActivityDetailWithDateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetYammerGroupsActivityDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
+// Invoke function getYammerGroupsActivityDetail
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
 func (m *GetYammerGroupsActivityDetailWithDateRequestBuilder) CreateGetRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -52,6 +67,11 @@ func (m *GetYammerGroupsActivityDetailWithDateRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
+// Invoke function getYammerGroupsActivityDetail
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *GetYammerGroupsActivityDetailWithDateRequestBuilder) Get(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report, error) {
     requestInfo, err := m.CreateGetRequestInformation(h, o);
     if err != nil {

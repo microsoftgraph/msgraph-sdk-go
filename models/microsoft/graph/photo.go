@@ -5,24 +5,37 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type Photo struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Camera manufacturer. Read-only.
     cameraMake *string;
+    // Camera model. Read-only.
     cameraModel *string;
+    // The denominator for the exposure time fraction from the camera. Read-only.
     exposureDenominator *float64;
+    // The numerator for the exposure time fraction from the camera. Read-only.
     exposureNumerator *float64;
+    // The F-stop value from the camera. Read-only.
     fNumber *float64;
+    // The focal length from the camera. Read-only.
     focalLength *float64;
+    // The ISO value from the camera. Read-only.
     iso *int32;
+    // The orientation value from the camera. Writable on OneDrive Personal.
     orientation *int32;
+    // Represents the date and time the photo was taken. Read-only.
     takenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
+// Instantiates a new photo and sets the default values.
 func NewPhoto()(*Photo) {
     m := &Photo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Photo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,6 +43,7 @@ func (m *Photo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the cameraMake property value. Camera manufacturer. Read-only.
 func (m *Photo) GetCameraMake()(*string) {
     if m == nil {
         return nil
@@ -37,6 +51,7 @@ func (m *Photo) GetCameraMake()(*string) {
         return m.cameraMake
     }
 }
+// Gets the cameraModel property value. Camera model. Read-only.
 func (m *Photo) GetCameraModel()(*string) {
     if m == nil {
         return nil
@@ -44,6 +59,7 @@ func (m *Photo) GetCameraModel()(*string) {
         return m.cameraModel
     }
 }
+// Gets the exposureDenominator property value. The denominator for the exposure time fraction from the camera. Read-only.
 func (m *Photo) GetExposureDenominator()(*float64) {
     if m == nil {
         return nil
@@ -51,6 +67,7 @@ func (m *Photo) GetExposureDenominator()(*float64) {
         return m.exposureDenominator
     }
 }
+// Gets the exposureNumerator property value. The numerator for the exposure time fraction from the camera. Read-only.
 func (m *Photo) GetExposureNumerator()(*float64) {
     if m == nil {
         return nil
@@ -58,6 +75,7 @@ func (m *Photo) GetExposureNumerator()(*float64) {
         return m.exposureNumerator
     }
 }
+// Gets the fNumber property value. The F-stop value from the camera. Read-only.
 func (m *Photo) GetFNumber()(*float64) {
     if m == nil {
         return nil
@@ -65,6 +83,7 @@ func (m *Photo) GetFNumber()(*float64) {
         return m.fNumber
     }
 }
+// Gets the focalLength property value. The focal length from the camera. Read-only.
 func (m *Photo) GetFocalLength()(*float64) {
     if m == nil {
         return nil
@@ -72,6 +91,7 @@ func (m *Photo) GetFocalLength()(*float64) {
         return m.focalLength
     }
 }
+// Gets the iso property value. The ISO value from the camera. Read-only.
 func (m *Photo) GetIso()(*int32) {
     if m == nil {
         return nil
@@ -79,6 +99,7 @@ func (m *Photo) GetIso()(*int32) {
         return m.iso
     }
 }
+// Gets the orientation property value. The orientation value from the camera. Writable on OneDrive Personal.
 func (m *Photo) GetOrientation()(*int32) {
     if m == nil {
         return nil
@@ -86,6 +107,7 @@ func (m *Photo) GetOrientation()(*int32) {
         return m.orientation
     }
 }
+// Gets the takenDateTime property value. Represents the date and time the photo was taken. Read-only.
 func (m *Photo) GetTakenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -93,6 +115,7 @@ func (m *Photo) GetTakenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
         return m.takenDateTime
     }
 }
+// The deserialization information for the current model
 func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["cameraMake"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,6 +195,9 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Photo) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Photo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("cameraMake", m.GetCameraMake())
@@ -235,33 +261,63 @@ func (m *Photo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *Photo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the cameraMake property value. Camera manufacturer. Read-only.
+// Parameters:
+//  - value : Value to set for the cameraMake property.
 func (m *Photo) SetCameraMake(value *string)() {
     m.cameraMake = value
 }
+// Sets the cameraModel property value. Camera model. Read-only.
+// Parameters:
+//  - value : Value to set for the cameraModel property.
 func (m *Photo) SetCameraModel(value *string)() {
     m.cameraModel = value
 }
+// Sets the exposureDenominator property value. The denominator for the exposure time fraction from the camera. Read-only.
+// Parameters:
+//  - value : Value to set for the exposureDenominator property.
 func (m *Photo) SetExposureDenominator(value *float64)() {
     m.exposureDenominator = value
 }
+// Sets the exposureNumerator property value. The numerator for the exposure time fraction from the camera. Read-only.
+// Parameters:
+//  - value : Value to set for the exposureNumerator property.
 func (m *Photo) SetExposureNumerator(value *float64)() {
     m.exposureNumerator = value
 }
+// Sets the fNumber property value. The F-stop value from the camera. Read-only.
+// Parameters:
+//  - value : Value to set for the fNumber property.
 func (m *Photo) SetFNumber(value *float64)() {
     m.fNumber = value
 }
+// Sets the focalLength property value. The focal length from the camera. Read-only.
+// Parameters:
+//  - value : Value to set for the focalLength property.
 func (m *Photo) SetFocalLength(value *float64)() {
     m.focalLength = value
 }
+// Sets the iso property value. The ISO value from the camera. Read-only.
+// Parameters:
+//  - value : Value to set for the iso property.
 func (m *Photo) SetIso(value *int32)() {
     m.iso = value
 }
+// Sets the orientation property value. The orientation value from the camera. Writable on OneDrive Personal.
+// Parameters:
+//  - value : Value to set for the orientation property.
 func (m *Photo) SetOrientation(value *int32)() {
     m.orientation = value
 }
+// Sets the takenDateTime property value. Represents the date and time the photo was taken. Read-only.
+// Parameters:
+//  - value : Value to set for the takenDateTime property.
 func (m *Photo) SetTakenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.takenDateTime = value
 }

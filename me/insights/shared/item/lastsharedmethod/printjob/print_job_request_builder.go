@@ -8,9 +8,13 @@ import (
     iea086e9a0e5c814bf8fffa6f32e7e5ee0acad87d9a30672e5faffb72ae926046 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/printjob/abort"
 )
 
+// Builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.printJob
 type PrintJobRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
 func (m *PrintJobRequestBuilder) Abort()(*iea086e9a0e5c814bf8fffa6f32e7e5ee0acad87d9a30672e5faffb72ae926046.AbortRequestBuilder) {
@@ -19,20 +23,26 @@ func (m *PrintJobRequestBuilder) Abort()(*iea086e9a0e5c814bf8fffa6f32e7e5ee0acad
 func (m *PrintJobRequestBuilder) Cancel()(*i65d540e862794ef4e467b02d8f2d4c9bd0daaf7517806969e97b023ddc3b2152.CancelRequestBuilder) {
     return i65d540e862794ef4e467b02d8f2d4c9bd0daaf7517806969e97b023ddc3b2152.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Instantiates a new PrintJobRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewPrintJobRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintJobRequestBuilder) {
     m := &PrintJobRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/me/insights/shared/{sharedInsight_id}/lastSharedMethod/microsoft.graph.printJob";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new PrintJobRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewPrintJobRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintJobRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

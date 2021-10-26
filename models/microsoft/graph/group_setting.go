@@ -4,18 +4,24 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type GroupSetting struct {
     Entity
+    // Display name of this group of settings, which comes from the associated template.
     displayName *string;
+    // Unique identifier for the template used to create this group of settings. Read-only.
     templateId *string;
+    // Collection of name value pairs. Must contain and set all the settings defined in the template.
     values []SettingValue;
 }
+// Instantiates a new groupSetting and sets the default values.
 func NewGroupSetting()(*GroupSetting) {
     m := &GroupSetting{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the displayName property value. Display name of this group of settings, which comes from the associated template.
 func (m *GroupSetting) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *GroupSetting) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the templateId property value. Unique identifier for the template used to create this group of settings. Read-only.
 func (m *GroupSetting) GetTemplateId()(*string) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *GroupSetting) GetTemplateId()(*string) {
         return m.templateId
     }
 }
+// Gets the values property value. Collection of name value pairs. Must contain and set all the settings defined in the template.
 func (m *GroupSetting) GetValues()([]SettingValue) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *GroupSetting) GetValues()([]SettingValue) {
         return m.values
     }
 }
+// The deserialization information for the current model
 func (m *GroupSetting) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,6 +81,9 @@ func (m *GroupSetting) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *GroupSetting) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GroupSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -102,12 +114,21 @@ func (m *GroupSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
+// Sets the displayName property value. Display name of this group of settings, which comes from the associated template.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *GroupSetting) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the templateId property value. Unique identifier for the template used to create this group of settings. Read-only.
+// Parameters:
+//  - value : Value to set for the templateId property.
 func (m *GroupSetting) SetTemplateId(value *string)() {
     m.templateId = value
 }
+// Sets the values property value. Collection of name value pairs. Must contain and set all the settings defined in the template.
+// Parameters:
+//  - value : Value to set for the values property.
 func (m *GroupSetting) SetValues(value []SettingValue)() {
     m.values = value
 }

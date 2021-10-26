@@ -8,50 +8,69 @@ import (
     i64f858c8627e84ac3553655f2bc7b8c678e19238c74dba447be61b60e81acf4a "github.com/microsoftgraph/msgraph-sdk-go/authenticationmethodspolicy/authenticationmethodconfigurations/item"
 )
 
+// Builds and executes requests for operations under \authenticationMethodsPolicy
 type AuthenticationMethodsPolicyRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Get authenticationMethodsPolicy
 type AuthenticationMethodsPolicyRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
 }
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurations()(*i3e1a5562edfffe5e226bf012be5c2c5a4d9397890b97d1165af87107fe553217.AuthenticationMethodConfigurationsRequestBuilder) {
     return i3e1a5562edfffe5e226bf012be5c2c5a4d9397890b97d1165af87107fe553217.NewAuthenticationMethodConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.authenticationMethodsPolicy.authenticationMethodConfigurations.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurationsById(id string)(*i64f858c8627e84ac3553655f2bc7b8c678e19238c74dba447be61b60e81acf4a.AuthenticationMethodConfigurationRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["authenticationMethodConfiguration_id"] = id
     }
     return i64f858c8627e84ac3553655f2bc7b8c678e19238c74dba447be61b60e81acf4a.NewAuthenticationMethodConfigurationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Instantiates a new AuthenticationMethodsPolicyRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewAuthenticationMethodsPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationMethodsPolicyRequestBuilder) {
     m := &AuthenticationMethodsPolicyRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/authenticationMethodsPolicy{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new AuthenticationMethodsPolicyRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewAuthenticationMethodsPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationMethodsPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationMethodsPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Get authenticationMethodsPolicy
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
 func (m *AuthenticationMethodsPolicyRequestBuilder) CreateGetRequestInformation(q func (value *AuthenticationMethodsPolicyRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -82,6 +101,11 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
+// Update authenticationMethodsPolicy
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *AuthenticationMethodsPolicyRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodsPolicy, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,6 +126,12 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
+// Get authenticationMethodsPolicy
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *AuthenticationMethodsPolicyRequestBuilder) Get(q func (value *AuthenticationMethodsPolicyRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodsPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(q, h, o);
     if err != nil {
@@ -113,6 +143,12 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) Get(q func (value *Authentic
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodsPolicy), nil
 }
+// Update authenticationMethodsPolicy
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *AuthenticationMethodsPolicyRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodsPolicy, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
     if err != nil {

@@ -5,17 +5,23 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type UpdateRecordingStatusRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     clientContext *string;
+    // 
     status *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordingStatus;
 }
+// Instantiates a new updateRecordingStatusRequestBody and sets the default values.
 func NewUpdateRecordingStatusRequestBody()(*UpdateRecordingStatusRequestBody) {
     m := &UpdateRecordingStatusRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateRecordingStatusRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *UpdateRecordingStatusRequestBody) GetAdditionalData()(map[string]interf
         return m.additionalData
     }
 }
+// Gets the clientContext property value. 
 func (m *UpdateRecordingStatusRequestBody) GetClientContext()(*string) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *UpdateRecordingStatusRequestBody) GetClientContext()(*string) {
         return m.clientContext
     }
 }
+// Gets the status property value. 
 func (m *UpdateRecordingStatusRequestBody) GetStatus()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordingStatus) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *UpdateRecordingStatusRequestBody) GetStatus()(*i4a838ef194e4c99e9f2c63b
         return m.status
     }
 }
+// The deserialization information for the current model
 func (m *UpdateRecordingStatusRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["clientContext"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,6 +70,9 @@ func (m *UpdateRecordingStatusRequestBody) GetFieldDeserializers()(map[string]fu
 func (m *UpdateRecordingStatusRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *UpdateRecordingStatusRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("clientContext", m.GetClientContext())
@@ -83,12 +95,21 @@ func (m *UpdateRecordingStatusRequestBody) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *UpdateRecordingStatusRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the clientContext property value. 
+// Parameters:
+//  - value : Value to set for the clientContext property.
 func (m *UpdateRecordingStatusRequestBody) SetClientContext(value *string)() {
     m.clientContext = value
 }
+// Sets the status property value. 
+// Parameters:
+//  - value : Value to set for the status property.
 func (m *UpdateRecordingStatusRequestBody) SetStatus(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordingStatus)() {
     m.status = value
 }

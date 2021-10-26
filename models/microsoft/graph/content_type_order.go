@@ -4,17 +4,23 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type ContentTypeOrder struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    default_escpaped *bool;
+    // Whether this is the default Content Type
+    default_escaped *bool;
+    // Specifies the position in which the Content Type appears in the selection UI.
     position *int32;
 }
+// Instantiates a new contentTypeOrder and sets the default values.
 func NewContentTypeOrder()(*ContentTypeOrder) {
     m := &ContentTypeOrder{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentTypeOrder) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -22,13 +28,15 @@ func (m *ContentTypeOrder) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-func (m *ContentTypeOrder) GetDefault_escpaped()(*bool) {
+// Gets the default_escaped property value. Whether this is the default Content Type
+func (m *ContentTypeOrder) GetDefault_escaped()(*bool) {
     if m == nil {
         return nil
     } else {
-        return m.default_escpaped
+        return m.default_escaped
     }
 }
+// Gets the position property value. Specifies the position in which the Content Type appears in the selection UI.
 func (m *ContentTypeOrder) GetPosition()(*int32) {
     if m == nil {
         return nil
@@ -36,14 +44,15 @@ func (m *ContentTypeOrder) GetPosition()(*int32) {
         return m.position
     }
 }
+// The deserialization information for the current model
 func (m *ContentTypeOrder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
-    res["default_escpaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["default_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
         }
-        m.SetDefault_escpaped(val)
+        m.SetDefault_escaped(val)
         return nil
     }
     res["position"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -59,9 +68,12 @@ func (m *ContentTypeOrder) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *ContentTypeOrder) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ContentTypeOrder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteBoolValue("default_escpaped", m.GetDefault_escpaped())
+        err := writer.WriteBoolValue("default_escaped", m.GetDefault_escaped())
         if err != nil {
             return err
         }
@@ -80,12 +92,21 @@ func (m *ContentTypeOrder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *ContentTypeOrder) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-func (m *ContentTypeOrder) SetDefault_escpaped(value *bool)() {
-    m.default_escpaped = value
+// Sets the default_escaped property value. Whether this is the default Content Type
+// Parameters:
+//  - value : Value to set for the default_escaped property.
+func (m *ContentTypeOrder) SetDefault_escaped(value *bool)() {
+    m.default_escaped = value
 }
+// Sets the position property value. Specifies the position in which the Content Type appears in the selection UI.
+// Parameters:
+//  - value : Value to set for the position property.
 func (m *ContentTypeOrder) SetPosition(value *int32)() {
     m.position = value
 }

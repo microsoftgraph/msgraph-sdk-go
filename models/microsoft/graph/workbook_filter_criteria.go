@@ -4,23 +4,35 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type WorkbookFilterCriteria struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     color *string;
+    // 
     criterion1 *string;
+    // 
     criterion2 *string;
+    // 
     dynamicCriteria *string;
+    // 
     filterOn *string;
+    // 
     icon *WorkbookIcon;
+    // 
     operator *string;
+    // 
     values *Json;
 }
+// Instantiates a new workbookFilterCriteria and sets the default values.
 func NewWorkbookFilterCriteria()(*WorkbookFilterCriteria) {
     m := &WorkbookFilterCriteria{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookFilterCriteria) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,6 +40,7 @@ func (m *WorkbookFilterCriteria) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the color property value. 
 func (m *WorkbookFilterCriteria) GetColor()(*string) {
     if m == nil {
         return nil
@@ -35,6 +48,7 @@ func (m *WorkbookFilterCriteria) GetColor()(*string) {
         return m.color
     }
 }
+// Gets the criterion1 property value. 
 func (m *WorkbookFilterCriteria) GetCriterion1()(*string) {
     if m == nil {
         return nil
@@ -42,6 +56,7 @@ func (m *WorkbookFilterCriteria) GetCriterion1()(*string) {
         return m.criterion1
     }
 }
+// Gets the criterion2 property value. 
 func (m *WorkbookFilterCriteria) GetCriterion2()(*string) {
     if m == nil {
         return nil
@@ -49,6 +64,7 @@ func (m *WorkbookFilterCriteria) GetCriterion2()(*string) {
         return m.criterion2
     }
 }
+// Gets the dynamicCriteria property value. 
 func (m *WorkbookFilterCriteria) GetDynamicCriteria()(*string) {
     if m == nil {
         return nil
@@ -56,6 +72,7 @@ func (m *WorkbookFilterCriteria) GetDynamicCriteria()(*string) {
         return m.dynamicCriteria
     }
 }
+// Gets the filterOn property value. 
 func (m *WorkbookFilterCriteria) GetFilterOn()(*string) {
     if m == nil {
         return nil
@@ -63,6 +80,7 @@ func (m *WorkbookFilterCriteria) GetFilterOn()(*string) {
         return m.filterOn
     }
 }
+// Gets the icon property value. 
 func (m *WorkbookFilterCriteria) GetIcon()(*WorkbookIcon) {
     if m == nil {
         return nil
@@ -70,6 +88,7 @@ func (m *WorkbookFilterCriteria) GetIcon()(*WorkbookIcon) {
         return m.icon
     }
 }
+// Gets the operator property value. 
 func (m *WorkbookFilterCriteria) GetOperator()(*string) {
     if m == nil {
         return nil
@@ -77,6 +96,7 @@ func (m *WorkbookFilterCriteria) GetOperator()(*string) {
         return m.operator
     }
 }
+// Gets the values property value. 
 func (m *WorkbookFilterCriteria) GetValues()(*Json) {
     if m == nil {
         return nil
@@ -84,6 +104,7 @@ func (m *WorkbookFilterCriteria) GetValues()(*Json) {
         return m.values
     }
 }
+// The deserialization information for the current model
 func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["color"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,6 +176,9 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interfa
 func (m *WorkbookFilterCriteria) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *WorkbookFilterCriteria) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("color", m.GetColor())
@@ -212,30 +236,57 @@ func (m *WorkbookFilterCriteria) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *WorkbookFilterCriteria) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the color property value. 
+// Parameters:
+//  - value : Value to set for the color property.
 func (m *WorkbookFilterCriteria) SetColor(value *string)() {
     m.color = value
 }
+// Sets the criterion1 property value. 
+// Parameters:
+//  - value : Value to set for the criterion1 property.
 func (m *WorkbookFilterCriteria) SetCriterion1(value *string)() {
     m.criterion1 = value
 }
+// Sets the criterion2 property value. 
+// Parameters:
+//  - value : Value to set for the criterion2 property.
 func (m *WorkbookFilterCriteria) SetCriterion2(value *string)() {
     m.criterion2 = value
 }
+// Sets the dynamicCriteria property value. 
+// Parameters:
+//  - value : Value to set for the dynamicCriteria property.
 func (m *WorkbookFilterCriteria) SetDynamicCriteria(value *string)() {
     m.dynamicCriteria = value
 }
+// Sets the filterOn property value. 
+// Parameters:
+//  - value : Value to set for the filterOn property.
 func (m *WorkbookFilterCriteria) SetFilterOn(value *string)() {
     m.filterOn = value
 }
+// Sets the icon property value. 
+// Parameters:
+//  - value : Value to set for the icon property.
 func (m *WorkbookFilterCriteria) SetIcon(value *WorkbookIcon)() {
     m.icon = value
 }
+// Sets the operator property value. 
+// Parameters:
+//  - value : Value to set for the operator property.
 func (m *WorkbookFilterCriteria) SetOperator(value *string)() {
     m.operator = value
 }
+// Sets the values property value. 
+// Parameters:
+//  - value : Value to set for the values property.
 func (m *WorkbookFilterCriteria) SetValues(value *Json)() {
     m.values = value
 }

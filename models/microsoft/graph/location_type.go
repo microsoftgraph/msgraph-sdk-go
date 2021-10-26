@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type LocationType int
 
 const (

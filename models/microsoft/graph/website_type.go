@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type WebsiteType int
 
 const (

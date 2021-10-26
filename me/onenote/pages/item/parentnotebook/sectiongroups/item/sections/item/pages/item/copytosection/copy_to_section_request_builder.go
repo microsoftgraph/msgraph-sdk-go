@@ -6,21 +6,30 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// Builds and executes requests for operations under \me\onenote\pages\{onenotePage-id}\parentNotebook\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}\pages\{onenotePage-id1}\microsoft.graph.copyToSection
 type CopyToSectionRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Union type wrapper for classes onenoteOperation
 type CopyToSectionResponse struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Union type representation for type onenoteOperation
     onenoteOperation *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteOperation;
 }
+// Instantiates a new copyToSectionResponse and sets the default values.
 func NewCopyToSectionResponse()(*CopyToSectionResponse) {
     m := &CopyToSectionResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyToSectionResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,6 +37,7 @@ func (m *CopyToSectionResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the onenoteOperation property value. Union type representation for type onenoteOperation
 func (m *CopyToSectionResponse) GetOnenoteOperation()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteOperation) {
     if m == nil {
         return nil
@@ -35,6 +45,7 @@ func (m *CopyToSectionResponse) GetOnenoteOperation()(*i4a838ef194e4c99e9f2c63ba
         return m.onenoteOperation
     }
 }
+// The deserialization information for the current model
 func (m *CopyToSectionResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["onenoteOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -50,6 +61,9 @@ func (m *CopyToSectionResponse) GetFieldDeserializers()(map[string]func(interfac
 func (m *CopyToSectionResponse) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *CopyToSectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("onenoteOperation", m.GetOnenoteOperation())
@@ -65,31 +79,48 @@ func (m *CopyToSectionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *CopyToSectionResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the onenoteOperation property value. Union type representation for type onenoteOperation
+// Parameters:
+//  - value : Value to set for the onenoteOperation property.
 func (m *CopyToSectionResponse) SetOnenoteOperation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteOperation)() {
     m.onenoteOperation = value
 }
+// Instantiates a new CopyToSectionRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewCopyToSectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CopyToSectionRequestBuilder) {
     m := &CopyToSectionRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/me/onenote/pages/{onenotePage_id}/parentNotebook/sectionGroups/{sectionGroup_id}/sections/{onenoteSection_id}/pages/{onenotePage_id1}/microsoft.graph.copyToSection";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new CopyToSectionRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewCopyToSectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CopyToSectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCopyToSectionRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Invoke action copyToSection
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *CopyToSectionRequestBuilder) CreatePostRequestInformation(body *CopyToSectionRequestBody, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,6 +141,12 @@ func (m *CopyToSectionRequestBuilder) CreatePostRequestInformation(body *CopyToS
     }
     return requestInfo, nil
 }
+// Invoke action copyToSection
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *CopyToSectionRequestBuilder) Post(body *CopyToSectionRequestBody, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*CopyToSectionResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(body, h, o);
     if err != nil {

@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type ExchangeIdFormat int
 
 const (

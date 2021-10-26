@@ -4,17 +4,22 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type PermissionGrantPolicy struct {
     PolicyBase
+    // Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
     excludes []PermissionGrantConditionSet;
+    // Condition sets which are included in this permission grant policy. Automatically expanded on GET.
     includes []PermissionGrantConditionSet;
 }
+// Instantiates a new permissionGrantPolicy and sets the default values.
 func NewPermissionGrantPolicy()(*PermissionGrantPolicy) {
     m := &PermissionGrantPolicy{
         PolicyBase: *NewPolicyBase(),
     }
     return m
 }
+// Gets the excludes property value. Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantPolicy) GetExcludes()([]PermissionGrantConditionSet) {
     if m == nil {
         return nil
@@ -22,6 +27,7 @@ func (m *PermissionGrantPolicy) GetExcludes()([]PermissionGrantConditionSet) {
         return m.excludes
     }
 }
+// Gets the includes property value. Condition sets which are included in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantPolicy) GetIncludes()([]PermissionGrantConditionSet) {
     if m == nil {
         return nil
@@ -29,6 +35,7 @@ func (m *PermissionGrantPolicy) GetIncludes()([]PermissionGrantConditionSet) {
         return m.includes
     }
 }
+// The deserialization information for the current model
 func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["excludes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,6 +67,9 @@ func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(interfac
 func (m *PermissionGrantPolicy) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *PermissionGrantPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.PolicyBase.Serialize(writer)
     if err != nil {
@@ -89,9 +99,15 @@ func (m *PermissionGrantPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
+// Sets the excludes property value. Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+// Parameters:
+//  - value : Value to set for the excludes property.
 func (m *PermissionGrantPolicy) SetExcludes(value []PermissionGrantConditionSet)() {
     m.excludes = value
 }
+// Sets the includes property value. Condition sets which are included in this permission grant policy. Automatically expanded on GET.
+// Parameters:
+//  - value : Value to set for the includes property.
 func (m *PermissionGrantPolicy) SetIncludes(value []PermissionGrantConditionSet)() {
     m.includes = value
 }

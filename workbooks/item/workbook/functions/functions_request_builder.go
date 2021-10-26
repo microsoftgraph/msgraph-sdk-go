@@ -25,6 +25,7 @@ import (
     i11766f797ebc2faf35ca5bd9fc2be9ca3099a81ea6ecfafb6c6678f6355ffc63 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/fixed"
     i124b15e94374881fc3ceb2d0b196066a5490324a97d0282f770abf019f5ebd72 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/intrate"
     i12c177d210a36c02a13c649a27eee3563c73121e988b53d1a5b0e07d943b1b5e "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/date"
+    i12ce5b3d2a6128dd758ffd3fd51436cd30412f72f262fdbfc334abc06417e3f7 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/type_escaped"
     i13a285c284ba2120d7f47ea78b56d599c53ac40b7bf0f52dea113e716d2acb01 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/networkdays"
     i143e69103e0c49602fa219a4dd399818f412db7e7276d4263af8e6357a08e352 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/sign"
     i15a001f719e754b66f338d6f5feeb9021d4d0325bf7e573450ebf7407b0625c8 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/bitxor"
@@ -95,6 +96,7 @@ import (
     i38fc3cb72c39e10c123242af337410c10810bac285ded0e88d03eea4d7630c1c "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/text"
     i39f4cd87e36f2f3a0b33d803ee7df3c500c56510f3a7e138e50274650d2d65de "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/hour"
     i3a6c51172f28c572ffc43c7fd7e49866fd2b0c97b32fe94e0e28d58d09fc4276 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/skew"
+    i3aa7f5e4a9ad281863916a5dae9bb0fb53bb4941b8b2664332317740e6a4c15b "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/if_escaped"
     i3b46708bc24ffb2b82689186a5a6f750836ea124768d99b4a4fbc31efa01d9c5 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/skew_p"
     i3b6f6c7ed33e73600236ac505d6d8ddfd90f8b9d72a97c577cf41f7f5bd9bad5 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/imcosh"
     i3bfcffb921445a5837441582c023df3ed7a99ae389fbed7fda482943e3fd5121 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/weeknum"
@@ -245,7 +247,6 @@ import (
     ia4f2ee6d2f82f9a2d3b1aa5510ad49e1c0c19d30e2756cb5032f0f376a908870 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/even"
     ia4f9e47d4e53e3eac9bb21e885d76281217b5ccfe774b3e87b0ebc017a58d50f "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/hex2bin"
     ia72c98a4751729a1e0614fc8ed05a45d4d39faa0ff7481aa4c31bae0ade72188 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/stdev_p"
-    ia7d46a49929bd1119b10c89629533d14bec9e6042d3045ccbe5305a00553e273 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/if_escpaped"
     ia8bfcef4032b0b7b3cfd0aa9712c6695c4c4baef57a47bff0df8c2d3e3cbe8de "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/lognorm_dist"
     iaa84aa290eae65b463a1ae1a6c3c4c4bc756a998a754e7118ceb8eae9ff2d6e6 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/effect"
     iaa87c9aca478301cc253d3d7e5bfe18a8cd7a4b5b78b7a47fe04bd32cf9f8517 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/received"
@@ -362,7 +363,6 @@ import (
     if8e737917131ca982223412916f7e20cc3b2fdc7e0c7fa5cac8c2dbcf066536a "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/workday"
     if90a89d555d1426169b10dbb9ac2554cda2ce1f4f2f7839205cd2fcbfa03444a "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/rate"
     if9338e79dad08cd3805e50da66aea478338f153a9d4d999956c67ff2071bfadd "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/datevalue"
-    if9ca4acbf64f96c9548af404bb8b9508a4bae570969f5db3eb14bd260f8f3aca "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/type_escpaped"
     if9ff5147ed19f76469c0737eaf1588b869564fa419d964e6acd6ddb95f1f65a3 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/roman"
     ifba3e217442e7b422f933a4732577709c619487368acff3f8aaa56e855079820 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/networkdays_intl"
     ifc0b96049e408483dcda28b9da9af8b3b9d0e3ab22420ca3ca0c69580846792f "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/sheet"
@@ -372,15 +372,22 @@ import (
     ifec202f6e2f8b4f71b4533ff606b32733c1244f51a6f1c2e6d45eabf4b17a8c5 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/functions/true"
 )
 
+// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\functions
 type FunctionsRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Get functions from workbooks
 type FunctionsRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
 }
 func (m *FunctionsRequestBuilder) Abs()(*iaacdbe1e397058fb6b88798374843ea2675a9a2f3a341db474e4363dbb71793f.AbsRequestBuilder) {
     return iaacdbe1e397058fb6b88798374843ea2675a9a2f3a341db474e4363dbb71793f.NewAbsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -559,20 +566,26 @@ func (m *FunctionsRequestBuilder) Confidence_Norm()(*ib2e975e6222afb294e23e89e86
 func (m *FunctionsRequestBuilder) Confidence_T()(*i6bc19e2249e93a4bf23661983c03ec617bb683cbdbfdd722b26080d00ca1a73e.Confidence_TRequestBuilder) {
     return i6bc19e2249e93a4bf23661983c03ec617bb683cbdbfdd722b26080d00ca1a73e.NewConfidence_TRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Instantiates a new FunctionsRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewFunctionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FunctionsRequestBuilder) {
     m := &FunctionsRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/workbooks/{driveItem_id}/workbook/functions{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new FunctionsRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewFunctionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FunctionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -626,6 +639,10 @@ func (m *FunctionsRequestBuilder) CoupNum()(*i8c9b12150110dff23884f98804b25416e7
 func (m *FunctionsRequestBuilder) CoupPcd()(*ibc437c6427620d2d6935f429015bf0c10a2efc14ea03389317f69042cb0a5675.CoupPcdRequestBuilder) {
     return ibc437c6427620d2d6935f429015bf0c10a2efc14ea03389317f69042cb0a5675.NewCoupPcdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Delete navigation property functions for workbooks
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
 func (m *FunctionsRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -645,6 +662,11 @@ func (m *FunctionsRequestBuilder) CreateDeleteRequestInformation(h func (value m
     }
     return requestInfo, nil
 }
+// Get functions from workbooks
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
 func (m *FunctionsRequestBuilder) CreateGetRequestInformation(q func (value *FunctionsRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -675,6 +697,11 @@ func (m *FunctionsRequestBuilder) CreateGetRequestInformation(q func (value *Fun
     }
     return requestInfo, nil
 }
+// Update the navigation property functions in workbooks
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
 func (m *FunctionsRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctions, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -755,6 +782,11 @@ func (m *FunctionsRequestBuilder) Decimal()(*icc8e84210ed02bc389729a7a57e6183f9d
 func (m *FunctionsRequestBuilder) Degrees()(*i763ba95b5f563556a70f24c79a10763e911fab1b34f6028e7d5edb86cba65062.DegreesRequestBuilder) {
     return i763ba95b5f563556a70f24c79a10763e911fab1b34f6028e7d5edb86cba65062.NewDegreesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Delete navigation property functions for workbooks
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *FunctionsRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(h, o);
     if err != nil {
@@ -928,6 +960,12 @@ func (m *FunctionsRequestBuilder) GeoMean()(*ie6397e87d1cd0c2613c317e8cf61006e73
 func (m *FunctionsRequestBuilder) GeStep()(*if672ced31e76bd2dec896594956640ddc503e702f15673b496157f5d13b489b0.GeStepRequestBuilder) {
     return if672ced31e76bd2dec896594956640ddc503e702f15673b496157f5d13b489b0.NewGeStepRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Get functions from workbooks
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - q : Request query parameters
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *FunctionsRequestBuilder) Get(q func (value *FunctionsRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctions, error) {
     requestInfo, err := m.CreateGetRequestInformation(q, h, o);
     if err != nil {
@@ -963,8 +1001,8 @@ func (m *FunctionsRequestBuilder) Hyperlink()(*i2b383fba5c20322d304f2d869487c05e
 func (m *FunctionsRequestBuilder) HypGeom_Dist()(*i5071f5260556cf090013e5064eda236cca516fed4d302085452c10f4c14ba7fc.HypGeom_DistRequestBuilder) {
     return i5071f5260556cf090013e5064eda236cca516fed4d302085452c10f4c14ba7fc.NewHypGeom_DistRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *FunctionsRequestBuilder) If_escpaped()(*ia7d46a49929bd1119b10c89629533d14bec9e6042d3045ccbe5305a00553e273.IfRequestBuilder) {
-    return ia7d46a49929bd1119b10c89629533d14bec9e6042d3045ccbe5305a00553e273.NewIfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *FunctionsRequestBuilder) If_escaped()(*i3aa7f5e4a9ad281863916a5dae9bb0fb53bb4941b8b2664332317740e6a4c15b.IfRequestBuilder) {
+    return i3aa7f5e4a9ad281863916a5dae9bb0fb53bb4941b8b2664332317740e6a4c15b.NewIfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *FunctionsRequestBuilder) ImAbs()(*i6014adf79a8085e3e438be1d03d71d6a94be7c73a6f54d011025b6869298a304.ImAbsRequestBuilder) {
     return i6014adf79a8085e3e438be1d03d71d6a94be7c73a6f54d011025b6869298a304.NewImAbsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -1254,6 +1292,12 @@ func (m *FunctionsRequestBuilder) OddLYield()(*ia4d363d4f1ca7b24dcccc1ef2cd633f8
 func (m *FunctionsRequestBuilder) Or()(*i9aa03510a433102dd03798716d94e40befa72b313c5eea5043a03f9c60bcf6fc.OrRequestBuilder) {
     return i9aa03510a433102dd03798716d94e40befa72b313c5eea5043a03f9c60bcf6fc.NewOrRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Update the navigation property functions in workbooks
+// Parameters:
+//  - body : 
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *FunctionsRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctions, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
     if err != nil {
@@ -1523,8 +1567,8 @@ func (m *FunctionsRequestBuilder) True()(*ifec202f6e2f8b4f71b4533ff606b32733c124
 func (m *FunctionsRequestBuilder) Trunc()(*i6bce0181254fb93d7930572c11d9dd1b75a83e5b3645600893fa1fff1d12d7b0.TruncRequestBuilder) {
     return i6bce0181254fb93d7930572c11d9dd1b75a83e5b3645600893fa1fff1d12d7b0.NewTruncRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *FunctionsRequestBuilder) Type_escpaped()(*if9ca4acbf64f96c9548af404bb8b9508a4bae570969f5db3eb14bd260f8f3aca.TypeRequestBuilder) {
-    return if9ca4acbf64f96c9548af404bb8b9508a4bae570969f5db3eb14bd260f8f3aca.NewTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+func (m *FunctionsRequestBuilder) Type_escaped()(*i12ce5b3d2a6128dd758ffd3fd51436cd30412f72f262fdbfc334abc06417e3f7.TypeRequestBuilder) {
+    return i12ce5b3d2a6128dd758ffd3fd51436cd30412f72f262fdbfc334abc06417e3f7.NewTypeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *FunctionsRequestBuilder) Unichar()(*i88b361cc03b1e56e044d4445f4d89a0ecb754efe4ea824b27420646e43020419.UnicharRequestBuilder) {
     return i88b361cc03b1e56e044d4445f4d89a0ecb754efe4ea824b27420646e43020419.NewUnicharRequestBuilderInternal(m.pathParameters, m.requestAdapter);

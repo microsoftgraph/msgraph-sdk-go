@@ -5,16 +5,21 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type AssignRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     mobileAppAssignments []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignment;
 }
+// Instantiates a new assignRequestBody and sets the default values.
 func NewAssignRequestBody()(*AssignRequestBody) {
     m := &AssignRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -22,6 +27,7 @@ func (m *AssignRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the mobileAppAssignments property value. 
 func (m *AssignRequestBody) GetMobileAppAssignments()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignment) {
     if m == nil {
         return nil
@@ -29,6 +35,7 @@ func (m *AssignRequestBody) GetMobileAppAssignments()([]i4a838ef194e4c99e9f2c63b
         return m.mobileAppAssignments
     }
 }
+// The deserialization information for the current model
 func (m *AssignRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["mobileAppAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -48,6 +55,9 @@ func (m *AssignRequestBody) GetFieldDeserializers()(map[string]func(interface{},
 func (m *AssignRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *AssignRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMobileAppAssignments()))
@@ -68,9 +78,15 @@ func (m *AssignRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *AssignRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the mobileAppAssignments property value. 
+// Parameters:
+//  - value : Value to set for the mobileAppAssignments property.
 func (m *AssignRequestBody) SetMobileAppAssignments(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignment)() {
     m.mobileAppAssignments = value
 }

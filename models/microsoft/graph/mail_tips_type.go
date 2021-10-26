@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type MailTipsType int
 
 const (

@@ -7,21 +7,30 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\microsoft.graph.itemAt(index={index})
 type ItemAtWithIndexRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Union type wrapper for classes workbookChartPoint
 type ItemAtWithIndexResponse struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Union type representation for type workbookChartPoint
     workbookChartPoint *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartPoint;
 }
+// Instantiates a new itemAtWithIndexResponse and sets the default values.
 func NewItemAtWithIndexResponse()(*ItemAtWithIndexResponse) {
     m := &ItemAtWithIndexResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemAtWithIndexResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,6 +38,7 @@ func (m *ItemAtWithIndexResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the workbookChartPoint property value. Union type representation for type workbookChartPoint
 func (m *ItemAtWithIndexResponse) GetWorkbookChartPoint()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartPoint) {
     if m == nil {
         return nil
@@ -36,6 +46,7 @@ func (m *ItemAtWithIndexResponse) GetWorkbookChartPoint()(*i4a838ef194e4c99e9f2c
         return m.workbookChartPoint
     }
 }
+// The deserialization information for the current model
 func (m *ItemAtWithIndexResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["workbookChartPoint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,6 +62,9 @@ func (m *ItemAtWithIndexResponse) GetFieldDeserializers()(map[string]func(interf
 func (m *ItemAtWithIndexResponse) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ItemAtWithIndexResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("workbookChartPoint", m.GetWorkbookChartPoint())
@@ -66,21 +80,30 @@ func (m *ItemAtWithIndexResponse) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *ItemAtWithIndexResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the workbookChartPoint property value. Union type representation for type workbookChartPoint
+// Parameters:
+//  - value : Value to set for the workbookChartPoint property.
 func (m *ItemAtWithIndexResponse) SetWorkbookChartPoint(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartPoint)() {
     m.workbookChartPoint = value
 }
+// Instantiates a new ItemAtWithIndexRequestBuilder and sets the default values.
+// Parameters:
+//  - index : Usage: index={index}
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewItemAtWithIndexRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, index *int32)(*ItemAtWithIndexRequestBuilder) {
     m := &ItemAtWithIndexRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/workbooks/{driveItem_id}/workbook/names/{workbookNamedItem_id}/worksheet/charts/{workbookChart_id}/series/{workbookChartSeries_id}/points/microsoft.graph.itemAt(index={index})";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     if index != nil {
         urlTplParams["index"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(*index), 10)
@@ -89,11 +112,19 @@ func NewItemAtWithIndexRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new ItemAtWithIndexRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewItemAtWithIndexRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemAtWithIndexRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemAtWithIndexRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
+// Invoke function itemAt
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
 func (m *ItemAtWithIndexRequestBuilder) CreateGetRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,6 +144,11 @@ func (m *ItemAtWithIndexRequestBuilder) CreateGetRequestInformation(h func (valu
     }
     return requestInfo, nil
 }
+// Invoke function itemAt
+// Parameters:
+//  - h : Request headers
+//  - o : Request options
+//  - responseHandler : Response handler to use in place of the default response handling provided by the core service
 func (m *ItemAtWithIndexRequestBuilder) Get(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*ItemAtWithIndexResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(h, o);
     if err != nil {

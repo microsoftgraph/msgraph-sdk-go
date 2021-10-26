@@ -4,19 +4,26 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type CalendarGroup struct {
     Entity
+    // The calendars in the calendar group. Navigation property. Read-only. Nullable.
     calendars []Calendar;
+    // Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     changeKey *string;
+    // The class identifier. Read-only.
     classId *string;
+    // The group name.
     name *string;
 }
+// Instantiates a new calendarGroup and sets the default values.
 func NewCalendarGroup()(*CalendarGroup) {
     m := &CalendarGroup{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the calendars property value. The calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *CalendarGroup) GetCalendars()([]Calendar) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *CalendarGroup) GetCalendars()([]Calendar) {
         return m.calendars
     }
 }
+// Gets the changeKey property value. Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
 func (m *CalendarGroup) GetChangeKey()(*string) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *CalendarGroup) GetChangeKey()(*string) {
         return m.changeKey
     }
 }
+// Gets the classId property value. The class identifier. Read-only.
 func (m *CalendarGroup) GetClassId()(*string) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *CalendarGroup) GetClassId()(*string) {
         return m.classId
     }
 }
+// Gets the name property value. The group name.
 func (m *CalendarGroup) GetName()(*string) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *CalendarGroup) GetName()(*string) {
         return m.name
     }
 }
+// The deserialization information for the current model
 func (m *CalendarGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["calendars"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,6 +99,9 @@ func (m *CalendarGroup) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *CalendarGroup) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *CalendarGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -124,15 +138,27 @@ func (m *CalendarGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
+// Sets the calendars property value. The calendars in the calendar group. Navigation property. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the calendars property.
 func (m *CalendarGroup) SetCalendars(value []Calendar)() {
     m.calendars = value
 }
+// Sets the changeKey property value. Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
+// Parameters:
+//  - value : Value to set for the changeKey property.
 func (m *CalendarGroup) SetChangeKey(value *string)() {
     m.changeKey = value
 }
+// Sets the classId property value. The class identifier. Read-only.
+// Parameters:
+//  - value : Value to set for the classId property.
 func (m *CalendarGroup) SetClassId(value *string)() {
     m.classId = value
 }
+// Sets the name property value. The group name.
+// Parameters:
+//  - value : Value to set for the name property.
 func (m *CalendarGroup) SetName(value *string)() {
     m.name = value
 }

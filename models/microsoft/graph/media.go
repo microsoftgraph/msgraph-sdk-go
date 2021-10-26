@@ -4,21 +4,31 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type Media struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // Device information associated with the callee endpoint of this media.
     calleeDevice *DeviceInfo;
+    // Network information associated with the callee endpoint of this media.
     calleeNetwork *NetworkInfo;
+    // Device information associated with the caller endpoint of this media.
     callerDevice *DeviceInfo;
+    // Network information associated with the caller endpoint of this media.
     callerNetwork *NetworkInfo;
+    // How the media was identified during media negotiation stage.
     label *string;
+    // Network streams associated with this media.
     streams []MediaStream;
 }
+// Instantiates a new media and sets the default values.
 func NewMedia()(*Media) {
     m := &Media{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Media) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,6 +36,7 @@ func (m *Media) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the calleeDevice property value. Device information associated with the callee endpoint of this media.
 func (m *Media) GetCalleeDevice()(*DeviceInfo) {
     if m == nil {
         return nil
@@ -33,6 +44,7 @@ func (m *Media) GetCalleeDevice()(*DeviceInfo) {
         return m.calleeDevice
     }
 }
+// Gets the calleeNetwork property value. Network information associated with the callee endpoint of this media.
 func (m *Media) GetCalleeNetwork()(*NetworkInfo) {
     if m == nil {
         return nil
@@ -40,6 +52,7 @@ func (m *Media) GetCalleeNetwork()(*NetworkInfo) {
         return m.calleeNetwork
     }
 }
+// Gets the callerDevice property value. Device information associated with the caller endpoint of this media.
 func (m *Media) GetCallerDevice()(*DeviceInfo) {
     if m == nil {
         return nil
@@ -47,6 +60,7 @@ func (m *Media) GetCallerDevice()(*DeviceInfo) {
         return m.callerDevice
     }
 }
+// Gets the callerNetwork property value. Network information associated with the caller endpoint of this media.
 func (m *Media) GetCallerNetwork()(*NetworkInfo) {
     if m == nil {
         return nil
@@ -54,6 +68,7 @@ func (m *Media) GetCallerNetwork()(*NetworkInfo) {
         return m.callerNetwork
     }
 }
+// Gets the label property value. How the media was identified during media negotiation stage.
 func (m *Media) GetLabel()(*string) {
     if m == nil {
         return nil
@@ -61,6 +76,7 @@ func (m *Media) GetLabel()(*string) {
         return m.label
     }
 }
+// Gets the streams property value. Network streams associated with this media.
 func (m *Media) GetStreams()([]MediaStream) {
     if m == nil {
         return nil
@@ -68,6 +84,7 @@ func (m *Media) GetStreams()([]MediaStream) {
         return m.streams
     }
 }
+// The deserialization information for the current model
 func (m *Media) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["calleeDevice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,6 +144,9 @@ func (m *Media) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Media) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Media) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("calleeDevice", m.GetCalleeDevice())
@@ -177,24 +197,45 @@ func (m *Media) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *Media) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the calleeDevice property value. Device information associated with the callee endpoint of this media.
+// Parameters:
+//  - value : Value to set for the calleeDevice property.
 func (m *Media) SetCalleeDevice(value *DeviceInfo)() {
     m.calleeDevice = value
 }
+// Sets the calleeNetwork property value. Network information associated with the callee endpoint of this media.
+// Parameters:
+//  - value : Value to set for the calleeNetwork property.
 func (m *Media) SetCalleeNetwork(value *NetworkInfo)() {
     m.calleeNetwork = value
 }
+// Sets the callerDevice property value. Device information associated with the caller endpoint of this media.
+// Parameters:
+//  - value : Value to set for the callerDevice property.
 func (m *Media) SetCallerDevice(value *DeviceInfo)() {
     m.callerDevice = value
 }
+// Sets the callerNetwork property value. Network information associated with the caller endpoint of this media.
+// Parameters:
+//  - value : Value to set for the callerNetwork property.
 func (m *Media) SetCallerNetwork(value *NetworkInfo)() {
     m.callerNetwork = value
 }
+// Sets the label property value. How the media was identified during media negotiation stage.
+// Parameters:
+//  - value : Value to set for the label property.
 func (m *Media) SetLabel(value *string)() {
     m.label = value
 }
+// Sets the streams property value. Network streams associated with this media.
+// Parameters:
+//  - value : Value to set for the streams property.
 func (m *Media) SetStreams(value []MediaStream)() {
     m.streams = value
 }
