@@ -1,4 +1,4 @@
-# Microsoft Graph SDK for Java
+# Microsoft Graph SDK for Go
 
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/microsoftgraph/msgraph-sdk-go/)](https://pkg.go.dev/github.com/microsoftgraph/msgraph-sdk-go/)
 
