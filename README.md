@@ -23,7 +23,7 @@ Register your application by following the steps at [Register your app with the 
 
 ### 2.2 Create an AuthenticationProvider object
 
-An instance of the **GraphRequestAdapter** class handles building client. To create a new instance of this class, you need to provide an instance of `AuthenticationProvider`, which can authenticate requests to Microsoft Graph.
+An instance of the **GraphRequestAdapter** class handles building client. To create a new instance of this class, you need to provide an instance of **AuthenticationProvider**, which can authenticate requests to Microsoft Graph.
 
 For an example of how to get an authentication provider, see [choose a Microsoft Graph authentication provider](https://docs.microsoft.com/graph/sdks/choose-authentication-providers?tabs=Go).
 
