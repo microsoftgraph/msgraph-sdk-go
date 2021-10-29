@@ -2,9 +2,10 @@
 
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/microsoftgraph/msgraph-sdk-go/)](https://pkg.go.dev/github.com/microsoftgraph/msgraph-sdk-go/)
 
-Get started with the Microsoft Graph SDK for Go by integrating the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/get-started/go) into your Go application!
+Get started with the Microsoft Graph SDK for Go by integrating the [Microsoft Graph API](https://docs.microsoft.com/graph/overview) into your Go application!
 
-> **Note:** this SDK allows you to build applications using the [v1.0](https://docs.microsoft.com/en-us/graph/use-the-api#version) of Microsoft Graph. If you want to try the latest Microsoft Graph APIs under beta, use our [beta SDK](https://github.com/microsoftgraph/msgraph-beta-sdk-go) instead.
+> **Note:** this SDK allows you to build applications using the [v1.0](https://docs.microsoft.com/graph/use-the-api#version) of Microsoft Graph. If you want to try the latest Microsoft Graph APIs under beta, use our [beta SDK](https://github.com/microsoftgraph/msgraph-beta-sdk-go) instead.
+>
 > **Note:** the Microsoft Graph Go SDK is currently in Community Preview. During this period we're expecting breaking changes to happen to the SDK based on community's feedback. Checkout the [known limitations](https://github.com/microsoftgraph/msgraph-sdk-go-core/issues/1).
 
 ## 1. Installation
@@ -26,32 +27,31 @@ An instance of the **GraphRequestAdapter** class handles building client. To cre
 
 For an example of how to get an authentication provider, see [choose a Microsoft Graph authentication provider](https://docs.microsoft.com/graph/sdks/choose-authentication-providers?tabs=Go).
 
-> Note: we are working to add the getting started information for Go to our public documentation, in the meantime the follwing sample should help you getting started.
+> Note: we are working to add the getting started information for Go to our public documentation, in the meantime the following sample should help you getting started.
 
 ```Golang
-
-
-// azidentity is an import of https://github.com/Azure/azure-sdk-for-go/tree/main/sdk/azidentity
+import (
+    azidentity "https://github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+    a          "https://github.com/microsoft/kiota/authentication/go/azure"
+)
 
 cred, err := azidentity.NewDeviceCodeCredential(&azidentity.DeviceCodeCredentialOptions{
-        TenantID: "<the tenant id from your app registration>",
-        ClientID: "<the client id from your app registration>",
-        UserPrompt: func(message azidentity.DeviceCodeMessage) {
-                fmt.Println(message.Message)
-        },
+    TenantID: "<the tenant id from your app registration>",
+    ClientID: "<the client id from your app registration>",
+    UserPrompt: func(message azidentity.DeviceCodeMessage) {
+        fmt.Println(message.Message)
+    },
 })
 
 if err != nil {
-        fmt.Printf("Error creating credentials: %v\n", err)
+    fmt.Printf("Error creating credentials: %v\n", err)
 }
 
-// a is an import of https://github.com/microsoft/kiota/authentication/go/azure
 auth, err := a.NewAzureIdentityAuthenticationProviderWithScopes(cred, []string{"Mail.Read", "Mail.Send"})
 if err != nil {
-        fmt.Printf("Error authentication provider: %v\n", err)
-        return
+    fmt.Printf("Error authentication provider: %v\n", err)
+    return
 }
-
 ```
 
 ### 2.3 Get a Graph Service Client Adapter object
@@ -59,18 +59,19 @@ if err != nil {
 You must get a **GraphRequestAdapter** object to make requests against the service.
 
 ```Golang
-// msgraphsdk is an import of this library
+import msgraphsdk "https://github.com/microsoftgraph/msgraph-sdk-go"
+
 adapter, err := msgraphsdk.NewGraphRequestAdapter(auth)
 if err != nil {
-        fmt.Printf("Error creating adapter: %v\n", err)
-        return
+    fmt.Printf("Error creating adapter: %v\n", err)
+    return
 }
 client := msgraphsdk.NewGraphServiceClient(adapter)
 ```
 
 ## 3. Make requests against the service
 
-After you have a GraphServiceClient that is authenticated, you can begin making calls against the service. The requests against the service look like our [REST API](https://docs.microsoft.com/graph/overview).
+After you have a **GraphServiceClient** that is authenticated, you can begin making calls against the service. The requests against the service look like our [REST API](https://docs.microsoft.com/graph/api/overview?view=graph-rest-1.0).
 
 ### 3.1 Get the user's drive
 
@@ -82,7 +83,7 @@ result, err := client
   .Drive()
   .Get(nil, nil, nil, nil)
 if err != nil {
-	fmt.Printf("Error getting the drive: %v\n", err)
+    fmt.Printf("Error getting the drive: %v\n", err)
 }
 fmt.Printf("Found Drive : %v\n", result.GetId())
 ```
