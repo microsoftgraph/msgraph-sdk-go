@@ -5,18 +5,25 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type DvarRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     criteria *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    // 
     database *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    // 
     field *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
+// Instantiates a new dvarRequestBody and sets the default values.
 func NewDvarRequestBody()(*DvarRequestBody) {
     m := &DvarRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DvarRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *DvarRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the criteria property value. 
 func (m *DvarRequestBody) GetCriteria()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *DvarRequestBody) GetCriteria()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89
         return m.criteria
     }
 }
+// Gets the database property value. 
 func (m *DvarRequestBody) GetDatabase()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *DvarRequestBody) GetDatabase()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89
         return m.database
     }
 }
+// Gets the field property value. 
 func (m *DvarRequestBody) GetField()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *DvarRequestBody) GetField()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.field
     }
 }
+// The deserialization information for the current model
 func (m *DvarRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["criteria"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,6 +87,9 @@ func (m *DvarRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *DvarRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *DvarRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("criteria", m.GetCriteria())
@@ -103,15 +117,27 @@ func (m *DvarRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *DvarRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the criteria property value. 
+// Parameters:
+//  - value : Value to set for the criteria property.
 func (m *DvarRequestBody) SetCriteria(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.criteria = value
 }
+// Sets the database property value. 
+// Parameters:
+//  - value : Value to set for the database property.
 func (m *DvarRequestBody) SetDatabase(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.database = value
 }
+// Sets the field property value. 
+// Parameters:
+//  - value : Value to set for the field property.
 func (m *DvarRequestBody) SetField(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.field = value
 }

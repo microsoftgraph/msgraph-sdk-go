@@ -29,15 +29,53 @@ import (
     i5e9268af6ea2183cbe612b8d18a9aeec3e11e6ad80e059611e3cafbb64907758 "github.com/microsoftgraph/msgraph-sdk-go/users/item/manageddevices/item/deviceconfigurationstates/item"
 )
 
+// Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}
 type ManagedDeviceRequestBuilder struct {
+    // Path parameters for the request
     pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
+// Options for Delete
+type ManagedDeviceRequestBuilderDeleteOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// Options for Get
+type ManagedDeviceRequestBuilderGetOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Request query parameters
+    Q *ManagedDeviceRequestBuilderGetQueryParameters;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// The managed devices associated with the user.
 type ManagedDeviceRequestBuilderGetQueryParameters struct {
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
+    // Expand related entities
     Expand []string;
-    Select_escpaped []string;
+    // Select properties to be returned
+    Select_escaped []string;
+}
+// Options for Patch
+type ManagedDeviceRequestBuilderPatchOptions struct {
+    // 
+    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDevice;
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 func (m *ManagedDeviceRequestBuilder) BypassActivationLock()(*if07c243615b7cd8f004a1303c7440d0fb98ff8cb9456cb22dee43fbf230ad815.BypassActivationLockRequestBuilder) {
     return if07c243615b7cd8f004a1303c7440d0fb98ff8cb9456cb22dee43fbf230ad815.NewBypassActivationLockRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -45,100 +83,104 @@ func (m *ManagedDeviceRequestBuilder) BypassActivationLock()(*if07c243615b7cd8f0
 func (m *ManagedDeviceRequestBuilder) CleanWindowsDevice()(*i30838d0e3fd5b58dc055f8efb1004348c1be948971f57117d40f2bbf1b4535f0.CleanWindowsDeviceRequestBuilder) {
     return i30838d0e3fd5b58dc055f8efb1004348c1be948971f57117d40f2bbf1b4535f0.NewCleanWindowsDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Instantiates a new ManagedDeviceRequestBuilder and sets the default values.
+// Parameters:
+//  - pathParameters : Path parameters for the request
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewManagedDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceRequestBuilder) {
     m := &ManagedDeviceRequestBuilder{
     }
     m.urlTemplate = "https://graph.microsoft.com/v1.0/users/{user_id}/managedDevices/{managedDevice_id}{?select,expand}";
     urlTplParams := make(map[string]string)
-    if pathParameters != nil {
-        for idx, item := range pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
     return m
 }
+// Instantiates a new ManagedDeviceRequestBuilder and sets the default values.
+// Parameters:
+//  - rawUrl : The raw URL to use for the request builder.
+//  - requestAdapter : The request adapter to use to execute the requests.
 func NewManagedDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-func (m *ManagedDeviceRequestBuilder) CreateDeleteRequestInformation(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// The managed devices associated with the user.
+// Parameters:
+//  - options : Options for the request
+func (m *ManagedDeviceRequestBuilder) CreateDeleteRequestInformation(options *ManagedDeviceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if h != nil {
-        err := h(requestInfo.Headers)
-        if err != nil {
-            return nil, err
-        }
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
     }
-    if o != nil {
-        err := requestInfo.AddRequestOptions(o)
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
-func (m *ManagedDeviceRequestBuilder) CreateGetRequestInformation(q func (value *ManagedDeviceRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// The managed devices associated with the user.
+// Parameters:
+//  - options : Options for the request
+func (m *ManagedDeviceRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
-    if q != nil {
-        qParams := new(ManagedDeviceRequestBuilderGetQueryParameters)
-        err := q(qParams)
-        if err != nil {
-            return nil, err
-        }
-        err = qParams.AddQueryParameters(requestInfo.QueryParameters)
+    if options != nil && options.Q != nil {
+        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
         if err != nil {
             return nil, err
         }
     }
-    if h != nil {
-        err := h(requestInfo.Headers)
-        if err != nil {
-            return nil, err
-        }
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
     }
-    if o != nil {
-        err := requestInfo.AddRequestOptions(o)
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
-func (m *ManagedDeviceRequestBuilder) CreatePatchRequestInformation(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDevice, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+// The managed devices associated with the user.
+// Parameters:
+//  - options : Options for the request
+func (m *ManagedDeviceRequestBuilder) CreatePatchRequestInformation(options *ManagedDeviceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if h != nil {
-        err := h(requestInfo.Headers)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
     }
-    if o != nil {
-        err := requestInfo.AddRequestOptions(o)
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
         if err != nil {
             return nil, err
         }
     }
     return requestInfo, nil
 }
-func (m *ManagedDeviceRequestBuilder) Delete(h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformation(h, o);
+// The managed devices associated with the user.
+// Parameters:
+//  - options : Options for the request
+func (m *ManagedDeviceRequestBuilder) Delete(options *ManagedDeviceRequestBuilderDeleteOptions)(error) {
+    requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, responseHandler)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
     if err != nil {
         return err
     }
@@ -153,12 +195,13 @@ func (m *ManagedDeviceRequestBuilder) DeviceCategory()(*i9daab2b0b5282b9d8617504
 func (m *ManagedDeviceRequestBuilder) DeviceCompliancePolicyStates()(*i1754afc016e1fdc501acb882736ad04e30bc5650f53d3c074ab8ac8a51c6fa8f.DeviceCompliancePolicyStatesRequestBuilder) {
     return i1754afc016e1fdc501acb882736ad04e30bc5650f53d3c074ab8ac8a51c6fa8f.NewDeviceCompliancePolicyStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.managedDevices.item.deviceCompliancePolicyStates.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ManagedDeviceRequestBuilder) DeviceCompliancePolicyStatesById(id string)(*i5b5d439175020246e151a9558d6d568e6bc4bd9fdd376e082964b229d2b71629.DeviceCompliancePolicyStateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceCompliancePolicyState_id"] = id
@@ -168,12 +211,13 @@ func (m *ManagedDeviceRequestBuilder) DeviceCompliancePolicyStatesById(id string
 func (m *ManagedDeviceRequestBuilder) DeviceConfigurationStates()(*i0fdd6e00c3a70ace39a5146d6c55b15af0de25c040237603b09168231c256f9b.DeviceConfigurationStatesRequestBuilder) {
     return i0fdd6e00c3a70ace39a5146d6c55b15af0de25c040237603b09168231c256f9b.NewDeviceConfigurationStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.managedDevices.item.deviceConfigurationStates.item collection
+// Parameters:
+//  - id : Unique identifier of the item
 func (m *ManagedDeviceRequestBuilder) DeviceConfigurationStatesById(id string)(*i5e9268af6ea2183cbe612b8d18a9aeec3e11e6ad80e059611e3cafbb64907758.DeviceConfigurationStateRequestBuilder) {
     urlTplParams := make(map[string]string)
-    if m.pathParameters != nil {
-        for idx, item := range m.pathParameters {
-            urlTplParams[idx] = item
-        }
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
     }
     if id != "" {
         urlTplParams["deviceConfigurationState_id"] = id
@@ -183,12 +227,15 @@ func (m *ManagedDeviceRequestBuilder) DeviceConfigurationStatesById(id string)(*
 func (m *ManagedDeviceRequestBuilder) DisableLostMode()(*id09c4b3a73bddb54267ba24e9836a171941a344b098f8a53e9044afc145d5939.DisableLostModeRequestBuilder) {
     return id09c4b3a73bddb54267ba24e9836a171941a344b098f8a53e9044afc145d5939.NewDisableLostModeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *ManagedDeviceRequestBuilder) Get(q func (value *ManagedDeviceRequestBuilderGetQueryParameters) (err error), h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDevice, error) {
-    requestInfo, err := m.CreateGetRequestInformation(q, h, o);
+// The managed devices associated with the user.
+// Parameters:
+//  - options : Options for the request
+func (m *ManagedDeviceRequestBuilder) Get(options *ManagedDeviceRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDevice, error) {
+    requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewManagedDevice() }, responseHandler)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewManagedDevice() }, nil)
     if err != nil {
         return nil, err
     }
@@ -200,12 +247,15 @@ func (m *ManagedDeviceRequestBuilder) LocateDevice()(*ia76862a49870b0532e8c4b374
 func (m *ManagedDeviceRequestBuilder) LogoutSharedAppleDeviceActiveUser()(*i8cb1d9fa2d4d44aff3eee0f4bd2fa9c55841709e6d7067c757f8da63d9f42acb.LogoutSharedAppleDeviceActiveUserRequestBuilder) {
     return i8cb1d9fa2d4d44aff3eee0f4bd2fa9c55841709e6d7067c757f8da63d9f42acb.NewLogoutSharedAppleDeviceActiveUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *ManagedDeviceRequestBuilder) Patch(body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDevice, h func (value map[string]string) (err error), o []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption, responseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler)(error) {
-    requestInfo, err := m.CreatePatchRequestInformation(body, h, o);
+// The managed devices associated with the user.
+// Parameters:
+//  - options : Options for the request
+func (m *ManagedDeviceRequestBuilder) Patch(options *ManagedDeviceRequestBuilderPatchOptions)(error) {
+    requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, responseHandler)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
     if err != nil {
         return err
     }

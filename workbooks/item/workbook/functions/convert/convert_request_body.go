@@ -5,18 +5,25 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type ConvertRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     fromUnit *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    // 
     number *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    // 
     toUnit *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
+// Instantiates a new convertRequestBody and sets the default values.
 func NewConvertRequestBody()(*ConvertRequestBody) {
     m := &ConvertRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConvertRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *ConvertRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the fromUnit property value. 
 func (m *ConvertRequestBody) GetFromUnit()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *ConvertRequestBody) GetFromUnit()(*i4a838ef194e4c99e9f2c63ba10dab9cb120
         return m.fromUnit
     }
 }
+// Gets the number property value. 
 func (m *ConvertRequestBody) GetNumber()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *ConvertRequestBody) GetNumber()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a8
         return m.number
     }
 }
+// Gets the toUnit property value. 
 func (m *ConvertRequestBody) GetToUnit()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *ConvertRequestBody) GetToUnit()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a8
         return m.toUnit
     }
 }
+// The deserialization information for the current model
 func (m *ConvertRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["fromUnit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,6 +87,9 @@ func (m *ConvertRequestBody) GetFieldDeserializers()(map[string]func(interface{}
 func (m *ConvertRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ConvertRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("fromUnit", m.GetFromUnit())
@@ -103,15 +117,27 @@ func (m *ConvertRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *ConvertRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the fromUnit property value. 
+// Parameters:
+//  - value : Value to set for the fromUnit property.
 func (m *ConvertRequestBody) SetFromUnit(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.fromUnit = value
 }
+// Sets the number property value. 
+// Parameters:
+//  - value : Value to set for the number property.
 func (m *ConvertRequestBody) SetNumber(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.number = value
 }
+// Sets the toUnit property value. 
+// Parameters:
+//  - value : Value to set for the toUnit property.
 func (m *ConvertRequestBody) SetToUnit(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.toUnit = value
 }

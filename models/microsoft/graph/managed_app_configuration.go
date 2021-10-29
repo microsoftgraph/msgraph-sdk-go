@@ -4,16 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type ManagedAppConfiguration struct {
     ManagedAppPolicy
+    // A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
     customSettings []KeyValuePair;
 }
+// Instantiates a new managedAppConfiguration and sets the default values.
 func NewManagedAppConfiguration()(*ManagedAppConfiguration) {
     m := &ManagedAppConfiguration{
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
     return m
 }
+// Gets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
 func (m *ManagedAppConfiguration) GetCustomSettings()([]KeyValuePair) {
     if m == nil {
         return nil
@@ -21,6 +25,7 @@ func (m *ManagedAppConfiguration) GetCustomSettings()([]KeyValuePair) {
         return m.customSettings
     }
 }
+// The deserialization information for the current model
 func (m *ManagedAppConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
     res["customSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -40,6 +45,9 @@ func (m *ManagedAppConfiguration) GetFieldDeserializers()(map[string]func(interf
 func (m *ManagedAppConfiguration) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *ManagedAppConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ManagedAppPolicy.Serialize(writer)
     if err != nil {
@@ -58,6 +66,9 @@ func (m *ManagedAppConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
+// Sets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
+// Parameters:
+//  - value : Value to set for the customSettings property.
 func (m *ManagedAppConfiguration) SetCustomSettings(value []KeyValuePair)() {
     m.customSettings = value
 }

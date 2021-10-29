@@ -4,22 +4,33 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type Print struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // The list of available print connectors.
     connectors []PrintConnector;
+    // The list of print long running operations.
     operations []PrintOperation;
+    // The list of printers registered in the tenant.
     printers []Printer;
+    // The list of available Universal Print service endpoints.
     services []PrintService;
+    // Tenant-wide settings for the Universal Print service.
     settings *PrintSettings;
+    // The list of printer shares registered in the tenant.
     shares []PrinterShare;
+    // List of abstract definition for a task that can be triggered when various events occur within Universal Print.
     taskDefinitions []PrintTaskDefinition;
 }
+// Instantiates a new Print and sets the default values.
 func NewPrint()(*Print) {
     m := &Print{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Print) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -27,6 +38,7 @@ func (m *Print) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the connectors property value. The list of available print connectors.
 func (m *Print) GetConnectors()([]PrintConnector) {
     if m == nil {
         return nil
@@ -34,6 +46,7 @@ func (m *Print) GetConnectors()([]PrintConnector) {
         return m.connectors
     }
 }
+// Gets the operations property value. The list of print long running operations.
 func (m *Print) GetOperations()([]PrintOperation) {
     if m == nil {
         return nil
@@ -41,6 +54,7 @@ func (m *Print) GetOperations()([]PrintOperation) {
         return m.operations
     }
 }
+// Gets the printers property value. The list of printers registered in the tenant.
 func (m *Print) GetPrinters()([]Printer) {
     if m == nil {
         return nil
@@ -48,6 +62,7 @@ func (m *Print) GetPrinters()([]Printer) {
         return m.printers
     }
 }
+// Gets the services property value. The list of available Universal Print service endpoints.
 func (m *Print) GetServices()([]PrintService) {
     if m == nil {
         return nil
@@ -55,6 +70,7 @@ func (m *Print) GetServices()([]PrintService) {
         return m.services
     }
 }
+// Gets the settings property value. Tenant-wide settings for the Universal Print service.
 func (m *Print) GetSettings()(*PrintSettings) {
     if m == nil {
         return nil
@@ -62,6 +78,7 @@ func (m *Print) GetSettings()(*PrintSettings) {
         return m.settings
     }
 }
+// Gets the shares property value. The list of printer shares registered in the tenant.
 func (m *Print) GetShares()([]PrinterShare) {
     if m == nil {
         return nil
@@ -69,6 +86,7 @@ func (m *Print) GetShares()([]PrinterShare) {
         return m.shares
     }
 }
+// Gets the taskDefinitions property value. List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 func (m *Print) GetTaskDefinitions()([]PrintTaskDefinition) {
     if m == nil {
         return nil
@@ -76,6 +94,7 @@ func (m *Print) GetTaskDefinitions()([]PrintTaskDefinition) {
         return m.taskDefinitions
     }
 }
+// The deserialization information for the current model
 func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["connectors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,6 +182,9 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Print) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConnectors()))
@@ -244,27 +266,51 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *Print) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the connectors property value. The list of available print connectors.
+// Parameters:
+//  - value : Value to set for the connectors property.
 func (m *Print) SetConnectors(value []PrintConnector)() {
     m.connectors = value
 }
+// Sets the operations property value. The list of print long running operations.
+// Parameters:
+//  - value : Value to set for the operations property.
 func (m *Print) SetOperations(value []PrintOperation)() {
     m.operations = value
 }
+// Sets the printers property value. The list of printers registered in the tenant.
+// Parameters:
+//  - value : Value to set for the printers property.
 func (m *Print) SetPrinters(value []Printer)() {
     m.printers = value
 }
+// Sets the services property value. The list of available Universal Print service endpoints.
+// Parameters:
+//  - value : Value to set for the services property.
 func (m *Print) SetServices(value []PrintService)() {
     m.services = value
 }
+// Sets the settings property value. Tenant-wide settings for the Universal Print service.
+// Parameters:
+//  - value : Value to set for the settings property.
 func (m *Print) SetSettings(value *PrintSettings)() {
     m.settings = value
 }
+// Sets the shares property value. The list of printer shares registered in the tenant.
+// Parameters:
+//  - value : Value to set for the shares property.
 func (m *Print) SetShares(value []PrinterShare)() {
     m.shares = value
 }
+// Sets the taskDefinitions property value. List of abstract definition for a task that can be triggered when various events occur within Universal Print.
+// Parameters:
+//  - value : Value to set for the taskDefinitions property.
 func (m *Print) SetTaskDefinitions(value []PrintTaskDefinition)() {
     m.taskDefinitions = value
 }

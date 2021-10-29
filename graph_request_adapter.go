@@ -3,8 +3,8 @@ package msgraphsdkgo
 import (
 	absauth "github.com/microsoft/kiota/abstractions/go/authentication"
 	absser "github.com/microsoft/kiota/abstractions/go/serialization"
-	khttp "github.com/microsoft/kiota/http/go/nethttp"
 	core "github.com/microsoftgraph/msgraph-sdk-go-core"
+	nethttp "net/http"
 )
 
 var clientOptions = core.GraphClientOptions{
@@ -55,7 +55,7 @@ func NewGraphRequestAdapterWithParseNodeFactoryAndSerializationWriterFactory(aut
 // httpClient: the client used to send requests
 // Returns:
 // a new GraphRequestAdapter
-func NewGraphRequestAdapterWithParseNodeFactoryAndSerializationWriterFactoryAndHttpClient(authenticationProvider absauth.AuthenticationProvider, parseNodeFactory absser.ParseNodeFactory, serializationWriterFactory absser.SerializationWriterFactory, httpClient *khttp.NetHttpMiddlewareClient) (*GraphRequestAdapter, error) {
+func NewGraphRequestAdapterWithParseNodeFactoryAndSerializationWriterFactoryAndHttpClient(authenticationProvider absauth.AuthenticationProvider, parseNodeFactory absser.ParseNodeFactory, serializationWriterFactory absser.SerializationWriterFactory, httpClient *nethttp.Client) (*GraphRequestAdapter, error) {
 	baseAdapter, err := core.NewGraphRequestAdapterBaseWithParseNodeFactoryAndSerializationWriterFactoryAndHttpClient(authenticationProvider, clientOptions, parseNodeFactory, serializationWriterFactory, httpClient)
 	if err != nil {
 		return nil, err

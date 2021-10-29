@@ -5,20 +5,29 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type SendActivityNotificationRequestBody struct {
+    // 
     activityType *string;
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     chainId *int64;
+    // 
     previewText *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBody;
+    // 
     templateParameters []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.KeyValuePair;
+    // 
     topic *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamworkActivityTopic;
 }
+// Instantiates a new sendActivityNotificationRequestBody and sets the default values.
 func NewSendActivityNotificationRequestBody()(*SendActivityNotificationRequestBody) {
     m := &SendActivityNotificationRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the activityType property value. 
 func (m *SendActivityNotificationRequestBody) GetActivityType()(*string) {
     if m == nil {
         return nil
@@ -26,6 +35,7 @@ func (m *SendActivityNotificationRequestBody) GetActivityType()(*string) {
         return m.activityType
     }
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendActivityNotificationRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -33,6 +43,7 @@ func (m *SendActivityNotificationRequestBody) GetAdditionalData()(map[string]int
         return m.additionalData
     }
 }
+// Gets the chainId property value. 
 func (m *SendActivityNotificationRequestBody) GetChainId()(*int64) {
     if m == nil {
         return nil
@@ -40,6 +51,7 @@ func (m *SendActivityNotificationRequestBody) GetChainId()(*int64) {
         return m.chainId
     }
 }
+// Gets the previewText property value. 
 func (m *SendActivityNotificationRequestBody) GetPreviewText()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBody) {
     if m == nil {
         return nil
@@ -47,6 +59,7 @@ func (m *SendActivityNotificationRequestBody) GetPreviewText()(*i4a838ef194e4c99
         return m.previewText
     }
 }
+// Gets the templateParameters property value. 
 func (m *SendActivityNotificationRequestBody) GetTemplateParameters()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.KeyValuePair) {
     if m == nil {
         return nil
@@ -54,6 +67,7 @@ func (m *SendActivityNotificationRequestBody) GetTemplateParameters()([]i4a838ef
         return m.templateParameters
     }
 }
+// Gets the topic property value. 
 func (m *SendActivityNotificationRequestBody) GetTopic()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamworkActivityTopic) {
     if m == nil {
         return nil
@@ -61,6 +75,7 @@ func (m *SendActivityNotificationRequestBody) GetTopic()(*i4a838ef194e4c99e9f2c6
         return m.topic
     }
 }
+// The deserialization information for the current model
 func (m *SendActivityNotificationRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["activityType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,6 +127,9 @@ func (m *SendActivityNotificationRequestBody) GetFieldDeserializers()(map[string
 func (m *SendActivityNotificationRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *SendActivityNotificationRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("activityType", m.GetActivityType())
@@ -156,21 +174,39 @@ func (m *SendActivityNotificationRequestBody) Serialize(writer i04eb5309aeaafadd
     }
     return nil
 }
+// Sets the activityType property value. 
+// Parameters:
+//  - value : Value to set for the activityType property.
 func (m *SendActivityNotificationRequestBody) SetActivityType(value *string)() {
     m.activityType = value
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *SendActivityNotificationRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the chainId property value. 
+// Parameters:
+//  - value : Value to set for the chainId property.
 func (m *SendActivityNotificationRequestBody) SetChainId(value *int64)() {
     m.chainId = value
 }
+// Sets the previewText property value. 
+// Parameters:
+//  - value : Value to set for the previewText property.
 func (m *SendActivityNotificationRequestBody) SetPreviewText(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBody)() {
     m.previewText = value
 }
+// Sets the templateParameters property value. 
+// Parameters:
+//  - value : Value to set for the templateParameters property.
 func (m *SendActivityNotificationRequestBody) SetTemplateParameters(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.KeyValuePair)() {
     m.templateParameters = value
 }
+// Sets the topic property value. 
+// Parameters:
+//  - value : Value to set for the topic property.
 func (m *SendActivityNotificationRequestBody) SetTopic(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamworkActivityTopic)() {
     m.topic = value
 }

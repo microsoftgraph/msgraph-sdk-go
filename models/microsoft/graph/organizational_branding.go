@@ -4,16 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type OrganizationalBranding struct {
     OrganizationalBrandingProperties
+    // Add different branding based on a locale.
     localizations []OrganizationalBrandingLocalization;
 }
+// Instantiates a new organizationalBranding and sets the default values.
 func NewOrganizationalBranding()(*OrganizationalBranding) {
     m := &OrganizationalBranding{
         OrganizationalBrandingProperties: *NewOrganizationalBrandingProperties(),
     }
     return m
 }
+// Gets the localizations property value. Add different branding based on a locale.
 func (m *OrganizationalBranding) GetLocalizations()([]OrganizationalBrandingLocalization) {
     if m == nil {
         return nil
@@ -21,6 +25,7 @@ func (m *OrganizationalBranding) GetLocalizations()([]OrganizationalBrandingLoca
         return m.localizations
     }
 }
+// The deserialization information for the current model
 func (m *OrganizationalBranding) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.OrganizationalBrandingProperties.GetFieldDeserializers()
     res["localizations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -40,6 +45,9 @@ func (m *OrganizationalBranding) GetFieldDeserializers()(map[string]func(interfa
 func (m *OrganizationalBranding) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *OrganizationalBranding) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.OrganizationalBrandingProperties.Serialize(writer)
     if err != nil {
@@ -58,6 +66,9 @@ func (m *OrganizationalBranding) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
+// Sets the localizations property value. Add different branding based on a locale.
+// Parameters:
+//  - value : Value to set for the localizations property.
 func (m *OrganizationalBranding) SetLocalizations(value []OrganizationalBrandingLocalization)() {
     m.localizations = value
 }

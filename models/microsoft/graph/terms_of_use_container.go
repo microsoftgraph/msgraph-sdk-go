@@ -4,17 +4,22 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type TermsOfUseContainer struct {
     Entity
+    // 
     agreementAcceptances []AgreementAcceptance;
+    // 
     agreements []Agreement;
 }
+// Instantiates a new termsOfUseContainer and sets the default values.
 func NewTermsOfUseContainer()(*TermsOfUseContainer) {
     m := &TermsOfUseContainer{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the agreementAcceptances property value. 
 func (m *TermsOfUseContainer) GetAgreementAcceptances()([]AgreementAcceptance) {
     if m == nil {
         return nil
@@ -22,6 +27,7 @@ func (m *TermsOfUseContainer) GetAgreementAcceptances()([]AgreementAcceptance) {
         return m.agreementAcceptances
     }
 }
+// Gets the agreements property value. 
 func (m *TermsOfUseContainer) GetAgreements()([]Agreement) {
     if m == nil {
         return nil
@@ -29,6 +35,7 @@ func (m *TermsOfUseContainer) GetAgreements()([]Agreement) {
         return m.agreements
     }
 }
+// The deserialization information for the current model
 func (m *TermsOfUseContainer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agreementAcceptances"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,6 +67,9 @@ func (m *TermsOfUseContainer) GetFieldDeserializers()(map[string]func(interface{
 func (m *TermsOfUseContainer) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *TermsOfUseContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -89,9 +99,15 @@ func (m *TermsOfUseContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
+// Sets the agreementAcceptances property value. 
+// Parameters:
+//  - value : Value to set for the agreementAcceptances property.
 func (m *TermsOfUseContainer) SetAgreementAcceptances(value []AgreementAcceptance)() {
     m.agreementAcceptances = value
 }
+// Sets the agreements property value. 
+// Parameters:
+//  - value : Value to set for the agreements property.
 func (m *TermsOfUseContainer) SetAgreements(value []Agreement)() {
     m.agreements = value
 }

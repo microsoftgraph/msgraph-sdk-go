@@ -4,49 +4,88 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type DeviceManagement struct {
     Entity
+    // Apple push notification certificate.
     applePushNotificationCertificate *ApplePushNotificationCertificate;
+    // The list of Compliance Management Partners configured by the tenant.
     complianceManagementPartners []ComplianceManagementPartner;
+    // The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
     conditionalAccessSettings *OnPremisesConditionalAccessSettings;
+    // The list of detected apps associated with a device.
     detectedApps []DetectedApp;
+    // The list of device categories with the tenant.
     deviceCategories []DeviceCategory;
+    // The device compliance policies.
     deviceCompliancePolicies []DeviceCompliancePolicy;
+    // The device compliance state summary for this account.
     deviceCompliancePolicyDeviceStateSummary *DeviceCompliancePolicyDeviceStateSummary;
+    // The summary states of compliance policy settings for this account.
     deviceCompliancePolicySettingStateSummaries []DeviceCompliancePolicySettingStateSummary;
+    // The device configuration device state summary for this account.
     deviceConfigurationDeviceStateSummaries *DeviceConfigurationDeviceStateSummary;
+    // The device configurations.
     deviceConfigurations []DeviceConfiguration;
+    // The list of device enrollment configurations
     deviceEnrollmentConfigurations []DeviceEnrollmentConfiguration;
+    // The list of Device Management Partners configured by the tenant.
     deviceManagementPartners []DeviceManagementPartner;
+    // The list of Exchange Connectors configured by the tenant.
     exchangeConnectors []DeviceManagementExchangeConnector;
+    // Collection of imported Windows autopilot devices.
     importedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentity;
+    // Intune Account Id for given tenant
     intuneAccountId *string;
+    // intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
     intuneBrand *IntuneBrand;
+    // The IOS software update installation statuses for this account.
     iosUpdateStatuses []IosUpdateDeviceStatus;
+    // Device overview
     managedDeviceOverview *ManagedDeviceOverview;
+    // The list of managed devices.
     managedDevices []ManagedDevice;
+    // The list of Mobile threat Defense connectors configured by the tenant.
     mobileThreatDefenseConnectors []MobileThreatDefenseConnector;
+    // The Notification Message Templates.
     notificationMessageTemplates []NotificationMessageTemplate;
+    // The remote assist partners.
     remoteAssistancePartners []RemoteAssistancePartner;
+    // Reports singleton
+    reports *DeviceManagementReports;
+    // The Resource Operations.
     resourceOperations []ResourceOperation;
+    // The Role Assignments.
     roleAssignments []DeviceAndAppManagementRoleAssignment;
+    // The Role Definitions.
     roleDefinitions []RoleDefinition;
+    // Account level settings.
     settings *DeviceManagementSettings;
+    // The software update status summary.
     softwareUpdateStatusSummary *SoftwareUpdateStatusSummary;
+    // Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
     subscriptionState *DeviceManagementSubscriptionState;
+    // The telecom expense management partners.
     telecomExpenseManagementPartners []TelecomExpenseManagementPartner;
+    // The terms and conditions associated with device management of the company.
     termsAndConditions []TermsAndConditions;
+    // The list of troubleshooting events for the tenant.
     troubleshootingEvents []DeviceManagementTroubleshootingEvent;
+    // The Windows autopilot device identities contained collection.
     windowsAutopilotDeviceIdentities []WindowsAutopilotDeviceIdentity;
+    // The windows information protection app learning summaries.
     windowsInformationProtectionAppLearningSummaries []WindowsInformationProtectionAppLearningSummary;
+    // The windows information protection network learning summaries.
     windowsInformationProtectionNetworkLearningSummaries []WindowsInformationProtectionNetworkLearningSummary;
 }
+// Instantiates a new deviceManagement and sets the default values.
 func NewDeviceManagement()(*DeviceManagement) {
     m := &DeviceManagement{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the applePushNotificationCertificate property value. Apple push notification certificate.
 func (m *DeviceManagement) GetApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {
     if m == nil {
         return nil
@@ -54,6 +93,7 @@ func (m *DeviceManagement) GetApplePushNotificationCertificate()(*ApplePushNotif
         return m.applePushNotificationCertificate
     }
 }
+// Gets the complianceManagementPartners property value. The list of Compliance Management Partners configured by the tenant.
 func (m *DeviceManagement) GetComplianceManagementPartners()([]ComplianceManagementPartner) {
     if m == nil {
         return nil
@@ -61,6 +101,7 @@ func (m *DeviceManagement) GetComplianceManagementPartners()([]ComplianceManagem
         return m.complianceManagementPartners
     }
 }
+// Gets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 func (m *DeviceManagement) GetConditionalAccessSettings()(*OnPremisesConditionalAccessSettings) {
     if m == nil {
         return nil
@@ -68,6 +109,7 @@ func (m *DeviceManagement) GetConditionalAccessSettings()(*OnPremisesConditional
         return m.conditionalAccessSettings
     }
 }
+// Gets the detectedApps property value. The list of detected apps associated with a device.
 func (m *DeviceManagement) GetDetectedApps()([]DetectedApp) {
     if m == nil {
         return nil
@@ -75,6 +117,7 @@ func (m *DeviceManagement) GetDetectedApps()([]DetectedApp) {
         return m.detectedApps
     }
 }
+// Gets the deviceCategories property value. The list of device categories with the tenant.
 func (m *DeviceManagement) GetDeviceCategories()([]DeviceCategory) {
     if m == nil {
         return nil
@@ -82,6 +125,7 @@ func (m *DeviceManagement) GetDeviceCategories()([]DeviceCategory) {
         return m.deviceCategories
     }
 }
+// Gets the deviceCompliancePolicies property value. The device compliance policies.
 func (m *DeviceManagement) GetDeviceCompliancePolicies()([]DeviceCompliancePolicy) {
     if m == nil {
         return nil
@@ -89,6 +133,7 @@ func (m *DeviceManagement) GetDeviceCompliancePolicies()([]DeviceCompliancePolic
         return m.deviceCompliancePolicies
     }
 }
+// Gets the deviceCompliancePolicyDeviceStateSummary property value. The device compliance state summary for this account.
 func (m *DeviceManagement) GetDeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDeviceStateSummary) {
     if m == nil {
         return nil
@@ -96,6 +141,7 @@ func (m *DeviceManagement) GetDeviceCompliancePolicyDeviceStateSummary()(*Device
         return m.deviceCompliancePolicyDeviceStateSummary
     }
 }
+// Gets the deviceCompliancePolicySettingStateSummaries property value. The summary states of compliance policy settings for this account.
 func (m *DeviceManagement) GetDeviceCompliancePolicySettingStateSummaries()([]DeviceCompliancePolicySettingStateSummary) {
     if m == nil {
         return nil
@@ -103,6 +149,7 @@ func (m *DeviceManagement) GetDeviceCompliancePolicySettingStateSummaries()([]De
         return m.deviceCompliancePolicySettingStateSummaries
     }
 }
+// Gets the deviceConfigurationDeviceStateSummaries property value. The device configuration device state summary for this account.
 func (m *DeviceManagement) GetDeviceConfigurationDeviceStateSummaries()(*DeviceConfigurationDeviceStateSummary) {
     if m == nil {
         return nil
@@ -110,6 +157,7 @@ func (m *DeviceManagement) GetDeviceConfigurationDeviceStateSummaries()(*DeviceC
         return m.deviceConfigurationDeviceStateSummaries
     }
 }
+// Gets the deviceConfigurations property value. The device configurations.
 func (m *DeviceManagement) GetDeviceConfigurations()([]DeviceConfiguration) {
     if m == nil {
         return nil
@@ -117,6 +165,7 @@ func (m *DeviceManagement) GetDeviceConfigurations()([]DeviceConfiguration) {
         return m.deviceConfigurations
     }
 }
+// Gets the deviceEnrollmentConfigurations property value. The list of device enrollment configurations
 func (m *DeviceManagement) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmentConfiguration) {
     if m == nil {
         return nil
@@ -124,6 +173,7 @@ func (m *DeviceManagement) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmen
         return m.deviceEnrollmentConfigurations
     }
 }
+// Gets the deviceManagementPartners property value. The list of Device Management Partners configured by the tenant.
 func (m *DeviceManagement) GetDeviceManagementPartners()([]DeviceManagementPartner) {
     if m == nil {
         return nil
@@ -131,6 +181,7 @@ func (m *DeviceManagement) GetDeviceManagementPartners()([]DeviceManagementPartn
         return m.deviceManagementPartners
     }
 }
+// Gets the exchangeConnectors property value. The list of Exchange Connectors configured by the tenant.
 func (m *DeviceManagement) GetExchangeConnectors()([]DeviceManagementExchangeConnector) {
     if m == nil {
         return nil
@@ -138,6 +189,7 @@ func (m *DeviceManagement) GetExchangeConnectors()([]DeviceManagementExchangeCon
         return m.exchangeConnectors
     }
 }
+// Gets the importedWindowsAutopilotDeviceIdentities property value. Collection of imported Windows autopilot devices.
 func (m *DeviceManagement) GetImportedWindowsAutopilotDeviceIdentities()([]ImportedWindowsAutopilotDeviceIdentity) {
     if m == nil {
         return nil
@@ -145,6 +197,7 @@ func (m *DeviceManagement) GetImportedWindowsAutopilotDeviceIdentities()([]Impor
         return m.importedWindowsAutopilotDeviceIdentities
     }
 }
+// Gets the intuneAccountId property value. Intune Account Id for given tenant
 func (m *DeviceManagement) GetIntuneAccountId()(*string) {
     if m == nil {
         return nil
@@ -152,6 +205,7 @@ func (m *DeviceManagement) GetIntuneAccountId()(*string) {
         return m.intuneAccountId
     }
 }
+// Gets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
 func (m *DeviceManagement) GetIntuneBrand()(*IntuneBrand) {
     if m == nil {
         return nil
@@ -159,6 +213,7 @@ func (m *DeviceManagement) GetIntuneBrand()(*IntuneBrand) {
         return m.intuneBrand
     }
 }
+// Gets the iosUpdateStatuses property value. The IOS software update installation statuses for this account.
 func (m *DeviceManagement) GetIosUpdateStatuses()([]IosUpdateDeviceStatus) {
     if m == nil {
         return nil
@@ -166,6 +221,7 @@ func (m *DeviceManagement) GetIosUpdateStatuses()([]IosUpdateDeviceStatus) {
         return m.iosUpdateStatuses
     }
 }
+// Gets the managedDeviceOverview property value. Device overview
 func (m *DeviceManagement) GetManagedDeviceOverview()(*ManagedDeviceOverview) {
     if m == nil {
         return nil
@@ -173,6 +229,7 @@ func (m *DeviceManagement) GetManagedDeviceOverview()(*ManagedDeviceOverview) {
         return m.managedDeviceOverview
     }
 }
+// Gets the managedDevices property value. The list of managed devices.
 func (m *DeviceManagement) GetManagedDevices()([]ManagedDevice) {
     if m == nil {
         return nil
@@ -180,6 +237,7 @@ func (m *DeviceManagement) GetManagedDevices()([]ManagedDevice) {
         return m.managedDevices
     }
 }
+// Gets the mobileThreatDefenseConnectors property value. The list of Mobile threat Defense connectors configured by the tenant.
 func (m *DeviceManagement) GetMobileThreatDefenseConnectors()([]MobileThreatDefenseConnector) {
     if m == nil {
         return nil
@@ -187,6 +245,7 @@ func (m *DeviceManagement) GetMobileThreatDefenseConnectors()([]MobileThreatDefe
         return m.mobileThreatDefenseConnectors
     }
 }
+// Gets the notificationMessageTemplates property value. The Notification Message Templates.
 func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessageTemplate) {
     if m == nil {
         return nil
@@ -194,6 +253,7 @@ func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessa
         return m.notificationMessageTemplates
     }
 }
+// Gets the remoteAssistancePartners property value. The remote assist partners.
 func (m *DeviceManagement) GetRemoteAssistancePartners()([]RemoteAssistancePartner) {
     if m == nil {
         return nil
@@ -201,6 +261,15 @@ func (m *DeviceManagement) GetRemoteAssistancePartners()([]RemoteAssistancePartn
         return m.remoteAssistancePartners
     }
 }
+// Gets the reports property value. Reports singleton
+func (m *DeviceManagement) GetReports()(*DeviceManagementReports) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reports
+    }
+}
+// Gets the resourceOperations property value. The Resource Operations.
 func (m *DeviceManagement) GetResourceOperations()([]ResourceOperation) {
     if m == nil {
         return nil
@@ -208,6 +277,7 @@ func (m *DeviceManagement) GetResourceOperations()([]ResourceOperation) {
         return m.resourceOperations
     }
 }
+// Gets the roleAssignments property value. The Role Assignments.
 func (m *DeviceManagement) GetRoleAssignments()([]DeviceAndAppManagementRoleAssignment) {
     if m == nil {
         return nil
@@ -215,6 +285,7 @@ func (m *DeviceManagement) GetRoleAssignments()([]DeviceAndAppManagementRoleAssi
         return m.roleAssignments
     }
 }
+// Gets the roleDefinitions property value. The Role Definitions.
 func (m *DeviceManagement) GetRoleDefinitions()([]RoleDefinition) {
     if m == nil {
         return nil
@@ -222,6 +293,7 @@ func (m *DeviceManagement) GetRoleDefinitions()([]RoleDefinition) {
         return m.roleDefinitions
     }
 }
+// Gets the settings property value. Account level settings.
 func (m *DeviceManagement) GetSettings()(*DeviceManagementSettings) {
     if m == nil {
         return nil
@@ -229,6 +301,7 @@ func (m *DeviceManagement) GetSettings()(*DeviceManagementSettings) {
         return m.settings
     }
 }
+// Gets the softwareUpdateStatusSummary property value. The software update status summary.
 func (m *DeviceManagement) GetSoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummary) {
     if m == nil {
         return nil
@@ -236,6 +309,7 @@ func (m *DeviceManagement) GetSoftwareUpdateStatusSummary()(*SoftwareUpdateStatu
         return m.softwareUpdateStatusSummary
     }
 }
+// Gets the subscriptionState property value. Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
 func (m *DeviceManagement) GetSubscriptionState()(*DeviceManagementSubscriptionState) {
     if m == nil {
         return nil
@@ -243,6 +317,7 @@ func (m *DeviceManagement) GetSubscriptionState()(*DeviceManagementSubscriptionS
         return m.subscriptionState
     }
 }
+// Gets the telecomExpenseManagementPartners property value. The telecom expense management partners.
 func (m *DeviceManagement) GetTelecomExpenseManagementPartners()([]TelecomExpenseManagementPartner) {
     if m == nil {
         return nil
@@ -250,6 +325,7 @@ func (m *DeviceManagement) GetTelecomExpenseManagementPartners()([]TelecomExpens
         return m.telecomExpenseManagementPartners
     }
 }
+// Gets the termsAndConditions property value. The terms and conditions associated with device management of the company.
 func (m *DeviceManagement) GetTermsAndConditions()([]TermsAndConditions) {
     if m == nil {
         return nil
@@ -257,6 +333,7 @@ func (m *DeviceManagement) GetTermsAndConditions()([]TermsAndConditions) {
         return m.termsAndConditions
     }
 }
+// Gets the troubleshootingEvents property value. The list of troubleshooting events for the tenant.
 func (m *DeviceManagement) GetTroubleshootingEvents()([]DeviceManagementTroubleshootingEvent) {
     if m == nil {
         return nil
@@ -264,6 +341,7 @@ func (m *DeviceManagement) GetTroubleshootingEvents()([]DeviceManagementTroubles
         return m.troubleshootingEvents
     }
 }
+// Gets the windowsAutopilotDeviceIdentities property value. The Windows autopilot device identities contained collection.
 func (m *DeviceManagement) GetWindowsAutopilotDeviceIdentities()([]WindowsAutopilotDeviceIdentity) {
     if m == nil {
         return nil
@@ -271,6 +349,7 @@ func (m *DeviceManagement) GetWindowsAutopilotDeviceIdentities()([]WindowsAutopi
         return m.windowsAutopilotDeviceIdentities
     }
 }
+// Gets the windowsInformationProtectionAppLearningSummaries property value. The windows information protection app learning summaries.
 func (m *DeviceManagement) GetWindowsInformationProtectionAppLearningSummaries()([]WindowsInformationProtectionAppLearningSummary) {
     if m == nil {
         return nil
@@ -278,6 +357,7 @@ func (m *DeviceManagement) GetWindowsInformationProtectionAppLearningSummaries()
         return m.windowsInformationProtectionAppLearningSummaries
     }
 }
+// Gets the windowsInformationProtectionNetworkLearningSummaries property value. The windows information protection network learning summaries.
 func (m *DeviceManagement) GetWindowsInformationProtectionNetworkLearningSummaries()([]WindowsInformationProtectionNetworkLearningSummary) {
     if m == nil {
         return nil
@@ -285,6 +365,7 @@ func (m *DeviceManagement) GetWindowsInformationProtectionNetworkLearningSummari
         return m.windowsInformationProtectionNetworkLearningSummaries
     }
 }
+// The deserialization information for the current model
 func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applePushNotificationCertificate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -523,6 +604,14 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
         m.SetRemoteAssistancePartners(res)
         return nil
     }
+    res["reports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDeviceManagementReports() })
+        if err != nil {
+            return err
+        }
+        m.SetReports(val.(*DeviceManagementReports))
+        return nil
+    }
     res["resourceOperations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResourceOperation() })
         if err != nil {
@@ -661,6 +750,9 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *DeviceManagement) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -874,6 +966,12 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
+        err = writer.WriteObjectValue("reports", m.GetReports())
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResourceOperations()))
         for i, v := range m.GetResourceOperations() {
             temp := v
@@ -993,105 +1091,213 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
+// Sets the applePushNotificationCertificate property value. Apple push notification certificate.
+// Parameters:
+//  - value : Value to set for the applePushNotificationCertificate property.
 func (m *DeviceManagement) SetApplePushNotificationCertificate(value *ApplePushNotificationCertificate)() {
     m.applePushNotificationCertificate = value
 }
+// Sets the complianceManagementPartners property value. The list of Compliance Management Partners configured by the tenant.
+// Parameters:
+//  - value : Value to set for the complianceManagementPartners property.
 func (m *DeviceManagement) SetComplianceManagementPartners(value []ComplianceManagementPartner)() {
     m.complianceManagementPartners = value
 }
+// Sets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+// Parameters:
+//  - value : Value to set for the conditionalAccessSettings property.
 func (m *DeviceManagement) SetConditionalAccessSettings(value *OnPremisesConditionalAccessSettings)() {
     m.conditionalAccessSettings = value
 }
+// Sets the detectedApps property value. The list of detected apps associated with a device.
+// Parameters:
+//  - value : Value to set for the detectedApps property.
 func (m *DeviceManagement) SetDetectedApps(value []DetectedApp)() {
     m.detectedApps = value
 }
+// Sets the deviceCategories property value. The list of device categories with the tenant.
+// Parameters:
+//  - value : Value to set for the deviceCategories property.
 func (m *DeviceManagement) SetDeviceCategories(value []DeviceCategory)() {
     m.deviceCategories = value
 }
+// Sets the deviceCompliancePolicies property value. The device compliance policies.
+// Parameters:
+//  - value : Value to set for the deviceCompliancePolicies property.
 func (m *DeviceManagement) SetDeviceCompliancePolicies(value []DeviceCompliancePolicy)() {
     m.deviceCompliancePolicies = value
 }
+// Sets the deviceCompliancePolicyDeviceStateSummary property value. The device compliance state summary for this account.
+// Parameters:
+//  - value : Value to set for the deviceCompliancePolicyDeviceStateSummary property.
 func (m *DeviceManagement) SetDeviceCompliancePolicyDeviceStateSummary(value *DeviceCompliancePolicyDeviceStateSummary)() {
     m.deviceCompliancePolicyDeviceStateSummary = value
 }
+// Sets the deviceCompliancePolicySettingStateSummaries property value. The summary states of compliance policy settings for this account.
+// Parameters:
+//  - value : Value to set for the deviceCompliancePolicySettingStateSummaries property.
 func (m *DeviceManagement) SetDeviceCompliancePolicySettingStateSummaries(value []DeviceCompliancePolicySettingStateSummary)() {
     m.deviceCompliancePolicySettingStateSummaries = value
 }
+// Sets the deviceConfigurationDeviceStateSummaries property value. The device configuration device state summary for this account.
+// Parameters:
+//  - value : Value to set for the deviceConfigurationDeviceStateSummaries property.
 func (m *DeviceManagement) SetDeviceConfigurationDeviceStateSummaries(value *DeviceConfigurationDeviceStateSummary)() {
     m.deviceConfigurationDeviceStateSummaries = value
 }
+// Sets the deviceConfigurations property value. The device configurations.
+// Parameters:
+//  - value : Value to set for the deviceConfigurations property.
 func (m *DeviceManagement) SetDeviceConfigurations(value []DeviceConfiguration)() {
     m.deviceConfigurations = value
 }
+// Sets the deviceEnrollmentConfigurations property value. The list of device enrollment configurations
+// Parameters:
+//  - value : Value to set for the deviceEnrollmentConfigurations property.
 func (m *DeviceManagement) SetDeviceEnrollmentConfigurations(value []DeviceEnrollmentConfiguration)() {
     m.deviceEnrollmentConfigurations = value
 }
+// Sets the deviceManagementPartners property value. The list of Device Management Partners configured by the tenant.
+// Parameters:
+//  - value : Value to set for the deviceManagementPartners property.
 func (m *DeviceManagement) SetDeviceManagementPartners(value []DeviceManagementPartner)() {
     m.deviceManagementPartners = value
 }
+// Sets the exchangeConnectors property value. The list of Exchange Connectors configured by the tenant.
+// Parameters:
+//  - value : Value to set for the exchangeConnectors property.
 func (m *DeviceManagement) SetExchangeConnectors(value []DeviceManagementExchangeConnector)() {
     m.exchangeConnectors = value
 }
+// Sets the importedWindowsAutopilotDeviceIdentities property value. Collection of imported Windows autopilot devices.
+// Parameters:
+//  - value : Value to set for the importedWindowsAutopilotDeviceIdentities property.
 func (m *DeviceManagement) SetImportedWindowsAutopilotDeviceIdentities(value []ImportedWindowsAutopilotDeviceIdentity)() {
     m.importedWindowsAutopilotDeviceIdentities = value
 }
+// Sets the intuneAccountId property value. Intune Account Id for given tenant
+// Parameters:
+//  - value : Value to set for the intuneAccountId property.
 func (m *DeviceManagement) SetIntuneAccountId(value *string)() {
     m.intuneAccountId = value
 }
+// Sets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
+// Parameters:
+//  - value : Value to set for the intuneBrand property.
 func (m *DeviceManagement) SetIntuneBrand(value *IntuneBrand)() {
     m.intuneBrand = value
 }
+// Sets the iosUpdateStatuses property value. The IOS software update installation statuses for this account.
+// Parameters:
+//  - value : Value to set for the iosUpdateStatuses property.
 func (m *DeviceManagement) SetIosUpdateStatuses(value []IosUpdateDeviceStatus)() {
     m.iosUpdateStatuses = value
 }
+// Sets the managedDeviceOverview property value. Device overview
+// Parameters:
+//  - value : Value to set for the managedDeviceOverview property.
 func (m *DeviceManagement) SetManagedDeviceOverview(value *ManagedDeviceOverview)() {
     m.managedDeviceOverview = value
 }
+// Sets the managedDevices property value. The list of managed devices.
+// Parameters:
+//  - value : Value to set for the managedDevices property.
 func (m *DeviceManagement) SetManagedDevices(value []ManagedDevice)() {
     m.managedDevices = value
 }
+// Sets the mobileThreatDefenseConnectors property value. The list of Mobile threat Defense connectors configured by the tenant.
+// Parameters:
+//  - value : Value to set for the mobileThreatDefenseConnectors property.
 func (m *DeviceManagement) SetMobileThreatDefenseConnectors(value []MobileThreatDefenseConnector)() {
     m.mobileThreatDefenseConnectors = value
 }
+// Sets the notificationMessageTemplates property value. The Notification Message Templates.
+// Parameters:
+//  - value : Value to set for the notificationMessageTemplates property.
 func (m *DeviceManagement) SetNotificationMessageTemplates(value []NotificationMessageTemplate)() {
     m.notificationMessageTemplates = value
 }
+// Sets the remoteAssistancePartners property value. The remote assist partners.
+// Parameters:
+//  - value : Value to set for the remoteAssistancePartners property.
 func (m *DeviceManagement) SetRemoteAssistancePartners(value []RemoteAssistancePartner)() {
     m.remoteAssistancePartners = value
 }
+// Sets the reports property value. Reports singleton
+// Parameters:
+//  - value : Value to set for the reports property.
+func (m *DeviceManagement) SetReports(value *DeviceManagementReports)() {
+    m.reports = value
+}
+// Sets the resourceOperations property value. The Resource Operations.
+// Parameters:
+//  - value : Value to set for the resourceOperations property.
 func (m *DeviceManagement) SetResourceOperations(value []ResourceOperation)() {
     m.resourceOperations = value
 }
+// Sets the roleAssignments property value. The Role Assignments.
+// Parameters:
+//  - value : Value to set for the roleAssignments property.
 func (m *DeviceManagement) SetRoleAssignments(value []DeviceAndAppManagementRoleAssignment)() {
     m.roleAssignments = value
 }
+// Sets the roleDefinitions property value. The Role Definitions.
+// Parameters:
+//  - value : Value to set for the roleDefinitions property.
 func (m *DeviceManagement) SetRoleDefinitions(value []RoleDefinition)() {
     m.roleDefinitions = value
 }
+// Sets the settings property value. Account level settings.
+// Parameters:
+//  - value : Value to set for the settings property.
 func (m *DeviceManagement) SetSettings(value *DeviceManagementSettings)() {
     m.settings = value
 }
+// Sets the softwareUpdateStatusSummary property value. The software update status summary.
+// Parameters:
+//  - value : Value to set for the softwareUpdateStatusSummary property.
 func (m *DeviceManagement) SetSoftwareUpdateStatusSummary(value *SoftwareUpdateStatusSummary)() {
     m.softwareUpdateStatusSummary = value
 }
+// Sets the subscriptionState property value. Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+// Parameters:
+//  - value : Value to set for the subscriptionState property.
 func (m *DeviceManagement) SetSubscriptionState(value *DeviceManagementSubscriptionState)() {
     m.subscriptionState = value
 }
+// Sets the telecomExpenseManagementPartners property value. The telecom expense management partners.
+// Parameters:
+//  - value : Value to set for the telecomExpenseManagementPartners property.
 func (m *DeviceManagement) SetTelecomExpenseManagementPartners(value []TelecomExpenseManagementPartner)() {
     m.telecomExpenseManagementPartners = value
 }
+// Sets the termsAndConditions property value. The terms and conditions associated with device management of the company.
+// Parameters:
+//  - value : Value to set for the termsAndConditions property.
 func (m *DeviceManagement) SetTermsAndConditions(value []TermsAndConditions)() {
     m.termsAndConditions = value
 }
+// Sets the troubleshootingEvents property value. The list of troubleshooting events for the tenant.
+// Parameters:
+//  - value : Value to set for the troubleshootingEvents property.
 func (m *DeviceManagement) SetTroubleshootingEvents(value []DeviceManagementTroubleshootingEvent)() {
     m.troubleshootingEvents = value
 }
+// Sets the windowsAutopilotDeviceIdentities property value. The Windows autopilot device identities contained collection.
+// Parameters:
+//  - value : Value to set for the windowsAutopilotDeviceIdentities property.
 func (m *DeviceManagement) SetWindowsAutopilotDeviceIdentities(value []WindowsAutopilotDeviceIdentity)() {
     m.windowsAutopilotDeviceIdentities = value
 }
+// Sets the windowsInformationProtectionAppLearningSummaries property value. The windows information protection app learning summaries.
+// Parameters:
+//  - value : Value to set for the windowsInformationProtectionAppLearningSummaries property.
 func (m *DeviceManagement) SetWindowsInformationProtectionAppLearningSummaries(value []WindowsInformationProtectionAppLearningSummary)() {
     m.windowsInformationProtectionAppLearningSummaries = value
 }
+// Sets the windowsInformationProtectionNetworkLearningSummaries property value. The windows information protection network learning summaries.
+// Parameters:
+//  - value : Value to set for the windowsInformationProtectionNetworkLearningSummaries property.
 func (m *DeviceManagement) SetWindowsInformationProtectionNetworkLearningSummaries(value []WindowsInformationProtectionNetworkLearningSummary)() {
     m.windowsInformationProtectionNetworkLearningSummaries = value
 }

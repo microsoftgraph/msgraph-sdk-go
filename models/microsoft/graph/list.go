@@ -4,24 +4,36 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type List struct {
     BaseItem
+    // The collection of field definitions for this list.
     columns []ColumnDefinition;
+    // The collection of content types present in this list.
     contentTypes []ContentType;
+    // The displayable title of the list.
     displayName *string;
+    // Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
     drive *Drive;
+    // All items contained in the list.
     items []ListItem;
+    // Provides additional details about the list.
     list *ListInfo;
+    // Returns identifiers useful for SharePoint REST compatibility. Read-only.
     sharepointIds *SharepointIds;
+    // The set of subscriptions on the list.
     subscriptions []Subscription;
+    // If present, indicates that this is a system-managed list. Read-only.
     system *SystemFacet;
 }
+// Instantiates a new list and sets the default values.
 func NewList()(*List) {
     m := &List{
         BaseItem: *NewBaseItem(),
     }
     return m
 }
+// Gets the columns property value. The collection of field definitions for this list.
 func (m *List) GetColumns()([]ColumnDefinition) {
     if m == nil {
         return nil
@@ -29,6 +41,7 @@ func (m *List) GetColumns()([]ColumnDefinition) {
         return m.columns
     }
 }
+// Gets the contentTypes property value. The collection of content types present in this list.
 func (m *List) GetContentTypes()([]ContentType) {
     if m == nil {
         return nil
@@ -36,6 +49,7 @@ func (m *List) GetContentTypes()([]ContentType) {
         return m.contentTypes
     }
 }
+// Gets the displayName property value. The displayable title of the list.
 func (m *List) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -43,6 +57,7 @@ func (m *List) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// Gets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 func (m *List) GetDrive()(*Drive) {
     if m == nil {
         return nil
@@ -50,6 +65,7 @@ func (m *List) GetDrive()(*Drive) {
         return m.drive
     }
 }
+// Gets the items property value. All items contained in the list.
 func (m *List) GetItems()([]ListItem) {
     if m == nil {
         return nil
@@ -57,6 +73,7 @@ func (m *List) GetItems()([]ListItem) {
         return m.items
     }
 }
+// Gets the list property value. Provides additional details about the list.
 func (m *List) GetList()(*ListInfo) {
     if m == nil {
         return nil
@@ -64,6 +81,7 @@ func (m *List) GetList()(*ListInfo) {
         return m.list
     }
 }
+// Gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *List) GetSharepointIds()(*SharepointIds) {
     if m == nil {
         return nil
@@ -71,6 +89,7 @@ func (m *List) GetSharepointIds()(*SharepointIds) {
         return m.sharepointIds
     }
 }
+// Gets the subscriptions property value. The set of subscriptions on the list.
 func (m *List) GetSubscriptions()([]Subscription) {
     if m == nil {
         return nil
@@ -78,6 +97,7 @@ func (m *List) GetSubscriptions()([]Subscription) {
         return m.subscriptions
     }
 }
+// Gets the system property value. If present, indicates that this is a system-managed list. Read-only.
 func (m *List) GetSystem()(*SystemFacet) {
     if m == nil {
         return nil
@@ -85,6 +105,7 @@ func (m *List) GetSystem()(*SystemFacet) {
         return m.system
     }
 }
+// The deserialization information for the current model
 func (m *List) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
     res["columns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,6 +201,9 @@ func (m *List) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
 func (m *List) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.BaseItem.Serialize(writer)
     if err != nil {
@@ -261,30 +285,57 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     }
     return nil
 }
+// Sets the columns property value. The collection of field definitions for this list.
+// Parameters:
+//  - value : Value to set for the columns property.
 func (m *List) SetColumns(value []ColumnDefinition)() {
     m.columns = value
 }
+// Sets the contentTypes property value. The collection of content types present in this list.
+// Parameters:
+//  - value : Value to set for the contentTypes property.
 func (m *List) SetContentTypes(value []ContentType)() {
     m.contentTypes = value
 }
+// Sets the displayName property value. The displayable title of the list.
+// Parameters:
+//  - value : Value to set for the displayName property.
 func (m *List) SetDisplayName(value *string)() {
     m.displayName = value
 }
+// Sets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+// Parameters:
+//  - value : Value to set for the drive property.
 func (m *List) SetDrive(value *Drive)() {
     m.drive = value
 }
+// Sets the items property value. All items contained in the list.
+// Parameters:
+//  - value : Value to set for the items property.
 func (m *List) SetItems(value []ListItem)() {
     m.items = value
 }
+// Sets the list property value. Provides additional details about the list.
+// Parameters:
+//  - value : Value to set for the list property.
 func (m *List) SetList(value *ListInfo)() {
     m.list = value
 }
+// Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
+// Parameters:
+//  - value : Value to set for the sharepointIds property.
 func (m *List) SetSharepointIds(value *SharepointIds)() {
     m.sharepointIds = value
 }
+// Sets the subscriptions property value. The set of subscriptions on the list.
+// Parameters:
+//  - value : Value to set for the subscriptions property.
 func (m *List) SetSubscriptions(value []Subscription)() {
     m.subscriptions = value
 }
+// Sets the system property value. If present, indicates that this is a system-managed list. Read-only.
+// Parameters:
+//  - value : Value to set for the system property.
 func (m *List) SetSystem(value *SystemFacet)() {
     m.system = value
 }

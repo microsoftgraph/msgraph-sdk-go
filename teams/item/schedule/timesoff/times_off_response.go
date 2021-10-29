@@ -5,17 +5,23 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type TimesOffResponse struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     nextLink *string;
+    // 
     value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOff;
 }
+// Instantiates a new timesOffResponse and sets the default values.
 func NewTimesOffResponse()(*TimesOffResponse) {
     m := &TimesOffResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimesOffResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -23,6 +29,7 @@ func (m *TimesOffResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the nextLink property value. 
 func (m *TimesOffResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
@@ -30,6 +37,7 @@ func (m *TimesOffResponse) GetNextLink()(*string) {
         return m.nextLink
     }
 }
+// Gets the value property value. 
 func (m *TimesOffResponse) GetValue()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOff) {
     if m == nil {
         return nil
@@ -37,6 +45,7 @@ func (m *TimesOffResponse) GetValue()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a893
         return m.value
     }
 }
+// The deserialization information for the current model
 func (m *TimesOffResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["@odata.nextLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,6 +73,9 @@ func (m *TimesOffResponse) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *TimesOffResponse) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *TimesOffResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
@@ -90,12 +102,21 @@ func (m *TimesOffResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *TimesOffResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the nextLink property value. 
+// Parameters:
+//  - value : Value to set for the nextLink property.
 func (m *TimesOffResponse) SetNextLink(value *string)() {
     m.nextLink = value
 }
+// Sets the value property value. 
+// Parameters:
+//  - value : Value to set for the value property.
 func (m *TimesOffResponse) SetValue(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOff)() {
     m.value = value
 }

@@ -3,6 +3,7 @@ import (
     "strings"
     "errors"
 )
+// 
 type DeviceRegistrationState int
 
 const (

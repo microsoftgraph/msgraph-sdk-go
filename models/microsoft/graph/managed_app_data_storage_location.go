@@ -3,16 +3,18 @@ import (
     "strings"
     "errors"
 )
+// 
 type ManagedAppDataStorageLocation int
 
 const (
     ONEDRIVEFORBUSINESS_MANAGEDAPPDATASTORAGELOCATION ManagedAppDataStorageLocation = iota
     SHAREPOINT_MANAGEDAPPDATASTORAGELOCATION
+    BOX_MANAGEDAPPDATASTORAGELOCATION
     LOCALSTORAGE_MANAGEDAPPDATASTORAGELOCATION
 )
 
 func (i ManagedAppDataStorageLocation) String() string {
-    return []string{"ONEDRIVEFORBUSINESS", "SHAREPOINT", "LOCALSTORAGE"}[i]
+    return []string{"ONEDRIVEFORBUSINESS", "SHAREPOINT", "BOX", "LOCALSTORAGE"}[i]
 }
 func ParseManagedAppDataStorageLocation(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -20,6 +22,8 @@ func ParseManagedAppDataStorageLocation(v string) (interface{}, error) {
             return ONEDRIVEFORBUSINESS_MANAGEDAPPDATASTORAGELOCATION, nil
         case "SHAREPOINT":
             return SHAREPOINT_MANAGEDAPPDATASTORAGELOCATION, nil
+        case "BOX":
+            return BOX_MANAGEDAPPDATASTORAGELOCATION, nil
         case "LOCALSTORAGE":
             return LOCALSTORAGE_MANAGEDAPPDATASTORAGELOCATION, nil
     }

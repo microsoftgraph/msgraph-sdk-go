@@ -5,18 +5,25 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type Floor_MathRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     mode *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    // 
     number *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    // 
     significance *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
+// Instantiates a new floor_MathRequestBody and sets the default values.
 func NewFloor_MathRequestBody()(*Floor_MathRequestBody) {
     m := &Floor_MathRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Floor_MathRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *Floor_MathRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the mode property value. 
 func (m *Floor_MathRequestBody) GetMode()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *Floor_MathRequestBody) GetMode()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a
         return m.mode
     }
 }
+// Gets the number property value. 
 func (m *Floor_MathRequestBody) GetNumber()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *Floor_MathRequestBody) GetNumber()(*i4a838ef194e4c99e9f2c63ba10dab9cb12
         return m.number
     }
 }
+// Gets the significance property value. 
 func (m *Floor_MathRequestBody) GetSignificance()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *Floor_MathRequestBody) GetSignificance()(*i4a838ef194e4c99e9f2c63ba10da
         return m.significance
     }
 }
+// The deserialization information for the current model
 func (m *Floor_MathRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["mode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,6 +87,9 @@ func (m *Floor_MathRequestBody) GetFieldDeserializers()(map[string]func(interfac
 func (m *Floor_MathRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Floor_MathRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("mode", m.GetMode())
@@ -103,15 +117,27 @@ func (m *Floor_MathRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *Floor_MathRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the mode property value. 
+// Parameters:
+//  - value : Value to set for the mode property.
 func (m *Floor_MathRequestBody) SetMode(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.mode = value
 }
+// Sets the number property value. 
+// Parameters:
+//  - value : Value to set for the number property.
 func (m *Floor_MathRequestBody) SetNumber(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.number = value
 }
+// Sets the significance property value. 
+// Parameters:
+//  - value : Value to set for the significance property.
 func (m *Floor_MathRequestBody) SetSignificance(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.significance = value
 }

@@ -4,19 +4,26 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type Authentication struct {
     Entity
+    // 
     fido2Methods []Fido2AuthenticationMethod;
+    // 
     methods []AuthenticationMethod;
+    // 
     microsoftAuthenticatorMethods []MicrosoftAuthenticatorAuthenticationMethod;
+    // 
     windowsHelloForBusinessMethods []WindowsHelloForBusinessAuthenticationMethod;
 }
+// Instantiates a new authentication and sets the default values.
 func NewAuthentication()(*Authentication) {
     m := &Authentication{
         Entity: *NewEntity(),
     }
     return m
 }
+// Gets the fido2Methods property value. 
 func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethod) {
     if m == nil {
         return nil
@@ -24,6 +31,7 @@ func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethod) {
         return m.fido2Methods
     }
 }
+// Gets the methods property value. 
 func (m *Authentication) GetMethods()([]AuthenticationMethod) {
     if m == nil {
         return nil
@@ -31,6 +39,7 @@ func (m *Authentication) GetMethods()([]AuthenticationMethod) {
         return m.methods
     }
 }
+// Gets the microsoftAuthenticatorMethods property value. 
 func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthenticatorAuthenticationMethod) {
     if m == nil {
         return nil
@@ -38,6 +47,7 @@ func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthentic
         return m.microsoftAuthenticatorMethods
     }
 }
+// Gets the windowsHelloForBusinessMethods property value. 
 func (m *Authentication) GetWindowsHelloForBusinessMethods()([]WindowsHelloForBusinessAuthenticationMethod) {
     if m == nil {
         return nil
@@ -45,6 +55,7 @@ func (m *Authentication) GetWindowsHelloForBusinessMethods()([]WindowsHelloForBu
         return m.windowsHelloForBusinessMethods
     }
 }
+// The deserialization information for the current model
 func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["fido2Methods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,6 +111,9 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *Authentication) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -151,15 +165,27 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
+// Sets the fido2Methods property value. 
+// Parameters:
+//  - value : Value to set for the fido2Methods property.
 func (m *Authentication) SetFido2Methods(value []Fido2AuthenticationMethod)() {
     m.fido2Methods = value
 }
+// Sets the methods property value. 
+// Parameters:
+//  - value : Value to set for the methods property.
 func (m *Authentication) SetMethods(value []AuthenticationMethod)() {
     m.methods = value
 }
+// Sets the microsoftAuthenticatorMethods property value. 
+// Parameters:
+//  - value : Value to set for the microsoftAuthenticatorMethods property.
 func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethod)() {
     m.microsoftAuthenticatorMethods = value
 }
+// Sets the windowsHelloForBusinessMethods property value. 
+// Parameters:
+//  - value : Value to set for the windowsHelloForBusinessMethods property.
 func (m *Authentication) SetWindowsHelloForBusinessMethods(value []WindowsHelloForBusinessAuthenticationMethod)() {
     m.windowsHelloForBusinessMethods = value
 }

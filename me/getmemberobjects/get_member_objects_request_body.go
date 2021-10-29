@@ -4,16 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
+// 
 type GetMemberObjectsRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     securityEnabledOnly *bool;
 }
+// Instantiates a new getMemberObjectsRequestBody and sets the default values.
 func NewGetMemberObjectsRequestBody()(*GetMemberObjectsRequestBody) {
     m := &GetMemberObjectsRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetMemberObjectsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -21,6 +26,7 @@ func (m *GetMemberObjectsRequestBody) GetAdditionalData()(map[string]interface{}
         return m.additionalData
     }
 }
+// Gets the securityEnabledOnly property value. 
 func (m *GetMemberObjectsRequestBody) GetSecurityEnabledOnly()(*bool) {
     if m == nil {
         return nil
@@ -28,6 +34,7 @@ func (m *GetMemberObjectsRequestBody) GetSecurityEnabledOnly()(*bool) {
         return m.securityEnabledOnly
     }
 }
+// The deserialization information for the current model
 func (m *GetMemberObjectsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["securityEnabledOnly"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -43,6 +50,9 @@ func (m *GetMemberObjectsRequestBody) GetFieldDeserializers()(map[string]func(in
 func (m *GetMemberObjectsRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *GetMemberObjectsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("securityEnabledOnly", m.GetSecurityEnabledOnly())
@@ -58,9 +68,15 @@ func (m *GetMemberObjectsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *GetMemberObjectsRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the securityEnabledOnly property value. 
+// Parameters:
+//  - value : Value to set for the securityEnabledOnly property.
 func (m *GetMemberObjectsRequestBody) SetSecurityEnabledOnly(value *bool)() {
     m.securityEnabledOnly = value
 }

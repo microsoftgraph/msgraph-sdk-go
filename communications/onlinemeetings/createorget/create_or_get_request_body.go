@@ -6,21 +6,31 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
+// 
 type CreateOrGetRequestBody struct {
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
+    // 
     chatInfo *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatInfo;
+    // 
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
     externalId *string;
+    // 
     participants *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingParticipants;
+    // 
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // 
     subject *string;
 }
+// Instantiates a new createOrGetRequestBody and sets the default values.
 func NewCreateOrGetRequestBody()(*CreateOrGetRequestBody) {
     m := &CreateOrGetRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
+// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateOrGetRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,6 +38,7 @@ func (m *CreateOrGetRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
+// Gets the chatInfo property value. 
 func (m *CreateOrGetRequestBody) GetChatInfo()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatInfo) {
     if m == nil {
         return nil
@@ -35,6 +46,7 @@ func (m *CreateOrGetRequestBody) GetChatInfo()(*i4a838ef194e4c99e9f2c63ba10dab9c
         return m.chatInfo
     }
 }
+// Gets the endDateTime property value. 
 func (m *CreateOrGetRequestBody) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -42,6 +54,7 @@ func (m *CreateOrGetRequestBody) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad
         return m.endDateTime
     }
 }
+// Gets the externalId property value. 
 func (m *CreateOrGetRequestBody) GetExternalId()(*string) {
     if m == nil {
         return nil
@@ -49,6 +62,7 @@ func (m *CreateOrGetRequestBody) GetExternalId()(*string) {
         return m.externalId
     }
 }
+// Gets the participants property value. 
 func (m *CreateOrGetRequestBody) GetParticipants()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingParticipants) {
     if m == nil {
         return nil
@@ -56,6 +70,7 @@ func (m *CreateOrGetRequestBody) GetParticipants()(*i4a838ef194e4c99e9f2c63ba10d
         return m.participants
     }
 }
+// Gets the startDateTime property value. 
 func (m *CreateOrGetRequestBody) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -63,6 +78,7 @@ func (m *CreateOrGetRequestBody) GetStartDateTime()(*i336074805fc853987abe6f7fe3
         return m.startDateTime
     }
 }
+// Gets the subject property value. 
 func (m *CreateOrGetRequestBody) GetSubject()(*string) {
     if m == nil {
         return nil
@@ -70,6 +86,7 @@ func (m *CreateOrGetRequestBody) GetSubject()(*string) {
         return m.subject
     }
 }
+// The deserialization information for the current model
 func (m *CreateOrGetRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["chatInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,6 +142,9 @@ func (m *CreateOrGetRequestBody) GetFieldDeserializers()(map[string]func(interfa
 func (m *CreateOrGetRequestBody) IsNil()(bool) {
     return m == nil
 }
+// Serializes information the current object
+// Parameters:
+//  - writer : Serialization writer to use to serialize this model
 func (m *CreateOrGetRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("chatInfo", m.GetChatInfo())
@@ -170,24 +190,45 @@ func (m *CreateOrGetRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
+// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// Parameters:
+//  - value : Value to set for the AdditionalData property.
 func (m *CreateOrGetRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
+// Sets the chatInfo property value. 
+// Parameters:
+//  - value : Value to set for the chatInfo property.
 func (m *CreateOrGetRequestBody) SetChatInfo(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatInfo)() {
     m.chatInfo = value
 }
+// Sets the endDateTime property value. 
+// Parameters:
+//  - value : Value to set for the endDateTime property.
 func (m *CreateOrGetRequestBody) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
+// Sets the externalId property value. 
+// Parameters:
+//  - value : Value to set for the externalId property.
 func (m *CreateOrGetRequestBody) SetExternalId(value *string)() {
     m.externalId = value
 }
+// Sets the participants property value. 
+// Parameters:
+//  - value : Value to set for the participants property.
 func (m *CreateOrGetRequestBody) SetParticipants(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingParticipants)() {
     m.participants = value
 }
+// Sets the startDateTime property value. 
+// Parameters:
+//  - value : Value to set for the startDateTime property.
 func (m *CreateOrGetRequestBody) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
+// Sets the subject property value. 
+// Parameters:
+//  - value : Value to set for the subject property.
 func (m *CreateOrGetRequestBody) SetSubject(value *string)() {
     m.subject = value
 }

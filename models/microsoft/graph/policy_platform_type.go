@@ -3,26 +3,29 @@ import (
     "strings"
     "errors"
 )
+// 
 type PolicyPlatformType int
 
 const (
     ANDROID_POLICYPLATFORMTYPE PolicyPlatformType = iota
+    ANDROIDFORWORK_POLICYPLATFORMTYPE
     IOS_POLICYPLATFORMTYPE
     MACOS_POLICYPLATFORMTYPE
     WINDOWSPHONE81_POLICYPLATFORMTYPE
     WINDOWS81ANDLATER_POLICYPLATFORMTYPE
     WINDOWS10ANDLATER_POLICYPLATFORMTYPE
-    ANDROIDWORKPROFILE_POLICYPLATFORMTYPE
     ALL_POLICYPLATFORMTYPE
 )
 
 func (i PolicyPlatformType) String() string {
-    return []string{"ANDROID", "IOS", "MACOS", "WINDOWSPHONE81", "WINDOWS81ANDLATER", "WINDOWS10ANDLATER", "ANDROIDWORKPROFILE", "ALL"}[i]
+    return []string{"ANDROID", "ANDROIDFORWORK", "IOS", "MACOS", "WINDOWSPHONE81", "WINDOWS81ANDLATER", "WINDOWS10ANDLATER", "ALL"}[i]
 }
 func ParsePolicyPlatformType(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
         case "ANDROID":
             return ANDROID_POLICYPLATFORMTYPE, nil
+        case "ANDROIDFORWORK":
+            return ANDROIDFORWORK_POLICYPLATFORMTYPE, nil
         case "IOS":
             return IOS_POLICYPLATFORMTYPE, nil
         case "MACOS":
@@ -33,8 +36,6 @@ func ParsePolicyPlatformType(v string) (interface{}, error) {
             return WINDOWS81ANDLATER_POLICYPLATFORMTYPE, nil
         case "WINDOWS10ANDLATER":
             return WINDOWS10ANDLATER_POLICYPLATFORMTYPE, nil
-        case "ANDROIDWORKPROFILE":
-            return ANDROIDWORKPROFILE_POLICYPLATFORMTYPE, nil
         case "ALL":
             return ALL_POLICYPLATFORMTYPE, nil
     }
