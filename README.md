@@ -81,7 +81,7 @@ To retrieve the user's drive:
 result, err := client
   .Me()
   .Drive()
-  .Get(nil, nil, nil, nil)
+  .Get(nil)
 if err != nil {
     fmt.Printf("Error getting the drive: %v\n", err)
 }
