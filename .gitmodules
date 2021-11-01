@@ -1,3 +1,0 @@
-[submodule "core"]
-	path = core
-	url = https://github.com/microsoftgraph/msgraph-sdk-go-core.git
