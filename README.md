@@ -11,8 +11,8 @@ Get started with the Microsoft Graph SDK for Go by integrating the [Microsoft Gr
 ## 1. Installation
 
 ```Shell
-go get github.com/microsoftgraph/msgraph-sdk-go
-go get github.com/Azure/azure-sdk-for-go/sdk/azidentity
+go get -u github.com/microsoftgraph/msgraph-sdk-go
+go get -u github.com/Azure/azure-sdk-for-go/sdk/azidentity
 ```
 
 ## 2. Getting started
