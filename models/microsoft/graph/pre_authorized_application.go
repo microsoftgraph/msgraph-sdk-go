@@ -62,7 +62,7 @@ func (m *PreAuthorizedApplication) GetFieldDeserializers()(map[string]func(inter
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetDelegatedPermissionIds(res)
         return nil

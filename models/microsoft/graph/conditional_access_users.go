@@ -94,7 +94,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetExcludeGroups(res)
         return nil
@@ -106,7 +106,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetExcludeRoles(res)
         return nil
@@ -118,7 +118,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetExcludeUsers(res)
         return nil
@@ -130,7 +130,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetIncludeGroups(res)
         return nil
@@ -142,7 +142,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetIncludeRoles(res)
         return nil
@@ -154,7 +154,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetIncludeUsers(res)
         return nil

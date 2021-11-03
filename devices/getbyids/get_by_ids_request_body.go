@@ -54,7 +54,7 @@ func (m *GetByIdsRequestBody) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetIds(res)
         return nil
@@ -66,7 +66,7 @@ func (m *GetByIdsRequestBody) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetTypes(res)
         return nil

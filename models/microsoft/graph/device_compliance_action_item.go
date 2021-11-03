@@ -82,7 +82,7 @@ func (m *DeviceComplianceActionItem) GetFieldDeserializers()(map[string]func(int
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetNotificationMessageCCList(res)
         return nil

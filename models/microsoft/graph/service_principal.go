@@ -495,7 +495,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetAlternativeNames(res)
         return nil
@@ -739,7 +739,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetNotificationEmailAddresses(res)
         return nil
@@ -827,7 +827,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetReplyUrls(res)
         return nil
@@ -847,7 +847,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetServicePrincipalNames(res)
         return nil
@@ -875,7 +875,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetTags(res)
         return nil

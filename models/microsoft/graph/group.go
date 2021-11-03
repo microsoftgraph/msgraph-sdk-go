@@ -876,7 +876,7 @@ func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetGroupTypes(res)
         return nil
@@ -1156,7 +1156,7 @@ func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetProxyAddresses(res)
         return nil

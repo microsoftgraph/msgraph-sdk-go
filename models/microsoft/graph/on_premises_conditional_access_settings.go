@@ -73,7 +73,7 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetExcludedGroups(res)
         return nil
@@ -85,7 +85,7 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetIncludedGroups(res)
         return nil

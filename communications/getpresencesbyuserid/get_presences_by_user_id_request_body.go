@@ -44,7 +44,7 @@ func (m *GetPresencesByUserIdRequestBody) GetFieldDeserializers()(map[string]fun
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetIds(res)
         return nil

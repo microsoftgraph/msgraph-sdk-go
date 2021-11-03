@@ -268,7 +268,7 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetOrganization(res)
         return nil
@@ -328,7 +328,7 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSubdivision(res)
         return nil
@@ -340,7 +340,7 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSubunit(res)
         return nil
