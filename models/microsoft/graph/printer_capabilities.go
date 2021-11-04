@@ -284,7 +284,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]int32, len(val))
         for i, v := range val {
-            res[i] = v.(int32)
+            res[i] = *(v.(*int32))
         }
         m.SetBottomMargins(res)
         return nil
@@ -316,7 +316,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetContentTypes(res)
         return nil
@@ -336,7 +336,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]int32, len(val))
         for i, v := range val {
-            res[i] = v.(int32)
+            res[i] = *(v.(*int32))
         }
         m.SetDpis(res)
         return nil
@@ -384,7 +384,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetInputBins(res)
         return nil
@@ -412,7 +412,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]int32, len(val))
         for i, v := range val {
-            res[i] = v.(int32)
+            res[i] = *(v.(*int32))
         }
         m.SetLeftMargins(res)
         return nil
@@ -424,7 +424,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetMediaColors(res)
         return nil
@@ -436,7 +436,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetMediaSizes(res)
         return nil
@@ -448,7 +448,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetMediaTypes(res)
         return nil
@@ -484,7 +484,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetOutputBins(res)
         return nil
@@ -496,7 +496,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]int32, len(val))
         for i, v := range val {
-            res[i] = v.(int32)
+            res[i] = *(v.(*int32))
         }
         m.SetPagesPerSheet(res)
         return nil
@@ -520,7 +520,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]int32, len(val))
         for i, v := range val {
-            res[i] = v.(int32)
+            res[i] = *(v.(*int32))
         }
         m.SetRightMargins(res)
         return nil
@@ -552,7 +552,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]int32, len(val))
         for i, v := range val {
-            res[i] = v.(int32)
+            res[i] = *(v.(*int32))
         }
         m.SetTopMargins(res)
         return nil

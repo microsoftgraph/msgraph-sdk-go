@@ -86,7 +86,7 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetCustomAuthenticationFactors(res)
         return nil
@@ -106,7 +106,7 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetTermsOfUse(res)
         return nil

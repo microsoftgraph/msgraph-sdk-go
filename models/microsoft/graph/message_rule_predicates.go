@@ -334,7 +334,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetBodyContains(res)
         return nil
@@ -346,7 +346,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetBodyOrSubjectContains(res)
         return nil
@@ -358,7 +358,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetCategories(res)
         return nil
@@ -390,7 +390,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetHeaderContains(res)
         return nil
@@ -516,7 +516,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRecipientContains(res)
         return nil
@@ -528,7 +528,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSenderContains(res)
         return nil
@@ -593,7 +593,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSubjectContains(res)
         return nil

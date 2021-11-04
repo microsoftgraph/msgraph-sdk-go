@@ -105,7 +105,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetCategories(res)
         return nil
@@ -157,7 +157,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSupportedProvisioningTypes(res)
         return nil
@@ -169,7 +169,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSupportedSingleSignOnModes(res)
         return nil

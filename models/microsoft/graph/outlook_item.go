@@ -66,7 +66,7 @@ func (m *OutlookItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetCategories(res)
         return nil

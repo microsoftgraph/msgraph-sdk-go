@@ -54,7 +54,7 @@ func (m *ResourceAction) GetFieldDeserializers()(map[string]func(interface{}, i0
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetAllowedResourceActions(res)
         return nil
@@ -66,7 +66,7 @@ func (m *ResourceAction) GetFieldDeserializers()(map[string]func(interface{}, i0
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetNotAllowedResourceActions(res)
         return nil

@@ -104,7 +104,7 @@ func (m *GetCachedReportRequestBody) GetFieldDeserializers()(map[string]func(int
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetGroupBy(res)
         return nil
@@ -124,7 +124,7 @@ func (m *GetCachedReportRequestBody) GetFieldDeserializers()(map[string]func(int
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetOrderBy(res)
         return nil
@@ -144,7 +144,7 @@ func (m *GetCachedReportRequestBody) GetFieldDeserializers()(map[string]func(int
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSelect_escaped(res)
         return nil

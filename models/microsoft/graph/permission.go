@@ -216,7 +216,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRoles(res)
         return nil

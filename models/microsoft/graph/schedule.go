@@ -396,7 +396,7 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetWorkforceIntegrationIds(res)
         return nil

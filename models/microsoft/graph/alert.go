@@ -488,7 +488,7 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetComments(res)
         return nil
@@ -524,7 +524,7 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetDetectionIds(res)
         return nil
@@ -589,7 +589,7 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetIncidentIds(res)
         return nil
@@ -677,7 +677,7 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetRecommendedActions(res)
         return nil
@@ -722,7 +722,7 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetSourceMaterials(res)
         return nil
@@ -743,7 +743,7 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetTags(res)
         return nil

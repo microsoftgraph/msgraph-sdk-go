@@ -92,7 +92,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetEnforcedGrantControls(res)
         return nil
@@ -104,7 +104,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         res := make([]string, len(val))
         for i, v := range val {
-            res[i] = v.(string)
+            res[i] = *(v.(*string))
         }
         m.SetEnforcedSessionControls(res)
         return nil
