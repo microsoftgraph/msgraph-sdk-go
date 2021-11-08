@@ -32,7 +32,7 @@ type GetYammerDeviceUsageUserDetailWithPeriodRequestBuilderGetOptions struct {
 func NewGetYammerDeviceUsageUserDetailWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetYammerDeviceUsageUserDetailWithPeriodRequestBuilder) {
     m := &GetYammerDeviceUsageUserDetailWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/reports/microsoft.graph.getYammerDeviceUsageUserDetail(period='{period}')";
+    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getYammerDeviceUsageUserDetail(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

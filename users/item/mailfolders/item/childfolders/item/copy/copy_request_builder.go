@@ -109,7 +109,7 @@ func (m *CopyResponse) SetMailFolder(value *i4a838ef194e4c99e9f2c63ba10dab9cb120
 func NewCopyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CopyRequestBuilder) {
     m := &CopyRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/users/{user_id}/mailFolders/{mailFolder_id}/childFolders/{mailFolder_id1}/microsoft.graph.copy";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/mailFolders/{mailFolder_id}/childFolders/{mailFolder_id1}/microsoft.graph.copy";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

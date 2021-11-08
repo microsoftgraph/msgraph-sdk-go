@@ -107,7 +107,7 @@ func (m *PreviewResponse) SetOnenotePagePreview(value *i4a838ef194e4c99e9f2c63ba
 func NewPreviewRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PreviewRequestBuilder) {
     m := &PreviewRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/groups/{group_id}/onenote/notebooks/{notebook_id}/sections/{onenoteSection_id}/pages/{onenotePage_id}/microsoft.graph.preview()";
+    m.urlTemplate = "{+baseurl}/groups/{group_id}/onenote/notebooks/{notebook_id}/sections/{onenoteSection_id}/pages/{onenotePage_id}/microsoft.graph.preview()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

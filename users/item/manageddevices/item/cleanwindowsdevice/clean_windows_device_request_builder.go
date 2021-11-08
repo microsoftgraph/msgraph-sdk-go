@@ -31,7 +31,7 @@ type CleanWindowsDeviceRequestBuilderPostOptions struct {
 func NewCleanWindowsDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CleanWindowsDeviceRequestBuilder) {
     m := &CleanWindowsDeviceRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/users/{user_id}/managedDevices/{managedDevice_id}/microsoft.graph.cleanWindowsDevice";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/managedDevices/{managedDevice_id}/microsoft.graph.cleanWindowsDevice";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

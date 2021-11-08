@@ -40,7 +40,7 @@ type ContentRequestBuilderPutOptions struct {
 func NewContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContentRequestBuilder) {
     m := &ContentRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/me/onenote/pages/{onenotePage_id}/parentSection/pages/{onenotePage_id1}/content";
+    m.urlTemplate = "{+baseurl}/me/onenote/pages/{onenotePage_id}/parentSection/pages/{onenotePage_id1}/content";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

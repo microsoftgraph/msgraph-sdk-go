@@ -61,7 +61,7 @@ type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchOptions struct 
 func NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) {
     m := &IdentitySecurityDefaultsEnforcementPolicyRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/policies/identitySecurityDefaultsEnforcementPolicy{?select,expand}";
+    m.urlTemplate = "{+baseurl}/policies/identitySecurityDefaultsEnforcementPolicy{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

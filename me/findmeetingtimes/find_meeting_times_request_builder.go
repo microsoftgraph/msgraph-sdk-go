@@ -109,7 +109,7 @@ func (m *FindMeetingTimesResponse) SetMeetingTimeSuggestionsResult(value *i4a838
 func NewFindMeetingTimesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FindMeetingTimesRequestBuilder) {
     m := &FindMeetingTimesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/me/microsoft.graph.findMeetingTimes";
+    m.urlTemplate = "{+baseurl}/me/microsoft.graph.findMeetingTimes";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

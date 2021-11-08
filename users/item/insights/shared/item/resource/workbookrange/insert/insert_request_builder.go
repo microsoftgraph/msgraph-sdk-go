@@ -109,7 +109,7 @@ func (m *InsertResponse) SetWorkbookRange(value *i4a838ef194e4c99e9f2c63ba10dab9
 func NewInsertRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InsertRequestBuilder) {
     m := &InsertRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/users/{user_id}/insights/shared/{sharedInsight_id}/resource/microsoft.graph.workbookRange/microsoft.graph.insert";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/insights/shared/{sharedInsight_id}/resource/microsoft.graph.workbookRange/microsoft.graph.insert";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

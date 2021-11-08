@@ -109,7 +109,7 @@ func (m *MoveResponse) SetMessage(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89
 func NewMoveRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MoveRequestBuilder) {
     m := &MoveRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/users/{user_id}/messages/{message_id}/microsoft.graph.move";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/messages/{message_id}/microsoft.graph.move";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

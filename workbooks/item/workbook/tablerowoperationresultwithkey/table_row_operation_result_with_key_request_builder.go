@@ -108,7 +108,7 @@ func (m *TableRowOperationResultWithKeyResponse) SetWorkbookTableRow(value *i4a8
 func NewTableRowOperationResultWithKeyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, key *string)(*TableRowOperationResultWithKeyRequestBuilder) {
     m := &TableRowOperationResultWithKeyRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/workbooks/{driveItem_id}/workbook/microsoft.graph.tableRowOperationResult(key='{key}')";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/microsoft.graph.tableRowOperationResult(key='{key}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

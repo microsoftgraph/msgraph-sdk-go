@@ -30,7 +30,7 @@ type CheckGrantedPermissionsForAppRequestBuilderPostOptions struct {
 func NewCheckGrantedPermissionsForAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CheckGrantedPermissionsForAppRequestBuilder) {
     m := &CheckGrantedPermissionsForAppRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/groups/{group_id}/microsoft.graph.checkGrantedPermissionsForApp";
+    m.urlTemplate = "{+baseurl}/groups/{group_id}/microsoft.graph.checkGrantedPermissionsForApp";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

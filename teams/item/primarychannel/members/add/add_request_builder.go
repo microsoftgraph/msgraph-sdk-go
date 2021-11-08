@@ -32,7 +32,7 @@ type AddRequestBuilderPostOptions struct {
 func NewAddRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddRequestBuilder) {
     m := &AddRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/teams/{team_id}/primaryChannel/members/microsoft.graph.add";
+    m.urlTemplate = "{+baseurl}/teams/{team_id}/primaryChannel/members/microsoft.graph.add";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

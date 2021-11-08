@@ -81,7 +81,7 @@ func (m *DriveRequestBuilder) BundlesById(id string)(*i196a6eae213268ad216785949
 func NewDriveRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveRequestBuilder) {
     m := &DriveRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/drive{?select,expand}";
+    m.urlTemplate = "{+baseurl}/drive{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

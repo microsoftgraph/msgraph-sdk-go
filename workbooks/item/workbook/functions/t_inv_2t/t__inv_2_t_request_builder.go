@@ -109,7 +109,7 @@ func (m *T_Inv_2TResponse) SetWorkbookFunctionResult(value *i4a838ef194e4c99e9f2
 func NewT_Inv_2TRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*T_Inv_2TRequestBuilder) {
     m := &T_Inv_2TRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.t_Inv_2T";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/functions/microsoft.graph.t_Inv_2T";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

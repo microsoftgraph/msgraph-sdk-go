@@ -50,7 +50,7 @@ func (m *BaseRequestBuilder) AssociateWithHubSites()(*iab46021f29f0137c239df1579
 func NewBaseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BaseRequestBuilder) {
     m := &BaseRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/shares/{sharedDriveItem_id}/list/contentTypes/{contentType_id}/base{?select,expand}";
+    m.urlTemplate = "{+baseurl}/shares/{sharedDriveItem_id}/list/contentTypes/{contentType_id}/base{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

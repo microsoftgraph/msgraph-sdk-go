@@ -32,7 +32,7 @@ type GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetOptions struct {
 func NewGetOffice365ServicesUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetOffice365ServicesUserCountsWithPeriodRequestBuilder) {
     m := &GetOffice365ServicesUserCountsWithPeriodRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/reports/microsoft.graph.getOffice365ServicesUserCounts(period='{period}')";
+    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getOffice365ServicesUserCounts(period='{period}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

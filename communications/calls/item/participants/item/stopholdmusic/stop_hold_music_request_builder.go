@@ -109,7 +109,7 @@ func (m *StopHoldMusicResponse) SetStopHoldMusicOperation(value *i4a838ef194e4c9
 func NewStopHoldMusicRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StopHoldMusicRequestBuilder) {
     m := &StopHoldMusicRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/communications/calls/{call_id}/participants/{participant_id}/microsoft.graph.stopHoldMusic";
+    m.urlTemplate = "{+baseurl}/communications/calls/{call_id}/participants/{participant_id}/microsoft.graph.stopHoldMusic";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

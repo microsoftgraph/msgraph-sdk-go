@@ -30,7 +30,7 @@ type AllowedCalendarSharingRolesWithUserRequestBuilderGetOptions struct {
 func NewAllowedCalendarSharingRolesWithUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, user *string)(*AllowedCalendarSharingRolesWithUserRequestBuilder) {
     m := &AllowedCalendarSharingRolesWithUserRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/me/events/{event_id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')";
+    m.urlTemplate = "{+baseurl}/me/events/{event_id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

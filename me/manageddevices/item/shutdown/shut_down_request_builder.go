@@ -29,7 +29,7 @@ type ShutDownRequestBuilderPostOptions struct {
 func NewShutDownRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ShutDownRequestBuilder) {
     m := &ShutDownRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/me/managedDevices/{managedDevice_id}/microsoft.graph.shutDown";
+    m.urlTemplate = "{+baseurl}/me/managedDevices/{managedDevice_id}/microsoft.graph.shutDown";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

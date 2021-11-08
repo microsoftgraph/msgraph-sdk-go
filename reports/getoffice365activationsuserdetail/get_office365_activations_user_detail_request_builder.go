@@ -31,7 +31,7 @@ type GetOffice365ActivationsUserDetailRequestBuilderGetOptions struct {
 func NewGetOffice365ActivationsUserDetailRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetOffice365ActivationsUserDetailRequestBuilder) {
     m := &GetOffice365ActivationsUserDetailRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/reports/microsoft.graph.getOffice365ActivationsUserDetail()";
+    m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getOffice365ActivationsUserDetail()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -72,7 +72,7 @@ func (m *EventRequestBuilder) Cancel()(*if13bf5db4c861d2c48743a82cb0fd3db30f4e2e
 func NewEventRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventRequestBuilder) {
     m := &EventRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/groups/{group_id}/calendar/events/{event_id}/instances/{event_id1}{?select}";
+    m.urlTemplate = "{+baseurl}/groups/{group_id}/calendar/events/{event_id}/instances/{event_id1}{?select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -63,7 +63,7 @@ type OnenoteSectionRequestBuilderPatchOptions struct {
 func NewOnenoteSectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenoteSectionRequestBuilder) {
     m := &OnenoteSectionRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/sites/{site_id}/onenote/sectionGroups/{sectionGroup_id}/sections/{onenoteSection_id}/parentNotebook/sections/{onenoteSection_id1}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/sites/{site_id}/onenote/sectionGroups/{sectionGroup_id}/sections/{onenoteSection_id}/parentNotebook/sections/{onenoteSection_id1}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

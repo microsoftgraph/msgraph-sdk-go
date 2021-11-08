@@ -29,7 +29,7 @@ type DismissReminderRequestBuilderPostOptions struct {
 func NewDismissReminderRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DismissReminderRequestBuilder) {
     m := &DismissReminderRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/groups/{group_id}/calendar/calendarView/{event_id}/instances/{event_id1}/microsoft.graph.dismissReminder";
+    m.urlTemplate = "{+baseurl}/groups/{group_id}/calendar/calendarView/{event_id}/instances/{event_id1}/microsoft.graph.dismissReminder";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

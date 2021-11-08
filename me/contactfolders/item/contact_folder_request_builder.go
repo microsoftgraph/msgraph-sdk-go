@@ -83,7 +83,7 @@ func (m *ContactFolderRequestBuilder) ChildFoldersById(id string)(*i7b320e3aa4ff
 func NewContactFolderRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactFolderRequestBuilder) {
     m := &ContactFolderRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/me/contactFolders/{contactFolder_id}{?select}";
+    m.urlTemplate = "{+baseurl}/me/contactFolders/{contactFolder_id}{?select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

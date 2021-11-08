@@ -61,7 +61,7 @@ type DeviceCategoryRequestBuilderPatchOptions struct {
 func NewDeviceCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCategoryRequestBuilder) {
     m := &DeviceCategoryRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/users/{user_id}/managedDevices/{managedDevice_id}/deviceCategory{?select,expand}";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/managedDevices/{managedDevice_id}/deviceCategory{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

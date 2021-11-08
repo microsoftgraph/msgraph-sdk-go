@@ -54,7 +54,7 @@ type TeamworkRequestBuilderPatchOptions struct {
 func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamworkRequestBuilder) {
     m := &TeamworkRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/teamwork{?select,expand}";
+    m.urlTemplate = "{+baseurl}/teamwork{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
