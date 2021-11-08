@@ -109,7 +109,7 @@ func (m *ColumnsBeforeWithCountResponse) SetWorkbookRange(value *i4a838ef194e4c9
 func NewColumnsBeforeWithCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, count *int32)(*ColumnsBeforeWithCountRequestBuilder) {
     m := &ColumnsBeforeWithCountRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/users/{user_id}/insights/trending/{trending_id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsBefore(count={count})";
+    m.urlTemplate = "{+baseurl}/users/{user_id}/insights/trending/{trending_id}/resource/microsoft.graph.workbookRange/microsoft.graph.columnsBefore(count={count})";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

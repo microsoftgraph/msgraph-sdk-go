@@ -61,7 +61,7 @@ type InstancesRequestBuilderPostOptions struct {
 func NewInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InstancesRequestBuilder) {
     m := &InstancesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/groups/{group_id}/calendar/calendarView/{event_id}/instances{?top,skip,filter,count,orderby,select}";
+    m.urlTemplate = "{+baseurl}/groups/{group_id}/calendar/calendarView/{event_id}/instances{?top,skip,filter,count,orderby,select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

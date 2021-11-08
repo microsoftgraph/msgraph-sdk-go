@@ -31,7 +31,7 @@ type ClearPresenceRequestBuilderPostOptions struct {
 func NewClearPresenceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClearPresenceRequestBuilder) {
     m := &ClearPresenceRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/communications/presences/{presence_id}/microsoft.graph.clearPresence";
+    m.urlTemplate = "{+baseurl}/communications/presences/{presence_id}/microsoft.graph.clearPresence";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

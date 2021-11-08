@@ -65,7 +65,7 @@ func (m *OnlineMeetingRequestBuilder) AttendeeReport()(*i7913b0f1f531b37f2b2d8ab
 func NewOnlineMeetingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnlineMeetingRequestBuilder) {
     m := &OnlineMeetingRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/me/onlineMeetings/{onlineMeeting_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me/onlineMeetings/{onlineMeeting_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

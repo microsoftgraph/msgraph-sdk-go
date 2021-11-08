@@ -30,7 +30,7 @@ type GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderGetOptio
 func NewGetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, secretReferenceValueId *string)(*GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder) {
     m := &GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/deviceManagement/deviceConfigurations/{deviceConfiguration_id}/microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId='{secretReferenceValueId}')";
+    m.urlTemplate = "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration_id}/microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId='{secretReferenceValueId}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

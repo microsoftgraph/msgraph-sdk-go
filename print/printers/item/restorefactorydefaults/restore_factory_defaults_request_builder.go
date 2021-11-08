@@ -29,7 +29,7 @@ type RestoreFactoryDefaultsRequestBuilderPostOptions struct {
 func NewRestoreFactoryDefaultsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RestoreFactoryDefaultsRequestBuilder) {
     m := &RestoreFactoryDefaultsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/print/printers/{printer_id}/microsoft.graph.restoreFactoryDefaults";
+    m.urlTemplate = "{+baseurl}/print/printers/{printer_id}/microsoft.graph.restoreFactoryDefaults";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

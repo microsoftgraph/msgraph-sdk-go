@@ -32,7 +32,7 @@ type GetPresencesByUserIdRequestBuilderPostOptions struct {
 func NewGetPresencesByUserIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetPresencesByUserIdRequestBuilder) {
     m := &GetPresencesByUserIdRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/communications/microsoft.graph.getPresencesByUserId";
+    m.urlTemplate = "{+baseurl}/communications/microsoft.graph.getPresencesByUserId";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

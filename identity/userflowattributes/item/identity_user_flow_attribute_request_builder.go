@@ -61,7 +61,7 @@ type IdentityUserFlowAttributeRequestBuilderPatchOptions struct {
 func NewIdentityUserFlowAttributeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityUserFlowAttributeRequestBuilder) {
     m := &IdentityUserFlowAttributeRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/identity/userFlowAttributes/{identityUserFlowAttribute_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identity/userFlowAttributes/{identityUserFlowAttribute_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

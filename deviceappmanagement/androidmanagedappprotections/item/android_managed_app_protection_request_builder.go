@@ -80,7 +80,7 @@ func (m *AndroidManagedAppProtectionRequestBuilder) AppsById(id string)(*i8c7499
 func NewAndroidManagedAppProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AndroidManagedAppProtectionRequestBuilder) {
     m := &AndroidManagedAppProtectionRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/deviceAppManagement/androidManagedAppProtections/{androidManagedAppProtection_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/androidManagedAppProtections/{androidManagedAppProtection_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

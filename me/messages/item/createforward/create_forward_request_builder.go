@@ -109,7 +109,7 @@ func (m *CreateForwardResponse) SetMessage(value *i4a838ef194e4c99e9f2c63ba10dab
 func NewCreateForwardRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateForwardRequestBuilder) {
     m := &CreateForwardRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/me/messages/{message_id}/microsoft.graph.createForward";
+    m.urlTemplate = "{+baseurl}/me/messages/{message_id}/microsoft.graph.createForward";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

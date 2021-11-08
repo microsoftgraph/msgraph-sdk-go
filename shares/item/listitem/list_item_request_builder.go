@@ -71,7 +71,7 @@ func (m *ListItemRequestBuilder) Analytics()(*i2ca2c646c48632855b77497ed7674e192
 func NewListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ListItemRequestBuilder) {
     m := &ListItemRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/shares/{sharedDriveItem_id}/listItem{?select,expand}";
+    m.urlTemplate = "{+baseurl}/shares/{sharedDriveItem_id}/listItem{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

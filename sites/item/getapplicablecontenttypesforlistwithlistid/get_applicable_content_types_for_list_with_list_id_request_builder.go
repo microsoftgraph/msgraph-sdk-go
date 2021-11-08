@@ -31,7 +31,7 @@ type GetApplicableContentTypesForListWithListIdRequestBuilderGetOptions struct {
 func NewGetApplicableContentTypesForListWithListIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, listId *string)(*GetApplicableContentTypesForListWithListIdRequestBuilder) {
     m := &GetApplicableContentTypesForListWithListIdRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/sites/{site_id}/microsoft.graph.getApplicableContentTypesForList(listId='{listId}')";
+    m.urlTemplate = "{+baseurl}/sites/{site_id}/microsoft.graph.getApplicableContentTypesForList(listId='{listId}')";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

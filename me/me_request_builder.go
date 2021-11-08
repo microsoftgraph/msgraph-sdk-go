@@ -254,7 +254,7 @@ func (m *MeRequestBuilder) CheckMemberObjects()(*i6f81259ff975e6273be10a39dd1ba9
 func NewMeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MeRequestBuilder) {
     m := &MeRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/me{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

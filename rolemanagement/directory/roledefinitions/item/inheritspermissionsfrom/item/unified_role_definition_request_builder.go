@@ -61,7 +61,7 @@ type UnifiedRoleDefinitionRequestBuilderPatchOptions struct {
 func NewUnifiedRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleDefinitionRequestBuilder) {
     m := &UnifiedRoleDefinitionRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition_id}/inheritsPermissionsFrom/{unifiedRoleDefinition_id1}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition_id}/inheritsPermissionsFrom/{unifiedRoleDefinition_id1}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

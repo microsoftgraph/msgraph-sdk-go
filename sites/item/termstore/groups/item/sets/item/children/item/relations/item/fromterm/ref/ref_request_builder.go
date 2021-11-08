@@ -49,7 +49,7 @@ type RefRequestBuilderPutOptions struct {
 func NewRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RefRequestBuilder) {
     m := &RefRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/sites/{site_id}/termStore/groups/{group_id}/sets/{set_id}/children/{term_id}/relations/{relation_id}/fromTerm/$ref";
+    m.urlTemplate = "{+baseurl}/sites/{site_id}/termStore/groups/{group_id}/sets/{set_id}/children/{term_id}/relations/{relation_id}/fromTerm/$ref";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

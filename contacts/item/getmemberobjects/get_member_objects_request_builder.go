@@ -31,7 +31,7 @@ type GetMemberObjectsRequestBuilderPostOptions struct {
 func NewGetMemberObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetMemberObjectsRequestBuilder) {
     m := &GetMemberObjectsRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/contacts/{orgContact_id}/microsoft.graph.getMemberObjects";
+    m.urlTemplate = "{+baseurl}/contacts/{orgContact_id}/microsoft.graph.getMemberObjects";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

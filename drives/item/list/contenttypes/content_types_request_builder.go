@@ -68,7 +68,7 @@ func (m *ContentTypesRequestBuilder) AddCopy()(*ic85b9a0b5d6ee30e1b203203779a0fb
 func NewContentTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContentTypesRequestBuilder) {
     m := &ContentTypesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/drives/{drive_id}/list/contentTypes{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/drives/{drive_id}/list/contentTypes{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

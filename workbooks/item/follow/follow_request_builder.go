@@ -107,7 +107,7 @@ func (m *FollowResponse) SetDriveItem(value *i4a838ef194e4c99e9f2c63ba10dab9cb12
 func NewFollowRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FollowRequestBuilder) {
     m := &FollowRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/workbooks/{driveItem_id}/microsoft.graph.follow";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/microsoft.graph.follow";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

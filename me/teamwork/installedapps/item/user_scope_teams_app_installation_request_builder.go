@@ -65,7 +65,7 @@ func (m *UserScopeTeamsAppInstallationRequestBuilder) Chat()(*i82ae2e3b126b0e2c2
 func NewUserScopeTeamsAppInstallationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserScopeTeamsAppInstallationRequestBuilder) {
     m := &UserScopeTeamsAppInstallationRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/me/teamwork/installedApps/{userScopeTeamsAppInstallation_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me/teamwork/installedApps/{userScopeTeamsAppInstallation_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

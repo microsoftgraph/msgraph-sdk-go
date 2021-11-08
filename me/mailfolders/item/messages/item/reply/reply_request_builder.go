@@ -31,7 +31,7 @@ type ReplyRequestBuilderPostOptions struct {
 func NewReplyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReplyRequestBuilder) {
     m := &ReplyRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/me/mailFolders/{mailFolder_id}/messages/{message_id}/microsoft.graph.reply";
+    m.urlTemplate = "{+baseurl}/me/mailFolders/{mailFolder_id}/messages/{message_id}/microsoft.graph.reply";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

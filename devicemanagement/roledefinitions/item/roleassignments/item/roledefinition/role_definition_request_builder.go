@@ -42,7 +42,7 @@ type RoleDefinitionRequestBuilderGetQueryParameters struct {
 func NewRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleDefinitionRequestBuilder) {
     m := &RoleDefinitionRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/deviceManagement/roleDefinitions/{roleDefinition_id}/roleAssignments/{roleAssignment_id}/roleDefinition{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/roleDefinitions/{roleDefinition_id}/roleAssignments/{roleAssignment_id}/roleDefinition{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

@@ -69,7 +69,7 @@ func (m *SitesRequestBuilder) Add()(*i04168ffe2353eecc18b03924033a8b3a497518b96d
 func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SitesRequestBuilder) {
     m := &SitesRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/sites{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/sites{?top,skip,search,filter,count,orderby,select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

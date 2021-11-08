@@ -72,7 +72,7 @@ func (m *GroupSettingTemplateRequestBuilder) CheckMemberObjects()(*i535340b77c27
 func NewGroupSettingTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupSettingTemplateRequestBuilder) {
     m := &GroupSettingTemplateRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/groupSettingTemplates/{groupSettingTemplate_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groupSettingTemplates/{groupSettingTemplate_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

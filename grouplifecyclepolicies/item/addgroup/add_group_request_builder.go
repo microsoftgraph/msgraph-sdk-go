@@ -31,7 +31,7 @@ type AddGroupRequestBuilderPostOptions struct {
 func NewAddGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddGroupRequestBuilder) {
     m := &AddGroupRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/groupLifecyclePolicies/{groupLifecyclePolicy_id}/microsoft.graph.addGroup";
+    m.urlTemplate = "{+baseurl}/groupLifecyclePolicies/{groupLifecyclePolicy_id}/microsoft.graph.addGroup";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

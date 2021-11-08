@@ -31,7 +31,7 @@ type ApplyBottomPercentFilterRequestBuilderPostOptions struct {
 func NewApplyBottomPercentFilterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplyBottomPercentFilterRequestBuilder) {
     m := &ApplyBottomPercentFilterRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/columns/{workbookTableColumn_id}/filter/microsoft.graph.applyBottomPercentFilter";
+    m.urlTemplate = "{+baseurl}/workbooks/{driveItem_id}/workbook/tables/{workbookTable_id}/columns/{workbookTableColumn_id}/filter/microsoft.graph.applyBottomPercentFilter";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

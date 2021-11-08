@@ -117,7 +117,7 @@ func (m *ContentTypeRequestBuilder) ColumnsById(id string)(*i5a14dba7acc9a67d9b7
 func NewContentTypeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContentTypeRequestBuilder) {
     m := &ContentTypeRequestBuilder{
     }
-    m.urlTemplate = "https://graph.microsoft.com/v1.0/shares/{sharedDriveItem_id}/list/contentTypes/{contentType_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/shares/{sharedDriveItem_id}/list/contentTypes/{contentType_id}{?select,expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

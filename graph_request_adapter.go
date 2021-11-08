@@ -1,15 +1,16 @@
 package msgraphsdkgo
 
 import (
+	nethttp "net/http"
+
 	absauth "github.com/microsoft/kiota/abstractions/go/authentication"
 	absser "github.com/microsoft/kiota/abstractions/go/serialization"
 	core "github.com/microsoftgraph/msgraph-sdk-go-core"
-	nethttp "net/http"
 )
 
 var clientOptions = core.GraphClientOptions{
 	GraphServiceVersion:        "v1.0",
-	GraphServiceLibraryVersion: "0.0.1",
+	GraphServiceLibraryVersion: "0.0.3",
 }
 
 // GraphRequestAdapter is the core service used by GraphServiceClient to make requests to Microsoft Graph.
