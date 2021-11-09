@@ -53,7 +53,9 @@ func (m *ScopedRoleMembership) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAdministrativeUnitId(val)
+        if val != nil {
+            m.SetAdministrativeUnitId(val)
+        }
         return nil
     }
     res["roleId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *ScopedRoleMembership) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetRoleId(val)
+        if val != nil {
+            m.SetRoleId(val)
+        }
         return nil
     }
     res["roleMemberInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *ScopedRoleMembership) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetRoleMemberInfo(val.(*Identity))
+        if val != nil {
+            m.SetRoleMemberInfo(val.(*Identity))
+        }
         return nil
     }
     return res

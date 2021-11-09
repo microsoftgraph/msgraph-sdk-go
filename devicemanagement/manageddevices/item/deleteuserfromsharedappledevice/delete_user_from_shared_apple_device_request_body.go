@@ -42,7 +42,9 @@ func (m *DeleteUserFromSharedAppleDeviceRequestBody) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

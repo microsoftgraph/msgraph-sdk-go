@@ -33,8 +33,10 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(AuthenticationMethodState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(AuthenticationMethodState)
+            m.SetState(&cast)
+        }
         return nil
     }
     return res

@@ -103,11 +103,13 @@ func (m *Agreement) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]AgreementAcceptance, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AgreementAcceptance))
+        if val != nil {
+            res := make([]AgreementAcceptance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AgreementAcceptance))
+            }
+            m.SetAcceptances(res)
         }
-        m.SetAcceptances(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +117,9 @@ func (m *Agreement) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["file"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +127,9 @@ func (m *Agreement) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetFile(val.(*AgreementFile))
+        if val != nil {
+            m.SetFile(val.(*AgreementFile))
+        }
         return nil
     }
     res["files"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,11 +137,13 @@ func (m *Agreement) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]AgreementFileLocalization, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AgreementFileLocalization))
+        if val != nil {
+            res := make([]AgreementFileLocalization, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AgreementFileLocalization))
+            }
+            m.SetFiles(res)
         }
-        m.SetFiles(res)
         return nil
     }
     res["isPerDeviceAcceptanceRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,7 +151,9 @@ func (m *Agreement) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetIsPerDeviceAcceptanceRequired(val)
+        if val != nil {
+            m.SetIsPerDeviceAcceptanceRequired(val)
+        }
         return nil
     }
     res["isViewingBeforeAcceptanceRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +161,9 @@ func (m *Agreement) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetIsViewingBeforeAcceptanceRequired(val)
+        if val != nil {
+            m.SetIsViewingBeforeAcceptanceRequired(val)
+        }
         return nil
     }
     res["termsExpiration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +171,9 @@ func (m *Agreement) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetTermsExpiration(val.(*TermsExpiration))
+        if val != nil {
+            m.SetTermsExpiration(val.(*TermsExpiration))
+        }
         return nil
     }
     res["userReacceptRequiredFrequency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,7 +181,9 @@ func (m *Agreement) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetUserReacceptRequiredFrequency(val)
+        if val != nil {
+            m.SetUserReacceptRequiredFrequency(val)
+        }
         return nil
     }
     return res

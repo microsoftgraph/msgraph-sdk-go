@@ -42,7 +42,9 @@ func (m *AbortRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetReason(val)
+        if val != nil {
+            m.SetReason(val)
+        }
         return nil
     }
     return res

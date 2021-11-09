@@ -164,7 +164,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetActivationUrl(val)
+        if val != nil {
+            m.SetActivationUrl(val)
+        }
         return nil
     }
     res["activitySourceHost"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +174,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetActivitySourceHost(val)
+        if val != nil {
+            m.SetActivitySourceHost(val)
+        }
         return nil
     }
     res["appActivityId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +184,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetAppActivityId(val)
+        if val != nil {
+            m.SetAppActivityId(val)
+        }
         return nil
     }
     res["appDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +194,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetAppDisplayName(val)
+        if val != nil {
+            m.SetAppDisplayName(val)
+        }
         return nil
     }
     res["contentInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +204,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetContentInfo(val.(*Json))
+        if val != nil {
+            m.SetContentInfo(val.(*Json))
+        }
         return nil
     }
     res["contentUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +214,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetContentUrl(val)
+        if val != nil {
+            m.SetContentUrl(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,7 +224,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +234,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["fallbackUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +244,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetFallbackUrl(val)
+        if val != nil {
+            m.SetFallbackUrl(val)
+        }
         return nil
     }
     res["historyItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,11 +254,13 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]ActivityHistoryItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ActivityHistoryItem))
+        if val != nil {
+            res := make([]ActivityHistoryItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ActivityHistoryItem))
+            }
+            m.SetHistoryItems(res)
         }
-        m.SetHistoryItems(res)
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -248,7 +268,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -256,8 +278,10 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        cast := val.(Status)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(Status)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["userTimezone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -265,7 +289,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetUserTimezone(val)
+        if val != nil {
+            m.SetUserTimezone(val)
+        }
         return nil
     }
     res["visualElements"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -273,7 +299,9 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetVisualElements(val.(*VisualInfo))
+        if val != nil {
+            m.SetVisualElements(val.(*VisualInfo))
+        }
         return nil
     }
     return res

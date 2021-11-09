@@ -223,11 +223,13 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]EducationCategory, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationCategory))
+        if val != nil {
+            res := make([]EducationCategory, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationCategory))
+            }
+            m.SetAssignmentCategories(res)
         }
-        m.SetAssignmentCategories(res)
         return nil
     }
     res["assignmentDefaults"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -235,7 +237,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetAssignmentDefaults(val.(*EducationAssignmentDefaults))
+        if val != nil {
+            m.SetAssignmentDefaults(val.(*EducationAssignmentDefaults))
+        }
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -243,11 +247,13 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]EducationAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationAssignment))
+        if val != nil {
+            res := make([]EducationAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["assignmentSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -255,7 +261,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetAssignmentSettings(val.(*EducationAssignmentSettings))
+        if val != nil {
+            m.SetAssignmentSettings(val.(*EducationAssignmentSettings))
+        }
         return nil
     }
     res["classCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,7 +271,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetClassCode(val)
+        if val != nil {
+            m.SetClassCode(val)
+        }
         return nil
     }
     res["course"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -271,7 +281,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetCourse(val.(*EducationCourse))
+        if val != nil {
+            m.SetCourse(val.(*EducationCourse))
+        }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -279,7 +291,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetCreatedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -287,7 +301,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -295,7 +311,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["externalId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -303,7 +321,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetExternalId(val)
+        if val != nil {
+            m.SetExternalId(val)
+        }
         return nil
     }
     res["externalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -311,7 +331,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetExternalName(val)
+        if val != nil {
+            m.SetExternalName(val)
+        }
         return nil
     }
     res["externalSource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -319,8 +341,10 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        cast := val.(EducationExternalSource)
-        m.SetExternalSource(&cast)
+        if val != nil {
+            cast := val.(EducationExternalSource)
+            m.SetExternalSource(&cast)
+        }
         return nil
     }
     res["externalSourceDetail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -328,7 +352,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetExternalSourceDetail(val)
+        if val != nil {
+            m.SetExternalSourceDetail(val)
+        }
         return nil
     }
     res["grade"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -336,7 +362,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetGrade(val)
+        if val != nil {
+            m.SetGrade(val)
+        }
         return nil
     }
     res["group"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -344,7 +372,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetGroup(val.(*Group))
+        if val != nil {
+            m.SetGroup(val.(*Group))
+        }
         return nil
     }
     res["mailNickname"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -352,7 +382,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetMailNickname(val)
+        if val != nil {
+            m.SetMailNickname(val)
+        }
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -360,11 +392,13 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]EducationUser, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationUser))
+        if val != nil {
+            res := make([]EducationUser, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationUser))
+            }
+            m.SetMembers(res)
         }
-        m.SetMembers(res)
         return nil
     }
     res["schools"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -372,11 +406,13 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]EducationSchool, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationSchool))
+        if val != nil {
+            res := make([]EducationSchool, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationSchool))
+            }
+            m.SetSchools(res)
         }
-        m.SetSchools(res)
         return nil
     }
     res["teachers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -384,11 +420,13 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]EducationUser, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationUser))
+        if val != nil {
+            res := make([]EducationUser, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationUser))
+            }
+            m.SetTeachers(res)
         }
-        m.SetTeachers(res)
         return nil
     }
     res["term"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -396,7 +434,9 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetTerm(val.(*EducationTerm))
+        if val != nil {
+            m.SetTerm(val.(*EducationTerm))
+        }
         return nil
     }
     return res

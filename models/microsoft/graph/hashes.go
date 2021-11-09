@@ -72,7 +72,9 @@ func (m *Hashes) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetCrc32Hash(val)
+        if val != nil {
+            m.SetCrc32Hash(val)
+        }
         return nil
     }
     res["quickXorHash"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *Hashes) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetQuickXorHash(val)
+        if val != nil {
+            m.SetQuickXorHash(val)
+        }
         return nil
     }
     res["sha1Hash"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *Hashes) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetSha1Hash(val)
+        if val != nil {
+            m.SetSha1Hash(val)
+        }
         return nil
     }
     res["sha256Hash"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *Hashes) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetSha256Hash(val)
+        if val != nil {
+            m.SetSha256Hash(val)
+        }
         return nil
     }
     return res

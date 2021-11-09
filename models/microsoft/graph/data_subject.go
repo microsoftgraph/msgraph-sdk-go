@@ -72,7 +72,9 @@ func (m *DataSubject) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetEmail(val)
+        if val != nil {
+            m.SetEmail(val)
+        }
         return nil
     }
     res["firstName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *DataSubject) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetFirstName(val)
+        if val != nil {
+            m.SetFirstName(val)
+        }
         return nil
     }
     res["lastName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *DataSubject) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLastName(val)
+        if val != nil {
+            m.SetLastName(val)
+        }
         return nil
     }
     res["residency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *DataSubject) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetResidency(val)
+        if val != nil {
+            m.SetResidency(val)
+        }
         return nil
     }
     return res

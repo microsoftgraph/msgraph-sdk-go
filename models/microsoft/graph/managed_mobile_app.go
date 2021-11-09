@@ -43,7 +43,9 @@ func (m *ManagedMobileApp) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetMobileAppIdentifier(val.(*MobileAppIdentifier))
+        if val != nil {
+            m.SetMobileAppIdentifier(val.(*MobileAppIdentifier))
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *ManagedMobileApp) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

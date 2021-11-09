@@ -62,7 +62,9 @@ func (m *ProvisionEmailResponse) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetProvisionChannelEmailResult(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResult))
+        if val != nil {
+            m.SetProvisionChannelEmailResult(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResult))
+        }
         return nil
     }
     return res

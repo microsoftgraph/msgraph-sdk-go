@@ -53,11 +53,13 @@ func (m *StsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetAppliesTo(res)
         }
-        m.SetAppliesTo(res)
         return nil
     }
     res["definition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *StsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDefinition(res)
         }
-        m.SetDefinition(res)
         return nil
     }
     res["isOrganizationDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,7 +81,9 @@ func (m *StsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetIsOrganizationDefault(val)
+        if val != nil {
+            m.SetIsOrganizationDefault(val)
+        }
         return nil
     }
     return res

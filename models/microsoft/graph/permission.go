@@ -134,7 +134,9 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["grantedTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +144,9 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetGrantedTo(val.(*IdentitySet))
+        if val != nil {
+            m.SetGrantedTo(val.(*IdentitySet))
+        }
         return nil
     }
     res["grantedToIdentities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,11 +154,13 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]IdentitySet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IdentitySet))
+        if val != nil {
+            res := make([]IdentitySet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IdentitySet))
+            }
+            m.SetGrantedToIdentities(res)
         }
-        m.SetGrantedToIdentities(res)
         return nil
     }
     res["grantedToIdentitiesV2"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,11 +168,13 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]SharePointIdentitySet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SharePointIdentitySet))
+        if val != nil {
+            res := make([]SharePointIdentitySet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SharePointIdentitySet))
+            }
+            m.SetGrantedToIdentitiesV2(res)
         }
-        m.SetGrantedToIdentitiesV2(res)
         return nil
     }
     res["grantedToV2"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +182,9 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetGrantedToV2(val.(*SharePointIdentitySet))
+        if val != nil {
+            m.SetGrantedToV2(val.(*SharePointIdentitySet))
+        }
         return nil
     }
     res["hasPassword"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +192,9 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetHasPassword(val)
+        if val != nil {
+            m.SetHasPassword(val)
+        }
         return nil
     }
     res["inheritedFrom"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +202,9 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetInheritedFrom(val.(*ItemReference))
+        if val != nil {
+            m.SetInheritedFrom(val.(*ItemReference))
+        }
         return nil
     }
     res["invitation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +212,9 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetInvitation(val.(*SharingInvitation))
+        if val != nil {
+            m.SetInvitation(val.(*SharingInvitation))
+        }
         return nil
     }
     res["link"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +222,9 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetLink(val.(*SharingLink))
+        if val != nil {
+            m.SetLink(val.(*SharingLink))
+        }
         return nil
     }
     res["roles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,11 +232,13 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRoles(res)
         }
-        m.SetRoles(res)
         return nil
     }
     res["shareId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +246,9 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetShareId(val)
+        if val != nil {
+            m.SetShareId(val)
+        }
         return nil
     }
     return res

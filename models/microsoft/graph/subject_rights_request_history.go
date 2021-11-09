@@ -83,7 +83,9 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetChangedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetChangedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["eventDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetEventDateTime(val)
+        if val != nil {
+            m.SetEventDateTime(val)
+        }
         return nil
     }
     res["stage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,8 +103,10 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(SubjectRightsRequestStage)
-        m.SetStage(&cast)
+        if val != nil {
+            cast := val.(SubjectRightsRequestStage)
+            m.SetStage(&cast)
+        }
         return nil
     }
     res["stageStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,8 +114,10 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(SubjectRightsRequestStageStatus)
-        m.SetStageStatus(&cast)
+        if val != nil {
+            cast := val.(SubjectRightsRequestStageStatus)
+            m.SetStageStatus(&cast)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +125,9 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetType_escaped(val)
+        if val != nil {
+            m.SetType_escaped(val)
+        }
         return nil
     }
     return res

@@ -53,7 +53,9 @@ func (m *GroupLifecyclePolicy) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAlternateNotificationEmails(val)
+        if val != nil {
+            m.SetAlternateNotificationEmails(val)
+        }
         return nil
     }
     res["groupLifetimeInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *GroupLifecyclePolicy) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetGroupLifetimeInDays(val)
+        if val != nil {
+            m.SetGroupLifetimeInDays(val)
+        }
         return nil
     }
     res["managedGroupTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *GroupLifecyclePolicy) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetManagedGroupTypes(val)
+        if val != nil {
+            m.SetManagedGroupTypes(val)
+        }
         return nil
     }
     return res

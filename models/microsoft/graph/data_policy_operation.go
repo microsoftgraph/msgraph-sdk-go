@@ -84,7 +84,9 @@ func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetCompletedDateTime(val)
+        if val != nil {
+            m.SetCompletedDateTime(val)
+        }
         return nil
     }
     res["progress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetProgress(val)
+        if val != nil {
+            m.SetProgress(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,8 +104,10 @@ func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(DataPolicyOperationStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(DataPolicyOperationStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["storageLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +115,9 @@ func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetStorageLocation(val)
+        if val != nil {
+            m.SetStorageLocation(val)
+        }
         return nil
     }
     res["submittedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +125,9 @@ func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetSubmittedDateTime(val)
+        if val != nil {
+            m.SetSubmittedDateTime(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +135,9 @@ func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     return res

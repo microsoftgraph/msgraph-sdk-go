@@ -42,7 +42,9 @@ func (m *ApplyFontColorFilterRequestBody) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetColor(val)
+        if val != nil {
+            m.SetColor(val)
+        }
         return nil
     }
     return res

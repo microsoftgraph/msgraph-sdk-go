@@ -42,7 +42,9 @@ func (m *WipeManagedAppRegistrationsByDeviceTagRequestBody) GetFieldDeserializer
         if err != nil {
             return err
         }
-        m.SetDeviceTag(val)
+        if val != nil {
+            m.SetDeviceTag(val)
+        }
         return nil
     }
     return res

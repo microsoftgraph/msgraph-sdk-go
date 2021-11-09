@@ -42,7 +42,9 @@ func (m *Report) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetContent(val)
+        if val != nil {
+            m.SetContent(val)
+        }
         return nil
     }
     return res

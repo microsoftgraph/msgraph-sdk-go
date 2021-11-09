@@ -42,7 +42,9 @@ func (m *AgreementFileData) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetData(val)
+        if val != nil {
+            m.SetData(val)
+        }
         return nil
     }
     return res

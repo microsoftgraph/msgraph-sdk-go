@@ -82,7 +82,9 @@ func (m *ApiApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetAcceptMappedClaims(val)
+        if val != nil {
+            m.SetAcceptMappedClaims(val)
+        }
         return nil
     }
     res["knownClientApplications"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,11 +92,13 @@ func (m *ApiApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetKnownClientApplications(res)
         }
-        m.SetKnownClientApplications(res)
         return nil
     }
     res["oauth2PermissionScopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,11 +106,13 @@ func (m *ApiApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]PermissionScope, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PermissionScope))
+        if val != nil {
+            res := make([]PermissionScope, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PermissionScope))
+            }
+            m.SetOauth2PermissionScopes(res)
         }
-        m.SetOauth2PermissionScopes(res)
         return nil
     }
     res["preAuthorizedApplications"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,11 +120,13 @@ func (m *ApiApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]PreAuthorizedApplication, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PreAuthorizedApplication))
+        if val != nil {
+            res := make([]PreAuthorizedApplication, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PreAuthorizedApplication))
+            }
+            m.SetPreAuthorizedApplications(res)
         }
-        m.SetPreAuthorizedApplications(res)
         return nil
     }
     res["requestedAccessTokenVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +134,9 @@ func (m *ApiApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetRequestedAccessTokenVersion(val)
+        if val != nil {
+            m.SetRequestedAccessTokenVersion(val)
+        }
         return nil
     }
     return res

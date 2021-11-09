@@ -84,7 +84,9 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetAcknowledgedDateTime(val)
+        if val != nil {
+            m.SetAcknowledgedDateTime(val)
+        }
         return nil
     }
     res["applyHoldToSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetApplyHoldToSources(val)
+        if val != nil {
+            m.SetApplyHoldToSources(val)
+        }
         return nil
     }
     res["email"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetEmail(val)
+        if val != nil {
+            m.SetEmail(val)
+        }
         return nil
     }
     res["siteSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,11 +114,13 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]SiteSource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SiteSource))
+        if val != nil {
+            res := make([]SiteSource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SiteSource))
+            }
+            m.SetSiteSources(res)
         }
-        m.SetSiteSources(res)
         return nil
     }
     res["unifiedGroupSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,11 +128,13 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]UnifiedGroupSource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedGroupSource))
+        if val != nil {
+            res := make([]UnifiedGroupSource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedGroupSource))
+            }
+            m.SetUnifiedGroupSources(res)
         }
-        m.SetUnifiedGroupSources(res)
         return nil
     }
     res["userSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,11 +142,13 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]UserSource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserSource))
+        if val != nil {
+            res := make([]UserSource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserSource))
+            }
+            m.SetUserSources(res)
         }
-        m.SetUserSources(res)
         return nil
     }
     return res

@@ -132,7 +132,9 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetCallChainId(val)
+        if val != nil {
+            m.SetCallChainId(val)
+        }
         return nil
     }
     res["cloudServiceDeploymentEnvironment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +142,9 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetCloudServiceDeploymentEnvironment(val)
+        if val != nil {
+            m.SetCloudServiceDeploymentEnvironment(val)
+        }
         return nil
     }
     res["cloudServiceDeploymentId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +152,9 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetCloudServiceDeploymentId(val)
+        if val != nil {
+            m.SetCloudServiceDeploymentId(val)
+        }
         return nil
     }
     res["cloudServiceInstanceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +162,9 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetCloudServiceInstanceName(val)
+        if val != nil {
+            m.SetCloudServiceInstanceName(val)
+        }
         return nil
     }
     res["cloudServiceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +172,9 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetCloudServiceName(val)
+        if val != nil {
+            m.SetCloudServiceName(val)
+        }
         return nil
     }
     res["deviceDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +182,9 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDeviceDescription(val)
+        if val != nil {
+            m.SetDeviceDescription(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +192,9 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["mediaLegId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +202,9 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMediaLegId(val)
+        if val != nil {
+            m.SetMediaLegId(val)
+        }
         return nil
     }
     res["mediaQualityList"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,11 +212,13 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]TeleconferenceDeviceMediaQuality, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TeleconferenceDeviceMediaQuality))
+        if val != nil {
+            res := make([]TeleconferenceDeviceMediaQuality, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TeleconferenceDeviceMediaQuality))
+            }
+            m.SetMediaQualityList(res)
         }
-        m.SetMediaQualityList(res)
         return nil
     }
     res["participantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +226,9 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetParticipantId(val)
+        if val != nil {
+            m.SetParticipantId(val)
+        }
         return nil
     }
     return res

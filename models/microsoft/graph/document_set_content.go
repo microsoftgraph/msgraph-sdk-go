@@ -62,7 +62,9 @@ func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetContentType(val.(*ContentTypeInfo))
+        if val != nil {
+            m.SetContentType(val.(*ContentTypeInfo))
+        }
         return nil
     }
     res["fileName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetFileName(val)
+        if val != nil {
+            m.SetFileName(val)
+        }
         return nil
     }
     res["folderName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetFolderName(val)
+        if val != nil {
+            m.SetFolderName(val)
+        }
         return nil
     }
     return res

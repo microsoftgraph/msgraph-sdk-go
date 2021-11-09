@@ -92,7 +92,9 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetCertificate(val)
+        if val != nil {
+            m.SetCertificate(val)
+        }
         return nil
     }
     res["certificateRevocationListUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetCertificateRevocationListUrl(val)
+        if val != nil {
+            m.SetCertificateRevocationListUrl(val)
+        }
         return nil
     }
     res["deltaCertificateRevocationListUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDeltaCertificateRevocationListUrl(val)
+        if val != nil {
+            m.SetDeltaCertificateRevocationListUrl(val)
+        }
         return nil
     }
     res["isRootAuthority"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +122,9 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsRootAuthority(val)
+        if val != nil {
+            m.SetIsRootAuthority(val)
+        }
         return nil
     }
     res["issuer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +132,9 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIssuer(val)
+        if val != nil {
+            m.SetIssuer(val)
+        }
         return nil
     }
     res["issuerSki"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +142,9 @@ func (m *CertificateAuthority) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIssuerSki(val)
+        if val != nil {
+            m.SetIssuerSki(val)
+        }
         return nil
     }
     return res

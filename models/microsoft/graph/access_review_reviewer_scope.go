@@ -62,7 +62,9 @@ func (m *AccessReviewReviewerScope) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetQuery(val)
+        if val != nil {
+            m.SetQuery(val)
+        }
         return nil
     }
     res["queryRoot"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *AccessReviewReviewerScope) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetQueryRoot(val)
+        if val != nil {
+            m.SetQueryRoot(val)
+        }
         return nil
     }
     res["queryType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *AccessReviewReviewerScope) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetQueryType(val)
+        if val != nil {
+            m.SetQueryType(val)
+        }
         return nil
     }
     return res

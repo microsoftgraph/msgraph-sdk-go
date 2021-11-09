@@ -62,7 +62,9 @@ func (m *RgbColor) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetB(val)
+        if val != nil {
+            m.SetB(val)
+        }
         return nil
     }
     res["g"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *RgbColor) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetG(val)
+        if val != nil {
+            m.SetG(val)
+        }
         return nil
     }
     res["r"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *RgbColor) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetR(val)
+        if val != nil {
+            m.SetR(val)
+        }
         return nil
     }
     return res

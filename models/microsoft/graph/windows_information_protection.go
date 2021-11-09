@@ -273,11 +273,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]TargetedManagedAppPolicyAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TargetedManagedAppPolicyAssignment))
+        if val != nil {
+            res := make([]TargetedManagedAppPolicyAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TargetedManagedAppPolicyAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["azureRightsManagementServicesAllowed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -285,7 +287,9 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAzureRightsManagementServicesAllowed(val)
+        if val != nil {
+            m.SetAzureRightsManagementServicesAllowed(val)
+        }
         return nil
     }
     res["dataRecoveryCertificate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -293,7 +297,9 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDataRecoveryCertificate(val.(*WindowsInformationProtectionDataRecoveryCertificate))
+        if val != nil {
+            m.SetDataRecoveryCertificate(val.(*WindowsInformationProtectionDataRecoveryCertificate))
+        }
         return nil
     }
     res["enforcementLevel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -301,8 +307,10 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(WindowsInformationProtectionEnforcementLevel)
-        m.SetEnforcementLevel(&cast)
+        if val != nil {
+            cast := val.(WindowsInformationProtectionEnforcementLevel)
+            m.SetEnforcementLevel(&cast)
+        }
         return nil
     }
     res["enterpriseDomain"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -310,7 +318,9 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetEnterpriseDomain(val)
+        if val != nil {
+            m.SetEnterpriseDomain(val)
+        }
         return nil
     }
     res["enterpriseInternalProxyServers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -318,11 +328,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionResourceCollection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+        if val != nil {
+            res := make([]WindowsInformationProtectionResourceCollection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+            }
+            m.SetEnterpriseInternalProxyServers(res)
         }
-        m.SetEnterpriseInternalProxyServers(res)
         return nil
     }
     res["enterpriseIPRanges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -330,11 +342,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionIPRangeCollection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionIPRangeCollection))
+        if val != nil {
+            res := make([]WindowsInformationProtectionIPRangeCollection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionIPRangeCollection))
+            }
+            m.SetEnterpriseIPRanges(res)
         }
-        m.SetEnterpriseIPRanges(res)
         return nil
     }
     res["enterpriseIPRangesAreAuthoritative"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -342,7 +356,9 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetEnterpriseIPRangesAreAuthoritative(val)
+        if val != nil {
+            m.SetEnterpriseIPRangesAreAuthoritative(val)
+        }
         return nil
     }
     res["enterpriseNetworkDomainNames"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -350,11 +366,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionResourceCollection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+        if val != nil {
+            res := make([]WindowsInformationProtectionResourceCollection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+            }
+            m.SetEnterpriseNetworkDomainNames(res)
         }
-        m.SetEnterpriseNetworkDomainNames(res)
         return nil
     }
     res["enterpriseProtectedDomainNames"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -362,11 +380,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionResourceCollection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+        if val != nil {
+            res := make([]WindowsInformationProtectionResourceCollection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+            }
+            m.SetEnterpriseProtectedDomainNames(res)
         }
-        m.SetEnterpriseProtectedDomainNames(res)
         return nil
     }
     res["enterpriseProxiedDomains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -374,11 +394,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionProxiedDomainCollection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionProxiedDomainCollection))
+        if val != nil {
+            res := make([]WindowsInformationProtectionProxiedDomainCollection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionProxiedDomainCollection))
+            }
+            m.SetEnterpriseProxiedDomains(res)
         }
-        m.SetEnterpriseProxiedDomains(res)
         return nil
     }
     res["enterpriseProxyServers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -386,11 +408,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionResourceCollection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+        if val != nil {
+            res := make([]WindowsInformationProtectionResourceCollection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+            }
+            m.SetEnterpriseProxyServers(res)
         }
-        m.SetEnterpriseProxyServers(res)
         return nil
     }
     res["enterpriseProxyServersAreAuthoritative"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -398,7 +422,9 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetEnterpriseProxyServersAreAuthoritative(val)
+        if val != nil {
+            m.SetEnterpriseProxyServersAreAuthoritative(val)
+        }
         return nil
     }
     res["exemptAppLockerFiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -406,11 +432,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionAppLockerFile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionAppLockerFile))
+        if val != nil {
+            res := make([]WindowsInformationProtectionAppLockerFile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionAppLockerFile))
+            }
+            m.SetExemptAppLockerFiles(res)
         }
-        m.SetExemptAppLockerFiles(res)
         return nil
     }
     res["exemptApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -418,11 +446,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionApp, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionApp))
+        if val != nil {
+            res := make([]WindowsInformationProtectionApp, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionApp))
+            }
+            m.SetExemptApps(res)
         }
-        m.SetExemptApps(res)
         return nil
     }
     res["iconsVisible"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -430,7 +460,9 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIconsVisible(val)
+        if val != nil {
+            m.SetIconsVisible(val)
+        }
         return nil
     }
     res["indexingEncryptedStoresOrItemsBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -438,7 +470,9 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIndexingEncryptedStoresOrItemsBlocked(val)
+        if val != nil {
+            m.SetIndexingEncryptedStoresOrItemsBlocked(val)
+        }
         return nil
     }
     res["isAssigned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -446,7 +480,9 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIsAssigned(val)
+        if val != nil {
+            m.SetIsAssigned(val)
+        }
         return nil
     }
     res["neutralDomainResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -454,11 +490,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionResourceCollection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+        if val != nil {
+            res := make([]WindowsInformationProtectionResourceCollection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+            }
+            m.SetNeutralDomainResources(res)
         }
-        m.SetNeutralDomainResources(res)
         return nil
     }
     res["protectedAppLockerFiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -466,11 +504,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionAppLockerFile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionAppLockerFile))
+        if val != nil {
+            res := make([]WindowsInformationProtectionAppLockerFile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionAppLockerFile))
+            }
+            m.SetProtectedAppLockerFiles(res)
         }
-        m.SetProtectedAppLockerFiles(res)
         return nil
     }
     res["protectedApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -478,11 +518,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionApp, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionApp))
+        if val != nil {
+            res := make([]WindowsInformationProtectionApp, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionApp))
+            }
+            m.SetProtectedApps(res)
         }
-        m.SetProtectedApps(res)
         return nil
     }
     res["protectionUnderLockConfigRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -490,7 +532,9 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetProtectionUnderLockConfigRequired(val)
+        if val != nil {
+            m.SetProtectionUnderLockConfigRequired(val)
+        }
         return nil
     }
     res["revokeOnUnenrollDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -498,7 +542,9 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRevokeOnUnenrollDisabled(val)
+        if val != nil {
+            m.SetRevokeOnUnenrollDisabled(val)
+        }
         return nil
     }
     res["rightsManagementServicesTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -506,7 +552,9 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRightsManagementServicesTemplateId(val)
+        if val != nil {
+            m.SetRightsManagementServicesTemplateId(val)
+        }
         return nil
     }
     res["smbAutoEncryptedFileExtensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -514,11 +562,13 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionResourceCollection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+        if val != nil {
+            res := make([]WindowsInformationProtectionResourceCollection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionResourceCollection))
+            }
+            m.SetSmbAutoEncryptedFileExtensions(res)
         }
-        m.SetSmbAutoEncryptedFileExtensions(res)
         return nil
     }
     return res

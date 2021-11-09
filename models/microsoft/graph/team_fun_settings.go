@@ -72,7 +72,9 @@ func (m *TeamFunSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetAllowCustomMemes(val)
+        if val != nil {
+            m.SetAllowCustomMemes(val)
+        }
         return nil
     }
     res["allowGiphy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *TeamFunSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetAllowGiphy(val)
+        if val != nil {
+            m.SetAllowGiphy(val)
+        }
         return nil
     }
     res["allowStickersAndMemes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *TeamFunSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetAllowStickersAndMemes(val)
+        if val != nil {
+            m.SetAllowStickersAndMemes(val)
+        }
         return nil
     }
     res["giphyContentRating"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,8 +102,10 @@ func (m *TeamFunSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        cast := val.(GiphyRatingType)
-        m.SetGiphyContentRating(&cast)
+        if val != nil {
+            cast := val.(GiphyRatingType)
+            m.SetGiphyContentRating(&cast)
+        }
         return nil
     }
     return res

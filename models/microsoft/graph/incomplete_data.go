@@ -53,7 +53,9 @@ func (m *IncompleteData) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetMissingDataBeforeDateTime(val)
+        if val != nil {
+            m.SetMissingDataBeforeDateTime(val)
+        }
         return nil
     }
     res["wasThrottled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *IncompleteData) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetWasThrottled(val)
+        if val != nil {
+            m.SetWasThrottled(val)
+        }
         return nil
     }
     return res

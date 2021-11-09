@@ -102,7 +102,9 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetExcludedItemCount(val)
+        if val != nil {
+            m.SetExcludedItemCount(val)
+        }
         return nil
     }
     res["insightCounts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,11 +112,13 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        res := make([]KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValuePair))
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetInsightCounts(res)
         }
-        m.SetInsightCounts(res)
         return nil
     }
     res["itemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +126,9 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetItemCount(val)
+        if val != nil {
+            m.SetItemCount(val)
+        }
         return nil
     }
     res["itemNeedReview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +136,9 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetItemNeedReview(val)
+        if val != nil {
+            m.SetItemNeedReview(val)
+        }
         return nil
     }
     res["productItemCounts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,11 +146,13 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        res := make([]KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValuePair))
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetProductItemCounts(res)
         }
-        m.SetProductItemCounts(res)
         return nil
     }
     res["signedOffItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +160,9 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetSignedOffItemCount(val)
+        if val != nil {
+            m.SetSignedOffItemCount(val)
+        }
         return nil
     }
     res["totalItemSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +170,9 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetTotalItemSize(val)
+        if val != nil {
+            m.SetTotalItemSize(val)
+        }
         return nil
     }
     return res

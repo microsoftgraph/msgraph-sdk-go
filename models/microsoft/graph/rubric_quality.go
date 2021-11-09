@@ -82,11 +82,13 @@ func (m *RubricQuality) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]RubricCriterion, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RubricCriterion))
+        if val != nil {
+            res := make([]RubricCriterion, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RubricCriterion))
+            }
+            m.SetCriteria(res)
         }
-        m.SetCriteria(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,7 +96,9 @@ func (m *RubricQuality) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDescription(val.(*EducationItemBody))
+        if val != nil {
+            m.SetDescription(val.(*EducationItemBody))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +106,9 @@ func (m *RubricQuality) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["qualityId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +116,9 @@ func (m *RubricQuality) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetQualityId(val)
+        if val != nil {
+            m.SetQualityId(val)
+        }
         return nil
     }
     res["weight"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +126,9 @@ func (m *RubricQuality) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetWeight(val)
+        if val != nil {
+            m.SetWeight(val)
+        }
         return nil
     }
     return res

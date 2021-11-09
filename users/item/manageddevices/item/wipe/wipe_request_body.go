@@ -72,7 +72,9 @@ func (m *WipeRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetKeepEnrollmentData(val)
+        if val != nil {
+            m.SetKeepEnrollmentData(val)
+        }
         return nil
     }
     res["keepUserData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *WipeRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetKeepUserData(val)
+        if val != nil {
+            m.SetKeepUserData(val)
+        }
         return nil
     }
     res["macOsUnlockCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *WipeRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetMacOsUnlockCode(val)
+        if val != nil {
+            m.SetMacOsUnlockCode(val)
+        }
         return nil
     }
     res["persistEsimDataPlan"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *WipeRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetPersistEsimDataPlan(val)
+        if val != nil {
+            m.SetPersistEsimDataPlan(val)
+        }
         return nil
     }
     return res

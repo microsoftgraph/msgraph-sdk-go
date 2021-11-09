@@ -52,7 +52,9 @@ func (m *DateTimeColumn) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDisplayAs(val)
+        if val != nil {
+            m.SetDisplayAs(val)
+        }
         return nil
     }
     res["format"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *DateTimeColumn) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetFormat(val)
+        if val != nil {
+            m.SetFormat(val)
+        }
         return nil
     }
     return res

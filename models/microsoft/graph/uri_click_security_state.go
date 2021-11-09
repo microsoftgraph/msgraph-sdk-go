@@ -93,7 +93,9 @@ func (m *UriClickSecurityState) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetClickAction(val)
+        if val != nil {
+            m.SetClickAction(val)
+        }
         return nil
     }
     res["clickDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *UriClickSecurityState) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetClickDateTime(val)
+        if val != nil {
+            m.SetClickDateTime(val)
+        }
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *UriClickSecurityState) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["sourceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +123,9 @@ func (m *UriClickSecurityState) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSourceId(val)
+        if val != nil {
+            m.SetSourceId(val)
+        }
         return nil
     }
     res["uriDomain"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +133,9 @@ func (m *UriClickSecurityState) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetUriDomain(val)
+        if val != nil {
+            m.SetUriDomain(val)
+        }
         return nil
     }
     res["verdict"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +143,9 @@ func (m *UriClickSecurityState) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetVerdict(val)
+        if val != nil {
+            m.SetVerdict(val)
+        }
         return nil
     }
     return res

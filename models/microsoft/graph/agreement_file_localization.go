@@ -33,11 +33,13 @@ func (m *AgreementFileLocalization) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]AgreementFileVersion, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AgreementFileVersion))
+        if val != nil {
+            res := make([]AgreementFileVersion, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AgreementFileVersion))
+            }
+            m.SetVersions(res)
         }
-        m.SetVersions(res)
         return nil
     }
     return res

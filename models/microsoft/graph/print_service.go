@@ -33,11 +33,13 @@ func (m *PrintService) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]PrintServiceEndpoint, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintServiceEndpoint))
+        if val != nil {
+            res := make([]PrintServiceEndpoint, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintServiceEndpoint))
+            }
+            m.SetEndpoints(res)
         }
-        m.SetEndpoints(res)
         return nil
     }
     return res

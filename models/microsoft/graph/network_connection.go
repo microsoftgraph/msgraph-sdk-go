@@ -233,7 +233,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetApplicationName(val)
+        if val != nil {
+            m.SetApplicationName(val)
+        }
         return nil
     }
     res["destinationAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -241,7 +243,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDestinationAddress(val)
+        if val != nil {
+            m.SetDestinationAddress(val)
+        }
         return nil
     }
     res["destinationDomain"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -249,7 +253,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDestinationDomain(val)
+        if val != nil {
+            m.SetDestinationDomain(val)
+        }
         return nil
     }
     res["destinationLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -257,7 +263,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDestinationLocation(val)
+        if val != nil {
+            m.SetDestinationLocation(val)
+        }
         return nil
     }
     res["destinationPort"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -265,7 +273,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDestinationPort(val)
+        if val != nil {
+            m.SetDestinationPort(val)
+        }
         return nil
     }
     res["destinationUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -273,7 +283,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDestinationUrl(val)
+        if val != nil {
+            m.SetDestinationUrl(val)
+        }
         return nil
     }
     res["direction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -281,8 +293,10 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(ConnectionDirection)
-        m.SetDirection(&cast)
+        if val != nil {
+            cast := val.(ConnectionDirection)
+            m.SetDirection(&cast)
+        }
         return nil
     }
     res["domainRegisteredDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -290,7 +304,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDomainRegisteredDateTime(val)
+        if val != nil {
+            m.SetDomainRegisteredDateTime(val)
+        }
         return nil
     }
     res["localDnsName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -298,7 +314,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetLocalDnsName(val)
+        if val != nil {
+            m.SetLocalDnsName(val)
+        }
         return nil
     }
     res["natDestinationAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -306,7 +324,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetNatDestinationAddress(val)
+        if val != nil {
+            m.SetNatDestinationAddress(val)
+        }
         return nil
     }
     res["natDestinationPort"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -314,7 +334,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetNatDestinationPort(val)
+        if val != nil {
+            m.SetNatDestinationPort(val)
+        }
         return nil
     }
     res["natSourceAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -322,7 +344,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetNatSourceAddress(val)
+        if val != nil {
+            m.SetNatSourceAddress(val)
+        }
         return nil
     }
     res["natSourcePort"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -330,7 +354,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetNatSourcePort(val)
+        if val != nil {
+            m.SetNatSourcePort(val)
+        }
         return nil
     }
     res["protocol"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -338,8 +364,10 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(SecurityNetworkProtocol)
-        m.SetProtocol(&cast)
+        if val != nil {
+            cast := val.(SecurityNetworkProtocol)
+            m.SetProtocol(&cast)
+        }
         return nil
     }
     res["riskScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -347,7 +375,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRiskScore(val)
+        if val != nil {
+            m.SetRiskScore(val)
+        }
         return nil
     }
     res["sourceAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -355,7 +385,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSourceAddress(val)
+        if val != nil {
+            m.SetSourceAddress(val)
+        }
         return nil
     }
     res["sourceLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -363,7 +395,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSourceLocation(val)
+        if val != nil {
+            m.SetSourceLocation(val)
+        }
         return nil
     }
     res["sourcePort"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -371,7 +405,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSourcePort(val)
+        if val != nil {
+            m.SetSourcePort(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -379,8 +415,10 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(ConnectionStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(ConnectionStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["urlParameters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -388,7 +426,9 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetUrlParameters(val)
+        if val != nil {
+            m.SetUrlParameters(val)
+        }
         return nil
     }
     return res

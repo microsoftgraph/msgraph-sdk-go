@@ -42,11 +42,13 @@ func (m *Privacy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]SubjectRightsRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SubjectRightsRequest))
+        if val != nil {
+            res := make([]SubjectRightsRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SubjectRightsRequest))
+            }
+            m.SetSubjectRightsRequests(res)
         }
-        m.SetSubjectRightsRequests(res)
         return nil
     }
     return res

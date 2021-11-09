@@ -33,8 +33,10 @@ func (m *AttendeeBase) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        cast := val.(AttendeeType)
-        m.SetType_escaped(&cast)
+        if val != nil {
+            cast := val.(AttendeeType)
+            m.SetType_escaped(&cast)
+        }
         return nil
     }
     return res

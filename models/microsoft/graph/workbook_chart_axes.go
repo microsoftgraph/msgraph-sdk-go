@@ -53,7 +53,9 @@ func (m *WorkbookChartAxes) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetCategoryAxis(val.(*WorkbookChartAxis))
+        if val != nil {
+            m.SetCategoryAxis(val.(*WorkbookChartAxis))
+        }
         return nil
     }
     res["seriesAxis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *WorkbookChartAxes) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSeriesAxis(val.(*WorkbookChartAxis))
+        if val != nil {
+            m.SetSeriesAxis(val.(*WorkbookChartAxis))
+        }
         return nil
     }
     res["valueAxis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *WorkbookChartAxes) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetValueAxis(val.(*WorkbookChartAxis))
+        if val != nil {
+            m.SetValueAxis(val.(*WorkbookChartAxis))
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *RemovePasswordRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetKeyId(val)
+        if val != nil {
+            m.SetKeyId(val)
+        }
         return nil
     }
     return res

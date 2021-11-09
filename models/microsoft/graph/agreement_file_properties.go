@@ -94,7 +94,9 @@ func (m *AgreementFileProperties) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +104,9 @@ func (m *AgreementFileProperties) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["fileData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +114,9 @@ func (m *AgreementFileProperties) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetFileData(val.(*AgreementFileData))
+        if val != nil {
+            m.SetFileData(val.(*AgreementFileData))
+        }
         return nil
     }
     res["fileName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +124,9 @@ func (m *AgreementFileProperties) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetFileName(val)
+        if val != nil {
+            m.SetFileName(val)
+        }
         return nil
     }
     res["isDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +134,9 @@ func (m *AgreementFileProperties) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetIsDefault(val)
+        if val != nil {
+            m.SetIsDefault(val)
+        }
         return nil
     }
     res["isMajorVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +144,9 @@ func (m *AgreementFileProperties) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetIsMajorVersion(val)
+        if val != nil {
+            m.SetIsMajorVersion(val)
+        }
         return nil
     }
     res["language"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +154,9 @@ func (m *AgreementFileProperties) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetLanguage(val)
+        if val != nil {
+            m.SetLanguage(val)
+        }
         return nil
     }
     return res

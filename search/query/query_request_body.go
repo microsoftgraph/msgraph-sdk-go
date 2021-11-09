@@ -43,11 +43,13 @@ func (m *QueryRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchRequest))
+        if val != nil {
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchRequest))
+            }
+            m.SetRequests(res)
         }
-        m.SetRequests(res)
         return nil
     }
     return res

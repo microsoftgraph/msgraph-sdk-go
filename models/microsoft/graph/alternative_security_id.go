@@ -62,7 +62,9 @@ func (m *AlternativeSecurityId) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIdentityProvider(val)
+        if val != nil {
+            m.SetIdentityProvider(val)
+        }
         return nil
     }
     res["key"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *AlternativeSecurityId) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetKey(val)
+        if val != nil {
+            m.SetKey(val)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *AlternativeSecurityId) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetType_escaped(val)
+        if val != nil {
+            m.SetType_escaped(val)
+        }
         return nil
     }
     return res

@@ -83,7 +83,9 @@ func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetAssignedTo(val)
+        if val != nil {
+            m.SetAssignedTo(val)
+        }
         return nil
     }
     res["comment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetComment(val)
+        if val != nil {
+            m.SetComment(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetState(val)
+        if val != nil {
+            m.SetState(val)
+        }
         return nil
     }
     res["updatedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetUpdatedBy(val)
+        if val != nil {
+            m.SetUpdatedBy(val)
+        }
         return nil
     }
     res["updatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetUpdatedDateTime(val)
+        if val != nil {
+            m.SetUpdatedDateTime(val)
+        }
         return nil
     }
     return res

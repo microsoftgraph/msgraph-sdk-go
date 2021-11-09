@@ -33,7 +33,9 @@ func (m *WorkbookFilter) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetCriteria(val.(*WorkbookFilterCriteria))
+        if val != nil {
+            m.SetCriteria(val.(*WorkbookFilterCriteria))
+        }
         return nil
     }
     return res

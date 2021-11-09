@@ -33,11 +33,13 @@ func (m *CertificateBasedAuthConfiguration) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]CertificateAuthority, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CertificateAuthority))
+        if val != nil {
+            res := make([]CertificateAuthority, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CertificateAuthority))
+            }
+            m.SetCertificateAuthorities(res)
         }
-        m.SetCertificateAuthorities(res)
         return nil
     }
     return res

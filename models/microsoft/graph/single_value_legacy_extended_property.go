@@ -33,7 +33,9 @@ func (m *SingleValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetValue(val)
+        if val != nil {
+            m.SetValue(val)
+        }
         return nil
     }
     return res

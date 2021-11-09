@@ -103,7 +103,9 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsDefault(val)
+        if val != nil {
+            m.SetIsDefault(val)
+        }
         return nil
     }
     res["isShared"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +113,9 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsShared(val)
+        if val != nil {
+            m.SetIsShared(val)
+        }
         return nil
     }
     res["links"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,7 +123,9 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLinks(val.(*NotebookLinks))
+        if val != nil {
+            m.SetLinks(val.(*NotebookLinks))
+        }
         return nil
     }
     res["sectionGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,11 +133,13 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]SectionGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SectionGroup))
+        if val != nil {
+            res := make([]SectionGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SectionGroup))
+            }
+            m.SetSectionGroups(res)
         }
-        m.SetSectionGroups(res)
         return nil
     }
     res["sectionGroupsUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +147,9 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetSectionGroupsUrl(val)
+        if val != nil {
+            m.SetSectionGroupsUrl(val)
+        }
         return nil
     }
     res["sections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,11 +157,13 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]OnenoteSection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnenoteSection))
+        if val != nil {
+            res := make([]OnenoteSection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnenoteSection))
+            }
+            m.SetSections(res)
         }
-        m.SetSections(res)
         return nil
     }
     res["sectionsUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +171,9 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetSectionsUrl(val)
+        if val != nil {
+            m.SetSectionsUrl(val)
+        }
         return nil
     }
     res["userRole"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,8 +181,10 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(OnenoteUserRole)
-        m.SetUserRole(&cast)
+        if val != nil {
+            cast := val.(OnenoteUserRole)
+            m.SetUserRole(&cast)
+        }
         return nil
     }
     return res

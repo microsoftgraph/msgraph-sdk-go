@@ -33,7 +33,9 @@ func (m *PrintUsageByPrinter) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetPrinterId(val)
+        if val != nil {
+            m.SetPrinterId(val)
+        }
         return nil
     }
     return res

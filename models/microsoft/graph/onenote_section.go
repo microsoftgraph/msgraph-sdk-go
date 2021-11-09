@@ -83,7 +83,9 @@ func (m *OnenoteSection) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetIsDefault(val)
+        if val != nil {
+            m.SetIsDefault(val)
+        }
         return nil
     }
     res["links"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *OnenoteSection) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetLinks(val.(*SectionLinks))
+        if val != nil {
+            m.SetLinks(val.(*SectionLinks))
+        }
         return nil
     }
     res["pages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,11 +103,13 @@ func (m *OnenoteSection) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]OnenotePage, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnenotePage))
+        if val != nil {
+            res := make([]OnenotePage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnenotePage))
+            }
+            m.SetPages(res)
         }
-        m.SetPages(res)
         return nil
     }
     res["pagesUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +117,9 @@ func (m *OnenoteSection) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetPagesUrl(val)
+        if val != nil {
+            m.SetPagesUrl(val)
+        }
         return nil
     }
     res["parentNotebook"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,7 +127,9 @@ func (m *OnenoteSection) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetParentNotebook(val.(*Notebook))
+        if val != nil {
+            m.SetParentNotebook(val.(*Notebook))
+        }
         return nil
     }
     res["parentSectionGroup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,7 +137,9 @@ func (m *OnenoteSection) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetParentSectionGroup(val.(*SectionGroup))
+        if val != nil {
+            m.SetParentSectionGroup(val.(*SectionGroup))
+        }
         return nil
     }
     return res

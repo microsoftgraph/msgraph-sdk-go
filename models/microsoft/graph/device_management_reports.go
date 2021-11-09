@@ -33,11 +33,13 @@ func (m *DeviceManagementReports) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]DeviceManagementExportJob, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceManagementExportJob))
+        if val != nil {
+            res := make([]DeviceManagementExportJob, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceManagementExportJob))
+            }
+            m.SetExportJobs(res)
         }
-        m.SetExportJobs(res)
         return nil
     }
     return res

@@ -33,11 +33,13 @@ func (m *Todo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]TodoTaskList, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TodoTaskList))
+        if val != nil {
+            res := make([]TodoTaskList, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TodoTaskList))
+            }
+            m.SetLists(res)
         }
-        m.SetLists(res)
         return nil
     }
     return res

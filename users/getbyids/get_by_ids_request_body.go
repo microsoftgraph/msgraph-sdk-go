@@ -52,11 +52,13 @@ func (m *GetByIdsRequestBody) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIds(res)
         }
-        m.SetIds(res)
         return nil
     }
     res["types"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,11 +66,13 @@ func (m *GetByIdsRequestBody) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTypes(res)
         }
-        m.SetTypes(res)
         return nil
     }
     return res

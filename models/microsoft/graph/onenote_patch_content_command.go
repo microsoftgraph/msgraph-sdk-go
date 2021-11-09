@@ -72,8 +72,10 @@ func (m *OnenotePatchContentCommand) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(OnenotePatchActionType)
-        m.SetAction(&cast)
+        if val != nil {
+            cast := val.(OnenotePatchActionType)
+            m.SetAction(&cast)
+        }
         return nil
     }
     res["content"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *OnenotePatchContentCommand) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetContent(val)
+        if val != nil {
+            m.SetContent(val)
+        }
         return nil
     }
     res["position"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,8 +93,10 @@ func (m *OnenotePatchContentCommand) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(OnenotePatchInsertPosition)
-        m.SetPosition(&cast)
+        if val != nil {
+            cast := val.(OnenotePatchInsertPosition)
+            m.SetPosition(&cast)
+        }
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +104,9 @@ func (m *OnenotePatchContentCommand) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetTarget(val)
+        if val != nil {
+            m.SetTarget(val)
+        }
         return nil
     }
     return res

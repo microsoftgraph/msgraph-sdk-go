@@ -83,7 +83,9 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetInfo(val.(*ParticipantInfo))
+        if val != nil {
+            m.SetInfo(val.(*ParticipantInfo))
+        }
         return nil
     }
     res["isInLobby"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetIsInLobby(val)
+        if val != nil {
+            m.SetIsInLobby(val)
+        }
         return nil
     }
     res["isMuted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetIsMuted(val)
+        if val != nil {
+            m.SetIsMuted(val)
+        }
         return nil
     }
     res["mediaStreams"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,11 +113,13 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]MediaStream, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MediaStream))
+        if val != nil {
+            res := make([]MediaStream, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MediaStream))
+            }
+            m.SetMediaStreams(res)
         }
-        m.SetMediaStreams(res)
         return nil
     }
     res["metadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,7 +127,9 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetMetadata(val)
+        if val != nil {
+            m.SetMetadata(val)
+        }
         return nil
     }
     res["recordingInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,7 +137,9 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetRecordingInfo(val.(*RecordingInfo))
+        if val != nil {
+            m.SetRecordingInfo(val.(*RecordingInfo))
+        }
         return nil
     }
     return res

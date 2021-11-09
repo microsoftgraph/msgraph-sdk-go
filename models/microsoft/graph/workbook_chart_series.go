@@ -53,7 +53,9 @@ func (m *WorkbookChartSeries) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetFormat(val.(*WorkbookChartSeriesFormat))
+        if val != nil {
+            m.SetFormat(val.(*WorkbookChartSeriesFormat))
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *WorkbookChartSeries) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["points"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,11 +73,13 @@ func (m *WorkbookChartSeries) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]WorkbookChartPoint, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookChartPoint))
+        if val != nil {
+            res := make([]WorkbookChartPoint, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookChartPoint))
+            }
+            m.SetPoints(res)
         }
-        m.SetPoints(res)
         return nil
     }
     return res

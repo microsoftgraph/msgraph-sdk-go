@@ -222,7 +222,9 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetCollate(val)
+        if val != nil {
+            m.SetCollate(val)
+        }
         return nil
     }
     res["colorMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -230,8 +232,10 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(PrintColorMode)
-        m.SetColorMode(&cast)
+        if val != nil {
+            cast := val.(PrintColorMode)
+            m.SetColorMode(&cast)
+        }
         return nil
     }
     res["copies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -239,7 +243,9 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetCopies(val)
+        if val != nil {
+            m.SetCopies(val)
+        }
         return nil
     }
     res["dpi"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -247,7 +253,9 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDpi(val)
+        if val != nil {
+            m.SetDpi(val)
+        }
         return nil
     }
     res["duplexMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -255,8 +263,10 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(PrintDuplexMode)
-        m.SetDuplexMode(&cast)
+        if val != nil {
+            cast := val.(PrintDuplexMode)
+            m.SetDuplexMode(&cast)
+        }
         return nil
     }
     res["feedOrientation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -264,8 +274,10 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(PrinterFeedOrientation)
-        m.SetFeedOrientation(&cast)
+        if val != nil {
+            cast := val.(PrinterFeedOrientation)
+            m.SetFeedOrientation(&cast)
+        }
         return nil
     }
     res["finishings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -273,11 +285,13 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]PrintFinishing, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintFinishing))
+        if val != nil {
+            res := make([]PrintFinishing, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintFinishing))
+            }
+            m.SetFinishings(res)
         }
-        m.SetFinishings(res)
         return nil
     }
     res["fitPdfToPage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -285,7 +299,9 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetFitPdfToPage(val)
+        if val != nil {
+            m.SetFitPdfToPage(val)
+        }
         return nil
     }
     res["inputBin"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -293,7 +309,9 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetInputBin(val)
+        if val != nil {
+            m.SetInputBin(val)
+        }
         return nil
     }
     res["margin"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -301,7 +319,9 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetMargin(val.(*PrintMargin))
+        if val != nil {
+            m.SetMargin(val.(*PrintMargin))
+        }
         return nil
     }
     res["mediaSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -309,7 +329,9 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetMediaSize(val)
+        if val != nil {
+            m.SetMediaSize(val)
+        }
         return nil
     }
     res["mediaType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -317,7 +339,9 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetMediaType(val)
+        if val != nil {
+            m.SetMediaType(val)
+        }
         return nil
     }
     res["multipageLayout"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -325,8 +349,10 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(PrintMultipageLayout)
-        m.SetMultipageLayout(&cast)
+        if val != nil {
+            cast := val.(PrintMultipageLayout)
+            m.SetMultipageLayout(&cast)
+        }
         return nil
     }
     res["orientation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -334,8 +360,10 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(PrintOrientation)
-        m.SetOrientation(&cast)
+        if val != nil {
+            cast := val.(PrintOrientation)
+            m.SetOrientation(&cast)
+        }
         return nil
     }
     res["outputBin"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -343,7 +371,9 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetOutputBin(val)
+        if val != nil {
+            m.SetOutputBin(val)
+        }
         return nil
     }
     res["pageRanges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -351,11 +381,13 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]IntegerRange, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IntegerRange))
+        if val != nil {
+            res := make([]IntegerRange, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IntegerRange))
+            }
+            m.SetPageRanges(res)
         }
-        m.SetPageRanges(res)
         return nil
     }
     res["pagesPerSheet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -363,7 +395,9 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetPagesPerSheet(val)
+        if val != nil {
+            m.SetPagesPerSheet(val)
+        }
         return nil
     }
     res["quality"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -371,8 +405,10 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(PrintQuality)
-        m.SetQuality(&cast)
+        if val != nil {
+            cast := val.(PrintQuality)
+            m.SetQuality(&cast)
+        }
         return nil
     }
     res["scaling"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -380,8 +416,10 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(PrintScaling)
-        m.SetScaling(&cast)
+        if val != nil {
+            cast := val.(PrintScaling)
+            m.SetScaling(&cast)
+        }
         return nil
     }
     return res

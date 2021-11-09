@@ -123,11 +123,13 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]ManagedMobileApp, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedMobileApp))
+        if val != nil {
+            res := make([]ManagedMobileApp, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedMobileApp))
+            }
+            m.SetApps(res)
         }
-        m.SetApps(res)
         return nil
     }
     res["customBrowserDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,7 +137,9 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetCustomBrowserDisplayName(val)
+        if val != nil {
+            m.SetCustomBrowserDisplayName(val)
+        }
         return nil
     }
     res["customBrowserPackageId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,7 +147,9 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetCustomBrowserPackageId(val)
+        if val != nil {
+            m.SetCustomBrowserPackageId(val)
+        }
         return nil
     }
     res["deployedAppCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +157,9 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDeployedAppCount(val)
+        if val != nil {
+            m.SetDeployedAppCount(val)
+        }
         return nil
     }
     res["deploymentSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +167,9 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDeploymentSummary(val.(*ManagedAppPolicyDeploymentSummary))
+        if val != nil {
+            m.SetDeploymentSummary(val.(*ManagedAppPolicyDeploymentSummary))
+        }
         return nil
     }
     res["disableAppEncryptionIfDeviceEncryptionIsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,7 +177,9 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDisableAppEncryptionIfDeviceEncryptionIsEnabled(val)
+        if val != nil {
+            m.SetDisableAppEncryptionIfDeviceEncryptionIsEnabled(val)
+        }
         return nil
     }
     res["encryptAppData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +187,9 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetEncryptAppData(val)
+        if val != nil {
+            m.SetEncryptAppData(val)
+        }
         return nil
     }
     res["minimumRequiredPatchVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +197,9 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMinimumRequiredPatchVersion(val)
+        if val != nil {
+            m.SetMinimumRequiredPatchVersion(val)
+        }
         return nil
     }
     res["minimumWarningPatchVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +207,9 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMinimumWarningPatchVersion(val)
+        if val != nil {
+            m.SetMinimumWarningPatchVersion(val)
+        }
         return nil
     }
     res["screenCaptureBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +217,9 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetScreenCaptureBlocked(val)
+        if val != nil {
+            m.SetScreenCaptureBlocked(val)
+        }
         return nil
     }
     return res

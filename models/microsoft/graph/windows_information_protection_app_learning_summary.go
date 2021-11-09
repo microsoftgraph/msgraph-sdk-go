@@ -53,7 +53,9 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetApplicationName(val)
+        if val != nil {
+            m.SetApplicationName(val)
+        }
         return nil
     }
     res["applicationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,8 +63,10 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        cast := val.(ApplicationType)
-        m.SetApplicationType(&cast)
+        if val != nil {
+            cast := val.(ApplicationType)
+            m.SetApplicationType(&cast)
+        }
         return nil
     }
     res["deviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +74,9 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetFieldDeserializers()
         if err != nil {
             return err
         }
-        m.SetDeviceCount(val)
+        if val != nil {
+            m.SetDeviceCount(val)
+        }
         return nil
     }
     return res

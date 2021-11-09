@@ -192,7 +192,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetAlbum(val)
+        if val != nil {
+            m.SetAlbum(val)
+        }
         return nil
     }
     res["albumArtist"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +202,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetAlbumArtist(val)
+        if val != nil {
+            m.SetAlbumArtist(val)
+        }
         return nil
     }
     res["artist"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +212,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetArtist(val)
+        if val != nil {
+            m.SetArtist(val)
+        }
         return nil
     }
     res["bitrate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,7 +222,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetBitrate(val)
+        if val != nil {
+            m.SetBitrate(val)
+        }
         return nil
     }
     res["composers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,7 +232,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetComposers(val)
+        if val != nil {
+            m.SetComposers(val)
+        }
         return nil
     }
     res["copyright"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -232,7 +242,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetCopyright(val)
+        if val != nil {
+            m.SetCopyright(val)
+        }
         return nil
     }
     res["disc"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -240,7 +252,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetDisc(val)
+        if val != nil {
+            m.SetDisc(val)
+        }
         return nil
     }
     res["discCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -248,7 +262,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetDiscCount(val)
+        if val != nil {
+            m.SetDiscCount(val)
+        }
         return nil
     }
     res["duration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -256,7 +272,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetDuration(val)
+        if val != nil {
+            m.SetDuration(val)
+        }
         return nil
     }
     res["genre"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -264,7 +282,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetGenre(val)
+        if val != nil {
+            m.SetGenre(val)
+        }
         return nil
     }
     res["hasDrm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -272,7 +292,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetHasDrm(val)
+        if val != nil {
+            m.SetHasDrm(val)
+        }
         return nil
     }
     res["isVariableBitrate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -280,7 +302,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIsVariableBitrate(val)
+        if val != nil {
+            m.SetIsVariableBitrate(val)
+        }
         return nil
     }
     res["title"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -288,7 +312,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetTitle(val)
+        if val != nil {
+            m.SetTitle(val)
+        }
         return nil
     }
     res["track"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -296,7 +322,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetTrack(val)
+        if val != nil {
+            m.SetTrack(val)
+        }
         return nil
     }
     res["trackCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -304,7 +332,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetTrackCount(val)
+        if val != nil {
+            m.SetTrackCount(val)
+        }
         return nil
     }
     res["year"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -312,7 +342,9 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetYear(val)
+        if val != nil {
+            m.SetYear(val)
+        }
         return nil
     }
     return res

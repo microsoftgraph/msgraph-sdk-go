@@ -134,7 +134,9 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetActivityDateTime(val)
+        if val != nil {
+            m.SetActivityDateTime(val)
+        }
         return nil
     }
     res["activityDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +144,9 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetActivityDisplayName(val)
+        if val != nil {
+            m.SetActivityDisplayName(val)
+        }
         return nil
     }
     res["additionalDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,11 +154,13 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]KeyValue, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValue))
+        if val != nil {
+            res := make([]KeyValue, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValue))
+            }
+            m.SetAdditionalDetails(res)
         }
-        m.SetAdditionalDetails(res)
         return nil
     }
     res["category"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +168,9 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetCategory(val)
+        if val != nil {
+            m.SetCategory(val)
+        }
         return nil
     }
     res["correlationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +178,9 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetCorrelationId(val)
+        if val != nil {
+            m.SetCorrelationId(val)
+        }
         return nil
     }
     res["initiatedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +188,9 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetInitiatedBy(val.(*AuditActivityInitiator))
+        if val != nil {
+            m.SetInitiatedBy(val.(*AuditActivityInitiator))
+        }
         return nil
     }
     res["loggedByService"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +198,9 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetLoggedByService(val)
+        if val != nil {
+            m.SetLoggedByService(val)
+        }
         return nil
     }
     res["operationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +208,9 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetOperationType(val)
+        if val != nil {
+            m.SetOperationType(val)
+        }
         return nil
     }
     res["result"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,8 +218,10 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        cast := val.(OperationResult)
-        m.SetResult(&cast)
+        if val != nil {
+            cast := val.(OperationResult)
+            m.SetResult(&cast)
+        }
         return nil
     }
     res["resultReason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -211,7 +229,9 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetResultReason(val)
+        if val != nil {
+            m.SetResultReason(val)
+        }
         return nil
     }
     res["targetResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -219,11 +239,13 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]TargetResource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TargetResource))
+        if val != nil {
+            res := make([]TargetResource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TargetResource))
+            }
+            m.SetTargetResources(res)
         }
-        m.SetTargetResources(res)
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *SubscribeToToneRequestBody) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetClientContext(val)
+        if val != nil {
+            m.SetClientContext(val)
+        }
         return nil
     }
     return res

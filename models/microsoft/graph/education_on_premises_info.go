@@ -42,7 +42,9 @@ func (m *EducationOnPremisesInfo) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetImmutableId(val)
+        if val != nil {
+            m.SetImmutableId(val)
+        }
         return nil
     }
     return res

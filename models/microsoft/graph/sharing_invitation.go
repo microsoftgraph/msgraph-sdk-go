@@ -72,7 +72,9 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetEmail(val)
+        if val != nil {
+            m.SetEmail(val)
+        }
         return nil
     }
     res["invitedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetInvitedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetInvitedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["redeemedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRedeemedBy(val)
+        if val != nil {
+            m.SetRedeemedBy(val)
+        }
         return nil
     }
     res["signInRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSignInRequired(val)
+        if val != nil {
+            m.SetSignInRequired(val)
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *Compliance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetEdiscovery(val.(*Ediscoveryroot))
+        if val != nil {
+            m.SetEdiscovery(val.(*Ediscoveryroot))
+        }
         return nil
     }
     return res

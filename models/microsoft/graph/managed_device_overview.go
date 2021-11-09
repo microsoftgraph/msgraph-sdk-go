@@ -73,7 +73,9 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDeviceExchangeAccessStateSummary(val.(*DeviceExchangeAccessStateSummary))
+        if val != nil {
+            m.SetDeviceExchangeAccessStateSummary(val.(*DeviceExchangeAccessStateSummary))
+        }
         return nil
     }
     res["deviceOperatingSystemSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDeviceOperatingSystemSummary(val.(*DeviceOperatingSystemSummary))
+        if val != nil {
+            m.SetDeviceOperatingSystemSummary(val.(*DeviceOperatingSystemSummary))
+        }
         return nil
     }
     res["dualEnrolledDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDualEnrolledDeviceCount(val)
+        if val != nil {
+            m.SetDualEnrolledDeviceCount(val)
+        }
         return nil
     }
     res["enrolledDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetEnrolledDeviceCount(val)
+        if val != nil {
+            m.SetEnrolledDeviceCount(val)
+        }
         return nil
     }
     res["mdmEnrolledCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +113,9 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetMdmEnrolledCount(val)
+        if val != nil {
+            m.SetMdmEnrolledCount(val)
+        }
         return nil
     }
     return res

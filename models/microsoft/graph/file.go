@@ -62,7 +62,9 @@ func (m *File) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetHashes(val.(*Hashes))
+        if val != nil {
+            m.SetHashes(val.(*Hashes))
+        }
         return nil
     }
     res["mimeType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *File) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetMimeType(val)
+        if val != nil {
+            m.SetMimeType(val)
+        }
         return nil
     }
     res["processingMetadata"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *File) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetProcessingMetadata(val)
+        if val != nil {
+            m.SetProcessingMetadata(val)
+        }
         return nil
     }
     return res

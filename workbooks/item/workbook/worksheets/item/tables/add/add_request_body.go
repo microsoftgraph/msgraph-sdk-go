@@ -52,7 +52,9 @@ func (m *AddRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetAddress(val)
+        if val != nil {
+            m.SetAddress(val)
+        }
         return nil
     }
     res["hasHeaders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *AddRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetHasHeaders(val)
+        if val != nil {
+            m.SetHasHeaders(val)
+        }
         return nil
     }
     return res

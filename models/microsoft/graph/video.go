@@ -132,7 +132,9 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetAudioBitsPerSample(val)
+        if val != nil {
+            m.SetAudioBitsPerSample(val)
+        }
         return nil
     }
     res["audioChannels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +142,9 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetAudioChannels(val)
+        if val != nil {
+            m.SetAudioChannels(val)
+        }
         return nil
     }
     res["audioFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +152,9 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetAudioFormat(val)
+        if val != nil {
+            m.SetAudioFormat(val)
+        }
         return nil
     }
     res["audioSamplesPerSecond"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +162,9 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetAudioSamplesPerSecond(val)
+        if val != nil {
+            m.SetAudioSamplesPerSecond(val)
+        }
         return nil
     }
     res["bitrate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +172,9 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetBitrate(val)
+        if val != nil {
+            m.SetBitrate(val)
+        }
         return nil
     }
     res["duration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +182,9 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetDuration(val)
+        if val != nil {
+            m.SetDuration(val)
+        }
         return nil
     }
     res["fourCC"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +192,9 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetFourCC(val)
+        if val != nil {
+            m.SetFourCC(val)
+        }
         return nil
     }
     res["frameRate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +202,9 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetFrameRate(val)
+        if val != nil {
+            m.SetFrameRate(val)
+        }
         return nil
     }
     res["height"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +212,9 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetHeight(val)
+        if val != nil {
+            m.SetHeight(val)
+        }
         return nil
     }
     res["width"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,7 +222,9 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetWidth(val)
+        if val != nil {
+            m.SetWidth(val)
+        }
         return nil
     }
     return res

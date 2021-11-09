@@ -33,7 +33,9 @@ func (m *SharePointIdentity) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetLoginName(val)
+        if val != nil {
+            m.SetLoginName(val)
+        }
         return nil
     }
     return res

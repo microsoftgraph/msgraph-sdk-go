@@ -82,8 +82,10 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(MediaDirection)
-        m.SetDirection(&cast)
+        if val != nil {
+            cast := val.(MediaDirection)
+            m.SetDirection(&cast)
+        }
         return nil
     }
     res["label"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLabel(val)
+        if val != nil {
+            m.SetLabel(val)
+        }
         return nil
     }
     res["mediaType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,8 +103,10 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(Modality)
-        m.SetMediaType(&cast)
+        if val != nil {
+            cast := val.(Modality)
+            m.SetMediaType(&cast)
+        }
         return nil
     }
     res["serverMuted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetServerMuted(val)
+        if val != nil {
+            m.SetServerMuted(val)
+        }
         return nil
     }
     res["sourceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetSourceId(val)
+        if val != nil {
+            m.SetSourceId(val)
+        }
         return nil
     }
     return res

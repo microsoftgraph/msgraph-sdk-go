@@ -53,7 +53,9 @@ func (m *WorkbookChartAxisTitle) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetFormat(val.(*WorkbookChartAxisTitleFormat))
+        if val != nil {
+            m.SetFormat(val.(*WorkbookChartAxisTitleFormat))
+        }
         return nil
     }
     res["text"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *WorkbookChartAxisTitle) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetText(val)
+        if val != nil {
+            m.SetText(val)
+        }
         return nil
     }
     res["visible"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *WorkbookChartAxisTitle) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetVisible(val)
+        if val != nil {
+            m.SetVisible(val)
+        }
         return nil
     }
     return res

@@ -103,11 +103,13 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetClientApplicationIds(res)
         }
-        m.SetClientApplicationIds(res)
         return nil
     }
     res["clientApplicationPublisherIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,11 +117,13 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetClientApplicationPublisherIds(res)
         }
-        m.SetClientApplicationPublisherIds(res)
         return nil
     }
     res["clientApplicationsFromVerifiedPublisherOnly"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,7 +131,9 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetClientApplicationsFromVerifiedPublisherOnly(val)
+        if val != nil {
+            m.SetClientApplicationsFromVerifiedPublisherOnly(val)
+        }
         return nil
     }
     res["clientApplicationTenantIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,11 +141,13 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetClientApplicationTenantIds(res)
         }
-        m.SetClientApplicationTenantIds(res)
         return nil
     }
     res["permissionClassification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +155,9 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetPermissionClassification(val)
+        if val != nil {
+            m.SetPermissionClassification(val)
+        }
         return nil
     }
     res["permissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,11 +165,13 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetPermissions(res)
         }
-        m.SetPermissions(res)
         return nil
     }
     res["permissionType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,8 +179,10 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(PermissionType)
-        m.SetPermissionType(&cast)
+        if val != nil {
+            cast := val.(PermissionType)
+            m.SetPermissionType(&cast)
+        }
         return nil
     }
     res["resourceApplication"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +190,9 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetResourceApplication(val)
+        if val != nil {
+            m.SetResourceApplication(val)
+        }
         return nil
     }
     return res

@@ -44,7 +44,9 @@ func (m *UnifiedGroupSource) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetGroup(val.(*Group))
+        if val != nil {
+            m.SetGroup(val.(*Group))
+        }
         return nil
     }
     res["includedSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,8 +54,10 @@ func (m *UnifiedGroupSource) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(i2f6e0000f37d36d482a1a2be3e8024654d1a2bafb61d18de02f698fc19f7d94d.SourceType)
-        m.SetIncludedSources(&cast)
+        if val != nil {
+            cast := val.(i2f6e0000f37d36d482a1a2be3e8024654d1a2bafb61d18de02f698fc19f7d94d.SourceType)
+            m.SetIncludedSources(&cast)
+        }
         return nil
     }
     return res

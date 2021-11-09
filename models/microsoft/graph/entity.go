@@ -42,7 +42,9 @@ func (m *Entity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     return res

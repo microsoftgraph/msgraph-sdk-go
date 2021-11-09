@@ -154,7 +154,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetAgreementFileId(val)
+        if val != nil {
+            m.SetAgreementFileId(val)
+        }
         return nil
     }
     res["agreementId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +164,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetAgreementId(val)
+        if val != nil {
+            m.SetAgreementId(val)
+        }
         return nil
     }
     res["deviceDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +174,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDeviceDisplayName(val)
+        if val != nil {
+            m.SetDeviceDisplayName(val)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +184,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["deviceOSType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +194,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDeviceOSType(val)
+        if val != nil {
+            m.SetDeviceOSType(val)
+        }
         return nil
     }
     res["deviceOSVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +204,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDeviceOSVersion(val)
+        if val != nil {
+            m.SetDeviceOSVersion(val)
+        }
         return nil
     }
     res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +214,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["recordedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +224,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetRecordedDateTime(val)
+        if val != nil {
+            m.SetRecordedDateTime(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,8 +234,10 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(AgreementAcceptanceState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(AgreementAcceptanceState)
+            m.SetState(&cast)
+        }
         return nil
     }
     res["userDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -227,7 +245,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUserDisplayName(val)
+        if val != nil {
+            m.SetUserDisplayName(val)
+        }
         return nil
     }
     res["userEmail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -235,7 +255,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUserEmail(val)
+        if val != nil {
+            m.SetUserEmail(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -243,7 +265,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -251,7 +275,9 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

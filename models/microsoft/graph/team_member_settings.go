@@ -92,7 +92,9 @@ func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAllowAddRemoveApps(val)
+        if val != nil {
+            m.SetAllowAddRemoveApps(val)
+        }
         return nil
     }
     res["allowCreatePrivateChannels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAllowCreatePrivateChannels(val)
+        if val != nil {
+            m.SetAllowCreatePrivateChannels(val)
+        }
         return nil
     }
     res["allowCreateUpdateChannels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAllowCreateUpdateChannels(val)
+        if val != nil {
+            m.SetAllowCreateUpdateChannels(val)
+        }
         return nil
     }
     res["allowCreateUpdateRemoveConnectors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +122,9 @@ func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAllowCreateUpdateRemoveConnectors(val)
+        if val != nil {
+            m.SetAllowCreateUpdateRemoveConnectors(val)
+        }
         return nil
     }
     res["allowCreateUpdateRemoveTabs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +132,9 @@ func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAllowCreateUpdateRemoveTabs(val)
+        if val != nil {
+            m.SetAllowCreateUpdateRemoveTabs(val)
+        }
         return nil
     }
     res["allowDeleteChannels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +142,9 @@ func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAllowDeleteChannels(val)
+        if val != nil {
+            m.SetAllowDeleteChannels(val)
+        }
         return nil
     }
     return res

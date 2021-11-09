@@ -35,7 +35,9 @@ func (m *GetByIds) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetDeletedDateTime(val)
+        if val != nil {
+            m.SetDeletedDateTime(val)
+        }
         return nil
     }
     return res

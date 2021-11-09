@@ -62,7 +62,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDeviceComplianceCheckinThresholdDays(val)
+        if val != nil {
+            m.SetDeviceComplianceCheckinThresholdDays(val)
+        }
         return nil
     }
     res["isScheduledActionEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsScheduledActionEnabled(val)
+        if val != nil {
+            m.SetIsScheduledActionEnabled(val)
+        }
         return nil
     }
     res["secureByDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSecureByDefault(val)
+        if val != nil {
+            m.SetSecureByDefault(val)
+        }
         return nil
     }
     return res

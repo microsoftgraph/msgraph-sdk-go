@@ -114,7 +114,9 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetCreatedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +124,9 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +134,9 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDescription(val.(*EducationItemBody))
+        if val != nil {
+            m.SetDescription(val.(*EducationItemBody))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +144,9 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["grading"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +154,9 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetGrading(val.(*EducationAssignmentGradeType))
+        if val != nil {
+            m.SetGrading(val.(*EducationAssignmentGradeType))
+        }
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +164,9 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetLastModifiedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetLastModifiedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +174,9 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["levels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,11 +184,13 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]RubricLevel, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RubricLevel))
+        if val != nil {
+            res := make([]RubricLevel, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RubricLevel))
+            }
+            m.SetLevels(res)
         }
-        m.SetLevels(res)
         return nil
     }
     res["qualities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,11 +198,13 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]RubricQuality, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RubricQuality))
+        if val != nil {
+            res := make([]RubricQuality, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RubricQuality))
+            }
+            m.SetQualities(res)
         }
-        m.SetQualities(res)
         return nil
     }
     return res

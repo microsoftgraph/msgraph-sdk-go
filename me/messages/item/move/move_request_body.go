@@ -42,7 +42,9 @@ func (m *MoveRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDestinationId(val)
+        if val != nil {
+            m.SetDestinationId(val)
+        }
         return nil
     }
     return res

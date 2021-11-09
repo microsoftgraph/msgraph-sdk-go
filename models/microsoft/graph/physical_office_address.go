@@ -92,7 +92,9 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetCity(val)
+        if val != nil {
+            m.SetCity(val)
+        }
         return nil
     }
     res["countryOrRegion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetCountryOrRegion(val)
+        if val != nil {
+            m.SetCountryOrRegion(val)
+        }
         return nil
     }
     res["officeLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetOfficeLocation(val)
+        if val != nil {
+            m.SetOfficeLocation(val)
+        }
         return nil
     }
     res["postalCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +122,9 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetPostalCode(val)
+        if val != nil {
+            m.SetPostalCode(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +132,9 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetState(val)
+        if val != nil {
+            m.SetState(val)
+        }
         return nil
     }
     res["street"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +142,9 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetStreet(val)
+        if val != nil {
+            m.SetStreet(val)
+        }
         return nil
     }
     return res

@@ -104,11 +104,13 @@ func (m *Set) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         if err != nil {
             return err
         }
-        res := make([]Term, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Term))
+        if val != nil {
+            res := make([]Term, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Term))
+            }
+            m.SetChildren(res)
         }
-        m.SetChildren(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +118,9 @@ func (m *Set) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +128,9 @@ func (m *Set) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["localizedNames"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,11 +138,13 @@ func (m *Set) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         if err != nil {
             return err
         }
-        res := make([]LocalizedName, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LocalizedName))
+        if val != nil {
+            res := make([]LocalizedName, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LocalizedName))
+            }
+            m.SetLocalizedNames(res)
         }
-        m.SetLocalizedNames(res)
         return nil
     }
     res["parentGroup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +152,9 @@ func (m *Set) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         if err != nil {
             return err
         }
-        m.SetParentGroup(val.(*Group))
+        if val != nil {
+            m.SetParentGroup(val.(*Group))
+        }
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,11 +162,13 @@ func (m *Set) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         if err != nil {
             return err
         }
-        res := make([]KeyValue, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValue))
+        if val != nil {
+            res := make([]KeyValue, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValue))
+            }
+            m.SetProperties(res)
         }
-        m.SetProperties(res)
         return nil
     }
     res["relations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,11 +176,13 @@ func (m *Set) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         if err != nil {
             return err
         }
-        res := make([]Relation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Relation))
+        if val != nil {
+            res := make([]Relation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Relation))
+            }
+            m.SetRelations(res)
         }
-        m.SetRelations(res)
         return nil
     }
     res["terms"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,11 +190,13 @@ func (m *Set) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         if err != nil {
             return err
         }
-        res := make([]Term, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Term))
+        if val != nil {
+            res := make([]Term, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Term))
+            }
+            m.SetTerms(res)
         }
-        m.SetTerms(res)
         return nil
     }
     return res

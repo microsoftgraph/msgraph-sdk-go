@@ -33,7 +33,9 @@ func (m *WorkbookChartAxisTitleFormat) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetFont(val.(*WorkbookChartFont))
+        if val != nil {
+            m.SetFont(val.(*WorkbookChartFont))
+        }
         return nil
     }
     return res

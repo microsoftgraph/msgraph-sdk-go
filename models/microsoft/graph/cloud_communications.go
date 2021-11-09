@@ -63,11 +63,13 @@ func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]CallRecord, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CallRecord))
+        if val != nil {
+            res := make([]CallRecord, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CallRecord))
+            }
+            m.SetCallRecords(res)
         }
-        m.SetCallRecords(res)
         return nil
     }
     res["calls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,11 +77,13 @@ func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]Call, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Call))
+        if val != nil {
+            res := make([]Call, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Call))
+            }
+            m.SetCalls(res)
         }
-        m.SetCalls(res)
         return nil
     }
     res["onlineMeetings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,11 +91,13 @@ func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]OnlineMeeting, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnlineMeeting))
+        if val != nil {
+            res := make([]OnlineMeeting, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnlineMeeting))
+            }
+            m.SetOnlineMeetings(res)
         }
-        m.SetOnlineMeetings(res)
         return nil
     }
     res["presences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,11 +105,13 @@ func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]Presence, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Presence))
+        if val != nil {
+            res := make([]Presence, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Presence))
+            }
+            m.SetPresences(res)
         }
-        m.SetPresences(res)
         return nil
     }
     return res

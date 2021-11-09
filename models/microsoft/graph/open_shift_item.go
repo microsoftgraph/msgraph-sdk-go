@@ -33,7 +33,9 @@ func (m *OpenShiftItem) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetOpenSlotCount(val)
+        if val != nil {
+            m.SetOpenSlotCount(val)
+        }
         return nil
     }
     return res

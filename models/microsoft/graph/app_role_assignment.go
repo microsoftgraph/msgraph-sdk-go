@@ -94,7 +94,9 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetAppRoleId(val)
+        if val != nil {
+            m.SetAppRoleId(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +104,9 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["principalDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +114,9 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetPrincipalDisplayName(val)
+        if val != nil {
+            m.SetPrincipalDisplayName(val)
+        }
         return nil
     }
     res["principalId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +124,9 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetPrincipalId(val)
+        if val != nil {
+            m.SetPrincipalId(val)
+        }
         return nil
     }
     res["principalType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +134,9 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetPrincipalType(val)
+        if val != nil {
+            m.SetPrincipalType(val)
+        }
         return nil
     }
     res["resourceDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +144,9 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetResourceDisplayName(val)
+        if val != nil {
+            m.SetResourceDisplayName(val)
+        }
         return nil
     }
     res["resourceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +154,9 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetResourceId(val)
+        if val != nil {
+            m.SetResourceId(val)
+        }
         return nil
     }
     return res

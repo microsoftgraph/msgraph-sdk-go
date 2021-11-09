@@ -42,7 +42,9 @@ func (m *Deleted) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetState(val)
+        if val != nil {
+            m.SetState(val)
+        }
         return nil
     }
     return res

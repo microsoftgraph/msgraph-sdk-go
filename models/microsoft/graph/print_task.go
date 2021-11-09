@@ -63,7 +63,9 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetDefinition(val.(*PrintTaskDefinition))
+        if val != nil {
+            m.SetDefinition(val.(*PrintTaskDefinition))
+        }
         return nil
     }
     res["parentUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetParentUrl(val)
+        if val != nil {
+            m.SetParentUrl(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetStatus(val.(*PrintTaskStatus))
+        if val != nil {
+            m.SetStatus(val.(*PrintTaskStatus))
+        }
         return nil
     }
     res["trigger"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *PrintTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetTrigger(val.(*PrintTaskTrigger))
+        if val != nil {
+            m.SetTrigger(val.(*PrintTaskTrigger))
+        }
         return nil
     }
     return res

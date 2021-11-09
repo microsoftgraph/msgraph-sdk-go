@@ -42,7 +42,9 @@ func (m *SetSolidColorRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetColor(val)
+        if val != nil {
+            m.SetColor(val)
+        }
         return nil
     }
     return res

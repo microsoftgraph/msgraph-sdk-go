@@ -42,7 +42,9 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDirectory(val.(*RbacApplication))
+        if val != nil {
+            m.SetDirectory(val.(*RbacApplication))
+        }
         return nil
     }
     return res

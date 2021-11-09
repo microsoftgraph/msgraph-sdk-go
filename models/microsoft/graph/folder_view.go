@@ -62,7 +62,9 @@ func (m *FolderView) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetSortBy(val)
+        if val != nil {
+            m.SetSortBy(val)
+        }
         return nil
     }
     res["sortOrder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *FolderView) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetSortOrder(val)
+        if val != nil {
+            m.SetSortOrder(val)
+        }
         return nil
     }
     res["viewType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *FolderView) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetViewType(val)
+        if val != nil {
+            m.SetViewType(val)
+        }
         return nil
     }
     return res

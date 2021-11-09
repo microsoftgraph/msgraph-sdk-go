@@ -52,7 +52,9 @@ func (m *ChannelIdentity) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetChannelId(val)
+        if val != nil {
+            m.SetChannelId(val)
+        }
         return nil
     }
     res["teamId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *ChannelIdentity) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetTeamId(val)
+        if val != nil {
+            m.SetTeamId(val)
+        }
         return nil
     }
     return res

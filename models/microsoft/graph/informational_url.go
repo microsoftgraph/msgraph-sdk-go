@@ -82,7 +82,9 @@ func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetLogoUrl(val)
+        if val != nil {
+            m.SetLogoUrl(val)
+        }
         return nil
     }
     res["marketingUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetMarketingUrl(val)
+        if val != nil {
+            m.SetMarketingUrl(val)
+        }
         return nil
     }
     res["privacyStatementUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetPrivacyStatementUrl(val)
+        if val != nil {
+            m.SetPrivacyStatementUrl(val)
+        }
         return nil
     }
     res["supportUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetSupportUrl(val)
+        if val != nil {
+            m.SetSupportUrl(val)
+        }
         return nil
     }
     res["termsOfServiceUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetTermsOfServiceUrl(val)
+        if val != nil {
+            m.SetTermsOfServiceUrl(val)
+        }
         return nil
     }
     return res

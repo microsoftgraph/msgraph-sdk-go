@@ -33,11 +33,13 @@ func (m *ManagedAppConfiguration) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValuePair))
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetCustomSettings(res)
         }
-        m.SetCustomSettings(res)
         return nil
     }
     return res

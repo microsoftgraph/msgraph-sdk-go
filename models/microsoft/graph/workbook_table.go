@@ -163,11 +163,13 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]WorkbookTableColumn, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookTableColumn))
+        if val != nil {
+            res := make([]WorkbookTableColumn, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookTableColumn))
+            }
+            m.SetColumns(res)
         }
-        m.SetColumns(res)
         return nil
     }
     res["highlightFirstColumn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +177,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetHighlightFirstColumn(val)
+        if val != nil {
+            m.SetHighlightFirstColumn(val)
+        }
         return nil
     }
     res["highlightLastColumn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +187,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetHighlightLastColumn(val)
+        if val != nil {
+            m.SetHighlightLastColumn(val)
+        }
         return nil
     }
     res["legacyId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +197,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetLegacyId(val)
+        if val != nil {
+            m.SetLegacyId(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +207,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["rows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,11 +217,13 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]WorkbookTableRow, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookTableRow))
+        if val != nil {
+            res := make([]WorkbookTableRow, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookTableRow))
+            }
+            m.SetRows(res)
         }
-        m.SetRows(res)
         return nil
     }
     res["showBandedColumns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -219,7 +231,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetShowBandedColumns(val)
+        if val != nil {
+            m.SetShowBandedColumns(val)
+        }
         return nil
     }
     res["showBandedRows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -227,7 +241,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetShowBandedRows(val)
+        if val != nil {
+            m.SetShowBandedRows(val)
+        }
         return nil
     }
     res["showFilterButton"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -235,7 +251,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetShowFilterButton(val)
+        if val != nil {
+            m.SetShowFilterButton(val)
+        }
         return nil
     }
     res["showHeaders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -243,7 +261,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetShowHeaders(val)
+        if val != nil {
+            m.SetShowHeaders(val)
+        }
         return nil
     }
     res["showTotals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -251,7 +271,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetShowTotals(val)
+        if val != nil {
+            m.SetShowTotals(val)
+        }
         return nil
     }
     res["sort"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -259,7 +281,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSort(val.(*WorkbookTableSort))
+        if val != nil {
+            m.SetSort(val.(*WorkbookTableSort))
+        }
         return nil
     }
     res["style"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -267,7 +291,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetStyle(val)
+        if val != nil {
+            m.SetStyle(val)
+        }
         return nil
     }
     res["worksheet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -275,7 +301,9 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetWorksheet(val.(*WorkbookWorksheet))
+        if val != nil {
+            m.SetWorksheet(val.(*WorkbookWorksheet))
+        }
         return nil
     }
     return res

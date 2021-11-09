@@ -113,7 +113,9 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetFormat(val.(*WorkbookChartDataLabelFormat))
+        if val != nil {
+            m.SetFormat(val.(*WorkbookChartDataLabelFormat))
+        }
         return nil
     }
     res["position"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +123,9 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetPosition(val)
+        if val != nil {
+            m.SetPosition(val)
+        }
         return nil
     }
     res["separator"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +133,9 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetSeparator(val)
+        if val != nil {
+            m.SetSeparator(val)
+        }
         return nil
     }
     res["showBubbleSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +143,9 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetShowBubbleSize(val)
+        if val != nil {
+            m.SetShowBubbleSize(val)
+        }
         return nil
     }
     res["showCategoryName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +153,9 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetShowCategoryName(val)
+        if val != nil {
+            m.SetShowCategoryName(val)
+        }
         return nil
     }
     res["showLegendKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +163,9 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetShowLegendKey(val)
+        if val != nil {
+            m.SetShowLegendKey(val)
+        }
         return nil
     }
     res["showPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +173,9 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetShowPercentage(val)
+        if val != nil {
+            m.SetShowPercentage(val)
+        }
         return nil
     }
     res["showSeriesName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,7 +183,9 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetShowSeriesName(val)
+        if val != nil {
+            m.SetShowSeriesName(val)
+        }
         return nil
     }
     res["showValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,7 +193,9 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetShowValue(val)
+        if val != nil {
+            m.SetShowValue(val)
+        }
         return nil
     }
     return res

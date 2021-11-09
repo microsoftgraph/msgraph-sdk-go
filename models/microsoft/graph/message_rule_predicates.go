@@ -332,11 +332,13 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetBodyContains(res)
         }
-        m.SetBodyContains(res)
         return nil
     }
     res["bodyOrSubjectContains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -344,11 +346,13 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetBodyOrSubjectContains(res)
         }
-        m.SetBodyOrSubjectContains(res)
         return nil
     }
     res["categories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -356,11 +360,13 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCategories(res)
         }
-        m.SetCategories(res)
         return nil
     }
     res["fromAddresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -368,11 +374,13 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Recipient))
+        if val != nil {
+            res := make([]Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Recipient))
+            }
+            m.SetFromAddresses(res)
         }
-        m.SetFromAddresses(res)
         return nil
     }
     res["hasAttachments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -380,7 +388,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetHasAttachments(val)
+        if val != nil {
+            m.SetHasAttachments(val)
+        }
         return nil
     }
     res["headerContains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -388,11 +398,13 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetHeaderContains(res)
         }
-        m.SetHeaderContains(res)
         return nil
     }
     res["importance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -400,8 +412,10 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(Importance)
-        m.SetImportance(&cast)
+        if val != nil {
+            cast := val.(Importance)
+            m.SetImportance(&cast)
+        }
         return nil
     }
     res["isApprovalRequest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -409,7 +423,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsApprovalRequest(val)
+        if val != nil {
+            m.SetIsApprovalRequest(val)
+        }
         return nil
     }
     res["isAutomaticForward"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -417,7 +433,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsAutomaticForward(val)
+        if val != nil {
+            m.SetIsAutomaticForward(val)
+        }
         return nil
     }
     res["isAutomaticReply"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -425,7 +443,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsAutomaticReply(val)
+        if val != nil {
+            m.SetIsAutomaticReply(val)
+        }
         return nil
     }
     res["isEncrypted"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -433,7 +453,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsEncrypted(val)
+        if val != nil {
+            m.SetIsEncrypted(val)
+        }
         return nil
     }
     res["isMeetingRequest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -441,7 +463,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsMeetingRequest(val)
+        if val != nil {
+            m.SetIsMeetingRequest(val)
+        }
         return nil
     }
     res["isMeetingResponse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -449,7 +473,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsMeetingResponse(val)
+        if val != nil {
+            m.SetIsMeetingResponse(val)
+        }
         return nil
     }
     res["isNonDeliveryReport"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -457,7 +483,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsNonDeliveryReport(val)
+        if val != nil {
+            m.SetIsNonDeliveryReport(val)
+        }
         return nil
     }
     res["isPermissionControlled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -465,7 +493,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsPermissionControlled(val)
+        if val != nil {
+            m.SetIsPermissionControlled(val)
+        }
         return nil
     }
     res["isReadReceipt"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -473,7 +503,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsReadReceipt(val)
+        if val != nil {
+            m.SetIsReadReceipt(val)
+        }
         return nil
     }
     res["isSigned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -481,7 +513,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsSigned(val)
+        if val != nil {
+            m.SetIsSigned(val)
+        }
         return nil
     }
     res["isVoicemail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -489,7 +523,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsVoicemail(val)
+        if val != nil {
+            m.SetIsVoicemail(val)
+        }
         return nil
     }
     res["messageActionFlag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -497,8 +533,10 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(MessageActionFlag)
-        m.SetMessageActionFlag(&cast)
+        if val != nil {
+            cast := val.(MessageActionFlag)
+            m.SetMessageActionFlag(&cast)
+        }
         return nil
     }
     res["notSentToMe"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -506,7 +544,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetNotSentToMe(val)
+        if val != nil {
+            m.SetNotSentToMe(val)
+        }
         return nil
     }
     res["recipientContains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -514,11 +554,13 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRecipientContains(res)
         }
-        m.SetRecipientContains(res)
         return nil
     }
     res["senderContains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -526,11 +568,13 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSenderContains(res)
         }
-        m.SetSenderContains(res)
         return nil
     }
     res["sensitivity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -538,8 +582,10 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(Sensitivity)
-        m.SetSensitivity(&cast)
+        if val != nil {
+            cast := val.(Sensitivity)
+            m.SetSensitivity(&cast)
+        }
         return nil
     }
     res["sentCcMe"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -547,7 +593,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSentCcMe(val)
+        if val != nil {
+            m.SetSentCcMe(val)
+        }
         return nil
     }
     res["sentOnlyToMe"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -555,7 +603,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSentOnlyToMe(val)
+        if val != nil {
+            m.SetSentOnlyToMe(val)
+        }
         return nil
     }
     res["sentToAddresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -563,11 +613,13 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Recipient))
+        if val != nil {
+            res := make([]Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Recipient))
+            }
+            m.SetSentToAddresses(res)
         }
-        m.SetSentToAddresses(res)
         return nil
     }
     res["sentToMe"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -575,7 +627,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSentToMe(val)
+        if val != nil {
+            m.SetSentToMe(val)
+        }
         return nil
     }
     res["sentToOrCcMe"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -583,7 +637,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSentToOrCcMe(val)
+        if val != nil {
+            m.SetSentToOrCcMe(val)
+        }
         return nil
     }
     res["subjectContains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -591,11 +647,13 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSubjectContains(res)
         }
-        m.SetSubjectContains(res)
         return nil
     }
     res["withinSizeRange"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -603,7 +661,9 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetWithinSizeRange(val.(*SizeRange))
+        if val != nil {
+            m.SetWithinSizeRange(val.(*SizeRange))
+        }
         return nil
     }
     return res

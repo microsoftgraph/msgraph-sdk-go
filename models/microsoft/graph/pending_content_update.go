@@ -43,7 +43,9 @@ func (m *PendingContentUpdate) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetQueuedDateTime(val)
+        if val != nil {
+            m.SetQueuedDateTime(val)
+        }
         return nil
     }
     return res

@@ -92,7 +92,9 @@ func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetConferenceId(val)
+        if val != nil {
+            m.SetConferenceId(val)
+        }
         return nil
     }
     res["dialinUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDialinUrl(val)
+        if val != nil {
+            m.SetDialinUrl(val)
+        }
         return nil
     }
     res["tollFreeNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetTollFreeNumber(val)
+        if val != nil {
+            m.SetTollFreeNumber(val)
+        }
         return nil
     }
     res["tollFreeNumbers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,11 +122,13 @@ func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTollFreeNumbers(res)
         }
-        m.SetTollFreeNumbers(res)
         return nil
     }
     res["tollNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +136,9 @@ func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetTollNumber(val)
+        if val != nil {
+            m.SetTollNumber(val)
+        }
         return nil
     }
     res["tollNumbers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,11 +146,13 @@ func (m *AudioConferencing) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTollNumbers(res)
         }
-        m.SetTollNumbers(res)
         return nil
     }
     return res

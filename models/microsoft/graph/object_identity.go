@@ -62,7 +62,9 @@ func (m *ObjectIdentity) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetIssuer(val)
+        if val != nil {
+            m.SetIssuer(val)
+        }
         return nil
     }
     res["issuerAssignedId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *ObjectIdentity) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetIssuerAssignedId(val)
+        if val != nil {
+            m.SetIssuerAssignedId(val)
+        }
         return nil
     }
     res["signInType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *ObjectIdentity) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetSignInType(val)
+        if val != nil {
+            m.SetSignInType(val)
+        }
         return nil
     }
     return res

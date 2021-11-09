@@ -33,11 +33,13 @@ func (m *PlannerGroup) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]PlannerPlan, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PlannerPlan))
+        if val != nil {
+            res := make([]PlannerPlan, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PlannerPlan))
+            }
+            m.SetPlans(res)
         }
-        m.SetPlans(res)
         return nil
     }
     return res

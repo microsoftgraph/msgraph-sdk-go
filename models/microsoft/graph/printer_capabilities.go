@@ -282,11 +282,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]int32, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*int32))
+        if val != nil {
+            res := make([]int32, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*int32))
+            }
+            m.SetBottomMargins(res)
         }
-        m.SetBottomMargins(res)
         return nil
     }
     res["collation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -294,7 +296,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetCollation(val)
+        if val != nil {
+            m.SetCollation(val)
+        }
         return nil
     }
     res["colorModes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -302,11 +306,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]PrintColorMode, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintColorMode))
+        if val != nil {
+            res := make([]PrintColorMode, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintColorMode))
+            }
+            m.SetColorModes(res)
         }
-        m.SetColorModes(res)
         return nil
     }
     res["contentTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -314,11 +320,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetContentTypes(res)
         }
-        m.SetContentTypes(res)
         return nil
     }
     res["copiesPerJob"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -326,7 +334,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetCopiesPerJob(val.(*IntegerRange))
+        if val != nil {
+            m.SetCopiesPerJob(val.(*IntegerRange))
+        }
         return nil
     }
     res["dpis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -334,11 +344,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]int32, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*int32))
+        if val != nil {
+            res := make([]int32, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*int32))
+            }
+            m.SetDpis(res)
         }
-        m.SetDpis(res)
         return nil
     }
     res["duplexModes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -346,11 +358,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]PrintDuplexMode, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintDuplexMode))
+        if val != nil {
+            res := make([]PrintDuplexMode, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintDuplexMode))
+            }
+            m.SetDuplexModes(res)
         }
-        m.SetDuplexModes(res)
         return nil
     }
     res["feedOrientations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -358,11 +372,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]PrinterFeedOrientation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrinterFeedOrientation))
+        if val != nil {
+            res := make([]PrinterFeedOrientation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrinterFeedOrientation))
+            }
+            m.SetFeedOrientations(res)
         }
-        m.SetFeedOrientations(res)
         return nil
     }
     res["finishings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -370,11 +386,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]PrintFinishing, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintFinishing))
+        if val != nil {
+            res := make([]PrintFinishing, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintFinishing))
+            }
+            m.SetFinishings(res)
         }
-        m.SetFinishings(res)
         return nil
     }
     res["inputBins"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -382,11 +400,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetInputBins(res)
         }
-        m.SetInputBins(res)
         return nil
     }
     res["isColorPrintingSupported"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -394,7 +414,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetIsColorPrintingSupported(val)
+        if val != nil {
+            m.SetIsColorPrintingSupported(val)
+        }
         return nil
     }
     res["isPageRangeSupported"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -402,7 +424,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetIsPageRangeSupported(val)
+        if val != nil {
+            m.SetIsPageRangeSupported(val)
+        }
         return nil
     }
     res["leftMargins"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -410,11 +434,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]int32, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*int32))
+        if val != nil {
+            res := make([]int32, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*int32))
+            }
+            m.SetLeftMargins(res)
         }
-        m.SetLeftMargins(res)
         return nil
     }
     res["mediaColors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -422,11 +448,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetMediaColors(res)
         }
-        m.SetMediaColors(res)
         return nil
     }
     res["mediaSizes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -434,11 +462,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetMediaSizes(res)
         }
-        m.SetMediaSizes(res)
         return nil
     }
     res["mediaTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -446,11 +476,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetMediaTypes(res)
         }
-        m.SetMediaTypes(res)
         return nil
     }
     res["multipageLayouts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -458,11 +490,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]PrintMultipageLayout, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintMultipageLayout))
+        if val != nil {
+            res := make([]PrintMultipageLayout, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintMultipageLayout))
+            }
+            m.SetMultipageLayouts(res)
         }
-        m.SetMultipageLayouts(res)
         return nil
     }
     res["orientations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -470,11 +504,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]PrintOrientation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintOrientation))
+        if val != nil {
+            res := make([]PrintOrientation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintOrientation))
+            }
+            m.SetOrientations(res)
         }
-        m.SetOrientations(res)
         return nil
     }
     res["outputBins"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -482,11 +518,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetOutputBins(res)
         }
-        m.SetOutputBins(res)
         return nil
     }
     res["pagesPerSheet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -494,11 +532,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]int32, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*int32))
+        if val != nil {
+            res := make([]int32, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*int32))
+            }
+            m.SetPagesPerSheet(res)
         }
-        m.SetPagesPerSheet(res)
         return nil
     }
     res["qualities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -506,11 +546,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]PrintQuality, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintQuality))
+        if val != nil {
+            res := make([]PrintQuality, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintQuality))
+            }
+            m.SetQualities(res)
         }
-        m.SetQualities(res)
         return nil
     }
     res["rightMargins"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -518,11 +560,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]int32, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*int32))
+        if val != nil {
+            res := make([]int32, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*int32))
+            }
+            m.SetRightMargins(res)
         }
-        m.SetRightMargins(res)
         return nil
     }
     res["scalings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -530,11 +574,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]PrintScaling, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintScaling))
+        if val != nil {
+            res := make([]PrintScaling, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintScaling))
+            }
+            m.SetScalings(res)
         }
-        m.SetScalings(res)
         return nil
     }
     res["supportsFitPdfToPage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -542,7 +588,9 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetSupportsFitPdfToPage(val)
+        if val != nil {
+            m.SetSupportsFitPdfToPage(val)
+        }
         return nil
     }
     res["topMargins"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -550,11 +598,13 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]int32, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*int32))
+        if val != nil {
+            res := make([]int32, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*int32))
+            }
+            m.SetTopMargins(res)
         }
-        m.SetTopMargins(res)
         return nil
     }
     return res

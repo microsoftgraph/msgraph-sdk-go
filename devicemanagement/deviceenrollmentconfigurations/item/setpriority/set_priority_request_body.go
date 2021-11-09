@@ -42,7 +42,9 @@ func (m *SetPriorityRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetPriority(val)
+        if val != nil {
+            m.SetPriority(val)
+        }
         return nil
     }
     return res

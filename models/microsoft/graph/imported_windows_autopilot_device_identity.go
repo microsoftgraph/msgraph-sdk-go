@@ -93,7 +93,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetAssignedUserPrincipalName(val)
+        if val != nil {
+            m.SetAssignedUserPrincipalName(val)
+        }
         return nil
     }
     res["groupTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetGroupTag(val)
+        if val != nil {
+            m.SetGroupTag(val)
+        }
         return nil
     }
     res["hardwareIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetHardwareIdentifier(val)
+        if val != nil {
+            m.SetHardwareIdentifier(val)
+        }
         return nil
     }
     res["importId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +123,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetImportId(val)
+        if val != nil {
+            m.SetImportId(val)
+        }
         return nil
     }
     res["productKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +133,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetProductKey(val)
+        if val != nil {
+            m.SetProductKey(val)
+        }
         return nil
     }
     res["serialNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +143,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetSerialNumber(val)
+        if val != nil {
+            m.SetSerialNumber(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +153,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetState(val.(*ImportedWindowsAutopilotDeviceIdentityState))
+        if val != nil {
+            m.SetState(val.(*ImportedWindowsAutopilotDeviceIdentityState))
+        }
         return nil
     }
     return res

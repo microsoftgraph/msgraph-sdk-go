@@ -72,11 +72,13 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]ConditionalAccessGrantControl, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConditionalAccessGrantControl))
+        if val != nil {
+            res := make([]ConditionalAccessGrantControl, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConditionalAccessGrantControl))
+            }
+            m.SetBuiltInControls(res)
         }
-        m.SetBuiltInControls(res)
         return nil
     }
     res["customAuthenticationFactors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,11 +86,13 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCustomAuthenticationFactors(res)
         }
-        m.SetCustomAuthenticationFactors(res)
         return nil
     }
     res["operator"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +100,9 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetOperator(val)
+        if val != nil {
+            m.SetOperator(val)
+        }
         return nil
     }
     res["termsOfUse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -104,11 +110,13 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTermsOfUse(res)
         }
-        m.SetTermsOfUse(res)
         return nil
     }
     return res

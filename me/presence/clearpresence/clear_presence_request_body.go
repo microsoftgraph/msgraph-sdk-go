@@ -42,7 +42,9 @@ func (m *ClearPresenceRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetSessionId(val)
+        if val != nil {
+            m.SetSessionId(val)
+        }
         return nil
     }
     return res

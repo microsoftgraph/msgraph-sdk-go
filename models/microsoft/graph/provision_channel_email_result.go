@@ -42,7 +42,9 @@ func (m *ProvisionChannelEmailResult) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetEmail(val)
+        if val != nil {
+            m.SetEmail(val)
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *HyperlinkOrPictureColumn) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsPicture(val)
+        if val != nil {
+            m.SetIsPicture(val)
+        }
         return nil
     }
     return res

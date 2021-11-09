@@ -62,7 +62,9 @@ func (m *ProvisionedPlan) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetCapabilityStatus(val)
+        if val != nil {
+            m.SetCapabilityStatus(val)
+        }
         return nil
     }
     res["provisioningStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *ProvisionedPlan) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetProvisioningStatus(val)
+        if val != nil {
+            m.SetProvisioningStatus(val)
+        }
         return nil
     }
     res["service"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *ProvisionedPlan) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetService(val)
+        if val != nil {
+            m.SetService(val)
+        }
         return nil
     }
     return res

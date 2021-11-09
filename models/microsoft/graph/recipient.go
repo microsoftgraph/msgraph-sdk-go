@@ -42,7 +42,9 @@ func (m *Recipient) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetEmailAddress(val.(*EmailAddress))
+        if val != nil {
+            m.SetEmailAddress(val.(*EmailAddress))
+        }
         return nil
     }
     return res

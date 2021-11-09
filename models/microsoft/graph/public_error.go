@@ -82,7 +82,9 @@ func (m *PublicError) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCode(val)
+        if val != nil {
+            m.SetCode(val)
+        }
         return nil
     }
     res["details"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,11 +92,13 @@ func (m *PublicError) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]PublicErrorDetail, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PublicErrorDetail))
+        if val != nil {
+            res := make([]PublicErrorDetail, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PublicErrorDetail))
+            }
+            m.SetDetails(res)
         }
-        m.SetDetails(res)
         return nil
     }
     res["innerError"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +106,9 @@ func (m *PublicError) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetInnerError(val.(*PublicInnerError))
+        if val != nil {
+            m.SetInnerError(val.(*PublicInnerError))
+        }
         return nil
     }
     res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +116,9 @@ func (m *PublicError) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetMessage(val)
+        if val != nil {
+            m.SetMessage(val)
+        }
         return nil
     }
     res["target"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +126,9 @@ func (m *PublicError) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetTarget(val)
+        if val != nil {
+            m.SetTarget(val)
+        }
         return nil
     }
     return res

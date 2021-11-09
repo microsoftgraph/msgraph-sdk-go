@@ -42,11 +42,13 @@ func (m *AssignmentOrder) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetOrder(res)
         }
-        m.SetOrder(res)
         return nil
     }
     return res

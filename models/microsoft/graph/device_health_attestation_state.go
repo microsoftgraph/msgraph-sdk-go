@@ -353,7 +353,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAttestationIdentityKey(val)
+        if val != nil {
+            m.SetAttestationIdentityKey(val)
+        }
         return nil
     }
     res["bitLockerStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -361,7 +363,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetBitLockerStatus(val)
+        if val != nil {
+            m.SetBitLockerStatus(val)
+        }
         return nil
     }
     res["bootAppSecurityVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -369,7 +373,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetBootAppSecurityVersion(val)
+        if val != nil {
+            m.SetBootAppSecurityVersion(val)
+        }
         return nil
     }
     res["bootDebugging"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -377,7 +383,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetBootDebugging(val)
+        if val != nil {
+            m.SetBootDebugging(val)
+        }
         return nil
     }
     res["bootManagerSecurityVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -385,7 +393,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetBootManagerSecurityVersion(val)
+        if val != nil {
+            m.SetBootManagerSecurityVersion(val)
+        }
         return nil
     }
     res["bootManagerVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -393,7 +403,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetBootManagerVersion(val)
+        if val != nil {
+            m.SetBootManagerVersion(val)
+        }
         return nil
     }
     res["bootRevisionListInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -401,7 +413,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetBootRevisionListInfo(val)
+        if val != nil {
+            m.SetBootRevisionListInfo(val)
+        }
         return nil
     }
     res["codeIntegrity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -409,7 +423,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCodeIntegrity(val)
+        if val != nil {
+            m.SetCodeIntegrity(val)
+        }
         return nil
     }
     res["codeIntegrityCheckVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -417,7 +433,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCodeIntegrityCheckVersion(val)
+        if val != nil {
+            m.SetCodeIntegrityCheckVersion(val)
+        }
         return nil
     }
     res["codeIntegrityPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -425,7 +443,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCodeIntegrityPolicy(val)
+        if val != nil {
+            m.SetCodeIntegrityPolicy(val)
+        }
         return nil
     }
     res["contentNamespaceUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -433,7 +453,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetContentNamespaceUrl(val)
+        if val != nil {
+            m.SetContentNamespaceUrl(val)
+        }
         return nil
     }
     res["contentVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -441,7 +463,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetContentVersion(val)
+        if val != nil {
+            m.SetContentVersion(val)
+        }
         return nil
     }
     res["dataExcutionPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -449,7 +473,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDataExcutionPolicy(val)
+        if val != nil {
+            m.SetDataExcutionPolicy(val)
+        }
         return nil
     }
     res["deviceHealthAttestationStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -457,7 +483,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDeviceHealthAttestationStatus(val)
+        if val != nil {
+            m.SetDeviceHealthAttestationStatus(val)
+        }
         return nil
     }
     res["earlyLaunchAntiMalwareDriverProtection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -465,7 +493,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetEarlyLaunchAntiMalwareDriverProtection(val)
+        if val != nil {
+            m.SetEarlyLaunchAntiMalwareDriverProtection(val)
+        }
         return nil
     }
     res["healthAttestationSupportedStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -473,7 +503,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetHealthAttestationSupportedStatus(val)
+        if val != nil {
+            m.SetHealthAttestationSupportedStatus(val)
+        }
         return nil
     }
     res["healthStatusMismatchInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -481,7 +513,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetHealthStatusMismatchInfo(val)
+        if val != nil {
+            m.SetHealthStatusMismatchInfo(val)
+        }
         return nil
     }
     res["issuedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -489,7 +523,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetIssuedDateTime(val)
+        if val != nil {
+            m.SetIssuedDateTime(val)
+        }
         return nil
     }
     res["lastUpdateDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -497,7 +533,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetLastUpdateDateTime(val)
+        if val != nil {
+            m.SetLastUpdateDateTime(val)
+        }
         return nil
     }
     res["operatingSystemKernelDebugging"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -505,7 +543,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetOperatingSystemKernelDebugging(val)
+        if val != nil {
+            m.SetOperatingSystemKernelDebugging(val)
+        }
         return nil
     }
     res["operatingSystemRevListInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -513,7 +553,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetOperatingSystemRevListInfo(val)
+        if val != nil {
+            m.SetOperatingSystemRevListInfo(val)
+        }
         return nil
     }
     res["pcr0"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -521,7 +563,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetPcr0(val)
+        if val != nil {
+            m.SetPcr0(val)
+        }
         return nil
     }
     res["pcrHashAlgorithm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -529,7 +573,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetPcrHashAlgorithm(val)
+        if val != nil {
+            m.SetPcrHashAlgorithm(val)
+        }
         return nil
     }
     res["resetCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -537,7 +583,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetResetCount(val)
+        if val != nil {
+            m.SetResetCount(val)
+        }
         return nil
     }
     res["restartCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -545,7 +593,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRestartCount(val)
+        if val != nil {
+            m.SetRestartCount(val)
+        }
         return nil
     }
     res["safeMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -553,7 +603,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetSafeMode(val)
+        if val != nil {
+            m.SetSafeMode(val)
+        }
         return nil
     }
     res["secureBoot"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -561,7 +613,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetSecureBoot(val)
+        if val != nil {
+            m.SetSecureBoot(val)
+        }
         return nil
     }
     res["secureBootConfigurationPolicyFingerPrint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -569,7 +623,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetSecureBootConfigurationPolicyFingerPrint(val)
+        if val != nil {
+            m.SetSecureBootConfigurationPolicyFingerPrint(val)
+        }
         return nil
     }
     res["testSigning"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -577,7 +633,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetTestSigning(val)
+        if val != nil {
+            m.SetTestSigning(val)
+        }
         return nil
     }
     res["tpmVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -585,7 +643,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetTpmVersion(val)
+        if val != nil {
+            m.SetTpmVersion(val)
+        }
         return nil
     }
     res["virtualSecureMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -593,7 +653,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetVirtualSecureMode(val)
+        if val != nil {
+            m.SetVirtualSecureMode(val)
+        }
         return nil
     }
     res["windowsPE"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -601,7 +663,9 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetWindowsPE(val)
+        if val != nil {
+            m.SetWindowsPE(val)
+        }
         return nil
     }
     return res

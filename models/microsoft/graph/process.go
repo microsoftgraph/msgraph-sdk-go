@@ -153,7 +153,9 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetAccountName(val)
+        if val != nil {
+            m.SetAccountName(val)
+        }
         return nil
     }
     res["commandLine"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +163,9 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetCommandLine(val)
+        if val != nil {
+            m.SetCommandLine(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,7 +173,9 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["fileHash"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,7 +183,9 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetFileHash(val.(*FileHash))
+        if val != nil {
+            m.SetFileHash(val.(*FileHash))
+        }
         return nil
     }
     res["integrityLevel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,8 +193,10 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        cast := val.(ProcessIntegrityLevel)
-        m.SetIntegrityLevel(&cast)
+        if val != nil {
+            cast := val.(ProcessIntegrityLevel)
+            m.SetIntegrityLevel(&cast)
+        }
         return nil
     }
     res["isElevated"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +204,9 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetIsElevated(val)
+        if val != nil {
+            m.SetIsElevated(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +214,9 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["parentProcessCreatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +224,9 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetParentProcessCreatedDateTime(val)
+        if val != nil {
+            m.SetParentProcessCreatedDateTime(val)
+        }
         return nil
     }
     res["parentProcessId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +234,9 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetParentProcessId(val)
+        if val != nil {
+            m.SetParentProcessId(val)
+        }
         return nil
     }
     res["parentProcessName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +244,9 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetParentProcessName(val)
+        if val != nil {
+            m.SetParentProcessName(val)
+        }
         return nil
     }
     res["path"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,7 +254,9 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetPath(val)
+        if val != nil {
+            m.SetPath(val)
+        }
         return nil
     }
     res["processId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -242,7 +264,9 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetProcessId(val)
+        if val != nil {
+            m.SetProcessId(val)
+        }
         return nil
     }
     return res

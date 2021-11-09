@@ -53,11 +53,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]Alert, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Alert))
+        if val != nil {
+            res := make([]Alert, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Alert))
+            }
+            m.SetAlerts(res)
         }
-        m.SetAlerts(res)
         return nil
     }
     res["secureScoreControlProfiles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]SecureScoreControlProfile, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SecureScoreControlProfile))
+        if val != nil {
+            res := make([]SecureScoreControlProfile, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SecureScoreControlProfile))
+            }
+            m.SetSecureScoreControlProfiles(res)
         }
-        m.SetSecureScoreControlProfiles(res)
         return nil
     }
     res["secureScores"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,11 +81,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]SecureScore, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SecureScore))
+        if val != nil {
+            res := make([]SecureScore, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SecureScore))
+            }
+            m.SetSecureScores(res)
         }
-        m.SetSecureScores(res)
         return nil
     }
     return res

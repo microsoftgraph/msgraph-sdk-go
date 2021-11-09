@@ -72,7 +72,9 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAccessReviews(val.(*AccessReviewSet))
+        if val != nil {
+            m.SetAccessReviews(val.(*AccessReviewSet))
+        }
         return nil
     }
     res["appConsent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAppConsent(val.(*AppConsentApprovalRoute))
+        if val != nil {
+            m.SetAppConsent(val.(*AppConsentApprovalRoute))
+        }
         return nil
     }
     res["entitlementManagement"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetEntitlementManagement(val.(*EntitlementManagement))
+        if val != nil {
+            m.SetEntitlementManagement(val.(*EntitlementManagement))
+        }
         return nil
     }
     res["termsOfUse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetTermsOfUse(val.(*TermsOfUseContainer))
+        if val != nil {
+            m.SetTermsOfUse(val.(*TermsOfUseContainer))
+        }
         return nil
     }
     return res

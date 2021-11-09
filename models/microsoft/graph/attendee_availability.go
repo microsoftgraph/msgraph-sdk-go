@@ -52,7 +52,9 @@ func (m *AttendeeAvailability) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetAttendee(val.(*AttendeeBase))
+        if val != nil {
+            m.SetAttendee(val.(*AttendeeBase))
+        }
         return nil
     }
     res["availability"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,8 +62,10 @@ func (m *AttendeeAvailability) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(FreeBusyStatus)
-        m.SetAvailability(&cast)
+        if val != nil {
+            cast := val.(FreeBusyStatus)
+            m.SetAvailability(&cast)
+        }
         return nil
     }
     return res

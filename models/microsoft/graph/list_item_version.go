@@ -33,7 +33,9 @@ func (m *ListItemVersion) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetFields(val.(*FieldValueSet))
+        if val != nil {
+            m.SetFields(val.(*FieldValueSet))
+        }
         return nil
     }
     return res

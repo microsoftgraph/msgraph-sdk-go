@@ -42,7 +42,9 @@ func (m *RubricCriterion) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDescription(val.(*EducationItemBody))
+        if val != nil {
+            m.SetDescription(val.(*EducationItemBody))
+        }
         return nil
     }
     return res

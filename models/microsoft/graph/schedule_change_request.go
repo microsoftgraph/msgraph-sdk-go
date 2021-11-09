@@ -104,8 +104,10 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(ScheduleChangeRequestActor)
-        m.SetAssignedTo(&cast)
+        if val != nil {
+            cast := val.(ScheduleChangeRequestActor)
+            m.SetAssignedTo(&cast)
+        }
         return nil
     }
     res["managerActionDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,7 +115,9 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetManagerActionDateTime(val)
+        if val != nil {
+            m.SetManagerActionDateTime(val)
+        }
         return nil
     }
     res["managerActionMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +125,9 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetManagerActionMessage(val)
+        if val != nil {
+            m.SetManagerActionMessage(val)
+        }
         return nil
     }
     res["managerUserId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +135,9 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetManagerUserId(val)
+        if val != nil {
+            m.SetManagerUserId(val)
+        }
         return nil
     }
     res["senderDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +145,9 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSenderDateTime(val)
+        if val != nil {
+            m.SetSenderDateTime(val)
+        }
         return nil
     }
     res["senderMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +155,9 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSenderMessage(val)
+        if val != nil {
+            m.SetSenderMessage(val)
+        }
         return nil
     }
     res["senderUserId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +165,9 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSenderUserId(val)
+        if val != nil {
+            m.SetSenderUserId(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,8 +175,10 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(ScheduleChangeState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(ScheduleChangeState)
+            m.SetState(&cast)
+        }
         return nil
     }
     return res

@@ -153,11 +153,13 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]ActivityBasedTimeoutPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ActivityBasedTimeoutPolicy))
+        if val != nil {
+            res := make([]ActivityBasedTimeoutPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ActivityBasedTimeoutPolicy))
+            }
+            m.SetActivityBasedTimeoutPolicies(res)
         }
-        m.SetActivityBasedTimeoutPolicies(res)
         return nil
     }
     res["adminConsentRequestPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +167,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetAdminConsentRequestPolicy(val.(*AdminConsentRequestPolicy))
+        if val != nil {
+            m.SetAdminConsentRequestPolicy(val.(*AdminConsentRequestPolicy))
+        }
         return nil
     }
     res["authenticationFlowsPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +177,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetAuthenticationFlowsPolicy(val.(*AuthenticationFlowsPolicy))
+        if val != nil {
+            m.SetAuthenticationFlowsPolicy(val.(*AuthenticationFlowsPolicy))
+        }
         return nil
     }
     res["authenticationMethodsPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +187,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetAuthenticationMethodsPolicy(val.(*AuthenticationMethodsPolicy))
+        if val != nil {
+            m.SetAuthenticationMethodsPolicy(val.(*AuthenticationMethodsPolicy))
+        }
         return nil
     }
     res["authorizationPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -189,7 +197,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetAuthorizationPolicy(val.(*AuthorizationPolicy))
+        if val != nil {
+            m.SetAuthorizationPolicy(val.(*AuthorizationPolicy))
+        }
         return nil
     }
     res["claimsMappingPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -197,11 +207,13 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]ClaimsMappingPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ClaimsMappingPolicy))
+        if val != nil {
+            res := make([]ClaimsMappingPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ClaimsMappingPolicy))
+            }
+            m.SetClaimsMappingPolicies(res)
         }
-        m.SetClaimsMappingPolicies(res)
         return nil
     }
     res["conditionalAccessPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,11 +221,13 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]ConditionalAccessPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConditionalAccessPolicy))
+        if val != nil {
+            res := make([]ConditionalAccessPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConditionalAccessPolicy))
+            }
+            m.SetConditionalAccessPolicies(res)
         }
-        m.SetConditionalAccessPolicies(res)
         return nil
     }
     res["featureRolloutPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -221,11 +235,13 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]FeatureRolloutPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*FeatureRolloutPolicy))
+        if val != nil {
+            res := make([]FeatureRolloutPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*FeatureRolloutPolicy))
+            }
+            m.SetFeatureRolloutPolicies(res)
         }
-        m.SetFeatureRolloutPolicies(res)
         return nil
     }
     res["homeRealmDiscoveryPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -233,11 +249,13 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]HomeRealmDiscoveryPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*HomeRealmDiscoveryPolicy))
+        if val != nil {
+            res := make([]HomeRealmDiscoveryPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*HomeRealmDiscoveryPolicy))
+            }
+            m.SetHomeRealmDiscoveryPolicies(res)
         }
-        m.SetHomeRealmDiscoveryPolicies(res)
         return nil
     }
     res["identitySecurityDefaultsEnforcementPolicy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,7 +263,9 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetIdentitySecurityDefaultsEnforcementPolicy(val.(*IdentitySecurityDefaultsEnforcementPolicy))
+        if val != nil {
+            m.SetIdentitySecurityDefaultsEnforcementPolicy(val.(*IdentitySecurityDefaultsEnforcementPolicy))
+        }
         return nil
     }
     res["permissionGrantPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,11 +273,13 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]PermissionGrantPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PermissionGrantPolicy))
+        if val != nil {
+            res := make([]PermissionGrantPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PermissionGrantPolicy))
+            }
+            m.SetPermissionGrantPolicies(res)
         }
-        m.SetPermissionGrantPolicies(res)
         return nil
     }
     res["tokenIssuancePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -265,11 +287,13 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]TokenIssuancePolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TokenIssuancePolicy))
+        if val != nil {
+            res := make([]TokenIssuancePolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TokenIssuancePolicy))
+            }
+            m.SetTokenIssuancePolicies(res)
         }
-        m.SetTokenIssuancePolicies(res)
         return nil
     }
     res["tokenLifetimePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -277,11 +301,13 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]TokenLifetimePolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TokenLifetimePolicy))
+        if val != nil {
+            res := make([]TokenLifetimePolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TokenLifetimePolicy))
+            }
+            m.SetTokenLifetimePolicies(res)
         }
-        m.SetTokenLifetimePolicies(res)
         return nil
     }
     return res

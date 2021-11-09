@@ -73,7 +73,9 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetIsOptional(val)
+        if val != nil {
+            m.SetIsOptional(val)
+        }
         return nil
     }
     res["label"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetLabel(val)
+        if val != nil {
+            m.SetLabel(val)
+        }
         return nil
     }
     res["recordType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetRecordType(val)
+        if val != nil {
+            m.SetRecordType(val)
+        }
         return nil
     }
     res["supportedService"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetSupportedService(val)
+        if val != nil {
+            m.SetSupportedService(val)
+        }
         return nil
     }
     res["ttl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +113,9 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetTtl(val)
+        if val != nil {
+            m.SetTtl(val)
+        }
         return nil
     }
     return res

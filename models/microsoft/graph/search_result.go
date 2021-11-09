@@ -42,7 +42,9 @@ func (m *SearchResult) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetOnClickTelemetryUrl(val)
+        if val != nil {
+            m.SetOnClickTelemetryUrl(val)
+        }
         return nil
     }
     return res

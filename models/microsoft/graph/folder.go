@@ -52,7 +52,9 @@ func (m *Folder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetChildCount(val)
+        if val != nil {
+            m.SetChildCount(val)
+        }
         return nil
     }
     res["view"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *Folder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetView(val.(*FolderView))
+        if val != nil {
+            m.SetView(val.(*FolderView))
+        }
         return nil
     }
     return res

@@ -43,11 +43,13 @@ func (m *TermsOfUseContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]AgreementAcceptance, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AgreementAcceptance))
+        if val != nil {
+            res := make([]AgreementAcceptance, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AgreementAcceptance))
+            }
+            m.SetAgreementAcceptances(res)
         }
-        m.SetAgreementAcceptances(res)
         return nil
     }
     res["agreements"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -55,11 +57,13 @@ func (m *TermsOfUseContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]Agreement, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Agreement))
+        if val != nil {
+            res := make([]Agreement, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Agreement))
+            }
+            m.SetAgreements(res)
         }
-        m.SetAgreements(res)
         return nil
     }
     return res

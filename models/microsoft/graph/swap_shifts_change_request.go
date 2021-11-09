@@ -33,7 +33,9 @@ func (m *SwapShiftsChangeRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetRecipientShiftId(val)
+        if val != nil {
+            m.SetRecipientShiftId(val)
+        }
         return nil
     }
     return res

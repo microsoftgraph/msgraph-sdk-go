@@ -73,7 +73,9 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,11 +93,13 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetMembers(res)
         }
-        m.SetMembers(res)
         return nil
     }
     res["roleTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +107,9 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetRoleTemplateId(val)
+        if val != nil {
+            m.SetRoleTemplateId(val)
+        }
         return nil
     }
     res["scopedMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,11 +117,13 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ScopedRoleMembership, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ScopedRoleMembership))
+        if val != nil {
+            res := make([]ScopedRoleMembership, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ScopedRoleMembership))
+            }
+            m.SetScopedMembers(res)
         }
-        m.SetScopedMembers(res)
         return nil
     }
     return res

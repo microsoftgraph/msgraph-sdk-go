@@ -53,8 +53,10 @@ func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(PermissionClassificationType)
-        m.SetClassification(&cast)
+        if val != nil {
+            cast := val.(PermissionClassificationType)
+            m.SetClassification(&cast)
+        }
         return nil
     }
     res["permissionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -62,7 +64,9 @@ func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetPermissionId(val)
+        if val != nil {
+            m.SetPermissionId(val)
+        }
         return nil
     }
     res["permissionName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +74,9 @@ func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetPermissionName(val)
+        if val != nil {
+            m.SetPermissionName(val)
+        }
         return nil
     }
     return res

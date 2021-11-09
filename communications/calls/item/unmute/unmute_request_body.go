@@ -42,7 +42,9 @@ func (m *UnmuteRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetClientContext(val)
+        if val != nil {
+            m.SetClientContext(val)
+        }
         return nil
     }
     return res

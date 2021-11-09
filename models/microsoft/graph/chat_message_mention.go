@@ -62,7 +62,9 @@ func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["mentioned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetMentioned(val.(*ChatMessageMentionedIdentitySet))
+        if val != nil {
+            m.SetMentioned(val.(*ChatMessageMentionedIdentitySet))
+        }
         return nil
     }
     res["mentionText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetMentionText(val)
+        if val != nil {
+            m.SetMentionText(val)
+        }
         return nil
     }
     return res

@@ -113,11 +113,13 @@ func (m *Property) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAliases(res)
         }
-        m.SetAliases(res)
         return nil
     }
     res["isQueryable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +127,9 @@ func (m *Property) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsQueryable(val)
+        if val != nil {
+            m.SetIsQueryable(val)
+        }
         return nil
     }
     res["isRefinable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +137,9 @@ func (m *Property) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsRefinable(val)
+        if val != nil {
+            m.SetIsRefinable(val)
+        }
         return nil
     }
     res["isRetrievable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +147,9 @@ func (m *Property) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsRetrievable(val)
+        if val != nil {
+            m.SetIsRetrievable(val)
+        }
         return nil
     }
     res["isSearchable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +157,9 @@ func (m *Property) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsSearchable(val)
+        if val != nil {
+            m.SetIsSearchable(val)
+        }
         return nil
     }
     res["labels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,11 +167,13 @@ func (m *Property) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.Label, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.Label))
+        if val != nil {
+            res := make([]i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.Label, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.Label))
+            }
+            m.SetLabels(res)
         }
-        m.SetLabels(res)
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,7 +181,9 @@ func (m *Property) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,8 +191,10 @@ func (m *Property) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.PropertyType)
-        m.SetType_escaped(&cast)
+        if val != nil {
+            cast := val.(i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.PropertyType)
+            m.SetType_escaped(&cast)
+        }
         return nil
     }
     return res

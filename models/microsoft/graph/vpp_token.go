@@ -134,7 +134,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetAppleId(val)
+        if val != nil {
+            m.SetAppleId(val)
+        }
         return nil
     }
     res["automaticallyUpdateApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +144,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetAutomaticallyUpdateApps(val)
+        if val != nil {
+            m.SetAutomaticallyUpdateApps(val)
+        }
         return nil
     }
     res["countryOrRegion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +154,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCountryOrRegion(val)
+        if val != nil {
+            m.SetCountryOrRegion(val)
+        }
         return nil
     }
     res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +164,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +174,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["lastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +184,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLastSyncDateTime(val)
+        if val != nil {
+            m.SetLastSyncDateTime(val)
+        }
         return nil
     }
     res["lastSyncStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,8 +194,10 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(VppTokenSyncStatus)
-        m.SetLastSyncStatus(&cast)
+        if val != nil {
+            cast := val.(VppTokenSyncStatus)
+            m.SetLastSyncStatus(&cast)
+        }
         return nil
     }
     res["organizationName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +205,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetOrganizationName(val)
+        if val != nil {
+            m.SetOrganizationName(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,8 +215,10 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(VppTokenState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(VppTokenState)
+            m.SetState(&cast)
+        }
         return nil
     }
     res["token"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +226,9 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetToken(val)
+        if val != nil {
+            m.SetToken(val)
+        }
         return nil
     }
     res["vppTokenAccountType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,8 +236,10 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(VppTokenAccountType)
-        m.SetVppTokenAccountType(&cast)
+        if val != nil {
+            cast := val.(VppTokenAccountType)
+            m.SetVppTokenAccountType(&cast)
+        }
         return nil
     }
     return res

@@ -103,7 +103,9 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetFormat(val.(*WorkbookChartAxisFormat))
+        if val != nil {
+            m.SetFormat(val.(*WorkbookChartAxisFormat))
+        }
         return nil
     }
     res["majorGridlines"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +113,9 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetMajorGridlines(val.(*WorkbookChartGridlines))
+        if val != nil {
+            m.SetMajorGridlines(val.(*WorkbookChartGridlines))
+        }
         return nil
     }
     res["majorUnit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,7 +123,9 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetMajorUnit(val.(*Json))
+        if val != nil {
+            m.SetMajorUnit(val.(*Json))
+        }
         return nil
     }
     res["maximum"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,7 +133,9 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetMaximum(val.(*Json))
+        if val != nil {
+            m.SetMaximum(val.(*Json))
+        }
         return nil
     }
     res["minimum"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,7 +143,9 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetMinimum(val.(*Json))
+        if val != nil {
+            m.SetMinimum(val.(*Json))
+        }
         return nil
     }
     res["minorGridlines"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,7 +153,9 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetMinorGridlines(val.(*WorkbookChartGridlines))
+        if val != nil {
+            m.SetMinorGridlines(val.(*WorkbookChartGridlines))
+        }
         return nil
     }
     res["minorUnit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +163,9 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetMinorUnit(val.(*Json))
+        if val != nil {
+            m.SetMinorUnit(val.(*Json))
+        }
         return nil
     }
     res["title"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +173,9 @@ func (m *WorkbookChartAxis) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetTitle(val.(*WorkbookChartAxisTitle))
+        if val != nil {
+            m.SetTitle(val.(*WorkbookChartAxisTitle))
+        }
         return nil
     }
     return res

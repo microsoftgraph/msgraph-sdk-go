@@ -62,11 +62,13 @@ func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Recipient))
+        if val != nil {
+            res := make([]Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Recipient))
+            }
+            m.SetCcRecipients(res)
         }
-        m.SetCcRecipients(res)
         return nil
     }
     res["customizedMessageBody"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,7 +76,9 @@ func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCustomizedMessageBody(val)
+        if val != nil {
+            m.SetCustomizedMessageBody(val)
+        }
         return nil
     }
     res["messageLanguage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +86,9 @@ func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetMessageLanguage(val)
+        if val != nil {
+            m.SetMessageLanguage(val)
+        }
         return nil
     }
     return res

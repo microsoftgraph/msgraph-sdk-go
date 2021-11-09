@@ -83,7 +83,9 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,11 +103,13 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]Extension, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Extension))
+        if val != nil {
+            res := make([]Extension, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Extension))
+            }
+            m.SetExtensions(res)
         }
-        m.SetExtensions(res)
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,11 +117,13 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetMembers(res)
         }
-        m.SetMembers(res)
         return nil
     }
     res["scopedRoleMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,11 +131,13 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]ScopedRoleMembership, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ScopedRoleMembership))
+        if val != nil {
+            res := make([]ScopedRoleMembership, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ScopedRoleMembership))
+            }
+            m.SetScopedRoleMembers(res)
         }
-        m.SetScopedRoleMembers(res)
         return nil
     }
     res["visibility"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,7 +145,9 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetVisibility(val)
+        if val != nil {
+            m.SetVisibility(val)
+        }
         return nil
     }
     return res

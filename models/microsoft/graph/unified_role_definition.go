@@ -113,7 +113,9 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +123,9 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["inheritsPermissionsFrom"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,11 +133,13 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]UnifiedRoleDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRoleDefinition))
+        if val != nil {
+            res := make([]UnifiedRoleDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRoleDefinition))
+            }
+            m.SetInheritsPermissionsFrom(res)
         }
-        m.SetInheritsPermissionsFrom(res)
         return nil
     }
     res["isBuiltIn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +147,9 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsBuiltIn(val)
+        if val != nil {
+            m.SetIsBuiltIn(val)
+        }
         return nil
     }
     res["isEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +157,9 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetIsEnabled(val)
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
         return nil
     }
     res["resourceScopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,11 +167,13 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetResourceScopes(res)
         }
-        m.SetResourceScopes(res)
         return nil
     }
     res["rolePermissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,11 +181,13 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]UnifiedRolePermission, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UnifiedRolePermission))
+        if val != nil {
+            res := make([]UnifiedRolePermission, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UnifiedRolePermission))
+            }
+            m.SetRolePermissions(res)
         }
-        m.SetRolePermissions(res)
         return nil
     }
     res["templateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +195,9 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTemplateId(val)
+        if val != nil {
+            m.SetTemplateId(val)
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -189,7 +205,9 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

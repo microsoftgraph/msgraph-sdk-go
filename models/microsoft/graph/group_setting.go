@@ -53,7 +53,9 @@ func (m *GroupSetting) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["templateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *GroupSetting) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetTemplateId(val)
+        if val != nil {
+            m.SetTemplateId(val)
+        }
         return nil
     }
     res["values"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,11 +73,13 @@ func (m *GroupSetting) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]SettingValue, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SettingValue))
+        if val != nil {
+            res := make([]SettingValue, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SettingValue))
+            }
+            m.SetValues(res)
         }
-        m.SetValues(res)
         return nil
     }
     return res

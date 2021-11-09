@@ -53,7 +53,9 @@ func (m *FailureInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetReason(val)
+        if val != nil {
+            m.SetReason(val)
+        }
         return nil
     }
     res["stage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,8 +63,10 @@ func (m *FailureInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.FailureStage)
-        m.SetStage(&cast)
+        if val != nil {
+            cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.FailureStage)
+            m.SetStage(&cast)
+        }
         return nil
     }
     return res

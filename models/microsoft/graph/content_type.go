@@ -213,11 +213,13 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAssociatedHubsUrls(res)
         }
-        m.SetAssociatedHubsUrls(res)
         return nil
     }
     res["base"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -225,7 +227,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetBase(val.(*ContentType))
+        if val != nil {
+            m.SetBase(val.(*ContentType))
+        }
         return nil
     }
     res["baseTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -233,11 +237,13 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ContentType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ContentType))
+        if val != nil {
+            res := make([]ContentType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ContentType))
+            }
+            m.SetBaseTypes(res)
         }
-        m.SetBaseTypes(res)
         return nil
     }
     res["columnLinks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,11 +251,13 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ColumnLink, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ColumnLink))
+        if val != nil {
+            res := make([]ColumnLink, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ColumnLink))
+            }
+            m.SetColumnLinks(res)
         }
-        m.SetColumnLinks(res)
         return nil
     }
     res["columnPositions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -257,11 +265,13 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ColumnDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ColumnDefinition))
+        if val != nil {
+            res := make([]ColumnDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ColumnDefinition))
+            }
+            m.SetColumnPositions(res)
         }
-        m.SetColumnPositions(res)
         return nil
     }
     res["columns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -269,11 +279,13 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ColumnDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ColumnDefinition))
+        if val != nil {
+            res := make([]ColumnDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ColumnDefinition))
+            }
+            m.SetColumns(res)
         }
-        m.SetColumns(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -281,7 +293,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["documentSet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -289,7 +303,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDocumentSet(val.(*DocumentSet))
+        if val != nil {
+            m.SetDocumentSet(val.(*DocumentSet))
+        }
         return nil
     }
     res["documentTemplate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -297,7 +313,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDocumentTemplate(val.(*DocumentSetContent))
+        if val != nil {
+            m.SetDocumentTemplate(val.(*DocumentSetContent))
+        }
         return nil
     }
     res["group"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -305,7 +323,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetGroup(val)
+        if val != nil {
+            m.SetGroup(val)
+        }
         return nil
     }
     res["hidden"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -313,7 +333,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetHidden(val)
+        if val != nil {
+            m.SetHidden(val)
+        }
         return nil
     }
     res["inheritedFrom"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -321,7 +343,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetInheritedFrom(val.(*ItemReference))
+        if val != nil {
+            m.SetInheritedFrom(val.(*ItemReference))
+        }
         return nil
     }
     res["isBuiltIn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -329,7 +353,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetIsBuiltIn(val)
+        if val != nil {
+            m.SetIsBuiltIn(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -337,7 +363,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["order"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -345,7 +373,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetOrder(val.(*ContentTypeOrder))
+        if val != nil {
+            m.SetOrder(val.(*ContentTypeOrder))
+        }
         return nil
     }
     res["parentId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -353,7 +383,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetParentId(val)
+        if val != nil {
+            m.SetParentId(val)
+        }
         return nil
     }
     res["propagateChanges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -361,7 +393,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetPropagateChanges(val)
+        if val != nil {
+            m.SetPropagateChanges(val)
+        }
         return nil
     }
     res["readOnly"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -369,7 +403,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetReadOnly(val)
+        if val != nil {
+            m.SetReadOnly(val)
+        }
         return nil
     }
     res["sealed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -377,7 +413,9 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetSealed(val)
+        if val != nil {
+            m.SetSealed(val)
+        }
         return nil
     }
     return res

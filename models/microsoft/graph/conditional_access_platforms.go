@@ -52,11 +52,13 @@ func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        res := make([]ConditionalAccessDevicePlatform, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConditionalAccessDevicePlatform))
+        if val != nil {
+            res := make([]ConditionalAccessDevicePlatform, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConditionalAccessDevicePlatform))
+            }
+            m.SetExcludePlatforms(res)
         }
-        m.SetExcludePlatforms(res)
         return nil
     }
     res["includePlatforms"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,11 +66,13 @@ func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        res := make([]ConditionalAccessDevicePlatform, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConditionalAccessDevicePlatform))
+        if val != nil {
+            res := make([]ConditionalAccessDevicePlatform, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConditionalAccessDevicePlatform))
+            }
+            m.SetIncludePlatforms(res)
         }
-        m.SetIncludePlatforms(res)
         return nil
     }
     return res

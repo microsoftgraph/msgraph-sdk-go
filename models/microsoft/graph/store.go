@@ -63,7 +63,9 @@ func (m *Store) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetDefaultLanguageTag(val)
+        if val != nil {
+            m.SetDefaultLanguageTag(val)
+        }
         return nil
     }
     res["groups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,11 +73,13 @@ func (m *Store) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]Group, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Group))
+        if val != nil {
+            res := make([]Group, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Group))
+            }
+            m.SetGroups(res)
         }
-        m.SetGroups(res)
         return nil
     }
     res["languageTags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,11 +87,13 @@ func (m *Store) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetLanguageTags(res)
         }
-        m.SetLanguageTags(res)
         return nil
     }
     res["sets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,11 +101,13 @@ func (m *Store) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]Set, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Set))
+        if val != nil {
+            res := make([]Set, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Set))
+            }
+            m.SetSets(res)
         }
-        m.SetSets(res)
         return nil
     }
     return res

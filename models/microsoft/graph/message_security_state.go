@@ -123,7 +123,9 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetConnectingIP(val)
+        if val != nil {
+            m.SetConnectingIP(val)
+        }
         return nil
     }
     res["deliveryAction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +133,9 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDeliveryAction(val)
+        if val != nil {
+            m.SetDeliveryAction(val)
+        }
         return nil
     }
     res["deliveryLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +143,9 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDeliveryLocation(val)
+        if val != nil {
+            m.SetDeliveryLocation(val)
+        }
         return nil
     }
     res["directionality"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +153,9 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDirectionality(val)
+        if val != nil {
+            m.SetDirectionality(val)
+        }
         return nil
     }
     res["internetMessageId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +163,9 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetInternetMessageId(val)
+        if val != nil {
+            m.SetInternetMessageId(val)
+        }
         return nil
     }
     res["messageFingerprint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +173,9 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMessageFingerprint(val)
+        if val != nil {
+            m.SetMessageFingerprint(val)
+        }
         return nil
     }
     res["messageReceivedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,7 +183,9 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMessageReceivedDateTime(val)
+        if val != nil {
+            m.SetMessageReceivedDateTime(val)
+        }
         return nil
     }
     res["messageSubject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,7 +193,9 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMessageSubject(val)
+        if val != nil {
+            m.SetMessageSubject(val)
+        }
         return nil
     }
     res["networkMessageId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -187,7 +203,9 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetNetworkMessageId(val)
+        if val != nil {
+            m.SetNetworkMessageId(val)
+        }
         return nil
     }
     return res

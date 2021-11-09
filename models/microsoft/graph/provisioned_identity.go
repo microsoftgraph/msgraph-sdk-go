@@ -43,7 +43,9 @@ func (m *ProvisionedIdentity) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDetails(val.(*DetailsInfo))
+        if val != nil {
+            m.SetDetails(val.(*DetailsInfo))
+        }
         return nil
     }
     res["identityType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *ProvisionedIdentity) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetIdentityType(val)
+        if val != nil {
+            m.SetIdentityType(val)
+        }
         return nil
     }
     return res

@@ -63,7 +63,9 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetAppDisplayName(val)
+        if val != nil {
+            m.SetAppDisplayName(val)
+        }
         return nil
     }
     res["appId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetAppId(val)
+        if val != nil {
+            m.SetAppId(val)
+        }
         return nil
     }
     res["pendingScopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,11 +83,13 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]AppConsentRequestScope, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AppConsentRequestScope))
+        if val != nil {
+            res := make([]AppConsentRequestScope, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AppConsentRequestScope))
+            }
+            m.SetPendingScopes(res)
         }
-        m.SetPendingScopes(res)
         return nil
     }
     res["userConsentRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,11 +97,13 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]UserConsentRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserConsentRequest))
+        if val != nil {
+            res := make([]UserConsentRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserConsentRequest))
+            }
+            m.SetUserConsentRequests(res)
         }
-        m.SetUserConsentRequests(res)
         return nil
     }
     return res

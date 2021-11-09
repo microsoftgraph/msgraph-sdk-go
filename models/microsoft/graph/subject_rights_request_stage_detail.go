@@ -62,7 +62,9 @@ func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetError(val.(*PublicError))
+        if val != nil {
+            m.SetError(val.(*PublicError))
+        }
         return nil
     }
     res["stage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,8 +72,10 @@ func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(SubjectRightsRequestStage)
-        m.SetStage(&cast)
+        if val != nil {
+            cast := val.(SubjectRightsRequestStage)
+            m.SetStage(&cast)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,8 +83,10 @@ func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(SubjectRightsRequestStageStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(SubjectRightsRequestStageStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

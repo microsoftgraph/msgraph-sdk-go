@@ -43,7 +43,9 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetActivity(val)
+        if val != nil {
+            m.SetActivity(val)
+        }
         return nil
     }
     res["availability"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetAvailability(val)
+        if val != nil {
+            m.SetAvailability(val)
+        }
         return nil
     }
     return res

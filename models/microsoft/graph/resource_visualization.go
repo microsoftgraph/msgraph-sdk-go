@@ -112,7 +112,9 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetContainerDisplayName(val)
+        if val != nil {
+            m.SetContainerDisplayName(val)
+        }
         return nil
     }
     res["containerType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +122,9 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetContainerType(val)
+        if val != nil {
+            m.SetContainerType(val)
+        }
         return nil
     }
     res["containerWebUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +132,9 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetContainerWebUrl(val)
+        if val != nil {
+            m.SetContainerWebUrl(val)
+        }
         return nil
     }
     res["mediaType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +142,9 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetMediaType(val)
+        if val != nil {
+            m.SetMediaType(val)
+        }
         return nil
     }
     res["previewImageUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +152,9 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetPreviewImageUrl(val)
+        if val != nil {
+            m.SetPreviewImageUrl(val)
+        }
         return nil
     }
     res["previewText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +162,9 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetPreviewText(val)
+        if val != nil {
+            m.SetPreviewText(val)
+        }
         return nil
     }
     res["title"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +172,9 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetTitle(val)
+        if val != nil {
+            m.SetTitle(val)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +182,9 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetType_escaped(val)
+        if val != nil {
+            m.SetType_escaped(val)
+        }
         return nil
     }
     return res

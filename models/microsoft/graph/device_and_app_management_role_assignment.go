@@ -33,11 +33,13 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetMembers(res)
         }
-        m.SetMembers(res)
         return nil
     }
     return res

@@ -83,7 +83,9 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetIsEnabled(val)
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
         return nil
     }
     res["notifyReviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetNotifyReviewers(val)
+        if val != nil {
+            m.SetNotifyReviewers(val)
+        }
         return nil
     }
     res["remindersEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetRemindersEnabled(val)
+        if val != nil {
+            m.SetRemindersEnabled(val)
+        }
         return nil
     }
     res["requestDurationInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetRequestDurationInDays(val)
+        if val != nil {
+            m.SetRequestDurationInDays(val)
+        }
         return nil
     }
     res["reviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,11 +123,13 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]AccessReviewReviewerScope, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewReviewerScope))
+        if val != nil {
+            res := make([]AccessReviewReviewerScope, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewReviewerScope))
+            }
+            m.SetReviewers(res)
         }
-        m.SetReviewers(res)
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,7 +137,9 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

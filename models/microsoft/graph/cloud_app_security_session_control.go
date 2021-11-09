@@ -33,8 +33,10 @@ func (m *CloudAppSecuritySessionControl) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(CloudAppSecuritySessionControlType)
-        m.SetCloudAppSecurityType(&cast)
+        if val != nil {
+            cast := val.(CloudAppSecuritySessionControlType)
+            m.SetCloudAppSecurityType(&cast)
+        }
         return nil
     }
     return res

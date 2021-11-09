@@ -113,7 +113,9 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetInvitedUser(val.(*User))
+        if val != nil {
+            m.SetInvitedUser(val.(*User))
+        }
         return nil
     }
     res["invitedUserDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,7 +123,9 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetInvitedUserDisplayName(val)
+        if val != nil {
+            m.SetInvitedUserDisplayName(val)
+        }
         return nil
     }
     res["invitedUserEmailAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +133,9 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetInvitedUserEmailAddress(val)
+        if val != nil {
+            m.SetInvitedUserEmailAddress(val)
+        }
         return nil
     }
     res["invitedUserMessageInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +143,9 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetInvitedUserMessageInfo(val.(*InvitedUserMessageInfo))
+        if val != nil {
+            m.SetInvitedUserMessageInfo(val.(*InvitedUserMessageInfo))
+        }
         return nil
     }
     res["invitedUserType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +153,9 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetInvitedUserType(val)
+        if val != nil {
+            m.SetInvitedUserType(val)
+        }
         return nil
     }
     res["inviteRedeemUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +163,9 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetInviteRedeemUrl(val)
+        if val != nil {
+            m.SetInviteRedeemUrl(val)
+        }
         return nil
     }
     res["inviteRedirectUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +173,9 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetInviteRedirectUrl(val)
+        if val != nil {
+            m.SetInviteRedirectUrl(val)
+        }
         return nil
     }
     res["sendInvitationMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,7 +183,9 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetSendInvitationMessage(val)
+        if val != nil {
+            m.SetSendInvitationMessage(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,7 +193,9 @@ func (m *Invitation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     return res

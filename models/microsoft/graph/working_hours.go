@@ -72,11 +72,13 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]DayOfWeek, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DayOfWeek))
+        if val != nil {
+            res := make([]DayOfWeek, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DayOfWeek))
+            }
+            m.SetDaysOfWeek(res)
         }
-        m.SetDaysOfWeek(res)
         return nil
     }
     res["endTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,7 +86,9 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetEndTime(val)
+        if val != nil {
+            m.SetEndTime(val)
+        }
         return nil
     }
     res["startTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +96,9 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetStartTime(val)
+        if val != nil {
+            m.SetStartTime(val)
+        }
         return nil
     }
     res["timeZone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +106,9 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetTimeZone(val.(*TimeZoneBase))
+        if val != nil {
+            m.SetTimeZone(val.(*TimeZoneBase))
+        }
         return nil
     }
     return res

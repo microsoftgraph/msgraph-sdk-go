@@ -84,7 +84,9 @@ func (m *PrintConnector) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetAppVersion(val)
+        if val != nil {
+            m.SetAppVersion(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *PrintConnector) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["fullyQualifiedDomainName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *PrintConnector) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetFullyQualifiedDomainName(val)
+        if val != nil {
+            m.SetFullyQualifiedDomainName(val)
+        }
         return nil
     }
     res["location"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *PrintConnector) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetLocation(val.(*PrinterLocation))
+        if val != nil {
+            m.SetLocation(val.(*PrinterLocation))
+        }
         return nil
     }
     res["operatingSystem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *PrintConnector) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetOperatingSystem(val)
+        if val != nil {
+            m.SetOperatingSystem(val)
+        }
         return nil
     }
     res["registeredDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *PrintConnector) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetRegisteredDateTime(val)
+        if val != nil {
+            m.SetRegisteredDateTime(val)
+        }
         return nil
     }
     return res

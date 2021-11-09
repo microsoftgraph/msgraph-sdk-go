@@ -42,7 +42,9 @@ func (m *GetAvailableExtensionPropertiesRequestBody) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetIsSyncedFromOnPremises(val)
+        if val != nil {
+            m.SetIsSyncedFromOnPremises(val)
+        }
         return nil
     }
     return res

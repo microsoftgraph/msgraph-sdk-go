@@ -83,7 +83,9 @@ func (m *SharingDetail) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSharedBy(val.(*InsightIdentity))
+        if val != nil {
+            m.SetSharedBy(val.(*InsightIdentity))
+        }
         return nil
     }
     res["sharedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *SharingDetail) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSharedDateTime(val)
+        if val != nil {
+            m.SetSharedDateTime(val)
+        }
         return nil
     }
     res["sharingReference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *SharingDetail) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSharingReference(val.(*ResourceReference))
+        if val != nil {
+            m.SetSharingReference(val.(*ResourceReference))
+        }
         return nil
     }
     res["sharingSubject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *SharingDetail) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSharingSubject(val)
+        if val != nil {
+            m.SetSharingSubject(val)
+        }
         return nil
     }
     res["sharingType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *SharingDetail) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSharingType(val)
+        if val != nil {
+            m.SetSharingType(val)
+        }
         return nil
     }
     return res

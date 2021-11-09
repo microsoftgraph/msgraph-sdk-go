@@ -42,7 +42,9 @@ func (m *AddCopyRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetContentType(val)
+        if val != nil {
+            m.SetContentType(val)
+        }
         return nil
     }
     return res

@@ -34,7 +34,9 @@ func (m *OnenoteEntitySchemaObjectModel) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     return res

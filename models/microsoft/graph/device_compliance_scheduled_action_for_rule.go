@@ -43,7 +43,9 @@ func (m *DeviceComplianceScheduledActionForRule) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        m.SetRuleName(val)
+        if val != nil {
+            m.SetRuleName(val)
+        }
         return nil
     }
     res["scheduledActionConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,11 +53,13 @@ func (m *DeviceComplianceScheduledActionForRule) GetFieldDeserializers()(map[str
         if err != nil {
             return err
         }
-        res := make([]DeviceComplianceActionItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceComplianceActionItem))
+        if val != nil {
+            res := make([]DeviceComplianceActionItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceComplianceActionItem))
+            }
+            m.SetScheduledActionConfigurations(res)
         }
-        m.SetScheduledActionConfigurations(res)
         return nil
     }
     return res

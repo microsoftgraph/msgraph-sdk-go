@@ -42,11 +42,13 @@ func (m *CheckMemberGroupsRequestBody) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetGroupIds(res)
         }
-        m.SetGroupIds(res)
         return nil
     }
     return res

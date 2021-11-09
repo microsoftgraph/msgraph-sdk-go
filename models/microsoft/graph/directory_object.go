@@ -34,7 +34,9 @@ func (m *DirectoryObject) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDeletedDateTime(val)
+        if val != nil {
+            m.SetDeletedDateTime(val)
+        }
         return nil
     }
     return res

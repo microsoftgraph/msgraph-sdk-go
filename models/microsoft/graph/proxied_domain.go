@@ -52,7 +52,9 @@ func (m *ProxiedDomain) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetIpAddressOrFQDN(val)
+        if val != nil {
+            m.SetIpAddressOrFQDN(val)
+        }
         return nil
     }
     res["proxy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *ProxiedDomain) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetProxy(val)
+        if val != nil {
+            m.SetProxy(val)
+        }
         return nil
     }
     return res

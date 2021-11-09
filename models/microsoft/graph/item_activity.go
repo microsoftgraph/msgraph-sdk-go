@@ -64,7 +64,9 @@ func (m *ItemActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetAccess(val.(*AccessAction))
+        if val != nil {
+            m.SetAccess(val.(*AccessAction))
+        }
         return nil
     }
     res["activityDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *ItemActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetActivityDateTime(val)
+        if val != nil {
+            m.SetActivityDateTime(val)
+        }
         return nil
     }
     res["actor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *ItemActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetActor(val.(*IdentitySet))
+        if val != nil {
+            m.SetActor(val.(*IdentitySet))
+        }
         return nil
     }
     res["driveItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *ItemActivity) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDriveItem(val.(*DriveItem))
+        if val != nil {
+            m.SetDriveItem(val.(*DriveItem))
+        }
         return nil
     }
     return res

@@ -74,7 +74,9 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetConfigurationDeployedUserCount(val)
+        if val != nil {
+            m.SetConfigurationDeployedUserCount(val)
+        }
         return nil
     }
     res["configurationDeploymentSummaryPerApp"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,11 +84,13 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        res := make([]ManagedAppPolicyDeploymentSummaryPerApp, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedAppPolicyDeploymentSummaryPerApp))
+        if val != nil {
+            res := make([]ManagedAppPolicyDeploymentSummaryPerApp, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedAppPolicyDeploymentSummaryPerApp))
+            }
+            m.SetConfigurationDeploymentSummaryPerApp(res)
         }
-        m.SetConfigurationDeploymentSummaryPerApp(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,7 +98,9 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastRefreshTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +108,9 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetLastRefreshTime(val)
+        if val != nil {
+            m.SetLastRefreshTime(val)
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +118,9 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

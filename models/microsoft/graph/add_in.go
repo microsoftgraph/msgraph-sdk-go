@@ -62,7 +62,9 @@ func (m *AddIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,11 +72,13 @@ func (m *AddIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]KeyValue, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValue))
+        if val != nil {
+            res := make([]KeyValue, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValue))
+            }
+            m.SetProperties(res)
         }
-        m.SetProperties(res)
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +86,9 @@ func (m *AddIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetType_escaped(val)
+        if val != nil {
+            m.SetType_escaped(val)
+        }
         return nil
     }
     return res

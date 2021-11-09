@@ -33,7 +33,9 @@ func (m *WorkbookChartGridlinesFormat) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetLine(val.(*WorkbookChartLineFormat))
+        if val != nil {
+            m.SetLine(val.(*WorkbookChartLineFormat))
+        }
         return nil
     }
     return res

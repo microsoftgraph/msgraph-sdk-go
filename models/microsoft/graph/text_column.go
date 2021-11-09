@@ -82,7 +82,9 @@ func (m *TextColumn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetAllowMultipleLines(val)
+        if val != nil {
+            m.SetAllowMultipleLines(val)
+        }
         return nil
     }
     res["appendChangesToExistingText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *TextColumn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetAppendChangesToExistingText(val)
+        if val != nil {
+            m.SetAppendChangesToExistingText(val)
+        }
         return nil
     }
     res["linesForEditing"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *TextColumn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetLinesForEditing(val)
+        if val != nil {
+            m.SetLinesForEditing(val)
+        }
         return nil
     }
     res["maxLength"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *TextColumn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetMaxLength(val)
+        if val != nil {
+            m.SetMaxLength(val)
+        }
         return nil
     }
     res["textType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *TextColumn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetTextType(val)
+        if val != nil {
+            m.SetTextType(val)
+        }
         return nil
     }
     return res

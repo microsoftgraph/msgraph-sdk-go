@@ -124,7 +124,9 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAccess(val.(*ItemActionStat))
+        if val != nil {
+            m.SetAccess(val.(*ItemActionStat))
+        }
         return nil
     }
     res["activities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,11 +134,13 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]ItemActivity, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ItemActivity))
+        if val != nil {
+            res := make([]ItemActivity, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ItemActivity))
+            }
+            m.SetActivities(res)
         }
-        m.SetActivities(res)
         return nil
     }
     res["create"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +148,9 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetCreate(val.(*ItemActionStat))
+        if val != nil {
+            m.SetCreate(val.(*ItemActionStat))
+        }
         return nil
     }
     res["delete"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +158,9 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDelete(val.(*ItemActionStat))
+        if val != nil {
+            m.SetDelete(val.(*ItemActionStat))
+        }
         return nil
     }
     res["edit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +168,9 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetEdit(val.(*ItemActionStat))
+        if val != nil {
+            m.SetEdit(val.(*ItemActionStat))
+        }
         return nil
     }
     res["endDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +178,9 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetEndDateTime(val)
+        if val != nil {
+            m.SetEndDateTime(val)
+        }
         return nil
     }
     res["incompleteData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +188,9 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIncompleteData(val.(*IncompleteData))
+        if val != nil {
+            m.SetIncompleteData(val.(*IncompleteData))
+        }
         return nil
     }
     res["isTrending"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,7 +198,9 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIsTrending(val)
+        if val != nil {
+            m.SetIsTrending(val)
+        }
         return nil
     }
     res["move"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,7 +208,9 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetMove(val.(*ItemActionStat))
+        if val != nil {
+            m.SetMove(val.(*ItemActionStat))
+        }
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +218,9 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     return res

@@ -33,7 +33,9 @@ func (m *OpenShiftChangeRequest) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetOpenShiftId(val)
+        if val != nil {
+            m.SetOpenShiftId(val)
+        }
         return nil
     }
     return res

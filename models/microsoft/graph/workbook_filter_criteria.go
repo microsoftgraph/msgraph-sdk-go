@@ -112,7 +112,9 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetColor(val)
+        if val != nil {
+            m.SetColor(val)
+        }
         return nil
     }
     res["criterion1"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +122,9 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCriterion1(val)
+        if val != nil {
+            m.SetCriterion1(val)
+        }
         return nil
     }
     res["criterion2"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +132,9 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCriterion2(val)
+        if val != nil {
+            m.SetCriterion2(val)
+        }
         return nil
     }
     res["dynamicCriteria"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +142,9 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDynamicCriteria(val)
+        if val != nil {
+            m.SetDynamicCriteria(val)
+        }
         return nil
     }
     res["filterOn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +152,9 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetFilterOn(val)
+        if val != nil {
+            m.SetFilterOn(val)
+        }
         return nil
     }
     res["icon"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +162,9 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetIcon(val.(*WorkbookIcon))
+        if val != nil {
+            m.SetIcon(val.(*WorkbookIcon))
+        }
         return nil
     }
     res["operator"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +172,9 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetOperator(val)
+        if val != nil {
+            m.SetOperator(val)
+        }
         return nil
     }
     res["values"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +182,9 @@ func (m *WorkbookFilterCriteria) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetValues(val.(*Json))
+        if val != nil {
+            m.SetValues(val.(*Json))
+        }
         return nil
     }
     return res

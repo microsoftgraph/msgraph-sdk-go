@@ -64,7 +64,9 @@ func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRecipientActionDateTime(val)
+        if val != nil {
+            m.SetRecipientActionDateTime(val)
+        }
         return nil
     }
     res["recipientActionMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRecipientActionMessage(val)
+        if val != nil {
+            m.SetRecipientActionMessage(val)
+        }
         return nil
     }
     res["recipientUserId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRecipientUserId(val)
+        if val != nil {
+            m.SetRecipientUserId(val)
+        }
         return nil
     }
     res["senderShiftId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSenderShiftId(val)
+        if val != nil {
+            m.SetSenderShiftId(val)
+        }
         return nil
     }
     return res

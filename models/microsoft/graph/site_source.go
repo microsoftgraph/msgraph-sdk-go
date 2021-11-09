@@ -33,7 +33,9 @@ func (m *SiteSource) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetSite(val.(*Site))
+        if val != nil {
+            m.SetSite(val.(*Site))
+        }
         return nil
     }
     return res

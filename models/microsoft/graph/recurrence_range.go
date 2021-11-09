@@ -82,7 +82,9 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetEndDate(val)
+        if val != nil {
+            m.SetEndDate(val)
+        }
         return nil
     }
     res["numberOfOccurrences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetNumberOfOccurrences(val)
+        if val != nil {
+            m.SetNumberOfOccurrences(val)
+        }
         return nil
     }
     res["recurrenceTimeZone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetRecurrenceTimeZone(val)
+        if val != nil {
+            m.SetRecurrenceTimeZone(val)
+        }
         return nil
     }
     res["startDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetStartDate(val)
+        if val != nil {
+            m.SetStartDate(val)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,8 +122,10 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        cast := val.(RecurrenceRangeType)
-        m.SetType_escaped(&cast)
+        if val != nil {
+            cast := val.(RecurrenceRangeType)
+            m.SetType_escaped(&cast)
+        }
         return nil
     }
     return res

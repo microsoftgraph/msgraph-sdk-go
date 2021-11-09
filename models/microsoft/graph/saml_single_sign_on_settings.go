@@ -42,7 +42,9 @@ func (m *SamlSingleSignOnSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetRelayState(val)
+        if val != nil {
+            m.SetRelayState(val)
+        }
         return nil
     }
     return res

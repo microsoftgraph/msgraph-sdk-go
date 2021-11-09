@@ -63,11 +63,13 @@ func (m *TeamsApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]TeamsAppDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TeamsAppDefinition))
+        if val != nil {
+            res := make([]TeamsAppDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TeamsAppDefinition))
+            }
+            m.SetAppDefinitions(res)
         }
-        m.SetAppDefinitions(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,7 +77,9 @@ func (m *TeamsApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["distributionMethod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,8 +87,10 @@ func (m *TeamsApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(TeamsAppDistributionMethod)
-        m.SetDistributionMethod(&cast)
+        if val != nil {
+            cast := val.(TeamsAppDistributionMethod)
+            m.SetDistributionMethod(&cast)
+        }
         return nil
     }
     res["externalId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +98,9 @@ func (m *TeamsApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetExternalId(val)
+        if val != nil {
+            m.SetExternalId(val)
+        }
         return nil
     }
     return res

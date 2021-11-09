@@ -33,7 +33,9 @@ func (m *TimeOffItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetTimeOffReasonId(val)
+        if val != nil {
+            m.SetTimeOffReasonId(val)
+        }
         return nil
     }
     return res

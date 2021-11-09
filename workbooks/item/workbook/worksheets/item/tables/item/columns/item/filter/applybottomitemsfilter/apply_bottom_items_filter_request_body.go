@@ -42,7 +42,9 @@ func (m *ApplyBottomItemsFilterRequestBody) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetCount(val)
+        if val != nil {
+            m.SetCount(val)
+        }
         return nil
     }
     return res

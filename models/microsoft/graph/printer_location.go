@@ -202,7 +202,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetAltitudeInMeters(val)
+        if val != nil {
+            m.SetAltitudeInMeters(val)
+        }
         return nil
     }
     res["building"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +212,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetBuilding(val)
+        if val != nil {
+            m.SetBuilding(val)
+        }
         return nil
     }
     res["city"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +222,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetCity(val)
+        if val != nil {
+            m.SetCity(val)
+        }
         return nil
     }
     res["countryOrRegion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +232,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetCountryOrRegion(val)
+        if val != nil {
+            m.SetCountryOrRegion(val)
+        }
         return nil
     }
     res["floor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,7 +242,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetFloor(val)
+        if val != nil {
+            m.SetFloor(val)
+        }
         return nil
     }
     res["floorDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -242,7 +252,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetFloorDescription(val)
+        if val != nil {
+            m.SetFloorDescription(val)
+        }
         return nil
     }
     res["latitude"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -250,7 +262,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetLatitude(val)
+        if val != nil {
+            m.SetLatitude(val)
+        }
         return nil
     }
     res["longitude"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -258,7 +272,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetLongitude(val)
+        if val != nil {
+            m.SetLongitude(val)
+        }
         return nil
     }
     res["organization"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -266,11 +282,13 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetOrganization(res)
         }
-        m.SetOrganization(res)
         return nil
     }
     res["postalCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,7 +296,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetPostalCode(val)
+        if val != nil {
+            m.SetPostalCode(val)
+        }
         return nil
     }
     res["roomDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -286,7 +306,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetRoomDescription(val)
+        if val != nil {
+            m.SetRoomDescription(val)
+        }
         return nil
     }
     res["roomName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -294,7 +316,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetRoomName(val)
+        if val != nil {
+            m.SetRoomName(val)
+        }
         return nil
     }
     res["site"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -302,7 +326,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetSite(val)
+        if val != nil {
+            m.SetSite(val)
+        }
         return nil
     }
     res["stateOrProvince"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -310,7 +336,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetStateOrProvince(val)
+        if val != nil {
+            m.SetStateOrProvince(val)
+        }
         return nil
     }
     res["streetAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -318,7 +346,9 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetStreetAddress(val)
+        if val != nil {
+            m.SetStreetAddress(val)
+        }
         return nil
     }
     res["subdivision"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -326,11 +356,13 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSubdivision(res)
         }
-        m.SetSubdivision(res)
         return nil
     }
     res["subunit"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -338,11 +370,13 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSubunit(res)
         }
-        m.SetSubunit(res)
         return nil
     }
     return res

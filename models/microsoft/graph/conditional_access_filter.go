@@ -52,8 +52,10 @@ func (m *ConditionalAccessFilter) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(FilterMode)
-        m.SetMode(&cast)
+        if val != nil {
+            cast := val.(FilterMode)
+            m.SetMode(&cast)
+        }
         return nil
     }
     res["rule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *ConditionalAccessFilter) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetRule(val)
+        if val != nil {
+            m.SetRule(val)
+        }
         return nil
     }
     return res

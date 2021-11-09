@@ -72,7 +72,9 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetApplicationEnforcedRestrictions(val.(*ApplicationEnforcedRestrictionsSessionControl))
+        if val != nil {
+            m.SetApplicationEnforcedRestrictions(val.(*ApplicationEnforcedRestrictionsSessionControl))
+        }
         return nil
     }
     res["cloudAppSecurity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetCloudAppSecurity(val.(*CloudAppSecuritySessionControl))
+        if val != nil {
+            m.SetCloudAppSecurity(val.(*CloudAppSecuritySessionControl))
+        }
         return nil
     }
     res["persistentBrowser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetPersistentBrowser(val.(*PersistentBrowserSessionControl))
+        if val != nil {
+            m.SetPersistentBrowser(val.(*PersistentBrowserSessionControl))
+        }
         return nil
     }
     res["signInFrequency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSignInFrequency(val.(*SignInFrequencySessionControl))
+        if val != nil {
+            m.SetSignInFrequency(val.(*SignInFrequencySessionControl))
+        }
         return nil
     }
     return res

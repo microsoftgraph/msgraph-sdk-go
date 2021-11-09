@@ -53,7 +53,9 @@ func (m *CaseSettings) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetOcr(val.(*OcrSettings))
+        if val != nil {
+            m.SetOcr(val.(*OcrSettings))
+        }
         return nil
     }
     res["redundancyDetection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *CaseSettings) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetRedundancyDetection(val.(*RedundancyDetectionSettings))
+        if val != nil {
+            m.SetRedundancyDetection(val.(*RedundancyDetectionSettings))
+        }
         return nil
     }
     res["topicModeling"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *CaseSettings) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetTopicModeling(val.(*TopicModelingSettings))
+        if val != nil {
+            m.SetTopicModeling(val.(*TopicModelingSettings))
+        }
         return nil
     }
     return res

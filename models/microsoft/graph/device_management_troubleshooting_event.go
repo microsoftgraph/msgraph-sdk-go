@@ -44,7 +44,9 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetCorrelationId(val)
+        if val != nil {
+            m.SetCorrelationId(val)
+        }
         return nil
     }
     res["eventDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,7 +54,9 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetEventDateTime(val)
+        if val != nil {
+            m.SetEventDateTime(val)
+        }
         return nil
     }
     return res

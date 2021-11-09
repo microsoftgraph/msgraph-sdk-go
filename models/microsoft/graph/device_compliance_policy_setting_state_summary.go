@@ -133,7 +133,9 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetCompliantDeviceCount(val)
+        if val != nil {
+            m.SetCompliantDeviceCount(val)
+        }
         return nil
     }
     res["conflictDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +143,9 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetConflictDeviceCount(val)
+        if val != nil {
+            m.SetConflictDeviceCount(val)
+        }
         return nil
     }
     res["deviceComplianceSettingStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,11 +153,13 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        res := make([]DeviceComplianceSettingState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceComplianceSettingState))
+        if val != nil {
+            res := make([]DeviceComplianceSettingState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceComplianceSettingState))
+            }
+            m.SetDeviceComplianceSettingStates(res)
         }
-        m.SetDeviceComplianceSettingStates(res)
         return nil
     }
     res["errorDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +167,9 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetErrorDeviceCount(val)
+        if val != nil {
+            m.SetErrorDeviceCount(val)
+        }
         return nil
     }
     res["nonCompliantDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,7 +177,9 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetNonCompliantDeviceCount(val)
+        if val != nil {
+            m.SetNonCompliantDeviceCount(val)
+        }
         return nil
     }
     res["notApplicableDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -177,7 +187,9 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetNotApplicableDeviceCount(val)
+        if val != nil {
+            m.SetNotApplicableDeviceCount(val)
+        }
         return nil
     }
     res["platformType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,8 +197,10 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        cast := val.(PolicyPlatformType)
-        m.SetPlatformType(&cast)
+        if val != nil {
+            cast := val.(PolicyPlatformType)
+            m.SetPlatformType(&cast)
+        }
         return nil
     }
     res["remediatedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +208,9 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetRemediatedDeviceCount(val)
+        if val != nil {
+            m.SetRemediatedDeviceCount(val)
+        }
         return nil
     }
     res["setting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +218,9 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetSetting(val)
+        if val != nil {
+            m.SetSetting(val)
+        }
         return nil
     }
     res["settingName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +228,9 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetSettingName(val)
+        if val != nil {
+            m.SetSettingName(val)
+        }
         return nil
     }
     res["unknownDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +238,9 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetUnknownDeviceCount(val)
+        if val != nil {
+            m.SetUnknownDeviceCount(val)
+        }
         return nil
     }
     return res

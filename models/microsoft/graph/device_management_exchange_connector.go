@@ -114,7 +114,9 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetConnectorServerName(val)
+        if val != nil {
+            m.SetConnectorServerName(val)
+        }
         return nil
     }
     res["exchangeAlias"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +124,9 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetExchangeAlias(val)
+        if val != nil {
+            m.SetExchangeAlias(val)
+        }
         return nil
     }
     res["exchangeConnectorType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,8 +134,10 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementExchangeConnectorType)
-        m.SetExchangeConnectorType(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementExchangeConnectorType)
+            m.SetExchangeConnectorType(&cast)
+        }
         return nil
     }
     res["exchangeOrganization"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +145,9 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetExchangeOrganization(val)
+        if val != nil {
+            m.SetExchangeOrganization(val)
+        }
         return nil
     }
     res["lastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +155,9 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetLastSyncDateTime(val)
+        if val != nil {
+            m.SetLastSyncDateTime(val)
+        }
         return nil
     }
     res["primarySmtpAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +165,9 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetPrimarySmtpAddress(val)
+        if val != nil {
+            m.SetPrimarySmtpAddress(val)
+        }
         return nil
     }
     res["serverName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +175,9 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetServerName(val)
+        if val != nil {
+            m.SetServerName(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,8 +185,10 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementExchangeConnectorStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementExchangeConnectorStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +196,9 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

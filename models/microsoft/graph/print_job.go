@@ -114,7 +114,9 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetConfiguration(val.(*PrintJobConfiguration))
+        if val != nil {
+            m.SetConfiguration(val.(*PrintJobConfiguration))
+        }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +124,9 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*UserIdentity))
+        if val != nil {
+            m.SetCreatedBy(val.(*UserIdentity))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +134,9 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["documents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,11 +144,13 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]PrintDocument, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintDocument))
+        if val != nil {
+            res := make([]PrintDocument, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintDocument))
+            }
+            m.SetDocuments(res)
         }
-        m.SetDocuments(res)
         return nil
     }
     res["isFetchable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +158,9 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsFetchable(val)
+        if val != nil {
+            m.SetIsFetchable(val)
+        }
         return nil
     }
     res["redirectedFrom"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +168,9 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetRedirectedFrom(val)
+        if val != nil {
+            m.SetRedirectedFrom(val)
+        }
         return nil
     }
     res["redirectedTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +178,9 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetRedirectedTo(val)
+        if val != nil {
+            m.SetRedirectedTo(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +188,9 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetStatus(val.(*PrintJobStatus))
+        if val != nil {
+            m.SetStatus(val.(*PrintJobStatus))
+        }
         return nil
     }
     res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,11 +198,13 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]PrintTask, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintTask))
+        if val != nil {
+            res := make([]PrintTask, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintTask))
+            }
+            m.SetTasks(res)
         }
-        m.SetTasks(res)
         return nil
     }
     return res

@@ -63,7 +63,9 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetChecklist(val.(*PlannerChecklistItems))
+        if val != nil {
+            m.SetChecklist(val.(*PlannerChecklistItems))
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["previewType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,8 +83,10 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(PlannerPreviewType)
-        m.SetPreviewType(&cast)
+        if val != nil {
+            cast := val.(PlannerPreviewType)
+            m.SetPreviewType(&cast)
+        }
         return nil
     }
     res["references"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetReferences(val.(*PlannerExternalReferences))
+        if val != nil {
+            m.SetReferences(val.(*PlannerExternalReferences))
+        }
         return nil
     }
     return res

@@ -54,7 +54,9 @@ func (m *AuthoredNote) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetAuthor(val.(*Identity))
+        if val != nil {
+            m.SetAuthor(val.(*Identity))
+        }
         return nil
     }
     res["content"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -62,7 +64,9 @@ func (m *AuthoredNote) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetContent(val.(*ItemBody))
+        if val != nil {
+            m.SetContent(val.(*ItemBody))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +74,9 @@ func (m *AuthoredNote) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     return res

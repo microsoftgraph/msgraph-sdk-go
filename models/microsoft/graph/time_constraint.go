@@ -52,8 +52,10 @@ func (m *TimeConstraint) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        cast := val.(ActivityDomain)
-        m.SetActivityDomain(&cast)
+        if val != nil {
+            cast := val.(ActivityDomain)
+            m.SetActivityDomain(&cast)
+        }
         return nil
     }
     res["timeSlots"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,11 +63,13 @@ func (m *TimeConstraint) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]TimeSlot, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TimeSlot))
+        if val != nil {
+            res := make([]TimeSlot, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TimeSlot))
+            }
+            m.SetTimeSlots(res)
         }
-        m.SetTimeSlots(res)
         return nil
     }
     return res

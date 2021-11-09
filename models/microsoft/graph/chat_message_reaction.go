@@ -63,7 +63,9 @@ func (m *ChatMessageReaction) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["reactionType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *ChatMessageReaction) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetReactionType(val)
+        if val != nil {
+            m.SetReactionType(val)
+        }
         return nil
     }
     res["user"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *ChatMessageReaction) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUser(val.(*ChatMessageReactionIdentitySet))
+        if val != nil {
+            m.SetUser(val.(*ChatMessageReactionIdentitySet))
+        }
         return nil
     }
     return res

@@ -63,11 +63,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]Fido2AuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Fido2AuthenticationMethod))
+        if val != nil {
+            res := make([]Fido2AuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Fido2AuthenticationMethod))
+            }
+            m.SetFido2Methods(res)
         }
-        m.SetFido2Methods(res)
         return nil
     }
     res["methods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,11 +77,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]AuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AuthenticationMethod))
+        if val != nil {
+            res := make([]AuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AuthenticationMethod))
+            }
+            m.SetMethods(res)
         }
-        m.SetMethods(res)
         return nil
     }
     res["microsoftAuthenticatorMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,11 +91,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]MicrosoftAuthenticatorAuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MicrosoftAuthenticatorAuthenticationMethod))
+        if val != nil {
+            res := make([]MicrosoftAuthenticatorAuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MicrosoftAuthenticatorAuthenticationMethod))
+            }
+            m.SetMicrosoftAuthenticatorMethods(res)
         }
-        m.SetMicrosoftAuthenticatorMethods(res)
         return nil
     }
     res["windowsHelloForBusinessMethods"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,11 +105,13 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]WindowsHelloForBusinessAuthenticationMethod, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsHelloForBusinessAuthenticationMethod))
+        if val != nil {
+            res := make([]WindowsHelloForBusinessAuthenticationMethod, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsHelloForBusinessAuthenticationMethod))
+            }
+            m.SetWindowsHelloForBusinessMethods(res)
         }
-        m.SetWindowsHelloForBusinessMethods(res)
         return nil
     }
     return res

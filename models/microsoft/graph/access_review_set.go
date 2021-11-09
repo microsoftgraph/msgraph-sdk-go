@@ -33,11 +33,13 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]AccessReviewScheduleDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewScheduleDefinition))
+        if val != nil {
+            res := make([]AccessReviewScheduleDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewScheduleDefinition))
+            }
+            m.SetDefinitions(res)
         }
-        m.SetDefinitions(res)
         return nil
     }
     return res

@@ -73,7 +73,9 @@ func (m *Endpoint) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCapability(val)
+        if val != nil {
+            m.SetCapability(val)
+        }
         return nil
     }
     res["providerId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *Endpoint) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetProviderId(val)
+        if val != nil {
+            m.SetProviderId(val)
+        }
         return nil
     }
     res["providerName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *Endpoint) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetProviderName(val)
+        if val != nil {
+            m.SetProviderName(val)
+        }
         return nil
     }
     res["providerResourceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *Endpoint) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetProviderResourceId(val)
+        if val != nil {
+            m.SetProviderResourceId(val)
+        }
         return nil
     }
     res["uri"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +113,9 @@ func (m *Endpoint) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetUri(val)
+        if val != nil {
+            m.SetUri(val)
+        }
         return nil
     }
     return res

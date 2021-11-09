@@ -42,7 +42,9 @@ func (m *StoragePlanInformation) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetUpgradeAvailable(val)
+        if val != nil {
+            m.SetUpgradeAvailable(val)
+        }
         return nil
     }
     return res

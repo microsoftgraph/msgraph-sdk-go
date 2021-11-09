@@ -33,11 +33,13 @@ func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]UserScopeTeamsAppInstallation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserScopeTeamsAppInstallation))
+        if val != nil {
+            res := make([]UserScopeTeamsAppInstallation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserScopeTeamsAppInstallation))
+            }
+            m.SetInstalledApps(res)
         }
-        m.SetInstalledApps(res)
         return nil
     }
     return res

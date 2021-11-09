@@ -42,7 +42,9 @@ func (m *DeclineRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetMessage(val)
+        if val != nil {
+            m.SetMessage(val)
+        }
         return nil
     }
     return res

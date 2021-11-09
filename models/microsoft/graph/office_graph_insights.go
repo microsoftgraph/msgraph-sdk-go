@@ -53,11 +53,13 @@ func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]SharedInsight, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SharedInsight))
+        if val != nil {
+            res := make([]SharedInsight, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SharedInsight))
+            }
+            m.SetShared(res)
         }
-        m.SetShared(res)
         return nil
     }
     res["trending"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]Trending, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Trending))
+        if val != nil {
+            res := make([]Trending, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Trending))
+            }
+            m.SetTrending(res)
         }
-        m.SetTrending(res)
         return nil
     }
     res["used"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,11 +81,13 @@ func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]UsedInsight, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UsedInsight))
+        if val != nil {
+            res := make([]UsedInsight, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UsedInsight))
+            }
+            m.SetUsed(res)
         }
-        m.SetUsed(res)
         return nil
     }
     return res

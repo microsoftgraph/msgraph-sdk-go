@@ -64,7 +64,9 @@ func (m *StopHoldMusicResponse) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetStopHoldMusicOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StopHoldMusicOperation))
+        if val != nil {
+            m.SetStopHoldMusicOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StopHoldMusicOperation))
+        }
         return nil
     }
     return res

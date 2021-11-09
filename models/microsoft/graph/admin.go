@@ -42,7 +42,9 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetServiceAnnouncement(val.(*ServiceAnnouncement))
+        if val != nil {
+            m.SetServiceAnnouncement(val.(*ServiceAnnouncement))
+        }
         return nil
     }
     return res

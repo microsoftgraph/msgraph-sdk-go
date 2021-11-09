@@ -74,7 +74,9 @@ func (m *TelecomExpenseManagementPartner) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetAppAuthorized(val)
+        if val != nil {
+            m.SetAppAuthorized(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *TelecomExpenseManagementPartner) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["enabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *TelecomExpenseManagementPartner) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetEnabled(val)
+        if val != nil {
+            m.SetEnabled(val)
+        }
         return nil
     }
     res["lastConnectionDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +104,9 @@ func (m *TelecomExpenseManagementPartner) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetLastConnectionDateTime(val)
+        if val != nil {
+            m.SetLastConnectionDateTime(val)
+        }
         return nil
     }
     res["url"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +114,9 @@ func (m *TelecomExpenseManagementPartner) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetUrl(val)
+        if val != nil {
+            m.SetUrl(val)
+        }
         return nil
     }
     return res

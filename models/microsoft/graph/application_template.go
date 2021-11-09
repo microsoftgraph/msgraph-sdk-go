@@ -103,11 +103,13 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetCategories(res)
         }
-        m.SetCategories(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +117,9 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +127,9 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["homePageUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +137,9 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetHomePageUrl(val)
+        if val != nil {
+            m.SetHomePageUrl(val)
+        }
         return nil
     }
     res["logoUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +147,9 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetLogoUrl(val)
+        if val != nil {
+            m.SetLogoUrl(val)
+        }
         return nil
     }
     res["publisher"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +157,9 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetPublisher(val)
+        if val != nil {
+            m.SetPublisher(val)
+        }
         return nil
     }
     res["supportedProvisioningTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,11 +167,13 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSupportedProvisioningTypes(res)
         }
-        m.SetSupportedProvisioningTypes(res)
         return nil
     }
     res["supportedSingleSignOnModes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,11 +181,13 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSupportedSingleSignOnModes(res)
         }
-        m.SetSupportedSingleSignOnModes(res)
         return nil
     }
     return res

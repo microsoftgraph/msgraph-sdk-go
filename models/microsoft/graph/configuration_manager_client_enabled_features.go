@@ -92,7 +92,9 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetCompliancePolicy(val)
+        if val != nil {
+            m.SetCompliancePolicy(val)
+        }
         return nil
     }
     res["deviceConfiguration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetDeviceConfiguration(val)
+        if val != nil {
+            m.SetDeviceConfiguration(val)
+        }
         return nil
     }
     res["inventory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetInventory(val)
+        if val != nil {
+            m.SetInventory(val)
+        }
         return nil
     }
     res["modernApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +122,9 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetModernApps(val)
+        if val != nil {
+            m.SetModernApps(val)
+        }
         return nil
     }
     res["resourceAccess"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +132,9 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetResourceAccess(val)
+        if val != nil {
+            m.SetResourceAccess(val)
+        }
         return nil
     }
     res["windowsUpdateForBusiness"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +142,9 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetWindowsUpdateForBusiness(val)
+        if val != nil {
+            m.SetWindowsUpdateForBusiness(val)
+        }
         return nil
     }
     return res

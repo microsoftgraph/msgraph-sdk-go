@@ -64,7 +64,9 @@ func (m *PreviewResponse) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetItemPreviewInfo(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemPreviewInfo))
+        if val != nil {
+            m.SetItemPreviewInfo(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemPreviewInfo))
+        }
         return nil
     }
     return res

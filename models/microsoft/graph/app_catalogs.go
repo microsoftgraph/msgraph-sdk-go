@@ -33,11 +33,13 @@ func (m *AppCatalogs) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]TeamsApp, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TeamsApp))
+        if val != nil {
+            res := make([]TeamsApp, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TeamsApp))
+            }
+            m.SetTeamsApps(res)
         }
-        m.SetTeamsApps(res)
         return nil
     }
     return res

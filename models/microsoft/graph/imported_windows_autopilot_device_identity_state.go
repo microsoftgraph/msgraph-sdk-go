@@ -72,7 +72,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetDeviceErrorCode(val)
+        if val != nil {
+            m.SetDeviceErrorCode(val)
+        }
         return nil
     }
     res["deviceErrorName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetDeviceErrorName(val)
+        if val != nil {
+            m.SetDeviceErrorName(val)
+        }
         return nil
     }
     res["deviceImportStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,8 +92,10 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        cast := val.(ImportedWindowsAutopilotDeviceIdentityImportStatus)
-        m.SetDeviceImportStatus(&cast)
+        if val != nil {
+            cast := val.(ImportedWindowsAutopilotDeviceIdentityImportStatus)
+            m.SetDeviceImportStatus(&cast)
+        }
         return nil
     }
     res["deviceRegistrationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(ma
         if err != nil {
             return err
         }
-        m.SetDeviceRegistrationId(val)
+        if val != nil {
+            m.SetDeviceRegistrationId(val)
+        }
         return nil
     }
     return res

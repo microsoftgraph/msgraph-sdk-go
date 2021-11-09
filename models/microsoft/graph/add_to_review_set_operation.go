@@ -43,7 +43,9 @@ func (m *AddToReviewSetOperation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetReviewSet(val.(*ReviewSet))
+        if val != nil {
+            m.SetReviewSet(val.(*ReviewSet))
+        }
         return nil
     }
     res["sourceCollection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *AddToReviewSetOperation) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetSourceCollection(val.(*SourceCollection))
+        if val != nil {
+            m.SetSourceCollection(val.(*SourceCollection))
+        }
         return nil
     }
     return res

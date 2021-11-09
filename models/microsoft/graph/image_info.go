@@ -72,7 +72,9 @@ func (m *ImageInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetAddImageQuery(val)
+        if val != nil {
+            m.SetAddImageQuery(val)
+        }
         return nil
     }
     res["alternateText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *ImageInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetAlternateText(val)
+        if val != nil {
+            m.SetAlternateText(val)
+        }
         return nil
     }
     res["alternativeText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *ImageInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetAlternativeText(val)
+        if val != nil {
+            m.SetAlternativeText(val)
+        }
         return nil
     }
     res["iconUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *ImageInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetIconUrl(val)
+        if val != nil {
+            m.SetIconUrl(val)
+        }
         return nil
     }
     return res

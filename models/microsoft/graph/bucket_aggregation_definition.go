@@ -82,7 +82,9 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetIsDescending(val)
+        if val != nil {
+            m.SetIsDescending(val)
+        }
         return nil
     }
     res["minimumCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMinimumCount(val)
+        if val != nil {
+            m.SetMinimumCount(val)
+        }
         return nil
     }
     res["prefixFilter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetPrefixFilter(val)
+        if val != nil {
+            m.SetPrefixFilter(val)
+        }
         return nil
     }
     res["ranges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,11 +112,13 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]BucketAggregationRange, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BucketAggregationRange))
+        if val != nil {
+            res := make([]BucketAggregationRange, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BucketAggregationRange))
+            }
+            m.SetRanges(res)
         }
-        m.SetRanges(res)
         return nil
     }
     res["sortBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,8 +126,10 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        cast := val.(BucketAggregationSortProperty)
-        m.SetSortBy(&cast)
+        if val != nil {
+            cast := val.(BucketAggregationSortProperty)
+            m.SetSortBy(&cast)
+        }
         return nil
     }
     return res

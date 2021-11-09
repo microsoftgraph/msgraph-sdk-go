@@ -74,7 +74,9 @@ func (m *TermsAndConditionsAcceptanceStatus) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAcceptedDateTime(val)
+        if val != nil {
+            m.SetAcceptedDateTime(val)
+        }
         return nil
     }
     res["acceptedVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *TermsAndConditionsAcceptanceStatus) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAcceptedVersion(val)
+        if val != nil {
+            m.SetAcceptedVersion(val)
+        }
         return nil
     }
     res["termsAndConditions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *TermsAndConditionsAcceptanceStatus) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetTermsAndConditions(val.(*TermsAndConditions))
+        if val != nil {
+            m.SetTermsAndConditions(val.(*TermsAndConditions))
+        }
         return nil
     }
     res["userDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +104,9 @@ func (m *TermsAndConditionsAcceptanceStatus) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetUserDisplayName(val)
+        if val != nil {
+            m.SetUserDisplayName(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +114,9 @@ func (m *TermsAndConditionsAcceptanceStatus) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

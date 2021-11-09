@@ -72,11 +72,13 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]SearchAggregation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SearchAggregation))
+        if val != nil {
+            res := make([]SearchAggregation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SearchAggregation))
+            }
+            m.SetAggregations(res)
         }
-        m.SetAggregations(res)
         return nil
     }
     res["hits"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,11 +86,13 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]SearchHit, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SearchHit))
+        if val != nil {
+            res := make([]SearchHit, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SearchHit))
+            }
+            m.SetHits(res)
         }
-        m.SetHits(res)
         return nil
     }
     res["moreResultsAvailable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +100,9 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetMoreResultsAvailable(val)
+        if val != nil {
+            m.SetMoreResultsAvailable(val)
+        }
         return nil
     }
     res["total"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -104,7 +110,9 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetTotal(val)
+        if val != nil {
+            m.SetTotal(val)
+        }
         return nil
     }
     return res

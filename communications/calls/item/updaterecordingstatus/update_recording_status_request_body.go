@@ -53,7 +53,9 @@ func (m *UpdateRecordingStatusRequestBody) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetClientContext(val)
+        if val != nil {
+            m.SetClientContext(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,8 +63,10 @@ func (m *UpdateRecordingStatusRequestBody) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordingStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordingStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

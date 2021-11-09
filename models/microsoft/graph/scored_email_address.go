@@ -72,7 +72,9 @@ func (m *ScoredEmailAddress) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetAddress(val)
+        if val != nil {
+            m.SetAddress(val)
+        }
         return nil
     }
     res["itemId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *ScoredEmailAddress) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetItemId(val)
+        if val != nil {
+            m.SetItemId(val)
+        }
         return nil
     }
     res["relevanceScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *ScoredEmailAddress) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetRelevanceScore(val)
+        if val != nil {
+            m.SetRelevanceScore(val)
+        }
         return nil
     }
     res["selectionLikelihood"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,8 +102,10 @@ func (m *ScoredEmailAddress) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(SelectionLikelihoodInfo)
-        m.SetSelectionLikelihood(&cast)
+        if val != nil {
+            cast := val.(SelectionLikelihoodInfo)
+            m.SetSelectionLikelihood(&cast)
+        }
         return nil
     }
     return res

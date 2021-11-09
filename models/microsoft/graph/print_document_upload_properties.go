@@ -62,7 +62,9 @@ func (m *PrintDocumentUploadProperties) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetContentType(val)
+        if val != nil {
+            m.SetContentType(val)
+        }
         return nil
     }
     res["documentName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *PrintDocumentUploadProperties) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetDocumentName(val)
+        if val != nil {
+            m.SetDocumentName(val)
+        }
         return nil
     }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *PrintDocumentUploadProperties) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetSize(val)
+        if val != nil {
+            m.SetSize(val)
+        }
         return nil
     }
     return res

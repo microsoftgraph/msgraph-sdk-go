@@ -33,7 +33,9 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetIsEnabled(val)
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
         return nil
     }
     return res

@@ -42,11 +42,13 @@ func (m *RolePermission) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]ResourceAction, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ResourceAction))
+        if val != nil {
+            res := make([]ResourceAction, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ResourceAction))
+            }
+            m.SetResourceActions(res)
         }
-        m.SetResourceActions(res)
         return nil
     }
     return res

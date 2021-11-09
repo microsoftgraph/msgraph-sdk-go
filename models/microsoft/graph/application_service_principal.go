@@ -52,7 +52,9 @@ func (m *ApplicationServicePrincipal) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetApplication(val.(*Application))
+        if val != nil {
+            m.SetApplication(val.(*Application))
+        }
         return nil
     }
     res["servicePrincipal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *ApplicationServicePrincipal) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetServicePrincipal(val.(*ServicePrincipal))
+        if val != nil {
+            m.SetServicePrincipal(val.(*ServicePrincipal))
+        }
         return nil
     }
     return res

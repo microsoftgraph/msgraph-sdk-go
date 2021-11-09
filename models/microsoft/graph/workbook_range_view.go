@@ -143,7 +143,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetCellAddresses(val.(*Json))
+        if val != nil {
+            m.SetCellAddresses(val.(*Json))
+        }
         return nil
     }
     res["columnCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +153,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetColumnCount(val)
+        if val != nil {
+            m.SetColumnCount(val)
+        }
         return nil
     }
     res["formulas"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +163,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetFormulas(val.(*Json))
+        if val != nil {
+            m.SetFormulas(val.(*Json))
+        }
         return nil
     }
     res["formulasLocal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,7 +173,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetFormulasLocal(val.(*Json))
+        if val != nil {
+            m.SetFormulasLocal(val.(*Json))
+        }
         return nil
     }
     res["formulasR1C1"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +183,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetFormulasR1C1(val.(*Json))
+        if val != nil {
+            m.SetFormulasR1C1(val.(*Json))
+        }
         return nil
     }
     res["index"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +193,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetIndex(val)
+        if val != nil {
+            m.SetIndex(val)
+        }
         return nil
     }
     res["numberFormat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +203,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetNumberFormat(val.(*Json))
+        if val != nil {
+            m.SetNumberFormat(val.(*Json))
+        }
         return nil
     }
     res["rowCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +213,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRowCount(val)
+        if val != nil {
+            m.SetRowCount(val)
+        }
         return nil
     }
     res["rows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,11 +223,13 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]WorkbookRangeView, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookRangeView))
+        if val != nil {
+            res := make([]WorkbookRangeView, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookRangeView))
+            }
+            m.SetRows(res)
         }
-        m.SetRows(res)
         return nil
     }
     res["text"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -219,7 +237,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetText(val.(*Json))
+        if val != nil {
+            m.SetText(val.(*Json))
+        }
         return nil
     }
     res["values"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -227,7 +247,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetValues(val.(*Json))
+        if val != nil {
+            m.SetValues(val.(*Json))
+        }
         return nil
     }
     res["valueTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -235,7 +257,9 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetValueTypes(val.(*Json))
+        if val != nil {
+            m.SetValueTypes(val.(*Json))
+        }
         return nil
     }
     return res

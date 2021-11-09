@@ -114,7 +114,9 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetActiveDurationSeconds(val)
+        if val != nil {
+            m.SetActiveDurationSeconds(val)
+        }
         return nil
     }
     res["activity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +124,9 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetActivity(val.(*UserActivity))
+        if val != nil {
+            m.SetActivity(val.(*UserActivity))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +134,9 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["expirationDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +144,9 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["lastActiveDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +154,9 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetLastActiveDateTime(val)
+        if val != nil {
+            m.SetLastActiveDateTime(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +164,9 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["startedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +174,9 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetStartedDateTime(val)
+        if val != nil {
+            m.SetStartedDateTime(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,8 +184,10 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(Status)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(Status)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["userTimezone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,7 +195,9 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUserTimezone(val)
+        if val != nil {
+            m.SetUserTimezone(val)
+        }
         return nil
     }
     return res

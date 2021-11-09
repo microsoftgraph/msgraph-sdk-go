@@ -52,11 +52,13 @@ func (m *AssignedLicense) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDisabledPlans(res)
         }
-        m.SetDisabledPlans(res)
         return nil
     }
     res["skuId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,7 +66,9 @@ func (m *AssignedLicense) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetSkuId(val)
+        if val != nil {
+            m.SetSkuId(val)
+        }
         return nil
     }
     return res

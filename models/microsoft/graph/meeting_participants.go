@@ -52,11 +52,13 @@ func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]MeetingParticipantInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MeetingParticipantInfo))
+        if val != nil {
+            res := make([]MeetingParticipantInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MeetingParticipantInfo))
+            }
+            m.SetAttendees(res)
         }
-        m.SetAttendees(res)
         return nil
     }
     res["organizer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,7 +66,9 @@ func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetOrganizer(val.(*MeetingParticipantInfo))
+        if val != nil {
+            m.SetOrganizer(val.(*MeetingParticipantInfo))
+        }
         return nil
     }
     return res

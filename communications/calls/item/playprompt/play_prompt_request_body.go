@@ -53,7 +53,9 @@ func (m *PlayPromptRequestBody) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetClientContext(val)
+        if val != nil {
+            m.SetClientContext(val)
+        }
         return nil
     }
     res["prompts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,11 +63,13 @@ func (m *PlayPromptRequestBody) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Prompt, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Prompt))
+        if val != nil {
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Prompt, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Prompt))
+            }
+            m.SetPrompts(res)
         }
-        m.SetPrompts(res)
         return nil
     }
     return res

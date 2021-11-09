@@ -73,7 +73,9 @@ func (m *SchemaExtension) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["owner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *SchemaExtension) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetOwner(val)
+        if val != nil {
+            m.SetOwner(val)
+        }
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,11 +93,13 @@ func (m *SchemaExtension) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]ExtensionSchemaProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ExtensionSchemaProperty))
+        if val != nil {
+            res := make([]ExtensionSchemaProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ExtensionSchemaProperty))
+            }
+            m.SetProperties(res)
         }
-        m.SetProperties(res)
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +107,9 @@ func (m *SchemaExtension) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     res["targetTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,11 +117,13 @@ func (m *SchemaExtension) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTargetTypes(res)
         }
-        m.SetTargetTypes(res)
         return nil
     }
     return res

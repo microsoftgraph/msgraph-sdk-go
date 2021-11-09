@@ -62,7 +62,9 @@ func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetIdentity(val.(*IdentitySet))
+        if val != nil {
+            m.SetIdentity(val.(*IdentitySet))
+        }
         return nil
     }
     res["role"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,8 +72,10 @@ func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(OnlineMeetingRole)
-        m.SetRole(&cast)
+        if val != nil {
+            cast := val.(OnlineMeetingRole)
+            m.SetRole(&cast)
+        }
         return nil
     }
     res["upn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetUpn(val)
+        if val != nil {
+            m.SetUpn(val)
+        }
         return nil
     }
     return res

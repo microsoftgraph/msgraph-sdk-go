@@ -42,7 +42,9 @@ func (m *InsertRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetShift(val)
+        if val != nil {
+            m.SetShift(val)
+        }
         return nil
     }
     return res

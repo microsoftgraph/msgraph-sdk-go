@@ -92,7 +92,9 @@ func (m *Media) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetCalleeDevice(val.(*DeviceInfo))
+        if val != nil {
+            m.SetCalleeDevice(val.(*DeviceInfo))
+        }
         return nil
     }
     res["calleeNetwork"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *Media) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetCalleeNetwork(val.(*NetworkInfo))
+        if val != nil {
+            m.SetCalleeNetwork(val.(*NetworkInfo))
+        }
         return nil
     }
     res["callerDevice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *Media) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetCallerDevice(val.(*DeviceInfo))
+        if val != nil {
+            m.SetCallerDevice(val.(*DeviceInfo))
+        }
         return nil
     }
     res["callerNetwork"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +122,9 @@ func (m *Media) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetCallerNetwork(val.(*NetworkInfo))
+        if val != nil {
+            m.SetCallerNetwork(val.(*NetworkInfo))
+        }
         return nil
     }
     res["label"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +132,9 @@ func (m *Media) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetLabel(val)
+        if val != nil {
+            m.SetLabel(val)
+        }
         return nil
     }
     res["streams"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,11 +142,13 @@ func (m *Media) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]MediaStream, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MediaStream))
+        if val != nil {
+            res := make([]MediaStream, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MediaStream))
+            }
+            m.SetStreams(res)
         }
-        m.SetStreams(res)
         return nil
     }
     return res

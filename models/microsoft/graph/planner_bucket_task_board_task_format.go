@@ -33,7 +33,9 @@ func (m *PlannerBucketTaskBoardTaskFormat) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetOrderHint(val)
+        if val != nil {
+            m.SetOrderHint(val)
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *ExternalLink) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetHref(val)
+        if val != nil {
+            m.SetHref(val)
+        }
         return nil
     }
     return res

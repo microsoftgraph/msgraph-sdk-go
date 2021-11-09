@@ -52,7 +52,9 @@ func (m *PrintTaskStatus) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,8 +62,10 @@ func (m *PrintTaskStatus) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        cast := val.(PrintTaskProcessingState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(PrintTaskProcessingState)
+            m.SetState(&cast)
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetDeviceFilter(val.(*ConditionalAccessFilter))
+        if val != nil {
+            m.SetDeviceFilter(val.(*ConditionalAccessFilter))
+        }
         return nil
     }
     return res

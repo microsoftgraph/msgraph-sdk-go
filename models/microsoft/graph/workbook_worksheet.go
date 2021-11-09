@@ -103,11 +103,13 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]WorkbookChart, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookChart))
+        if val != nil {
+            res := make([]WorkbookChart, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookChart))
+            }
+            m.SetCharts(res)
         }
-        m.SetCharts(res)
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +117,9 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["names"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,11 +127,13 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]WorkbookNamedItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookNamedItem))
+        if val != nil {
+            res := make([]WorkbookNamedItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookNamedItem))
+            }
+            m.SetNames(res)
         }
-        m.SetNames(res)
         return nil
     }
     res["pivotTables"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,11 +141,13 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]WorkbookPivotTable, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookPivotTable))
+        if val != nil {
+            res := make([]WorkbookPivotTable, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookPivotTable))
+            }
+            m.SetPivotTables(res)
         }
-        m.SetPivotTables(res)
         return nil
     }
     res["position"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +155,9 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetPosition(val)
+        if val != nil {
+            m.SetPosition(val)
+        }
         return nil
     }
     res["protection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +165,9 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetProtection(val.(*WorkbookWorksheetProtection))
+        if val != nil {
+            m.SetProtection(val.(*WorkbookWorksheetProtection))
+        }
         return nil
     }
     res["tables"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,11 +175,13 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]WorkbookTable, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookTable))
+        if val != nil {
+            res := make([]WorkbookTable, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookTable))
+            }
+            m.SetTables(res)
         }
-        m.SetTables(res)
         return nil
     }
     res["visibility"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +189,9 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetVisibility(val)
+        if val != nil {
+            m.SetVisibility(val)
+        }
         return nil
     }
     return res

@@ -102,7 +102,9 @@ func (m *FileEncryptionInfo) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetEncryptionKey(val)
+        if val != nil {
+            m.SetEncryptionKey(val)
+        }
         return nil
     }
     res["fileDigest"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +112,9 @@ func (m *FileEncryptionInfo) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetFileDigest(val)
+        if val != nil {
+            m.SetFileDigest(val)
+        }
         return nil
     }
     res["fileDigestAlgorithm"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +122,9 @@ func (m *FileEncryptionInfo) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetFileDigestAlgorithm(val)
+        if val != nil {
+            m.SetFileDigestAlgorithm(val)
+        }
         return nil
     }
     res["initializationVector"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +132,9 @@ func (m *FileEncryptionInfo) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetInitializationVector(val)
+        if val != nil {
+            m.SetInitializationVector(val)
+        }
         return nil
     }
     res["mac"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +142,9 @@ func (m *FileEncryptionInfo) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetMac(val)
+        if val != nil {
+            m.SetMac(val)
+        }
         return nil
     }
     res["macKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +152,9 @@ func (m *FileEncryptionInfo) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetMacKey(val)
+        if val != nil {
+            m.SetMacKey(val)
+        }
         return nil
     }
     res["profileIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +162,9 @@ func (m *FileEncryptionInfo) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetProfileIdentifier(val)
+        if val != nil {
+            m.SetProfileIdentifier(val)
+        }
         return nil
     }
     return res

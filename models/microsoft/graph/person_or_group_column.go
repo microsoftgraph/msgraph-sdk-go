@@ -62,7 +62,9 @@ func (m *PersonOrGroupColumn) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetAllowMultipleSelection(val)
+        if val != nil {
+            m.SetAllowMultipleSelection(val)
+        }
         return nil
     }
     res["chooseFromType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *PersonOrGroupColumn) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetChooseFromType(val)
+        if val != nil {
+            m.SetChooseFromType(val)
+        }
         return nil
     }
     res["displayAs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *PersonOrGroupColumn) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDisplayAs(val)
+        if val != nil {
+            m.SetDisplayAs(val)
+        }
         return nil
     }
     return res

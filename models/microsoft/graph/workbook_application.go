@@ -33,7 +33,9 @@ func (m *WorkbookApplication) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetCalculationMode(val)
+        if val != nil {
+            m.SetCalculationMode(val)
+        }
         return nil
     }
     return res
