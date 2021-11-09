@@ -34,15 +34,14 @@ jobs:
       shell: bash
       env:
         GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-        MESSAGE_TITLE: Generated v1.0 models and request builders using Typewriter
+        MESSAGE_TITLE: Generated v1.0 models and request builders using Kiota
         MESSAGE_BODY: "This pull request was automatically created by the GitHub Action, **${{github.workflow}}**. \n\n The commit hash is _${{github.sha}}_. \n\n **Important** Check for unexpected deletions or changes in this PR."
-        REVIEWERS: peombwa,ddyett,zengin,nikithauc,baywet
         ASSIGNEDTO: baywet
         LABELS: generated
         BASE: main
       run: |
         curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1
-        bin/hub pull-request -b "$BASE" -h "$GITHUB_REF" -m "$MESSAGE_TITLE" -m "$MESSAGE_BODY" -r "$REVIEWERS" -a "$ASSIGNEDTO" -l "$LABELS"
+        bin/hub pull-request -b "$BASE" -h "$GITHUB_REF" -m "$MESSAGE_TITLE" -m "$MESSAGE_BODY" -a "$ASSIGNEDTO" -l "$LABELS"
       
 # References
 # [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
