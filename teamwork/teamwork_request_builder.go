@@ -148,7 +148,7 @@ func (m *TeamworkRequestBuilder) Patch(options *TeamworkRequestBuilderPatchOptio
 func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*iddcac2568dd554d7be34ddc7c2ac2e4fbb78d101317aac3fb089b697445cbfed.WorkforceIntegrationsRequestBuilder) {
     return iddcac2568dd554d7be34ddc7c2ac2e4fbb78d101317aac3fb089b697445cbfed.NewWorkforceIntegrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.teamwork.workforceIntegrations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teamwork.workforceIntegrations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*i295aba9e44cb402c499d2a80cfc1debd716eaecddf1f4ebc306a69d2b3c53bc8.WorkforceIntegrationRequestBuilder) {

@@ -64,7 +64,7 @@ type SetRequestBuilderPatchOptions struct {
 func (m *SetRequestBuilder) Children()(*i827e50e0e704e89f39c6ad2c9dd28f427f51f016d3cd9a70c29413bf073622a7.ChildrenRequestBuilder) {
     return i827e50e0e704e89f39c6ad2c9dd28f427f51f016d3cd9a70c29413bf073622a7.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.termStores.item.groups.item.sets.item.children.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item.groups.item.sets.item.children.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SetRequestBuilder) ChildrenById(id string)(*ia984aaf284a0f001442f674627bbd07e2de13686abd06c482db59f9e652b98f2.TermRequestBuilder) {
@@ -214,7 +214,7 @@ func (m *SetRequestBuilder) Patch(options *SetRequestBuilderPatchOptions)(error)
 func (m *SetRequestBuilder) Relations()(*i28411d489ad3cd729f1892303dcb2505651bcd5f6acc3e5cf227bc4118eea651.RelationsRequestBuilder) {
     return i28411d489ad3cd729f1892303dcb2505651bcd5f6acc3e5cf227bc4118eea651.NewRelationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.termStores.item.groups.item.sets.item.relations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item.groups.item.sets.item.relations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SetRequestBuilder) RelationsById(id string)(*ibb602acd9415bff5d888f98c2aba16005dd06d930f81c6a0360e1614b8bc2aaf.RelationRequestBuilder) {
@@ -230,7 +230,7 @@ func (m *SetRequestBuilder) RelationsById(id string)(*ibb602acd9415bff5d888f98c2
 func (m *SetRequestBuilder) Terms()(*i571a44d28bde16f052863de7c5cf0d88446d9f63065509564f1a776efa65f403.TermsRequestBuilder) {
     return i571a44d28bde16f052863de7c5cf0d88446d9f63065509564f1a776efa65f403.NewTermsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.termStores.item.groups.item.sets.item.terms.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item.groups.item.sets.item.terms.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SetRequestBuilder) TermsById(id string)(*i193200b3734d30a01f56084d8677802018b1f9f0bbb205294e6e271745ac81a8.TermRequestBuilder) {

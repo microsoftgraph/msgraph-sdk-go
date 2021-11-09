@@ -69,7 +69,7 @@ func (m *ManagedDeviceMobileAppConfigurationRequestBuilder) Assign()(*ia2a6efbe6
 func (m *ManagedDeviceMobileAppConfigurationRequestBuilder) Assignments()(*i6bbd09e352a0e87235e9c9775845f897603974356216a5236acfbea5f16155b0.AssignmentsRequestBuilder) {
     return i6bbd09e352a0e87235e9c9775845f897603974356216a5236acfbea5f16155b0.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.mobileAppConfigurations.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.mobileAppConfigurations.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ManagedDeviceMobileAppConfigurationRequestBuilder) AssignmentsById(id string)(*i88ff03a861b0c98567d5cfa6d93d8d9d0de34bb73fdd948e55765d9858a275c3.ManagedDeviceMobileAppConfigurationAssignmentRequestBuilder) {
@@ -188,7 +188,7 @@ func (m *ManagedDeviceMobileAppConfigurationRequestBuilder) Delete(options *Mana
 func (m *ManagedDeviceMobileAppConfigurationRequestBuilder) DeviceStatuses()(*iebd1b47b377fdbd0e32c261a4ebc852aebb3266e58bde42f93309b4e2edc6d16.DeviceStatusesRequestBuilder) {
     return iebd1b47b377fdbd0e32c261a4ebc852aebb3266e58bde42f93309b4e2edc6d16.NewDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.mobileAppConfigurations.item.deviceStatuses.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.mobileAppConfigurations.item.deviceStatuses.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ManagedDeviceMobileAppConfigurationRequestBuilder) DeviceStatusesById(id string)(*i5644f6cefb6e37ba63ec8582d3a158ec48759832b4146d5ffd2d350288b5e5ca.ManagedDeviceMobileAppConfigurationDeviceStatusRequestBuilder) {
@@ -235,7 +235,7 @@ func (m *ManagedDeviceMobileAppConfigurationRequestBuilder) Patch(options *Manag
 func (m *ManagedDeviceMobileAppConfigurationRequestBuilder) UserStatuses()(*i20a49af14049cce13bbcbf77639ba345f23a979ba735144f96caf7cc46ac52d4.UserStatusesRequestBuilder) {
     return i20a49af14049cce13bbcbf77639ba345f23a979ba735144f96caf7cc46ac52d4.NewUserStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.mobileAppConfigurations.item.userStatuses.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.mobileAppConfigurations.item.userStatuses.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ManagedDeviceMobileAppConfigurationRequestBuilder) UserStatusesById(id string)(*i72a4318a7e8f28adce62f7520318129090631e70fa23a9371561c34fac1f0582.ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) {

@@ -66,7 +66,7 @@ type ListRequestBuilderPatchOptions struct {
 func (m *ListRequestBuilder) Columns()(*id137f289f6d68aa0ce87e57630353e341f93dbb3fb993d0ec54f3e9944c8865c.ColumnsRequestBuilder) {
     return id137f289f6d68aa0ce87e57630353e341f93dbb3fb993d0ec54f3e9944c8865c.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.drive.list.columns.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.list.columns.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) ColumnsById(id string)(*i05799d6c1d82ecbf851acb48a1cb741eeecec1479585ec331eb151a1eb12fef7.ColumnDefinitionRequestBuilder) {
@@ -107,7 +107,7 @@ func NewListRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
 func (m *ListRequestBuilder) ContentTypes()(*i4ceb3442437d25b4d65a5fb368c3ea2eebf89199b8598c6e3c12a21be842c870.ContentTypesRequestBuilder) {
     return i4ceb3442437d25b4d65a5fb368c3ea2eebf89199b8598c6e3c12a21be842c870.NewContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.drive.list.contentTypes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.list.contentTypes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) ContentTypesById(id string)(*i666016b9de0fea6c6ca42db4cdc518e2bbe5b22999b3927c4fc4035901b10667.ContentTypeRequestBuilder) {
@@ -218,7 +218,7 @@ func (m *ListRequestBuilder) Get(options *ListRequestBuilderGetOptions)(*i4a838e
 func (m *ListRequestBuilder) Items()(*ibf8d356e7a219821b2879666575a0d558fe0723087550da01c802cb67c2ea4a9.ItemsRequestBuilder) {
     return ibf8d356e7a219821b2879666575a0d558fe0723087550da01c802cb67c2ea4a9.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.drive.list.items.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.list.items.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) ItemsById(id string)(*if1844020acb9c67e872cff770020bec5e9fbe0ec4bdb729561240d6a686db31c.ListItemRequestBuilder) {
@@ -248,7 +248,7 @@ func (m *ListRequestBuilder) Patch(options *ListRequestBuilderPatchOptions)(erro
 func (m *ListRequestBuilder) Subscriptions()(*ibf5d29d5462efb100f3ac502d1eba6060e878b0461baab8d107bba2657e634d5.SubscriptionsRequestBuilder) {
     return ibf5d29d5462efb100f3ac502d1eba6060e878b0461baab8d107bba2657e634d5.NewSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.drive.list.subscriptions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.list.subscriptions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) SubscriptionsById(id string)(*i0cc711a2d9e9934918c44b76b7f313fb885f4cc911346a17e775fac04e5518ac.SubscriptionRequestBuilder) {

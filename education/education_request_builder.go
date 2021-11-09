@@ -55,7 +55,7 @@ type EducationRequestBuilderPatchOptions struct {
 func (m *EducationRequestBuilder) Classes()(*if6b46a923414b614133630b614b404c3005a11daa1e05f10bb834755518d40dd.ClassesRequestBuilder) {
     return if6b46a923414b614133630b614b404c3005a11daa1e05f10bb834755518d40dd.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.education.classes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationRequestBuilder) ClassesById(id string)(*i31a8a42bc05cb93b0a8b6dc7e28fb5a481e3934df6dc18de8217d0fe268d617c.EducationClassRequestBuilder) {
@@ -172,7 +172,7 @@ func (m *EducationRequestBuilder) Patch(options *EducationRequestBuilderPatchOpt
 func (m *EducationRequestBuilder) Schools()(*i8803b2d448091478d216c51910e6ed01bbc8c76e5b76968b633118267314ebe9.SchoolsRequestBuilder) {
     return i8803b2d448091478d216c51910e6ed01bbc8c76e5b76968b633118267314ebe9.NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.education.schools.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationRequestBuilder) SchoolsById(id string)(*ibcc84b6252b9c075d39d4d8641ef3cf01a04613a5da305d7d48d21c122395065.EducationSchoolRequestBuilder) {
@@ -188,7 +188,7 @@ func (m *EducationRequestBuilder) SchoolsById(id string)(*ibcc84b6252b9c075d39d4
 func (m *EducationRequestBuilder) Users()(*i82d352ad9c3de7536dcc103a1a2a276e7beba1b35548191dda9e846d8c21e897.UsersRequestBuilder) {
     return i82d352ad9c3de7536dcc103a1a2a276e7beba1b35548191dda9e846d8c21e897.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.education.users.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.users.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationRequestBuilder) UsersById(id string)(*i6fc2718a806c86250bd9f9aaba5418413286c98ed345a7dbe988c558836bde8e.EducationUserRequestBuilder) {

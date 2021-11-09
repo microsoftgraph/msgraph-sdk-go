@@ -174,7 +174,7 @@ func (m *InferenceClassificationRequestBuilder) Get(options *InferenceClassifica
 func (m *InferenceClassificationRequestBuilder) Overrides()(*ibfafa6b940886b457653b94b114f2d4cb60996c26c8924e81d4ff1e93746ce0b.OverridesRequestBuilder) {
     return ibfafa6b940886b457653b94b114f2d4cb60996c26c8924e81d4ff1e93746ce0b.NewOverridesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.inferenceClassification.overrides.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.inferenceClassification.overrides.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *InferenceClassificationRequestBuilder) OverridesById(id string)(*iaf2a4cfde77fbaccd51ec8bd60e7c52bf1f5d4301431aedb8bca91697d8829d3.InferenceClassificationOverrideRequestBuilder) {

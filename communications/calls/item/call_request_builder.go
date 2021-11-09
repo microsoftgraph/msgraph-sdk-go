@@ -206,7 +206,7 @@ func (m *CallRequestBuilder) Mute()(*i16df7b37097565742989cf0afde62825b1acba1907
 func (m *CallRequestBuilder) Operations()(*i34ed9d0ef5bd801c08c976e0011aa37aa3b7cd0346f50aed0b58fbda8fa2d09e.OperationsRequestBuilder) {
     return i34ed9d0ef5bd801c08c976e0011aa37aa3b7cd0346f50aed0b58fbda8fa2d09e.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.communications.calls.item.operations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.communications.calls.item.operations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CallRequestBuilder) OperationsById(id string)(*ied141ef3c3b82e58ad49b195ba5c23ec1d4cc768e035310e410fa372b3a1fc49.CommsOperationRequestBuilder) {
@@ -222,7 +222,7 @@ func (m *CallRequestBuilder) OperationsById(id string)(*ied141ef3c3b82e58ad49b19
 func (m *CallRequestBuilder) Participants()(*i07f45294889a4c0baadf8d3c66171a11e824128d56c5d5922e1b42e5a85ab314.ParticipantsRequestBuilder) {
     return i07f45294889a4c0baadf8d3c66171a11e824128d56c5d5922e1b42e5a85ab314.NewParticipantsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.communications.calls.item.participants.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.communications.calls.item.participants.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CallRequestBuilder) ParticipantsById(id string)(*ib16dc40ca9627c2186a56c4d731808da49ba6e8a34c17a076a47f881856366d7.ParticipantRequestBuilder) {

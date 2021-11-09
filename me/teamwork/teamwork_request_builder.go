@@ -177,7 +177,7 @@ func (m *TeamworkRequestBuilder) Get(options *TeamworkRequestBuilderGetOptions)(
 func (m *TeamworkRequestBuilder) InstalledApps()(*i82e4938eebb0f1f3b3ab5df9811549921c7228dca4f6c8d8ff37d7937c4dedb8.InstalledAppsRequestBuilder) {
     return i82e4938eebb0f1f3b3ab5df9811549921c7228dca4f6c8d8ff37d7937c4dedb8.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.teamwork.installedApps.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.teamwork.installedApps.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*i6f2f4be9580b67290cc415b4f8c6378d961b002fbc22ad36883310556039daae.UserScopeTeamsAppInstallationRequestBuilder) {

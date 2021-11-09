@@ -186,7 +186,7 @@ func (m *OnenoteRequestBuilder) Get(options *OnenoteRequestBuilderGetOptions)(*i
 func (m *OnenoteRequestBuilder) Notebooks()(*i3e5ab660d6ac3db9593f97ea896aa48566cf72944732b076c4a9d061912a6c04.NotebooksRequestBuilder) {
     return i3e5ab660d6ac3db9593f97ea896aa48566cf72944732b076c4a9d061912a6c04.NewNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.onenote.notebooks.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.onenote.notebooks.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) NotebooksById(id string)(*icf88544b86cbd77f33fc028168410031e602c247e6524b0ec76c9ec5301c1b8c.NotebookRequestBuilder) {
@@ -202,7 +202,7 @@ func (m *OnenoteRequestBuilder) NotebooksById(id string)(*icf88544b86cbd77f33fc0
 func (m *OnenoteRequestBuilder) Operations()(*ic4302b238aa48da7d88cf2ada9f17f6eed828e36e8f54efabf0292996911ef1a.OperationsRequestBuilder) {
     return ic4302b238aa48da7d88cf2ada9f17f6eed828e36e8f54efabf0292996911ef1a.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.onenote.operations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.onenote.operations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) OperationsById(id string)(*i15f518181fda87a8cdf2c10fc20b18c70bacacca5e08a1dc09a45eb124da89ad.OnenoteOperationRequestBuilder) {
@@ -218,7 +218,7 @@ func (m *OnenoteRequestBuilder) OperationsById(id string)(*i15f518181fda87a8cdf2
 func (m *OnenoteRequestBuilder) Pages()(*id7a0200daa8eeafd045771e775fa3934eb9a171334b734bc94cdc8222f05a916.PagesRequestBuilder) {
     return id7a0200daa8eeafd045771e775fa3934eb9a171334b734bc94cdc8222f05a916.NewPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.onenote.pages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.onenote.pages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) PagesById(id string)(*i0a0eb5562b0dd916c680d0a554cb25b167a2ebe18945dc353bdaa39a7ec4fa14.OnenotePageRequestBuilder) {
@@ -248,7 +248,7 @@ func (m *OnenoteRequestBuilder) Patch(options *OnenoteRequestBuilderPatchOptions
 func (m *OnenoteRequestBuilder) Resources()(*i56afdd94701540796ba18ff7485293b0edb3d0ff46c482e936c1a66059939a7d.ResourcesRequestBuilder) {
     return i56afdd94701540796ba18ff7485293b0edb3d0ff46c482e936c1a66059939a7d.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.onenote.resources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.onenote.resources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) ResourcesById(id string)(*ic982193c51308e3c875bd915544c104ad98988f51026864216f9494619169091.OnenoteResourceRequestBuilder) {
@@ -264,7 +264,7 @@ func (m *OnenoteRequestBuilder) ResourcesById(id string)(*ic982193c51308e3c875bd
 func (m *OnenoteRequestBuilder) SectionGroups()(*i392b78ec87e6862ef0bb0965913ffdca97eaf69084704fd05b09f2a82f718e11.SectionGroupsRequestBuilder) {
     return i392b78ec87e6862ef0bb0965913ffdca97eaf69084704fd05b09f2a82f718e11.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.onenote.sectionGroups.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.onenote.sectionGroups.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) SectionGroupsById(id string)(*i032333af94d0562d937990b412828a992cf6dcd9300441d921dd966122896df0.SectionGroupRequestBuilder) {
@@ -280,7 +280,7 @@ func (m *OnenoteRequestBuilder) SectionGroupsById(id string)(*i032333af94d0562d9
 func (m *OnenoteRequestBuilder) Sections()(*id5409a02c0495e9c5e6b38f89b83f82f93291dc5e79dd29c377d082d3a67b973.SectionsRequestBuilder) {
     return id5409a02c0495e9c5e6b38f89b83f82f93291dc5e79dd29c377d082d3a67b973.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.onenote.sections.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.onenote.sections.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OnenoteRequestBuilder) SectionsById(id string)(*i18fb32726d606974074adcc29ef533aa0b798a82757b5717d4487c0bec214a39.OnenoteSectionRequestBuilder) {

@@ -239,7 +239,7 @@ func (m *WorkbookChartRequestBuilder) Patch(options *WorkbookChartRequestBuilder
 func (m *WorkbookChartRequestBuilder) Series()(*if6c63be159d2471eea0c0924705e2ad59adb302e3ca5fe0eebe61fdca03392e4.SeriesRequestBuilder) {
     return if6c63be159d2471eea0c0924705e2ad59adb302e3ca5fe0eebe61fdca03392e4.NewSeriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.workbooks.item.workbook.names.item.worksheet.charts.item.series.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.names.item.worksheet.charts.item.series.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorkbookChartRequestBuilder) SeriesById(id string)(*i28bf140701aeebdde7c593f39208093698c7f5d1b66bc90e8a19aaad06b16b21.WorkbookChartSeriesRequestBuilder) {

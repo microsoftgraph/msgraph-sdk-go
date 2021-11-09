@@ -20,7 +20,7 @@ type Organization struct {
     city *string;
     // Country/region name of the address for the organization.
     country *string;
-    // Country/region abbreviation for the organization.
+    // Country or region abbreviation for the organization in ISO 3166-2 format.
     countryLetterCode *string;
     // Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -114,7 +114,7 @@ func (m *Organization) GetCountry()(*string) {
         return m.country
     }
 }
-// Gets the countryLetterCode property value. Country/region abbreviation for the organization.
+// Gets the countryLetterCode property value. Country or region abbreviation for the organization in ISO 3166-2 format.
 func (m *Organization) GetCountryLetterCode()(*string) {
     if m == nil {
         return nil
@@ -737,7 +737,7 @@ func (m *Organization) SetCity(value *string)() {
 func (m *Organization) SetCountry(value *string)() {
     m.country = value
 }
-// Sets the countryLetterCode property value. Country/region abbreviation for the organization.
+// Sets the countryLetterCode property value. Country or region abbreviation for the organization in ISO 3166-2 format.
 // Parameters:
 //  - value : Value to set for the countryLetterCode property.
 func (m *Organization) SetCountryLetterCode(value *string)() {

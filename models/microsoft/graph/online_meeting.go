@@ -18,7 +18,7 @@ type OnlineMeeting struct {
     allowMeetingChat *MeetingChatMode;
     // Indicates whether Teams reactions are enabled for the meeting.
     allowTeamworkReactions *bool;
-    // The content stream of the attendee report of a live event. Read-only.
+    // The content stream of the attendee report of a Microsoft Teams live event. Read-only.
     attendeeReport []byte;
     // The phone access (dial-in) information for an online meeting. Read-only.
     audioConferencing *AudioConferencing;
@@ -32,7 +32,7 @@ type OnlineMeeting struct {
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The external ID. A custom ID. Optional.
     externalId *string;
-    // Indicates if this is a live event.
+    // Indicates if this is a Teams live event.
     isBroadcast *bool;
     // Indicates whether to announce when callers join or leave.
     isEntryExitAnnounced *bool;
@@ -100,7 +100,7 @@ func (m *OnlineMeeting) GetAllowTeamworkReactions()(*bool) {
         return m.allowTeamworkReactions
     }
 }
-// Gets the attendeeReport property value. The content stream of the attendee report of a live event. Read-only.
+// Gets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
 func (m *OnlineMeeting) GetAttendeeReport()([]byte) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *OnlineMeeting) GetExternalId()(*string) {
         return m.externalId
     }
 }
-// Gets the isBroadcast property value. Indicates if this is a live event.
+// Gets the isBroadcast property value. Indicates if this is a Teams live event.
 func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
     if m == nil {
         return nil
@@ -596,7 +596,7 @@ func (m *OnlineMeeting) SetAllowMeetingChat(value *MeetingChatMode)() {
 func (m *OnlineMeeting) SetAllowTeamworkReactions(value *bool)() {
     m.allowTeamworkReactions = value
 }
-// Sets the attendeeReport property value. The content stream of the attendee report of a live event. Read-only.
+// Sets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
 // Parameters:
 //  - value : Value to set for the attendeeReport property.
 func (m *OnlineMeeting) SetAttendeeReport(value []byte)() {
@@ -638,7 +638,7 @@ func (m *OnlineMeeting) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
 func (m *OnlineMeeting) SetExternalId(value *string)() {
     m.externalId = value
 }
-// Sets the isBroadcast property value. Indicates if this is a live event.
+// Sets the isBroadcast property value. Indicates if this is a Teams live event.
 // Parameters:
 //  - value : Value to set for the isBroadcast property.
 func (m *OnlineMeeting) SetIsBroadcast(value *bool)() {

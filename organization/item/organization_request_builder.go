@@ -182,7 +182,7 @@ func (m *OrganizationRequestBuilder) Delete(options *OrganizationRequestBuilderD
 func (m *OrganizationRequestBuilder) Extensions()(*i62fcec4c98d8f7e9caa7bd4b260ea9d20f54a28de6683ff87d4101316c41f38a.ExtensionsRequestBuilder) {
     return i62fcec4c98d8f7e9caa7bd4b260ea9d20f54a28de6683ff87d4101316c41f38a.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.organization.item.extensions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.organization.item.extensions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OrganizationRequestBuilder) ExtensionsById(id string)(*iead5f0a6000982961cff6f0e297f9427177afc718378c21027082d54c9ed6105.ExtensionRequestBuilder) {

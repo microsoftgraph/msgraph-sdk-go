@@ -194,7 +194,7 @@ func (m *ApplicationRequestBuilder) Delete(options *ApplicationRequestBuilderDel
 func (m *ApplicationRequestBuilder) ExtensionProperties()(*ida306ab63547733b6e18148e7f72a169be3442196d415312a52cbd9978ab6961.ExtensionPropertiesRequestBuilder) {
     return ida306ab63547733b6e18148e7f72a169be3442196d415312a52cbd9978ab6961.NewExtensionPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.applications.item.extensionProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.extensionProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ApplicationRequestBuilder) ExtensionPropertiesById(id string)(*ie9db136445b8a8e3d0b048cc9910b564635f65b63edab67c97c083c411010b77.ExtensionPropertyRequestBuilder) {

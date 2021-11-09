@@ -78,7 +78,7 @@ func (m *ContentTypeRequestBuilder) BaseTypes()(*i4a1ce58e21fb551499684168220c8c
 func (m *ContentTypeRequestBuilder) ColumnLinks()(*i0df9b813acca9f52cb58191b981da2631e2ce7ec1e0f39baea115430a4d91ec7.ColumnLinksRequestBuilder) {
     return i0df9b813acca9f52cb58191b981da2631e2ce7ec1e0f39baea115430a4d91ec7.NewColumnLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.shares.item.list.contentTypes.item.columnLinks.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.shares.item.list.contentTypes.item.columnLinks.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ContentTypeRequestBuilder) ColumnLinksById(id string)(*i8459e0e9fdbef8a8ad4c7a315789b0cca6cc0c5d53c4d9f685c083f3c7d8381d.ColumnLinkRequestBuilder) {
@@ -97,7 +97,7 @@ func (m *ContentTypeRequestBuilder) ColumnPositions()(*i553035798d555384c1d78519
 func (m *ContentTypeRequestBuilder) Columns()(*i1ec18c0a4fbb8f904f34e72c387a8703eb3af7790657ffef68bd11ec2a9905ef.ColumnsRequestBuilder) {
     return i1ec18c0a4fbb8f904f34e72c387a8703eb3af7790657ffef68bd11ec2a9905ef.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.shares.item.list.contentTypes.item.columns.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.shares.item.list.contentTypes.item.columns.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ContentTypeRequestBuilder) ColumnsById(id string)(*i5a14dba7acc9a67d9b71d060c0e0de130dbeaf1185def884644520254fd0a2bf.ColumnDefinitionRequestBuilder) {

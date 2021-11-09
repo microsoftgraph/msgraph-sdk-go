@@ -183,7 +183,7 @@ func (m *ChatRequestBuilder) Get(options *ChatRequestBuilderGetOptions)(*i4a838e
 func (m *ChatRequestBuilder) InstalledApps()(*i6e9937a477483db52c918f11ae44d2375f40192b050c02f9aaa34371ac1a12b8.InstalledAppsRequestBuilder) {
     return i6e9937a477483db52c918f11ae44d2375f40192b050c02f9aaa34371ac1a12b8.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.chats.item.installedApps.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.chats.item.installedApps.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatRequestBuilder) InstalledAppsById(id string)(*ie48eb983af14f89a84a71353f7c41fc8847c3001c54421e947a07c7e5017ae2b.TeamsAppInstallationRequestBuilder) {
@@ -199,7 +199,7 @@ func (m *ChatRequestBuilder) InstalledAppsById(id string)(*ie48eb983af14f89a84a7
 func (m *ChatRequestBuilder) Members()(*i75aa69acd6a8f7bab80f3af14760426f17ce1597f5155737243d02bac7efbc9b.MembersRequestBuilder) {
     return i75aa69acd6a8f7bab80f3af14760426f17ce1597f5155737243d02bac7efbc9b.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.chats.item.members.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.chats.item.members.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatRequestBuilder) MembersById(id string)(*ia1765451c54b694370a995b8293695056771707eceb99a55ae5f1a319717a9cd.ConversationMemberRequestBuilder) {
@@ -215,7 +215,7 @@ func (m *ChatRequestBuilder) MembersById(id string)(*ia1765451c54b694370a995b829
 func (m *ChatRequestBuilder) Messages()(*i0453d8f2831f761719a2d96702e4c863ff529132a101dbe684210882f2721d5c.MessagesRequestBuilder) {
     return i0453d8f2831f761719a2d96702e4c863ff529132a101dbe684210882f2721d5c.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.chats.item.messages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.chats.item.messages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatRequestBuilder) MessagesById(id string)(*if01cbefdd30a84f3f8ae04a8237bc738cd6d90ab68b9c2ccb4f8f2e8b18e5f34.ChatMessageRequestBuilder) {
@@ -248,7 +248,7 @@ func (m *ChatRequestBuilder) SendActivityNotification()(*i6feff4d6e3d0767acb48ac
 func (m *ChatRequestBuilder) Tabs()(*i4829a1a874097739700639a97e70426ca9839240f97e9abd24a5c555929e9d7f.TabsRequestBuilder) {
     return i4829a1a874097739700639a97e70426ca9839240f97e9abd24a5c555929e9d7f.NewTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.chats.item.tabs.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.chats.item.tabs.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ChatRequestBuilder) TabsById(id string)(*i837ff1257c18874e8d41607d659eb84e1e4dde73a2ec63b89aa3896598c0d0b1.TeamsTabRequestBuilder) {

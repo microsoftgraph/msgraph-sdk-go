@@ -191,7 +191,7 @@ func (m *ConversationThreadRequestBuilder) Patch(options *ConversationThreadRequ
 func (m *ConversationThreadRequestBuilder) Posts()(*id26e94f9dbf23b5fdd5ede5af63af454470170f7062fd6497a43be216cfba0d7.PostsRequestBuilder) {
     return id26e94f9dbf23b5fdd5ede5af63af454470170f7062fd6497a43be216cfba0d7.NewPostsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.conversations.item.threads.item.posts.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.conversations.item.threads.item.posts.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ConversationThreadRequestBuilder) PostsById(id string)(*i6cd95c84bd7443f7a3726ac49d6c195d580c8f304384efe56dca298268aecb2d.PostRequestBuilder) {

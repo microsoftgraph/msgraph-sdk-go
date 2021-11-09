@@ -193,7 +193,7 @@ func (m *InsightsRequestBuilder) Patch(options *InsightsRequestBuilderPatchOptio
 func (m *InsightsRequestBuilder) Shared()(*i29d2c155f681081063d0b2c0ab92796f0e2b78c469f71af45a16d8240b348ebf.SharedRequestBuilder) {
     return i29d2c155f681081063d0b2c0ab92796f0e2b78c469f71af45a16d8240b348ebf.NewSharedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.insights.shared.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.insights.shared.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *InsightsRequestBuilder) SharedById(id string)(*i7eb746d3d91c620af79236bba2af4b708c6b65d5f4ec8f9cc42e5d4305f1c396.SharedInsightRequestBuilder) {
@@ -209,7 +209,7 @@ func (m *InsightsRequestBuilder) SharedById(id string)(*i7eb746d3d91c620af79236b
 func (m *InsightsRequestBuilder) Trending()(*i8893ecb7e9d38ec8961e185f29391303f74779021473d1c37caeafd1abebef9a.TrendingRequestBuilder) {
     return i8893ecb7e9d38ec8961e185f29391303f74779021473d1c37caeafd1abebef9a.NewTrendingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.insights.trending.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.insights.trending.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *InsightsRequestBuilder) TrendingById(id string)(*i8893ecb7e9d38ec8961e185f29391303f74779021473d1c37caeafd1abebef9a.TrendingRequestBuilder) {
@@ -225,7 +225,7 @@ func (m *InsightsRequestBuilder) TrendingById(id string)(*i8893ecb7e9d38ec8961e1
 func (m *InsightsRequestBuilder) Used()(*i99fad623e5b2b4a7ae85326fa692745befba2f6b4fb179d4572c3e7219fbf3ac.UsedRequestBuilder) {
     return i99fad623e5b2b4a7ae85326fa692745befba2f6b4fb179d4572c3e7219fbf3ac.NewUsedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.insights.used.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.insights.used.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *InsightsRequestBuilder) UsedById(id string)(*ic47fb69b7ecc13ce7f81973ffdde08efe7b70445311d1e83964064ef79497098.UsedInsightRequestBuilder) {

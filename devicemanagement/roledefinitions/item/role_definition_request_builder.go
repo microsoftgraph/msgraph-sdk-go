@@ -190,7 +190,7 @@ func (m *RoleDefinitionRequestBuilder) Patch(options *RoleDefinitionRequestBuild
 func (m *RoleDefinitionRequestBuilder) RoleAssignments()(*ifa547832647c7d9052c8c752460cc37f72b999f4001c299048bb286b36ca6660.RoleAssignmentsRequestBuilder) {
     return ifa547832647c7d9052c8c752460cc37f72b999f4001c299048bb286b36ca6660.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceManagement.roleDefinitions.item.roleAssignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.roleDefinitions.item.roleAssignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *RoleDefinitionRequestBuilder) RoleAssignmentsById(id string)(*i9a64128a6cdac7274657acec87208aa9284bb1683560f6445c50346fa4b38ae4.RoleAssignmentRequestBuilder) {

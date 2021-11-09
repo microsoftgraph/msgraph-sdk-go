@@ -70,7 +70,7 @@ type DriveRequestBuilderPatchOptions struct {
 func (m *DriveRequestBuilder) Bundles()(*i4205fb8ccb30dea17fb8ba72024db369db4bc1d5e093c337fcf552e72e3571c4.BundlesRequestBuilder) {
     return i4205fb8ccb30dea17fb8ba72024db369db4bc1d5e093c337fcf552e72e3571c4.NewBundlesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.drives.item.bundles.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drives.item.bundles.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveRequestBuilder) BundlesById(id string)(*id7a7f8969d72823f194725db5971b674a1dd6dda550bc0b0d5bec20719ad9ee5.DriveItemRequestBuilder) {
@@ -189,7 +189,7 @@ func (m *DriveRequestBuilder) Delete(options *DriveRequestBuilderDeleteOptions)(
 func (m *DriveRequestBuilder) Following()(*iee46aa3df6c96b156c19a7dd468c660bb9bf053a22e578da189bbbaee28b0cdc.FollowingRequestBuilder) {
     return iee46aa3df6c96b156c19a7dd468c660bb9bf053a22e578da189bbbaee28b0cdc.NewFollowingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.drives.item.following.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drives.item.following.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveRequestBuilder) FollowingById(id string)(*i1ccf6e5f8701f6397ef714c413639aae46e1c415cb2263eeee0443f0155a743b.DriveItemRequestBuilder) {
@@ -219,7 +219,7 @@ func (m *DriveRequestBuilder) Get(options *DriveRequestBuilderGetOptions)(*i4a83
 func (m *DriveRequestBuilder) Items()(*iae8ee83127418dc4b9186e79ac698ea94d3e30eecc4269743c54c60cf314172b.ItemsRequestBuilder) {
     return iae8ee83127418dc4b9186e79ac698ea94d3e30eecc4269743c54c60cf314172b.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.drives.item.items.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drives.item.items.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveRequestBuilder) ItemsById(id string)(*iafa8d5d3e1080d6766c6b71c082fdab35a828b1d0cc84e17edcfefd65ff9b021.DriveItemRequestBuilder) {
@@ -269,7 +269,7 @@ func (m *DriveRequestBuilder) SharedWithMe()(*i2e66e6af0433d92d462a30e13b39a28fb
 func (m *DriveRequestBuilder) Special()(*ic658e9fc1679f0fe33489f42aae3b91cbf7d5382b5acf0f9fa109add5f3e4b2b.SpecialRequestBuilder) {
     return ic658e9fc1679f0fe33489f42aae3b91cbf7d5382b5acf0f9fa109add5f3e4b2b.NewSpecialRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.drives.item.special.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drives.item.special.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DriveRequestBuilder) SpecialById(id string)(*ibb5bf0dffefc66fdb863261eb4a45d386965bbca07ce1fa075249ee0e414aba9.DriveItemRequestBuilder) {

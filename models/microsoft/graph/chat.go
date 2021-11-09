@@ -8,7 +8,7 @@ import (
 // 
 type Chat struct {
     Entity
-    // Specifies the type of chat. Possible values are:group, oneOnOne and meeting.
+    // Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
     chatType *ChatType;
     // Date and time at which the chat was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -32,7 +32,7 @@ func NewChat()(*Chat) {
     }
     return m
 }
-// Gets the chatType property value. Specifies the type of chat. Possible values are:group, oneOnOne and meeting.
+// Gets the chatType property value. Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
 func (m *Chat) GetChatType()(*ChatType) {
     if m == nil {
         return nil
@@ -264,7 +264,7 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     }
     return nil
 }
-// Sets the chatType property value. Specifies the type of chat. Possible values are:group, oneOnOne and meeting.
+// Sets the chatType property value. Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
 // Parameters:
 //  - value : Value to set for the chatType property.
 func (m *Chat) SetChatType(value *ChatType)() {

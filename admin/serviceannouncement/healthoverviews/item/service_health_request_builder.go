@@ -176,7 +176,7 @@ func (m *ServiceHealthRequestBuilder) Get(options *ServiceHealthRequestBuilderGe
 func (m *ServiceHealthRequestBuilder) Issues()(*i354ddacdf1a2eb0d22ba38e8550f9567f1e9d2448c9847848c1e2777b81e9897.IssuesRequestBuilder) {
     return i354ddacdf1a2eb0d22ba38e8550f9567f1e9d2448c9847848c1e2777b81e9897.NewIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.admin.serviceAnnouncement.healthOverviews.item.issues.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.admin.serviceAnnouncement.healthOverviews.item.issues.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ServiceHealthRequestBuilder) IssuesById(id string)(*i6e1a2f8712e9f578e838fffdb3afa8eec075e09a4eb6f822a8b0041305d14e5f.ServiceHealthIssueRequestBuilder) {

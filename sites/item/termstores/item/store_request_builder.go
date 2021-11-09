@@ -178,7 +178,7 @@ func (m *StoreRequestBuilder) Get(options *StoreRequestBuilderGetOptions)(*i4a83
 func (m *StoreRequestBuilder) Groups()(*i943058511484df328af302c39ee5cb2c343138e90a60de21e94bad79f3a4f322.GroupsRequestBuilder) {
     return i943058511484df328af302c39ee5cb2c343138e90a60de21e94bad79f3a4f322.NewGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.termStores.item.groups.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item.groups.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *StoreRequestBuilder) GroupsById(id string)(*iab727bf89f62d932b7d66fef22c81af81d898a18ffb7aff5b451ac7d9f07b34e.GroupRequestBuilder) {
@@ -208,7 +208,7 @@ func (m *StoreRequestBuilder) Patch(options *StoreRequestBuilderPatchOptions)(er
 func (m *StoreRequestBuilder) Sets()(*i74df54b361b035b3b1c15bccb664cccb4c6f3b3f9d08ea3db87bafc5850d9c5c.SetsRequestBuilder) {
     return i74df54b361b035b3b1c15bccb664cccb4c6f3b3f9d08ea3db87bafc5850d9c5c.NewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.termStores.item.sets.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item.sets.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *StoreRequestBuilder) SetsById(id string)(*ib6b55dfc35d41e5306edb4c31882d97fa855e36e1f8d413bfb9bdb0f532f0d2c.SetRequestBuilder) {

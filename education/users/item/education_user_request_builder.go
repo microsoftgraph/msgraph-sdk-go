@@ -197,7 +197,7 @@ func (m *EducationUserRequestBuilder) Patch(options *EducationUserRequestBuilder
 func (m *EducationUserRequestBuilder) Rubrics()(*if19c2a0949f5f27bde752502b1831a530b8da87a55d1240bdad90f98dc585e1e.RubricsRequestBuilder) {
     return if19c2a0949f5f27bde752502b1831a530b8da87a55d1240bdad90f98dc585e1e.NewRubricsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.education.users.item.rubrics.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.users.item.rubrics.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationUserRequestBuilder) RubricsById(id string)(*ia6a8d66cb9ce8a7587ed39000e658b45c988146e3baee26d141c9c4829ae1818.EducationRubricRequestBuilder) {

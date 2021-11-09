@@ -78,7 +78,7 @@ func (m *WorkbookRequestBuilder) CloseSession()(*i4b302c1274ce37d0c4ddda1cc08f3a
 func (m *WorkbookRequestBuilder) Comments()(*ied7e07d513586a96205d8ae9f0876cae0217399e1898581f1a059df4292376dc.CommentsRequestBuilder) {
     return ied7e07d513586a96205d8ae9f0876cae0217399e1898581f1a059df4292376dc.NewCommentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.workbooks.item.workbook.comments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.comments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorkbookRequestBuilder) CommentsById(id string)(*ia41154e3202e47bd63acff7870d9d6636dc792d816181e05a5856d39b83bec9f.WorkbookCommentRequestBuilder) {
@@ -217,7 +217,7 @@ func (m *WorkbookRequestBuilder) Get(options *WorkbookRequestBuilderGetOptions)(
 func (m *WorkbookRequestBuilder) Names()(*i0903ad19dd9574dfbb4bed167da14643c2228c1dea871561fb358665afbb3ca6.NamesRequestBuilder) {
     return i0903ad19dd9574dfbb4bed167da14643c2228c1dea871561fb358665afbb3ca6.NewNamesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.workbooks.item.workbook.names.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.names.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorkbookRequestBuilder) NamesById(id string)(*i867aea5d1d9d669532c2772fe62859a2f33577fdfb784d5e4dfb9e0ee0a76e43.WorkbookNamedItemRequestBuilder) {
@@ -233,7 +233,7 @@ func (m *WorkbookRequestBuilder) NamesById(id string)(*i867aea5d1d9d669532c2772f
 func (m *WorkbookRequestBuilder) Operations()(*icc3ddbd086b90086e0cc449c4727a2d955b5fa6e180fc36ba2ff568fd7726c93.OperationsRequestBuilder) {
     return icc3ddbd086b90086e0cc449c4727a2d955b5fa6e180fc36ba2ff568fd7726c93.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.workbooks.item.workbook.operations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.operations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorkbookRequestBuilder) OperationsById(id string)(*ib4734e530e4717b1ad6655524718a151560482e22b338d1d804a63a8a2052198.WorkbookOperationRequestBuilder) {
@@ -278,7 +278,7 @@ func (m *WorkbookRequestBuilder) TableRowOperationResultWithKey(key *string)(*i5
 func (m *WorkbookRequestBuilder) Tables()(*idf6798b505adccc099c94c60811b9d6c499a7568c1af8d4aa9244555e95d4904.TablesRequestBuilder) {
     return idf6798b505adccc099c94c60811b9d6c499a7568c1af8d4aa9244555e95d4904.NewTablesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.workbooks.item.workbook.tables.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.tables.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorkbookRequestBuilder) TablesById(id string)(*ia867d3dcb91a7bd46ca5aaeb6bb772aca9c6f09cef40078b4d04158f64420354.WorkbookTableRequestBuilder) {
@@ -294,7 +294,7 @@ func (m *WorkbookRequestBuilder) TablesById(id string)(*ia867d3dcb91a7bd46ca5aae
 func (m *WorkbookRequestBuilder) Worksheets()(*i1eca07bc58ad01f3faa752b735e09e50ab7683422b4e83226505d100e95ee50c.WorksheetsRequestBuilder) {
     return i1eca07bc58ad01f3faa752b735e09e50ab7683422b4e83226505d100e95ee50c.NewWorksheetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.workbooks.item.workbook.worksheets.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.worksheets.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *WorkbookRequestBuilder) WorksheetsById(id string)(*icab31dc579f88cafdb4bcc1f326af353da1fc9fc046edacfaab9d24362f5130c.WorkbookWorksheetRequestBuilder) {

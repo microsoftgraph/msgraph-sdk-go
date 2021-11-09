@@ -176,7 +176,7 @@ func (m *UserActivityRequestBuilder) Get(options *UserActivityRequestBuilderGetO
 func (m *UserActivityRequestBuilder) HistoryItems()(*i822bc63f1f3bef59d89c75d576cb6366c24fd707d4e8fcc0bc947292c98a4cb7.HistoryItemsRequestBuilder) {
     return i822bc63f1f3bef59d89c75d576cb6366c24fd707d4e8fcc0bc947292c98a4cb7.NewHistoryItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.activities.item.historyItems.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.activities.item.historyItems.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserActivityRequestBuilder) HistoryItemsById(id string)(*ia69c57315c0340b03c0a51c9260e6551e4f8db7581442352b20c1ccbf9da6b40.ActivityHistoryItemRequestBuilder) {

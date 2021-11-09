@@ -177,7 +177,7 @@ func (m *NotificationMessageTemplateRequestBuilder) Get(options *NotificationMes
 func (m *NotificationMessageTemplateRequestBuilder) LocalizedNotificationMessages()(*icc3fe1a1c8b964bc176be6a6d48621fc3548efaeadcb3b10e136af2f19764752.LocalizedNotificationMessagesRequestBuilder) {
     return icc3fe1a1c8b964bc176be6a6d48621fc3548efaeadcb3b10e136af2f19764752.NewLocalizedNotificationMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceManagement.notificationMessageTemplates.item.localizedNotificationMessages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.notificationMessageTemplates.item.localizedNotificationMessages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *NotificationMessageTemplateRequestBuilder) LocalizedNotificationMessagesById(id string)(*i079873d8184290e06e63c9a04520d4cbb886c99c078b4ea0a493ba22bc14901e.LocalizedNotificationMessageRequestBuilder) {

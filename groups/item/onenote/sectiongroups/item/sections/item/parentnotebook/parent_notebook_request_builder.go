@@ -196,7 +196,7 @@ func (m *ParentNotebookRequestBuilder) Patch(options *ParentNotebookRequestBuild
 func (m *ParentNotebookRequestBuilder) SectionGroups()(*iad97c17999a69111abdfcb34a91be48a82e44ac6105319a56af58fb94714ddef.SectionGroupsRequestBuilder) {
     return iad97c17999a69111abdfcb34a91be48a82e44ac6105319a56af58fb94714ddef.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.onenote.sectionGroups.item.sections.item.parentNotebook.sectionGroups.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.onenote.sectionGroups.item.sections.item.parentNotebook.sectionGroups.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ParentNotebookRequestBuilder) SectionGroupsById(id string)(*i0deef97ad96f4144726b2d9c2f39932448f3b36f896f8dfeb8cd7b70ec81e90a.SectionGroupRequestBuilder) {
@@ -212,7 +212,7 @@ func (m *ParentNotebookRequestBuilder) SectionGroupsById(id string)(*i0deef97ad9
 func (m *ParentNotebookRequestBuilder) Sections()(*i0102e1dc03bebeef3aa71f8f243153212adacbd87f2d530ecf7815f1f40405a2.SectionsRequestBuilder) {
     return i0102e1dc03bebeef3aa71f8f243153212adacbd87f2d530ecf7815f1f40405a2.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.onenote.sectionGroups.item.sections.item.parentNotebook.sections.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.onenote.sectionGroups.item.sections.item.parentNotebook.sections.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ParentNotebookRequestBuilder) SectionsById(id string)(*i6736f310282f8b925a0fa5b0d236e61a25bca88f94b09c43d34c86e0a5bb253b.OnenoteSectionRequestBuilder) {

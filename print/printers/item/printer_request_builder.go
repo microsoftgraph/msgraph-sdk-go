@@ -202,7 +202,7 @@ func (m *PrinterRequestBuilder) Shares()(*i74b470ddc01590a04dfc5ba245b7ccb094a2f
 func (m *PrinterRequestBuilder) TaskTriggers()(*i05f5154d5dc8e1096ef3ba18fb5bdb890712250391686b0ffd44f043e05db1fb.TaskTriggersRequestBuilder) {
     return i05f5154d5dc8e1096ef3ba18fb5bdb890712250391686b0ffd44f043e05db1fb.NewTaskTriggersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.print.printers.item.taskTriggers.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.printers.item.taskTriggers.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrinterRequestBuilder) TaskTriggersById(id string)(*i8a35ad54635f07016096adf7157efc92ede0057cd4a790d06a32332ce94f22cc.PrintTaskTriggerRequestBuilder) {

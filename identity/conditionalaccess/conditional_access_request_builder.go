@@ -178,7 +178,7 @@ func (m *ConditionalAccessRequestBuilder) Get(options *ConditionalAccessRequestB
 func (m *ConditionalAccessRequestBuilder) NamedLocations()(*ie167212f1f78fb7bf5e6a91e4a3df660b8a5499daeed0e885580a0dde04d710e.NamedLocationsRequestBuilder) {
     return ie167212f1f78fb7bf5e6a91e4a3df660b8a5499daeed0e885580a0dde04d710e.NewNamedLocationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.identity.conditionalAccess.namedLocations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identity.conditionalAccess.namedLocations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ConditionalAccessRequestBuilder) NamedLocationsById(id string)(*i652ce65e13fdceb3d1ed10efc4a8f6c0d893a47d549accb475d48e05eedf3251.NamedLocationRequestBuilder) {
@@ -208,7 +208,7 @@ func (m *ConditionalAccessRequestBuilder) Patch(options *ConditionalAccessReques
 func (m *ConditionalAccessRequestBuilder) Policies()(*i27d3a1bae6f4577a4de2876ba58fad41be78be972958441916bfc0b15d805933.PoliciesRequestBuilder) {
     return i27d3a1bae6f4577a4de2876ba58fad41be78be972958441916bfc0b15d805933.NewPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.identity.conditionalAccess.policies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identity.conditionalAccess.policies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ConditionalAccessRequestBuilder) PoliciesById(id string)(*i91801d979eb0028b76d066e7195d63b5ed00d456ccdceaa9f6bb9a091401a467.ConditionalAccessPolicyRequestBuilder) {

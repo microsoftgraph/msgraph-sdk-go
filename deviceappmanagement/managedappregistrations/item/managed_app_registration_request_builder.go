@@ -63,7 +63,7 @@ type ManagedAppRegistrationRequestBuilderPatchOptions struct {
 func (m *ManagedAppRegistrationRequestBuilder) AppliedPolicies()(*ifa8f167e8cac58c1a5037bc99e8f6f25e58a3455715484a9419cebb030ee4304.AppliedPoliciesRequestBuilder) {
     return ifa8f167e8cac58c1a5037bc99e8f6f25e58a3455715484a9419cebb030ee4304.NewAppliedPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.managedAppRegistrations.item.appliedPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedAppRegistrations.item.appliedPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ManagedAppRegistrationRequestBuilder) AppliedPoliciesById(id string)(*i8c014196246f79aab4e3ce9c3fa6da286aeeb8d4af36d5f9b7fe584d08030fe6.ManagedAppPolicyRequestBuilder) {
@@ -196,7 +196,7 @@ func (m *ManagedAppRegistrationRequestBuilder) Get(options *ManagedAppRegistrati
 func (m *ManagedAppRegistrationRequestBuilder) IntendedPolicies()(*i3eed464a4a4f7a056ae78f7d5084484b8e4c7071ced5cd16d8978c75a211418d.IntendedPoliciesRequestBuilder) {
     return i3eed464a4a4f7a056ae78f7d5084484b8e4c7071ced5cd16d8978c75a211418d.NewIntendedPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.managedAppRegistrations.item.intendedPolicies.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedAppRegistrations.item.intendedPolicies.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ManagedAppRegistrationRequestBuilder) IntendedPoliciesById(id string)(*i0d4a89b01c459a241cf1b150996622b188ac6eefcbb7901958e20402e3fbda2f.ManagedAppPolicyRequestBuilder) {
@@ -212,7 +212,7 @@ func (m *ManagedAppRegistrationRequestBuilder) IntendedPoliciesById(id string)(*
 func (m *ManagedAppRegistrationRequestBuilder) Operations()(*i798793d33f3b0c4349f4a5beaee290369942f7f1d78a4207726bf30670bbf0d0.OperationsRequestBuilder) {
     return i798793d33f3b0c4349f4a5beaee290369942f7f1d78a4207726bf30670bbf0d0.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.managedAppRegistrations.item.operations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedAppRegistrations.item.operations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ManagedAppRegistrationRequestBuilder) OperationsById(id string)(*i0a22e7eeb322ca1994c33c38e16e5fe50b47a7810496c52fd2e2c94195f6c08f.ManagedAppOperationRequestBuilder) {

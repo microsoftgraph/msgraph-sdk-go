@@ -57,7 +57,7 @@ type CalendarGroupRequestBuilderPatchOptions struct {
 func (m *CalendarGroupRequestBuilder) Calendars()(*i3590b8f890244f229db5431aba77050c3f0d47b58ccb3e18bce4de2435f6618f.CalendarsRequestBuilder) {
     return i3590b8f890244f229db5431aba77050c3f0d47b58ccb3e18bce4de2435f6618f.NewCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.calendarGroups.item.calendars.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.calendarGroups.item.calendars.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CalendarGroupRequestBuilder) CalendarsById(id string)(*i197dbad7943759a3dd36697e6f2e3399c325cdb1a8615189ccad29c055709313.CalendarRequestBuilder) {

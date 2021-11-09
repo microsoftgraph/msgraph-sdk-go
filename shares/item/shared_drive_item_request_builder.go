@@ -185,7 +185,7 @@ func (m *SharedDriveItemRequestBuilder) Get(options *SharedDriveItemRequestBuild
 func (m *SharedDriveItemRequestBuilder) Items()(*i05fb43f9021a0913de359c2cfdf1fcad6b4de0310980145d3c6276c460270205.ItemsRequestBuilder) {
     return i05fb43f9021a0913de359c2cfdf1fcad6b4de0310980145d3c6276c460270205.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.shares.item.items.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.shares.item.items.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SharedDriveItemRequestBuilder) ItemsById(id string)(*i645f1e1a516727ccf24f1ba68b8f4137ee52e397b6e58438bccce4f0cb3d74b5.DriveItemRequestBuilder) {
