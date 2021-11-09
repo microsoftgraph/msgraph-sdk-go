@@ -8,6 +8,8 @@ import (
 // 
 type AccessReviewScheduleDefinition struct {
     Entity
+    // Defines the list of additional users or group members to be notified of the access review progress.
+    additionalNotificationRecipients []AccessReviewNotificationRecipientItem;
     // User who created this review. Read-only.
     createdBy *UserIdentity;
     // Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
@@ -41,6 +43,14 @@ func NewAccessReviewScheduleDefinition()(*AccessReviewScheduleDefinition) {
         Entity: *NewEntity(),
     }
     return m
+}
+// Gets the additionalNotificationRecipients property value. Defines the list of additional users or group members to be notified of the access review progress.
+func (m *AccessReviewScheduleDefinition) GetAdditionalNotificationRecipients()([]AccessReviewNotificationRecipientItem) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalNotificationRecipients
+    }
 }
 // Gets the createdBy property value. User who created this review. Read-only.
 func (m *AccessReviewScheduleDefinition) GetCreatedBy()(*UserIdentity) {
@@ -149,6 +159,18 @@ func (m *AccessReviewScheduleDefinition) GetStatus()(*string) {
 // The deserialization information for the current model
 func (m *AccessReviewScheduleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["additionalNotificationRecipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewNotificationRecipientItem() })
+        if err != nil {
+            return err
+        }
+        res := make([]AccessReviewNotificationRecipientItem, len(val))
+        for i, v := range val {
+            res[i] = *(v.(*AccessReviewNotificationRecipientItem))
+        }
+        m.SetAdditionalNotificationRecipients(res)
+        return nil
+    }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewUserIdentity() })
         if err != nil {
@@ -279,6 +301,17 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i04eb5309aeaafadd28374
         return err
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdditionalNotificationRecipients()))
+        for i, v := range m.GetAdditionalNotificationRecipients() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("additionalNotificationRecipients", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("createdBy", m.GetCreatedBy())
         if err != nil {
             return err
@@ -372,6 +405,12 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     return nil
+}
+// Sets the additionalNotificationRecipients property value. Defines the list of additional users or group members to be notified of the access review progress.
+// Parameters:
+//  - value : Value to set for the additionalNotificationRecipients property.
+func (m *AccessReviewScheduleDefinition) SetAdditionalNotificationRecipients(value []AccessReviewNotificationRecipientItem)() {
+    m.additionalNotificationRecipients = value
 }
 // Sets the createdBy property value. User who created this review. Read-only.
 // Parameters:

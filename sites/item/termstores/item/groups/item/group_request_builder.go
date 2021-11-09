@@ -190,7 +190,7 @@ func (m *GroupRequestBuilder) Patch(options *GroupRequestBuilderPatchOptions)(er
 func (m *GroupRequestBuilder) Sets()(*ide829bd6cd70d7fada81aa62bf6320e030449525807f8037dbf60251fd03a8c1.SetsRequestBuilder) {
     return ide829bd6cd70d7fada81aa62bf6320e030449525807f8037dbf60251fd03a8c1.NewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.termStores.item.groups.item.sets.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item.groups.item.sets.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *GroupRequestBuilder) SetsById(id string)(*i5fdd48054605d51ed33ea2d41b75d39ed3218582993ba4e6df34e3814d837ebd.SetRequestBuilder) {

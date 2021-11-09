@@ -133,7 +133,7 @@ type MeRequestBuilderPatchOptions struct {
 func (m *MeRequestBuilder) Activities()(*i400df5b1ed0100dbcae47bf4ceadd56eb71bfe33cebe1e407f4d5bfb8117b817.ActivitiesRequestBuilder) {
     return i400df5b1ed0100dbcae47bf4ceadd56eb71bfe33cebe1e407f4d5bfb8117b817.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.activities.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.activities.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) ActivitiesById(id string)(*i82519bf2607f9e93061888d9cc2d4e3080d112fa88638604197007e67f12d566.UserActivityRequestBuilder) {
@@ -152,7 +152,7 @@ func (m *MeRequestBuilder) AgreementAcceptances()(*ia995f6de67e6b602301051afac27
 func (m *MeRequestBuilder) AppRoleAssignments()(*iefdd1942e52abc032856b0c8e7df1198ee77c343ca4b63b4334fe23327191948.AppRoleAssignmentsRequestBuilder) {
     return iefdd1942e52abc032856b0c8e7df1198ee77c343ca4b63b4334fe23327191948.NewAppRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.appRoleAssignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.appRoleAssignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) AppRoleAssignmentsById(id string)(*i752ffd2149afbb59609f4e3b13e45c1e9596654430b65978023435d0b0bf8870.AppRoleAssignmentRequestBuilder) {
@@ -177,7 +177,7 @@ func (m *MeRequestBuilder) Calendar()(*i784e87d14910c0a7d5684a2351bbece9b82f8591
 func (m *MeRequestBuilder) CalendarGroups()(*i92e1bd77977f5be2fc73e3f2fbef2c3c51fe1de08b40c1d2b0d160c2fd3b1ec1.CalendarGroupsRequestBuilder) {
     return i92e1bd77977f5be2fc73e3f2fbef2c3c51fe1de08b40c1d2b0d160c2fd3b1ec1.NewCalendarGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.calendarGroups.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.calendarGroups.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) CalendarGroupsById(id string)(*iacc2566a5831cf5ddad547cea0842bc8e654bd4e9694e5687421afcbc7870697.CalendarGroupRequestBuilder) {
@@ -193,7 +193,7 @@ func (m *MeRequestBuilder) CalendarGroupsById(id string)(*iacc2566a5831cf5ddad54
 func (m *MeRequestBuilder) Calendars()(*i1156454f600e0ccae7e57d287a3b71ffac33356633440fdd599e5877247efb98.CalendarsRequestBuilder) {
     return i1156454f600e0ccae7e57d287a3b71ffac33356633440fdd599e5877247efb98.NewCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.calendars.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.calendars.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) CalendarsById(id string)(*i6db87d2607e360763d6144f96a5539d25e575d719b1c6486ff32ca05194b469f.CalendarRequestBuilder) {
@@ -209,7 +209,7 @@ func (m *MeRequestBuilder) CalendarsById(id string)(*i6db87d2607e360763d6144f96a
 func (m *MeRequestBuilder) CalendarView()(*i623b9c23db2c6285bb1586e2570422826e72f619ad0cc7dc9ffd8dccc9c363be.CalendarViewRequestBuilder) {
     return i623b9c23db2c6285bb1586e2570422826e72f619ad0cc7dc9ffd8dccc9c363be.NewCalendarViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.calendarView.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.calendarView.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) CalendarViewById(id string)(*ic34e2b1716720766154a4200263bd99d00617b2dbbdacdf92c9bdd0f2abc909d.EventRequestBuilder) {
@@ -228,7 +228,7 @@ func (m *MeRequestBuilder) ChangePassword()(*i206cb0c8230584b060b2abec39bb01624c
 func (m *MeRequestBuilder) Chats()(*i3000cb547f984da6889114dc83c890ea62854b01b8390756a6c2a26c0c46762d.ChatsRequestBuilder) {
     return i3000cb547f984da6889114dc83c890ea62854b01b8390756a6c2a26c0c46762d.NewChatsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.chats.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.chats.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) ChatsById(id string)(*i50623afd83f34872b2858002ef89a796dbcb413e984eb8f2c393ab63dfe9f627.ChatRequestBuilder) {
@@ -275,7 +275,7 @@ func NewMeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013
 func (m *MeRequestBuilder) ContactFolders()(*id62186df8bd24482efb58f5c6df32ea36d60861e1b0a5e18bb0fb8e93180ed0d.ContactFoldersRequestBuilder) {
     return id62186df8bd24482efb58f5c6df32ea36d60861e1b0a5e18bb0fb8e93180ed0d.NewContactFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.contactFolders.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) ContactFoldersById(id string)(*i75076f3180c03011b591579c7879bb208b53bd7df65ecaec246e426b96222960.ContactFolderRequestBuilder) {
@@ -291,7 +291,7 @@ func (m *MeRequestBuilder) ContactFoldersById(id string)(*i75076f3180c03011b5915
 func (m *MeRequestBuilder) Contacts()(*i0e15e1c0947fe4cf75784f5461116d0799880f431bc4828322b311b5c56abaed.ContactsRequestBuilder) {
     return i0e15e1c0947fe4cf75784f5461116d0799880f431bc4828322b311b5c56abaed.NewContactsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.contacts.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contacts.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) ContactsById(id string)(*iedeff048dd4d8b91b3d6b0f2ea6810bff050db01d964ad2520525eab286ef758.ContactRequestBuilder) {
@@ -355,7 +355,7 @@ func (m *MeRequestBuilder) CreatePatchRequestInformation(options *MeRequestBuild
 func (m *MeRequestBuilder) DeviceManagementTroubleshootingEvents()(*ibdc8482a4a0b860817f919057540f0ded62ef795b16107be11a838b262800802.DeviceManagementTroubleshootingEventsRequestBuilder) {
     return ibdc8482a4a0b860817f919057540f0ded62ef795b16107be11a838b262800802.NewDeviceManagementTroubleshootingEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.deviceManagementTroubleshootingEvents.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.deviceManagementTroubleshootingEvents.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) DeviceManagementTroubleshootingEventsById(id string)(*i83de839160b1a76c562f0c577e0521385e7ededa8ac09093fcb0042ae0b34038.DeviceManagementTroubleshootingEventRequestBuilder) {
@@ -377,7 +377,7 @@ func (m *MeRequestBuilder) Drive()(*ia9ef5226776ef05cff35a5a1a349d35741713774b97
 func (m *MeRequestBuilder) Drives()(*i2c49d98286eefcf44eb33ad01a55d610a378f0b72400964e65dcad0ef245bf34.DrivesRequestBuilder) {
     return i2c49d98286eefcf44eb33ad01a55d610a378f0b72400964e65dcad0ef245bf34.NewDrivesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.drives.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.drives.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) DrivesById(id string)(*i97ba4ab89e2ae86eddef1645331bb1ff7664a5d8975c392bde50d7d40498c4d7.DriveRequestBuilder) {
@@ -393,7 +393,7 @@ func (m *MeRequestBuilder) DrivesById(id string)(*i97ba4ab89e2ae86eddef1645331bb
 func (m *MeRequestBuilder) Events()(*i3057974c2fd0cf7ae8fb427fde3c898513dde98528639b123e00f8faa4959af6.EventsRequestBuilder) {
     return i3057974c2fd0cf7ae8fb427fde3c898513dde98528639b123e00f8faa4959af6.NewEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.events.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.events.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) EventsById(id string)(*i409a18a3611aab89ea3fdfbbfcd81dee9c098de84cb70a324adb81efe77cd9c9.EventRequestBuilder) {
@@ -412,7 +412,7 @@ func (m *MeRequestBuilder) ExportPersonalData()(*idea9ec8c60200f05e5423dbb896eb1
 func (m *MeRequestBuilder) Extensions()(*i7c760ce34c8b15a60dd49909c50aa1a09d44d83d6ecbc77285333fcb80771ca3.ExtensionsRequestBuilder) {
     return i7c760ce34c8b15a60dd49909c50aa1a09d44d83d6ecbc77285333fcb80771ca3.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.extensions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.extensions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) ExtensionsById(id string)(*i50dd9a7afd373a7096c01b2a6c52a0dc97b9ce9b8050e77ebbec5f2113eeedfb.ExtensionRequestBuilder) {
@@ -471,7 +471,7 @@ func (m *MeRequestBuilder) Insights()(*ie5dfb4f09b7e53c1fe101d19d424cbec858c4a3b
 func (m *MeRequestBuilder) JoinedTeams()(*i67b0755c468e050eae94b1218741505fa70f64cd77602bf39c9076f078a8ee50.JoinedTeamsRequestBuilder) {
     return i67b0755c468e050eae94b1218741505fa70f64cd77602bf39c9076f078a8ee50.NewJoinedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.joinedTeams.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.joinedTeams.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) JoinedTeamsById(id string)(*ib6fc3cd91dac93a9c6c6225979a445d5d12b9cbde994609403d5f99724571a99.TeamRequestBuilder) {
@@ -487,7 +487,7 @@ func (m *MeRequestBuilder) JoinedTeamsById(id string)(*ib6fc3cd91dac93a9c6c62259
 func (m *MeRequestBuilder) LicenseDetails()(*i6c0a6ed6de8e009fdea4dfe1e4bebefb8e3a9b7d7b00593a3c4993cdc95ecce4.LicenseDetailsRequestBuilder) {
     return i6c0a6ed6de8e009fdea4dfe1e4bebefb8e3a9b7d7b00593a3c4993cdc95ecce4.NewLicenseDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.licenseDetails.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.licenseDetails.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) LicenseDetailsById(id string)(*i6c0a6ed6de8e009fdea4dfe1e4bebefb8e3a9b7d7b00593a3c4993cdc95ecce4.LicenseDetailsRequestBuilder) {
@@ -503,7 +503,7 @@ func (m *MeRequestBuilder) LicenseDetailsById(id string)(*i6c0a6ed6de8e009fdea4d
 func (m *MeRequestBuilder) MailFolders()(*if7fed2ae20f77809a300e075348d5bea3d8904437f11a11dfb7b13fd95f43cfe.MailFoldersRequestBuilder) {
     return if7fed2ae20f77809a300e075348d5bea3d8904437f11a11dfb7b13fd95f43cfe.NewMailFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.mailFolders.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.mailFolders.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) MailFoldersById(id string)(*ic04fc81ee412d734a4c3dfd98f60894e358d83f93c390e56d414c05ff05e1c03.MailFolderRequestBuilder) {
@@ -522,7 +522,7 @@ func (m *MeRequestBuilder) ManagedAppRegistrations()(*i623b12e632bcd3b4f1cb07d67
 func (m *MeRequestBuilder) ManagedDevices()(*i0649e8b11b3ec8278bb4babf63ec9cafa0d10566ccd622ca5149bb1a04573075.ManagedDevicesRequestBuilder) {
     return i0649e8b11b3ec8278bb4babf63ec9cafa0d10566ccd622ca5149bb1a04573075.NewManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.managedDevices.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.managedDevices.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) ManagedDevicesById(id string)(*i0e5e8b891a423bb213a9ca59b700130801c575d572de2f19f7ef7c3dec985001.ManagedDeviceRequestBuilder) {
@@ -544,7 +544,7 @@ func (m *MeRequestBuilder) MemberOf()(*ieaba2dfa6d4e6328c4835d71f5a6ea14a337fbef
 func (m *MeRequestBuilder) Messages()(*iec29d828a5054453503e707bcd7facaa5d237b91dc87d7bfa7a5c7c2924a2feb.MessagesRequestBuilder) {
     return iec29d828a5054453503e707bcd7facaa5d237b91dc87d7bfa7a5c7c2924a2feb.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.messages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.messages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) MessagesById(id string)(*ib6af81a46e1cd2294b1d59edaed878023b799ed71ffaeb0e543a0c7b2a9c45a0.MessageRequestBuilder) {
@@ -566,7 +566,7 @@ func (m *MeRequestBuilder) Onenote()(*ia6c56ed70fd384389e50daa416af9b5762eca2c23
 func (m *MeRequestBuilder) OnlineMeetings()(*i163a59c87a433f4932bfb97703da0b1e5c2c913c9843ea865155805ec9ebcfbb.OnlineMeetingsRequestBuilder) {
     return i163a59c87a433f4932bfb97703da0b1e5c2c913c9843ea865155805ec9ebcfbb.NewOnlineMeetingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.onlineMeetings.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.onlineMeetings.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) OnlineMeetingsById(id string)(*i9c1bc246a87f6ba4dcf4c0f9c4f30c60d893d596cd2e949badd25f8199ed6cef.OnlineMeetingRequestBuilder) {
@@ -605,7 +605,7 @@ func (m *MeRequestBuilder) Patch(options *MeRequestBuilderPatchOptions)(error) {
 func (m *MeRequestBuilder) People()(*i62ed0dc699525e42bbd5c7dfa30d19fdd5a8021fe52c792cf5693a26efb054e4.PeopleRequestBuilder) {
     return i62ed0dc699525e42bbd5c7dfa30d19fdd5a8021fe52c792cf5693a26efb054e4.NewPeopleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.people.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.people.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) PeopleById(id string)(*ia1410212e65c13be6cba0cefbf2258deb7d5d955a0132ae6350cb69d39b4f134.PersonRequestBuilder) {
@@ -624,7 +624,7 @@ func (m *MeRequestBuilder) Photo()(*i8fd348dda44ec8b066f0a5c3314ed97e4aba19fcc10
 func (m *MeRequestBuilder) Photos()(*idec091ad007a3e12a149ec3f0e0dffee68ef12bce854b22de68e4463b4dc78df.PhotosRequestBuilder) {
     return idec091ad007a3e12a149ec3f0e0dffee68ef12bce854b22de68e4463b4dc78df.NewPhotosRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.photos.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.photos.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) PhotosById(id string)(*i23e227c47e59513561e1310dee7f275d72e661826989ad5fb79f0410e26e3d6d.ProfilePhotoRequestBuilder) {
@@ -668,7 +668,7 @@ func (m *MeRequestBuilder) RevokeSignInSessions()(*ifb8ef527308910b38e34eeeff4d0
 func (m *MeRequestBuilder) ScopedRoleMemberOf()(*i8a29b74e3d9357a073ac07e4373df7de12140089e29fff53089c9ea7c9da1be6.ScopedRoleMemberOfRequestBuilder) {
     return i8a29b74e3d9357a073ac07e4373df7de12140089e29fff53089c9ea7c9da1be6.NewScopedRoleMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.scopedRoleMemberOf.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.scopedRoleMemberOf.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MeRequestBuilder) ScopedRoleMemberOfById(id string)(*icfc73b24da43bea4379998bbe38e31b2617fa5b3e777573a24b5722fdae583b3.ScopedRoleMembershipRequestBuilder) {

@@ -76,7 +76,7 @@ type MessageRequestBuilderPatchOptions struct {
 func (m *MessageRequestBuilder) Attachments()(*i7a919721ec6ea9b78407f2ee5aa295d1812c6812aeef0242dec74082f64d5fa2.AttachmentsRequestBuilder) {
     return i7a919721ec6ea9b78407f2ee5aa295d1812c6812aeef0242dec74082f64d5fa2.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.mailFolders.item.messages.item.attachments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.mailFolders.item.messages.item.attachments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MessageRequestBuilder) AttachmentsById(id string)(*i93ef364c0f89b4997f731376d9fd8c3497ed63375a7efc0ee24e1a2122c20a64.AttachmentRequestBuilder) {
@@ -213,7 +213,7 @@ func (m *MessageRequestBuilder) Delete(options *MessageRequestBuilderDeleteOptio
 func (m *MessageRequestBuilder) Extensions()(*i57c84c8fec460faeb8d03d0e3a5e76bff8ceceef2d1a73f98c319b311312185f.ExtensionsRequestBuilder) {
     return i57c84c8fec460faeb8d03d0e3a5e76bff8ceceef2d1a73f98c319b311312185f.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.mailFolders.item.messages.item.extensions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.mailFolders.item.messages.item.extensions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MessageRequestBuilder) ExtensionsById(id string)(*idec392630c701cf349a9fadb8a05ca2f81715c4de9cfc77853598541c08f6920.ExtensionRequestBuilder) {
@@ -249,7 +249,7 @@ func (m *MessageRequestBuilder) Move()(*i23d1871eaa3b34b9da4dc3013d78975116ba3c9
 func (m *MessageRequestBuilder) MultiValueExtendedProperties()(*ie70f42a3bdeda2a4c05e634ad649af47641c62c1ebdb49d12f0653327fce4e07.MultiValueExtendedPropertiesRequestBuilder) {
     return ie70f42a3bdeda2a4c05e634ad649af47641c62c1ebdb49d12f0653327fce4e07.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.mailFolders.item.messages.item.multiValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.mailFolders.item.messages.item.multiValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MessageRequestBuilder) MultiValueExtendedPropertiesById(id string)(*id44a9e5325d96aaff187d75056e8b221eae0fe1190baf4c4c0318b6dfc483672.MultiValueLegacyExtendedPropertyRequestBuilder) {
@@ -288,7 +288,7 @@ func (m *MessageRequestBuilder) Send()(*i1e31ad36dd6f6af890b8fbc16fdd724e1b79f82
 func (m *MessageRequestBuilder) SingleValueExtendedProperties()(*iaf5c26a284e4a05c5a5a6cfa25d3c65b91541124829eb429f6ffc67343739406.SingleValueExtendedPropertiesRequestBuilder) {
     return iaf5c26a284e4a05c5a5a6cfa25d3c65b91541124829eb429f6ffc67343739406.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.mailFolders.item.messages.item.singleValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.mailFolders.item.messages.item.singleValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MessageRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i39886b4e20e3dea3e0ba21523a984da9b2ca189aff6561f3bc956ebf0d1c17ee.SingleValueLegacyExtendedPropertyRequestBuilder) {

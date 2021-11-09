@@ -54,7 +54,7 @@ type PlannerRequestBuilderPatchOptions struct {
 func (m *PlannerRequestBuilder) Buckets()(*ib9a05c969511c90134a6d709165bc74e1713b24df408cc128f1e0dd7ead93ed5.BucketsRequestBuilder) {
     return ib9a05c969511c90134a6d709165bc74e1713b24df408cc128f1e0dd7ead93ed5.NewBucketsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.planner.buckets.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.planner.buckets.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PlannerRequestBuilder) BucketsById(id string)(*i61fc96c998992d6a9f34876bca0e09cf8fd042f82ea4e76e5bcd7ec6488b05fb.PlannerBucketRequestBuilder) {
@@ -168,7 +168,7 @@ func (m *PlannerRequestBuilder) Patch(options *PlannerRequestBuilderPatchOptions
 func (m *PlannerRequestBuilder) Plans()(*i2e30aee32e30369c8ecc6bc38d177e6784a40fa62474eccf2569928795aaa39d.PlansRequestBuilder) {
     return i2e30aee32e30369c8ecc6bc38d177e6784a40fa62474eccf2569928795aaa39d.NewPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.planner.plans.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.planner.plans.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PlannerRequestBuilder) PlansById(id string)(*if0be1a8c4a5c143221ab5041a7fe062880699c2169cf3b86e89b735af5f493e2.PlannerPlanRequestBuilder) {
@@ -184,7 +184,7 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*if0be1a8c4a5c143221ab5041a
 func (m *PlannerRequestBuilder) Tasks()(*i986fc893717836028d97e76e59d0d0f8dcd31663c6dae0666baf59f70e2d3160.TasksRequestBuilder) {
     return i986fc893717836028d97e76e59d0d0f8dcd31663c6dae0666baf59f70e2d3160.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.planner.tasks.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.planner.tasks.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PlannerRequestBuilder) TasksById(id string)(*ic1589f257c7e9d50ebdff1741b3e8c9aaea2fa2dbe14575d8dfdfaa82594b4be.PlannerTaskRequestBuilder) {

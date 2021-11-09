@@ -13,6 +13,7 @@ import (
     i84f8f5a64514eebc8bfcd77e0aed520ff21eec6aa53873f1894bd18b5d9aedd0 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/calendarsharingmessage"
     i89966168170997d2aed24b007473bf974b970bb390f147b3b055f424e2338841 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/schedulechangerequest"
     i93b4858e144352162776d0b982472c140438e266bc138cb7bd1deacedcdc6c06 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/workbookrangesort"
+    i9e996ddfbcd39ed043463a8707fa99dec8dd0abf8fcab9046fe7d0b0e6d54587 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/caseexportoperation"
     iaf1bbc68b495ef6c434777ba234a41b7129a04adaed4c5d34c058d9fdca5eb2f "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/windowsinformationprotection"
     ic09e25ea07b805ea73e40360cd847c88a966af5d477ece74aeb6fffa36cb13e7 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/targetedmanagedappprotection"
     ic62b66384099a7e9134470de00370e4c1df58b0e6c5476f324a976f8dfff968e "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/mobileappcontentfile"
@@ -50,6 +51,9 @@ type ResourceRequestBuilderGetQueryParameters struct {
 }
 func (m *ResourceRequestBuilder) CalendarSharingMessage()(*i84f8f5a64514eebc8bfcd77e0aed520ff21eec6aa53873f1894bd18b5d9aedd0.CalendarSharingMessageRequestBuilder) {
     return i84f8f5a64514eebc8bfcd77e0aed520ff21eec6aa53873f1894bd18b5d9aedd0.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ResourceRequestBuilder) CaseExportOperation()(*i9e996ddfbcd39ed043463a8707fa99dec8dd0abf8fcab9046fe7d0b0e6d54587.CaseExportOperationRequestBuilder) {
+    return i9e996ddfbcd39ed043463a8707fa99dec8dd0abf8fcab9046fe7d0b0e6d54587.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Instantiates a new ResourceRequestBuilder and sets the default values.
 // Parameters:

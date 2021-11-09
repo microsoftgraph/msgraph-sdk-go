@@ -85,7 +85,7 @@ func (m *SiteRequestBuilder) Analytics()(*i339cee83997cfcbf197752f780095780d8a49
 func (m *SiteRequestBuilder) Columns()(*ifdd24c47f65a3313024bac4f3f3e730f886d4041edbb2510eda841cd16478038.ColumnsRequestBuilder) {
     return ifdd24c47f65a3313024bac4f3f3e730f886d4041edbb2510eda841cd16478038.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.columns.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.columns.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SiteRequestBuilder) ColumnsById(id string)(*i209a587ff4beb5ee9c360ac0d6e4a3c7f62c54965cf6114ee02077fff23801c5.ColumnDefinitionRequestBuilder) {
@@ -126,7 +126,7 @@ func NewSiteRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
 func (m *SiteRequestBuilder) ContentTypes()(*i0c26d90ad9ba1101a52431870fbb281c6a4f6b751415aa8750d1294df6fc9e2c.ContentTypesRequestBuilder) {
     return i0c26d90ad9ba1101a52431870fbb281c6a4f6b751415aa8750d1294df6fc9e2c.NewContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.contentTypes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.contentTypes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SiteRequestBuilder) ContentTypesById(id string)(*if642ca98ef1cfea5e51e56e879548fde41cf1297f3ce162d09a6224e659bc1f8.ContentTypeRequestBuilder) {
@@ -223,7 +223,7 @@ func (m *SiteRequestBuilder) Drive()(*i1f30e998cc7f16739a41575c86813834123cba8d5
 func (m *SiteRequestBuilder) Drives()(*ic3e3392ffd4cfbeca5a615ab4821d60c9132bc0218c910f3bbb9967204677d15.DrivesRequestBuilder) {
     return ic3e3392ffd4cfbeca5a615ab4821d60c9132bc0218c910f3bbb9967204677d15.NewDrivesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.drives.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.drives.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SiteRequestBuilder) DrivesById(id string)(*ia5bb104926264b975572fae9aaa50ca289316f014c3b08eb8446548e5146dedb.DriveRequestBuilder) {
@@ -280,7 +280,7 @@ func (m *SiteRequestBuilder) GetByPathWithPath(path *string)(*i4ffbbec24206153c7
 func (m *SiteRequestBuilder) Items()(*i05bca8d67f58c6d9aa648acf49fac24e4d5361e451fb444c3868fc782faa3a3a.ItemsRequestBuilder) {
     return i05bca8d67f58c6d9aa648acf49fac24e4d5361e451fb444c3868fc782faa3a3a.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.items.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.items.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SiteRequestBuilder) ItemsById(id string)(*id5c99b5d474798a011325ba892c9f2ef398ac5ca9126710bc745e020c22b60fd.BaseItemRequestBuilder) {
@@ -296,7 +296,7 @@ func (m *SiteRequestBuilder) ItemsById(id string)(*id5c99b5d474798a011325ba892c9
 func (m *SiteRequestBuilder) Lists()(*i55cb8b4eba146099911d28cd6cbf1c2648018a786384c9ec7c40a8f9baf109f0.ListsRequestBuilder) {
     return i55cb8b4eba146099911d28cd6cbf1c2648018a786384c9ec7c40a8f9baf109f0.NewListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.lists.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.lists.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SiteRequestBuilder) ListsById(id string)(*i78f58c637039463a95013be84966d9b8b0483bfd65aa77130e076a7f7381cfd6.ListRequestBuilder) {
@@ -329,7 +329,7 @@ func (m *SiteRequestBuilder) Patch(options *SiteRequestBuilderPatchOptions)(erro
 func (m *SiteRequestBuilder) Permissions()(*i5cf45aa21d0025c798a2868eb9d4091cba588f6ea645d747c04aba2a4591fe1b.PermissionsRequestBuilder) {
     return i5cf45aa21d0025c798a2868eb9d4091cba588f6ea645d747c04aba2a4591fe1b.NewPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.permissions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.permissions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SiteRequestBuilder) PermissionsById(id string)(*i9bdc46bee3db40ed2ad5cb8d27cc47b07556e9f9bec575d1a403c32a5cce68ae.PermissionRequestBuilder) {
@@ -345,7 +345,7 @@ func (m *SiteRequestBuilder) PermissionsById(id string)(*i9bdc46bee3db40ed2ad5cb
 func (m *SiteRequestBuilder) Sites()(*i6dae79969c0cc01a1ae54240ed306a0bd1ad56e07a0515dc28cfab53e29bb580.SitesRequestBuilder) {
     return i6dae79969c0cc01a1ae54240ed306a0bd1ad56e07a0515dc28cfab53e29bb580.NewSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.sites.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.sites.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SiteRequestBuilder) SitesById(id string)(*i25b238e1bb04065b78bbf7b8af856ab5c032ddb3bf1f7e6a6dd2660de6f8217a.SiteRequestBuilder) {
@@ -364,7 +364,7 @@ func (m *SiteRequestBuilder) TermStore()(*i56d3808dd8956f908cd3292b0ec9af6c42c18
 func (m *SiteRequestBuilder) TermStores()(*i8c3520c945a3499d24747186abcb37377ea0d8afa3d1bfa0cd8a7e6fcf9b2a83.TermStoresRequestBuilder) {
     return i8c3520c945a3499d24747186abcb37377ea0d8afa3d1bfa0cd8a7e6fcf9b2a83.NewTermStoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.termStores.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SiteRequestBuilder) TermStoresById(id string)(*ia4734d1ec9f14b1703e1b22f66af2a51aea0b15668f690fb492176e062cae20e.StoreRequestBuilder) {

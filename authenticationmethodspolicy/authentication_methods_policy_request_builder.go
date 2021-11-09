@@ -50,7 +50,7 @@ type AuthenticationMethodsPolicyRequestBuilderPatchOptions struct {
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurations()(*i3e1a5562edfffe5e226bf012be5c2c5a4d9397890b97d1165af87107fe553217.AuthenticationMethodConfigurationsRequestBuilder) {
     return i3e1a5562edfffe5e226bf012be5c2c5a4d9397890b97d1165af87107fe553217.NewAuthenticationMethodConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.authenticationMethodsPolicy.authenticationMethodConfigurations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.authenticationMethodsPolicy.authenticationMethodConfigurations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurationsById(id string)(*i64f858c8627e84ac3553655f2bc7b8c678e19238c74dba447be61b60e81acf4a.AuthenticationMethodConfigurationRequestBuilder) {

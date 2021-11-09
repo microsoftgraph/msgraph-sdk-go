@@ -176,7 +176,7 @@ func (m *TodoRequestBuilder) Get(options *TodoRequestBuilderGetOptions)(*i4a838e
 func (m *TodoRequestBuilder) Lists()(*ie5f8a097f7844da5a7d667dd0d7e0368d4ffbb273a06929bcb8fae45ca0235b1.ListsRequestBuilder) {
     return ie5f8a097f7844da5a7d667dd0d7e0368d4ffbb273a06929bcb8fae45ca0235b1.NewListsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.todo.lists.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.todo.lists.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *TodoRequestBuilder) ListsById(id string)(*i81ebf6f75f491b0a0564cc642776d5dabd9e088779452721273b1147e4c8a1ce.TodoTaskListRequestBuilder) {

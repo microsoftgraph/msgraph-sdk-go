@@ -176,7 +176,7 @@ func (m *FileRequestBuilder) Get(options *FileRequestBuilderGetOptions)(*i4a838e
 func (m *FileRequestBuilder) Localizations()(*ic78f888972339bcf34b80d7c4800ddb974b3f0f20a8f7c321cf41909a56f17d1.LocalizationsRequestBuilder) {
     return ic78f888972339bcf34b80d7c4800ddb974b3f0f20a8f7c321cf41909a56f17d1.NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.agreements.item.file.localizations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.agreements.item.file.localizations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *FileRequestBuilder) LocalizationsById(id string)(*i2d4b6344639678e1dd779cb456a26ba4351c3e4a09c717bf205c3c77beff31a5.AgreementFileLocalizationRequestBuilder) {

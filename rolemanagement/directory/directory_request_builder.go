@@ -192,7 +192,7 @@ func (m *DirectoryRequestBuilder) Patch(options *DirectoryRequestBuilderPatchOpt
 func (m *DirectoryRequestBuilder) RoleAssignments()(*i57b910acb4194d77e597cd7fc038ff1fcdab95ffb0c6387ecd462abda735c54f.RoleAssignmentsRequestBuilder) {
     return i57b910acb4194d77e597cd7fc038ff1fcdab95ffb0c6387ecd462abda735c54f.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.roleManagement.directory.roleAssignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.directory.roleAssignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DirectoryRequestBuilder) RoleAssignmentsById(id string)(*i26564a3dcf6f5b8f339c5029b420a35ad925e9ec8a807e073a522418b894b461.UnifiedRoleAssignmentRequestBuilder) {
@@ -208,7 +208,7 @@ func (m *DirectoryRequestBuilder) RoleAssignmentsById(id string)(*i26564a3dcf6f5
 func (m *DirectoryRequestBuilder) RoleDefinitions()(*i65e8721e08cadca66e59fe29786f285c292916fbfaf6d187c1ae36f76b2d8e58.RoleDefinitionsRequestBuilder) {
     return i65e8721e08cadca66e59fe29786f285c292916fbfaf6d187c1ae36f76b2d8e58.NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.roleManagement.directory.roleDefinitions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.directory.roleDefinitions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DirectoryRequestBuilder) RoleDefinitionsById(id string)(*i93f0046b6ea93bb22d2872d826c5bb0b32c7bd776d82404d212ed81ae3bfa20c.UnifiedRoleDefinitionRequestBuilder) {

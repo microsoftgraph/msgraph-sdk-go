@@ -167,7 +167,7 @@ func (m *ContactRequestBuilder) Delete(options *ContactRequestBuilderDeleteOptio
 func (m *ContactRequestBuilder) Extensions()(*ib8cc74adfce6dfc0789ee0acb82354ad0bcc5e628492e567a0c358afb1fe741f.ExtensionsRequestBuilder) {
     return ib8cc74adfce6dfc0789ee0acb82354ad0bcc5e628492e567a0c358afb1fe741f.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.contactFolders.item.contacts.item.extensions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item.contacts.item.extensions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ContactRequestBuilder) ExtensionsById(id string)(*i707bf214b57d0fb124dfd1e57eb1ad7127873d5d018f3aa458aa74c2697719cf.ExtensionRequestBuilder) {
@@ -197,7 +197,7 @@ func (m *ContactRequestBuilder) Get(options *ContactRequestBuilderGetOptions)(*i
 func (m *ContactRequestBuilder) MultiValueExtendedProperties()(*ife1d7f7e3b6d757a7201f2349a51e5e4d89c0ec8aa32c691a7bc983d58f03031.MultiValueExtendedPropertiesRequestBuilder) {
     return ife1d7f7e3b6d757a7201f2349a51e5e4d89c0ec8aa32c691a7bc983d58f03031.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.contactFolders.item.contacts.item.multiValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item.contacts.item.multiValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ContactRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ifb7b100c3862aac4d11c9eec0cd8a2dd8abb0681790b9f59c49e5519657c8849.MultiValueLegacyExtendedPropertyRequestBuilder) {
@@ -230,7 +230,7 @@ func (m *ContactRequestBuilder) Photo()(*i5b3c5a1d1e7fbc3d2cab902cce2aa5e8077c4d
 func (m *ContactRequestBuilder) SingleValueExtendedProperties()(*i99160c73b1259c3dbc6c400fc70439ce9e3cc2e871ea6f0a4a0c008b7a8ef536.SingleValueExtendedPropertiesRequestBuilder) {
     return i99160c73b1259c3dbc6c400fc70439ce9e3cc2e871ea6f0a4a0c008b7a8ef536.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.contactFolders.item.contacts.item.singleValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item.contacts.item.singleValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ContactRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ib15d886582231557e1b5d33561dc0a80a183185d3af5dfb3a67e56a0f47cfe85.SingleValueLegacyExtendedPropertyRequestBuilder) {

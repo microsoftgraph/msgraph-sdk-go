@@ -64,7 +64,7 @@ type TargetedManagedAppConfigurationRequestBuilderPatchOptions struct {
 func (m *TargetedManagedAppConfigurationRequestBuilder) Apps()(*if5f3e25c7fb7036c0005255cf83f278d6dbdc54efe6806e0f73b94dcc8769f54.AppsRequestBuilder) {
     return if5f3e25c7fb7036c0005255cf83f278d6dbdc54efe6806e0f73b94dcc8769f54.NewAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.targetedManagedAppConfigurations.item.apps.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.targetedManagedAppConfigurations.item.apps.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *TargetedManagedAppConfigurationRequestBuilder) AppsById(id string)(*i0c58f5c03e1e1e1b14874efa5218a60bb1595c685ea667497c77cd45c45299ab.ManagedMobileAppRequestBuilder) {
@@ -83,7 +83,7 @@ func (m *TargetedManagedAppConfigurationRequestBuilder) Assign()(*i1bc0e847e41eb
 func (m *TargetedManagedAppConfigurationRequestBuilder) Assignments()(*i2e2aa2658be52cafac5b62880a98fc25ab296fd6408d08702a2e240e8e1ef1af.AssignmentsRequestBuilder) {
     return i2e2aa2658be52cafac5b62880a98fc25ab296fd6408d08702a2e240e8e1ef1af.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.targetedManagedAppConfigurations.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.targetedManagedAppConfigurations.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *TargetedManagedAppConfigurationRequestBuilder) AssignmentsById(id string)(*iae5cd0b807da9eeca622ea354242f60add20264ab977061a2f592e1e2bb4e2ef.TargetedManagedAppPolicyAssignmentRequestBuilder) {

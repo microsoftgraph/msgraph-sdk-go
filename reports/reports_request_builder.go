@@ -219,7 +219,7 @@ func (m *ReportsRequestBuilder) CreatePatchRequestInformation(options *ReportsRe
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinter()(*ic78e2d968f685321dafd3ca273401e484836d7ca84e4da07ae045edca4ca55a2.DailyPrintUsageByPrinterRequestBuilder) {
     return ic78e2d968f685321dafd3ca273401e484836d7ca84e4da07ae045edca4ca55a2.NewDailyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.reports.dailyPrintUsageByPrinter.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.dailyPrintUsageByPrinter.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*i48adffda977c4642ea9d1490fef3ceaa45cfab2defb01a97672b497f12eee0bc.PrintUsageByPrinterRequestBuilder) {
@@ -235,7 +235,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*i48adff
 func (m *ReportsRequestBuilder) DailyPrintUsageByUser()(*i1d9fef6f0fe1efedede6850168705608b3b5be81427b11c9c3d64b7dc8c126ed.DailyPrintUsageByUserRequestBuilder) {
     return i1d9fef6f0fe1efedede6850168705608b3b5be81427b11c9c3d64b7dc8c126ed.NewDailyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.reports.dailyPrintUsageByUser.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.dailyPrintUsageByUser.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i80d61621ea489f37484a66bdee6bdaa9bbb8a0b83a1cc326a225bedfc4c6dd91.PrintUsageByUserRequestBuilder) {
@@ -812,7 +812,7 @@ func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailuresWithPeriod(per
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinter()(*if1205fb664936127831759fefe4c2c43852474a3fc0419f51e89975f0f281d32.MonthlyPrintUsageByPrinterRequestBuilder) {
     return if1205fb664936127831759fefe4c2c43852474a3fc0419f51e89975f0f281d32.NewMonthlyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.reports.monthlyPrintUsageByPrinter.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.monthlyPrintUsageByPrinter.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i0fbd1879eec3f09756dabd53c9de402f839fcf5ed7e8be0da0d3e4135b124b0a.PrintUsageByPrinterRequestBuilder) {
@@ -828,7 +828,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i0fbd
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUser()(*i3f12902a7f7457a60f97014c6db3b2bd89dac8cabe4d467b766677db3d6029d0.MonthlyPrintUsageByUserRequestBuilder) {
     return i3f12902a7f7457a60f97014c6db3b2bd89dac8cabe4d467b766677db3d6029d0.NewMonthlyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.reports.monthlyPrintUsageByUser.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.monthlyPrintUsageByUser.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*if4346a9921b148666613b317b233f49301e4eef2f130f6b9e02414250e5a2294.PrintUsageByUserRequestBuilder) {

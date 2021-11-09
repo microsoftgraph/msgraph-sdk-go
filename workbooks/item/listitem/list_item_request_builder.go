@@ -216,7 +216,7 @@ func (m *ListItemRequestBuilder) Patch(options *ListItemRequestBuilderPatchOptio
 func (m *ListItemRequestBuilder) Versions()(*i23928885e968269c974925e6845e4eeda1eabcba9ed90e8a19cbe4956c6bd0c4.VersionsRequestBuilder) {
     return i23928885e968269c974925e6845e4eeda1eabcba9ed90e8a19cbe4956c6bd0c4.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.workbooks.item.listItem.versions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.listItem.versions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListItemRequestBuilder) VersionsById(id string)(*ib939ff408fde6d3763a478a2106c5bbbd3445e21dc809ff36372b9df300dd03d.ListItemVersionRequestBuilder) {

@@ -163,7 +163,7 @@ func (m *AccessReviewInstanceRequestBuilder) CreatePatchRequestInformation(optio
 func (m *AccessReviewInstanceRequestBuilder) Decisions()(*iaba5c5f8866d817198badccdab50ac168445b09d85f789a8f760044ae410a919.DecisionsRequestBuilder) {
     return iaba5c5f8866d817198badccdab50ac168445b09d85f789a8f760044ae410a919.NewDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.identityGovernance.accessReviews.definitions.item.instances.item.decisions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item.decisions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AccessReviewInstanceRequestBuilder) DecisionsById(id string)(*ia5228e75938f6cab481e6dee19c7eeb8666192ef9a8d846054e182dcf31deb9e.AccessReviewInstanceDecisionItemRequestBuilder) {

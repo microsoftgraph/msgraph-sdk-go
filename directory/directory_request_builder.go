@@ -52,7 +52,7 @@ type DirectoryRequestBuilderPatchOptions struct {
 func (m *DirectoryRequestBuilder) AdministrativeUnits()(*i47420a6f1d93f934067d08aecf791436625344c23db8a5ebf8ac8c6aa35228f5.AdministrativeUnitsRequestBuilder) {
     return i47420a6f1d93f934067d08aecf791436625344c23db8a5ebf8ac8c6aa35228f5.NewAdministrativeUnitsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.directory.administrativeUnits.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.administrativeUnits.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*ib6eef29306489af3d4867139be6f8c0d2f07e27cc972bbe619040834fd6bc53c.AdministrativeUnitRequestBuilder) {
@@ -138,7 +138,7 @@ func (m *DirectoryRequestBuilder) CreatePatchRequestInformation(options *Directo
 func (m *DirectoryRequestBuilder) DeletedItems()(*i608270f0d53df54d261f336ae52901ae79654f5ed54338f92dab3b2188e27aeb.DeletedItemsRequestBuilder) {
     return i608270f0d53df54d261f336ae52901ae79654f5ed54338f92dab3b2188e27aeb.NewDeletedItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.directory.deletedItems.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.deletedItems.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*ic11656dccc6289d407b8e6129a339cd67d5b4802e9850fa2b7197192054f419c.DirectoryObjectRequestBuilder) {

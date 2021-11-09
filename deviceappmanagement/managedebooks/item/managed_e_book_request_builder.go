@@ -68,7 +68,7 @@ func (m *ManagedEBookRequestBuilder) Assign()(*idc6ae391c23f1dd68e1a8ab2a8216079
 func (m *ManagedEBookRequestBuilder) Assignments()(*i51b72059dfed2f421aeb43f36dd6cb3a75014ea68e29bfe9f0763a1e28dc32bd.AssignmentsRequestBuilder) {
     return i51b72059dfed2f421aeb43f36dd6cb3a75014ea68e29bfe9f0763a1e28dc32bd.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.managedEBooks.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ManagedEBookRequestBuilder) AssignmentsById(id string)(*i162ff3d0f43f21953d43cb94a636ae231382fdb4a6c3f80ff27c8fb165d745cb.ManagedEBookAssignmentRequestBuilder) {
@@ -187,7 +187,7 @@ func (m *ManagedEBookRequestBuilder) Delete(options *ManagedEBookRequestBuilderD
 func (m *ManagedEBookRequestBuilder) DeviceStates()(*i4099812734ce25dbdeab4692470c91900c048e8dee3becb3e5c54a0326239224.DeviceStatesRequestBuilder) {
     return i4099812734ce25dbdeab4692470c91900c048e8dee3becb3e5c54a0326239224.NewDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.managedEBooks.item.deviceStates.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.deviceStates.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ManagedEBookRequestBuilder) DeviceStatesById(id string)(*i9ce747e428e80c804ab60cf526324b5166b04a2d275fe59526d2b02eb3bc9118.DeviceInstallStateRequestBuilder) {
@@ -234,7 +234,7 @@ func (m *ManagedEBookRequestBuilder) Patch(options *ManagedEBookRequestBuilderPa
 func (m *ManagedEBookRequestBuilder) UserStateSummary()(*ib4714ec089652eb60ee2444506e153b0e8d535e7937b3b83850dc25a80de4be4.UserStateSummaryRequestBuilder) {
     return ib4714ec089652eb60ee2444506e153b0e8d535e7937b3b83850dc25a80de4be4.NewUserStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.managedEBooks.item.userStateSummary.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.userStateSummary.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ManagedEBookRequestBuilder) UserStateSummaryById(id string)(*if265c839ceb44280882d17ad922716116a39c1ce469abc935e86c7c536ccf9e0.UserInstallStateSummaryRequestBuilder) {

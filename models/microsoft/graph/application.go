@@ -34,7 +34,7 @@ type Application struct {
     groupMembershipClaims *string;
     // 
     homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicy;
-    // The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
+    // Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
     identifierUris []string;
     // Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le).
     info *InformationalUrl;
@@ -192,7 +192,7 @@ func (m *Application) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicy
         return m.homeRealmDiscoveryPolicies
     }
 }
-// Gets the identifierUris property value. The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
+// Gets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
 func (m *Application) GetIdentifierUris()([]string) {
     if m == nil {
         return nil
@@ -1074,7 +1074,7 @@ func (m *Application) SetGroupMembershipClaims(value *string)() {
 func (m *Application) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicy)() {
     m.homeRealmDiscoveryPolicies = value
 }
-// Sets the identifierUris property value. The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
+// Sets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
 // Parameters:
 //  - value : Value to set for the identifierUris property.
 func (m *Application) SetIdentifierUris(value []string)() {

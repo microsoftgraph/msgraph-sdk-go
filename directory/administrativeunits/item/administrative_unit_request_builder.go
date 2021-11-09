@@ -165,7 +165,7 @@ func (m *AdministrativeUnitRequestBuilder) Delete(options *AdministrativeUnitReq
 func (m *AdministrativeUnitRequestBuilder) Extensions()(*i94253098475db605e990260e13febd658ee5c0709ceaf573e3f903be950c52b6.ExtensionsRequestBuilder) {
     return i94253098475db605e990260e13febd658ee5c0709ceaf573e3f903be950c52b6.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.directory.administrativeUnits.item.extensions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.administrativeUnits.item.extensions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AdministrativeUnitRequestBuilder) ExtensionsById(id string)(*if71e90a642a2c3f3e90bf7d0f3cbe5d719d6ca30c2312110465fc6e587f8ec38.ExtensionRequestBuilder) {
@@ -212,7 +212,7 @@ func (m *AdministrativeUnitRequestBuilder) Patch(options *AdministrativeUnitRequ
 func (m *AdministrativeUnitRequestBuilder) ScopedRoleMembers()(*i776e11034305b48e5290b2e53dd2f7575359c486273d18f2353ff65faa9063b1.ScopedRoleMembersRequestBuilder) {
     return i776e11034305b48e5290b2e53dd2f7575359c486273d18f2353ff65faa9063b1.NewScopedRoleMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.directory.administrativeUnits.item.scopedRoleMembers.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.administrativeUnits.item.scopedRoleMembers.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AdministrativeUnitRequestBuilder) ScopedRoleMembersById(id string)(*ia9df9f379ea5fc92e0383f29dfd050c3b88591b8f475f586b856fc130a4fd053.ScopedRoleMembershipRequestBuilder) {

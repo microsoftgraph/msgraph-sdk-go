@@ -142,7 +142,7 @@ type UserRequestBuilderPatchOptions struct {
 func (m *UserRequestBuilder) Activities()(*i7434742f328fb34181df9069343c7bf11d068d61f4481ab2eaea71f3bc398a8c.ActivitiesRequestBuilder) {
     return i7434742f328fb34181df9069343c7bf11d068d61f4481ab2eaea71f3bc398a8c.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.activities.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.activities.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) ActivitiesById(id string)(*if2fde6f9b7cf9a66adc51b4c84ec599a0497b6792379909cd577d454bd9d0414.UserActivityRequestBuilder) {
@@ -161,7 +161,7 @@ func (m *UserRequestBuilder) AgreementAcceptances()(*idc22dd282127655d723afbe2b6
 func (m *UserRequestBuilder) AppRoleAssignments()(*i8acf48036fa30b3733f0a3efffd923a945db096ce1c005ede1236ec3db8f202b.AppRoleAssignmentsRequestBuilder) {
     return i8acf48036fa30b3733f0a3efffd923a945db096ce1c005ede1236ec3db8f202b.NewAppRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.appRoleAssignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.appRoleAssignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) AppRoleAssignmentsById(id string)(*id307eb3180e14c2c4cec59b4b85564ae282ebaa15d7f7735716952f69e678279.AppRoleAssignmentRequestBuilder) {
@@ -186,7 +186,7 @@ func (m *UserRequestBuilder) Calendar()(*i79cfaa5f7496a3faeffd9cee89b05478df0419
 func (m *UserRequestBuilder) CalendarGroups()(*i927d56fd90d9c38a0e88ef5c682feb77cc18445308d44276e0f1e095247b3634.CalendarGroupsRequestBuilder) {
     return i927d56fd90d9c38a0e88ef5c682feb77cc18445308d44276e0f1e095247b3634.NewCalendarGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.calendarGroups.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.calendarGroups.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) CalendarGroupsById(id string)(*i2083055461886ca3b56f8adc26419c83b6c45f08c3a0eb4fcdfa94b7e99c9bef.CalendarGroupRequestBuilder) {
@@ -202,7 +202,7 @@ func (m *UserRequestBuilder) CalendarGroupsById(id string)(*i2083055461886ca3b56
 func (m *UserRequestBuilder) Calendars()(*i2ec0496e560d7cecb96d82bcf32b4c61894a21cfd165c378253939195c546d27.CalendarsRequestBuilder) {
     return i2ec0496e560d7cecb96d82bcf32b4c61894a21cfd165c378253939195c546d27.NewCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.calendars.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.calendars.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) CalendarsById(id string)(*i086f912938edbc37b845789cda2e3e84c9a478d06edbee6d535f8e143d4c70ba.CalendarRequestBuilder) {
@@ -218,7 +218,7 @@ func (m *UserRequestBuilder) CalendarsById(id string)(*i086f912938edbc37b845789c
 func (m *UserRequestBuilder) CalendarView()(*ifec6c3ff45ea43d5b46ee636228680b7e4b3bfb9eba0437938b28dad5cadcd06.CalendarViewRequestBuilder) {
     return ifec6c3ff45ea43d5b46ee636228680b7e4b3bfb9eba0437938b28dad5cadcd06.NewCalendarViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.calendarView.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.calendarView.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) CalendarViewById(id string)(*i5cf53dd103ab02b1568c2f84b946a72977e41e0de97287af6722ccafaa880d49.EventRequestBuilder) {
@@ -237,7 +237,7 @@ func (m *UserRequestBuilder) ChangePassword()(*icf27f39169518adb5f7aa45892636b30
 func (m *UserRequestBuilder) Chats()(*id9510e26530c8ba3b39834c060eb72230844f30169f4e2b2e6b683eb86727fa0.ChatsRequestBuilder) {
     return id9510e26530c8ba3b39834c060eb72230844f30169f4e2b2e6b683eb86727fa0.NewChatsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.chats.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.chats.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) ChatsById(id string)(*i4d1b56e56093574975d1ab3f4a52af1d6db962510708352cb01245aa891a6ef5.ChatRequestBuilder) {
@@ -284,7 +284,7 @@ func NewUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
 func (m *UserRequestBuilder) ContactFolders()(*ic31c6bdf1febcc1619240151a993f96448ebdf3c6f91fe0243fbe55f91e7f620.ContactFoldersRequestBuilder) {
     return ic31c6bdf1febcc1619240151a993f96448ebdf3c6f91fe0243fbe55f91e7f620.NewContactFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.contactFolders.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) ContactFoldersById(id string)(*ibbdc262c9fd17ec4015663fbf467ebc865f1a6a45daf1ffbaa73c799220a610b.ContactFolderRequestBuilder) {
@@ -300,7 +300,7 @@ func (m *UserRequestBuilder) ContactFoldersById(id string)(*ibbdc262c9fd17ec4015
 func (m *UserRequestBuilder) Contacts()(*i9164851f0a06aba10b88da1bbecb98e3600356d368c9db499b8931c4f96f1219.ContactsRequestBuilder) {
     return i9164851f0a06aba10b88da1bbecb98e3600356d368c9db499b8931c4f96f1219.NewContactsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.contacts.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contacts.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) ContactsById(id string)(*i88e2c30b78a734ede88b94c583c45b04ce07232920ad9d7b2366b4278bfae360.ContactRequestBuilder) {
@@ -397,7 +397,7 @@ func (m *UserRequestBuilder) Delete(options *UserRequestBuilderDeleteOptions)(er
 func (m *UserRequestBuilder) DeviceManagementTroubleshootingEvents()(*i8b015d6ac3b9f998d8da5aa503d326b952acdc90c4c90a03d48fdec51c4588f1.DeviceManagementTroubleshootingEventsRequestBuilder) {
     return i8b015d6ac3b9f998d8da5aa503d326b952acdc90c4c90a03d48fdec51c4588f1.NewDeviceManagementTroubleshootingEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.deviceManagementTroubleshootingEvents.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.deviceManagementTroubleshootingEvents.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) DeviceManagementTroubleshootingEventsById(id string)(*i0be6421da86ae0eb5550fa2bf3e3bb1ee5c6cb82a7b6539fce14162126c5d994.DeviceManagementTroubleshootingEventRequestBuilder) {
@@ -419,7 +419,7 @@ func (m *UserRequestBuilder) Drive()(*i3a4cc4e91af7383718bf555760e1dba5c1fc1de35
 func (m *UserRequestBuilder) Drives()(*i6fea53c850cb6db38ea2669df26d5c9986df82967fc9dcbd1415ef4c37ba3909.DrivesRequestBuilder) {
     return i6fea53c850cb6db38ea2669df26d5c9986df82967fc9dcbd1415ef4c37ba3909.NewDrivesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.drives.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.drives.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) DrivesById(id string)(*i764f7513465c0251a3785c28eac14dab3642e586e0fad67528f13704ed1cbb64.DriveRequestBuilder) {
@@ -435,7 +435,7 @@ func (m *UserRequestBuilder) DrivesById(id string)(*i764f7513465c0251a3785c28eac
 func (m *UserRequestBuilder) Events()(*ifd9b701a6f88aa459780777b5ac521fe3494f01b9276c6884b86827296582e54.EventsRequestBuilder) {
     return ifd9b701a6f88aa459780777b5ac521fe3494f01b9276c6884b86827296582e54.NewEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.events.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.events.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) EventsById(id string)(*ifdc39e295bcc2e19fecc18f2ae737ddb8fe9018d8753e81ef0c2de8bb37638da.EventRequestBuilder) {
@@ -454,7 +454,7 @@ func (m *UserRequestBuilder) ExportPersonalData()(*iedc2060488fc2f6e7d120554e9e8
 func (m *UserRequestBuilder) Extensions()(*if0c7df43a05145fae76c1ab18483108fb4043f7b6a0b01f47772fd66022550ee.ExtensionsRequestBuilder) {
     return if0c7df43a05145fae76c1ab18483108fb4043f7b6a0b01f47772fd66022550ee.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.extensions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.extensions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) ExtensionsById(id string)(*i129160b87cb78d35acdd1a84c7328c6872f51bf17cb02a211ba957a5431db64b.ExtensionRequestBuilder) {
@@ -513,7 +513,7 @@ func (m *UserRequestBuilder) Insights()(*i8deae6de37c6b836f34cd5c6b8fab91a73043c
 func (m *UserRequestBuilder) JoinedTeams()(*i7f31fc68d418ebfd772842294b63ed5b4dafc3cab499c7bf25b7634a901656bb.JoinedTeamsRequestBuilder) {
     return i7f31fc68d418ebfd772842294b63ed5b4dafc3cab499c7bf25b7634a901656bb.NewJoinedTeamsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.joinedTeams.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.joinedTeams.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) JoinedTeamsById(id string)(*i0b4dff6b82c5c98b58b9ff11aead66a7e49d0eac6b18b1490fd01bf9597cf36c.TeamRequestBuilder) {
@@ -529,7 +529,7 @@ func (m *UserRequestBuilder) JoinedTeamsById(id string)(*i0b4dff6b82c5c98b58b9ff
 func (m *UserRequestBuilder) LicenseDetails()(*i065d0a279baf0cb315c26855c2ba7a5c0701939d8cae543a4fb9b7bb2c7cbda5.LicenseDetailsRequestBuilder) {
     return i065d0a279baf0cb315c26855c2ba7a5c0701939d8cae543a4fb9b7bb2c7cbda5.NewLicenseDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.licenseDetails.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.licenseDetails.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) LicenseDetailsById(id string)(*i065d0a279baf0cb315c26855c2ba7a5c0701939d8cae543a4fb9b7bb2c7cbda5.LicenseDetailsRequestBuilder) {
@@ -545,7 +545,7 @@ func (m *UserRequestBuilder) LicenseDetailsById(id string)(*i065d0a279baf0cb315c
 func (m *UserRequestBuilder) MailFolders()(*ib946e3869f342130dddab8c76c89f264a76e899f07657349241151b4e41b4286.MailFoldersRequestBuilder) {
     return ib946e3869f342130dddab8c76c89f264a76e899f07657349241151b4e41b4286.NewMailFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.mailFolders.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.mailFolders.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) MailFoldersById(id string)(*id1f5db1c2220a25bede6871151a00a067652bdb75e2db4d199ca6ffcdd70b342.MailFolderRequestBuilder) {
@@ -564,7 +564,7 @@ func (m *UserRequestBuilder) ManagedAppRegistrations()(*if12f3532feee7012e3a4dc1
 func (m *UserRequestBuilder) ManagedDevices()(*i91af54e73e80a81d2f98c6f72fbb6c81539e67ba0480227ae8e2e5f2b8f467fa.ManagedDevicesRequestBuilder) {
     return i91af54e73e80a81d2f98c6f72fbb6c81539e67ba0480227ae8e2e5f2b8f467fa.NewManagedDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.managedDevices.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.managedDevices.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) ManagedDevicesById(id string)(*i0c6b3d37dc64615f253a6fd9a58f59f536aa93a57f99bb5f9d4210ae83aa5112.ManagedDeviceRequestBuilder) {
@@ -586,7 +586,7 @@ func (m *UserRequestBuilder) MemberOf()(*ia6a0f4f70d60f824df18f07f8918c6e9ac043f
 func (m *UserRequestBuilder) Messages()(*i0a6d7999baeed47d1aa02960cd9f3f120528ecae4240bf52300542a8dc9f978d.MessagesRequestBuilder) {
     return i0a6d7999baeed47d1aa02960cd9f3f120528ecae4240bf52300542a8dc9f978d.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.messages.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.messages.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) MessagesById(id string)(*if33563b345c020375260161400a6b809f00973f17d5ab870445f3c67ca7323b8.MessageRequestBuilder) {
@@ -608,7 +608,7 @@ func (m *UserRequestBuilder) Onenote()(*ib8e8ec0d09197f1fd57167b1b67da9bcc229fa2
 func (m *UserRequestBuilder) OnlineMeetings()(*i2c0f098b49b5f2edba81f4095f0c699516263b7cd6ff316d31f469f15b8366b0.OnlineMeetingsRequestBuilder) {
     return i2c0f098b49b5f2edba81f4095f0c699516263b7cd6ff316d31f469f15b8366b0.NewOnlineMeetingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.onlineMeetings.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.onlineMeetings.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) OnlineMeetingsById(id string)(*i3ecd250b638acba95f41b3db07eaa507842a51f8e0cd3640cb9b75f0052ceff6.OnlineMeetingRequestBuilder) {
@@ -647,7 +647,7 @@ func (m *UserRequestBuilder) Patch(options *UserRequestBuilderPatchOptions)(erro
 func (m *UserRequestBuilder) People()(*i2b4d48c4393811d79f4d4cc1f4addb3b49f58a53edcf7d1d7140e29a22ab7504.PeopleRequestBuilder) {
     return i2b4d48c4393811d79f4d4cc1f4addb3b49f58a53edcf7d1d7140e29a22ab7504.NewPeopleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.people.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.people.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) PeopleById(id string)(*i8465a2d5f26666d08a0baebc755ef48f1f0dc18551f929c58c09d0110510a317.PersonRequestBuilder) {
@@ -666,7 +666,7 @@ func (m *UserRequestBuilder) Photo()(*icf56cc7fcccc9803d5655a975f93bee1c76d14d27
 func (m *UserRequestBuilder) Photos()(*idea2a9c81deaaa3e33a2bcef2386387935820f4f571d71af1fc2daa24d8fa032.PhotosRequestBuilder) {
     return idea2a9c81deaaa3e33a2bcef2386387935820f4f571d71af1fc2daa24d8fa032.NewPhotosRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.photos.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.photos.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) PhotosById(id string)(*i5f2b6c8998555350079828979727c205406cf7155e907008bec42440c3e9724a.ProfilePhotoRequestBuilder) {
@@ -710,7 +710,7 @@ func (m *UserRequestBuilder) RevokeSignInSessions()(*i1090e84ad9b76c4c279467ebbc
 func (m *UserRequestBuilder) ScopedRoleMemberOf()(*ia99f649e03b3020696f5c2c11f42a9ad7f094cb80add889863fc7947d3bf9ec7.ScopedRoleMemberOfRequestBuilder) {
     return ia99f649e03b3020696f5c2c11f42a9ad7f094cb80add889863fc7947d3bf9ec7.NewScopedRoleMemberOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.scopedRoleMemberOf.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.scopedRoleMemberOf.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserRequestBuilder) ScopedRoleMemberOfById(id string)(*i983bdc3dce2d947aec82e1e9dd5edd887e8d861d589287d050f96af67abb1e1f.ScopedRoleMembershipRequestBuilder) {

@@ -54,7 +54,7 @@ type SecurityRequestBuilderPatchOptions struct {
 func (m *SecurityRequestBuilder) Alerts()(*ic55f4c3693b3458d37f169972d41697131ecfdb31a625c4fae6e024f02167222.AlertsRequestBuilder) {
     return ic55f4c3693b3458d37f169972d41697131ecfdb31a625c4fae6e024f02167222.NewAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.security.alerts.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.alerts.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SecurityRequestBuilder) AlertsById(id string)(*i9f4cc7fe9832e758c23f51e8095ff0946d511066f5a7d110c1662df7efadb000.AlertRequestBuilder) {
@@ -168,7 +168,7 @@ func (m *SecurityRequestBuilder) Patch(options *SecurityRequestBuilderPatchOptio
 func (m *SecurityRequestBuilder) SecureScoreControlProfiles()(*ie4328a6e5437e25d06c50bee3076698796ad30481e9e114d704c631aad9b6f5b.SecureScoreControlProfilesRequestBuilder) {
     return ie4328a6e5437e25d06c50bee3076698796ad30481e9e114d704c631aad9b6f5b.NewSecureScoreControlProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.security.secureScoreControlProfiles.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.secureScoreControlProfiles.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*i341438a13fe09ad4284380c5f498c991d5debd415f26d3ad4445315402edc168.SecureScoreControlProfileRequestBuilder) {
@@ -184,7 +184,7 @@ func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*i341
 func (m *SecurityRequestBuilder) SecureScores()(*i13bd20348dd8380732465deeb248cdc3f18bf1b888ea708c2518379965331b7d.SecureScoresRequestBuilder) {
     return i13bd20348dd8380732465deeb248cdc3f18bf1b888ea708c2518379965331b7d.NewSecureScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.security.secureScores.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.secureScores.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *SecurityRequestBuilder) SecureScoresById(id string)(*i935eca4ee55c30c68a1ba6558e201935fcaf58fd82c8f8076c82de8f806aac5b.SecureScoreRequestBuilder) {

@@ -5,6 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i0760a086d672db9e1f9badd4568fe68a0f937e8b9800b0a28bdec7daa64d5ccd "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/ref"
+    i0e041913f321e8912df7015b396e82f2aa558c2f06b56020174ecdddbc19e1a4 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/caseexportoperation"
     i34d062f7c1f9b651ed7e321f7b6727ce6d621992085db8d45c80fbc916188dcc "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/managedappprotection"
     i5f98868acbc862431e923374a6ba8e936fb3eec70eed687c4ab204b8f1263b09 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/printdocument"
     i70f104074c4620fcf4c3f78aeafd5d45b974329cb2b41fbd3bb6e04d67f12985 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/targetedmanagedappprotection"
@@ -50,6 +51,9 @@ type ResourceRequestBuilderGetQueryParameters struct {
 }
 func (m *ResourceRequestBuilder) CalendarSharingMessage()(*i89ca78a87910a4d326eebc0ff244cb6c019d297c07a94b543d3173c95db7ecd2.CalendarSharingMessageRequestBuilder) {
     return i89ca78a87910a4d326eebc0ff244cb6c019d297c07a94b543d3173c95db7ecd2.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ResourceRequestBuilder) CaseExportOperation()(*i0e041913f321e8912df7015b396e82f2aa558c2f06b56020174ecdddbc19e1a4.CaseExportOperationRequestBuilder) {
+    return i0e041913f321e8912df7015b396e82f2aa558c2f06b56020174ecdddbc19e1a4.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Instantiates a new ResourceRequestBuilder and sets the default values.
 // Parameters:

@@ -164,7 +164,7 @@ func (m *TodoTaskRequestBuilder) Delete(options *TodoTaskRequestBuilderDeleteOpt
 func (m *TodoTaskRequestBuilder) Extensions()(*ib328057042b40aca0435e29217cc75d0b307a22c3fa6a95d56b669cd767d0505.ExtensionsRequestBuilder) {
     return ib328057042b40aca0435e29217cc75d0b307a22c3fa6a95d56b669cd767d0505.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.todo.lists.item.tasks.item.extensions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.todo.lists.item.tasks.item.extensions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *TodoTaskRequestBuilder) ExtensionsById(id string)(*ia6e8ba8256cc0f982965ab6b7cc3a994f177bbc1e73b05c133e11c04133cbbaf.ExtensionRequestBuilder) {
@@ -194,7 +194,7 @@ func (m *TodoTaskRequestBuilder) Get(options *TodoTaskRequestBuilderGetOptions)(
 func (m *TodoTaskRequestBuilder) LinkedResources()(*idb041647a8374ed00dc0466469e256d948e2d774e8f6c2d867a2a02b3bc54399.LinkedResourcesRequestBuilder) {
     return idb041647a8374ed00dc0466469e256d948e2d774e8f6c2d867a2a02b3bc54399.NewLinkedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.todo.lists.item.tasks.item.linkedResources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.todo.lists.item.tasks.item.linkedResources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *TodoTaskRequestBuilder) LinkedResourcesById(id string)(*ie07af192062a7164b8c25ab2158765e4eb3925d07dcd66ef69fed8ceb2679be9.LinkedResourceRequestBuilder) {

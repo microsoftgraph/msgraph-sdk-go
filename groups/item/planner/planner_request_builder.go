@@ -190,7 +190,7 @@ func (m *PlannerRequestBuilder) Patch(options *PlannerRequestBuilderPatchOptions
 func (m *PlannerRequestBuilder) Plans()(*icffde7ab20afb870cc9b77013c660b5a60f1decad39740b28a0f1b5f4d318d32.PlansRequestBuilder) {
     return icffde7ab20afb870cc9b77013c660b5a60f1decad39740b28a0f1b5f4d318d32.NewPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.planner.plans.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.planner.plans.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PlannerRequestBuilder) PlansById(id string)(*i8a69353b1b005763a981538691afe90300b184d370fe56031baad3f85ccdae01.PlannerPlanRequestBuilder) {

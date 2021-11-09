@@ -60,7 +60,7 @@ type DefaultManagedAppProtectionRequestBuilderPatchOptions struct {
 func (m *DefaultManagedAppProtectionRequestBuilder) Apps()(*ib58f8e07860703f9c02eb7bd9c28b3c1acc81af39864fcb1185d0ac405db866a.AppsRequestBuilder) {
     return ib58f8e07860703f9c02eb7bd9c28b3c1acc81af39864fcb1185d0ac405db866a.NewAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.defaultManagedAppProtections.item.apps.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.defaultManagedAppProtections.item.apps.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DefaultManagedAppProtectionRequestBuilder) AppsById(id string)(*i664cce9ac6a8d066456ffc5e2e02eef4dbe7ba1273babaff744dd6346838dd7d.ManagedMobileAppRequestBuilder) {

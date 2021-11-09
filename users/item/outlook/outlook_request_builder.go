@@ -177,7 +177,7 @@ func (m *OutlookRequestBuilder) Get(options *OutlookRequestBuilderGetOptions)(*i
 func (m *OutlookRequestBuilder) MasterCategories()(*i5778e4eb64102e20ca8d1195cd8e1846b24ae1936d8c6f197de8072b5d0708ac.MasterCategoriesRequestBuilder) {
     return i5778e4eb64102e20ca8d1195cd8e1846b24ae1936d8c6f197de8072b5d0708ac.NewMasterCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.outlook.masterCategories.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.outlook.masterCategories.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*i9c16ff1de59760cb207932c94d7e5b162ef9fa5d4907f338c86fe76159e2fd2e.OutlookCategoryRequestBuilder) {

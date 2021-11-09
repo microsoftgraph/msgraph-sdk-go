@@ -63,7 +63,7 @@ type ContactFolderRequestBuilderPatchOptions struct {
 func (m *ContactFolderRequestBuilder) ChildFolders()(*i60ab60f82d14e2dac827c4a94548731a12742fd43ee5e3c8ad4e981c63b3430e.ChildFoldersRequestBuilder) {
     return i60ab60f82d14e2dac827c4a94548731a12742fd43ee5e3c8ad4e981c63b3430e.NewChildFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.contactFolders.item.childFolders.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item.childFolders.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ContactFolderRequestBuilder) ChildFoldersById(id string)(*i313408c9cc7b38ecc6251cca569a0b7c6640fe8f5556623d6b010c4ad94526c7.ContactFolderRequestBuilder) {
@@ -104,7 +104,7 @@ func NewContactFolderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
 func (m *ContactFolderRequestBuilder) Contacts()(*ida83c3cad119a461d4351a90d275d85f7ab07a13493267b770834de6b0df1e46.ContactsRequestBuilder) {
     return ida83c3cad119a461d4351a90d275d85f7ab07a13493267b770834de6b0df1e46.NewContactsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.contactFolders.item.contacts.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item.contacts.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ContactFolderRequestBuilder) ContactsById(id string)(*i316f60e76d66ed07f62c18eb8b9dbe052faea000d861699ea2e1e9ee3745269a.ContactRequestBuilder) {
@@ -212,7 +212,7 @@ func (m *ContactFolderRequestBuilder) Get(options *ContactFolderRequestBuilderGe
 func (m *ContactFolderRequestBuilder) MultiValueExtendedProperties()(*i65553c18ffeaa784c3939c2a02713d4581a841081044d39399ed69407816f934.MultiValueExtendedPropertiesRequestBuilder) {
     return i65553c18ffeaa784c3939c2a02713d4581a841081044d39399ed69407816f934.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.contactFolders.item.multiValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item.multiValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ContactFolderRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ibd6ce6f8bcc14aa05c644fdf6a85e41e90bf174f08ca7bfa4ed65ee287544500.MultiValueLegacyExtendedPropertyRequestBuilder) {
@@ -242,7 +242,7 @@ func (m *ContactFolderRequestBuilder) Patch(options *ContactFolderRequestBuilder
 func (m *ContactFolderRequestBuilder) SingleValueExtendedProperties()(*i12bbca421752c1a216af39c1b248202a000c0523508478cb12f65bebbdf390b1.SingleValueExtendedPropertiesRequestBuilder) {
     return i12bbca421752c1a216af39c1b248202a000c0523508478cb12f65bebbdf390b1.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.users.item.contactFolders.item.singleValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.contactFolders.item.singleValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ContactFolderRequestBuilder) SingleValueExtendedPropertiesById(id string)(*ibb87b307fcec740337cd562826187e93e9cf34543efe25a06a3c17bea866ffc8.SingleValueLegacyExtendedPropertyRequestBuilder) {

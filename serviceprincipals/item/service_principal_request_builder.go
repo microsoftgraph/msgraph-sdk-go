@@ -90,7 +90,7 @@ func (m *ServicePrincipalRequestBuilder) AddPassword()(*i495446d97cfd23af0607d58
 func (m *ServicePrincipalRequestBuilder) AppRoleAssignedTo()(*id692483c2e6fa4444b9d250ecaa7a6bea16dbc3cd7fa20c05fb69b2f7b69ad46.AppRoleAssignedToRequestBuilder) {
     return id692483c2e6fa4444b9d250ecaa7a6bea16dbc3cd7fa20c05fb69b2f7b69ad46.NewAppRoleAssignedToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.servicePrincipals.item.appRoleAssignedTo.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.appRoleAssignedTo.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ServicePrincipalRequestBuilder) AppRoleAssignedToById(id string)(*ieade744732b95d81e11bac4d5146b5ac0bfeb407228f97be47815b5b44c77ff1.AppRoleAssignmentRequestBuilder) {
@@ -106,7 +106,7 @@ func (m *ServicePrincipalRequestBuilder) AppRoleAssignedToById(id string)(*ieade
 func (m *ServicePrincipalRequestBuilder) AppRoleAssignments()(*i93153ff64f35a046ae51130f6dbc11813af572bf8610f8142e2bebbb77269190.AppRoleAssignmentsRequestBuilder) {
     return i93153ff64f35a046ae51130f6dbc11813af572bf8610f8142e2bebbb77269190.NewAppRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.servicePrincipals.item.appRoleAssignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.appRoleAssignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ServicePrincipalRequestBuilder) AppRoleAssignmentsById(id string)(*i80395ca3a6452268f5c4d3e92f315d7c92e78fef9911bf32e289ea47d6968415.AppRoleAssignmentRequestBuilder) {
@@ -223,7 +223,7 @@ func (m *ServicePrincipalRequestBuilder) CreatePatchRequestInformation(options *
 func (m *ServicePrincipalRequestBuilder) DelegatedPermissionClassifications()(*iedd8dd60eed89931552d2c873e7c568c2a30c87dee999cc992446db26f8803fc.DelegatedPermissionClassificationsRequestBuilder) {
     return iedd8dd60eed89931552d2c873e7c568c2a30c87dee999cc992446db26f8803fc.NewDelegatedPermissionClassificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.servicePrincipals.item.delegatedPermissionClassifications.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.delegatedPermissionClassifications.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ServicePrincipalRequestBuilder) DelegatedPermissionClassificationsById(id string)(*i38c5edd99af7364922d88fc2b49de45f320d11c5fa36e8234c12f1d863cbea73.DelegatedPermissionClassificationRequestBuilder) {
@@ -253,7 +253,7 @@ func (m *ServicePrincipalRequestBuilder) Delete(options *ServicePrincipalRequest
 func (m *ServicePrincipalRequestBuilder) Endpoints()(*ic2b775c554f6f0689bed0deb6e610608281614f70275cada61da8274360068d0.EndpointsRequestBuilder) {
     return ic2b775c554f6f0689bed0deb6e610608281614f70275cada61da8274360068d0.NewEndpointsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.servicePrincipals.item.endpoints.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.endpoints.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ServicePrincipalRequestBuilder) EndpointsById(id string)(*iae6f1167638ef01ba227e18af033b58e9203edca74b4641453bc1cec1de3aa91.EndpointRequestBuilder) {

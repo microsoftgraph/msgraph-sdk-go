@@ -162,7 +162,7 @@ func (m *UserInstallStateSummaryRequestBuilder) Delete(options *UserInstallState
 func (m *UserInstallStateSummaryRequestBuilder) DeviceStates()(*i9d4e03b9802e2eb51b7709de98a35a0efc7531c683b19f204be587d9169b2732.DeviceStatesRequestBuilder) {
     return i9d4e03b9802e2eb51b7709de98a35a0efc7531c683b19f204be587d9169b2732.NewDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.managedEBooks.item.userStateSummary.item.deviceStates.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.userStateSummary.item.deviceStates.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *UserInstallStateSummaryRequestBuilder) DeviceStatesById(id string)(*i4af6a004d2bf39ad93c5dd909c7a0431ca0e6fff0d6eee0daa5a92c3cfa82fec.DeviceInstallStateRequestBuilder) {

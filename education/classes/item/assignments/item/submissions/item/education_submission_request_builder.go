@@ -184,7 +184,7 @@ func (m *EducationSubmissionRequestBuilder) Get(options *EducationSubmissionRequ
 func (m *EducationSubmissionRequestBuilder) Outcomes()(*ic9e6f044df077c5c49203af4cbb1cb4bdd990da9a1e6a2c50a189335ae8c62fc.OutcomesRequestBuilder) {
     return ic9e6f044df077c5c49203af4cbb1cb4bdd990da9a1e6a2c50a189335ae8c62fc.NewOutcomesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.education.classes.item.assignments.item.submissions.item.outcomes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.assignments.item.submissions.item.outcomes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationSubmissionRequestBuilder) OutcomesById(id string)(*i9a0443e0b2ffd58714a9cae0542bdec49c7a1c21111a0cba91c45aa013014f81.EducationOutcomeRequestBuilder) {
@@ -214,7 +214,7 @@ func (m *EducationSubmissionRequestBuilder) Patch(options *EducationSubmissionRe
 func (m *EducationSubmissionRequestBuilder) Resources()(*id25fa828362bc547da297fba40d2cdbe268a1fd50d31a4ead0dd41ffa77fdfc6.ResourcesRequestBuilder) {
     return id25fa828362bc547da297fba40d2cdbe268a1fd50d31a4ead0dd41ffa77fdfc6.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.education.classes.item.assignments.item.submissions.item.resources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.assignments.item.submissions.item.resources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationSubmissionRequestBuilder) ResourcesById(id string)(*idf6da69a1128e56db2a075a35c90dfb9d769744b063f36a369e943680fa35795.EducationSubmissionResourceRequestBuilder) {
@@ -239,7 +239,7 @@ func (m *EducationSubmissionRequestBuilder) Submit()(*i685e1486255b2d524092d2de8
 func (m *EducationSubmissionRequestBuilder) SubmittedResources()(*id595ffd3ed593bffbb73e849bb31881e531d536f5c57d0b37c7933bb34ad1ad0.SubmittedResourcesRequestBuilder) {
     return id595ffd3ed593bffbb73e849bb31881e531d536f5c57d0b37c7933bb34ad1ad0.NewSubmittedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.education.classes.item.assignments.item.submissions.item.submittedResources.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.assignments.item.submissions.item.submittedResources.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EducationSubmissionRequestBuilder) SubmittedResourcesById(id string)(*if2b3a1bb63b3f0f978027b12a06272583c8a6c2ebe1a551f1e1b72a751ef4004.EducationSubmissionResourceRequestBuilder) {

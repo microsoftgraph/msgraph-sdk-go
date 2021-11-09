@@ -50,7 +50,7 @@ type ExternalRequestBuilderPatchOptions struct {
 func (m *ExternalRequestBuilder) Connections()(*i48e814d71144f5121a67549d49468b2234835e783775817ee48121414806c410.ConnectionsRequestBuilder) {
     return i48e814d71144f5121a67549d49468b2234835e783775817ee48121414806c410.NewConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.external.connections.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.external.connections.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ExternalRequestBuilder) ConnectionsById(id string)(*i577c32b3546bb944ef6f26d23de16748f1a577be367300410114bee1d27f70cb.ExternalConnectionRequestBuilder) {

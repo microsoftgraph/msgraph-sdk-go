@@ -195,7 +195,7 @@ func (m *ManagedDeviceRequestBuilder) DeviceCategory()(*ic7e7f352418887585e7f8a8
 func (m *ManagedDeviceRequestBuilder) DeviceCompliancePolicyStates()(*i83acc3dd442c42abdbabb9f4fb5b7f362e8c2133c09e2ab7c8978a58dcaba49a.DeviceCompliancePolicyStatesRequestBuilder) {
     return i83acc3dd442c42abdbabb9f4fb5b7f362e8c2133c09e2ab7c8978a58dcaba49a.NewDeviceCompliancePolicyStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.managedDevices.item.deviceCompliancePolicyStates.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.managedDevices.item.deviceCompliancePolicyStates.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ManagedDeviceRequestBuilder) DeviceCompliancePolicyStatesById(id string)(*i04ce841e69bdde74a0a5ab2a5f5b64b7e52f890d6dce32e3f002ee145b68f803.DeviceCompliancePolicyStateRequestBuilder) {
@@ -211,7 +211,7 @@ func (m *ManagedDeviceRequestBuilder) DeviceCompliancePolicyStatesById(id string
 func (m *ManagedDeviceRequestBuilder) DeviceConfigurationStates()(*ia9eca82f666e7935a7636c1a6840da82b973be896a102904ee6f6cb28bc3f48a.DeviceConfigurationStatesRequestBuilder) {
     return ia9eca82f666e7935a7636c1a6840da82b973be896a102904ee6f6cb28bc3f48a.NewDeviceConfigurationStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.managedDevices.item.deviceConfigurationStates.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.managedDevices.item.deviceConfigurationStates.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ManagedDeviceRequestBuilder) DeviceConfigurationStatesById(id string)(*i635fc9cf6abf1cd6f28dfa5885addac5c0d71ed597869597de4dc6569fcace0a.DeviceConfigurationStateRequestBuilder) {

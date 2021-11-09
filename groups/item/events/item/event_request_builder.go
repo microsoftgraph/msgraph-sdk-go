@@ -76,7 +76,7 @@ func (m *EventRequestBuilder) Accept()(*iaf6ca7f88694008763f7c64dc5f9e9a4696d364
 func (m *EventRequestBuilder) Attachments()(*ia9eabac6ecd410545dc4495208341bd846651d6673db813cabee1323b7ccebb1.AttachmentsRequestBuilder) {
     return ia9eabac6ecd410545dc4495208341bd846651d6673db813cabee1323b7ccebb1.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.events.item.attachments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.events.item.attachments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EventRequestBuilder) AttachmentsById(id string)(*ia3fe1bf9b023096d20271ede0e7f809b9ea0d5dc59475200a395629f1ecb917c.AttachmentRequestBuilder) {
@@ -207,7 +207,7 @@ func (m *EventRequestBuilder) DismissReminder()(*i973bdbcda3dd1f6f25a1482be6ac8c
 func (m *EventRequestBuilder) Extensions()(*i4b518553c867ab557e4a9014d64bff52b4a5614abc228a534b622097747f58c4.ExtensionsRequestBuilder) {
     return i4b518553c867ab557e4a9014d64bff52b4a5614abc228a534b622097747f58c4.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.events.item.extensions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.events.item.extensions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EventRequestBuilder) ExtensionsById(id string)(*i68e56f812a05f1c50a7fc8625d20c43951316b2122068afdbe3b9ec586bd6fe2.ExtensionRequestBuilder) {
@@ -240,7 +240,7 @@ func (m *EventRequestBuilder) Get(options *EventRequestBuilderGetOptions)(*i4a83
 func (m *EventRequestBuilder) Instances()(*i23879bc3fa3602cbaf93cee98173f588cf737baf3fa364fa5d532b4a7ccffb6f.InstancesRequestBuilder) {
     return i23879bc3fa3602cbaf93cee98173f588cf737baf3fa364fa5d532b4a7ccffb6f.NewInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.events.item.instances.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.events.item.instances.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EventRequestBuilder) InstancesById(id string)(*i5042ede149a551ff0f8fb6fd788882bbcfd795931aefebb153289527246e5e4d.EventRequestBuilder) {
@@ -256,7 +256,7 @@ func (m *EventRequestBuilder) InstancesById(id string)(*i5042ede149a551ff0f8fb6f
 func (m *EventRequestBuilder) MultiValueExtendedProperties()(*i967611b2c88418ecd27c9ba55d8e1a0fb980af96f161a7941b0122d0af98e20b.MultiValueExtendedPropertiesRequestBuilder) {
     return i967611b2c88418ecd27c9ba55d8e1a0fb980af96f161a7941b0122d0af98e20b.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.events.item.multiValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.events.item.multiValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EventRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i3924f06647673effb94eed5dd5d2d7fe2b5b2f58ac82d0f02eab48c1219f1c07.MultiValueLegacyExtendedPropertyRequestBuilder) {
@@ -286,7 +286,7 @@ func (m *EventRequestBuilder) Patch(options *EventRequestBuilderPatchOptions)(er
 func (m *EventRequestBuilder) SingleValueExtendedProperties()(*i855851d197827c1ee6475b539166033ff1c226b94affc6b7876227a822cefe56.SingleValueExtendedPropertiesRequestBuilder) {
     return i855851d197827c1ee6475b539166033ff1c226b94affc6b7876227a822cefe56.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.groups.item.events.item.singleValueExtendedProperties.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.events.item.singleValueExtendedProperties.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *EventRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i9fcaa4fe7aa3132d8c368ba6abc3e2992d0ff4b8a67614921b91e92aab8cab92.SingleValueLegacyExtendedPropertyRequestBuilder) {

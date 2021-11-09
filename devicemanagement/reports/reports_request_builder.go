@@ -178,7 +178,7 @@ func (m *ReportsRequestBuilder) Delete(options *ReportsRequestBuilderDeleteOptio
 func (m *ReportsRequestBuilder) ExportJobs()(*i062d4a86380aad1b2a18fcdf2ae3039afe4fb3340e8c61cd8a0118f64e2961f4.ExportJobsRequestBuilder) {
     return i062d4a86380aad1b2a18fcdf2ae3039afe4fb3340e8c61cd8a0118f64e2961f4.NewExportJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceManagement.reports.exportJobs.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.reports.exportJobs.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ReportsRequestBuilder) ExportJobsById(id string)(*i485f9fd192f0985070e6776ebbebebbeab22aaa9df64be7131a3e622b77e1c4e.DeviceManagementExportJobRequestBuilder) {

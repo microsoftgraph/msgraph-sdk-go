@@ -148,7 +148,7 @@ func (m *AppCatalogsRequestBuilder) Patch(options *AppCatalogsRequestBuilderPatc
 func (m *AppCatalogsRequestBuilder) TeamsApps()(*i60b4144747afcc2877fe98b77f31eb5f795af4ce3b56c13dadc3c81a149664c5.TeamsAppsRequestBuilder) {
     return i60b4144747afcc2877fe98b77f31eb5f795af4ce3b56c13dadc3c81a149664c5.NewTeamsAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.appCatalogs.teamsApps.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.appCatalogs.teamsApps.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*i0ff9d493a3baa51f602d43222cbde17af6238f7fde139b7afe7c7123654b865b.TeamsAppRequestBuilder) {

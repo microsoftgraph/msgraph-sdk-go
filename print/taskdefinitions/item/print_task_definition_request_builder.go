@@ -190,7 +190,7 @@ func (m *PrintTaskDefinitionRequestBuilder) Patch(options *PrintTaskDefinitionRe
 func (m *PrintTaskDefinitionRequestBuilder) Tasks()(*ia17e90b868e2477ae400798399ce90e12c84b05266b802ea329cdb41683f368a.TasksRequestBuilder) {
     return ia17e90b868e2477ae400798399ce90e12c84b05266b802ea329cdb41683f368a.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.print.taskDefinitions.item.tasks.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.taskDefinitions.item.tasks.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrintTaskDefinitionRequestBuilder) TasksById(id string)(*i0d5f8f6b05ef36affaa4705ed7f63280fb98114a2a0c815ba833448eb3b3afa4.PrintTaskRequestBuilder) {

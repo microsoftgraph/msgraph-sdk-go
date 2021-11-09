@@ -192,7 +192,7 @@ func (m *PlannerRequestBuilder) Patch(options *PlannerRequestBuilderPatchOptions
 func (m *PlannerRequestBuilder) Plans()(*ie4a45f6e29fee570f2c703bf98adc84b852882a446b0b48477fc0b59a9ab9d24.PlansRequestBuilder) {
     return ie4a45f6e29fee570f2c703bf98adc84b852882a446b0b48477fc0b59a9ab9d24.NewPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.planner.plans.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.planner.plans.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PlannerRequestBuilder) PlansById(id string)(*i56240115022859e0ae78e43a562fea702c163b3e89ba06e2dba02c5a32c7983b.PlannerPlanRequestBuilder) {
@@ -208,7 +208,7 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*i56240115022859e0ae78e43a5
 func (m *PlannerRequestBuilder) Tasks()(*ic91505b79e0fb326d51c5dad2da04c24c4e419c61736e32df9c14017c046a6c9.TasksRequestBuilder) {
     return ic91505b79e0fb326d51c5dad2da04c24c4e419c61736e32df9c14017c046a6c9.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.me.planner.tasks.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.planner.tasks.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PlannerRequestBuilder) TasksById(id string)(*if5d0e47a30b3381304690625a320d0592ca166a01a975435702e618eac2ef1eb.PlannerTaskRequestBuilder) {

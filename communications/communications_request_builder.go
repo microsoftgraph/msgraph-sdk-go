@@ -57,7 +57,7 @@ type CommunicationsRequestBuilderPatchOptions struct {
 func (m *CommunicationsRequestBuilder) CallRecords()(*ia16cdc2d9b3bc568ec8cc434362cdc775f06d33edc59461753307ae81aa82be2.CallRecordsRequestBuilder) {
     return ia16cdc2d9b3bc568ec8cc434362cdc775f06d33edc59461753307ae81aa82be2.NewCallRecordsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.communications.callRecords.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.communications.callRecords.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*i86a5a2d6d1df2d6f16bc44eca70678c6e13a6e96de856db7943e4d10d0e565f9.CallRecordRequestBuilder) {
@@ -73,7 +73,7 @@ func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*i86a5a2d6d1df
 func (m *CommunicationsRequestBuilder) Calls()(*i97bbd24556e25a02196df7f369bb3b5f98f59c02b80c2e99a6f1a240704122ec.CallsRequestBuilder) {
     return i97bbd24556e25a02196df7f369bb3b5f98f59c02b80c2e99a6f1a240704122ec.NewCallsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.communications.calls.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.communications.calls.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CommunicationsRequestBuilder) CallsById(id string)(*i477b1ae6bd5bbfab5a3df641da78a8d4e8d13bcb144b2cc255a5232c225c8e02.CallRequestBuilder) {
@@ -176,7 +176,7 @@ func (m *CommunicationsRequestBuilder) GetPresencesByUserId()(*i3c47b88ab2c0939d
 func (m *CommunicationsRequestBuilder) OnlineMeetings()(*i8ffdea05c8e955294fca9f00741f2c593d8a678f56d226eb2403adf492ba07b0.OnlineMeetingsRequestBuilder) {
     return i8ffdea05c8e955294fca9f00741f2c593d8a678f56d226eb2403adf492ba07b0.NewOnlineMeetingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.communications.onlineMeetings.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.communications.onlineMeetings.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*ia12cb51356bed2ae549e4383f0c613f371754648330c864ba0a94eed03acad34.OnlineMeetingRequestBuilder) {
@@ -206,7 +206,7 @@ func (m *CommunicationsRequestBuilder) Patch(options *CommunicationsRequestBuild
 func (m *CommunicationsRequestBuilder) Presences()(*i7094ab8c1a06bafeeedd3a2746844e0ec2ac0e2e7d2937ef9abdad9734836b3b.PresencesRequestBuilder) {
     return i7094ab8c1a06bafeeedd3a2746844e0ec2ac0e2e7d2937ef9abdad9734836b3b.NewPresencesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.communications.presences.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.communications.presences.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *CommunicationsRequestBuilder) PresencesById(id string)(*i18c4da38d0089983229c741b411e29ea20d5089f44a41039b28b9300ac6b2bbc.PresenceRequestBuilder) {

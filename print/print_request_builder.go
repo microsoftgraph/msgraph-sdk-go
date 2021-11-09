@@ -60,7 +60,7 @@ type PrintRequestBuilderPatchOptions struct {
 func (m *PrintRequestBuilder) Connectors()(*i0f704d64ae3c276c8ff23cafb44315ef4067a668629360d124bdabfea38afdd3.ConnectorsRequestBuilder) {
     return i0f704d64ae3c276c8ff23cafb44315ef4067a668629360d124bdabfea38afdd3.NewConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.print.connectors.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.connectors.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrintRequestBuilder) ConnectorsById(id string)(*iebd42d165d4ff6aca1eec85e8351f67b97a4208ea00a5bc8ac67f4f1f191b677.PrintConnectorRequestBuilder) {
@@ -160,7 +160,7 @@ func (m *PrintRequestBuilder) Get(options *PrintRequestBuilderGetOptions)(*i4a83
 func (m *PrintRequestBuilder) Operations()(*ib24f76d25d0e8f20d062be56f8b94808153dc20498d344b76af7867075ea8ad9.OperationsRequestBuilder) {
     return ib24f76d25d0e8f20d062be56f8b94808153dc20498d344b76af7867075ea8ad9.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.print.operations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.operations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrintRequestBuilder) OperationsById(id string)(*id0e61828b4320e56c027152ab07b04414264a89aa169cd832394397ada28defd.PrintOperationRequestBuilder) {
@@ -190,7 +190,7 @@ func (m *PrintRequestBuilder) Patch(options *PrintRequestBuilderPatchOptions)(er
 func (m *PrintRequestBuilder) Printers()(*i0bda270a8db970823b8449367f0a1b6167aeb67bb1a0b116061e10c72e9e8d5d.PrintersRequestBuilder) {
     return i0bda270a8db970823b8449367f0a1b6167aeb67bb1a0b116061e10c72e9e8d5d.NewPrintersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.print.printers.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.printers.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrintRequestBuilder) PrintersById(id string)(*i7b3d94bc34459d3d2fa55e5dc4096ab7096e743ffc216c2d05b8f451f231fde1.PrinterRequestBuilder) {
@@ -206,7 +206,7 @@ func (m *PrintRequestBuilder) PrintersById(id string)(*i7b3d94bc34459d3d2fa55e5d
 func (m *PrintRequestBuilder) Services()(*i802e345f3915c26a53a0e538ad96acb01b0ad515a9510581f00bcedb2e2d1266.ServicesRequestBuilder) {
     return i802e345f3915c26a53a0e538ad96acb01b0ad515a9510581f00bcedb2e2d1266.NewServicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.print.services.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.services.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrintRequestBuilder) ServicesById(id string)(*i0b3afc35ae08ae48e886b1ea1ae2fe47da46f82bd161cb48f9ff550676f78301.PrintServiceRequestBuilder) {
@@ -222,7 +222,7 @@ func (m *PrintRequestBuilder) ServicesById(id string)(*i0b3afc35ae08ae48e886b1ea
 func (m *PrintRequestBuilder) Shares()(*i54feb3a1bee5e2d3891bf4b38d7ad46df95f464ec5502fc27ce12645532dcf04.SharesRequestBuilder) {
     return i54feb3a1bee5e2d3891bf4b38d7ad46df95f464ec5502fc27ce12645532dcf04.NewSharesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.print.shares.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrintRequestBuilder) SharesById(id string)(*i8e18f5c596955d2371ff489e959f3488755280f5b7014ba5a0f5b95b7dc44bf2.PrinterShareRequestBuilder) {
@@ -238,7 +238,7 @@ func (m *PrintRequestBuilder) SharesById(id string)(*i8e18f5c596955d2371ff489e95
 func (m *PrintRequestBuilder) TaskDefinitions()(*ied8956e290d0c898cb2abe2b85d9373567ead7ae2e05a776597718dd3f1709e8.TaskDefinitionsRequestBuilder) {
     return ied8956e290d0c898cb2abe2b85d9373567ead7ae2e05a776597718dd3f1709e8.NewTaskDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.print.taskDefinitions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.taskDefinitions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *PrintRequestBuilder) TaskDefinitionsById(id string)(*i827522a32e9dfc8181a7f7793aec64fdf0814658430464c0b64af19c8e4e9a96.PrintTaskDefinitionRequestBuilder) {

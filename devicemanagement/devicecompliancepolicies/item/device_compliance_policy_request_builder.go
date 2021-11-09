@@ -74,7 +74,7 @@ func (m *DeviceCompliancePolicyRequestBuilder) Assign()(*i3030ab3b219bf633819d46
 func (m *DeviceCompliancePolicyRequestBuilder) Assignments()(*i2e2c72e21cb0c8cdaec10a654e10b331974312d189a1909be8f3858df23bdb23.AssignmentsRequestBuilder) {
     return i2e2c72e21cb0c8cdaec10a654e10b331974312d189a1909be8f3858df23bdb23.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceManagement.deviceCompliancePolicies.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.deviceCompliancePolicies.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceCompliancePolicyRequestBuilder) AssignmentsById(id string)(*i6900b8b299999e708b620425dc8c6ce05ee63496c68d74d9f14fdd267e9722fd.DeviceCompliancePolicyAssignmentRequestBuilder) {
@@ -193,7 +193,7 @@ func (m *DeviceCompliancePolicyRequestBuilder) Delete(options *DeviceComplianceP
 func (m *DeviceCompliancePolicyRequestBuilder) DeviceSettingStateSummaries()(*i19eac586d5d9cdaadb80098949fbb380feb5000e24ac5c8fe81ccde9477b5e2a.DeviceSettingStateSummariesRequestBuilder) {
     return i19eac586d5d9cdaadb80098949fbb380feb5000e24ac5c8fe81ccde9477b5e2a.NewDeviceSettingStateSummariesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceManagement.deviceCompliancePolicies.item.deviceSettingStateSummaries.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.deviceCompliancePolicies.item.deviceSettingStateSummaries.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceCompliancePolicyRequestBuilder) DeviceSettingStateSummariesById(id string)(*i524f1aabf095e7a89f8751206668b1131dc6a571119b861cc6a82957868b66bb.SettingStateDeviceSummaryRequestBuilder) {
@@ -209,7 +209,7 @@ func (m *DeviceCompliancePolicyRequestBuilder) DeviceSettingStateSummariesById(i
 func (m *DeviceCompliancePolicyRequestBuilder) DeviceStatuses()(*i02fb6a209ffec3d5fa70a95db4705fc7c75cfc91437c2fa31a8e146503996769.DeviceStatusesRequestBuilder) {
     return i02fb6a209ffec3d5fa70a95db4705fc7c75cfc91437c2fa31a8e146503996769.NewDeviceStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceManagement.deviceCompliancePolicies.item.deviceStatuses.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.deviceCompliancePolicies.item.deviceStatuses.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceCompliancePolicyRequestBuilder) DeviceStatusesById(id string)(*i322065cfad3bb35a1e313e9c3ea9020cbd58f06bf7ec5f4c92fbf517ea5d4439.DeviceComplianceDeviceStatusRequestBuilder) {
@@ -259,7 +259,7 @@ func (m *DeviceCompliancePolicyRequestBuilder) ScheduleActionsForRules()(*i72793
 func (m *DeviceCompliancePolicyRequestBuilder) ScheduledActionsForRule()(*i160c96d8c11dddcb0d327977c26d60c04f4b6c89fe2e2313696b0a10646d4cce.ScheduledActionsForRuleRequestBuilder) {
     return i160c96d8c11dddcb0d327977c26d60c04f4b6c89fe2e2313696b0a10646d4cce.NewScheduledActionsForRuleRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceManagement.deviceCompliancePolicies.item.scheduledActionsForRule.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.deviceCompliancePolicies.item.scheduledActionsForRule.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceCompliancePolicyRequestBuilder) ScheduledActionsForRuleById(id string)(*i7fb30de09cd8a009b11319ff0df1e3a97b0ee6a475979d0c276ba707f9024a6b.DeviceComplianceScheduledActionForRuleRequestBuilder) {
@@ -275,7 +275,7 @@ func (m *DeviceCompliancePolicyRequestBuilder) ScheduledActionsForRuleById(id st
 func (m *DeviceCompliancePolicyRequestBuilder) UserStatuses()(*i9bc4838e6f15dbc4846618bfd7af51ca2f4b8feade4b5c921daf6d262ac1f5b6.UserStatusesRequestBuilder) {
     return i9bc4838e6f15dbc4846618bfd7af51ca2f4b8feade4b5c921daf6d262ac1f5b6.NewUserStatusesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceManagement.deviceCompliancePolicies.item.userStatuses.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.deviceCompliancePolicies.item.userStatuses.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *DeviceCompliancePolicyRequestBuilder) UserStatusesById(id string)(*i52eb2204ffb8d3ff80719b2c0c36fc7747e810561f4265399b1b3fe48ce24e2e.DeviceComplianceUserStatusRequestBuilder) {

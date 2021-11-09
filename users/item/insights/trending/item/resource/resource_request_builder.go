@@ -17,6 +17,7 @@ import (
     ibceebb108ca739619379bc5738b0a7c30356db34ba8ab5eb0a44723691af2c9d "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/trending/item/resource/mobileappcontentfile"
     ic1ec7a08e927a127fa7f7b342a9970799a3202f31b0a2d9fb38c3500bd905557 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/trending/item/resource/workbookrangeformat"
     id5a13ac26a3dd37d1067017bd48306686f285bc748329caaec5307240144b1ee "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/trending/item/resource/targetedmanagedappprotection"
+    iddd07889f2b5cbfec9dd520b84404255ff5ce83a926f9ac1ea17da6d5016e503 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/trending/item/resource/caseexportoperation"
     ide90b82c9976bd9a2bcbeb3e59519101171b7c3b844b3c76d6a77c8715537d8d "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/trending/item/resource/workbookrangefill"
 )
 
@@ -50,6 +51,9 @@ type ResourceRequestBuilderGetQueryParameters struct {
 }
 func (m *ResourceRequestBuilder) CalendarSharingMessage()(*i919e2f7c61a582a751e71e7f9d8c3fc3c17163411877b465756860f8c36a89c6.CalendarSharingMessageRequestBuilder) {
     return i919e2f7c61a582a751e71e7f9d8c3fc3c17163411877b465756860f8c36a89c6.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ResourceRequestBuilder) CaseExportOperation()(*iddd07889f2b5cbfec9dd520b84404255ff5ce83a926f9ac1ea17da6d5016e503.CaseExportOperationRequestBuilder) {
+    return iddd07889f2b5cbfec9dd520b84404255ff5ce83a926f9ac1ea17da6d5016e503.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Instantiates a new ResourceRequestBuilder and sets the default values.
 // Parameters:

@@ -64,7 +64,7 @@ func (m *MobileAppRequestBuilder) Assign()(*ia9cfc52616110c9bb721b0f95f47d861e5a
 func (m *MobileAppRequestBuilder) Assignments()(*i41e6a4f5d8af8cbec70d9d8c4f48278ff47465e70b23d4ee2bbdcafa93bae975.AssignmentsRequestBuilder) {
     return i41e6a4f5d8af8cbec70d9d8c4f48278ff47465e70b23d4ee2bbdcafa93bae975.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.deviceAppManagement.mobileApps.item.assignments.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.mobileApps.item.assignments.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *MobileAppRequestBuilder) AssignmentsById(id string)(*i1de44916490eb612ae701336a2eae5f89d836e0eaae6829aa711a57c559453e1.MobileAppAssignmentRequestBuilder) {

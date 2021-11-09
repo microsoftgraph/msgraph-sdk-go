@@ -62,7 +62,7 @@ type TermRequestBuilderPatchOptions struct {
 func (m *TermRequestBuilder) Children()(*i1c33b01412e05a2c6cc2e923fc88f32ab966267704c2923f40edf92a88c9613a.ChildrenRequestBuilder) {
     return i1c33b01412e05a2c6cc2e923fc88f32ab966267704c2923f40edf92a88c9613a.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.termStores.item.sets.item.children.item.children.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item.sets.item.children.item.children.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *TermRequestBuilder) ChildrenById(id string)(*if9bf490a0735e53c6d0328b6121d771de76a238bb69194ea10ea3b615b8a2282.TermRequestBuilder) {
@@ -209,7 +209,7 @@ func (m *TermRequestBuilder) Patch(options *TermRequestBuilderPatchOptions)(erro
 func (m *TermRequestBuilder) Relations()(*ibab5c4187cbc96e893b55c5a9aa41fdee052e49f299a78f71e2b81bc887c29e8.RelationsRequestBuilder) {
     return ibab5c4187cbc96e893b55c5a9aa41fdee052e49f299a78f71e2b81bc887c29e8.NewRelationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.termStores.item.sets.item.children.item.relations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item.sets.item.children.item.relations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *TermRequestBuilder) RelationsById(id string)(*i3120330c3bb83287ebc3c78db940c56a1cd934b6cd8a36893b59bfca4fe09526.RelationRequestBuilder) {

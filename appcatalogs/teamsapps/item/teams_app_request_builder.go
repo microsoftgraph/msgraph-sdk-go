@@ -59,7 +59,7 @@ type TeamsAppRequestBuilderPatchOptions struct {
 func (m *TeamsAppRequestBuilder) AppDefinitions()(*i048cb49cf3e85a5059ba0b619f93cec0ea03f1ed67b1a2e8f9cdc580df57bc70.AppDefinitionsRequestBuilder) {
     return i048cb49cf3e85a5059ba0b619f93cec0ea03f1ed67b1a2e8f9cdc580df57bc70.NewAppDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.appCatalogs.teamsApps.item.appDefinitions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.appCatalogs.teamsApps.item.appDefinitions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *TeamsAppRequestBuilder) AppDefinitionsById(id string)(*ic0dc56f620001a78f10e220a38cfda92ea81c50e16ac619fcd0904e1ef140bb8.TeamsAppDefinitionRequestBuilder) {

@@ -190,7 +190,7 @@ func (m *ThreatAssessmentRequestRequestBuilder) Patch(options *ThreatAssessmentR
 func (m *ThreatAssessmentRequestRequestBuilder) Results()(*i830d3ff070fd8ee773495b3c0281bb745b2cb51d722269cf3375470d7bde5582.ResultsRequestBuilder) {
     return i830d3ff070fd8ee773495b3c0281bb745b2cb51d722269cf3375470d7bde5582.NewResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.informationProtection.threatAssessmentRequests.item.results.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.informationProtection.threatAssessmentRequests.item.results.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ThreatAssessmentRequestRequestBuilder) ResultsById(id string)(*ic55cf4dfb7b61ba1f1a933e1461e5ca2dd101263eebcd32b51393ae518540c31.ThreatAssessmentResultRequestBuilder) {

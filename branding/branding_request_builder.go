@@ -134,7 +134,7 @@ func (m *BrandingRequestBuilder) Get(options *BrandingRequestBuilderGetOptions)(
 func (m *BrandingRequestBuilder) Localizations()(*i11606dfdbbf1d1bc678546ed98e21fe3520002d2ebc49f2e965d358c6ec48612.LocalizationsRequestBuilder) {
     return i11606dfdbbf1d1bc678546ed98e21fe3520002d2ebc49f2e965d358c6ec48612.NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.branding.localizations.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.branding.localizations.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *BrandingRequestBuilder) LocalizationsById(id string)(*i91122bc73f66085eb8e21b0f9aeadfa4ab90c1d5f4782e2d5b68f2f03fbf9409.OrganizationalBrandingLocalizationRequestBuilder) {

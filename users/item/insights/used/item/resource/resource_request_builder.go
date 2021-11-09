@@ -7,6 +7,7 @@ import (
     i09507481e6d2771384a602969a9296dd81422a9aa6cbf3792949c2330818fe27 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/used/item/resource/managedappprotection"
     i0ae9916e8f3c05c45ee170b46064159741b4d56af279d3cdeaceecb471451564 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/used/item/resource/windowsinformationprotection"
     i16d48cc90853d8bea741488599b7c134badc2d679834c0b865a98f9d00de6520 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/used/item/resource/mobileappcontentfile"
+    i20f9fc378c0b3dd78f5071ecb3d0a1caeaf079d864776908308c076a648c96c7 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/used/item/resource/caseexportoperation"
     i28f0c52b8732c8205239fd962478b9e6f1b680c90da1db40cb50abf1f792eb1f "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/used/item/resource/ref"
     i29bc9fc3241164c6d3dfa03b83c3e5a0bf3168ef35052eff3fb6c35091fd8c66 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/used/item/resource/workbookrangesort"
     i2c6aa2662728e6c096102f9113d7d1d2bdfc5dfa15816aee10a61a92677a931a "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/used/item/resource/workbookrange"
@@ -50,6 +51,9 @@ type ResourceRequestBuilderGetQueryParameters struct {
 }
 func (m *ResourceRequestBuilder) CalendarSharingMessage()(*ifadb9c06695851288d7f222b713a8b88b32e45403b46d20966111b125faacac6.CalendarSharingMessageRequestBuilder) {
     return ifadb9c06695851288d7f222b713a8b88b32e45403b46d20966111b125faacac6.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ResourceRequestBuilder) CaseExportOperation()(*i20f9fc378c0b3dd78f5071ecb3d0a1caeaf079d864776908308c076a648c96c7.CaseExportOperationRequestBuilder) {
+    return i20f9fc378c0b3dd78f5071ecb3d0a1caeaf079d864776908308c076a648c96c7.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Instantiates a new ResourceRequestBuilder and sets the default values.
 // Parameters:

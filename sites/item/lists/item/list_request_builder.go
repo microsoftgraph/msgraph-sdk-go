@@ -66,7 +66,7 @@ type ListRequestBuilderPatchOptions struct {
 func (m *ListRequestBuilder) Columns()(*iba44b7436ee578f0cdcf0bef23ebf91e573df950188cd5c09348cdb272313d22.ColumnsRequestBuilder) {
     return iba44b7436ee578f0cdcf0bef23ebf91e573df950188cd5c09348cdb272313d22.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.lists.item.columns.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.lists.item.columns.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) ColumnsById(id string)(*if9bcea652e382c241c7fa4514e528bbc37f0207bc686524780f29a74dd5ca836.ColumnDefinitionRequestBuilder) {
@@ -107,7 +107,7 @@ func NewListRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
 func (m *ListRequestBuilder) ContentTypes()(*ibc5e8f990dad4f95b8b4bd579dded9ea1e8c076148f1d4cfb4f1744ebe20ab8d.ContentTypesRequestBuilder) {
     return ibc5e8f990dad4f95b8b4bd579dded9ea1e8c076148f1d4cfb4f1744ebe20ab8d.NewContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.lists.item.contentTypes.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.lists.item.contentTypes.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) ContentTypesById(id string)(*i6c9dcd133fd23d5a310dbad4862c8aaa2a6609247eff036993808a9040099f13.ContentTypeRequestBuilder) {
@@ -218,7 +218,7 @@ func (m *ListRequestBuilder) Get(options *ListRequestBuilderGetOptions)(*i4a838e
 func (m *ListRequestBuilder) Items()(*ie75397ed565a327126aae5b8e7b19c6bc3de18a156dba53f2b72b89e0a7e00b1.ItemsRequestBuilder) {
     return ie75397ed565a327126aae5b8e7b19c6bc3de18a156dba53f2b72b89e0a7e00b1.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.lists.item.items.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.lists.item.items.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) ItemsById(id string)(*i2d9cdb676c9c26e70e774261d0a85daad5586103454cee0b289bf9656e13ffc9.ListItemRequestBuilder) {
@@ -248,7 +248,7 @@ func (m *ListRequestBuilder) Patch(options *ListRequestBuilderPatchOptions)(erro
 func (m *ListRequestBuilder) Subscriptions()(*ib0bb6c285d2b89517632b84321fc9413604706b96beb6806a4afeeb55142414b.SubscriptionsRequestBuilder) {
     return ib0bb6c285d2b89517632b84321fc9413604706b96beb6806a4afeeb55142414b.NewSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go.sites.item.lists.item.subscriptions.item collection
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.lists.item.subscriptions.item collection
 // Parameters:
 //  - id : Unique identifier of the item
 func (m *ListRequestBuilder) SubscriptionsById(id string)(*i9013361a5eaf684747310250468b31adbabe01728c088561aa2e8074c10fa175.SubscriptionRequestBuilder) {
