@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Fixes #14 a misalignement with telemetry specification
+
 ## [0.1.1] - 2021-11-09
 
 ### Changed

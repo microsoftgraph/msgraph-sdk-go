@@ -9,7 +9,7 @@ import (
 )
 
 var clientOptions = core.GraphClientOptions{
-	GraphServiceVersion:        "v1.0",
+	GraphServiceVersion:        "", //v1 doesn't include the service version in the telemetry header
 	GraphServiceLibraryVersion: "0.1.1",
 }
 
