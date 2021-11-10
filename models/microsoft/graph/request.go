@@ -84,7 +84,9 @@ func (m *Request) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetApprovalId(val)
+        if val != nil {
+            m.SetApprovalId(val)
+        }
         return nil
     }
     res["completedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +94,9 @@ func (m *Request) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetCompletedDateTime(val)
+        if val != nil {
+            m.SetCompletedDateTime(val)
+        }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +104,9 @@ func (m *Request) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetCreatedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +114,9 @@ func (m *Request) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["customData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +124,9 @@ func (m *Request) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetCustomData(val)
+        if val != nil {
+            m.SetCustomData(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +134,9 @@ func (m *Request) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     return res

@@ -52,7 +52,9 @@ func (m *AssignUserToDeviceRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetAddressableUserName(val)
+        if val != nil {
+            m.SetAddressableUserName(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *AssignUserToDeviceRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

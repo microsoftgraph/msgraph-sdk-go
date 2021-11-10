@@ -242,7 +242,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAverageInboundJitter(val)
+        if val != nil {
+            m.SetAverageInboundJitter(val)
+        }
         return nil
     }
     res["averageInboundPacketLossRateInPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -250,7 +252,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAverageInboundPacketLossRateInPercentage(val)
+        if val != nil {
+            m.SetAverageInboundPacketLossRateInPercentage(val)
+        }
         return nil
     }
     res["averageInboundRoundTripDelay"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -258,7 +262,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAverageInboundRoundTripDelay(val)
+        if val != nil {
+            m.SetAverageInboundRoundTripDelay(val)
+        }
         return nil
     }
     res["averageOutboundJitter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -266,7 +272,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAverageOutboundJitter(val)
+        if val != nil {
+            m.SetAverageOutboundJitter(val)
+        }
         return nil
     }
     res["averageOutboundPacketLossRateInPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -274,7 +282,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAverageOutboundPacketLossRateInPercentage(val)
+        if val != nil {
+            m.SetAverageOutboundPacketLossRateInPercentage(val)
+        }
         return nil
     }
     res["averageOutboundRoundTripDelay"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -282,7 +292,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAverageOutboundRoundTripDelay(val)
+        if val != nil {
+            m.SetAverageOutboundRoundTripDelay(val)
+        }
         return nil
     }
     res["channelIndex"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -290,7 +302,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetChannelIndex(val)
+        if val != nil {
+            m.SetChannelIndex(val)
+        }
         return nil
     }
     res["inboundPackets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -298,7 +312,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetInboundPackets(val)
+        if val != nil {
+            m.SetInboundPackets(val)
+        }
         return nil
     }
     res["localIPAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -306,7 +322,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetLocalIPAddress(val)
+        if val != nil {
+            m.SetLocalIPAddress(val)
+        }
         return nil
     }
     res["localPort"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -314,7 +332,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetLocalPort(val)
+        if val != nil {
+            m.SetLocalPort(val)
+        }
         return nil
     }
     res["maximumInboundJitter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -322,7 +342,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetMaximumInboundJitter(val)
+        if val != nil {
+            m.SetMaximumInboundJitter(val)
+        }
         return nil
     }
     res["maximumInboundPacketLossRateInPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -330,7 +352,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetMaximumInboundPacketLossRateInPercentage(val)
+        if val != nil {
+            m.SetMaximumInboundPacketLossRateInPercentage(val)
+        }
         return nil
     }
     res["maximumInboundRoundTripDelay"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -338,7 +362,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetMaximumInboundRoundTripDelay(val)
+        if val != nil {
+            m.SetMaximumInboundRoundTripDelay(val)
+        }
         return nil
     }
     res["maximumOutboundJitter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -346,7 +372,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetMaximumOutboundJitter(val)
+        if val != nil {
+            m.SetMaximumOutboundJitter(val)
+        }
         return nil
     }
     res["maximumOutboundPacketLossRateInPercentage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -354,7 +382,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetMaximumOutboundPacketLossRateInPercentage(val)
+        if val != nil {
+            m.SetMaximumOutboundPacketLossRateInPercentage(val)
+        }
         return nil
     }
     res["maximumOutboundRoundTripDelay"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -362,7 +392,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetMaximumOutboundRoundTripDelay(val)
+        if val != nil {
+            m.SetMaximumOutboundRoundTripDelay(val)
+        }
         return nil
     }
     res["mediaDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -370,7 +402,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetMediaDuration(val)
+        if val != nil {
+            m.SetMediaDuration(val)
+        }
         return nil
     }
     res["networkLinkSpeedInBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -378,7 +412,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetNetworkLinkSpeedInBytes(val)
+        if val != nil {
+            m.SetNetworkLinkSpeedInBytes(val)
+        }
         return nil
     }
     res["outboundPackets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -386,7 +422,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetOutboundPackets(val)
+        if val != nil {
+            m.SetOutboundPackets(val)
+        }
         return nil
     }
     res["remoteIPAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -394,7 +432,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetRemoteIPAddress(val)
+        if val != nil {
+            m.SetRemoteIPAddress(val)
+        }
         return nil
     }
     res["remotePort"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -402,7 +442,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetRemotePort(val)
+        if val != nil {
+            m.SetRemotePort(val)
+        }
         return nil
     }
     return res

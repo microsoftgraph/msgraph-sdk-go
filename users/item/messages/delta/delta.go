@@ -325,11 +325,13 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment))
+        if val != nil {
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment))
+            }
+            m.SetAttachments(res)
         }
-        m.SetAttachments(res)
         return nil
     }
     res["bccRecipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -337,11 +339,13 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+        if val != nil {
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+            }
+            m.SetBccRecipients(res)
         }
-        m.SetBccRecipients(res)
         return nil
     }
     res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -349,7 +353,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetBody(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBody))
+        if val != nil {
+            m.SetBody(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBody))
+        }
         return nil
     }
     res["bodyPreview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -357,7 +363,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetBodyPreview(val)
+        if val != nil {
+            m.SetBodyPreview(val)
+        }
         return nil
     }
     res["ccRecipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -365,11 +373,13 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+        if val != nil {
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+            }
+            m.SetCcRecipients(res)
         }
-        m.SetCcRecipients(res)
         return nil
     }
     res["conversationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -377,7 +387,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetConversationId(val)
+        if val != nil {
+            m.SetConversationId(val)
+        }
         return nil
     }
     res["conversationIndex"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -385,7 +397,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetConversationIndex(val)
+        if val != nil {
+            m.SetConversationIndex(val)
+        }
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -393,11 +407,13 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension))
+        if val != nil {
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension))
+            }
+            m.SetExtensions(res)
         }
-        m.SetExtensions(res)
         return nil
     }
     res["flag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -405,7 +421,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetFlag(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FollowupFlag))
+        if val != nil {
+            m.SetFlag(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FollowupFlag))
+        }
         return nil
     }
     res["from"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -413,7 +431,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetFrom(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+        if val != nil {
+            m.SetFrom(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+        }
         return nil
     }
     res["hasAttachments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -421,7 +441,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetHasAttachments(val)
+        if val != nil {
+            m.SetHasAttachments(val)
+        }
         return nil
     }
     res["importance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -429,8 +451,10 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Importance)
-        m.SetImportance(&cast)
+        if val != nil {
+            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Importance)
+            m.SetImportance(&cast)
+        }
         return nil
     }
     res["inferenceClassification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -438,8 +462,10 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InferenceClassificationType)
-        m.SetInferenceClassification(&cast)
+        if val != nil {
+            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InferenceClassificationType)
+            m.SetInferenceClassification(&cast)
+        }
         return nil
     }
     res["internetMessageHeaders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -447,11 +473,13 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InternetMessageHeader, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InternetMessageHeader))
+        if val != nil {
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InternetMessageHeader, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InternetMessageHeader))
+            }
+            m.SetInternetMessageHeaders(res)
         }
-        m.SetInternetMessageHeaders(res)
         return nil
     }
     res["internetMessageId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -459,7 +487,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetInternetMessageId(val)
+        if val != nil {
+            m.SetInternetMessageId(val)
+        }
         return nil
     }
     res["isDeliveryReceiptRequested"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -467,7 +497,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIsDeliveryReceiptRequested(val)
+        if val != nil {
+            m.SetIsDeliveryReceiptRequested(val)
+        }
         return nil
     }
     res["isDraft"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -475,7 +507,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIsDraft(val)
+        if val != nil {
+            m.SetIsDraft(val)
+        }
         return nil
     }
     res["isRead"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -483,7 +517,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIsRead(val)
+        if val != nil {
+            m.SetIsRead(val)
+        }
         return nil
     }
     res["isReadReceiptRequested"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -491,7 +527,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIsReadReceiptRequested(val)
+        if val != nil {
+            m.SetIsReadReceiptRequested(val)
+        }
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -499,11 +537,13 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty))
+            }
+            m.SetMultiValueExtendedProperties(res)
         }
-        m.SetMultiValueExtendedProperties(res)
         return nil
     }
     res["parentFolderId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -511,7 +551,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetParentFolderId(val)
+        if val != nil {
+            m.SetParentFolderId(val)
+        }
         return nil
     }
     res["receivedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -519,7 +561,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetReceivedDateTime(val)
+        if val != nil {
+            m.SetReceivedDateTime(val)
+        }
         return nil
     }
     res["replyTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -527,11 +571,13 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+        if val != nil {
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+            }
+            m.SetReplyTo(res)
         }
-        m.SetReplyTo(res)
         return nil
     }
     res["sender"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -539,7 +585,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetSender(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+        if val != nil {
+            m.SetSender(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+        }
         return nil
     }
     res["sentDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -547,7 +595,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetSentDateTime(val)
+        if val != nil {
+            m.SetSentDateTime(val)
+        }
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -555,11 +605,13 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty))
+            }
+            m.SetSingleValueExtendedProperties(res)
         }
-        m.SetSingleValueExtendedProperties(res)
         return nil
     }
     res["subject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -567,7 +619,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetSubject(val)
+        if val != nil {
+            m.SetSubject(val)
+        }
         return nil
     }
     res["toRecipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -575,11 +629,13 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+        if val != nil {
+            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient))
+            }
+            m.SetToRecipients(res)
         }
-        m.SetToRecipients(res)
         return nil
     }
     res["uniqueBody"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -587,7 +643,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetUniqueBody(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBody))
+        if val != nil {
+            m.SetUniqueBody(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBody))
+        }
         return nil
     }
     res["webLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -595,7 +653,9 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetWebLink(val)
+        if val != nil {
+            m.SetWebLink(val)
+        }
         return nil
     }
     return res

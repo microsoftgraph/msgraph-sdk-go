@@ -102,7 +102,9 @@ func (m *SharepointIds) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetListId(val)
+        if val != nil {
+            m.SetListId(val)
+        }
         return nil
     }
     res["listItemId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +112,9 @@ func (m *SharepointIds) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetListItemId(val)
+        if val != nil {
+            m.SetListItemId(val)
+        }
         return nil
     }
     res["listItemUniqueId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +122,9 @@ func (m *SharepointIds) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetListItemUniqueId(val)
+        if val != nil {
+            m.SetListItemUniqueId(val)
+        }
         return nil
     }
     res["siteId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +132,9 @@ func (m *SharepointIds) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSiteId(val)
+        if val != nil {
+            m.SetSiteId(val)
+        }
         return nil
     }
     res["siteUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +142,9 @@ func (m *SharepointIds) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSiteUrl(val)
+        if val != nil {
+            m.SetSiteUrl(val)
+        }
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +152,9 @@ func (m *SharepointIds) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     res["webId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +162,9 @@ func (m *SharepointIds) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetWebId(val)
+        if val != nil {
+            m.SetWebId(val)
+        }
         return nil
     }
     return res

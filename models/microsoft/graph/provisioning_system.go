@@ -33,7 +33,9 @@ func (m *ProvisioningSystem) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDetails(val.(*DetailsInfo))
+        if val != nil {
+            m.SetDetails(val.(*DetailsInfo))
+        }
         return nil
     }
     return res

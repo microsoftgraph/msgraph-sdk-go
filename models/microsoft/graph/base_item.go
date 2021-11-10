@@ -134,7 +134,9 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetCreatedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["createdByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +144,9 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCreatedByUser(val.(*User))
+        if val != nil {
+            m.SetCreatedByUser(val.(*User))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +154,9 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +164,9 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["eTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +174,9 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetETag(val)
+        if val != nil {
+            m.SetETag(val)
+        }
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +184,9 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLastModifiedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetLastModifiedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["lastModifiedByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +194,9 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLastModifiedByUser(val.(*User))
+        if val != nil {
+            m.SetLastModifiedByUser(val.(*User))
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +204,9 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +214,9 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["parentReference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +224,9 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetParentReference(val.(*ItemReference))
+        if val != nil {
+            m.SetParentReference(val.(*ItemReference))
+        }
         return nil
     }
     res["webUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +234,9 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetWebUrl(val)
+        if val != nil {
+            m.SetWebUrl(val)
+        }
         return nil
     }
     return res

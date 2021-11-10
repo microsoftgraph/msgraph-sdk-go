@@ -53,7 +53,9 @@ func (m *WorkbookOperation) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetError(val.(*WorkbookOperationError))
+        if val != nil {
+            m.SetError(val.(*WorkbookOperationError))
+        }
         return nil
     }
     res["resourceLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *WorkbookOperation) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetResourceLocation(val)
+        if val != nil {
+            m.SetResourceLocation(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,8 +73,10 @@ func (m *WorkbookOperation) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(WorkbookOperationStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(WorkbookOperationStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

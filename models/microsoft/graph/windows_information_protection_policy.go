@@ -143,7 +143,9 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetDaysWithoutContactBeforeUnenroll(val)
+        if val != nil {
+            m.SetDaysWithoutContactBeforeUnenroll(val)
+        }
         return nil
     }
     res["mdmEnrollmentUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +153,9 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetMdmEnrollmentUrl(val)
+        if val != nil {
+            m.SetMdmEnrollmentUrl(val)
+        }
         return nil
     }
     res["minutesOfInactivityBeforeDeviceLock"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +163,9 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetMinutesOfInactivityBeforeDeviceLock(val)
+        if val != nil {
+            m.SetMinutesOfInactivityBeforeDeviceLock(val)
+        }
         return nil
     }
     res["numberOfPastPinsRemembered"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,7 +173,9 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetNumberOfPastPinsRemembered(val)
+        if val != nil {
+            m.SetNumberOfPastPinsRemembered(val)
+        }
         return nil
     }
     res["passwordMaximumAttemptCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +183,9 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetPasswordMaximumAttemptCount(val)
+        if val != nil {
+            m.SetPasswordMaximumAttemptCount(val)
+        }
         return nil
     }
     res["pinExpirationDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +193,9 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetPinExpirationDays(val)
+        if val != nil {
+            m.SetPinExpirationDays(val)
+        }
         return nil
     }
     res["pinLowercaseLetters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,8 +203,10 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        cast := val.(WindowsInformationProtectionPinCharacterRequirements)
-        m.SetPinLowercaseLetters(&cast)
+        if val != nil {
+            cast := val.(WindowsInformationProtectionPinCharacterRequirements)
+            m.SetPinLowercaseLetters(&cast)
+        }
         return nil
     }
     res["pinMinimumLength"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +214,9 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetPinMinimumLength(val)
+        if val != nil {
+            m.SetPinMinimumLength(val)
+        }
         return nil
     }
     res["pinSpecialCharacters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,8 +224,10 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        cast := val.(WindowsInformationProtectionPinCharacterRequirements)
-        m.SetPinSpecialCharacters(&cast)
+        if val != nil {
+            cast := val.(WindowsInformationProtectionPinCharacterRequirements)
+            m.SetPinSpecialCharacters(&cast)
+        }
         return nil
     }
     res["pinUppercaseLetters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -217,8 +235,10 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        cast := val.(WindowsInformationProtectionPinCharacterRequirements)
-        m.SetPinUppercaseLetters(&cast)
+        if val != nil {
+            cast := val.(WindowsInformationProtectionPinCharacterRequirements)
+            m.SetPinUppercaseLetters(&cast)
+        }
         return nil
     }
     res["revokeOnMdmHandoffDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +246,9 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetRevokeOnMdmHandoffDisabled(val)
+        if val != nil {
+            m.SetRevokeOnMdmHandoffDisabled(val)
+        }
         return nil
     }
     res["windowsHelloForBusinessBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,7 +256,9 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetWindowsHelloForBusinessBlocked(val)
+        if val != nil {
+            m.SetWindowsHelloForBusinessBlocked(val)
+        }
         return nil
     }
     return res

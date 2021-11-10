@@ -62,7 +62,9 @@ func (m *ListInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetContentTypesEnabled(val)
+        if val != nil {
+            m.SetContentTypesEnabled(val)
+        }
         return nil
     }
     res["hidden"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *ListInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetHidden(val)
+        if val != nil {
+            m.SetHidden(val)
+        }
         return nil
     }
     res["template"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *ListInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetTemplate(val)
+        if val != nil {
+            m.SetTemplate(val)
+        }
         return nil
     }
     return res

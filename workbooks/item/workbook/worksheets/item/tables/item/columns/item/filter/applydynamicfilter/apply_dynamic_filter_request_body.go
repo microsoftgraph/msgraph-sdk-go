@@ -42,7 +42,9 @@ func (m *ApplyDynamicFilterRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetCriteria(val)
+        if val != nil {
+            m.SetCriteria(val)
+        }
         return nil
     }
     return res

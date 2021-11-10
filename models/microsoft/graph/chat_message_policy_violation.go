@@ -82,8 +82,10 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(ChatMessagePolicyViolationDlpActionTypes)
-        m.SetDlpAction(&cast)
+        if val != nil {
+            cast := val.(ChatMessagePolicyViolationDlpActionTypes)
+            m.SetDlpAction(&cast)
+        }
         return nil
     }
     res["justificationText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetJustificationText(val)
+        if val != nil {
+            m.SetJustificationText(val)
+        }
         return nil
     }
     res["policyTip"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetPolicyTip(val.(*ChatMessagePolicyViolationPolicyTip))
+        if val != nil {
+            m.SetPolicyTip(val.(*ChatMessagePolicyViolationPolicyTip))
+        }
         return nil
     }
     res["userAction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,8 +113,10 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(ChatMessagePolicyViolationUserActionTypes)
-        m.SetUserAction(&cast)
+        if val != nil {
+            cast := val.(ChatMessagePolicyViolationUserActionTypes)
+            m.SetUserAction(&cast)
+        }
         return nil
     }
     res["verdictDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,8 +124,10 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(ChatMessagePolicyViolationVerdictDetailsTypes)
-        m.SetVerdictDetails(&cast)
+        if val != nil {
+            cast := val.(ChatMessagePolicyViolationVerdictDetailsTypes)
+            m.SetVerdictDetails(&cast)
+        }
         return nil
     }
     return res

@@ -132,8 +132,10 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(RegistryHive)
-        m.SetHive(&cast)
+        if val != nil {
+            cast := val.(RegistryHive)
+            m.SetHive(&cast)
+        }
         return nil
     }
     res["key"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +143,9 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetKey(val)
+        if val != nil {
+            m.SetKey(val)
+        }
         return nil
     }
     res["oldKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +153,9 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetOldKey(val)
+        if val != nil {
+            m.SetOldKey(val)
+        }
         return nil
     }
     res["oldValueData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +163,9 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetOldValueData(val)
+        if val != nil {
+            m.SetOldValueData(val)
+        }
         return nil
     }
     res["oldValueName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +173,9 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetOldValueName(val)
+        if val != nil {
+            m.SetOldValueName(val)
+        }
         return nil
     }
     res["operation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,8 +183,10 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(RegistryOperation)
-        m.SetOperation(&cast)
+        if val != nil {
+            cast := val.(RegistryOperation)
+            m.SetOperation(&cast)
+        }
         return nil
     }
     res["processId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +194,9 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetProcessId(val)
+        if val != nil {
+            m.SetProcessId(val)
+        }
         return nil
     }
     res["valueData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +204,9 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetValueData(val)
+        if val != nil {
+            m.SetValueData(val)
+        }
         return nil
     }
     res["valueName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +214,9 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetValueName(val)
+        if val != nil {
+            m.SetValueName(val)
+        }
         return nil
     }
     res["valueType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,8 +224,10 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(RegistryValueType)
-        m.SetValueType(&cast)
+        if val != nil {
+            cast := val.(RegistryValueType)
+            m.SetValueType(&cast)
+        }
         return nil
     }
     return res

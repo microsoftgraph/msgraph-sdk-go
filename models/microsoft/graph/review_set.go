@@ -64,7 +64,9 @@ func (m *ReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetCreatedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *ReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *ReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["queries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,11 +94,13 @@ func (m *ReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]ReviewSetQuery, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ReviewSetQuery))
+        if val != nil {
+            res := make([]ReviewSetQuery, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ReviewSetQuery))
+            }
+            m.SetQueries(res)
         }
-        m.SetQueries(res)
         return nil
     }
     return res

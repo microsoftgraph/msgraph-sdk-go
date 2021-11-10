@@ -242,7 +242,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetCaptureDeviceDriver(val)
+        if val != nil {
+            m.SetCaptureDeviceDriver(val)
+        }
         return nil
     }
     res["captureDeviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -250,7 +252,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetCaptureDeviceName(val)
+        if val != nil {
+            m.SetCaptureDeviceName(val)
+        }
         return nil
     }
     res["captureNotFunctioningEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -258,7 +262,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetCaptureNotFunctioningEventRatio(val)
+        if val != nil {
+            m.SetCaptureNotFunctioningEventRatio(val)
+        }
         return nil
     }
     res["cpuInsufficentEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -266,7 +272,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetCpuInsufficentEventRatio(val)
+        if val != nil {
+            m.SetCpuInsufficentEventRatio(val)
+        }
         return nil
     }
     res["deviceClippingEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -274,7 +282,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetDeviceClippingEventRatio(val)
+        if val != nil {
+            m.SetDeviceClippingEventRatio(val)
+        }
         return nil
     }
     res["deviceGlitchEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -282,7 +292,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetDeviceGlitchEventRatio(val)
+        if val != nil {
+            m.SetDeviceGlitchEventRatio(val)
+        }
         return nil
     }
     res["howlingEventCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -290,7 +302,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetHowlingEventCount(val)
+        if val != nil {
+            m.SetHowlingEventCount(val)
+        }
         return nil
     }
     res["initialSignalLevelRootMeanSquare"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -298,7 +312,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetInitialSignalLevelRootMeanSquare(val)
+        if val != nil {
+            m.SetInitialSignalLevelRootMeanSquare(val)
+        }
         return nil
     }
     res["lowSpeechLevelEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -306,7 +322,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetLowSpeechLevelEventRatio(val)
+        if val != nil {
+            m.SetLowSpeechLevelEventRatio(val)
+        }
         return nil
     }
     res["lowSpeechToNoiseEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -314,7 +332,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetLowSpeechToNoiseEventRatio(val)
+        if val != nil {
+            m.SetLowSpeechToNoiseEventRatio(val)
+        }
         return nil
     }
     res["micGlitchRate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -322,7 +342,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetMicGlitchRate(val)
+        if val != nil {
+            m.SetMicGlitchRate(val)
+        }
         return nil
     }
     res["receivedNoiseLevel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -330,7 +352,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetReceivedNoiseLevel(val)
+        if val != nil {
+            m.SetReceivedNoiseLevel(val)
+        }
         return nil
     }
     res["receivedSignalLevel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -338,7 +362,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetReceivedSignalLevel(val)
+        if val != nil {
+            m.SetReceivedSignalLevel(val)
+        }
         return nil
     }
     res["renderDeviceDriver"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -346,7 +372,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetRenderDeviceDriver(val)
+        if val != nil {
+            m.SetRenderDeviceDriver(val)
+        }
         return nil
     }
     res["renderDeviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -354,7 +382,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetRenderDeviceName(val)
+        if val != nil {
+            m.SetRenderDeviceName(val)
+        }
         return nil
     }
     res["renderMuteEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -362,7 +392,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetRenderMuteEventRatio(val)
+        if val != nil {
+            m.SetRenderMuteEventRatio(val)
+        }
         return nil
     }
     res["renderNotFunctioningEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -370,7 +402,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetRenderNotFunctioningEventRatio(val)
+        if val != nil {
+            m.SetRenderNotFunctioningEventRatio(val)
+        }
         return nil
     }
     res["renderZeroVolumeEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -378,7 +412,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetRenderZeroVolumeEventRatio(val)
+        if val != nil {
+            m.SetRenderZeroVolumeEventRatio(val)
+        }
         return nil
     }
     res["sentNoiseLevel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -386,7 +422,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetSentNoiseLevel(val)
+        if val != nil {
+            m.SetSentNoiseLevel(val)
+        }
         return nil
     }
     res["sentSignalLevel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -394,7 +432,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetSentSignalLevel(val)
+        if val != nil {
+            m.SetSentSignalLevel(val)
+        }
         return nil
     }
     res["speakerGlitchRate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -402,7 +442,9 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetSpeakerGlitchRate(val)
+        if val != nil {
+            m.SetSpeakerGlitchRate(val)
+        }
         return nil
     }
     return res

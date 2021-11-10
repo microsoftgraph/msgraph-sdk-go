@@ -155,11 +155,13 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]DataSource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DataSource))
+        if val != nil {
+            res := make([]DataSource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DataSource))
+            }
+            m.SetAdditionalSources(res)
         }
-        m.SetAdditionalSources(res)
         return nil
     }
     res["addToReviewSetOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,7 +169,9 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAddToReviewSetOperation(val.(*AddToReviewSetOperation))
+        if val != nil {
+            m.SetAddToReviewSetOperation(val.(*AddToReviewSetOperation))
+        }
         return nil
     }
     res["contentQuery"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +179,9 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetContentQuery(val)
+        if val != nil {
+            m.SetContentQuery(val)
+        }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,7 +189,9 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetCreatedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +199,9 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["custodianSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,11 +209,13 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]DataSource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DataSource))
+        if val != nil {
+            res := make([]DataSource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DataSource))
+            }
+            m.SetCustodianSources(res)
         }
-        m.SetCustodianSources(res)
         return nil
     }
     res["dataSourceScopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -211,8 +223,10 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(i2f6e0000f37d36d482a1a2be3e8024654d1a2bafb61d18de02f698fc19f7d94d.DataSourceScopes)
-        m.SetDataSourceScopes(&cast)
+        if val != nil {
+            cast := val.(i2f6e0000f37d36d482a1a2be3e8024654d1a2bafb61d18de02f698fc19f7d94d.DataSourceScopes)
+            m.SetDataSourceScopes(&cast)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -220,7 +234,9 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,7 +244,9 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastEstimateStatisticsOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,7 +254,9 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetLastEstimateStatisticsOperation(val.(*EstimateStatisticsOperation))
+        if val != nil {
+            m.SetLastEstimateStatisticsOperation(val.(*EstimateStatisticsOperation))
+        }
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,7 +264,9 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetLastModifiedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetLastModifiedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -252,7 +274,9 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["noncustodialSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -260,11 +284,13 @@ func (m *SourceCollection) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]NoncustodialDataSource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*NoncustodialDataSource))
+        if val != nil {
+            res := make([]NoncustodialDataSource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*NoncustodialDataSource))
+            }
+            m.SetNoncustodialSources(res)
         }
-        m.SetNoncustodialSources(res)
         return nil
     }
     return res

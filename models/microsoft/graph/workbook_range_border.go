@@ -63,7 +63,9 @@ func (m *WorkbookRangeBorder) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetColor(val)
+        if val != nil {
+            m.SetColor(val)
+        }
         return nil
     }
     res["sideIndex"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *WorkbookRangeBorder) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetSideIndex(val)
+        if val != nil {
+            m.SetSideIndex(val)
+        }
         return nil
     }
     res["style"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *WorkbookRangeBorder) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetStyle(val)
+        if val != nil {
+            m.SetStyle(val)
+        }
         return nil
     }
     res["weight"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *WorkbookRangeBorder) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetWeight(val)
+        if val != nil {
+            m.SetWeight(val)
+        }
         return nil
     }
     return res

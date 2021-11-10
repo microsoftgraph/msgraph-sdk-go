@@ -72,7 +72,9 @@ func (m *RubricLevel) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDescription(val.(*EducationItemBody))
+        if val != nil {
+            m.SetDescription(val.(*EducationItemBody))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *RubricLevel) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["grading"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *RubricLevel) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetGrading(val.(*EducationAssignmentGradeType))
+        if val != nil {
+            m.SetGrading(val.(*EducationAssignmentGradeType))
+        }
         return nil
     }
     res["levelId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *RubricLevel) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLevelId(val)
+        if val != nil {
+            m.SetLevelId(val)
+        }
         return nil
     }
     return res

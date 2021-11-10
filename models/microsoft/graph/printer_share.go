@@ -74,7 +74,9 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetAllowAllUsers(val)
+        if val != nil {
+            m.SetAllowAllUsers(val)
+        }
         return nil
     }
     res["allowedGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,11 +84,13 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]Group, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Group))
+        if val != nil {
+            res := make([]Group, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Group))
+            }
+            m.SetAllowedGroups(res)
         }
-        m.SetAllowedGroups(res)
         return nil
     }
     res["allowedUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,11 +98,13 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]User, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*User))
+        if val != nil {
+            res := make([]User, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*User))
+            }
+            m.SetAllowedUsers(res)
         }
-        m.SetAllowedUsers(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["printer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetPrinter(val.(*Printer))
+        if val != nil {
+            m.SetPrinter(val.(*Printer))
+        }
         return nil
     }
     return res

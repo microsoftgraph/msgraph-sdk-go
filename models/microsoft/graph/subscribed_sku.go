@@ -93,7 +93,9 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetAppliesTo(val)
+        if val != nil {
+            m.SetAppliesTo(val)
+        }
         return nil
     }
     res["capabilityStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetCapabilityStatus(val)
+        if val != nil {
+            m.SetCapabilityStatus(val)
+        }
         return nil
     }
     res["consumedUnits"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetConsumedUnits(val)
+        if val != nil {
+            m.SetConsumedUnits(val)
+        }
         return nil
     }
     res["prepaidUnits"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +123,9 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetPrepaidUnits(val.(*LicenseUnitsDetail))
+        if val != nil {
+            m.SetPrepaidUnits(val.(*LicenseUnitsDetail))
+        }
         return nil
     }
     res["servicePlans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,11 +133,13 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ServicePlanInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ServicePlanInfo))
+        if val != nil {
+            res := make([]ServicePlanInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ServicePlanInfo))
+            }
+            m.SetServicePlans(res)
         }
-        m.SetServicePlans(res)
         return nil
     }
     res["skuId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,7 +147,9 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSkuId(val)
+        if val != nil {
+            m.SetSkuId(val)
+        }
         return nil
     }
     res["skuPartNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,7 +157,9 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSkuPartNumber(val)
+        if val != nil {
+            m.SetSkuPartNumber(val)
+        }
         return nil
     }
     return res

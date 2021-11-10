@@ -43,7 +43,9 @@ func (m *ApplyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetCriteria(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFilterCriteria))
+        if val != nil {
+            m.SetCriteria(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFilterCriteria))
+        }
         return nil
     }
     return res

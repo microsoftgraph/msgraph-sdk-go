@@ -62,7 +62,9 @@ func (m *ServiceUpdateMessageViewpoint) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetIsArchived(val)
+        if val != nil {
+            m.SetIsArchived(val)
+        }
         return nil
     }
     res["isFavorited"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *ServiceUpdateMessageViewpoint) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetIsFavorited(val)
+        if val != nil {
+            m.SetIsFavorited(val)
+        }
         return nil
     }
     res["isRead"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *ServiceUpdateMessageViewpoint) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetIsRead(val)
+        if val != nil {
+            m.SetIsRead(val)
+        }
         return nil
     }
     return res

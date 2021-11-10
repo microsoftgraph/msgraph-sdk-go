@@ -63,8 +63,10 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         if err != nil {
             return err
         }
-        cast := val.(i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.AccessType)
-        m.SetAccessType(&cast)
+        if val != nil {
+            cast := val.(i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.AccessType)
+            m.SetAccessType(&cast)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,8 +74,10 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         if err != nil {
             return err
         }
-        cast := val.(i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.AclType)
-        m.SetType_escaped(&cast)
+        if val != nil {
+            cast := val.(i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.AclType)
+            m.SetType_escaped(&cast)
+        }
         return nil
     }
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +85,9 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaa
         if err != nil {
             return err
         }
-        m.SetValue(val)
+        if val != nil {
+            m.SetValue(val)
+        }
         return nil
     }
     return res

@@ -43,7 +43,9 @@ func (m *PrintServiceEndpoint) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["uri"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *PrintServiceEndpoint) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetUri(val)
+        if val != nil {
+            m.SetUri(val)
+        }
         return nil
     }
     return res

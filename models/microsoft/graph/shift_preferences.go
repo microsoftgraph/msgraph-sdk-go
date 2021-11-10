@@ -33,11 +33,13 @@ func (m *ShiftPreferences) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]ShiftAvailability, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ShiftAvailability))
+        if val != nil {
+            res := make([]ShiftAvailability, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ShiftAvailability))
+            }
+            m.SetAvailability(res)
         }
-        m.SetAvailability(res)
         return nil
     }
     return res

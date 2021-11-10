@@ -83,7 +83,9 @@ func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetBold(val)
+        if val != nil {
+            m.SetBold(val)
+        }
         return nil
     }
     res["color"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetColor(val)
+        if val != nil {
+            m.SetColor(val)
+        }
         return nil
     }
     res["italic"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetItalic(val)
+        if val != nil {
+            m.SetItalic(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSize(val)
+        if val != nil {
+            m.SetSize(val)
+        }
         return nil
     }
     res["underline"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +133,9 @@ func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetUnderline(val)
+        if val != nil {
+            m.SetUnderline(val)
+        }
         return nil
     }
     return res

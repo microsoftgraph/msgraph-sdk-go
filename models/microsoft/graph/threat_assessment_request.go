@@ -104,8 +104,10 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(ThreatCategory)
-        m.SetCategory(&cast)
+        if val != nil {
+            cast := val.(ThreatCategory)
+            m.SetCategory(&cast)
+        }
         return nil
     }
     res["contentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,8 +115,10 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(ThreatAssessmentContentType)
-        m.SetContentType(&cast)
+        if val != nil {
+            cast := val.(ThreatAssessmentContentType)
+            m.SetContentType(&cast)
+        }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +126,9 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetCreatedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +136,9 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["expectedAssessment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,8 +146,10 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(ThreatExpectedAssessment)
-        m.SetExpectedAssessment(&cast)
+        if val != nil {
+            cast := val.(ThreatExpectedAssessment)
+            m.SetExpectedAssessment(&cast)
+        }
         return nil
     }
     res["requestSource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,8 +157,10 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(ThreatAssessmentRequestSource)
-        m.SetRequestSource(&cast)
+        if val != nil {
+            cast := val.(ThreatAssessmentRequestSource)
+            m.SetRequestSource(&cast)
+        }
         return nil
     }
     res["results"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,11 +168,13 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]ThreatAssessmentResult, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ThreatAssessmentResult))
+        if val != nil {
+            res := make([]ThreatAssessmentResult, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ThreatAssessmentResult))
+            }
+            m.SetResults(res)
         }
-        m.SetResults(res)
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,8 +182,10 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(ThreatAssessmentStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(ThreatAssessmentStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

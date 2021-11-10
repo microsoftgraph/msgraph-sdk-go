@@ -44,7 +44,9 @@ func (m *PrintOperation) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,7 +54,9 @@ func (m *PrintOperation) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetStatus(val.(*PrintOperationStatus))
+        if val != nil {
+            m.SetStatus(val.(*PrintOperationStatus))
+        }
         return nil
     }
     return res

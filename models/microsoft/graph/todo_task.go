@@ -164,7 +164,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetBody(val.(*ItemBody))
+        if val != nil {
+            m.SetBody(val.(*ItemBody))
+        }
         return nil
     }
     res["bodyLastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +174,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetBodyLastModifiedDateTime(val)
+        if val != nil {
+            m.SetBodyLastModifiedDateTime(val)
+        }
         return nil
     }
     res["completedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +184,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCompletedDateTime(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetCompletedDateTime(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,7 +194,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["dueDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -196,7 +204,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetDueDateTime(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetDueDateTime(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,11 +214,13 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]Extension, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Extension))
+        if val != nil {
+            res := make([]Extension, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Extension))
+            }
+            m.SetExtensions(res)
         }
-        m.SetExtensions(res)
         return nil
     }
     res["importance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,8 +228,10 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(Importance)
-        m.SetImportance(&cast)
+        if val != nil {
+            cast := val.(Importance)
+            m.SetImportance(&cast)
+        }
         return nil
     }
     res["isReminderOn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -225,7 +239,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetIsReminderOn(val)
+        if val != nil {
+            m.SetIsReminderOn(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -233,7 +249,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["linkedResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -241,11 +259,13 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]LinkedResource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LinkedResource))
+        if val != nil {
+            res := make([]LinkedResource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LinkedResource))
+            }
+            m.SetLinkedResources(res)
         }
-        m.SetLinkedResources(res)
         return nil
     }
     res["recurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,7 +273,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetRecurrence(val.(*PatternedRecurrence))
+        if val != nil {
+            m.SetRecurrence(val.(*PatternedRecurrence))
+        }
         return nil
     }
     res["reminderDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -261,7 +283,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetReminderDateTime(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetReminderDateTime(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -269,8 +293,10 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(TaskStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(TaskStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["title"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,7 +304,9 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetTitle(val)
+        if val != nil {
+            m.SetTitle(val)
+        }
         return nil
     }
     return res

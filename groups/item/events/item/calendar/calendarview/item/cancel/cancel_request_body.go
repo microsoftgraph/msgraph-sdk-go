@@ -42,7 +42,9 @@ func (m *CancelRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetComment(val)
+        if val != nil {
+            m.SetComment(val)
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *CalculateRequestBody) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetCalculationType(val)
+        if val != nil {
+            m.SetCalculationType(val)
+        }
         return nil
     }
     return res

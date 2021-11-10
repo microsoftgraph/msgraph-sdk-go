@@ -72,7 +72,9 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCompletedDateTime(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetCompletedDateTime(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     res["dueDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDueDateTime(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetDueDateTime(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     res["flagStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,8 +92,10 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        cast := val.(FollowupFlagStatus)
-        m.SetFlagStatus(&cast)
+        if val != nil {
+            cast := val.(FollowupFlagStatus)
+            m.SetFlagStatus(&cast)
+        }
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetStartDateTime(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     return res

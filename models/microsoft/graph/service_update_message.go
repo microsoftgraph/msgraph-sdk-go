@@ -104,7 +104,9 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetActionRequiredByDateTime(val)
+        if val != nil {
+            m.SetActionRequiredByDateTime(val)
+        }
         return nil
     }
     res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetBody(val.(*ItemBody))
+        if val != nil {
+            m.SetBody(val.(*ItemBody))
+        }
         return nil
     }
     res["category"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,8 +124,10 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(ServiceUpdateCategory)
-        m.SetCategory(&cast)
+        if val != nil {
+            cast := val.(ServiceUpdateCategory)
+            m.SetCategory(&cast)
+        }
         return nil
     }
     res["isMajorChange"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,7 +135,9 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsMajorChange(val)
+        if val != nil {
+            m.SetIsMajorChange(val)
+        }
         return nil
     }
     res["services"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,11 +145,13 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetServices(res)
         }
-        m.SetServices(res)
         return nil
     }
     res["severity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,8 +159,10 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(ServiceUpdateSeverity)
-        m.SetSeverity(&cast)
+        if val != nil {
+            cast := val.(ServiceUpdateSeverity)
+            m.SetSeverity(&cast)
+        }
         return nil
     }
     res["tags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,11 +170,13 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTags(res)
         }
-        m.SetTags(res)
         return nil
     }
     res["viewPoint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +184,9 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetViewPoint(val.(*ServiceUpdateMessageViewpoint))
+        if val != nil {
+            m.SetViewPoint(val.(*ServiceUpdateMessageViewpoint))
+        }
         return nil
     }
     return res

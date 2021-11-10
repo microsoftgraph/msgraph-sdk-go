@@ -132,11 +132,13 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        res := make([]AccessReviewApplyAction, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AccessReviewApplyAction))
+        if val != nil {
+            res := make([]AccessReviewApplyAction, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewApplyAction))
+            }
+            m.SetApplyActions(res)
         }
-        m.SetApplyActions(res)
         return nil
     }
     res["autoApplyDecisionsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +146,9 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetAutoApplyDecisionsEnabled(val)
+        if val != nil {
+            m.SetAutoApplyDecisionsEnabled(val)
+        }
         return nil
     }
     res["defaultDecision"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +156,9 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDefaultDecision(val)
+        if val != nil {
+            m.SetDefaultDecision(val)
+        }
         return nil
     }
     res["defaultDecisionEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,7 +166,9 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDefaultDecisionEnabled(val)
+        if val != nil {
+            m.SetDefaultDecisionEnabled(val)
+        }
         return nil
     }
     res["instanceDurationInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +176,9 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetInstanceDurationInDays(val)
+        if val != nil {
+            m.SetInstanceDurationInDays(val)
+        }
         return nil
     }
     res["justificationRequiredOnApproval"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +186,9 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetJustificationRequiredOnApproval(val)
+        if val != nil {
+            m.SetJustificationRequiredOnApproval(val)
+        }
         return nil
     }
     res["mailNotificationsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,7 +196,9 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetMailNotificationsEnabled(val)
+        if val != nil {
+            m.SetMailNotificationsEnabled(val)
+        }
         return nil
     }
     res["recommendationsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,7 +206,9 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRecommendationsEnabled(val)
+        if val != nil {
+            m.SetRecommendationsEnabled(val)
+        }
         return nil
     }
     res["recurrence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +216,9 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetRecurrence(val.(*PatternedRecurrence))
+        if val != nil {
+            m.SetRecurrence(val.(*PatternedRecurrence))
+        }
         return nil
     }
     res["reminderNotificationsEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +226,9 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetReminderNotificationsEnabled(val)
+        if val != nil {
+            m.SetReminderNotificationsEnabled(val)
+        }
         return nil
     }
     return res

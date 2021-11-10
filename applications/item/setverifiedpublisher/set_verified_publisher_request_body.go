@@ -42,7 +42,9 @@ func (m *SetVerifiedPublisherRequestBody) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetVerifiedPublisherId(val)
+        if val != nil {
+            m.SetVerifiedPublisherId(val)
+        }
         return nil
     }
     return res

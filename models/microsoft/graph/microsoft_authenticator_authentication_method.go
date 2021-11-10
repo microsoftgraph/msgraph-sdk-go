@@ -74,7 +74,9 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["device"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +84,9 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetDevice(val.(*Device))
+        if val != nil {
+            m.SetDevice(val.(*Device))
+        }
         return nil
     }
     res["deviceTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetDeviceTag(val)
+        if val != nil {
+            m.SetDeviceTag(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +104,9 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["phoneAppVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +114,9 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map
         if err != nil {
             return err
         }
-        m.SetPhoneAppVersion(val)
+        if val != nil {
+            m.SetPhoneAppVersion(val)
+        }
         return nil
     }
     return res

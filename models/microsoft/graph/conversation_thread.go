@@ -114,11 +114,13 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Recipient))
+        if val != nil {
+            res := make([]Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Recipient))
+            }
+            m.SetCcRecipients(res)
         }
-        m.SetCcRecipients(res)
         return nil
     }
     res["hasAttachments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +128,9 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetHasAttachments(val)
+        if val != nil {
+            m.SetHasAttachments(val)
+        }
         return nil
     }
     res["isLocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +138,9 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetIsLocked(val)
+        if val != nil {
+            m.SetIsLocked(val)
+        }
         return nil
     }
     res["lastDeliveredDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +148,9 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetLastDeliveredDateTime(val)
+        if val != nil {
+            m.SetLastDeliveredDateTime(val)
+        }
         return nil
     }
     res["posts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,11 +158,13 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]Post, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Post))
+        if val != nil {
+            res := make([]Post, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Post))
+            }
+            m.SetPosts(res)
         }
-        m.SetPosts(res)
         return nil
     }
     res["preview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +172,9 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetPreview(val)
+        if val != nil {
+            m.SetPreview(val)
+        }
         return nil
     }
     res["topic"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +182,9 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetTopic(val)
+        if val != nil {
+            m.SetTopic(val)
+        }
         return nil
     }
     res["toRecipients"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,11 +192,13 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Recipient))
+        if val != nil {
+            res := make([]Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Recipient))
+            }
+            m.SetToRecipients(res)
         }
-        m.SetToRecipients(res)
         return nil
     }
     res["uniqueSenders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,11 +206,13 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetUniqueSenders(res)
         }
-        m.SetUniqueSenders(res)
         return nil
     }
     return res

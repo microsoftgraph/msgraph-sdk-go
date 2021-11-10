@@ -124,7 +124,9 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["filter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +134,9 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetFilter(val)
+        if val != nil {
+            m.SetFilter(val)
+        }
         return nil
     }
     res["format"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,8 +144,10 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementReportFileFormat)
-        m.SetFormat(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementReportFileFormat)
+            m.SetFormat(&cast)
+        }
         return nil
     }
     res["localizationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,8 +155,10 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementExportJobLocalizationType)
-        m.SetLocalizationType(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementExportJobLocalizationType)
+            m.SetLocalizationType(&cast)
+        }
         return nil
     }
     res["reportName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +166,9 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetReportName(val)
+        if val != nil {
+            m.SetReportName(val)
+        }
         return nil
     }
     res["requestDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +176,9 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetRequestDateTime(val)
+        if val != nil {
+            m.SetRequestDateTime(val)
+        }
         return nil
     }
     res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,11 +186,13 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSelect_escaped(res)
         }
-        m.SetSelect_escaped(res)
         return nil
     }
     res["snapshotId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +200,9 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSnapshotId(val)
+        if val != nil {
+            m.SetSnapshotId(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,8 +210,10 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(DeviceManagementReportStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(DeviceManagementReportStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["url"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -203,7 +221,9 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetUrl(val)
+        if val != nil {
+            m.SetUrl(val)
+        }
         return nil
     }
     return res

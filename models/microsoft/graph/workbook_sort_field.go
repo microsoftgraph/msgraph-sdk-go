@@ -92,7 +92,9 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetAscending(val)
+        if val != nil {
+            m.SetAscending(val)
+        }
         return nil
     }
     res["color"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetColor(val)
+        if val != nil {
+            m.SetColor(val)
+        }
         return nil
     }
     res["dataOption"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDataOption(val)
+        if val != nil {
+            m.SetDataOption(val)
+        }
         return nil
     }
     res["icon"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +122,9 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetIcon(val.(*WorkbookIcon))
+        if val != nil {
+            m.SetIcon(val.(*WorkbookIcon))
+        }
         return nil
     }
     res["key"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +132,9 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetKey(val)
+        if val != nil {
+            m.SetKey(val)
+        }
         return nil
     }
     res["sortOn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +142,9 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSortOn(val)
+        if val != nil {
+            m.SetSortOn(val)
+        }
         return nil
     }
     return res

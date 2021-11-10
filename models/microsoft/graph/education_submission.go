@@ -144,11 +144,13 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]EducationOutcome, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationOutcome))
+        if val != nil {
+            res := make([]EducationOutcome, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationOutcome))
+            }
+            m.SetOutcomes(res)
         }
-        m.SetOutcomes(res)
         return nil
     }
     res["recipient"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,7 +158,9 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetRecipient(val.(*EducationSubmissionRecipient))
+        if val != nil {
+            m.SetRecipient(val.(*EducationSubmissionRecipient))
+        }
         return nil
     }
     res["resources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,11 +168,13 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]EducationSubmissionResource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationSubmissionResource))
+        if val != nil {
+            res := make([]EducationSubmissionResource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationSubmissionResource))
+            }
+            m.SetResources(res)
         }
-        m.SetResources(res)
         return nil
     }
     res["resourcesFolderUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,7 +182,9 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetResourcesFolderUrl(val)
+        if val != nil {
+            m.SetResourcesFolderUrl(val)
+        }
         return nil
     }
     res["returnedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -184,7 +192,9 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetReturnedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetReturnedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["returnedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,7 +202,9 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetReturnedDateTime(val)
+        if val != nil {
+            m.SetReturnedDateTime(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,8 +212,10 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(EducationSubmissionStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(EducationSubmissionStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["submittedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -209,7 +223,9 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetSubmittedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetSubmittedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["submittedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -217,7 +233,9 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetSubmittedDateTime(val)
+        if val != nil {
+            m.SetSubmittedDateTime(val)
+        }
         return nil
     }
     res["submittedResources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -225,11 +243,13 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]EducationSubmissionResource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EducationSubmissionResource))
+        if val != nil {
+            res := make([]EducationSubmissionResource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationSubmissionResource))
+            }
+            m.SetSubmittedResources(res)
         }
-        m.SetSubmittedResources(res)
         return nil
     }
     res["unsubmittedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -237,7 +257,9 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUnsubmittedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetUnsubmittedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["unsubmittedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -245,7 +267,9 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetUnsubmittedDateTime(val)
+        if val != nil {
+            m.SetUnsubmittedDateTime(val)
+        }
         return nil
     }
     return res

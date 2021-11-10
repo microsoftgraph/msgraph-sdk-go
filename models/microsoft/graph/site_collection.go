@@ -62,7 +62,9 @@ func (m *SiteCollection) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDataLocationCode(val)
+        if val != nil {
+            m.SetDataLocationCode(val)
+        }
         return nil
     }
     res["hostname"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *SiteCollection) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetHostname(val)
+        if val != nil {
+            m.SetHostname(val)
+        }
         return nil
     }
     res["root"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *SiteCollection) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetRoot(val.(*Root))
+        if val != nil {
+            m.SetRoot(val.(*Root))
+        }
         return nil
     }
     return res

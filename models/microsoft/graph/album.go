@@ -42,7 +42,9 @@ func (m *Album) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetCoverImageItemId(val)
+        if val != nil {
+            m.SetCoverImageItemId(val)
+        }
         return nil
     }
     return res

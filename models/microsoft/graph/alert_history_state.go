@@ -103,7 +103,9 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetAppId(val)
+        if val != nil {
+            m.SetAppId(val)
+        }
         return nil
     }
     res["assignedTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +113,9 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetAssignedTo(val)
+        if val != nil {
+            m.SetAssignedTo(val)
+        }
         return nil
     }
     res["comments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,11 +123,13 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetComments(res)
         }
-        m.SetComments(res)
         return nil
     }
     res["feedback"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,8 +137,10 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(AlertFeedback)
-        m.SetFeedback(&cast)
+        if val != nil {
+            cast := val.(AlertFeedback)
+            m.SetFeedback(&cast)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,8 +148,10 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(AlertStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(AlertStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["updatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +159,9 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetUpdatedDateTime(val)
+        if val != nil {
+            m.SetUpdatedDateTime(val)
+        }
         return nil
     }
     res["user"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +169,9 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetUser(val)
+        if val != nil {
+            m.SetUser(val)
+        }
         return nil
     }
     return res

@@ -82,7 +82,9 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["enforcedGrantControls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,11 +92,13 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetEnforcedGrantControls(res)
         }
-        m.SetEnforcedGrantControls(res)
         return nil
     }
     res["enforcedSessionControls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,11 +106,13 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetEnforcedSessionControls(res)
         }
-        m.SetEnforcedSessionControls(res)
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +120,9 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["result"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,8 +130,10 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(AppliedConditionalAccessPolicyResult)
-        m.SetResult(&cast)
+        if val != nil {
+            cast := val.(AppliedConditionalAccessPolicyResult)
+            m.SetResult(&cast)
+        }
         return nil
     }
     return res

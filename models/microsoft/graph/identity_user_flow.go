@@ -43,8 +43,10 @@ func (m *IdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(UserFlowType)
-        m.SetUserFlowType(&cast)
+        if val != nil {
+            cast := val.(UserFlowType)
+            m.SetUserFlowType(&cast)
+        }
         return nil
     }
     res["userFlowTypeVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,7 +54,9 @@ func (m *IdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetUserFlowTypeVersion(val)
+        if val != nil {
+            m.SetUserFlowTypeVersion(val)
+        }
         return nil
     }
     return res

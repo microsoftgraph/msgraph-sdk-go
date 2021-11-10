@@ -82,7 +82,9 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAllowedDeviceCount(val)
+        if val != nil {
+            m.SetAllowedDeviceCount(val)
+        }
         return nil
     }
     res["blockedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetBlockedDeviceCount(val)
+        if val != nil {
+            m.SetBlockedDeviceCount(val)
+        }
         return nil
     }
     res["quarantinedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetQuarantinedDeviceCount(val)
+        if val != nil {
+            m.SetQuarantinedDeviceCount(val)
+        }
         return nil
     }
     res["unavailableDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetUnavailableDeviceCount(val)
+        if val != nil {
+            m.SetUnavailableDeviceCount(val)
+        }
         return nil
     }
     res["unknownDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetUnknownDeviceCount(val)
+        if val != nil {
+            m.SetUnknownDeviceCount(val)
+        }
         return nil
     }
     return res

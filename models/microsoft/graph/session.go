@@ -94,7 +94,9 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetCallee(val.(*Endpoint))
+        if val != nil {
+            m.SetCallee(val.(*Endpoint))
+        }
         return nil
     }
     res["caller"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +104,9 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetCaller(val.(*Endpoint))
+        if val != nil {
+            m.SetCaller(val.(*Endpoint))
+        }
         return nil
     }
     res["endDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +114,9 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetEndDateTime(val)
+        if val != nil {
+            m.SetEndDateTime(val)
+        }
         return nil
     }
     res["failureInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +124,9 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetFailureInfo(val.(*FailureInfo))
+        if val != nil {
+            m.SetFailureInfo(val.(*FailureInfo))
+        }
         return nil
     }
     res["modalities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,11 +134,13 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]Modality, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Modality))
+        if val != nil {
+            res := make([]Modality, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Modality))
+            }
+            m.SetModalities(res)
         }
-        m.SetModalities(res)
         return nil
     }
     res["segments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,11 +148,13 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]Segment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Segment))
+        if val != nil {
+            res := make([]Segment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Segment))
+            }
+            m.SetSegments(res)
         }
-        m.SetSegments(res)
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +162,9 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     return res

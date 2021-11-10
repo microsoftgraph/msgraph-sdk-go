@@ -63,8 +63,10 @@ func (m *DeviceComplianceActionItem) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        cast := val.(DeviceComplianceActionType)
-        m.SetActionType(&cast)
+        if val != nil {
+            cast := val.(DeviceComplianceActionType)
+            m.SetActionType(&cast)
+        }
         return nil
     }
     res["gracePeriodHours"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *DeviceComplianceActionItem) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetGracePeriodHours(val)
+        if val != nil {
+            m.SetGracePeriodHours(val)
+        }
         return nil
     }
     res["notificationMessageCCList"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,11 +84,13 @@ func (m *DeviceComplianceActionItem) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetNotificationMessageCCList(res)
         }
-        m.SetNotificationMessageCCList(res)
         return nil
     }
     res["notificationTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +98,9 @@ func (m *DeviceComplianceActionItem) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetNotificationTemplateId(val)
+        if val != nil {
+            m.SetNotificationTemplateId(val)
+        }
         return nil
     }
     return res

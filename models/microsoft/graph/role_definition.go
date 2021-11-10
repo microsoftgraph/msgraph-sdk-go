@@ -73,7 +73,9 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["isBuiltIn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetIsBuiltIn(val)
+        if val != nil {
+            m.SetIsBuiltIn(val)
+        }
         return nil
     }
     res["roleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,11 +103,13 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]RoleAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RoleAssignment))
+        if val != nil {
+            res := make([]RoleAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RoleAssignment))
+            }
+            m.SetRoleAssignments(res)
         }
-        m.SetRoleAssignments(res)
         return nil
     }
     res["rolePermissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,11 +117,13 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]RolePermission, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*RolePermission))
+        if val != nil {
+            res := make([]RolePermission, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RolePermission))
+            }
+            m.SetRolePermissions(res)
         }
-        m.SetRolePermissions(res)
         return nil
     }
     return res

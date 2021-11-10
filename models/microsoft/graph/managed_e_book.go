@@ -154,11 +154,13 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]ManagedEBookAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedEBookAssignment))
+        if val != nil {
+            res := make([]ManagedEBookAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedEBookAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +168,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +178,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["deviceStates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,11 +188,13 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]DeviceInstallState, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DeviceInstallState))
+        if val != nil {
+            res := make([]DeviceInstallState, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DeviceInstallState))
+            }
+            m.SetDeviceStates(res)
         }
-        m.SetDeviceStates(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +202,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["informationUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +212,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetInformationUrl(val)
+        if val != nil {
+            m.SetInformationUrl(val)
+        }
         return nil
     }
     res["installSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +222,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetInstallSummary(val.(*EBookInstallSummary))
+        if val != nil {
+            m.SetInstallSummary(val.(*EBookInstallSummary))
+        }
         return nil
     }
     res["largeCover"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +232,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetLargeCover(val.(*MimeContent))
+        if val != nil {
+            m.SetLargeCover(val.(*MimeContent))
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +242,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["privacyInformationUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,7 +252,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetPrivacyInformationUrl(val)
+        if val != nil {
+            m.SetPrivacyInformationUrl(val)
+        }
         return nil
     }
     res["publishedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -242,7 +262,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetPublishedDateTime(val)
+        if val != nil {
+            m.SetPublishedDateTime(val)
+        }
         return nil
     }
     res["publisher"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -250,7 +272,9 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetPublisher(val)
+        if val != nil {
+            m.SetPublisher(val)
+        }
         return nil
     }
     res["userStateSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -258,11 +282,13 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]UserInstallStateSummary, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserInstallStateSummary))
+        if val != nil {
+            res := make([]UserInstallStateSummary, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserInstallStateSummary))
+            }
+            m.SetUserStateSummary(res)
         }
-        m.SetUserStateSummary(res)
         return nil
     }
     return res

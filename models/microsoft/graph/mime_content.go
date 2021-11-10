@@ -52,7 +52,9 @@ func (m *MimeContent) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetType_escaped(val)
+        if val != nil {
+            m.SetType_escaped(val)
+        }
         return nil
     }
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *MimeContent) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetValue(val)
+        if val != nil {
+            m.SetValue(val)
+        }
         return nil
     }
     return res

@@ -103,7 +103,9 @@ func (m *SharedDriveItem) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetDriveItem(val.(*DriveItem))
+        if val != nil {
+            m.SetDriveItem(val.(*DriveItem))
+        }
         return nil
     }
     res["items"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,11 +113,13 @@ func (m *SharedDriveItem) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]DriveItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DriveItem))
+        if val != nil {
+            res := make([]DriveItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DriveItem))
+            }
+            m.SetItems(res)
         }
-        m.SetItems(res)
         return nil
     }
     res["list"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +127,9 @@ func (m *SharedDriveItem) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetList(val.(*List))
+        if val != nil {
+            m.SetList(val.(*List))
+        }
         return nil
     }
     res["listItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +137,9 @@ func (m *SharedDriveItem) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetListItem(val.(*ListItem))
+        if val != nil {
+            m.SetListItem(val.(*ListItem))
+        }
         return nil
     }
     res["owner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +147,9 @@ func (m *SharedDriveItem) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetOwner(val.(*IdentitySet))
+        if val != nil {
+            m.SetOwner(val.(*IdentitySet))
+        }
         return nil
     }
     res["permission"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +157,9 @@ func (m *SharedDriveItem) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetPermission(val.(*Permission))
+        if val != nil {
+            m.SetPermission(val.(*Permission))
+        }
         return nil
     }
     res["root"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +167,9 @@ func (m *SharedDriveItem) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetRoot(val.(*DriveItem))
+        if val != nil {
+            m.SetRoot(val.(*DriveItem))
+        }
         return nil
     }
     res["site"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +177,9 @@ func (m *SharedDriveItem) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetSite(val.(*Site))
+        if val != nil {
+            m.SetSite(val.(*Site))
+        }
         return nil
     }
     return res

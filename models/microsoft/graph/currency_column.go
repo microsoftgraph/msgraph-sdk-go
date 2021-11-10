@@ -42,7 +42,9 @@ func (m *CurrencyColumn) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetLocale(val)
+        if val != nil {
+            m.SetLocale(val)
+        }
         return nil
     }
     return res

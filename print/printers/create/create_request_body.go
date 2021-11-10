@@ -103,7 +103,9 @@ func (m *CreateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetCertificateSigningRequest(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintCertificateSigningRequest))
+        if val != nil {
+            m.SetCertificateSigningRequest(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintCertificateSigningRequest))
+        }
         return nil
     }
     res["connectorId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +113,9 @@ func (m *CreateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetConnectorId(val)
+        if val != nil {
+            m.SetConnectorId(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,7 +123,9 @@ func (m *CreateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["hasPhysicalDevice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,7 +133,9 @@ func (m *CreateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetHasPhysicalDevice(val)
+        if val != nil {
+            m.SetHasPhysicalDevice(val)
+        }
         return nil
     }
     res["manufacturer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,7 +143,9 @@ func (m *CreateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetManufacturer(val)
+        if val != nil {
+            m.SetManufacturer(val)
+        }
         return nil
     }
     res["model"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,7 +153,9 @@ func (m *CreateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetModel(val)
+        if val != nil {
+            m.SetModel(val)
+        }
         return nil
     }
     res["physicalDeviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -151,7 +163,9 @@ func (m *CreateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetPhysicalDeviceId(val)
+        if val != nil {
+            m.SetPhysicalDeviceId(val)
+        }
         return nil
     }
     return res

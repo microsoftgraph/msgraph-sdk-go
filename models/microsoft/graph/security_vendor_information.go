@@ -72,7 +72,9 @@ func (m *SecurityVendorInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetProvider(val)
+        if val != nil {
+            m.SetProvider(val)
+        }
         return nil
     }
     res["providerVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *SecurityVendorInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetProviderVersion(val)
+        if val != nil {
+            m.SetProviderVersion(val)
+        }
         return nil
     }
     res["subProvider"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *SecurityVendorInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSubProvider(val)
+        if val != nil {
+            m.SetSubProvider(val)
+        }
         return nil
     }
     res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *SecurityVendorInformation) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetVendor_escaped(val)
+        if val != nil {
+            m.SetVendor_escaped(val)
+        }
         return nil
     }
     return res

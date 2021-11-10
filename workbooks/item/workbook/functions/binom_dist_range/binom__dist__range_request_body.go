@@ -73,7 +73,9 @@ func (m *Binom_Dist_RangeRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetNumberS(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        if val != nil {
+            m.SetNumberS(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        }
         return nil
     }
     res["numberS2"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *Binom_Dist_RangeRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetNumberS2(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        if val != nil {
+            m.SetNumberS2(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        }
         return nil
     }
     res["probabilityS"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *Binom_Dist_RangeRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetProbabilityS(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        if val != nil {
+            m.SetProbabilityS(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        }
         return nil
     }
     res["trials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *Binom_Dist_RangeRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetTrials(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        if val != nil {
+            m.SetTrials(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        }
         return nil
     }
     return res

@@ -42,11 +42,13 @@ func (m *PublicClientApplication) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetRedirectUris(res)
         }
-        m.SetRedirectUris(res)
         return nil
     }
     return res

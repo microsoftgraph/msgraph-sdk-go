@@ -52,8 +52,10 @@ func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        cast := val.(WorkforceIntegrationEncryptionProtocol)
-        m.SetProtocol(&cast)
+        if val != nil {
+            cast := val.(WorkforceIntegrationEncryptionProtocol)
+            m.SetProtocol(&cast)
+        }
         return nil
     }
     res["secret"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetSecret(val)
+        if val != nil {
+            m.SetSecret(val)
+        }
         return nil
     }
     return res

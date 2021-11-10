@@ -204,11 +204,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]AndroidManagedAppProtection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AndroidManagedAppProtection))
+        if val != nil {
+            res := make([]AndroidManagedAppProtection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AndroidManagedAppProtection))
+            }
+            m.SetAndroidManagedAppProtections(res)
         }
-        m.SetAndroidManagedAppProtections(res)
         return nil
     }
     res["defaultManagedAppProtections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,11 +218,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]DefaultManagedAppProtection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DefaultManagedAppProtection))
+        if val != nil {
+            res := make([]DefaultManagedAppProtection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DefaultManagedAppProtection))
+            }
+            m.SetDefaultManagedAppProtections(res)
         }
-        m.SetDefaultManagedAppProtections(res)
         return nil
     }
     res["iosManagedAppProtections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -228,11 +232,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]IosManagedAppProtection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IosManagedAppProtection))
+        if val != nil {
+            res := make([]IosManagedAppProtection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IosManagedAppProtection))
+            }
+            m.SetIosManagedAppProtections(res)
         }
-        m.SetIosManagedAppProtections(res)
         return nil
     }
     res["isEnabledForMicrosoftStoreForBusiness"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -240,7 +246,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetIsEnabledForMicrosoftStoreForBusiness(val)
+        if val != nil {
+            m.SetIsEnabledForMicrosoftStoreForBusiness(val)
+        }
         return nil
     }
     res["managedAppPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -248,11 +256,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ManagedAppPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedAppPolicy))
+        if val != nil {
+            res := make([]ManagedAppPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedAppPolicy))
+            }
+            m.SetManagedAppPolicies(res)
         }
-        m.SetManagedAppPolicies(res)
         return nil
     }
     res["managedAppRegistrations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -260,11 +270,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ManagedAppRegistration, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedAppRegistration))
+        if val != nil {
+            res := make([]ManagedAppRegistration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedAppRegistration))
+            }
+            m.SetManagedAppRegistrations(res)
         }
-        m.SetManagedAppRegistrations(res)
         return nil
     }
     res["managedAppStatuses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -272,11 +284,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ManagedAppStatus, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedAppStatus))
+        if val != nil {
+            res := make([]ManagedAppStatus, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedAppStatus))
+            }
+            m.SetManagedAppStatuses(res)
         }
-        m.SetManagedAppStatuses(res)
         return nil
     }
     res["managedEBooks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -284,11 +298,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ManagedEBook, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedEBook))
+        if val != nil {
+            res := make([]ManagedEBook, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedEBook))
+            }
+            m.SetManagedEBooks(res)
         }
-        m.SetManagedEBooks(res)
         return nil
     }
     res["mdmWindowsInformationProtectionPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -296,11 +312,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]MdmWindowsInformationProtectionPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MdmWindowsInformationProtectionPolicy))
+        if val != nil {
+            res := make([]MdmWindowsInformationProtectionPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MdmWindowsInformationProtectionPolicy))
+            }
+            m.SetMdmWindowsInformationProtectionPolicies(res)
         }
-        m.SetMdmWindowsInformationProtectionPolicies(res)
         return nil
     }
     res["microsoftStoreForBusinessLanguage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -308,7 +326,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetMicrosoftStoreForBusinessLanguage(val)
+        if val != nil {
+            m.SetMicrosoftStoreForBusinessLanguage(val)
+        }
         return nil
     }
     res["microsoftStoreForBusinessLastCompletedApplicationSyncTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -316,7 +336,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime(val)
+        if val != nil {
+            m.SetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime(val)
+        }
         return nil
     }
     res["microsoftStoreForBusinessLastSuccessfulSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -324,7 +346,9 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime(val)
+        if val != nil {
+            m.SetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime(val)
+        }
         return nil
     }
     res["mobileAppCategories"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -332,11 +356,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]MobileAppCategory, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MobileAppCategory))
+        if val != nil {
+            res := make([]MobileAppCategory, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MobileAppCategory))
+            }
+            m.SetMobileAppCategories(res)
         }
-        m.SetMobileAppCategories(res)
         return nil
     }
     res["mobileAppConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -344,11 +370,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ManagedDeviceMobileAppConfiguration, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedDeviceMobileAppConfiguration))
+        if val != nil {
+            res := make([]ManagedDeviceMobileAppConfiguration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedDeviceMobileAppConfiguration))
+            }
+            m.SetMobileAppConfigurations(res)
         }
-        m.SetMobileAppConfigurations(res)
         return nil
     }
     res["mobileApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -356,11 +384,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]MobileApp, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MobileApp))
+        if val != nil {
+            res := make([]MobileApp, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MobileApp))
+            }
+            m.SetMobileApps(res)
         }
-        m.SetMobileApps(res)
         return nil
     }
     res["targetedManagedAppConfigurations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -368,11 +398,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]TargetedManagedAppConfiguration, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TargetedManagedAppConfiguration))
+        if val != nil {
+            res := make([]TargetedManagedAppConfiguration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TargetedManagedAppConfiguration))
+            }
+            m.SetTargetedManagedAppConfigurations(res)
         }
-        m.SetTargetedManagedAppConfigurations(res)
         return nil
     }
     res["vppTokens"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -380,11 +412,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]VppToken, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*VppToken))
+        if val != nil {
+            res := make([]VppToken, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*VppToken))
+            }
+            m.SetVppTokens(res)
         }
-        m.SetVppTokens(res)
         return nil
     }
     res["windowsInformationProtectionPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -392,11 +426,13 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]WindowsInformationProtectionPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WindowsInformationProtectionPolicy))
+        if val != nil {
+            res := make([]WindowsInformationProtectionPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WindowsInformationProtectionPolicy))
+            }
+            m.SetWindowsInformationProtectionPolicies(res)
         }
-        m.SetWindowsInformationProtectionPolicies(res)
         return nil
     }
     return res

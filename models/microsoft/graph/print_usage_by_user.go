@@ -33,7 +33,9 @@ func (m *PrintUsageByUser) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

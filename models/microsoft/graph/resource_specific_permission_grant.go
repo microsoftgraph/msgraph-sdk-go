@@ -73,7 +73,9 @@ func (m *ResourceSpecificPermissionGrant) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetClientAppId(val)
+        if val != nil {
+            m.SetClientAppId(val)
+        }
         return nil
     }
     res["clientId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *ResourceSpecificPermissionGrant) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetClientId(val)
+        if val != nil {
+            m.SetClientId(val)
+        }
         return nil
     }
     res["permission"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *ResourceSpecificPermissionGrant) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetPermission(val)
+        if val != nil {
+            m.SetPermission(val)
+        }
         return nil
     }
     res["permissionType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *ResourceSpecificPermissionGrant) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetPermissionType(val)
+        if val != nil {
+            m.SetPermissionType(val)
+        }
         return nil
     }
     res["resourceAppId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +113,9 @@ func (m *ResourceSpecificPermissionGrant) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetResourceAppId(val)
+        if val != nil {
+            m.SetResourceAppId(val)
+        }
         return nil
     }
     return res

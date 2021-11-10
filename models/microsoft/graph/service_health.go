@@ -53,11 +53,13 @@ func (m *ServiceHealth) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ServiceHealthIssue, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ServiceHealthIssue))
+        if val != nil {
+            res := make([]ServiceHealthIssue, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ServiceHealthIssue))
+            }
+            m.SetIssues(res)
         }
-        m.SetIssues(res)
         return nil
     }
     res["service"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,7 +67,9 @@ func (m *ServiceHealth) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetService(val)
+        if val != nil {
+            m.SetService(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,8 +77,10 @@ func (m *ServiceHealth) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(ServiceHealthStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(ServiceHealthStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

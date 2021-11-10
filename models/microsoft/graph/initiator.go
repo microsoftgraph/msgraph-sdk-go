@@ -33,8 +33,10 @@ func (m *Initiator) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        cast := val.(InitiatorType)
-        m.SetInitiatorType(&cast)
+        if val != nil {
+            cast := val.(InitiatorType)
+            m.SetInitiatorType(&cast)
+        }
         return nil
     }
     return res

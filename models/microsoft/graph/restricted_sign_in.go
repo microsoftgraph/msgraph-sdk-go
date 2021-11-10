@@ -33,7 +33,9 @@ func (m *RestrictedSignIn) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetTargetTenantId(val)
+        if val != nil {
+            m.SetTargetTenantId(val)
+        }
         return nil
     }
     return res

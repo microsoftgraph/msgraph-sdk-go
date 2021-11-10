@@ -33,7 +33,9 @@ func (m *UserScopeTeamsAppInstallation) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetChat(val.(*Chat))
+        if val != nil {
+            m.SetChat(val.(*Chat))
+        }
         return nil
     }
     return res

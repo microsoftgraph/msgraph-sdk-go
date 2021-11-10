@@ -33,11 +33,13 @@ func (m *OrganizationalBranding) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]OrganizationalBrandingLocalization, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OrganizationalBrandingLocalization))
+        if val != nil {
+            res := make([]OrganizationalBrandingLocalization, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OrganizationalBrandingLocalization))
+            }
+            m.SetLocalizations(res)
         }
-        m.SetLocalizations(res)
         return nil
     }
     return res

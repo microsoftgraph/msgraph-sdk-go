@@ -42,8 +42,10 @@ func (m *CallMediaState) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        cast := val.(MediaState)
-        m.SetAudio(&cast)
+        if val != nil {
+            cast := val.(MediaState)
+            m.SetAudio(&cast)
+        }
         return nil
     }
     return res

@@ -62,7 +62,9 @@ func (m *ChatInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetMessageId(val)
+        if val != nil {
+            m.SetMessageId(val)
+        }
         return nil
     }
     res["replyChainMessageId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *ChatInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetReplyChainMessageId(val)
+        if val != nil {
+            m.SetReplyChainMessageId(val)
+        }
         return nil
     }
     res["threadId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *ChatInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetThreadId(val)
+        if val != nil {
+            m.SetThreadId(val)
+        }
         return nil
     }
     return res

@@ -62,7 +62,9 @@ func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDestinationServiceIp(val)
+        if val != nil {
+            m.SetDestinationServiceIp(val)
+        }
         return nil
     }
     res["destinationServiceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDestinationServiceName(val)
+        if val != nil {
+            m.SetDestinationServiceName(val)
+        }
         return nil
     }
     res["riskScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetRiskScore(val)
+        if val != nil {
+            m.SetRiskScore(val)
+        }
         return nil
     }
     return res

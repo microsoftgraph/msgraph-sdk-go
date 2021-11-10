@@ -83,11 +83,13 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]Notebook, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Notebook))
+        if val != nil {
+            res := make([]Notebook, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Notebook))
+            }
+            m.SetNotebooks(res)
         }
-        m.SetNotebooks(res)
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,11 +97,13 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]OnenoteOperation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnenoteOperation))
+        if val != nil {
+            res := make([]OnenoteOperation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnenoteOperation))
+            }
+            m.SetOperations(res)
         }
-        m.SetOperations(res)
         return nil
     }
     res["pages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,11 +111,13 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]OnenotePage, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnenotePage))
+        if val != nil {
+            res := make([]OnenotePage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnenotePage))
+            }
+            m.SetPages(res)
         }
-        m.SetPages(res)
         return nil
     }
     res["resources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,11 +125,13 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]OnenoteResource, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnenoteResource))
+        if val != nil {
+            res := make([]OnenoteResource, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnenoteResource))
+            }
+            m.SetResources(res)
         }
-        m.SetResources(res)
         return nil
     }
     res["sectionGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,11 +139,13 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]SectionGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SectionGroup))
+        if val != nil {
+            res := make([]SectionGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SectionGroup))
+            }
+            m.SetSectionGroups(res)
         }
-        m.SetSectionGroups(res)
         return nil
     }
     res["sections"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -143,11 +153,13 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        res := make([]OnenoteSection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OnenoteSection))
+        if val != nil {
+            res := make([]OnenoteSection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OnenoteSection))
+            }
+            m.SetSections(res)
         }
-        m.SetSections(res)
         return nil
     }
     return res

@@ -42,11 +42,13 @@ func (m *External) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]ExternalConnection, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ExternalConnection))
+        if val != nil {
+            res := make([]ExternalConnection, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ExternalConnection))
+            }
+            m.SetConnections(res)
         }
-        m.SetConnections(res)
         return nil
     }
     return res

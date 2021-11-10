@@ -43,7 +43,9 @@ func (m *PlannerAssignedToTaskBoardTaskFormat) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetOrderHintsByAssignee(val.(*PlannerOrderHintsByAssignee))
+        if val != nil {
+            m.SetOrderHintsByAssignee(val.(*PlannerOrderHintsByAssignee))
+        }
         return nil
     }
     res["unassignedOrderHint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *PlannerAssignedToTaskBoardTaskFormat) GetFieldDeserializers()(map[strin
         if err != nil {
             return err
         }
-        m.SetUnassignedOrderHint(val)
+        if val != nil {
+            m.SetUnassignedOrderHint(val)
+        }
         return nil
     }
     return res

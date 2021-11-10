@@ -83,7 +83,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetBackgroundColor(val)
+        if val != nil {
+            m.SetBackgroundColor(val)
+        }
         return nil
     }
     res["backgroundImage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetBackgroundImage(val)
+        if val != nil {
+            m.SetBackgroundImage(val)
+        }
         return nil
     }
     res["bannerLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetBannerLogo(val)
+        if val != nil {
+            m.SetBannerLogo(val)
+        }
         return nil
     }
     res["signInPageText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSignInPageText(val)
+        if val != nil {
+            m.SetSignInPageText(val)
+        }
         return nil
     }
     res["squareLogo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetSquareLogo(val)
+        if val != nil {
+            m.SetSquareLogo(val)
+        }
         return nil
     }
     res["usernameHintText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,7 +133,9 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetUsernameHintText(val)
+        if val != nil {
+            m.SetUsernameHintText(val)
+        }
         return nil
     }
     return res

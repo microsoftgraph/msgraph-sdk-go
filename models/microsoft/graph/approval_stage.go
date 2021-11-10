@@ -94,7 +94,9 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetAssignedToMe(val)
+        if val != nil {
+            m.SetAssignedToMe(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +104,9 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["justification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +114,9 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetJustification(val)
+        if val != nil {
+            m.SetJustification(val)
+        }
         return nil
     }
     res["reviewedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -118,7 +124,9 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetReviewedBy(val.(*Identity))
+        if val != nil {
+            m.SetReviewedBy(val.(*Identity))
+        }
         return nil
     }
     res["reviewedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +134,9 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetReviewedDateTime(val)
+        if val != nil {
+            m.SetReviewedDateTime(val)
+        }
         return nil
     }
     res["reviewResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +144,9 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetReviewResult(val)
+        if val != nil {
+            m.SetReviewResult(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +154,9 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *GetNotebookFromWebUrlRequestBody) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetWebUrl(val)
+        if val != nil {
+            m.SetWebUrl(val)
+        }
         return nil
     }
     return res

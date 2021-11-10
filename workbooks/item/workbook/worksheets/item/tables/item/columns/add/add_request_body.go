@@ -63,7 +63,9 @@ func (m *AddRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetIndex(val)
+        if val != nil {
+            m.SetIndex(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *AddRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["values"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *AddRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetValues(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        if val != nil {
+            m.SetValues(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        }
         return nil
     }
     return res

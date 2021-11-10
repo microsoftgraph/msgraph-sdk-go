@@ -72,7 +72,9 @@ func (m *NumberColumn) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDecimalPlaces(val)
+        if val != nil {
+            m.SetDecimalPlaces(val)
+        }
         return nil
     }
     res["displayAs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *NumberColumn) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDisplayAs(val)
+        if val != nil {
+            m.SetDisplayAs(val)
+        }
         return nil
     }
     res["maximum"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *NumberColumn) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetMaximum(val)
+        if val != nil {
+            m.SetMaximum(val)
+        }
         return nil
     }
     res["minimum"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *NumberColumn) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetMinimum(val)
+        if val != nil {
+            m.SetMinimum(val)
+        }
         return nil
     }
     return res

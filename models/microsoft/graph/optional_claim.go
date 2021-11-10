@@ -72,11 +72,13 @@ func (m *OptionalClaim) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAdditionalProperties(res)
         }
-        m.SetAdditionalProperties(res)
         return nil
     }
     res["essential"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,7 +86,9 @@ func (m *OptionalClaim) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetEssential(val)
+        if val != nil {
+            m.SetEssential(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +96,9 @@ func (m *OptionalClaim) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +106,9 @@ func (m *OptionalClaim) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSource(val)
+        if val != nil {
+            m.SetSource(val)
+        }
         return nil
     }
     return res

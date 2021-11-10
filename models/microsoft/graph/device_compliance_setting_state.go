@@ -134,7 +134,9 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetComplianceGracePeriodExpirationDateTime(val)
+        if val != nil {
+            m.SetComplianceGracePeriodExpirationDateTime(val)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +144,9 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["deviceModel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +154,9 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDeviceModel(val)
+        if val != nil {
+            m.SetDeviceModel(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +164,9 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["setting"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +174,9 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetSetting(val)
+        if val != nil {
+            m.SetSetting(val)
+        }
         return nil
     }
     res["settingName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +184,9 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetSettingName(val)
+        if val != nil {
+            m.SetSettingName(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,8 +194,10 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(ComplianceStatus)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(ComplianceStatus)
+            m.SetState(&cast)
+        }
         return nil
     }
     res["userEmail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +205,9 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetUserEmail(val)
+        if val != nil {
+            m.SetUserEmail(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +215,9 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     res["userName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,7 +225,9 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetUserName(val)
+        if val != nil {
+            m.SetUserName(val)
+        }
         return nil
     }
     res["userPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,7 +235,9 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetUserPrincipalName(val)
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
         return nil
     }
     return res

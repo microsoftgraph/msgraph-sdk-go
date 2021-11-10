@@ -73,7 +73,9 @@ func (m *DeviceActionResult) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetActionName(val)
+        if val != nil {
+            m.SetActionName(val)
+        }
         return nil
     }
     res["actionState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,8 +83,10 @@ func (m *DeviceActionResult) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(ActionState)
-        m.SetActionState(&cast)
+        if val != nil {
+            cast := val.(ActionState)
+            m.SetActionState(&cast)
+        }
         return nil
     }
     res["lastUpdatedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +94,9 @@ func (m *DeviceActionResult) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetLastUpdatedDateTime(val)
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
+        }
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +104,9 @@ func (m *DeviceActionResult) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     return res

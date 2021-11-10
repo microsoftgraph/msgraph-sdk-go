@@ -73,7 +73,9 @@ func (m *ReplaceRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetNewText(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        if val != nil {
+            m.SetNewText(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        }
         return nil
     }
     res["numChars"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *ReplaceRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetNumChars(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        if val != nil {
+            m.SetNumChars(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        }
         return nil
     }
     res["oldText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *ReplaceRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetOldText(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        if val != nil {
+            m.SetOldText(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        }
         return nil
     }
     res["startNum"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *ReplaceRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetStartNum(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        if val != nil {
+            m.SetStartNum(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+        }
         return nil
     }
     return res

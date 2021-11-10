@@ -63,7 +63,9 @@ func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetFormat(val.(*WorkbookChartLegendFormat))
+        if val != nil {
+            m.SetFormat(val.(*WorkbookChartLegendFormat))
+        }
         return nil
     }
     res["overlay"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetOverlay(val)
+        if val != nil {
+            m.SetOverlay(val)
+        }
         return nil
     }
     res["position"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetPosition(val)
+        if val != nil {
+            m.SetPosition(val)
+        }
         return nil
     }
     res["visible"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetVisible(val)
+        if val != nil {
+            m.SetVisible(val)
+        }
         return nil
     }
     return res

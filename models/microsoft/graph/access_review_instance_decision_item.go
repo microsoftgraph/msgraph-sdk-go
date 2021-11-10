@@ -154,7 +154,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAccessReviewId(val)
+        if val != nil {
+            m.SetAccessReviewId(val)
+        }
         return nil
     }
     res["appliedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +164,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAppliedBy(val.(*UserIdentity))
+        if val != nil {
+            m.SetAppliedBy(val.(*UserIdentity))
+        }
         return nil
     }
     res["appliedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,7 +174,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetAppliedDateTime(val)
+        if val != nil {
+            m.SetAppliedDateTime(val)
+        }
         return nil
     }
     res["applyResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -178,7 +184,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetApplyResult(val)
+        if val != nil {
+            m.SetApplyResult(val)
+        }
         return nil
     }
     res["decision"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -186,7 +194,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetDecision(val)
+        if val != nil {
+            m.SetDecision(val)
+        }
         return nil
     }
     res["justification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +204,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetJustification(val)
+        if val != nil {
+            m.SetJustification(val)
+        }
         return nil
     }
     res["principal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +214,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetPrincipal(val.(*Identity))
+        if val != nil {
+            m.SetPrincipal(val.(*Identity))
+        }
         return nil
     }
     res["principalLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +224,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetPrincipalLink(val)
+        if val != nil {
+            m.SetPrincipalLink(val)
+        }
         return nil
     }
     res["recommendation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +234,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetRecommendation(val)
+        if val != nil {
+            m.SetRecommendation(val)
+        }
         return nil
     }
     res["resource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +244,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetResource(val.(*AccessReviewInstanceDecisionItemResource))
+        if val != nil {
+            m.SetResource(val.(*AccessReviewInstanceDecisionItemResource))
+        }
         return nil
     }
     res["resourceLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,7 +254,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetResourceLink(val)
+        if val != nil {
+            m.SetResourceLink(val)
+        }
         return nil
     }
     res["reviewedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -242,7 +264,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetReviewedBy(val.(*UserIdentity))
+        if val != nil {
+            m.SetReviewedBy(val.(*UserIdentity))
+        }
         return nil
     }
     res["reviewedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -250,7 +274,9 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetReviewedDateTime(val)
+        if val != nil {
+            m.SetReviewedDateTime(val)
+        }
         return nil
     }
     return res

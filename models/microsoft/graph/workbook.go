@@ -93,7 +93,9 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetApplication(val.(*WorkbookApplication))
+        if val != nil {
+            m.SetApplication(val.(*WorkbookApplication))
+        }
         return nil
     }
     res["comments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,11 +103,13 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]WorkbookComment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookComment))
+        if val != nil {
+            res := make([]WorkbookComment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookComment))
+            }
+            m.SetComments(res)
         }
-        m.SetComments(res)
         return nil
     }
     res["functions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,7 +117,9 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetFunctions(val.(*WorkbookFunctions))
+        if val != nil {
+            m.SetFunctions(val.(*WorkbookFunctions))
+        }
         return nil
     }
     res["names"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -121,11 +127,13 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]WorkbookNamedItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookNamedItem))
+        if val != nil {
+            res := make([]WorkbookNamedItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookNamedItem))
+            }
+            m.SetNames(res)
         }
-        m.SetNames(res)
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,11 +141,13 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]WorkbookOperation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookOperation))
+        if val != nil {
+            res := make([]WorkbookOperation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookOperation))
+            }
+            m.SetOperations(res)
         }
-        m.SetOperations(res)
         return nil
     }
     res["tables"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,11 +155,13 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]WorkbookTable, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookTable))
+        if val != nil {
+            res := make([]WorkbookTable, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookTable))
+            }
+            m.SetTables(res)
         }
-        m.SetTables(res)
         return nil
     }
     res["worksheets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,11 +169,13 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]WorkbookWorksheet, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookWorksheet))
+        if val != nil {
+            res := make([]WorkbookWorksheet, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookWorksheet))
+            }
+            m.SetWorksheets(res)
         }
-        m.SetWorksheets(res)
         return nil
     }
     return res

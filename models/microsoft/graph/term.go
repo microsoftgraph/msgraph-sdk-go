@@ -104,11 +104,13 @@ func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]Term, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Term))
+        if val != nil {
+            res := make([]Term, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Term))
+            }
+            m.SetChildren(res)
         }
-        m.SetChildren(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +118,9 @@ func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["descriptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,11 +128,13 @@ func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]LocalizedDescription, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LocalizedDescription))
+        if val != nil {
+            res := make([]LocalizedDescription, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LocalizedDescription))
+            }
+            m.SetDescriptions(res)
         }
-        m.SetDescriptions(res)
         return nil
     }
     res["labels"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,11 +142,13 @@ func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]LocalizedLabel, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LocalizedLabel))
+        if val != nil {
+            res := make([]LocalizedLabel, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LocalizedLabel))
+            }
+            m.SetLabels(res)
         }
-        m.SetLabels(res)
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +156,9 @@ func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,11 +166,13 @@ func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]KeyValue, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValue))
+        if val != nil {
+            res := make([]KeyValue, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValue))
+            }
+            m.SetProperties(res)
         }
-        m.SetProperties(res)
         return nil
     }
     res["relations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,11 +180,13 @@ func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]Relation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Relation))
+        if val != nil {
+            res := make([]Relation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Relation))
+            }
+            m.SetRelations(res)
         }
-        m.SetRelations(res)
         return nil
     }
     res["set"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +194,9 @@ func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetSet(val.(*Set))
+        if val != nil {
+            m.SetSet(val.(*Set))
+        }
         return nil
     }
     return res

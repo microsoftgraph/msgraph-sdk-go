@@ -52,7 +52,9 @@ func (m *Image) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetHeight(val)
+        if val != nil {
+            m.SetHeight(val)
+        }
         return nil
     }
     res["width"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *Image) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetWidth(val)
+        if val != nil {
+            m.SetWidth(val)
+        }
         return nil
     }
     return res

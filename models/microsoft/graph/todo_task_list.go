@@ -83,7 +83,9 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["extensions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,11 +93,13 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]Extension, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Extension))
+        if val != nil {
+            res := make([]Extension, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Extension))
+            }
+            m.SetExtensions(res)
         }
-        m.SetExtensions(res)
         return nil
     }
     res["isOwner"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -103,7 +107,9 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetIsOwner(val)
+        if val != nil {
+            m.SetIsOwner(val)
+        }
         return nil
     }
     res["isShared"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,7 +117,9 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetIsShared(val)
+        if val != nil {
+            m.SetIsShared(val)
+        }
         return nil
     }
     res["tasks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,11 +127,13 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]TodoTask, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TodoTask))
+        if val != nil {
+            res := make([]TodoTask, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TodoTask))
+            }
+            m.SetTasks(res)
         }
-        m.SetTasks(res)
         return nil
     }
     res["wellknownListName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,8 +141,10 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        cast := val.(WellknownListName)
-        m.SetWellknownListName(&cast)
+        if val != nil {
+            cast := val.(WellknownListName)
+            m.SetWellknownListName(&cast)
+        }
         return nil
     }
     return res

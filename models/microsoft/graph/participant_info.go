@@ -92,7 +92,9 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetCountryCode(val)
+        if val != nil {
+            m.SetCountryCode(val)
+        }
         return nil
     }
     res["endpointType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,8 +102,10 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        cast := val.(EndpointType)
-        m.SetEndpointType(&cast)
+        if val != nil {
+            cast := val.(EndpointType)
+            m.SetEndpointType(&cast)
+        }
         return nil
     }
     res["identity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetIdentity(val.(*IdentitySet))
+        if val != nil {
+            m.SetIdentity(val.(*IdentitySet))
+        }
         return nil
     }
     res["languageId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +123,9 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetLanguageId(val)
+        if val != nil {
+            m.SetLanguageId(val)
+        }
         return nil
     }
     res["participantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +133,9 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetParticipantId(val)
+        if val != nil {
+            m.SetParticipantId(val)
+        }
         return nil
     }
     res["region"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +143,9 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetRegion(val)
+        if val != nil {
+            m.SetRegion(val)
+        }
         return nil
     }
     return res

@@ -62,7 +62,9 @@ func (m *SetUpResourcesFolderResponse) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetEducationAssignment(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignment))
+        if val != nil {
+            m.SetEducationAssignment(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignment))
+        }
         return nil
     }
     return res

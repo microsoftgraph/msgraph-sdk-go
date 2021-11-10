@@ -63,11 +63,13 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]PrintUsageByPrinter, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintUsageByPrinter))
+        if val != nil {
+            res := make([]PrintUsageByPrinter, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintUsageByPrinter))
+            }
+            m.SetDailyPrintUsageByPrinter(res)
         }
-        m.SetDailyPrintUsageByPrinter(res)
         return nil
     }
     res["dailyPrintUsageByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,11 +77,13 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]PrintUsageByUser, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintUsageByUser))
+        if val != nil {
+            res := make([]PrintUsageByUser, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintUsageByUser))
+            }
+            m.SetDailyPrintUsageByUser(res)
         }
-        m.SetDailyPrintUsageByUser(res)
         return nil
     }
     res["monthlyPrintUsageByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,11 +91,13 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]PrintUsageByPrinter, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintUsageByPrinter))
+        if val != nil {
+            res := make([]PrintUsageByPrinter, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintUsageByPrinter))
+            }
+            m.SetMonthlyPrintUsageByPrinter(res)
         }
-        m.SetMonthlyPrintUsageByPrinter(res)
         return nil
     }
     res["monthlyPrintUsageByUser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,11 +105,13 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]PrintUsageByUser, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintUsageByUser))
+        if val != nil {
+            res := make([]PrintUsageByUser, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintUsageByUser))
+            }
+            m.SetMonthlyPrintUsageByUser(res)
         }
-        m.SetMonthlyPrintUsageByUser(res)
         return nil
     }
     return res

@@ -33,7 +33,9 @@ func (m *LocationConstraintItem) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetResolveAvailability(val)
+        if val != nil {
+            m.SetResolveAvailability(val)
+        }
         return nil
     }
     return res

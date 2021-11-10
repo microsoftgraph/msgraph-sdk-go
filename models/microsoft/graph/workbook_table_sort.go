@@ -53,11 +53,13 @@ func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]WorkbookSortField, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookSortField))
+        if val != nil {
+            res := make([]WorkbookSortField, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookSortField))
+            }
+            m.SetFields(res)
         }
-        m.SetFields(res)
         return nil
     }
     res["matchCase"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,7 +67,9 @@ func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetMatchCase(val)
+        if val != nil {
+            m.SetMatchCase(val)
+        }
         return nil
     }
     res["method"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,7 +77,9 @@ func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetMethod(val)
+        if val != nil {
+            m.SetMethod(val)
+        }
         return nil
     }
     return res

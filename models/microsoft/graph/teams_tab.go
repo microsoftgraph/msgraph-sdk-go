@@ -63,7 +63,9 @@ func (m *TeamsTab) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetConfiguration(val.(*TeamsTabConfiguration))
+        if val != nil {
+            m.SetConfiguration(val.(*TeamsTabConfiguration))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *TeamsTab) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["teamsApp"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *TeamsTab) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetTeamsApp(val.(*TeamsApp))
+        if val != nil {
+            m.SetTeamsApp(val.(*TeamsApp))
+        }
         return nil
     }
     res["webUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *TeamsTab) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetWebUrl(val)
+        if val != nil {
+            m.SetWebUrl(val)
+        }
         return nil
     }
     return res

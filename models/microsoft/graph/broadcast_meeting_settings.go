@@ -82,8 +82,10 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        cast := val.(BroadcastMeetingAudience)
-        m.SetAllowedAudience(&cast)
+        if val != nil {
+            cast := val.(BroadcastMeetingAudience)
+            m.SetAllowedAudience(&cast)
+        }
         return nil
     }
     res["isAttendeeReportEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsAttendeeReportEnabled(val)
+        if val != nil {
+            m.SetIsAttendeeReportEnabled(val)
+        }
         return nil
     }
     res["isQuestionAndAnswerEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsQuestionAndAnswerEnabled(val)
+        if val != nil {
+            m.SetIsQuestionAndAnswerEnabled(val)
+        }
         return nil
     }
     res["isRecordingEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsRecordingEnabled(val)
+        if val != nil {
+            m.SetIsRecordingEnabled(val)
+        }
         return nil
     }
     res["isVideoOnDemandEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetIsVideoOnDemandEnabled(val)
+        if val != nil {
+            m.SetIsVideoOnDemandEnabled(val)
+        }
         return nil
     }
     return res

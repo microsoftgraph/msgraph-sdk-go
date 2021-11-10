@@ -92,11 +92,13 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetExcludeGroups(res)
         }
-        m.SetExcludeGroups(res)
         return nil
     }
     res["excludeRoles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -104,11 +106,13 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetExcludeRoles(res)
         }
-        m.SetExcludeRoles(res)
         return nil
     }
     res["excludeUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,11 +120,13 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetExcludeUsers(res)
         }
-        m.SetExcludeUsers(res)
         return nil
     }
     res["includeGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,11 +134,13 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIncludeGroups(res)
         }
-        m.SetIncludeGroups(res)
         return nil
     }
     res["includeRoles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,11 +148,13 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIncludeRoles(res)
         }
-        m.SetIncludeRoles(res)
         return nil
     }
     res["includeUsers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,11 +162,13 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIncludeUsers(res)
         }
-        m.SetIncludeUsers(res)
         return nil
     }
     return res

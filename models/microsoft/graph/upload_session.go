@@ -63,7 +63,9 @@ func (m *UploadSession) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetExpirationDateTime(val)
+        if val != nil {
+            m.SetExpirationDateTime(val)
+        }
         return nil
     }
     res["nextExpectedRanges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,11 +73,13 @@ func (m *UploadSession) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetNextExpectedRanges(res)
         }
-        m.SetNextExpectedRanges(res)
         return nil
     }
     res["uploadUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,7 +87,9 @@ func (m *UploadSession) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetUploadUrl(val)
+        if val != nil {
+            m.SetUploadUrl(val)
+        }
         return nil
     }
     return res

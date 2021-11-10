@@ -62,8 +62,10 @@ func (m *TeamworkActivityTopic) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(TeamworkActivityTopicSource)
-        m.SetSource(&cast)
+        if val != nil {
+            cast := val.(TeamworkActivityTopicSource)
+            m.SetSource(&cast)
+        }
         return nil
     }
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *TeamworkActivityTopic) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetValue(val)
+        if val != nil {
+            m.SetValue(val)
+        }
         return nil
     }
     res["webUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *TeamworkActivityTopic) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetWebUrl(val)
+        if val != nil {
+            m.SetWebUrl(val)
+        }
         return nil
     }
     return res

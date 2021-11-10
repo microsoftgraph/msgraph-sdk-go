@@ -64,7 +64,9 @@ func (m *BitlockerRecoveryKey) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,7 +74,9 @@ func (m *BitlockerRecoveryKey) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDeviceId(val)
+        if val != nil {
+            m.SetDeviceId(val)
+        }
         return nil
     }
     res["key"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +84,9 @@ func (m *BitlockerRecoveryKey) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetKey(val)
+        if val != nil {
+            m.SetKey(val)
+        }
         return nil
     }
     res["volumeType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,8 +94,10 @@ func (m *BitlockerRecoveryKey) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(VolumeType)
-        m.SetVolumeType(&cast)
+        if val != nil {
+            cast := val.(VolumeType)
+            m.SetVolumeType(&cast)
+        }
         return nil
     }
     return res

@@ -52,7 +52,9 @@ func (m *BucketAggregationRange) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetFrom(val)
+        if val != nil {
+            m.SetFrom(val)
+        }
         return nil
     }
     res["to"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *BucketAggregationRange) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetTo(val)
+        if val != nil {
+            m.SetTo(val)
+        }
         return nil
     }
     return res

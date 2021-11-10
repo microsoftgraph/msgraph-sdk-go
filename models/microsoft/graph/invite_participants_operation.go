@@ -33,11 +33,13 @@ func (m *InviteParticipantsOperation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]InvitationParticipantInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*InvitationParticipantInfo))
+        if val != nil {
+            res := make([]InvitationParticipantInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*InvitationParticipantInfo))
+            }
+            m.SetParticipants(res)
         }
-        m.SetParticipants(res)
         return nil
     }
     return res

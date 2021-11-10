@@ -83,7 +83,9 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["isOptional"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetIsOptional(val)
+        if val != nil {
+            m.SetIsOptional(val)
+        }
         return nil
     }
     res["requiresVerification"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetRequiresVerification(val)
+        if val != nil {
+            m.SetRequiresVerification(val)
+        }
         return nil
     }
     res["userAttribute"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetUserAttribute(val.(*IdentityUserFlowAttribute))
+        if val != nil {
+            m.SetUserAttribute(val.(*IdentityUserFlowAttribute))
+        }
         return nil
     }
     res["userAttributeValues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,11 +123,13 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]UserAttributeValuesItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*UserAttributeValuesItem))
+        if val != nil {
+            res := make([]UserAttributeValuesItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*UserAttributeValuesItem))
+            }
+            m.SetUserAttributeValues(res)
         }
-        m.SetUserAttributeValues(res)
         return nil
     }
     res["userInputType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -127,8 +137,10 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        cast := val.(IdentityUserFlowAttributeInputType)
-        m.SetUserInputType(&cast)
+        if val != nil {
+            cast := val.(IdentityUserFlowAttributeInputType)
+            m.SetUserInputType(&cast)
+        }
         return nil
     }
     return res

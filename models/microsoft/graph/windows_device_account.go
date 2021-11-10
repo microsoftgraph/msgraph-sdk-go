@@ -42,7 +42,9 @@ func (m *WindowsDeviceAccount) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetPassword(val)
+        if val != nil {
+            m.SetPassword(val)
+        }
         return nil
     }
     return res

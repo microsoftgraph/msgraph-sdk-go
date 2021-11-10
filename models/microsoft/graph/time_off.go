@@ -53,7 +53,9 @@ func (m *TimeOff) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetDraftTimeOff(val.(*TimeOffItem))
+        if val != nil {
+            m.SetDraftTimeOff(val.(*TimeOffItem))
+        }
         return nil
     }
     res["sharedTimeOff"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *TimeOff) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetSharedTimeOff(val.(*TimeOffItem))
+        if val != nil {
+            m.SetSharedTimeOff(val.(*TimeOffItem))
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *TimeOff) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     return res

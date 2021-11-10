@@ -104,7 +104,9 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetConfiguration(val.(*Configuration))
+        if val != nil {
+            m.SetConfiguration(val.(*Configuration))
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["groups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,11 +124,13 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]ExternalGroup, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ExternalGroup))
+        if val != nil {
+            res := make([]ExternalGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ExternalGroup))
+            }
+            m.SetGroups(res)
         }
-        m.SetGroups(res)
         return nil
     }
     res["items"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,11 +138,13 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]ExternalItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ExternalItem))
+        if val != nil {
+            res := make([]ExternalItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ExternalItem))
+            }
+            m.SetItems(res)
         }
-        m.SetItems(res)
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +152,9 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,11 +162,13 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]ConnectionOperation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ConnectionOperation))
+        if val != nil {
+            res := make([]ConnectionOperation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ConnectionOperation))
+            }
+            m.SetOperations(res)
         }
-        m.SetOperations(res)
         return nil
     }
     res["schema"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +176,9 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetSchema(val.(*Schema))
+        if val != nil {
+            m.SetSchema(val.(*Schema))
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,8 +186,10 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionState)
+            m.SetState(&cast)
+        }
         return nil
     }
     return res

@@ -82,7 +82,9 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAdditionalDetails(val)
+        if val != nil {
+            m.SetAdditionalDetails(val)
+        }
         return nil
     }
     res["errorCategory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,8 +92,10 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(ProvisioningStatusErrorCategory)
-        m.SetErrorCategory(&cast)
+        if val != nil {
+            cast := val.(ProvisioningStatusErrorCategory)
+            m.SetErrorCategory(&cast)
+        }
         return nil
     }
     res["errorCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetErrorCode(val)
+        if val != nil {
+            m.SetErrorCode(val)
+        }
         return nil
     }
     res["reason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetReason(val)
+        if val != nil {
+            m.SetReason(val)
+        }
         return nil
     }
     res["recommendedAction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetRecommendedAction(val)
+        if val != nil {
+            m.SetRecommendedAction(val)
+        }
         return nil
     }
     return res

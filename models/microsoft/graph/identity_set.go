@@ -62,7 +62,9 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetApplication(val.(*Identity))
+        if val != nil {
+            m.SetApplication(val.(*Identity))
+        }
         return nil
     }
     res["device"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDevice(val.(*Identity))
+        if val != nil {
+            m.SetDevice(val.(*Identity))
+        }
         return nil
     }
     res["user"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetUser(val.(*Identity))
+        if val != nil {
+            m.SetUser(val.(*Identity))
+        }
         return nil
     }
     return res

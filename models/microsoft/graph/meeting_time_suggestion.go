@@ -102,11 +102,13 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]AttendeeAvailability, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AttendeeAvailability))
+        if val != nil {
+            res := make([]AttendeeAvailability, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AttendeeAvailability))
+            }
+            m.SetAttendeeAvailability(res)
         }
-        m.SetAttendeeAvailability(res)
         return nil
     }
     res["confidence"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +116,9 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetConfidence(val)
+        if val != nil {
+            m.SetConfidence(val)
+        }
         return nil
     }
     res["locations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,11 +126,13 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]Location, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Location))
+        if val != nil {
+            res := make([]Location, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Location))
+            }
+            m.SetLocations(res)
         }
-        m.SetLocations(res)
         return nil
     }
     res["meetingTimeSlot"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,7 +140,9 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetMeetingTimeSlot(val.(*TimeSlot))
+        if val != nil {
+            m.SetMeetingTimeSlot(val.(*TimeSlot))
+        }
         return nil
     }
     res["order"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -142,7 +150,9 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetOrder(val)
+        if val != nil {
+            m.SetOrder(val)
+        }
         return nil
     }
     res["organizerAvailability"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,8 +160,10 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(FreeBusyStatus)
-        m.SetOrganizerAvailability(&cast)
+        if val != nil {
+            cast := val.(FreeBusyStatus)
+            m.SetOrganizerAvailability(&cast)
+        }
         return nil
     }
     res["suggestionReason"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -159,7 +171,9 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetSuggestionReason(val)
+        if val != nil {
+            m.SetSuggestionReason(val)
+        }
         return nil
     }
     return res

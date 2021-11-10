@@ -62,7 +62,9 @@ func (m *ItemWithNameResponse) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetWorkbookChart(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChart))
+        if val != nil {
+            m.SetWorkbookChart(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChart))
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *LicenseProcessingState) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetState(val)
+        if val != nil {
+            m.SetState(val)
+        }
         return nil
     }
     return res

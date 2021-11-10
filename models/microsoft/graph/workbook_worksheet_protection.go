@@ -43,7 +43,9 @@ func (m *WorkbookWorksheetProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetOptions(val.(*WorkbookWorksheetProtectionOptions))
+        if val != nil {
+            m.SetOptions(val.(*WorkbookWorksheetProtectionOptions))
+        }
         return nil
     }
     res["protected"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *WorkbookWorksheetProtection) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetProtected(val)
+        if val != nil {
+            m.SetProtected(val)
+        }
         return nil
     }
     return res

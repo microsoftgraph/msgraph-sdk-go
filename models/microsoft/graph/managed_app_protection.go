@@ -293,11 +293,13 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]ManagedAppDataStorageLocation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedAppDataStorageLocation))
+        if val != nil {
+            res := make([]ManagedAppDataStorageLocation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedAppDataStorageLocation))
+            }
+            m.SetAllowedDataStorageLocations(res)
         }
-        m.SetAllowedDataStorageLocations(res)
         return nil
     }
     res["allowedInboundDataTransferSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -305,8 +307,10 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(ManagedAppDataTransferLevel)
-        m.SetAllowedInboundDataTransferSources(&cast)
+        if val != nil {
+            cast := val.(ManagedAppDataTransferLevel)
+            m.SetAllowedInboundDataTransferSources(&cast)
+        }
         return nil
     }
     res["allowedOutboundClipboardSharingLevel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -314,8 +318,10 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(ManagedAppClipboardSharingLevel)
-        m.SetAllowedOutboundClipboardSharingLevel(&cast)
+        if val != nil {
+            cast := val.(ManagedAppClipboardSharingLevel)
+            m.SetAllowedOutboundClipboardSharingLevel(&cast)
+        }
         return nil
     }
     res["allowedOutboundDataTransferDestinations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -323,8 +329,10 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(ManagedAppDataTransferLevel)
-        m.SetAllowedOutboundDataTransferDestinations(&cast)
+        if val != nil {
+            cast := val.(ManagedAppDataTransferLevel)
+            m.SetAllowedOutboundDataTransferDestinations(&cast)
+        }
         return nil
     }
     res["contactSyncBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -332,7 +340,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetContactSyncBlocked(val)
+        if val != nil {
+            m.SetContactSyncBlocked(val)
+        }
         return nil
     }
     res["dataBackupBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -340,7 +350,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDataBackupBlocked(val)
+        if val != nil {
+            m.SetDataBackupBlocked(val)
+        }
         return nil
     }
     res["deviceComplianceRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -348,7 +360,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDeviceComplianceRequired(val)
+        if val != nil {
+            m.SetDeviceComplianceRequired(val)
+        }
         return nil
     }
     res["disableAppPinIfDevicePinIsSet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -356,7 +370,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDisableAppPinIfDevicePinIsSet(val)
+        if val != nil {
+            m.SetDisableAppPinIfDevicePinIsSet(val)
+        }
         return nil
     }
     res["fingerprintBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -364,7 +380,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetFingerprintBlocked(val)
+        if val != nil {
+            m.SetFingerprintBlocked(val)
+        }
         return nil
     }
     res["managedBrowser"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -372,8 +390,10 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(ManagedBrowserType)
-        m.SetManagedBrowser(&cast)
+        if val != nil {
+            cast := val.(ManagedBrowserType)
+            m.SetManagedBrowser(&cast)
+        }
         return nil
     }
     res["managedBrowserToOpenLinksRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -381,7 +401,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetManagedBrowserToOpenLinksRequired(val)
+        if val != nil {
+            m.SetManagedBrowserToOpenLinksRequired(val)
+        }
         return nil
     }
     res["maximumPinRetries"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -389,7 +411,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMaximumPinRetries(val)
+        if val != nil {
+            m.SetMaximumPinRetries(val)
+        }
         return nil
     }
     res["minimumPinLength"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -397,7 +421,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMinimumPinLength(val)
+        if val != nil {
+            m.SetMinimumPinLength(val)
+        }
         return nil
     }
     res["minimumRequiredAppVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -405,7 +431,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMinimumRequiredAppVersion(val)
+        if val != nil {
+            m.SetMinimumRequiredAppVersion(val)
+        }
         return nil
     }
     res["minimumRequiredOsVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -413,7 +441,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMinimumRequiredOsVersion(val)
+        if val != nil {
+            m.SetMinimumRequiredOsVersion(val)
+        }
         return nil
     }
     res["minimumWarningAppVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -421,7 +451,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMinimumWarningAppVersion(val)
+        if val != nil {
+            m.SetMinimumWarningAppVersion(val)
+        }
         return nil
     }
     res["minimumWarningOsVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -429,7 +461,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetMinimumWarningOsVersion(val)
+        if val != nil {
+            m.SetMinimumWarningOsVersion(val)
+        }
         return nil
     }
     res["organizationalCredentialsRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -437,7 +471,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetOrganizationalCredentialsRequired(val)
+        if val != nil {
+            m.SetOrganizationalCredentialsRequired(val)
+        }
         return nil
     }
     res["periodBeforePinReset"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -445,7 +481,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetPeriodBeforePinReset(val)
+        if val != nil {
+            m.SetPeriodBeforePinReset(val)
+        }
         return nil
     }
     res["periodOfflineBeforeAccessCheck"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -453,7 +491,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetPeriodOfflineBeforeAccessCheck(val)
+        if val != nil {
+            m.SetPeriodOfflineBeforeAccessCheck(val)
+        }
         return nil
     }
     res["periodOfflineBeforeWipeIsEnforced"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -461,7 +501,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetPeriodOfflineBeforeWipeIsEnforced(val)
+        if val != nil {
+            m.SetPeriodOfflineBeforeWipeIsEnforced(val)
+        }
         return nil
     }
     res["periodOnlineBeforeAccessCheck"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -469,7 +511,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetPeriodOnlineBeforeAccessCheck(val)
+        if val != nil {
+            m.SetPeriodOnlineBeforeAccessCheck(val)
+        }
         return nil
     }
     res["pinCharacterSet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -477,8 +521,10 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(ManagedAppPinCharacterSet)
-        m.SetPinCharacterSet(&cast)
+        if val != nil {
+            cast := val.(ManagedAppPinCharacterSet)
+            m.SetPinCharacterSet(&cast)
+        }
         return nil
     }
     res["pinRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -486,7 +532,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetPinRequired(val)
+        if val != nil {
+            m.SetPinRequired(val)
+        }
         return nil
     }
     res["printBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -494,7 +542,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetPrintBlocked(val)
+        if val != nil {
+            m.SetPrintBlocked(val)
+        }
         return nil
     }
     res["saveAsBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -502,7 +552,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetSaveAsBlocked(val)
+        if val != nil {
+            m.SetSaveAsBlocked(val)
+        }
         return nil
     }
     res["simplePinBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -510,7 +562,9 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetSimplePinBlocked(val)
+        if val != nil {
+            m.SetSimplePinBlocked(val)
+        }
         return nil
     }
     return res

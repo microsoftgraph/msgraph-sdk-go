@@ -102,11 +102,13 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ContentTypeInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ContentTypeInfo))
+        if val != nil {
+            res := make([]ContentTypeInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ContentTypeInfo))
+            }
+            m.SetAllowedContentTypes(res)
         }
-        m.SetAllowedContentTypes(res)
         return nil
     }
     res["defaultContents"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,11 +116,13 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]DocumentSetContent, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DocumentSetContent))
+        if val != nil {
+            res := make([]DocumentSetContent, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DocumentSetContent))
+            }
+            m.SetDefaultContents(res)
         }
-        m.SetDefaultContents(res)
         return nil
     }
     res["propagateWelcomePageChanges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,7 +130,9 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetPropagateWelcomePageChanges(val)
+        if val != nil {
+            m.SetPropagateWelcomePageChanges(val)
+        }
         return nil
     }
     res["sharedColumns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -134,11 +140,13 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ColumnDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ColumnDefinition))
+        if val != nil {
+            res := make([]ColumnDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ColumnDefinition))
+            }
+            m.SetSharedColumns(res)
         }
-        m.SetSharedColumns(res)
         return nil
     }
     res["shouldPrefixNameToFile"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +154,9 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetShouldPrefixNameToFile(val)
+        if val != nil {
+            m.SetShouldPrefixNameToFile(val)
+        }
         return nil
     }
     res["welcomePageColumns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,11 +164,13 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ColumnDefinition, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ColumnDefinition))
+        if val != nil {
+            res := make([]ColumnDefinition, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ColumnDefinition))
+            }
+            m.SetWelcomePageColumns(res)
         }
-        m.SetWelcomePageColumns(res)
         return nil
     }
     res["welcomePageUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +178,9 @@ func (m *DocumentSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetWelcomePageUrl(val)
+        if val != nil {
+            m.SetWelcomePageUrl(val)
+        }
         return nil
     }
     return res

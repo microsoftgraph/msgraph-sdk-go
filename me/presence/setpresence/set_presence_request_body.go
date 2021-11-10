@@ -72,7 +72,9 @@ func (m *SetPresenceRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetActivity(val)
+        if val != nil {
+            m.SetActivity(val)
+        }
         return nil
     }
     res["availability"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *SetPresenceRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetAvailability(val)
+        if val != nil {
+            m.SetAvailability(val)
+        }
         return nil
     }
     res["expirationDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *SetPresenceRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetExpirationDuration(val)
+        if val != nil {
+            m.SetExpirationDuration(val)
+        }
         return nil
     }
     res["sessionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *SetPresenceRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetSessionId(val)
+        if val != nil {
+            m.SetSessionId(val)
+        }
         return nil
     }
     return res

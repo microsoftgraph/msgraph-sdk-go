@@ -42,7 +42,9 @@ func (m *GetMemberObjectsRequestBody) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetSecurityEnabledOnly(val)
+        if val != nil {
+            m.SetSecurityEnabledOnly(val)
+        }
         return nil
     }
     return res

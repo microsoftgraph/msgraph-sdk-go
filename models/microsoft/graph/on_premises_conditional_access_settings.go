@@ -63,7 +63,9 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetEnabled(val)
+        if val != nil {
+            m.SetEnabled(val)
+        }
         return nil
     }
     res["excludedGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,11 +73,13 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetExcludedGroups(res)
         }
-        m.SetExcludedGroups(res)
         return nil
     }
     res["includedGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,11 +87,13 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetIncludedGroups(res)
         }
-        m.SetIncludedGroups(res)
         return nil
     }
     res["overrideDefaultRule"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,7 +101,9 @@ func (m *OnPremisesConditionalAccessSettings) GetFieldDeserializers()(map[string
         if err != nil {
             return err
         }
-        m.SetOverrideDefaultRule(val)
+        if val != nil {
+            m.SetOverrideDefaultRule(val)
+        }
         return nil
     }
     return res

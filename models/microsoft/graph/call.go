@@ -243,7 +243,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetCallbackUri(val)
+        if val != nil {
+            m.SetCallbackUri(val)
+        }
         return nil
     }
     res["callChainId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -251,7 +253,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetCallChainId(val)
+        if val != nil {
+            m.SetCallChainId(val)
+        }
         return nil
     }
     res["callOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -259,7 +263,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetCallOptions(val.(*CallOptions))
+        if val != nil {
+            m.SetCallOptions(val.(*CallOptions))
+        }
         return nil
     }
     res["callRoutes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -267,11 +273,13 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]CallRoute, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CallRoute))
+        if val != nil {
+            res := make([]CallRoute, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CallRoute))
+            }
+            m.SetCallRoutes(res)
         }
-        m.SetCallRoutes(res)
         return nil
     }
     res["chatInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -279,7 +287,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetChatInfo(val.(*ChatInfo))
+        if val != nil {
+            m.SetChatInfo(val.(*ChatInfo))
+        }
         return nil
     }
     res["direction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -287,8 +297,10 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        cast := val.(CallDirection)
-        m.SetDirection(&cast)
+        if val != nil {
+            cast := val.(CallDirection)
+            m.SetDirection(&cast)
+        }
         return nil
     }
     res["incomingContext"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -296,7 +308,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetIncomingContext(val.(*IncomingContext))
+        if val != nil {
+            m.SetIncomingContext(val.(*IncomingContext))
+        }
         return nil
     }
     res["mediaConfig"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -304,7 +318,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetMediaConfig(val.(*MediaConfig))
+        if val != nil {
+            m.SetMediaConfig(val.(*MediaConfig))
+        }
         return nil
     }
     res["mediaState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -312,7 +328,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetMediaState(val.(*CallMediaState))
+        if val != nil {
+            m.SetMediaState(val.(*CallMediaState))
+        }
         return nil
     }
     res["meetingInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -320,7 +338,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetMeetingInfo(val.(*MeetingInfo))
+        if val != nil {
+            m.SetMeetingInfo(val.(*MeetingInfo))
+        }
         return nil
     }
     res["myParticipantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -328,7 +348,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetMyParticipantId(val)
+        if val != nil {
+            m.SetMyParticipantId(val)
+        }
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -336,11 +358,13 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]CommsOperation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CommsOperation))
+        if val != nil {
+            res := make([]CommsOperation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CommsOperation))
+            }
+            m.SetOperations(res)
         }
-        m.SetOperations(res)
         return nil
     }
     res["participants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -348,11 +372,13 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]Participant, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Participant))
+        if val != nil {
+            res := make([]Participant, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Participant))
+            }
+            m.SetParticipants(res)
         }
-        m.SetParticipants(res)
         return nil
     }
     res["requestedModalities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -360,11 +386,13 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]Modality, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Modality))
+        if val != nil {
+            res := make([]Modality, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Modality))
+            }
+            m.SetRequestedModalities(res)
         }
-        m.SetRequestedModalities(res)
         return nil
     }
     res["resultInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -372,7 +400,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetResultInfo(val.(*ResultInfo))
+        if val != nil {
+            m.SetResultInfo(val.(*ResultInfo))
+        }
         return nil
     }
     res["source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -380,7 +410,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetSource(val.(*ParticipantInfo))
+        if val != nil {
+            m.SetSource(val.(*ParticipantInfo))
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -388,8 +420,10 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        cast := val.(CallState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(CallState)
+            m.SetState(&cast)
+        }
         return nil
     }
     res["subject"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -397,7 +431,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetSubject(val)
+        if val != nil {
+            m.SetSubject(val)
+        }
         return nil
     }
     res["targets"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -405,11 +441,13 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        res := make([]InvitationParticipantInfo, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*InvitationParticipantInfo))
+        if val != nil {
+            res := make([]InvitationParticipantInfo, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*InvitationParticipantInfo))
+            }
+            m.SetTargets(res)
         }
-        m.SetTargets(res)
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -417,7 +455,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     res["toneInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -425,7 +465,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetToneInfo(val.(*ToneInfo))
+        if val != nil {
+            m.SetToneInfo(val.(*ToneInfo))
+        }
         return nil
     }
     res["transcription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -433,7 +475,9 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         if err != nil {
             return err
         }
-        m.SetTranscription(val.(*CallTranscriptionInfo))
+        if val != nil {
+            m.SetTranscription(val.(*CallTranscriptionInfo))
+        }
         return nil
     }
     return res

@@ -333,7 +333,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetBoolean(val.(*BooleanColumn))
+        if val != nil {
+            m.SetBoolean(val.(*BooleanColumn))
+        }
         return nil
     }
     res["calculated"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -341,7 +343,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetCalculated(val.(*CalculatedColumn))
+        if val != nil {
+            m.SetCalculated(val.(*CalculatedColumn))
+        }
         return nil
     }
     res["choice"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -349,7 +353,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetChoice(val.(*ChoiceColumn))
+        if val != nil {
+            m.SetChoice(val.(*ChoiceColumn))
+        }
         return nil
     }
     res["columnGroup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -357,7 +363,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetColumnGroup(val)
+        if val != nil {
+            m.SetColumnGroup(val)
+        }
         return nil
     }
     res["contentApprovalStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -365,7 +373,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetContentApprovalStatus(val.(*ContentApprovalStatusColumn))
+        if val != nil {
+            m.SetContentApprovalStatus(val.(*ContentApprovalStatusColumn))
+        }
         return nil
     }
     res["currency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -373,7 +383,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetCurrency(val.(*CurrencyColumn))
+        if val != nil {
+            m.SetCurrency(val.(*CurrencyColumn))
+        }
         return nil
     }
     res["dateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -381,7 +393,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDateTime(val.(*DateTimeColumn))
+        if val != nil {
+            m.SetDateTime(val.(*DateTimeColumn))
+        }
         return nil
     }
     res["defaultValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -389,7 +403,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDefaultValue(val.(*DefaultColumnValue))
+        if val != nil {
+            m.SetDefaultValue(val.(*DefaultColumnValue))
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -397,7 +413,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -405,7 +423,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["enforceUniqueValues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -413,7 +433,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetEnforceUniqueValues(val)
+        if val != nil {
+            m.SetEnforceUniqueValues(val)
+        }
         return nil
     }
     res["geolocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -421,7 +443,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetGeolocation(val.(*GeolocationColumn))
+        if val != nil {
+            m.SetGeolocation(val.(*GeolocationColumn))
+        }
         return nil
     }
     res["hidden"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -429,7 +453,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetHidden(val)
+        if val != nil {
+            m.SetHidden(val)
+        }
         return nil
     }
     res["hyperlinkOrPicture"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -437,7 +463,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetHyperlinkOrPicture(val.(*HyperlinkOrPictureColumn))
+        if val != nil {
+            m.SetHyperlinkOrPicture(val.(*HyperlinkOrPictureColumn))
+        }
         return nil
     }
     res["indexed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -445,7 +473,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIndexed(val)
+        if val != nil {
+            m.SetIndexed(val)
+        }
         return nil
     }
     res["isDeletable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -453,7 +483,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIsDeletable(val)
+        if val != nil {
+            m.SetIsDeletable(val)
+        }
         return nil
     }
     res["isReorderable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -461,7 +493,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIsReorderable(val)
+        if val != nil {
+            m.SetIsReorderable(val)
+        }
         return nil
     }
     res["isSealed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -469,7 +503,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetIsSealed(val)
+        if val != nil {
+            m.SetIsSealed(val)
+        }
         return nil
     }
     res["lookup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -477,7 +513,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetLookup(val.(*LookupColumn))
+        if val != nil {
+            m.SetLookup(val.(*LookupColumn))
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -485,7 +523,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["number"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -493,7 +533,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetNumber(val.(*NumberColumn))
+        if val != nil {
+            m.SetNumber(val.(*NumberColumn))
+        }
         return nil
     }
     res["personOrGroup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -501,7 +543,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetPersonOrGroup(val.(*PersonOrGroupColumn))
+        if val != nil {
+            m.SetPersonOrGroup(val.(*PersonOrGroupColumn))
+        }
         return nil
     }
     res["propagateChanges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -509,7 +553,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetPropagateChanges(val)
+        if val != nil {
+            m.SetPropagateChanges(val)
+        }
         return nil
     }
     res["readOnly"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -517,7 +563,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetReadOnly(val)
+        if val != nil {
+            m.SetReadOnly(val)
+        }
         return nil
     }
     res["required"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -525,7 +573,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetRequired(val)
+        if val != nil {
+            m.SetRequired(val)
+        }
         return nil
     }
     res["sourceColumn"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -533,7 +583,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetSourceColumn(val.(*ColumnDefinition))
+        if val != nil {
+            m.SetSourceColumn(val.(*ColumnDefinition))
+        }
         return nil
     }
     res["term"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -541,7 +593,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetTerm(val.(*TermColumn))
+        if val != nil {
+            m.SetTerm(val.(*TermColumn))
+        }
         return nil
     }
     res["text"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -549,7 +603,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetText(val.(*TextColumn))
+        if val != nil {
+            m.SetText(val.(*TextColumn))
+        }
         return nil
     }
     res["thumbnail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -557,7 +613,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetThumbnail(val.(*ThumbnailColumn))
+        if val != nil {
+            m.SetThumbnail(val.(*ThumbnailColumn))
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -565,8 +623,10 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(ColumnTypes)
-        m.SetType_escaped(&cast)
+        if val != nil {
+            cast := val.(ColumnTypes)
+            m.SetType_escaped(&cast)
+        }
         return nil
     }
     res["validation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -574,7 +634,9 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetValidation(val.(*ColumnValidation))
+        if val != nil {
+            m.SetValidation(val.(*ColumnValidation))
+        }
         return nil
     }
     return res

@@ -73,7 +73,9 @@ func (m *DetectedApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDeviceCount(val)
+        if val != nil {
+            m.SetDeviceCount(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *DetectedApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["managedDevices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,11 +93,13 @@ func (m *DetectedApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ManagedDevice, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedDevice))
+        if val != nil {
+            res := make([]ManagedDevice, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedDevice))
+            }
+            m.SetManagedDevices(res)
         }
-        m.SetManagedDevices(res)
         return nil
     }
     res["sizeInByte"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +107,9 @@ func (m *DetectedApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetSizeInByte(val)
+        if val != nil {
+            m.SetSizeInByte(val)
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +117,9 @@ func (m *DetectedApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

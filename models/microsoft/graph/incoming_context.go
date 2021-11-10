@@ -72,7 +72,9 @@ func (m *IncomingContext) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetObservedParticipantId(val)
+        if val != nil {
+            m.SetObservedParticipantId(val)
+        }
         return nil
     }
     res["onBehalfOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *IncomingContext) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetOnBehalfOf(val.(*IdentitySet))
+        if val != nil {
+            m.SetOnBehalfOf(val.(*IdentitySet))
+        }
         return nil
     }
     res["sourceParticipantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *IncomingContext) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetSourceParticipantId(val)
+        if val != nil {
+            m.SetSourceParticipantId(val)
+        }
         return nil
     }
     res["transferor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *IncomingContext) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetTransferor(val.(*IdentitySet))
+        if val != nil {
+            m.SetTransferor(val.(*IdentitySet))
+        }
         return nil
     }
     return res

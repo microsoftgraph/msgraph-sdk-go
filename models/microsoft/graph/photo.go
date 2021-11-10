@@ -123,7 +123,9 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetCameraMake(val)
+        if val != nil {
+            m.SetCameraMake(val)
+        }
         return nil
     }
     res["cameraModel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,7 +133,9 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetCameraModel(val)
+        if val != nil {
+            m.SetCameraModel(val)
+        }
         return nil
     }
     res["exposureDenominator"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -139,7 +143,9 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetExposureDenominator(val)
+        if val != nil {
+            m.SetExposureDenominator(val)
+        }
         return nil
     }
     res["exposureNumerator"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,7 +153,9 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetExposureNumerator(val)
+        if val != nil {
+            m.SetExposureNumerator(val)
+        }
         return nil
     }
     res["fNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -155,7 +163,9 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetFNumber(val)
+        if val != nil {
+            m.SetFNumber(val)
+        }
         return nil
     }
     res["focalLength"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +173,9 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetFocalLength(val)
+        if val != nil {
+            m.SetFocalLength(val)
+        }
         return nil
     }
     res["iso"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,7 +183,9 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetIso(val)
+        if val != nil {
+            m.SetIso(val)
+        }
         return nil
     }
     res["orientation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,7 +193,9 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetOrientation(val)
+        if val != nil {
+            m.SetOrientation(val)
+        }
         return nil
     }
     res["takenDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -187,7 +203,9 @@ func (m *Photo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         if err != nil {
             return err
         }
-        m.SetTakenDateTime(val)
+        if val != nil {
+            m.SetTakenDateTime(val)
+        }
         return nil
     }
     return res

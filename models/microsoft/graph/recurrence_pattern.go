@@ -102,7 +102,9 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDayOfMonth(val)
+        if val != nil {
+            m.SetDayOfMonth(val)
+        }
         return nil
     }
     res["daysOfWeek"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,11 +112,13 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]DayOfWeek, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DayOfWeek))
+        if val != nil {
+            res := make([]DayOfWeek, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DayOfWeek))
+            }
+            m.SetDaysOfWeek(res)
         }
-        m.SetDaysOfWeek(res)
         return nil
     }
     res["firstDayOfWeek"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,8 +126,10 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(DayOfWeek)
-        m.SetFirstDayOfWeek(&cast)
+        if val != nil {
+            cast := val.(DayOfWeek)
+            m.SetFirstDayOfWeek(&cast)
+        }
         return nil
     }
     res["index"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,8 +137,10 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(WeekIndex)
-        m.SetIndex(&cast)
+        if val != nil {
+            cast := val.(WeekIndex)
+            m.SetIndex(&cast)
+        }
         return nil
     }
     res["interval"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +148,9 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetInterval(val)
+        if val != nil {
+            m.SetInterval(val)
+        }
         return nil
     }
     res["month"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,7 +158,9 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetMonth(val)
+        if val != nil {
+            m.SetMonth(val)
+        }
         return nil
     }
     res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,8 +168,10 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(RecurrencePatternType)
-        m.SetType_escaped(&cast)
+        if val != nil {
+            cast := val.(RecurrencePatternType)
+            m.SetType_escaped(&cast)
+        }
         return nil
     }
     return res

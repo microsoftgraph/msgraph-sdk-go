@@ -42,7 +42,9 @@ func (m *PrintSettings) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDocumentConversionEnabled(val)
+        if val != nil {
+            m.SetDocumentConversionEnabled(val)
+        }
         return nil
     }
     return res

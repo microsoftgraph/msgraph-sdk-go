@@ -33,8 +33,10 @@ func (m *PersistentBrowserSessionControl) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(PersistentBrowserSessionMode)
-        m.SetMode(&cast)
+        if val != nil {
+            cast := val.(PersistentBrowserSessionMode)
+            m.SetMode(&cast)
+        }
         return nil
     }
     return res

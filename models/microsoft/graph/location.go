@@ -112,7 +112,9 @@ func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetAddress(val.(*PhysicalAddress))
+        if val != nil {
+            m.SetAddress(val.(*PhysicalAddress))
+        }
         return nil
     }
     res["coordinates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +122,9 @@ func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetCoordinates(val.(*OutlookGeoCoordinates))
+        if val != nil {
+            m.SetCoordinates(val.(*OutlookGeoCoordinates))
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +132,9 @@ func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["locationEmailAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,7 +142,9 @@ func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLocationEmailAddress(val)
+        if val != nil {
+            m.SetLocationEmailAddress(val)
+        }
         return nil
     }
     res["locationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,8 +152,10 @@ func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(LocationType)
-        m.SetLocationType(&cast)
+        if val != nil {
+            cast := val.(LocationType)
+            m.SetLocationType(&cast)
+        }
         return nil
     }
     res["locationUri"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +163,9 @@ func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetLocationUri(val)
+        if val != nil {
+            m.SetLocationUri(val)
+        }
         return nil
     }
     res["uniqueId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +173,9 @@ func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetUniqueId(val)
+        if val != nil {
+            m.SetUniqueId(val)
+        }
         return nil
     }
     res["uniqueIdType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,8 +183,10 @@ func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(LocationUniqueIdType)
-        m.SetUniqueIdType(&cast)
+        if val != nil {
+            cast := val.(LocationUniqueIdType)
+            m.SetUniqueIdType(&cast)
+        }
         return nil
     }
     return res

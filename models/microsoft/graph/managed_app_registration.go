@@ -174,7 +174,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetAppIdentifier(val.(*MobileAppIdentifier))
+        if val != nil {
+            m.SetAppIdentifier(val.(*MobileAppIdentifier))
+        }
         return nil
     }
     res["applicationVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +184,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetApplicationVersion(val)
+        if val != nil {
+            m.SetApplicationVersion(val)
+        }
         return nil
     }
     res["appliedPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,11 +194,13 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]ManagedAppPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedAppPolicy))
+        if val != nil {
+            res := make([]ManagedAppPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedAppPolicy))
+            }
+            m.SetAppliedPolicies(res)
         }
-        m.SetAppliedPolicies(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,7 +208,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["deviceName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -210,7 +218,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDeviceName(val)
+        if val != nil {
+            m.SetDeviceName(val)
+        }
         return nil
     }
     res["deviceTag"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -218,7 +228,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDeviceTag(val)
+        if val != nil {
+            m.SetDeviceTag(val)
+        }
         return nil
     }
     res["deviceType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -226,7 +238,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDeviceType(val)
+        if val != nil {
+            m.SetDeviceType(val)
+        }
         return nil
     }
     res["flaggedReasons"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -234,11 +248,13 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]ManagedAppFlaggedReason, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedAppFlaggedReason))
+        if val != nil {
+            res := make([]ManagedAppFlaggedReason, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedAppFlaggedReason))
+            }
+            m.SetFlaggedReasons(res)
         }
-        m.SetFlaggedReasons(res)
         return nil
     }
     res["intendedPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -246,11 +262,13 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]ManagedAppPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedAppPolicy))
+        if val != nil {
+            res := make([]ManagedAppPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedAppPolicy))
+            }
+            m.SetIntendedPolicies(res)
         }
-        m.SetIntendedPolicies(res)
         return nil
     }
     res["lastSyncDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -258,7 +276,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetLastSyncDateTime(val)
+        if val != nil {
+            m.SetLastSyncDateTime(val)
+        }
         return nil
     }
     res["managementSdkVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -266,7 +286,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetManagementSdkVersion(val)
+        if val != nil {
+            m.SetManagementSdkVersion(val)
+        }
         return nil
     }
     res["operations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -274,11 +296,13 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        res := make([]ManagedAppOperation, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedAppOperation))
+        if val != nil {
+            res := make([]ManagedAppOperation, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedAppOperation))
+            }
+            m.SetOperations(res)
         }
-        m.SetOperations(res)
         return nil
     }
     res["platformVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -286,7 +310,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetPlatformVersion(val)
+        if val != nil {
+            m.SetPlatformVersion(val)
+        }
         return nil
     }
     res["userId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -294,7 +320,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetUserId(val)
+        if val != nil {
+            m.SetUserId(val)
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -302,7 +330,9 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

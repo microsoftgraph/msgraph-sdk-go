@@ -112,7 +112,9 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetFilter(val)
+        if val != nil {
+            m.SetFilter(val)
+        }
         return nil
     }
     res["groupBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,11 +122,13 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetGroupBy(res)
         }
-        m.SetGroupBy(res)
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +136,9 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["orderBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,11 +146,13 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetOrderBy(res)
         }
-        m.SetOrderBy(res)
         return nil
     }
     res["search"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,7 +160,9 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetSearch(val)
+        if val != nil {
+            m.SetSearch(val)
+        }
         return nil
     }
     res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,11 +170,13 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSelect_escaped(res)
         }
-        m.SetSelect_escaped(res)
         return nil
     }
     res["skip"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +184,9 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetSkip(val)
+        if val != nil {
+            m.SetSkip(val)
+        }
         return nil
     }
     res["top"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,7 +194,9 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetTop(val)
+        if val != nil {
+            m.SetTop(val)
+        }
         return nil
     }
     return res

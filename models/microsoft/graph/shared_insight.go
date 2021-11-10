@@ -83,7 +83,9 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetLastShared(val.(*SharingDetail))
+        if val != nil {
+            m.SetLastShared(val.(*SharingDetail))
+        }
         return nil
     }
     res["lastSharedMethod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -91,7 +93,9 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetLastSharedMethod(val.(*Entity))
+        if val != nil {
+            m.SetLastSharedMethod(val.(*Entity))
+        }
         return nil
     }
     res["resource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -99,7 +103,9 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetResource(val.(*Entity))
+        if val != nil {
+            m.SetResource(val.(*Entity))
+        }
         return nil
     }
     res["resourceReference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,7 +113,9 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetResourceReference(val.(*ResourceReference))
+        if val != nil {
+            m.SetResourceReference(val.(*ResourceReference))
+        }
         return nil
     }
     res["resourceVisualization"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -115,7 +123,9 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetResourceVisualization(val.(*ResourceVisualization))
+        if val != nil {
+            m.SetResourceVisualization(val.(*ResourceVisualization))
+        }
         return nil
     }
     res["sharingHistory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,11 +133,13 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]SharingDetail, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SharingDetail))
+        if val != nil {
+            res := make([]SharingDetail, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SharingDetail))
+            }
+            m.SetSharingHistory(res)
         }
-        m.SetSharingHistory(res)
         return nil
     }
     return res

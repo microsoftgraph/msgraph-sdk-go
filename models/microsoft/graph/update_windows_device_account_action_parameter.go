@@ -92,7 +92,9 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetCalendarSyncEnabled(val)
+        if val != nil {
+            m.SetCalendarSyncEnabled(val)
+        }
         return nil
     }
     res["deviceAccount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetDeviceAccount(val.(*WindowsDeviceAccount))
+        if val != nil {
+            m.SetDeviceAccount(val.(*WindowsDeviceAccount))
+        }
         return nil
     }
     res["deviceAccountEmail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,7 +112,9 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetDeviceAccountEmail(val)
+        if val != nil {
+            m.SetDeviceAccountEmail(val)
+        }
         return nil
     }
     res["exchangeServer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,7 +122,9 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetExchangeServer(val)
+        if val != nil {
+            m.SetExchangeServer(val)
+        }
         return nil
     }
     res["passwordRotationEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,7 +132,9 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetPasswordRotationEnabled(val)
+        if val != nil {
+            m.SetPasswordRotationEnabled(val)
+        }
         return nil
     }
     res["sessionInitiationProtocalAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,7 +142,9 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetSessionInitiationProtocalAddress(val)
+        if val != nil {
+            m.SetSessionInitiationProtocalAddress(val)
+        }
         return nil
     }
     return res

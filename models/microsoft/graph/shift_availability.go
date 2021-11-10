@@ -62,7 +62,9 @@ func (m *ShiftAvailability) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetRecurrence(val.(*PatternedRecurrence))
+        if val != nil {
+            m.SetRecurrence(val.(*PatternedRecurrence))
+        }
         return nil
     }
     res["timeSlots"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,11 +72,13 @@ func (m *ShiftAvailability) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]TimeRange, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TimeRange))
+        if val != nil {
+            res := make([]TimeRange, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TimeRange))
+            }
+            m.SetTimeSlots(res)
         }
-        m.SetTimeSlots(res)
         return nil
     }
     res["timeZone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +86,9 @@ func (m *ShiftAvailability) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetTimeZone(val)
+        if val != nil {
+            m.SetTimeZone(val)
+        }
         return nil
     }
     return res

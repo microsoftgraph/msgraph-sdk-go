@@ -63,11 +63,13 @@ func (m *TranslateExchangeIdsRequestBody) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetInputIds(res)
         }
-        m.SetInputIds(res)
         return nil
     }
     res["sourceIdType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -75,8 +77,10 @@ func (m *TranslateExchangeIdsRequestBody) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat)
-        m.SetSourceIdType(&cast)
+        if val != nil {
+            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat)
+            m.SetSourceIdType(&cast)
+        }
         return nil
     }
     res["targetIdType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,8 +88,10 @@ func (m *TranslateExchangeIdsRequestBody) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat)
-        m.SetTargetIdType(&cast)
+        if val != nil {
+            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat)
+            m.SetTargetIdType(&cast)
+        }
         return nil
     }
     return res

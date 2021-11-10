@@ -53,7 +53,9 @@ func (m *ItemAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetAllTime(val.(*ItemActivityStat))
+        if val != nil {
+            m.SetAllTime(val.(*ItemActivityStat))
+        }
         return nil
     }
     res["itemActivityStats"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,11 +63,13 @@ func (m *ItemAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]ItemActivityStat, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ItemActivityStat))
+        if val != nil {
+            res := make([]ItemActivityStat, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ItemActivityStat))
+            }
+            m.SetItemActivityStats(res)
         }
-        m.SetItemActivityStats(res)
         return nil
     }
     res["lastSevenDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,7 +77,9 @@ func (m *ItemAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetLastSevenDays(val.(*ItemActivityStat))
+        if val != nil {
+            m.SetLastSevenDays(val.(*ItemActivityStat))
+        }
         return nil
     }
     return res

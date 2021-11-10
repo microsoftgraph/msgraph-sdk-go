@@ -72,7 +72,9 @@ func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetContentUrl(val)
+        if val != nil {
+            m.SetContentUrl(val)
+        }
         return nil
     }
     res["entityId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetEntityId(val)
+        if val != nil {
+            m.SetEntityId(val)
+        }
         return nil
     }
     res["removeUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetRemoveUrl(val)
+        if val != nil {
+            m.SetRemoveUrl(val)
+        }
         return nil
     }
     res["websiteUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetWebsiteUrl(val)
+        if val != nil {
+            m.SetWebsiteUrl(val)
+        }
         return nil
     }
     return res

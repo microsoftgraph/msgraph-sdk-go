@@ -133,7 +133,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetChildFolderCount(val)
+        if val != nil {
+            m.SetChildFolderCount(val)
+        }
         return nil
     }
     res["childFolders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,11 +143,13 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]MailFolder, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MailFolder))
+        if val != nil {
+            res := make([]MailFolder, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MailFolder))
+            }
+            m.SetChildFolders(res)
         }
-        m.SetChildFolders(res)
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,7 +157,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["isHidden"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -161,7 +167,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetIsHidden(val)
+        if val != nil {
+            m.SetIsHidden(val)
+        }
         return nil
     }
     res["messageRules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -169,11 +177,13 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]MessageRule, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MessageRule))
+        if val != nil {
+            res := make([]MessageRule, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MessageRule))
+            }
+            m.SetMessageRules(res)
         }
-        m.SetMessageRules(res)
         return nil
     }
     res["messages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,11 +191,13 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]Message, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Message))
+        if val != nil {
+            res := make([]Message, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Message))
+            }
+            m.SetMessages(res)
         }
-        m.SetMessages(res)
         return nil
     }
     res["multiValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -193,11 +205,13 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]MultiValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]MultiValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MultiValueLegacyExtendedProperty))
+            }
+            m.SetMultiValueExtendedProperties(res)
         }
-        m.SetMultiValueExtendedProperties(res)
         return nil
     }
     res["parentFolderId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -205,7 +219,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetParentFolderId(val)
+        if val != nil {
+            m.SetParentFolderId(val)
+        }
         return nil
     }
     res["singleValueExtendedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -213,11 +229,13 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        res := make([]SingleValueLegacyExtendedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+        if val != nil {
+            res := make([]SingleValueLegacyExtendedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SingleValueLegacyExtendedProperty))
+            }
+            m.SetSingleValueExtendedProperties(res)
         }
-        m.SetSingleValueExtendedProperties(res)
         return nil
     }
     res["totalItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -225,7 +243,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetTotalItemCount(val)
+        if val != nil {
+            m.SetTotalItemCount(val)
+        }
         return nil
     }
     res["unreadItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -233,7 +253,9 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetUnreadItemCount(val)
+        if val != nil {
+            m.SetUnreadItemCount(val)
+        }
         return nil
     }
     return res

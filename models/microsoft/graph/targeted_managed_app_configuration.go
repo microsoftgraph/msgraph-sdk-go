@@ -73,11 +73,13 @@ func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        res := make([]ManagedMobileApp, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ManagedMobileApp))
+        if val != nil {
+            res := make([]ManagedMobileApp, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ManagedMobileApp))
+            }
+            m.SetApps(res)
         }
-        m.SetApps(res)
         return nil
     }
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -85,11 +87,13 @@ func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        res := make([]TargetedManagedAppPolicyAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TargetedManagedAppPolicyAssignment))
+        if val != nil {
+            res := make([]TargetedManagedAppPolicyAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TargetedManagedAppPolicyAssignment))
+            }
+            m.SetAssignments(res)
         }
-        m.SetAssignments(res)
         return nil
     }
     res["deployedAppCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +101,9 @@ func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDeployedAppCount(val)
+        if val != nil {
+            m.SetDeployedAppCount(val)
+        }
         return nil
     }
     res["deploymentSummary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,7 +111,9 @@ func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetDeploymentSummary(val.(*ManagedAppPolicyDeploymentSummary))
+        if val != nil {
+            m.SetDeploymentSummary(val.(*ManagedAppPolicyDeploymentSummary))
+        }
         return nil
     }
     res["isAssigned"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,7 +121,9 @@ func (m *TargetedManagedAppConfiguration) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetIsAssigned(val)
+        if val != nil {
+            m.SetIsAssigned(val)
+        }
         return nil
     }
     return res

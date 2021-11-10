@@ -142,11 +142,13 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAssignCategories(res)
         }
-        m.SetAssignCategories(res)
         return nil
     }
     res["copyToFolder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +156,9 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetCopyToFolder(val)
+        if val != nil {
+            m.SetCopyToFolder(val)
+        }
         return nil
     }
     res["delete"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +166,9 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDelete(val)
+        if val != nil {
+            m.SetDelete(val)
+        }
         return nil
     }
     res["forwardAsAttachmentTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -170,11 +176,13 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Recipient))
+        if val != nil {
+            res := make([]Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Recipient))
+            }
+            m.SetForwardAsAttachmentTo(res)
         }
-        m.SetForwardAsAttachmentTo(res)
         return nil
     }
     res["forwardTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,11 +190,13 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Recipient))
+        if val != nil {
+            res := make([]Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Recipient))
+            }
+            m.SetForwardTo(res)
         }
-        m.SetForwardTo(res)
         return nil
     }
     res["markAsRead"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,7 +204,9 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetMarkAsRead(val)
+        if val != nil {
+            m.SetMarkAsRead(val)
+        }
         return nil
     }
     res["markImportance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -202,8 +214,10 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(Importance)
-        m.SetMarkImportance(&cast)
+        if val != nil {
+            cast := val.(Importance)
+            m.SetMarkImportance(&cast)
+        }
         return nil
     }
     res["moveToFolder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -211,7 +225,9 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetMoveToFolder(val)
+        if val != nil {
+            m.SetMoveToFolder(val)
+        }
         return nil
     }
     res["permanentDelete"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -219,7 +235,9 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetPermanentDelete(val)
+        if val != nil {
+            m.SetPermanentDelete(val)
+        }
         return nil
     }
     res["redirectTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -227,11 +245,13 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]Recipient, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Recipient))
+        if val != nil {
+            res := make([]Recipient, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Recipient))
+            }
+            m.SetRedirectTo(res)
         }
-        m.SetRedirectTo(res)
         return nil
     }
     res["stopProcessingRules"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -239,7 +259,9 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetStopProcessingRules(val)
+        if val != nil {
+            m.SetStopProcessingRules(val)
+        }
         return nil
     }
     return res

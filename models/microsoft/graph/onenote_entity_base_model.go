@@ -33,7 +33,9 @@ func (m *OnenoteEntityBaseModel) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetSelf(val)
+        if val != nil {
+            m.SetSelf(val)
+        }
         return nil
     }
     return res

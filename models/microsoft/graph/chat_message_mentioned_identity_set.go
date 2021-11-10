@@ -33,7 +33,9 @@ func (m *ChatMessageMentionedIdentitySet) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetConversation(val.(*TeamworkConversationIdentity))
+        if val != nil {
+            m.SetConversation(val.(*TeamworkConversationIdentity))
+        }
         return nil
     }
     return res

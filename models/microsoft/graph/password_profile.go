@@ -62,7 +62,9 @@ func (m *PasswordProfile) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetForceChangePasswordNextSignIn(val)
+        if val != nil {
+            m.SetForceChangePasswordNextSignIn(val)
+        }
         return nil
     }
     res["forceChangePasswordNextSignInWithMfa"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *PasswordProfile) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetForceChangePasswordNextSignInWithMfa(val)
+        if val != nil {
+            m.SetForceChangePasswordNextSignInWithMfa(val)
+        }
         return nil
     }
     res["password"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *PasswordProfile) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetPassword(val)
+        if val != nil {
+            m.SetPassword(val)
+        }
         return nil
     }
     return res

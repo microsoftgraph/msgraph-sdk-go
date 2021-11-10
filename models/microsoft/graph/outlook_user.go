@@ -33,11 +33,13 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]OutlookCategory, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OutlookCategory))
+        if val != nil {
+            res := make([]OutlookCategory, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OutlookCategory))
+            }
+            m.SetMasterCategories(res)
         }
-        m.SetMasterCategories(res)
         return nil
     }
     return res

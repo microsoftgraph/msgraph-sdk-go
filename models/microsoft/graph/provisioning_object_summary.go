@@ -184,7 +184,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetActivityDateTime(val)
+        if val != nil {
+            m.SetActivityDateTime(val)
+        }
         return nil
     }
     res["changeId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,7 +194,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetChangeId(val)
+        if val != nil {
+            m.SetChangeId(val)
+        }
         return nil
     }
     res["cycleId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +204,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetCycleId(val)
+        if val != nil {
+            m.SetCycleId(val)
+        }
         return nil
     }
     res["durationInMilliseconds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +214,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetDurationInMilliseconds(val)
+        if val != nil {
+            m.SetDurationInMilliseconds(val)
+        }
         return nil
     }
     res["initiatedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,7 +224,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetInitiatedBy(val.(*Initiator))
+        if val != nil {
+            m.SetInitiatedBy(val.(*Initiator))
+        }
         return nil
     }
     res["jobId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,7 +234,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetJobId(val)
+        if val != nil {
+            m.SetJobId(val)
+        }
         return nil
     }
     res["modifiedProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -232,11 +244,13 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]ModifiedProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ModifiedProperty))
+        if val != nil {
+            res := make([]ModifiedProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ModifiedProperty))
+            }
+            m.SetModifiedProperties(res)
         }
-        m.SetModifiedProperties(res)
         return nil
     }
     res["provisioningAction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -244,8 +258,10 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        cast := val.(ProvisioningAction)
-        m.SetProvisioningAction(&cast)
+        if val != nil {
+            cast := val.(ProvisioningAction)
+            m.SetProvisioningAction(&cast)
+        }
         return nil
     }
     res["provisioningStatusInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -253,7 +269,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetProvisioningStatusInfo(val.(*ProvisioningStatusInfo))
+        if val != nil {
+            m.SetProvisioningStatusInfo(val.(*ProvisioningStatusInfo))
+        }
         return nil
     }
     res["provisioningSteps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -261,11 +279,13 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        res := make([]ProvisioningStep, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ProvisioningStep))
+        if val != nil {
+            res := make([]ProvisioningStep, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ProvisioningStep))
+            }
+            m.SetProvisioningSteps(res)
         }
-        m.SetProvisioningSteps(res)
         return nil
     }
     res["servicePrincipal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -273,7 +293,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetServicePrincipal(val.(*ProvisioningServicePrincipal))
+        if val != nil {
+            m.SetServicePrincipal(val.(*ProvisioningServicePrincipal))
+        }
         return nil
     }
     res["sourceIdentity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -281,7 +303,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSourceIdentity(val.(*ProvisionedIdentity))
+        if val != nil {
+            m.SetSourceIdentity(val.(*ProvisionedIdentity))
+        }
         return nil
     }
     res["sourceSystem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -289,7 +313,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSourceSystem(val.(*ProvisioningSystem))
+        if val != nil {
+            m.SetSourceSystem(val.(*ProvisioningSystem))
+        }
         return nil
     }
     res["targetIdentity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -297,7 +323,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetTargetIdentity(val.(*ProvisionedIdentity))
+        if val != nil {
+            m.SetTargetIdentity(val.(*ProvisionedIdentity))
+        }
         return nil
     }
     res["targetSystem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -305,7 +333,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetTargetSystem(val.(*ProvisioningSystem))
+        if val != nil {
+            m.SetTargetSystem(val.(*ProvisioningSystem))
+        }
         return nil
     }
     res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -313,7 +343,9 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetTenantId(val)
+        if val != nil {
+            m.SetTenantId(val)
+        }
         return nil
     }
     return res

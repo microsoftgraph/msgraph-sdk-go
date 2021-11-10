@@ -52,7 +52,9 @@ func (m *WorkbookIcon) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetIndex(val)
+        if val != nil {
+            m.SetIndex(val)
+        }
         return nil
     }
     res["set"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *WorkbookIcon) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetSet(val)
+        if val != nil {
+            m.SetSet(val)
+        }
         return nil
     }
     return res

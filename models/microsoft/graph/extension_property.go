@@ -73,7 +73,9 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetAppDisplayName(val)
+        if val != nil {
+            m.SetAppDisplayName(val)
+        }
         return nil
     }
     res["dataType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,7 +83,9 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDataType(val)
+        if val != nil {
+            m.SetDataType(val)
+        }
         return nil
     }
     res["isSyncedFromOnPremises"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -89,7 +93,9 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetIsSyncedFromOnPremises(val)
+        if val != nil {
+            m.SetIsSyncedFromOnPremises(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,7 +103,9 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["targetObjects"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -105,11 +113,13 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTargetObjects(res)
         }
-        m.SetTargetObjects(res)
         return nil
     }
     return res

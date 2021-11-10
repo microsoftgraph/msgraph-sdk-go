@@ -42,7 +42,9 @@ func (m *ArchiveRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetShouldSetSpoSiteReadOnlyForMembers(val)
+        if val != nil {
+            m.SetShouldSetSpoSiteReadOnlyForMembers(val)
+        }
         return nil
     }
     return res

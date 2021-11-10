@@ -53,7 +53,9 @@ func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetContent(val)
+        if val != nil {
+            m.SetContent(val)
+        }
         return nil
     }
     res["contentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        m.SetContentType(val)
+        if val != nil {
+            m.SetContentType(val)
+        }
         return nil
     }
     res["replies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,11 +73,13 @@ func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(interface{}, i
         if err != nil {
             return err
         }
-        res := make([]WorkbookCommentReply, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookCommentReply))
+        if val != nil {
+            res := make([]WorkbookCommentReply, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookCommentReply))
+            }
+            m.SetReplies(res)
         }
-        m.SetReplies(res)
         return nil
     }
     return res

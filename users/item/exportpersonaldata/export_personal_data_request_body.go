@@ -42,7 +42,9 @@ func (m *ExportPersonalDataRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetStorageLocation(val)
+        if val != nil {
+            m.SetStorageLocation(val)
+        }
         return nil
     }
     return res

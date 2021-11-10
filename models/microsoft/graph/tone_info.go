@@ -52,7 +52,9 @@ func (m *ToneInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        m.SetSequenceId(val)
+        if val != nil {
+            m.SetSequenceId(val)
+        }
         return nil
     }
     res["tone"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,8 +62,10 @@ func (m *ToneInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        cast := val.(Tone)
-        m.SetTone(&cast)
+        if val != nil {
+            cast := val.(Tone)
+            m.SetTone(&cast)
+        }
         return nil
     }
     return res

@@ -473,7 +473,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAccountEnabled(val)
+        if val != nil {
+            m.SetAccountEnabled(val)
+        }
         return nil
     }
     res["addIns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -481,11 +483,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]AddIn, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AddIn))
+        if val != nil {
+            res := make([]AddIn, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AddIn))
+            }
+            m.SetAddIns(res)
         }
-        m.SetAddIns(res)
         return nil
     }
     res["alternativeNames"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -493,11 +497,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAlternativeNames(res)
         }
-        m.SetAlternativeNames(res)
         return nil
     }
     res["appDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -505,7 +511,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAppDescription(val)
+        if val != nil {
+            m.SetAppDescription(val)
+        }
         return nil
     }
     res["appDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -513,7 +521,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAppDisplayName(val)
+        if val != nil {
+            m.SetAppDisplayName(val)
+        }
         return nil
     }
     res["appId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -521,7 +531,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAppId(val)
+        if val != nil {
+            m.SetAppId(val)
+        }
         return nil
     }
     res["applicationTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -529,7 +541,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetApplicationTemplateId(val)
+        if val != nil {
+            m.SetApplicationTemplateId(val)
+        }
         return nil
     }
     res["appOwnerOrganizationId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -537,7 +551,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAppOwnerOrganizationId(val)
+        if val != nil {
+            m.SetAppOwnerOrganizationId(val)
+        }
         return nil
     }
     res["appRoleAssignedTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -545,11 +561,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]AppRoleAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AppRoleAssignment))
+        if val != nil {
+            res := make([]AppRoleAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AppRoleAssignment))
+            }
+            m.SetAppRoleAssignedTo(res)
         }
-        m.SetAppRoleAssignedTo(res)
         return nil
     }
     res["appRoleAssignmentRequired"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -557,7 +575,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAppRoleAssignmentRequired(val)
+        if val != nil {
+            m.SetAppRoleAssignmentRequired(val)
+        }
         return nil
     }
     res["appRoleAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -565,11 +585,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]AppRoleAssignment, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AppRoleAssignment))
+        if val != nil {
+            res := make([]AppRoleAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AppRoleAssignment))
+            }
+            m.SetAppRoleAssignments(res)
         }
-        m.SetAppRoleAssignments(res)
         return nil
     }
     res["appRoles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -577,11 +599,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]AppRole, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AppRole))
+        if val != nil {
+            res := make([]AppRole, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AppRole))
+            }
+            m.SetAppRoles(res)
         }
-        m.SetAppRoles(res)
         return nil
     }
     res["claimsMappingPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -589,11 +613,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]ClaimsMappingPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ClaimsMappingPolicy))
+        if val != nil {
+            res := make([]ClaimsMappingPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ClaimsMappingPolicy))
+            }
+            m.SetClaimsMappingPolicies(res)
         }
-        m.SetClaimsMappingPolicies(res)
         return nil
     }
     res["createdObjects"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -601,11 +627,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetCreatedObjects(res)
         }
-        m.SetCreatedObjects(res)
         return nil
     }
     res["delegatedPermissionClassifications"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -613,11 +641,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]DelegatedPermissionClassification, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DelegatedPermissionClassification))
+        if val != nil {
+            res := make([]DelegatedPermissionClassification, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DelegatedPermissionClassification))
+            }
+            m.SetDelegatedPermissionClassifications(res)
         }
-        m.SetDelegatedPermissionClassifications(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -625,7 +655,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["disabledByMicrosoftStatus"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -633,7 +665,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDisabledByMicrosoftStatus(val)
+        if val != nil {
+            m.SetDisabledByMicrosoftStatus(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -641,7 +675,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["endpoints"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -649,11 +685,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]Endpoint, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Endpoint))
+        if val != nil {
+            res := make([]Endpoint, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Endpoint))
+            }
+            m.SetEndpoints(res)
         }
-        m.SetEndpoints(res)
         return nil
     }
     res["homepage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -661,7 +699,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetHomepage(val)
+        if val != nil {
+            m.SetHomepage(val)
+        }
         return nil
     }
     res["homeRealmDiscoveryPolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -669,11 +709,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]HomeRealmDiscoveryPolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*HomeRealmDiscoveryPolicy))
+        if val != nil {
+            res := make([]HomeRealmDiscoveryPolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*HomeRealmDiscoveryPolicy))
+            }
+            m.SetHomeRealmDiscoveryPolicies(res)
         }
-        m.SetHomeRealmDiscoveryPolicies(res)
         return nil
     }
     res["info"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -681,7 +723,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetInfo(val.(*InformationalUrl))
+        if val != nil {
+            m.SetInfo(val.(*InformationalUrl))
+        }
         return nil
     }
     res["keyCredentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -689,11 +733,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]KeyCredential, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyCredential))
+        if val != nil {
+            res := make([]KeyCredential, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyCredential))
+            }
+            m.SetKeyCredentials(res)
         }
-        m.SetKeyCredentials(res)
         return nil
     }
     res["loginUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -701,7 +747,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetLoginUrl(val)
+        if val != nil {
+            m.SetLoginUrl(val)
+        }
         return nil
     }
     res["logoutUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -709,7 +757,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetLogoutUrl(val)
+        if val != nil {
+            m.SetLogoutUrl(val)
+        }
         return nil
     }
     res["memberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -717,11 +767,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetMemberOf(res)
         }
-        m.SetMemberOf(res)
         return nil
     }
     res["notes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -729,7 +781,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetNotes(val)
+        if val != nil {
+            m.SetNotes(val)
+        }
         return nil
     }
     res["notificationEmailAddresses"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -737,11 +791,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetNotificationEmailAddresses(res)
         }
-        m.SetNotificationEmailAddresses(res)
         return nil
     }
     res["oauth2PermissionGrants"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -749,11 +805,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]OAuth2PermissionGrant, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OAuth2PermissionGrant))
+        if val != nil {
+            res := make([]OAuth2PermissionGrant, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OAuth2PermissionGrant))
+            }
+            m.SetOauth2PermissionGrants(res)
         }
-        m.SetOauth2PermissionGrants(res)
         return nil
     }
     res["oauth2PermissionScopes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -761,11 +819,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]PermissionScope, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PermissionScope))
+        if val != nil {
+            res := make([]PermissionScope, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PermissionScope))
+            }
+            m.SetOauth2PermissionScopes(res)
         }
-        m.SetOauth2PermissionScopes(res)
         return nil
     }
     res["ownedObjects"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -773,11 +833,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetOwnedObjects(res)
         }
-        m.SetOwnedObjects(res)
         return nil
     }
     res["owners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -785,11 +847,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetOwners(res)
         }
-        m.SetOwners(res)
         return nil
     }
     res["passwordCredentials"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -797,11 +861,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]PasswordCredential, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PasswordCredential))
+        if val != nil {
+            res := make([]PasswordCredential, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PasswordCredential))
+            }
+            m.SetPasswordCredentials(res)
         }
-        m.SetPasswordCredentials(res)
         return nil
     }
     res["preferredSingleSignOnMode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -809,7 +875,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetPreferredSingleSignOnMode(val)
+        if val != nil {
+            m.SetPreferredSingleSignOnMode(val)
+        }
         return nil
     }
     res["preferredTokenSigningKeyThumbprint"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -817,7 +885,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetPreferredTokenSigningKeyThumbprint(val)
+        if val != nil {
+            m.SetPreferredTokenSigningKeyThumbprint(val)
+        }
         return nil
     }
     res["replyUrls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -825,11 +895,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetReplyUrls(res)
         }
-        m.SetReplyUrls(res)
         return nil
     }
     res["samlSingleSignOnSettings"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -837,7 +909,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetSamlSingleSignOnSettings(val.(*SamlSingleSignOnSettings))
+        if val != nil {
+            m.SetSamlSingleSignOnSettings(val.(*SamlSingleSignOnSettings))
+        }
         return nil
     }
     res["servicePrincipalNames"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -845,11 +919,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetServicePrincipalNames(res)
         }
-        m.SetServicePrincipalNames(res)
         return nil
     }
     res["servicePrincipalType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -857,7 +933,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetServicePrincipalType(val)
+        if val != nil {
+            m.SetServicePrincipalType(val)
+        }
         return nil
     }
     res["signInAudience"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -865,7 +943,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetSignInAudience(val)
+        if val != nil {
+            m.SetSignInAudience(val)
+        }
         return nil
     }
     res["tags"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -873,11 +953,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTags(res)
         }
-        m.SetTags(res)
         return nil
     }
     res["tokenEncryptionKeyId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -885,7 +967,9 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetTokenEncryptionKeyId(val)
+        if val != nil {
+            m.SetTokenEncryptionKeyId(val)
+        }
         return nil
     }
     res["tokenIssuancePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -893,11 +977,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]TokenIssuancePolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TokenIssuancePolicy))
+        if val != nil {
+            res := make([]TokenIssuancePolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TokenIssuancePolicy))
+            }
+            m.SetTokenIssuancePolicies(res)
         }
-        m.SetTokenIssuancePolicies(res)
         return nil
     }
     res["tokenLifetimePolicies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -905,11 +991,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]TokenLifetimePolicy, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*TokenLifetimePolicy))
+        if val != nil {
+            res := make([]TokenLifetimePolicy, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*TokenLifetimePolicy))
+            }
+            m.SetTokenLifetimePolicies(res)
         }
-        m.SetTokenLifetimePolicies(res)
         return nil
     }
     res["transitiveMemberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -917,11 +1005,13 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetTransitiveMemberOf(res)
         }
-        m.SetTransitiveMemberOf(res)
         return nil
     }
     return res

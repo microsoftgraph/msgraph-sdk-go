@@ -62,11 +62,13 @@ func (m *OptionalClaims) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]OptionalClaim, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OptionalClaim))
+        if val != nil {
+            res := make([]OptionalClaim, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OptionalClaim))
+            }
+            m.SetAccessToken(res)
         }
-        m.SetAccessToken(res)
         return nil
     }
     res["idToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,11 +76,13 @@ func (m *OptionalClaims) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]OptionalClaim, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OptionalClaim))
+        if val != nil {
+            res := make([]OptionalClaim, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OptionalClaim))
+            }
+            m.SetIdToken(res)
         }
-        m.SetIdToken(res)
         return nil
     }
     res["saml2Token"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -86,11 +90,13 @@ func (m *OptionalClaims) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]OptionalClaim, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*OptionalClaim))
+        if val != nil {
+            res := make([]OptionalClaim, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*OptionalClaim))
+            }
+            m.SetSaml2Token(res)
         }
-        m.SetSaml2Token(res)
         return nil
     }
     return res

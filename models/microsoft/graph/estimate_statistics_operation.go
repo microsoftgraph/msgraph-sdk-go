@@ -93,7 +93,9 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetIndexedItemCount(val)
+        if val != nil {
+            m.SetIndexedItemCount(val)
+        }
         return nil
     }
     res["indexedItemsSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetIndexedItemsSize(val)
+        if val != nil {
+            m.SetIndexedItemsSize(val)
+        }
         return nil
     }
     res["mailboxCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMailboxCount(val)
+        if val != nil {
+            m.SetMailboxCount(val)
+        }
         return nil
     }
     res["siteCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +123,9 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetSiteCount(val)
+        if val != nil {
+            m.SetSiteCount(val)
+        }
         return nil
     }
     res["sourceCollection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +133,9 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetSourceCollection(val.(*SourceCollection))
+        if val != nil {
+            m.SetSourceCollection(val.(*SourceCollection))
+        }
         return nil
     }
     res["unindexedItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +143,9 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetUnindexedItemCount(val)
+        if val != nil {
+            m.SetUnindexedItemCount(val)
+        }
         return nil
     }
     res["unindexedItemsSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +153,9 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetUnindexedItemsSize(val)
+        if val != nil {
+            m.SetUnindexedItemsSize(val)
+        }
         return nil
     }
     return res

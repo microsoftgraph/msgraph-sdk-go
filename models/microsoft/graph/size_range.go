@@ -52,7 +52,9 @@ func (m *SizeRange) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetMaximumSize(val)
+        if val != nil {
+            m.SetMaximumSize(val)
+        }
         return nil
     }
     res["minimumSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *SizeRange) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetMinimumSize(val)
+        if val != nil {
+            m.SetMinimumSize(val)
+        }
         return nil
     }
     return res

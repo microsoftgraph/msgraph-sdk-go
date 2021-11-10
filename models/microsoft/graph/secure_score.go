@@ -124,7 +124,9 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetActiveUserCount(val)
+        if val != nil {
+            m.SetActiveUserCount(val)
+        }
         return nil
     }
     res["averageComparativeScores"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,11 +134,13 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]AverageComparativeScore, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AverageComparativeScore))
+        if val != nil {
+            res := make([]AverageComparativeScore, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AverageComparativeScore))
+            }
+            m.SetAverageComparativeScores(res)
         }
-        m.SetAverageComparativeScores(res)
         return nil
     }
     res["azureTenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,7 +148,9 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetAzureTenantId(val)
+        if val != nil {
+            m.SetAzureTenantId(val)
+        }
         return nil
     }
     res["controlScores"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,11 +158,13 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]ControlScore, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ControlScore))
+        if val != nil {
+            res := make([]ControlScore, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ControlScore))
+            }
+            m.SetControlScores(res)
         }
-        m.SetControlScores(res)
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -164,7 +172,9 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["currentScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,7 +182,9 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetCurrentScore(val)
+        if val != nil {
+            m.SetCurrentScore(val)
+        }
         return nil
     }
     res["enabledServices"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,11 +192,13 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetEnabledServices(res)
         }
-        m.SetEnabledServices(res)
         return nil
     }
     res["licensedUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -192,7 +206,9 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLicensedUserCount(val)
+        if val != nil {
+            m.SetLicensedUserCount(val)
+        }
         return nil
     }
     res["maxScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +216,9 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetMaxScore(val)
+        if val != nil {
+            m.SetMaxScore(val)
+        }
         return nil
     }
     res["vendorInformation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +226,9 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetVendorInformation(val.(*SecurityVendorInformation))
+        if val != nil {
+            m.SetVendorInformation(val.(*SecurityVendorInformation))
+        }
         return nil
     }
     return res

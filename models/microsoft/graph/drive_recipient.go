@@ -62,7 +62,9 @@ func (m *DriveRecipient) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetAlias(val)
+        if val != nil {
+            m.SetAlias(val)
+        }
         return nil
     }
     res["email"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *DriveRecipient) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetEmail(val)
+        if val != nil {
+            m.SetEmail(val)
+        }
         return nil
     }
     res["objectId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *DriveRecipient) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetObjectId(val)
+        if val != nil {
+            m.SetObjectId(val)
+        }
         return nil
     }
     return res

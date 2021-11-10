@@ -43,7 +43,9 @@ func (m *Schema) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        m.SetBaseType(val)
+        if val != nil {
+            m.SetBaseType(val)
+        }
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,11 +53,13 @@ func (m *Schema) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         if err != nil {
             return err
         }
-        res := make([]Property, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Property))
+        if val != nil {
+            res := make([]Property, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Property))
+            }
+            m.SetProperties(res)
         }
-        m.SetProperties(res)
         return nil
     }
     return res

@@ -142,7 +142,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAllowAutoFilter(val)
+        if val != nil {
+            m.SetAllowAutoFilter(val)
+        }
         return nil
     }
     res["allowDeleteColumns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -150,7 +152,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAllowDeleteColumns(val)
+        if val != nil {
+            m.SetAllowDeleteColumns(val)
+        }
         return nil
     }
     res["allowDeleteRows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -158,7 +162,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAllowDeleteRows(val)
+        if val != nil {
+            m.SetAllowDeleteRows(val)
+        }
         return nil
     }
     res["allowFormatCells"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -166,7 +172,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAllowFormatCells(val)
+        if val != nil {
+            m.SetAllowFormatCells(val)
+        }
         return nil
     }
     res["allowFormatColumns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -174,7 +182,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAllowFormatColumns(val)
+        if val != nil {
+            m.SetAllowFormatColumns(val)
+        }
         return nil
     }
     res["allowFormatRows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -182,7 +192,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAllowFormatRows(val)
+        if val != nil {
+            m.SetAllowFormatRows(val)
+        }
         return nil
     }
     res["allowInsertColumns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,7 +202,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAllowInsertColumns(val)
+        if val != nil {
+            m.SetAllowInsertColumns(val)
+        }
         return nil
     }
     res["allowInsertHyperlinks"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -198,7 +212,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAllowInsertHyperlinks(val)
+        if val != nil {
+            m.SetAllowInsertHyperlinks(val)
+        }
         return nil
     }
     res["allowInsertRows"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,7 +222,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAllowInsertRows(val)
+        if val != nil {
+            m.SetAllowInsertRows(val)
+        }
         return nil
     }
     res["allowPivotTables"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -214,7 +232,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAllowPivotTables(val)
+        if val != nil {
+            m.SetAllowPivotTables(val)
+        }
         return nil
     }
     res["allowSort"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -222,7 +242,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         if err != nil {
             return err
         }
-        m.SetAllowSort(val)
+        if val != nil {
+            m.SetAllowSort(val)
+        }
         return nil
     }
     return res

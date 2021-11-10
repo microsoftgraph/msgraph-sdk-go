@@ -82,7 +82,9 @@ func (m *CopyToNotebookRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetGroupId(val)
+        if val != nil {
+            m.SetGroupId(val)
+        }
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *CopyToNotebookRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["renameAs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *CopyToNotebookRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetRenameAs(val)
+        if val != nil {
+            m.SetRenameAs(val)
+        }
         return nil
     }
     res["siteCollectionId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *CopyToNotebookRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSiteCollectionId(val)
+        if val != nil {
+            m.SetSiteCollectionId(val)
+        }
         return nil
     }
     res["siteId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *CopyToNotebookRequestBody) GetFieldDeserializers()(map[string]func(inte
         if err != nil {
             return err
         }
-        m.SetSiteId(val)
+        if val != nil {
+            m.SetSiteId(val)
+        }
         return nil
     }
     return res

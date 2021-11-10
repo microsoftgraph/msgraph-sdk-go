@@ -52,7 +52,9 @@ func (m *PatternedRecurrence) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetPattern(val.(*RecurrencePattern))
+        if val != nil {
+            m.SetPattern(val.(*RecurrencePattern))
+        }
         return nil
     }
     res["range_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *PatternedRecurrence) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetRange_escaped(val.(*RecurrenceRange))
+        if val != nil {
+            m.SetRange_escaped(val.(*RecurrenceRange))
+        }
         return nil
     }
     return res

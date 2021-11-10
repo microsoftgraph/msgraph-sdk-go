@@ -93,7 +93,9 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetAzureBlobContainer(val)
+        if val != nil {
+            m.SetAzureBlobContainer(val)
+        }
         return nil
     }
     res["azureBlobToken"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetAzureBlobToken(val)
+        if val != nil {
+            m.SetAzureBlobToken(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["exportOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,8 +123,10 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(i2f6e0000f37d36d482a1a2be3e8024654d1a2bafb61d18de02f698fc19f7d94d.ExportOptions)
-        m.SetExportOptions(&cast)
+        if val != nil {
+            cast := val.(i2f6e0000f37d36d482a1a2be3e8024654d1a2bafb61d18de02f698fc19f7d94d.ExportOptions)
+            m.SetExportOptions(&cast)
+        }
         return nil
     }
     res["exportStructure"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -126,8 +134,10 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(i2f6e0000f37d36d482a1a2be3e8024654d1a2bafb61d18de02f698fc19f7d94d.ExportFileStructure)
-        m.SetExportStructure(&cast)
+        if val != nil {
+            cast := val.(i2f6e0000f37d36d482a1a2be3e8024654d1a2bafb61d18de02f698fc19f7d94d.ExportFileStructure)
+            m.SetExportStructure(&cast)
+        }
         return nil
     }
     res["outputName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,7 +145,9 @@ func (m *ExportRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetOutputName(val)
+        if val != nil {
+            m.SetOutputName(val)
+        }
         return nil
     }
     return res

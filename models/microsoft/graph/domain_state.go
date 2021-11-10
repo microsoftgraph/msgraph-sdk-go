@@ -63,7 +63,9 @@ func (m *DomainState) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLastActionDateTime(val)
+        if val != nil {
+            m.SetLastActionDateTime(val)
+        }
         return nil
     }
     res["operation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *DomainState) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetOperation(val)
+        if val != nil {
+            m.SetOperation(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *DomainState) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetStatus(val)
+        if val != nil {
+            m.SetStatus(val)
+        }
         return nil
     }
     return res

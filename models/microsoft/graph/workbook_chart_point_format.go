@@ -33,7 +33,9 @@ func (m *WorkbookChartPointFormat) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetFill(val.(*WorkbookChartFill))
+        if val != nil {
+            m.SetFill(val.(*WorkbookChartFill))
+        }
         return nil
     }
     return res

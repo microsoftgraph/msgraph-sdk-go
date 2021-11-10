@@ -113,8 +113,10 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(ServiceHealthClassificationType)
-        m.SetClassification(&cast)
+        if val != nil {
+            cast := val.(ServiceHealthClassificationType)
+            m.SetClassification(&cast)
+        }
         return nil
     }
     res["feature"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +124,9 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetFeature(val)
+        if val != nil {
+            m.SetFeature(val)
+        }
         return nil
     }
     res["featureGroup"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +134,9 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetFeatureGroup(val)
+        if val != nil {
+            m.SetFeatureGroup(val)
+        }
         return nil
     }
     res["impactDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +144,9 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetImpactDescription(val)
+        if val != nil {
+            m.SetImpactDescription(val)
+        }
         return nil
     }
     res["isResolved"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +154,9 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetIsResolved(val)
+        if val != nil {
+            m.SetIsResolved(val)
+        }
         return nil
     }
     res["origin"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,8 +164,10 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(ServiceHealthOrigin)
-        m.SetOrigin(&cast)
+        if val != nil {
+            cast := val.(ServiceHealthOrigin)
+            m.SetOrigin(&cast)
+        }
         return nil
     }
     res["posts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,11 +175,13 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]ServiceHealthIssuePost, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ServiceHealthIssuePost))
+        if val != nil {
+            res := make([]ServiceHealthIssuePost, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ServiceHealthIssuePost))
+            }
+            m.SetPosts(res)
         }
-        m.SetPosts(res)
         return nil
     }
     res["service"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -175,7 +189,9 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetService(val)
+        if val != nil {
+            m.SetService(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -183,8 +199,10 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(ServiceHealthStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(ServiceHealthStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

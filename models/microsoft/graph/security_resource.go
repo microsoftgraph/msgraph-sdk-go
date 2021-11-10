@@ -52,7 +52,9 @@ func (m *SecurityResource) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetResource(val)
+        if val != nil {
+            m.SetResource(val)
+        }
         return nil
     }
     res["resourceType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,8 +62,10 @@ func (m *SecurityResource) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        cast := val.(SecurityResourceType)
-        m.SetResourceType(&cast)
+        if val != nil {
+            cast := val.(SecurityResourceType)
+            m.SetResourceType(&cast)
+        }
         return nil
     }
     return res

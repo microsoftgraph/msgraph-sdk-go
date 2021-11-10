@@ -42,7 +42,9 @@ func (m *RemoveGroupRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetGroupId(val)
+        if val != nil {
+            m.SetGroupId(val)
+        }
         return nil
     }
     return res

@@ -104,7 +104,9 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetAttemptsCount(val)
+        if val != nil {
+            m.SetAttemptsCount(val)
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +114,9 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +124,9 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetError(val.(*OperationError))
+        if val != nil {
+            m.SetError(val.(*OperationError))
+        }
         return nil
     }
     res["lastActionDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +134,9 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetLastActionDateTime(val)
+        if val != nil {
+            m.SetLastActionDateTime(val)
+        }
         return nil
     }
     res["operationType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -136,8 +144,10 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(TeamsAsyncOperationType)
-        m.SetOperationType(&cast)
+        if val != nil {
+            cast := val.(TeamsAsyncOperationType)
+            m.SetOperationType(&cast)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -145,8 +155,10 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(TeamsAsyncOperationStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(TeamsAsyncOperationStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     res["targetResourceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,7 +166,9 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetTargetResourceId(val)
+        if val != nil {
+            m.SetTargetResourceId(val)
+        }
         return nil
     }
     res["targetResourceLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -162,7 +176,9 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetTargetResourceLocation(val)
+        if val != nil {
+            m.SetTargetResourceLocation(val)
+        }
         return nil
     }
     return res

@@ -33,11 +33,13 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         if err != nil {
             return err
         }
-        res := make([]WorkforceIntegration, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkforceIntegration))
+        if val != nil {
+            res := make([]WorkforceIntegration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkforceIntegration))
+            }
+            m.SetWorkforceIntegrations(res)
         }
-        m.SetWorkforceIntegrations(res)
         return nil
     }
     return res

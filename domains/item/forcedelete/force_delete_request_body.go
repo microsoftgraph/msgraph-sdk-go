@@ -42,7 +42,9 @@ func (m *ForceDeleteRequestBody) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDisableUserAccounts(val)
+        if val != nil {
+            m.SetDisableUserAccounts(val)
+        }
         return nil
     }
     return res

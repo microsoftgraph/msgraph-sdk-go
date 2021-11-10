@@ -114,7 +114,9 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetBot(val.(*TeamworkBot))
+        if val != nil {
+            m.SetBot(val.(*TeamworkBot))
+        }
         return nil
     }
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -122,7 +124,9 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetCreatedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -130,7 +134,9 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -138,7 +144,9 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -146,7 +154,9 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["publishingState"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -154,8 +164,10 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(TeamsAppPublishingState)
-        m.SetPublishingState(&cast)
+        if val != nil {
+            cast := val.(TeamsAppPublishingState)
+            m.SetPublishingState(&cast)
+        }
         return nil
     }
     res["shortDescription"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,7 +175,9 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetShortDescription(val)
+        if val != nil {
+            m.SetShortDescription(val)
+        }
         return nil
     }
     res["teamsAppId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -171,7 +185,9 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetTeamsAppId(val)
+        if val != nil {
+            m.SetTeamsAppId(val)
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,7 +195,9 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res

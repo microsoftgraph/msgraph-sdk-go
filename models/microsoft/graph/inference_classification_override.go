@@ -43,8 +43,10 @@ func (m *InferenceClassificationOverride) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        cast := val.(InferenceClassificationType)
-        m.SetClassifyAs(&cast)
+        if val != nil {
+            cast := val.(InferenceClassificationType)
+            m.SetClassifyAs(&cast)
+        }
         return nil
     }
     res["senderEmailAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,7 +54,9 @@ func (m *InferenceClassificationOverride) GetFieldDeserializers()(map[string]fun
         if err != nil {
             return err
         }
-        m.SetSenderEmailAddress(val.(*EmailAddress))
+        if val != nil {
+            m.SetSenderEmailAddress(val.(*EmailAddress))
+        }
         return nil
     }
     return res

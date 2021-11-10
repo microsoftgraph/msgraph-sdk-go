@@ -64,7 +64,9 @@ func (m *InviteResponse) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetInviteParticipantsOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InviteParticipantsOperation))
+        if val != nil {
+            m.SetInviteParticipantsOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InviteParticipantsOperation))
+        }
         return nil
     }
     return res

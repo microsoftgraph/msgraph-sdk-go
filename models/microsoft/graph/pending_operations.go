@@ -42,7 +42,9 @@ func (m *PendingOperations) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetPendingContentUpdate(val.(*PendingContentUpdate))
+        if val != nil {
+            m.SetPendingContentUpdate(val.(*PendingContentUpdate))
+        }
         return nil
     }
     return res

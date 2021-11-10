@@ -72,7 +72,9 @@ func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetIsEnabled(val)
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
         return nil
     }
     res["maxWords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMaxWords(val)
+        if val != nil {
+            m.SetMaxWords(val)
+        }
         return nil
     }
     res["minWords"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetMinWords(val)
+        if val != nil {
+            m.SetMinWords(val)
+        }
         return nil
     }
     res["similarityThreshold"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetSimilarityThreshold(val)
+        if val != nil {
+            m.SetSimilarityThreshold(val)
+        }
         return nil
     }
     return res

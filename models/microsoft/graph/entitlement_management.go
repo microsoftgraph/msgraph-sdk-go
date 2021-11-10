@@ -33,11 +33,13 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]Approval, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Approval))
+        if val != nil {
+            res := make([]Approval, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Approval))
+            }
+            m.SetAccessPackageAssignmentApprovals(res)
         }
-        m.SetAccessPackageAssignmentApprovals(res)
         return nil
     }
     return res

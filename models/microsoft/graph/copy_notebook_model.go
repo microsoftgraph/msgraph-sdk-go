@@ -183,7 +183,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val)
+        if val != nil {
+            m.SetCreatedBy(val)
+        }
         return nil
     }
     res["createdByIdentity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -191,7 +193,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetCreatedByIdentity(val.(*IdentitySet))
+        if val != nil {
+            m.SetCreatedByIdentity(val.(*IdentitySet))
+        }
         return nil
     }
     res["createdTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -199,7 +203,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetCreatedTime(val)
+        if val != nil {
+            m.SetCreatedTime(val)
+        }
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -207,7 +213,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["isDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -215,7 +223,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetIsDefault(val)
+        if val != nil {
+            m.SetIsDefault(val)
+        }
         return nil
     }
     res["isShared"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -223,7 +233,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetIsShared(val)
+        if val != nil {
+            m.SetIsShared(val)
+        }
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -231,7 +243,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetLastModifiedBy(val)
+        if val != nil {
+            m.SetLastModifiedBy(val)
+        }
         return nil
     }
     res["lastModifiedByIdentity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -239,7 +253,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetLastModifiedByIdentity(val.(*IdentitySet))
+        if val != nil {
+            m.SetLastModifiedByIdentity(val.(*IdentitySet))
+        }
         return nil
     }
     res["lastModifiedTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -247,7 +263,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetLastModifiedTime(val)
+        if val != nil {
+            m.SetLastModifiedTime(val)
+        }
         return nil
     }
     res["links"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -255,7 +273,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetLinks(val.(*NotebookLinks))
+        if val != nil {
+            m.SetLinks(val.(*NotebookLinks))
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,7 +283,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["sectionGroupsUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -271,7 +293,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSectionGroupsUrl(val)
+        if val != nil {
+            m.SetSectionGroupsUrl(val)
+        }
         return nil
     }
     res["sectionsUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -279,7 +303,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSectionsUrl(val)
+        if val != nil {
+            m.SetSectionsUrl(val)
+        }
         return nil
     }
     res["self"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -287,7 +313,9 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetSelf(val)
+        if val != nil {
+            m.SetSelf(val)
+        }
         return nil
     }
     res["userRole"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -295,8 +323,10 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        cast := val.(OnenoteUserRole)
-        m.SetUserRole(&cast)
+        if val != nil {
+            cast := val.(OnenoteUserRole)
+            m.SetUserRole(&cast)
+        }
         return nil
     }
     return res

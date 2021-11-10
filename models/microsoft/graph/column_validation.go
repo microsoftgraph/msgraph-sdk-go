@@ -62,7 +62,9 @@ func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetDefaultLanguage(val)
+        if val != nil {
+            m.SetDefaultLanguage(val)
+        }
         return nil
     }
     res["descriptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,11 +72,13 @@ func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        res := make([]DisplayNameLocalization, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DisplayNameLocalization))
+        if val != nil {
+            res := make([]DisplayNameLocalization, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DisplayNameLocalization))
+            }
+            m.SetDescriptions(res)
         }
-        m.SetDescriptions(res)
         return nil
     }
     res["formula"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +86,9 @@ func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetFormula(val)
+        if val != nil {
+            m.SetFormula(val)
+        }
         return nil
     }
     return res

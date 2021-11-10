@@ -43,11 +43,13 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]AdministrativeUnit, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AdministrativeUnit))
+        if val != nil {
+            res := make([]AdministrativeUnit, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AdministrativeUnit))
+            }
+            m.SetAdministrativeUnits(res)
         }
-        m.SetAdministrativeUnits(res)
         return nil
     }
     res["deletedItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -55,11 +57,13 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetDeletedItems(res)
         }
-        m.SetDeletedItems(res)
         return nil
     }
     return res

@@ -33,11 +33,13 @@ func (m *Bitlocker) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        res := make([]BitlockerRecoveryKey, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*BitlockerRecoveryKey))
+        if val != nil {
+            res := make([]BitlockerRecoveryKey, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*BitlockerRecoveryKey))
+            }
+            m.SetRecoveryKeys(res)
         }
-        m.SetRecoveryKeys(res)
         return nil
     }
     return res

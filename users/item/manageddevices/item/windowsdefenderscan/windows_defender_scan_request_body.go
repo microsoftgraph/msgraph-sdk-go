@@ -42,7 +42,9 @@ func (m *WindowsDefenderScanRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetQuickScan(val)
+        if val != nil {
+            m.SetQuickScan(val)
+        }
         return nil
     }
     return res

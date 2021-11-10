@@ -42,7 +42,9 @@ func (m *StopHoldMusicRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetClientContext(val)
+        if val != nil {
+            m.SetClientContext(val)
+        }
         return nil
     }
     return res

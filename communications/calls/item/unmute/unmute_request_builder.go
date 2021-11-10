@@ -64,7 +64,9 @@ func (m *UnmuteResponse) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetUnmuteParticipantOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnmuteParticipantOperation))
+        if val != nil {
+            m.SetUnmuteParticipantOperation(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnmuteParticipantOperation))
+        }
         return nil
     }
     return res

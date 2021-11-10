@@ -42,7 +42,9 @@ func (m *GetMemberGroupsRequestBody) GetFieldDeserializers()(map[string]func(int
         if err != nil {
             return err
         }
-        m.SetSecurityEnabledOnly(val)
+        if val != nil {
+            m.SetSecurityEnabledOnly(val)
+        }
         return nil
     }
     return res

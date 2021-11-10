@@ -43,7 +43,9 @@ func (m *TeamsAppInstallation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetTeamsApp(val.(*TeamsApp))
+        if val != nil {
+            m.SetTeamsApp(val.(*TeamsApp))
+        }
         return nil
     }
     res["teamsAppDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *TeamsAppInstallation) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetTeamsAppDefinition(val.(*TeamsAppDefinition))
+        if val != nil {
+            m.SetTeamsAppDefinition(val.(*TeamsAppDefinition))
+        }
         return nil
     }
     return res

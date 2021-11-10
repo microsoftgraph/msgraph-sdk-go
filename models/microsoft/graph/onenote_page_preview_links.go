@@ -42,7 +42,9 @@ func (m *OnenotePagePreviewLinks) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetPreviewImageUrl(val.(*ExternalLink))
+        if val != nil {
+            m.SetPreviewImageUrl(val.(*ExternalLink))
+        }
         return nil
     }
     return res

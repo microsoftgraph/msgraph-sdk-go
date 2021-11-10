@@ -72,7 +72,9 @@ func (m *AutomaticRepliesMailTips) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetMessage(val)
+        if val != nil {
+            m.SetMessage(val)
+        }
         return nil
     }
     res["messageLanguage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *AutomaticRepliesMailTips) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetMessageLanguage(val.(*LocaleInfo))
+        if val != nil {
+            m.SetMessageLanguage(val.(*LocaleInfo))
+        }
         return nil
     }
     res["scheduledEndTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *AutomaticRepliesMailTips) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetScheduledEndTime(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetScheduledEndTime(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     res["scheduledStartTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *AutomaticRepliesMailTips) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetScheduledStartTime(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetScheduledStartTime(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     return res

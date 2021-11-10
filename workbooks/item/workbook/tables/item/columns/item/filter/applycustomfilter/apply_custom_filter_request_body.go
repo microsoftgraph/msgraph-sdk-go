@@ -62,7 +62,9 @@ func (m *ApplyCustomFilterRequestBody) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCriteria1(val)
+        if val != nil {
+            m.SetCriteria1(val)
+        }
         return nil
     }
     res["criteria2"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *ApplyCustomFilterRequestBody) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetCriteria2(val)
+        if val != nil {
+            m.SetCriteria2(val)
+        }
         return nil
     }
     res["oper"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *ApplyCustomFilterRequestBody) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        m.SetOper(val)
+        if val != nil {
+            m.SetOper(val)
+        }
         return nil
     }
     return res

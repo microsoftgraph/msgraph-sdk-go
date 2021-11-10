@@ -52,7 +52,9 @@ func (m *AverageComparativeScore) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetAverageScore(val)
+        if val != nil {
+            m.SetAverageScore(val)
+        }
         return nil
     }
     res["basis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,7 +62,9 @@ func (m *AverageComparativeScore) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetBasis(val)
+        if val != nil {
+            m.SetBasis(val)
+        }
         return nil
     }
     return res

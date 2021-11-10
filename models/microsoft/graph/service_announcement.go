@@ -53,11 +53,13 @@ func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ServiceHealth, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ServiceHealth))
+        if val != nil {
+            res := make([]ServiceHealth, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ServiceHealth))
+            }
+            m.SetHealthOverviews(res)
         }
-        m.SetHealthOverviews(res)
         return nil
     }
     res["issues"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,11 +67,13 @@ func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ServiceHealthIssue, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ServiceHealthIssue))
+        if val != nil {
+            res := make([]ServiceHealthIssue, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ServiceHealthIssue))
+            }
+            m.SetIssues(res)
         }
-        m.SetIssues(res)
         return nil
     }
     res["messages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,11 +81,13 @@ func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]ServiceUpdateMessage, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*ServiceUpdateMessage))
+        if val != nil {
+            res := make([]ServiceUpdateMessage, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ServiceUpdateMessage))
+            }
+            m.SetMessages(res)
         }
-        m.SetMessages(res)
         return nil
     }
     return res

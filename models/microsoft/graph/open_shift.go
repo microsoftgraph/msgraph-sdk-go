@@ -53,7 +53,9 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetDraftOpenShift(val.(*OpenShiftItem))
+        if val != nil {
+            m.SetDraftOpenShift(val.(*OpenShiftItem))
+        }
         return nil
     }
     res["schedulingGroupId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -61,7 +63,9 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetSchedulingGroupId(val)
+        if val != nil {
+            m.SetSchedulingGroupId(val)
+        }
         return nil
     }
     res["sharedOpenShift"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -69,7 +73,9 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         if err != nil {
             return err
         }
-        m.SetSharedOpenShift(val.(*OpenShiftItem))
+        if val != nil {
+            m.SetSharedOpenShift(val.(*OpenShiftItem))
+        }
         return nil
     }
     return res

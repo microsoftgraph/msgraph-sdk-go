@@ -33,7 +33,9 @@ func (m *EducationAssignmentSettings) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetSubmissionAnimationDisabled(val)
+        if val != nil {
+            m.SetSubmissionAnimationDisabled(val)
+        }
         return nil
     }
     return res

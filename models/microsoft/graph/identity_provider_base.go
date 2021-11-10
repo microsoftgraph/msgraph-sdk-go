@@ -33,7 +33,9 @@ func (m *IdentityProviderBase) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     return res

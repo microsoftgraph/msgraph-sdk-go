@@ -53,11 +53,13 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        res := make([]Acl, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Acl))
+        if val != nil {
+            res := make([]Acl, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Acl))
+            }
+            m.SetAcl(res)
         }
-        m.SetAcl(res)
         return nil
     }
     res["content"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -65,7 +67,9 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetContent(val.(*ExternalItemContent))
+        if val != nil {
+            m.SetContent(val.(*ExternalItemContent))
+        }
         return nil
     }
     res["properties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,7 +77,9 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetProperties(val.(*Properties))
+        if val != nil {
+            m.SetProperties(val.(*Properties))
+        }
         return nil
     }
     return res

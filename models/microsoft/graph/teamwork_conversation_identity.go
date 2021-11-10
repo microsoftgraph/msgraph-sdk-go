@@ -33,8 +33,10 @@ func (m *TeamworkConversationIdentity) GetFieldDeserializers()(map[string]func(i
         if err != nil {
             return err
         }
-        cast := val.(TeamworkConversationIdentityType)
-        m.SetConversationIdentityType(&cast)
+        if val != nil {
+            cast := val.(TeamworkConversationIdentityType)
+            m.SetConversationIdentityType(&cast)
+        }
         return nil
     }
     return res

@@ -43,7 +43,9 @@ func (m *WorkbookFormatProtection) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetFormulaHidden(val)
+        if val != nil {
+            m.SetFormulaHidden(val)
+        }
         return nil
     }
     res["locked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *WorkbookFormatProtection) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetLocked(val)
+        if val != nil {
+            m.SetLocked(val)
+        }
         return nil
     }
     return res

@@ -33,11 +33,13 @@ func (m *AppConsentApprovalRoute) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]AppConsentRequest, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AppConsentRequest))
+        if val != nil {
+            res := make([]AppConsentRequest, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AppConsentRequest))
+            }
+            m.SetAppConsentRequests(res)
         }
-        m.SetAppConsentRequests(res)
         return nil
     }
     return res

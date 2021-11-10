@@ -73,11 +73,13 @@ func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]CalendarRoleType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*CalendarRoleType))
+        if val != nil {
+            res := make([]CalendarRoleType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*CalendarRoleType))
+            }
+            m.SetAllowedRoles(res)
         }
-        m.SetAllowedRoles(res)
         return nil
     }
     res["emailAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -85,7 +87,9 @@ func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetEmailAddress(val.(*EmailAddress))
+        if val != nil {
+            m.SetEmailAddress(val.(*EmailAddress))
+        }
         return nil
     }
     res["isInsideOrganization"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,7 +97,9 @@ func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetIsInsideOrganization(val)
+        if val != nil {
+            m.SetIsInsideOrganization(val)
+        }
         return nil
     }
     res["isRemovable"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +107,9 @@ func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetIsRemovable(val)
+        if val != nil {
+            m.SetIsRemovable(val)
+        }
         return nil
     }
     res["role"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,8 +117,10 @@ func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        cast := val.(CalendarRoleType)
-        m.SetRole(&cast)
+        if val != nil {
+            cast := val.(CalendarRoleType)
+            m.SetRole(&cast)
+        }
         return nil
     }
     return res

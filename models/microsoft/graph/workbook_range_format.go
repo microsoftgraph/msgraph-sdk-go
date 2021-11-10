@@ -113,11 +113,13 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        res := make([]WorkbookRangeBorder, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*WorkbookRangeBorder))
+        if val != nil {
+            res := make([]WorkbookRangeBorder, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*WorkbookRangeBorder))
+            }
+            m.SetBorders(res)
         }
-        m.SetBorders(res)
         return nil
     }
     res["columnWidth"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +127,9 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetColumnWidth(val)
+        if val != nil {
+            m.SetColumnWidth(val)
+        }
         return nil
     }
     res["fill"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,7 +137,9 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetFill(val.(*WorkbookRangeFill))
+        if val != nil {
+            m.SetFill(val.(*WorkbookRangeFill))
+        }
         return nil
     }
     res["font"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -141,7 +147,9 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetFont(val.(*WorkbookRangeFont))
+        if val != nil {
+            m.SetFont(val.(*WorkbookRangeFont))
+        }
         return nil
     }
     res["horizontalAlignment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -149,7 +157,9 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetHorizontalAlignment(val)
+        if val != nil {
+            m.SetHorizontalAlignment(val)
+        }
         return nil
     }
     res["protection"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -157,7 +167,9 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetProtection(val.(*WorkbookFormatProtection))
+        if val != nil {
+            m.SetProtection(val.(*WorkbookFormatProtection))
+        }
         return nil
     }
     res["rowHeight"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -165,7 +177,9 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetRowHeight(val)
+        if val != nil {
+            m.SetRowHeight(val)
+        }
         return nil
     }
     res["verticalAlignment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -173,7 +187,9 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetVerticalAlignment(val)
+        if val != nil {
+            m.SetVerticalAlignment(val)
+        }
         return nil
     }
     res["wrapText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -181,7 +197,9 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetWrapText(val)
+        if val != nil {
+            m.SetWrapText(val)
+        }
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *CleanWindowsDeviceRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetKeepUserData(val)
+        if val != nil {
+            m.SetKeepUserData(val)
+        }
         return nil
     }
     return res

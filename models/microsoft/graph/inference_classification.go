@@ -33,11 +33,13 @@ func (m *InferenceClassification) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]InferenceClassificationOverride, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*InferenceClassificationOverride))
+        if val != nil {
+            res := make([]InferenceClassificationOverride, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*InferenceClassificationOverride))
+            }
+            m.SetOverrides(res)
         }
-        m.SetOverrides(res)
         return nil
     }
     return res

@@ -42,7 +42,9 @@ func (m *MergeRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
         if err != nil {
             return err
         }
-        m.SetAcross(val)
+        if val != nil {
+            m.SetAcross(val)
+        }
         return nil
     }
     return res

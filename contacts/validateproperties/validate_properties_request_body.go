@@ -72,7 +72,9 @@ func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["entityType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetEntityType(val)
+        if val != nil {
+            m.SetEntityType(val)
+        }
         return nil
     }
     res["mailNickname"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetMailNickname(val)
+        if val != nil {
+            m.SetMailNickname(val)
+        }
         return nil
     }
     res["onBehalfOfUserId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetOnBehalfOfUserId(val)
+        if val != nil {
+            m.SetOnBehalfOfUserId(val)
+        }
         return nil
     }
     return res

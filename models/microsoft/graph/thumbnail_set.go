@@ -63,7 +63,9 @@ func (m *ThumbnailSet) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetLarge(val.(*Thumbnail))
+        if val != nil {
+            m.SetLarge(val.(*Thumbnail))
+        }
         return nil
     }
     res["medium"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *ThumbnailSet) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetMedium(val.(*Thumbnail))
+        if val != nil {
+            m.SetMedium(val.(*Thumbnail))
+        }
         return nil
     }
     res["small"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *ThumbnailSet) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetSmall(val.(*Thumbnail))
+        if val != nil {
+            m.SetSmall(val.(*Thumbnail))
+        }
         return nil
     }
     res["source"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *ThumbnailSet) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetSource(val.(*Thumbnail))
+        if val != nil {
+            m.SetSource(val.(*Thumbnail))
+        }
         return nil
     }
     return res

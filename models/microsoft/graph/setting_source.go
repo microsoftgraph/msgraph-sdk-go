@@ -62,7 +62,9 @@ func (m *SettingSource) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *SettingSource) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["sourceType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,8 +82,10 @@ func (m *SettingSource) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        cast := val.(SettingSourceType)
-        m.SetSourceType(&cast)
+        if val != nil {
+            cast := val.(SettingSourceType)
+            m.SetSourceType(&cast)
+        }
         return nil
     }
     return res

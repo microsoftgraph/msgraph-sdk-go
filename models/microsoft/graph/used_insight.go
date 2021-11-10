@@ -63,7 +63,9 @@ func (m *UsedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLastUsed(val.(*UsageDetails))
+        if val != nil {
+            m.SetLastUsed(val.(*UsageDetails))
+        }
         return nil
     }
     res["resource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *UsedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetResource(val.(*Entity))
+        if val != nil {
+            m.SetResource(val.(*Entity))
+        }
         return nil
     }
     res["resourceReference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *UsedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetResourceReference(val.(*ResourceReference))
+        if val != nil {
+            m.SetResourceReference(val.(*ResourceReference))
+        }
         return nil
     }
     res["resourceVisualization"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *UsedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetResourceVisualization(val.(*ResourceVisualization))
+        if val != nil {
+            m.SetResourceVisualization(val.(*ResourceVisualization))
+        }
         return nil
     }
     return res

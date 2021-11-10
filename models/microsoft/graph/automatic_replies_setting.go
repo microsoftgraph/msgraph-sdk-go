@@ -92,8 +92,10 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(ExternalAudienceScope)
-        m.SetExternalAudience(&cast)
+        if val != nil {
+            cast := val.(ExternalAudienceScope)
+            m.SetExternalAudience(&cast)
+        }
         return nil
     }
     res["externalReplyMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +103,9 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetExternalReplyMessage(val)
+        if val != nil {
+            m.SetExternalReplyMessage(val)
+        }
         return nil
     }
     res["internalReplyMessage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +113,9 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetInternalReplyMessage(val)
+        if val != nil {
+            m.SetInternalReplyMessage(val)
+        }
         return nil
     }
     res["scheduledEndDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +123,9 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetScheduledEndDateTime(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetScheduledEndDateTime(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     res["scheduledStartDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,7 +133,9 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetScheduledStartDateTime(val.(*DateTimeTimeZone))
+        if val != nil {
+            m.SetScheduledStartDateTime(val.(*DateTimeTimeZone))
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,8 +143,10 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        cast := val.(AutomaticRepliesStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(AutomaticRepliesStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

@@ -92,7 +92,9 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetConferenceId(val)
+        if val != nil {
+            m.SetConferenceId(val)
+        }
         return nil
     }
     res["joinUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,7 +102,9 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetJoinUrl(val)
+        if val != nil {
+            m.SetJoinUrl(val)
+        }
         return nil
     }
     res["phones"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -108,11 +112,13 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]Phone, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Phone))
+        if val != nil {
+            res := make([]Phone, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Phone))
+            }
+            m.SetPhones(res)
         }
-        m.SetPhones(res)
         return nil
     }
     res["quickDial"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +126,9 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetQuickDial(val)
+        if val != nil {
+            m.SetQuickDial(val)
+        }
         return nil
     }
     res["tollFreeNumbers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,11 +136,13 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetTollFreeNumbers(res)
         }
-        m.SetTollFreeNumbers(res)
         return nil
     }
     res["tollNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -140,7 +150,9 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
         if err != nil {
             return err
         }
-        m.SetTollNumber(val)
+        if val != nil {
+            m.SetTollNumber(val)
+        }
         return nil
     }
     return res

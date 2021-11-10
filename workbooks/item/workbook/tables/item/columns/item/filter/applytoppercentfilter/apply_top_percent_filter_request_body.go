@@ -42,7 +42,9 @@ func (m *ApplyTopPercentFilterRequestBody) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        m.SetPercent(val)
+        if val != nil {
+            m.SetPercent(val)
+        }
         return nil
     }
     return res

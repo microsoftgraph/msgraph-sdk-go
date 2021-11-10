@@ -273,7 +273,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetBandwidthLowEventRatio(val)
+        if val != nil {
+            m.SetBandwidthLowEventRatio(val)
+        }
         return nil
     }
     res["basicServiceSetIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -281,7 +283,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetBasicServiceSetIdentifier(val)
+        if val != nil {
+            m.SetBasicServiceSetIdentifier(val)
+        }
         return nil
     }
     res["connectionType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -289,8 +293,10 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.NetworkConnectionType)
-        m.SetConnectionType(&cast)
+        if val != nil {
+            cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.NetworkConnectionType)
+            m.SetConnectionType(&cast)
+        }
         return nil
     }
     res["delayEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -298,7 +304,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDelayEventRatio(val)
+        if val != nil {
+            m.SetDelayEventRatio(val)
+        }
         return nil
     }
     res["dnsSuffix"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -306,7 +314,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetDnsSuffix(val)
+        if val != nil {
+            m.SetDnsSuffix(val)
+        }
         return nil
     }
     res["ipAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -314,7 +324,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetIpAddress(val)
+        if val != nil {
+            m.SetIpAddress(val)
+        }
         return nil
     }
     res["linkSpeed"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -322,7 +334,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetLinkSpeed(val)
+        if val != nil {
+            m.SetLinkSpeed(val)
+        }
         return nil
     }
     res["macAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -330,7 +344,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetMacAddress(val)
+        if val != nil {
+            m.SetMacAddress(val)
+        }
         return nil
     }
     res["port"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -338,7 +354,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetPort(val)
+        if val != nil {
+            m.SetPort(val)
+        }
         return nil
     }
     res["receivedQualityEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -346,7 +364,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetReceivedQualityEventRatio(val)
+        if val != nil {
+            m.SetReceivedQualityEventRatio(val)
+        }
         return nil
     }
     res["reflexiveIPAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -354,7 +374,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetReflexiveIPAddress(val)
+        if val != nil {
+            m.SetReflexiveIPAddress(val)
+        }
         return nil
     }
     res["relayIPAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -362,7 +384,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetRelayIPAddress(val)
+        if val != nil {
+            m.SetRelayIPAddress(val)
+        }
         return nil
     }
     res["relayPort"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -370,7 +394,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetRelayPort(val)
+        if val != nil {
+            m.SetRelayPort(val)
+        }
         return nil
     }
     res["sentQualityEventRatio"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -378,7 +404,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetSentQualityEventRatio(val)
+        if val != nil {
+            m.SetSentQualityEventRatio(val)
+        }
         return nil
     }
     res["subnet"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -386,7 +414,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetSubnet(val)
+        if val != nil {
+            m.SetSubnet(val)
+        }
         return nil
     }
     res["wifiBand"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -394,8 +424,10 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiBand)
-        m.SetWifiBand(&cast)
+        if val != nil {
+            cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiBand)
+            m.SetWifiBand(&cast)
+        }
         return nil
     }
     res["wifiBatteryCharge"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -403,7 +435,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetWifiBatteryCharge(val)
+        if val != nil {
+            m.SetWifiBatteryCharge(val)
+        }
         return nil
     }
     res["wifiChannel"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -411,7 +445,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetWifiChannel(val)
+        if val != nil {
+            m.SetWifiChannel(val)
+        }
         return nil
     }
     res["wifiMicrosoftDriver"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -419,7 +455,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetWifiMicrosoftDriver(val)
+        if val != nil {
+            m.SetWifiMicrosoftDriver(val)
+        }
         return nil
     }
     res["wifiMicrosoftDriverVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -427,7 +465,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetWifiMicrosoftDriverVersion(val)
+        if val != nil {
+            m.SetWifiMicrosoftDriverVersion(val)
+        }
         return nil
     }
     res["wifiRadioType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -435,8 +475,10 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiRadioType)
-        m.SetWifiRadioType(&cast)
+        if val != nil {
+            cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiRadioType)
+            m.SetWifiRadioType(&cast)
+        }
         return nil
     }
     res["wifiSignalStrength"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -444,7 +486,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetWifiSignalStrength(val)
+        if val != nil {
+            m.SetWifiSignalStrength(val)
+        }
         return nil
     }
     res["wifiVendorDriver"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -452,7 +496,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetWifiVendorDriver(val)
+        if val != nil {
+            m.SetWifiVendorDriver(val)
+        }
         return nil
     }
     res["wifiVendorDriverVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -460,7 +506,9 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         if err != nil {
             return err
         }
-        m.SetWifiVendorDriverVersion(val)
+        if val != nil {
+            m.SetWifiVendorDriverVersion(val)
+        }
         return nil
     }
     return res

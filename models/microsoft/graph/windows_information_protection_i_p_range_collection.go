@@ -52,7 +52,9 @@ func (m *WindowsInformationProtectionIPRangeCollection) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["ranges"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -60,11 +62,13 @@ func (m *WindowsInformationProtectionIPRangeCollection) GetFieldDeserializers()(
         if err != nil {
             return err
         }
-        res := make([]IpRange, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*IpRange))
+        if val != nil {
+            res := make([]IpRange, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*IpRange))
+            }
+            m.SetRanges(res)
         }
-        m.SetRanges(res)
         return nil
     }
     return res

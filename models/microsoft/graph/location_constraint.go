@@ -62,7 +62,9 @@ func (m *LocationConstraint) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetIsRequired(val)
+        if val != nil {
+            m.SetIsRequired(val)
+        }
         return nil
     }
     res["locations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,11 +72,13 @@ func (m *LocationConstraint) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        res := make([]LocationConstraintItem, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*LocationConstraintItem))
+        if val != nil {
+            res := make([]LocationConstraintItem, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*LocationConstraintItem))
+            }
+            m.SetLocations(res)
         }
-        m.SetLocations(res)
         return nil
     }
     res["suggestLocation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,7 +86,9 @@ func (m *LocationConstraint) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetSuggestLocation(val)
+        if val != nil {
+            m.SetSuggestLocation(val)
+        }
         return nil
     }
     return res

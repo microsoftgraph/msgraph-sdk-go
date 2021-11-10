@@ -62,7 +62,9 @@ func (m *LicenseUnitsDetail) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetEnabled(val)
+        if val != nil {
+            m.SetEnabled(val)
+        }
         return nil
     }
     res["suspended"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -70,7 +72,9 @@ func (m *LicenseUnitsDetail) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetSuspended(val)
+        if val != nil {
+            m.SetSuspended(val)
+        }
         return nil
     }
     res["warning"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -78,7 +82,9 @@ func (m *LicenseUnitsDetail) GetFieldDeserializers()(map[string]func(interface{}
         if err != nil {
             return err
         }
-        m.SetWarning(val)
+        if val != nil {
+            m.SetWarning(val)
+        }
         return nil
     }
     return res

@@ -72,7 +72,9 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["fileSize"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,7 +82,9 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetFileSize(val)
+        if val != nil {
+            m.SetFileSize(val)
+        }
         return nil
     }
     res["fileSystemInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +92,9 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetFileSystemInfo(val.(*FileSystemInfo))
+        if val != nil {
+            m.SetFileSystemInfo(val.(*FileSystemInfo))
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +102,9 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     return res

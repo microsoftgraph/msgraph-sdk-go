@@ -33,11 +33,13 @@ func (m *MultiValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]fu
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetValue(res)
         }
-        m.SetValue(res)
         return nil
     }
     return res

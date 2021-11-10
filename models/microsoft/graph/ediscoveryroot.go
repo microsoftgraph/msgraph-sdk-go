@@ -33,11 +33,13 @@ func (m *Ediscoveryroot) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]Case_escaped, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*Case_escaped))
+        if val != nil {
+            res := make([]Case_escaped, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*Case_escaped))
+            }
+            m.SetCases(res)
         }
-        m.SetCases(res)
         return nil
     }
     return res

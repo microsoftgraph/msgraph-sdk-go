@@ -82,7 +82,9 @@ func (m *TeamMessagingSettings) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAllowChannelMentions(val)
+        if val != nil {
+            m.SetAllowChannelMentions(val)
+        }
         return nil
     }
     res["allowOwnerDeleteMessages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *TeamMessagingSettings) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAllowOwnerDeleteMessages(val)
+        if val != nil {
+            m.SetAllowOwnerDeleteMessages(val)
+        }
         return nil
     }
     res["allowTeamMentions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *TeamMessagingSettings) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAllowTeamMentions(val)
+        if val != nil {
+            m.SetAllowTeamMentions(val)
+        }
         return nil
     }
     res["allowUserDeleteMessages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *TeamMessagingSettings) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAllowUserDeleteMessages(val)
+        if val != nil {
+            m.SetAllowUserDeleteMessages(val)
+        }
         return nil
     }
     res["allowUserEditMessages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *TeamMessagingSettings) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetAllowUserEditMessages(val)
+        if val != nil {
+            m.SetAllowUserEditMessages(val)
+        }
         return nil
     }
     return res

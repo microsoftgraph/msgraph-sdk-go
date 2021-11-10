@@ -72,7 +72,9 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["details"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -80,11 +82,13 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        res := make([]PrintJobStateDetail, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*PrintJobStateDetail))
+        if val != nil {
+            res := make([]PrintJobStateDetail, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*PrintJobStateDetail))
+            }
+            m.SetDetails(res)
         }
-        m.SetDetails(res)
         return nil
     }
     res["isAcquiredByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,7 +96,9 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        m.SetIsAcquiredByPrinter(val)
+        if val != nil {
+            m.SetIsAcquiredByPrinter(val)
+        }
         return nil
     }
     res["state"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -100,8 +106,10 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
         if err != nil {
             return err
         }
-        cast := val.(PrintJobProcessingState)
-        m.SetState(&cast)
+        if val != nil {
+            cast := val.(PrintJobProcessingState)
+            m.SetState(&cast)
+        }
         return nil
     }
     return res

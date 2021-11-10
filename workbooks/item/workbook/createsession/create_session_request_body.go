@@ -42,7 +42,9 @@ func (m *CreateSessionRequestBody) GetFieldDeserializers()(map[string]func(inter
         if err != nil {
             return err
         }
-        m.SetPersistChanges(val)
+        if val != nil {
+            m.SetPersistChanges(val)
+        }
         return nil
     }
     return res

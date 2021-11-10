@@ -82,7 +82,9 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetAttribution(val.(*ImageInfo))
+        if val != nil {
+            m.SetAttribution(val.(*ImageInfo))
+        }
         return nil
     }
     res["backgroundColor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetBackgroundColor(val)
+        if val != nil {
+            m.SetBackgroundColor(val)
+        }
         return nil
     }
     res["content"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetContent(val.(*Json))
+        if val != nil {
+            m.SetContent(val.(*Json))
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetDisplayText(val)
+        if val != nil {
+            m.SetDisplayText(val)
+        }
         return nil
     }
     return res

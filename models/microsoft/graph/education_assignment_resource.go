@@ -43,7 +43,9 @@ func (m *EducationAssignmentResource) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDistributeForStudentWork(val)
+        if val != nil {
+            m.SetDistributeForStudentWork(val)
+        }
         return nil
     }
     res["resource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -51,7 +53,9 @@ func (m *EducationAssignmentResource) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetResource(val.(*EducationResource))
+        if val != nil {
+            m.SetResource(val.(*EducationResource))
+        }
         return nil
     }
     return res

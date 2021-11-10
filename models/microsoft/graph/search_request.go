@@ -132,11 +132,13 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAggregationFilters(res)
         }
-        m.SetAggregationFilters(res)
         return nil
     }
     res["aggregations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,11 +146,13 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]AggregationOption, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AggregationOption))
+        if val != nil {
+            res := make([]AggregationOption, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AggregationOption))
+            }
+            m.SetAggregations(res)
         }
-        m.SetAggregations(res)
         return nil
     }
     res["contentSources"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -156,11 +160,13 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetContentSources(res)
         }
-        m.SetContentSources(res)
         return nil
     }
     res["enableTopResults"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -168,7 +174,9 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetEnableTopResults(val)
+        if val != nil {
+            m.SetEnableTopResults(val)
+        }
         return nil
     }
     res["entityTypes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -176,11 +184,13 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]EntityType, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*EntityType))
+        if val != nil {
+            res := make([]EntityType, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EntityType))
+            }
+            m.SetEntityTypes(res)
         }
-        m.SetEntityTypes(res)
         return nil
     }
     res["fields"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -188,11 +198,13 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetFields(res)
         }
-        m.SetFields(res)
         return nil
     }
     res["from"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,7 +212,9 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetFrom(val)
+        if val != nil {
+            m.SetFrom(val)
+        }
         return nil
     }
     res["query"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -208,7 +222,9 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetQuery(val.(*SearchQuery))
+        if val != nil {
+            m.SetQuery(val.(*SearchQuery))
+        }
         return nil
     }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -216,7 +232,9 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        m.SetSize(val)
+        if val != nil {
+            m.SetSize(val)
+        }
         return nil
     }
     res["sortProperties"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -224,11 +242,13 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         if err != nil {
             return err
         }
-        res := make([]SortProperty, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*SortProperty))
+        if val != nil {
+            res := make([]SortProperty, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*SortProperty))
+            }
+            m.SetSortProperties(res)
         }
-        m.SetSortProperties(res)
         return nil
     }
     return res

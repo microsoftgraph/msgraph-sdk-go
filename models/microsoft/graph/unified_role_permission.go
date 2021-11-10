@@ -62,11 +62,13 @@ func (m *UnifiedRolePermission) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAllowedResourceActions(res)
         }
-        m.SetAllowedResourceActions(res)
         return nil
     }
     res["condition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,7 +76,9 @@ func (m *UnifiedRolePermission) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetCondition(val)
+        if val != nil {
+            m.SetCondition(val)
+        }
         return nil
     }
     res["excludedResourceActions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -82,11 +86,13 @@ func (m *UnifiedRolePermission) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        res := make([]string, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*string))
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetExcludedResourceActions(res)
         }
-        m.SetExcludedResourceActions(res)
         return nil
     }
     return res

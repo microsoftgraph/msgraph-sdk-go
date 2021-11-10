@@ -63,7 +63,9 @@ func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        m.SetDescription(val.(*ItemBody))
+        if val != nil {
+            m.SetDescription(val.(*ItemBody))
+        }
         return nil
     }
     res["postType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,8 +83,10 @@ func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(interfa
         if err != nil {
             return err
         }
-        cast := val.(PostType)
-        m.SetPostType(&cast)
+        if val != nil {
+            cast := val.(PostType)
+            m.SetPostType(&cast)
+        }
         return nil
     }
     return res

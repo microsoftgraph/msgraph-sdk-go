@@ -84,11 +84,13 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        res := make([]AuthenticationMethodConfiguration, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*AuthenticationMethodConfiguration))
+        if val != nil {
+            res := make([]AuthenticationMethodConfiguration, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AuthenticationMethodConfiguration))
+            }
+            m.SetAuthenticationMethodConfigurations(res)
         }
-        m.SetAuthenticationMethodConfigurations(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,7 +98,9 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -104,7 +108,9 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,7 +118,9 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["policyVersion"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +128,9 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetPolicyVersion(val)
+        if val != nil {
+            m.SetPolicyVersion(val)
+        }
         return nil
     }
     res["reconfirmationInDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +138,9 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         if err != nil {
             return err
         }
-        m.SetReconfirmationInDays(val)
+        if val != nil {
+            m.SetReconfirmationInDays(val)
+        }
         return nil
     }
     return res

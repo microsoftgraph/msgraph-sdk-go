@@ -83,11 +83,13 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        res := make([]DirectoryObject, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*DirectoryObject))
+        if val != nil {
+            res := make([]DirectoryObject, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*DirectoryObject))
+            }
+            m.SetAppliesTo(res)
         }
-        m.SetAppliesTo(res)
         return nil
     }
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,7 +97,9 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -103,7 +107,9 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["feature"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,8 +117,10 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        cast := val.(StagedFeatureName)
-        m.SetFeature(&cast)
+        if val != nil {
+            cast := val.(StagedFeatureName)
+            m.SetFeature(&cast)
+        }
         return nil
     }
     res["isAppliedToOrganization"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,7 +128,9 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsAppliedToOrganization(val)
+        if val != nil {
+            m.SetIsAppliedToOrganization(val)
+        }
         return nil
     }
     res["isEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,7 +138,9 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(interface
         if err != nil {
             return err
         }
-        m.SetIsEnabled(val)
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
         return nil
     }
     return res

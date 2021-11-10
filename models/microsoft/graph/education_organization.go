@@ -63,7 +63,9 @@ func (m *EducationOrganization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDescription(val)
+        if val != nil {
+            m.SetDescription(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *EducationOrganization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["externalSource"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,8 +83,10 @@ func (m *EducationOrganization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        cast := val.(EducationExternalSource)
-        m.SetExternalSource(&cast)
+        if val != nil {
+            cast := val.(EducationExternalSource)
+            m.SetExternalSource(&cast)
+        }
         return nil
     }
     res["externalSourceDetail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -88,7 +94,9 @@ func (m *EducationOrganization) GetFieldDeserializers()(map[string]func(interfac
         if err != nil {
             return err
         }
-        m.SetExternalSourceDetail(val)
+        if val != nil {
+            m.SetExternalSourceDetail(val)
+        }
         return nil
     }
     return res

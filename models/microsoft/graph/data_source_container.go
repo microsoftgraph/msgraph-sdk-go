@@ -85,7 +85,9 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,7 +95,9 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["lastIndexOperation"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -101,7 +105,9 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetLastIndexOperation(val.(*CaseIndexOperation))
+        if val != nil {
+            m.SetLastIndexOperation(val.(*CaseIndexOperation))
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -109,7 +115,9 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["releasedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,7 +125,9 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        m.SetReleasedDateTime(val)
+        if val != nil {
+            m.SetReleasedDateTime(val)
+        }
         return nil
     }
     res["status"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,8 +135,10 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         if err != nil {
             return err
         }
-        cast := val.(i2f6e0000f37d36d482a1a2be3e8024654d1a2bafb61d18de02f698fc19f7d94d.DataSourceContainerStatus)
-        m.SetStatus(&cast)
+        if val != nil {
+            cast := val.(i2f6e0000f37d36d482a1a2be3e8024654d1a2bafb61d18de02f698fc19f7d94d.DataSourceContainerStatus)
+            m.SetStatus(&cast)
+        }
         return nil
     }
     return res

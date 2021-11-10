@@ -82,7 +82,9 @@ func (m *LookupColumn) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetAllowMultipleValues(val)
+        if val != nil {
+            m.SetAllowMultipleValues(val)
+        }
         return nil
     }
     res["allowUnlimitedLength"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -90,7 +92,9 @@ func (m *LookupColumn) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetAllowUnlimitedLength(val)
+        if val != nil {
+            m.SetAllowUnlimitedLength(val)
+        }
         return nil
     }
     res["columnName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -98,7 +102,9 @@ func (m *LookupColumn) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetColumnName(val)
+        if val != nil {
+            m.SetColumnName(val)
+        }
         return nil
     }
     res["listId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -106,7 +112,9 @@ func (m *LookupColumn) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetListId(val)
+        if val != nil {
+            m.SetListId(val)
+        }
         return nil
     }
     res["primaryLookupColumnId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,7 +122,9 @@ func (m *LookupColumn) GetFieldDeserializers()(map[string]func(interface{}, i04e
         if err != nil {
             return err
         }
-        m.SetPrimaryLookupColumnId(val)
+        if val != nil {
+            m.SetPrimaryLookupColumnId(val)
+        }
         return nil
     }
     return res

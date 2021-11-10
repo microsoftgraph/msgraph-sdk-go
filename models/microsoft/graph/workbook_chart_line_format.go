@@ -33,7 +33,9 @@ func (m *WorkbookChartLineFormat) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetColor(val)
+        if val != nil {
+            m.SetColor(val)
+        }
         return nil
     }
     return res

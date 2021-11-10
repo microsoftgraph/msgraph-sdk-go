@@ -43,7 +43,9 @@ func (m *CreateUploadSessionRequestBody) GetFieldDeserializers()(map[string]func
         if err != nil {
             return err
         }
-        m.SetProperties(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintDocumentUploadProperties))
+        if val != nil {
+            m.SetProperties(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintDocumentUploadProperties))
+        }
         return nil
     }
     return res

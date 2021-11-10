@@ -223,7 +223,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetCreatedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetCreatedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["createdDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -231,7 +233,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetCreatedDateTime(val)
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
         return nil
     }
     res["file"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -239,7 +243,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetFile(val.(*File))
+        if val != nil {
+            m.SetFile(val.(*File))
+        }
         return nil
     }
     res["fileSystemInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -247,7 +253,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetFileSystemInfo(val.(*FileSystemInfo))
+        if val != nil {
+            m.SetFileSystemInfo(val.(*FileSystemInfo))
+        }
         return nil
     }
     res["folder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -255,7 +263,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetFolder(val.(*Folder))
+        if val != nil {
+            m.SetFolder(val.(*Folder))
+        }
         return nil
     }
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -263,7 +273,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetId(val)
+        if val != nil {
+            m.SetId(val)
+        }
         return nil
     }
     res["image"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -271,7 +283,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetImage(val.(*Image))
+        if val != nil {
+            m.SetImage(val.(*Image))
+        }
         return nil
     }
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -279,7 +293,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetLastModifiedBy(val.(*IdentitySet))
+        if val != nil {
+            m.SetLastModifiedBy(val.(*IdentitySet))
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -287,7 +303,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -295,7 +313,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetName(val)
+        if val != nil {
+            m.SetName(val)
+        }
         return nil
     }
     res["package_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -303,7 +323,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetPackage_escaped(val.(*Package_escaped))
+        if val != nil {
+            m.SetPackage_escaped(val.(*Package_escaped))
+        }
         return nil
     }
     res["parentReference"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -311,7 +333,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetParentReference(val.(*ItemReference))
+        if val != nil {
+            m.SetParentReference(val.(*ItemReference))
+        }
         return nil
     }
     res["shared"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -319,7 +343,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetShared(val.(*Shared))
+        if val != nil {
+            m.SetShared(val.(*Shared))
+        }
         return nil
     }
     res["sharepointIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -327,7 +353,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetSharepointIds(val.(*SharepointIds))
+        if val != nil {
+            m.SetSharepointIds(val.(*SharepointIds))
+        }
         return nil
     }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -335,7 +363,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetSize(val)
+        if val != nil {
+            m.SetSize(val)
+        }
         return nil
     }
     res["specialFolder"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -343,7 +373,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetSpecialFolder(val.(*SpecialFolder))
+        if val != nil {
+            m.SetSpecialFolder(val.(*SpecialFolder))
+        }
         return nil
     }
     res["video"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -351,7 +383,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetVideo(val.(*Video))
+        if val != nil {
+            m.SetVideo(val.(*Video))
+        }
         return nil
     }
     res["webDavUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -359,7 +393,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetWebDavUrl(val)
+        if val != nil {
+            m.SetWebDavUrl(val)
+        }
         return nil
     }
     res["webUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -367,7 +403,9 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         if err != nil {
             return err
         }
-        m.SetWebUrl(val)
+        if val != nil {
+            m.SetWebUrl(val)
+        }
         return nil
     }
     return res

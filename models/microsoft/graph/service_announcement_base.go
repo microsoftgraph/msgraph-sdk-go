@@ -74,11 +74,13 @@ func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        res := make([]KeyValuePair, len(val))
-        for i, v := range val {
-            res[i] = *(v.(*KeyValuePair))
+        if val != nil {
+            res := make([]KeyValuePair, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*KeyValuePair))
+            }
+            m.SetDetails(res)
         }
-        m.SetDetails(res)
         return nil
     }
     res["endDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -86,7 +88,9 @@ func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetEndDateTime(val)
+        if val != nil {
+            m.SetEndDateTime(val)
+        }
         return nil
     }
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,7 +98,9 @@ func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetLastModifiedDateTime(val)
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
         return nil
     }
     res["startDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -102,7 +108,9 @@ func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetStartDateTime(val)
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
         return nil
     }
     res["title"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -110,7 +118,9 @@ func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(interf
         if err != nil {
             return err
         }
-        m.SetTitle(val)
+        if val != nil {
+            m.SetTitle(val)
+        }
         return nil
     }
     return res

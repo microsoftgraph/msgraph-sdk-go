@@ -63,7 +63,9 @@ func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetDisplayName(val)
+        if val != nil {
+            m.SetDisplayName(val)
+        }
         return nil
     }
     res["file"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,7 +73,9 @@ func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetFile(val)
+        if val != nil {
+            m.SetFile(val)
+        }
         return nil
     }
     res["fileHash"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -79,7 +83,9 @@ func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetFileHash(val)
+        if val != nil {
+            m.SetFileHash(val)
+        }
         return nil
     }
     res["version"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,7 +93,9 @@ func (m *WindowsInformationProtectionAppLockerFile) GetFieldDeserializers()(map[
         if err != nil {
             return err
         }
-        m.SetVersion(val)
+        if val != nil {
+            m.SetVersion(val)
+        }
         return nil
     }
     return res
