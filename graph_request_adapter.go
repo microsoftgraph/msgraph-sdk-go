@@ -10,7 +10,7 @@ import (
 
 var clientOptions = core.GraphClientOptions{
 	GraphServiceVersion:        "", //v1 doesn't include the service version in the telemetry header
-	GraphServiceLibraryVersion: "0.2.0",
+	GraphServiceLibraryVersion: "0.1.2",
 }
 
 // GraphRequestAdapter is the core service used by GraphServiceClient to make requests to Microsoft Graph.
