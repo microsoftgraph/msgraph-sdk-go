@@ -38,7 +38,6 @@ type UsedInsightRequestBuilderGetOptions struct {
 }
 // Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 type UsedInsightRequestBuilderGetQueryParameters struct {
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Expand related entities
     Expand []string;
     // Select properties to be returned
@@ -108,10 +107,7 @@ func (m *UsedInsightRequestBuilder) CreateGetRequestInformation(options *UsedIns
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
-        if err != nil {
-            return nil, err
-        }
+        requestInfo.AddQueryParameters(options.Q)
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H

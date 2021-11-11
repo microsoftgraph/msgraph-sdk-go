@@ -37,7 +37,6 @@ type OnenoteOperationRequestBuilderGetOptions struct {
 }
 // The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
 type OnenoteOperationRequestBuilderGetQueryParameters struct {
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Expand related entities
     Expand []string;
     // Select properties to be returned
@@ -107,10 +106,7 @@ func (m *OnenoteOperationRequestBuilder) CreateGetRequestInformation(options *On
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
-        if err != nil {
-            return nil, err
-        }
+        requestInfo.AddQueryParameters(options.Q)
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H

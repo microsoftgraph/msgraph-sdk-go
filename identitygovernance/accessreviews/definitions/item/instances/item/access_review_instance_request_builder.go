@@ -45,7 +45,6 @@ type AccessReviewInstanceRequestBuilderGetOptions struct {
 }
 // If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
 type AccessReviewInstanceRequestBuilderGetQueryParameters struct {
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Expand related entities
     Expand []string;
     // Select properties to be returned
@@ -124,10 +123,7 @@ func (m *AccessReviewInstanceRequestBuilder) CreateGetRequestInformation(options
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
-        if err != nil {
-            return nil, err
-        }
+        requestInfo.AddQueryParameters(options.Q)
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H

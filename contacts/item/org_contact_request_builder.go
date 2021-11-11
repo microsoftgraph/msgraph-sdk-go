@@ -46,7 +46,6 @@ type OrgContactRequestBuilderGetOptions struct {
 }
 // Get entity from contacts by key
 type OrgContactRequestBuilderGetQueryParameters struct {
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Expand related entities
     Expand []string;
     // Select properties to be returned
@@ -122,10 +121,7 @@ func (m *OrgContactRequestBuilder) CreateGetRequestInformation(options *OrgConta
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
-        if err != nil {
-            return nil, err
-        }
+        requestInfo.AddQueryParameters(options.Q)
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H
