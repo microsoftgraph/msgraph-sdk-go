@@ -28,7 +28,6 @@ type RegisteredUsersRequestBuilderGetOptions struct {
 }
 // Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 type RegisteredUsersRequestBuilderGetQueryParameters struct {
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Include count of items
     Count *bool;
     // Expand related entities
@@ -80,10 +79,7 @@ func (m *RegisteredUsersRequestBuilder) CreateGetRequestInformation(options *Reg
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
-        if err != nil {
-            return nil, err
-        }
+        requestInfo.AddQueryParameters(options.Q)
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H

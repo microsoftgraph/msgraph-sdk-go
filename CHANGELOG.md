@@ -11,7 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.1.2] - 2021-11-12
+
+### Changed
+
 - Fixes #14 a misalignement with telemetry specification
+- Fixes #17 a bug where query parameters would be missing
 
 ## [0.1.1] - 2021-11-09
 

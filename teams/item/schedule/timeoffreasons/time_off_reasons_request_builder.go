@@ -28,7 +28,6 @@ type TimeOffReasonsRequestBuilderGetOptions struct {
 }
 // The set of reasons for a time off in the schedule.
 type TimeOffReasonsRequestBuilderGetQueryParameters struct {
-    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.QueryParametersBase
     // Include count of items
     Count *bool;
     // Filter items by property values
@@ -89,10 +88,7 @@ func (m *TimeOffReasonsRequestBuilder) CreateGetRequestInformation(options *Time
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        err := options.Q.AddQueryParameters(requestInfo.QueryParameters)
-        if err != nil {
-            return nil, err
-        }
+        requestInfo.AddQueryParameters(options.Q)
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H
