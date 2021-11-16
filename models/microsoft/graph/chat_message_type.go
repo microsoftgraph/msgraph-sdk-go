@@ -11,10 +11,11 @@ const (
     CHATEVENT_CHATMESSAGETYPE
     TYPING_CHATMESSAGETYPE
     UNKNOWNFUTUREVALUE_CHATMESSAGETYPE
+    SYSTEMEVENTMESSAGE_CHATMESSAGETYPE
 )
 
 func (i ChatMessageType) String() string {
-    return []string{"MESSAGE", "CHATEVENT", "TYPING", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"MESSAGE", "CHATEVENT", "TYPING", "UNKNOWNFUTUREVALUE", "SYSTEMEVENTMESSAGE"}[i]
 }
 func ParseChatMessageType(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -26,6 +27,8 @@ func ParseChatMessageType(v string) (interface{}, error) {
             return TYPING_CHATMESSAGETYPE, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_CHATMESSAGETYPE, nil
+        case "SYSTEMEVENTMESSAGE":
+            return SYSTEMEVENTMESSAGE_CHATMESSAGETYPE, nil
     }
     return 0, errors.New("Unknown ChatMessageType value: " + v)
 }

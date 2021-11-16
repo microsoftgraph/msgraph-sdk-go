@@ -7,6 +7,8 @@ import (
 // 
 type Call struct {
     Entity
+    // Read-only. Nullable.
+    audioRoutingGroups []AudioRoutingGroup;
     // The callback URL on which callbacks will be delivered. Must be https.
     callbackUri *string;
     // A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
@@ -58,6 +60,14 @@ func NewCall()(*Call) {
         Entity: *NewEntity(),
     }
     return m
+}
+// Gets the audioRoutingGroups property value. Read-only. Nullable.
+func (m *Call) GetAudioRoutingGroups()([]AudioRoutingGroup) {
+    if m == nil {
+        return nil
+    } else {
+        return m.audioRoutingGroups
+    }
 }
 // Gets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
 func (m *Call) GetCallbackUri()(*string) {
@@ -238,6 +248,20 @@ func (m *Call) GetTranscription()(*CallTranscriptionInfo) {
 // The deserialization information for the current model
 func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["audioRoutingGroups"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAudioRoutingGroup() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AudioRoutingGroup, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AudioRoutingGroup))
+            }
+            m.SetAudioRoutingGroups(res)
+        }
+        return nil
+    }
     res["callbackUri"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -494,6 +518,17 @@ func (m *Call) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         return err
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAudioRoutingGroups()))
+        for i, v := range m.GetAudioRoutingGroups() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("audioRoutingGroups", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("callbackUri", m.GetCallbackUri())
         if err != nil {
             return err
@@ -648,6 +683,12 @@ func (m *Call) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     return nil
+}
+// Sets the audioRoutingGroups property value. Read-only. Nullable.
+// Parameters:
+//  - value : Value to set for the audioRoutingGroups property.
+func (m *Call) SetAudioRoutingGroups(value []AudioRoutingGroup)() {
+    m.audioRoutingGroups = value
 }
 // Sets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
 // Parameters:

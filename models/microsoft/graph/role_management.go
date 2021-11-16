@@ -10,6 +10,8 @@ type RoleManagement struct {
     additionalData map[string]interface{};
     // Read-only. Nullable.
     directory *RbacApplication;
+    // The RbacApplication for Entitlement Management
+    entitlementManagement *RbacApplication;
 }
 // Instantiates a new RoleManagement and sets the default values.
 func NewRoleManagement()(*RoleManagement) {
@@ -34,6 +36,14 @@ func (m *RoleManagement) GetDirectory()(*RbacApplication) {
         return m.directory
     }
 }
+// Gets the entitlementManagement property value. The RbacApplication for Entitlement Management
+func (m *RoleManagement) GetEntitlementManagement()(*RbacApplication) {
+    if m == nil {
+        return nil
+    } else {
+        return m.entitlementManagement
+    }
+}
 // The deserialization information for the current model
 func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
@@ -44,6 +54,16 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i0
         }
         if val != nil {
             m.SetDirectory(val.(*RbacApplication))
+        }
+        return nil
+    }
+    res["entitlementManagement"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRbacApplication() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEntitlementManagement(val.(*RbacApplication))
         }
         return nil
     }
@@ -58,6 +78,12 @@ func (m *RoleManagement) IsNil()(bool) {
 func (m *RoleManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("directory", m.GetDirectory())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("entitlementManagement", m.GetEntitlementManagement())
         if err != nil {
             return err
         }
@@ -81,4 +107,10 @@ func (m *RoleManagement) SetAdditionalData(value map[string]interface{})() {
 //  - value : Value to set for the directory property.
 func (m *RoleManagement) SetDirectory(value *RbacApplication)() {
     m.directory = value
+}
+// Sets the entitlementManagement property value. The RbacApplication for Entitlement Management
+// Parameters:
+//  - value : Value to set for the entitlementManagement property.
+func (m *RoleManagement) SetEntitlementManagement(value *RbacApplication)() {
+    m.entitlementManagement = value
 }

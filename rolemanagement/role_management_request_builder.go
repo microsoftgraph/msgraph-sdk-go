@@ -1,6 +1,7 @@
 package rolemanagement
 
 import (
+    i2529f89b496523729dcdfab1e2d617e69879d8d3f1d15ee0974ec5f165c6b85a "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/entitlementmanagement"
     iccf2533ee4b8170d1ddaae74c306af4ad148d82bdc4a5a338bd8779a8217cbe5 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/directory"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
@@ -79,7 +80,7 @@ func (m *RoleManagementRequestBuilder) CreateGetRequestInformation(options *Role
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(options.Q)
+        requestInfo.AddQueryParameters(*(options.Q))
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H
@@ -114,6 +115,9 @@ func (m *RoleManagementRequestBuilder) CreatePatchRequestInformation(options *Ro
 }
 func (m *RoleManagementRequestBuilder) Directory()(*iccf2533ee4b8170d1ddaae74c306af4ad148d82bdc4a5a338bd8779a8217cbe5.DirectoryRequestBuilder) {
     return iccf2533ee4b8170d1ddaae74c306af4ad148d82bdc4a5a338bd8779a8217cbe5.NewDirectoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *RoleManagementRequestBuilder) EntitlementManagement()(*i2529f89b496523729dcdfab1e2d617e69879d8d3f1d15ee0974ec5f165c6b85a.EntitlementManagementRequestBuilder) {
+    return i2529f89b496523729dcdfab1e2d617e69879d8d3f1d15ee0974ec5f165c6b85a.NewEntitlementManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get roleManagement
 // Parameters:

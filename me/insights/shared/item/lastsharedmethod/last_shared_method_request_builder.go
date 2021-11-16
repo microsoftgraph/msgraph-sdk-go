@@ -11,7 +11,6 @@ import (
     i565ca0b1b9ad912766fbf0e58273b9b820797d53acf7b1a52b069c653ed89642 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/calendarsharingmessage"
     i6cc0aa29fc3d62fe6f6b63130592b1d29cd1d8fb11958714c2e1742bca9aebc4 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/printdocument"
     i7683100b0875413d2b2c4dcf5d11783cac950aa58c66828826f8aece48cbf65a "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/workbookrangefill"
-    i839f2ef36f3076143729c0a7524f33f2e7a3b3fb22d505658e4b7c57872879c1 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/caseexportoperation"
     ia9cce8d9fe15f9c6483c6dc727188f8dd88d1e7ba94f24973a7777efb1d5f9e9 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/targetedmanagedappprotection"
     ib3f96e09937f4ccaf5d8a6c187f8e47d8d4c861bf85934c288824052c89ddf6b "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/printjob"
     ibf3077bbc251729ad3fc7d0b16ffb0f2f39a470f7076ba6e5686549a2f39d417 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/workbookrangesort"
@@ -51,9 +50,6 @@ type LastSharedMethodRequestBuilderGetQueryParameters struct {
 func (m *LastSharedMethodRequestBuilder) CalendarSharingMessage()(*i565ca0b1b9ad912766fbf0e58273b9b820797d53acf7b1a52b069c653ed89642.CalendarSharingMessageRequestBuilder) {
     return i565ca0b1b9ad912766fbf0e58273b9b820797d53acf7b1a52b069c653ed89642.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *LastSharedMethodRequestBuilder) CaseExportOperation()(*i839f2ef36f3076143729c0a7524f33f2e7a3b3fb22d505658e4b7c57872879c1.CaseExportOperationRequestBuilder) {
-    return i839f2ef36f3076143729c0a7524f33f2e7a3b3fb22d505658e4b7c57872879c1.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Instantiates a new LastSharedMethodRequestBuilder and sets the default values.
 // Parameters:
 //  - pathParameters : Path parameters for the request
@@ -88,7 +84,7 @@ func (m *LastSharedMethodRequestBuilder) CreateGetRequestInformation(options *La
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(options.Q)
+        requestInfo.AddQueryParameters(*(options.Q))
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H

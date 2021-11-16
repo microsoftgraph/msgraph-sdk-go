@@ -4,7 +4,6 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i08b80671e06ff16f50e97ca34c6fc54d2fb7015313e581e61f78f8e9987f9d90 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/lastsharedmethod/caseexportoperation"
     i14988d2192ea3bfd876a73dc2fa29e9c461099775af2daa51550f01232119e17 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/lastsharedmethod/mobileappcontentfile"
     i1c5e952cbcca5bb0561f018e495d472c32de97497ee9f2dcea5c10787062433c "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/lastsharedmethod/calendarsharingmessage"
     i2013aba7e11d64583041b9ec3c14bb138531f49988b7fd4c16494ec690243282 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/lastsharedmethod/managedappprotection"
@@ -51,9 +50,6 @@ type LastSharedMethodRequestBuilderGetQueryParameters struct {
 func (m *LastSharedMethodRequestBuilder) CalendarSharingMessage()(*i1c5e952cbcca5bb0561f018e495d472c32de97497ee9f2dcea5c10787062433c.CalendarSharingMessageRequestBuilder) {
     return i1c5e952cbcca5bb0561f018e495d472c32de97497ee9f2dcea5c10787062433c.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *LastSharedMethodRequestBuilder) CaseExportOperation()(*i08b80671e06ff16f50e97ca34c6fc54d2fb7015313e581e61f78f8e9987f9d90.CaseExportOperationRequestBuilder) {
-    return i08b80671e06ff16f50e97ca34c6fc54d2fb7015313e581e61f78f8e9987f9d90.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Instantiates a new LastSharedMethodRequestBuilder and sets the default values.
 // Parameters:
 //  - pathParameters : Path parameters for the request
@@ -88,7 +84,7 @@ func (m *LastSharedMethodRequestBuilder) CreateGetRequestInformation(options *La
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(options.Q)
+        requestInfo.AddQueryParameters(*(options.Q))
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H

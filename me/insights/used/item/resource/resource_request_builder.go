@@ -6,7 +6,6 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i107d9ae42c7ac65b388a10b884476850058b8219d2aa81890b49ded2bee00b96 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/windowsinformationprotection"
     i1429d6e2a4ee92153e765d74efc3a1698c621c7bff18d626d6323c8fe207d52b "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/printdocument"
-    i1898a950728694f5a0aaa2983d4129fa6acfe77bc979409ea6679fd52b1f5531 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/caseexportoperation"
     i1fb984c261149e510758d4f79d6a05df1668b3f93b94f0ca606302d3f5cfbba6 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/managedappprotection"
     i3106f034381a839ffaa7ed14980bc96ae3ffda145a8feef3095a5644a025d5f5 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/targetedmanagedappprotection"
     i380f882243d3b01ee5998bc5277bb5b8cd51f88b6780f54ca772b6438de2c907 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/workbookrangefill"
@@ -51,9 +50,6 @@ type ResourceRequestBuilderGetQueryParameters struct {
 func (m *ResourceRequestBuilder) CalendarSharingMessage()(*i62b687cd6b7e485c303b6bb216790b11502ddc55e296673f7f2a481a70fc3dea.CalendarSharingMessageRequestBuilder) {
     return i62b687cd6b7e485c303b6bb216790b11502ddc55e296673f7f2a481a70fc3dea.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-func (m *ResourceRequestBuilder) CaseExportOperation()(*i1898a950728694f5a0aaa2983d4129fa6acfe77bc979409ea6679fd52b1f5531.CaseExportOperationRequestBuilder) {
-    return i1898a950728694f5a0aaa2983d4129fa6acfe77bc979409ea6679fd52b1f5531.NewCaseExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // Instantiates a new ResourceRequestBuilder and sets the default values.
 // Parameters:
 //  - pathParameters : Path parameters for the request
@@ -88,7 +84,7 @@ func (m *ResourceRequestBuilder) CreateGetRequestInformation(options *ResourceRe
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(options.Q)
+        requestInfo.AddQueryParameters(*(options.Q))
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H

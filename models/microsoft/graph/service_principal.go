@@ -41,7 +41,7 @@ type ServicePrincipal struct {
     description *string;
     // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).
     disabledByMicrosoftStatus *string;
-    // The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+    // The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string;
     // Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
     endpoints []Endpoint;
@@ -49,7 +49,7 @@ type ServicePrincipal struct {
     homepage *string;
     // The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
     homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicy;
-    // Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le).
+    // Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
     info *InformationalUrl;
     // The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, NOT, ge, le).
     keyCredentials []KeyCredential;
@@ -241,7 +241,7 @@ func (m *ServicePrincipal) GetDisabledByMicrosoftStatus()(*string) {
         return m.disabledByMicrosoftStatus
     }
 }
-// Gets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+// Gets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *ServicePrincipal) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -273,7 +273,7 @@ func (m *ServicePrincipal) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryP
         return m.homeRealmDiscoveryPolicies
     }
 }
-// Gets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le).
+// Gets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
 func (m *ServicePrincipal) GetInfo()(*InformationalUrl) {
     if m == nil {
         return nil
@@ -1496,7 +1496,7 @@ func (m *ServicePrincipal) SetDescription(value *string)() {
 func (m *ServicePrincipal) SetDisabledByMicrosoftStatus(value *string)() {
     m.disabledByMicrosoftStatus = value
 }
-// Sets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+// Sets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 // Parameters:
 //  - value : Value to set for the displayName property.
 func (m *ServicePrincipal) SetDisplayName(value *string)() {
@@ -1520,7 +1520,7 @@ func (m *ServicePrincipal) SetHomepage(value *string)() {
 func (m *ServicePrincipal) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicy)() {
     m.homeRealmDiscoveryPolicies = value
 }
-// Sets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le).
+// Sets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
 // Parameters:
 //  - value : Value to set for the info property.
 func (m *ServicePrincipal) SetInfo(value *InformationalUrl)() {

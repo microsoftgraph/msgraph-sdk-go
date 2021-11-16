@@ -1,7 +1,6 @@
 package compliance
 
 import (
-    i8db4ba7f1dbb2e25044f7b7168ec99267288890528e3e9fce43056cd2e77fa75 "github.com/microsoftgraph/msgraph-sdk-go/compliance/ediscovery"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
@@ -79,7 +78,7 @@ func (m *ComplianceRequestBuilder) CreateGetRequestInformation(options *Complian
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(options.Q)
+        requestInfo.AddQueryParameters(*(options.Q))
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H
@@ -111,9 +110,6 @@ func (m *ComplianceRequestBuilder) CreatePatchRequestInformation(options *Compli
         }
     }
     return requestInfo, nil
-}
-func (m *ComplianceRequestBuilder) Ediscovery()(*i8db4ba7f1dbb2e25044f7b7168ec99267288890528e3e9fce43056cd2e77fa75.EdiscoveryRequestBuilder) {
-    return i8db4ba7f1dbb2e25044f7b7168ec99267288890528e3e9fce43056cd2e77fa75.NewEdiscoveryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get compliance
 // Parameters:

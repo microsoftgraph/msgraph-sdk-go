@@ -22,6 +22,8 @@ type ChatMessage struct {
     deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only. Version number of the chat message.
     etag *string;
+    // Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
+    eventDetail *EventMessageDetail;
     // Details of the sender of the chat message. Can only be set during migration.
     from *ChatMessageFromIdentitySet;
     // Content in a message hosted by Microsoft Teams - for example, images or code snippets.
@@ -114,6 +116,14 @@ func (m *ChatMessage) GetEtag()(*string) {
         return nil
     } else {
         return m.etag
+    }
+}
+// Gets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
+func (m *ChatMessage) GetEventDetail()(*EventMessageDetail) {
+    if m == nil {
+        return nil
+    } else {
+        return m.eventDetail
     }
 }
 // Gets the from property value. Details of the sender of the chat message. Can only be set during migration.
@@ -310,6 +320,16 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         }
         if val != nil {
             m.SetEtag(val)
+        }
+        return nil
+    }
+    res["eventDetail"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEventMessageDetail() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEventDetail(val.(*EventMessageDetail))
         }
         return nil
     }
@@ -542,6 +562,12 @@ func (m *ChatMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
+        err = writer.WriteObjectValue("eventDetail", m.GetEventDetail())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("from", m.GetFrom())
         if err != nil {
             return err
@@ -696,6 +722,12 @@ func (m *ChatMessage) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a
 //  - value : Value to set for the etag property.
 func (m *ChatMessage) SetEtag(value *string)() {
     m.etag = value
+}
+// Sets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
+// Parameters:
+//  - value : Value to set for the eventDetail property.
+func (m *ChatMessage) SetEventDetail(value *EventMessageDetail)() {
+    m.eventDetail = value
 }
 // Sets the from property value. Details of the sender of the chat message. Can only be set during migration.
 // Parameters:
