@@ -12,7 +12,7 @@ type Device struct {
     accountEnabled *bool;
     // For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le).
     alternativeSecurityIds []AlternativeSecurityId;
-    // The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le) and $orderBy.
+    // The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, and eq on null values) and $orderBy.
     approximateLastSignInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     complianceExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -22,7 +22,7 @@ type Device struct {
     deviceMetadata *string;
     // For internal use only.
     deviceVersion *int32;
-    // The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+    // The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string;
     // The collection of open extensions defined for the device. Read-only. Nullable.
     extensions []Extension;
@@ -36,11 +36,11 @@ type Device struct {
     memberOf []DirectoryObject;
     // The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, NOT, ge, le, in).
     onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).
+    // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).
     onPremisesSyncEnabled *bool;
-    // The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
+    // The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).
     operatingSystem *string;
-    // The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
+    // The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).
     operatingSystemVersion *string;
     // For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
     physicalIds []string;
@@ -80,7 +80,7 @@ func (m *Device) GetAlternativeSecurityIds()([]AlternativeSecurityId) {
         return m.alternativeSecurityIds
     }
 }
-// Gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le) and $orderBy.
+// Gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, and eq on null values) and $orderBy.
 func (m *Device) GetApproximateLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -120,7 +120,7 @@ func (m *Device) GetDeviceVersion()(*int32) {
         return m.deviceVersion
     }
 }
-// Gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+// Gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Device) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *Device) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.onPremisesLastSyncDateTime
     }
 }
-// Gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).
+// Gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).
 func (m *Device) GetOnPremisesSyncEnabled()(*bool) {
     if m == nil {
         return nil
@@ -184,7 +184,7 @@ func (m *Device) GetOnPremisesSyncEnabled()(*bool) {
         return m.onPremisesSyncEnabled
     }
 }
-// Gets the operatingSystem property value. The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
+// Gets the operatingSystem property value. The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).
 func (m *Device) GetOperatingSystem()(*string) {
     if m == nil {
         return nil
@@ -192,7 +192,7 @@ func (m *Device) GetOperatingSystem()(*string) {
         return m.operatingSystem
     }
 }
-// Gets the operatingSystemVersion property value. The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
+// Gets the operatingSystemVersion property value. The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).
 func (m *Device) GetOperatingSystemVersion()(*string) {
     if m == nil {
         return nil
@@ -732,7 +732,7 @@ func (m *Device) SetAccountEnabled(value *bool)() {
 func (m *Device) SetAlternativeSecurityIds(value []AlternativeSecurityId)() {
     m.alternativeSecurityIds = value
 }
-// Sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le) and $orderBy.
+// Sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, and eq on null values) and $orderBy.
 // Parameters:
 //  - value : Value to set for the approximateLastSignInDateTime property.
 func (m *Device) SetApproximateLastSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
@@ -762,7 +762,7 @@ func (m *Device) SetDeviceMetadata(value *string)() {
 func (m *Device) SetDeviceVersion(value *int32)() {
     m.deviceVersion = value
 }
-// Sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+// Sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 // Parameters:
 //  - value : Value to set for the displayName property.
 func (m *Device) SetDisplayName(value *string)() {
@@ -804,19 +804,19 @@ func (m *Device) SetMemberOf(value []DirectoryObject)() {
 func (m *Device) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.onPremisesLastSyncDateTime = value
 }
-// Sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).
+// Sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).
 // Parameters:
 //  - value : Value to set for the onPremisesSyncEnabled property.
 func (m *Device) SetOnPremisesSyncEnabled(value *bool)() {
     m.onPremisesSyncEnabled = value
 }
-// Sets the operatingSystem property value. The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
+// Sets the operatingSystem property value. The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the operatingSystem property.
 func (m *Device) SetOperatingSystem(value *string)() {
     m.operatingSystem = value
 }
-// Sets the operatingSystemVersion property value. The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
+// Sets the operatingSystemVersion property value. The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the operatingSystemVersion property.
 func (m *Device) SetOperatingSystemVersion(value *string)() {

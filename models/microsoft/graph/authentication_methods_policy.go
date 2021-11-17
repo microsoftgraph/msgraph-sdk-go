@@ -20,6 +20,8 @@ type AuthenticationMethodsPolicy struct {
     policyVersion *string;
     // 
     reconfirmationInDays *int32;
+    // Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
+    registrationEnforcement *RegistrationEnforcement;
 }
 // Instantiates a new authenticationMethodsPolicy and sets the default values.
 func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {
@@ -74,6 +76,14 @@ func (m *AuthenticationMethodsPolicy) GetReconfirmationInDays()(*int32) {
         return nil
     } else {
         return m.reconfirmationInDays
+    }
+}
+// Gets the registrationEnforcement property value. Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
+func (m *AuthenticationMethodsPolicy) GetRegistrationEnforcement()(*RegistrationEnforcement) {
+    if m == nil {
+        return nil
+    } else {
+        return m.registrationEnforcement
     }
 }
 // The deserialization information for the current model
@@ -143,6 +153,16 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
+    res["registrationEnforcement"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRegistrationEnforcement() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegistrationEnforcement(val.(*RegistrationEnforcement))
+        }
+        return nil
+    }
     return res
 }
 func (m *AuthenticationMethodsPolicy) IsNil()(bool) {
@@ -197,6 +217,12 @@ func (m *AuthenticationMethodsPolicy) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("registrationEnforcement", m.GetRegistrationEnforcement())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // Sets the authenticationMethodConfigurations property value. Represents the settings for each authentication method.
@@ -234,4 +260,10 @@ func (m *AuthenticationMethodsPolicy) SetPolicyVersion(value *string)() {
 //  - value : Value to set for the reconfirmationInDays property.
 func (m *AuthenticationMethodsPolicy) SetReconfirmationInDays(value *int32)() {
     m.reconfirmationInDays = value
+}
+// Sets the registrationEnforcement property value. Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
+// Parameters:
+//  - value : Value to set for the registrationEnforcement property.
+func (m *AuthenticationMethodsPolicy) SetRegistrationEnforcement(value *RegistrationEnforcement)() {
+    m.registrationEnforcement = value
 }

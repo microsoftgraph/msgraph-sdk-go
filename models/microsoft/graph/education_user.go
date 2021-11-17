@@ -56,6 +56,8 @@ type EducationUser struct {
     provisionedPlans []ProvisionedPlan;
     // 
     refreshTokensValidFromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    // Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue
+    relatedContacts []RelatedContact;
     // Address where user lives.
     residenceAddress *PhysicalAddress;
     // 
@@ -278,6 +280,14 @@ func (m *EducationUser) GetRefreshTokensValidFromDateTime()(*i336074805fc853987a
         return nil
     } else {
         return m.refreshTokensValidFromDateTime
+    }
+}
+// Gets the relatedContacts property value. Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue
+func (m *EducationUser) GetRelatedContacts()([]RelatedContact) {
+    if m == nil {
+        return nil
+    } else {
+        return m.relatedContacts
     }
 }
 // Gets the residenceAddress property value. Address where user lives.
@@ -641,6 +651,20 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         return nil
     }
+    res["relatedContacts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRelatedContact() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RelatedContact, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*RelatedContact))
+            }
+            m.SetRelatedContacts(res)
+        }
+        return nil
+    }
     res["residenceAddress"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPhysicalAddress() })
         if err != nil {
@@ -953,6 +977,17 @@ func (m *EducationUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRelatedContacts()))
+        for i, v := range m.GetRelatedContacts() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("relatedContacts", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("residenceAddress", m.GetResidenceAddress())
         if err != nil {
             return err
@@ -1184,6 +1219,12 @@ func (m *EducationUser) SetProvisionedPlans(value []ProvisionedPlan)() {
 //  - value : Value to set for the refreshTokensValidFromDateTime property.
 func (m *EducationUser) SetRefreshTokensValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.refreshTokensValidFromDateTime = value
+}
+// Sets the relatedContacts property value. Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue
+// Parameters:
+//  - value : Value to set for the relatedContacts property.
+func (m *EducationUser) SetRelatedContacts(value []RelatedContact)() {
+    m.relatedContacts = value
 }
 // Sets the residenceAddress property value. Address where user lives.
 // Parameters:

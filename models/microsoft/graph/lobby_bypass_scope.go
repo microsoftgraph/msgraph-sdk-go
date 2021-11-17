@@ -12,10 +12,12 @@ const (
     ORGANIZATIONANDFEDERATED_LOBBYBYPASSSCOPE
     EVERYONE_LOBBYBYPASSSCOPE
     UNKNOWNFUTUREVALUE_LOBBYBYPASSSCOPE
+    INVITED_LOBBYBYPASSSCOPE
+    ORGANIZATIONEXCLUDINGGUESTS_LOBBYBYPASSSCOPE
 )
 
 func (i LobbyBypassScope) String() string {
-    return []string{"ORGANIZER", "ORGANIZATION", "ORGANIZATIONANDFEDERATED", "EVERYONE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"ORGANIZER", "ORGANIZATION", "ORGANIZATIONANDFEDERATED", "EVERYONE", "UNKNOWNFUTUREVALUE", "INVITED", "ORGANIZATIONEXCLUDINGGUESTS"}[i]
 }
 func ParseLobbyBypassScope(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -29,6 +31,10 @@ func ParseLobbyBypassScope(v string) (interface{}, error) {
             return EVERYONE_LOBBYBYPASSSCOPE, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_LOBBYBYPASSSCOPE, nil
+        case "INVITED":
+            return INVITED_LOBBYBYPASSSCOPE, nil
+        case "ORGANIZATIONEXCLUDINGGUESTS":
+            return ORGANIZATIONEXCLUDINGGUESTS_LOBBYBYPASSSCOPE, nil
     }
     return 0, errors.New("Unknown LobbyBypassScope value: " + v)
 }

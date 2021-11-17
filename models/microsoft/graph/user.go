@@ -40,9 +40,9 @@ type User struct {
     calendarView []Event;
     // 
     chats []Chat;
-    // The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     city *string;
-    // The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     companyName *string;
     // Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, NOT, and in).
     consentProvidedForMinor *string;
@@ -50,15 +50,15 @@ type User struct {
     contactFolders []ContactFolder;
     // The user's contacts. Read-only. Nullable.
     contacts []Contact;
-    // The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     country *string;
-    // The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).
+    // The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in).
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Directory objects that were created by the user. Read-only. Nullable.
     createdObjects []DirectoryObject;
-    // Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, and in).
+    // Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, in).
     creationType *string;
-    // The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).
+    // The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, and eq on null values).
     department *string;
     // The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
     deviceEnrollmentLimit *int32;
@@ -66,7 +66,7 @@ type User struct {
     deviceManagementTroubleshootingEvents []DeviceManagementTroubleshootingEvent;
     // The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
     directReports []DirectoryObject;
-    // The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith), $orderBy, and $search.
+    // The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
     displayName *string;
     // The user's OneDrive. Read-only.
     drive *Drive;
@@ -74,7 +74,7 @@ type User struct {
     drives []Drive;
     // The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in).
     employeeHireDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+    // The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
     employeeId *string;
     // Represents organization data (e.g. division and costCenter) associated with a user. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in).
     employeeOrgData *EmployeeOrgData;
@@ -88,15 +88,15 @@ type User struct {
     externalUserState *string;
     // Shows the timestamp for the latest change to the externalUserState property. Returned only on $select. Supports $filter (eq, ne, NOT , in).
     externalUserStateChangeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The fax number of the user. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+    // The fax number of the user. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
     faxNumber *string;
     // 
     followedSites []Site;
-    // The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+    // The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
     givenName *string;
     // The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
     hireDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) only where the signInType is not userPrincipalName.
+    // Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
     identities []ObjectIdentity;
     // The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, NOT, ge, le, startsWith).
     imAddresses []string;
@@ -108,7 +108,7 @@ type User struct {
     interests []string;
     // Do not use – reserved for future use.
     isResourceAccount *bool;
-    // The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+    // The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
     jobTitle *string;
     // The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
     joinedTeams []Team;
@@ -120,13 +120,13 @@ type User struct {
     licenseAssignmentStates []LicenseAssignmentState;
     // A collection of this user's license details. Read-only.
     licenseDetails []LicenseDetails;
-    // The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith).
+    // The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith, and eq on null values).
     mail *string;
     // Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone.Returned only on $select.
     mailboxSettings *MailboxSettings;
     // The user's mail folders. Read-only. Nullable.
     mailFolders []MailFolder;
-    // The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     mailNickname *string;
     // Zero or more managed app registrations that belong to the user.
     managedAppRegistrations []ManagedAppRegistration;
@@ -138,13 +138,13 @@ type User struct {
     memberOf []DirectoryObject;
     // The messages in a mailbox or folder. Read-only. Nullable.
     messages []Message;
-    // The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     mobilePhone *string;
     // The URL for the user's personal site. Returned only on $select.
     mySite *string;
     // 
     oauth2PermissionGrants []OAuth2PermissionGrant;
-    // The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     officeLocation *string;
     // Read-only.
     onenote *Onenote;
@@ -154,7 +154,7 @@ type User struct {
     onPremisesDistinguishedName *string;
     // Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
     onPremisesDomainName *string;
-    // Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select. Supports $filter (eq, NOT, ge, le, in).
+    // Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select. Supports $filter (eq, NOT, ge, le, in, and eq on null values).
     onPremisesExtensionAttributes *OnPremisesExtensionAttributes;
     // This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in)..
     onPremisesImmutableId *string;
@@ -164,9 +164,9 @@ type User struct {
     onPremisesProvisioningErrors []OnPremisesProvisioningError;
     // Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
     onPremisesSamAccountName *string;
-    // Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.
+    // Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.
     onPremisesSecurityIdentifier *string;
-    // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, in).
+    // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values).
     onPremisesSyncEnabled *bool;
     // Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
     onPremisesUserPrincipalName *string;
@@ -178,9 +178,9 @@ type User struct {
     ownedDevices []DirectoryObject;
     // Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
     ownedObjects []DirectoryObject;
-    // Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, NOT).
+    // Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, NOT, and eq on null values).
     passwordPolicies *string;
-    // Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.Returned only on $select. Supports $filter (eq, ne, NOT, in).
+    // Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values).
     passwordProfile *PasswordProfile;
     // A list for the user to enumerate their past projects. Returned only on $select.
     pastProjects []string;
@@ -192,9 +192,9 @@ type User struct {
     photos []ProfilePhoto;
     // Entry-point to the Planner resource that might exist for a user. Read-only.
     planner *PlannerUser;
-    // The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     postalCode *string;
-    // The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith)
+    // The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values)
     preferredLanguage *string;
     // The preferred name for the user. Returned only on $select.
     preferredName *string;
@@ -220,11 +220,11 @@ type User struct {
     signInSessionsValidFromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // A list for the user to enumerate their skills. Returned only on $select.
     skills []string;
-    // The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     state *string;
-    // The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     streetAddress *string;
-    // The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     surname *string;
     // A container for Microsoft Teams features available for the user. Read-only. Nullable.
     teamwork *UserTeamwork;
@@ -232,11 +232,11 @@ type User struct {
     todo *Todo;
     // 
     transitiveMemberOf []DirectoryObject;
-    // A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     usageLocation *string;
     // The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith) and $orderBy.
     userPrincipalName *string;
-    // A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+    // A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
     userType *string;
 }
 // Instantiates a new user and sets the default values.
@@ -374,7 +374,7 @@ func (m *User) GetChats()([]Chat) {
         return m.chats
     }
 }
-// Gets the city property value. The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the city property value. The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetCity()(*string) {
     if m == nil {
         return nil
@@ -382,7 +382,7 @@ func (m *User) GetCity()(*string) {
         return m.city
     }
 }
-// Gets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetCompanyName()(*string) {
     if m == nil {
         return nil
@@ -414,7 +414,7 @@ func (m *User) GetContacts()([]Contact) {
         return m.contacts
     }
 }
-// Gets the country property value. The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the country property value. The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetCountry()(*string) {
     if m == nil {
         return nil
@@ -422,7 +422,7 @@ func (m *User) GetCountry()(*string) {
         return m.country
     }
 }
-// Gets the createdDateTime property value. The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).
+// Gets the createdDateTime property value. The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in).
 func (m *User) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -438,7 +438,7 @@ func (m *User) GetCreatedObjects()([]DirectoryObject) {
         return m.createdObjects
     }
 }
-// Gets the creationType property value. Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, and in).
+// Gets the creationType property value. Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, in).
 func (m *User) GetCreationType()(*string) {
     if m == nil {
         return nil
@@ -446,7 +446,7 @@ func (m *User) GetCreationType()(*string) {
         return m.creationType
     }
 }
-// Gets the department property value. The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).
+// Gets the department property value. The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, and eq on null values).
 func (m *User) GetDepartment()(*string) {
     if m == nil {
         return nil
@@ -478,7 +478,7 @@ func (m *User) GetDirectReports()([]DirectoryObject) {
         return m.directReports
     }
 }
-// Gets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith), $orderBy, and $search.
+// Gets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
 func (m *User) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -510,7 +510,7 @@ func (m *User) GetEmployeeHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
         return m.employeeHireDate
     }
 }
-// Gets the employeeId property value. The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+// Gets the employeeId property value. The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
 func (m *User) GetEmployeeId()(*string) {
     if m == nil {
         return nil
@@ -566,7 +566,7 @@ func (m *User) GetExternalUserStateChangeDateTime()(*i336074805fc853987abe6f7fe3
         return m.externalUserStateChangeDateTime
     }
 }
-// Gets the faxNumber property value. The fax number of the user. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+// Gets the faxNumber property value. The fax number of the user. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
 func (m *User) GetFaxNumber()(*string) {
     if m == nil {
         return nil
@@ -582,7 +582,7 @@ func (m *User) GetFollowedSites()([]Site) {
         return m.followedSites
     }
 }
-// Gets the givenName property value. The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+// Gets the givenName property value. The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
 func (m *User) GetGivenName()(*string) {
     if m == nil {
         return nil
@@ -598,7 +598,7 @@ func (m *User) GetHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec7
         return m.hireDate
     }
 }
-// Gets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) only where the signInType is not userPrincipalName.
+// Gets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
 func (m *User) GetIdentities()([]ObjectIdentity) {
     if m == nil {
         return nil
@@ -646,7 +646,7 @@ func (m *User) GetIsResourceAccount()(*bool) {
         return m.isResourceAccount
     }
 }
-// Gets the jobTitle property value. The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+// Gets the jobTitle property value. The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
 func (m *User) GetJobTitle()(*string) {
     if m == nil {
         return nil
@@ -694,7 +694,7 @@ func (m *User) GetLicenseDetails()([]LicenseDetails) {
         return m.licenseDetails
     }
 }
-// Gets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith).
+// Gets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith, and eq on null values).
 func (m *User) GetMail()(*string) {
     if m == nil {
         return nil
@@ -718,7 +718,7 @@ func (m *User) GetMailFolders()([]MailFolder) {
         return m.mailFolders
     }
 }
-// Gets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetMailNickname()(*string) {
     if m == nil {
         return nil
@@ -766,7 +766,7 @@ func (m *User) GetMessages()([]Message) {
         return m.messages
     }
 }
-// Gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetMobilePhone()(*string) {
     if m == nil {
         return nil
@@ -790,7 +790,7 @@ func (m *User) GetOauth2PermissionGrants()([]OAuth2PermissionGrant) {
         return m.oauth2PermissionGrants
     }
 }
-// Gets the officeLocation property value. The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the officeLocation property value. The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetOfficeLocation()(*string) {
     if m == nil {
         return nil
@@ -830,7 +830,7 @@ func (m *User) GetOnPremisesDomainName()(*string) {
         return m.onPremisesDomainName
     }
 }
-// Gets the onPremisesExtensionAttributes property value. Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select. Supports $filter (eq, NOT, ge, le, in).
+// Gets the onPremisesExtensionAttributes property value. Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select. Supports $filter (eq, NOT, ge, le, in, and eq on null values).
 func (m *User) GetOnPremisesExtensionAttributes()(*OnPremisesExtensionAttributes) {
     if m == nil {
         return nil
@@ -870,7 +870,7 @@ func (m *User) GetOnPremisesSamAccountName()(*string) {
         return m.onPremisesSamAccountName
     }
 }
-// Gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.
+// Gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.
 func (m *User) GetOnPremisesSecurityIdentifier()(*string) {
     if m == nil {
         return nil
@@ -878,7 +878,7 @@ func (m *User) GetOnPremisesSecurityIdentifier()(*string) {
         return m.onPremisesSecurityIdentifier
     }
 }
-// Gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, in).
+// Gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values).
 func (m *User) GetOnPremisesSyncEnabled()(*bool) {
     if m == nil {
         return nil
@@ -926,7 +926,7 @@ func (m *User) GetOwnedObjects()([]DirectoryObject) {
         return m.ownedObjects
     }
 }
-// Gets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, NOT).
+// Gets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, NOT, and eq on null values).
 func (m *User) GetPasswordPolicies()(*string) {
     if m == nil {
         return nil
@@ -934,7 +934,7 @@ func (m *User) GetPasswordPolicies()(*string) {
         return m.passwordPolicies
     }
 }
-// Gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.Returned only on $select. Supports $filter (eq, ne, NOT, in).
+// Gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values).
 func (m *User) GetPasswordProfile()(*PasswordProfile) {
     if m == nil {
         return nil
@@ -982,7 +982,7 @@ func (m *User) GetPlanner()(*PlannerUser) {
         return m.planner
     }
 }
-// Gets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetPostalCode()(*string) {
     if m == nil {
         return nil
@@ -990,7 +990,7 @@ func (m *User) GetPostalCode()(*string) {
         return m.postalCode
     }
 }
-// Gets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith)
+// Gets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values)
 func (m *User) GetPreferredLanguage()(*string) {
     if m == nil {
         return nil
@@ -1094,7 +1094,7 @@ func (m *User) GetSkills()([]string) {
         return m.skills
     }
 }
-// Gets the state property value. The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the state property value. The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetState()(*string) {
     if m == nil {
         return nil
@@ -1102,7 +1102,7 @@ func (m *User) GetState()(*string) {
         return m.state
     }
 }
-// Gets the streetAddress property value. The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the streetAddress property value. The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetStreetAddress()(*string) {
     if m == nil {
         return nil
@@ -1110,7 +1110,7 @@ func (m *User) GetStreetAddress()(*string) {
         return m.streetAddress
     }
 }
-// Gets the surname property value. The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the surname property value. The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetSurname()(*string) {
     if m == nil {
         return nil
@@ -1142,7 +1142,7 @@ func (m *User) GetTransitiveMemberOf()([]DirectoryObject) {
         return m.transitiveMemberOf
     }
 }
-// Gets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetUsageLocation()(*string) {
     if m == nil {
         return nil
@@ -1158,7 +1158,7 @@ func (m *User) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
-// Gets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+// Gets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
 func (m *User) GetUserType()(*string) {
     if m == nil {
         return nil
@@ -3498,13 +3498,13 @@ func (m *User) SetCalendarView(value []Event)() {
 func (m *User) SetChats(value []Chat)() {
     m.chats = value
 }
-// Sets the city property value. The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the city property value. The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the city property.
 func (m *User) SetCity(value *string)() {
     m.city = value
 }
-// Sets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the companyName property.
 func (m *User) SetCompanyName(value *string)() {
@@ -3528,13 +3528,13 @@ func (m *User) SetContactFolders(value []ContactFolder)() {
 func (m *User) SetContacts(value []Contact)() {
     m.contacts = value
 }
-// Sets the country property value. The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the country property value. The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the country property.
 func (m *User) SetCountry(value *string)() {
     m.country = value
 }
-// Sets the createdDateTime property value. The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).
+// Sets the createdDateTime property value. The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in).
 // Parameters:
 //  - value : Value to set for the createdDateTime property.
 func (m *User) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
@@ -3546,13 +3546,13 @@ func (m *User) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f307
 func (m *User) SetCreatedObjects(value []DirectoryObject)() {
     m.createdObjects = value
 }
-// Sets the creationType property value. Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, and in).
+// Sets the creationType property value. Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, in).
 // Parameters:
 //  - value : Value to set for the creationType property.
 func (m *User) SetCreationType(value *string)() {
     m.creationType = value
 }
-// Sets the department property value. The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).
+// Sets the department property value. The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, and eq on null values).
 // Parameters:
 //  - value : Value to set for the department property.
 func (m *User) SetDepartment(value *string)() {
@@ -3576,7 +3576,7 @@ func (m *User) SetDeviceManagementTroubleshootingEvents(value []DeviceManagement
 func (m *User) SetDirectReports(value []DirectoryObject)() {
     m.directReports = value
 }
-// Sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith), $orderBy, and $search.
+// Sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
 // Parameters:
 //  - value : Value to set for the displayName property.
 func (m *User) SetDisplayName(value *string)() {
@@ -3600,7 +3600,7 @@ func (m *User) SetDrives(value []Drive)() {
 func (m *User) SetEmployeeHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.employeeHireDate = value
 }
-// Sets the employeeId property value. The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+// Sets the employeeId property value. The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the employeeId property.
 func (m *User) SetEmployeeId(value *string)() {
@@ -3642,7 +3642,7 @@ func (m *User) SetExternalUserState(value *string)() {
 func (m *User) SetExternalUserStateChangeDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.externalUserStateChangeDateTime = value
 }
-// Sets the faxNumber property value. The fax number of the user. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+// Sets the faxNumber property value. The fax number of the user. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the faxNumber property.
 func (m *User) SetFaxNumber(value *string)() {
@@ -3654,7 +3654,7 @@ func (m *User) SetFaxNumber(value *string)() {
 func (m *User) SetFollowedSites(value []Site)() {
     m.followedSites = value
 }
-// Sets the givenName property value. The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+// Sets the givenName property value. The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the givenName property.
 func (m *User) SetGivenName(value *string)() {
@@ -3666,7 +3666,7 @@ func (m *User) SetGivenName(value *string)() {
 func (m *User) SetHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.hireDate = value
 }
-// Sets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) only where the signInType is not userPrincipalName.
+// Sets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
 // Parameters:
 //  - value : Value to set for the identities property.
 func (m *User) SetIdentities(value []ObjectIdentity)() {
@@ -3702,7 +3702,7 @@ func (m *User) SetInterests(value []string)() {
 func (m *User) SetIsResourceAccount(value *bool)() {
     m.isResourceAccount = value
 }
-// Sets the jobTitle property value. The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).
+// Sets the jobTitle property value. The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the jobTitle property.
 func (m *User) SetJobTitle(value *string)() {
@@ -3738,7 +3738,7 @@ func (m *User) SetLicenseAssignmentStates(value []LicenseAssignmentState)() {
 func (m *User) SetLicenseDetails(value []LicenseDetails)() {
     m.licenseDetails = value
 }
-// Sets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith).
+// Sets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the mail property.
 func (m *User) SetMail(value *string)() {
@@ -3756,7 +3756,7 @@ func (m *User) SetMailboxSettings(value *MailboxSettings)() {
 func (m *User) SetMailFolders(value []MailFolder)() {
     m.mailFolders = value
 }
-// Sets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the mailNickname property.
 func (m *User) SetMailNickname(value *string)() {
@@ -3792,7 +3792,7 @@ func (m *User) SetMemberOf(value []DirectoryObject)() {
 func (m *User) SetMessages(value []Message)() {
     m.messages = value
 }
-// Sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the mobilePhone property.
 func (m *User) SetMobilePhone(value *string)() {
@@ -3810,7 +3810,7 @@ func (m *User) SetMySite(value *string)() {
 func (m *User) SetOauth2PermissionGrants(value []OAuth2PermissionGrant)() {
     m.oauth2PermissionGrants = value
 }
-// Sets the officeLocation property value. The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the officeLocation property value. The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the officeLocation property.
 func (m *User) SetOfficeLocation(value *string)() {
@@ -3840,7 +3840,7 @@ func (m *User) SetOnPremisesDistinguishedName(value *string)() {
 func (m *User) SetOnPremisesDomainName(value *string)() {
     m.onPremisesDomainName = value
 }
-// Sets the onPremisesExtensionAttributes property value. Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select. Supports $filter (eq, NOT, ge, le, in).
+// Sets the onPremisesExtensionAttributes property value. Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select. Supports $filter (eq, NOT, ge, le, in, and eq on null values).
 // Parameters:
 //  - value : Value to set for the onPremisesExtensionAttributes property.
 func (m *User) SetOnPremisesExtensionAttributes(value *OnPremisesExtensionAttributes)() {
@@ -3870,13 +3870,13 @@ func (m *User) SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErr
 func (m *User) SetOnPremisesSamAccountName(value *string)() {
     m.onPremisesSamAccountName = value
 }
-// Sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.
+// Sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.
 // Parameters:
 //  - value : Value to set for the onPremisesSecurityIdentifier property.
 func (m *User) SetOnPremisesSecurityIdentifier(value *string)() {
     m.onPremisesSecurityIdentifier = value
 }
-// Sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, in).
+// Sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values).
 // Parameters:
 //  - value : Value to set for the onPremisesSyncEnabled property.
 func (m *User) SetOnPremisesSyncEnabled(value *bool)() {
@@ -3912,13 +3912,13 @@ func (m *User) SetOwnedDevices(value []DirectoryObject)() {
 func (m *User) SetOwnedObjects(value []DirectoryObject)() {
     m.ownedObjects = value
 }
-// Sets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, NOT).
+// Sets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, NOT, and eq on null values).
 // Parameters:
 //  - value : Value to set for the passwordPolicies property.
 func (m *User) SetPasswordPolicies(value *string)() {
     m.passwordPolicies = value
 }
-// Sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.Returned only on $select. Supports $filter (eq, ne, NOT, in).
+// Sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon.Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values).
 // Parameters:
 //  - value : Value to set for the passwordProfile property.
 func (m *User) SetPasswordProfile(value *PasswordProfile)() {
@@ -3954,13 +3954,13 @@ func (m *User) SetPhotos(value []ProfilePhoto)() {
 func (m *User) SetPlanner(value *PlannerUser)() {
     m.planner = value
 }
-// Sets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the postalCode property.
 func (m *User) SetPostalCode(value *string)() {
     m.postalCode = value
 }
-// Sets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith)
+// Sets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values)
 // Parameters:
 //  - value : Value to set for the preferredLanguage property.
 func (m *User) SetPreferredLanguage(value *string)() {
@@ -4038,19 +4038,19 @@ func (m *User) SetSignInSessionsValidFromDateTime(value *i336074805fc853987abe6f
 func (m *User) SetSkills(value []string)() {
     m.skills = value
 }
-// Sets the state property value. The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the state property value. The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the state property.
 func (m *User) SetState(value *string)() {
     m.state = value
 }
-// Sets the streetAddress property value. The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the streetAddress property value. The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the streetAddress property.
 func (m *User) SetStreetAddress(value *string)() {
     m.streetAddress = value
 }
-// Sets the surname property value. The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the surname property value. The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the surname property.
 func (m *User) SetSurname(value *string)() {
@@ -4074,7 +4074,7 @@ func (m *User) SetTodo(value *Todo)() {
 func (m *User) SetTransitiveMemberOf(value []DirectoryObject)() {
     m.transitiveMemberOf = value
 }
-// Sets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the usageLocation property.
 func (m *User) SetUsageLocation(value *string)() {
@@ -4086,7 +4086,7 @@ func (m *User) SetUsageLocation(value *string)() {
 func (m *User) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }
-// Sets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+// Sets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
 // Parameters:
 //  - value : Value to set for the userType property.
 func (m *User) SetUserType(value *string)() {

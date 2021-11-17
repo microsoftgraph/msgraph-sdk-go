@@ -18,7 +18,7 @@ type Application struct {
     applicationTemplateId *string;
     // The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
     appRoles []AppRole;
-    // The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, NOT, ge, le, in) and $orderBy.
+    // The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, NOT, ge, le, in, and eq on null values) and $orderBy.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only.
     createdOnBehalfOf *DirectoryObject;
@@ -26,7 +26,7 @@ type Application struct {
     description *string;
     // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).
     disabledByMicrosoftStatus *string;
-    // The display name for the application. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+    // The display name for the application. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string;
     // Read-only. Nullable.
     extensionProperties []ExtensionProperty;
@@ -36,7 +36,7 @@ type Application struct {
     homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicy;
     // Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
     identifierUris []string;
-    // Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le).
+    // Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
     info *InformationalUrl;
     // Specifies whether this application supports device authentication without a user. The default is false.
     isDeviceOnlyAuthSupported *bool;
@@ -128,7 +128,7 @@ func (m *Application) GetAppRoles()([]AppRole) {
         return m.appRoles
     }
 }
-// Gets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, NOT, ge, le, in) and $orderBy.
+// Gets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, NOT, ge, le, in, and eq on null values) and $orderBy.
 func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -160,7 +160,7 @@ func (m *Application) GetDisabledByMicrosoftStatus()(*string) {
         return m.disabledByMicrosoftStatus
     }
 }
-// Gets the displayName property value. The display name for the application. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+// Gets the displayName property value. The display name for the application. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Application) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -200,7 +200,7 @@ func (m *Application) GetIdentifierUris()([]string) {
         return m.identifierUris
     }
 }
-// Gets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le).
+// Gets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
 func (m *Application) GetInfo()(*InformationalUrl) {
     if m == nil {
         return nil
@@ -1098,7 +1098,7 @@ func (m *Application) SetApplicationTemplateId(value *string)() {
 func (m *Application) SetAppRoles(value []AppRole)() {
     m.appRoles = value
 }
-// Sets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, NOT, ge, le, in) and $orderBy.
+// Sets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, NOT, ge, le, in, and eq on null values) and $orderBy.
 // Parameters:
 //  - value : Value to set for the createdDateTime property.
 func (m *Application) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
@@ -1122,7 +1122,7 @@ func (m *Application) SetDescription(value *string)() {
 func (m *Application) SetDisabledByMicrosoftStatus(value *string)() {
     m.disabledByMicrosoftStatus = value
 }
-// Sets the displayName property value. The display name for the application. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+// Sets the displayName property value. The display name for the application. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 // Parameters:
 //  - value : Value to set for the displayName property.
 func (m *Application) SetDisplayName(value *string)() {
@@ -1152,7 +1152,7 @@ func (m *Application) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPo
 func (m *Application) SetIdentifierUris(value []string)() {
     m.identifierUris = value
 }
-// Sets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le).
+// Sets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
 // Parameters:
 //  - value : Value to set for the info property.
 func (m *Application) SetInfo(value *InformationalUrl)() {

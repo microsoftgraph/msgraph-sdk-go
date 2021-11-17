@@ -34,7 +34,7 @@ type Group struct {
     createdOnBehalfOf *DirectoryObject;
     // An optional description for the group. Returned by default. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
     description *string;
-    // The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+    // The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string;
     // The group's default drive. Read-only.
     drive *Drive;
@@ -64,11 +64,11 @@ type Group struct {
     isSubscribedByMail *bool;
     // Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
     licenseProcessingState *LicenseProcessingState;
-    // The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     mail *string;
     // Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, NOT).
     mailEnabled *bool;
-    // The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     mailNickname *string;
     // Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
     memberOf []DirectoryObject;
@@ -94,7 +94,7 @@ type Group struct {
     onPremisesSamAccountName *string;
     // Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter on null values. Read-only.
     onPremisesSecurityIdentifier *string;
-    // true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, NOT, in).
+    // true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).
     onPremisesSyncEnabled *bool;
     // The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand.
     owners []DirectoryObject;
@@ -108,7 +108,7 @@ type Group struct {
     planner *PlannerGroup;
     // The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see  OneDrive Online Multi-Geo. Nullable. Returned by default.
     preferredDataLocation *string;
-    // The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+    // The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
     preferredLanguage *string;
     // Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
     proxyAddresses []string;
@@ -250,7 +250,7 @@ func (m *Group) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+// Gets the displayName property value. The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Group) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -370,7 +370,7 @@ func (m *Group) GetLicenseProcessingState()(*LicenseProcessingState) {
         return m.licenseProcessingState
     }
 }
-// Gets the mail property value. The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the mail property value. The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *Group) GetMail()(*string) {
     if m == nil {
         return nil
@@ -386,7 +386,7 @@ func (m *Group) GetMailEnabled()(*bool) {
         return m.mailEnabled
     }
 }
-// Gets the mailNickname property value. The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the mailNickname property value. The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *Group) GetMailNickname()(*string) {
     if m == nil {
         return nil
@@ -490,7 +490,7 @@ func (m *Group) GetOnPremisesSecurityIdentifier()(*string) {
         return m.onPremisesSecurityIdentifier
     }
 }
-// Gets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, NOT, in).
+// Gets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).
 func (m *Group) GetOnPremisesSyncEnabled()(*bool) {
     if m == nil {
         return nil
@@ -546,7 +546,7 @@ func (m *Group) GetPreferredDataLocation()(*string) {
         return m.preferredDataLocation
     }
 }
-// Gets the preferredLanguage property value. The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Gets the preferredLanguage property value. The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 func (m *Group) GetPreferredLanguage()(*string) {
     if m == nil {
         return nil
@@ -2017,7 +2017,7 @@ func (m *Group) SetCreatedOnBehalfOf(value *DirectoryObject)() {
 func (m *Group) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
+// Sets the displayName property value. The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 // Parameters:
 //  - value : Value to set for the displayName property.
 func (m *Group) SetDisplayName(value *string)() {
@@ -2107,7 +2107,7 @@ func (m *Group) SetIsSubscribedByMail(value *bool)() {
 func (m *Group) SetLicenseProcessingState(value *LicenseProcessingState)() {
     m.licenseProcessingState = value
 }
-// Sets the mail property value. The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the mail property value. The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the mail property.
 func (m *Group) SetMail(value *string)() {
@@ -2119,7 +2119,7 @@ func (m *Group) SetMail(value *string)() {
 func (m *Group) SetMailEnabled(value *bool)() {
     m.mailEnabled = value
 }
-// Sets the mailNickname property value. The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the mailNickname property value. The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the mailNickname property.
 func (m *Group) SetMailNickname(value *string)() {
@@ -2197,7 +2197,7 @@ func (m *Group) SetOnPremisesSamAccountName(value *string)() {
 func (m *Group) SetOnPremisesSecurityIdentifier(value *string)() {
     m.onPremisesSecurityIdentifier = value
 }
-// Sets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, NOT, in).
+// Sets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).
 // Parameters:
 //  - value : Value to set for the onPremisesSyncEnabled property.
 func (m *Group) SetOnPremisesSyncEnabled(value *bool)() {
@@ -2239,7 +2239,7 @@ func (m *Group) SetPlanner(value *PlannerGroup)() {
 func (m *Group) SetPreferredDataLocation(value *string)() {
     m.preferredDataLocation = value
 }
-// Sets the preferredLanguage property value. The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).
+// Sets the preferredLanguage property value. The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
 // Parameters:
 //  - value : Value to set for the preferredLanguage property.
 func (m *Group) SetPreferredLanguage(value *string)() {

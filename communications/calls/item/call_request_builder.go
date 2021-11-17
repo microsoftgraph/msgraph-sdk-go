@@ -15,10 +15,12 @@ import (
     i6f0caf07b9d5829ba084ad4149cb4986ad69a13c935041d3da78c3cf1a5e3699 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/updaterecordingstatus"
     i9597d4ee7219b291ed6ed4ac94f7ebb5f0666e8551606a8052e7ef400c7bf200 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/cancelmediaprocessing"
     ia71afd593ae0c607d4acf1137eef2551b24d75551eb2631d48f91f4361dc4882 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/answer"
+    ib42114d547ae3a5efaa8e2718244399826bae33e41e3785ade01e865ab37b3dd "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/audioroutinggroups"
     ic39f6d760e484c6cb7e55f7c08819553f2edb8148ca9b866c4410d6f117ebec5 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/recordresponse"
     ide3c7ebfce3fcf67decd28a86fe72e18f04a31dbafdecea60efdc8ec16540ce8 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/reject"
     ie2968de31b227a313ec19bfb3d49e7376b707c33a3ef61ee430fc608fc92b15d "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/keepalive"
     ie9da2770859e3dca5a85a6b4849aa09b988da20f525af2a9495d23bd3bfd686b "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/changescreensharingrole"
+    i5809389356a44ad33cb003cb59127db82d834418c35f9604ed259b7fe5afd5ce "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/audioroutinggroups/item"
     ib16dc40ca9627c2186a56c4d731808da49ba6e8a34c17a076a47f881856366d7 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/participants/item"
     ied141ef3c3b82e58ad49b195ba5c23ec1d4cc768e035310e410fa372b3a1fc49 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/operations/item"
 )
@@ -72,6 +74,22 @@ type CallRequestBuilderPatchOptions struct {
 }
 func (m *CallRequestBuilder) Answer()(*ia71afd593ae0c607d4acf1137eef2551b24d75551eb2631d48f91f4361dc4882.AnswerRequestBuilder) {
     return ia71afd593ae0c607d4acf1137eef2551b24d75551eb2631d48f91f4361dc4882.NewAnswerRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *CallRequestBuilder) AudioRoutingGroups()(*ib42114d547ae3a5efaa8e2718244399826bae33e41e3785ade01e865ab37b3dd.AudioRoutingGroupsRequestBuilder) {
+    return ib42114d547ae3a5efaa8e2718244399826bae33e41e3785ade01e865ab37b3dd.NewAudioRoutingGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.communications.calls.item.audioRoutingGroups.item collection
+// Parameters:
+//  - id : Unique identifier of the item
+func (m *CallRequestBuilder) AudioRoutingGroupsById(id string)(*i5809389356a44ad33cb003cb59127db82d834418c35f9604ed259b7fe5afd5ce.AudioRoutingGroupRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["audioRoutingGroup_id"] = id
+    }
+    return i5809389356a44ad33cb003cb59127db82d834418c35f9604ed259b7fe5afd5ce.NewAudioRoutingGroupRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *CallRequestBuilder) CancelMediaProcessing()(*i9597d4ee7219b291ed6ed4ac94f7ebb5f0666e8551606a8052e7ef400c7bf200.CancelMediaProcessingRequestBuilder) {
     return i9597d4ee7219b291ed6ed4ac94f7ebb5f0666e8551606a8052e7ef400c7bf200.NewCancelMediaProcessingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -132,7 +150,7 @@ func (m *CallRequestBuilder) CreateGetRequestInformation(options *CallRequestBui
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
     if options != nil && options.Q != nil {
-        requestInfo.AddQueryParameters(options.Q)
+        requestInfo.AddQueryParameters(*(options.Q))
     }
     if options != nil && options.H != nil {
         requestInfo.Headers = options.H
