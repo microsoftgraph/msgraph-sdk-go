@@ -8,7 +8,8 @@ import (
 	core "github.com/microsoftgraph/msgraph-sdk-go-core"
 )
 
-var clientOptions = core.GraphClientOptions{
+// ClientOptions is used by the telemetry handler.
+var ClientOptions = core.GraphClientOptions{
 	GraphServiceVersion:        "", //v1 doesn't include the service version in the telemetry header
 	GraphServiceLibraryVersion: "0.2.0",
 }
@@ -57,7 +58,7 @@ func NewGraphRequestAdapterWithParseNodeFactoryAndSerializationWriterFactory(aut
 // Returns:
 // a new GraphRequestAdapter
 func NewGraphRequestAdapterWithParseNodeFactoryAndSerializationWriterFactoryAndHttpClient(authenticationProvider absauth.AuthenticationProvider, parseNodeFactory absser.ParseNodeFactory, serializationWriterFactory absser.SerializationWriterFactory, httpClient *nethttp.Client) (*GraphRequestAdapter, error) {
-	baseAdapter, err := core.NewGraphRequestAdapterBaseWithParseNodeFactoryAndSerializationWriterFactoryAndHttpClient(authenticationProvider, clientOptions, parseNodeFactory, serializationWriterFactory, httpClient)
+	baseAdapter, err := core.NewGraphRequestAdapterBaseWithParseNodeFactoryAndSerializationWriterFactoryAndHttpClient(authenticationProvider, ClientOptions, parseNodeFactory, serializationWriterFactory, httpClient)
 	if err != nil {
 		return nil, err
 	}
