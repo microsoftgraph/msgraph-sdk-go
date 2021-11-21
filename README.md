@@ -49,7 +49,7 @@ if err != nil {
     fmt.Printf("Error creating credentials: %v\n", err)
 }
 
-auth, err := a.NewAzureIdentityAuthenticationProviderWithScopes(cred, []string{"Mail.Read", "Mail.Send"})
+auth, err := a.NewAzureIdentityAuthenticationProviderWithScopes(cred, []string{"Files.Read"})
 if err != nil {
     fmt.Printf("Error authentication provider: %v\n", err)
     return
