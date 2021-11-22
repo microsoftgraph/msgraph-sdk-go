@@ -13,6 +13,11 @@ var clientOptions = core.GraphClientOptions{
 	GraphServiceLibraryVersion: "0.2.0",
 }
 
+// GetDefaultClientOptions returns the default client options used by the GraphRequestAdapterBase and the middleware.
+func GetDefaultClientOptions() core.GraphClientOptions {
+	return clientOptions
+}
+
 // GraphRequestAdapter is the core service used by GraphServiceClient to make requests to Microsoft Graph.
 type GraphRequestAdapter struct {
 	core.GraphRequestAdapterBase
@@ -67,5 +72,3 @@ func NewGraphRequestAdapterWithParseNodeFactoryAndSerializationWriterFactoryAndH
 
 	return result, nil
 }
-
-

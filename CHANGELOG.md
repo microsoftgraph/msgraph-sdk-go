@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.2.1] - 2021-11-19
+
+### Changed
+
+- Made the client options public so they can be used by consumers when customizing middleware
+
 ## [0.2.0] - 2021-11-17
 
 ### Changed
