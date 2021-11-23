@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\calendar\calendarView\{event-id}\instances\{event-id1}\microsoft.graph.snoozeReminder
+// snoozeReminderRequestBuilder builds and executes requests for operations under \me\calendar\calendarView\{event-id}\instances\{event-id1}\microsoft.graph.snoozeReminder
 type SnoozeReminderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type SnoozeReminderRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// SnoozeReminderRequestBuilderPostOptions options for Post
 type SnoozeReminderRequestBuilderPostOptions struct {
     // 
     Body *SnoozeReminderRequestBody;
@@ -24,10 +24,7 @@ type SnoozeReminderRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SnoozeReminderRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSnoozeReminderRequestBuilderInternal instantiates a new SnoozeReminderRequestBuilder and sets the default values.
 func NewSnoozeReminderRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SnoozeReminderRequestBuilder) {
     m := &SnoozeReminderRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewSnoozeReminderRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SnoozeReminderRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSnoozeReminderRequestBuilder instantiates a new SnoozeReminderRequestBuilder and sets the default values.
 func NewSnoozeReminderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SnoozeReminderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSnoozeReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action snoozeReminder
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action snoozeReminder
 func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformation(options *SnoozeReminderRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *SnoozeReminderRequestBuilder) CreatePostRequestInformation(options *Sno
     }
     return requestInfo, nil
 }
-// Invoke action snoozeReminder
-// Parameters:
-//  - options : Options for the request
+// Post invoke action snoozeReminder
 func (m *SnoozeReminderRequestBuilder) Post(options *SnoozeReminderRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

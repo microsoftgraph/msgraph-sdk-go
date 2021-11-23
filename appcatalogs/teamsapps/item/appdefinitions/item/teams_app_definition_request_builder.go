@@ -7,7 +7,7 @@ import (
     ic912f2288b7848a8421be619dff435a964cc6d824a3baefab5334b3a699f668c "github.com/microsoftgraph/msgraph-sdk-go/appcatalogs/teamsapps/item/appdefinitions/item/bot"
 )
 
-// Builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}
+// teamsAppDefinitionRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}
 type TeamsAppDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TeamsAppDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TeamsAppDefinitionRequestBuilderDeleteOptions options for Delete
 type TeamsAppDefinitionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type TeamsAppDefinitionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TeamsAppDefinitionRequestBuilderGetOptions options for Get
 type TeamsAppDefinitionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type TeamsAppDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The details for each version of the app.
+// teamsAppDefinitionRequestBuilderGetQueryParameters the details for each version of the app.
 type TeamsAppDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TeamsAppDefinitionRequestBuilderPatchOptions options for Patch
 type TeamsAppDefinitionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinition;
@@ -57,10 +57,7 @@ type TeamsAppDefinitionRequestBuilderPatchOptions struct {
 func (m *TeamsAppDefinitionRequestBuilder) Bot()(*ic912f2288b7848a8421be619dff435a964cc6d824a3baefab5334b3a699f668c.BotRequestBuilder) {
     return ic912f2288b7848a8421be619dff435a964cc6d824a3baefab5334b3a699f668c.NewBotRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppDefinitionRequestBuilderInternal instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.
 func NewTeamsAppDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppDefinitionRequestBuilder) {
     m := &TeamsAppDefinitionRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewTeamsAppDefinitionRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppDefinitionRequestBuilder instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.
 func NewTeamsAppDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppDefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The details for each version of the app.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the details for each version of the app.
 func (m *TeamsAppDefinitionRequestBuilder) CreateDeleteRequestInformation(options *TeamsAppDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *TeamsAppDefinitionRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// The details for each version of the app.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the details for each version of the app.
 func (m *TeamsAppDefinitionRequestBuilder) CreateGetRequestInformation(options *TeamsAppDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TeamsAppDefinitionRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The details for each version of the app.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the details for each version of the app.
 func (m *TeamsAppDefinitionRequestBuilder) CreatePatchRequestInformation(options *TeamsAppDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *TeamsAppDefinitionRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// The details for each version of the app.
-// Parameters:
-//  - options : Options for the request
+// Delete the details for each version of the app.
 func (m *TeamsAppDefinitionRequestBuilder) Delete(options *TeamsAppDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *TeamsAppDefinitionRequestBuilder) Delete(options *TeamsAppDefinitionReq
     }
     return nil
 }
-// The details for each version of the app.
-// Parameters:
-//  - options : Options for the request
+// Get the details for each version of the app.
 func (m *TeamsAppDefinitionRequestBuilder) Get(options *TeamsAppDefinitionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *TeamsAppDefinitionRequestBuilder) Get(options *TeamsAppDefinitionReques
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinition), nil
 }
-// The details for each version of the app.
-// Parameters:
-//  - options : Options for the request
+// Patch the details for each version of the app.
 func (m *TeamsAppDefinitionRequestBuilder) Patch(options *TeamsAppDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

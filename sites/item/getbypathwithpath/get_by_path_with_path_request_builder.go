@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\microsoft.graph.getByPath(path='{path}')
+// getByPathWithPathRequestBuilder builds and executes requests for operations under \sites\{site-id}\microsoft.graph.getByPath(path='{path}')
 type GetByPathWithPathRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GetByPathWithPathRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetByPathWithPathRequestBuilderGetOptions options for Get
 type GetByPathWithPathRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type GetByPathWithPathRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes site
+// getByPathWithPathResponse union type wrapper for classes site
 type GetByPathWithPathResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type site
     site *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site;
 }
-// Instantiates a new getByPathWithPathResponse and sets the default values.
+// NewGetByPathWithPathResponse instantiates a new getByPathWithPathResponse and sets the default values.
 func NewGetByPathWithPathResponse()(*GetByPathWithPathResponse) {
     m := &GetByPathWithPathResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetByPathWithPathResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *GetByPathWithPathResponse) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// Gets the site property value. Union type representation for type site
+// GetSite gets the site property value. Union type representation for type site
 func (m *GetByPathWithPathResponse) GetSite()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *GetByPathWithPathResponse) GetSite()(*i4a838ef194e4c99e9f2c63ba10dab9cb
         return m.site
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetByPathWithPathResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["site"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *GetByPathWithPathResponse) GetFieldDeserializers()(map[string]func(inte
 func (m *GetByPathWithPathResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetByPathWithPathResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("site", m.GetSite())
@@ -90,23 +88,15 @@ func (m *GetByPathWithPathResponse) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetByPathWithPathResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the site property value. Union type representation for type site
-// Parameters:
-//  - value : Value to set for the site property.
+// SetSite sets the site property value. Union type representation for type site
 func (m *GetByPathWithPathResponse) SetSite(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site)() {
     m.site = value
 }
-// Instantiates a new GetByPathWithPathRequestBuilder and sets the default values.
-// Parameters:
-//  - path : Usage: path={path}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetByPathWithPathRequestBuilderInternal instantiates a new GetByPathWithPathRequestBuilder and sets the default values.
 func NewGetByPathWithPathRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, path *string)(*GetByPathWithPathRequestBuilder) {
     m := &GetByPathWithPathRequestBuilder{
     }
@@ -122,18 +112,13 @@ func NewGetByPathWithPathRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetByPathWithPathRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetByPathWithPathRequestBuilder instantiates a new GetByPathWithPathRequestBuilder and sets the default values.
 func NewGetByPathWithPathRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetByPathWithPathRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetByPathWithPathRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getByPath
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getByPath
 func (m *GetByPathWithPathRequestBuilder) CreateGetRequestInformation(options *GetByPathWithPathRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +135,7 @@ func (m *GetByPathWithPathRequestBuilder) CreateGetRequestInformation(options *G
     }
     return requestInfo, nil
 }
-// Invoke function getByPath
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getByPath
 func (m *GetByPathWithPathRequestBuilder) Get(options *GetByPathWithPathRequestBuilderGetOptions)(*GetByPathWithPathResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

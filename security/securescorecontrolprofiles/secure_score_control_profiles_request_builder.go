@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\secureScoreControlProfiles
+// secureScoreControlProfilesRequestBuilder builds and executes requests for operations under \security\secureScoreControlProfiles
 type SecureScoreControlProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SecureScoreControlProfilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SecureScoreControlProfilesRequestBuilderGetOptions options for Get
 type SecureScoreControlProfilesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SecureScoreControlProfilesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get secureScoreControlProfiles from security
+// secureScoreControlProfilesRequestBuilderGetQueryParameters get secureScoreControlProfiles from security
 type SecureScoreControlProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SecureScoreControlProfilesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SecureScoreControlProfilesRequestBuilderPostOptions options for Post
 type SecureScoreControlProfilesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfile;
@@ -56,10 +56,7 @@ type SecureScoreControlProfilesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SecureScoreControlProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSecureScoreControlProfilesRequestBuilderInternal instantiates a new SecureScoreControlProfilesRequestBuilder and sets the default values.
 func NewSecureScoreControlProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecureScoreControlProfilesRequestBuilder) {
     m := &SecureScoreControlProfilesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSecureScoreControlProfilesRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SecureScoreControlProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSecureScoreControlProfilesRequestBuilder instantiates a new SecureScoreControlProfilesRequestBuilder and sets the default values.
 func NewSecureScoreControlProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecureScoreControlProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSecureScoreControlProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get secureScoreControlProfiles from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get secureScoreControlProfiles from security
 func (m *SecureScoreControlProfilesRequestBuilder) CreateGetRequestInformation(options *SecureScoreControlProfilesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SecureScoreControlProfilesRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// Create new navigation property to secureScoreControlProfiles for security
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to secureScoreControlProfiles for security
 func (m *SecureScoreControlProfilesRequestBuilder) CreatePostRequestInformation(options *SecureScoreControlProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SecureScoreControlProfilesRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Get secureScoreControlProfiles from security
-// Parameters:
-//  - options : Options for the request
+// Get get secureScoreControlProfiles from security
 func (m *SecureScoreControlProfilesRequestBuilder) Get(options *SecureScoreControlProfilesRequestBuilderGetOptions)(*SecureScoreControlProfilesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SecureScoreControlProfilesRequestBuilder) Get(options *SecureScoreContr
     }
     return res.(*SecureScoreControlProfilesResponse), nil
 }
-// Create new navigation property to secureScoreControlProfiles for security
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to secureScoreControlProfiles for security
 func (m *SecureScoreControlProfilesRequestBuilder) Post(options *SecureScoreControlProfilesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScoreControlProfile, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

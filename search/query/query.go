@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// query 
 type Query struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type Query struct {
     // Contains the search terms sent in the initial search query.
     searchTerms []string;
 }
-// Instantiates a new query and sets the default values.
+// NewQuery instantiates a new query and sets the default values.
 func NewQuery()(*Query) {
     m := &Query{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Query) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *Query) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the hitsContainers property value. A collection of search results.
+// GetHitsContainers gets the hitsContainers property value. A collection of search results.
 func (m *Query) GetHitsContainers()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchHitsContainer) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *Query) GetHitsContainers()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.hitsContainers
     }
 }
-// Gets the searchTerms property value. Contains the search terms sent in the initial search query.
+// GetSearchTerms gets the searchTerms property value. Contains the search terms sent in the initial search query.
 func (m *Query) GetSearchTerms()([]string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *Query) GetSearchTerms()([]string) {
         return m.searchTerms
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Query) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["hitsContainers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -81,9 +81,7 @@ func (m *Query) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Query) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Query) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHitsContainers()))
@@ -110,21 +108,15 @@ func (m *Query) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Query) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the hitsContainers property value. A collection of search results.
-// Parameters:
-//  - value : Value to set for the hitsContainers property.
+// SetHitsContainers sets the hitsContainers property value. A collection of search results.
 func (m *Query) SetHitsContainers(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchHitsContainer)() {
     m.hitsContainers = value
 }
-// Sets the searchTerms property value. Contains the search terms sent in the initial search query.
-// Parameters:
-//  - value : Value to set for the searchTerms property.
+// SetSearchTerms sets the searchTerms property value. Contains the search terms sent in the initial search query.
 func (m *Query) SetSearchTerms(value []string)() {
     m.searchTerms = value
 }

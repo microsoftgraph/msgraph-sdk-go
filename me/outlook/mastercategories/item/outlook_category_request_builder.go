@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\outlook\masterCategories\{outlookCategory-id}
+// outlookCategoryRequestBuilder builds and executes requests for operations under \me\outlook\masterCategories\{outlookCategory-id}
 type OutlookCategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OutlookCategoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OutlookCategoryRequestBuilderDeleteOptions options for Delete
 type OutlookCategoryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type OutlookCategoryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OutlookCategoryRequestBuilderGetOptions options for Get
 type OutlookCategoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,12 +35,12 @@ type OutlookCategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of categories defined for the user.
+// outlookCategoryRequestBuilderGetQueryParameters a list of categories defined for the user.
 type OutlookCategoryRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OutlookCategoryRequestBuilderPatchOptions options for Patch
 type OutlookCategoryRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OutlookCategory;
@@ -51,10 +51,7 @@ type OutlookCategoryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OutlookCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOutlookCategoryRequestBuilderInternal instantiates a new OutlookCategoryRequestBuilder and sets the default values.
 func NewOutlookCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlookCategoryRequestBuilder) {
     m := &OutlookCategoryRequestBuilder{
     }
@@ -67,18 +64,13 @@ func NewOutlookCategoryRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OutlookCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOutlookCategoryRequestBuilder instantiates a new OutlookCategoryRequestBuilder and sets the default values.
 func NewOutlookCategoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OutlookCategoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOutlookCategoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of categories defined for the user.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a list of categories defined for the user.
 func (m *OutlookCategoryRequestBuilder) CreateDeleteRequestInformation(options *OutlookCategoryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,9 +87,7 @@ func (m *OutlookCategoryRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// A list of categories defined for the user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of categories defined for the user.
 func (m *OutlookCategoryRequestBuilder) CreateGetRequestInformation(options *OutlookCategoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,9 +107,7 @@ func (m *OutlookCategoryRequestBuilder) CreateGetRequestInformation(options *Out
     }
     return requestInfo, nil
 }
-// A list of categories defined for the user.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a list of categories defined for the user.
 func (m *OutlookCategoryRequestBuilder) CreatePatchRequestInformation(options *OutlookCategoryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *OutlookCategoryRequestBuilder) CreatePatchRequestInformation(options *O
     }
     return requestInfo, nil
 }
-// A list of categories defined for the user.
-// Parameters:
-//  - options : Options for the request
+// Delete a list of categories defined for the user.
 func (m *OutlookCategoryRequestBuilder) Delete(options *OutlookCategoryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -151,9 +137,7 @@ func (m *OutlookCategoryRequestBuilder) Delete(options *OutlookCategoryRequestBu
     }
     return nil
 }
-// A list of categories defined for the user.
-// Parameters:
-//  - options : Options for the request
+// Get a list of categories defined for the user.
 func (m *OutlookCategoryRequestBuilder) Get(options *OutlookCategoryRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OutlookCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -165,9 +149,7 @@ func (m *OutlookCategoryRequestBuilder) Get(options *OutlookCategoryRequestBuild
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OutlookCategory), nil
 }
-// A list of categories defined for the user.
-// Parameters:
-//  - options : Options for the request
+// Patch a list of categories defined for the user.
 func (m *OutlookCategoryRequestBuilder) Patch(options *OutlookCategoryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

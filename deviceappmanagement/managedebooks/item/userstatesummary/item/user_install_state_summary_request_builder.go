@@ -8,7 +8,7 @@ import (
     i4af6a004d2bf39ad93c5dd909c7a0431ca0e6fff0d6eee0daa5a92c3cfa82fec "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/managedebooks/item/userstatesummary/item/devicestates/item"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\userStateSummary\{userInstallStateSummary-id}
+// userInstallStateSummaryRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\userStateSummary\{userInstallStateSummary-id}
 type UserInstallStateSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type UserInstallStateSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserInstallStateSummaryRequestBuilderDeleteOptions options for Delete
 type UserInstallStateSummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserInstallStateSummaryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserInstallStateSummaryRequestBuilderGetOptions options for Get
 type UserInstallStateSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type UserInstallStateSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of installation states for this eBook.
+// userInstallStateSummaryRequestBuilderGetQueryParameters the list of installation states for this eBook.
 type UserInstallStateSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserInstallStateSummaryRequestBuilderPatchOptions options for Patch
 type UserInstallStateSummaryRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserInstallStateSummary;
@@ -55,10 +55,7 @@ type UserInstallStateSummaryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserInstallStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserInstallStateSummaryRequestBuilderInternal instantiates a new UserInstallStateSummaryRequestBuilder and sets the default values.
 func NewUserInstallStateSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserInstallStateSummaryRequestBuilder) {
     m := &UserInstallStateSummaryRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewUserInstallStateSummaryRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserInstallStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserInstallStateSummaryRequestBuilder instantiates a new UserInstallStateSummaryRequestBuilder and sets the default values.
 func NewUserInstallStateSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserInstallStateSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserInstallStateSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of installation states for this eBook.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of installation states for this eBook.
 func (m *UserInstallStateSummaryRequestBuilder) CreateDeleteRequestInformation(options *UserInstallStateSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *UserInstallStateSummaryRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// The list of installation states for this eBook.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of installation states for this eBook.
 func (m *UserInstallStateSummaryRequestBuilder) CreateGetRequestInformation(options *UserInstallStateSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *UserInstallStateSummaryRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The list of installation states for this eBook.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of installation states for this eBook.
 func (m *UserInstallStateSummaryRequestBuilder) CreatePatchRequestInformation(options *UserInstallStateSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *UserInstallStateSummaryRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// The list of installation states for this eBook.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of installation states for this eBook.
 func (m *UserInstallStateSummaryRequestBuilder) Delete(options *UserInstallStateSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *UserInstallStateSummaryRequestBuilder) Delete(options *UserInstallState
 func (m *UserInstallStateSummaryRequestBuilder) DeviceStates()(*i9d4e03b9802e2eb51b7709de98a35a0efc7531c683b19f204be587d9169b2732.DeviceStatesRequestBuilder) {
     return i9d4e03b9802e2eb51b7709de98a35a0efc7531c683b19f204be587d9169b2732.NewDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.userStateSummary.item.deviceStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeviceStatesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.userStateSummary.item.deviceStates.item collection
 func (m *UserInstallStateSummaryRequestBuilder) DeviceStatesById(id string)(*i4af6a004d2bf39ad93c5dd909c7a0431ca0e6fff0d6eee0daa5a92c3cfa82fec.DeviceInstallStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -171,9 +155,7 @@ func (m *UserInstallStateSummaryRequestBuilder) DeviceStatesById(id string)(*i4a
     }
     return i4af6a004d2bf39ad93c5dd909c7a0431ca0e6fff0d6eee0daa5a92c3cfa82fec.NewDeviceInstallStateRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The list of installation states for this eBook.
-// Parameters:
-//  - options : Options for the request
+// Get the list of installation states for this eBook.
 func (m *UserInstallStateSummaryRequestBuilder) Get(options *UserInstallStateSummaryRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserInstallStateSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *UserInstallStateSummaryRequestBuilder) Get(options *UserInstallStateSum
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserInstallStateSummary), nil
 }
-// The list of installation states for this eBook.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of installation states for this eBook.
 func (m *UserInstallStateSummaryRequestBuilder) Patch(options *UserInstallStateSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

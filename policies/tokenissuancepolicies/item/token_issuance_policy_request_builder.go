@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\tokenIssuancePolicies\{tokenIssuancePolicy-id}
+// tokenIssuancePolicyRequestBuilder builds and executes requests for operations under \policies\tokenIssuancePolicies\{tokenIssuancePolicy-id}
 type TokenIssuancePolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TokenIssuancePolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TokenIssuancePolicyRequestBuilderDeleteOptions options for Delete
 type TokenIssuancePolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TokenIssuancePolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TokenIssuancePolicyRequestBuilderGetOptions options for Get
 type TokenIssuancePolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type TokenIssuancePolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+// tokenIssuancePolicyRequestBuilderGetQueryParameters the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 type TokenIssuancePolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TokenIssuancePolicyRequestBuilderPatchOptions options for Patch
 type TokenIssuancePolicyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TokenIssuancePolicy;
@@ -53,10 +53,7 @@ type TokenIssuancePolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TokenIssuancePolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTokenIssuancePolicyRequestBuilderInternal instantiates a new TokenIssuancePolicyRequestBuilder and sets the default values.
 func NewTokenIssuancePolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TokenIssuancePolicyRequestBuilder) {
     m := &TokenIssuancePolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewTokenIssuancePolicyRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TokenIssuancePolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTokenIssuancePolicyRequestBuilder instantiates a new TokenIssuancePolicyRequestBuilder and sets the default values.
 func NewTokenIssuancePolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TokenIssuancePolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTokenIssuancePolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *TokenIssuancePolicyRequestBuilder) CreateDeleteRequestInformation(options *TokenIssuancePolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *TokenIssuancePolicyRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *TokenIssuancePolicyRequestBuilder) CreateGetRequestInformation(options *TokenIssuancePolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *TokenIssuancePolicyRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *TokenIssuancePolicyRequestBuilder) CreatePatchRequestInformation(options *TokenIssuancePolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *TokenIssuancePolicyRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-// Parameters:
-//  - options : Options for the request
+// Delete the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *TokenIssuancePolicyRequestBuilder) Delete(options *TokenIssuancePolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *TokenIssuancePolicyRequestBuilder) Delete(options *TokenIssuancePolicyR
     }
     return nil
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-// Parameters:
-//  - options : Options for the request
+// Get the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *TokenIssuancePolicyRequestBuilder) Get(options *TokenIssuancePolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TokenIssuancePolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *TokenIssuancePolicyRequestBuilder) Get(options *TokenIssuancePolicyRequ
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TokenIssuancePolicy), nil
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-// Parameters:
-//  - options : Options for the request
+// Patch the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *TokenIssuancePolicyRequestBuilder) Patch(options *TokenIssuancePolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

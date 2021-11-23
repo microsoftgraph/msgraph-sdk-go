@@ -6,7 +6,7 @@ import (
     if03fbf2512be788b170c83d65cb8357b1ed434919d409e0ec39fe1fbc9b2a915 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/targetedmanagedappprotection/targetapps"
 )
 
-// Builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.targetedManagedAppProtection
+// targetedManagedAppProtectionRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.targetedManagedAppProtection
 type TargetedManagedAppProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,10 +18,7 @@ type TargetedManagedAppProtectionRequestBuilder struct {
 func (m *TargetedManagedAppProtectionRequestBuilder) Assign()(*idc168e9231263e2c311e55fbc5bfc33acf48a5cb2ffb1c6ef2f7aae7f140d850.AssignRequestBuilder) {
     return idc168e9231263e2c311e55fbc5bfc33acf48a5cb2ffb1c6ef2f7aae7f140d850.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new TargetedManagedAppProtectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetedManagedAppProtectionRequestBuilderInternal instantiates a new TargetedManagedAppProtectionRequestBuilder and sets the default values.
 func NewTargetedManagedAppProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetedManagedAppProtectionRequestBuilder) {
     m := &TargetedManagedAppProtectionRequestBuilder{
     }
@@ -34,10 +31,7 @@ func NewTargetedManagedAppProtectionRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TargetedManagedAppProtectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetedManagedAppProtectionRequestBuilder instantiates a new TargetedManagedAppProtectionRequestBuilder and sets the default values.
 func NewTargetedManagedAppProtectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetedManagedAppProtectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

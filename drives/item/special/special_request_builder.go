@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \drives\{drive-id}\special
+// specialRequestBuilder builds and executes requests for operations under \drives\{drive-id}\special
 type SpecialRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SpecialRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SpecialRequestBuilderGetOptions options for Get
 type SpecialRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SpecialRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
+// specialRequestBuilderGetQueryParameters collection of common folders available in OneDrive. Read-only. Nullable.
 type SpecialRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SpecialRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SpecialRequestBuilderPostOptions options for Post
 type SpecialRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem;
@@ -56,10 +56,7 @@ type SpecialRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SpecialRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSpecialRequestBuilderInternal instantiates a new SpecialRequestBuilder and sets the default values.
 func NewSpecialRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SpecialRequestBuilder) {
     m := &SpecialRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSpecialRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SpecialRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSpecialRequestBuilder instantiates a new SpecialRequestBuilder and sets the default values.
 func NewSpecialRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SpecialRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSpecialRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *SpecialRequestBuilder) CreateGetRequestInformation(options *SpecialRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SpecialRequestBuilder) CreateGetRequestInformation(options *SpecialRequ
     }
     return requestInfo, nil
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *SpecialRequestBuilder) CreatePostRequestInformation(options *SpecialRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SpecialRequestBuilder) CreatePostRequestInformation(options *SpecialReq
     }
     return requestInfo, nil
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *SpecialRequestBuilder) Get(options *SpecialRequestBuilderGetOptions)(*SpecialResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SpecialRequestBuilder) Get(options *SpecialRequestBuilderGetOptions)(*S
     }
     return res.(*SpecialResponse), nil
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *SpecialRequestBuilder) Post(options *SpecialRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

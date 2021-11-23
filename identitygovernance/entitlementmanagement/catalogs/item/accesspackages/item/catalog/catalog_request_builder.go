@@ -7,7 +7,7 @@ import (
     i42f0e2349ba329f7e2bafaa8e7e58d15e631ccb3f422bc18825a30beb3bf043e "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/catalog/ref"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\catalogs\{accessPackageCatalog-id}\accessPackages\{accessPackage-id}\catalog
+// catalogRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\catalogs\{accessPackageCatalog-id}\accessPackages\{accessPackage-id}\catalog
 type CatalogRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type CatalogRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CatalogRequestBuilderGetOptions options for Get
 type CatalogRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type CatalogRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get catalog from identityGovernance
+// catalogRequestBuilderGetQueryParameters get catalog from identityGovernance
 type CatalogRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new CatalogRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCatalogRequestBuilderInternal instantiates a new CatalogRequestBuilder and sets the default values.
 func NewCatalogRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CatalogRequestBuilder) {
     m := &CatalogRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewCatalogRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CatalogRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCatalogRequestBuilder instantiates a new CatalogRequestBuilder and sets the default values.
 func NewCatalogRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CatalogRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCatalogRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get catalog from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get catalog from identityGovernance
 func (m *CatalogRequestBuilder) CreateGetRequestInformation(options *CatalogRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *CatalogRequestBuilder) CreateGetRequestInformation(options *CatalogRequ
     }
     return requestInfo, nil
 }
-// Get catalog from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get catalog from identityGovernance
 func (m *CatalogRequestBuilder) Get(options *CatalogRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageCatalog, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i0c10871d16189fb41e85f0bfac474cb5d94a22a1965435f5fa53b5c46c8b2cf6 "github.com/microsoftgraph/msgraph-sdk-go/me/agreementacceptances/ref"
 )
 
-// Builds and executes requests for operations under \me\agreementAcceptances
+// agreementAcceptancesRequestBuilder builds and executes requests for operations under \me\agreementAcceptances
 type AgreementAcceptancesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AgreementAcceptancesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AgreementAcceptancesRequestBuilderGetOptions options for Get
 type AgreementAcceptancesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AgreementAcceptancesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user's terms of use acceptance statuses. Read-only. Nullable.
+// agreementAcceptancesRequestBuilderGetQueryParameters the user's terms of use acceptance statuses. Read-only. Nullable.
 type AgreementAcceptancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type AgreementAcceptancesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new AgreementAcceptancesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgreementAcceptancesRequestBuilderInternal instantiates a new AgreementAcceptancesRequestBuilder and sets the default values.
 func NewAgreementAcceptancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgreementAcceptancesRequestBuilder) {
     m := &AgreementAcceptancesRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewAgreementAcceptancesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AgreementAcceptancesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgreementAcceptancesRequestBuilder instantiates a new AgreementAcceptancesRequestBuilder and sets the default values.
 func NewAgreementAcceptancesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgreementAcceptancesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementAcceptancesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user's terms of use acceptance statuses. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user's terms of use acceptance statuses. Read-only. Nullable.
 func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformation(options *AgreementAcceptancesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// The user's terms of use acceptance statuses. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the user's terms of use acceptance statuses. Read-only. Nullable.
 func (m *AgreementAcceptancesRequestBuilder) Get(options *AgreementAcceptancesRequestBuilderGetOptions)(*AgreementAcceptancesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i2de0ad36b23b2ab3c0df45c69cfbf292f5bd5c823098b73b381d75abdf91cd30 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenlifetimepolicies/ref"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\tokenLifetimePolicies
+// tokenLifetimePoliciesRequestBuilder builds and executes requests for operations under \applications\{application-id}\tokenLifetimePolicies
 type TokenLifetimePoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TokenLifetimePoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TokenLifetimePoliciesRequestBuilderGetOptions options for Get
 type TokenLifetimePoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TokenLifetimePoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The tokenLifetimePolicies assigned to this application. Supports $expand.
+// tokenLifetimePoliciesRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this application. Supports $expand.
 type TokenLifetimePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type TokenLifetimePoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTokenLifetimePoliciesRequestBuilderInternal instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.
 func NewTokenLifetimePoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TokenLifetimePoliciesRequestBuilder) {
     m := &TokenLifetimePoliciesRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewTokenLifetimePoliciesRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTokenLifetimePoliciesRequestBuilder instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.
 func NewTokenLifetimePoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TokenLifetimePoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTokenLifetimePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The tokenLifetimePolicies assigned to this application. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the tokenLifetimePolicies assigned to this application. Supports $expand.
 func (m *TokenLifetimePoliciesRequestBuilder) CreateGetRequestInformation(options *TokenLifetimePoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *TokenLifetimePoliciesRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// The tokenLifetimePolicies assigned to this application. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get the tokenLifetimePolicies assigned to this application. Supports $expand.
 func (m *TokenLifetimePoliciesRequestBuilder) Get(options *TokenLifetimePoliciesRequestBuilderGetOptions)(*TokenLifetimePoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

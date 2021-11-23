@@ -7,7 +7,7 @@ import (
     ie3c2d781be357915d70a20b0bfaecd9c94b8860c5be08b81684cba3fe3388e2d "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/directory/roleassignments/item/principal/ref"
 )
 
-// Builds and executes requests for operations under \roleManagement\directory\roleAssignments\{unifiedRoleAssignment-id}\principal
+// principalRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignments\{unifiedRoleAssignment-id}\principal
 type PrincipalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type PrincipalRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PrincipalRequestBuilderGetOptions options for Get
 type PrincipalRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type PrincipalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Referencing the assigned principal. Read-only. Supports $expand.
+// principalRequestBuilderGetQueryParameters referencing the assigned principal. Read-only. Supports $expand.
 type PrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new PrincipalRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrincipalRequestBuilderInternal instantiates a new PrincipalRequestBuilder and sets the default values.
 func NewPrincipalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrincipalRequestBuilder) {
     m := &PrincipalRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewPrincipalRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrincipalRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrincipalRequestBuilder instantiates a new PrincipalRequestBuilder and sets the default values.
 func NewPrincipalRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrincipalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrincipalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Referencing the assigned principal. Read-only. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation referencing the assigned principal. Read-only. Supports $expand.
 func (m *PrincipalRequestBuilder) CreateGetRequestInformation(options *PrincipalRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *PrincipalRequestBuilder) CreateGetRequestInformation(options *Principal
     }
     return requestInfo, nil
 }
-// Referencing the assigned principal. Read-only. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get referencing the assigned principal. Read-only. Supports $expand.
 func (m *PrincipalRequestBuilder) Get(options *PrincipalRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

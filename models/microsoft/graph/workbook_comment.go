@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// workbookComment 
 type WorkbookComment struct {
     Entity
     // The content of comment.
@@ -14,14 +14,14 @@ type WorkbookComment struct {
     // Read-only. Nullable.
     replies []WorkbookCommentReply;
 }
-// Instantiates a new workbookComment and sets the default values.
+// NewWorkbookComment instantiates a new workbookComment and sets the default values.
 func NewWorkbookComment()(*WorkbookComment) {
     m := &WorkbookComment{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the content property value. The content of comment.
+// GetContent gets the content property value. The content of comment.
 func (m *WorkbookComment) GetContent()(*string) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *WorkbookComment) GetContent()(*string) {
         return m.content
     }
 }
-// Gets the contentType property value. Indicates the type for the comment.
+// GetContentType gets the contentType property value. Indicates the type for the comment.
 func (m *WorkbookComment) GetContentType()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *WorkbookComment) GetContentType()(*string) {
         return m.contentType
     }
 }
-// Gets the replies property value. Read-only. Nullable.
+// GetReplies gets the replies property value. Read-only. Nullable.
 func (m *WorkbookComment) GetReplies()([]WorkbookCommentReply) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *WorkbookComment) GetReplies()([]WorkbookCommentReply) {
         return m.replies
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["content"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,9 +87,7 @@ func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *WorkbookComment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WorkbookComment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -120,21 +118,15 @@ func (m *WorkbookComment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the content property value. The content of comment.
-// Parameters:
-//  - value : Value to set for the content property.
+// SetContent sets the content property value. The content of comment.
 func (m *WorkbookComment) SetContent(value *string)() {
     m.content = value
 }
-// Sets the contentType property value. Indicates the type for the comment.
-// Parameters:
-//  - value : Value to set for the contentType property.
+// SetContentType sets the contentType property value. Indicates the type for the comment.
 func (m *WorkbookComment) SetContentType(value *string)() {
     m.contentType = value
 }
-// Sets the replies property value. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the replies property.
+// SetReplies sets the replies property value. Read-only. Nullable.
 func (m *WorkbookComment) SetReplies(value []WorkbookCommentReply)() {
     m.replies = value
 }

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\licenseDetails
+// licenseDetailsRequestBuilder builds and executes requests for operations under \users\{user-id}\licenseDetails
 type LicenseDetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type LicenseDetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// LicenseDetailsRequestBuilderGetOptions options for Get
 type LicenseDetailsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type LicenseDetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of this user's license details. Read-only.
+// licenseDetailsRequestBuilderGetQueryParameters a collection of this user's license details. Read-only.
 type LicenseDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type LicenseDetailsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// LicenseDetailsRequestBuilderPostOptions options for Post
 type LicenseDetailsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LicenseDetails;
@@ -56,10 +56,7 @@ type LicenseDetailsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LicenseDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLicenseDetailsRequestBuilderInternal instantiates a new LicenseDetailsRequestBuilder and sets the default values.
 func NewLicenseDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LicenseDetailsRequestBuilder) {
     m := &LicenseDetailsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewLicenseDetailsRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LicenseDetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLicenseDetailsRequestBuilder instantiates a new LicenseDetailsRequestBuilder and sets the default values.
 func NewLicenseDetailsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LicenseDetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLicenseDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of this user's license details. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of this user's license details. Read-only.
 func (m *LicenseDetailsRequestBuilder) CreateGetRequestInformation(options *LicenseDetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *LicenseDetailsRequestBuilder) CreateGetRequestInformation(options *Lice
     }
     return requestInfo, nil
 }
-// A collection of this user's license details. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a collection of this user's license details. Read-only.
 func (m *LicenseDetailsRequestBuilder) CreatePostRequestInformation(options *LicenseDetailsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *LicenseDetailsRequestBuilder) CreatePostRequestInformation(options *Lic
     }
     return requestInfo, nil
 }
-// A collection of this user's license details. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of this user's license details. Read-only.
 func (m *LicenseDetailsRequestBuilder) Get(options *LicenseDetailsRequestBuilderGetOptions)(*LicenseDetailsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *LicenseDetailsRequestBuilder) Get(options *LicenseDetailsRequestBuilder
     }
     return res.(*LicenseDetailsResponse), nil
 }
-// A collection of this user's license details. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post a collection of this user's license details. Read-only.
 func (m *LicenseDetailsRequestBuilder) Post(options *LicenseDetailsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LicenseDetails, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

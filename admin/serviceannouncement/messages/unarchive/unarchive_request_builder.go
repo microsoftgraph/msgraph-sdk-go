@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.unarchive
+// unarchiveRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.unarchive
 type UnarchiveRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UnarchiveRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UnarchiveRequestBuilderPostOptions options for Post
 type UnarchiveRequestBuilderPostOptions struct {
     // 
     Body *UnarchiveRequestBody;
@@ -24,10 +24,7 @@ type UnarchiveRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnarchiveRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnarchiveRequestBuilderInternal instantiates a new UnarchiveRequestBuilder and sets the default values.
 func NewUnarchiveRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnarchiveRequestBuilder) {
     m := &UnarchiveRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewUnarchiveRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnarchiveRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnarchiveRequestBuilder instantiates a new UnarchiveRequestBuilder and sets the default values.
 func NewUnarchiveRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnarchiveRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action unarchive
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action unarchive
 func (m *UnarchiveRequestBuilder) CreatePostRequestInformation(options *UnarchiveRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *UnarchiveRequestBuilder) CreatePostRequestInformation(options *Unarchiv
     }
     return requestInfo, nil
 }
-// Invoke action unarchive
-// Parameters:
-//  - options : Options for the request
+// Post invoke action unarchive
 func (m *UnarchiveRequestBuilder) Post(options *UnarchiveRequestBuilderPostOptions)(*bool, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

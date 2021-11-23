@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \me\microsoft.graph.getManagedAppDiagnosticStatuses()
+// getManagedAppDiagnosticStatusesRequestBuilder builds and executes requests for operations under \me\microsoft.graph.getManagedAppDiagnosticStatuses()
 type GetManagedAppDiagnosticStatusesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetManagedAppDiagnosticStatusesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetManagedAppDiagnosticStatusesRequestBuilderGetOptions options for Get
 type GetManagedAppDiagnosticStatusesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type GetManagedAppDiagnosticStatusesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetManagedAppDiagnosticStatusesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetManagedAppDiagnosticStatusesRequestBuilderInternal instantiates a new GetManagedAppDiagnosticStatusesRequestBuilder and sets the default values.
 func NewGetManagedAppDiagnosticStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetManagedAppDiagnosticStatusesRequestBuilder) {
     m := &GetManagedAppDiagnosticStatusesRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewGetManagedAppDiagnosticStatusesRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetManagedAppDiagnosticStatusesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetManagedAppDiagnosticStatusesRequestBuilder instantiates a new GetManagedAppDiagnosticStatusesRequestBuilder and sets the default values.
 func NewGetManagedAppDiagnosticStatusesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetManagedAppDiagnosticStatusesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetManagedAppDiagnosticStatusesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Gets diagnostics validation status for a given user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation gets diagnostics validation status for a given user.
 func (m *GetManagedAppDiagnosticStatusesRequestBuilder) CreateGetRequestInformation(options *GetManagedAppDiagnosticStatusesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *GetManagedAppDiagnosticStatusesRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Gets diagnostics validation status for a given user.
-// Parameters:
-//  - options : Options for the request
+// Get gets diagnostics validation status for a given user.
 func (m *GetManagedAppDiagnosticStatusesRequestBuilder) Get(options *GetManagedAppDiagnosticStatusesRequestBuilderGetOptions)([]GetManagedAppDiagnosticStatuses, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

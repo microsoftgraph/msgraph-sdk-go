@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\deviceStatuses\{deviceConfigurationDeviceStatus-id}
+// deviceConfigurationDeviceStatusRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\deviceStatuses\{deviceConfigurationDeviceStatus-id}
 type DeviceConfigurationDeviceStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceConfigurationDeviceStatusRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceConfigurationDeviceStatusRequestBuilderDeleteOptions options for Delete
 type DeviceConfigurationDeviceStatusRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceConfigurationDeviceStatusRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceConfigurationDeviceStatusRequestBuilderGetOptions options for Get
 type DeviceConfigurationDeviceStatusRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceConfigurationDeviceStatusRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Device configuration installation status by device.
+// deviceConfigurationDeviceStatusRequestBuilderGetQueryParameters device configuration installation status by device.
 type DeviceConfigurationDeviceStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceConfigurationDeviceStatusRequestBuilderPatchOptions options for Patch
 type DeviceConfigurationDeviceStatusRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationDeviceStatus;
@@ -53,10 +53,7 @@ type DeviceConfigurationDeviceStatusRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceConfigurationDeviceStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationDeviceStatusRequestBuilderInternal instantiates a new DeviceConfigurationDeviceStatusRequestBuilder and sets the default values.
 func NewDeviceConfigurationDeviceStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationDeviceStatusRequestBuilder) {
     m := &DeviceConfigurationDeviceStatusRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceConfigurationDeviceStatusRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceConfigurationDeviceStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationDeviceStatusRequestBuilder instantiates a new DeviceConfigurationDeviceStatusRequestBuilder and sets the default values.
 func NewDeviceConfigurationDeviceStatusRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationDeviceStatusRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationDeviceStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Device configuration installation status by device.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation device configuration installation status by device.
 func (m *DeviceConfigurationDeviceStatusRequestBuilder) CreateDeleteRequestInformation(options *DeviceConfigurationDeviceStatusRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceConfigurationDeviceStatusRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// Device configuration installation status by device.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation device configuration installation status by device.
 func (m *DeviceConfigurationDeviceStatusRequestBuilder) CreateGetRequestInformation(options *DeviceConfigurationDeviceStatusRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceConfigurationDeviceStatusRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Device configuration installation status by device.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation device configuration installation status by device.
 func (m *DeviceConfigurationDeviceStatusRequestBuilder) CreatePatchRequestInformation(options *DeviceConfigurationDeviceStatusRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceConfigurationDeviceStatusRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Device configuration installation status by device.
-// Parameters:
-//  - options : Options for the request
+// Delete device configuration installation status by device.
 func (m *DeviceConfigurationDeviceStatusRequestBuilder) Delete(options *DeviceConfigurationDeviceStatusRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceConfigurationDeviceStatusRequestBuilder) Delete(options *DeviceCo
     }
     return nil
 }
-// Device configuration installation status by device.
-// Parameters:
-//  - options : Options for the request
+// Get device configuration installation status by device.
 func (m *DeviceConfigurationDeviceStatusRequestBuilder) Get(options *DeviceConfigurationDeviceStatusRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationDeviceStatus, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceConfigurationDeviceStatusRequestBuilder) Get(options *DeviceConfi
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationDeviceStatus), nil
 }
-// Device configuration installation status by device.
-// Parameters:
-//  - options : Options for the request
+// Patch device configuration installation status by device.
 func (m *DeviceConfigurationDeviceStatusRequestBuilder) Patch(options *DeviceConfigurationDeviceStatusRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

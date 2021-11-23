@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\group\$ref
+// refRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\group\$ref
 type RefRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RefRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RefRequestBuilderDeleteOptions options for Delete
 type RefRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -22,7 +22,7 @@ type RefRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RefRequestBuilderGetOptions options for Get
 type RefRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type RefRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Put
+// RefRequestBuilderPutOptions options for Put
 type RefRequestBuilderPutOptions struct {
     // 
     Body *Ref;
@@ -42,10 +42,7 @@ type RefRequestBuilderPutOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RefRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
 func NewRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RefRequestBuilder) {
     m := &RefRequestBuilder{
     }
@@ -58,18 +55,13 @@ func NewRefRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RefRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
 func NewRefRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The underlying Microsoft 365 group object.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the underlying Microsoft 365 group object.
 func (m *RefRequestBuilder) CreateDeleteRequestInformation(options *RefRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -86,9 +78,7 @@ func (m *RefRequestBuilder) CreateDeleteRequestInformation(options *RefRequestBu
     }
     return requestInfo, nil
 }
-// The underlying Microsoft 365 group object.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the underlying Microsoft 365 group object.
 func (m *RefRequestBuilder) CreateGetRequestInformation(options *RefRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +95,7 @@ func (m *RefRequestBuilder) CreateGetRequestInformation(options *RefRequestBuild
     }
     return requestInfo, nil
 }
-// The underlying Microsoft 365 group object.
-// Parameters:
-//  - options : Options for the request
+// CreatePutRequestInformation the underlying Microsoft 365 group object.
 func (m *RefRequestBuilder) CreatePutRequestInformation(options *RefRequestBuilderPutOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +113,7 @@ func (m *RefRequestBuilder) CreatePutRequestInformation(options *RefRequestBuild
     }
     return requestInfo, nil
 }
-// The underlying Microsoft 365 group object.
-// Parameters:
-//  - options : Options for the request
+// Delete the underlying Microsoft 365 group object.
 func (m *RefRequestBuilder) Delete(options *RefRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,9 +125,7 @@ func (m *RefRequestBuilder) Delete(options *RefRequestBuilderDeleteOptions)(erro
     }
     return nil
 }
-// The underlying Microsoft 365 group object.
-// Parameters:
-//  - options : Options for the request
+// Get the underlying Microsoft 365 group object.
 func (m *RefRequestBuilder) Get(options *RefRequestBuilderGetOptions)(*string, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -153,9 +137,7 @@ func (m *RefRequestBuilder) Get(options *RefRequestBuilderGetOptions)(*string, e
     }
     return res.(*string), nil
 }
-// The underlying Microsoft 365 group object.
-// Parameters:
-//  - options : Options for the request
+// Put the underlying Microsoft 365 group object.
 func (m *RefRequestBuilder) Put(options *RefRequestBuilderPutOptions)(error) {
     requestInfo, err := m.CreatePutRequestInformation(options);
     if err != nil {

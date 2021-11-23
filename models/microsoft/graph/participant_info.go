@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// participantInfo 
 type ParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type ParticipantInfo struct {
     // The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
     region *string;
 }
-// Instantiates a new participantInfo and sets the default values.
+// NewParticipantInfo instantiates a new participantInfo and sets the default values.
 func NewParticipantInfo()(*ParticipantInfo) {
     m := &ParticipantInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParticipantInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ParticipantInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the countryCode property value. The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
+// GetCountryCode gets the countryCode property value. The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
 func (m *ParticipantInfo) GetCountryCode()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *ParticipantInfo) GetCountryCode()(*string) {
         return m.countryCode
     }
 }
-// Gets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
+// GetEndpointType gets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
 func (m *ParticipantInfo) GetEndpointType()(*EndpointType) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *ParticipantInfo) GetEndpointType()(*EndpointType) {
         return m.endpointType
     }
 }
-// Gets the identity property value. 
+// GetIdentity gets the identity property value. 
 func (m *ParticipantInfo) GetIdentity()(*IdentitySet) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *ParticipantInfo) GetIdentity()(*IdentitySet) {
         return m.identity
     }
 }
-// Gets the languageId property value. The language culture string. Read-only.
+// GetLanguageId gets the languageId property value. The language culture string. Read-only.
 func (m *ParticipantInfo) GetLanguageId()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *ParticipantInfo) GetLanguageId()(*string) {
         return m.languageId
     }
 }
-// Gets the participantId property value. The participant ID of the participant. Read-only.
+// GetParticipantId gets the participantId property value. The participant ID of the participant. Read-only.
 func (m *ParticipantInfo) GetParticipantId()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *ParticipantInfo) GetParticipantId()(*string) {
         return m.participantId
     }
 }
-// Gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+// GetRegion gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
 func (m *ParticipantInfo) GetRegion()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *ParticipantInfo) GetRegion()(*string) {
         return m.region
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["countryCode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,9 +153,7 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *ParticipantInfo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("countryCode", m.GetCountryCode())
@@ -202,45 +200,31 @@ func (m *ParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParticipantInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the countryCode property value. The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
-// Parameters:
-//  - value : Value to set for the countryCode property.
+// SetCountryCode sets the countryCode property value. The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
 func (m *ParticipantInfo) SetCountryCode(value *string)() {
     m.countryCode = value
 }
-// Sets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
-// Parameters:
-//  - value : Value to set for the endpointType property.
+// SetEndpointType sets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
 func (m *ParticipantInfo) SetEndpointType(value *EndpointType)() {
     m.endpointType = value
 }
-// Sets the identity property value. 
-// Parameters:
-//  - value : Value to set for the identity property.
+// SetIdentity sets the identity property value. 
 func (m *ParticipantInfo) SetIdentity(value *IdentitySet)() {
     m.identity = value
 }
-// Sets the languageId property value. The language culture string. Read-only.
-// Parameters:
-//  - value : Value to set for the languageId property.
+// SetLanguageId sets the languageId property value. The language culture string. Read-only.
 func (m *ParticipantInfo) SetLanguageId(value *string)() {
     m.languageId = value
 }
-// Sets the participantId property value. The participant ID of the participant. Read-only.
-// Parameters:
-//  - value : Value to set for the participantId property.
+// SetParticipantId sets the participantId property value. The participant ID of the participant. Read-only.
 func (m *ParticipantInfo) SetParticipantId(value *string)() {
     m.participantId = value
 }
-// Sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
-// Parameters:
-//  - value : Value to set for the region property.
+// SetRegion sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
 func (m *ParticipantInfo) SetRegion(value *string)() {
     m.region = value
 }

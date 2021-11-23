@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\dailyPrintUsageByUser\{printUsageByUser-id}
+// printUsageByUserRequestBuilder builds and executes requests for operations under \reports\dailyPrintUsageByUser\{printUsageByUser-id}
 type PrintUsageByUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PrintUsageByUserRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrintUsageByUserRequestBuilderDeleteOptions options for Delete
 type PrintUsageByUserRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PrintUsageByUserRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrintUsageByUserRequestBuilderGetOptions options for Get
 type PrintUsageByUserRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PrintUsageByUserRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get dailyPrintUsageByUser from reports
+// printUsageByUserRequestBuilderGetQueryParameters get dailyPrintUsageByUser from reports
 type PrintUsageByUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrintUsageByUserRequestBuilderPatchOptions options for Patch
 type PrintUsageByUserRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByUser;
@@ -53,10 +53,7 @@ type PrintUsageByUserRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrintUsageByUserRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintUsageByUserRequestBuilderInternal instantiates a new PrintUsageByUserRequestBuilder and sets the default values.
 func NewPrintUsageByUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintUsageByUserRequestBuilder) {
     m := &PrintUsageByUserRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPrintUsageByUserRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrintUsageByUserRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintUsageByUserRequestBuilder instantiates a new PrintUsageByUserRequestBuilder and sets the default values.
 func NewPrintUsageByUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintUsageByUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrintUsageByUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property dailyPrintUsageByUser for reports
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property dailyPrintUsageByUser for reports
 func (m *PrintUsageByUserRequestBuilder) CreateDeleteRequestInformation(options *PrintUsageByUserRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PrintUsageByUserRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get dailyPrintUsageByUser from reports
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get dailyPrintUsageByUser from reports
 func (m *PrintUsageByUserRequestBuilder) CreateGetRequestInformation(options *PrintUsageByUserRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PrintUsageByUserRequestBuilder) CreateGetRequestInformation(options *Pr
     }
     return requestInfo, nil
 }
-// Update the navigation property dailyPrintUsageByUser in reports
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property dailyPrintUsageByUser in reports
 func (m *PrintUsageByUserRequestBuilder) CreatePatchRequestInformation(options *PrintUsageByUserRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PrintUsageByUserRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete navigation property dailyPrintUsageByUser for reports
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property dailyPrintUsageByUser for reports
 func (m *PrintUsageByUserRequestBuilder) Delete(options *PrintUsageByUserRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PrintUsageByUserRequestBuilder) Delete(options *PrintUsageByUserRequest
     }
     return nil
 }
-// Get dailyPrintUsageByUser from reports
-// Parameters:
-//  - options : Options for the request
+// Get get dailyPrintUsageByUser from reports
 func (m *PrintUsageByUserRequestBuilder) Get(options *PrintUsageByUserRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByUser, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PrintUsageByUserRequestBuilder) Get(options *PrintUsageByUserRequestBui
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByUser), nil
 }
-// Update the navigation property dailyPrintUsageByUser in reports
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property dailyPrintUsageByUser in reports
 func (m *PrintUsageByUserRequestBuilder) Patch(options *PrintUsageByUserRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

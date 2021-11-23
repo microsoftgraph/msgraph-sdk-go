@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// subjectRightsRequestHistory 
 type SubjectRightsRequestHistory struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,14 +20,14 @@ type SubjectRightsRequestHistory struct {
     // Type of history.
     type_escaped *string;
 }
-// Instantiates a new subjectRightsRequestHistory and sets the default values.
+// NewSubjectRightsRequestHistory instantiates a new subjectRightsRequestHistory and sets the default values.
 func NewSubjectRightsRequestHistory()(*SubjectRightsRequestHistory) {
     m := &SubjectRightsRequestHistory{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestHistory) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *SubjectRightsRequestHistory) GetAdditionalData()(map[string]interface{}
         return m.additionalData
     }
 }
-// Gets the changedBy property value. Identity of the user who changed the  subject rights request.
+// GetChangedBy gets the changedBy property value. Identity of the user who changed the  subject rights request.
 func (m *SubjectRightsRequestHistory) GetChangedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *SubjectRightsRequestHistory) GetChangedBy()(*IdentitySet) {
         return m.changedBy
     }
 }
-// Gets the eventDateTime property value. Data and time when the entity was changed.
+// GetEventDateTime gets the eventDateTime property value. Data and time when the entity was changed.
 func (m *SubjectRightsRequestHistory) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *SubjectRightsRequestHistory) GetEventDateTime()(*i336074805fc853987abe6
         return m.eventDateTime
     }
 }
-// Gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
+// GetStage gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
 func (m *SubjectRightsRequestHistory) GetStage()(*SubjectRightsRequestStage) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *SubjectRightsRequestHistory) GetStage()(*SubjectRightsRequestStage) {
         return m.stage
     }
 }
-// Gets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
+// GetStageStatus gets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
 func (m *SubjectRightsRequestHistory) GetStageStatus()(*SubjectRightsRequestStageStatus) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *SubjectRightsRequestHistory) GetStageStatus()(*SubjectRightsRequestStag
         return m.stageStatus
     }
 }
-// Gets the type_escaped property value. Type of history.
+// GetType_escaped gets the type_escaped property value. Type of history.
 func (m *SubjectRightsRequestHistory) GetType_escaped()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *SubjectRightsRequestHistory) GetType_escaped()(*string) {
         return m.type_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["changedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -135,9 +135,7 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(in
 func (m *SubjectRightsRequestHistory) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SubjectRightsRequestHistory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("changedBy", m.GetChangedBy())
@@ -179,39 +177,27 @@ func (m *SubjectRightsRequestHistory) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestHistory) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the changedBy property value. Identity of the user who changed the  subject rights request.
-// Parameters:
-//  - value : Value to set for the changedBy property.
+// SetChangedBy sets the changedBy property value. Identity of the user who changed the  subject rights request.
 func (m *SubjectRightsRequestHistory) SetChangedBy(value *IdentitySet)() {
     m.changedBy = value
 }
-// Sets the eventDateTime property value. Data and time when the entity was changed.
-// Parameters:
-//  - value : Value to set for the eventDateTime property.
+// SetEventDateTime sets the eventDateTime property value. Data and time when the entity was changed.
 func (m *SubjectRightsRequestHistory) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.eventDateTime = value
 }
-// Sets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the stage property.
+// SetStage sets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
 func (m *SubjectRightsRequestHistory) SetStage(value *SubjectRightsRequestStage)() {
     m.stage = value
 }
-// Sets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the stageStatus property.
+// SetStageStatus sets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
 func (m *SubjectRightsRequestHistory) SetStageStatus(value *SubjectRightsRequestStageStatus)() {
     m.stageStatus = value
 }
-// Sets the type_escaped property value. Type of history.
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. Type of history.
 func (m *SubjectRightsRequestHistory) SetType_escaped(value *string)() {
     m.type_escaped = value
 }

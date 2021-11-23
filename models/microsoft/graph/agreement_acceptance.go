@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// agreementAcceptance 
 type AgreementAcceptance struct {
     Entity
     // The identifier of the agreement file accepted by the user.
@@ -35,14 +35,14 @@ type AgreementAcceptance struct {
     // UPN of the user when the acceptance was recorded.
     userPrincipalName *string;
 }
-// Instantiates a new agreementAcceptance and sets the default values.
+// NewAgreementAcceptance instantiates a new agreementAcceptance and sets the default values.
 func NewAgreementAcceptance()(*AgreementAcceptance) {
     m := &AgreementAcceptance{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the agreementFileId property value. The identifier of the agreement file accepted by the user.
+// GetAgreementFileId gets the agreementFileId property value. The identifier of the agreement file accepted by the user.
 func (m *AgreementAcceptance) GetAgreementFileId()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *AgreementAcceptance) GetAgreementFileId()(*string) {
         return m.agreementFileId
     }
 }
-// Gets the agreementId property value. The identifier of the agreement.
+// GetAgreementId gets the agreementId property value. The identifier of the agreement.
 func (m *AgreementAcceptance) GetAgreementId()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *AgreementAcceptance) GetAgreementId()(*string) {
         return m.agreementId
     }
 }
-// Gets the deviceDisplayName property value. The display name of the device used for accepting the agreement.
+// GetDeviceDisplayName gets the deviceDisplayName property value. The display name of the device used for accepting the agreement.
 func (m *AgreementAcceptance) GetDeviceDisplayName()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *AgreementAcceptance) GetDeviceDisplayName()(*string) {
         return m.deviceDisplayName
     }
 }
-// Gets the deviceId property value. The unique identifier of the device used for accepting the agreement.
+// GetDeviceId gets the deviceId property value. The unique identifier of the device used for accepting the agreement.
 func (m *AgreementAcceptance) GetDeviceId()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *AgreementAcceptance) GetDeviceId()(*string) {
         return m.deviceId
     }
 }
-// Gets the deviceOSType property value. The operating system used to accept the agreement.
+// GetDeviceOSType gets the deviceOSType property value. The operating system used to accept the agreement.
 func (m *AgreementAcceptance) GetDeviceOSType()(*string) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *AgreementAcceptance) GetDeviceOSType()(*string) {
         return m.deviceOSType
     }
 }
-// Gets the deviceOSVersion property value. The operating system version of the device used to accept the agreement.
+// GetDeviceOSVersion gets the deviceOSVersion property value. The operating system version of the device used to accept the agreement.
 func (m *AgreementAcceptance) GetDeviceOSVersion()(*string) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *AgreementAcceptance) GetDeviceOSVersion()(*string) {
         return m.deviceOSVersion
     }
 }
-// Gets the expirationDateTime property value. The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetExpirationDateTime gets the expirationDateTime property value. The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AgreementAcceptance) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *AgreementAcceptance) GetExpirationDateTime()(*i336074805fc853987abe6f7f
         return m.expirationDateTime
     }
 }
-// Gets the recordedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetRecordedDateTime gets the recordedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AgreementAcceptance) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *AgreementAcceptance) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3
         return m.recordedDateTime
     }
 }
-// Gets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined.
+// GetState gets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined.
 func (m *AgreementAcceptance) GetState()(*AgreementAcceptanceState) {
     if m == nil {
         return nil
@@ -114,7 +114,7 @@ func (m *AgreementAcceptance) GetState()(*AgreementAcceptanceState) {
         return m.state
     }
 }
-// Gets the userDisplayName property value. Display name of the user when the acceptance was recorded.
+// GetUserDisplayName gets the userDisplayName property value. Display name of the user when the acceptance was recorded.
 func (m *AgreementAcceptance) GetUserDisplayName()(*string) {
     if m == nil {
         return nil
@@ -122,7 +122,7 @@ func (m *AgreementAcceptance) GetUserDisplayName()(*string) {
         return m.userDisplayName
     }
 }
-// Gets the userEmail property value. Email of the user when the acceptance was recorded.
+// GetUserEmail gets the userEmail property value. Email of the user when the acceptance was recorded.
 func (m *AgreementAcceptance) GetUserEmail()(*string) {
     if m == nil {
         return nil
@@ -130,7 +130,7 @@ func (m *AgreementAcceptance) GetUserEmail()(*string) {
         return m.userEmail
     }
 }
-// Gets the userId property value. The identifier of the user who accepted the agreement.
+// GetUserId gets the userId property value. The identifier of the user who accepted the agreement.
 func (m *AgreementAcceptance) GetUserId()(*string) {
     if m == nil {
         return nil
@@ -138,7 +138,7 @@ func (m *AgreementAcceptance) GetUserId()(*string) {
         return m.userId
     }
 }
-// Gets the userPrincipalName property value. UPN of the user when the acceptance was recorded.
+// GetUserPrincipalName gets the userPrincipalName property value. UPN of the user when the acceptance was recorded.
 func (m *AgreementAcceptance) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -146,7 +146,7 @@ func (m *AgreementAcceptance) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agreementFileId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -285,9 +285,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
 func (m *AgreementAcceptance) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AgreementAcceptance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -374,81 +372,55 @@ func (m *AgreementAcceptance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the agreementFileId property value. The identifier of the agreement file accepted by the user.
-// Parameters:
-//  - value : Value to set for the agreementFileId property.
+// SetAgreementFileId sets the agreementFileId property value. The identifier of the agreement file accepted by the user.
 func (m *AgreementAcceptance) SetAgreementFileId(value *string)() {
     m.agreementFileId = value
 }
-// Sets the agreementId property value. The identifier of the agreement.
-// Parameters:
-//  - value : Value to set for the agreementId property.
+// SetAgreementId sets the agreementId property value. The identifier of the agreement.
 func (m *AgreementAcceptance) SetAgreementId(value *string)() {
     m.agreementId = value
 }
-// Sets the deviceDisplayName property value. The display name of the device used for accepting the agreement.
-// Parameters:
-//  - value : Value to set for the deviceDisplayName property.
+// SetDeviceDisplayName sets the deviceDisplayName property value. The display name of the device used for accepting the agreement.
 func (m *AgreementAcceptance) SetDeviceDisplayName(value *string)() {
     m.deviceDisplayName = value
 }
-// Sets the deviceId property value. The unique identifier of the device used for accepting the agreement.
-// Parameters:
-//  - value : Value to set for the deviceId property.
+// SetDeviceId sets the deviceId property value. The unique identifier of the device used for accepting the agreement.
 func (m *AgreementAcceptance) SetDeviceId(value *string)() {
     m.deviceId = value
 }
-// Sets the deviceOSType property value. The operating system used to accept the agreement.
-// Parameters:
-//  - value : Value to set for the deviceOSType property.
+// SetDeviceOSType sets the deviceOSType property value. The operating system used to accept the agreement.
 func (m *AgreementAcceptance) SetDeviceOSType(value *string)() {
     m.deviceOSType = value
 }
-// Sets the deviceOSVersion property value. The operating system version of the device used to accept the agreement.
-// Parameters:
-//  - value : Value to set for the deviceOSVersion property.
+// SetDeviceOSVersion sets the deviceOSVersion property value. The operating system version of the device used to accept the agreement.
 func (m *AgreementAcceptance) SetDeviceOSVersion(value *string)() {
     m.deviceOSVersion = value
 }
-// Sets the expirationDateTime property value. The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-// Parameters:
-//  - value : Value to set for the expirationDateTime property.
+// SetExpirationDateTime sets the expirationDateTime property value. The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AgreementAcceptance) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
 }
-// Sets the recordedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-// Parameters:
-//  - value : Value to set for the recordedDateTime property.
+// SetRecordedDateTime sets the recordedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AgreementAcceptance) SetRecordedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.recordedDateTime = value
 }
-// Sets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined.
 func (m *AgreementAcceptance) SetState(value *AgreementAcceptanceState)() {
     m.state = value
 }
-// Sets the userDisplayName property value. Display name of the user when the acceptance was recorded.
-// Parameters:
-//  - value : Value to set for the userDisplayName property.
+// SetUserDisplayName sets the userDisplayName property value. Display name of the user when the acceptance was recorded.
 func (m *AgreementAcceptance) SetUserDisplayName(value *string)() {
     m.userDisplayName = value
 }
-// Sets the userEmail property value. Email of the user when the acceptance was recorded.
-// Parameters:
-//  - value : Value to set for the userEmail property.
+// SetUserEmail sets the userEmail property value. Email of the user when the acceptance was recorded.
 func (m *AgreementAcceptance) SetUserEmail(value *string)() {
     m.userEmail = value
 }
-// Sets the userId property value. The identifier of the user who accepted the agreement.
-// Parameters:
-//  - value : Value to set for the userId property.
+// SetUserId sets the userId property value. The identifier of the user who accepted the agreement.
 func (m *AgreementAcceptance) SetUserId(value *string)() {
     m.userId = value
 }
-// Sets the userPrincipalName property value. UPN of the user when the acceptance was recorded.
-// Parameters:
-//  - value : Value to set for the userPrincipalName property.
+// SetUserPrincipalName sets the userPrincipalName property value. UPN of the user when the acceptance was recorded.
 func (m *AgreementAcceptance) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

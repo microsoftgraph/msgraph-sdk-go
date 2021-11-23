@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// windowsInformationProtectionResourceCollection 
 type WindowsInformationProtectionResourceCollection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type WindowsInformationProtectionResourceCollection struct {
     // Collection of resources
     resources []string;
 }
-// Instantiates a new windowsInformationProtectionResourceCollection and sets the default values.
+// NewWindowsInformationProtectionResourceCollection instantiates a new windowsInformationProtectionResourceCollection and sets the default values.
 func NewWindowsInformationProtectionResourceCollection()(*WindowsInformationProtectionResourceCollection) {
     m := &WindowsInformationProtectionResourceCollection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionResourceCollection) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *WindowsInformationProtectionResourceCollection) GetAdditionalData()(map
         return m.additionalData
     }
 }
-// Gets the displayName property value. Display name
+// GetDisplayName gets the displayName property value. Display name
 func (m *WindowsInformationProtectionResourceCollection) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *WindowsInformationProtectionResourceCollection) GetDisplayName()(*strin
         return m.displayName
     }
 }
-// Gets the resources property value. Collection of resources
+// GetResources gets the resources property value. Collection of resources
 func (m *WindowsInformationProtectionResourceCollection) GetResources()([]string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *WindowsInformationProtectionResourceCollection) GetResources()([]string
         return m.resources
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionResourceCollection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,9 +76,7 @@ func (m *WindowsInformationProtectionResourceCollection) GetFieldDeserializers()
 func (m *WindowsInformationProtectionResourceCollection) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WindowsInformationProtectionResourceCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
@@ -100,21 +98,15 @@ func (m *WindowsInformationProtectionResourceCollection) Serialize(writer i04eb5
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionResourceCollection) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the displayName property value. Display name
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name
 func (m *WindowsInformationProtectionResourceCollection) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the resources property value. Collection of resources
-// Parameters:
-//  - value : Value to set for the resources property.
+// SetResources sets the resources property value. Collection of resources
 func (m *WindowsInformationProtectionResourceCollection) SetResources(value []string)() {
     m.resources = value
 }

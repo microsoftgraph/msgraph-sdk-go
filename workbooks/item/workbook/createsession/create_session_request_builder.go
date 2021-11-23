@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\microsoft.graph.createSession
+// createSessionRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\microsoft.graph.createSession
 type CreateSessionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CreateSessionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// CreateSessionRequestBuilderPostOptions options for Post
 type CreateSessionRequestBuilderPostOptions struct {
     // 
     Body *CreateSessionRequestBody;
@@ -26,21 +26,21 @@ type CreateSessionRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes workbookSessionInfo
+// createSessionResponse union type wrapper for classes workbookSessionInfo
 type CreateSessionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type workbookSessionInfo
     workbookSessionInfo *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookSessionInfo;
 }
-// Instantiates a new createSessionResponse and sets the default values.
+// NewCreateSessionResponse instantiates a new createSessionResponse and sets the default values.
 func NewCreateSessionResponse()(*CreateSessionResponse) {
     m := &CreateSessionResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateSessionResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *CreateSessionResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the workbookSessionInfo property value. Union type representation for type workbookSessionInfo
+// GetWorkbookSessionInfo gets the workbookSessionInfo property value. Union type representation for type workbookSessionInfo
 func (m *CreateSessionResponse) GetWorkbookSessionInfo()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookSessionInfo) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *CreateSessionResponse) GetWorkbookSessionInfo()(*i4a838ef194e4c99e9f2c6
         return m.workbookSessionInfo
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CreateSessionResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["workbookSessionInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *CreateSessionResponse) GetFieldDeserializers()(map[string]func(interfac
 func (m *CreateSessionResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CreateSessionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("workbookSessionInfo", m.GetWorkbookSessionInfo())
@@ -92,22 +90,15 @@ func (m *CreateSessionResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateSessionResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the workbookSessionInfo property value. Union type representation for type workbookSessionInfo
-// Parameters:
-//  - value : Value to set for the workbookSessionInfo property.
+// SetWorkbookSessionInfo sets the workbookSessionInfo property value. Union type representation for type workbookSessionInfo
 func (m *CreateSessionResponse) SetWorkbookSessionInfo(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookSessionInfo)() {
     m.workbookSessionInfo = value
 }
-// Instantiates a new CreateSessionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateSessionRequestBuilderInternal instantiates a new CreateSessionRequestBuilder and sets the default values.
 func NewCreateSessionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateSessionRequestBuilder) {
     m := &CreateSessionRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewCreateSessionRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CreateSessionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateSessionRequestBuilder instantiates a new CreateSessionRequestBuilder and sets the default values.
 func NewCreateSessionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateSessionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCreateSessionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action createSession
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action createSession
 func (m *CreateSessionRequestBuilder) CreatePostRequestInformation(options *CreateSessionRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *CreateSessionRequestBuilder) CreatePostRequestInformation(options *Crea
     }
     return requestInfo, nil
 }
-// Invoke action createSession
-// Parameters:
-//  - options : Options for the request
+// Post invoke action createSession
 func (m *CreateSessionRequestBuilder) Post(options *CreateSessionRequestBuilderPostOptions)(*CreateSessionResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

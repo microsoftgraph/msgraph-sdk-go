@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \domains
+// domainsRequestBuilder builds and executes requests for operations under \domains
 type DomainsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DomainsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DomainsRequestBuilderGetOptions options for Get
 type DomainsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DomainsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from domains
+// domainsRequestBuilderGetQueryParameters get entities from domains
 type DomainsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DomainsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DomainsRequestBuilderPostOptions options for Post
 type DomainsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Domain;
@@ -56,10 +56,7 @@ type DomainsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DomainsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDomainsRequestBuilderInternal instantiates a new DomainsRequestBuilder and sets the default values.
 func NewDomainsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DomainsRequestBuilder) {
     m := &DomainsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDomainsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DomainsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDomainsRequestBuilder instantiates a new DomainsRequestBuilder and sets the default values.
 func NewDomainsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DomainsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDomainsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from domains
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from domains
 func (m *DomainsRequestBuilder) CreateGetRequestInformation(options *DomainsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DomainsRequestBuilder) CreateGetRequestInformation(options *DomainsRequ
     }
     return requestInfo, nil
 }
-// Add new entity to domains
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to domains
 func (m *DomainsRequestBuilder) CreatePostRequestInformation(options *DomainsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DomainsRequestBuilder) CreatePostRequestInformation(options *DomainsReq
     }
     return requestInfo, nil
 }
-// Get entities from domains
-// Parameters:
-//  - options : Options for the request
+// Get get entities from domains
 func (m *DomainsRequestBuilder) Get(options *DomainsRequestBuilderGetOptions)(*DomainsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DomainsRequestBuilder) Get(options *DomainsRequestBuilderGetOptions)(*D
     }
     return res.(*DomainsResponse), nil
 }
-// Add new entity to domains
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to domains
 func (m *DomainsRequestBuilder) Post(options *DomainsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Domain, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

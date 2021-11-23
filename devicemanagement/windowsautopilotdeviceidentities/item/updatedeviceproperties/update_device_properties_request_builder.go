@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\microsoft.graph.updateDeviceProperties
+// updateDevicePropertiesRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\microsoft.graph.updateDeviceProperties
 type UpdateDevicePropertiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UpdateDevicePropertiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UpdateDevicePropertiesRequestBuilderPostOptions options for Post
 type UpdateDevicePropertiesRequestBuilderPostOptions struct {
     // 
     Body *UpdateDevicePropertiesRequestBody;
@@ -24,10 +24,7 @@ type UpdateDevicePropertiesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UpdateDevicePropertiesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdateDevicePropertiesRequestBuilderInternal instantiates a new UpdateDevicePropertiesRequestBuilder and sets the default values.
 func NewUpdateDevicePropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdateDevicePropertiesRequestBuilder) {
     m := &UpdateDevicePropertiesRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewUpdateDevicePropertiesRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UpdateDevicePropertiesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUpdateDevicePropertiesRequestBuilder instantiates a new UpdateDevicePropertiesRequestBuilder and sets the default values.
 func NewUpdateDevicePropertiesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UpdateDevicePropertiesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateDevicePropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Updates properties on Autopilot devices.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation updates properties on Autopilot devices.
 func (m *UpdateDevicePropertiesRequestBuilder) CreatePostRequestInformation(options *UpdateDevicePropertiesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *UpdateDevicePropertiesRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Updates properties on Autopilot devices.
-// Parameters:
-//  - options : Options for the request
+// Post updates properties on Autopilot devices.
 func (m *UpdateDevicePropertiesRequestBuilder) Post(options *UpdateDevicePropertiesRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

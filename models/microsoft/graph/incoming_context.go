@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// incomingContext 
 type IncomingContext struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type IncomingContext struct {
     // The identity that transferred the call.
     transferor *IdentitySet;
 }
-// Instantiates a new incomingContext and sets the default values.
+// NewIncomingContext instantiates a new incomingContext and sets the default values.
 func NewIncomingContext()(*IncomingContext) {
     m := &IncomingContext{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IncomingContext) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *IncomingContext) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the observedParticipantId property value. The ID of the participant that is under observation. Read-only.
+// GetObservedParticipantId gets the observedParticipantId property value. The ID of the participant that is under observation. Read-only.
 func (m *IncomingContext) GetObservedParticipantId()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *IncomingContext) GetObservedParticipantId()(*string) {
         return m.observedParticipantId
     }
 }
-// Gets the onBehalfOf property value. The identity that the call is happening on behalf of.
+// GetOnBehalfOf gets the onBehalfOf property value. The identity that the call is happening on behalf of.
 func (m *IncomingContext) GetOnBehalfOf()(*IdentitySet) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *IncomingContext) GetOnBehalfOf()(*IdentitySet) {
         return m.onBehalfOf
     }
 }
-// Gets the sourceParticipantId property value. The ID of the participant that triggered the incoming call. Read-only.
+// GetSourceParticipantId gets the sourceParticipantId property value. The ID of the participant that triggered the incoming call. Read-only.
 func (m *IncomingContext) GetSourceParticipantId()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *IncomingContext) GetSourceParticipantId()(*string) {
         return m.sourceParticipantId
     }
 }
-// Gets the transferor property value. The identity that transferred the call.
+// GetTransferor gets the transferor property value. The identity that transferred the call.
 func (m *IncomingContext) GetTransferor()(*IdentitySet) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *IncomingContext) GetTransferor()(*IdentitySet) {
         return m.transferor
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *IncomingContext) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["observedParticipantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *IncomingContext) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *IncomingContext) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *IncomingContext) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("observedParticipantId", m.GetObservedParticipantId())
@@ -148,33 +146,23 @@ func (m *IncomingContext) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IncomingContext) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the observedParticipantId property value. The ID of the participant that is under observation. Read-only.
-// Parameters:
-//  - value : Value to set for the observedParticipantId property.
+// SetObservedParticipantId sets the observedParticipantId property value. The ID of the participant that is under observation. Read-only.
 func (m *IncomingContext) SetObservedParticipantId(value *string)() {
     m.observedParticipantId = value
 }
-// Sets the onBehalfOf property value. The identity that the call is happening on behalf of.
-// Parameters:
-//  - value : Value to set for the onBehalfOf property.
+// SetOnBehalfOf sets the onBehalfOf property value. The identity that the call is happening on behalf of.
 func (m *IncomingContext) SetOnBehalfOf(value *IdentitySet)() {
     m.onBehalfOf = value
 }
-// Sets the sourceParticipantId property value. The ID of the participant that triggered the incoming call. Read-only.
-// Parameters:
-//  - value : Value to set for the sourceParticipantId property.
+// SetSourceParticipantId sets the sourceParticipantId property value. The ID of the participant that triggered the incoming call. Read-only.
 func (m *IncomingContext) SetSourceParticipantId(value *string)() {
     m.sourceParticipantId = value
 }
-// Sets the transferor property value. The identity that transferred the call.
-// Parameters:
-//  - value : Value to set for the transferor property.
+// SetTransferor sets the transferor property value. The identity that transferred the call.
 func (m *IncomingContext) SetTransferor(value *IdentitySet)() {
     m.transferor = value
 }

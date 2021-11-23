@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\microsoft.graph.convertToRange
+// convertToRangeRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\microsoft.graph.convertToRange
 type ConvertToRangeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConvertToRangeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ConvertToRangeRequestBuilderPostOptions options for Post
 type ConvertToRangeRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type ConvertToRangeRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes workbookRange
+// convertToRangeResponse union type wrapper for classes workbookRange
 type ConvertToRangeResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type workbookRange
     workbookRange *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookRange;
 }
-// Instantiates a new convertToRangeResponse and sets the default values.
+// NewConvertToRangeResponse instantiates a new convertToRangeResponse and sets the default values.
 func NewConvertToRangeResponse()(*ConvertToRangeResponse) {
     m := &ConvertToRangeResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConvertToRangeResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *ConvertToRangeResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the workbookRange property value. Union type representation for type workbookRange
+// GetWorkbookRange gets the workbookRange property value. Union type representation for type workbookRange
 func (m *ConvertToRangeResponse) GetWorkbookRange()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookRange) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *ConvertToRangeResponse) GetWorkbookRange()(*i4a838ef194e4c99e9f2c63ba10
         return m.workbookRange
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ConvertToRangeResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["workbookRange"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *ConvertToRangeResponse) GetFieldDeserializers()(map[string]func(interfa
 func (m *ConvertToRangeResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ConvertToRangeResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("workbookRange", m.GetWorkbookRange())
@@ -90,22 +88,15 @@ func (m *ConvertToRangeResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConvertToRangeResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the workbookRange property value. Union type representation for type workbookRange
-// Parameters:
-//  - value : Value to set for the workbookRange property.
+// SetWorkbookRange sets the workbookRange property value. Union type representation for type workbookRange
 func (m *ConvertToRangeResponse) SetWorkbookRange(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookRange)() {
     m.workbookRange = value
 }
-// Instantiates a new ConvertToRangeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConvertToRangeRequestBuilderInternal instantiates a new ConvertToRangeRequestBuilder and sets the default values.
 func NewConvertToRangeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConvertToRangeRequestBuilder) {
     m := &ConvertToRangeRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewConvertToRangeRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConvertToRangeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConvertToRangeRequestBuilder instantiates a new ConvertToRangeRequestBuilder and sets the default values.
 func NewConvertToRangeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConvertToRangeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConvertToRangeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action convertToRange
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action convertToRange
 func (m *ConvertToRangeRequestBuilder) CreatePostRequestInformation(options *ConvertToRangeRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *ConvertToRangeRequestBuilder) CreatePostRequestInformation(options *Con
     }
     return requestInfo, nil
 }
-// Invoke action convertToRange
-// Parameters:
-//  - options : Options for the request
+// Post invoke action convertToRange
 func (m *ConvertToRangeRequestBuilder) Post(options *ConvertToRangeRequestBuilderPostOptions)(*ConvertToRangeResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

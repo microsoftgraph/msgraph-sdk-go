@@ -8,7 +8,7 @@ import (
     i5277b129e22dfa5e86980e7eb9e12d613f54e728b67def882071332de9013ba5 "github.com/microsoftgraph/msgraph-sdk-go/grouplifecyclepolicies/item/addgroup"
 )
 
-// Builds and executes requests for operations under \groupLifecyclePolicies\{groupLifecyclePolicy-id}
+// groupLifecyclePolicyRequestBuilder builds and executes requests for operations under \groupLifecyclePolicies\{groupLifecyclePolicy-id}
 type GroupLifecyclePolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type GroupLifecyclePolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupLifecyclePolicyRequestBuilderDeleteOptions options for Delete
 type GroupLifecyclePolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type GroupLifecyclePolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupLifecyclePolicyRequestBuilderGetOptions options for Get
 type GroupLifecyclePolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type GroupLifecyclePolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from groupLifecyclePolicies by key
+// groupLifecyclePolicyRequestBuilderGetQueryParameters get entity from groupLifecyclePolicies by key
 type GroupLifecyclePolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupLifecyclePolicyRequestBuilderPatchOptions options for Patch
 type GroupLifecyclePolicyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupLifecyclePolicy;
@@ -58,10 +58,7 @@ type GroupLifecyclePolicyRequestBuilderPatchOptions struct {
 func (m *GroupLifecyclePolicyRequestBuilder) AddGroup()(*i5277b129e22dfa5e86980e7eb9e12d613f54e728b67def882071332de9013ba5.AddGroupRequestBuilder) {
     return i5277b129e22dfa5e86980e7eb9e12d613f54e728b67def882071332de9013ba5.NewAddGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new GroupLifecyclePolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupLifecyclePolicyRequestBuilderInternal instantiates a new GroupLifecyclePolicyRequestBuilder and sets the default values.
 func NewGroupLifecyclePolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupLifecyclePolicyRequestBuilder) {
     m := &GroupLifecyclePolicyRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewGroupLifecyclePolicyRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupLifecyclePolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupLifecyclePolicyRequestBuilder instantiates a new GroupLifecyclePolicyRequestBuilder and sets the default values.
 func NewGroupLifecyclePolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupLifecyclePolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupLifecyclePolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from groupLifecyclePolicies
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from groupLifecyclePolicies
 func (m *GroupLifecyclePolicyRequestBuilder) CreateDeleteRequestInformation(options *GroupLifecyclePolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *GroupLifecyclePolicyRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get entity from groupLifecyclePolicies by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from groupLifecyclePolicies by key
 func (m *GroupLifecyclePolicyRequestBuilder) CreateGetRequestInformation(options *GroupLifecyclePolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *GroupLifecyclePolicyRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update entity in groupLifecyclePolicies
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in groupLifecyclePolicies
 func (m *GroupLifecyclePolicyRequestBuilder) CreatePatchRequestInformation(options *GroupLifecyclePolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *GroupLifecyclePolicyRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete entity from groupLifecyclePolicies
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from groupLifecyclePolicies
 func (m *GroupLifecyclePolicyRequestBuilder) Delete(options *GroupLifecyclePolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *GroupLifecyclePolicyRequestBuilder) Delete(options *GroupLifecyclePolic
     }
     return nil
 }
-// Get entity from groupLifecyclePolicies by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from groupLifecyclePolicies by key
 func (m *GroupLifecyclePolicyRequestBuilder) Get(options *GroupLifecyclePolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupLifecyclePolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *GroupLifecyclePolicyRequestBuilder) Get(options *GroupLifecyclePolicyRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupLifecyclePolicy), nil
 }
-// Update entity in groupLifecyclePolicies
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in groupLifecyclePolicies
 func (m *GroupLifecyclePolicyRequestBuilder) Patch(options *GroupLifecyclePolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

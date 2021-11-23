@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// printDocument 
 type PrintDocument struct {
     Entity
     // The document's content (MIME) type. Read-only.
@@ -14,14 +14,14 @@ type PrintDocument struct {
     // The document's size in bytes. Read-only.
     size *int64;
 }
-// Instantiates a new printDocument and sets the default values.
+// NewPrintDocument instantiates a new printDocument and sets the default values.
 func NewPrintDocument()(*PrintDocument) {
     m := &PrintDocument{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the contentType property value. The document's content (MIME) type. Read-only.
+// GetContentType gets the contentType property value. The document's content (MIME) type. Read-only.
 func (m *PrintDocument) GetContentType()(*string) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *PrintDocument) GetContentType()(*string) {
         return m.contentType
     }
 }
-// Gets the displayName property value. The document's name. Read-only.
+// GetDisplayName gets the displayName property value. The document's name. Read-only.
 func (m *PrintDocument) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *PrintDocument) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the size property value. The document's size in bytes. Read-only.
+// GetSize gets the size property value. The document's size in bytes. Read-only.
 func (m *PrintDocument) GetSize()(*int64) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *PrintDocument) GetSize()(*int64) {
         return m.size
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PrintDocument) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,9 +83,7 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *PrintDocument) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PrintDocument) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -111,21 +109,15 @@ func (m *PrintDocument) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the contentType property value. The document's content (MIME) type. Read-only.
-// Parameters:
-//  - value : Value to set for the contentType property.
+// SetContentType sets the contentType property value. The document's content (MIME) type. Read-only.
 func (m *PrintDocument) SetContentType(value *string)() {
     m.contentType = value
 }
-// Sets the displayName property value. The document's name. Read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The document's name. Read-only.
 func (m *PrintDocument) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the size property value. The document's size in bytes. Read-only.
-// Parameters:
-//  - value : Value to set for the size property.
+// SetSize sets the size property value. The document's size in bytes. Read-only.
 func (m *PrintDocument) SetSize(value *int64)() {
     m.size = value
 }

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// accessPackageCatalog 
 type AccessPackageCatalog struct {
     Entity
     // The access packages in this catalog. Read-only. Nullable.
@@ -25,14 +25,14 @@ type AccessPackageCatalog struct {
     // 
     state *AccessPackageCatalogState;
 }
-// Instantiates a new accessPackageCatalog and sets the default values.
+// NewAccessPackageCatalog instantiates a new accessPackageCatalog and sets the default values.
 func NewAccessPackageCatalog()(*AccessPackageCatalog) {
     m := &AccessPackageCatalog{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
+// GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackage) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackage) {
         return m.accessPackages
     }
 }
-// Gets the catalogType property value. One of UserManaged or ServiceDefault.
+// GetCatalogType gets the catalogType property value. One of UserManaged or ServiceDefault.
 func (m *AccessPackageCatalog) GetCatalogType()(*AccessPackageCatalogType) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *AccessPackageCatalog) GetCatalogType()(*AccessPackageCatalogType) {
         return m.catalogType
     }
 }
-// Gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *AccessPackageCatalog) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
         return m.createdDateTime
     }
 }
-// Gets the description property value. The description of the access package catalog.
+// GetDescription gets the description property value. The description of the access package catalog.
 func (m *AccessPackageCatalog) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *AccessPackageCatalog) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The display name of the access package catalog.
+// GetDisplayName gets the displayName property value. The display name of the access package catalog.
 func (m *AccessPackageCatalog) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *AccessPackageCatalog) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
+// GetIsExternallyVisible gets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
 func (m *AccessPackageCatalog) GetIsExternallyVisible()(*bool) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *AccessPackageCatalog) GetIsExternallyVisible()(*bool) {
         return m.isExternallyVisible
     }
 }
-// Gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *AccessPackageCatalog) GetModifiedDateTime()(*i336074805fc853987abe6f7fe
         return m.modifiedDateTime
     }
 }
-// Gets the state property value. 
+// GetState gets the state property value. 
 func (m *AccessPackageCatalog) GetState()(*AccessPackageCatalogState) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *AccessPackageCatalog) GetState()(*AccessPackageCatalogState) {
         return m.state
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -190,9 +190,7 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(interface
 func (m *AccessPackageCatalog) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AccessPackageCatalog) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -255,51 +253,35 @@ func (m *AccessPackageCatalog) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the accessPackages property.
+// SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackage)() {
     m.accessPackages = value
 }
-// Sets the catalogType property value. One of UserManaged or ServiceDefault.
-// Parameters:
-//  - value : Value to set for the catalogType property.
+// SetCatalogType sets the catalogType property value. One of UserManaged or ServiceDefault.
 func (m *AccessPackageCatalog) SetCatalogType(value *AccessPackageCatalogType)() {
     m.catalogType = value
 }
-// Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the description property value. The description of the access package catalog.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The description of the access package catalog.
 func (m *AccessPackageCatalog) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The display name of the access package catalog.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name of the access package catalog.
 func (m *AccessPackageCatalog) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
-// Parameters:
-//  - value : Value to set for the isExternallyVisible property.
+// SetIsExternallyVisible sets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
 func (m *AccessPackageCatalog) SetIsExternallyVisible(value *bool)() {
     m.isExternallyVisible = value
 }
-// Sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-// Parameters:
-//  - value : Value to set for the modifiedDateTime property.
+// SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageCatalog) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.modifiedDateTime = value
 }
-// Sets the state property value. 
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. 
 func (m *AccessPackageCatalog) SetState(value *AccessPackageCatalogState)() {
     m.state = value
 }

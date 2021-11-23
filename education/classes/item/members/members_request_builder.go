@@ -7,7 +7,7 @@ import (
     ic1a5afc44bfa9f83fac65cb26b6679b5cab07b2bc2cfe7747dcc6601a88375af "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/members/ref"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\members
+// membersRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\members
 type MembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type MembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MembersRequestBuilderGetOptions options for Get
 type MembersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type MembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All users in the class. Nullable.
+// membersRequestBuilderGetQueryParameters all users in the class. Nullable.
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,10 +46,7 @@ type MembersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new MembersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MembersRequestBuilder) {
     m := &MembersRequestBuilder{
     }
@@ -62,18 +59,13 @@ func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MembersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
 func NewMembersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MembersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All users in the class. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all users in the class. Nullable.
 func (m *MembersRequestBuilder) CreateGetRequestInformation(options *MembersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,13 +85,11 @@ func (m *MembersRequestBuilder) CreateGetRequestInformation(options *MembersRequ
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\members\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \education\classes\{educationClass-id}\members\microsoft.graph.delta()
 func (m *MembersRequestBuilder) Delta()(*i8fba8ef7233addbfa9718684747fc803e2f98b746a9148f3994132b7d2ca57af.DeltaRequestBuilder) {
     return i8fba8ef7233addbfa9718684747fc803e2f98b746a9148f3994132b7d2ca57af.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// All users in the class. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get all users in the class. Nullable.
 func (m *MembersRequestBuilder) Get(options *MembersRequestBuilderGetOptions)(*MembersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

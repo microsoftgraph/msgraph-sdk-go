@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\onenote\notebooks\{notebook-id}\sections\{onenoteSection-id}\pages
+// pagesRequestBuilder builds and executes requests for operations under \groups\{group-id}\onenote\notebooks\{notebook-id}\sections\{onenoteSection-id}\pages
 type PagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PagesRequestBuilderGetOptions options for Get
 type PagesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of pages in the section.  Read-only. Nullable.
+// pagesRequestBuilderGetQueryParameters the collection of pages in the section.  Read-only. Nullable.
 type PagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PagesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PagesRequestBuilderPostOptions options for Post
 type PagesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenotePage;
@@ -56,10 +56,7 @@ type PagesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PagesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPagesRequestBuilderInternal instantiates a new PagesRequestBuilder and sets the default values.
 func NewPagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PagesRequestBuilder) {
     m := &PagesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPagesRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PagesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPagesRequestBuilder instantiates a new PagesRequestBuilder and sets the default values.
 func NewPagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of pages in the section.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of pages in the section.  Read-only. Nullable.
 func (m *PagesRequestBuilder) CreateGetRequestInformation(options *PagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PagesRequestBuilder) CreateGetRequestInformation(options *PagesRequestB
     }
     return requestInfo, nil
 }
-// The collection of pages in the section.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of pages in the section.  Read-only. Nullable.
 func (m *PagesRequestBuilder) CreatePostRequestInformation(options *PagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PagesRequestBuilder) CreatePostRequestInformation(options *PagesRequest
     }
     return requestInfo, nil
 }
-// The collection of pages in the section.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of pages in the section.  Read-only. Nullable.
 func (m *PagesRequestBuilder) Get(options *PagesRequestBuilderGetOptions)(*PagesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PagesRequestBuilder) Get(options *PagesRequestBuilderGetOptions)(*Pages
     }
     return res.(*PagesResponse), nil
 }
-// The collection of pages in the section.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of pages in the section.  Read-only. Nullable.
 func (m *PagesRequestBuilder) Post(options *PagesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenotePage, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

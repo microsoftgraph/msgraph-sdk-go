@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\calendarPermissions\{calendarPermission-id}
+// calendarPermissionRequestBuilder builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\calendarPermissions\{calendarPermission-id}
 type CalendarPermissionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CalendarPermissionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CalendarPermissionRequestBuilderDeleteOptions options for Delete
 type CalendarPermissionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CalendarPermissionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CalendarPermissionRequestBuilderGetOptions options for Get
 type CalendarPermissionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,12 +35,12 @@ type CalendarPermissionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The permissions of the users with whom the calendar is shared.
+// calendarPermissionRequestBuilderGetQueryParameters the permissions of the users with whom the calendar is shared.
 type CalendarPermissionRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CalendarPermissionRequestBuilderPatchOptions options for Patch
 type CalendarPermissionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CalendarPermission;
@@ -51,10 +51,7 @@ type CalendarPermissionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CalendarPermissionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCalendarPermissionRequestBuilderInternal instantiates a new CalendarPermissionRequestBuilder and sets the default values.
 func NewCalendarPermissionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarPermissionRequestBuilder) {
     m := &CalendarPermissionRequestBuilder{
     }
@@ -67,18 +64,13 @@ func NewCalendarPermissionRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CalendarPermissionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCalendarPermissionRequestBuilder instantiates a new CalendarPermissionRequestBuilder and sets the default values.
 func NewCalendarPermissionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarPermissionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarPermissionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The permissions of the users with whom the calendar is shared.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the permissions of the users with whom the calendar is shared.
 func (m *CalendarPermissionRequestBuilder) CreateDeleteRequestInformation(options *CalendarPermissionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,9 +87,7 @@ func (m *CalendarPermissionRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// The permissions of the users with whom the calendar is shared.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the permissions of the users with whom the calendar is shared.
 func (m *CalendarPermissionRequestBuilder) CreateGetRequestInformation(options *CalendarPermissionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,9 +107,7 @@ func (m *CalendarPermissionRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The permissions of the users with whom the calendar is shared.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the permissions of the users with whom the calendar is shared.
 func (m *CalendarPermissionRequestBuilder) CreatePatchRequestInformation(options *CalendarPermissionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *CalendarPermissionRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// The permissions of the users with whom the calendar is shared.
-// Parameters:
-//  - options : Options for the request
+// Delete the permissions of the users with whom the calendar is shared.
 func (m *CalendarPermissionRequestBuilder) Delete(options *CalendarPermissionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -151,9 +137,7 @@ func (m *CalendarPermissionRequestBuilder) Delete(options *CalendarPermissionReq
     }
     return nil
 }
-// The permissions of the users with whom the calendar is shared.
-// Parameters:
-//  - options : Options for the request
+// Get the permissions of the users with whom the calendar is shared.
 func (m *CalendarPermissionRequestBuilder) Get(options *CalendarPermissionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CalendarPermission, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -165,9 +149,7 @@ func (m *CalendarPermissionRequestBuilder) Get(options *CalendarPermissionReques
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CalendarPermission), nil
 }
-// The permissions of the users with whom the calendar is shared.
-// Parameters:
-//  - options : Options for the request
+// Patch the permissions of the users with whom the calendar is shared.
 func (m *CalendarPermissionRequestBuilder) Patch(options *CalendarPermissionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \auditLogs\restrictedSignIns\{restrictedSignIn-id}
+// restrictedSignInRequestBuilder builds and executes requests for operations under \auditLogs\restrictedSignIns\{restrictedSignIn-id}
 type RestrictedSignInRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RestrictedSignInRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RestrictedSignInRequestBuilderDeleteOptions options for Delete
 type RestrictedSignInRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type RestrictedSignInRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RestrictedSignInRequestBuilderGetOptions options for Get
 type RestrictedSignInRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type RestrictedSignInRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get restrictedSignIns from auditLogs
+// restrictedSignInRequestBuilderGetQueryParameters get restrictedSignIns from auditLogs
 type RestrictedSignInRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RestrictedSignInRequestBuilderPatchOptions options for Patch
 type RestrictedSignInRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RestrictedSignIn;
@@ -53,10 +53,7 @@ type RestrictedSignInRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RestrictedSignInRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRestrictedSignInRequestBuilderInternal instantiates a new RestrictedSignInRequestBuilder and sets the default values.
 func NewRestrictedSignInRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RestrictedSignInRequestBuilder) {
     m := &RestrictedSignInRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewRestrictedSignInRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RestrictedSignInRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRestrictedSignInRequestBuilder instantiates a new RestrictedSignInRequestBuilder and sets the default values.
 func NewRestrictedSignInRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RestrictedSignInRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRestrictedSignInRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property restrictedSignIns for auditLogs
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property restrictedSignIns for auditLogs
 func (m *RestrictedSignInRequestBuilder) CreateDeleteRequestInformation(options *RestrictedSignInRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *RestrictedSignInRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get restrictedSignIns from auditLogs
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get restrictedSignIns from auditLogs
 func (m *RestrictedSignInRequestBuilder) CreateGetRequestInformation(options *RestrictedSignInRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *RestrictedSignInRequestBuilder) CreateGetRequestInformation(options *Re
     }
     return requestInfo, nil
 }
-// Update the navigation property restrictedSignIns in auditLogs
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property restrictedSignIns in auditLogs
 func (m *RestrictedSignInRequestBuilder) CreatePatchRequestInformation(options *RestrictedSignInRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *RestrictedSignInRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete navigation property restrictedSignIns for auditLogs
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property restrictedSignIns for auditLogs
 func (m *RestrictedSignInRequestBuilder) Delete(options *RestrictedSignInRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *RestrictedSignInRequestBuilder) Delete(options *RestrictedSignInRequest
     }
     return nil
 }
-// Get restrictedSignIns from auditLogs
-// Parameters:
-//  - options : Options for the request
+// Get get restrictedSignIns from auditLogs
 func (m *RestrictedSignInRequestBuilder) Get(options *RestrictedSignInRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RestrictedSignIn, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *RestrictedSignInRequestBuilder) Get(options *RestrictedSignInRequestBui
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RestrictedSignIn), nil
 }
-// Update the navigation property restrictedSignIns in auditLogs
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property restrictedSignIns in auditLogs
 func (m *RestrictedSignInRequestBuilder) Patch(options *RestrictedSignInRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

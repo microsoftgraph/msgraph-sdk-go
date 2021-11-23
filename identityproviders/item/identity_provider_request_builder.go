@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityProviders\{identityProvider-id}
+// identityProviderRequestBuilder builds and executes requests for operations under \identityProviders\{identityProvider-id}
 type IdentityProviderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IdentityProviderRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// IdentityProviderRequestBuilderDeleteOptions options for Delete
 type IdentityProviderRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type IdentityProviderRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// IdentityProviderRequestBuilderGetOptions options for Get
 type IdentityProviderRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type IdentityProviderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from identityProviders by key
+// identityProviderRequestBuilderGetQueryParameters get entity from identityProviders by key
 type IdentityProviderRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// IdentityProviderRequestBuilderPatchOptions options for Patch
 type IdentityProviderRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityProvider;
@@ -53,10 +53,7 @@ type IdentityProviderRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IdentityProviderRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityProviderRequestBuilderInternal instantiates a new IdentityProviderRequestBuilder and sets the default values.
 func NewIdentityProviderRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityProviderRequestBuilder) {
     m := &IdentityProviderRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewIdentityProviderRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IdentityProviderRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityProviderRequestBuilder instantiates a new IdentityProviderRequestBuilder and sets the default values.
 func NewIdentityProviderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityProviderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityProviderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from identityProviders
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from identityProviders
 func (m *IdentityProviderRequestBuilder) CreateDeleteRequestInformation(options *IdentityProviderRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *IdentityProviderRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Get entity from identityProviders by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from identityProviders by key
 func (m *IdentityProviderRequestBuilder) CreateGetRequestInformation(options *IdentityProviderRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *IdentityProviderRequestBuilder) CreateGetRequestInformation(options *Id
     }
     return requestInfo, nil
 }
-// Update entity in identityProviders
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in identityProviders
 func (m *IdentityProviderRequestBuilder) CreatePatchRequestInformation(options *IdentityProviderRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *IdentityProviderRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Delete entity from identityProviders
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from identityProviders
 func (m *IdentityProviderRequestBuilder) Delete(options *IdentityProviderRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *IdentityProviderRequestBuilder) Delete(options *IdentityProviderRequest
     }
     return nil
 }
-// Get entity from identityProviders by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from identityProviders by key
 func (m *IdentityProviderRequestBuilder) Get(options *IdentityProviderRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityProvider, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *IdentityProviderRequestBuilder) Get(options *IdentityProviderRequestBui
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityProvider), nil
 }
-// Update entity in identityProviders
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in identityProviders
 func (m *IdentityProviderRequestBuilder) Patch(options *IdentityProviderRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

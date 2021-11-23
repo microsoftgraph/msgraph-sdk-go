@@ -8,7 +8,7 @@ import (
     ic164c81c5d28bd5f950f84060e47239ac6719d76dd43039350dfeb58699dc2da "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/add"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names
+// namesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names
 type NamesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type NamesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// NamesRequestBuilderGetOptions options for Get
 type NamesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type NamesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
+// namesRequestBuilderGetQueryParameters represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 type NamesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type NamesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// NamesRequestBuilderPostOptions options for Post
 type NamesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookNamedItem;
@@ -64,10 +64,7 @@ func (m *NamesRequestBuilder) Add()(*ic164c81c5d28bd5f950f84060e47239ac6719d76dd
 func (m *NamesRequestBuilder) AddFormulaLocal()(*i3d53e018f8e3eaaded5a8881304134ef8b22032d6728db1f3498be4aa0841867.AddFormulaLocalRequestBuilder) {
     return i3d53e018f8e3eaaded5a8881304134ef8b22032d6728db1f3498be4aa0841867.NewAddFormulaLocalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new NamesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNamesRequestBuilderInternal instantiates a new NamesRequestBuilder and sets the default values.
 func NewNamesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NamesRequestBuilder) {
     m := &NamesRequestBuilder{
     }
@@ -80,18 +77,13 @@ func NewNamesRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NamesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNamesRequestBuilder instantiates a new NamesRequestBuilder and sets the default values.
 func NewNamesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NamesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNamesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *NamesRequestBuilder) CreateGetRequestInformation(options *NamesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,9 +103,7 @@ func (m *NamesRequestBuilder) CreateGetRequestInformation(options *NamesRequestB
     }
     return requestInfo, nil
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *NamesRequestBuilder) CreatePostRequestInformation(options *NamesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,9 +121,7 @@ func (m *NamesRequestBuilder) CreatePostRequestInformation(options *NamesRequest
     }
     return requestInfo, nil
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *NamesRequestBuilder) Get(options *NamesRequestBuilderGetOptions)(*NamesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -145,9 +133,7 @@ func (m *NamesRequestBuilder) Get(options *NamesRequestBuilderGetOptions)(*Names
     }
     return res.(*NamesResponse), nil
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *NamesRequestBuilder) Post(options *NamesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookNamedItem, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

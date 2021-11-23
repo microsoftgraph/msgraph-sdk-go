@@ -8,7 +8,7 @@ import (
     i197dbad7943759a3dd36697e6f2e3399c325cdb1a8615189ccad29c055709313 "github.com/microsoftgraph/msgraph-sdk-go/me/calendargroups/item/calendars/item"
 )
 
-// Builds and executes requests for operations under \me\calendarGroups\{calendarGroup-id}
+// calendarGroupRequestBuilder builds and executes requests for operations under \me\calendarGroups\{calendarGroup-id}
 type CalendarGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type CalendarGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CalendarGroupRequestBuilderDeleteOptions options for Delete
 type CalendarGroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CalendarGroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CalendarGroupRequestBuilderGetOptions options for Get
 type CalendarGroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,12 +37,12 @@ type CalendarGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user's calendar groups. Read-only. Nullable.
+// calendarGroupRequestBuilderGetQueryParameters the user's calendar groups. Read-only. Nullable.
 type CalendarGroupRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CalendarGroupRequestBuilderPatchOptions options for Patch
 type CalendarGroupRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CalendarGroup;
@@ -56,9 +56,7 @@ type CalendarGroupRequestBuilderPatchOptions struct {
 func (m *CalendarGroupRequestBuilder) Calendars()(*i3590b8f890244f229db5431aba77050c3f0d47b58ccb3e18bce4de2435f6618f.CalendarsRequestBuilder) {
     return i3590b8f890244f229db5431aba77050c3f0d47b58ccb3e18bce4de2435f6618f.NewCalendarsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.calendarGroups.item.calendars.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CalendarsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.calendarGroups.item.calendars.item collection
 func (m *CalendarGroupRequestBuilder) CalendarsById(id string)(*i197dbad7943759a3dd36697e6f2e3399c325cdb1a8615189ccad29c055709313.CalendarRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -69,10 +67,7 @@ func (m *CalendarGroupRequestBuilder) CalendarsById(id string)(*i197dbad7943759a
     }
     return i197dbad7943759a3dd36697e6f2e3399c325cdb1a8615189ccad29c055709313.NewCalendarRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new CalendarGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCalendarGroupRequestBuilderInternal instantiates a new CalendarGroupRequestBuilder and sets the default values.
 func NewCalendarGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarGroupRequestBuilder) {
     m := &CalendarGroupRequestBuilder{
     }
@@ -85,18 +80,13 @@ func NewCalendarGroupRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CalendarGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCalendarGroupRequestBuilder instantiates a new CalendarGroupRequestBuilder and sets the default values.
 func NewCalendarGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user's calendar groups. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the user's calendar groups. Read-only. Nullable.
 func (m *CalendarGroupRequestBuilder) CreateDeleteRequestInformation(options *CalendarGroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,9 +103,7 @@ func (m *CalendarGroupRequestBuilder) CreateDeleteRequestInformation(options *Ca
     }
     return requestInfo, nil
 }
-// The user's calendar groups. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user's calendar groups. Read-only. Nullable.
 func (m *CalendarGroupRequestBuilder) CreateGetRequestInformation(options *CalendarGroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,9 +123,7 @@ func (m *CalendarGroupRequestBuilder) CreateGetRequestInformation(options *Calen
     }
     return requestInfo, nil
 }
-// The user's calendar groups. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the user's calendar groups. Read-only. Nullable.
 func (m *CalendarGroupRequestBuilder) CreatePatchRequestInformation(options *CalendarGroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -155,9 +141,7 @@ func (m *CalendarGroupRequestBuilder) CreatePatchRequestInformation(options *Cal
     }
     return requestInfo, nil
 }
-// The user's calendar groups. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the user's calendar groups. Read-only. Nullable.
 func (m *CalendarGroupRequestBuilder) Delete(options *CalendarGroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *CalendarGroupRequestBuilder) Delete(options *CalendarGroupRequestBuilde
     }
     return nil
 }
-// The user's calendar groups. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the user's calendar groups. Read-only. Nullable.
 func (m *CalendarGroupRequestBuilder) Get(options *CalendarGroupRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CalendarGroup, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -183,9 +165,7 @@ func (m *CalendarGroupRequestBuilder) Get(options *CalendarGroupRequestBuilderGe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CalendarGroup), nil
 }
-// The user's calendar groups. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the user's calendar groups. Read-only. Nullable.
 func (m *CalendarGroupRequestBuilder) Patch(options *CalendarGroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// applyRequestBody 
 type ApplyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,14 +20,14 @@ type ApplyRequestBody struct {
     // 
     orientation *string;
 }
-// Instantiates a new applyRequestBody and sets the default values.
+// NewApplyRequestBody instantiates a new applyRequestBody and sets the default values.
 func NewApplyRequestBody()(*ApplyRequestBody) {
     m := &ApplyRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *ApplyRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the fields property value. 
+// GetFields gets the fields property value. 
 func (m *ApplyRequestBody) GetFields()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookSortField) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *ApplyRequestBody) GetFields()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89
         return m.fields
     }
 }
-// Gets the hasHeaders property value. 
+// GetHasHeaders gets the hasHeaders property value. 
 func (m *ApplyRequestBody) GetHasHeaders()(*bool) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *ApplyRequestBody) GetHasHeaders()(*bool) {
         return m.hasHeaders
     }
 }
-// Gets the matchCase property value. 
+// GetMatchCase gets the matchCase property value. 
 func (m *ApplyRequestBody) GetMatchCase()(*bool) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *ApplyRequestBody) GetMatchCase()(*bool) {
         return m.matchCase
     }
 }
-// Gets the method property value. 
+// GetMethod gets the method property value. 
 func (m *ApplyRequestBody) GetMethod()(*string) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *ApplyRequestBody) GetMethod()(*string) {
         return m.method
     }
 }
-// Gets the orientation property value. 
+// GetOrientation gets the orientation property value. 
 func (m *ApplyRequestBody) GetOrientation()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *ApplyRequestBody) GetOrientation()(*string) {
         return m.orientation
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ApplyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["fields"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -137,9 +137,7 @@ func (m *ApplyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *ApplyRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ApplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFields()))
@@ -184,39 +182,27 @@ func (m *ApplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the fields property value. 
-// Parameters:
-//  - value : Value to set for the fields property.
+// SetFields sets the fields property value. 
 func (m *ApplyRequestBody) SetFields(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookSortField)() {
     m.fields = value
 }
-// Sets the hasHeaders property value. 
-// Parameters:
-//  - value : Value to set for the hasHeaders property.
+// SetHasHeaders sets the hasHeaders property value. 
 func (m *ApplyRequestBody) SetHasHeaders(value *bool)() {
     m.hasHeaders = value
 }
-// Sets the matchCase property value. 
-// Parameters:
-//  - value : Value to set for the matchCase property.
+// SetMatchCase sets the matchCase property value. 
 func (m *ApplyRequestBody) SetMatchCase(value *bool)() {
     m.matchCase = value
 }
-// Sets the method property value. 
-// Parameters:
-//  - value : Value to set for the method property.
+// SetMethod sets the method property value. 
 func (m *ApplyRequestBody) SetMethod(value *string)() {
     m.method = value
 }
-// Sets the orientation property value. 
-// Parameters:
-//  - value : Value to set for the orientation property.
+// SetOrientation sets the orientation property value. 
 func (m *ApplyRequestBody) SetOrientation(value *string)() {
     m.orientation = value
 }

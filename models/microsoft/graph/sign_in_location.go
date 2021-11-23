@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// signInLocation 
 type SignInLocation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type SignInLocation struct {
     // Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
     state *string;
 }
-// Instantiates a new signInLocation and sets the default values.
+// NewSignInLocation instantiates a new signInLocation and sets the default values.
 func NewSignInLocation()(*SignInLocation) {
     m := &SignInLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignInLocation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *SignInLocation) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+// GetCity gets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) GetCity()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *SignInLocation) GetCity()(*string) {
         return m.city
     }
 }
-// Gets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+// GetCountryOrRegion gets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) GetCountryOrRegion()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *SignInLocation) GetCountryOrRegion()(*string) {
         return m.countryOrRegion
     }
 }
-// Gets the geoCoordinates property value. Provides the latitude, longitude and altitude where the sign-in originated.
+// GetGeoCoordinates gets the geoCoordinates property value. Provides the latitude, longitude and altitude where the sign-in originated.
 func (m *SignInLocation) GetGeoCoordinates()(*GeoCoordinates) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *SignInLocation) GetGeoCoordinates()(*GeoCoordinates) {
         return m.geoCoordinates
     }
 }
-// Gets the state property value. Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+// GetState gets the state property value. Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) GetState()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *SignInLocation) GetState()(*string) {
         return m.state
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SignInLocation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["city"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *SignInLocation) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *SignInLocation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SignInLocation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("city", m.GetCity())
@@ -148,33 +146,23 @@ func (m *SignInLocation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignInLocation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-// Parameters:
-//  - value : Value to set for the city property.
+// SetCity sets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) SetCity(value *string)() {
     m.city = value
 }
-// Sets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
-// Parameters:
-//  - value : Value to set for the countryOrRegion property.
+// SetCountryOrRegion sets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) SetCountryOrRegion(value *string)() {
     m.countryOrRegion = value
 }
-// Sets the geoCoordinates property value. Provides the latitude, longitude and altitude where the sign-in originated.
-// Parameters:
-//  - value : Value to set for the geoCoordinates property.
+// SetGeoCoordinates sets the geoCoordinates property value. Provides the latitude, longitude and altitude where the sign-in originated.
 func (m *SignInLocation) SetGeoCoordinates(value *GeoCoordinates)() {
     m.geoCoordinates = value
 }
-// Sets the state property value. Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) SetState(value *string)() {
     m.state = value
 }

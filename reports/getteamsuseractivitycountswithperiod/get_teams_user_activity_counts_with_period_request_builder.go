@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityCounts(period='{period}')
+// getTeamsUserActivityCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityCounts(period='{period}')
 type GetTeamsUserActivityCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetTeamsUserActivityCountsWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetTeamsUserActivityCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetTeamsUserActivityCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,11 +22,7 @@ type GetTeamsUserActivityCountsWithPeriodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetTeamsUserActivityCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTeamsUserActivityCountsWithPeriodRequestBuilderInternal instantiates a new GetTeamsUserActivityCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetTeamsUserActivityCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetTeamsUserActivityCountsWithPeriodRequestBuilder) {
     m := &GetTeamsUserActivityCountsWithPeriodRequestBuilder{
     }
@@ -42,18 +38,13 @@ func NewGetTeamsUserActivityCountsWithPeriodRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetTeamsUserActivityCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTeamsUserActivityCountsWithPeriodRequestBuilder instantiates a new GetTeamsUserActivityCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetTeamsUserActivityCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetTeamsUserActivityCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsUserActivityCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getTeamsUserActivityCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getTeamsUserActivityCounts
 func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetTeamsUserActivityCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +61,7 @@ func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// Invoke function getTeamsUserActivityCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getTeamsUserActivityCounts
 func (m *GetTeamsUserActivityCountsWithPeriodRequestBuilder) Get(options *GetTeamsUserActivityCountsWithPeriodRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

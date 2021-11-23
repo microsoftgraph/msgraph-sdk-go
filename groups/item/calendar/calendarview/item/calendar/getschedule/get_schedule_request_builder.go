@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\calendar\calendarView\{event-id}\calendar\microsoft.graph.getSchedule
+// getScheduleRequestBuilder builds and executes requests for operations under \groups\{group-id}\calendar\calendarView\{event-id}\calendar\microsoft.graph.getSchedule
 type GetScheduleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetScheduleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetScheduleRequestBuilderPostOptions options for Post
 type GetScheduleRequestBuilderPostOptions struct {
     // 
     Body *GetScheduleRequestBody;
@@ -25,10 +25,7 @@ type GetScheduleRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetScheduleRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetScheduleRequestBuilderInternal instantiates a new GetScheduleRequestBuilder and sets the default values.
 func NewGetScheduleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetScheduleRequestBuilder) {
     m := &GetScheduleRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewGetScheduleRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetScheduleRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetScheduleRequestBuilder instantiates a new GetScheduleRequestBuilder and sets the default values.
 func NewGetScheduleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetScheduleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getSchedule
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getSchedule
 func (m *GetScheduleRequestBuilder) CreatePostRequestInformation(options *GetScheduleRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *GetScheduleRequestBuilder) CreatePostRequestInformation(options *GetSch
     }
     return requestInfo, nil
 }
-// Invoke action getSchedule
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getSchedule
 func (m *GetScheduleRequestBuilder) Post(options *GetScheduleRequestBuilderPostOptions)([]GetSchedule, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// fileSecurityState 
 type FileSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type FileSecurityState struct {
     // Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
     riskScore *string;
 }
-// Instantiates a new fileSecurityState and sets the default values.
+// NewFileSecurityState instantiates a new fileSecurityState and sets the default values.
 func NewFileSecurityState()(*FileSecurityState) {
     m := &FileSecurityState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileSecurityState) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *FileSecurityState) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
+// GetFileHash gets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
 func (m *FileSecurityState) GetFileHash()(*FileHash) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *FileSecurityState) GetFileHash()(*FileHash) {
         return m.fileHash
     }
 }
-// Gets the name property value. File name (without path).
+// GetName gets the name property value. File name (without path).
 func (m *FileSecurityState) GetName()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *FileSecurityState) GetName()(*string) {
         return m.name
     }
 }
-// Gets the path property value. Full file path of the file/imageFile.
+// GetPath gets the path property value. Full file path of the file/imageFile.
 func (m *FileSecurityState) GetPath()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *FileSecurityState) GetPath()(*string) {
         return m.path
     }
 }
-// Gets the riskScore property value. Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
+// GetRiskScore gets the riskScore property value. Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
 func (m *FileSecurityState) GetRiskScore()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *FileSecurityState) GetRiskScore()(*string) {
         return m.riskScore
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *FileSecurityState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["fileHash"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *FileSecurityState) GetFieldDeserializers()(map[string]func(interface{},
 func (m *FileSecurityState) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *FileSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("fileHash", m.GetFileHash())
@@ -148,33 +146,23 @@ func (m *FileSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileSecurityState) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
-// Parameters:
-//  - value : Value to set for the fileHash property.
+// SetFileHash sets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
 func (m *FileSecurityState) SetFileHash(value *FileHash)() {
     m.fileHash = value
 }
-// Sets the name property value. File name (without path).
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. File name (without path).
 func (m *FileSecurityState) SetName(value *string)() {
     m.name = value
 }
-// Sets the path property value. Full file path of the file/imageFile.
-// Parameters:
-//  - value : Value to set for the path property.
+// SetPath sets the path property value. Full file path of the file/imageFile.
 func (m *FileSecurityState) SetPath(value *string)() {
     m.path = value
 }
-// Sets the riskScore property value. Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
-// Parameters:
-//  - value : Value to set for the riskScore property.
+// SetRiskScore sets the riskScore property value. Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
 func (m *FileSecurityState) SetRiskScore(value *string)() {
     m.riskScore = value
 }

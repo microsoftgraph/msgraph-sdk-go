@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// applicationTemplatesResponse 
 type ApplicationTemplatesResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type ApplicationTemplatesResponse struct {
     // 
     value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationTemplate;
 }
-// Instantiates a new applicationTemplatesResponse and sets the default values.
+// NewApplicationTemplatesResponse instantiates a new applicationTemplatesResponse and sets the default values.
 func NewApplicationTemplatesResponse()(*ApplicationTemplatesResponse) {
     m := &ApplicationTemplatesResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplicationTemplatesResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *ApplicationTemplatesResponse) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// Gets the nextLink property value. 
+// GetNextLink gets the nextLink property value. 
 func (m *ApplicationTemplatesResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *ApplicationTemplatesResponse) GetNextLink()(*string) {
         return m.nextLink
     }
 }
-// Gets the value property value. 
+// GetValue gets the value property value. 
 func (m *ApplicationTemplatesResponse) GetValue()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationTemplate) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *ApplicationTemplatesResponse) GetValue()([]i4a838ef194e4c99e9f2c63ba10d
         return m.value
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ApplicationTemplatesResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["@odata.nextLink"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,9 +77,7 @@ func (m *ApplicationTemplatesResponse) GetFieldDeserializers()(map[string]func(i
 func (m *ApplicationTemplatesResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ApplicationTemplatesResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
@@ -106,21 +104,15 @@ func (m *ApplicationTemplatesResponse) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplicationTemplatesResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the nextLink property value. 
-// Parameters:
-//  - value : Value to set for the nextLink property.
+// SetNextLink sets the nextLink property value. 
 func (m *ApplicationTemplatesResponse) SetNextLink(value *string)() {
     m.nextLink = value
 }
-// Sets the value property value. 
-// Parameters:
-//  - value : Value to set for the value property.
+// SetValue sets the value property value. 
 func (m *ApplicationTemplatesResponse) SetValue(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationTemplate)() {
     m.value = value
 }

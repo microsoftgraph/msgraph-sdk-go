@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\notes\{authoredNote-id}
+// authoredNoteRequestBuilder builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\notes\{authoredNote-id}
 type AuthoredNoteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AuthoredNoteRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AuthoredNoteRequestBuilderDeleteOptions options for Delete
 type AuthoredNoteRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AuthoredNoteRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AuthoredNoteRequestBuilderGetOptions options for Get
 type AuthoredNoteRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AuthoredNoteRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of notes associcated with the request.
+// authoredNoteRequestBuilderGetQueryParameters list of notes associcated with the request.
 type AuthoredNoteRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AuthoredNoteRequestBuilderPatchOptions options for Patch
 type AuthoredNoteRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthoredNote;
@@ -53,10 +53,7 @@ type AuthoredNoteRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AuthoredNoteRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthoredNoteRequestBuilderInternal instantiates a new AuthoredNoteRequestBuilder and sets the default values.
 func NewAuthoredNoteRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthoredNoteRequestBuilder) {
     m := &AuthoredNoteRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAuthoredNoteRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AuthoredNoteRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthoredNoteRequestBuilder instantiates a new AuthoredNoteRequestBuilder and sets the default values.
 func NewAuthoredNoteRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthoredNoteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthoredNoteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of notes associcated with the request.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of notes associcated with the request.
 func (m *AuthoredNoteRequestBuilder) CreateDeleteRequestInformation(options *AuthoredNoteRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AuthoredNoteRequestBuilder) CreateDeleteRequestInformation(options *Aut
     }
     return requestInfo, nil
 }
-// List of notes associcated with the request.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of notes associcated with the request.
 func (m *AuthoredNoteRequestBuilder) CreateGetRequestInformation(options *AuthoredNoteRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AuthoredNoteRequestBuilder) CreateGetRequestInformation(options *Author
     }
     return requestInfo, nil
 }
-// List of notes associcated with the request.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of notes associcated with the request.
 func (m *AuthoredNoteRequestBuilder) CreatePatchRequestInformation(options *AuthoredNoteRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AuthoredNoteRequestBuilder) CreatePatchRequestInformation(options *Auth
     }
     return requestInfo, nil
 }
-// List of notes associcated with the request.
-// Parameters:
-//  - options : Options for the request
+// Delete list of notes associcated with the request.
 func (m *AuthoredNoteRequestBuilder) Delete(options *AuthoredNoteRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AuthoredNoteRequestBuilder) Delete(options *AuthoredNoteRequestBuilderD
     }
     return nil
 }
-// List of notes associcated with the request.
-// Parameters:
-//  - options : Options for the request
+// Get list of notes associcated with the request.
 func (m *AuthoredNoteRequestBuilder) Get(options *AuthoredNoteRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthoredNote, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AuthoredNoteRequestBuilder) Get(options *AuthoredNoteRequestBuilderGetO
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthoredNote), nil
 }
-// List of notes associcated with the request.
-// Parameters:
-//  - options : Options for the request
+// Patch list of notes associcated with the request.
 func (m *AuthoredNoteRequestBuilder) Patch(options *AuthoredNoteRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// localizedNotificationMessage 
 type LocalizedNotificationMessage struct {
     Entity
     // Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
@@ -19,14 +19,14 @@ type LocalizedNotificationMessage struct {
     // The Message Template Subject.
     subject *string;
 }
-// Instantiates a new localizedNotificationMessage and sets the default values.
+// NewLocalizedNotificationMessage instantiates a new localizedNotificationMessage and sets the default values.
 func NewLocalizedNotificationMessage()(*LocalizedNotificationMessage) {
     m := &LocalizedNotificationMessage{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the isDefault property value. Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
+// GetIsDefault gets the isDefault property value. Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
 func (m *LocalizedNotificationMessage) GetIsDefault()(*bool) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *LocalizedNotificationMessage) GetIsDefault()(*bool) {
         return m.isDefault
     }
 }
-// Gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *LocalizedNotificationMessage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *LocalizedNotificationMessage) GetLastModifiedDateTime()(*i336074805fc85
         return m.lastModifiedDateTime
     }
 }
-// Gets the locale property value. The Locale for which this message is destined.
+// GetLocale gets the locale property value. The Locale for which this message is destined.
 func (m *LocalizedNotificationMessage) GetLocale()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *LocalizedNotificationMessage) GetLocale()(*string) {
         return m.locale
     }
 }
-// Gets the messageTemplate property value. The Message Template content.
+// GetMessageTemplate gets the messageTemplate property value. The Message Template content.
 func (m *LocalizedNotificationMessage) GetMessageTemplate()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *LocalizedNotificationMessage) GetMessageTemplate()(*string) {
         return m.messageTemplate
     }
 }
-// Gets the subject property value. The Message Template Subject.
+// GetSubject gets the subject property value. The Message Template Subject.
 func (m *LocalizedNotificationMessage) GetSubject()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *LocalizedNotificationMessage) GetSubject()(*string) {
         return m.subject
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *LocalizedNotificationMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,9 +124,7 @@ func (m *LocalizedNotificationMessage) GetFieldDeserializers()(map[string]func(i
 func (m *LocalizedNotificationMessage) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *LocalizedNotificationMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -164,33 +162,23 @@ func (m *LocalizedNotificationMessage) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the isDefault property value. Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
-// Parameters:
-//  - value : Value to set for the isDefault property.
+// SetIsDefault sets the isDefault property value. Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
 func (m *LocalizedNotificationMessage) SetIsDefault(value *bool)() {
     m.isDefault = value
 }
-// Sets the lastModifiedDateTime property value. DateTime the object was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *LocalizedNotificationMessage) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the locale property value. The Locale for which this message is destined.
-// Parameters:
-//  - value : Value to set for the locale property.
+// SetLocale sets the locale property value. The Locale for which this message is destined.
 func (m *LocalizedNotificationMessage) SetLocale(value *string)() {
     m.locale = value
 }
-// Sets the messageTemplate property value. The Message Template content.
-// Parameters:
-//  - value : Value to set for the messageTemplate property.
+// SetMessageTemplate sets the messageTemplate property value. The Message Template content.
 func (m *LocalizedNotificationMessage) SetMessageTemplate(value *string)() {
     m.messageTemplate = value
 }
-// Sets the subject property value. The Message Template Subject.
-// Parameters:
-//  - value : Value to set for the subject property.
+// SetSubject sets the subject property value. The Message Template Subject.
 func (m *LocalizedNotificationMessage) SetSubject(value *string)() {
     m.subject = value
 }

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\microsoft.graph.tableRowOperationResult(key='{key}')
+// tableRowOperationResultWithKeyRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\microsoft.graph.tableRowOperationResult(key='{key}')
 type TableRowOperationResultWithKeyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TableRowOperationResultWithKeyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TableRowOperationResultWithKeyRequestBuilderGetOptions options for Get
 type TableRowOperationResultWithKeyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type TableRowOperationResultWithKeyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes workbookTableRow
+// tableRowOperationResultWithKeyResponse union type wrapper for classes workbookTableRow
 type TableRowOperationResultWithKeyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type workbookTableRow
     workbookTableRow *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookTableRow;
 }
-// Instantiates a new tableRowOperationResultWithKeyResponse and sets the default values.
+// NewTableRowOperationResultWithKeyResponse instantiates a new tableRowOperationResultWithKeyResponse and sets the default values.
 func NewTableRowOperationResultWithKeyResponse()(*TableRowOperationResultWithKeyResponse) {
     m := &TableRowOperationResultWithKeyResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TableRowOperationResultWithKeyResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *TableRowOperationResultWithKeyResponse) GetAdditionalData()(map[string]
         return m.additionalData
     }
 }
-// Gets the workbookTableRow property value. Union type representation for type workbookTableRow
+// GetWorkbookTableRow gets the workbookTableRow property value. Union type representation for type workbookTableRow
 func (m *TableRowOperationResultWithKeyResponse) GetWorkbookTableRow()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookTableRow) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *TableRowOperationResultWithKeyResponse) GetWorkbookTableRow()(*i4a838ef
         return m.workbookTableRow
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TableRowOperationResultWithKeyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["workbookTableRow"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *TableRowOperationResultWithKeyResponse) GetFieldDeserializers()(map[str
 func (m *TableRowOperationResultWithKeyResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TableRowOperationResultWithKeyResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("workbookTableRow", m.GetWorkbookTableRow())
@@ -90,23 +88,15 @@ func (m *TableRowOperationResultWithKeyResponse) Serialize(writer i04eb5309aeaaf
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TableRowOperationResultWithKeyResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the workbookTableRow property value. Union type representation for type workbookTableRow
-// Parameters:
-//  - value : Value to set for the workbookTableRow property.
+// SetWorkbookTableRow sets the workbookTableRow property value. Union type representation for type workbookTableRow
 func (m *TableRowOperationResultWithKeyResponse) SetWorkbookTableRow(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookTableRow)() {
     m.workbookTableRow = value
 }
-// Instantiates a new TableRowOperationResultWithKeyRequestBuilder and sets the default values.
-// Parameters:
-//  - key : Usage: key={key}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTableRowOperationResultWithKeyRequestBuilderInternal instantiates a new TableRowOperationResultWithKeyRequestBuilder and sets the default values.
 func NewTableRowOperationResultWithKeyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, key *string)(*TableRowOperationResultWithKeyRequestBuilder) {
     m := &TableRowOperationResultWithKeyRequestBuilder{
     }
@@ -122,18 +112,13 @@ func NewTableRowOperationResultWithKeyRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TableRowOperationResultWithKeyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTableRowOperationResultWithKeyRequestBuilder instantiates a new TableRowOperationResultWithKeyRequestBuilder and sets the default values.
 func NewTableRowOperationResultWithKeyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TableRowOperationResultWithKeyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTableRowOperationResultWithKeyRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function tableRowOperationResult
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function tableRowOperationResult
 func (m *TableRowOperationResultWithKeyRequestBuilder) CreateGetRequestInformation(options *TableRowOperationResultWithKeyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +135,7 @@ func (m *TableRowOperationResultWithKeyRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Invoke function tableRowOperationResult
-// Parameters:
-//  - options : Options for the request
+// Get invoke function tableRowOperationResult
 func (m *TableRowOperationResultWithKeyRequestBuilder) Get(options *TableRowOperationResultWithKeyRequestBuilderGetOptions)(*TableRowOperationResultWithKeyResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

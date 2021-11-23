@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\assignments\{mobileAppAssignment-id}
+// mobileAppAssignmentRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\assignments\{mobileAppAssignment-id}
 type MobileAppAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MobileAppAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MobileAppAssignmentRequestBuilderDeleteOptions options for Delete
 type MobileAppAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MobileAppAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MobileAppAssignmentRequestBuilderGetOptions options for Get
 type MobileAppAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type MobileAppAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of group assignments for this mobile app.
+// mobileAppAssignmentRequestBuilderGetQueryParameters the list of group assignments for this mobile app.
 type MobileAppAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MobileAppAssignmentRequestBuilderPatchOptions options for Patch
 type MobileAppAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignment;
@@ -53,10 +53,7 @@ type MobileAppAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MobileAppAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppAssignmentRequestBuilderInternal instantiates a new MobileAppAssignmentRequestBuilder and sets the default values.
 func NewMobileAppAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppAssignmentRequestBuilder) {
     m := &MobileAppAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewMobileAppAssignmentRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MobileAppAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppAssignmentRequestBuilder instantiates a new MobileAppAssignmentRequestBuilder and sets the default values.
 func NewMobileAppAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of group assignments for this mobile app.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of group assignments for this mobile app.
 func (m *MobileAppAssignmentRequestBuilder) CreateDeleteRequestInformation(options *MobileAppAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *MobileAppAssignmentRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The list of group assignments for this mobile app.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of group assignments for this mobile app.
 func (m *MobileAppAssignmentRequestBuilder) CreateGetRequestInformation(options *MobileAppAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MobileAppAssignmentRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The list of group assignments for this mobile app.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of group assignments for this mobile app.
 func (m *MobileAppAssignmentRequestBuilder) CreatePatchRequestInformation(options *MobileAppAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *MobileAppAssignmentRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// The list of group assignments for this mobile app.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of group assignments for this mobile app.
 func (m *MobileAppAssignmentRequestBuilder) Delete(options *MobileAppAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *MobileAppAssignmentRequestBuilder) Delete(options *MobileAppAssignmentR
     }
     return nil
 }
-// The list of group assignments for this mobile app.
-// Parameters:
-//  - options : Options for the request
+// Get the list of group assignments for this mobile app.
 func (m *MobileAppAssignmentRequestBuilder) Get(options *MobileAppAssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *MobileAppAssignmentRequestBuilder) Get(options *MobileAppAssignmentRequ
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppAssignment), nil
 }
-// The list of group assignments for this mobile app.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of group assignments for this mobile app.
 func (m *MobileAppAssignmentRequestBuilder) Patch(options *MobileAppAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\adminConsentRequestPolicy
+// adminConsentRequestPolicyRequestBuilder builds and executes requests for operations under \policies\adminConsentRequestPolicy
 type AdminConsentRequestPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AdminConsentRequestPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AdminConsentRequestPolicyRequestBuilderDeleteOptions options for Delete
 type AdminConsentRequestPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AdminConsentRequestPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AdminConsentRequestPolicyRequestBuilderGetOptions options for Get
 type AdminConsentRequestPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AdminConsentRequestPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy by which consent requests are created and managed for the entire tenant.
+// adminConsentRequestPolicyRequestBuilderGetQueryParameters the policy by which consent requests are created and managed for the entire tenant.
 type AdminConsentRequestPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AdminConsentRequestPolicyRequestBuilderPatchOptions options for Patch
 type AdminConsentRequestPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AdminConsentRequestPolicy;
@@ -53,10 +53,7 @@ type AdminConsentRequestPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AdminConsentRequestPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdminConsentRequestPolicyRequestBuilderInternal instantiates a new AdminConsentRequestPolicyRequestBuilder and sets the default values.
 func NewAdminConsentRequestPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdminConsentRequestPolicyRequestBuilder) {
     m := &AdminConsentRequestPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAdminConsentRequestPolicyRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AdminConsentRequestPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdminConsentRequestPolicyRequestBuilder instantiates a new AdminConsentRequestPolicyRequestBuilder and sets the default values.
 func NewAdminConsentRequestPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdminConsentRequestPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdminConsentRequestPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy by which consent requests are created and managed for the entire tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the policy by which consent requests are created and managed for the entire tenant.
 func (m *AdminConsentRequestPolicyRequestBuilder) CreateDeleteRequestInformation(options *AdminConsentRequestPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AdminConsentRequestPolicyRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// The policy by which consent requests are created and managed for the entire tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy by which consent requests are created and managed for the entire tenant.
 func (m *AdminConsentRequestPolicyRequestBuilder) CreateGetRequestInformation(options *AdminConsentRequestPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AdminConsentRequestPolicyRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// The policy by which consent requests are created and managed for the entire tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the policy by which consent requests are created and managed for the entire tenant.
 func (m *AdminConsentRequestPolicyRequestBuilder) CreatePatchRequestInformation(options *AdminConsentRequestPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AdminConsentRequestPolicyRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// The policy by which consent requests are created and managed for the entire tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the policy by which consent requests are created and managed for the entire tenant.
 func (m *AdminConsentRequestPolicyRequestBuilder) Delete(options *AdminConsentRequestPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AdminConsentRequestPolicyRequestBuilder) Delete(options *AdminConsentRe
     }
     return nil
 }
-// The policy by which consent requests are created and managed for the entire tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the policy by which consent requests are created and managed for the entire tenant.
 func (m *AdminConsentRequestPolicyRequestBuilder) Get(options *AdminConsentRequestPolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AdminConsentRequestPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AdminConsentRequestPolicyRequestBuilder) Get(options *AdminConsentReque
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AdminConsentRequestPolicy), nil
 }
-// The policy by which consent requests are created and managed for the entire tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the policy by which consent requests are created and managed for the entire tenant.
 func (m *AdminConsentRequestPolicyRequestBuilder) Patch(options *AdminConsentRequestPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

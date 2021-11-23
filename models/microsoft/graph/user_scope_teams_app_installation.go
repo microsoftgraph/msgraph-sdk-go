@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// userScopeTeamsAppInstallation 
 type UserScopeTeamsAppInstallation struct {
     TeamsAppInstallation
     // The chat between the user and Teams app.
     chat *Chat;
 }
-// Instantiates a new userScopeTeamsAppInstallation and sets the default values.
+// NewUserScopeTeamsAppInstallation instantiates a new userScopeTeamsAppInstallation and sets the default values.
 func NewUserScopeTeamsAppInstallation()(*UserScopeTeamsAppInstallation) {
     m := &UserScopeTeamsAppInstallation{
         TeamsAppInstallation: *NewTeamsAppInstallation(),
     }
     return m
 }
-// Gets the chat property value. The chat between the user and Teams app.
+// GetChat gets the chat property value. The chat between the user and Teams app.
 func (m *UserScopeTeamsAppInstallation) GetChat()(*Chat) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *UserScopeTeamsAppInstallation) GetChat()(*Chat) {
         return m.chat
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserScopeTeamsAppInstallation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.TeamsAppInstallation.GetFieldDeserializers()
     res["chat"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -43,9 +43,7 @@ func (m *UserScopeTeamsAppInstallation) GetFieldDeserializers()(map[string]func(
 func (m *UserScopeTeamsAppInstallation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserScopeTeamsAppInstallation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.TeamsAppInstallation.Serialize(writer)
     if err != nil {
@@ -59,9 +57,7 @@ func (m *UserScopeTeamsAppInstallation) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the chat property value. The chat between the user and Teams app.
-// Parameters:
-//  - value : Value to set for the chat property.
+// SetChat sets the chat property value. The chat between the user and Teams app.
 func (m *UserScopeTeamsAppInstallation) SetChat(value *Chat)() {
     m.chat = value
 }

@@ -7,7 +7,7 @@ import (
     ibfebe8e1821c93dda8997c543dd7161494427c674556776df0eee3b6720e6f3c "github.com/microsoftgraph/msgraph-sdk-go/education/users/item/taughtclasses/ref"
 )
 
-// Builds and executes requests for operations under \education\users\{educationUser-id}\taughtClasses
+// taughtClassesRequestBuilder builds and executes requests for operations under \education\users\{educationUser-id}\taughtClasses
 type TaughtClassesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TaughtClassesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TaughtClassesRequestBuilderGetOptions options for Get
 type TaughtClassesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type TaughtClassesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Classes for which the user is a teacher.
+// taughtClassesRequestBuilderGetQueryParameters classes for which the user is a teacher.
 type TaughtClassesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,10 +46,7 @@ type TaughtClassesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new TaughtClassesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaughtClassesRequestBuilderInternal instantiates a new TaughtClassesRequestBuilder and sets the default values.
 func NewTaughtClassesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaughtClassesRequestBuilder) {
     m := &TaughtClassesRequestBuilder{
     }
@@ -62,18 +59,13 @@ func NewTaughtClassesRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TaughtClassesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaughtClassesRequestBuilder instantiates a new TaughtClassesRequestBuilder and sets the default values.
 func NewTaughtClassesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaughtClassesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTaughtClassesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Classes for which the user is a teacher.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation classes for which the user is a teacher.
 func (m *TaughtClassesRequestBuilder) CreateGetRequestInformation(options *TaughtClassesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,13 +85,11 @@ func (m *TaughtClassesRequestBuilder) CreateGetRequestInformation(options *Taugh
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \education\users\{educationUser-id}\taughtClasses\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \education\users\{educationUser-id}\taughtClasses\microsoft.graph.delta()
 func (m *TaughtClassesRequestBuilder) Delta()(*i9a82ba081a87a0b82fe7518f2699a91f6cdabe7560d9041a4bbd68ca17595c04.DeltaRequestBuilder) {
     return i9a82ba081a87a0b82fe7518f2699a91f6cdabe7560d9041a4bbd68ca17595c04.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Classes for which the user is a teacher.
-// Parameters:
-//  - options : Options for the request
+// Get classes for which the user is a teacher.
 func (m *TaughtClassesRequestBuilder) Get(options *TaughtClassesRequestBuilderGetOptions)(*TaughtClassesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

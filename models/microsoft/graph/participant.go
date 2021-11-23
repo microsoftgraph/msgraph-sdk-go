@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// participant 
 type Participant struct {
     Entity
     // 
@@ -20,14 +20,14 @@ type Participant struct {
     // Information about whether the participant has recording capability.
     recordingInfo *RecordingInfo;
 }
-// Instantiates a new participant and sets the default values.
+// NewParticipant instantiates a new participant and sets the default values.
 func NewParticipant()(*Participant) {
     m := &Participant{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the info property value. 
+// GetInfo gets the info property value. 
 func (m *Participant) GetInfo()(*ParticipantInfo) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *Participant) GetInfo()(*ParticipantInfo) {
         return m.info
     }
 }
-// Gets the isInLobby property value. true if the participant is in lobby.
+// GetIsInLobby gets the isInLobby property value. true if the participant is in lobby.
 func (m *Participant) GetIsInLobby()(*bool) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *Participant) GetIsInLobby()(*bool) {
         return m.isInLobby
     }
 }
-// Gets the isMuted property value. true if the participant is muted (client or server muted).
+// GetIsMuted gets the isMuted property value. true if the participant is muted (client or server muted).
 func (m *Participant) GetIsMuted()(*bool) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *Participant) GetIsMuted()(*bool) {
         return m.isMuted
     }
 }
-// Gets the mediaStreams property value. The list of media streams.
+// GetMediaStreams gets the mediaStreams property value. The list of media streams.
 func (m *Participant) GetMediaStreams()([]MediaStream) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *Participant) GetMediaStreams()([]MediaStream) {
         return m.mediaStreams
     }
 }
-// Gets the metadata property value. A blob of data provided by the participant in the roster.
+// GetMetadata gets the metadata property value. A blob of data provided by the participant in the roster.
 func (m *Participant) GetMetadata()(*string) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *Participant) GetMetadata()(*string) {
         return m.metadata
     }
 }
-// Gets the recordingInfo property value. Information about whether the participant has recording capability.
+// GetRecordingInfo gets the recordingInfo property value. Information about whether the participant has recording capability.
 func (m *Participant) GetRecordingInfo()(*RecordingInfo) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *Participant) GetRecordingInfo()(*RecordingInfo) {
         return m.recordingInfo
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Participant) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["info"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,9 +147,7 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *Participant) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Participant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -198,39 +196,27 @@ func (m *Participant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// Sets the info property value. 
-// Parameters:
-//  - value : Value to set for the info property.
+// SetInfo sets the info property value. 
 func (m *Participant) SetInfo(value *ParticipantInfo)() {
     m.info = value
 }
-// Sets the isInLobby property value. true if the participant is in lobby.
-// Parameters:
-//  - value : Value to set for the isInLobby property.
+// SetIsInLobby sets the isInLobby property value. true if the participant is in lobby.
 func (m *Participant) SetIsInLobby(value *bool)() {
     m.isInLobby = value
 }
-// Sets the isMuted property value. true if the participant is muted (client or server muted).
-// Parameters:
-//  - value : Value to set for the isMuted property.
+// SetIsMuted sets the isMuted property value. true if the participant is muted (client or server muted).
 func (m *Participant) SetIsMuted(value *bool)() {
     m.isMuted = value
 }
-// Sets the mediaStreams property value. The list of media streams.
-// Parameters:
-//  - value : Value to set for the mediaStreams property.
+// SetMediaStreams sets the mediaStreams property value. The list of media streams.
 func (m *Participant) SetMediaStreams(value []MediaStream)() {
     m.mediaStreams = value
 }
-// Sets the metadata property value. A blob of data provided by the participant in the roster.
-// Parameters:
-//  - value : Value to set for the metadata property.
+// SetMetadata sets the metadata property value. A blob of data provided by the participant in the roster.
 func (m *Participant) SetMetadata(value *string)() {
     m.metadata = value
 }
-// Sets the recordingInfo property value. Information about whether the participant has recording capability.
-// Parameters:
-//  - value : Value to set for the recordingInfo property.
+// SetRecordingInfo sets the recordingInfo property value. Information about whether the participant has recording capability.
 func (m *Participant) SetRecordingInfo(value *RecordingInfo)() {
     m.recordingInfo = value
 }

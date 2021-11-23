@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceConfiguration 
 type DeviceConfiguration struct {
     Entity
     // The list of assignments for the device configuration profile.
@@ -31,14 +31,14 @@ type DeviceConfiguration struct {
     // Version of the device configuration.
     version *int32;
 }
-// Instantiates a new deviceConfiguration and sets the default values.
+// NewDeviceConfiguration instantiates a new deviceConfiguration and sets the default values.
 func NewDeviceConfiguration()(*DeviceConfiguration) {
     m := &DeviceConfiguration{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the assignments property value. The list of assignments for the device configuration profile.
+// GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignment) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignment) 
         return m.assignments
     }
 }
-// Gets the createdDateTime property value. DateTime the object was created.
+// GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
 func (m *DeviceConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *DeviceConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
         return m.createdDateTime
     }
 }
-// Gets the description property value. Admin provided description of the Device Configuration.
+// GetDescription gets the description property value. Admin provided description of the Device Configuration.
 func (m *DeviceConfiguration) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *DeviceConfiguration) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
+// GetDeviceSettingStateSummaries gets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
 func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummary) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDev
         return m.deviceSettingStateSummaries
     }
 }
-// Gets the deviceStatuses property value. Device configuration installation status by device.
+// GetDeviceStatuses gets the deviceStatuses property value. Device configuration installation status by device.
 func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceStatus) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceSta
         return m.deviceStatuses
     }
 }
-// Gets the deviceStatusOverview property value. Device Configuration devices status overview
+// GetDeviceStatusOverview gets the deviceStatusOverview property value. Device Configuration devices status overview
 func (m *DeviceConfiguration) GetDeviceStatusOverview()(*DeviceConfigurationDeviceOverview) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *DeviceConfiguration) GetDeviceStatusOverview()(*DeviceConfigurationDevi
         return m.deviceStatusOverview
     }
 }
-// Gets the displayName property value. Admin provided name of the device configuration.
+// GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
 func (m *DeviceConfiguration) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *DeviceConfiguration) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f
         return m.lastModifiedDateTime
     }
 }
-// Gets the userStatuses property value. Device configuration installation status by user.
+// GetUserStatuses gets the userStatuses property value. Device configuration installation status by user.
 func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatus) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatus)
         return m.userStatuses
     }
 }
-// Gets the userStatusOverview property value. Device Configuration users status overview
+// GetUserStatusOverview gets the userStatusOverview property value. Device Configuration users status overview
 func (m *DeviceConfiguration) GetUserStatusOverview()(*DeviceConfigurationUserOverview) {
     if m == nil {
         return nil
@@ -118,7 +118,7 @@ func (m *DeviceConfiguration) GetUserStatusOverview()(*DeviceConfigurationUserOv
         return m.userStatusOverview
     }
 }
-// Gets the version property value. Version of the device configuration.
+// GetVersion gets the version property value. Version of the device configuration.
 func (m *DeviceConfiguration) GetVersion()(*int32) {
     if m == nil {
         return nil
@@ -126,7 +126,7 @@ func (m *DeviceConfiguration) GetVersion()(*int32) {
         return m.version
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -260,9 +260,7 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{
 func (m *DeviceConfiguration) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -356,69 +354,47 @@ func (m *DeviceConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the assignments property value. The list of assignments for the device configuration profile.
-// Parameters:
-//  - value : Value to set for the assignments property.
+// SetAssignments sets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceConfiguration) SetAssignments(value []DeviceConfigurationAssignment)() {
     m.assignments = value
 }
-// Sets the createdDateTime property value. DateTime the object was created.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. DateTime the object was created.
 func (m *DeviceConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the description property value. Admin provided description of the Device Configuration.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Admin provided description of the Device Configuration.
 func (m *DeviceConfiguration) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
-// Parameters:
-//  - value : Value to set for the deviceSettingStateSummaries property.
+// SetDeviceSettingStateSummaries sets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
 func (m *DeviceConfiguration) SetDeviceSettingStateSummaries(value []SettingStateDeviceSummary)() {
     m.deviceSettingStateSummaries = value
 }
-// Sets the deviceStatuses property value. Device configuration installation status by device.
-// Parameters:
-//  - value : Value to set for the deviceStatuses property.
+// SetDeviceStatuses sets the deviceStatuses property value. Device configuration installation status by device.
 func (m *DeviceConfiguration) SetDeviceStatuses(value []DeviceConfigurationDeviceStatus)() {
     m.deviceStatuses = value
 }
-// Sets the deviceStatusOverview property value. Device Configuration devices status overview
-// Parameters:
-//  - value : Value to set for the deviceStatusOverview property.
+// SetDeviceStatusOverview sets the deviceStatusOverview property value. Device Configuration devices status overview
 func (m *DeviceConfiguration) SetDeviceStatusOverview(value *DeviceConfigurationDeviceOverview)() {
     m.deviceStatusOverview = value
 }
-// Sets the displayName property value. Admin provided name of the device configuration.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Admin provided name of the device configuration.
 func (m *DeviceConfiguration) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastModifiedDateTime property value. DateTime the object was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *DeviceConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the userStatuses property value. Device configuration installation status by user.
-// Parameters:
-//  - value : Value to set for the userStatuses property.
+// SetUserStatuses sets the userStatuses property value. Device configuration installation status by user.
 func (m *DeviceConfiguration) SetUserStatuses(value []DeviceConfigurationUserStatus)() {
     m.userStatuses = value
 }
-// Sets the userStatusOverview property value. Device Configuration users status overview
-// Parameters:
-//  - value : Value to set for the userStatusOverview property.
+// SetUserStatusOverview sets the userStatusOverview property value. Device Configuration users status overview
 func (m *DeviceConfiguration) SetUserStatusOverview(value *DeviceConfigurationUserOverview)() {
     m.userStatusOverview = value
 }
-// Sets the version property value. Version of the device configuration.
-// Parameters:
-//  - value : Value to set for the version property.
+// SetVersion sets the version property value. Version of the device configuration.
 func (m *DeviceConfiguration) SetVersion(value *int32)() {
     m.version = value
 }

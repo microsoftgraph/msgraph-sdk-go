@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// lobbyBypassSettings 
 type LobbyBypassSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type LobbyBypassSettings struct {
     // Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
     scope *LobbyBypassScope;
 }
-// Instantiates a new lobbyBypassSettings and sets the default values.
+// NewLobbyBypassSettings instantiates a new lobbyBypassSettings and sets the default values.
 func NewLobbyBypassSettings()(*LobbyBypassSettings) {
     m := &LobbyBypassSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LobbyBypassSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *LobbyBypassSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the isDialInBypassEnabled property value. Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+// GetIsDialInBypassEnabled gets the isDialInBypassEnabled property value. Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
 func (m *LobbyBypassSettings) GetIsDialInBypassEnabled()(*bool) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *LobbyBypassSettings) GetIsDialInBypassEnabled()(*bool) {
         return m.isDialInBypassEnabled
     }
 }
-// Gets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
+// GetScope gets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
 func (m *LobbyBypassSettings) GetScope()(*LobbyBypassScope) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *LobbyBypassSettings) GetScope()(*LobbyBypassScope) {
         return m.scope
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *LobbyBypassSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["isDialInBypassEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *LobbyBypassSettings) GetFieldDeserializers()(map[string]func(interface{
 func (m *LobbyBypassSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *LobbyBypassSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isDialInBypassEnabled", m.GetIsDialInBypassEnabled())
@@ -98,21 +96,15 @@ func (m *LobbyBypassSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LobbyBypassSettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the isDialInBypassEnabled property value. Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
-// Parameters:
-//  - value : Value to set for the isDialInBypassEnabled property.
+// SetIsDialInBypassEnabled sets the isDialInBypassEnabled property value. Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
 func (m *LobbyBypassSettings) SetIsDialInBypassEnabled(value *bool)() {
     m.isDialInBypassEnabled = value
 }
-// Sets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
-// Parameters:
-//  - value : Value to set for the scope property.
+// SetScope sets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
 func (m *LobbyBypassSettings) SetScope(value *LobbyBypassScope)() {
     m.scope = value
 }

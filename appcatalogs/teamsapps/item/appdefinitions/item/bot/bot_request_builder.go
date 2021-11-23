@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\bot
+// botRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\bot
 type BotRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BotRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// BotRequestBuilderDeleteOptions options for Delete
 type BotRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type BotRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// BotRequestBuilderGetOptions options for Get
 type BotRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type BotRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The details of the bot specified in the Teams app manifest.
+// botRequestBuilderGetQueryParameters the details of the bot specified in the Teams app manifest.
 type BotRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// BotRequestBuilderPatchOptions options for Patch
 type BotRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamworkBot;
@@ -53,10 +53,7 @@ type BotRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BotRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBotRequestBuilderInternal instantiates a new BotRequestBuilder and sets the default values.
 func NewBotRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BotRequestBuilder) {
     m := &BotRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewBotRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BotRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBotRequestBuilder instantiates a new BotRequestBuilder and sets the default values.
 func NewBotRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BotRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBotRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The details of the bot specified in the Teams app manifest.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the details of the bot specified in the Teams app manifest.
 func (m *BotRequestBuilder) CreateDeleteRequestInformation(options *BotRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *BotRequestBuilder) CreateDeleteRequestInformation(options *BotRequestBu
     }
     return requestInfo, nil
 }
-// The details of the bot specified in the Teams app manifest.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the details of the bot specified in the Teams app manifest.
 func (m *BotRequestBuilder) CreateGetRequestInformation(options *BotRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *BotRequestBuilder) CreateGetRequestInformation(options *BotRequestBuild
     }
     return requestInfo, nil
 }
-// The details of the bot specified in the Teams app manifest.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the details of the bot specified in the Teams app manifest.
 func (m *BotRequestBuilder) CreatePatchRequestInformation(options *BotRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *BotRequestBuilder) CreatePatchRequestInformation(options *BotRequestBui
     }
     return requestInfo, nil
 }
-// The details of the bot specified in the Teams app manifest.
-// Parameters:
-//  - options : Options for the request
+// Delete the details of the bot specified in the Teams app manifest.
 func (m *BotRequestBuilder) Delete(options *BotRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *BotRequestBuilder) Delete(options *BotRequestBuilderDeleteOptions)(erro
     }
     return nil
 }
-// The details of the bot specified in the Teams app manifest.
-// Parameters:
-//  - options : Options for the request
+// Get the details of the bot specified in the Teams app manifest.
 func (m *BotRequestBuilder) Get(options *BotRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamworkBot, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *BotRequestBuilder) Get(options *BotRequestBuilderGetOptions)(*i4a838ef1
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamworkBot), nil
 }
-// The details of the bot specified in the Teams app manifest.
-// Parameters:
-//  - options : Options for the request
+// Patch the details of the bot specified in the Teams app manifest.
 func (m *BotRequestBuilder) Patch(options *BotRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

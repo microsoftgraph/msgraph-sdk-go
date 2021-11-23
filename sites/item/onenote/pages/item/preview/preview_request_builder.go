@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\onenote\pages\{onenotePage-id}\microsoft.graph.preview()
+// previewRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\pages\{onenotePage-id}\microsoft.graph.preview()
 type PreviewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PreviewRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PreviewRequestBuilderGetOptions options for Get
 type PreviewRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type PreviewRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes onenotePagePreview
+// previewResponse union type wrapper for classes onenotePagePreview
 type PreviewResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type onenotePagePreview
     onenotePagePreview *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenotePagePreview;
 }
-// Instantiates a new previewResponse and sets the default values.
+// NewPreviewResponse instantiates a new previewResponse and sets the default values.
 func NewPreviewResponse()(*PreviewResponse) {
     m := &PreviewResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreviewResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *PreviewResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the onenotePagePreview property value. Union type representation for type onenotePagePreview
+// GetOnenotePagePreview gets the onenotePagePreview property value. Union type representation for type onenotePagePreview
 func (m *PreviewResponse) GetOnenotePagePreview()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenotePagePreview) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *PreviewResponse) GetOnenotePagePreview()(*i4a838ef194e4c99e9f2c63ba10da
         return m.onenotePagePreview
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PreviewResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["onenotePagePreview"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *PreviewResponse) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *PreviewResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PreviewResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("onenotePagePreview", m.GetOnenotePagePreview())
@@ -90,22 +88,15 @@ func (m *PreviewResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreviewResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the onenotePagePreview property value. Union type representation for type onenotePagePreview
-// Parameters:
-//  - value : Value to set for the onenotePagePreview property.
+// SetOnenotePagePreview sets the onenotePagePreview property value. Union type representation for type onenotePagePreview
 func (m *PreviewResponse) SetOnenotePagePreview(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenotePagePreview)() {
     m.onenotePagePreview = value
 }
-// Instantiates a new PreviewRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPreviewRequestBuilderInternal instantiates a new PreviewRequestBuilder and sets the default values.
 func NewPreviewRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PreviewRequestBuilder) {
     m := &PreviewRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewPreviewRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PreviewRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPreviewRequestBuilder instantiates a new PreviewRequestBuilder and sets the default values.
 func NewPreviewRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PreviewRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPreviewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function preview
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function preview
 func (m *PreviewRequestBuilder) CreateGetRequestInformation(options *PreviewRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *PreviewRequestBuilder) CreateGetRequestInformation(options *PreviewRequ
     }
     return requestInfo, nil
 }
-// Invoke function preview
-// Parameters:
-//  - options : Options for the request
+// Get invoke function preview
 func (m *PreviewRequestBuilder) Get(options *PreviewRequestBuilderGetOptions)(*PreviewResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

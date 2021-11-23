@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \appCatalogs\teamsApps
+// teamsAppsRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps
 type TeamsAppsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TeamsAppsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TeamsAppsRequestBuilderGetOptions options for Get
 type TeamsAppsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TeamsAppsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get teamsApps from appCatalogs
+// teamsAppsRequestBuilderGetQueryParameters get teamsApps from appCatalogs
 type TeamsAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TeamsAppsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TeamsAppsRequestBuilderPostOptions options for Post
 type TeamsAppsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsApp;
@@ -56,10 +56,7 @@ type TeamsAppsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TeamsAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppsRequestBuilderInternal instantiates a new TeamsAppsRequestBuilder and sets the default values.
 func NewTeamsAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppsRequestBuilder) {
     m := &TeamsAppsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTeamsAppsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamsAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppsRequestBuilder instantiates a new TeamsAppsRequestBuilder and sets the default values.
 func NewTeamsAppsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get teamsApps from appCatalogs
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get teamsApps from appCatalogs
 func (m *TeamsAppsRequestBuilder) CreateGetRequestInformation(options *TeamsAppsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TeamsAppsRequestBuilder) CreateGetRequestInformation(options *TeamsApps
     }
     return requestInfo, nil
 }
-// Create new navigation property to teamsApps for appCatalogs
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to teamsApps for appCatalogs
 func (m *TeamsAppsRequestBuilder) CreatePostRequestInformation(options *TeamsAppsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TeamsAppsRequestBuilder) CreatePostRequestInformation(options *TeamsApp
     }
     return requestInfo, nil
 }
-// Get teamsApps from appCatalogs
-// Parameters:
-//  - options : Options for the request
+// Get get teamsApps from appCatalogs
 func (m *TeamsAppsRequestBuilder) Get(options *TeamsAppsRequestBuilderGetOptions)(*TeamsAppsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TeamsAppsRequestBuilder) Get(options *TeamsAppsRequestBuilderGetOptions
     }
     return res.(*TeamsAppsResponse), nil
 }
-// Create new navigation property to teamsApps for appCatalogs
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to teamsApps for appCatalogs
 func (m *TeamsAppsRequestBuilder) Post(options *TeamsAppsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsApp, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

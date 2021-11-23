@@ -6,7 +6,7 @@ import (
     ib1e234b4ff408390909249e7bb9f4912b7ceb64c4587784c93396fe7dc824c48 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/mobileappcontentfile/commit"
 )
 
-// Builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.mobileAppContentFile
+// mobileAppContentFileRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.mobileAppContentFile
 type MobileAppContentFileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,10 +18,7 @@ type MobileAppContentFileRequestBuilder struct {
 func (m *MobileAppContentFileRequestBuilder) Commit()(*ib1e234b4ff408390909249e7bb9f4912b7ceb64c4587784c93396fe7dc824c48.CommitRequestBuilder) {
     return ib1e234b4ff408390909249e7bb9f4912b7ceb64c4587784c93396fe7dc824c48.NewCommitRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new MobileAppContentFileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppContentFileRequestBuilderInternal instantiates a new MobileAppContentFileRequestBuilder and sets the default values.
 func NewMobileAppContentFileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppContentFileRequestBuilder) {
     m := &MobileAppContentFileRequestBuilder{
     }
@@ -34,10 +31,7 @@ func NewMobileAppContentFileRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MobileAppContentFileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppContentFileRequestBuilder instantiates a new MobileAppContentFileRequestBuilder and sets the default values.
 func NewMobileAppContentFileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppContentFileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// serviceUpdateMessageViewpoint 
 type ServiceUpdateMessageViewpoint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type ServiceUpdateMessageViewpoint struct {
     // Indicates whether the user read the message.
     isRead *bool;
 }
-// Instantiates a new serviceUpdateMessageViewpoint and sets the default values.
+// NewServiceUpdateMessageViewpoint instantiates a new serviceUpdateMessageViewpoint and sets the default values.
 func NewServiceUpdateMessageViewpoint()(*ServiceUpdateMessageViewpoint) {
     m := &ServiceUpdateMessageViewpoint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServiceUpdateMessageViewpoint) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *ServiceUpdateMessageViewpoint) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// Gets the isArchived property value. Indicates whether the user archived the message.
+// GetIsArchived gets the isArchived property value. Indicates whether the user archived the message.
 func (m *ServiceUpdateMessageViewpoint) GetIsArchived()(*bool) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *ServiceUpdateMessageViewpoint) GetIsArchived()(*bool) {
         return m.isArchived
     }
 }
-// Gets the isFavorited property value. Indicates whether the user marked the message as favorite.
+// GetIsFavorited gets the isFavorited property value. Indicates whether the user marked the message as favorite.
 func (m *ServiceUpdateMessageViewpoint) GetIsFavorited()(*bool) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *ServiceUpdateMessageViewpoint) GetIsFavorited()(*bool) {
         return m.isFavorited
     }
 }
-// Gets the isRead property value. Indicates whether the user read the message.
+// GetIsRead gets the isRead property value. Indicates whether the user read the message.
 func (m *ServiceUpdateMessageViewpoint) GetIsRead()(*bool) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *ServiceUpdateMessageViewpoint) GetIsRead()(*bool) {
         return m.isRead
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceUpdateMessageViewpoint) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["isArchived"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *ServiceUpdateMessageViewpoint) GetFieldDeserializers()(map[string]func(
 func (m *ServiceUpdateMessageViewpoint) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ServiceUpdateMessageViewpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isArchived", m.GetIsArchived())
@@ -122,27 +120,19 @@ func (m *ServiceUpdateMessageViewpoint) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServiceUpdateMessageViewpoint) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the isArchived property value. Indicates whether the user archived the message.
-// Parameters:
-//  - value : Value to set for the isArchived property.
+// SetIsArchived sets the isArchived property value. Indicates whether the user archived the message.
 func (m *ServiceUpdateMessageViewpoint) SetIsArchived(value *bool)() {
     m.isArchived = value
 }
-// Sets the isFavorited property value. Indicates whether the user marked the message as favorite.
-// Parameters:
-//  - value : Value to set for the isFavorited property.
+// SetIsFavorited sets the isFavorited property value. Indicates whether the user marked the message as favorite.
 func (m *ServiceUpdateMessageViewpoint) SetIsFavorited(value *bool)() {
     m.isFavorited = value
 }
-// Sets the isRead property value. Indicates whether the user read the message.
-// Parameters:
-//  - value : Value to set for the isRead property.
+// SetIsRead sets the isRead property value. Indicates whether the user read the message.
 func (m *ServiceUpdateMessageViewpoint) SetIsRead(value *bool)() {
     m.isRead = value
 }

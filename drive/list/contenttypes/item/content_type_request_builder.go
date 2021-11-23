@@ -18,7 +18,7 @@ import (
     ib8f5fc0530361dc8f60f00c441136b066b0ef8c5599697f14d1092db89ae8857 "github.com/microsoftgraph/msgraph-sdk-go/drive/list/contenttypes/item/columnlinks/item"
 )
 
-// Builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}
+// contentTypeRequestBuilder builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}
 type ContentTypeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ContentTypeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ContentTypeRequestBuilderDeleteOptions options for Delete
 type ContentTypeRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -36,7 +36,7 @@ type ContentTypeRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ContentTypeRequestBuilderGetOptions options for Get
 type ContentTypeRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -47,14 +47,14 @@ type ContentTypeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of content types present in this list.
+// contentTypeRequestBuilderGetQueryParameters the collection of content types present in this list.
 type ContentTypeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ContentTypeRequestBuilderPatchOptions options for Patch
 type ContentTypeRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentType;
@@ -77,9 +77,7 @@ func (m *ContentTypeRequestBuilder) BaseTypes()(*ibbfe9e07ff81e3a1ac4b3ed908b90b
 func (m *ContentTypeRequestBuilder) ColumnLinks()(*i350e95307b635e7cbd9b80327f06108e3c2d26f1b80f2ffe02ab9e26040919c0.ColumnLinksRequestBuilder) {
     return i350e95307b635e7cbd9b80327f06108e3c2d26f1b80f2ffe02ab9e26040919c0.NewColumnLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.list.contentTypes.item.columnLinks.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ColumnLinksById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.list.contentTypes.item.columnLinks.item collection
 func (m *ContentTypeRequestBuilder) ColumnLinksById(id string)(*ib8f5fc0530361dc8f60f00c441136b066b0ef8c5599697f14d1092db89ae8857.ColumnLinkRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -96,9 +94,7 @@ func (m *ContentTypeRequestBuilder) ColumnPositions()(*i45c3970936281df10318dee6
 func (m *ContentTypeRequestBuilder) Columns()(*i37ed59fef414ed542b467a743d67ed5f7b35e828361fcee35f794973680f0273.ColumnsRequestBuilder) {
     return i37ed59fef414ed542b467a743d67ed5f7b35e828361fcee35f794973680f0273.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.list.contentTypes.item.columns.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ColumnsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.list.contentTypes.item.columns.item collection
 func (m *ContentTypeRequestBuilder) ColumnsById(id string)(*i15ae992f8c06ad8a7ba1ec98d7e1e47ad2aadb64d711a178a018a0753d67fbcf.ColumnDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -109,10 +105,7 @@ func (m *ContentTypeRequestBuilder) ColumnsById(id string)(*i15ae992f8c06ad8a7ba
     }
     return i15ae992f8c06ad8a7ba1ec98d7e1e47ad2aadb64d711a178a018a0753d67fbcf.NewColumnDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new ContentTypeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContentTypeRequestBuilderInternal instantiates a new ContentTypeRequestBuilder and sets the default values.
 func NewContentTypeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContentTypeRequestBuilder) {
     m := &ContentTypeRequestBuilder{
     }
@@ -125,10 +118,7 @@ func NewContentTypeRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ContentTypeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContentTypeRequestBuilder instantiates a new ContentTypeRequestBuilder and sets the default values.
 func NewContentTypeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContentTypeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -137,9 +127,7 @@ func NewContentTypeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
 func (m *ContentTypeRequestBuilder) CopyToDefaultContentLocation()(*i8a8731025cbe5699c843f367738d2c9ee2193b6d64796d2224611f93056402c4.CopyToDefaultContentLocationRequestBuilder) {
     return i8a8731025cbe5699c843f367738d2c9ee2193b6d64796d2224611f93056402c4.NewCopyToDefaultContentLocationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of content types present in this list.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of content types present in this list.
 func (m *ContentTypeRequestBuilder) CreateDeleteRequestInformation(options *ContentTypeRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -156,9 +144,7 @@ func (m *ContentTypeRequestBuilder) CreateDeleteRequestInformation(options *Cont
     }
     return requestInfo, nil
 }
-// The collection of content types present in this list.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of content types present in this list.
 func (m *ContentTypeRequestBuilder) CreateGetRequestInformation(options *ContentTypeRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -178,9 +164,7 @@ func (m *ContentTypeRequestBuilder) CreateGetRequestInformation(options *Content
     }
     return requestInfo, nil
 }
-// The collection of content types present in this list.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of content types present in this list.
 func (m *ContentTypeRequestBuilder) CreatePatchRequestInformation(options *ContentTypeRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -198,9 +182,7 @@ func (m *ContentTypeRequestBuilder) CreatePatchRequestInformation(options *Conte
     }
     return requestInfo, nil
 }
-// The collection of content types present in this list.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of content types present in this list.
 func (m *ContentTypeRequestBuilder) Delete(options *ContentTypeRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -212,9 +194,7 @@ func (m *ContentTypeRequestBuilder) Delete(options *ContentTypeRequestBuilderDel
     }
     return nil
 }
-// The collection of content types present in this list.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of content types present in this list.
 func (m *ContentTypeRequestBuilder) Get(options *ContentTypeRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentType, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -226,13 +206,11 @@ func (m *ContentTypeRequestBuilder) Get(options *ContentTypeRequestBuilderGetOpt
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentType), nil
 }
-// Builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}\microsoft.graph.isPublished()
+// IsPublished builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}\microsoft.graph.isPublished()
 func (m *ContentTypeRequestBuilder) IsPublished()(*i0e4a4f160e936ed0b701995d280a973c677a1c132f35feaca1aae10c863ea1b4.IsPublishedRequestBuilder) {
     return i0e4a4f160e936ed0b701995d280a973c677a1c132f35feaca1aae10c863ea1b4.NewIsPublishedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of content types present in this list.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of content types present in this list.
 func (m *ContentTypeRequestBuilder) Patch(options *ContentTypeRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

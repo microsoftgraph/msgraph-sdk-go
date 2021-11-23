@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\insights\used\{usedInsight-id}\resource\microsoft.graph.printJob\microsoft.graph.abort
+// abortRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\used\{usedInsight-id}\resource\microsoft.graph.printJob\microsoft.graph.abort
 type AbortRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type AbortRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// AbortRequestBuilderPostOptions options for Post
 type AbortRequestBuilderPostOptions struct {
     // 
     Body *AbortRequestBody;
@@ -24,10 +24,7 @@ type AbortRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AbortRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAbortRequestBuilderInternal instantiates a new AbortRequestBuilder and sets the default values.
 func NewAbortRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AbortRequestBuilder) {
     m := &AbortRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewAbortRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AbortRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAbortRequestBuilder instantiates a new AbortRequestBuilder and sets the default values.
 func NewAbortRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AbortRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAbortRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action abort
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action abort
 func (m *AbortRequestBuilder) CreatePostRequestInformation(options *AbortRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *AbortRequestBuilder) CreatePostRequestInformation(options *AbortRequest
     }
     return requestInfo, nil
 }
-// Invoke action abort
-// Parameters:
-//  - options : Options for the request
+// Post invoke action abort
 func (m *AbortRequestBuilder) Post(options *AbortRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

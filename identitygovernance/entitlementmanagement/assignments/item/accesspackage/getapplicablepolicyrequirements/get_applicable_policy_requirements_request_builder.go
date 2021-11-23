@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\assignments\{accessPackageAssignment-id}\accessPackage\microsoft.graph.getApplicablePolicyRequirements
+// getApplicablePolicyRequirementsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\assignments\{accessPackageAssignment-id}\accessPackage\microsoft.graph.getApplicablePolicyRequirements
 type GetApplicablePolicyRequirementsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetApplicablePolicyRequirementsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetApplicablePolicyRequirementsRequestBuilderPostOptions options for Post
 type GetApplicablePolicyRequirementsRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type GetApplicablePolicyRequirementsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetApplicablePolicyRequirementsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetApplicablePolicyRequirementsRequestBuilderInternal instantiates a new GetApplicablePolicyRequirementsRequestBuilder and sets the default values.
 func NewGetApplicablePolicyRequirementsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetApplicablePolicyRequirementsRequestBuilder) {
     m := &GetApplicablePolicyRequirementsRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewGetApplicablePolicyRequirementsRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetApplicablePolicyRequirementsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetApplicablePolicyRequirementsRequestBuilder instantiates a new GetApplicablePolicyRequirementsRequestBuilder and sets the default values.
 func NewGetApplicablePolicyRequirementsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetApplicablePolicyRequirementsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetApplicablePolicyRequirementsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getApplicablePolicyRequirements
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getApplicablePolicyRequirements
 func (m *GetApplicablePolicyRequirementsRequestBuilder) CreatePostRequestInformation(options *GetApplicablePolicyRequirementsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *GetApplicablePolicyRequirementsRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// Invoke action getApplicablePolicyRequirements
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getApplicablePolicyRequirements
 func (m *GetApplicablePolicyRequirementsRequestBuilder) Post(options *GetApplicablePolicyRequirementsRequestBuilderPostOptions)([]GetApplicablePolicyRequirements, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

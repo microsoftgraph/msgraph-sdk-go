@@ -13,7 +13,7 @@ import (
     i9d1670091fc52082d729a9f897ef1d49013bba55d168ff02986d174ec33643a0 "github.com/microsoftgraph/msgraph-sdk-go/connections/item/operations/item"
 )
 
-// Builds and executes requests for operations under \connections\{externalConnection-id}
+// externalConnectionRequestBuilder builds and executes requests for operations under \connections\{externalConnection-id}
 type ExternalConnectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type ExternalConnectionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ExternalConnectionRequestBuilderDeleteOptions options for Delete
 type ExternalConnectionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type ExternalConnectionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ExternalConnectionRequestBuilderGetOptions options for Get
 type ExternalConnectionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,14 +42,14 @@ type ExternalConnectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from connections by key
+// externalConnectionRequestBuilderGetQueryParameters get entity from connections by key
 type ExternalConnectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ExternalConnectionRequestBuilderPatchOptions options for Patch
 type ExternalConnectionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExternalConnection;
@@ -60,10 +60,7 @@ type ExternalConnectionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExternalConnectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExternalConnectionRequestBuilderInternal instantiates a new ExternalConnectionRequestBuilder and sets the default values.
 func NewExternalConnectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExternalConnectionRequestBuilder) {
     m := &ExternalConnectionRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewExternalConnectionRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExternalConnectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExternalConnectionRequestBuilder instantiates a new ExternalConnectionRequestBuilder and sets the default values.
 func NewExternalConnectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExternalConnectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExternalConnectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from connections
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from connections
 func (m *ExternalConnectionRequestBuilder) CreateDeleteRequestInformation(options *ExternalConnectionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *ExternalConnectionRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get entity from connections by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from connections by key
 func (m *ExternalConnectionRequestBuilder) CreateGetRequestInformation(options *ExternalConnectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,9 +116,7 @@ func (m *ExternalConnectionRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Update entity in connections
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in connections
 func (m *ExternalConnectionRequestBuilder) CreatePatchRequestInformation(options *ExternalConnectionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +134,7 @@ func (m *ExternalConnectionRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete entity from connections
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from connections
 func (m *ExternalConnectionRequestBuilder) Delete(options *ExternalConnectionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -160,9 +146,7 @@ func (m *ExternalConnectionRequestBuilder) Delete(options *ExternalConnectionReq
     }
     return nil
 }
-// Get entity from connections by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from connections by key
 func (m *ExternalConnectionRequestBuilder) Get(options *ExternalConnectionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExternalConnection, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -177,9 +161,7 @@ func (m *ExternalConnectionRequestBuilder) Get(options *ExternalConnectionReques
 func (m *ExternalConnectionRequestBuilder) Groups()(*ia84cec0e2ab16fa98bdba4c35c9559797c1bb782a6a6075b268c17aa2dcc36ca.GroupsRequestBuilder) {
     return ia84cec0e2ab16fa98bdba4c35c9559797c1bb782a6a6075b268c17aa2dcc36ca.NewGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.connections.item.groups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// GroupsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.connections.item.groups.item collection
 func (m *ExternalConnectionRequestBuilder) GroupsById(id string)(*i0587295e9b0a8f2babd875f43631037e119426cc9b33dc66829b00e0d66f13af.ExternalGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -193,9 +175,7 @@ func (m *ExternalConnectionRequestBuilder) GroupsById(id string)(*i0587295e9b0a8
 func (m *ExternalConnectionRequestBuilder) Items()(*icf71281ca8434d6f3f31e6093b19ce2721c2209cc2f0fed59881aad425ce8fd9.ItemsRequestBuilder) {
     return icf71281ca8434d6f3f31e6093b19ce2721c2209cc2f0fed59881aad425ce8fd9.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.connections.item.items.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ItemsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.connections.item.items.item collection
 func (m *ExternalConnectionRequestBuilder) ItemsById(id string)(*i2a254f378bc8eba0badf934e4cc3f16461077f8f3e402ec2f5ec50847304c54a.ExternalItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -209,9 +189,7 @@ func (m *ExternalConnectionRequestBuilder) ItemsById(id string)(*i2a254f378bc8eb
 func (m *ExternalConnectionRequestBuilder) Operations()(*i9f701836f6f064da245ba53c4a8cab511ce5c7805cdaa836b4aef8c9af6852a6.OperationsRequestBuilder) {
     return i9f701836f6f064da245ba53c4a8cab511ce5c7805cdaa836b4aef8c9af6852a6.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.connections.item.operations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// OperationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.connections.item.operations.item collection
 func (m *ExternalConnectionRequestBuilder) OperationsById(id string)(*i9d1670091fc52082d729a9f897ef1d49013bba55d168ff02986d174ec33643a0.ConnectionOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -222,9 +200,7 @@ func (m *ExternalConnectionRequestBuilder) OperationsById(id string)(*i9d1670091
     }
     return i9d1670091fc52082d729a9f897ef1d49013bba55d168ff02986d174ec33643a0.NewConnectionOperationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update entity in connections
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in connections
 func (m *ExternalConnectionRequestBuilder) Patch(options *ExternalConnectionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

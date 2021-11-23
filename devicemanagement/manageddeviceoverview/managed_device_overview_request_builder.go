@@ -7,7 +7,7 @@ import (
     i8a112f9bef0ef189294c1f3ecf8b6e6f3da80cb9207f29240296ac2bc4151c97 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/manageddeviceoverview/ref"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDeviceOverview
+// managedDeviceOverviewRequestBuilder builds and executes requests for operations under \deviceManagement\managedDeviceOverview
 type ManagedDeviceOverviewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ManagedDeviceOverviewRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagedDeviceOverviewRequestBuilderGetOptions options for Get
 type ManagedDeviceOverviewRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ManagedDeviceOverviewRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Device overview
+// managedDeviceOverviewRequestBuilderGetQueryParameters device overview
 type ManagedDeviceOverviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ManagedDeviceOverviewRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceOverviewRequestBuilderInternal instantiates a new ManagedDeviceOverviewRequestBuilder and sets the default values.
 func NewManagedDeviceOverviewRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceOverviewRequestBuilder) {
     m := &ManagedDeviceOverviewRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewManagedDeviceOverviewRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedDeviceOverviewRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceOverviewRequestBuilder instantiates a new ManagedDeviceOverviewRequestBuilder and sets the default values.
 func NewManagedDeviceOverviewRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceOverviewRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceOverviewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Device overview
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation device overview
 func (m *ManagedDeviceOverviewRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceOverviewRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ManagedDeviceOverviewRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Device overview
-// Parameters:
-//  - options : Options for the request
+// Get device overview
 func (m *ManagedDeviceOverviewRequestBuilder) Get(options *ManagedDeviceOverviewRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceOverview, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceInstallState 
 type DeviceInstallState struct {
     Entity
     // Device Id.
@@ -25,14 +25,14 @@ type DeviceInstallState struct {
     // Device User Name.
     userName *string;
 }
-// Instantiates a new deviceInstallState and sets the default values.
+// NewDeviceInstallState instantiates a new deviceInstallState and sets the default values.
 func NewDeviceInstallState()(*DeviceInstallState) {
     m := &DeviceInstallState{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the deviceId property value. Device Id.
+// GetDeviceId gets the deviceId property value. Device Id.
 func (m *DeviceInstallState) GetDeviceId()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *DeviceInstallState) GetDeviceId()(*string) {
         return m.deviceId
     }
 }
-// Gets the deviceName property value. Device name.
+// GetDeviceName gets the deviceName property value. Device name.
 func (m *DeviceInstallState) GetDeviceName()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *DeviceInstallState) GetDeviceName()(*string) {
         return m.deviceName
     }
 }
-// Gets the errorCode property value. The error code for install failures.
+// GetErrorCode gets the errorCode property value. The error code for install failures.
 func (m *DeviceInstallState) GetErrorCode()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *DeviceInstallState) GetErrorCode()(*string) {
         return m.errorCode
     }
 }
-// Gets the installState property value. The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
+// GetInstallState gets the installState property value. The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
 func (m *DeviceInstallState) GetInstallState()(*InstallState) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *DeviceInstallState) GetInstallState()(*InstallState) {
         return m.installState
     }
 }
-// Gets the lastSyncDateTime property value. Last sync date and time.
+// GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync date and time.
 func (m *DeviceInstallState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *DeviceInstallState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3a
         return m.lastSyncDateTime
     }
 }
-// Gets the osDescription property value. OS Description.
+// GetOsDescription gets the osDescription property value. OS Description.
 func (m *DeviceInstallState) GetOsDescription()(*string) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *DeviceInstallState) GetOsDescription()(*string) {
         return m.osDescription
     }
 }
-// Gets the osVersion property value. OS Version.
+// GetOsVersion gets the osVersion property value. OS Version.
 func (m *DeviceInstallState) GetOsVersion()(*string) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *DeviceInstallState) GetOsVersion()(*string) {
         return m.osVersion
     }
 }
-// Gets the userName property value. Device User Name.
+// GetUserName gets the userName property value. Device User Name.
 func (m *DeviceInstallState) GetUserName()(*string) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *DeviceInstallState) GetUserName()(*string) {
         return m.userName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceInstallState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,9 +185,7 @@ func (m *DeviceInstallState) GetFieldDeserializers()(map[string]func(interface{}
 func (m *DeviceInstallState) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceInstallState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -244,51 +242,35 @@ func (m *DeviceInstallState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the deviceId property value. Device Id.
-// Parameters:
-//  - value : Value to set for the deviceId property.
+// SetDeviceId sets the deviceId property value. Device Id.
 func (m *DeviceInstallState) SetDeviceId(value *string)() {
     m.deviceId = value
 }
-// Sets the deviceName property value. Device name.
-// Parameters:
-//  - value : Value to set for the deviceName property.
+// SetDeviceName sets the deviceName property value. Device name.
 func (m *DeviceInstallState) SetDeviceName(value *string)() {
     m.deviceName = value
 }
-// Sets the errorCode property value. The error code for install failures.
-// Parameters:
-//  - value : Value to set for the errorCode property.
+// SetErrorCode sets the errorCode property value. The error code for install failures.
 func (m *DeviceInstallState) SetErrorCode(value *string)() {
     m.errorCode = value
 }
-// Sets the installState property value. The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
-// Parameters:
-//  - value : Value to set for the installState property.
+// SetInstallState sets the installState property value. The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
 func (m *DeviceInstallState) SetInstallState(value *InstallState)() {
     m.installState = value
 }
-// Sets the lastSyncDateTime property value. Last sync date and time.
-// Parameters:
-//  - value : Value to set for the lastSyncDateTime property.
+// SetLastSyncDateTime sets the lastSyncDateTime property value. Last sync date and time.
 func (m *DeviceInstallState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastSyncDateTime = value
 }
-// Sets the osDescription property value. OS Description.
-// Parameters:
-//  - value : Value to set for the osDescription property.
+// SetOsDescription sets the osDescription property value. OS Description.
 func (m *DeviceInstallState) SetOsDescription(value *string)() {
     m.osDescription = value
 }
-// Sets the osVersion property value. OS Version.
-// Parameters:
-//  - value : Value to set for the osVersion property.
+// SetOsVersion sets the osVersion property value. OS Version.
 func (m *DeviceInstallState) SetOsVersion(value *string)() {
     m.osVersion = value
 }
-// Sets the userName property value. Device User Name.
-// Parameters:
-//  - value : Value to set for the userName property.
+// SetUserName sets the userName property value. Device User Name.
 func (m *DeviceInstallState) SetUserName(value *string)() {
     m.userName = value
 }

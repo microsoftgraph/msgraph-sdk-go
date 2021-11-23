@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \auditLogs\restrictedSignIns
+// restrictedSignInsRequestBuilder builds and executes requests for operations under \auditLogs\restrictedSignIns
 type RestrictedSignInsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RestrictedSignInsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RestrictedSignInsRequestBuilderGetOptions options for Get
 type RestrictedSignInsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RestrictedSignInsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get restrictedSignIns from auditLogs
+// restrictedSignInsRequestBuilderGetQueryParameters get restrictedSignIns from auditLogs
 type RestrictedSignInsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RestrictedSignInsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RestrictedSignInsRequestBuilderPostOptions options for Post
 type RestrictedSignInsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RestrictedSignIn;
@@ -56,10 +56,7 @@ type RestrictedSignInsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RestrictedSignInsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRestrictedSignInsRequestBuilderInternal instantiates a new RestrictedSignInsRequestBuilder and sets the default values.
 func NewRestrictedSignInsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RestrictedSignInsRequestBuilder) {
     m := &RestrictedSignInsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRestrictedSignInsRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RestrictedSignInsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRestrictedSignInsRequestBuilder instantiates a new RestrictedSignInsRequestBuilder and sets the default values.
 func NewRestrictedSignInsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RestrictedSignInsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRestrictedSignInsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get restrictedSignIns from auditLogs
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get restrictedSignIns from auditLogs
 func (m *RestrictedSignInsRequestBuilder) CreateGetRequestInformation(options *RestrictedSignInsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RestrictedSignInsRequestBuilder) CreateGetRequestInformation(options *R
     }
     return requestInfo, nil
 }
-// Create new navigation property to restrictedSignIns for auditLogs
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to restrictedSignIns for auditLogs
 func (m *RestrictedSignInsRequestBuilder) CreatePostRequestInformation(options *RestrictedSignInsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RestrictedSignInsRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get restrictedSignIns from auditLogs
-// Parameters:
-//  - options : Options for the request
+// Get get restrictedSignIns from auditLogs
 func (m *RestrictedSignInsRequestBuilder) Get(options *RestrictedSignInsRequestBuilderGetOptions)(*RestrictedSignInsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RestrictedSignInsRequestBuilder) Get(options *RestrictedSignInsRequestB
     }
     return res.(*RestrictedSignInsResponse), nil
 }
-// Create new navigation property to restrictedSignIns for auditLogs
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to restrictedSignIns for auditLogs
 func (m *RestrictedSignInsRequestBuilder) Post(options *RestrictedSignInsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RestrictedSignIn, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

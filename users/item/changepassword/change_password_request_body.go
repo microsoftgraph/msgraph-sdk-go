@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// changePasswordRequestBody 
 type ChangePasswordRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type ChangePasswordRequestBody struct {
     // 
     newPassword *string;
 }
-// Instantiates a new changePasswordRequestBody and sets the default values.
+// NewChangePasswordRequestBody instantiates a new changePasswordRequestBody and sets the default values.
 func NewChangePasswordRequestBody()(*ChangePasswordRequestBody) {
     m := &ChangePasswordRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangePasswordRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *ChangePasswordRequestBody) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// Gets the currentPassword property value. 
+// GetCurrentPassword gets the currentPassword property value. 
 func (m *ChangePasswordRequestBody) GetCurrentPassword()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ChangePasswordRequestBody) GetCurrentPassword()(*string) {
         return m.currentPassword
     }
 }
-// Gets the newPassword property value. 
+// GetNewPassword gets the newPassword property value. 
 func (m *ChangePasswordRequestBody) GetNewPassword()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *ChangePasswordRequestBody) GetNewPassword()(*string) {
         return m.newPassword
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ChangePasswordRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["currentPassword"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *ChangePasswordRequestBody) GetFieldDeserializers()(map[string]func(inte
 func (m *ChangePasswordRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ChangePasswordRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("currentPassword", m.GetCurrentPassword())
@@ -96,21 +94,15 @@ func (m *ChangePasswordRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangePasswordRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the currentPassword property value. 
-// Parameters:
-//  - value : Value to set for the currentPassword property.
+// SetCurrentPassword sets the currentPassword property value. 
 func (m *ChangePasswordRequestBody) SetCurrentPassword(value *string)() {
     m.currentPassword = value
 }
-// Sets the newPassword property value. 
-// Parameters:
-//  - value : Value to set for the newPassword property.
+// SetNewPassword sets the newPassword property value. 
 func (m *ChangePasswordRequestBody) SetNewPassword(value *string)() {
     m.newPassword = value
 }

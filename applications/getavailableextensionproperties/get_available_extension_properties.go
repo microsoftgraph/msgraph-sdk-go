@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// getAvailableExtensionProperties 
 type GetAvailableExtensionProperties struct {
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject
     // Display name of the application object on which this extension property is defined. Read-only.
@@ -19,14 +19,14 @@ type GetAvailableExtensionProperties struct {
     // Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
     targetObjects []string;
 }
-// Instantiates a new getAvailableExtensionProperties and sets the default values.
+// NewGetAvailableExtensionProperties instantiates a new getAvailableExtensionProperties and sets the default values.
 func NewGetAvailableExtensionProperties()(*GetAvailableExtensionProperties) {
     m := &GetAvailableExtensionProperties{
         DirectoryObject: *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDirectoryObject(),
     }
     return m
 }
-// Gets the appDisplayName property value. Display name of the application object on which this extension property is defined. Read-only.
+// GetAppDisplayName gets the appDisplayName property value. Display name of the application object on which this extension property is defined. Read-only.
 func (m *GetAvailableExtensionProperties) GetAppDisplayName()(*string) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *GetAvailableExtensionProperties) GetAppDisplayName()(*string) {
         return m.appDisplayName
     }
 }
-// Gets the dataType property value. Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+// GetDataType gets the dataType property value. Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
 func (m *GetAvailableExtensionProperties) GetDataType()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *GetAvailableExtensionProperties) GetDataType()(*string) {
         return m.dataType
     }
 }
-// Gets the isSyncedFromOnPremises property value. Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+// GetIsSyncedFromOnPremises gets the isSyncedFromOnPremises property value. Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
 func (m *GetAvailableExtensionProperties) GetIsSyncedFromOnPremises()(*bool) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *GetAvailableExtensionProperties) GetIsSyncedFromOnPremises()(*bool) {
         return m.isSyncedFromOnPremises
     }
 }
-// Gets the name property value. Name of the extension property. Not nullable.
+// GetName gets the name property value. Name of the extension property. Not nullable.
 func (m *GetAvailableExtensionProperties) GetName()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *GetAvailableExtensionProperties) GetName()(*string) {
         return m.name
     }
 }
-// Gets the targetObjects property value. Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+// GetTargetObjects gets the targetObjects property value. Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
 func (m *GetAvailableExtensionProperties) GetTargetObjects()([]string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *GetAvailableExtensionProperties) GetTargetObjects()([]string) {
         return m.targetObjects
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetAvailableExtensionProperties) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["appDisplayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,9 +128,7 @@ func (m *GetAvailableExtensionProperties) GetFieldDeserializers()(map[string]fun
 func (m *GetAvailableExtensionProperties) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetAvailableExtensionProperties) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.DirectoryObject.Serialize(writer)
     if err != nil {
@@ -168,33 +166,23 @@ func (m *GetAvailableExtensionProperties) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the appDisplayName property value. Display name of the application object on which this extension property is defined. Read-only.
-// Parameters:
-//  - value : Value to set for the appDisplayName property.
+// SetAppDisplayName sets the appDisplayName property value. Display name of the application object on which this extension property is defined. Read-only.
 func (m *GetAvailableExtensionProperties) SetAppDisplayName(value *string)() {
     m.appDisplayName = value
 }
-// Sets the dataType property value. Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
-// Parameters:
-//  - value : Value to set for the dataType property.
+// SetDataType sets the dataType property value. Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
 func (m *GetAvailableExtensionProperties) SetDataType(value *string)() {
     m.dataType = value
 }
-// Sets the isSyncedFromOnPremises property value. Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
-// Parameters:
-//  - value : Value to set for the isSyncedFromOnPremises property.
+// SetIsSyncedFromOnPremises sets the isSyncedFromOnPremises property value. Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
 func (m *GetAvailableExtensionProperties) SetIsSyncedFromOnPremises(value *bool)() {
     m.isSyncedFromOnPremises = value
 }
-// Sets the name property value. Name of the extension property. Not nullable.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. Name of the extension property. Not nullable.
 func (m *GetAvailableExtensionProperties) SetName(value *string)() {
     m.name = value
 }
-// Sets the targetObjects property value. Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
-// Parameters:
-//  - value : Value to set for the targetObjects property.
+// SetTargetObjects sets the targetObjects property value. Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
 func (m *GetAvailableExtensionProperties) SetTargetObjects(value []string)() {
     m.targetObjects = value
 }

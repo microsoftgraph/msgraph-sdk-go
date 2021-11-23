@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\conversations
+// conversationsRequestBuilder builds and executes requests for operations under \groups\{group-id}\conversations
 type ConversationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConversationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ConversationsRequestBuilderGetOptions options for Get
 type ConversationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ConversationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The group's conversations.
+// conversationsRequestBuilderGetQueryParameters the group's conversations.
 type ConversationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -43,7 +43,7 @@ type ConversationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ConversationsRequestBuilderPostOptions options for Post
 type ConversationsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Conversation;
@@ -54,10 +54,7 @@ type ConversationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConversationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConversationsRequestBuilderInternal instantiates a new ConversationsRequestBuilder and sets the default values.
 func NewConversationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConversationsRequestBuilder) {
     m := &ConversationsRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewConversationsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConversationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConversationsRequestBuilder instantiates a new ConversationsRequestBuilder and sets the default values.
 func NewConversationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConversationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConversationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The group's conversations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the group's conversations.
 func (m *ConversationsRequestBuilder) CreateGetRequestInformation(options *ConversationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *ConversationsRequestBuilder) CreateGetRequestInformation(options *Conve
     }
     return requestInfo, nil
 }
-// The group's conversations.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the group's conversations.
 func (m *ConversationsRequestBuilder) CreatePostRequestInformation(options *ConversationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ConversationsRequestBuilder) CreatePostRequestInformation(options *Conv
     }
     return requestInfo, nil
 }
-// The group's conversations.
-// Parameters:
-//  - options : Options for the request
+// Get the group's conversations.
 func (m *ConversationsRequestBuilder) Get(options *ConversationsRequestBuilderGetOptions)(*ConversationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -135,9 +123,7 @@ func (m *ConversationsRequestBuilder) Get(options *ConversationsRequestBuilderGe
     }
     return res.(*ConversationsResponse), nil
 }
-// The group's conversations.
-// Parameters:
-//  - options : Options for the request
+// Post the group's conversations.
 func (m *ConversationsRequestBuilder) Post(options *ConversationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Conversation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

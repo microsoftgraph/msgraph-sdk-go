@@ -7,7 +7,7 @@ import (
     i3a2f116c3ad9c35e323e6e89e6ce64bdebbcfb284e78492f193d489da55ab574 "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/manager/ref"
 )
 
-// Builds and executes requests for operations under \contacts\{orgContact-id}\manager
+// managerRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}\manager
 type ManagerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ManagerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ManagerRequestBuilderGetOptions options for Get
 type ManagerRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ManagerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user or contact that is this contact's manager. Read-only. Supports $expand.
+// managerRequestBuilderGetQueryParameters the user or contact that is this contact's manager. Read-only. Supports $expand.
 type ManagerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ManagerRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagerRequestBuilderInternal instantiates a new ManagerRequestBuilder and sets the default values.
 func NewManagerRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagerRequestBuilder) {
     m := &ManagerRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewManagerRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagerRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagerRequestBuilder instantiates a new ManagerRequestBuilder and sets the default values.
 func NewManagerRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user or contact that is this contact's manager. Read-only. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user or contact that is this contact's manager. Read-only. Supports $expand.
 func (m *ManagerRequestBuilder) CreateGetRequestInformation(options *ManagerRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ManagerRequestBuilder) CreateGetRequestInformation(options *ManagerRequ
     }
     return requestInfo, nil
 }
-// The user or contact that is this contact's manager. Read-only. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get the user or contact that is this contact's manager. Read-only. Supports $expand.
 func (m *ManagerRequestBuilder) Get(options *ManagerRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\items\{baseItem-id}
+// baseItemRequestBuilder builds and executes requests for operations under \sites\{site-id}\items\{baseItem-id}
 type BaseItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BaseItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// BaseItemRequestBuilderDeleteOptions options for Delete
 type BaseItemRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type BaseItemRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// BaseItemRequestBuilderGetOptions options for Get
 type BaseItemRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type BaseItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Used to address any item contained in this site. This collection can't be enumerated.
+// baseItemRequestBuilderGetQueryParameters used to address any item contained in this site. This collection can't be enumerated.
 type BaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// BaseItemRequestBuilderPatchOptions options for Patch
 type BaseItemRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BaseItem;
@@ -53,10 +53,7 @@ type BaseItemRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BaseItemRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBaseItemRequestBuilderInternal instantiates a new BaseItemRequestBuilder and sets the default values.
 func NewBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BaseItemRequestBuilder) {
     m := &BaseItemRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewBaseItemRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BaseItemRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBaseItemRequestBuilder instantiates a new BaseItemRequestBuilder and sets the default values.
 func NewBaseItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BaseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Used to address any item contained in this site. This collection can't be enumerated.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation used to address any item contained in this site. This collection can't be enumerated.
 func (m *BaseItemRequestBuilder) CreateDeleteRequestInformation(options *BaseItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *BaseItemRequestBuilder) CreateDeleteRequestInformation(options *BaseIte
     }
     return requestInfo, nil
 }
-// Used to address any item contained in this site. This collection can't be enumerated.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation used to address any item contained in this site. This collection can't be enumerated.
 func (m *BaseItemRequestBuilder) CreateGetRequestInformation(options *BaseItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *BaseItemRequestBuilder) CreateGetRequestInformation(options *BaseItemRe
     }
     return requestInfo, nil
 }
-// Used to address any item contained in this site. This collection can't be enumerated.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation used to address any item contained in this site. This collection can't be enumerated.
 func (m *BaseItemRequestBuilder) CreatePatchRequestInformation(options *BaseItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *BaseItemRequestBuilder) CreatePatchRequestInformation(options *BaseItem
     }
     return requestInfo, nil
 }
-// Used to address any item contained in this site. This collection can't be enumerated.
-// Parameters:
-//  - options : Options for the request
+// Delete used to address any item contained in this site. This collection can't be enumerated.
 func (m *BaseItemRequestBuilder) Delete(options *BaseItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *BaseItemRequestBuilder) Delete(options *BaseItemRequestBuilderDeleteOpt
     }
     return nil
 }
-// Used to address any item contained in this site. This collection can't be enumerated.
-// Parameters:
-//  - options : Options for the request
+// Get used to address any item contained in this site. This collection can't be enumerated.
 func (m *BaseItemRequestBuilder) Get(options *BaseItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BaseItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *BaseItemRequestBuilder) Get(options *BaseItemRequestBuilderGetOptions)(
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BaseItem), nil
 }
-// Used to address any item contained in this site. This collection can't be enumerated.
-// Parameters:
-//  - options : Options for the request
+// Patch used to address any item contained in this site. This collection can't be enumerated.
 func (m *BaseItemRequestBuilder) Patch(options *BaseItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

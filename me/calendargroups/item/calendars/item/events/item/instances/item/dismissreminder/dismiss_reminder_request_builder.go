@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\calendarGroups\{calendarGroup-id}\calendars\{calendar-id}\events\{event-id}\instances\{event-id1}\microsoft.graph.dismissReminder
+// dismissReminderRequestBuilder builds and executes requests for operations under \me\calendarGroups\{calendarGroup-id}\calendars\{calendar-id}\events\{event-id}\instances\{event-id1}\microsoft.graph.dismissReminder
 type DismissReminderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type DismissReminderRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// DismissReminderRequestBuilderPostOptions options for Post
 type DismissReminderRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type DismissReminderRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DismissReminderRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDismissReminderRequestBuilderInternal instantiates a new DismissReminderRequestBuilder and sets the default values.
 func NewDismissReminderRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DismissReminderRequestBuilder) {
     m := &DismissReminderRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewDismissReminderRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DismissReminderRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDismissReminderRequestBuilder instantiates a new DismissReminderRequestBuilder and sets the default values.
 func NewDismissReminderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DismissReminderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDismissReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action dismissReminder
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action dismissReminder
 func (m *DismissReminderRequestBuilder) CreatePostRequestInformation(options *DismissReminderRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *DismissReminderRequestBuilder) CreatePostRequestInformation(options *Di
     }
     return requestInfo, nil
 }
-// Invoke action dismissReminder
-// Parameters:
-//  - options : Options for the request
+// Post invoke action dismissReminder
 func (m *DismissReminderRequestBuilder) Post(options *DismissReminderRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\inferenceClassification\overrides
+// overridesRequestBuilder builds and executes requests for operations under \users\{user-id}\inferenceClassification\overrides
 type OverridesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OverridesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// OverridesRequestBuilderGetOptions options for Get
 type OverridesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type OverridesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
+// overridesRequestBuilderGetQueryParameters a set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 type OverridesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -41,7 +41,7 @@ type OverridesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// OverridesRequestBuilderPostOptions options for Post
 type OverridesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InferenceClassificationOverride;
@@ -52,10 +52,7 @@ type OverridesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OverridesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOverridesRequestBuilderInternal instantiates a new OverridesRequestBuilder and sets the default values.
 func NewOverridesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OverridesRequestBuilder) {
     m := &OverridesRequestBuilder{
     }
@@ -68,18 +65,13 @@ func NewOverridesRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OverridesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOverridesRequestBuilder instantiates a new OverridesRequestBuilder and sets the default values.
 func NewOverridesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OverridesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOverridesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 func (m *OverridesRequestBuilder) CreateGetRequestInformation(options *OverridesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *OverridesRequestBuilder) CreateGetRequestInformation(options *Overrides
     }
     return requestInfo, nil
 }
-// A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 func (m *OverridesRequestBuilder) CreatePostRequestInformation(options *OverridesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *OverridesRequestBuilder) CreatePostRequestInformation(options *Override
     }
     return requestInfo, nil
 }
-// A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get a set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 func (m *OverridesRequestBuilder) Get(options *OverridesRequestBuilderGetOptions)(*OverridesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -133,9 +121,7 @@ func (m *OverridesRequestBuilder) Get(options *OverridesRequestBuilderGetOptions
     }
     return res.(*OverridesResponse), nil
 }
-// A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post a set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 func (m *OverridesRequestBuilder) Post(options *OverridesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InferenceClassificationOverride, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

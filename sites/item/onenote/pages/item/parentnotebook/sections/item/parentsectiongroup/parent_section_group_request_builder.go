@@ -11,7 +11,7 @@ import (
     ia9d8d6492ab979db50660d1b43fa83a2c4774107062e19701cbd1a84b67afcfc "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/pages/item/parentnotebook/sections/item/parentsectiongroup/sections/item"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\onenote\pages\{onenotePage-id}\parentNotebook\sections\{onenoteSection-id}\parentSectionGroup
+// parentSectionGroupRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\pages\{onenotePage-id}\parentNotebook\sections\{onenoteSection-id}\parentSectionGroup
 type ParentSectionGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type ParentSectionGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ParentSectionGroupRequestBuilderDeleteOptions options for Delete
 type ParentSectionGroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type ParentSectionGroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ParentSectionGroupRequestBuilderGetOptions options for Get
 type ParentSectionGroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type ParentSectionGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The section group that contains the section.  Read-only.
+// parentSectionGroupRequestBuilderGetQueryParameters the section group that contains the section.  Read-only.
 type ParentSectionGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ParentSectionGroupRequestBuilderPatchOptions options for Patch
 type ParentSectionGroupRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroup;
@@ -58,10 +58,7 @@ type ParentSectionGroupRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ParentSectionGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewParentSectionGroupRequestBuilderInternal instantiates a new ParentSectionGroupRequestBuilder and sets the default values.
 func NewParentSectionGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentSectionGroupRequestBuilder) {
     m := &ParentSectionGroupRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewParentSectionGroupRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ParentSectionGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewParentSectionGroupRequestBuilder instantiates a new ParentSectionGroupRequestBuilder and sets the default values.
 func NewParentSectionGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentSectionGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewParentSectionGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The section group that contains the section.  Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the section group that contains the section.  Read-only.
 func (m *ParentSectionGroupRequestBuilder) CreateDeleteRequestInformation(options *ParentSectionGroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *ParentSectionGroupRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// The section group that contains the section.  Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the section group that contains the section.  Read-only.
 func (m *ParentSectionGroupRequestBuilder) CreateGetRequestInformation(options *ParentSectionGroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *ParentSectionGroupRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The section group that contains the section.  Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the section group that contains the section.  Read-only.
 func (m *ParentSectionGroupRequestBuilder) CreatePatchRequestInformation(options *ParentSectionGroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *ParentSectionGroupRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// The section group that contains the section.  Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete the section group that contains the section.  Read-only.
 func (m *ParentSectionGroupRequestBuilder) Delete(options *ParentSectionGroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *ParentSectionGroupRequestBuilder) Delete(options *ParentSectionGroupReq
     }
     return nil
 }
-// The section group that contains the section.  Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the section group that contains the section.  Read-only.
 func (m *ParentSectionGroupRequestBuilder) Get(options *ParentSectionGroupRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SectionGroup, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -178,9 +162,7 @@ func (m *ParentSectionGroupRequestBuilder) ParentNotebook()(*i9c910a156c1baf43be
 func (m *ParentSectionGroupRequestBuilder) ParentSectionGroup()(*ParentSectionGroupRequestBuilder) {
     return NewParentSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The section group that contains the section.  Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch the section group that contains the section.  Read-only.
 func (m *ParentSectionGroupRequestBuilder) Patch(options *ParentSectionGroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -195,9 +177,7 @@ func (m *ParentSectionGroupRequestBuilder) Patch(options *ParentSectionGroupRequ
 func (m *ParentSectionGroupRequestBuilder) SectionGroups()(*ia3c79dcbff84f2620c17857df20538e5eaddf90501c7b3dad94fccce3ea0efdf.SectionGroupsRequestBuilder) {
     return ia3c79dcbff84f2620c17857df20538e5eaddf90501c7b3dad94fccce3ea0efdf.NewSectionGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.onenote.pages.item.parentNotebook.sections.item.parentSectionGroup.sectionGroups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SectionGroupsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.onenote.pages.item.parentNotebook.sections.item.parentSectionGroup.sectionGroups.item collection
 func (m *ParentSectionGroupRequestBuilder) SectionGroupsById(id string)(*i2ea381d6e5c42041d7e4b107813633612fab03a8e865210d29ed3f17c1b21192.SectionGroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -211,9 +191,7 @@ func (m *ParentSectionGroupRequestBuilder) SectionGroupsById(id string)(*i2ea381
 func (m *ParentSectionGroupRequestBuilder) Sections()(*if87fe9298a62bc322abfbaa0fb9ece0889cc55353f6fbb995af78493d4a54456.SectionsRequestBuilder) {
     return if87fe9298a62bc322abfbaa0fb9ece0889cc55353f6fbb995af78493d4a54456.NewSectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.onenote.pages.item.parentNotebook.sections.item.parentSectionGroup.sections.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SectionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.onenote.pages.item.parentNotebook.sections.item.parentSectionGroup.sections.item collection
 func (m *ParentSectionGroupRequestBuilder) SectionsById(id string)(*ia9d8d6492ab979db50660d1b43fa83a2c4774107062e19701cbd1a84b67afcfc.OnenoteSectionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

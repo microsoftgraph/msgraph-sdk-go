@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getDeviceManagementIntentPerSettingContributingProfiles
+// getDeviceManagementIntentPerSettingContributingProfilesRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getDeviceManagementIntentPerSettingContributingProfiles
 type GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder struc
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostOptions options for Post
 type GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostOptions struct {
     // 
     Body *GetDeviceManagementIntentPerSettingContributingProfilesRequestBody;
@@ -24,10 +24,7 @@ type GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostOp
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal instantiates a new GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder and sets the default values.
 func NewGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) {
     m := &GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder instantiates a new GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder and sets the default values.
 func NewGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getDeviceManagementIntentPerSettingContributingProfiles
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getDeviceManagementIntentPerSettingContributingProfiles
 func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) CreatePostRequestInformation(options *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) 
     }
     return requestInfo, nil
 }
-// Invoke action getDeviceManagementIntentPerSettingContributingProfiles
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getDeviceManagementIntentPerSettingContributingProfiles
 func (m *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) Post(options *GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

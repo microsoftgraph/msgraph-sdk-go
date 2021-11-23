@@ -7,7 +7,7 @@ import (
     i415748cc8f8e69ceadb08d9f3b3e6aa5b2df030488cf04002d186028391305fb "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstores/item/groups/item/sets/item/relations/item/toterm/ref"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}\sets\{set-id}\relations\{relation-id}\toTerm
+// toTermRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}\sets\{set-id}\relations\{relation-id}\toTerm
 type ToTermRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ToTermRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ToTermRequestBuilderGetOptions options for Get
 type ToTermRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ToTermRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The to [term] of the relation. The term to which the relationship is defined.
+// toTermRequestBuilderGetQueryParameters the to [term] of the relation. The term to which the relationship is defined.
 type ToTermRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ToTermRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewToTermRequestBuilderInternal instantiates a new ToTermRequestBuilder and sets the default values.
 func NewToTermRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ToTermRequestBuilder) {
     m := &ToTermRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewToTermRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ToTermRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewToTermRequestBuilder instantiates a new ToTermRequestBuilder and sets the default values.
 func NewToTermRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ToTermRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewToTermRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The to [term] of the relation. The term to which the relationship is defined.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the to [term] of the relation. The term to which the relationship is defined.
 func (m *ToTermRequestBuilder) CreateGetRequestInformation(options *ToTermRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ToTermRequestBuilder) CreateGetRequestInformation(options *ToTermReques
     }
     return requestInfo, nil
 }
-// The to [term] of the relation. The term to which the relationship is defined.
-// Parameters:
-//  - options : Options for the request
+// Get the to [term] of the relation. The term to which the relationship is defined.
 func (m *ToTermRequestBuilder) Get(options *ToTermRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Term, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

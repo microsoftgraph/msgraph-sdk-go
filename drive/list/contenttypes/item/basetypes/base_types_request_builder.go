@@ -7,7 +7,7 @@ import (
     i7b5d08edef0c199de0a6a5b120539b28f8c49982e6ab3d57d03e7deaca3b9f90 "github.com/microsoftgraph/msgraph-sdk-go/drive/list/contenttypes/item/basetypes/ref"
 )
 
-// Builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}\baseTypes
+// baseTypesRequestBuilder builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}\baseTypes
 type BaseTypesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type BaseTypesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// BaseTypesRequestBuilderGetOptions options for Get
 type BaseTypesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type BaseTypesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of content types that are ancestors of this content type.
+// baseTypesRequestBuilderGetQueryParameters the collection of content types that are ancestors of this content type.
 type BaseTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -49,10 +49,7 @@ type BaseTypesRequestBuilderGetQueryParameters struct {
 func (m *BaseTypesRequestBuilder) AddCopy()(*i57a28786127fcf178237655aeffb639c694772312028d3fa38fc8f10aa54c0d4.AddCopyRequestBuilder) {
     return i57a28786127fcf178237655aeffb639c694772312028d3fa38fc8f10aa54c0d4.NewAddCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new BaseTypesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBaseTypesRequestBuilderInternal instantiates a new BaseTypesRequestBuilder and sets the default values.
 func NewBaseTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BaseTypesRequestBuilder) {
     m := &BaseTypesRequestBuilder{
     }
@@ -65,18 +62,13 @@ func NewBaseTypesRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BaseTypesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBaseTypesRequestBuilder instantiates a new BaseTypesRequestBuilder and sets the default values.
 func NewBaseTypesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BaseTypesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBaseTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of content types that are ancestors of this content type.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of content types that are ancestors of this content type.
 func (m *BaseTypesRequestBuilder) CreateGetRequestInformation(options *BaseTypesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,9 +88,7 @@ func (m *BaseTypesRequestBuilder) CreateGetRequestInformation(options *BaseTypes
     }
     return requestInfo, nil
 }
-// The collection of content types that are ancestors of this content type.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of content types that are ancestors of this content type.
 func (m *BaseTypesRequestBuilder) Get(options *BaseTypesRequestBuilderGetOptions)(*BaseTypesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

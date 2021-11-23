@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// externalGroup 
 type ExternalGroup struct {
     Entity
     // The description of the external group. Optional.
@@ -14,14 +14,14 @@ type ExternalGroup struct {
     // A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
     members []Identity;
 }
-// Instantiates a new externalGroup and sets the default values.
+// NewExternalGroup instantiates a new externalGroup and sets the default values.
 func NewExternalGroup()(*ExternalGroup) {
     m := &ExternalGroup{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the description property value. The description of the external group. Optional.
+// GetDescription gets the description property value. The description of the external group. Optional.
 func (m *ExternalGroup) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *ExternalGroup) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The friendly name of the external group. Optional.
+// GetDisplayName gets the displayName property value. The friendly name of the external group. Optional.
 func (m *ExternalGroup) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *ExternalGroup) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+// GetMembers gets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *ExternalGroup) GetMembers()([]Identity) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *ExternalGroup) GetMembers()([]Identity) {
         return m.members
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalGroup) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,9 +87,7 @@ func (m *ExternalGroup) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *ExternalGroup) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ExternalGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -120,21 +118,15 @@ func (m *ExternalGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the description property value. The description of the external group. Optional.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The description of the external group. Optional.
 func (m *ExternalGroup) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The friendly name of the external group. Optional.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The friendly name of the external group. Optional.
 func (m *ExternalGroup) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
-// Parameters:
-//  - value : Value to set for the members property.
+// SetMembers sets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *ExternalGroup) SetMembers(value []Identity)() {
     m.members = value
 }

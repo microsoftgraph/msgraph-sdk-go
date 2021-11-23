@@ -7,7 +7,7 @@ import (
     i85d88bfa44625993b4281e20a75819f54ad326a59285eef6fd14250077614169 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/roledefinitions/item/roleassignments/item/roledefinition"
 )
 
-// Builds and executes requests for operations under \deviceManagement\roleDefinitions\{roleDefinition-id}\roleAssignments\{roleAssignment-id}
+// roleAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\roleDefinitions\{roleDefinition-id}\roleAssignments\{roleAssignment-id}
 type RoleAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type RoleAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RoleAssignmentRequestBuilderDeleteOptions options for Delete
 type RoleAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type RoleAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RoleAssignmentRequestBuilderGetOptions options for Get
 type RoleAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type RoleAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of Role assignments for this role definition.
+// roleAssignmentRequestBuilderGetQueryParameters list of Role assignments for this role definition.
 type RoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RoleAssignmentRequestBuilderPatchOptions options for Patch
 type RoleAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleAssignment;
@@ -54,10 +54,7 @@ type RoleAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RoleAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleAssignmentRequestBuilderInternal instantiates a new RoleAssignmentRequestBuilder and sets the default values.
 func NewRoleAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleAssignmentRequestBuilder) {
     m := &RoleAssignmentRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewRoleAssignmentRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleAssignmentRequestBuilder instantiates a new RoleAssignmentRequestBuilder and sets the default values.
 func NewRoleAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of Role assignments for this role definition.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of Role assignments for this role definition.
 func (m *RoleAssignmentRequestBuilder) CreateDeleteRequestInformation(options *RoleAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *RoleAssignmentRequestBuilder) CreateDeleteRequestInformation(options *R
     }
     return requestInfo, nil
 }
-// List of Role assignments for this role definition.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of Role assignments for this role definition.
 func (m *RoleAssignmentRequestBuilder) CreateGetRequestInformation(options *RoleAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *RoleAssignmentRequestBuilder) CreateGetRequestInformation(options *Role
     }
     return requestInfo, nil
 }
-// List of Role assignments for this role definition.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of Role assignments for this role definition.
 func (m *RoleAssignmentRequestBuilder) CreatePatchRequestInformation(options *RoleAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *RoleAssignmentRequestBuilder) CreatePatchRequestInformation(options *Ro
     }
     return requestInfo, nil
 }
-// List of Role assignments for this role definition.
-// Parameters:
-//  - options : Options for the request
+// Delete list of Role assignments for this role definition.
 func (m *RoleAssignmentRequestBuilder) Delete(options *RoleAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *RoleAssignmentRequestBuilder) Delete(options *RoleAssignmentRequestBuil
     }
     return nil
 }
-// List of Role assignments for this role definition.
-// Parameters:
-//  - options : Options for the request
+// Get list of Role assignments for this role definition.
 func (m *RoleAssignmentRequestBuilder) Get(options *RoleAssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *RoleAssignmentRequestBuilder) Get(options *RoleAssignmentRequestBuilder
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleAssignment), nil
 }
-// List of Role assignments for this role definition.
-// Parameters:
-//  - options : Options for the request
+// Patch list of Role assignments for this role definition.
 func (m *RoleAssignmentRequestBuilder) Patch(options *RoleAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

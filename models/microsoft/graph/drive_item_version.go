@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// driveItemVersion 
 type DriveItemVersion struct {
     BaseItemVersion
     // The content stream for this version of the item.
@@ -12,14 +12,14 @@ type DriveItemVersion struct {
     // Indicates the size of the content stream for this version of the item.
     size *int64;
 }
-// Instantiates a new driveItemVersion and sets the default values.
+// NewDriveItemVersion instantiates a new driveItemVersion and sets the default values.
 func NewDriveItemVersion()(*DriveItemVersion) {
     m := &DriveItemVersion{
         BaseItemVersion: *NewBaseItemVersion(),
     }
     return m
 }
-// Gets the content property value. The content stream for this version of the item.
+// GetContent gets the content property value. The content stream for this version of the item.
 func (m *DriveItemVersion) GetContent()([]byte) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *DriveItemVersion) GetContent()([]byte) {
         return m.content
     }
 }
-// Gets the size property value. Indicates the size of the content stream for this version of the item.
+// GetSize gets the size property value. Indicates the size of the content stream for this version of the item.
 func (m *DriveItemVersion) GetSize()(*int64) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *DriveItemVersion) GetSize()(*int64) {
         return m.size
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DriveItemVersion) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.BaseItemVersion.GetFieldDeserializers()
     res["content"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,9 +63,7 @@ func (m *DriveItemVersion) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *DriveItemVersion) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DriveItemVersion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.BaseItemVersion.Serialize(writer)
     if err != nil {
@@ -85,15 +83,11 @@ func (m *DriveItemVersion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the content property value. The content stream for this version of the item.
-// Parameters:
-//  - value : Value to set for the content property.
+// SetContent sets the content property value. The content stream for this version of the item.
 func (m *DriveItemVersion) SetContent(value []byte)() {
     m.content = value
 }
-// Sets the size property value. Indicates the size of the content stream for this version of the item.
-// Parameters:
-//  - value : Value to set for the size property.
+// SetSize sets the size property value. Indicates the size of the content stream for this version of the item.
 func (m *DriveItemVersion) SetSize(value *int64)() {
     m.size = value
 }

@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// applyBottomPercentFilterRequestBody 
 type ApplyBottomPercentFilterRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     percent *int32;
 }
-// Instantiates a new applyBottomPercentFilterRequestBody and sets the default values.
+// NewApplyBottomPercentFilterRequestBody instantiates a new applyBottomPercentFilterRequestBody and sets the default values.
 func NewApplyBottomPercentFilterRequestBody()(*ApplyBottomPercentFilterRequestBody) {
     m := &ApplyBottomPercentFilterRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyBottomPercentFilterRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,7 +26,7 @@ func (m *ApplyBottomPercentFilterRequestBody) GetAdditionalData()(map[string]int
         return m.additionalData
     }
 }
-// Gets the percent property value. 
+// GetPercent gets the percent property value. 
 func (m *ApplyBottomPercentFilterRequestBody) GetPercent()(*int32) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *ApplyBottomPercentFilterRequestBody) GetPercent()(*int32) {
         return m.percent
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ApplyBottomPercentFilterRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["percent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,9 +52,7 @@ func (m *ApplyBottomPercentFilterRequestBody) GetFieldDeserializers()(map[string
 func (m *ApplyBottomPercentFilterRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ApplyBottomPercentFilterRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("percent", m.GetPercent())
@@ -70,15 +68,11 @@ func (m *ApplyBottomPercentFilterRequestBody) Serialize(writer i04eb5309aeaafadd
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyBottomPercentFilterRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the percent property value. 
-// Parameters:
-//  - value : Value to set for the percent property.
+// SetPercent sets the percent property value. 
 func (m *ApplyBottomPercentFilterRequestBody) SetPercent(value *int32)() {
     m.percent = value
 }

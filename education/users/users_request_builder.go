@@ -7,7 +7,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\users
+// usersRequestBuilder builds and executes requests for operations under \education\users
 type UsersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UsersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UsersRequestBuilderGetOptions options for Get
 type UsersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type UsersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get users from education
+// usersRequestBuilderGetQueryParameters get users from education
 type UsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type UsersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UsersRequestBuilderPostOptions options for Post
 type UsersRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationUser;
@@ -57,10 +57,7 @@ type UsersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UsersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsersRequestBuilderInternal instantiates a new UsersRequestBuilder and sets the default values.
 func NewUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsersRequestBuilder) {
     m := &UsersRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewUsersRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UsersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUsersRequestBuilder instantiates a new UsersRequestBuilder and sets the default values.
 func NewUsersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UsersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get users from education
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get users from education
 func (m *UsersRequestBuilder) CreateGetRequestInformation(options *UsersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *UsersRequestBuilder) CreateGetRequestInformation(options *UsersRequestB
     }
     return requestInfo, nil
 }
-// Create new navigation property to users for education
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to users for education
 func (m *UsersRequestBuilder) CreatePostRequestInformation(options *UsersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,13 +114,11 @@ func (m *UsersRequestBuilder) CreatePostRequestInformation(options *UsersRequest
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \education\users\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \education\users\microsoft.graph.delta()
 func (m *UsersRequestBuilder) Delta()(*i1b2a6e0c9b3d43370c286fada0502f90b88c10cc34a09cfc835a7cde680bd082.DeltaRequestBuilder) {
     return i1b2a6e0c9b3d43370c286fada0502f90b88c10cc34a09cfc835a7cde680bd082.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get users from education
-// Parameters:
-//  - options : Options for the request
+// Get get users from education
 func (m *UsersRequestBuilder) Get(options *UsersRequestBuilderGetOptions)(*UsersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,9 +130,7 @@ func (m *UsersRequestBuilder) Get(options *UsersRequestBuilderGetOptions)(*Users
     }
     return res.(*UsersResponse), nil
 }
-// Create new navigation property to users for education
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to users for education
 func (m *UsersRequestBuilder) Post(options *UsersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationUser, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

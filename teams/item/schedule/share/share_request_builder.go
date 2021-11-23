@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\microsoft.graph.share
+// shareRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\microsoft.graph.share
 type ShareRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ShareRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ShareRequestBuilderPostOptions options for Post
 type ShareRequestBuilderPostOptions struct {
     // 
     Body *ShareRequestBody;
@@ -24,10 +24,7 @@ type ShareRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ShareRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewShareRequestBuilderInternal instantiates a new ShareRequestBuilder and sets the default values.
 func NewShareRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ShareRequestBuilder) {
     m := &ShareRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewShareRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ShareRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewShareRequestBuilder instantiates a new ShareRequestBuilder and sets the default values.
 func NewShareRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ShareRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewShareRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action share
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action share
 func (m *ShareRequestBuilder) CreatePostRequestInformation(options *ShareRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ShareRequestBuilder) CreatePostRequestInformation(options *ShareRequest
     }
     return requestInfo, nil
 }
-// Invoke action share
-// Parameters:
-//  - options : Options for the request
+// Post invoke action share
 func (m *ShareRequestBuilder) Post(options *ShareRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

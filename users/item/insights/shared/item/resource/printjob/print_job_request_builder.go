@@ -8,7 +8,7 @@ import (
     ib704f387d9b1af33a522a47750ed92cc8b89f5b8882e76985288aa981f2ea1f6 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/printjob/cancel"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource\microsoft.graph.printJob
+// printJobRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource\microsoft.graph.printJob
 type PrintJobRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -23,10 +23,7 @@ func (m *PrintJobRequestBuilder) Abort()(*ib23d731227c773b22cce072b1253ea039721a
 func (m *PrintJobRequestBuilder) Cancel()(*ib704f387d9b1af33a522a47750ed92cc8b89f5b8882e76985288aa981f2ea1f6.CancelRequestBuilder) {
     return ib704f387d9b1af33a522a47750ed92cc8b89f5b8882e76985288aa981f2ea1f6.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new PrintJobRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintJobRequestBuilderInternal instantiates a new PrintJobRequestBuilder and sets the default values.
 func NewPrintJobRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintJobRequestBuilder) {
     m := &PrintJobRequestBuilder{
     }
@@ -39,10 +36,7 @@ func NewPrintJobRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrintJobRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintJobRequestBuilder instantiates a new PrintJobRequestBuilder and sets the default values.
 func NewPrintJobRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintJobRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

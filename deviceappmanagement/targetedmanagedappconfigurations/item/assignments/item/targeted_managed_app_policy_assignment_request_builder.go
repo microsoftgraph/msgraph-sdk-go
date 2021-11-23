@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\targetedManagedAppConfigurations\{targetedManagedAppConfiguration-id}\assignments\{targetedManagedAppPolicyAssignment-id}
+// targetedManagedAppPolicyAssignmentRequestBuilder builds and executes requests for operations under \deviceAppManagement\targetedManagedAppConfigurations\{targetedManagedAppConfiguration-id}\assignments\{targetedManagedAppPolicyAssignment-id}
 type TargetedManagedAppPolicyAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TargetedManagedAppPolicyAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TargetedManagedAppPolicyAssignmentRequestBuilderDeleteOptions options for Delete
 type TargetedManagedAppPolicyAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TargetedManagedAppPolicyAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TargetedManagedAppPolicyAssignmentRequestBuilderGetOptions options for Get
 type TargetedManagedAppPolicyAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type TargetedManagedAppPolicyAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+// targetedManagedAppPolicyAssignmentRequestBuilderGetQueryParameters navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 type TargetedManagedAppPolicyAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TargetedManagedAppPolicyAssignmentRequestBuilderPatchOptions options for Patch
 type TargetedManagedAppPolicyAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppPolicyAssignment;
@@ -53,10 +53,7 @@ type TargetedManagedAppPolicyAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TargetedManagedAppPolicyAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetedManagedAppPolicyAssignmentRequestBuilderInternal instantiates a new TargetedManagedAppPolicyAssignmentRequestBuilder and sets the default values.
 func NewTargetedManagedAppPolicyAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetedManagedAppPolicyAssignmentRequestBuilder) {
     m := &TargetedManagedAppPolicyAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewTargetedManagedAppPolicyAssignmentRequestBuilderInternal(pathParameters 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TargetedManagedAppPolicyAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetedManagedAppPolicyAssignmentRequestBuilder instantiates a new TargetedManagedAppPolicyAssignmentRequestBuilder and sets the default values.
 func NewTargetedManagedAppPolicyAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetedManagedAppPolicyAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTargetedManagedAppPolicyAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppPolicyAssignmentRequestBuilder) CreateDeleteRequestInformation(options *TargetedManagedAppPolicyAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *TargetedManagedAppPolicyAssignmentRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppPolicyAssignmentRequestBuilder) CreateGetRequestInformation(options *TargetedManagedAppPolicyAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *TargetedManagedAppPolicyAssignmentRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppPolicyAssignmentRequestBuilder) CreatePatchRequestInformation(options *TargetedManagedAppPolicyAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *TargetedManagedAppPolicyAssignmentRequestBuilder) CreatePatchRequestInf
     }
     return requestInfo, nil
 }
-// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// Delete navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppPolicyAssignmentRequestBuilder) Delete(options *TargetedManagedAppPolicyAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *TargetedManagedAppPolicyAssignmentRequestBuilder) Delete(options *Targe
     }
     return nil
 }
-// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// Get navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppPolicyAssignmentRequestBuilder) Get(options *TargetedManagedAppPolicyAssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppPolicyAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *TargetedManagedAppPolicyAssignmentRequestBuilder) Get(options *Targeted
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppPolicyAssignment), nil
 }
-// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// Patch navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppPolicyAssignmentRequestBuilder) Patch(options *TargetedManagedAppPolicyAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\functions\microsoft.graph.negBinom_Dist
+// negBinom_DistRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\functions\microsoft.graph.negBinom_Dist
 type NegBinom_DistRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type NegBinom_DistRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// NegBinom_DistRequestBuilderPostOptions options for Post
 type NegBinom_DistRequestBuilderPostOptions struct {
     // 
     Body *NegBinom_DistRequestBody;
@@ -26,21 +26,21 @@ type NegBinom_DistRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes workbookFunctionResult
+// negBinom_DistResponse union type wrapper for classes workbookFunctionResult
 type NegBinom_DistResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type workbookFunctionResult
     workbookFunctionResult *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctionResult;
 }
-// Instantiates a new negBinom_DistResponse and sets the default values.
+// NewNegBinom_DistResponse instantiates a new negBinom_DistResponse and sets the default values.
 func NewNegBinom_DistResponse()(*NegBinom_DistResponse) {
     m := &NegBinom_DistResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NegBinom_DistResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *NegBinom_DistResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the workbookFunctionResult property value. Union type representation for type workbookFunctionResult
+// GetWorkbookFunctionResult gets the workbookFunctionResult property value. Union type representation for type workbookFunctionResult
 func (m *NegBinom_DistResponse) GetWorkbookFunctionResult()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctionResult) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *NegBinom_DistResponse) GetWorkbookFunctionResult()(*i4a838ef194e4c99e9f
         return m.workbookFunctionResult
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *NegBinom_DistResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["workbookFunctionResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *NegBinom_DistResponse) GetFieldDeserializers()(map[string]func(interfac
 func (m *NegBinom_DistResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *NegBinom_DistResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("workbookFunctionResult", m.GetWorkbookFunctionResult())
@@ -92,22 +90,15 @@ func (m *NegBinom_DistResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NegBinom_DistResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the workbookFunctionResult property value. Union type representation for type workbookFunctionResult
-// Parameters:
-//  - value : Value to set for the workbookFunctionResult property.
+// SetWorkbookFunctionResult sets the workbookFunctionResult property value. Union type representation for type workbookFunctionResult
 func (m *NegBinom_DistResponse) SetWorkbookFunctionResult(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctionResult)() {
     m.workbookFunctionResult = value
 }
-// Instantiates a new NegBinom_DistRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNegBinom_DistRequestBuilderInternal instantiates a new NegBinom_DistRequestBuilder and sets the default values.
 func NewNegBinom_DistRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NegBinom_DistRequestBuilder) {
     m := &NegBinom_DistRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewNegBinom_DistRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NegBinom_DistRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNegBinom_DistRequestBuilder instantiates a new NegBinom_DistRequestBuilder and sets the default values.
 func NewNegBinom_DistRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NegBinom_DistRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNegBinom_DistRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action negBinom_Dist
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action negBinom_Dist
 func (m *NegBinom_DistRequestBuilder) CreatePostRequestInformation(options *NegBinom_DistRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *NegBinom_DistRequestBuilder) CreatePostRequestInformation(options *NegB
     }
     return requestInfo, nil
 }
-// Invoke action negBinom_Dist
-// Parameters:
-//  - options : Options for the request
+// Post invoke action negBinom_Dist
 func (m *NegBinom_DistRequestBuilder) Post(options *NegBinom_DistRequestBuilderPostOptions)(*NegBinom_DistResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

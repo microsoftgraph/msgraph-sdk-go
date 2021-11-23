@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// threatAssessmentRequest 
 type ThreatAssessmentRequest struct {
     Entity
     // The threat category. Possible values are: spam, phishing, malware.
@@ -25,14 +25,14 @@ type ThreatAssessmentRequest struct {
     // The assessment process status. Possible values are: pending, completed.
     status *ThreatAssessmentStatus;
 }
-// Instantiates a new threatAssessmentRequest and sets the default values.
+// NewThreatAssessmentRequest instantiates a new threatAssessmentRequest and sets the default values.
 func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {
     m := &ThreatAssessmentRequest{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the category property value. The threat category. Possible values are: spam, phishing, malware.
+// GetCategory gets the category property value. The threat category. Possible values are: spam, phishing, malware.
 func (m *ThreatAssessmentRequest) GetCategory()(*ThreatCategory) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *ThreatAssessmentRequest) GetCategory()(*ThreatCategory) {
         return m.category
     }
 }
-// Gets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
+// GetContentType gets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
 func (m *ThreatAssessmentRequest) GetContentType()(*ThreatAssessmentContentType) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ThreatAssessmentRequest) GetContentType()(*ThreatAssessmentContentType)
         return m.contentType
     }
 }
-// Gets the createdBy property value. The threat assessment request creator.
+// GetCreatedBy gets the createdBy property value. The threat assessment request creator.
 func (m *ThreatAssessmentRequest) GetCreatedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ThreatAssessmentRequest) GetCreatedBy()(*IdentitySet) {
         return m.createdBy
     }
 }
-// Gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ThreatAssessmentRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *ThreatAssessmentRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7
         return m.createdDateTime
     }
 }
-// Gets the expectedAssessment property value. The expected assessment from submitter. Possible values are: block, unblock.
+// GetExpectedAssessment gets the expectedAssessment property value. The expected assessment from submitter. Possible values are: block, unblock.
 func (m *ThreatAssessmentRequest) GetExpectedAssessment()(*ThreatExpectedAssessment) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *ThreatAssessmentRequest) GetExpectedAssessment()(*ThreatExpectedAssessm
         return m.expectedAssessment
     }
 }
-// Gets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
+// GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
 func (m *ThreatAssessmentRequest) GetRequestSource()(*ThreatAssessmentRequestSource) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *ThreatAssessmentRequest) GetRequestSource()(*ThreatAssessmentRequestSou
         return m.requestSource
     }
 }
-// Gets the results property value. A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
+// GetResults gets the results property value. A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
 func (m *ThreatAssessmentRequest) GetResults()([]ThreatAssessmentResult) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *ThreatAssessmentRequest) GetResults()([]ThreatAssessmentResult) {
         return m.results
     }
 }
-// Gets the status property value. The assessment process status. Possible values are: pending, completed.
+// GetStatus gets the status property value. The assessment process status. Possible values are: pending, completed.
 func (m *ThreatAssessmentRequest) GetStatus()(*ThreatAssessmentStatus) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *ThreatAssessmentRequest) GetStatus()(*ThreatAssessmentStatus) {
         return m.status
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -193,9 +193,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
 func (m *ThreatAssessmentRequest) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ThreatAssessmentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -261,51 +259,35 @@ func (m *ThreatAssessmentRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the category property value. The threat category. Possible values are: spam, phishing, malware.
-// Parameters:
-//  - value : Value to set for the category property.
+// SetCategory sets the category property value. The threat category. Possible values are: spam, phishing, malware.
 func (m *ThreatAssessmentRequest) SetCategory(value *ThreatCategory)() {
     m.category = value
 }
-// Sets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
-// Parameters:
-//  - value : Value to set for the contentType property.
+// SetContentType sets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
 func (m *ThreatAssessmentRequest) SetContentType(value *ThreatAssessmentContentType)() {
     m.contentType = value
 }
-// Sets the createdBy property value. The threat assessment request creator.
-// Parameters:
-//  - value : Value to set for the createdBy property.
+// SetCreatedBy sets the createdBy property value. The threat assessment request creator.
 func (m *ThreatAssessmentRequest) SetCreatedBy(value *IdentitySet)() {
     m.createdBy = value
 }
-// Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ThreatAssessmentRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the expectedAssessment property value. The expected assessment from submitter. Possible values are: block, unblock.
-// Parameters:
-//  - value : Value to set for the expectedAssessment property.
+// SetExpectedAssessment sets the expectedAssessment property value. The expected assessment from submitter. Possible values are: block, unblock.
 func (m *ThreatAssessmentRequest) SetExpectedAssessment(value *ThreatExpectedAssessment)() {
     m.expectedAssessment = value
 }
-// Sets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
-// Parameters:
-//  - value : Value to set for the requestSource property.
+// SetRequestSource sets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
 func (m *ThreatAssessmentRequest) SetRequestSource(value *ThreatAssessmentRequestSource)() {
     m.requestSource = value
 }
-// Sets the results property value. A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-// Parameters:
-//  - value : Value to set for the results property.
+// SetResults sets the results property value. A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
 func (m *ThreatAssessmentRequest) SetResults(value []ThreatAssessmentResult)() {
     m.results = value
 }
-// Sets the status property value. The assessment process status. Possible values are: pending, completed.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. The assessment process status. Possible values are: pending, completed.
 func (m *ThreatAssessmentRequest) SetStatus(value *ThreatAssessmentStatus)() {
     m.status = value
 }

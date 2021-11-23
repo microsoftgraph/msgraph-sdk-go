@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\tokenIssuancePolicies
+// tokenIssuancePoliciesRequestBuilder builds and executes requests for operations under \policies\tokenIssuancePolicies
 type TokenIssuancePoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TokenIssuancePoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TokenIssuancePoliciesRequestBuilderGetOptions options for Get
 type TokenIssuancePoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TokenIssuancePoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+// tokenIssuancePoliciesRequestBuilderGetQueryParameters the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 type TokenIssuancePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TokenIssuancePoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TokenIssuancePoliciesRequestBuilderPostOptions options for Post
 type TokenIssuancePoliciesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TokenIssuancePolicy;
@@ -56,10 +56,7 @@ type TokenIssuancePoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTokenIssuancePoliciesRequestBuilderInternal instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.
 func NewTokenIssuancePoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TokenIssuancePoliciesRequestBuilder) {
     m := &TokenIssuancePoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTokenIssuancePoliciesRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTokenIssuancePoliciesRequestBuilder instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.
 func NewTokenIssuancePoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TokenIssuancePoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTokenIssuancePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformation(options *TokenIssuancePoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *TokenIssuancePoliciesRequestBuilder) CreatePostRequestInformation(options *TokenIssuancePoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TokenIssuancePoliciesRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-// Parameters:
-//  - options : Options for the request
+// Get the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *TokenIssuancePoliciesRequestBuilder) Get(options *TokenIssuancePoliciesRequestBuilderGetOptions)(*TokenIssuancePoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TokenIssuancePoliciesRequestBuilder) Get(options *TokenIssuancePolicies
     }
     return res.(*TokenIssuancePoliciesResponse), nil
 }
-// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-// Parameters:
-//  - options : Options for the request
+// Post the policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *TokenIssuancePoliciesRequestBuilder) Post(options *TokenIssuancePoliciesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TokenIssuancePolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\calendarGroups\{calendarGroup-id}\calendars\{calendar-id}\multiValueExtendedProperties\{multiValueLegacyExtendedProperty-id}
+// multiValueLegacyExtendedPropertyRequestBuilder builds and executes requests for operations under \me\calendarGroups\{calendarGroup-id}\calendars\{calendar-id}\multiValueExtendedProperties\{multiValueLegacyExtendedProperty-id}
 type MultiValueLegacyExtendedPropertyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MultiValueLegacyExtendedPropertyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MultiValueLegacyExtendedPropertyRequestBuilderDeleteOptions options for Delete
 type MultiValueLegacyExtendedPropertyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MultiValueLegacyExtendedPropertyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MultiValueLegacyExtendedPropertyRequestBuilderGetOptions options for Get
 type MultiValueLegacyExtendedPropertyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type MultiValueLegacyExtendedPropertyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
+// multiValueLegacyExtendedPropertyRequestBuilderGetQueryParameters the collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
 type MultiValueLegacyExtendedPropertyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MultiValueLegacyExtendedPropertyRequestBuilderPatchOptions options for Patch
 type MultiValueLegacyExtendedPropertyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty;
@@ -53,10 +53,7 @@ type MultiValueLegacyExtendedPropertyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MultiValueLegacyExtendedPropertyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMultiValueLegacyExtendedPropertyRequestBuilderInternal instantiates a new MultiValueLegacyExtendedPropertyRequestBuilder and sets the default values.
 func NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MultiValueLegacyExtendedPropertyRequestBuilder) {
     m := &MultiValueLegacyExtendedPropertyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MultiValueLegacyExtendedPropertyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMultiValueLegacyExtendedPropertyRequestBuilder instantiates a new MultiValueLegacyExtendedPropertyRequestBuilder and sets the default values.
 func NewMultiValueLegacyExtendedPropertyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *MultiValueLegacyExtendedPropertyRequestBuilder) CreateDeleteRequestInformation(options *MultiValueLegacyExtendedPropertyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *MultiValueLegacyExtendedPropertyRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *MultiValueLegacyExtendedPropertyRequestBuilder) CreateGetRequestInformation(options *MultiValueLegacyExtendedPropertyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MultiValueLegacyExtendedPropertyRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *MultiValueLegacyExtendedPropertyRequestBuilder) CreatePatchRequestInformation(options *MultiValueLegacyExtendedPropertyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *MultiValueLegacyExtendedPropertyRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *MultiValueLegacyExtendedPropertyRequestBuilder) Delete(options *MultiValueLegacyExtendedPropertyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *MultiValueLegacyExtendedPropertyRequestBuilder) Delete(options *MultiVa
     }
     return nil
 }
-// The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *MultiValueLegacyExtendedPropertyRequestBuilder) Get(options *MultiValueLegacyExtendedPropertyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *MultiValueLegacyExtendedPropertyRequestBuilder) Get(options *MultiValue
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty), nil
 }
-// The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *MultiValueLegacyExtendedPropertyRequestBuilder) Patch(options *MultiValueLegacyExtendedPropertyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

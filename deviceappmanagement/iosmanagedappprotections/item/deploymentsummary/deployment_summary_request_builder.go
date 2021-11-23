@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\iosManagedAppProtections\{iosManagedAppProtection-id}\deploymentSummary
+// deploymentSummaryRequestBuilder builds and executes requests for operations under \deviceAppManagement\iosManagedAppProtections\{iosManagedAppProtection-id}\deploymentSummary
 type DeploymentSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeploymentSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeploymentSummaryRequestBuilderDeleteOptions options for Delete
 type DeploymentSummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeploymentSummaryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeploymentSummaryRequestBuilderGetOptions options for Get
 type DeploymentSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeploymentSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Navigation property to deployment summary of the configuration.
+// deploymentSummaryRequestBuilderGetQueryParameters navigation property to deployment summary of the configuration.
 type DeploymentSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeploymentSummaryRequestBuilderPatchOptions options for Patch
 type DeploymentSummaryRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicyDeploymentSummary;
@@ -53,10 +53,7 @@ type DeploymentSummaryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeploymentSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeploymentSummaryRequestBuilderInternal instantiates a new DeploymentSummaryRequestBuilder and sets the default values.
 func NewDeploymentSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeploymentSummaryRequestBuilder) {
     m := &DeploymentSummaryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeploymentSummaryRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeploymentSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeploymentSummaryRequestBuilder instantiates a new DeploymentSummaryRequestBuilder and sets the default values.
 func NewDeploymentSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeploymentSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeploymentSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Navigation property to deployment summary of the configuration.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation navigation property to deployment summary of the configuration.
 func (m *DeploymentSummaryRequestBuilder) CreateDeleteRequestInformation(options *DeploymentSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeploymentSummaryRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// Navigation property to deployment summary of the configuration.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation navigation property to deployment summary of the configuration.
 func (m *DeploymentSummaryRequestBuilder) CreateGetRequestInformation(options *DeploymentSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeploymentSummaryRequestBuilder) CreateGetRequestInformation(options *D
     }
     return requestInfo, nil
 }
-// Navigation property to deployment summary of the configuration.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation navigation property to deployment summary of the configuration.
 func (m *DeploymentSummaryRequestBuilder) CreatePatchRequestInformation(options *DeploymentSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeploymentSummaryRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Navigation property to deployment summary of the configuration.
-// Parameters:
-//  - options : Options for the request
+// Delete navigation property to deployment summary of the configuration.
 func (m *DeploymentSummaryRequestBuilder) Delete(options *DeploymentSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeploymentSummaryRequestBuilder) Delete(options *DeploymentSummaryReque
     }
     return nil
 }
-// Navigation property to deployment summary of the configuration.
-// Parameters:
-//  - options : Options for the request
+// Get navigation property to deployment summary of the configuration.
 func (m *DeploymentSummaryRequestBuilder) Get(options *DeploymentSummaryRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicyDeploymentSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeploymentSummaryRequestBuilder) Get(options *DeploymentSummaryRequestB
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicyDeploymentSummary), nil
 }
-// Navigation property to deployment summary of the configuration.
-// Parameters:
-//  - options : Options for the request
+// Patch navigation property to deployment summary of the configuration.
 func (m *DeploymentSummaryRequestBuilder) Patch(options *DeploymentSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentApprovals\{approval-id}\stages\{approvalStage-id}
+// approvalStageRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentApprovals\{approval-id}\stages\{approvalStage-id}
 type ApprovalStageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ApprovalStageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ApprovalStageRequestBuilderDeleteOptions options for Delete
 type ApprovalStageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ApprovalStageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ApprovalStageRequestBuilderGetOptions options for Get
 type ApprovalStageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ApprovalStageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of stages in the approval decision.
+// approvalStageRequestBuilderGetQueryParameters a collection of stages in the approval decision.
 type ApprovalStageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ApprovalStageRequestBuilderPatchOptions options for Patch
 type ApprovalStageRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApprovalStage;
@@ -53,10 +53,7 @@ type ApprovalStageRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApprovalStageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApprovalStageRequestBuilderInternal instantiates a new ApprovalStageRequestBuilder and sets the default values.
 func NewApprovalStageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalStageRequestBuilder) {
     m := &ApprovalStageRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewApprovalStageRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApprovalStageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApprovalStageRequestBuilder instantiates a new ApprovalStageRequestBuilder and sets the default values.
 func NewApprovalStageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalStageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalStageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of stages in the approval decision.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of stages in the approval decision.
 func (m *ApprovalStageRequestBuilder) CreateDeleteRequestInformation(options *ApprovalStageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ApprovalStageRequestBuilder) CreateDeleteRequestInformation(options *Ap
     }
     return requestInfo, nil
 }
-// A collection of stages in the approval decision.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of stages in the approval decision.
 func (m *ApprovalStageRequestBuilder) CreateGetRequestInformation(options *ApprovalStageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ApprovalStageRequestBuilder) CreateGetRequestInformation(options *Appro
     }
     return requestInfo, nil
 }
-// A collection of stages in the approval decision.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of stages in the approval decision.
 func (m *ApprovalStageRequestBuilder) CreatePatchRequestInformation(options *ApprovalStageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ApprovalStageRequestBuilder) CreatePatchRequestInformation(options *App
     }
     return requestInfo, nil
 }
-// A collection of stages in the approval decision.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of stages in the approval decision.
 func (m *ApprovalStageRequestBuilder) Delete(options *ApprovalStageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ApprovalStageRequestBuilder) Delete(options *ApprovalStageRequestBuilde
     }
     return nil
 }
-// A collection of stages in the approval decision.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of stages in the approval decision.
 func (m *ApprovalStageRequestBuilder) Get(options *ApprovalStageRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApprovalStage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ApprovalStageRequestBuilder) Get(options *ApprovalStageRequestBuilderGe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApprovalStage), nil
 }
-// A collection of stages in the approval decision.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of stages in the approval decision.
 func (m *ApprovalStageRequestBuilder) Patch(options *ApprovalStageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

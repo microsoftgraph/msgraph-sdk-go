@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \subscriptions
+// subscriptionsRequestBuilder builds and executes requests for operations under \subscriptions
 type SubscriptionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SubscriptionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SubscriptionsRequestBuilderGetOptions options for Get
 type SubscriptionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,14 +26,14 @@ type SubscriptionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from subscriptions
+// subscriptionsRequestBuilderGetQueryParameters get entities from subscriptions
 type SubscriptionsRequestBuilderGetQueryParameters struct {
     // Search items by search phrases
     Search *string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Post
+// SubscriptionsRequestBuilderPostOptions options for Post
 type SubscriptionsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Subscription;
@@ -44,10 +44,7 @@ type SubscriptionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SubscriptionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubscriptionsRequestBuilderInternal instantiates a new SubscriptionsRequestBuilder and sets the default values.
 func NewSubscriptionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubscriptionsRequestBuilder) {
     m := &SubscriptionsRequestBuilder{
     }
@@ -60,18 +57,13 @@ func NewSubscriptionsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SubscriptionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubscriptionsRequestBuilder instantiates a new SubscriptionsRequestBuilder and sets the default values.
 func NewSubscriptionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubscriptionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSubscriptionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from subscriptions
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from subscriptions
 func (m *SubscriptionsRequestBuilder) CreateGetRequestInformation(options *SubscriptionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,9 +83,7 @@ func (m *SubscriptionsRequestBuilder) CreateGetRequestInformation(options *Subsc
     }
     return requestInfo, nil
 }
-// Add new entity to subscriptions
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to subscriptions
 func (m *SubscriptionsRequestBuilder) CreatePostRequestInformation(options *SubscriptionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,9 +101,7 @@ func (m *SubscriptionsRequestBuilder) CreatePostRequestInformation(options *Subs
     }
     return requestInfo, nil
 }
-// Get entities from subscriptions
-// Parameters:
-//  - options : Options for the request
+// Get get entities from subscriptions
 func (m *SubscriptionsRequestBuilder) Get(options *SubscriptionsRequestBuilderGetOptions)(*SubscriptionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,9 +113,7 @@ func (m *SubscriptionsRequestBuilder) Get(options *SubscriptionsRequestBuilderGe
     }
     return res.(*SubscriptionsResponse), nil
 }
-// Add new entity to subscriptions
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to subscriptions
 func (m *SubscriptionsRequestBuilder) Post(options *SubscriptionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Subscription, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

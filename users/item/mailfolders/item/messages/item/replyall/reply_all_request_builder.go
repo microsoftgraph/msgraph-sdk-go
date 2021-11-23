@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.replyAll
+// replyAllRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.replyAll
 type ReplyAllRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ReplyAllRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ReplyAllRequestBuilderPostOptions options for Post
 type ReplyAllRequestBuilderPostOptions struct {
     // 
     Body *ReplyAllRequestBody;
@@ -24,10 +24,7 @@ type ReplyAllRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ReplyAllRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReplyAllRequestBuilderInternal instantiates a new ReplyAllRequestBuilder and sets the default values.
 func NewReplyAllRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReplyAllRequestBuilder) {
     m := &ReplyAllRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewReplyAllRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ReplyAllRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewReplyAllRequestBuilder instantiates a new ReplyAllRequestBuilder and sets the default values.
 func NewReplyAllRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ReplyAllRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReplyAllRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action replyAll
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action replyAll
 func (m *ReplyAllRequestBuilder) CreatePostRequestInformation(options *ReplyAllRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ReplyAllRequestBuilder) CreatePostRequestInformation(options *ReplyAllR
     }
     return requestInfo, nil
 }
-// Invoke action replyAll
-// Parameters:
-//  - options : Options for the request
+// Post invoke action replyAll
 func (m *ReplyAllRequestBuilder) Post(options *ReplyAllRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

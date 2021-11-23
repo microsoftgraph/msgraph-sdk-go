@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// workbookSortField 
 type WorkbookSortField struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type WorkbookSortField struct {
     // Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
     sortOn *string;
 }
-// Instantiates a new workbookSortField and sets the default values.
+// NewWorkbookSortField instantiates a new workbookSortField and sets the default values.
 func NewWorkbookSortField()(*WorkbookSortField) {
     m := &WorkbookSortField{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookSortField) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *WorkbookSortField) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the ascending property value. Represents whether the sorting is done in an ascending fashion.
+// GetAscending gets the ascending property value. Represents whether the sorting is done in an ascending fashion.
 func (m *WorkbookSortField) GetAscending()(*bool) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *WorkbookSortField) GetAscending()(*bool) {
         return m.ascending
     }
 }
-// Gets the color property value. Represents the color that is the target of the condition if the sorting is on font or cell color.
+// GetColor gets the color property value. Represents the color that is the target of the condition if the sorting is on font or cell color.
 func (m *WorkbookSortField) GetColor()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *WorkbookSortField) GetColor()(*string) {
         return m.color
     }
 }
-// Gets the dataOption property value. Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
+// GetDataOption gets the dataOption property value. Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
 func (m *WorkbookSortField) GetDataOption()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *WorkbookSortField) GetDataOption()(*string) {
         return m.dataOption
     }
 }
-// Gets the icon property value. Represents the icon that is the target of the condition if the sorting is on the cell's icon.
+// GetIcon gets the icon property value. Represents the icon that is the target of the condition if the sorting is on the cell's icon.
 func (m *WorkbookSortField) GetIcon()(*WorkbookIcon) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *WorkbookSortField) GetIcon()(*WorkbookIcon) {
         return m.icon
     }
 }
-// Gets the key property value. Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
+// GetKey gets the key property value. Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
 func (m *WorkbookSortField) GetKey()(*int32) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *WorkbookSortField) GetKey()(*int32) {
         return m.key
     }
 }
-// Gets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
+// GetSortOn gets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
 func (m *WorkbookSortField) GetSortOn()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *WorkbookSortField) GetSortOn()(*string) {
         return m.sortOn
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["ascending"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,9 +152,7 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
 func (m *WorkbookSortField) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WorkbookSortField) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("ascending", m.GetAscending())
@@ -200,45 +198,31 @@ func (m *WorkbookSortField) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookSortField) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the ascending property value. Represents whether the sorting is done in an ascending fashion.
-// Parameters:
-//  - value : Value to set for the ascending property.
+// SetAscending sets the ascending property value. Represents whether the sorting is done in an ascending fashion.
 func (m *WorkbookSortField) SetAscending(value *bool)() {
     m.ascending = value
 }
-// Sets the color property value. Represents the color that is the target of the condition if the sorting is on font or cell color.
-// Parameters:
-//  - value : Value to set for the color property.
+// SetColor sets the color property value. Represents the color that is the target of the condition if the sorting is on font or cell color.
 func (m *WorkbookSortField) SetColor(value *string)() {
     m.color = value
 }
-// Sets the dataOption property value. Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
-// Parameters:
-//  - value : Value to set for the dataOption property.
+// SetDataOption sets the dataOption property value. Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
 func (m *WorkbookSortField) SetDataOption(value *string)() {
     m.dataOption = value
 }
-// Sets the icon property value. Represents the icon that is the target of the condition if the sorting is on the cell's icon.
-// Parameters:
-//  - value : Value to set for the icon property.
+// SetIcon sets the icon property value. Represents the icon that is the target of the condition if the sorting is on the cell's icon.
 func (m *WorkbookSortField) SetIcon(value *WorkbookIcon)() {
     m.icon = value
 }
-// Sets the key property value. Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
-// Parameters:
-//  - value : Value to set for the key property.
+// SetKey sets the key property value. Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
 func (m *WorkbookSortField) SetKey(value *int32)() {
     m.key = value
 }
-// Sets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
-// Parameters:
-//  - value : Value to set for the sortOn property.
+// SetSortOn sets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
 func (m *WorkbookSortField) SetSortOn(value *string)() {
     m.sortOn = value
 }

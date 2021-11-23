@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\notificationMessageTemplates
+// notificationMessageTemplatesRequestBuilder builds and executes requests for operations under \deviceManagement\notificationMessageTemplates
 type NotificationMessageTemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type NotificationMessageTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// NotificationMessageTemplatesRequestBuilderGetOptions options for Get
 type NotificationMessageTemplatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type NotificationMessageTemplatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Notification Message Templates.
+// notificationMessageTemplatesRequestBuilderGetQueryParameters the Notification Message Templates.
 type NotificationMessageTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type NotificationMessageTemplatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// NotificationMessageTemplatesRequestBuilderPostOptions options for Post
 type NotificationMessageTemplatesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplate;
@@ -56,10 +56,7 @@ type NotificationMessageTemplatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new NotificationMessageTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotificationMessageTemplatesRequestBuilderInternal instantiates a new NotificationMessageTemplatesRequestBuilder and sets the default values.
 func NewNotificationMessageTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotificationMessageTemplatesRequestBuilder) {
     m := &NotificationMessageTemplatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewNotificationMessageTemplatesRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NotificationMessageTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotificationMessageTemplatesRequestBuilder instantiates a new NotificationMessageTemplatesRequestBuilder and sets the default values.
 func NewNotificationMessageTemplatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotificationMessageTemplatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNotificationMessageTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Notification Message Templates.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Notification Message Templates.
 func (m *NotificationMessageTemplatesRequestBuilder) CreateGetRequestInformation(options *NotificationMessageTemplatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *NotificationMessageTemplatesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// The Notification Message Templates.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the Notification Message Templates.
 func (m *NotificationMessageTemplatesRequestBuilder) CreatePostRequestInformation(options *NotificationMessageTemplatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *NotificationMessageTemplatesRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// The Notification Message Templates.
-// Parameters:
-//  - options : Options for the request
+// Get the Notification Message Templates.
 func (m *NotificationMessageTemplatesRequestBuilder) Get(options *NotificationMessageTemplatesRequestBuilderGetOptions)(*NotificationMessageTemplatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *NotificationMessageTemplatesRequestBuilder) Get(options *NotificationMe
     }
     return res.(*NotificationMessageTemplatesResponse), nil
 }
-// The Notification Message Templates.
-// Parameters:
-//  - options : Options for the request
+// Post the Notification Message Templates.
 func (m *NotificationMessageTemplatesRequestBuilder) Post(options *NotificationMessageTemplatesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

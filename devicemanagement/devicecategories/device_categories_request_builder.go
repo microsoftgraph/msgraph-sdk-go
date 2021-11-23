@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCategories
+// deviceCategoriesRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCategories
 type DeviceCategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceCategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceCategoriesRequestBuilderGetOptions options for Get
 type DeviceCategoriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceCategoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of device categories with the tenant.
+// deviceCategoriesRequestBuilderGetQueryParameters the list of device categories with the tenant.
 type DeviceCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceCategoriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceCategoriesRequestBuilderPostOptions options for Post
 type DeviceCategoriesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCategory;
@@ -56,10 +56,7 @@ type DeviceCategoriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCategoriesRequestBuilderInternal instantiates a new DeviceCategoriesRequestBuilder and sets the default values.
 func NewDeviceCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCategoriesRequestBuilder) {
     m := &DeviceCategoriesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceCategoriesRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCategoriesRequestBuilder instantiates a new DeviceCategoriesRequestBuilder and sets the default values.
 func NewDeviceCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of device categories with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of device categories with the tenant.
 func (m *DeviceCategoriesRequestBuilder) CreateGetRequestInformation(options *DeviceCategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceCategoriesRequestBuilder) CreateGetRequestInformation(options *De
     }
     return requestInfo, nil
 }
-// The list of device categories with the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of device categories with the tenant.
 func (m *DeviceCategoriesRequestBuilder) CreatePostRequestInformation(options *DeviceCategoriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceCategoriesRequestBuilder) CreatePostRequestInformation(options *D
     }
     return requestInfo, nil
 }
-// The list of device categories with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of device categories with the tenant.
 func (m *DeviceCategoriesRequestBuilder) Get(options *DeviceCategoriesRequestBuilderGetOptions)(*DeviceCategoriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceCategoriesRequestBuilder) Get(options *DeviceCategoriesRequestBui
     }
     return res.(*DeviceCategoriesResponse), nil
 }
-// The list of device categories with the tenant.
-// Parameters:
-//  - options : Options for the request
+// Post the list of device categories with the tenant.
 func (m *DeviceCategoriesRequestBuilder) Post(options *DeviceCategoriesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCategory, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

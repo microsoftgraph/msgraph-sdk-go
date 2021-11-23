@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\scheduledActionsForRule\{deviceComplianceScheduledActionForRule-id}\scheduledActionConfigurations\{deviceComplianceActionItem-id}
+// deviceComplianceActionItemRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\scheduledActionsForRule\{deviceComplianceScheduledActionForRule-id}\scheduledActionConfigurations\{deviceComplianceActionItem-id}
 type DeviceComplianceActionItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceComplianceActionItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceComplianceActionItemRequestBuilderDeleteOptions options for Delete
 type DeviceComplianceActionItemRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceComplianceActionItemRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceComplianceActionItemRequestBuilderGetOptions options for Get
 type DeviceComplianceActionItemRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceComplianceActionItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+// deviceComplianceActionItemRequestBuilderGetQueryParameters the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 type DeviceComplianceActionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceComplianceActionItemRequestBuilderPatchOptions options for Patch
 type DeviceComplianceActionItemRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceActionItem;
@@ -53,10 +53,7 @@ type DeviceComplianceActionItemRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceComplianceActionItemRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceComplianceActionItemRequestBuilderInternal instantiates a new DeviceComplianceActionItemRequestBuilder and sets the default values.
 func NewDeviceComplianceActionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceComplianceActionItemRequestBuilder) {
     m := &DeviceComplianceActionItemRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceComplianceActionItemRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceComplianceActionItemRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceComplianceActionItemRequestBuilder instantiates a new DeviceComplianceActionItemRequestBuilder and sets the default values.
 func NewDeviceComplianceActionItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceComplianceActionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceComplianceActionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 func (m *DeviceComplianceActionItemRequestBuilder) CreateDeleteRequestInformation(options *DeviceComplianceActionItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceComplianceActionItemRequestBuilder) CreateDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 func (m *DeviceComplianceActionItemRequestBuilder) CreateGetRequestInformation(options *DeviceComplianceActionItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceComplianceActionItemRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 func (m *DeviceComplianceActionItemRequestBuilder) CreatePatchRequestInformation(options *DeviceComplianceActionItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceComplianceActionItemRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 func (m *DeviceComplianceActionItemRequestBuilder) Delete(options *DeviceComplianceActionItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceComplianceActionItemRequestBuilder) Delete(options *DeviceComplia
     }
     return nil
 }
-// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-// Parameters:
-//  - options : Options for the request
+// Get the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 func (m *DeviceComplianceActionItemRequestBuilder) Get(options *DeviceComplianceActionItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceActionItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceComplianceActionItemRequestBuilder) Get(options *DeviceCompliance
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceActionItem), nil
 }
-// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 func (m *DeviceComplianceActionItemRequestBuilder) Patch(options *DeviceComplianceActionItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

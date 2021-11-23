@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\planner\plans
+// plansRequestBuilder builds and executes requests for operations under \groups\{group-id}\planner\plans
 type PlansRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PlansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PlansRequestBuilderGetOptions options for Get
 type PlansRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PlansRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Returns the plannerPlans owned by the group.
+// plansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans owned by the group.
 type PlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PlansRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PlansRequestBuilderPostOptions options for Post
 type PlansRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerPlan;
@@ -56,10 +56,7 @@ type PlansRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PlansRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlansRequestBuilderInternal instantiates a new PlansRequestBuilder and sets the default values.
 func NewPlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlansRequestBuilder) {
     m := &PlansRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPlansRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PlansRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlansRequestBuilder instantiates a new PlansRequestBuilder and sets the default values.
 func NewPlansRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlansRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlansRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Returns the plannerPlans owned by the group.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Returns the plannerPlans owned by the group.
 func (m *PlansRequestBuilder) CreateGetRequestInformation(options *PlansRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PlansRequestBuilder) CreateGetRequestInformation(options *PlansRequestB
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns the plannerPlans owned by the group.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation read-only. Nullable. Returns the plannerPlans owned by the group.
 func (m *PlansRequestBuilder) CreatePostRequestInformation(options *PlansRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PlansRequestBuilder) CreatePostRequestInformation(options *PlansRequest
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns the plannerPlans owned by the group.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Returns the plannerPlans owned by the group.
 func (m *PlansRequestBuilder) Get(options *PlansRequestBuilderGetOptions)(*PlansResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PlansRequestBuilder) Get(options *PlansRequestBuilderGetOptions)(*Plans
     }
     return res.(*PlansResponse), nil
 }
-// Read-only. Nullable. Returns the plannerPlans owned by the group.
-// Parameters:
-//  - options : Options for the request
+// Post read-only. Nullable. Returns the plannerPlans owned by the group.
 func (m *PlansRequestBuilder) Post(options *PlansRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerPlan, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

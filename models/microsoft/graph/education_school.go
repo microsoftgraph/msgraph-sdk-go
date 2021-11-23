@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// educationSchool 
 type EducationSchool struct {
     EducationOrganization
     // Address of the school.
@@ -36,14 +36,14 @@ type EducationSchool struct {
     // Users in the school. Nullable.
     users []EducationUser;
 }
-// Instantiates a new educationSchool and sets the default values.
+// NewEducationSchool instantiates a new educationSchool and sets the default values.
 func NewEducationSchool()(*EducationSchool) {
     m := &EducationSchool{
         EducationOrganization: *NewEducationOrganization(),
     }
     return m
 }
-// Gets the address property value. Address of the school.
+// GetAddress gets the address property value. Address of the school.
 func (m *EducationSchool) GetAddress()(*PhysicalAddress) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *EducationSchool) GetAddress()(*PhysicalAddress) {
         return m.address
     }
 }
-// Gets the administrativeUnit property value. The underlying administrativeUnit for this school.
+// GetAdministrativeUnit gets the administrativeUnit property value. The underlying administrativeUnit for this school.
 func (m *EducationSchool) GetAdministrativeUnit()(*AdministrativeUnit) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *EducationSchool) GetAdministrativeUnit()(*AdministrativeUnit) {
         return m.administrativeUnit
     }
 }
-// Gets the classes property value. Classes taught at the school. Nullable.
+// GetClasses gets the classes property value. Classes taught at the school. Nullable.
 func (m *EducationSchool) GetClasses()([]EducationClass) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *EducationSchool) GetClasses()([]EducationClass) {
         return m.classes
     }
 }
-// Gets the createdBy property value. Entity who created the school.
+// GetCreatedBy gets the createdBy property value. Entity who created the school.
 func (m *EducationSchool) GetCreatedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *EducationSchool) GetCreatedBy()(*IdentitySet) {
         return m.createdBy
     }
 }
-// Gets the externalId property value. ID of school in syncing system.
+// GetExternalId gets the externalId property value. ID of school in syncing system.
 func (m *EducationSchool) GetExternalId()(*string) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *EducationSchool) GetExternalId()(*string) {
         return m.externalId
     }
 }
-// Gets the externalPrincipalId property value. ID of principal in syncing system.
+// GetExternalPrincipalId gets the externalPrincipalId property value. ID of principal in syncing system.
 func (m *EducationSchool) GetExternalPrincipalId()(*string) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *EducationSchool) GetExternalPrincipalId()(*string) {
         return m.externalPrincipalId
     }
 }
-// Gets the fax property value. 
+// GetFax gets the fax property value. 
 func (m *EducationSchool) GetFax()(*string) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *EducationSchool) GetFax()(*string) {
         return m.fax
     }
 }
-// Gets the highestGrade property value. Highest grade taught.
+// GetHighestGrade gets the highestGrade property value. Highest grade taught.
 func (m *EducationSchool) GetHighestGrade()(*string) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *EducationSchool) GetHighestGrade()(*string) {
         return m.highestGrade
     }
 }
-// Gets the lowestGrade property value. Lowest grade taught.
+// GetLowestGrade gets the lowestGrade property value. Lowest grade taught.
 func (m *EducationSchool) GetLowestGrade()(*string) {
     if m == nil {
         return nil
@@ -115,7 +115,7 @@ func (m *EducationSchool) GetLowestGrade()(*string) {
         return m.lowestGrade
     }
 }
-// Gets the phone property value. Phone number of school.
+// GetPhone gets the phone property value. Phone number of school.
 func (m *EducationSchool) GetPhone()(*string) {
     if m == nil {
         return nil
@@ -123,7 +123,7 @@ func (m *EducationSchool) GetPhone()(*string) {
         return m.phone
     }
 }
-// Gets the principalEmail property value. Email address of the principal.
+// GetPrincipalEmail gets the principalEmail property value. Email address of the principal.
 func (m *EducationSchool) GetPrincipalEmail()(*string) {
     if m == nil {
         return nil
@@ -131,7 +131,7 @@ func (m *EducationSchool) GetPrincipalEmail()(*string) {
         return m.principalEmail
     }
 }
-// Gets the principalName property value. Name of the principal.
+// GetPrincipalName gets the principalName property value. Name of the principal.
 func (m *EducationSchool) GetPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -139,7 +139,7 @@ func (m *EducationSchool) GetPrincipalName()(*string) {
         return m.principalName
     }
 }
-// Gets the schoolNumber property value. School Number.
+// GetSchoolNumber gets the schoolNumber property value. School Number.
 func (m *EducationSchool) GetSchoolNumber()(*string) {
     if m == nil {
         return nil
@@ -147,7 +147,7 @@ func (m *EducationSchool) GetSchoolNumber()(*string) {
         return m.schoolNumber
     }
 }
-// Gets the users property value. Users in the school. Nullable.
+// GetUsers gets the users property value. Users in the school. Nullable.
 func (m *EducationSchool) GetUsers()([]EducationUser) {
     if m == nil {
         return nil
@@ -155,7 +155,7 @@ func (m *EducationSchool) GetUsers()([]EducationUser) {
         return m.users
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EducationSchool) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.EducationOrganization.GetFieldDeserializers()
     res["address"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -311,9 +311,7 @@ func (m *EducationSchool) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *EducationSchool) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EducationSchool) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.EducationOrganization.Serialize(writer)
     if err != nil {
@@ -415,87 +413,59 @@ func (m *EducationSchool) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the address property value. Address of the school.
-// Parameters:
-//  - value : Value to set for the address property.
+// SetAddress sets the address property value. Address of the school.
 func (m *EducationSchool) SetAddress(value *PhysicalAddress)() {
     m.address = value
 }
-// Sets the administrativeUnit property value. The underlying administrativeUnit for this school.
-// Parameters:
-//  - value : Value to set for the administrativeUnit property.
+// SetAdministrativeUnit sets the administrativeUnit property value. The underlying administrativeUnit for this school.
 func (m *EducationSchool) SetAdministrativeUnit(value *AdministrativeUnit)() {
     m.administrativeUnit = value
 }
-// Sets the classes property value. Classes taught at the school. Nullable.
-// Parameters:
-//  - value : Value to set for the classes property.
+// SetClasses sets the classes property value. Classes taught at the school. Nullable.
 func (m *EducationSchool) SetClasses(value []EducationClass)() {
     m.classes = value
 }
-// Sets the createdBy property value. Entity who created the school.
-// Parameters:
-//  - value : Value to set for the createdBy property.
+// SetCreatedBy sets the createdBy property value. Entity who created the school.
 func (m *EducationSchool) SetCreatedBy(value *IdentitySet)() {
     m.createdBy = value
 }
-// Sets the externalId property value. ID of school in syncing system.
-// Parameters:
-//  - value : Value to set for the externalId property.
+// SetExternalId sets the externalId property value. ID of school in syncing system.
 func (m *EducationSchool) SetExternalId(value *string)() {
     m.externalId = value
 }
-// Sets the externalPrincipalId property value. ID of principal in syncing system.
-// Parameters:
-//  - value : Value to set for the externalPrincipalId property.
+// SetExternalPrincipalId sets the externalPrincipalId property value. ID of principal in syncing system.
 func (m *EducationSchool) SetExternalPrincipalId(value *string)() {
     m.externalPrincipalId = value
 }
-// Sets the fax property value. 
-// Parameters:
-//  - value : Value to set for the fax property.
+// SetFax sets the fax property value. 
 func (m *EducationSchool) SetFax(value *string)() {
     m.fax = value
 }
-// Sets the highestGrade property value. Highest grade taught.
-// Parameters:
-//  - value : Value to set for the highestGrade property.
+// SetHighestGrade sets the highestGrade property value. Highest grade taught.
 func (m *EducationSchool) SetHighestGrade(value *string)() {
     m.highestGrade = value
 }
-// Sets the lowestGrade property value. Lowest grade taught.
-// Parameters:
-//  - value : Value to set for the lowestGrade property.
+// SetLowestGrade sets the lowestGrade property value. Lowest grade taught.
 func (m *EducationSchool) SetLowestGrade(value *string)() {
     m.lowestGrade = value
 }
-// Sets the phone property value. Phone number of school.
-// Parameters:
-//  - value : Value to set for the phone property.
+// SetPhone sets the phone property value. Phone number of school.
 func (m *EducationSchool) SetPhone(value *string)() {
     m.phone = value
 }
-// Sets the principalEmail property value. Email address of the principal.
-// Parameters:
-//  - value : Value to set for the principalEmail property.
+// SetPrincipalEmail sets the principalEmail property value. Email address of the principal.
 func (m *EducationSchool) SetPrincipalEmail(value *string)() {
     m.principalEmail = value
 }
-// Sets the principalName property value. Name of the principal.
-// Parameters:
-//  - value : Value to set for the principalName property.
+// SetPrincipalName sets the principalName property value. Name of the principal.
 func (m *EducationSchool) SetPrincipalName(value *string)() {
     m.principalName = value
 }
-// Sets the schoolNumber property value. School Number.
-// Parameters:
-//  - value : Value to set for the schoolNumber property.
+// SetSchoolNumber sets the schoolNumber property value. School Number.
 func (m *EducationSchool) SetSchoolNumber(value *string)() {
     m.schoolNumber = value
 }
-// Sets the users property value. Users in the school. Nullable.
-// Parameters:
-//  - value : Value to set for the users property.
+// SetUsers sets the users property value. Users in the school. Nullable.
 func (m *EducationSchool) SetUsers(value []EducationUser)() {
     m.users = value
 }

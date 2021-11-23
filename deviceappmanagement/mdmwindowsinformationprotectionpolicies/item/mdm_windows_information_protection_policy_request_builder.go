@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mdmWindowsInformationProtectionPolicies\{mdmWindowsInformationProtectionPolicy-id}
+// mdmWindowsInformationProtectionPolicyRequestBuilder builds and executes requests for operations under \deviceAppManagement\mdmWindowsInformationProtectionPolicies\{mdmWindowsInformationProtectionPolicy-id}
 type MdmWindowsInformationProtectionPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MdmWindowsInformationProtectionPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MdmWindowsInformationProtectionPolicyRequestBuilderDeleteOptions options for Delete
 type MdmWindowsInformationProtectionPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MdmWindowsInformationProtectionPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MdmWindowsInformationProtectionPolicyRequestBuilderGetOptions options for Get
 type MdmWindowsInformationProtectionPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type MdmWindowsInformationProtectionPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Windows information protection for apps running on devices which are MDM enrolled.
+// mdmWindowsInformationProtectionPolicyRequestBuilderGetQueryParameters windows information protection for apps running on devices which are MDM enrolled.
 type MdmWindowsInformationProtectionPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MdmWindowsInformationProtectionPolicyRequestBuilderPatchOptions options for Patch
 type MdmWindowsInformationProtectionPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MdmWindowsInformationProtectionPolicy;
@@ -53,10 +53,7 @@ type MdmWindowsInformationProtectionPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MdmWindowsInformationProtectionPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMdmWindowsInformationProtectionPolicyRequestBuilderInternal instantiates a new MdmWindowsInformationProtectionPolicyRequestBuilder and sets the default values.
 func NewMdmWindowsInformationProtectionPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MdmWindowsInformationProtectionPolicyRequestBuilder) {
     m := &MdmWindowsInformationProtectionPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewMdmWindowsInformationProtectionPolicyRequestBuilderInternal(pathParamete
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MdmWindowsInformationProtectionPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMdmWindowsInformationProtectionPolicyRequestBuilder instantiates a new MdmWindowsInformationProtectionPolicyRequestBuilder and sets the default values.
 func NewMdmWindowsInformationProtectionPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MdmWindowsInformationProtectionPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMdmWindowsInformationProtectionPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Windows information protection for apps running on devices which are MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation windows information protection for apps running on devices which are MDM enrolled.
 func (m *MdmWindowsInformationProtectionPolicyRequestBuilder) CreateDeleteRequestInformation(options *MdmWindowsInformationProtectionPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *MdmWindowsInformationProtectionPolicyRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// Windows information protection for apps running on devices which are MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation windows information protection for apps running on devices which are MDM enrolled.
 func (m *MdmWindowsInformationProtectionPolicyRequestBuilder) CreateGetRequestInformation(options *MdmWindowsInformationProtectionPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MdmWindowsInformationProtectionPolicyRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// Windows information protection for apps running on devices which are MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation windows information protection for apps running on devices which are MDM enrolled.
 func (m *MdmWindowsInformationProtectionPolicyRequestBuilder) CreatePatchRequestInformation(options *MdmWindowsInformationProtectionPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *MdmWindowsInformationProtectionPolicyRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// Windows information protection for apps running on devices which are MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// Delete windows information protection for apps running on devices which are MDM enrolled.
 func (m *MdmWindowsInformationProtectionPolicyRequestBuilder) Delete(options *MdmWindowsInformationProtectionPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *MdmWindowsInformationProtectionPolicyRequestBuilder) Delete(options *Md
     }
     return nil
 }
-// Windows information protection for apps running on devices which are MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// Get windows information protection for apps running on devices which are MDM enrolled.
 func (m *MdmWindowsInformationProtectionPolicyRequestBuilder) Get(options *MdmWindowsInformationProtectionPolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MdmWindowsInformationProtectionPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *MdmWindowsInformationProtectionPolicyRequestBuilder) Get(options *MdmWi
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MdmWindowsInformationProtectionPolicy), nil
 }
-// Windows information protection for apps running on devices which are MDM enrolled.
-// Parameters:
-//  - options : Options for the request
+// Patch windows information protection for apps running on devices which are MDM enrolled.
 func (m *MdmWindowsInformationProtectionPolicyRequestBuilder) Patch(options *MdmWindowsInformationProtectionPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\authentication\methods
+// methodsRequestBuilder builds and executes requests for operations under \me\authentication\methods
 type MethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MethodsRequestBuilderGetOptions options for Get
 type MethodsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get methods from me
+// methodsRequestBuilderGetQueryParameters get methods from me
 type MethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MethodsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MethodsRequestBuilderPostOptions options for Post
 type MethodsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethod;
@@ -56,10 +56,7 @@ type MethodsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMethodsRequestBuilderInternal instantiates a new MethodsRequestBuilder and sets the default values.
 func NewMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MethodsRequestBuilder) {
     m := &MethodsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMethodsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMethodsRequestBuilder instantiates a new MethodsRequestBuilder and sets the default values.
 func NewMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get methods from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get methods from me
 func (m *MethodsRequestBuilder) CreateGetRequestInformation(options *MethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MethodsRequestBuilder) CreateGetRequestInformation(options *MethodsRequ
     }
     return requestInfo, nil
 }
-// Create new navigation property to methods for me
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to methods for me
 func (m *MethodsRequestBuilder) CreatePostRequestInformation(options *MethodsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MethodsRequestBuilder) CreatePostRequestInformation(options *MethodsReq
     }
     return requestInfo, nil
 }
-// Get methods from me
-// Parameters:
-//  - options : Options for the request
+// Get get methods from me
 func (m *MethodsRequestBuilder) Get(options *MethodsRequestBuilderGetOptions)(*MethodsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MethodsRequestBuilder) Get(options *MethodsRequestBuilderGetOptions)(*M
     }
     return res.(*MethodsResponse), nil
 }
-// Create new navigation property to methods for me
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to methods for me
 func (m *MethodsRequestBuilder) Post(options *MethodsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethod, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

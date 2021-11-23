@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\sets\{set-id}\children\{term-id}\relations
+// relationsRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\sets\{set-id}\children\{term-id}\relations
 type RelationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RelationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RelationsRequestBuilderGetOptions options for Get
 type RelationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RelationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// To indicate which terms are related to the current term as either pinned or reused.
+// relationsRequestBuilderGetQueryParameters to indicate which terms are related to the current term as either pinned or reused.
 type RelationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RelationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RelationsRequestBuilderPostOptions options for Post
 type RelationsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Relation;
@@ -56,10 +56,7 @@ type RelationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RelationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRelationsRequestBuilderInternal instantiates a new RelationsRequestBuilder and sets the default values.
 func NewRelationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RelationsRequestBuilder) {
     m := &RelationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRelationsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RelationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRelationsRequestBuilder instantiates a new RelationsRequestBuilder and sets the default values.
 func NewRelationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RelationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRelationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// To indicate which terms are related to the current term as either pinned or reused.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation to indicate which terms are related to the current term as either pinned or reused.
 func (m *RelationsRequestBuilder) CreateGetRequestInformation(options *RelationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RelationsRequestBuilder) CreateGetRequestInformation(options *Relations
     }
     return requestInfo, nil
 }
-// To indicate which terms are related to the current term as either pinned or reused.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation to indicate which terms are related to the current term as either pinned or reused.
 func (m *RelationsRequestBuilder) CreatePostRequestInformation(options *RelationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RelationsRequestBuilder) CreatePostRequestInformation(options *Relation
     }
     return requestInfo, nil
 }
-// To indicate which terms are related to the current term as either pinned or reused.
-// Parameters:
-//  - options : Options for the request
+// Get to indicate which terms are related to the current term as either pinned or reused.
 func (m *RelationsRequestBuilder) Get(options *RelationsRequestBuilderGetOptions)(*RelationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RelationsRequestBuilder) Get(options *RelationsRequestBuilderGetOptions
     }
     return res.(*RelationsResponse), nil
 }
-// To indicate which terms are related to the current term as either pinned or reused.
-// Parameters:
-//  - options : Options for the request
+// Post to indicate which terms are related to the current term as either pinned or reused.
 func (m *RelationsRequestBuilder) Post(options *RelationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Relation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

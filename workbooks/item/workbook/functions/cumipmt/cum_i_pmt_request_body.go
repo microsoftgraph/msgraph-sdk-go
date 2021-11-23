@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// cumIPmtRequestBody 
 type CumIPmtRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,14 +22,14 @@ type CumIPmtRequestBody struct {
     // 
     type_escaped *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
-// Instantiates a new cumIPmtRequestBody and sets the default values.
+// NewCumIPmtRequestBody instantiates a new cumIPmtRequestBody and sets the default values.
 func NewCumIPmtRequestBody()(*CumIPmtRequestBody) {
     m := &CumIPmtRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CumIPmtRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *CumIPmtRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the endPeriod property value. 
+// GetEndPeriod gets the endPeriod property value. 
 func (m *CumIPmtRequestBody) GetEndPeriod()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *CumIPmtRequestBody) GetEndPeriod()(*i4a838ef194e4c99e9f2c63ba10dab9cb12
         return m.endPeriod
     }
 }
-// Gets the nper property value. 
+// GetNper gets the nper property value. 
 func (m *CumIPmtRequestBody) GetNper()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *CumIPmtRequestBody) GetNper()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a893
         return m.nper
     }
 }
-// Gets the pv property value. 
+// GetPv gets the pv property value. 
 func (m *CumIPmtRequestBody) GetPv()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *CumIPmtRequestBody) GetPv()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.pv
     }
 }
-// Gets the rate property value. 
+// GetRate gets the rate property value. 
 func (m *CumIPmtRequestBody) GetRate()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *CumIPmtRequestBody) GetRate()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a893
         return m.rate
     }
 }
-// Gets the startPeriod property value. 
+// GetStartPeriod gets the startPeriod property value. 
 func (m *CumIPmtRequestBody) GetStartPeriod()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *CumIPmtRequestBody) GetStartPeriod()(*i4a838ef194e4c99e9f2c63ba10dab9cb
         return m.startPeriod
     }
 }
-// Gets the type_escaped property value. 
+// GetType_escaped gets the type_escaped property value. 
 func (m *CumIPmtRequestBody) GetType_escaped()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *CumIPmtRequestBody) GetType_escaped()(*i4a838ef194e4c99e9f2c63ba10dab9c
         return m.type_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CumIPmtRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["endPeriod"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,9 +153,7 @@ func (m *CumIPmtRequestBody) GetFieldDeserializers()(map[string]func(interface{}
 func (m *CumIPmtRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CumIPmtRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("endPeriod", m.GetEndPeriod())
@@ -201,45 +199,31 @@ func (m *CumIPmtRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CumIPmtRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the endPeriod property value. 
-// Parameters:
-//  - value : Value to set for the endPeriod property.
+// SetEndPeriod sets the endPeriod property value. 
 func (m *CumIPmtRequestBody) SetEndPeriod(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.endPeriod = value
 }
-// Sets the nper property value. 
-// Parameters:
-//  - value : Value to set for the nper property.
+// SetNper sets the nper property value. 
 func (m *CumIPmtRequestBody) SetNper(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.nper = value
 }
-// Sets the pv property value. 
-// Parameters:
-//  - value : Value to set for the pv property.
+// SetPv sets the pv property value. 
 func (m *CumIPmtRequestBody) SetPv(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.pv = value
 }
-// Sets the rate property value. 
-// Parameters:
-//  - value : Value to set for the rate property.
+// SetRate sets the rate property value. 
 func (m *CumIPmtRequestBody) SetRate(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.rate = value
 }
-// Sets the startPeriod property value. 
-// Parameters:
-//  - value : Value to set for the startPeriod property.
+// SetStartPeriod sets the startPeriod property value. 
 func (m *CumIPmtRequestBody) SetStartPeriod(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.startPeriod = value
 }
-// Sets the type_escaped property value. 
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. 
 func (m *CumIPmtRequestBody) SetType_escaped(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.type_escaped = value
 }

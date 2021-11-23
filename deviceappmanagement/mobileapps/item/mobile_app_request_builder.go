@@ -10,7 +10,7 @@ import (
     i1de44916490eb612ae701336a2eae5f89d836e0eaae6829aa711a57c559453e1 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}
+// mobileAppRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}
 type MobileAppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type MobileAppRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MobileAppRequestBuilderDeleteOptions options for Delete
 type MobileAppRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type MobileAppRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MobileAppRequestBuilderGetOptions options for Get
 type MobileAppRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type MobileAppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The mobile apps.
+// mobileAppRequestBuilderGetQueryParameters the mobile apps.
 type MobileAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MobileAppRequestBuilderPatchOptions options for Patch
 type MobileAppRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileApp;
@@ -63,9 +63,7 @@ func (m *MobileAppRequestBuilder) Assign()(*ia9cfc52616110c9bb721b0f95f47d861e5a
 func (m *MobileAppRequestBuilder) Assignments()(*i41e6a4f5d8af8cbec70d9d8c4f48278ff47465e70b23d4ee2bbdcafa93bae975.AssignmentsRequestBuilder) {
     return i41e6a4f5d8af8cbec70d9d8c4f48278ff47465e70b23d4ee2bbdcafa93bae975.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.mobileApps.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.mobileApps.item.assignments.item collection
 func (m *MobileAppRequestBuilder) AssignmentsById(id string)(*i1de44916490eb612ae701336a2eae5f89d836e0eaae6829aa711a57c559453e1.MobileAppAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -79,10 +77,7 @@ func (m *MobileAppRequestBuilder) AssignmentsById(id string)(*i1de44916490eb612a
 func (m *MobileAppRequestBuilder) Categories()(*i52247cde4874402d4eaf161fa2c9ec2cc4a9257f52df96b9bbbcdf47e1f167f9.CategoriesRequestBuilder) {
     return i52247cde4874402d4eaf161fa2c9ec2cc4a9257f52df96b9bbbcdf47e1f167f9.NewCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new MobileAppRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppRequestBuilderInternal instantiates a new MobileAppRequestBuilder and sets the default values.
 func NewMobileAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppRequestBuilder) {
     m := &MobileAppRequestBuilder{
     }
@@ -95,18 +90,13 @@ func NewMobileAppRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MobileAppRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppRequestBuilder instantiates a new MobileAppRequestBuilder and sets the default values.
 func NewMobileAppRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The mobile apps.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the mobile apps.
 func (m *MobileAppRequestBuilder) CreateDeleteRequestInformation(options *MobileAppRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MobileAppRequestBuilder) CreateDeleteRequestInformation(options *Mobile
     }
     return requestInfo, nil
 }
-// The mobile apps.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the mobile apps.
 func (m *MobileAppRequestBuilder) CreateGetRequestInformation(options *MobileAppRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +133,7 @@ func (m *MobileAppRequestBuilder) CreateGetRequestInformation(options *MobileApp
     }
     return requestInfo, nil
 }
-// The mobile apps.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the mobile apps.
 func (m *MobileAppRequestBuilder) CreatePatchRequestInformation(options *MobileAppRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -165,9 +151,7 @@ func (m *MobileAppRequestBuilder) CreatePatchRequestInformation(options *MobileA
     }
     return requestInfo, nil
 }
-// The mobile apps.
-// Parameters:
-//  - options : Options for the request
+// Delete the mobile apps.
 func (m *MobileAppRequestBuilder) Delete(options *MobileAppRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -179,9 +163,7 @@ func (m *MobileAppRequestBuilder) Delete(options *MobileAppRequestBuilderDeleteO
     }
     return nil
 }
-// The mobile apps.
-// Parameters:
-//  - options : Options for the request
+// Get the mobile apps.
 func (m *MobileAppRequestBuilder) Get(options *MobileAppRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileApp, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -193,9 +175,7 @@ func (m *MobileAppRequestBuilder) Get(options *MobileAppRequestBuilderGetOptions
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileApp), nil
 }
-// The mobile apps.
-// Parameters:
-//  - options : Options for the request
+// Patch the mobile apps.
 func (m *MobileAppRequestBuilder) Patch(options *MobileAppRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

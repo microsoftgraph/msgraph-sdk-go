@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\monthlyPrintUsageByPrinter\{printUsageByPrinter-id}
+// printUsageByPrinterRequestBuilder builds and executes requests for operations under \reports\monthlyPrintUsageByPrinter\{printUsageByPrinter-id}
 type PrintUsageByPrinterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PrintUsageByPrinterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrintUsageByPrinterRequestBuilderDeleteOptions options for Delete
 type PrintUsageByPrinterRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PrintUsageByPrinterRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrintUsageByPrinterRequestBuilderGetOptions options for Get
 type PrintUsageByPrinterRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PrintUsageByPrinterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get monthlyPrintUsageByPrinter from reports
+// printUsageByPrinterRequestBuilderGetQueryParameters get monthlyPrintUsageByPrinter from reports
 type PrintUsageByPrinterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrintUsageByPrinterRequestBuilderPatchOptions options for Patch
 type PrintUsageByPrinterRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinter;
@@ -53,10 +53,7 @@ type PrintUsageByPrinterRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrintUsageByPrinterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintUsageByPrinterRequestBuilderInternal instantiates a new PrintUsageByPrinterRequestBuilder and sets the default values.
 func NewPrintUsageByPrinterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintUsageByPrinterRequestBuilder) {
     m := &PrintUsageByPrinterRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPrintUsageByPrinterRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrintUsageByPrinterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintUsageByPrinterRequestBuilder instantiates a new PrintUsageByPrinterRequestBuilder and sets the default values.
 func NewPrintUsageByPrinterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintUsageByPrinterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrintUsageByPrinterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property monthlyPrintUsageByPrinter for reports
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property monthlyPrintUsageByPrinter for reports
 func (m *PrintUsageByPrinterRequestBuilder) CreateDeleteRequestInformation(options *PrintUsageByPrinterRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PrintUsageByPrinterRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get monthlyPrintUsageByPrinter from reports
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get monthlyPrintUsageByPrinter from reports
 func (m *PrintUsageByPrinterRequestBuilder) CreateGetRequestInformation(options *PrintUsageByPrinterRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PrintUsageByPrinterRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Update the navigation property monthlyPrintUsageByPrinter in reports
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property monthlyPrintUsageByPrinter in reports
 func (m *PrintUsageByPrinterRequestBuilder) CreatePatchRequestInformation(options *PrintUsageByPrinterRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PrintUsageByPrinterRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete navigation property monthlyPrintUsageByPrinter for reports
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property monthlyPrintUsageByPrinter for reports
 func (m *PrintUsageByPrinterRequestBuilder) Delete(options *PrintUsageByPrinterRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PrintUsageByPrinterRequestBuilder) Delete(options *PrintUsageByPrinterR
     }
     return nil
 }
-// Get monthlyPrintUsageByPrinter from reports
-// Parameters:
-//  - options : Options for the request
+// Get get monthlyPrintUsageByPrinter from reports
 func (m *PrintUsageByPrinterRequestBuilder) Get(options *PrintUsageByPrinterRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinter, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PrintUsageByPrinterRequestBuilder) Get(options *PrintUsageByPrinterRequ
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinter), nil
 }
-// Update the navigation property monthlyPrintUsageByPrinter in reports
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property monthlyPrintUsageByPrinter in reports
 func (m *PrintUsageByPrinterRequestBuilder) Patch(options *PrintUsageByPrinterRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

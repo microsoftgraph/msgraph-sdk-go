@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// playPromptRequestBody 
 type PlayPromptRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type PlayPromptRequestBody struct {
     // 
     prompts []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Prompt;
 }
-// Instantiates a new playPromptRequestBody and sets the default values.
+// NewPlayPromptRequestBody instantiates a new playPromptRequestBody and sets the default values.
 func NewPlayPromptRequestBody()(*PlayPromptRequestBody) {
     m := &PlayPromptRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlayPromptRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *PlayPromptRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the clientContext property value. 
+// GetClientContext gets the clientContext property value. 
 func (m *PlayPromptRequestBody) GetClientContext()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *PlayPromptRequestBody) GetClientContext()(*string) {
         return m.clientContext
     }
 }
-// Gets the prompts property value. 
+// GetPrompts gets the prompts property value. 
 func (m *PlayPromptRequestBody) GetPrompts()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Prompt) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *PlayPromptRequestBody) GetPrompts()([]i4a838ef194e4c99e9f2c63ba10dab9cb
         return m.prompts
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PlayPromptRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["clientContext"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,9 +77,7 @@ func (m *PlayPromptRequestBody) GetFieldDeserializers()(map[string]func(interfac
 func (m *PlayPromptRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PlayPromptRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("clientContext", m.GetClientContext())
@@ -106,21 +104,15 @@ func (m *PlayPromptRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlayPromptRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the clientContext property value. 
-// Parameters:
-//  - value : Value to set for the clientContext property.
+// SetClientContext sets the clientContext property value. 
 func (m *PlayPromptRequestBody) SetClientContext(value *string)() {
     m.clientContext = value
 }
-// Sets the prompts property value. 
-// Parameters:
-//  - value : Value to set for the prompts property.
+// SetPrompts sets the prompts property value. 
 func (m *PlayPromptRequestBody) SetPrompts(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Prompt)() {
     m.prompts = value
 }

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\complianceManagementPartners
+// complianceManagementPartnersRequestBuilder builds and executes requests for operations under \deviceManagement\complianceManagementPartners
 type ComplianceManagementPartnersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ComplianceManagementPartnersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ComplianceManagementPartnersRequestBuilderGetOptions options for Get
 type ComplianceManagementPartnersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ComplianceManagementPartnersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of Compliance Management Partners configured by the tenant.
+// complianceManagementPartnersRequestBuilderGetQueryParameters the list of Compliance Management Partners configured by the tenant.
 type ComplianceManagementPartnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ComplianceManagementPartnersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ComplianceManagementPartnersRequestBuilderPostOptions options for Post
 type ComplianceManagementPartnersRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ComplianceManagementPartner;
@@ -56,10 +56,7 @@ type ComplianceManagementPartnersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ComplianceManagementPartnersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComplianceManagementPartnersRequestBuilderInternal instantiates a new ComplianceManagementPartnersRequestBuilder and sets the default values.
 func NewComplianceManagementPartnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComplianceManagementPartnersRequestBuilder) {
     m := &ComplianceManagementPartnersRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewComplianceManagementPartnersRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ComplianceManagementPartnersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComplianceManagementPartnersRequestBuilder instantiates a new ComplianceManagementPartnersRequestBuilder and sets the default values.
 func NewComplianceManagementPartnersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComplianceManagementPartnersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewComplianceManagementPartnersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of Compliance Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of Compliance Management Partners configured by the tenant.
 func (m *ComplianceManagementPartnersRequestBuilder) CreateGetRequestInformation(options *ComplianceManagementPartnersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ComplianceManagementPartnersRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// The list of Compliance Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of Compliance Management Partners configured by the tenant.
 func (m *ComplianceManagementPartnersRequestBuilder) CreatePostRequestInformation(options *ComplianceManagementPartnersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ComplianceManagementPartnersRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// The list of Compliance Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of Compliance Management Partners configured by the tenant.
 func (m *ComplianceManagementPartnersRequestBuilder) Get(options *ComplianceManagementPartnersRequestBuilderGetOptions)(*ComplianceManagementPartnersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ComplianceManagementPartnersRequestBuilder) Get(options *ComplianceMana
     }
     return res.(*ComplianceManagementPartnersResponse), nil
 }
-// The list of Compliance Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Post the list of Compliance Management Partners configured by the tenant.
 func (m *ComplianceManagementPartnersRequestBuilder) Post(options *ComplianceManagementPartnersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ComplianceManagementPartner, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

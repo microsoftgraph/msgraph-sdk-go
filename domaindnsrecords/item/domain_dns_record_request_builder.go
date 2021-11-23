@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \domainDnsRecords\{domainDnsRecord-id}
+// domainDnsRecordRequestBuilder builds and executes requests for operations under \domainDnsRecords\{domainDnsRecord-id}
 type DomainDnsRecordRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DomainDnsRecordRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DomainDnsRecordRequestBuilderDeleteOptions options for Delete
 type DomainDnsRecordRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DomainDnsRecordRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DomainDnsRecordRequestBuilderGetOptions options for Get
 type DomainDnsRecordRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DomainDnsRecordRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from domainDnsRecords by key
+// domainDnsRecordRequestBuilderGetQueryParameters get entity from domainDnsRecords by key
 type DomainDnsRecordRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DomainDnsRecordRequestBuilderPatchOptions options for Patch
 type DomainDnsRecordRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DomainDnsRecord;
@@ -53,10 +53,7 @@ type DomainDnsRecordRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DomainDnsRecordRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDomainDnsRecordRequestBuilderInternal instantiates a new DomainDnsRecordRequestBuilder and sets the default values.
 func NewDomainDnsRecordRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DomainDnsRecordRequestBuilder) {
     m := &DomainDnsRecordRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDomainDnsRecordRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DomainDnsRecordRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDomainDnsRecordRequestBuilder instantiates a new DomainDnsRecordRequestBuilder and sets the default values.
 func NewDomainDnsRecordRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DomainDnsRecordRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDomainDnsRecordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from domainDnsRecords
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from domainDnsRecords
 func (m *DomainDnsRecordRequestBuilder) CreateDeleteRequestInformation(options *DomainDnsRecordRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DomainDnsRecordRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get entity from domainDnsRecords by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from domainDnsRecords by key
 func (m *DomainDnsRecordRequestBuilder) CreateGetRequestInformation(options *DomainDnsRecordRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DomainDnsRecordRequestBuilder) CreateGetRequestInformation(options *Dom
     }
     return requestInfo, nil
 }
-// Update entity in domainDnsRecords
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in domainDnsRecords
 func (m *DomainDnsRecordRequestBuilder) CreatePatchRequestInformation(options *DomainDnsRecordRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DomainDnsRecordRequestBuilder) CreatePatchRequestInformation(options *D
     }
     return requestInfo, nil
 }
-// Delete entity from domainDnsRecords
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from domainDnsRecords
 func (m *DomainDnsRecordRequestBuilder) Delete(options *DomainDnsRecordRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DomainDnsRecordRequestBuilder) Delete(options *DomainDnsRecordRequestBu
     }
     return nil
 }
-// Get entity from domainDnsRecords by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from domainDnsRecords by key
 func (m *DomainDnsRecordRequestBuilder) Get(options *DomainDnsRecordRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DomainDnsRecord, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DomainDnsRecordRequestBuilder) Get(options *DomainDnsRecordRequestBuild
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DomainDnsRecord), nil
 }
-// Update entity in domainDnsRecords
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in domainDnsRecords
 func (m *DomainDnsRecordRequestBuilder) Patch(options *DomainDnsRecordRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

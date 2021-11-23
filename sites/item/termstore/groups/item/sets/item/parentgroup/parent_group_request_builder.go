@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\termStore\groups\{group-id}\sets\{set-id}\parentGroup
+// parentGroupRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\groups\{group-id}\sets\{set-id}\parentGroup
 type ParentGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ParentGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ParentGroupRequestBuilderDeleteOptions options for Delete
 type ParentGroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ParentGroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ParentGroupRequestBuilderGetOptions options for Get
 type ParentGroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ParentGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The parent [group] that contains the set.
+// parentGroupRequestBuilderGetQueryParameters the parent [group] that contains the set.
 type ParentGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ParentGroupRequestBuilderPatchOptions options for Patch
 type ParentGroupRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Group;
@@ -53,10 +53,7 @@ type ParentGroupRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ParentGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewParentGroupRequestBuilderInternal instantiates a new ParentGroupRequestBuilder and sets the default values.
 func NewParentGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentGroupRequestBuilder) {
     m := &ParentGroupRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewParentGroupRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ParentGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewParentGroupRequestBuilder instantiates a new ParentGroupRequestBuilder and sets the default values.
 func NewParentGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewParentGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The parent [group] that contains the set.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the parent [group] that contains the set.
 func (m *ParentGroupRequestBuilder) CreateDeleteRequestInformation(options *ParentGroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ParentGroupRequestBuilder) CreateDeleteRequestInformation(options *Pare
     }
     return requestInfo, nil
 }
-// The parent [group] that contains the set.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the parent [group] that contains the set.
 func (m *ParentGroupRequestBuilder) CreateGetRequestInformation(options *ParentGroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ParentGroupRequestBuilder) CreateGetRequestInformation(options *ParentG
     }
     return requestInfo, nil
 }
-// The parent [group] that contains the set.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the parent [group] that contains the set.
 func (m *ParentGroupRequestBuilder) CreatePatchRequestInformation(options *ParentGroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ParentGroupRequestBuilder) CreatePatchRequestInformation(options *Paren
     }
     return requestInfo, nil
 }
-// The parent [group] that contains the set.
-// Parameters:
-//  - options : Options for the request
+// Delete the parent [group] that contains the set.
 func (m *ParentGroupRequestBuilder) Delete(options *ParentGroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ParentGroupRequestBuilder) Delete(options *ParentGroupRequestBuilderDel
     }
     return nil
 }
-// The parent [group] that contains the set.
-// Parameters:
-//  - options : Options for the request
+// Get the parent [group] that contains the set.
 func (m *ParentGroupRequestBuilder) Get(options *ParentGroupRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Group, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ParentGroupRequestBuilder) Get(options *ParentGroupRequestBuilderGetOpt
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Group), nil
 }
-// The parent [group] that contains the set.
-// Parameters:
-//  - options : Options for the request
+// Patch the parent [group] that contains the set.
 func (m *ParentGroupRequestBuilder) Patch(options *ParentGroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

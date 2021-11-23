@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getOffice365GroupsActivityDetail(date={date})
+// getOffice365GroupsActivityDetailWithDateRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365GroupsActivityDetail(date={date})
 type GetOffice365GroupsActivityDetailWithDateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GetOffice365GroupsActivityDetailWithDateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetOffice365GroupsActivityDetailWithDateRequestBuilderGetOptions options for Get
 type GetOffice365GroupsActivityDetailWithDateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,11 +24,7 @@ type GetOffice365GroupsActivityDetailWithDateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetOffice365GroupsActivityDetailWithDateRequestBuilder and sets the default values.
-// Parameters:
-//  - date : Usage: date={date}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal instantiates a new GetOffice365GroupsActivityDetailWithDateRequestBuilder and sets the default values.
 func NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *string)(*GetOffice365GroupsActivityDetailWithDateRequestBuilder) {
     m := &GetOffice365GroupsActivityDetailWithDateRequestBuilder{
     }
@@ -44,18 +40,13 @@ func NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(pathParam
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetOffice365GroupsActivityDetailWithDateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOffice365GroupsActivityDetailWithDateRequestBuilder instantiates a new GetOffice365GroupsActivityDetailWithDateRequestBuilder and sets the default values.
 func NewGetOffice365GroupsActivityDetailWithDateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetOffice365GroupsActivityDetailWithDateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getOffice365GroupsActivityDetail
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getOffice365GroupsActivityDetail
 func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) CreateGetRequestInformation(options *GetOffice365GroupsActivityDetailWithDateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -72,9 +63,7 @@ func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// Invoke function getOffice365GroupsActivityDetail
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getOffice365GroupsActivityDetail
 func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) Get(options *GetOffice365GroupsActivityDetailWithDateRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

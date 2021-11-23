@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\appRoleAssignments
+// appRoleAssignmentsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\appRoleAssignments
 type AppRoleAssignmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppRoleAssignmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppRoleAssignmentsRequestBuilderGetOptions options for Get
 type AppRoleAssignmentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AppRoleAssignmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// App role assignment for another app or service, granted to this service principal. Supports $expand.
+// appRoleAssignmentsRequestBuilderGetQueryParameters app role assignment for another app or service, granted to this service principal. Supports $expand.
 type AppRoleAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AppRoleAssignmentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AppRoleAssignmentsRequestBuilderPostOptions options for Post
 type AppRoleAssignmentsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppRoleAssignment;
@@ -56,10 +56,7 @@ type AppRoleAssignmentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppRoleAssignmentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppRoleAssignmentsRequestBuilderInternal instantiates a new AppRoleAssignmentsRequestBuilder and sets the default values.
 func NewAppRoleAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppRoleAssignmentsRequestBuilder) {
     m := &AppRoleAssignmentsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAppRoleAssignmentsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppRoleAssignmentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppRoleAssignmentsRequestBuilder instantiates a new AppRoleAssignmentsRequestBuilder and sets the default values.
 func NewAppRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppRoleAssignmentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppRoleAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// App role assignment for another app or service, granted to this service principal. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation app role assignment for another app or service, granted to this service principal. Supports $expand.
 func (m *AppRoleAssignmentsRequestBuilder) CreateGetRequestInformation(options *AppRoleAssignmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AppRoleAssignmentsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// App role assignment for another app or service, granted to this service principal. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation app role assignment for another app or service, granted to this service principal. Supports $expand.
 func (m *AppRoleAssignmentsRequestBuilder) CreatePostRequestInformation(options *AppRoleAssignmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AppRoleAssignmentsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// App role assignment for another app or service, granted to this service principal. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get app role assignment for another app or service, granted to this service principal. Supports $expand.
 func (m *AppRoleAssignmentsRequestBuilder) Get(options *AppRoleAssignmentsRequestBuilderGetOptions)(*AppRoleAssignmentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AppRoleAssignmentsRequestBuilder) Get(options *AppRoleAssignmentsReques
     }
     return res.(*AppRoleAssignmentsResponse), nil
 }
-// App role assignment for another app or service, granted to this service principal. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Post app role assignment for another app or service, granted to this service principal. Supports $expand.
 func (m *AppRoleAssignmentsRequestBuilder) Post(options *AppRoleAssignmentsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppRoleAssignment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

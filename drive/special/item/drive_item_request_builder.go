@@ -7,7 +7,7 @@ import (
     i06884e9fa9448b35b877b8c625d69ee9998e13686b1ec4ce0e2f3776f1ba9299 "github.com/microsoftgraph/msgraph-sdk-go/drive/special/item/content"
 )
 
-// Builds and executes requests for operations under \drive\special\{driveItem-id}
+// driveItemRequestBuilder builds and executes requests for operations under \drive\special\{driveItem-id}
 type DriveItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DriveItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DriveItemRequestBuilderDeleteOptions options for Delete
 type DriveItemRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type DriveItemRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DriveItemRequestBuilderGetOptions options for Get
 type DriveItemRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type DriveItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
+// driveItemRequestBuilderGetQueryParameters collection of common folders available in OneDrive. Read-only. Nullable.
 type DriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DriveItemRequestBuilderPatchOptions options for Patch
 type DriveItemRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem;
@@ -54,10 +54,7 @@ type DriveItemRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DriveItemRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDriveItemRequestBuilderInternal instantiates a new DriveItemRequestBuilder and sets the default values.
 func NewDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveItemRequestBuilder) {
     m := &DriveItemRequestBuilder{
     }
@@ -70,10 +67,7 @@ func NewDriveItemRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DriveItemRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDriveItemRequestBuilder instantiates a new DriveItemRequestBuilder and sets the default values.
 func NewDriveItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -82,9 +76,7 @@ func NewDriveItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
 func (m *DriveItemRequestBuilder) Content()(*i06884e9fa9448b35b877b8c625d69ee9998e13686b1ec4ce0e2f3776f1ba9299.ContentRequestBuilder) {
     return i06884e9fa9448b35b877b8c625d69ee9998e13686b1ec4ce0e2f3776f1ba9299.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *DriveItemRequestBuilder) CreateDeleteRequestInformation(options *DriveItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *DriveItemRequestBuilder) CreateDeleteRequestInformation(options *DriveI
     }
     return requestInfo, nil
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *DriveItemRequestBuilder) CreateGetRequestInformation(options *DriveItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DriveItemRequestBuilder) CreateGetRequestInformation(options *DriveItem
     }
     return requestInfo, nil
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *DriveItemRequestBuilder) CreatePatchRequestInformation(options *DriveItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *DriveItemRequestBuilder) CreatePatchRequestInformation(options *DriveIt
     }
     return requestInfo, nil
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *DriveItemRequestBuilder) Delete(options *DriveItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *DriveItemRequestBuilder) Delete(options *DriveItemRequestBuilderDeleteO
     }
     return nil
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *DriveItemRequestBuilder) Get(options *DriveItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *DriveItemRequestBuilder) Get(options *DriveItemRequestBuilderGetOptions
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem), nil
 }
-// Collection of common folders available in OneDrive. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *DriveItemRequestBuilder) Patch(options *DriveItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

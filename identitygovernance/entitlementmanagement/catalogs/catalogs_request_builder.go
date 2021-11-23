@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\catalogs
+// catalogsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\catalogs
 type CatalogsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CatalogsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CatalogsRequestBuilderGetOptions options for Get
 type CatalogsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CatalogsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get catalogs from identityGovernance
+// catalogsRequestBuilderGetQueryParameters get catalogs from identityGovernance
 type CatalogsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CatalogsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CatalogsRequestBuilderPostOptions options for Post
 type CatalogsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageCatalog;
@@ -56,10 +56,7 @@ type CatalogsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CatalogsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCatalogsRequestBuilderInternal instantiates a new CatalogsRequestBuilder and sets the default values.
 func NewCatalogsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CatalogsRequestBuilder) {
     m := &CatalogsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCatalogsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CatalogsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCatalogsRequestBuilder instantiates a new CatalogsRequestBuilder and sets the default values.
 func NewCatalogsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CatalogsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCatalogsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get catalogs from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get catalogs from identityGovernance
 func (m *CatalogsRequestBuilder) CreateGetRequestInformation(options *CatalogsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CatalogsRequestBuilder) CreateGetRequestInformation(options *CatalogsRe
     }
     return requestInfo, nil
 }
-// Create new navigation property to catalogs for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to catalogs for identityGovernance
 func (m *CatalogsRequestBuilder) CreatePostRequestInformation(options *CatalogsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CatalogsRequestBuilder) CreatePostRequestInformation(options *CatalogsR
     }
     return requestInfo, nil
 }
-// Get catalogs from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get catalogs from identityGovernance
 func (m *CatalogsRequestBuilder) Get(options *CatalogsRequestBuilderGetOptions)(*CatalogsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CatalogsRequestBuilder) Get(options *CatalogsRequestBuilderGetOptions)(
     }
     return res.(*CatalogsResponse), nil
 }
-// Create new navigation property to catalogs for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to catalogs for identityGovernance
 func (m *CatalogsRequestBuilder) Post(options *CatalogsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageCatalog, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

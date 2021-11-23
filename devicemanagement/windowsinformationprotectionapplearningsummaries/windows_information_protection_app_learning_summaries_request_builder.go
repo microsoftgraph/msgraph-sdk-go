@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsInformationProtectionAppLearningSummaries
+// windowsInformationProtectionAppLearningSummariesRequestBuilder builds and executes requests for operations under \deviceManagement\windowsInformationProtectionAppLearningSummaries
 type WindowsInformationProtectionAppLearningSummariesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsInformationProtectionAppLearningSummariesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// WindowsInformationProtectionAppLearningSummariesRequestBuilderGetOptions options for Get
 type WindowsInformationProtectionAppLearningSummariesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WindowsInformationProtectionAppLearningSummariesRequestBuilderGetOptions st
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The windows information protection app learning summaries.
+// windowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters the windows information protection app learning summaries.
 type WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParam
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// WindowsInformationProtectionAppLearningSummariesRequestBuilderPostOptions options for Post
 type WindowsInformationProtectionAppLearningSummariesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionAppLearningSummary;
@@ -56,10 +56,7 @@ type WindowsInformationProtectionAppLearningSummariesRequestBuilderPostOptions s
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsInformationProtectionAppLearningSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal instantiates a new WindowsInformationProtectionAppLearningSummariesRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsInformationProtectionAppLearningSummariesRequestBuilder) {
     m := &WindowsInformationProtectionAppLearningSummariesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal(p
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsInformationProtectionAppLearningSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsInformationProtectionAppLearningSummariesRequestBuilder instantiates a new WindowsInformationProtectionAppLearningSummariesRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionAppLearningSummariesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsInformationProtectionAppLearningSummariesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionAppLearningSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The windows information protection app learning summaries.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the windows information protection app learning summaries.
 func (m *WindowsInformationProtectionAppLearningSummariesRequestBuilder) CreateGetRequestInformation(options *WindowsInformationProtectionAppLearningSummariesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *WindowsInformationProtectionAppLearningSummariesRequestBuilder) CreateG
     }
     return requestInfo, nil
 }
-// The windows information protection app learning summaries.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the windows information protection app learning summaries.
 func (m *WindowsInformationProtectionAppLearningSummariesRequestBuilder) CreatePostRequestInformation(options *WindowsInformationProtectionAppLearningSummariesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *WindowsInformationProtectionAppLearningSummariesRequestBuilder) CreateP
     }
     return requestInfo, nil
 }
-// The windows information protection app learning summaries.
-// Parameters:
-//  - options : Options for the request
+// Get the windows information protection app learning summaries.
 func (m *WindowsInformationProtectionAppLearningSummariesRequestBuilder) Get(options *WindowsInformationProtectionAppLearningSummariesRequestBuilderGetOptions)(*WindowsInformationProtectionAppLearningSummariesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *WindowsInformationProtectionAppLearningSummariesRequestBuilder) Get(opt
     }
     return res.(*WindowsInformationProtectionAppLearningSummariesResponse), nil
 }
-// The windows information protection app learning summaries.
-// Parameters:
-//  - options : Options for the request
+// Post the windows information protection app learning summaries.
 func (m *WindowsInformationProtectionAppLearningSummariesRequestBuilder) Post(options *WindowsInformationProtectionAppLearningSummariesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsInformationProtectionAppLearningSummary, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

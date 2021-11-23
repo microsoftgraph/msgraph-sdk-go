@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\detectedApps
+// detectedAppsRequestBuilder builds and executes requests for operations under \deviceManagement\detectedApps
 type DetectedAppsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DetectedAppsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DetectedAppsRequestBuilderGetOptions options for Get
 type DetectedAppsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DetectedAppsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of detected apps associated with a device.
+// detectedAppsRequestBuilderGetQueryParameters the list of detected apps associated with a device.
 type DetectedAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DetectedAppsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DetectedAppsRequestBuilderPostOptions options for Post
 type DetectedAppsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DetectedApp;
@@ -56,10 +56,7 @@ type DetectedAppsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DetectedAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDetectedAppsRequestBuilderInternal instantiates a new DetectedAppsRequestBuilder and sets the default values.
 func NewDetectedAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DetectedAppsRequestBuilder) {
     m := &DetectedAppsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDetectedAppsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DetectedAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDetectedAppsRequestBuilder instantiates a new DetectedAppsRequestBuilder and sets the default values.
 func NewDetectedAppsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DetectedAppsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDetectedAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of detected apps associated with a device.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of detected apps associated with a device.
 func (m *DetectedAppsRequestBuilder) CreateGetRequestInformation(options *DetectedAppsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DetectedAppsRequestBuilder) CreateGetRequestInformation(options *Detect
     }
     return requestInfo, nil
 }
-// The list of detected apps associated with a device.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of detected apps associated with a device.
 func (m *DetectedAppsRequestBuilder) CreatePostRequestInformation(options *DetectedAppsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DetectedAppsRequestBuilder) CreatePostRequestInformation(options *Detec
     }
     return requestInfo, nil
 }
-// The list of detected apps associated with a device.
-// Parameters:
-//  - options : Options for the request
+// Get the list of detected apps associated with a device.
 func (m *DetectedAppsRequestBuilder) Get(options *DetectedAppsRequestBuilderGetOptions)(*DetectedAppsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DetectedAppsRequestBuilder) Get(options *DetectedAppsRequestBuilderGetO
     }
     return res.(*DetectedAppsResponse), nil
 }
-// The list of detected apps associated with a device.
-// Parameters:
-//  - options : Options for the request
+// Post the list of detected apps associated with a device.
 func (m *DetectedAppsRequestBuilder) Post(options *DetectedAppsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DetectedApp, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

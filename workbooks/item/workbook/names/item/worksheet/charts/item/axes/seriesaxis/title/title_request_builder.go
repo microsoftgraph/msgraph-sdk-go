@@ -7,7 +7,7 @@ import (
     ib63c82e5724432edde06767561218c174e373434e0488998140d6dda57b5d9c7 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/axes/seriesaxis/title/format"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes\seriesAxis\title
+// titleRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes\seriesAxis\title
 type TitleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TitleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TitleRequestBuilderDeleteOptions options for Delete
 type TitleRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type TitleRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TitleRequestBuilderGetOptions options for Get
 type TitleRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type TitleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the axis title. Read-only.
+// titleRequestBuilderGetQueryParameters represents the axis title. Read-only.
 type TitleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TitleRequestBuilderPatchOptions options for Patch
 type TitleRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxisTitle;
@@ -54,10 +54,7 @@ type TitleRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TitleRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTitleRequestBuilderInternal instantiates a new TitleRequestBuilder and sets the default values.
 func NewTitleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TitleRequestBuilder) {
     m := &TitleRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewTitleRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TitleRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTitleRequestBuilder instantiates a new TitleRequestBuilder and sets the default values.
 func NewTitleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TitleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTitleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the axis title. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the axis title. Read-only.
 func (m *TitleRequestBuilder) CreateDeleteRequestInformation(options *TitleRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *TitleRequestBuilder) CreateDeleteRequestInformation(options *TitleReque
     }
     return requestInfo, nil
 }
-// Represents the axis title. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the axis title. Read-only.
 func (m *TitleRequestBuilder) CreateGetRequestInformation(options *TitleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *TitleRequestBuilder) CreateGetRequestInformation(options *TitleRequestB
     }
     return requestInfo, nil
 }
-// Represents the axis title. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the axis title. Read-only.
 func (m *TitleRequestBuilder) CreatePatchRequestInformation(options *TitleRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *TitleRequestBuilder) CreatePatchRequestInformation(options *TitleReques
     }
     return requestInfo, nil
 }
-// Represents the axis title. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the axis title. Read-only.
 func (m *TitleRequestBuilder) Delete(options *TitleRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *TitleRequestBuilder) Delete(options *TitleRequestBuilderDeleteOptions)(
 func (m *TitleRequestBuilder) Format()(*ib63c82e5724432edde06767561218c174e373434e0488998140d6dda57b5d9c7.FormatRequestBuilder) {
     return ib63c82e5724432edde06767561218c174e373434e0488998140d6dda57b5d9c7.NewFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents the axis title. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents the axis title. Read-only.
 func (m *TitleRequestBuilder) Get(options *TitleRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxisTitle, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *TitleRequestBuilder) Get(options *TitleRequestBuilderGetOptions)(*i4a83
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxisTitle), nil
 }
-// Represents the axis title. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the axis title. Read-only.
 func (m *TitleRequestBuilder) Patch(options *TitleRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

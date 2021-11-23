@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\operations\{managedAppOperation-id}
+// managedAppOperationRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\operations\{managedAppOperation-id}
 type ManagedAppOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagedAppOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedAppOperationRequestBuilderDeleteOptions options for Delete
 type ManagedAppOperationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ManagedAppOperationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedAppOperationRequestBuilderGetOptions options for Get
 type ManagedAppOperationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ManagedAppOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Zero or more long running operations triggered on the app registration.
+// managedAppOperationRequestBuilderGetQueryParameters zero or more long running operations triggered on the app registration.
 type ManagedAppOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedAppOperationRequestBuilderPatchOptions options for Patch
 type ManagedAppOperationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppOperation;
@@ -53,10 +53,7 @@ type ManagedAppOperationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagedAppOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedAppOperationRequestBuilderInternal instantiates a new ManagedAppOperationRequestBuilder and sets the default values.
 func NewManagedAppOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedAppOperationRequestBuilder) {
     m := &ManagedAppOperationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewManagedAppOperationRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedAppOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedAppOperationRequestBuilder instantiates a new ManagedAppOperationRequestBuilder and sets the default values.
 func NewManagedAppOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedAppOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Zero or more long running operations triggered on the app registration.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation zero or more long running operations triggered on the app registration.
 func (m *ManagedAppOperationRequestBuilder) CreateDeleteRequestInformation(options *ManagedAppOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ManagedAppOperationRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Zero or more long running operations triggered on the app registration.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation zero or more long running operations triggered on the app registration.
 func (m *ManagedAppOperationRequestBuilder) CreateGetRequestInformation(options *ManagedAppOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ManagedAppOperationRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Zero or more long running operations triggered on the app registration.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation zero or more long running operations triggered on the app registration.
 func (m *ManagedAppOperationRequestBuilder) CreatePatchRequestInformation(options *ManagedAppOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ManagedAppOperationRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Zero or more long running operations triggered on the app registration.
-// Parameters:
-//  - options : Options for the request
+// Delete zero or more long running operations triggered on the app registration.
 func (m *ManagedAppOperationRequestBuilder) Delete(options *ManagedAppOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ManagedAppOperationRequestBuilder) Delete(options *ManagedAppOperationR
     }
     return nil
 }
-// Zero or more long running operations triggered on the app registration.
-// Parameters:
-//  - options : Options for the request
+// Get zero or more long running operations triggered on the app registration.
 func (m *ManagedAppOperationRequestBuilder) Get(options *ManagedAppOperationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ManagedAppOperationRequestBuilder) Get(options *ManagedAppOperationRequ
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppOperation), nil
 }
-// Zero or more long running operations triggered on the app registration.
-// Parameters:
-//  - options : Options for the request
+// Patch zero or more long running operations triggered on the app registration.
 func (m *ManagedAppOperationRequestBuilder) Patch(options *ManagedAppOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

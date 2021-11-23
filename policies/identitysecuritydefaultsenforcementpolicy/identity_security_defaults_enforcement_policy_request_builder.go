@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\identitySecurityDefaultsEnforcementPolicy
+// identitySecurityDefaultsEnforcementPolicyRequestBuilder builds and executes requests for operations under \policies\identitySecurityDefaultsEnforcementPolicy
 type IdentitySecurityDefaultsEnforcementPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IdentitySecurityDefaultsEnforcementPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteOptions options for Delete
 type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetOptions options for Get
 type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy that represents the security defaults that protect against common attacks.
+// identitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters the policy that represents the security defaults that protect against common attacks.
 type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchOptions options for Patch
 type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentitySecurityDefaultsEnforcementPolicy;
@@ -53,10 +53,7 @@ type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal instantiates a new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder and sets the default values.
 func NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) {
     m := &IdentitySecurityDefaultsEnforcementPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal(pathPara
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilder instantiates a new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder and sets the default values.
 func NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy that represents the security defaults that protect against common attacks.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the policy that represents the security defaults that protect against common attacks.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateDeleteRequestInformation(options *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// The policy that represents the security defaults that protect against common attacks.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy that represents the security defaults that protect against common attacks.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateGetRequestInformation(options *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// The policy that represents the security defaults that protect against common attacks.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the policy that represents the security defaults that protect against common attacks.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreatePatchRequestInformation(options *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) CreatePatchReq
     }
     return requestInfo, nil
 }
-// The policy that represents the security defaults that protect against common attacks.
-// Parameters:
-//  - options : Options for the request
+// Delete the policy that represents the security defaults that protect against common attacks.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Delete(options *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Delete(options
     }
     return nil
 }
-// The policy that represents the security defaults that protect against common attacks.
-// Parameters:
-//  - options : Options for the request
+// Get the policy that represents the security defaults that protect against common attacks.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Get(options *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentitySecurityDefaultsEnforcementPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Get(options *I
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentitySecurityDefaultsEnforcementPolicy), nil
 }
-// The policy that represents the security defaults that protect against common attacks.
-// Parameters:
-//  - options : Options for the request
+// Patch the policy that represents the security defaults that protect against common attacks.
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Patch(options *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

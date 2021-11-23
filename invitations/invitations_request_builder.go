@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \invitations
+// invitationsRequestBuilder builds and executes requests for operations under \invitations
 type InvitationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type InvitationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// InvitationsRequestBuilderGetOptions options for Get
 type InvitationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type InvitationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from invitations
+// invitationsRequestBuilderGetQueryParameters get entities from invitations
 type InvitationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type InvitationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// InvitationsRequestBuilderPostOptions options for Post
 type InvitationsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Invitation;
@@ -56,10 +56,7 @@ type InvitationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new InvitationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInvitationsRequestBuilderInternal instantiates a new InvitationsRequestBuilder and sets the default values.
 func NewInvitationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InvitationsRequestBuilder) {
     m := &InvitationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewInvitationsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new InvitationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInvitationsRequestBuilder instantiates a new InvitationsRequestBuilder and sets the default values.
 func NewInvitationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InvitationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInvitationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from invitations
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from invitations
 func (m *InvitationsRequestBuilder) CreateGetRequestInformation(options *InvitationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *InvitationsRequestBuilder) CreateGetRequestInformation(options *Invitat
     }
     return requestInfo, nil
 }
-// Add new entity to invitations
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to invitations
 func (m *InvitationsRequestBuilder) CreatePostRequestInformation(options *InvitationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *InvitationsRequestBuilder) CreatePostRequestInformation(options *Invita
     }
     return requestInfo, nil
 }
-// Get entities from invitations
-// Parameters:
-//  - options : Options for the request
+// Get get entities from invitations
 func (m *InvitationsRequestBuilder) Get(options *InvitationsRequestBuilderGetOptions)(*InvitationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *InvitationsRequestBuilder) Get(options *InvitationsRequestBuilderGetOpt
     }
     return res.(*InvitationsResponse), nil
 }
-// Add new entity to invitations
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to invitations
 func (m *InvitationsRequestBuilder) Post(options *InvitationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Invitation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

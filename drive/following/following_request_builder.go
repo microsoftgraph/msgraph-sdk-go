@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \drive\following
+// followingRequestBuilder builds and executes requests for operations under \drive\following
 type FollowingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type FollowingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// FollowingRequestBuilderGetOptions options for Get
 type FollowingRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type FollowingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of items the user is following. Only in OneDrive for Business.
+// followingRequestBuilderGetQueryParameters the list of items the user is following. Only in OneDrive for Business.
 type FollowingRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type FollowingRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// FollowingRequestBuilderPostOptions options for Post
 type FollowingRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem;
@@ -56,10 +56,7 @@ type FollowingRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FollowingRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFollowingRequestBuilderInternal instantiates a new FollowingRequestBuilder and sets the default values.
 func NewFollowingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FollowingRequestBuilder) {
     m := &FollowingRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewFollowingRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FollowingRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFollowingRequestBuilder instantiates a new FollowingRequestBuilder and sets the default values.
 func NewFollowingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FollowingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFollowingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of items the user is following. Only in OneDrive for Business.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of items the user is following. Only in OneDrive for Business.
 func (m *FollowingRequestBuilder) CreateGetRequestInformation(options *FollowingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *FollowingRequestBuilder) CreateGetRequestInformation(options *Following
     }
     return requestInfo, nil
 }
-// The list of items the user is following. Only in OneDrive for Business.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of items the user is following. Only in OneDrive for Business.
 func (m *FollowingRequestBuilder) CreatePostRequestInformation(options *FollowingRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *FollowingRequestBuilder) CreatePostRequestInformation(options *Followin
     }
     return requestInfo, nil
 }
-// The list of items the user is following. Only in OneDrive for Business.
-// Parameters:
-//  - options : Options for the request
+// Get the list of items the user is following. Only in OneDrive for Business.
 func (m *FollowingRequestBuilder) Get(options *FollowingRequestBuilderGetOptions)(*FollowingResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *FollowingRequestBuilder) Get(options *FollowingRequestBuilderGetOptions
     }
     return res.(*FollowingResponse), nil
 }
-// The list of items the user is following. Only in OneDrive for Business.
-// Parameters:
-//  - options : Options for the request
+// Post the list of items the user is following. Only in OneDrive for Business.
 func (m *FollowingRequestBuilder) Post(options *FollowingRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

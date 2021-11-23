@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// columnLink 
 type ColumnLink struct {
     Entity
     // The name of the column  in this content type.
     name *string;
 }
-// Instantiates a new columnLink and sets the default values.
+// NewColumnLink instantiates a new columnLink and sets the default values.
 func NewColumnLink()(*ColumnLink) {
     m := &ColumnLink{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the name property value. The name of the column  in this content type.
+// GetName gets the name property value. The name of the column  in this content type.
 func (m *ColumnLink) GetName()(*string) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *ColumnLink) GetName()(*string) {
         return m.name
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ColumnLink) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -43,9 +43,7 @@ func (m *ColumnLink) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *ColumnLink) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ColumnLink) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -59,9 +57,7 @@ func (m *ColumnLink) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
-// Sets the name property value. The name of the column  in this content type.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. The name of the column  in this content type.
 func (m *ColumnLink) SetName(value *string)() {
     m.name = value
 }

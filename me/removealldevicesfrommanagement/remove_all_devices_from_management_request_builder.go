@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\microsoft.graph.removeAllDevicesFromManagement
+// removeAllDevicesFromManagementRequestBuilder builds and executes requests for operations under \me\microsoft.graph.removeAllDevicesFromManagement
 type RemoveAllDevicesFromManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RemoveAllDevicesFromManagementRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RemoveAllDevicesFromManagementRequestBuilderPostOptions options for Post
 type RemoveAllDevicesFromManagementRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type RemoveAllDevicesFromManagementRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RemoveAllDevicesFromManagementRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoveAllDevicesFromManagementRequestBuilderInternal instantiates a new RemoveAllDevicesFromManagementRequestBuilder and sets the default values.
 func NewRemoveAllDevicesFromManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoveAllDevicesFromManagementRequestBuilder) {
     m := &RemoveAllDevicesFromManagementRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewRemoveAllDevicesFromManagementRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RemoveAllDevicesFromManagementRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoveAllDevicesFromManagementRequestBuilder instantiates a new RemoveAllDevicesFromManagementRequestBuilder and sets the default values.
 func NewRemoveAllDevicesFromManagementRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoveAllDevicesFromManagementRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveAllDevicesFromManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Retire all devices from management for this user
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation retire all devices from management for this user
 func (m *RemoveAllDevicesFromManagementRequestBuilder) CreatePostRequestInformation(options *RemoveAllDevicesFromManagementRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *RemoveAllDevicesFromManagementRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// Retire all devices from management for this user
-// Parameters:
-//  - options : Options for the request
+// Post retire all devices from management for this user
 func (m *RemoveAllDevicesFromManagementRequestBuilder) Post(options *RemoveAllDevicesFromManagementRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

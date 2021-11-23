@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teamwork\workforceIntegrations
+// workforceIntegrationsRequestBuilder builds and executes requests for operations under \teamwork\workforceIntegrations
 type WorkforceIntegrationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WorkforceIntegrationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// WorkforceIntegrationsRequestBuilderGetOptions options for Get
 type WorkforceIntegrationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WorkforceIntegrationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get workforceIntegrations from teamwork
+// workforceIntegrationsRequestBuilderGetQueryParameters get workforceIntegrations from teamwork
 type WorkforceIntegrationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type WorkforceIntegrationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// WorkforceIntegrationsRequestBuilderPostOptions options for Post
 type WorkforceIntegrationsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkforceIntegration;
@@ -56,10 +56,7 @@ type WorkforceIntegrationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WorkforceIntegrationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkforceIntegrationsRequestBuilderInternal instantiates a new WorkforceIntegrationsRequestBuilder and sets the default values.
 func NewWorkforceIntegrationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkforceIntegrationsRequestBuilder) {
     m := &WorkforceIntegrationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewWorkforceIntegrationsRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkforceIntegrationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkforceIntegrationsRequestBuilder instantiates a new WorkforceIntegrationsRequestBuilder and sets the default values.
 func NewWorkforceIntegrationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkforceIntegrationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorkforceIntegrationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get workforceIntegrations from teamwork
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformation(options *WorkforceIntegrationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Create new navigation property to workforceIntegrations for teamwork
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to workforceIntegrations for teamwork
 func (m *WorkforceIntegrationsRequestBuilder) CreatePostRequestInformation(options *WorkforceIntegrationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *WorkforceIntegrationsRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get workforceIntegrations from teamwork
-// Parameters:
-//  - options : Options for the request
+// Get get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationsRequestBuilder) Get(options *WorkforceIntegrationsRequestBuilderGetOptions)(*WorkforceIntegrationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *WorkforceIntegrationsRequestBuilder) Get(options *WorkforceIntegrations
     }
     return res.(*WorkforceIntegrationsResponse), nil
 }
-// Create new navigation property to workforceIntegrations for teamwork
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to workforceIntegrations for teamwork
 func (m *WorkforceIntegrationsRequestBuilder) Post(options *WorkforceIntegrationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkforceIntegration, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

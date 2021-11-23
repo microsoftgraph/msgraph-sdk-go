@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicyDeviceStateSummary
+// deviceCompliancePolicyDeviceStateSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicyDeviceStateSummary
 type DeviceCompliancePolicyDeviceStateSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceCompliancePolicyDeviceStateSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceCompliancePolicyDeviceStateSummaryRequestBuilderDeleteOptions options for Delete
 type DeviceCompliancePolicyDeviceStateSummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceCompliancePolicyDeviceStateSummaryRequestBuilderDeleteOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceCompliancePolicyDeviceStateSummaryRequestBuilderGetOptions options for Get
 type DeviceCompliancePolicyDeviceStateSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceCompliancePolicyDeviceStateSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The device compliance state summary for this account.
+// deviceCompliancePolicyDeviceStateSummaryRequestBuilderGetQueryParameters the device compliance state summary for this account.
 type DeviceCompliancePolicyDeviceStateSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceCompliancePolicyDeviceStateSummaryRequestBuilderPatchOptions options for Patch
 type DeviceCompliancePolicyDeviceStateSummaryRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyDeviceStateSummary;
@@ -53,10 +53,7 @@ type DeviceCompliancePolicyDeviceStateSummaryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceCompliancePolicyDeviceStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilderInternal instantiates a new DeviceCompliancePolicyDeviceStateSummaryRequestBuilder and sets the default values.
 func NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) {
     m := &DeviceCompliancePolicyDeviceStateSummaryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilderInternal(pathParam
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceCompliancePolicyDeviceStateSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilder instantiates a new DeviceCompliancePolicyDeviceStateSummaryRequestBuilder and sets the default values.
 func NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The device compliance state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the device compliance state summary for this account.
 func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) CreateDeleteRequestInformation(options *DeviceCompliancePolicyDeviceStateSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) CreateDeleteReq
     }
     return requestInfo, nil
 }
-// The device compliance state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the device compliance state summary for this account.
 func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) CreateGetRequestInformation(options *DeviceCompliancePolicyDeviceStateSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// The device compliance state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the device compliance state summary for this account.
 func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) CreatePatchRequestInformation(options *DeviceCompliancePolicyDeviceStateSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) CreatePatchRequ
     }
     return requestInfo, nil
 }
-// The device compliance state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// Delete the device compliance state summary for this account.
 func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) Delete(options *DeviceCompliancePolicyDeviceStateSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) Delete(options 
     }
     return nil
 }
-// The device compliance state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// Get the device compliance state summary for this account.
 func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) Get(options *DeviceCompliancePolicyDeviceStateSummaryRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyDeviceStateSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) Get(options *De
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyDeviceStateSummary), nil
 }
-// The device compliance state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// Patch the device compliance state summary for this account.
 func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) Patch(options *DeviceCompliancePolicyDeviceStateSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

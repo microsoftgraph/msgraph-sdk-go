@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \admin\serviceAnnouncement\healthOverviews\{serviceHealth-id}\issues
+// issuesRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\healthOverviews\{serviceHealth-id}\issues
 type IssuesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IssuesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IssuesRequestBuilderGetOptions options for Get
 type IssuesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type IssuesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of issues happened on the service, with detailed information for each issue.
+// issuesRequestBuilderGetQueryParameters a collection of issues happened on the service, with detailed information for each issue.
 type IssuesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type IssuesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// IssuesRequestBuilderPostOptions options for Post
 type IssuesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssue;
@@ -56,10 +56,7 @@ type IssuesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IssuesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIssuesRequestBuilderInternal instantiates a new IssuesRequestBuilder and sets the default values.
 func NewIssuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IssuesRequestBuilder) {
     m := &IssuesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewIssuesRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IssuesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIssuesRequestBuilder instantiates a new IssuesRequestBuilder and sets the default values.
 func NewIssuesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IssuesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIssuesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of issues happened on the service, with detailed information for each issue.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of issues happened on the service, with detailed information for each issue.
 func (m *IssuesRequestBuilder) CreateGetRequestInformation(options *IssuesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *IssuesRequestBuilder) CreateGetRequestInformation(options *IssuesReques
     }
     return requestInfo, nil
 }
-// A collection of issues happened on the service, with detailed information for each issue.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a collection of issues happened on the service, with detailed information for each issue.
 func (m *IssuesRequestBuilder) CreatePostRequestInformation(options *IssuesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *IssuesRequestBuilder) CreatePostRequestInformation(options *IssuesReque
     }
     return requestInfo, nil
 }
-// A collection of issues happened on the service, with detailed information for each issue.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of issues happened on the service, with detailed information for each issue.
 func (m *IssuesRequestBuilder) Get(options *IssuesRequestBuilderGetOptions)(*IssuesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *IssuesRequestBuilder) Get(options *IssuesRequestBuilderGetOptions)(*Iss
     }
     return res.(*IssuesResponse), nil
 }
-// A collection of issues happened on the service, with detailed information for each issue.
-// Parameters:
-//  - options : Options for the request
+// Post a collection of issues happened on the service, with detailed information for each issue.
 func (m *IssuesRequestBuilder) Post(options *IssuesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssue, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

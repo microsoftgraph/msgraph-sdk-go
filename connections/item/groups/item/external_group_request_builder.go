@@ -8,7 +8,7 @@ import (
     ic50b14a0e54ff71be7722a78ea802d3159c32ea452a5c07b697e520926f67def "github.com/microsoftgraph/msgraph-sdk-go/connections/item/groups/item/members/item"
 )
 
-// Builds and executes requests for operations under \connections\{externalConnection-id}\groups\{externalGroup-id}
+// externalGroupRequestBuilder builds and executes requests for operations under \connections\{externalConnection-id}\groups\{externalGroup-id}
 type ExternalGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ExternalGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ExternalGroupRequestBuilderDeleteOptions options for Delete
 type ExternalGroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ExternalGroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ExternalGroupRequestBuilderGetOptions options for Get
 type ExternalGroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type ExternalGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable.
+// externalGroupRequestBuilderGetQueryParameters read-only. Nullable.
 type ExternalGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ExternalGroupRequestBuilderPatchOptions options for Patch
 type ExternalGroupRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExternalGroup;
@@ -55,10 +55,7 @@ type ExternalGroupRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExternalGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExternalGroupRequestBuilderInternal instantiates a new ExternalGroupRequestBuilder and sets the default values.
 func NewExternalGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExternalGroupRequestBuilder) {
     m := &ExternalGroupRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewExternalGroupRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExternalGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExternalGroupRequestBuilder instantiates a new ExternalGroupRequestBuilder and sets the default values.
 func NewExternalGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExternalGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExternalGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable.
 func (m *ExternalGroupRequestBuilder) CreateDeleteRequestInformation(options *ExternalGroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *ExternalGroupRequestBuilder) CreateDeleteRequestInformation(options *Ex
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable.
 func (m *ExternalGroupRequestBuilder) CreateGetRequestInformation(options *ExternalGroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ExternalGroupRequestBuilder) CreateGetRequestInformation(options *Exter
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable.
 func (m *ExternalGroupRequestBuilder) CreatePatchRequestInformation(options *ExternalGroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *ExternalGroupRequestBuilder) CreatePatchRequestInformation(options *Ext
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable.
 func (m *ExternalGroupRequestBuilder) Delete(options *ExternalGroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *ExternalGroupRequestBuilder) Delete(options *ExternalGroupRequestBuilde
     }
     return nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable.
 func (m *ExternalGroupRequestBuilder) Get(options *ExternalGroupRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExternalGroup, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *ExternalGroupRequestBuilder) Get(options *ExternalGroupRequestBuilderGe
 func (m *ExternalGroupRequestBuilder) Members()(*i73fe10f042f8d5f546129b39cb0729955f22b23bbb7ba28062bb39181ef118b1.MembersRequestBuilder) {
     return i73fe10f042f8d5f546129b39cb0729955f22b23bbb7ba28062bb39181ef118b1.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.connections.item.groups.item.members.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.connections.item.groups.item.members.item collection
 func (m *ExternalGroupRequestBuilder) MembersById(id string)(*ic50b14a0e54ff71be7722a78ea802d3159c32ea452a5c07b697e520926f67def.IdentityRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *ExternalGroupRequestBuilder) MembersById(id string)(*ic50b14a0e54ff71be
     }
     return ic50b14a0e54ff71be7722a78ea802d3159c32ea452a5c07b697e520926f67def.NewIdentityRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable.
 func (m *ExternalGroupRequestBuilder) Patch(options *ExternalGroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

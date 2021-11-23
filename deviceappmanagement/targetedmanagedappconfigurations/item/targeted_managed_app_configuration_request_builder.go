@@ -13,7 +13,7 @@ import (
     iae5cd0b807da9eeca622ea354242f60add20264ab977061a2f592e1e2bb4e2ef "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/targetedmanagedappconfigurations/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\targetedManagedAppConfigurations\{targetedManagedAppConfiguration-id}
+// targetedManagedAppConfigurationRequestBuilder builds and executes requests for operations under \deviceAppManagement\targetedManagedAppConfigurations\{targetedManagedAppConfiguration-id}
 type TargetedManagedAppConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type TargetedManagedAppConfigurationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TargetedManagedAppConfigurationRequestBuilderDeleteOptions options for Delete
 type TargetedManagedAppConfigurationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type TargetedManagedAppConfigurationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TargetedManagedAppConfigurationRequestBuilderGetOptions options for Get
 type TargetedManagedAppConfigurationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,14 +42,14 @@ type TargetedManagedAppConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Targeted managed app configurations.
+// targetedManagedAppConfigurationRequestBuilderGetQueryParameters targeted managed app configurations.
 type TargetedManagedAppConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TargetedManagedAppConfigurationRequestBuilderPatchOptions options for Patch
 type TargetedManagedAppConfigurationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppConfiguration;
@@ -63,9 +63,7 @@ type TargetedManagedAppConfigurationRequestBuilderPatchOptions struct {
 func (m *TargetedManagedAppConfigurationRequestBuilder) Apps()(*if5f3e25c7fb7036c0005255cf83f278d6dbdc54efe6806e0f73b94dcc8769f54.AppsRequestBuilder) {
     return if5f3e25c7fb7036c0005255cf83f278d6dbdc54efe6806e0f73b94dcc8769f54.NewAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.targetedManagedAppConfigurations.item.apps.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.targetedManagedAppConfigurations.item.apps.item collection
 func (m *TargetedManagedAppConfigurationRequestBuilder) AppsById(id string)(*i0c58f5c03e1e1e1b14874efa5218a60bb1595c685ea667497c77cd45c45299ab.ManagedMobileAppRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -82,9 +80,7 @@ func (m *TargetedManagedAppConfigurationRequestBuilder) Assign()(*i1bc0e847e41eb
 func (m *TargetedManagedAppConfigurationRequestBuilder) Assignments()(*i2e2aa2658be52cafac5b62880a98fc25ab296fd6408d08702a2e240e8e1ef1af.AssignmentsRequestBuilder) {
     return i2e2aa2658be52cafac5b62880a98fc25ab296fd6408d08702a2e240e8e1ef1af.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.targetedManagedAppConfigurations.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.targetedManagedAppConfigurations.item.assignments.item collection
 func (m *TargetedManagedAppConfigurationRequestBuilder) AssignmentsById(id string)(*iae5cd0b807da9eeca622ea354242f60add20264ab977061a2f592e1e2bb4e2ef.TargetedManagedAppPolicyAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -95,10 +91,7 @@ func (m *TargetedManagedAppConfigurationRequestBuilder) AssignmentsById(id strin
     }
     return iae5cd0b807da9eeca622ea354242f60add20264ab977061a2f592e1e2bb4e2ef.NewTargetedManagedAppPolicyAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new TargetedManagedAppConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetedManagedAppConfigurationRequestBuilderInternal instantiates a new TargetedManagedAppConfigurationRequestBuilder and sets the default values.
 func NewTargetedManagedAppConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetedManagedAppConfigurationRequestBuilder) {
     m := &TargetedManagedAppConfigurationRequestBuilder{
     }
@@ -111,18 +104,13 @@ func NewTargetedManagedAppConfigurationRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TargetedManagedAppConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetedManagedAppConfigurationRequestBuilder instantiates a new TargetedManagedAppConfigurationRequestBuilder and sets the default values.
 func NewTargetedManagedAppConfigurationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetedManagedAppConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTargetedManagedAppConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Targeted managed app configurations.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation targeted managed app configurations.
 func (m *TargetedManagedAppConfigurationRequestBuilder) CreateDeleteRequestInformation(options *TargetedManagedAppConfigurationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *TargetedManagedAppConfigurationRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// Targeted managed app configurations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation targeted managed app configurations.
 func (m *TargetedManagedAppConfigurationRequestBuilder) CreateGetRequestInformation(options *TargetedManagedAppConfigurationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,9 +147,7 @@ func (m *TargetedManagedAppConfigurationRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Targeted managed app configurations.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation targeted managed app configurations.
 func (m *TargetedManagedAppConfigurationRequestBuilder) CreatePatchRequestInformation(options *TargetedManagedAppConfigurationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -181,9 +165,7 @@ func (m *TargetedManagedAppConfigurationRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Targeted managed app configurations.
-// Parameters:
-//  - options : Options for the request
+// Delete targeted managed app configurations.
 func (m *TargetedManagedAppConfigurationRequestBuilder) Delete(options *TargetedManagedAppConfigurationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -198,9 +180,7 @@ func (m *TargetedManagedAppConfigurationRequestBuilder) Delete(options *Targeted
 func (m *TargetedManagedAppConfigurationRequestBuilder) DeploymentSummary()(*i10df9e1d49ddd8e40cfbeb83f29b10a26d0a9bd66f497b5f5a6f0cac3ad0a238.DeploymentSummaryRequestBuilder) {
     return i10df9e1d49ddd8e40cfbeb83f29b10a26d0a9bd66f497b5f5a6f0cac3ad0a238.NewDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Targeted managed app configurations.
-// Parameters:
-//  - options : Options for the request
+// Get targeted managed app configurations.
 func (m *TargetedManagedAppConfigurationRequestBuilder) Get(options *TargetedManagedAppConfigurationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppConfiguration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -212,9 +192,7 @@ func (m *TargetedManagedAppConfigurationRequestBuilder) Get(options *TargetedMan
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppConfiguration), nil
 }
-// Targeted managed app configurations.
-// Parameters:
-//  - options : Options for the request
+// Patch targeted managed app configurations.
 func (m *TargetedManagedAppConfigurationRequestBuilder) Patch(options *TargetedManagedAppConfigurationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

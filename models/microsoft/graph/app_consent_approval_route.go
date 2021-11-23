@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// appConsentApprovalRoute 
 type AppConsentApprovalRoute struct {
     Entity
     // 
     appConsentRequests []AppConsentRequest;
 }
-// Instantiates a new appConsentApprovalRoute and sets the default values.
+// NewAppConsentApprovalRoute instantiates a new appConsentApprovalRoute and sets the default values.
 func NewAppConsentApprovalRoute()(*AppConsentApprovalRoute) {
     m := &AppConsentApprovalRoute{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the appConsentRequests property value. 
+// GetAppConsentRequests gets the appConsentRequests property value. 
 func (m *AppConsentApprovalRoute) GetAppConsentRequests()([]AppConsentRequest) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *AppConsentApprovalRoute) GetAppConsentRequests()([]AppConsentRequest) {
         return m.appConsentRequests
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AppConsentApprovalRoute) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appConsentRequests"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -47,9 +47,7 @@ func (m *AppConsentApprovalRoute) GetFieldDeserializers()(map[string]func(interf
 func (m *AppConsentApprovalRoute) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AppConsentApprovalRoute) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -68,9 +66,7 @@ func (m *AppConsentApprovalRoute) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the appConsentRequests property value. 
-// Parameters:
-//  - value : Value to set for the appConsentRequests property.
+// SetAppConsentRequests sets the appConsentRequests property value. 
 func (m *AppConsentApprovalRoute) SetAppConsentRequests(value []AppConsentRequest)() {
     m.appConsentRequests = value
 }

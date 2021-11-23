@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// printUsage 
 type PrintUsage struct {
     Entity
     // 
@@ -16,14 +16,14 @@ type PrintUsage struct {
     // 
     usageDate *string;
 }
-// Instantiates a new printUsage and sets the default values.
+// NewPrintUsage instantiates a new printUsage and sets the default values.
 func NewPrintUsage()(*PrintUsage) {
     m := &PrintUsage{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the completedBlackAndWhiteJobCount property value. 
+// GetCompletedBlackAndWhiteJobCount gets the completedBlackAndWhiteJobCount property value. 
 func (m *PrintUsage) GetCompletedBlackAndWhiteJobCount()(*int64) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *PrintUsage) GetCompletedBlackAndWhiteJobCount()(*int64) {
         return m.completedBlackAndWhiteJobCount
     }
 }
-// Gets the completedColorJobCount property value. 
+// GetCompletedColorJobCount gets the completedColorJobCount property value. 
 func (m *PrintUsage) GetCompletedColorJobCount()(*int64) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *PrintUsage) GetCompletedColorJobCount()(*int64) {
         return m.completedColorJobCount
     }
 }
-// Gets the incompleteJobCount property value. 
+// GetIncompleteJobCount gets the incompleteJobCount property value. 
 func (m *PrintUsage) GetIncompleteJobCount()(*int64) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *PrintUsage) GetIncompleteJobCount()(*int64) {
         return m.incompleteJobCount
     }
 }
-// Gets the usageDate property value. 
+// GetUsageDate gets the usageDate property value. 
 func (m *PrintUsage) GetUsageDate()(*string) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *PrintUsage) GetUsageDate()(*string) {
         return m.usageDate
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["completedBlackAndWhiteJobCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -103,9 +103,7 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *PrintUsage) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PrintUsage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -137,27 +135,19 @@ func (m *PrintUsage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
-// Sets the completedBlackAndWhiteJobCount property value. 
-// Parameters:
-//  - value : Value to set for the completedBlackAndWhiteJobCount property.
+// SetCompletedBlackAndWhiteJobCount sets the completedBlackAndWhiteJobCount property value. 
 func (m *PrintUsage) SetCompletedBlackAndWhiteJobCount(value *int64)() {
     m.completedBlackAndWhiteJobCount = value
 }
-// Sets the completedColorJobCount property value. 
-// Parameters:
-//  - value : Value to set for the completedColorJobCount property.
+// SetCompletedColorJobCount sets the completedColorJobCount property value. 
 func (m *PrintUsage) SetCompletedColorJobCount(value *int64)() {
     m.completedColorJobCount = value
 }
-// Sets the incompleteJobCount property value. 
-// Parameters:
-//  - value : Value to set for the incompleteJobCount property.
+// SetIncompleteJobCount sets the incompleteJobCount property value. 
 func (m *PrintUsage) SetIncompleteJobCount(value *int64)() {
     m.incompleteJobCount = value
 }
-// Sets the usageDate property value. 
-// Parameters:
-//  - value : Value to set for the usageDate property.
+// SetUsageDate sets the usageDate property value. 
 func (m *PrintUsage) SetUsageDate(value *string)() {
     m.usageDate = value
 }

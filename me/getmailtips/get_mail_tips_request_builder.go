@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \me\microsoft.graph.getMailTips
+// getMailTipsRequestBuilder builds and executes requests for operations under \me\microsoft.graph.getMailTips
 type GetMailTipsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetMailTipsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetMailTipsRequestBuilderPostOptions options for Post
 type GetMailTipsRequestBuilderPostOptions struct {
     // 
     Body *GetMailTipsRequestBody;
@@ -25,10 +25,7 @@ type GetMailTipsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetMailTipsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetMailTipsRequestBuilderInternal instantiates a new GetMailTipsRequestBuilder and sets the default values.
 func NewGetMailTipsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetMailTipsRequestBuilder) {
     m := &GetMailTipsRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewGetMailTipsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetMailTipsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetMailTipsRequestBuilder instantiates a new GetMailTipsRequestBuilder and sets the default values.
 func NewGetMailTipsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetMailTipsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetMailTipsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getMailTips
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getMailTips
 func (m *GetMailTipsRequestBuilder) CreatePostRequestInformation(options *GetMailTipsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *GetMailTipsRequestBuilder) CreatePostRequestInformation(options *GetMai
     }
     return requestInfo, nil
 }
-// Invoke action getMailTips
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getMailTips
 func (m *GetMailTipsRequestBuilder) Post(options *GetMailTipsRequestBuilderPostOptions)([]GetMailTips, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

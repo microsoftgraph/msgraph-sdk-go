@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\authentication\fido2Methods
+// fido2MethodsRequestBuilder builds and executes requests for operations under \me\authentication\fido2Methods
 type Fido2MethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type Fido2MethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// Fido2MethodsRequestBuilderGetOptions options for Get
 type Fido2MethodsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type Fido2MethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get fido2Methods from me
+// fido2MethodsRequestBuilderGetQueryParameters get fido2Methods from me
 type Fido2MethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type Fido2MethodsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// Fido2MethodsRequestBuilderPostOptions options for Post
 type Fido2MethodsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Fido2AuthenticationMethod;
@@ -56,10 +56,7 @@ type Fido2MethodsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new Fido2MethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFido2MethodsRequestBuilderInternal instantiates a new Fido2MethodsRequestBuilder and sets the default values.
 func NewFido2MethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*Fido2MethodsRequestBuilder) {
     m := &Fido2MethodsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewFido2MethodsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new Fido2MethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFido2MethodsRequestBuilder instantiates a new Fido2MethodsRequestBuilder and sets the default values.
 func NewFido2MethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*Fido2MethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFido2MethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get fido2Methods from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get fido2Methods from me
 func (m *Fido2MethodsRequestBuilder) CreateGetRequestInformation(options *Fido2MethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *Fido2MethodsRequestBuilder) CreateGetRequestInformation(options *Fido2M
     }
     return requestInfo, nil
 }
-// Create new navigation property to fido2Methods for me
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to fido2Methods for me
 func (m *Fido2MethodsRequestBuilder) CreatePostRequestInformation(options *Fido2MethodsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *Fido2MethodsRequestBuilder) CreatePostRequestInformation(options *Fido2
     }
     return requestInfo, nil
 }
-// Get fido2Methods from me
-// Parameters:
-//  - options : Options for the request
+// Get get fido2Methods from me
 func (m *Fido2MethodsRequestBuilder) Get(options *Fido2MethodsRequestBuilderGetOptions)(*Fido2MethodsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *Fido2MethodsRequestBuilder) Get(options *Fido2MethodsRequestBuilderGetO
     }
     return res.(*Fido2MethodsResponse), nil
 }
-// Create new navigation property to fido2Methods for me
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to fido2Methods for me
 func (m *Fido2MethodsRequestBuilder) Post(options *Fido2MethodsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Fido2AuthenticationMethod, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

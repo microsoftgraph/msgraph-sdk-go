@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\iosUpdateStatuses
+// iosUpdateStatusesRequestBuilder builds and executes requests for operations under \deviceManagement\iosUpdateStatuses
 type IosUpdateStatusesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IosUpdateStatusesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IosUpdateStatusesRequestBuilderGetOptions options for Get
 type IosUpdateStatusesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type IosUpdateStatusesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The IOS software update installation statuses for this account.
+// iosUpdateStatusesRequestBuilderGetQueryParameters the IOS software update installation statuses for this account.
 type IosUpdateStatusesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type IosUpdateStatusesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// IosUpdateStatusesRequestBuilderPostOptions options for Post
 type IosUpdateStatusesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosUpdateDeviceStatus;
@@ -56,10 +56,7 @@ type IosUpdateStatusesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IosUpdateStatusesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosUpdateStatusesRequestBuilderInternal instantiates a new IosUpdateStatusesRequestBuilder and sets the default values.
 func NewIosUpdateStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosUpdateStatusesRequestBuilder) {
     m := &IosUpdateStatusesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewIosUpdateStatusesRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IosUpdateStatusesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosUpdateStatusesRequestBuilder instantiates a new IosUpdateStatusesRequestBuilder and sets the default values.
 func NewIosUpdateStatusesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosUpdateStatusesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIosUpdateStatusesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The IOS software update installation statuses for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the IOS software update installation statuses for this account.
 func (m *IosUpdateStatusesRequestBuilder) CreateGetRequestInformation(options *IosUpdateStatusesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *IosUpdateStatusesRequestBuilder) CreateGetRequestInformation(options *I
     }
     return requestInfo, nil
 }
-// The IOS software update installation statuses for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the IOS software update installation statuses for this account.
 func (m *IosUpdateStatusesRequestBuilder) CreatePostRequestInformation(options *IosUpdateStatusesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *IosUpdateStatusesRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The IOS software update installation statuses for this account.
-// Parameters:
-//  - options : Options for the request
+// Get the IOS software update installation statuses for this account.
 func (m *IosUpdateStatusesRequestBuilder) Get(options *IosUpdateStatusesRequestBuilderGetOptions)(*IosUpdateStatusesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *IosUpdateStatusesRequestBuilder) Get(options *IosUpdateStatusesRequestB
     }
     return res.(*IosUpdateStatusesResponse), nil
 }
-// The IOS software update installation statuses for this account.
-// Parameters:
-//  - options : Options for the request
+// Post the IOS software update installation statuses for this account.
 func (m *IosUpdateStatusesRequestBuilder) Post(options *IosUpdateStatusesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosUpdateDeviceStatus, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

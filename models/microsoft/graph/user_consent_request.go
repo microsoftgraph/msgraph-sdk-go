@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// userConsentRequest 
 type UserConsentRequest struct {
     Request
     // Approval decisions associated with a request.
@@ -12,14 +12,14 @@ type UserConsentRequest struct {
     // The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
     reason *string;
 }
-// Instantiates a new userConsentRequest and sets the default values.
+// NewUserConsentRequest instantiates a new userConsentRequest and sets the default values.
 func NewUserConsentRequest()(*UserConsentRequest) {
     m := &UserConsentRequest{
         Request: *NewRequest(),
     }
     return m
 }
-// Gets the approval property value. Approval decisions associated with a request.
+// GetApproval gets the approval property value. Approval decisions associated with a request.
 func (m *UserConsentRequest) GetApproval()(*Approval) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *UserConsentRequest) GetApproval()(*Approval) {
         return m.approval
     }
 }
-// Gets the reason property value. The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
+// GetReason gets the reason property value. The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
 func (m *UserConsentRequest) GetReason()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *UserConsentRequest) GetReason()(*string) {
         return m.reason
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserConsentRequest) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Request.GetFieldDeserializers()
     res["approval"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,9 +63,7 @@ func (m *UserConsentRequest) GetFieldDeserializers()(map[string]func(interface{}
 func (m *UserConsentRequest) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserConsentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Request.Serialize(writer)
     if err != nil {
@@ -85,15 +83,11 @@ func (m *UserConsentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the approval property value. Approval decisions associated with a request.
-// Parameters:
-//  - value : Value to set for the approval property.
+// SetApproval sets the approval property value. Approval decisions associated with a request.
 func (m *UserConsentRequest) SetApproval(value *Approval)() {
     m.approval = value
 }
-// Sets the reason property value. The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
-// Parameters:
-//  - value : Value to set for the reason property.
+// SetReason sets the reason property value. The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
 func (m *UserConsentRequest) SetReason(value *string)() {
     m.reason = value
 }

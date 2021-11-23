@@ -7,7 +7,7 @@ import (
     i9fe13f0e474f4d86c91d856d6298749eb74702f65b27f2d65e34abfe17f576a1 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/axes/categoryaxis/minorgridlines/format/line/clear"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\categoryAxis\minorGridlines\format\line
+// lineRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\categoryAxis\minorGridlines\format\line
 type LineRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type LineRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// LineRequestBuilderDeleteOptions options for Delete
 type LineRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type LineRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// LineRequestBuilderGetOptions options for Get
 type LineRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type LineRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents chart line formatting. Read-only.
+// lineRequestBuilderGetQueryParameters represents chart line formatting. Read-only.
 type LineRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// LineRequestBuilderPatchOptions options for Patch
 type LineRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartLineFormat;
@@ -57,10 +57,7 @@ type LineRequestBuilderPatchOptions struct {
 func (m *LineRequestBuilder) Clear()(*i9fe13f0e474f4d86c91d856d6298749eb74702f65b27f2d65e34abfe17f576a1.ClearRequestBuilder) {
     return i9fe13f0e474f4d86c91d856d6298749eb74702f65b27f2d65e34abfe17f576a1.NewClearRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new LineRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLineRequestBuilderInternal instantiates a new LineRequestBuilder and sets the default values.
 func NewLineRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LineRequestBuilder) {
     m := &LineRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewLineRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LineRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLineRequestBuilder instantiates a new LineRequestBuilder and sets the default values.
 func NewLineRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LineRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLineRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents chart line formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents chart line formatting. Read-only.
 func (m *LineRequestBuilder) CreateDeleteRequestInformation(options *LineRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *LineRequestBuilder) CreateDeleteRequestInformation(options *LineRequest
     }
     return requestInfo, nil
 }
-// Represents chart line formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents chart line formatting. Read-only.
 func (m *LineRequestBuilder) CreateGetRequestInformation(options *LineRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *LineRequestBuilder) CreateGetRequestInformation(options *LineRequestBui
     }
     return requestInfo, nil
 }
-// Represents chart line formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents chart line formatting. Read-only.
 func (m *LineRequestBuilder) CreatePatchRequestInformation(options *LineRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *LineRequestBuilder) CreatePatchRequestInformation(options *LineRequestB
     }
     return requestInfo, nil
 }
-// Represents chart line formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents chart line formatting. Read-only.
 func (m *LineRequestBuilder) Delete(options *LineRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *LineRequestBuilder) Delete(options *LineRequestBuilderDeleteOptions)(er
     }
     return nil
 }
-// Represents chart line formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents chart line formatting. Read-only.
 func (m *LineRequestBuilder) Get(options *LineRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartLineFormat, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *LineRequestBuilder) Get(options *LineRequestBuilderGetOptions)(*i4a838e
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartLineFormat), nil
 }
-// Represents chart line formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents chart line formatting. Read-only.
 func (m *LineRequestBuilder) Patch(options *LineRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

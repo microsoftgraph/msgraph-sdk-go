@@ -7,7 +7,7 @@ import (
     i98580ff13a3ef7f4b1170b624972b1ac27bd9eccb32aeaed3970aa4eb19496f3 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/accesspackages/filterbycurrentuserwithon"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages
+// accessPackagesRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages
 type AccessPackagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AccessPackagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AccessPackagesRequestBuilderGetOptions options for Get
 type AccessPackagesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AccessPackagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get accessPackages from identityGovernance
+// accessPackagesRequestBuilderGetQueryParameters get accessPackages from identityGovernance
 type AccessPackagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type AccessPackagesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AccessPackagesRequestBuilderPostOptions options for Post
 type AccessPackagesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackage;
@@ -57,10 +57,7 @@ type AccessPackagesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccessPackagesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackagesRequestBuilderInternal instantiates a new AccessPackagesRequestBuilder and sets the default values.
 func NewAccessPackagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackagesRequestBuilder) {
     m := &AccessPackagesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewAccessPackagesRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessPackagesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessPackagesRequestBuilder instantiates a new AccessPackagesRequestBuilder and sets the default values.
 func NewAccessPackagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get accessPackages from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get accessPackages from identityGovernance
 func (m *AccessPackagesRequestBuilder) CreateGetRequestInformation(options *AccessPackagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *AccessPackagesRequestBuilder) CreateGetRequestInformation(options *Acce
     }
     return requestInfo, nil
 }
-// Create new navigation property to accessPackages for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to accessPackages for identityGovernance
 func (m *AccessPackagesRequestBuilder) CreatePostRequestInformation(options *AccessPackagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,15 +114,11 @@ func (m *AccessPackagesRequestBuilder) CreatePostRequestInformation(options *Acc
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\microsoft.graph.filterByCurrentUser(on={on})
-// Parameters:
-//  - on : Usage: on={on}
+// FilterByCurrentUserWithOn builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackages\microsoft.graph.filterByCurrentUser(on={on})
 func (m *AccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i98580ff13a3ef7f4b1170b624972b1ac27bd9eccb32aeaed3970aa4eb19496f3.FilterByCurrentUserWithOnRequestBuilder) {
     return i98580ff13a3ef7f4b1170b624972b1ac27bd9eccb32aeaed3970aa4eb19496f3.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get accessPackages from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get accessPackages from identityGovernance
 func (m *AccessPackagesRequestBuilder) Get(options *AccessPackagesRequestBuilderGetOptions)(*AccessPackagesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -144,9 +130,7 @@ func (m *AccessPackagesRequestBuilder) Get(options *AccessPackagesRequestBuilder
     }
     return res.(*AccessPackagesResponse), nil
 }
-// Create new navigation property to accessPackages for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to accessPackages for identityGovernance
 func (m *AccessPackagesRequestBuilder) Post(options *AccessPackagesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackage, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

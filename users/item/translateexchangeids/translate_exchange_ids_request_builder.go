@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.translateExchangeIds
+// translateExchangeIdsRequestBuilder builds and executes requests for operations under \users\{user-id}\microsoft.graph.translateExchangeIds
 type TranslateExchangeIdsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type TranslateExchangeIdsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// TranslateExchangeIdsRequestBuilderPostOptions options for Post
 type TranslateExchangeIdsRequestBuilderPostOptions struct {
     // 
     Body *TranslateExchangeIdsRequestBody;
@@ -25,10 +25,7 @@ type TranslateExchangeIdsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TranslateExchangeIdsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTranslateExchangeIdsRequestBuilderInternal instantiates a new TranslateExchangeIdsRequestBuilder and sets the default values.
 func NewTranslateExchangeIdsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TranslateExchangeIdsRequestBuilder) {
     m := &TranslateExchangeIdsRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewTranslateExchangeIdsRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TranslateExchangeIdsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTranslateExchangeIdsRequestBuilder instantiates a new TranslateExchangeIdsRequestBuilder and sets the default values.
 func NewTranslateExchangeIdsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TranslateExchangeIdsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTranslateExchangeIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action translateExchangeIds
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action translateExchangeIds
 func (m *TranslateExchangeIdsRequestBuilder) CreatePostRequestInformation(options *TranslateExchangeIdsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *TranslateExchangeIdsRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Invoke action translateExchangeIds
-// Parameters:
-//  - options : Options for the request
+// Post invoke action translateExchangeIds
 func (m *TranslateExchangeIdsRequestBuilder) Post(options *TranslateExchangeIdsRequestBuilderPostOptions)([]TranslateExchangeIds, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

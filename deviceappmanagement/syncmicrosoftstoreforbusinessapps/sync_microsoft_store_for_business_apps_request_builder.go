@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\microsoft.graph.syncMicrosoftStoreForBusinessApps
+// syncMicrosoftStoreForBusinessAppsRequestBuilder builds and executes requests for operations under \deviceAppManagement\microsoft.graph.syncMicrosoftStoreForBusinessApps
 type SyncMicrosoftStoreForBusinessAppsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type SyncMicrosoftStoreForBusinessAppsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// SyncMicrosoftStoreForBusinessAppsRequestBuilderPostOptions options for Post
 type SyncMicrosoftStoreForBusinessAppsRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type SyncMicrosoftStoreForBusinessAppsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SyncMicrosoftStoreForBusinessAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSyncMicrosoftStoreForBusinessAppsRequestBuilderInternal instantiates a new SyncMicrosoftStoreForBusinessAppsRequestBuilder and sets the default values.
 func NewSyncMicrosoftStoreForBusinessAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SyncMicrosoftStoreForBusinessAppsRequestBuilder) {
     m := &SyncMicrosoftStoreForBusinessAppsRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewSyncMicrosoftStoreForBusinessAppsRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SyncMicrosoftStoreForBusinessAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSyncMicrosoftStoreForBusinessAppsRequestBuilder instantiates a new SyncMicrosoftStoreForBusinessAppsRequestBuilder and sets the default values.
 func NewSyncMicrosoftStoreForBusinessAppsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SyncMicrosoftStoreForBusinessAppsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSyncMicrosoftStoreForBusinessAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Syncs Intune account with Microsoft Store For Business
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation syncs Intune account with Microsoft Store For Business
 func (m *SyncMicrosoftStoreForBusinessAppsRequestBuilder) CreatePostRequestInformation(options *SyncMicrosoftStoreForBusinessAppsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *SyncMicrosoftStoreForBusinessAppsRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// Syncs Intune account with Microsoft Store For Business
-// Parameters:
-//  - options : Options for the request
+// Post syncs Intune account with Microsoft Store For Business
 func (m *SyncMicrosoftStoreForBusinessAppsRequestBuilder) Post(options *SyncMicrosoftStoreForBusinessAppsRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

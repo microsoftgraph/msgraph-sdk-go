@@ -5,7 +5,7 @@ import (
     i82c6bf85b2492322ba6fb9c982c87ddc6ebcb18961a81c582df903cee20da37b "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/resource/workbookrangefill/clear"
 )
 
-// Builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.workbookRangeFill
+// workbookRangeFillRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.workbookRangeFill
 type WorkbookRangeFillRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,10 +17,7 @@ type WorkbookRangeFillRequestBuilder struct {
 func (m *WorkbookRangeFillRequestBuilder) Clear()(*i82c6bf85b2492322ba6fb9c982c87ddc6ebcb18961a81c582df903cee20da37b.ClearRequestBuilder) {
     return i82c6bf85b2492322ba6fb9c982c87ddc6ebcb18961a81c582df903cee20da37b.NewClearRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new WorkbookRangeFillRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookRangeFillRequestBuilderInternal instantiates a new WorkbookRangeFillRequestBuilder and sets the default values.
 func NewWorkbookRangeFillRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookRangeFillRequestBuilder) {
     m := &WorkbookRangeFillRequestBuilder{
     }
@@ -33,10 +30,7 @@ func NewWorkbookRangeFillRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbookRangeFillRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookRangeFillRequestBuilder instantiates a new WorkbookRangeFillRequestBuilder and sets the default values.
 func NewWorkbookRangeFillRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookRangeFillRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

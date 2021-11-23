@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// sharePointIdentity 
 type SharePointIdentity struct {
     Identity
     // 
     loginName *string;
 }
-// Instantiates a new sharePointIdentity and sets the default values.
+// NewSharePointIdentity instantiates a new sharePointIdentity and sets the default values.
 func NewSharePointIdentity()(*SharePointIdentity) {
     m := &SharePointIdentity{
         Identity: *NewIdentity(),
     }
     return m
 }
-// Gets the loginName property value. 
+// GetLoginName gets the loginName property value. 
 func (m *SharePointIdentity) GetLoginName()(*string) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *SharePointIdentity) GetLoginName()(*string) {
         return m.loginName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SharePointIdentity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["loginName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -43,9 +43,7 @@ func (m *SharePointIdentity) GetFieldDeserializers()(map[string]func(interface{}
 func (m *SharePointIdentity) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SharePointIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Identity.Serialize(writer)
     if err != nil {
@@ -59,9 +57,7 @@ func (m *SharePointIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the loginName property value. 
-// Parameters:
-//  - value : Value to set for the loginName property.
+// SetLoginName sets the loginName property value. 
 func (m *SharePointIdentity) SetLoginName(value *string)() {
     m.loginName = value
 }

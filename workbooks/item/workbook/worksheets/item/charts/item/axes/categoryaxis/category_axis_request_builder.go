@@ -10,7 +10,7 @@ import (
     ic8f517c928282fceb895b3711e71afc58cac9128a6d1c267ef1b7a615f1e414e "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/axes/categoryaxis/title"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\categoryAxis
+// categoryAxisRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\categoryAxis
 type CategoryAxisRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type CategoryAxisRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CategoryAxisRequestBuilderDeleteOptions options for Delete
 type CategoryAxisRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type CategoryAxisRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CategoryAxisRequestBuilderGetOptions options for Get
 type CategoryAxisRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type CategoryAxisRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the category axis in a chart. Read-only.
+// categoryAxisRequestBuilderGetQueryParameters represents the category axis in a chart. Read-only.
 type CategoryAxisRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CategoryAxisRequestBuilderPatchOptions options for Patch
 type CategoryAxisRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxis;
@@ -57,10 +57,7 @@ type CategoryAxisRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CategoryAxisRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCategoryAxisRequestBuilderInternal instantiates a new CategoryAxisRequestBuilder and sets the default values.
 func NewCategoryAxisRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CategoryAxisRequestBuilder) {
     m := &CategoryAxisRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewCategoryAxisRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CategoryAxisRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCategoryAxisRequestBuilder instantiates a new CategoryAxisRequestBuilder and sets the default values.
 func NewCategoryAxisRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CategoryAxisRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCategoryAxisRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the category axis in a chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the category axis in a chart. Read-only.
 func (m *CategoryAxisRequestBuilder) CreateDeleteRequestInformation(options *CategoryAxisRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *CategoryAxisRequestBuilder) CreateDeleteRequestInformation(options *Cat
     }
     return requestInfo, nil
 }
-// Represents the category axis in a chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the category axis in a chart. Read-only.
 func (m *CategoryAxisRequestBuilder) CreateGetRequestInformation(options *CategoryAxisRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CategoryAxisRequestBuilder) CreateGetRequestInformation(options *Catego
     }
     return requestInfo, nil
 }
-// Represents the category axis in a chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the category axis in a chart. Read-only.
 func (m *CategoryAxisRequestBuilder) CreatePatchRequestInformation(options *CategoryAxisRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *CategoryAxisRequestBuilder) CreatePatchRequestInformation(options *Cate
     }
     return requestInfo, nil
 }
-// Represents the category axis in a chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the category axis in a chart. Read-only.
 func (m *CategoryAxisRequestBuilder) Delete(options *CategoryAxisRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -160,9 +146,7 @@ func (m *CategoryAxisRequestBuilder) Delete(options *CategoryAxisRequestBuilderD
 func (m *CategoryAxisRequestBuilder) Format()(*i990f8ed06fbc5d875c459ced2290a050b51741b28b7e519ef33228f2765bc118.FormatRequestBuilder) {
     return i990f8ed06fbc5d875c459ced2290a050b51741b28b7e519ef33228f2765bc118.NewFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents the category axis in a chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents the category axis in a chart. Read-only.
 func (m *CategoryAxisRequestBuilder) Get(options *CategoryAxisRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxis, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -180,9 +164,7 @@ func (m *CategoryAxisRequestBuilder) MajorGridlines()(*ibad0358edbb0279a35b0743a
 func (m *CategoryAxisRequestBuilder) MinorGridlines()(*iac88f5c48a2c77396a21992fd5c38d548b42c8849c7519f8a752b62d4b8f5bc0.MinorGridlinesRequestBuilder) {
     return iac88f5c48a2c77396a21992fd5c38d548b42c8849c7519f8a752b62d4b8f5bc0.NewMinorGridlinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents the category axis in a chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the category axis in a chart. Read-only.
 func (m *CategoryAxisRequestBuilder) Patch(options *CategoryAxisRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

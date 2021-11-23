@@ -14,7 +14,7 @@ import (
     i82ebac0048f2c4d4678fe54780699f0f1230c24f422393c29fcc9bccf43bf443 "github.com/microsoftgraph/msgraph-sdk-go/me/contactfolders/item/singlevalueextendedproperties/item"
 )
 
-// Builds and executes requests for operations under \me\contactFolders\{contactFolder-id}
+// contactFolderRequestBuilder builds and executes requests for operations under \me\contactFolders\{contactFolder-id}
 type ContactFolderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -23,7 +23,7 @@ type ContactFolderRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ContactFolderRequestBuilderDeleteOptions options for Delete
 type ContactFolderRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -32,7 +32,7 @@ type ContactFolderRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ContactFolderRequestBuilderGetOptions options for Get
 type ContactFolderRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -43,12 +43,12 @@ type ContactFolderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user's contacts folders. Read-only. Nullable.
+// contactFolderRequestBuilderGetQueryParameters the user's contacts folders. Read-only. Nullable.
 type ContactFolderRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ContactFolderRequestBuilderPatchOptions options for Patch
 type ContactFolderRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolder;
@@ -62,9 +62,7 @@ type ContactFolderRequestBuilderPatchOptions struct {
 func (m *ContactFolderRequestBuilder) ChildFolders()(*i0035901ffc213fc4b59f4993863d1daec79b347f97e62b284d79c7f4e51e541a.ChildFoldersRequestBuilder) {
     return i0035901ffc213fc4b59f4993863d1daec79b347f97e62b284d79c7f4e51e541a.NewChildFoldersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item.childFolders.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ChildFoldersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item.childFolders.item collection
 func (m *ContactFolderRequestBuilder) ChildFoldersById(id string)(*i7b320e3aa4ff049100b60cd68585037930958ce6c760db10289e1a7baef49df1.ContactFolderRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,10 +73,7 @@ func (m *ContactFolderRequestBuilder) ChildFoldersById(id string)(*i7b320e3aa4ff
     }
     return i7b320e3aa4ff049100b60cd68585037930958ce6c760db10289e1a7baef49df1.NewContactFolderRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new ContactFolderRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContactFolderRequestBuilderInternal instantiates a new ContactFolderRequestBuilder and sets the default values.
 func NewContactFolderRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactFolderRequestBuilder) {
     m := &ContactFolderRequestBuilder{
     }
@@ -91,10 +86,7 @@ func NewContactFolderRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ContactFolderRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContactFolderRequestBuilder instantiates a new ContactFolderRequestBuilder and sets the default values.
 func NewContactFolderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactFolderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -103,9 +95,7 @@ func NewContactFolderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
 func (m *ContactFolderRequestBuilder) Contacts()(*ib939870f831b5d1e6f646bd6624ff59df0efd3d63e40ad5d6874229710fb5a0f.ContactsRequestBuilder) {
     return ib939870f831b5d1e6f646bd6624ff59df0efd3d63e40ad5d6874229710fb5a0f.NewContactsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item.contacts.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ContactsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item.contacts.item collection
 func (m *ContactFolderRequestBuilder) ContactsById(id string)(*i73617fc20b6e8870c7f350b9a031e29042cc9e456837fc4b6df34bbf3918f396.ContactRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -116,9 +106,7 @@ func (m *ContactFolderRequestBuilder) ContactsById(id string)(*i73617fc20b6e8870
     }
     return i73617fc20b6e8870c7f350b9a031e29042cc9e456837fc4b6df34bbf3918f396.NewContactRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The user's contacts folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the user's contacts folders. Read-only. Nullable.
 func (m *ContactFolderRequestBuilder) CreateDeleteRequestInformation(options *ContactFolderRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -135,9 +123,7 @@ func (m *ContactFolderRequestBuilder) CreateDeleteRequestInformation(options *Co
     }
     return requestInfo, nil
 }
-// The user's contacts folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user's contacts folders. Read-only. Nullable.
 func (m *ContactFolderRequestBuilder) CreateGetRequestInformation(options *ContactFolderRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,9 +143,7 @@ func (m *ContactFolderRequestBuilder) CreateGetRequestInformation(options *Conta
     }
     return requestInfo, nil
 }
-// The user's contacts folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the user's contacts folders. Read-only. Nullable.
 func (m *ContactFolderRequestBuilder) CreatePatchRequestInformation(options *ContactFolderRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -177,9 +161,7 @@ func (m *ContactFolderRequestBuilder) CreatePatchRequestInformation(options *Con
     }
     return requestInfo, nil
 }
-// The user's contacts folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the user's contacts folders. Read-only. Nullable.
 func (m *ContactFolderRequestBuilder) Delete(options *ContactFolderRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -191,9 +173,7 @@ func (m *ContactFolderRequestBuilder) Delete(options *ContactFolderRequestBuilde
     }
     return nil
 }
-// The user's contacts folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the user's contacts folders. Read-only. Nullable.
 func (m *ContactFolderRequestBuilder) Get(options *ContactFolderRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolder, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -208,9 +188,7 @@ func (m *ContactFolderRequestBuilder) Get(options *ContactFolderRequestBuilderGe
 func (m *ContactFolderRequestBuilder) MultiValueExtendedProperties()(*ic1c22c979ab4e96bd99861c36b59000262714ad01fb89b523d57edd0e2710294.MultiValueExtendedPropertiesRequestBuilder) {
     return ic1c22c979ab4e96bd99861c36b59000262714ad01fb89b523d57edd0e2710294.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item.multiValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item.multiValueExtendedProperties.item collection
 func (m *ContactFolderRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i6249342797ad051a9fde0138fc7a4de2b582b010423ef26c264a2a10b971def7.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -221,9 +199,7 @@ func (m *ContactFolderRequestBuilder) MultiValueExtendedPropertiesById(id string
     }
     return i6249342797ad051a9fde0138fc7a4de2b582b010423ef26c264a2a10b971def7.NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The user's contacts folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the user's contacts folders. Read-only. Nullable.
 func (m *ContactFolderRequestBuilder) Patch(options *ContactFolderRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -238,9 +214,7 @@ func (m *ContactFolderRequestBuilder) Patch(options *ContactFolderRequestBuilder
 func (m *ContactFolderRequestBuilder) SingleValueExtendedProperties()(*ibe30f52eff3d7782e030050a6a70ab017912ac09c1eaaafeb1f5bc12d8b3a5c0.SingleValueExtendedPropertiesRequestBuilder) {
     return ibe30f52eff3d7782e030050a6a70ab017912ac09c1eaaafeb1f5bc12d8b3a5c0.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item.singleValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contactFolders.item.singleValueExtendedProperties.item collection
 func (m *ContactFolderRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i82ebac0048f2c4d4678fe54780699f0f1230c24f422393c29fcc9bccf43bf443.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

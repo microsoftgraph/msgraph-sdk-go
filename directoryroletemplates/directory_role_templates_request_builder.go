@@ -9,7 +9,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \directoryRoleTemplates
+// directoryRoleTemplatesRequestBuilder builds and executes requests for operations under \directoryRoleTemplates
 type DirectoryRoleTemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type DirectoryRoleTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DirectoryRoleTemplatesRequestBuilderGetOptions options for Get
 type DirectoryRoleTemplatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type DirectoryRoleTemplatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from directoryRoleTemplates
+// directoryRoleTemplatesRequestBuilderGetQueryParameters get entities from directoryRoleTemplates
 type DirectoryRoleTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type DirectoryRoleTemplatesRequestBuilderGetQueryParameters struct {
     // Skip the first n items
     Skip *int32;
 }
-// Options for Post
+// DirectoryRoleTemplatesRequestBuilderPostOptions options for Post
 type DirectoryRoleTemplatesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleTemplate;
@@ -57,10 +57,7 @@ type DirectoryRoleTemplatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DirectoryRoleTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryRoleTemplatesRequestBuilderInternal instantiates a new DirectoryRoleTemplatesRequestBuilder and sets the default values.
 func NewDirectoryRoleTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRoleTemplatesRequestBuilder) {
     m := &DirectoryRoleTemplatesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewDirectoryRoleTemplatesRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DirectoryRoleTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryRoleTemplatesRequestBuilder instantiates a new DirectoryRoleTemplatesRequestBuilder and sets the default values.
 func NewDirectoryRoleTemplatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRoleTemplatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from directoryRoleTemplates
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from directoryRoleTemplates
 func (m *DirectoryRoleTemplatesRequestBuilder) CreateGetRequestInformation(options *DirectoryRoleTemplatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *DirectoryRoleTemplatesRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Add new entity to directoryRoleTemplates
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to directoryRoleTemplates
 func (m *DirectoryRoleTemplatesRequestBuilder) CreatePostRequestInformation(options *DirectoryRoleTemplatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *DirectoryRoleTemplatesRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get entities from directoryRoleTemplates
-// Parameters:
-//  - options : Options for the request
+// Get get entities from directoryRoleTemplates
 func (m *DirectoryRoleTemplatesRequestBuilder) Get(options *DirectoryRoleTemplatesRequestBuilderGetOptions)(*DirectoryRoleTemplatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -144,9 +132,7 @@ func (m *DirectoryRoleTemplatesRequestBuilder) GetAvailableExtensionProperties()
 func (m *DirectoryRoleTemplatesRequestBuilder) GetByIds()(*i13f35543e7fd513b7896b53959450496b4b40a0d8ed709962f6871dc35b86ec4.GetByIdsRequestBuilder) {
     return i13f35543e7fd513b7896b53959450496b4b40a0d8ed709962f6871dc35b86ec4.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to directoryRoleTemplates
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to directoryRoleTemplates
 func (m *DirectoryRoleTemplatesRequestBuilder) Post(options *DirectoryRoleTemplatesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleTemplate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

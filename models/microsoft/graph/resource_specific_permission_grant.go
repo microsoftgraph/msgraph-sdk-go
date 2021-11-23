@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// resourceSpecificPermissionGrant 
 type ResourceSpecificPermissionGrant struct {
     DirectoryObject
     // ID of the service principal of the Azure AD app that has been granted access. Read-only.
@@ -18,14 +18,14 @@ type ResourceSpecificPermissionGrant struct {
     // ID of the Azure AD app that is hosting the resource. Read-only.
     resourceAppId *string;
 }
-// Instantiates a new resourceSpecificPermissionGrant and sets the default values.
+// NewResourceSpecificPermissionGrant instantiates a new resourceSpecificPermissionGrant and sets the default values.
 func NewResourceSpecificPermissionGrant()(*ResourceSpecificPermissionGrant) {
     m := &ResourceSpecificPermissionGrant{
         DirectoryObject: *NewDirectoryObject(),
     }
     return m
 }
-// Gets the clientAppId property value. ID of the service principal of the Azure AD app that has been granted access. Read-only.
+// GetClientAppId gets the clientAppId property value. ID of the service principal of the Azure AD app that has been granted access. Read-only.
 func (m *ResourceSpecificPermissionGrant) GetClientAppId()(*string) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *ResourceSpecificPermissionGrant) GetClientAppId()(*string) {
         return m.clientAppId
     }
 }
-// Gets the clientId property value. ID of the Azure AD app that has been granted access. Read-only.
+// GetClientId gets the clientId property value. ID of the Azure AD app that has been granted access. Read-only.
 func (m *ResourceSpecificPermissionGrant) GetClientId()(*string) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *ResourceSpecificPermissionGrant) GetClientId()(*string) {
         return m.clientId
     }
 }
-// Gets the permission property value. The name of the resource-specific permission. Read-only.
+// GetPermission gets the permission property value. The name of the resource-specific permission. Read-only.
 func (m *ResourceSpecificPermissionGrant) GetPermission()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *ResourceSpecificPermissionGrant) GetPermission()(*string) {
         return m.permission
     }
 }
-// Gets the permissionType property value. The type of permission. Possible values are: Application, Delegated. Read-only.
+// GetPermissionType gets the permissionType property value. The type of permission. Possible values are: Application, Delegated. Read-only.
 func (m *ResourceSpecificPermissionGrant) GetPermissionType()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *ResourceSpecificPermissionGrant) GetPermissionType()(*string) {
         return m.permissionType
     }
 }
-// Gets the resourceAppId property value. ID of the Azure AD app that is hosting the resource. Read-only.
+// GetResourceAppId gets the resourceAppId property value. ID of the Azure AD app that is hosting the resource. Read-only.
 func (m *ResourceSpecificPermissionGrant) GetResourceAppId()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *ResourceSpecificPermissionGrant) GetResourceAppId()(*string) {
         return m.resourceAppId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ResourceSpecificPermissionGrant) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["clientAppId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -123,9 +123,7 @@ func (m *ResourceSpecificPermissionGrant) GetFieldDeserializers()(map[string]fun
 func (m *ResourceSpecificPermissionGrant) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ResourceSpecificPermissionGrant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.DirectoryObject.Serialize(writer)
     if err != nil {
@@ -163,33 +161,23 @@ func (m *ResourceSpecificPermissionGrant) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the clientAppId property value. ID of the service principal of the Azure AD app that has been granted access. Read-only.
-// Parameters:
-//  - value : Value to set for the clientAppId property.
+// SetClientAppId sets the clientAppId property value. ID of the service principal of the Azure AD app that has been granted access. Read-only.
 func (m *ResourceSpecificPermissionGrant) SetClientAppId(value *string)() {
     m.clientAppId = value
 }
-// Sets the clientId property value. ID of the Azure AD app that has been granted access. Read-only.
-// Parameters:
-//  - value : Value to set for the clientId property.
+// SetClientId sets the clientId property value. ID of the Azure AD app that has been granted access. Read-only.
 func (m *ResourceSpecificPermissionGrant) SetClientId(value *string)() {
     m.clientId = value
 }
-// Sets the permission property value. The name of the resource-specific permission. Read-only.
-// Parameters:
-//  - value : Value to set for the permission property.
+// SetPermission sets the permission property value. The name of the resource-specific permission. Read-only.
 func (m *ResourceSpecificPermissionGrant) SetPermission(value *string)() {
     m.permission = value
 }
-// Sets the permissionType property value. The type of permission. Possible values are: Application, Delegated. Read-only.
-// Parameters:
-//  - value : Value to set for the permissionType property.
+// SetPermissionType sets the permissionType property value. The type of permission. Possible values are: Application, Delegated. Read-only.
 func (m *ResourceSpecificPermissionGrant) SetPermissionType(value *string)() {
     m.permissionType = value
 }
-// Sets the resourceAppId property value. ID of the Azure AD app that is hosting the resource. Read-only.
-// Parameters:
-//  - value : Value to set for the resourceAppId property.
+// SetResourceAppId sets the resourceAppId property value. ID of the Azure AD app that is hosting the resource. Read-only.
 func (m *ResourceSpecificPermissionGrant) SetResourceAppId(value *string)() {
     m.resourceAppId = value
 }

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.requestRemoteAssistance
+// requestRemoteAssistanceRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.requestRemoteAssistance
 type RequestRemoteAssistanceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RequestRemoteAssistanceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RequestRemoteAssistanceRequestBuilderPostOptions options for Post
 type RequestRemoteAssistanceRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type RequestRemoteAssistanceRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RequestRemoteAssistanceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRequestRemoteAssistanceRequestBuilderInternal instantiates a new RequestRemoteAssistanceRequestBuilder and sets the default values.
 func NewRequestRemoteAssistanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RequestRemoteAssistanceRequestBuilder) {
     m := &RequestRemoteAssistanceRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewRequestRemoteAssistanceRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RequestRemoteAssistanceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRequestRemoteAssistanceRequestBuilder instantiates a new RequestRemoteAssistanceRequestBuilder and sets the default values.
 func NewRequestRemoteAssistanceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RequestRemoteAssistanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRequestRemoteAssistanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Request remote assistance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation request remote assistance
 func (m *RequestRemoteAssistanceRequestBuilder) CreatePostRequestInformation(options *RequestRemoteAssistanceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *RequestRemoteAssistanceRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Request remote assistance
-// Parameters:
-//  - options : Options for the request
+// Post request remote assistance
 func (m *RequestRemoteAssistanceRequestBuilder) Post(options *RequestRemoteAssistanceRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

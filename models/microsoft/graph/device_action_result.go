@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceActionResult 
 type DeviceActionResult struct {
     // Action name
     actionName *string;
@@ -18,14 +18,14 @@ type DeviceActionResult struct {
     // Time the action was initiated
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new deviceActionResult and sets the default values.
+// NewDeviceActionResult instantiates a new deviceActionResult and sets the default values.
 func NewDeviceActionResult()(*DeviceActionResult) {
     m := &DeviceActionResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the actionName property value. Action name
+// GetActionName gets the actionName property value. Action name
 func (m *DeviceActionResult) GetActionName()(*string) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *DeviceActionResult) GetActionName()(*string) {
         return m.actionName
     }
 }
-// Gets the actionState property value. State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+// GetActionState gets the actionState property value. State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.
 func (m *DeviceActionResult) GetActionState()(*ActionState) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *DeviceActionResult) GetActionState()(*ActionState) {
         return m.actionState
     }
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceActionResult) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *DeviceActionResult) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the lastUpdatedDateTime property value. Time the action state was last updated
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Time the action state was last updated
 func (m *DeviceActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *DeviceActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7f
         return m.lastUpdatedDateTime
     }
 }
-// Gets the startDateTime property value. Time the action was initiated
+// GetStartDateTime gets the startDateTime property value. Time the action was initiated
 func (m *DeviceActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *DeviceActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97
         return m.startDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceActionResult) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["actionName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -114,9 +114,7 @@ func (m *DeviceActionResult) GetFieldDeserializers()(map[string]func(interface{}
 func (m *DeviceActionResult) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceActionResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("actionName", m.GetActionName())
@@ -151,33 +149,23 @@ func (m *DeviceActionResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the actionName property value. Action name
-// Parameters:
-//  - value : Value to set for the actionName property.
+// SetActionName sets the actionName property value. Action name
 func (m *DeviceActionResult) SetActionName(value *string)() {
     m.actionName = value
 }
-// Sets the actionState property value. State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.
-// Parameters:
-//  - value : Value to set for the actionState property.
+// SetActionState sets the actionState property value. State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.
 func (m *DeviceActionResult) SetActionState(value *ActionState)() {
     m.actionState = value
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceActionResult) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the lastUpdatedDateTime property value. Time the action state was last updated
-// Parameters:
-//  - value : Value to set for the lastUpdatedDateTime property.
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Time the action state was last updated
 func (m *DeviceActionResult) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastUpdatedDateTime = value
 }
-// Sets the startDateTime property value. Time the action was initiated
-// Parameters:
-//  - value : Value to set for the startDateTime property.
+// SetStartDateTime sets the startDateTime property value. Time the action was initiated
 func (m *DeviceActionResult) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }

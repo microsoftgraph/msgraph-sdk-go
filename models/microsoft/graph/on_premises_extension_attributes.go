@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// onPremisesExtensionAttributes 
 type OnPremisesExtensionAttributes struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -39,14 +39,14 @@ type OnPremisesExtensionAttributes struct {
     // Ninth customizable extension attribute.
     extensionAttribute9 *string;
 }
-// Instantiates a new onPremisesExtensionAttributes and sets the default values.
+// NewOnPremisesExtensionAttributes instantiates a new onPremisesExtensionAttributes and sets the default values.
 func NewOnPremisesExtensionAttributes()(*OnPremisesExtensionAttributes) {
     m := &OnPremisesExtensionAttributes{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesExtensionAttributes) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *OnPremisesExtensionAttributes) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// Gets the extensionAttribute1 property value. First customizable extension attribute.
+// GetExtensionAttribute1 gets the extensionAttribute1 property value. First customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute1()(*string) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute1()(*string) {
         return m.extensionAttribute1
     }
 }
-// Gets the extensionAttribute10 property value. Tenth customizable extension attribute.
+// GetExtensionAttribute10 gets the extensionAttribute10 property value. Tenth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute10()(*string) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute10()(*string) {
         return m.extensionAttribute10
     }
 }
-// Gets the extensionAttribute11 property value. Eleventh customizable extension attribute.
+// GetExtensionAttribute11 gets the extensionAttribute11 property value. Eleventh customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute11()(*string) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute11()(*string) {
         return m.extensionAttribute11
     }
 }
-// Gets the extensionAttribute12 property value. Twelfth customizable extension attribute.
+// GetExtensionAttribute12 gets the extensionAttribute12 property value. Twelfth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute12()(*string) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute12()(*string) {
         return m.extensionAttribute12
     }
 }
-// Gets the extensionAttribute13 property value. Thirteenth customizable extension attribute.
+// GetExtensionAttribute13 gets the extensionAttribute13 property value. Thirteenth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute13()(*string) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute13()(*string) {
         return m.extensionAttribute13
     }
 }
-// Gets the extensionAttribute14 property value. Fourteenth customizable extension attribute.
+// GetExtensionAttribute14 gets the extensionAttribute14 property value. Fourteenth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute14()(*string) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute14()(*string) {
         return m.extensionAttribute14
     }
 }
-// Gets the extensionAttribute15 property value. Fifteenth customizable extension attribute.
+// GetExtensionAttribute15 gets the extensionAttribute15 property value. Fifteenth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute15()(*string) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute15()(*string) {
         return m.extensionAttribute15
     }
 }
-// Gets the extensionAttribute2 property value. Second customizable extension attribute.
+// GetExtensionAttribute2 gets the extensionAttribute2 property value. Second customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute2()(*string) {
     if m == nil {
         return nil
@@ -118,7 +118,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute2()(*string) {
         return m.extensionAttribute2
     }
 }
-// Gets the extensionAttribute3 property value. Third customizable extension attribute.
+// GetExtensionAttribute3 gets the extensionAttribute3 property value. Third customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute3()(*string) {
     if m == nil {
         return nil
@@ -126,7 +126,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute3()(*string) {
         return m.extensionAttribute3
     }
 }
-// Gets the extensionAttribute4 property value. Fourth customizable extension attribute.
+// GetExtensionAttribute4 gets the extensionAttribute4 property value. Fourth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute4()(*string) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute4()(*string) {
         return m.extensionAttribute4
     }
 }
-// Gets the extensionAttribute5 property value. Fifth customizable extension attribute.
+// GetExtensionAttribute5 gets the extensionAttribute5 property value. Fifth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute5()(*string) {
     if m == nil {
         return nil
@@ -142,7 +142,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute5()(*string) {
         return m.extensionAttribute5
     }
 }
-// Gets the extensionAttribute6 property value. Sixth customizable extension attribute.
+// GetExtensionAttribute6 gets the extensionAttribute6 property value. Sixth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute6()(*string) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute6()(*string) {
         return m.extensionAttribute6
     }
 }
-// Gets the extensionAttribute7 property value. Seventh customizable extension attribute.
+// GetExtensionAttribute7 gets the extensionAttribute7 property value. Seventh customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute7()(*string) {
     if m == nil {
         return nil
@@ -158,7 +158,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute7()(*string) {
         return m.extensionAttribute7
     }
 }
-// Gets the extensionAttribute8 property value. Eighth customizable extension attribute.
+// GetExtensionAttribute8 gets the extensionAttribute8 property value. Eighth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute8()(*string) {
     if m == nil {
         return nil
@@ -166,7 +166,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute8()(*string) {
         return m.extensionAttribute8
     }
 }
-// Gets the extensionAttribute9 property value. Ninth customizable extension attribute.
+// GetExtensionAttribute9 gets the extensionAttribute9 property value. Ninth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute9()(*string) {
     if m == nil {
         return nil
@@ -174,7 +174,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute9()(*string) {
         return m.extensionAttribute9
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["extensionAttribute1"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -332,9 +332,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
 func (m *OnPremisesExtensionAttributes) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *OnPremisesExtensionAttributes) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("extensionAttribute1", m.GetExtensionAttribute1())
@@ -434,99 +432,67 @@ func (m *OnPremisesExtensionAttributes) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesExtensionAttributes) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the extensionAttribute1 property value. First customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute1 property.
+// SetExtensionAttribute1 sets the extensionAttribute1 property value. First customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute1(value *string)() {
     m.extensionAttribute1 = value
 }
-// Sets the extensionAttribute10 property value. Tenth customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute10 property.
+// SetExtensionAttribute10 sets the extensionAttribute10 property value. Tenth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute10(value *string)() {
     m.extensionAttribute10 = value
 }
-// Sets the extensionAttribute11 property value. Eleventh customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute11 property.
+// SetExtensionAttribute11 sets the extensionAttribute11 property value. Eleventh customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute11(value *string)() {
     m.extensionAttribute11 = value
 }
-// Sets the extensionAttribute12 property value. Twelfth customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute12 property.
+// SetExtensionAttribute12 sets the extensionAttribute12 property value. Twelfth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute12(value *string)() {
     m.extensionAttribute12 = value
 }
-// Sets the extensionAttribute13 property value. Thirteenth customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute13 property.
+// SetExtensionAttribute13 sets the extensionAttribute13 property value. Thirteenth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute13(value *string)() {
     m.extensionAttribute13 = value
 }
-// Sets the extensionAttribute14 property value. Fourteenth customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute14 property.
+// SetExtensionAttribute14 sets the extensionAttribute14 property value. Fourteenth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute14(value *string)() {
     m.extensionAttribute14 = value
 }
-// Sets the extensionAttribute15 property value. Fifteenth customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute15 property.
+// SetExtensionAttribute15 sets the extensionAttribute15 property value. Fifteenth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute15(value *string)() {
     m.extensionAttribute15 = value
 }
-// Sets the extensionAttribute2 property value. Second customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute2 property.
+// SetExtensionAttribute2 sets the extensionAttribute2 property value. Second customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute2(value *string)() {
     m.extensionAttribute2 = value
 }
-// Sets the extensionAttribute3 property value. Third customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute3 property.
+// SetExtensionAttribute3 sets the extensionAttribute3 property value. Third customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute3(value *string)() {
     m.extensionAttribute3 = value
 }
-// Sets the extensionAttribute4 property value. Fourth customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute4 property.
+// SetExtensionAttribute4 sets the extensionAttribute4 property value. Fourth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute4(value *string)() {
     m.extensionAttribute4 = value
 }
-// Sets the extensionAttribute5 property value. Fifth customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute5 property.
+// SetExtensionAttribute5 sets the extensionAttribute5 property value. Fifth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute5(value *string)() {
     m.extensionAttribute5 = value
 }
-// Sets the extensionAttribute6 property value. Sixth customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute6 property.
+// SetExtensionAttribute6 sets the extensionAttribute6 property value. Sixth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute6(value *string)() {
     m.extensionAttribute6 = value
 }
-// Sets the extensionAttribute7 property value. Seventh customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute7 property.
+// SetExtensionAttribute7 sets the extensionAttribute7 property value. Seventh customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute7(value *string)() {
     m.extensionAttribute7 = value
 }
-// Sets the extensionAttribute8 property value. Eighth customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute8 property.
+// SetExtensionAttribute8 sets the extensionAttribute8 property value. Eighth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute8(value *string)() {
     m.extensionAttribute8 = value
 }
-// Sets the extensionAttribute9 property value. Ninth customizable extension attribute.
-// Parameters:
-//  - value : Value to set for the extensionAttribute9 property.
+// SetExtensionAttribute9 sets the extensionAttribute9 property value. Ninth customizable extension attribute.
 func (m *OnPremisesExtensionAttributes) SetExtensionAttribute9(value *string)() {
     m.extensionAttribute9 = value
 }

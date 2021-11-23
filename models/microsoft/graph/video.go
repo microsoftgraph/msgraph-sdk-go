@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// video 
 type Video struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -29,14 +29,14 @@ type Video struct {
     // Width of the video, in pixels.
     width *int32;
 }
-// Instantiates a new video and sets the default values.
+// NewVideo instantiates a new video and sets the default values.
 func NewVideo()(*Video) {
     m := &Video{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Video) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *Video) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the audioBitsPerSample property value. Number of audio bits per sample.
+// GetAudioBitsPerSample gets the audioBitsPerSample property value. Number of audio bits per sample.
 func (m *Video) GetAudioBitsPerSample()(*int32) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *Video) GetAudioBitsPerSample()(*int32) {
         return m.audioBitsPerSample
     }
 }
-// Gets the audioChannels property value. Number of audio channels.
+// GetAudioChannels gets the audioChannels property value. Number of audio channels.
 func (m *Video) GetAudioChannels()(*int32) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *Video) GetAudioChannels()(*int32) {
         return m.audioChannels
     }
 }
-// Gets the audioFormat property value. Name of the audio format (AAC, MP3, etc.).
+// GetAudioFormat gets the audioFormat property value. Name of the audio format (AAC, MP3, etc.).
 func (m *Video) GetAudioFormat()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *Video) GetAudioFormat()(*string) {
         return m.audioFormat
     }
 }
-// Gets the audioSamplesPerSecond property value. Number of audio samples per second.
+// GetAudioSamplesPerSecond gets the audioSamplesPerSecond property value. Number of audio samples per second.
 func (m *Video) GetAudioSamplesPerSecond()(*int32) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *Video) GetAudioSamplesPerSecond()(*int32) {
         return m.audioSamplesPerSecond
     }
 }
-// Gets the bitrate property value. Bit rate of the video in bits per second.
+// GetBitrate gets the bitrate property value. Bit rate of the video in bits per second.
 func (m *Video) GetBitrate()(*int32) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *Video) GetBitrate()(*int32) {
         return m.bitrate
     }
 }
-// Gets the duration property value. Duration of the file in milliseconds.
+// GetDuration gets the duration property value. Duration of the file in milliseconds.
 func (m *Video) GetDuration()(*int64) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *Video) GetDuration()(*int64) {
         return m.duration
     }
 }
-// Gets the fourCC property value. 'Four character code' name of the video format.
+// GetFourCC gets the fourCC property value. 'Four character code' name of the video format.
 func (m *Video) GetFourCC()(*string) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *Video) GetFourCC()(*string) {
         return m.fourCC
     }
 }
-// Gets the frameRate property value. Frame rate of the video.
+// GetFrameRate gets the frameRate property value. Frame rate of the video.
 func (m *Video) GetFrameRate()(*float64) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *Video) GetFrameRate()(*float64) {
         return m.frameRate
     }
 }
-// Gets the height property value. Height of the video, in pixels.
+// GetHeight gets the height property value. Height of the video, in pixels.
 func (m *Video) GetHeight()(*int32) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *Video) GetHeight()(*int32) {
         return m.height
     }
 }
-// Gets the width property value. Width of the video, in pixels.
+// GetWidth gets the width property value. Width of the video, in pixels.
 func (m *Video) GetWidth()(*int32) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *Video) GetWidth()(*int32) {
         return m.width
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["audioBitsPerSample"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -232,9 +232,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Video) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Video) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("audioBitsPerSample", m.GetAudioBitsPerSample())
@@ -304,69 +302,47 @@ func (m *Video) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Video) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the audioBitsPerSample property value. Number of audio bits per sample.
-// Parameters:
-//  - value : Value to set for the audioBitsPerSample property.
+// SetAudioBitsPerSample sets the audioBitsPerSample property value. Number of audio bits per sample.
 func (m *Video) SetAudioBitsPerSample(value *int32)() {
     m.audioBitsPerSample = value
 }
-// Sets the audioChannels property value. Number of audio channels.
-// Parameters:
-//  - value : Value to set for the audioChannels property.
+// SetAudioChannels sets the audioChannels property value. Number of audio channels.
 func (m *Video) SetAudioChannels(value *int32)() {
     m.audioChannels = value
 }
-// Sets the audioFormat property value. Name of the audio format (AAC, MP3, etc.).
-// Parameters:
-//  - value : Value to set for the audioFormat property.
+// SetAudioFormat sets the audioFormat property value. Name of the audio format (AAC, MP3, etc.).
 func (m *Video) SetAudioFormat(value *string)() {
     m.audioFormat = value
 }
-// Sets the audioSamplesPerSecond property value. Number of audio samples per second.
-// Parameters:
-//  - value : Value to set for the audioSamplesPerSecond property.
+// SetAudioSamplesPerSecond sets the audioSamplesPerSecond property value. Number of audio samples per second.
 func (m *Video) SetAudioSamplesPerSecond(value *int32)() {
     m.audioSamplesPerSecond = value
 }
-// Sets the bitrate property value. Bit rate of the video in bits per second.
-// Parameters:
-//  - value : Value to set for the bitrate property.
+// SetBitrate sets the bitrate property value. Bit rate of the video in bits per second.
 func (m *Video) SetBitrate(value *int32)() {
     m.bitrate = value
 }
-// Sets the duration property value. Duration of the file in milliseconds.
-// Parameters:
-//  - value : Value to set for the duration property.
+// SetDuration sets the duration property value. Duration of the file in milliseconds.
 func (m *Video) SetDuration(value *int64)() {
     m.duration = value
 }
-// Sets the fourCC property value. 'Four character code' name of the video format.
-// Parameters:
-//  - value : Value to set for the fourCC property.
+// SetFourCC sets the fourCC property value. 'Four character code' name of the video format.
 func (m *Video) SetFourCC(value *string)() {
     m.fourCC = value
 }
-// Sets the frameRate property value. Frame rate of the video.
-// Parameters:
-//  - value : Value to set for the frameRate property.
+// SetFrameRate sets the frameRate property value. Frame rate of the video.
 func (m *Video) SetFrameRate(value *float64)() {
     m.frameRate = value
 }
-// Sets the height property value. Height of the video, in pixels.
-// Parameters:
-//  - value : Value to set for the height property.
+// SetHeight sets the height property value. Height of the video, in pixels.
 func (m *Video) SetHeight(value *int32)() {
     m.height = value
 }
-// Sets the width property value. Width of the video, in pixels.
-// Parameters:
-//  - value : Value to set for the width property.
+// SetWidth sets the width property value. Width of the video, in pixels.
 func (m *Video) SetWidth(value *int32)() {
     m.width = value
 }

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\outlook\masterCategories
+// masterCategoriesRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook\masterCategories
 type MasterCategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MasterCategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MasterCategoriesRequestBuilderGetOptions options for Get
 type MasterCategoriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MasterCategoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of categories defined for the user.
+// masterCategoriesRequestBuilderGetQueryParameters a list of categories defined for the user.
 type MasterCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -41,7 +41,7 @@ type MasterCategoriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MasterCategoriesRequestBuilderPostOptions options for Post
 type MasterCategoriesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OutlookCategory;
@@ -52,10 +52,7 @@ type MasterCategoriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MasterCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMasterCategoriesRequestBuilderInternal instantiates a new MasterCategoriesRequestBuilder and sets the default values.
 func NewMasterCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MasterCategoriesRequestBuilder) {
     m := &MasterCategoriesRequestBuilder{
     }
@@ -68,18 +65,13 @@ func NewMasterCategoriesRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MasterCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMasterCategoriesRequestBuilder instantiates a new MasterCategoriesRequestBuilder and sets the default values.
 func NewMasterCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MasterCategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMasterCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of categories defined for the user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of categories defined for the user.
 func (m *MasterCategoriesRequestBuilder) CreateGetRequestInformation(options *MasterCategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *MasterCategoriesRequestBuilder) CreateGetRequestInformation(options *Ma
     }
     return requestInfo, nil
 }
-// A list of categories defined for the user.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a list of categories defined for the user.
 func (m *MasterCategoriesRequestBuilder) CreatePostRequestInformation(options *MasterCategoriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MasterCategoriesRequestBuilder) CreatePostRequestInformation(options *M
     }
     return requestInfo, nil
 }
-// A list of categories defined for the user.
-// Parameters:
-//  - options : Options for the request
+// Get a list of categories defined for the user.
 func (m *MasterCategoriesRequestBuilder) Get(options *MasterCategoriesRequestBuilderGetOptions)(*MasterCategoriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -133,9 +121,7 @@ func (m *MasterCategoriesRequestBuilder) Get(options *MasterCategoriesRequestBui
     }
     return res.(*MasterCategoriesResponse), nil
 }
-// A list of categories defined for the user.
-// Parameters:
-//  - options : Options for the request
+// Post a list of categories defined for the user.
 func (m *MasterCategoriesRequestBuilder) Post(options *MasterCategoriesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OutlookCategory, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

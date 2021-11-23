@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \planner\buckets
+// bucketsRequestBuilder builds and executes requests for operations under \planner\buckets
 type BucketsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BucketsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// BucketsRequestBuilderGetOptions options for Get
 type BucketsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type BucketsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Returns a collection of the specified buckets
+// bucketsRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified buckets
 type BucketsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type BucketsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// BucketsRequestBuilderPostOptions options for Post
 type BucketsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucket;
@@ -56,10 +56,7 @@ type BucketsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BucketsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBucketsRequestBuilderInternal instantiates a new BucketsRequestBuilder and sets the default values.
 func NewBucketsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BucketsRequestBuilder) {
     m := &BucketsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewBucketsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BucketsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBucketsRequestBuilder instantiates a new BucketsRequestBuilder and sets the default values.
 func NewBucketsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BucketsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBucketsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Returns a collection of the specified buckets
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified buckets
 func (m *BucketsRequestBuilder) CreateGetRequestInformation(options *BucketsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *BucketsRequestBuilder) CreateGetRequestInformation(options *BucketsRequ
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified buckets
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation read-only. Nullable. Returns a collection of the specified buckets
 func (m *BucketsRequestBuilder) CreatePostRequestInformation(options *BucketsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *BucketsRequestBuilder) CreatePostRequestInformation(options *BucketsReq
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified buckets
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Returns a collection of the specified buckets
 func (m *BucketsRequestBuilder) Get(options *BucketsRequestBuilderGetOptions)(*BucketsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *BucketsRequestBuilder) Get(options *BucketsRequestBuilderGetOptions)(*B
     }
     return res.(*BucketsResponse), nil
 }
-// Read-only. Nullable. Returns a collection of the specified buckets
-// Parameters:
-//  - options : Options for the request
+// Post read-only. Nullable. Returns a collection of the specified buckets
 func (m *BucketsRequestBuilder) Post(options *BucketsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucket, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

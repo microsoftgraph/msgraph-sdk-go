@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\microsoft.graph.setOrder
+// setOrderRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\microsoft.graph.setOrder
 type SetOrderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type SetOrderRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// SetOrderRequestBuilderPostOptions options for Post
 type SetOrderRequestBuilderPostOptions struct {
     // 
     Body *SetOrderRequestBody;
@@ -24,10 +24,7 @@ type SetOrderRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SetOrderRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSetOrderRequestBuilderInternal instantiates a new SetOrderRequestBuilder and sets the default values.
 func NewSetOrderRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SetOrderRequestBuilder) {
     m := &SetOrderRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewSetOrderRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SetOrderRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSetOrderRequestBuilder instantiates a new SetOrderRequestBuilder and sets the default values.
 func NewSetOrderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SetOrderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSetOrderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action setOrder
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action setOrder
 func (m *SetOrderRequestBuilder) CreatePostRequestInformation(options *SetOrderRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *SetOrderRequestBuilder) CreatePostRequestInformation(options *SetOrderR
     }
     return requestInfo, nil
 }
-// Invoke action setOrder
-// Parameters:
-//  - options : Options for the request
+// Post invoke action setOrder
 func (m *SetOrderRequestBuilder) Post(options *SetOrderRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

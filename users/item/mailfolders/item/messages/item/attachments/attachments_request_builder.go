@@ -7,7 +7,7 @@ import (
     i73623225b7e69270f689d73d9c67245c350419872b1bf08009d964844eb30013 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/messages/item/attachments/createuploadsession"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\attachments
+// attachmentsRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\attachments
 type AttachmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AttachmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AttachmentsRequestBuilderGetOptions options for Get
 type AttachmentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AttachmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The fileAttachment and itemAttachment attachments for the message.
+// attachmentsRequestBuilderGetQueryParameters the fileAttachment and itemAttachment attachments for the message.
 type AttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -44,7 +44,7 @@ type AttachmentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AttachmentsRequestBuilderPostOptions options for Post
 type AttachmentsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment;
@@ -55,10 +55,7 @@ type AttachmentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AttachmentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAttachmentsRequestBuilderInternal instantiates a new AttachmentsRequestBuilder and sets the default values.
 func NewAttachmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AttachmentsRequestBuilder) {
     m := &AttachmentsRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewAttachmentsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AttachmentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAttachmentsRequestBuilder instantiates a new AttachmentsRequestBuilder and sets the default values.
 func NewAttachmentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AttachmentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAttachmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The fileAttachment and itemAttachment attachments for the message.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the fileAttachment and itemAttachment attachments for the message.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformation(options *AttachmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *AttachmentsRequestBuilder) CreateGetRequestInformation(options *Attachm
     }
     return requestInfo, nil
 }
-// The fileAttachment and itemAttachment attachments for the message.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the fileAttachment and itemAttachment attachments for the message.
 func (m *AttachmentsRequestBuilder) CreatePostRequestInformation(options *AttachmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *AttachmentsRequestBuilder) CreatePostRequestInformation(options *Attach
 func (m *AttachmentsRequestBuilder) CreateUploadSession()(*i73623225b7e69270f689d73d9c67245c350419872b1bf08009d964844eb30013.CreateUploadSessionRequestBuilder) {
     return i73623225b7e69270f689d73d9c67245c350419872b1bf08009d964844eb30013.NewCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The fileAttachment and itemAttachment attachments for the message.
-// Parameters:
-//  - options : Options for the request
+// Get the fileAttachment and itemAttachment attachments for the message.
 func (m *AttachmentsRequestBuilder) Get(options *AttachmentsRequestBuilderGetOptions)(*AttachmentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -139,9 +127,7 @@ func (m *AttachmentsRequestBuilder) Get(options *AttachmentsRequestBuilderGetOpt
     }
     return res.(*AttachmentsResponse), nil
 }
-// The fileAttachment and itemAttachment attachments for the message.
-// Parameters:
-//  - options : Options for the request
+// Post the fileAttachment and itemAttachment attachments for the message.
 func (m *AttachmentsRequestBuilder) Post(options *AttachmentsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\todo\lists\{todoTaskList-id}\tasks\{todoTask-id}\linkedResources
+// linkedResourcesRequestBuilder builds and executes requests for operations under \users\{user-id}\todo\lists\{todoTaskList-id}\tasks\{todoTask-id}\linkedResources
 type LinkedResourcesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type LinkedResourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// LinkedResourcesRequestBuilderGetOptions options for Get
 type LinkedResourcesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type LinkedResourcesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of resources linked to the task.
+// linkedResourcesRequestBuilderGetQueryParameters a collection of resources linked to the task.
 type LinkedResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type LinkedResourcesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// LinkedResourcesRequestBuilderPostOptions options for Post
 type LinkedResourcesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResource;
@@ -56,10 +56,7 @@ type LinkedResourcesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LinkedResourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLinkedResourcesRequestBuilderInternal instantiates a new LinkedResourcesRequestBuilder and sets the default values.
 func NewLinkedResourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LinkedResourcesRequestBuilder) {
     m := &LinkedResourcesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewLinkedResourcesRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LinkedResourcesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLinkedResourcesRequestBuilder instantiates a new LinkedResourcesRequestBuilder and sets the default values.
 func NewLinkedResourcesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LinkedResourcesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLinkedResourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of resources linked to the task.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of resources linked to the task.
 func (m *LinkedResourcesRequestBuilder) CreateGetRequestInformation(options *LinkedResourcesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *LinkedResourcesRequestBuilder) CreateGetRequestInformation(options *Lin
     }
     return requestInfo, nil
 }
-// A collection of resources linked to the task.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a collection of resources linked to the task.
 func (m *LinkedResourcesRequestBuilder) CreatePostRequestInformation(options *LinkedResourcesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *LinkedResourcesRequestBuilder) CreatePostRequestInformation(options *Li
     }
     return requestInfo, nil
 }
-// A collection of resources linked to the task.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of resources linked to the task.
 func (m *LinkedResourcesRequestBuilder) Get(options *LinkedResourcesRequestBuilderGetOptions)(*LinkedResourcesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *LinkedResourcesRequestBuilder) Get(options *LinkedResourcesRequestBuild
     }
     return res.(*LinkedResourcesResponse), nil
 }
-// A collection of resources linked to the task.
-// Parameters:
-//  - options : Options for the request
+// Post a collection of resources linked to the task.
 func (m *LinkedResourcesRequestBuilder) Post(options *LinkedResourcesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResource, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

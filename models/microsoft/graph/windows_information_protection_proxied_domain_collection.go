@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// windowsInformationProtectionProxiedDomainCollection 
 type WindowsInformationProtectionProxiedDomainCollection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type WindowsInformationProtectionProxiedDomainCollection struct {
     // Collection of proxied domains
     proxiedDomains []ProxiedDomain;
 }
-// Instantiates a new windowsInformationProtectionProxiedDomainCollection and sets the default values.
+// NewWindowsInformationProtectionProxiedDomainCollection instantiates a new windowsInformationProtectionProxiedDomainCollection and sets the default values.
 func NewWindowsInformationProtectionProxiedDomainCollection()(*WindowsInformationProtectionProxiedDomainCollection) {
     m := &WindowsInformationProtectionProxiedDomainCollection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionProxiedDomainCollection) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) GetAdditionalData(
         return m.additionalData
     }
 }
-// Gets the displayName property value. Display name
+// GetDisplayName gets the displayName property value. Display name
 func (m *WindowsInformationProtectionProxiedDomainCollection) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) GetDisplayName()(*
         return m.displayName
     }
 }
-// Gets the proxiedDomains property value. Collection of proxied domains
+// GetProxiedDomains gets the proxiedDomains property value. Collection of proxied domains
 func (m *WindowsInformationProtectionProxiedDomainCollection) GetProxiedDomains()([]ProxiedDomain) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) GetProxiedDomains(
         return m.proxiedDomains
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionProxiedDomainCollection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,9 +76,7 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) GetFieldDeserializ
 func (m *WindowsInformationProtectionProxiedDomainCollection) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WindowsInformationProtectionProxiedDomainCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
@@ -105,21 +103,15 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) Serialize(writer i
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionProxiedDomainCollection) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the displayName property value. Display name
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name
 func (m *WindowsInformationProtectionProxiedDomainCollection) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the proxiedDomains property value. Collection of proxied domains
-// Parameters:
-//  - value : Value to set for the proxiedDomains property.
+// SetProxiedDomains sets the proxiedDomains property value. Collection of proxied domains
 func (m *WindowsInformationProtectionProxiedDomainCollection) SetProxiedDomains(value []ProxiedDomain)() {
     m.proxiedDomains = value
 }

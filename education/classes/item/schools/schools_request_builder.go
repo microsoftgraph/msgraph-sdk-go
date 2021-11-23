@@ -7,7 +7,7 @@ import (
     ie96248ccc61767ca0f9ce692dcb287e1e3fe4d846626806247e1208a266f28b0 "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/schools/ref"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\schools
+// schoolsRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\schools
 type SchoolsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type SchoolsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SchoolsRequestBuilderGetOptions options for Get
 type SchoolsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type SchoolsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All schools that this class is associated with. Nullable.
+// schoolsRequestBuilderGetQueryParameters all schools that this class is associated with. Nullable.
 type SchoolsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,10 +46,7 @@ type SchoolsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new SchoolsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSchoolsRequestBuilderInternal instantiates a new SchoolsRequestBuilder and sets the default values.
 func NewSchoolsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SchoolsRequestBuilder) {
     m := &SchoolsRequestBuilder{
     }
@@ -62,18 +59,13 @@ func NewSchoolsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SchoolsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSchoolsRequestBuilder instantiates a new SchoolsRequestBuilder and sets the default values.
 func NewSchoolsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SchoolsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All schools that this class is associated with. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all schools that this class is associated with. Nullable.
 func (m *SchoolsRequestBuilder) CreateGetRequestInformation(options *SchoolsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,13 +85,11 @@ func (m *SchoolsRequestBuilder) CreateGetRequestInformation(options *SchoolsRequ
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\schools\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \education\classes\{educationClass-id}\schools\microsoft.graph.delta()
 func (m *SchoolsRequestBuilder) Delta()(*i9bff590a460b52e5f40b634c15d18595cddb033ef6d43ef01edef967ac8013a3.DeltaRequestBuilder) {
     return i9bff590a460b52e5f40b634c15d18595cddb033ef6d43ef01edef967ac8013a3.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// All schools that this class is associated with. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get all schools that this class is associated with. Nullable.
 func (m *SchoolsRequestBuilder) Get(options *SchoolsRequestBuilderGetOptions)(*SchoolsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     i32e3646a9badfebd1ae88b12e26db0e546b4b3173fedc95941209cd6a4698976 "github.com/microsoftgraph/msgraph-sdk-go/users/item/calendars/item/events/delta"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\events
+// eventsRequestBuilder builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\events
 type EventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type EventsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// EventsRequestBuilderGetOptions options for Get
 type EventsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type EventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The events in the calendar. Navigation property. Read-only.
+// eventsRequestBuilderGetQueryParameters the events in the calendar. Navigation property. Read-only.
 type EventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -42,7 +42,7 @@ type EventsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// EventsRequestBuilderPostOptions options for Post
 type EventsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event;
@@ -53,10 +53,7 @@ type EventsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EventsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEventsRequestBuilderInternal instantiates a new EventsRequestBuilder and sets the default values.
 func NewEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventsRequestBuilder) {
     m := &EventsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewEventsRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EventsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEventsRequestBuilder instantiates a new EventsRequestBuilder and sets the default values.
 func NewEventsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The events in the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the events in the calendar. Navigation property. Read-only.
 func (m *EventsRequestBuilder) CreateGetRequestInformation(options *EventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *EventsRequestBuilder) CreateGetRequestInformation(options *EventsReques
     }
     return requestInfo, nil
 }
-// The events in the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the events in the calendar. Navigation property. Read-only.
 func (m *EventsRequestBuilder) CreatePostRequestInformation(options *EventsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,13 +110,11 @@ func (m *EventsRequestBuilder) CreatePostRequestInformation(options *EventsReque
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\events\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\events\microsoft.graph.delta()
 func (m *EventsRequestBuilder) Delta()(*i32e3646a9badfebd1ae88b12e26db0e546b4b3173fedc95941209cd6a4698976.DeltaRequestBuilder) {
     return i32e3646a9badfebd1ae88b12e26db0e546b4b3173fedc95941209cd6a4698976.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The events in the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the events in the calendar. Navigation property. Read-only.
 func (m *EventsRequestBuilder) Get(options *EventsRequestBuilderGetOptions)(*EventsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *EventsRequestBuilder) Get(options *EventsRequestBuilderGetOptions)(*Eve
     }
     return res.(*EventsResponse), nil
 }
-// The events in the calendar. Navigation property. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post the events in the calendar. Navigation property. Read-only.
 func (m *EventsRequestBuilder) Post(options *EventsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     i0a1d3e1945db6b7d4136012b3f94b87bb840ddf91d4b121c484d8ae1d673a287 "github.com/microsoftgraph/msgraph-sdk-go/privacy/subjectrightsrequests/item/team/ref"
 )
 
-// Builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\team
+// teamRequestBuilder builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\team
 type TeamRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TeamRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TeamRequestBuilderGetOptions options for Get
 type TeamRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type TeamRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Information about the Microsoft Teams team that was created for the request.
+// teamRequestBuilderGetQueryParameters information about the Microsoft Teams team that was created for the request.
 type TeamRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new TeamRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamRequestBuilderInternal instantiates a new TeamRequestBuilder and sets the default values.
 func NewTeamRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamRequestBuilder) {
     m := &TeamRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewTeamRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamRequestBuilder instantiates a new TeamRequestBuilder and sets the default values.
 func NewTeamRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Information about the Microsoft Teams team that was created for the request.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation information about the Microsoft Teams team that was created for the request.
 func (m *TeamRequestBuilder) CreateGetRequestInformation(options *TeamRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *TeamRequestBuilder) CreateGetRequestInformation(options *TeamRequestBui
     }
     return requestInfo, nil
 }
-// Information about the Microsoft Teams team that was created for the request.
-// Parameters:
-//  - options : Options for the request
+// Get information about the Microsoft Teams team that was created for the request.
 func (m *TeamRequestBuilder) Get(options *TeamRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Team, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks
+// workbooksRequestBuilder builds and executes requests for operations under \workbooks
 type WorkbooksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WorkbooksRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// WorkbooksRequestBuilderGetOptions options for Get
 type WorkbooksRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WorkbooksRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from workbooks
+// workbooksRequestBuilderGetQueryParameters get entities from workbooks
 type WorkbooksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type WorkbooksRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// WorkbooksRequestBuilderPostOptions options for Post
 type WorkbooksRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem;
@@ -56,10 +56,7 @@ type WorkbooksRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WorkbooksRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbooksRequestBuilderInternal instantiates a new WorkbooksRequestBuilder and sets the default values.
 func NewWorkbooksRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbooksRequestBuilder) {
     m := &WorkbooksRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewWorkbooksRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbooksRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbooksRequestBuilder instantiates a new WorkbooksRequestBuilder and sets the default values.
 func NewWorkbooksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbooksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorkbooksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from workbooks
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from workbooks
 func (m *WorkbooksRequestBuilder) CreateGetRequestInformation(options *WorkbooksRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *WorkbooksRequestBuilder) CreateGetRequestInformation(options *Workbooks
     }
     return requestInfo, nil
 }
-// Add new entity to workbooks
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to workbooks
 func (m *WorkbooksRequestBuilder) CreatePostRequestInformation(options *WorkbooksRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *WorkbooksRequestBuilder) CreatePostRequestInformation(options *Workbook
     }
     return requestInfo, nil
 }
-// Get entities from workbooks
-// Parameters:
-//  - options : Options for the request
+// Get get entities from workbooks
 func (m *WorkbooksRequestBuilder) Get(options *WorkbooksRequestBuilderGetOptions)(*WorkbooksResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *WorkbooksRequestBuilder) Get(options *WorkbooksRequestBuilderGetOptions
     }
     return res.(*WorkbooksResponse), nil
 }
-// Add new entity to workbooks
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to workbooks
 func (m *WorkbooksRequestBuilder) Post(options *WorkbooksRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

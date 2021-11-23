@@ -11,7 +11,7 @@ import (
     id9f37aeb0c650c7dae960ccd75831f41966f8d4e42fab7b9ae5383ab810b94cd "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/pivottables/item/worksheet/cellwithrowwithcolumn"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet
+// worksheetRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet
 type WorksheetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type WorksheetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorksheetRequestBuilderDeleteOptions options for Delete
 type WorksheetRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type WorksheetRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorksheetRequestBuilderGetOptions options for Get
 type WorksheetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type WorksheetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The worksheet containing the current PivotTable. Read-only.
+// worksheetRequestBuilderGetQueryParameters the worksheet containing the current PivotTable. Read-only.
 type WorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorksheetRequestBuilderPatchOptions options for Patch
 type WorksheetRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheet;
@@ -58,17 +58,11 @@ type WorksheetRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet\microsoft.graph.cell(row={row},column={column})
-// Parameters:
-//  - column : Usage: column={column}
-//  - row : Usage: row={row}
+// CellWithRowWithColumn builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet\microsoft.graph.cell(row={row},column={column})
 func (m *WorksheetRequestBuilder) CellWithRowWithColumn(row *int32, column *int32)(*id9f37aeb0c650c7dae960ccd75831f41966f8d4e42fab7b9ae5383ab810b94cd.CellWithRowWithColumnRequestBuilder) {
     return id9f37aeb0c650c7dae960ccd75831f41966f8d4e42fab7b9ae5383ab810b94cd.NewCellWithRowWithColumnRequestBuilderInternal(m.pathParameters, m.requestAdapter, row, column);
 }
-// Instantiates a new WorksheetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorksheetRequestBuilderInternal instantiates a new WorksheetRequestBuilder and sets the default values.
 func NewWorksheetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorksheetRequestBuilder) {
     m := &WorksheetRequestBuilder{
     }
@@ -81,18 +75,13 @@ func NewWorksheetRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorksheetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorksheetRequestBuilder instantiates a new WorksheetRequestBuilder and sets the default values.
 func NewWorksheetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorksheetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorksheetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The worksheet containing the current PivotTable. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the worksheet containing the current PivotTable. Read-only.
 func (m *WorksheetRequestBuilder) CreateDeleteRequestInformation(options *WorksheetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +98,7 @@ func (m *WorksheetRequestBuilder) CreateDeleteRequestInformation(options *Worksh
     }
     return requestInfo, nil
 }
-// The worksheet containing the current PivotTable. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the worksheet containing the current PivotTable. Read-only.
 func (m *WorksheetRequestBuilder) CreateGetRequestInformation(options *WorksheetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,9 +118,7 @@ func (m *WorksheetRequestBuilder) CreateGetRequestInformation(options *Worksheet
     }
     return requestInfo, nil
 }
-// The worksheet containing the current PivotTable. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the worksheet containing the current PivotTable. Read-only.
 func (m *WorksheetRequestBuilder) CreatePatchRequestInformation(options *WorksheetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,9 +136,7 @@ func (m *WorksheetRequestBuilder) CreatePatchRequestInformation(options *Workshe
     }
     return requestInfo, nil
 }
-// The worksheet containing the current PivotTable. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete the worksheet containing the current PivotTable. Read-only.
 func (m *WorksheetRequestBuilder) Delete(options *WorksheetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -165,9 +148,7 @@ func (m *WorksheetRequestBuilder) Delete(options *WorksheetRequestBuilderDeleteO
     }
     return nil
 }
-// The worksheet containing the current PivotTable. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the worksheet containing the current PivotTable. Read-only.
 func (m *WorksheetRequestBuilder) Get(options *WorksheetRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheet, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -179,9 +160,7 @@ func (m *WorksheetRequestBuilder) Get(options *WorksheetRequestBuilderGetOptions
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheet), nil
 }
-// The worksheet containing the current PivotTable. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch the worksheet containing the current PivotTable. Read-only.
 func (m *WorksheetRequestBuilder) Patch(options *WorksheetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -193,23 +172,19 @@ func (m *WorksheetRequestBuilder) Patch(options *WorksheetRequestBuilderPatchOpt
     }
     return nil
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet\microsoft.graph.range()
+// Range_escaped builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet\microsoft.graph.range()
 func (m *WorksheetRequestBuilder) Range_escaped()(*id37703a559af9bf479b1b0df96fc12844889331582e315aa1d8d488ca393150e.RangeRequestBuilder) {
     return id37703a559af9bf479b1b0df96fc12844889331582e315aa1d8d488ca393150e.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet\microsoft.graph.range(address='{address}')
-// Parameters:
-//  - address : Usage: address={address}
+// RangeWithAddress builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet\microsoft.graph.range(address='{address}')
 func (m *WorksheetRequestBuilder) RangeWithAddress(address *string)(*i0edf057e112a937f515cc72b6d0b60a627ca536a4c3ce7668e0e5f5345d190ed.RangeWithAddressRequestBuilder) {
     return i0edf057e112a937f515cc72b6d0b60a627ca536a4c3ce7668e0e5f5345d190ed.NewRangeWithAddressRequestBuilderInternal(m.pathParameters, m.requestAdapter, address);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet\microsoft.graph.usedRange()
+// UsedRange builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet\microsoft.graph.usedRange()
 func (m *WorksheetRequestBuilder) UsedRange()(*ia4907a338e6dd3fa9240efcd1f688791fa44db9429bfb95e0170925e187e5575.UsedRangeRequestBuilder) {
     return ia4907a338e6dd3fa9240efcd1f688791fa44db9429bfb95e0170925e187e5575.NewUsedRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet\microsoft.graph.usedRange(valuesOnly={valuesOnly})
-// Parameters:
-//  - valuesOnly : Usage: valuesOnly={valuesOnly}
+// UsedRangeWithValuesOnly builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}\worksheet\microsoft.graph.usedRange(valuesOnly={valuesOnly})
 func (m *WorksheetRequestBuilder) UsedRangeWithValuesOnly(valuesOnly *bool)(*i78e2620f3bfb9840e5e22d33b778cba7878ac9a7bd5b98633ffe55a557f53674.UsedRangeWithValuesOnlyRequestBuilder) {
     return i78e2620f3bfb9840e5e22d33b778cba7878ac9a7bd5b98633ffe55a557f53674.NewUsedRangeWithValuesOnlyRequestBuilderInternal(m.pathParameters, m.requestAdapter, valuesOnly);
 }

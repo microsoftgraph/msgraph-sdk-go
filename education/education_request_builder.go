@@ -13,7 +13,7 @@ import (
     ibcc84b6252b9c075d39d4d8641ef3cf01a04613a5da305d7d48d21c122395065 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item"
 )
 
-// Builds and executes requests for operations under \education
+// educationRequestBuilder builds and executes requests for operations under \education
 type EducationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type EducationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// EducationRequestBuilderGetOptions options for Get
 type EducationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -33,14 +33,14 @@ type EducationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get education
+// educationRequestBuilderGetQueryParameters get education
 type EducationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EducationRequestBuilderPatchOptions options for Patch
 type EducationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Education;
@@ -54,9 +54,7 @@ type EducationRequestBuilderPatchOptions struct {
 func (m *EducationRequestBuilder) Classes()(*if6b46a923414b614133630b614b404c3005a11daa1e05f10bb834755518d40dd.ClassesRequestBuilder) {
     return if6b46a923414b614133630b614b404c3005a11daa1e05f10bb834755518d40dd.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ClassesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item collection
 func (m *EducationRequestBuilder) ClassesById(id string)(*i31a8a42bc05cb93b0a8b6dc7e28fb5a481e3934df6dc18de8217d0fe268d617c.EducationClassRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -67,10 +65,7 @@ func (m *EducationRequestBuilder) ClassesById(id string)(*i31a8a42bc05cb93b0a8b6
     }
     return i31a8a42bc05cb93b0a8b6dc7e28fb5a481e3934df6dc18de8217d0fe268d617c.NewEducationClassRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new EducationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationRequestBuilderInternal instantiates a new EducationRequestBuilder and sets the default values.
 func NewEducationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationRequestBuilder) {
     m := &EducationRequestBuilder{
     }
@@ -83,18 +78,13 @@ func NewEducationRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EducationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationRequestBuilder instantiates a new EducationRequestBuilder and sets the default values.
 func NewEducationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEducationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get education
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get education
 func (m *EducationRequestBuilder) CreateGetRequestInformation(options *EducationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,9 +104,7 @@ func (m *EducationRequestBuilder) CreateGetRequestInformation(options *Education
     }
     return requestInfo, nil
 }
-// Update education
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update education
 func (m *EducationRequestBuilder) CreatePatchRequestInformation(options *EducationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,9 +122,7 @@ func (m *EducationRequestBuilder) CreatePatchRequestInformation(options *Educati
     }
     return requestInfo, nil
 }
-// Get education
-// Parameters:
-//  - options : Options for the request
+// Get get education
 func (m *EducationRequestBuilder) Get(options *EducationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationRoot, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,9 +137,7 @@ func (m *EducationRequestBuilder) Get(options *EducationRequestBuilderGetOptions
 func (m *EducationRequestBuilder) Me()(*i11d420057e9890f34c6f87265f6025f3489c0f78de3b99ece6ba73f225d5a75c.MeRequestBuilder) {
     return i11d420057e9890f34c6f87265f6025f3489c0f78de3b99ece6ba73f225d5a75c.NewMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update education
-// Parameters:
-//  - options : Options for the request
+// Patch update education
 func (m *EducationRequestBuilder) Patch(options *EducationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *EducationRequestBuilder) Patch(options *EducationRequestBuilderPatchOpt
 func (m *EducationRequestBuilder) Schools()(*i8803b2d448091478d216c51910e6ed01bbc8c76e5b76968b633118267314ebe9.SchoolsRequestBuilder) {
     return i8803b2d448091478d216c51910e6ed01bbc8c76e5b76968b633118267314ebe9.NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SchoolsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item collection
 func (m *EducationRequestBuilder) SchoolsById(id string)(*ibcc84b6252b9c075d39d4d8641ef3cf01a04613a5da305d7d48d21c122395065.EducationSchoolRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -184,9 +166,7 @@ func (m *EducationRequestBuilder) SchoolsById(id string)(*ibcc84b6252b9c075d39d4
 func (m *EducationRequestBuilder) Users()(*i82d352ad9c3de7536dcc103a1a2a276e7beba1b35548191dda9e846d8c21e897.UsersRequestBuilder) {
     return i82d352ad9c3de7536dcc103a1a2a276e7beba1b35548191dda9e846d8c21e897.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.users.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.users.item collection
 func (m *EducationRequestBuilder) UsersById(id string)(*i6fc2718a806c86250bd9f9aaba5418413286c98ed345a7dbe988c558836bde8e.EducationUserRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

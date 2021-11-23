@@ -13,7 +13,7 @@ import (
     i44a3a29013a87665948b1066cf6f8773748b7ac1401379c01fb28e5463d27f7b "github.com/microsoftgraph/msgraph-sdk-go/drive/list/items/item/versions/item"
 )
 
-// Builds and executes requests for operations under \drive\list\items\{listItem-id}
+// listItemRequestBuilder builds and executes requests for operations under \drive\list\items\{listItem-id}
 type ListItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type ListItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ListItemRequestBuilderDeleteOptions options for Delete
 type ListItemRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type ListItemRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ListItemRequestBuilderGetOptions options for Get
 type ListItemRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,14 +42,14 @@ type ListItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All items contained in the list.
+// listItemRequestBuilderGetQueryParameters all items contained in the list.
 type ListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ListItemRequestBuilderPatchOptions options for Patch
 type ListItemRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItem;
@@ -63,10 +63,7 @@ type ListItemRequestBuilderPatchOptions struct {
 func (m *ListItemRequestBuilder) Analytics()(*ifabc278b07b0113c004fabf80ccbf154b1cc72ddb0dc1df69317992206c1e9ff.AnalyticsRequestBuilder) {
     return ifabc278b07b0113c004fabf80ccbf154b1cc72ddb0dc1df69317992206c1e9ff.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ListItemRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewListItemRequestBuilderInternal instantiates a new ListItemRequestBuilder and sets the default values.
 func NewListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ListItemRequestBuilder) {
     m := &ListItemRequestBuilder{
     }
@@ -79,18 +76,13 @@ func NewListItemRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ListItemRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewListItemRequestBuilder instantiates a new ListItemRequestBuilder and sets the default values.
 func NewListItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ListItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewListItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All items contained in the list.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation all items contained in the list.
 func (m *ListItemRequestBuilder) CreateDeleteRequestInformation(options *ListItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *ListItemRequestBuilder) CreateDeleteRequestInformation(options *ListIte
     }
     return requestInfo, nil
 }
-// All items contained in the list.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all items contained in the list.
 func (m *ListItemRequestBuilder) CreateGetRequestInformation(options *ListItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *ListItemRequestBuilder) CreateGetRequestInformation(options *ListItemRe
     }
     return requestInfo, nil
 }
-// All items contained in the list.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation all items contained in the list.
 func (m *ListItemRequestBuilder) CreatePatchRequestInformation(options *ListItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +137,7 @@ func (m *ListItemRequestBuilder) CreatePatchRequestInformation(options *ListItem
     }
     return requestInfo, nil
 }
-// All items contained in the list.
-// Parameters:
-//  - options : Options for the request
+// Delete all items contained in the list.
 func (m *ListItemRequestBuilder) Delete(options *ListItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -169,9 +155,7 @@ func (m *ListItemRequestBuilder) DriveItem()(*ifca91ac8e5e52a0525b222b440095201b
 func (m *ListItemRequestBuilder) Fields()(*icfa93af295e2c3ed949602f12965514f4c154c6202f64ad3b063ee330e4477a3.FieldsRequestBuilder) {
     return icfa93af295e2c3ed949602f12965514f4c154c6202f64ad3b063ee330e4477a3.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// All items contained in the list.
-// Parameters:
-//  - options : Options for the request
+// Get all items contained in the list.
 func (m *ListItemRequestBuilder) Get(options *ListItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -183,21 +167,15 @@ func (m *ListItemRequestBuilder) Get(options *ListItemRequestBuilderGetOptions)(
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItem), nil
 }
-// Builds and executes requests for operations under \drive\list\items\{listItem-id}\microsoft.graph.getActivitiesByInterval()
+// GetActivitiesByInterval builds and executes requests for operations under \drive\list\items\{listItem-id}\microsoft.graph.getActivitiesByInterval()
 func (m *ListItemRequestBuilder) GetActivitiesByInterval()(*icad8e414e13ad7445f378a90dceced431e87f28b9b2bdab5bd01fab73e0836b7.GetActivitiesByIntervalRequestBuilder) {
     return icad8e414e13ad7445f378a90dceced431e87f28b9b2bdab5bd01fab73e0836b7.NewGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \drive\list\items\{listItem-id}\microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')
-// Parameters:
-//  - endDateTime : Usage: endDateTime={endDateTime}
-//  - interval : Usage: interval={interval}
-//  - startDateTime : Usage: startDateTime={startDateTime}
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval builds and executes requests for operations under \drive\list\items\{listItem-id}\microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')
 func (m *ListItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(startDateTime *string, endDateTime *string, interval *string)(*i8e568168614054d992bd2e3c6dc4070f603d07587a748038712c68673ec9fcfb.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
     return i8e568168614054d992bd2e3c6dc4070f603d07587a748038712c68673ec9fcfb.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, startDateTime, endDateTime, interval);
 }
-// All items contained in the list.
-// Parameters:
-//  - options : Options for the request
+// Patch all items contained in the list.
 func (m *ListItemRequestBuilder) Patch(options *ListItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -212,9 +190,7 @@ func (m *ListItemRequestBuilder) Patch(options *ListItemRequestBuilderPatchOptio
 func (m *ListItemRequestBuilder) Versions()(*ia10ea61655f8ad45623fc2b1a0c3088baf399fb22e97e2473385d2954c3373a3.VersionsRequestBuilder) {
     return ia10ea61655f8ad45623fc2b1a0c3088baf399fb22e97e2473385d2954c3373a3.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.list.items.item.versions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// VersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.list.items.item.versions.item collection
 func (m *ListItemRequestBuilder) VersionsById(id string)(*i44a3a29013a87665948b1066cf6f8773748b7ac1401379c01fb28e5463d27f7b.ListItemVersionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

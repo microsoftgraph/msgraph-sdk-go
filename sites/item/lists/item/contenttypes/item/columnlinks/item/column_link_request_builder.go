@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\columnLinks\{columnLink-id}
+// columnLinkRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\columnLinks\{columnLink-id}
 type ColumnLinkRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ColumnLinkRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ColumnLinkRequestBuilderDeleteOptions options for Delete
 type ColumnLinkRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ColumnLinkRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ColumnLinkRequestBuilderGetOptions options for Get
 type ColumnLinkRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ColumnLinkRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of columns that are required by this content type.
+// columnLinkRequestBuilderGetQueryParameters the collection of columns that are required by this content type.
 type ColumnLinkRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ColumnLinkRequestBuilderPatchOptions options for Patch
 type ColumnLinkRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ColumnLink;
@@ -53,10 +53,7 @@ type ColumnLinkRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ColumnLinkRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewColumnLinkRequestBuilderInternal instantiates a new ColumnLinkRequestBuilder and sets the default values.
 func NewColumnLinkRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ColumnLinkRequestBuilder) {
     m := &ColumnLinkRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewColumnLinkRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ColumnLinkRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewColumnLinkRequestBuilder instantiates a new ColumnLinkRequestBuilder and sets the default values.
 func NewColumnLinkRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ColumnLinkRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewColumnLinkRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of columns that are required by this content type.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of columns that are required by this content type.
 func (m *ColumnLinkRequestBuilder) CreateDeleteRequestInformation(options *ColumnLinkRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ColumnLinkRequestBuilder) CreateDeleteRequestInformation(options *Colum
     }
     return requestInfo, nil
 }
-// The collection of columns that are required by this content type.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of columns that are required by this content type.
 func (m *ColumnLinkRequestBuilder) CreateGetRequestInformation(options *ColumnLinkRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ColumnLinkRequestBuilder) CreateGetRequestInformation(options *ColumnLi
     }
     return requestInfo, nil
 }
-// The collection of columns that are required by this content type.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of columns that are required by this content type.
 func (m *ColumnLinkRequestBuilder) CreatePatchRequestInformation(options *ColumnLinkRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ColumnLinkRequestBuilder) CreatePatchRequestInformation(options *Column
     }
     return requestInfo, nil
 }
-// The collection of columns that are required by this content type.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of columns that are required by this content type.
 func (m *ColumnLinkRequestBuilder) Delete(options *ColumnLinkRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ColumnLinkRequestBuilder) Delete(options *ColumnLinkRequestBuilderDelet
     }
     return nil
 }
-// The collection of columns that are required by this content type.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of columns that are required by this content type.
 func (m *ColumnLinkRequestBuilder) Get(options *ColumnLinkRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ColumnLink, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ColumnLinkRequestBuilder) Get(options *ColumnLinkRequestBuilderGetOptio
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ColumnLink), nil
 }
-// The collection of columns that are required by this content type.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of columns that are required by this content type.
 func (m *ColumnLinkRequestBuilder) Patch(options *ColumnLinkRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.bypassActivationLock
+// bypassActivationLockRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.bypassActivationLock
 type BypassActivationLockRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type BypassActivationLockRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// BypassActivationLockRequestBuilderPostOptions options for Post
 type BypassActivationLockRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type BypassActivationLockRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BypassActivationLockRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBypassActivationLockRequestBuilderInternal instantiates a new BypassActivationLockRequestBuilder and sets the default values.
 func NewBypassActivationLockRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BypassActivationLockRequestBuilder) {
     m := &BypassActivationLockRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewBypassActivationLockRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BypassActivationLockRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBypassActivationLockRequestBuilder instantiates a new BypassActivationLockRequestBuilder and sets the default values.
 func NewBypassActivationLockRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BypassActivationLockRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBypassActivationLockRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Bypass activation lock
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation bypass activation lock
 func (m *BypassActivationLockRequestBuilder) CreatePostRequestInformation(options *BypassActivationLockRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *BypassActivationLockRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Bypass activation lock
-// Parameters:
-//  - options : Options for the request
+// Post bypass activation lock
 func (m *BypassActivationLockRequestBuilder) Post(options *BypassActivationLockRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

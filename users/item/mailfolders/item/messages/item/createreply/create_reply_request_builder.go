@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.createReply
+// createReplyRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.createReply
 type CreateReplyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CreateReplyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// CreateReplyRequestBuilderPostOptions options for Post
 type CreateReplyRequestBuilderPostOptions struct {
     // 
     Body *CreateReplyRequestBody;
@@ -26,21 +26,21 @@ type CreateReplyRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes message
+// createReplyResponse union type wrapper for classes message
 type CreateReplyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type message
     message *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message;
 }
-// Instantiates a new createReplyResponse and sets the default values.
+// NewCreateReplyResponse instantiates a new createReplyResponse and sets the default values.
 func NewCreateReplyResponse()(*CreateReplyResponse) {
     m := &CreateReplyResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateReplyResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *CreateReplyResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the message property value. Union type representation for type message
+// GetMessage gets the message property value. Union type representation for type message
 func (m *CreateReplyResponse) GetMessage()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *CreateReplyResponse) GetMessage()(*i4a838ef194e4c99e9f2c63ba10dab9cb120
         return m.message
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CreateReplyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *CreateReplyResponse) GetFieldDeserializers()(map[string]func(interface{
 func (m *CreateReplyResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CreateReplyResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("message", m.GetMessage())
@@ -92,22 +90,15 @@ func (m *CreateReplyResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateReplyResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the message property value. Union type representation for type message
-// Parameters:
-//  - value : Value to set for the message property.
+// SetMessage sets the message property value. Union type representation for type message
 func (m *CreateReplyResponse) SetMessage(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message)() {
     m.message = value
 }
-// Instantiates a new CreateReplyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateReplyRequestBuilderInternal instantiates a new CreateReplyRequestBuilder and sets the default values.
 func NewCreateReplyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateReplyRequestBuilder) {
     m := &CreateReplyRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewCreateReplyRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CreateReplyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateReplyRequestBuilder instantiates a new CreateReplyRequestBuilder and sets the default values.
 func NewCreateReplyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateReplyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCreateReplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action createReply
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action createReply
 func (m *CreateReplyRequestBuilder) CreatePostRequestInformation(options *CreateReplyRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *CreateReplyRequestBuilder) CreatePostRequestInformation(options *Create
     }
     return requestInfo, nil
 }
-// Invoke action createReply
-// Parameters:
-//  - options : Options for the request
+// Post invoke action createReply
 func (m *CreateReplyRequestBuilder) Post(options *CreateReplyRequestBuilderPostOptions)(*CreateReplyResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

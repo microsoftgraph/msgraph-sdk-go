@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getOneDriveUsageAccountDetail(period='{period}')
+// getOneDriveUsageAccountDetailWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOneDriveUsageAccountDetail(period='{period}')
 type GetOneDriveUsageAccountDetailWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GetOneDriveUsageAccountDetailWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetOneDriveUsageAccountDetailWithPeriodRequestBuilderGetOptions options for Get
 type GetOneDriveUsageAccountDetailWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,11 +24,7 @@ type GetOneDriveUsageAccountDetailWithPeriodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetOneDriveUsageAccountDetailWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOneDriveUsageAccountDetailWithPeriodRequestBuilderInternal instantiates a new GetOneDriveUsageAccountDetailWithPeriodRequestBuilder and sets the default values.
 func NewGetOneDriveUsageAccountDetailWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetOneDriveUsageAccountDetailWithPeriodRequestBuilder) {
     m := &GetOneDriveUsageAccountDetailWithPeriodRequestBuilder{
     }
@@ -44,18 +40,13 @@ func NewGetOneDriveUsageAccountDetailWithPeriodRequestBuilderInternal(pathParame
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetOneDriveUsageAccountDetailWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOneDriveUsageAccountDetailWithPeriodRequestBuilder instantiates a new GetOneDriveUsageAccountDetailWithPeriodRequestBuilder and sets the default values.
 func NewGetOneDriveUsageAccountDetailWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetOneDriveUsageAccountDetailWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetOneDriveUsageAccountDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getOneDriveUsageAccountDetail
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getOneDriveUsageAccountDetail
 func (m *GetOneDriveUsageAccountDetailWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetOneDriveUsageAccountDetailWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -72,9 +63,7 @@ func (m *GetOneDriveUsageAccountDetailWithPeriodRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// Invoke function getOneDriveUsageAccountDetail
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getOneDriveUsageAccountDetail
 func (m *GetOneDriveUsageAccountDetailWithPeriodRequestBuilder) Get(options *GetOneDriveUsageAccountDetailWithPeriodRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

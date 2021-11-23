@@ -18,7 +18,7 @@ import (
     ief856482f2d134a9efe38be849364abfebe3d62f31aa9dc78422dc6b1f07a7d3 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/tables/item/columns/item/filter/applyvaluesfilter"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter
+// filterRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter
 type FilterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type FilterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// FilterRequestBuilderDeleteOptions options for Delete
 type FilterRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -36,7 +36,7 @@ type FilterRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// FilterRequestBuilderGetOptions options for Get
 type FilterRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -47,14 +47,14 @@ type FilterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Retrieve the filter applied to the column. Read-only.
+// filterRequestBuilderGetQueryParameters retrieve the filter applied to the column. Read-only.
 type FilterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FilterRequestBuilderPatchOptions options for Patch
 type FilterRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFilter;
@@ -101,10 +101,7 @@ func (m *FilterRequestBuilder) ApplyValuesFilter()(*ief856482f2d134a9efe38be8493
 func (m *FilterRequestBuilder) Clear()(*i6e765936f672b9f83a474ef2df99b618cc00b4b8f9611c0f0bd2c71bf9d996f4.ClearRequestBuilder) {
     return i6e765936f672b9f83a474ef2df99b618cc00b4b8f9611c0f0bd2c71bf9d996f4.NewClearRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new FilterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFilterRequestBuilderInternal instantiates a new FilterRequestBuilder and sets the default values.
 func NewFilterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FilterRequestBuilder) {
     m := &FilterRequestBuilder{
     }
@@ -117,18 +114,13 @@ func NewFilterRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FilterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFilterRequestBuilder instantiates a new FilterRequestBuilder and sets the default values.
 func NewFilterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FilterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFilterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Retrieve the filter applied to the column. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation retrieve the filter applied to the column. Read-only.
 func (m *FilterRequestBuilder) CreateDeleteRequestInformation(options *FilterRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +137,7 @@ func (m *FilterRequestBuilder) CreateDeleteRequestInformation(options *FilterReq
     }
     return requestInfo, nil
 }
-// Retrieve the filter applied to the column. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation retrieve the filter applied to the column. Read-only.
 func (m *FilterRequestBuilder) CreateGetRequestInformation(options *FilterRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -167,9 +157,7 @@ func (m *FilterRequestBuilder) CreateGetRequestInformation(options *FilterReques
     }
     return requestInfo, nil
 }
-// Retrieve the filter applied to the column. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation retrieve the filter applied to the column. Read-only.
 func (m *FilterRequestBuilder) CreatePatchRequestInformation(options *FilterRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -187,9 +175,7 @@ func (m *FilterRequestBuilder) CreatePatchRequestInformation(options *FilterRequ
     }
     return requestInfo, nil
 }
-// Retrieve the filter applied to the column. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete retrieve the filter applied to the column. Read-only.
 func (m *FilterRequestBuilder) Delete(options *FilterRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -201,9 +187,7 @@ func (m *FilterRequestBuilder) Delete(options *FilterRequestBuilderDeleteOptions
     }
     return nil
 }
-// Retrieve the filter applied to the column. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get retrieve the filter applied to the column. Read-only.
 func (m *FilterRequestBuilder) Get(options *FilterRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFilter, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -215,9 +199,7 @@ func (m *FilterRequestBuilder) Get(options *FilterRequestBuilderGetOptions)(*i4a
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFilter), nil
 }
-// Retrieve the filter applied to the column. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch retrieve the filter applied to the column. Read-only.
 func (m *FilterRequestBuilder) Patch(options *FilterRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

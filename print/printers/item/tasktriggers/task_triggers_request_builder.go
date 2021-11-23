@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \print\printers\{printer-id}\taskTriggers
+// taskTriggersRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\taskTriggers
 type TaskTriggersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TaskTriggersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TaskTriggersRequestBuilderGetOptions options for Get
 type TaskTriggersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TaskTriggersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of task triggers that are associated with the printer.
+// taskTriggersRequestBuilderGetQueryParameters a list of task triggers that are associated with the printer.
 type TaskTriggersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TaskTriggersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TaskTriggersRequestBuilderPostOptions options for Post
 type TaskTriggersRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTaskTrigger;
@@ -56,10 +56,7 @@ type TaskTriggersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TaskTriggersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaskTriggersRequestBuilderInternal instantiates a new TaskTriggersRequestBuilder and sets the default values.
 func NewTaskTriggersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaskTriggersRequestBuilder) {
     m := &TaskTriggersRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTaskTriggersRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TaskTriggersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaskTriggersRequestBuilder instantiates a new TaskTriggersRequestBuilder and sets the default values.
 func NewTaskTriggersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaskTriggersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTaskTriggersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of task triggers that are associated with the printer.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of task triggers that are associated with the printer.
 func (m *TaskTriggersRequestBuilder) CreateGetRequestInformation(options *TaskTriggersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TaskTriggersRequestBuilder) CreateGetRequestInformation(options *TaskTr
     }
     return requestInfo, nil
 }
-// A list of task triggers that are associated with the printer.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a list of task triggers that are associated with the printer.
 func (m *TaskTriggersRequestBuilder) CreatePostRequestInformation(options *TaskTriggersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TaskTriggersRequestBuilder) CreatePostRequestInformation(options *TaskT
     }
     return requestInfo, nil
 }
-// A list of task triggers that are associated with the printer.
-// Parameters:
-//  - options : Options for the request
+// Get a list of task triggers that are associated with the printer.
 func (m *TaskTriggersRequestBuilder) Get(options *TaskTriggersRequestBuilderGetOptions)(*TaskTriggersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TaskTriggersRequestBuilder) Get(options *TaskTriggersRequestBuilderGetO
     }
     return res.(*TaskTriggersResponse), nil
 }
-// A list of task triggers that are associated with the printer.
-// Parameters:
-//  - options : Options for the request
+// Post a list of task triggers that are associated with the printer.
 func (m *TaskTriggersRequestBuilder) Post(options *TaskTriggersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTaskTrigger, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.addKey
+// addKeyRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.addKey
 type AddKeyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AddKeyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// AddKeyRequestBuilderPostOptions options for Post
 type AddKeyRequestBuilderPostOptions struct {
     // 
     Body *KeyCredentialRequestBody;
@@ -26,10 +26,7 @@ type AddKeyRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AddKeyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddKeyRequestBuilderInternal instantiates a new AddKeyRequestBuilder and sets the default values.
 func NewAddKeyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddKeyRequestBuilder) {
     m := &AddKeyRequestBuilder{
     }
@@ -42,18 +39,13 @@ func NewAddKeyRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AddKeyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddKeyRequestBuilder instantiates a new AddKeyRequestBuilder and sets the default values.
 func NewAddKeyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddKeyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAddKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action addKey
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action addKey
 func (m *AddKeyRequestBuilder) CreatePostRequestInformation(options *AddKeyRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +63,7 @@ func (m *AddKeyRequestBuilder) CreatePostRequestInformation(options *AddKeyReque
     }
     return requestInfo, nil
 }
-// Invoke action addKey
-// Parameters:
-//  - options : Options for the request
+// Post invoke action addKey
 func (m *AddKeyRequestBuilder) Post(options *AddKeyRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.KeyCredential, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

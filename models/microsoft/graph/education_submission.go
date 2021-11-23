@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// educationSubmission 
 type EducationSubmission struct {
     Entity
     // Read-Write. Nullable.
@@ -33,14 +33,14 @@ type EducationSubmission struct {
     // Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     unsubmittedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new educationSubmission and sets the default values.
+// NewEducationSubmission instantiates a new educationSubmission and sets the default values.
 func NewEducationSubmission()(*EducationSubmission) {
     m := &EducationSubmission{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the outcomes property value. Read-Write. Nullable.
+// GetOutcomes gets the outcomes property value. Read-Write. Nullable.
 func (m *EducationSubmission) GetOutcomes()([]EducationOutcome) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *EducationSubmission) GetOutcomes()([]EducationOutcome) {
         return m.outcomes
     }
 }
-// Gets the recipient property value. Who this submission is assigned to.
+// GetRecipient gets the recipient property value. Who this submission is assigned to.
 func (m *EducationSubmission) GetRecipient()(*EducationSubmissionRecipient) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *EducationSubmission) GetRecipient()(*EducationSubmissionRecipient) {
         return m.recipient
     }
 }
-// Gets the resources property value. Nullable.
+// GetResources gets the resources property value. Nullable.
 func (m *EducationSubmission) GetResources()([]EducationSubmissionResource) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *EducationSubmission) GetResources()([]EducationSubmissionResource) {
         return m.resources
     }
 }
-// Gets the resourcesFolderUrl property value. Folder where all file resources for this submission need to be stored.
+// GetResourcesFolderUrl gets the resourcesFolderUrl property value. Folder where all file resources for this submission need to be stored.
 func (m *EducationSubmission) GetResourcesFolderUrl()(*string) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *EducationSubmission) GetResourcesFolderUrl()(*string) {
         return m.resourcesFolderUrl
     }
 }
-// Gets the returnedBy property value. User who moved the status of this submission to returned.
+// GetReturnedBy gets the returnedBy property value. User who moved the status of this submission to returned.
 func (m *EducationSubmission) GetReturnedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *EducationSubmission) GetReturnedBy()(*IdentitySet) {
         return m.returnedBy
     }
 }
-// Gets the returnedDateTime property value. Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetReturnedDateTime gets the returnedDateTime property value. Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationSubmission) GetReturnedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *EducationSubmission) GetReturnedDateTime()(*i336074805fc853987abe6f7fe3
         return m.returnedDateTime
     }
 }
-// Gets the status property value. Read-Only. Possible values are: working, submitted, released, returned.
+// GetStatus gets the status property value. Read-Only. Possible values are: working, submitted, released, returned.
 func (m *EducationSubmission) GetStatus()(*EducationSubmissionStatus) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *EducationSubmission) GetStatus()(*EducationSubmissionStatus) {
         return m.status
     }
 }
-// Gets the submittedBy property value. User who moved the resource into the submitted state.
+// GetSubmittedBy gets the submittedBy property value. User who moved the resource into the submitted state.
 func (m *EducationSubmission) GetSubmittedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -104,7 +104,7 @@ func (m *EducationSubmission) GetSubmittedBy()(*IdentitySet) {
         return m.submittedBy
     }
 }
-// Gets the submittedDateTime property value. Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetSubmittedDateTime gets the submittedDateTime property value. Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationSubmission) GetSubmittedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -112,7 +112,7 @@ func (m *EducationSubmission) GetSubmittedDateTime()(*i336074805fc853987abe6f7fe
         return m.submittedDateTime
     }
 }
-// Gets the submittedResources property value. Read-only. Nullable.
+// GetSubmittedResources gets the submittedResources property value. Read-only. Nullable.
 func (m *EducationSubmission) GetSubmittedResources()([]EducationSubmissionResource) {
     if m == nil {
         return nil
@@ -120,7 +120,7 @@ func (m *EducationSubmission) GetSubmittedResources()([]EducationSubmissionResou
         return m.submittedResources
     }
 }
-// Gets the unsubmittedBy property value. User who moved the resource from submitted into the working state.
+// GetUnsubmittedBy gets the unsubmittedBy property value. User who moved the resource from submitted into the working state.
 func (m *EducationSubmission) GetUnsubmittedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *EducationSubmission) GetUnsubmittedBy()(*IdentitySet) {
         return m.unsubmittedBy
     }
 }
-// Gets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetUnsubmittedDateTime gets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationSubmission) GetUnsubmittedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -136,7 +136,7 @@ func (m *EducationSubmission) GetUnsubmittedDateTime()(*i336074805fc853987abe6f7
         return m.unsubmittedDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["outcomes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -277,9 +277,7 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
 func (m *EducationSubmission) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EducationSubmission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -375,75 +373,51 @@ func (m *EducationSubmission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the outcomes property value. Read-Write. Nullable.
-// Parameters:
-//  - value : Value to set for the outcomes property.
+// SetOutcomes sets the outcomes property value. Read-Write. Nullable.
 func (m *EducationSubmission) SetOutcomes(value []EducationOutcome)() {
     m.outcomes = value
 }
-// Sets the recipient property value. Who this submission is assigned to.
-// Parameters:
-//  - value : Value to set for the recipient property.
+// SetRecipient sets the recipient property value. Who this submission is assigned to.
 func (m *EducationSubmission) SetRecipient(value *EducationSubmissionRecipient)() {
     m.recipient = value
 }
-// Sets the resources property value. Nullable.
-// Parameters:
-//  - value : Value to set for the resources property.
+// SetResources sets the resources property value. Nullable.
 func (m *EducationSubmission) SetResources(value []EducationSubmissionResource)() {
     m.resources = value
 }
-// Sets the resourcesFolderUrl property value. Folder where all file resources for this submission need to be stored.
-// Parameters:
-//  - value : Value to set for the resourcesFolderUrl property.
+// SetResourcesFolderUrl sets the resourcesFolderUrl property value. Folder where all file resources for this submission need to be stored.
 func (m *EducationSubmission) SetResourcesFolderUrl(value *string)() {
     m.resourcesFolderUrl = value
 }
-// Sets the returnedBy property value. User who moved the status of this submission to returned.
-// Parameters:
-//  - value : Value to set for the returnedBy property.
+// SetReturnedBy sets the returnedBy property value. User who moved the status of this submission to returned.
 func (m *EducationSubmission) SetReturnedBy(value *IdentitySet)() {
     m.returnedBy = value
 }
-// Sets the returnedDateTime property value. Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the returnedDateTime property.
+// SetReturnedDateTime sets the returnedDateTime property value. Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationSubmission) SetReturnedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.returnedDateTime = value
 }
-// Sets the status property value. Read-Only. Possible values are: working, submitted, released, returned.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. Read-Only. Possible values are: working, submitted, released, returned.
 func (m *EducationSubmission) SetStatus(value *EducationSubmissionStatus)() {
     m.status = value
 }
-// Sets the submittedBy property value. User who moved the resource into the submitted state.
-// Parameters:
-//  - value : Value to set for the submittedBy property.
+// SetSubmittedBy sets the submittedBy property value. User who moved the resource into the submitted state.
 func (m *EducationSubmission) SetSubmittedBy(value *IdentitySet)() {
     m.submittedBy = value
 }
-// Sets the submittedDateTime property value. Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the submittedDateTime property.
+// SetSubmittedDateTime sets the submittedDateTime property value. Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationSubmission) SetSubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.submittedDateTime = value
 }
-// Sets the submittedResources property value. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the submittedResources property.
+// SetSubmittedResources sets the submittedResources property value. Read-only. Nullable.
 func (m *EducationSubmission) SetSubmittedResources(value []EducationSubmissionResource)() {
     m.submittedResources = value
 }
-// Sets the unsubmittedBy property value. User who moved the resource from submitted into the working state.
-// Parameters:
-//  - value : Value to set for the unsubmittedBy property.
+// SetUnsubmittedBy sets the unsubmittedBy property value. User who moved the resource from submitted into the working state.
 func (m *EducationSubmission) SetUnsubmittedBy(value *IdentitySet)() {
     m.unsubmittedBy = value
 }
-// Sets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the unsubmittedDateTime property.
+// SetUnsubmittedDateTime sets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationSubmission) SetUnsubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.unsubmittedDateTime = value
 }

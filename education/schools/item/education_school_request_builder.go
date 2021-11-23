@@ -9,7 +9,7 @@ import (
     id764fdef7d1fc1e96b7dd96ba4ca2de348edde4d6b8c59eb7bc5df6cfdbe1fa3 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/administrativeunit"
 )
 
-// Builds and executes requests for operations under \education\schools\{educationSchool-id}
+// educationSchoolRequestBuilder builds and executes requests for operations under \education\schools\{educationSchool-id}
 type EducationSchoolRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type EducationSchoolRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EducationSchoolRequestBuilderDeleteOptions options for Delete
 type EducationSchoolRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type EducationSchoolRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EducationSchoolRequestBuilderGetOptions options for Get
 type EducationSchoolRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type EducationSchoolRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get schools from education
+// educationSchoolRequestBuilderGetQueryParameters get schools from education
 type EducationSchoolRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EducationSchoolRequestBuilderPatchOptions options for Patch
 type EducationSchoolRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSchool;
@@ -62,10 +62,7 @@ func (m *EducationSchoolRequestBuilder) AdministrativeUnit()(*id764fdef7d1fc1e96
 func (m *EducationSchoolRequestBuilder) Classes()(*iaa1b72b2e917a242ccb04624a7df0510273ede01d0eb20e634f0ce118cbe44d1.ClassesRequestBuilder) {
     return iaa1b72b2e917a242ccb04624a7df0510273ede01d0eb20e634f0ce118cbe44d1.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new EducationSchoolRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationSchoolRequestBuilderInternal instantiates a new EducationSchoolRequestBuilder and sets the default values.
 func NewEducationSchoolRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSchoolRequestBuilder) {
     m := &EducationSchoolRequestBuilder{
     }
@@ -78,18 +75,13 @@ func NewEducationSchoolRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EducationSchoolRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationSchoolRequestBuilder instantiates a new EducationSchoolRequestBuilder and sets the default values.
 func NewEducationSchoolRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationSchoolRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEducationSchoolRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property schools for education
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property schools for education
 func (m *EducationSchoolRequestBuilder) CreateDeleteRequestInformation(options *EducationSchoolRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,9 +98,7 @@ func (m *EducationSchoolRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get schools from education
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get schools from education
 func (m *EducationSchoolRequestBuilder) CreateGetRequestInformation(options *EducationSchoolRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,9 +118,7 @@ func (m *EducationSchoolRequestBuilder) CreateGetRequestInformation(options *Edu
     }
     return requestInfo, nil
 }
-// Update the navigation property schools in education
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property schools in education
 func (m *EducationSchoolRequestBuilder) CreatePatchRequestInformation(options *EducationSchoolRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,9 +136,7 @@ func (m *EducationSchoolRequestBuilder) CreatePatchRequestInformation(options *E
     }
     return requestInfo, nil
 }
-// Delete navigation property schools for education
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property schools for education
 func (m *EducationSchoolRequestBuilder) Delete(options *EducationSchoolRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -162,9 +148,7 @@ func (m *EducationSchoolRequestBuilder) Delete(options *EducationSchoolRequestBu
     }
     return nil
 }
-// Get schools from education
-// Parameters:
-//  - options : Options for the request
+// Get get schools from education
 func (m *EducationSchoolRequestBuilder) Get(options *EducationSchoolRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSchool, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -176,9 +160,7 @@ func (m *EducationSchoolRequestBuilder) Get(options *EducationSchoolRequestBuild
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSchool), nil
 }
-// Update the navigation property schools in education
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property schools in education
 func (m *EducationSchoolRequestBuilder) Patch(options *EducationSchoolRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

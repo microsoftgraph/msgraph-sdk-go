@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks\{todoTask-id}\linkedResources\{linkedResource-id}
+// linkedResourceRequestBuilder builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks\{todoTask-id}\linkedResources\{linkedResource-id}
 type LinkedResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type LinkedResourceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// LinkedResourceRequestBuilderDeleteOptions options for Delete
 type LinkedResourceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type LinkedResourceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// LinkedResourceRequestBuilderGetOptions options for Get
 type LinkedResourceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type LinkedResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of resources linked to the task.
+// linkedResourceRequestBuilderGetQueryParameters a collection of resources linked to the task.
 type LinkedResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// LinkedResourceRequestBuilderPatchOptions options for Patch
 type LinkedResourceRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResource;
@@ -53,10 +53,7 @@ type LinkedResourceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LinkedResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLinkedResourceRequestBuilderInternal instantiates a new LinkedResourceRequestBuilder and sets the default values.
 func NewLinkedResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LinkedResourceRequestBuilder) {
     m := &LinkedResourceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewLinkedResourceRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LinkedResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLinkedResourceRequestBuilder instantiates a new LinkedResourceRequestBuilder and sets the default values.
 func NewLinkedResourceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LinkedResourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLinkedResourceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of resources linked to the task.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of resources linked to the task.
 func (m *LinkedResourceRequestBuilder) CreateDeleteRequestInformation(options *LinkedResourceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *LinkedResourceRequestBuilder) CreateDeleteRequestInformation(options *L
     }
     return requestInfo, nil
 }
-// A collection of resources linked to the task.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of resources linked to the task.
 func (m *LinkedResourceRequestBuilder) CreateGetRequestInformation(options *LinkedResourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *LinkedResourceRequestBuilder) CreateGetRequestInformation(options *Link
     }
     return requestInfo, nil
 }
-// A collection of resources linked to the task.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of resources linked to the task.
 func (m *LinkedResourceRequestBuilder) CreatePatchRequestInformation(options *LinkedResourceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *LinkedResourceRequestBuilder) CreatePatchRequestInformation(options *Li
     }
     return requestInfo, nil
 }
-// A collection of resources linked to the task.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of resources linked to the task.
 func (m *LinkedResourceRequestBuilder) Delete(options *LinkedResourceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *LinkedResourceRequestBuilder) Delete(options *LinkedResourceRequestBuil
     }
     return nil
 }
-// A collection of resources linked to the task.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of resources linked to the task.
 func (m *LinkedResourceRequestBuilder) Get(options *LinkedResourceRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResource, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *LinkedResourceRequestBuilder) Get(options *LinkedResourceRequestBuilder
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LinkedResource), nil
 }
-// A collection of resources linked to the task.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of resources linked to the task.
 func (m *LinkedResourceRequestBuilder) Patch(options *LinkedResourceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

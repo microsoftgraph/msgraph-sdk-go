@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// apiApplication 
 type ApiApplication struct {
     // When true, allows an application to use claims mapping without specifying a custom signing key.
     acceptMappedClaims *bool;
@@ -19,14 +19,14 @@ type ApiApplication struct {
     // Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2
     requestedAccessTokenVersion *int32;
 }
-// Instantiates a new apiApplication and sets the default values.
+// NewApiApplication instantiates a new apiApplication and sets the default values.
 func NewApiApplication()(*ApiApplication) {
     m := &ApiApplication{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the acceptMappedClaims property value. When true, allows an application to use claims mapping without specifying a custom signing key.
+// GetAcceptMappedClaims gets the acceptMappedClaims property value. When true, allows an application to use claims mapping without specifying a custom signing key.
 func (m *ApiApplication) GetAcceptMappedClaims()(*bool) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *ApiApplication) GetAcceptMappedClaims()(*bool) {
         return m.acceptMappedClaims
     }
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApiApplication) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *ApiApplication) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the knownClientApplications property value. Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.
+// GetKnownClientApplications gets the knownClientApplications property value. Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.
 func (m *ApiApplication) GetKnownClientApplications()([]string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *ApiApplication) GetKnownClientApplications()([]string) {
         return m.knownClientApplications
     }
 }
-// Gets the oauth2PermissionScopes property value. The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
+// GetOauth2PermissionScopes gets the oauth2PermissionScopes property value. The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
 func (m *ApiApplication) GetOauth2PermissionScopes()([]PermissionScope) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *ApiApplication) GetOauth2PermissionScopes()([]PermissionScope) {
         return m.oauth2PermissionScopes
     }
 }
-// Gets the preAuthorizedApplications property value. Lists the client applications that are pre-authorized with the specified delegated permissions to access this application's APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.
+// GetPreAuthorizedApplications gets the preAuthorizedApplications property value. Lists the client applications that are pre-authorized with the specified delegated permissions to access this application's APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.
 func (m *ApiApplication) GetPreAuthorizedApplications()([]PreAuthorizedApplication) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *ApiApplication) GetPreAuthorizedApplications()([]PreAuthorizedApplicati
         return m.preAuthorizedApplications
     }
 }
-// Gets the requestedAccessTokenVersion property value. Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2
+// GetRequestedAccessTokenVersion gets the requestedAccessTokenVersion property value. Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2
 func (m *ApiApplication) GetRequestedAccessTokenVersion()(*int32) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *ApiApplication) GetRequestedAccessTokenVersion()(*int32) {
         return m.requestedAccessTokenVersion
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ApiApplication) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["acceptMappedClaims"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,9 +144,7 @@ func (m *ApiApplication) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *ApiApplication) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ApiApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("acceptMappedClaims", m.GetAcceptMappedClaims())
@@ -196,39 +194,27 @@ func (m *ApiApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the acceptMappedClaims property value. When true, allows an application to use claims mapping without specifying a custom signing key.
-// Parameters:
-//  - value : Value to set for the acceptMappedClaims property.
+// SetAcceptMappedClaims sets the acceptMappedClaims property value. When true, allows an application to use claims mapping without specifying a custom signing key.
 func (m *ApiApplication) SetAcceptMappedClaims(value *bool)() {
     m.acceptMappedClaims = value
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApiApplication) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the knownClientApplications property value. Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.
-// Parameters:
-//  - value : Value to set for the knownClientApplications property.
+// SetKnownClientApplications sets the knownClientApplications property value. Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.
 func (m *ApiApplication) SetKnownClientApplications(value []string)() {
     m.knownClientApplications = value
 }
-// Sets the oauth2PermissionScopes property value. The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
-// Parameters:
-//  - value : Value to set for the oauth2PermissionScopes property.
+// SetOauth2PermissionScopes sets the oauth2PermissionScopes property value. The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
 func (m *ApiApplication) SetOauth2PermissionScopes(value []PermissionScope)() {
     m.oauth2PermissionScopes = value
 }
-// Sets the preAuthorizedApplications property value. Lists the client applications that are pre-authorized with the specified delegated permissions to access this application's APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.
-// Parameters:
-//  - value : Value to set for the preAuthorizedApplications property.
+// SetPreAuthorizedApplications sets the preAuthorizedApplications property value. Lists the client applications that are pre-authorized with the specified delegated permissions to access this application's APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.
 func (m *ApiApplication) SetPreAuthorizedApplications(value []PreAuthorizedApplication)() {
     m.preAuthorizedApplications = value
 }
-// Sets the requestedAccessTokenVersion property value. Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2
-// Parameters:
-//  - value : Value to set for the requestedAccessTokenVersion property.
+// SetRequestedAccessTokenVersion sets the requestedAccessTokenVersion property value. Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2
 func (m *ApiApplication) SetRequestedAccessTokenVersion(value *int32)() {
     m.requestedAccessTokenVersion = value
 }

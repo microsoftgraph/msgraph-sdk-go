@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\authenticationFlowsPolicy
+// authenticationFlowsPolicyRequestBuilder builds and executes requests for operations under \policies\authenticationFlowsPolicy
 type AuthenticationFlowsPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AuthenticationFlowsPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AuthenticationFlowsPolicyRequestBuilderDeleteOptions options for Delete
 type AuthenticationFlowsPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AuthenticationFlowsPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AuthenticationFlowsPolicyRequestBuilderGetOptions options for Get
 type AuthenticationFlowsPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AuthenticationFlowsPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy configuration of the self-service sign-up experience of external users.
+// authenticationFlowsPolicyRequestBuilderGetQueryParameters the policy configuration of the self-service sign-up experience of external users.
 type AuthenticationFlowsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AuthenticationFlowsPolicyRequestBuilderPatchOptions options for Patch
 type AuthenticationFlowsPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationFlowsPolicy;
@@ -53,10 +53,7 @@ type AuthenticationFlowsPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AuthenticationFlowsPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthenticationFlowsPolicyRequestBuilderInternal instantiates a new AuthenticationFlowsPolicyRequestBuilder and sets the default values.
 func NewAuthenticationFlowsPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationFlowsPolicyRequestBuilder) {
     m := &AuthenticationFlowsPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAuthenticationFlowsPolicyRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AuthenticationFlowsPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthenticationFlowsPolicyRequestBuilder instantiates a new AuthenticationFlowsPolicyRequestBuilder and sets the default values.
 func NewAuthenticationFlowsPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationFlowsPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationFlowsPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy configuration of the self-service sign-up experience of external users.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the policy configuration of the self-service sign-up experience of external users.
 func (m *AuthenticationFlowsPolicyRequestBuilder) CreateDeleteRequestInformation(options *AuthenticationFlowsPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// The policy configuration of the self-service sign-up experience of external users.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy configuration of the self-service sign-up experience of external users.
 func (m *AuthenticationFlowsPolicyRequestBuilder) CreateGetRequestInformation(options *AuthenticationFlowsPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// The policy configuration of the self-service sign-up experience of external users.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the policy configuration of the self-service sign-up experience of external users.
 func (m *AuthenticationFlowsPolicyRequestBuilder) CreatePatchRequestInformation(options *AuthenticationFlowsPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// The policy configuration of the self-service sign-up experience of external users.
-// Parameters:
-//  - options : Options for the request
+// Delete the policy configuration of the self-service sign-up experience of external users.
 func (m *AuthenticationFlowsPolicyRequestBuilder) Delete(options *AuthenticationFlowsPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) Delete(options *Authentication
     }
     return nil
 }
-// The policy configuration of the self-service sign-up experience of external users.
-// Parameters:
-//  - options : Options for the request
+// Get the policy configuration of the self-service sign-up experience of external users.
 func (m *AuthenticationFlowsPolicyRequestBuilder) Get(options *AuthenticationFlowsPolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationFlowsPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AuthenticationFlowsPolicyRequestBuilder) Get(options *AuthenticationFlo
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationFlowsPolicy), nil
 }
-// The policy configuration of the self-service sign-up experience of external users.
-// Parameters:
-//  - options : Options for the request
+// Patch the policy configuration of the self-service sign-up experience of external users.
 func (m *AuthenticationFlowsPolicyRequestBuilder) Patch(options *AuthenticationFlowsPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

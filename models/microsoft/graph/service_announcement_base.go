@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// serviceAnnouncementBase 
 type ServiceAnnouncementBase struct {
     Entity
     // Additional details about service event. This property doesn't support filters.
@@ -19,14 +19,14 @@ type ServiceAnnouncementBase struct {
     // The title of the service event.
     title *string;
 }
-// Instantiates a new serviceAnnouncementBase and sets the default values.
+// NewServiceAnnouncementBase instantiates a new serviceAnnouncementBase and sets the default values.
 func NewServiceAnnouncementBase()(*ServiceAnnouncementBase) {
     m := &ServiceAnnouncementBase{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the details property value. Additional details about service event. This property doesn't support filters.
+// GetDetails gets the details property value. Additional details about service event. This property doesn't support filters.
 func (m *ServiceAnnouncementBase) GetDetails()([]KeyValuePair) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *ServiceAnnouncementBase) GetDetails()([]KeyValuePair) {
         return m.details
     }
 }
-// Gets the endDateTime property value. The end time of the service event.
+// GetEndDateTime gets the endDateTime property value. The end time of the service event.
 func (m *ServiceAnnouncementBase) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *ServiceAnnouncementBase) GetEndDateTime()(*i336074805fc853987abe6f7fe3a
         return m.endDateTime
     }
 }
-// Gets the lastModifiedDateTime property value. The last modified time of the service event.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified time of the service event.
 func (m *ServiceAnnouncementBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *ServiceAnnouncementBase) GetLastModifiedDateTime()(*i336074805fc853987a
         return m.lastModifiedDateTime
     }
 }
-// Gets the startDateTime property value. The start time of the service event.
+// GetStartDateTime gets the startDateTime property value. The start time of the service event.
 func (m *ServiceAnnouncementBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *ServiceAnnouncementBase) GetStartDateTime()(*i336074805fc853987abe6f7fe
         return m.startDateTime
     }
 }
-// Gets the title property value. The title of the service event.
+// GetTitle gets the title property value. The title of the service event.
 func (m *ServiceAnnouncementBase) GetTitle()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *ServiceAnnouncementBase) GetTitle()(*string) {
         return m.title
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["details"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,9 +128,7 @@ func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(interf
 func (m *ServiceAnnouncementBase) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ServiceAnnouncementBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -173,33 +171,23 @@ func (m *ServiceAnnouncementBase) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the details property value. Additional details about service event. This property doesn't support filters.
-// Parameters:
-//  - value : Value to set for the details property.
+// SetDetails sets the details property value. Additional details about service event. This property doesn't support filters.
 func (m *ServiceAnnouncementBase) SetDetails(value []KeyValuePair)() {
     m.details = value
 }
-// Sets the endDateTime property value. The end time of the service event.
-// Parameters:
-//  - value : Value to set for the endDateTime property.
+// SetEndDateTime sets the endDateTime property value. The end time of the service event.
 func (m *ServiceAnnouncementBase) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// Sets the lastModifiedDateTime property value. The last modified time of the service event.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The last modified time of the service event.
 func (m *ServiceAnnouncementBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the startDateTime property value. The start time of the service event.
-// Parameters:
-//  - value : Value to set for the startDateTime property.
+// SetStartDateTime sets the startDateTime property value. The start time of the service event.
 func (m *ServiceAnnouncementBase) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }
-// Sets the title property value. The title of the service event.
-// Parameters:
-//  - value : Value to set for the title property.
+// SetTitle sets the title property value. The title of the service event.
 func (m *ServiceAnnouncementBase) SetTitle(value *string)() {
     m.title = value
 }

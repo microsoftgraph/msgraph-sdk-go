@@ -11,7 +11,7 @@ import (
     i01c49ff8ee7f291e6ef03661dd6de1defbca61ef00e7cc93142b70cd237aae9e "github.com/microsoftgraph/msgraph-sdk-go/privacy/subjectrightsrequests/item/notes/item"
 )
 
-// Builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}
+// subjectRightsRequestRequestBuilder builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}
 type SubjectRightsRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type SubjectRightsRequestRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SubjectRightsRequestRequestBuilderDeleteOptions options for Delete
 type SubjectRightsRequestRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type SubjectRightsRequestRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SubjectRightsRequestRequestBuilderGetOptions options for Get
 type SubjectRightsRequestRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type SubjectRightsRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get subjectRightsRequests from privacy
+// subjectRightsRequestRequestBuilderGetQueryParameters get subjectRightsRequests from privacy
 type SubjectRightsRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SubjectRightsRequestRequestBuilderPatchOptions options for Patch
 type SubjectRightsRequestRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubjectRightsRequest;
@@ -58,10 +58,7 @@ type SubjectRightsRequestRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SubjectRightsRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubjectRightsRequestRequestBuilderInternal instantiates a new SubjectRightsRequestRequestBuilder and sets the default values.
 func NewSubjectRightsRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubjectRightsRequestRequestBuilder) {
     m := &SubjectRightsRequestRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewSubjectRightsRequestRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SubjectRightsRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubjectRightsRequestRequestBuilder instantiates a new SubjectRightsRequestRequestBuilder and sets the default values.
 func NewSubjectRightsRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubjectRightsRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSubjectRightsRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property subjectRightsRequests for privacy
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property subjectRightsRequests for privacy
 func (m *SubjectRightsRequestRequestBuilder) CreateDeleteRequestInformation(options *SubjectRightsRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *SubjectRightsRequestRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get subjectRightsRequests from privacy
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get subjectRightsRequests from privacy
 func (m *SubjectRightsRequestRequestBuilder) CreateGetRequestInformation(options *SubjectRightsRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *SubjectRightsRequestRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update the navigation property subjectRightsRequests in privacy
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property subjectRightsRequests in privacy
 func (m *SubjectRightsRequestRequestBuilder) CreatePatchRequestInformation(options *SubjectRightsRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *SubjectRightsRequestRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete navigation property subjectRightsRequests for privacy
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property subjectRightsRequests for privacy
 func (m *SubjectRightsRequestRequestBuilder) Delete(options *SubjectRightsRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *SubjectRightsRequestRequestBuilder) Delete(options *SubjectRightsReques
     }
     return nil
 }
-// Get subjectRightsRequests from privacy
-// Parameters:
-//  - options : Options for the request
+// Get get subjectRightsRequests from privacy
 func (m *SubjectRightsRequestRequestBuilder) Get(options *SubjectRightsRequestRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubjectRightsRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,20 +156,18 @@ func (m *SubjectRightsRequestRequestBuilder) Get(options *SubjectRightsRequestRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubjectRightsRequest), nil
 }
-// Builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\microsoft.graph.getFinalAttachment()
+// GetFinalAttachment builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\microsoft.graph.getFinalAttachment()
 func (m *SubjectRightsRequestRequestBuilder) GetFinalAttachment()(*ie490ccc81823dd6adcd276d7a2ff20dfdf201522ad6cac044881cf7e0b59a420.GetFinalAttachmentRequestBuilder) {
     return ie490ccc81823dd6adcd276d7a2ff20dfdf201522ad6cac044881cf7e0b59a420.NewGetFinalAttachmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\microsoft.graph.getFinalReport()
+// GetFinalReport builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\microsoft.graph.getFinalReport()
 func (m *SubjectRightsRequestRequestBuilder) GetFinalReport()(*i09fc0a778050440e74342b699ac672725441e7cf37365559ae6a2eb2457f6633.GetFinalReportRequestBuilder) {
     return i09fc0a778050440e74342b699ac672725441e7cf37365559ae6a2eb2457f6633.NewGetFinalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *SubjectRightsRequestRequestBuilder) Notes()(*i793fe4cfdde8af93f5cd2898a89580574ca6d3e95e1050acfda2f70d4ef9990b.NotesRequestBuilder) {
     return i793fe4cfdde8af93f5cd2898a89580574ca6d3e95e1050acfda2f70d4ef9990b.NewNotesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.privacy.subjectRightsRequests.item.notes.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// NotesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.privacy.subjectRightsRequests.item.notes.item collection
 func (m *SubjectRightsRequestRequestBuilder) NotesById(id string)(*i01c49ff8ee7f291e6ef03661dd6de1defbca61ef00e7cc93142b70cd237aae9e.AuthoredNoteRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -196,9 +178,7 @@ func (m *SubjectRightsRequestRequestBuilder) NotesById(id string)(*i01c49ff8ee7f
     }
     return i01c49ff8ee7f291e6ef03661dd6de1defbca61ef00e7cc93142b70cd237aae9e.NewAuthoredNoteRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update the navigation property subjectRightsRequests in privacy
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property subjectRightsRequests in privacy
 func (m *SubjectRightsRequestRequestBuilder) Patch(options *SubjectRightsRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

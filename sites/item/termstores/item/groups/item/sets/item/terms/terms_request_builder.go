@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}\sets\{set-id}\terms
+// termsRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}\sets\{set-id}\terms
 type TermsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TermsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TermsRequestBuilderGetOptions options for Get
 type TermsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TermsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All the terms under the set.
+// termsRequestBuilderGetQueryParameters all the terms under the set.
 type TermsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TermsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TermsRequestBuilderPostOptions options for Post
 type TermsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Term;
@@ -56,10 +56,7 @@ type TermsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TermsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermsRequestBuilderInternal instantiates a new TermsRequestBuilder and sets the default values.
 func NewTermsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermsRequestBuilder) {
     m := &TermsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTermsRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TermsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermsRequestBuilder instantiates a new TermsRequestBuilder and sets the default values.
 func NewTermsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTermsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All the terms under the set.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all the terms under the set.
 func (m *TermsRequestBuilder) CreateGetRequestInformation(options *TermsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TermsRequestBuilder) CreateGetRequestInformation(options *TermsRequestB
     }
     return requestInfo, nil
 }
-// All the terms under the set.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation all the terms under the set.
 func (m *TermsRequestBuilder) CreatePostRequestInformation(options *TermsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TermsRequestBuilder) CreatePostRequestInformation(options *TermsRequest
     }
     return requestInfo, nil
 }
-// All the terms under the set.
-// Parameters:
-//  - options : Options for the request
+// Get all the terms under the set.
 func (m *TermsRequestBuilder) Get(options *TermsRequestBuilderGetOptions)(*TermsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TermsRequestBuilder) Get(options *TermsRequestBuilderGetOptions)(*Terms
     }
     return res.(*TermsResponse), nil
 }
-// All the terms under the set.
-// Parameters:
-//  - options : Options for the request
+// Post all the terms under the set.
 func (m *TermsRequestBuilder) Post(options *TermsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Term, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\primaryChannel\microsoft.graph.removeEmail
+// removeEmailRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel\microsoft.graph.removeEmail
 type RemoveEmailRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RemoveEmailRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RemoveEmailRequestBuilderPostOptions options for Post
 type RemoveEmailRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type RemoveEmailRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RemoveEmailRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoveEmailRequestBuilderInternal instantiates a new RemoveEmailRequestBuilder and sets the default values.
 func NewRemoveEmailRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoveEmailRequestBuilder) {
     m := &RemoveEmailRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewRemoveEmailRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RemoveEmailRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoveEmailRequestBuilder instantiates a new RemoveEmailRequestBuilder and sets the default values.
 func NewRemoveEmailRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoveEmailRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveEmailRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action removeEmail
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action removeEmail
 func (m *RemoveEmailRequestBuilder) CreatePostRequestInformation(options *RemoveEmailRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *RemoveEmailRequestBuilder) CreatePostRequestInformation(options *Remove
     }
     return requestInfo, nil
 }
-// Invoke action removeEmail
-// Parameters:
-//  - options : Options for the request
+// Post invoke action removeEmail
 func (m *RemoveEmailRequestBuilder) Post(options *RemoveEmailRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

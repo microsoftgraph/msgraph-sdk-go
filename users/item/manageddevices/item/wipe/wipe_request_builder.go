@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.wipe
+// wipeRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.wipe
 type WipeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type WipeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// WipeRequestBuilderPostOptions options for Post
 type WipeRequestBuilderPostOptions struct {
     // 
     Body *WipeRequestBody;
@@ -24,10 +24,7 @@ type WipeRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WipeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWipeRequestBuilderInternal instantiates a new WipeRequestBuilder and sets the default values.
 func NewWipeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WipeRequestBuilder) {
     m := &WipeRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewWipeRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WipeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWipeRequestBuilder instantiates a new WipeRequestBuilder and sets the default values.
 func NewWipeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WipeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWipeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Wipe a device
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation wipe a device
 func (m *WipeRequestBuilder) CreatePostRequestInformation(options *WipeRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *WipeRequestBuilder) CreatePostRequestInformation(options *WipeRequestBu
     }
     return requestInfo, nil
 }
-// Wipe a device
-// Parameters:
-//  - options : Options for the request
+// Post wipe a device
 func (m *WipeRequestBuilder) Post(options *WipeRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

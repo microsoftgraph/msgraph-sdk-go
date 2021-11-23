@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\conditionalAccessPolicies\{conditionalAccessPolicy-id}
+// conditionalAccessPolicyRequestBuilder builds and executes requests for operations under \policies\conditionalAccessPolicies\{conditionalAccessPolicy-id}
 type ConditionalAccessPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConditionalAccessPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ConditionalAccessPolicyRequestBuilderDeleteOptions options for Delete
 type ConditionalAccessPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ConditionalAccessPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ConditionalAccessPolicyRequestBuilderGetOptions options for Get
 type ConditionalAccessPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ConditionalAccessPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The custom rules that define an access scenario.
+// conditionalAccessPolicyRequestBuilderGetQueryParameters the custom rules that define an access scenario.
 type ConditionalAccessPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ConditionalAccessPolicyRequestBuilderPatchOptions options for Patch
 type ConditionalAccessPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicy;
@@ -53,10 +53,7 @@ type ConditionalAccessPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConditionalAccessPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConditionalAccessPolicyRequestBuilderInternal instantiates a new ConditionalAccessPolicyRequestBuilder and sets the default values.
 func NewConditionalAccessPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConditionalAccessPolicyRequestBuilder) {
     m := &ConditionalAccessPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewConditionalAccessPolicyRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConditionalAccessPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConditionalAccessPolicyRequestBuilder instantiates a new ConditionalAccessPolicyRequestBuilder and sets the default values.
 func NewConditionalAccessPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConditionalAccessPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The custom rules that define an access scenario.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the custom rules that define an access scenario.
 func (m *ConditionalAccessPolicyRequestBuilder) CreateDeleteRequestInformation(options *ConditionalAccessPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ConditionalAccessPolicyRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// The custom rules that define an access scenario.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the custom rules that define an access scenario.
 func (m *ConditionalAccessPolicyRequestBuilder) CreateGetRequestInformation(options *ConditionalAccessPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ConditionalAccessPolicyRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The custom rules that define an access scenario.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the custom rules that define an access scenario.
 func (m *ConditionalAccessPolicyRequestBuilder) CreatePatchRequestInformation(options *ConditionalAccessPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ConditionalAccessPolicyRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// The custom rules that define an access scenario.
-// Parameters:
-//  - options : Options for the request
+// Delete the custom rules that define an access scenario.
 func (m *ConditionalAccessPolicyRequestBuilder) Delete(options *ConditionalAccessPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ConditionalAccessPolicyRequestBuilder) Delete(options *ConditionalAcces
     }
     return nil
 }
-// The custom rules that define an access scenario.
-// Parameters:
-//  - options : Options for the request
+// Get the custom rules that define an access scenario.
 func (m *ConditionalAccessPolicyRequestBuilder) Get(options *ConditionalAccessPolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ConditionalAccessPolicyRequestBuilder) Get(options *ConditionalAccessPo
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicy), nil
 }
-// The custom rules that define an access scenario.
-// Parameters:
-//  - options : Options for the request
+// Patch the custom rules that define an access scenario.
 func (m *ConditionalAccessPolicyRequestBuilder) Patch(options *ConditionalAccessPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\permissions
+// permissionsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\permissions
 type PermissionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PermissionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PermissionsRequestBuilderGetOptions options for Get
 type PermissionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PermissionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The set of permissions for the item. Read-only. Nullable.
+// permissionsRequestBuilderGetQueryParameters the set of permissions for the item. Read-only. Nullable.
 type PermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PermissionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PermissionsRequestBuilderPostOptions options for Post
 type PermissionsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission;
@@ -56,10 +56,7 @@ type PermissionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PermissionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPermissionsRequestBuilderInternal instantiates a new PermissionsRequestBuilder and sets the default values.
 func NewPermissionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PermissionsRequestBuilder) {
     m := &PermissionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPermissionsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PermissionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPermissionsRequestBuilder instantiates a new PermissionsRequestBuilder and sets the default values.
 func NewPermissionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PermissionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The set of permissions for the item. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the set of permissions for the item. Read-only. Nullable.
 func (m *PermissionsRequestBuilder) CreateGetRequestInformation(options *PermissionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PermissionsRequestBuilder) CreateGetRequestInformation(options *Permiss
     }
     return requestInfo, nil
 }
-// The set of permissions for the item. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the set of permissions for the item. Read-only. Nullable.
 func (m *PermissionsRequestBuilder) CreatePostRequestInformation(options *PermissionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PermissionsRequestBuilder) CreatePostRequestInformation(options *Permis
     }
     return requestInfo, nil
 }
-// The set of permissions for the item. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the set of permissions for the item. Read-only. Nullable.
 func (m *PermissionsRequestBuilder) Get(options *PermissionsRequestBuilderGetOptions)(*PermissionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PermissionsRequestBuilder) Get(options *PermissionsRequestBuilderGetOpt
     }
     return res.(*PermissionsResponse), nil
 }
-// The set of permissions for the item. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the set of permissions for the item. Read-only. Nullable.
 func (m *PermissionsRequestBuilder) Post(options *PermissionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

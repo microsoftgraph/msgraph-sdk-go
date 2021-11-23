@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\homeRealmDiscoveryPolicies
+// homeRealmDiscoveryPoliciesRequestBuilder builds and executes requests for operations under \policies\homeRealmDiscoveryPolicies
 type HomeRealmDiscoveryPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type HomeRealmDiscoveryPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// HomeRealmDiscoveryPoliciesRequestBuilderGetOptions options for Get
 type HomeRealmDiscoveryPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type HomeRealmDiscoveryPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy to control Azure AD authentication behavior for federated users.
+// homeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters the policy to control Azure AD authentication behavior for federated users.
 type HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// HomeRealmDiscoveryPoliciesRequestBuilderPostOptions options for Post
 type HomeRealmDiscoveryPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.HomeRealmDiscoveryPolicy;
@@ -56,10 +56,7 @@ type HomeRealmDiscoveryPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new HomeRealmDiscoveryPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHomeRealmDiscoveryPoliciesRequestBuilderInternal instantiates a new HomeRealmDiscoveryPoliciesRequestBuilder and sets the default values.
 func NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HomeRealmDiscoveryPoliciesRequestBuilder) {
     m := &HomeRealmDiscoveryPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new HomeRealmDiscoveryPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHomeRealmDiscoveryPoliciesRequestBuilder instantiates a new HomeRealmDiscoveryPoliciesRequestBuilder and sets the default values.
 func NewHomeRealmDiscoveryPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HomeRealmDiscoveryPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy to control Azure AD authentication behavior for federated users.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy to control Azure AD authentication behavior for federated users.
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformation(options *HomeRealmDiscoveryPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// The policy to control Azure AD authentication behavior for federated users.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the policy to control Azure AD authentication behavior for federated users.
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreatePostRequestInformation(options *HomeRealmDiscoveryPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// The policy to control Azure AD authentication behavior for federated users.
-// Parameters:
-//  - options : Options for the request
+// Get the policy to control Azure AD authentication behavior for federated users.
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Get(options *HomeRealmDiscoveryPoliciesRequestBuilderGetOptions)(*HomeRealmDiscoveryPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Get(options *HomeRealmDiscove
     }
     return res.(*HomeRealmDiscoveryPoliciesResponse), nil
 }
-// The policy to control Azure AD authentication behavior for federated users.
-// Parameters:
-//  - options : Options for the request
+// Post the policy to control Azure AD authentication behavior for federated users.
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Post(options *HomeRealmDiscoveryPoliciesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.HomeRealmDiscoveryPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\contentTypes\{contentType-id}\baseTypes\$ref
+// refRequestBuilder builds and executes requests for operations under \sites\{site-id}\contentTypes\{contentType-id}\baseTypes\$ref
 type RefRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type RefRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RefRequestBuilderGetOptions options for Get
 type RefRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type RefRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of content types that are ancestors of this content type.
+// refRequestBuilderGetQueryParameters the collection of content types that are ancestors of this content type.
 type RefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -40,7 +40,7 @@ type RefRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RefRequestBuilderPostOptions options for Post
 type RefRequestBuilderPostOptions struct {
     // 
     Body *Ref;
@@ -51,10 +51,7 @@ type RefRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RefRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
 func NewRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RefRequestBuilder) {
     m := &RefRequestBuilder{
     }
@@ -67,18 +64,13 @@ func NewRefRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RefRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
 func NewRefRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of content types that are ancestors of this content type.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of content types that are ancestors of this content type.
 func (m *RefRequestBuilder) CreateGetRequestInformation(options *RefRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *RefRequestBuilder) CreateGetRequestInformation(options *RefRequestBuild
     }
     return requestInfo, nil
 }
-// The collection of content types that are ancestors of this content type.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of content types that are ancestors of this content type.
 func (m *RefRequestBuilder) CreatePostRequestInformation(options *RefRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,9 +108,7 @@ func (m *RefRequestBuilder) CreatePostRequestInformation(options *RefRequestBuil
     }
     return requestInfo, nil
 }
-// The collection of content types that are ancestors of this content type.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of content types that are ancestors of this content type.
 func (m *RefRequestBuilder) Get(options *RefRequestBuilderGetOptions)(*RefResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -132,9 +120,7 @@ func (m *RefRequestBuilder) Get(options *RefRequestBuilderGetOptions)(*RefRespon
     }
     return res.(*RefResponse), nil
 }
-// The collection of content types that are ancestors of this content type.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of content types that are ancestors of this content type.
 func (m *RefRequestBuilder) Post(options *RefRequestBuilderPostOptions)(*Ref, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

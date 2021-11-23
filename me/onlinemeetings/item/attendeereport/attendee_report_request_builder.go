@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\onlineMeetings\{onlineMeeting-id}\attendeeReport
+// attendeeReportRequestBuilder builds and executes requests for operations under \me\onlineMeetings\{onlineMeeting-id}\attendeeReport
 type AttendeeReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type AttendeeReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AttendeeReportRequestBuilderGetOptions options for Get
 type AttendeeReportRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,7 +22,7 @@ type AttendeeReportRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Put
+// AttendeeReportRequestBuilderPutOptions options for Put
 type AttendeeReportRequestBuilderPutOptions struct {
     // Binary request body
     Body []byte;
@@ -33,10 +33,7 @@ type AttendeeReportRequestBuilderPutOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AttendeeReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAttendeeReportRequestBuilderInternal instantiates a new AttendeeReportRequestBuilder and sets the default values.
 func NewAttendeeReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AttendeeReportRequestBuilder) {
     m := &AttendeeReportRequestBuilder{
     }
@@ -49,18 +46,13 @@ func NewAttendeeReportRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AttendeeReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAttendeeReportRequestBuilder instantiates a new AttendeeReportRequestBuilder and sets the default values.
 func NewAttendeeReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AttendeeReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAttendeeReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get media content for the navigation property onlineMeetings from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get media content for the navigation property onlineMeetings from me
 func (m *AttendeeReportRequestBuilder) CreateGetRequestInformation(options *AttendeeReportRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -77,9 +69,7 @@ func (m *AttendeeReportRequestBuilder) CreateGetRequestInformation(options *Atte
     }
     return requestInfo, nil
 }
-// Update media content for the navigation property onlineMeetings in me
-// Parameters:
-//  - options : Options for the request
+// CreatePutRequestInformation update media content for the navigation property onlineMeetings in me
 func (m *AttendeeReportRequestBuilder) CreatePutRequestInformation(options *AttendeeReportRequestBuilderPutOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +87,7 @@ func (m *AttendeeReportRequestBuilder) CreatePutRequestInformation(options *Atte
     }
     return requestInfo, nil
 }
-// Get media content for the navigation property onlineMeetings from me
-// Parameters:
-//  - options : Options for the request
+// Get get media content for the navigation property onlineMeetings from me
 func (m *AttendeeReportRequestBuilder) Get(options *AttendeeReportRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -111,9 +99,7 @@ func (m *AttendeeReportRequestBuilder) Get(options *AttendeeReportRequestBuilder
     }
     return res.([]byte), nil
 }
-// Update media content for the navigation property onlineMeetings in me
-// Parameters:
-//  - options : Options for the request
+// Put update media content for the navigation property onlineMeetings in me
 func (m *AttendeeReportRequestBuilder) Put(options *AttendeeReportRequestBuilderPutOptions)(error) {
     requestInfo, err := m.CreatePutRequestInformation(options);
     if err != nil {

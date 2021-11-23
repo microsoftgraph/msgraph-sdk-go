@@ -8,7 +8,7 @@ import (
     idfe4f23b103f13fecc0869309eaabe219b2fbf7acf4386eaae3adf0607218730 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/worksheet/charts/item/series/item/points/count"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points
+// pointsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points
 type PointsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type PointsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PointsRequestBuilderGetOptions options for Get
 type PointsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type PointsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents a collection of all points in the series. Read-only.
+// pointsRequestBuilderGetQueryParameters represents a collection of all points in the series. Read-only.
 type PointsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type PointsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PointsRequestBuilderPostOptions options for Post
 type PointsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartPoint;
@@ -58,10 +58,7 @@ type PointsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PointsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPointsRequestBuilderInternal instantiates a new PointsRequestBuilder and sets the default values.
 func NewPointsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PointsRequestBuilder) {
     m := &PointsRequestBuilder{
     }
@@ -74,22 +71,17 @@ func NewPointsRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PointsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPointsRequestBuilder instantiates a new PointsRequestBuilder and sets the default values.
 func NewPointsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PointsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPointsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\microsoft.graph.count()
+// Count builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\microsoft.graph.count()
 func (m *PointsRequestBuilder) Count()(*idfe4f23b103f13fecc0869309eaabe219b2fbf7acf4386eaae3adf0607218730.CountRequestBuilder) {
     return idfe4f23b103f13fecc0869309eaabe219b2fbf7acf4386eaae3adf0607218730.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents a collection of all points in the series. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents a collection of all points in the series. Read-only.
 func (m *PointsRequestBuilder) CreateGetRequestInformation(options *PointsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +101,7 @@ func (m *PointsRequestBuilder) CreateGetRequestInformation(options *PointsReques
     }
     return requestInfo, nil
 }
-// Represents a collection of all points in the series. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents a collection of all points in the series. Read-only.
 func (m *PointsRequestBuilder) CreatePostRequestInformation(options *PointsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *PointsRequestBuilder) CreatePostRequestInformation(options *PointsReque
     }
     return requestInfo, nil
 }
-// Represents a collection of all points in the series. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents a collection of all points in the series. Read-only.
 func (m *PointsRequestBuilder) Get(options *PointsRequestBuilderGetOptions)(*PointsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -143,15 +131,11 @@ func (m *PointsRequestBuilder) Get(options *PointsRequestBuilderGetOptions)(*Poi
     }
     return res.(*PointsResponse), nil
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\microsoft.graph.itemAt(index={index})
-// Parameters:
-//  - index : Usage: index={index}
+// ItemAtWithIndex builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\microsoft.graph.itemAt(index={index})
 func (m *PointsRequestBuilder) ItemAtWithIndex(index *int32)(*i72b3cff7002c2a03a117a2514f00802cffe86dd4d61dcdd6a01d3a9690541083.ItemAtWithIndexRequestBuilder) {
     return i72b3cff7002c2a03a117a2514f00802cffe86dd4d61dcdd6a01d3a9690541083.NewItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index);
 }
-// Represents a collection of all points in the series. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post represents a collection of all points in the series. Read-only.
 func (m *PointsRequestBuilder) Post(options *PointsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartPoint, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// userFlowLanguageConfiguration 
 type UserFlowLanguageConfiguration struct {
     Entity
     // Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
@@ -16,14 +16,14 @@ type UserFlowLanguageConfiguration struct {
     // Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
     overridesPages []UserFlowLanguagePage;
 }
-// Instantiates a new userFlowLanguageConfiguration and sets the default values.
+// NewUserFlowLanguageConfiguration instantiates a new userFlowLanguageConfiguration and sets the default values.
 func NewUserFlowLanguageConfiguration()(*UserFlowLanguageConfiguration) {
     m := &UserFlowLanguageConfiguration{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+// GetDefaultPages gets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 func (m *UserFlowLanguageConfiguration) GetDefaultPages()([]UserFlowLanguagePage) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *UserFlowLanguageConfiguration) GetDefaultPages()([]UserFlowLanguagePage
         return m.defaultPages
     }
 }
-// Gets the displayName property value. The language name to display. This property is read-only.
+// GetDisplayName gets the displayName property value. The language name to display. This property is read-only.
 func (m *UserFlowLanguageConfiguration) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *UserFlowLanguageConfiguration) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the isEnabled property value. Indicates whether the language is enabled within the user flow.
+// GetIsEnabled gets the isEnabled property value. Indicates whether the language is enabled within the user flow.
 func (m *UserFlowLanguageConfiguration) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *UserFlowLanguageConfiguration) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// Gets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+// GetOverridesPages gets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
 func (m *UserFlowLanguageConfiguration) GetOverridesPages()([]UserFlowLanguagePage) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *UserFlowLanguageConfiguration) GetOverridesPages()([]UserFlowLanguagePa
         return m.overridesPages
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserFlowLanguageConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["defaultPages"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -111,9 +111,7 @@ func (m *UserFlowLanguageConfiguration) GetFieldDeserializers()(map[string]func(
 func (m *UserFlowLanguageConfiguration) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserFlowLanguageConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -155,27 +153,19 @@ func (m *UserFlowLanguageConfiguration) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-// Parameters:
-//  - value : Value to set for the defaultPages property.
+// SetDefaultPages sets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 func (m *UserFlowLanguageConfiguration) SetDefaultPages(value []UserFlowLanguagePage)() {
     m.defaultPages = value
 }
-// Sets the displayName property value. The language name to display. This property is read-only.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The language name to display. This property is read-only.
 func (m *UserFlowLanguageConfiguration) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the isEnabled property value. Indicates whether the language is enabled within the user flow.
-// Parameters:
-//  - value : Value to set for the isEnabled property.
+// SetIsEnabled sets the isEnabled property value. Indicates whether the language is enabled within the user flow.
 func (m *UserFlowLanguageConfiguration) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// Sets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
-// Parameters:
-//  - value : Value to set for the overridesPages property.
+// SetOverridesPages sets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
 func (m *UserFlowLanguageConfiguration) SetOverridesPages(value []UserFlowLanguagePage)() {
     m.overridesPages = value
 }

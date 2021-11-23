@@ -9,7 +9,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \contracts
+// contractsRequestBuilder builds and executes requests for operations under \contracts
 type ContractsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type ContractsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ContractsRequestBuilderGetOptions options for Get
 type ContractsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type ContractsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from contracts
+// contractsRequestBuilderGetQueryParameters get entities from contracts
 type ContractsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -48,7 +48,7 @@ type ContractsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ContractsRequestBuilderPostOptions options for Post
 type ContractsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Contract;
@@ -59,10 +59,7 @@ type ContractsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ContractsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContractsRequestBuilderInternal instantiates a new ContractsRequestBuilder and sets the default values.
 func NewContractsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContractsRequestBuilder) {
     m := &ContractsRequestBuilder{
     }
@@ -75,18 +72,13 @@ func NewContractsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ContractsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContractsRequestBuilder instantiates a new ContractsRequestBuilder and sets the default values.
 func NewContractsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContractsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewContractsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from contracts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from contracts
 func (m *ContractsRequestBuilder) CreateGetRequestInformation(options *ContractsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,9 +98,7 @@ func (m *ContractsRequestBuilder) CreateGetRequestInformation(options *Contracts
     }
     return requestInfo, nil
 }
-// Add new entity to contracts
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to contracts
 func (m *ContractsRequestBuilder) CreatePostRequestInformation(options *ContractsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,9 +116,7 @@ func (m *ContractsRequestBuilder) CreatePostRequestInformation(options *Contract
     }
     return requestInfo, nil
 }
-// Get entities from contracts
-// Parameters:
-//  - options : Options for the request
+// Get get entities from contracts
 func (m *ContractsRequestBuilder) Get(options *ContractsRequestBuilderGetOptions)(*ContractsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -146,9 +134,7 @@ func (m *ContractsRequestBuilder) GetAvailableExtensionProperties()(*ie41bc0d7fc
 func (m *ContractsRequestBuilder) GetByIds()(*if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.GetByIdsRequestBuilder) {
     return if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to contracts
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to contracts
 func (m *ContractsRequestBuilder) Post(options *ContractsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Contract, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

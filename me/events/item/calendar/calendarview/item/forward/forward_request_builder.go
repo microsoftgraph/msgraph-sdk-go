@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\events\{event-id}\calendar\calendarView\{event-id1}\microsoft.graph.forward
+// forwardRequestBuilder builds and executes requests for operations under \me\events\{event-id}\calendar\calendarView\{event-id1}\microsoft.graph.forward
 type ForwardRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ForwardRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ForwardRequestBuilderPostOptions options for Post
 type ForwardRequestBuilderPostOptions struct {
     // 
     Body *ForwardRequestBody;
@@ -24,10 +24,7 @@ type ForwardRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ForwardRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewForwardRequestBuilderInternal instantiates a new ForwardRequestBuilder and sets the default values.
 func NewForwardRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ForwardRequestBuilder) {
     m := &ForwardRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewForwardRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ForwardRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewForwardRequestBuilder instantiates a new ForwardRequestBuilder and sets the default values.
 func NewForwardRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ForwardRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action forward
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action forward
 func (m *ForwardRequestBuilder) CreatePostRequestInformation(options *ForwardRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ForwardRequestBuilder) CreatePostRequestInformation(options *ForwardReq
     }
     return requestInfo, nil
 }
-// Invoke action forward
-// Parameters:
-//  - options : Options for the request
+// Post invoke action forward
 func (m *ForwardRequestBuilder) Post(options *ForwardRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

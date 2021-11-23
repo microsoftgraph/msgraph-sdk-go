@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\deviceCategory
+// deviceCategoryRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\deviceCategory
 type DeviceCategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceCategoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceCategoryRequestBuilderDeleteOptions options for Delete
 type DeviceCategoryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceCategoryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceCategoryRequestBuilderGetOptions options for Get
 type DeviceCategoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceCategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Device category
+// deviceCategoryRequestBuilderGetQueryParameters device category
 type DeviceCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceCategoryRequestBuilderPatchOptions options for Patch
 type DeviceCategoryRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCategory;
@@ -53,10 +53,7 @@ type DeviceCategoryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCategoryRequestBuilderInternal instantiates a new DeviceCategoryRequestBuilder and sets the default values.
 func NewDeviceCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCategoryRequestBuilder) {
     m := &DeviceCategoryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceCategoryRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCategoryRequestBuilder instantiates a new DeviceCategoryRequestBuilder and sets the default values.
 func NewDeviceCategoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCategoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCategoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Device category
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation device category
 func (m *DeviceCategoryRequestBuilder) CreateDeleteRequestInformation(options *DeviceCategoryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceCategoryRequestBuilder) CreateDeleteRequestInformation(options *D
     }
     return requestInfo, nil
 }
-// Device category
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation device category
 func (m *DeviceCategoryRequestBuilder) CreateGetRequestInformation(options *DeviceCategoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceCategoryRequestBuilder) CreateGetRequestInformation(options *Devi
     }
     return requestInfo, nil
 }
-// Device category
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation device category
 func (m *DeviceCategoryRequestBuilder) CreatePatchRequestInformation(options *DeviceCategoryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceCategoryRequestBuilder) CreatePatchRequestInformation(options *De
     }
     return requestInfo, nil
 }
-// Device category
-// Parameters:
-//  - options : Options for the request
+// Delete device category
 func (m *DeviceCategoryRequestBuilder) Delete(options *DeviceCategoryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceCategoryRequestBuilder) Delete(options *DeviceCategoryRequestBuil
     }
     return nil
 }
-// Device category
-// Parameters:
-//  - options : Options for the request
+// Get device category
 func (m *DeviceCategoryRequestBuilder) Get(options *DeviceCategoryRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceCategoryRequestBuilder) Get(options *DeviceCategoryRequestBuilder
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCategory), nil
 }
-// Device category
-// Parameters:
-//  - options : Options for the request
+// Patch device category
 func (m *DeviceCategoryRequestBuilder) Patch(options *DeviceCategoryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

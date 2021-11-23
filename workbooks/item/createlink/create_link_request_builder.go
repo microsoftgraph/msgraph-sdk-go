@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.createLink
+// createLinkRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.createLink
 type CreateLinkRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CreateLinkRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// CreateLinkRequestBuilderPostOptions options for Post
 type CreateLinkRequestBuilderPostOptions struct {
     // 
     Body *CreateLinkRequestBody;
@@ -26,21 +26,21 @@ type CreateLinkRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes permission
+// createLinkResponse union type wrapper for classes permission
 type CreateLinkResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type permission
     permission *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission;
 }
-// Instantiates a new createLinkResponse and sets the default values.
+// NewCreateLinkResponse instantiates a new createLinkResponse and sets the default values.
 func NewCreateLinkResponse()(*CreateLinkResponse) {
     m := &CreateLinkResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateLinkResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *CreateLinkResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the permission property value. Union type representation for type permission
+// GetPermission gets the permission property value. Union type representation for type permission
 func (m *CreateLinkResponse) GetPermission()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *CreateLinkResponse) GetPermission()(*i4a838ef194e4c99e9f2c63ba10dab9cb1
         return m.permission
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CreateLinkResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["permission"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *CreateLinkResponse) GetFieldDeserializers()(map[string]func(interface{}
 func (m *CreateLinkResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CreateLinkResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("permission", m.GetPermission())
@@ -92,22 +90,15 @@ func (m *CreateLinkResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateLinkResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the permission property value. Union type representation for type permission
-// Parameters:
-//  - value : Value to set for the permission property.
+// SetPermission sets the permission property value. Union type representation for type permission
 func (m *CreateLinkResponse) SetPermission(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Permission)() {
     m.permission = value
 }
-// Instantiates a new CreateLinkRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateLinkRequestBuilderInternal instantiates a new CreateLinkRequestBuilder and sets the default values.
 func NewCreateLinkRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateLinkRequestBuilder) {
     m := &CreateLinkRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewCreateLinkRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CreateLinkRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreateLinkRequestBuilder instantiates a new CreateLinkRequestBuilder and sets the default values.
 func NewCreateLinkRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreateLinkRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCreateLinkRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action createLink
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action createLink
 func (m *CreateLinkRequestBuilder) CreatePostRequestInformation(options *CreateLinkRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *CreateLinkRequestBuilder) CreatePostRequestInformation(options *CreateL
     }
     return requestInfo, nil
 }
-// Invoke action createLink
-// Parameters:
-//  - options : Options for the request
+// Post invoke action createLink
 func (m *CreateLinkRequestBuilder) Post(options *CreateLinkRequestBuilderPostOptions)(*CreateLinkResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

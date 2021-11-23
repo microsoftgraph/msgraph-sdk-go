@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\microsoft.graph.unsetVerifiedPublisher
+// unsetVerifiedPublisherRequestBuilder builds and executes requests for operations under \applications\{application-id}\microsoft.graph.unsetVerifiedPublisher
 type UnsetVerifiedPublisherRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UnsetVerifiedPublisherRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UnsetVerifiedPublisherRequestBuilderPostOptions options for Post
 type UnsetVerifiedPublisherRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type UnsetVerifiedPublisherRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnsetVerifiedPublisherRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnsetVerifiedPublisherRequestBuilderInternal instantiates a new UnsetVerifiedPublisherRequestBuilder and sets the default values.
 func NewUnsetVerifiedPublisherRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnsetVerifiedPublisherRequestBuilder) {
     m := &UnsetVerifiedPublisherRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewUnsetVerifiedPublisherRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnsetVerifiedPublisherRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnsetVerifiedPublisherRequestBuilder instantiates a new UnsetVerifiedPublisherRequestBuilder and sets the default values.
 func NewUnsetVerifiedPublisherRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnsetVerifiedPublisherRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnsetVerifiedPublisherRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action unsetVerifiedPublisher
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action unsetVerifiedPublisher
 func (m *UnsetVerifiedPublisherRequestBuilder) CreatePostRequestInformation(options *UnsetVerifiedPublisherRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *UnsetVerifiedPublisherRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Invoke action unsetVerifiedPublisher
-// Parameters:
-//  - options : Options for the request
+// Post invoke action unsetVerifiedPublisher
 func (m *UnsetVerifiedPublisherRequestBuilder) Post(options *UnsetVerifiedPublisherRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

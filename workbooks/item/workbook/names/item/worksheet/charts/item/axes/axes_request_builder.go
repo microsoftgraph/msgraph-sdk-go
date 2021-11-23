@@ -9,7 +9,7 @@ import (
     idf696b94dea17b21fda287e90dd0d76f626983d4fa719fe4d889531730f80197 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/axes/categoryaxis"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes
+// axesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes
 type AxesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type AxesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AxesRequestBuilderDeleteOptions options for Delete
 type AxesRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AxesRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AxesRequestBuilderGetOptions options for Get
 type AxesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type AxesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents chart axes. Read-only.
+// axesRequestBuilderGetQueryParameters represents chart axes. Read-only.
 type AxesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AxesRequestBuilderPatchOptions options for Patch
 type AxesRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxes;
@@ -59,10 +59,7 @@ type AxesRequestBuilderPatchOptions struct {
 func (m *AxesRequestBuilder) CategoryAxis()(*idf696b94dea17b21fda287e90dd0d76f626983d4fa719fe4d889531730f80197.CategoryAxisRequestBuilder) {
     return idf696b94dea17b21fda287e90dd0d76f626983d4fa719fe4d889531730f80197.NewCategoryAxisRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new AxesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAxesRequestBuilderInternal instantiates a new AxesRequestBuilder and sets the default values.
 func NewAxesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AxesRequestBuilder) {
     m := &AxesRequestBuilder{
     }
@@ -75,18 +72,13 @@ func NewAxesRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AxesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAxesRequestBuilder instantiates a new AxesRequestBuilder and sets the default values.
 func NewAxesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AxesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAxesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents chart axes. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents chart axes. Read-only.
 func (m *AxesRequestBuilder) CreateDeleteRequestInformation(options *AxesRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AxesRequestBuilder) CreateDeleteRequestInformation(options *AxesRequest
     }
     return requestInfo, nil
 }
-// Represents chart axes. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents chart axes. Read-only.
 func (m *AxesRequestBuilder) CreateGetRequestInformation(options *AxesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *AxesRequestBuilder) CreateGetRequestInformation(options *AxesRequestBui
     }
     return requestInfo, nil
 }
-// Represents chart axes. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents chart axes. Read-only.
 func (m *AxesRequestBuilder) CreatePatchRequestInformation(options *AxesRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +133,7 @@ func (m *AxesRequestBuilder) CreatePatchRequestInformation(options *AxesRequestB
     }
     return requestInfo, nil
 }
-// Represents chart axes. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents chart axes. Read-only.
 func (m *AxesRequestBuilder) Delete(options *AxesRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -159,9 +145,7 @@ func (m *AxesRequestBuilder) Delete(options *AxesRequestBuilderDeleteOptions)(er
     }
     return nil
 }
-// Represents chart axes. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents chart axes. Read-only.
 func (m *AxesRequestBuilder) Get(options *AxesRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxes, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *AxesRequestBuilder) Get(options *AxesRequestBuilderGetOptions)(*i4a838e
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxes), nil
 }
-// Represents chart axes. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents chart axes. Read-only.
 func (m *AxesRequestBuilder) Patch(options *AxesRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

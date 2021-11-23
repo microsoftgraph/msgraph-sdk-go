@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\authentication\methods\{authenticationMethod-id}
+// authenticationMethodRequestBuilder builds and executes requests for operations under \me\authentication\methods\{authenticationMethod-id}
 type AuthenticationMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AuthenticationMethodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AuthenticationMethodRequestBuilderDeleteOptions options for Delete
 type AuthenticationMethodRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AuthenticationMethodRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AuthenticationMethodRequestBuilderGetOptions options for Get
 type AuthenticationMethodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AuthenticationMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get methods from me
+// authenticationMethodRequestBuilderGetQueryParameters get methods from me
 type AuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AuthenticationMethodRequestBuilderPatchOptions options for Patch
 type AuthenticationMethodRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethod;
@@ -53,10 +53,7 @@ type AuthenticationMethodRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthenticationMethodRequestBuilderInternal instantiates a new AuthenticationMethodRequestBuilder and sets the default values.
 func NewAuthenticationMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationMethodRequestBuilder) {
     m := &AuthenticationMethodRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAuthenticationMethodRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthenticationMethodRequestBuilder instantiates a new AuthenticationMethodRequestBuilder and sets the default values.
 func NewAuthenticationMethodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationMethodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property methods for me
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property methods for me
 func (m *AuthenticationMethodRequestBuilder) CreateDeleteRequestInformation(options *AuthenticationMethodRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AuthenticationMethodRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get methods from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get methods from me
 func (m *AuthenticationMethodRequestBuilder) CreateGetRequestInformation(options *AuthenticationMethodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AuthenticationMethodRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update the navigation property methods in me
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property methods in me
 func (m *AuthenticationMethodRequestBuilder) CreatePatchRequestInformation(options *AuthenticationMethodRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AuthenticationMethodRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete navigation property methods for me
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property methods for me
 func (m *AuthenticationMethodRequestBuilder) Delete(options *AuthenticationMethodRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AuthenticationMethodRequestBuilder) Delete(options *AuthenticationMetho
     }
     return nil
 }
-// Get methods from me
-// Parameters:
-//  - options : Options for the request
+// Get get methods from me
 func (m *AuthenticationMethodRequestBuilder) Get(options *AuthenticationMethodRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AuthenticationMethodRequestBuilder) Get(options *AuthenticationMethodRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethod), nil
 }
-// Update the navigation property methods in me
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property methods in me
 func (m *AuthenticationMethodRequestBuilder) Patch(options *AuthenticationMethodRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

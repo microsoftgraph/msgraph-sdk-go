@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// contentType 
 type ContentType struct {
     Entity
     // List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
@@ -46,14 +46,14 @@ type ContentType struct {
     // If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
     sealed *bool;
 }
-// Instantiates a new contentType and sets the default values.
+// NewContentType instantiates a new contentType and sets the default values.
 func NewContentType()(*ContentType) {
     m := &ContentType{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+// GetAssociatedHubsUrls gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
 func (m *ContentType) GetAssociatedHubsUrls()([]string) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *ContentType) GetAssociatedHubsUrls()([]string) {
         return m.associatedHubsUrls
     }
 }
-// Gets the base property value. Parent contentType from which this content type is derived.
+// GetBase gets the base property value. Parent contentType from which this content type is derived.
 func (m *ContentType) GetBase()(*ContentType) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *ContentType) GetBase()(*ContentType) {
         return m.base
     }
 }
-// Gets the baseTypes property value. The collection of content types that are ancestors of this content type.
+// GetBaseTypes gets the baseTypes property value. The collection of content types that are ancestors of this content type.
 func (m *ContentType) GetBaseTypes()([]ContentType) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *ContentType) GetBaseTypes()([]ContentType) {
         return m.baseTypes
     }
 }
-// Gets the columnLinks property value. The collection of columns that are required by this content type.
+// GetColumnLinks gets the columnLinks property value. The collection of columns that are required by this content type.
 func (m *ContentType) GetColumnLinks()([]ColumnLink) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *ContentType) GetColumnLinks()([]ColumnLink) {
         return m.columnLinks
     }
 }
-// Gets the columnPositions property value. Column order information in a content type.
+// GetColumnPositions gets the columnPositions property value. Column order information in a content type.
 func (m *ContentType) GetColumnPositions()([]ColumnDefinition) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *ContentType) GetColumnPositions()([]ColumnDefinition) {
         return m.columnPositions
     }
 }
-// Gets the columns property value. The collection of column definitions for this contentType.
+// GetColumns gets the columns property value. The collection of column definitions for this contentType.
 func (m *ContentType) GetColumns()([]ColumnDefinition) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *ContentType) GetColumns()([]ColumnDefinition) {
         return m.columns
     }
 }
-// Gets the description property value. The descriptive text for the item.
+// GetDescription gets the description property value. The descriptive text for the item.
 func (m *ContentType) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *ContentType) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the documentSet property value. Document Set metadata.
+// GetDocumentSet gets the documentSet property value. Document Set metadata.
 func (m *ContentType) GetDocumentSet()(*DocumentSet) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *ContentType) GetDocumentSet()(*DocumentSet) {
         return m.documentSet
     }
 }
-// Gets the documentTemplate property value. Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.
+// GetDocumentTemplate gets the documentTemplate property value. Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.
 func (m *ContentType) GetDocumentTemplate()(*DocumentSetContent) {
     if m == nil {
         return nil
@@ -125,7 +125,7 @@ func (m *ContentType) GetDocumentTemplate()(*DocumentSetContent) {
         return m.documentTemplate
     }
 }
-// Gets the group property value. The name of the group this content type belongs to. Helps organize related content types.
+// GetGroup gets the group property value. The name of the group this content type belongs to. Helps organize related content types.
 func (m *ContentType) GetGroup()(*string) {
     if m == nil {
         return nil
@@ -133,7 +133,7 @@ func (m *ContentType) GetGroup()(*string) {
         return m.group
     }
 }
-// Gets the hidden property value. Indicates whether the content type is hidden in the list's 'New' menu.
+// GetHidden gets the hidden property value. Indicates whether the content type is hidden in the list's 'New' menu.
 func (m *ContentType) GetHidden()(*bool) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *ContentType) GetHidden()(*bool) {
         return m.hidden
     }
 }
-// Gets the inheritedFrom property value. If this content type is inherited from another scope (like a site), provides a reference to the item where the content type is defined.
+// GetInheritedFrom gets the inheritedFrom property value. If this content type is inherited from another scope (like a site), provides a reference to the item where the content type is defined.
 func (m *ContentType) GetInheritedFrom()(*ItemReference) {
     if m == nil {
         return nil
@@ -149,7 +149,7 @@ func (m *ContentType) GetInheritedFrom()(*ItemReference) {
         return m.inheritedFrom
     }
 }
-// Gets the isBuiltIn property value. Specifies if a content type is a built-in content type.
+// GetIsBuiltIn gets the isBuiltIn property value. Specifies if a content type is a built-in content type.
 func (m *ContentType) GetIsBuiltIn()(*bool) {
     if m == nil {
         return nil
@@ -157,7 +157,7 @@ func (m *ContentType) GetIsBuiltIn()(*bool) {
         return m.isBuiltIn
     }
 }
-// Gets the name property value. The name of the content type.
+// GetName gets the name property value. The name of the content type.
 func (m *ContentType) GetName()(*string) {
     if m == nil {
         return nil
@@ -165,7 +165,7 @@ func (m *ContentType) GetName()(*string) {
         return m.name
     }
 }
-// Gets the order property value. Specifies the order in which the content type appears in the selection UI.
+// GetOrder gets the order property value. Specifies the order in which the content type appears in the selection UI.
 func (m *ContentType) GetOrder()(*ContentTypeOrder) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *ContentType) GetOrder()(*ContentTypeOrder) {
         return m.order
     }
 }
-// Gets the parentId property value. The unique identifier of the content type.
+// GetParentId gets the parentId property value. The unique identifier of the content type.
 func (m *ContentType) GetParentId()(*string) {
     if m == nil {
         return nil
@@ -181,7 +181,7 @@ func (m *ContentType) GetParentId()(*string) {
         return m.parentId
     }
 }
-// Gets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
+// GetPropagateChanges gets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
 func (m *ContentType) GetPropagateChanges()(*bool) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *ContentType) GetPropagateChanges()(*bool) {
         return m.propagateChanges
     }
 }
-// Gets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
+// GetReadOnly gets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
 func (m *ContentType) GetReadOnly()(*bool) {
     if m == nil {
         return nil
@@ -197,7 +197,7 @@ func (m *ContentType) GetReadOnly()(*bool) {
         return m.readOnly
     }
 }
-// Gets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+// GetSealed gets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 func (m *ContentType) GetSealed()(*bool) {
     if m == nil {
         return nil
@@ -205,7 +205,7 @@ func (m *ContentType) GetSealed()(*bool) {
         return m.sealed
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["associatedHubsUrls"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -423,9 +423,7 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *ContentType) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ContentType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -567,117 +565,79 @@ func (m *ContentType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// Sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
-// Parameters:
-//  - value : Value to set for the associatedHubsUrls property.
+// SetAssociatedHubsUrls sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
 func (m *ContentType) SetAssociatedHubsUrls(value []string)() {
     m.associatedHubsUrls = value
 }
-// Sets the base property value. Parent contentType from which this content type is derived.
-// Parameters:
-//  - value : Value to set for the base property.
+// SetBase sets the base property value. Parent contentType from which this content type is derived.
 func (m *ContentType) SetBase(value *ContentType)() {
     m.base = value
 }
-// Sets the baseTypes property value. The collection of content types that are ancestors of this content type.
-// Parameters:
-//  - value : Value to set for the baseTypes property.
+// SetBaseTypes sets the baseTypes property value. The collection of content types that are ancestors of this content type.
 func (m *ContentType) SetBaseTypes(value []ContentType)() {
     m.baseTypes = value
 }
-// Sets the columnLinks property value. The collection of columns that are required by this content type.
-// Parameters:
-//  - value : Value to set for the columnLinks property.
+// SetColumnLinks sets the columnLinks property value. The collection of columns that are required by this content type.
 func (m *ContentType) SetColumnLinks(value []ColumnLink)() {
     m.columnLinks = value
 }
-// Sets the columnPositions property value. Column order information in a content type.
-// Parameters:
-//  - value : Value to set for the columnPositions property.
+// SetColumnPositions sets the columnPositions property value. Column order information in a content type.
 func (m *ContentType) SetColumnPositions(value []ColumnDefinition)() {
     m.columnPositions = value
 }
-// Sets the columns property value. The collection of column definitions for this contentType.
-// Parameters:
-//  - value : Value to set for the columns property.
+// SetColumns sets the columns property value. The collection of column definitions for this contentType.
 func (m *ContentType) SetColumns(value []ColumnDefinition)() {
     m.columns = value
 }
-// Sets the description property value. The descriptive text for the item.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The descriptive text for the item.
 func (m *ContentType) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the documentSet property value. Document Set metadata.
-// Parameters:
-//  - value : Value to set for the documentSet property.
+// SetDocumentSet sets the documentSet property value. Document Set metadata.
 func (m *ContentType) SetDocumentSet(value *DocumentSet)() {
     m.documentSet = value
 }
-// Sets the documentTemplate property value. Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.
-// Parameters:
-//  - value : Value to set for the documentTemplate property.
+// SetDocumentTemplate sets the documentTemplate property value. Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.
 func (m *ContentType) SetDocumentTemplate(value *DocumentSetContent)() {
     m.documentTemplate = value
 }
-// Sets the group property value. The name of the group this content type belongs to. Helps organize related content types.
-// Parameters:
-//  - value : Value to set for the group property.
+// SetGroup sets the group property value. The name of the group this content type belongs to. Helps organize related content types.
 func (m *ContentType) SetGroup(value *string)() {
     m.group = value
 }
-// Sets the hidden property value. Indicates whether the content type is hidden in the list's 'New' menu.
-// Parameters:
-//  - value : Value to set for the hidden property.
+// SetHidden sets the hidden property value. Indicates whether the content type is hidden in the list's 'New' menu.
 func (m *ContentType) SetHidden(value *bool)() {
     m.hidden = value
 }
-// Sets the inheritedFrom property value. If this content type is inherited from another scope (like a site), provides a reference to the item where the content type is defined.
-// Parameters:
-//  - value : Value to set for the inheritedFrom property.
+// SetInheritedFrom sets the inheritedFrom property value. If this content type is inherited from another scope (like a site), provides a reference to the item where the content type is defined.
 func (m *ContentType) SetInheritedFrom(value *ItemReference)() {
     m.inheritedFrom = value
 }
-// Sets the isBuiltIn property value. Specifies if a content type is a built-in content type.
-// Parameters:
-//  - value : Value to set for the isBuiltIn property.
+// SetIsBuiltIn sets the isBuiltIn property value. Specifies if a content type is a built-in content type.
 func (m *ContentType) SetIsBuiltIn(value *bool)() {
     m.isBuiltIn = value
 }
-// Sets the name property value. The name of the content type.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. The name of the content type.
 func (m *ContentType) SetName(value *string)() {
     m.name = value
 }
-// Sets the order property value. Specifies the order in which the content type appears in the selection UI.
-// Parameters:
-//  - value : Value to set for the order property.
+// SetOrder sets the order property value. Specifies the order in which the content type appears in the selection UI.
 func (m *ContentType) SetOrder(value *ContentTypeOrder)() {
     m.order = value
 }
-// Sets the parentId property value. The unique identifier of the content type.
-// Parameters:
-//  - value : Value to set for the parentId property.
+// SetParentId sets the parentId property value. The unique identifier of the content type.
 func (m *ContentType) SetParentId(value *string)() {
     m.parentId = value
 }
-// Sets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
-// Parameters:
-//  - value : Value to set for the propagateChanges property.
+// SetPropagateChanges sets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
 func (m *ContentType) SetPropagateChanges(value *bool)() {
     m.propagateChanges = value
 }
-// Sets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
-// Parameters:
-//  - value : Value to set for the readOnly property.
+// SetReadOnly sets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
 func (m *ContentType) SetReadOnly(value *bool)() {
     m.readOnly = value
 }
-// Sets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
-// Parameters:
-//  - value : Value to set for the sealed property.
+// SetSealed sets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 func (m *ContentType) SetSealed(value *bool)() {
     m.sealed = value
 }

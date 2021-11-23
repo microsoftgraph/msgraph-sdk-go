@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \places
+// placesRequestBuilder builds and executes requests for operations under \places
 type PlacesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PlacesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PlacesRequestBuilderGetOptions options for Get
 type PlacesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PlacesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from places
+// placesRequestBuilderGetQueryParameters get entities from places
 type PlacesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PlacesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PlacesRequestBuilderPostOptions options for Post
 type PlacesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Place;
@@ -56,10 +56,7 @@ type PlacesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PlacesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlacesRequestBuilderInternal instantiates a new PlacesRequestBuilder and sets the default values.
 func NewPlacesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlacesRequestBuilder) {
     m := &PlacesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPlacesRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PlacesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlacesRequestBuilder instantiates a new PlacesRequestBuilder and sets the default values.
 func NewPlacesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlacesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlacesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from places
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from places
 func (m *PlacesRequestBuilder) CreateGetRequestInformation(options *PlacesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PlacesRequestBuilder) CreateGetRequestInformation(options *PlacesReques
     }
     return requestInfo, nil
 }
-// Add new entity to places
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to places
 func (m *PlacesRequestBuilder) CreatePostRequestInformation(options *PlacesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PlacesRequestBuilder) CreatePostRequestInformation(options *PlacesReque
     }
     return requestInfo, nil
 }
-// Get entities from places
-// Parameters:
-//  - options : Options for the request
+// Get get entities from places
 func (m *PlacesRequestBuilder) Get(options *PlacesRequestBuilderGetOptions)(*PlacesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PlacesRequestBuilder) Get(options *PlacesRequestBuilderGetOptions)(*Pla
     }
     return res.(*PlacesResponse), nil
 }
-// Add new entity to places
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to places
 func (m *PlacesRequestBuilder) Post(options *PlacesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Place, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

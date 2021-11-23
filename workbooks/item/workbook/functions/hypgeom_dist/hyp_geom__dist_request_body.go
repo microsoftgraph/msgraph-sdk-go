@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// hypGeom_DistRequestBody 
 type HypGeom_DistRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -20,14 +20,14 @@ type HypGeom_DistRequestBody struct {
     // 
     sampleS *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
-// Instantiates a new hypGeom_DistRequestBody and sets the default values.
+// NewHypGeom_DistRequestBody instantiates a new hypGeom_DistRequestBody and sets the default values.
 func NewHypGeom_DistRequestBody()(*HypGeom_DistRequestBody) {
     m := &HypGeom_DistRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HypGeom_DistRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *HypGeom_DistRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the cumulative property value. 
+// GetCumulative gets the cumulative property value. 
 func (m *HypGeom_DistRequestBody) GetCumulative()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *HypGeom_DistRequestBody) GetCumulative()(*i4a838ef194e4c99e9f2c63ba10da
         return m.cumulative
     }
 }
-// Gets the numberPop property value. 
+// GetNumberPop gets the numberPop property value. 
 func (m *HypGeom_DistRequestBody) GetNumberPop()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *HypGeom_DistRequestBody) GetNumberPop()(*i4a838ef194e4c99e9f2c63ba10dab
         return m.numberPop
     }
 }
-// Gets the numberSample property value. 
+// GetNumberSample gets the numberSample property value. 
 func (m *HypGeom_DistRequestBody) GetNumberSample()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *HypGeom_DistRequestBody) GetNumberSample()(*i4a838ef194e4c99e9f2c63ba10
         return m.numberSample
     }
 }
-// Gets the populationS property value. 
+// GetPopulationS gets the populationS property value. 
 func (m *HypGeom_DistRequestBody) GetPopulationS()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *HypGeom_DistRequestBody) GetPopulationS()(*i4a838ef194e4c99e9f2c63ba10d
         return m.populationS
     }
 }
-// Gets the sampleS property value. 
+// GetSampleS gets the sampleS property value. 
 func (m *HypGeom_DistRequestBody) GetSampleS()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *HypGeom_DistRequestBody) GetSampleS()(*i4a838ef194e4c99e9f2c63ba10dab9c
         return m.sampleS
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *HypGeom_DistRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["cumulative"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,9 +133,7 @@ func (m *HypGeom_DistRequestBody) GetFieldDeserializers()(map[string]func(interf
 func (m *HypGeom_DistRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *HypGeom_DistRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("cumulative", m.GetCumulative())
@@ -175,39 +173,27 @@ func (m *HypGeom_DistRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HypGeom_DistRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the cumulative property value. 
-// Parameters:
-//  - value : Value to set for the cumulative property.
+// SetCumulative sets the cumulative property value. 
 func (m *HypGeom_DistRequestBody) SetCumulative(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.cumulative = value
 }
-// Sets the numberPop property value. 
-// Parameters:
-//  - value : Value to set for the numberPop property.
+// SetNumberPop sets the numberPop property value. 
 func (m *HypGeom_DistRequestBody) SetNumberPop(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.numberPop = value
 }
-// Sets the numberSample property value. 
-// Parameters:
-//  - value : Value to set for the numberSample property.
+// SetNumberSample sets the numberSample property value. 
 func (m *HypGeom_DistRequestBody) SetNumberSample(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.numberSample = value
 }
-// Sets the populationS property value. 
-// Parameters:
-//  - value : Value to set for the populationS property.
+// SetPopulationS sets the populationS property value. 
 func (m *HypGeom_DistRequestBody) SetPopulationS(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.populationS = value
 }
-// Sets the sampleS property value. 
-// Parameters:
-//  - value : Value to set for the sampleS property.
+// SetSampleS sets the sampleS property value. 
 func (m *HypGeom_DistRequestBody) SetSampleS(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.sampleS = value
 }

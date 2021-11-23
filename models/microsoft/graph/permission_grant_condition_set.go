@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// permissionGrantConditionSet 
 type PermissionGrantConditionSet struct {
     Entity
     // A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
@@ -24,14 +24,14 @@ type PermissionGrantConditionSet struct {
     // The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
     resourceApplication *string;
 }
-// Instantiates a new permissionGrantConditionSet and sets the default values.
+// NewPermissionGrantConditionSet instantiates a new permissionGrantConditionSet and sets the default values.
 func NewPermissionGrantConditionSet()(*PermissionGrantConditionSet) {
     m := &PermissionGrantConditionSet{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the clientApplicationIds property value. A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
+// GetClientApplicationIds gets the clientApplicationIds property value. A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
 func (m *PermissionGrantConditionSet) GetClientApplicationIds()([]string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *PermissionGrantConditionSet) GetClientApplicationIds()([]string) {
         return m.clientApplicationIds
     }
 }
-// Gets the clientApplicationPublisherIds property value. A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
+// GetClientApplicationPublisherIds gets the clientApplicationPublisherIds property value. A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
 func (m *PermissionGrantConditionSet) GetClientApplicationPublisherIds()([]string) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *PermissionGrantConditionSet) GetClientApplicationPublisherIds()([]strin
         return m.clientApplicationPublisherIds
     }
 }
-// Gets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
+// GetClientApplicationsFromVerifiedPublisherOnly gets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
 func (m *PermissionGrantConditionSet) GetClientApplicationsFromVerifiedPublisherOnly()(*bool) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *PermissionGrantConditionSet) GetClientApplicationsFromVerifiedPublisher
         return m.clientApplicationsFromVerifiedPublisherOnly
     }
 }
-// Gets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
+// GetClientApplicationTenantIds gets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
 func (m *PermissionGrantConditionSet) GetClientApplicationTenantIds()([]string) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *PermissionGrantConditionSet) GetClientApplicationTenantIds()([]string) 
         return m.clientApplicationTenantIds
     }
 }
-// Gets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
+// GetPermissionClassification gets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
 func (m *PermissionGrantConditionSet) GetPermissionClassification()(*string) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *PermissionGrantConditionSet) GetPermissionClassification()(*string) {
         return m.permissionClassification
     }
 }
-// Gets the permissions property value. The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
+// GetPermissions gets the permissions property value. The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
 func (m *PermissionGrantConditionSet) GetPermissions()([]string) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *PermissionGrantConditionSet) GetPermissions()([]string) {
         return m.permissions
     }
 }
-// Gets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
+// GetPermissionType gets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
 func (m *PermissionGrantConditionSet) GetPermissionType()(*PermissionType) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *PermissionGrantConditionSet) GetPermissionType()(*PermissionType) {
         return m.permissionType
     }
 }
-// Gets the resourceApplication property value. The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
+// GetResourceApplication gets the resourceApplication property value. The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
 func (m *PermissionGrantConditionSet) GetResourceApplication()(*string) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *PermissionGrantConditionSet) GetResourceApplication()(*string) {
         return m.resourceApplication
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["clientApplicationIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -200,9 +200,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
 func (m *PermissionGrantConditionSet) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PermissionGrantConditionSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -259,51 +257,35 @@ func (m *PermissionGrantConditionSet) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the clientApplicationIds property value. A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
-// Parameters:
-//  - value : Value to set for the clientApplicationIds property.
+// SetClientApplicationIds sets the clientApplicationIds property value. A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
 func (m *PermissionGrantConditionSet) SetClientApplicationIds(value []string)() {
     m.clientApplicationIds = value
 }
-// Sets the clientApplicationPublisherIds property value. A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
-// Parameters:
-//  - value : Value to set for the clientApplicationPublisherIds property.
+// SetClientApplicationPublisherIds sets the clientApplicationPublisherIds property value. A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
 func (m *PermissionGrantConditionSet) SetClientApplicationPublisherIds(value []string)() {
     m.clientApplicationPublisherIds = value
 }
-// Sets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
-// Parameters:
-//  - value : Value to set for the clientApplicationsFromVerifiedPublisherOnly property.
+// SetClientApplicationsFromVerifiedPublisherOnly sets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
 func (m *PermissionGrantConditionSet) SetClientApplicationsFromVerifiedPublisherOnly(value *bool)() {
     m.clientApplicationsFromVerifiedPublisherOnly = value
 }
-// Sets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
-// Parameters:
-//  - value : Value to set for the clientApplicationTenantIds property.
+// SetClientApplicationTenantIds sets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
 func (m *PermissionGrantConditionSet) SetClientApplicationTenantIds(value []string)() {
     m.clientApplicationTenantIds = value
 }
-// Sets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
-// Parameters:
-//  - value : Value to set for the permissionClassification property.
+// SetPermissionClassification sets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
 func (m *PermissionGrantConditionSet) SetPermissionClassification(value *string)() {
     m.permissionClassification = value
 }
-// Sets the permissions property value. The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
-// Parameters:
-//  - value : Value to set for the permissions property.
+// SetPermissions sets the permissions property value. The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
 func (m *PermissionGrantConditionSet) SetPermissions(value []string)() {
     m.permissions = value
 }
-// Sets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
-// Parameters:
-//  - value : Value to set for the permissionType property.
+// SetPermissionType sets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
 func (m *PermissionGrantConditionSet) SetPermissionType(value *PermissionType)() {
     m.permissionType = value
 }
-// Sets the resourceApplication property value. The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
-// Parameters:
-//  - value : Value to set for the resourceApplication property.
+// SetResourceApplication sets the resourceApplication property value. The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
 func (m *PermissionGrantConditionSet) SetResourceApplication(value *string)() {
     m.resourceApplication = value
 }

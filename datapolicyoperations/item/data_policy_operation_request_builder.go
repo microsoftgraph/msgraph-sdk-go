@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \dataPolicyOperations\{dataPolicyOperation-id}
+// dataPolicyOperationRequestBuilder builds and executes requests for operations under \dataPolicyOperations\{dataPolicyOperation-id}
 type DataPolicyOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DataPolicyOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DataPolicyOperationRequestBuilderDeleteOptions options for Delete
 type DataPolicyOperationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DataPolicyOperationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DataPolicyOperationRequestBuilderGetOptions options for Get
 type DataPolicyOperationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DataPolicyOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from dataPolicyOperations by key
+// dataPolicyOperationRequestBuilderGetQueryParameters get entity from dataPolicyOperations by key
 type DataPolicyOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DataPolicyOperationRequestBuilderPatchOptions options for Patch
 type DataPolicyOperationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DataPolicyOperation;
@@ -53,10 +53,7 @@ type DataPolicyOperationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DataPolicyOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDataPolicyOperationRequestBuilderInternal instantiates a new DataPolicyOperationRequestBuilder and sets the default values.
 func NewDataPolicyOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DataPolicyOperationRequestBuilder) {
     m := &DataPolicyOperationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDataPolicyOperationRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DataPolicyOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDataPolicyOperationRequestBuilder instantiates a new DataPolicyOperationRequestBuilder and sets the default values.
 func NewDataPolicyOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DataPolicyOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDataPolicyOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from dataPolicyOperations
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from dataPolicyOperations
 func (m *DataPolicyOperationRequestBuilder) CreateDeleteRequestInformation(options *DataPolicyOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DataPolicyOperationRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get entity from dataPolicyOperations by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from dataPolicyOperations by key
 func (m *DataPolicyOperationRequestBuilder) CreateGetRequestInformation(options *DataPolicyOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DataPolicyOperationRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Update entity in dataPolicyOperations
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in dataPolicyOperations
 func (m *DataPolicyOperationRequestBuilder) CreatePatchRequestInformation(options *DataPolicyOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DataPolicyOperationRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete entity from dataPolicyOperations
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from dataPolicyOperations
 func (m *DataPolicyOperationRequestBuilder) Delete(options *DataPolicyOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DataPolicyOperationRequestBuilder) Delete(options *DataPolicyOperationR
     }
     return nil
 }
-// Get entity from dataPolicyOperations by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from dataPolicyOperations by key
 func (m *DataPolicyOperationRequestBuilder) Get(options *DataPolicyOperationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DataPolicyOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DataPolicyOperationRequestBuilder) Get(options *DataPolicyOperationRequ
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DataPolicyOperation), nil
 }
-// Update entity in dataPolicyOperations
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in dataPolicyOperations
 func (m *DataPolicyOperationRequestBuilder) Patch(options *DataPolicyOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

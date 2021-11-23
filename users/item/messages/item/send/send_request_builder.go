@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\messages\{message-id}\microsoft.graph.send
+// sendRequestBuilder builds and executes requests for operations under \users\{user-id}\messages\{message-id}\microsoft.graph.send
 type SendRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type SendRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// SendRequestBuilderPostOptions options for Post
 type SendRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type SendRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SendRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSendRequestBuilderInternal instantiates a new SendRequestBuilder and sets the default values.
 func NewSendRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SendRequestBuilder) {
     m := &SendRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewSendRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SendRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSendRequestBuilder instantiates a new SendRequestBuilder and sets the default values.
 func NewSendRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SendRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSendRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action send
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action send
 func (m *SendRequestBuilder) CreatePostRequestInformation(options *SendRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *SendRequestBuilder) CreatePostRequestInformation(options *SendRequestBu
     }
     return requestInfo, nil
 }
-// Invoke action send
-// Parameters:
-//  - options : Options for the request
+// Post invoke action send
 func (m *SendRequestBuilder) Post(options *SendRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

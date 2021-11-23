@@ -5,7 +5,7 @@ import (
     i0d828f46fe63046f931372f8cef95e30857c82a09b66d141c85f32c755f6d523 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/resource/workbookrangesort/apply"
 )
 
-// Builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.workbookRangeSort
+// workbookRangeSortRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.workbookRangeSort
 type WorkbookRangeSortRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,10 +17,7 @@ type WorkbookRangeSortRequestBuilder struct {
 func (m *WorkbookRangeSortRequestBuilder) Apply()(*i0d828f46fe63046f931372f8cef95e30857c82a09b66d141c85f32c755f6d523.ApplyRequestBuilder) {
     return i0d828f46fe63046f931372f8cef95e30857c82a09b66d141c85f32c755f6d523.NewApplyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new WorkbookRangeSortRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookRangeSortRequestBuilderInternal instantiates a new WorkbookRangeSortRequestBuilder and sets the default values.
 func NewWorkbookRangeSortRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookRangeSortRequestBuilder) {
     m := &WorkbookRangeSortRequestBuilder{
     }
@@ -33,10 +30,7 @@ func NewWorkbookRangeSortRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbookRangeSortRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookRangeSortRequestBuilder instantiates a new WorkbookRangeSortRequestBuilder and sets the default values.
 func NewWorkbookRangeSortRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookRangeSortRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

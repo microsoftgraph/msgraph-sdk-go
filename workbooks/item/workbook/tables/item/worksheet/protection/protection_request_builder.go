@@ -8,7 +8,7 @@ import (
     i9cbbfdc727d8427f57a94f7cdb2cacc913824fc222a37255b9382e0fbda944ee "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/worksheet/protection/protect"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\protection
+// protectionRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\protection
 type ProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ProtectionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ProtectionRequestBuilderDeleteOptions options for Delete
 type ProtectionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ProtectionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ProtectionRequestBuilderGetOptions options for Get
 type ProtectionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type ProtectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns sheet protection object for a worksheet. Read-only.
+// protectionRequestBuilderGetQueryParameters returns sheet protection object for a worksheet. Read-only.
 type ProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ProtectionRequestBuilderPatchOptions options for Patch
 type ProtectionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheetProtection;
@@ -55,10 +55,7 @@ type ProtectionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ProtectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProtectionRequestBuilderInternal instantiates a new ProtectionRequestBuilder and sets the default values.
 func NewProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProtectionRequestBuilder) {
     m := &ProtectionRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewProtectionRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ProtectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProtectionRequestBuilder instantiates a new ProtectionRequestBuilder and sets the default values.
 func NewProtectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProtectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProtectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns sheet protection object for a worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation returns sheet protection object for a worksheet. Read-only.
 func (m *ProtectionRequestBuilder) CreateDeleteRequestInformation(options *ProtectionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *ProtectionRequestBuilder) CreateDeleteRequestInformation(options *Prote
     }
     return requestInfo, nil
 }
-// Returns sheet protection object for a worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns sheet protection object for a worksheet. Read-only.
 func (m *ProtectionRequestBuilder) CreateGetRequestInformation(options *ProtectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ProtectionRequestBuilder) CreateGetRequestInformation(options *Protecti
     }
     return requestInfo, nil
 }
-// Returns sheet protection object for a worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation returns sheet protection object for a worksheet. Read-only.
 func (m *ProtectionRequestBuilder) CreatePatchRequestInformation(options *ProtectionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *ProtectionRequestBuilder) CreatePatchRequestInformation(options *Protec
     }
     return requestInfo, nil
 }
-// Returns sheet protection object for a worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete returns sheet protection object for a worksheet. Read-only.
 func (m *ProtectionRequestBuilder) Delete(options *ProtectionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *ProtectionRequestBuilder) Delete(options *ProtectionRequestBuilderDelet
     }
     return nil
 }
-// Returns sheet protection object for a worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get returns sheet protection object for a worksheet. Read-only.
 func (m *ProtectionRequestBuilder) Get(options *ProtectionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheetProtection, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *ProtectionRequestBuilder) Get(options *ProtectionRequestBuilderGetOptio
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheetProtection), nil
 }
-// Returns sheet protection object for a worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch returns sheet protection object for a worksheet. Read-only.
 func (m *ProtectionRequestBuilder) Patch(options *ProtectionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

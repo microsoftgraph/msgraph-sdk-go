@@ -6,7 +6,7 @@ import (
     i8bc4d63c1d6679d7014de544e6e3189959c82f63b43b96151001ac723c903a0d "github.com/microsoftgraph/msgraph-sdk-go/users/item/owneddevices/ref"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\ownedDevices
+// ownedDevicesRequestBuilder builds and executes requests for operations under \users\{user-id}\ownedDevices
 type OwnedDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OwnedDevicesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// OwnedDevicesRequestBuilderGetOptions options for Get
 type OwnedDevicesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type OwnedDevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// ownedDevicesRequestBuilderGetQueryParameters devices that are owned by the user. Read-only. Nullable. Supports $expand.
 type OwnedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type OwnedDevicesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new OwnedDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOwnedDevicesRequestBuilderInternal instantiates a new OwnedDevicesRequestBuilder and sets the default values.
 func NewOwnedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OwnedDevicesRequestBuilder) {
     m := &OwnedDevicesRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewOwnedDevicesRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OwnedDevicesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOwnedDevicesRequestBuilder instantiates a new OwnedDevicesRequestBuilder and sets the default values.
 func NewOwnedDevicesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OwnedDevicesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOwnedDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformation(options *OwnedDevicesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformation(options *OwnedD
     }
     return requestInfo, nil
 }
-// Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get devices that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *OwnedDevicesRequestBuilder) Get(options *OwnedDevicesRequestBuilderGetOptions)(*OwnedDevicesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

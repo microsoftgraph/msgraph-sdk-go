@@ -16,7 +16,7 @@ import (
     ifbf820637987673b919966137b926fb0a0b7c26841e2f3e1a8a08762ca2537c0 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/channels/item/members/item"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}
+// channelRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}
 type ChannelRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -25,7 +25,7 @@ type ChannelRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ChannelRequestBuilderDeleteOptions options for Delete
 type ChannelRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -34,7 +34,7 @@ type ChannelRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ChannelRequestBuilderGetOptions options for Get
 type ChannelRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -45,14 +45,14 @@ type ChannelRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of channels & messages associated with the team.
+// channelRequestBuilderGetQueryParameters the collection of channels & messages associated with the team.
 type ChannelRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ChannelRequestBuilderPatchOptions options for Patch
 type ChannelRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Channel;
@@ -66,10 +66,7 @@ type ChannelRequestBuilderPatchOptions struct {
 func (m *ChannelRequestBuilder) CompleteMigration()(*id475bce00f5dd8f4fee815fc2fb530ee5f11935ffc33cfa7e9e92780aad132dc.CompleteMigrationRequestBuilder) {
     return id475bce00f5dd8f4fee815fc2fb530ee5f11935ffc33cfa7e9e92780aad132dc.NewCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ChannelRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChannelRequestBuilderInternal instantiates a new ChannelRequestBuilder and sets the default values.
 func NewChannelRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChannelRequestBuilder) {
     m := &ChannelRequestBuilder{
     }
@@ -82,18 +79,13 @@ func NewChannelRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChannelRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChannelRequestBuilder instantiates a new ChannelRequestBuilder and sets the default values.
 func NewChannelRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChannelRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChannelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of channels & messages associated with the team.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of channels & messages associated with the team.
 func (m *ChannelRequestBuilder) CreateDeleteRequestInformation(options *ChannelRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,9 +102,7 @@ func (m *ChannelRequestBuilder) CreateDeleteRequestInformation(options *ChannelR
     }
     return requestInfo, nil
 }
-// The collection of channels & messages associated with the team.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of channels & messages associated with the team.
 func (m *ChannelRequestBuilder) CreateGetRequestInformation(options *ChannelRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,9 +122,7 @@ func (m *ChannelRequestBuilder) CreateGetRequestInformation(options *ChannelRequ
     }
     return requestInfo, nil
 }
-// The collection of channels & messages associated with the team.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of channels & messages associated with the team.
 func (m *ChannelRequestBuilder) CreatePatchRequestInformation(options *ChannelRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -152,9 +140,7 @@ func (m *ChannelRequestBuilder) CreatePatchRequestInformation(options *ChannelRe
     }
     return requestInfo, nil
 }
-// The collection of channels & messages associated with the team.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of channels & messages associated with the team.
 func (m *ChannelRequestBuilder) Delete(options *ChannelRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -169,9 +155,7 @@ func (m *ChannelRequestBuilder) Delete(options *ChannelRequestBuilderDeleteOptio
 func (m *ChannelRequestBuilder) FilesFolder()(*i9d35966f1cf1d79964b04fc579a16ad9d6fde5d5b6ea86ce1147f94ab0e92ab7.FilesFolderRequestBuilder) {
     return i9d35966f1cf1d79964b04fc579a16ad9d6fde5d5b6ea86ce1147f94ab0e92ab7.NewFilesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of channels & messages associated with the team.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of channels & messages associated with the team.
 func (m *ChannelRequestBuilder) Get(options *ChannelRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Channel, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -186,9 +170,7 @@ func (m *ChannelRequestBuilder) Get(options *ChannelRequestBuilderGetOptions)(*i
 func (m *ChannelRequestBuilder) Members()(*ib1c6ce99382e50e6c2a17723af8d800e520796e30cdda5ad72c456a4be0287a3.MembersRequestBuilder) {
     return ib1c6ce99382e50e6c2a17723af8d800e520796e30cdda5ad72c456a4be0287a3.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.channels.item.members.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.channels.item.members.item collection
 func (m *ChannelRequestBuilder) MembersById(id string)(*ifbf820637987673b919966137b926fb0a0b7c26841e2f3e1a8a08762ca2537c0.ConversationMemberRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -202,9 +184,7 @@ func (m *ChannelRequestBuilder) MembersById(id string)(*ifbf820637987673b9199661
 func (m *ChannelRequestBuilder) Messages()(*i5b2a4d2eaabfa3faa34dc6898f8cb9e57e0b1242b01f641ae9e0207836fe0ad4.MessagesRequestBuilder) {
     return i5b2a4d2eaabfa3faa34dc6898f8cb9e57e0b1242b01f641ae9e0207836fe0ad4.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.channels.item.messages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MessagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.channels.item.messages.item collection
 func (m *ChannelRequestBuilder) MessagesById(id string)(*if5725a60ca0d27f7ade8f6fcec0dcfe3a4c988fdc95238d1b2bc5148c05df6f3.ChatMessageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -215,9 +195,7 @@ func (m *ChannelRequestBuilder) MessagesById(id string)(*if5725a60ca0d27f7ade8f6
     }
     return if5725a60ca0d27f7ade8f6fcec0dcfe3a4c988fdc95238d1b2bc5148c05df6f3.NewChatMessageRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The collection of channels & messages associated with the team.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of channels & messages associated with the team.
 func (m *ChannelRequestBuilder) Patch(options *ChannelRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -238,9 +216,7 @@ func (m *ChannelRequestBuilder) RemoveEmail()(*i674af80ba48ecc53d2978ae46338b8a9
 func (m *ChannelRequestBuilder) Tabs()(*i24968b403d6ddad22f24d63ea935950ae5ca327471cd684f87d172b9041a8b41.TabsRequestBuilder) {
     return i24968b403d6ddad22f24d63ea935950ae5ca327471cd684f87d172b9041a8b41.NewTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.channels.item.tabs.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TabsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.channels.item.tabs.item collection
 func (m *ChannelRequestBuilder) TabsById(id string)(*ida5ab63d8e96fe8dfad94c2576765817725271d852ddd41b2ada05e5cc7d6e49.TeamsTabRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

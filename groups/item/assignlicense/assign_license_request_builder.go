@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\microsoft.graph.assignLicense
+// assignLicenseRequestBuilder builds and executes requests for operations under \groups\{group-id}\microsoft.graph.assignLicense
 type AssignLicenseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AssignLicenseRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// AssignLicenseRequestBuilderPostOptions options for Post
 type AssignLicenseRequestBuilderPostOptions struct {
     // 
     Body *AssignLicenseRequestBody;
@@ -26,21 +26,21 @@ type AssignLicenseRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes group
+// assignLicenseResponse union type wrapper for classes group
 type AssignLicenseResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type group
     group *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Group;
 }
-// Instantiates a new assignLicenseResponse and sets the default values.
+// NewAssignLicenseResponse instantiates a new assignLicenseResponse and sets the default values.
 func NewAssignLicenseResponse()(*AssignLicenseResponse) {
     m := &AssignLicenseResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignLicenseResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *AssignLicenseResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the group property value. Union type representation for type group
+// GetGroup gets the group property value. Union type representation for type group
 func (m *AssignLicenseResponse) GetGroup()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Group) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *AssignLicenseResponse) GetGroup()(*i4a838ef194e4c99e9f2c63ba10dab9cb120
         return m.group
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AssignLicenseResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["group"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *AssignLicenseResponse) GetFieldDeserializers()(map[string]func(interfac
 func (m *AssignLicenseResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AssignLicenseResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("group", m.GetGroup())
@@ -92,22 +90,15 @@ func (m *AssignLicenseResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignLicenseResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the group property value. Union type representation for type group
-// Parameters:
-//  - value : Value to set for the group property.
+// SetGroup sets the group property value. Union type representation for type group
 func (m *AssignLicenseResponse) SetGroup(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Group)() {
     m.group = value
 }
-// Instantiates a new AssignLicenseRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignLicenseRequestBuilderInternal instantiates a new AssignLicenseRequestBuilder and sets the default values.
 func NewAssignLicenseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignLicenseRequestBuilder) {
     m := &AssignLicenseRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewAssignLicenseRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AssignLicenseRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignLicenseRequestBuilder instantiates a new AssignLicenseRequestBuilder and sets the default values.
 func NewAssignLicenseRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignLicenseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignLicenseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action assignLicense
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action assignLicense
 func (m *AssignLicenseRequestBuilder) CreatePostRequestInformation(options *AssignLicenseRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *AssignLicenseRequestBuilder) CreatePostRequestInformation(options *Assi
     }
     return requestInfo, nil
 }
-// Invoke action assignLicense
-// Parameters:
-//  - options : Options for the request
+// Post invoke action assignLicense
 func (m *AssignLicenseRequestBuilder) Post(options *AssignLicenseRequestBuilderPostOptions)(*AssignLicenseResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

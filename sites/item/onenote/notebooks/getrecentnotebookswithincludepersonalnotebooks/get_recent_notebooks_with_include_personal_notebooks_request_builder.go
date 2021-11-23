@@ -6,7 +6,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\onenote\notebooks\microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})
+// getRecentNotebooksWithIncludePersonalNotebooksRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\notebooks\microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})
 type GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetOptions options for Get
 type GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,11 +24,7 @@ type GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder and sets the default values.
-// Parameters:
-//  - includePersonalNotebooks : Usage: includePersonalNotebooks={includePersonalNotebooks}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal instantiates a new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder and sets the default values.
 func NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, includePersonalNotebooks *bool)(*GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
     m := &GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder{
     }
@@ -44,18 +40,13 @@ func NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(pat
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder instantiates a new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder and sets the default values.
 func NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getRecentNotebooks
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getRecentNotebooks
 func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) CreateGetRequestInformation(options *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -72,9 +63,7 @@ func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// Invoke function getRecentNotebooks
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getRecentNotebooks
 func (m *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) Get(options *GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetOptions)([]GetRecentNotebooksWithIncludePersonalNotebooks, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

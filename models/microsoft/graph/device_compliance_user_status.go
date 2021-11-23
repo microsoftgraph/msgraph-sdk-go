@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceComplianceUserStatus 
 type DeviceComplianceUserStatus struct {
     Entity
     // Devices count for that user.
@@ -19,14 +19,14 @@ type DeviceComplianceUserStatus struct {
     // UserPrincipalName.
     userPrincipalName *string;
 }
-// Instantiates a new deviceComplianceUserStatus and sets the default values.
+// NewDeviceComplianceUserStatus instantiates a new deviceComplianceUserStatus and sets the default values.
 func NewDeviceComplianceUserStatus()(*DeviceComplianceUserStatus) {
     m := &DeviceComplianceUserStatus{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the devicesCount property value. Devices count for that user.
+// GetDevicesCount gets the devicesCount property value. Devices count for that user.
 func (m *DeviceComplianceUserStatus) GetDevicesCount()(*int32) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *DeviceComplianceUserStatus) GetDevicesCount()(*int32) {
         return m.devicesCount
     }
 }
-// Gets the lastReportedDateTime property value. Last modified date time of the policy report.
+// GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *DeviceComplianceUserStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *DeviceComplianceUserStatus) GetLastReportedDateTime()(*i336074805fc8539
         return m.lastReportedDateTime
     }
 }
-// Gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *DeviceComplianceUserStatus) GetStatus()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *DeviceComplianceUserStatus) GetStatus()(*ComplianceStatus) {
         return m.status
     }
 }
-// Gets the userDisplayName property value. User name of the DevicePolicyStatus.
+// GetUserDisplayName gets the userDisplayName property value. User name of the DevicePolicyStatus.
 func (m *DeviceComplianceUserStatus) GetUserDisplayName()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *DeviceComplianceUserStatus) GetUserDisplayName()(*string) {
         return m.userDisplayName
     }
 }
-// Gets the userPrincipalName property value. UserPrincipalName.
+// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceComplianceUserStatus) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *DeviceComplianceUserStatus) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceUserStatus) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["devicesCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -125,9 +125,7 @@ func (m *DeviceComplianceUserStatus) GetFieldDeserializers()(map[string]func(int
 func (m *DeviceComplianceUserStatus) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceComplianceUserStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -166,33 +164,23 @@ func (m *DeviceComplianceUserStatus) Serialize(writer i04eb5309aeaafadd28374d79c
     }
     return nil
 }
-// Sets the devicesCount property value. Devices count for that user.
-// Parameters:
-//  - value : Value to set for the devicesCount property.
+// SetDevicesCount sets the devicesCount property value. Devices count for that user.
 func (m *DeviceComplianceUserStatus) SetDevicesCount(value *int32)() {
     m.devicesCount = value
 }
-// Sets the lastReportedDateTime property value. Last modified date time of the policy report.
-// Parameters:
-//  - value : Value to set for the lastReportedDateTime property.
+// SetLastReportedDateTime sets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *DeviceComplianceUserStatus) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastReportedDateTime = value
 }
-// Sets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *DeviceComplianceUserStatus) SetStatus(value *ComplianceStatus)() {
     m.status = value
 }
-// Sets the userDisplayName property value. User name of the DevicePolicyStatus.
-// Parameters:
-//  - value : Value to set for the userDisplayName property.
+// SetUserDisplayName sets the userDisplayName property value. User name of the DevicePolicyStatus.
 func (m *DeviceComplianceUserStatus) SetUserDisplayName(value *string)() {
     m.userDisplayName = value
 }
-// Sets the userPrincipalName property value. UserPrincipalName.
-// Parameters:
-//  - value : Value to set for the userPrincipalName property.
+// SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceComplianceUserStatus) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

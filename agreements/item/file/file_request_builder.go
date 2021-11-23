@@ -8,7 +8,7 @@ import (
     i2d4b6344639678e1dd779cb456a26ba4351c3e4a09c717bf205c3c77beff31a5 "github.com/microsoftgraph/msgraph-sdk-go/agreements/item/file/localizations/item"
 )
 
-// Builds and executes requests for operations under \agreements\{agreement-id}\file
+// fileRequestBuilder builds and executes requests for operations under \agreements\{agreement-id}\file
 type FileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type FileRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// FileRequestBuilderDeleteOptions options for Delete
 type FileRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type FileRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// FileRequestBuilderGetOptions options for Get
 type FileRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type FileRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Default PDF linked to this agreement.
+// fileRequestBuilderGetQueryParameters default PDF linked to this agreement.
 type FileRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FileRequestBuilderPatchOptions options for Patch
 type FileRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFile;
@@ -55,10 +55,7 @@ type FileRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FileRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFileRequestBuilderInternal instantiates a new FileRequestBuilder and sets the default values.
 func NewFileRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FileRequestBuilder) {
     m := &FileRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewFileRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FileRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFileRequestBuilder instantiates a new FileRequestBuilder and sets the default values.
 func NewFileRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FileRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Default PDF linked to this agreement.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation default PDF linked to this agreement.
 func (m *FileRequestBuilder) CreateDeleteRequestInformation(options *FileRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *FileRequestBuilder) CreateDeleteRequestInformation(options *FileRequest
     }
     return requestInfo, nil
 }
-// Default PDF linked to this agreement.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation default PDF linked to this agreement.
 func (m *FileRequestBuilder) CreateGetRequestInformation(options *FileRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *FileRequestBuilder) CreateGetRequestInformation(options *FileRequestBui
     }
     return requestInfo, nil
 }
-// Default PDF linked to this agreement.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation default PDF linked to this agreement.
 func (m *FileRequestBuilder) CreatePatchRequestInformation(options *FileRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *FileRequestBuilder) CreatePatchRequestInformation(options *FileRequestB
     }
     return requestInfo, nil
 }
-// Default PDF linked to this agreement.
-// Parameters:
-//  - options : Options for the request
+// Delete default PDF linked to this agreement.
 func (m *FileRequestBuilder) Delete(options *FileRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *FileRequestBuilder) Delete(options *FileRequestBuilderDeleteOptions)(er
     }
     return nil
 }
-// Default PDF linked to this agreement.
-// Parameters:
-//  - options : Options for the request
+// Get default PDF linked to this agreement.
 func (m *FileRequestBuilder) Get(options *FileRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFile, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *FileRequestBuilder) Get(options *FileRequestBuilderGetOptions)(*i4a838e
 func (m *FileRequestBuilder) Localizations()(*ic78f888972339bcf34b80d7c4800ddb974b3f0f20a8f7c321cf41909a56f17d1.LocalizationsRequestBuilder) {
     return ic78f888972339bcf34b80d7c4800ddb974b3f0f20a8f7c321cf41909a56f17d1.NewLocalizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.agreements.item.file.localizations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// LocalizationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.agreements.item.file.localizations.item collection
 func (m *FileRequestBuilder) LocalizationsById(id string)(*i2d4b6344639678e1dd779cb456a26ba4351c3e4a09c717bf205c3c77beff31a5.AgreementFileLocalizationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *FileRequestBuilder) LocalizationsById(id string)(*i2d4b6344639678e1dd77
     }
     return i2d4b6344639678e1dd779cb456a26ba4351c3e4a09c717bf205c3c77beff31a5.NewAgreementFileLocalizationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Default PDF linked to this agreement.
-// Parameters:
-//  - options : Options for the request
+// Patch default PDF linked to this agreement.
 func (m *FileRequestBuilder) Patch(options *FileRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

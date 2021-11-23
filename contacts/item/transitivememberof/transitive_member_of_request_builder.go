@@ -6,7 +6,7 @@ import (
     i338af079c1d310df949b8daa59a8a574649b4664977177dd614afe267428f5a9 "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/transitivememberof/ref"
 )
 
-// Builds and executes requests for operations under \contacts\{orgContact-id}\transitiveMemberOf
+// transitiveMemberOfRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}\transitiveMemberOf
 type TransitiveMemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TransitiveMemberOfRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TransitiveMemberOfRequestBuilderGetOptions options for Get
 type TransitiveMemberOfRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TransitiveMemberOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get transitiveMemberOf from contacts
+// transitiveMemberOfRequestBuilderGetQueryParameters get transitiveMemberOf from contacts
 type TransitiveMemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type TransitiveMemberOfRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new TransitiveMemberOfRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTransitiveMemberOfRequestBuilderInternal instantiates a new TransitiveMemberOfRequestBuilder and sets the default values.
 func NewTransitiveMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TransitiveMemberOfRequestBuilder) {
     m := &TransitiveMemberOfRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewTransitiveMemberOfRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TransitiveMemberOfRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTransitiveMemberOfRequestBuilder instantiates a new TransitiveMemberOfRequestBuilder and sets the default values.
 func NewTransitiveMemberOfRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TransitiveMemberOfRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTransitiveMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get transitiveMemberOf from contacts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get transitiveMemberOf from contacts
 func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformation(options *TransitiveMemberOfRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get transitiveMemberOf from contacts
-// Parameters:
-//  - options : Options for the request
+// Get get transitiveMemberOf from contacts
 func (m *TransitiveMemberOfRequestBuilder) Get(options *TransitiveMemberOfRequestBuilderGetOptions)(*TransitiveMemberOfResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

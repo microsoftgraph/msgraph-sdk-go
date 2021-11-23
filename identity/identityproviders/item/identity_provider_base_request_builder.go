@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identity\identityProviders\{identityProviderBase-id}
+// identityProviderBaseRequestBuilder builds and executes requests for operations under \identity\identityProviders\{identityProviderBase-id}
 type IdentityProviderBaseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IdentityProviderBaseRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// IdentityProviderBaseRequestBuilderDeleteOptions options for Delete
 type IdentityProviderBaseRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type IdentityProviderBaseRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// IdentityProviderBaseRequestBuilderGetOptions options for Get
 type IdentityProviderBaseRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type IdentityProviderBaseRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents entry point for identity provider base.
+// identityProviderBaseRequestBuilderGetQueryParameters represents entry point for identity provider base.
 type IdentityProviderBaseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// IdentityProviderBaseRequestBuilderPatchOptions options for Patch
 type IdentityProviderBaseRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityProviderBase;
@@ -53,10 +53,7 @@ type IdentityProviderBaseRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IdentityProviderBaseRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityProviderBaseRequestBuilderInternal instantiates a new IdentityProviderBaseRequestBuilder and sets the default values.
 func NewIdentityProviderBaseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityProviderBaseRequestBuilder) {
     m := &IdentityProviderBaseRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewIdentityProviderBaseRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IdentityProviderBaseRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityProviderBaseRequestBuilder instantiates a new IdentityProviderBaseRequestBuilder and sets the default values.
 func NewIdentityProviderBaseRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityProviderBaseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityProviderBaseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents entry point for identity provider base.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents entry point for identity provider base.
 func (m *IdentityProviderBaseRequestBuilder) CreateDeleteRequestInformation(options *IdentityProviderBaseRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *IdentityProviderBaseRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Represents entry point for identity provider base.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents entry point for identity provider base.
 func (m *IdentityProviderBaseRequestBuilder) CreateGetRequestInformation(options *IdentityProviderBaseRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *IdentityProviderBaseRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Represents entry point for identity provider base.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents entry point for identity provider base.
 func (m *IdentityProviderBaseRequestBuilder) CreatePatchRequestInformation(options *IdentityProviderBaseRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *IdentityProviderBaseRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Represents entry point for identity provider base.
-// Parameters:
-//  - options : Options for the request
+// Delete represents entry point for identity provider base.
 func (m *IdentityProviderBaseRequestBuilder) Delete(options *IdentityProviderBaseRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *IdentityProviderBaseRequestBuilder) Delete(options *IdentityProviderBas
     }
     return nil
 }
-// Represents entry point for identity provider base.
-// Parameters:
-//  - options : Options for the request
+// Get represents entry point for identity provider base.
 func (m *IdentityProviderBaseRequestBuilder) Get(options *IdentityProviderBaseRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityProviderBase, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *IdentityProviderBaseRequestBuilder) Get(options *IdentityProviderBaseRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityProviderBase), nil
 }
-// Represents entry point for identity provider base.
-// Parameters:
-//  - options : Options for the request
+// Patch represents entry point for identity provider base.
 func (m *IdentityProviderBaseRequestBuilder) Patch(options *IdentityProviderBaseRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

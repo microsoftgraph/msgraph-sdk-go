@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// beta_DistRequestBody 
 type Beta_DistRequestBody struct {
     // 
     a *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
@@ -22,14 +22,14 @@ type Beta_DistRequestBody struct {
     // 
     x *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
-// Instantiates a new beta_DistRequestBody and sets the default values.
+// NewBeta_DistRequestBody instantiates a new beta_DistRequestBody and sets the default values.
 func NewBeta_DistRequestBody()(*Beta_DistRequestBody) {
     m := &Beta_DistRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the A property value. 
+// GetA gets the A property value. 
 func (m *Beta_DistRequestBody) GetA()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *Beta_DistRequestBody) GetA()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a8936
         return m.a
     }
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Beta_DistRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *Beta_DistRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the alpha property value. 
+// GetAlpha gets the alpha property value. 
 func (m *Beta_DistRequestBody) GetAlpha()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *Beta_DistRequestBody) GetAlpha()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a
         return m.alpha
     }
 }
-// Gets the B property value. 
+// GetB gets the B property value. 
 func (m *Beta_DistRequestBody) GetB()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *Beta_DistRequestBody) GetB()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a8936
         return m.b
     }
 }
-// Gets the beta property value. 
+// GetBeta gets the beta property value. 
 func (m *Beta_DistRequestBody) GetBeta()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *Beta_DistRequestBody) GetBeta()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a8
         return m.beta
     }
 }
-// Gets the cumulative property value. 
+// GetCumulative gets the cumulative property value. 
 func (m *Beta_DistRequestBody) GetCumulative()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *Beta_DistRequestBody) GetCumulative()(*i4a838ef194e4c99e9f2c63ba10dab9c
         return m.cumulative
     }
 }
-// Gets the x property value. 
+// GetX gets the x property value. 
 func (m *Beta_DistRequestBody) GetX()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *Beta_DistRequestBody) GetX()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a8936
         return m.x
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Beta_DistRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["a"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,9 +153,7 @@ func (m *Beta_DistRequestBody) GetFieldDeserializers()(map[string]func(interface
 func (m *Beta_DistRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Beta_DistRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("a", m.GetA())
@@ -201,45 +199,31 @@ func (m *Beta_DistRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the A property value. 
-// Parameters:
-//  - value : Value to set for the A property.
+// SetA sets the A property value. 
 func (m *Beta_DistRequestBody) SetA(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.a = value
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Beta_DistRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the alpha property value. 
-// Parameters:
-//  - value : Value to set for the alpha property.
+// SetAlpha sets the alpha property value. 
 func (m *Beta_DistRequestBody) SetAlpha(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.alpha = value
 }
-// Sets the B property value. 
-// Parameters:
-//  - value : Value to set for the B property.
+// SetB sets the B property value. 
 func (m *Beta_DistRequestBody) SetB(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.b = value
 }
-// Sets the beta property value. 
-// Parameters:
-//  - value : Value to set for the beta property.
+// SetBeta sets the beta property value. 
 func (m *Beta_DistRequestBody) SetBeta(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.beta = value
 }
-// Sets the cumulative property value. 
-// Parameters:
-//  - value : Value to set for the cumulative property.
+// SetCumulative sets the cumulative property value. 
 func (m *Beta_DistRequestBody) SetCumulative(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.cumulative = value
 }
-// Sets the x property value. 
-// Parameters:
-//  - value : Value to set for the x property.
+// SetX sets the x property value. 
 func (m *Beta_DistRequestBody) SetX(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.x = value
 }

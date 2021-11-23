@@ -6,7 +6,7 @@ import (
     ie51f6eaf3322f04272ba503f4fdac7aa0e94f9cb0e83f6be7d022757848e95b3 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/workbookrangeformat/autofitrows"
 )
 
-// Builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRangeFormat
+// workbookRangeFormatRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRangeFormat
 type WorkbookRangeFormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,10 +21,7 @@ func (m *WorkbookRangeFormatRequestBuilder) AutofitColumns()(*i23234a17861c49e8a
 func (m *WorkbookRangeFormatRequestBuilder) AutofitRows()(*ie51f6eaf3322f04272ba503f4fdac7aa0e94f9cb0e83f6be7d022757848e95b3.AutofitRowsRequestBuilder) {
     return ie51f6eaf3322f04272ba503f4fdac7aa0e94f9cb0e83f6be7d022757848e95b3.NewAutofitRowsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new WorkbookRangeFormatRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookRangeFormatRequestBuilderInternal instantiates a new WorkbookRangeFormatRequestBuilder and sets the default values.
 func NewWorkbookRangeFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookRangeFormatRequestBuilder) {
     m := &WorkbookRangeFormatRequestBuilder{
     }
@@ -37,10 +34,7 @@ func NewWorkbookRangeFormatRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbookRangeFormatRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookRangeFormatRequestBuilder instantiates a new WorkbookRangeFormatRequestBuilder and sets the default values.
 func NewWorkbookRangeFormatRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookRangeFormatRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \places\{place-id}
+// placeRequestBuilder builds and executes requests for operations under \places\{place-id}
 type PlaceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PlaceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PlaceRequestBuilderDeleteOptions options for Delete
 type PlaceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PlaceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PlaceRequestBuilderGetOptions options for Get
 type PlaceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PlaceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from places by key
+// placeRequestBuilderGetQueryParameters get entity from places by key
 type PlaceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PlaceRequestBuilderPatchOptions options for Patch
 type PlaceRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Place;
@@ -53,10 +53,7 @@ type PlaceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PlaceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlaceRequestBuilderInternal instantiates a new PlaceRequestBuilder and sets the default values.
 func NewPlaceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlaceRequestBuilder) {
     m := &PlaceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPlaceRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PlaceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPlaceRequestBuilder instantiates a new PlaceRequestBuilder and sets the default values.
 func NewPlaceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PlaceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPlaceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from places
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from places
 func (m *PlaceRequestBuilder) CreateDeleteRequestInformation(options *PlaceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PlaceRequestBuilder) CreateDeleteRequestInformation(options *PlaceReque
     }
     return requestInfo, nil
 }
-// Get entity from places by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from places by key
 func (m *PlaceRequestBuilder) CreateGetRequestInformation(options *PlaceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PlaceRequestBuilder) CreateGetRequestInformation(options *PlaceRequestB
     }
     return requestInfo, nil
 }
-// Update entity in places
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in places
 func (m *PlaceRequestBuilder) CreatePatchRequestInformation(options *PlaceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PlaceRequestBuilder) CreatePatchRequestInformation(options *PlaceReques
     }
     return requestInfo, nil
 }
-// Delete entity from places
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from places
 func (m *PlaceRequestBuilder) Delete(options *PlaceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PlaceRequestBuilder) Delete(options *PlaceRequestBuilderDeleteOptions)(
     }
     return nil
 }
-// Get entity from places by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from places by key
 func (m *PlaceRequestBuilder) Get(options *PlaceRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Place, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PlaceRequestBuilder) Get(options *PlaceRequestBuilderGetOptions)(*i4a83
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Place), nil
 }
-// Update entity in places
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in places
 func (m *PlaceRequestBuilder) Patch(options *PlaceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

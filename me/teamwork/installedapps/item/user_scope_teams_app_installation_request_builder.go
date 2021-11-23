@@ -7,7 +7,7 @@ import (
     i82ae2e3b126b0e2c2ce0859ada623300f796fca1ca04e53e697999c70dd48507 "github.com/microsoftgraph/msgraph-sdk-go/me/teamwork/installedapps/item/chat"
 )
 
-// Builds and executes requests for operations under \me\teamwork\installedApps\{userScopeTeamsAppInstallation-id}
+// userScopeTeamsAppInstallationRequestBuilder builds and executes requests for operations under \me\teamwork\installedApps\{userScopeTeamsAppInstallation-id}
 type UserScopeTeamsAppInstallationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UserScopeTeamsAppInstallationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserScopeTeamsAppInstallationRequestBuilderDeleteOptions options for Delete
 type UserScopeTeamsAppInstallationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type UserScopeTeamsAppInstallationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserScopeTeamsAppInstallationRequestBuilderGetOptions options for Get
 type UserScopeTeamsAppInstallationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type UserScopeTeamsAppInstallationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The apps installed in the personal scope of this user.
+// userScopeTeamsAppInstallationRequestBuilderGetQueryParameters the apps installed in the personal scope of this user.
 type UserScopeTeamsAppInstallationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserScopeTeamsAppInstallationRequestBuilderPatchOptions options for Patch
 type UserScopeTeamsAppInstallationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserScopeTeamsAppInstallation;
@@ -57,10 +57,7 @@ type UserScopeTeamsAppInstallationRequestBuilderPatchOptions struct {
 func (m *UserScopeTeamsAppInstallationRequestBuilder) Chat()(*i82ae2e3b126b0e2c2ce0859ada623300f796fca1ca04e53e697999c70dd48507.ChatRequestBuilder) {
     return i82ae2e3b126b0e2c2ce0859ada623300f796fca1ca04e53e697999c70dd48507.NewChatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new UserScopeTeamsAppInstallationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserScopeTeamsAppInstallationRequestBuilderInternal instantiates a new UserScopeTeamsAppInstallationRequestBuilder and sets the default values.
 func NewUserScopeTeamsAppInstallationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserScopeTeamsAppInstallationRequestBuilder) {
     m := &UserScopeTeamsAppInstallationRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewUserScopeTeamsAppInstallationRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserScopeTeamsAppInstallationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserScopeTeamsAppInstallationRequestBuilder instantiates a new UserScopeTeamsAppInstallationRequestBuilder and sets the default values.
 func NewUserScopeTeamsAppInstallationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserScopeTeamsAppInstallationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserScopeTeamsAppInstallationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The apps installed in the personal scope of this user.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the apps installed in the personal scope of this user.
 func (m *UserScopeTeamsAppInstallationRequestBuilder) CreateDeleteRequestInformation(options *UserScopeTeamsAppInstallationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *UserScopeTeamsAppInstallationRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// The apps installed in the personal scope of this user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the apps installed in the personal scope of this user.
 func (m *UserScopeTeamsAppInstallationRequestBuilder) CreateGetRequestInformation(options *UserScopeTeamsAppInstallationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserScopeTeamsAppInstallationRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// The apps installed in the personal scope of this user.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the apps installed in the personal scope of this user.
 func (m *UserScopeTeamsAppInstallationRequestBuilder) CreatePatchRequestInformation(options *UserScopeTeamsAppInstallationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *UserScopeTeamsAppInstallationRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// The apps installed in the personal scope of this user.
-// Parameters:
-//  - options : Options for the request
+// Delete the apps installed in the personal scope of this user.
 func (m *UserScopeTeamsAppInstallationRequestBuilder) Delete(options *UserScopeTeamsAppInstallationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *UserScopeTeamsAppInstallationRequestBuilder) Delete(options *UserScopeT
     }
     return nil
 }
-// The apps installed in the personal scope of this user.
-// Parameters:
-//  - options : Options for the request
+// Get the apps installed in the personal scope of this user.
 func (m *UserScopeTeamsAppInstallationRequestBuilder) Get(options *UserScopeTeamsAppInstallationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserScopeTeamsAppInstallation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *UserScopeTeamsAppInstallationRequestBuilder) Get(options *UserScopeTeam
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserScopeTeamsAppInstallation), nil
 }
-// The apps installed in the personal scope of this user.
-// Parameters:
-//  - options : Options for the request
+// Patch the apps installed in the personal scope of this user.
 func (m *UserScopeTeamsAppInstallationRequestBuilder) Patch(options *UserScopeTeamsAppInstallationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

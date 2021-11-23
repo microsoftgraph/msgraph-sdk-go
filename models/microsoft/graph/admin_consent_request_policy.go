@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// adminConsentRequestPolicy 
 type AdminConsentRequestPolicy struct {
     Entity
     // Specifies whether the admin consent request feature is enabled or disabled. Required.
@@ -20,14 +20,14 @@ type AdminConsentRequestPolicy struct {
     // Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
     version *int32;
 }
-// Instantiates a new adminConsentRequestPolicy and sets the default values.
+// NewAdminConsentRequestPolicy instantiates a new adminConsentRequestPolicy and sets the default values.
 func NewAdminConsentRequestPolicy()(*AdminConsentRequestPolicy) {
     m := &AdminConsentRequestPolicy{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the isEnabled property value. Specifies whether the admin consent request feature is enabled or disabled. Required.
+// GetIsEnabled gets the isEnabled property value. Specifies whether the admin consent request feature is enabled or disabled. Required.
 func (m *AdminConsentRequestPolicy) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *AdminConsentRequestPolicy) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// Gets the notifyReviewers property value. Specifies whether reviewers will receive notifications. Required.
+// GetNotifyReviewers gets the notifyReviewers property value. Specifies whether reviewers will receive notifications. Required.
 func (m *AdminConsentRequestPolicy) GetNotifyReviewers()(*bool) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *AdminConsentRequestPolicy) GetNotifyReviewers()(*bool) {
         return m.notifyReviewers
     }
 }
-// Gets the remindersEnabled property value. Specifies whether reviewers will receive reminder emails. Required.
+// GetRemindersEnabled gets the remindersEnabled property value. Specifies whether reviewers will receive reminder emails. Required.
 func (m *AdminConsentRequestPolicy) GetRemindersEnabled()(*bool) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *AdminConsentRequestPolicy) GetRemindersEnabled()(*bool) {
         return m.remindersEnabled
     }
 }
-// Gets the requestDurationInDays property value. Specifies the duration the request is active before it automatically expires if no decision is applied.
+// GetRequestDurationInDays gets the requestDurationInDays property value. Specifies the duration the request is active before it automatically expires if no decision is applied.
 func (m *AdminConsentRequestPolicy) GetRequestDurationInDays()(*int32) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *AdminConsentRequestPolicy) GetRequestDurationInDays()(*int32) {
         return m.requestDurationInDays
     }
 }
-// Gets the reviewers property value. The list of reviewers for the admin consent. Required.
+// GetReviewers gets the reviewers property value. The list of reviewers for the admin consent. Required.
 func (m *AdminConsentRequestPolicy) GetReviewers()([]AccessReviewReviewerScope) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *AdminConsentRequestPolicy) GetReviewers()([]AccessReviewReviewerScope) 
         return m.reviewers
     }
 }
-// Gets the version property value. Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
+// GetVersion gets the version property value. Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
 func (m *AdminConsentRequestPolicy) GetVersion()(*int32) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *AdminConsentRequestPolicy) GetVersion()(*int32) {
         return m.version
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isEnabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,9 +147,7 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
 func (m *AdminConsentRequestPolicy) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AdminConsentRequestPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -198,39 +196,27 @@ func (m *AdminConsentRequestPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// Sets the isEnabled property value. Specifies whether the admin consent request feature is enabled or disabled. Required.
-// Parameters:
-//  - value : Value to set for the isEnabled property.
+// SetIsEnabled sets the isEnabled property value. Specifies whether the admin consent request feature is enabled or disabled. Required.
 func (m *AdminConsentRequestPolicy) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }
-// Sets the notifyReviewers property value. Specifies whether reviewers will receive notifications. Required.
-// Parameters:
-//  - value : Value to set for the notifyReviewers property.
+// SetNotifyReviewers sets the notifyReviewers property value. Specifies whether reviewers will receive notifications. Required.
 func (m *AdminConsentRequestPolicy) SetNotifyReviewers(value *bool)() {
     m.notifyReviewers = value
 }
-// Sets the remindersEnabled property value. Specifies whether reviewers will receive reminder emails. Required.
-// Parameters:
-//  - value : Value to set for the remindersEnabled property.
+// SetRemindersEnabled sets the remindersEnabled property value. Specifies whether reviewers will receive reminder emails. Required.
 func (m *AdminConsentRequestPolicy) SetRemindersEnabled(value *bool)() {
     m.remindersEnabled = value
 }
-// Sets the requestDurationInDays property value. Specifies the duration the request is active before it automatically expires if no decision is applied.
-// Parameters:
-//  - value : Value to set for the requestDurationInDays property.
+// SetRequestDurationInDays sets the requestDurationInDays property value. Specifies the duration the request is active before it automatically expires if no decision is applied.
 func (m *AdminConsentRequestPolicy) SetRequestDurationInDays(value *int32)() {
     m.requestDurationInDays = value
 }
-// Sets the reviewers property value. The list of reviewers for the admin consent. Required.
-// Parameters:
-//  - value : Value to set for the reviewers property.
+// SetReviewers sets the reviewers property value. The list of reviewers for the admin consent. Required.
 func (m *AdminConsentRequestPolicy) SetReviewers(value []AccessReviewReviewerScope)() {
     m.reviewers = value
 }
-// Sets the version property value. Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
-// Parameters:
-//  - value : Value to set for the version property.
+// SetVersion sets the version property value. Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
 func (m *AdminConsentRequestPolicy) SetVersion(value *int32)() {
     m.version = value
 }

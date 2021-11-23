@@ -11,7 +11,7 @@ import (
     if0a1607357c7ac08b0f7369dd31ca3dae44d9d88c78c88afa398d08a8a0fe97e "github.com/microsoftgraph/msgraph-sdk-go/permissiongrants/item/checkmemberobjects"
 )
 
-// Builds and executes requests for operations under \permissionGrants\{resourceSpecificPermissionGrant-id}
+// resourceSpecificPermissionGrantRequestBuilder builds and executes requests for operations under \permissionGrants\{resourceSpecificPermissionGrant-id}
 type ResourceSpecificPermissionGrantRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type ResourceSpecificPermissionGrantRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ResourceSpecificPermissionGrantRequestBuilderDeleteOptions options for Delete
 type ResourceSpecificPermissionGrantRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type ResourceSpecificPermissionGrantRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ResourceSpecificPermissionGrantRequestBuilderGetOptions options for Get
 type ResourceSpecificPermissionGrantRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type ResourceSpecificPermissionGrantRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from permissionGrants by key
+// resourceSpecificPermissionGrantRequestBuilderGetQueryParameters get entity from permissionGrants by key
 type ResourceSpecificPermissionGrantRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ResourceSpecificPermissionGrantRequestBuilderPatchOptions options for Patch
 type ResourceSpecificPermissionGrantRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ResourceSpecificPermissionGrant;
@@ -64,10 +64,7 @@ func (m *ResourceSpecificPermissionGrantRequestBuilder) CheckMemberGroups()(*i8e
 func (m *ResourceSpecificPermissionGrantRequestBuilder) CheckMemberObjects()(*if0a1607357c7ac08b0f7369dd31ca3dae44d9d88c78c88afa398d08a8a0fe97e.CheckMemberObjectsRequestBuilder) {
     return if0a1607357c7ac08b0f7369dd31ca3dae44d9d88c78c88afa398d08a8a0fe97e.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ResourceSpecificPermissionGrantRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceSpecificPermissionGrantRequestBuilderInternal instantiates a new ResourceSpecificPermissionGrantRequestBuilder and sets the default values.
 func NewResourceSpecificPermissionGrantRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceSpecificPermissionGrantRequestBuilder) {
     m := &ResourceSpecificPermissionGrantRequestBuilder{
     }
@@ -80,18 +77,13 @@ func NewResourceSpecificPermissionGrantRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ResourceSpecificPermissionGrantRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceSpecificPermissionGrantRequestBuilder instantiates a new ResourceSpecificPermissionGrantRequestBuilder and sets the default values.
 func NewResourceSpecificPermissionGrantRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceSpecificPermissionGrantRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResourceSpecificPermissionGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from permissionGrants
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from permissionGrants
 func (m *ResourceSpecificPermissionGrantRequestBuilder) CreateDeleteRequestInformation(options *ResourceSpecificPermissionGrantRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *ResourceSpecificPermissionGrantRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// Get entity from permissionGrants by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from permissionGrants by key
 func (m *ResourceSpecificPermissionGrantRequestBuilder) CreateGetRequestInformation(options *ResourceSpecificPermissionGrantRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,9 +120,7 @@ func (m *ResourceSpecificPermissionGrantRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Update entity in permissionGrants
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in permissionGrants
 func (m *ResourceSpecificPermissionGrantRequestBuilder) CreatePatchRequestInformation(options *ResourceSpecificPermissionGrantRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +138,7 @@ func (m *ResourceSpecificPermissionGrantRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Delete entity from permissionGrants
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from permissionGrants
 func (m *ResourceSpecificPermissionGrantRequestBuilder) Delete(options *ResourceSpecificPermissionGrantRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -164,9 +150,7 @@ func (m *ResourceSpecificPermissionGrantRequestBuilder) Delete(options *Resource
     }
     return nil
 }
-// Get entity from permissionGrants by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from permissionGrants by key
 func (m *ResourceSpecificPermissionGrantRequestBuilder) Get(options *ResourceSpecificPermissionGrantRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ResourceSpecificPermissionGrant, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -184,9 +168,7 @@ func (m *ResourceSpecificPermissionGrantRequestBuilder) GetMemberGroups()(*ia62a
 func (m *ResourceSpecificPermissionGrantRequestBuilder) GetMemberObjects()(*i4a7063fe0d09620e5d6522f433c1e9cf3e5d296667e87f9dfecfc4af1b3aae9d.GetMemberObjectsRequestBuilder) {
     return i4a7063fe0d09620e5d6522f433c1e9cf3e5d296667e87f9dfecfc4af1b3aae9d.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in permissionGrants
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in permissionGrants
 func (m *ResourceSpecificPermissionGrantRequestBuilder) Patch(options *ResourceSpecificPermissionGrantRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

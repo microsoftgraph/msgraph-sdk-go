@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\authorizationPolicy
+// authorizationPolicyRequestBuilder builds and executes requests for operations under \policies\authorizationPolicy
 type AuthorizationPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AuthorizationPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AuthorizationPolicyRequestBuilderDeleteOptions options for Delete
 type AuthorizationPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AuthorizationPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AuthorizationPolicyRequestBuilderGetOptions options for Get
 type AuthorizationPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AuthorizationPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy that controls Azure AD authorization settings.
+// authorizationPolicyRequestBuilderGetQueryParameters the policy that controls Azure AD authorization settings.
 type AuthorizationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AuthorizationPolicyRequestBuilderPatchOptions options for Patch
 type AuthorizationPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthorizationPolicy;
@@ -53,10 +53,7 @@ type AuthorizationPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AuthorizationPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthorizationPolicyRequestBuilderInternal instantiates a new AuthorizationPolicyRequestBuilder and sets the default values.
 func NewAuthorizationPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthorizationPolicyRequestBuilder) {
     m := &AuthorizationPolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAuthorizationPolicyRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AuthorizationPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthorizationPolicyRequestBuilder instantiates a new AuthorizationPolicyRequestBuilder and sets the default values.
 func NewAuthorizationPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthorizationPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthorizationPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy that controls Azure AD authorization settings.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the policy that controls Azure AD authorization settings.
 func (m *AuthorizationPolicyRequestBuilder) CreateDeleteRequestInformation(options *AuthorizationPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AuthorizationPolicyRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The policy that controls Azure AD authorization settings.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy that controls Azure AD authorization settings.
 func (m *AuthorizationPolicyRequestBuilder) CreateGetRequestInformation(options *AuthorizationPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AuthorizationPolicyRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The policy that controls Azure AD authorization settings.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the policy that controls Azure AD authorization settings.
 func (m *AuthorizationPolicyRequestBuilder) CreatePatchRequestInformation(options *AuthorizationPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AuthorizationPolicyRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// The policy that controls Azure AD authorization settings.
-// Parameters:
-//  - options : Options for the request
+// Delete the policy that controls Azure AD authorization settings.
 func (m *AuthorizationPolicyRequestBuilder) Delete(options *AuthorizationPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AuthorizationPolicyRequestBuilder) Delete(options *AuthorizationPolicyR
     }
     return nil
 }
-// The policy that controls Azure AD authorization settings.
-// Parameters:
-//  - options : Options for the request
+// Get the policy that controls Azure AD authorization settings.
 func (m *AuthorizationPolicyRequestBuilder) Get(options *AuthorizationPolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthorizationPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AuthorizationPolicyRequestBuilder) Get(options *AuthorizationPolicyRequ
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthorizationPolicy), nil
 }
-// The policy that controls Azure AD authorization settings.
-// Parameters:
-//  - options : Options for the request
+// Patch the policy that controls Azure AD authorization settings.
 func (m *AuthorizationPolicyRequestBuilder) Patch(options *AuthorizationPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

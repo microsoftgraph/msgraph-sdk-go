@@ -8,7 +8,7 @@ import (
     if7c6b87c26560e612f175717242ca84d813291c0b9bda359fee5f53fa999dea8 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/comments/item/replies/item"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\comments\{workbookComment-id}
+// workbookCommentRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\comments\{workbookComment-id}
 type WorkbookCommentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type WorkbookCommentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorkbookCommentRequestBuilderDeleteOptions options for Delete
 type WorkbookCommentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WorkbookCommentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorkbookCommentRequestBuilderGetOptions options for Get
 type WorkbookCommentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type WorkbookCommentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get comments from workbooks
+// workbookCommentRequestBuilderGetQueryParameters get comments from workbooks
 type WorkbookCommentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorkbookCommentRequestBuilderPatchOptions options for Patch
 type WorkbookCommentRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookComment;
@@ -55,10 +55,7 @@ type WorkbookCommentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WorkbookCommentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookCommentRequestBuilderInternal instantiates a new WorkbookCommentRequestBuilder and sets the default values.
 func NewWorkbookCommentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookCommentRequestBuilder) {
     m := &WorkbookCommentRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewWorkbookCommentRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbookCommentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookCommentRequestBuilder instantiates a new WorkbookCommentRequestBuilder and sets the default values.
 func NewWorkbookCommentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookCommentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorkbookCommentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property comments for workbooks
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property comments for workbooks
 func (m *WorkbookCommentRequestBuilder) CreateDeleteRequestInformation(options *WorkbookCommentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *WorkbookCommentRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get comments from workbooks
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get comments from workbooks
 func (m *WorkbookCommentRequestBuilder) CreateGetRequestInformation(options *WorkbookCommentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *WorkbookCommentRequestBuilder) CreateGetRequestInformation(options *Wor
     }
     return requestInfo, nil
 }
-// Update the navigation property comments in workbooks
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property comments in workbooks
 func (m *WorkbookCommentRequestBuilder) CreatePatchRequestInformation(options *WorkbookCommentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *WorkbookCommentRequestBuilder) CreatePatchRequestInformation(options *W
     }
     return requestInfo, nil
 }
-// Delete navigation property comments for workbooks
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property comments for workbooks
 func (m *WorkbookCommentRequestBuilder) Delete(options *WorkbookCommentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *WorkbookCommentRequestBuilder) Delete(options *WorkbookCommentRequestBu
     }
     return nil
 }
-// Get comments from workbooks
-// Parameters:
-//  - options : Options for the request
+// Get get comments from workbooks
 func (m *WorkbookCommentRequestBuilder) Get(options *WorkbookCommentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookComment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *WorkbookCommentRequestBuilder) Get(options *WorkbookCommentRequestBuild
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookComment), nil
 }
-// Update the navigation property comments in workbooks
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property comments in workbooks
 func (m *WorkbookCommentRequestBuilder) Patch(options *WorkbookCommentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *WorkbookCommentRequestBuilder) Patch(options *WorkbookCommentRequestBui
 func (m *WorkbookCommentRequestBuilder) Replies()(*if89a002d4a24a65a985811fa34b4e8702e32b1c64cff9670b20718f9e755d7c3.RepliesRequestBuilder) {
     return if89a002d4a24a65a985811fa34b4e8702e32b1c64cff9670b20718f9e755d7c3.NewRepliesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.comments.item.replies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RepliesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.comments.item.replies.item collection
 func (m *WorkbookCommentRequestBuilder) RepliesById(id string)(*if7c6b87c26560e612f175717242ca84d813291c0b9bda359fee5f53fa999dea8.WorkbookCommentReplyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityGovernance\termsOfUse\agreements
+// agreementsRequestBuilder builds and executes requests for operations under \identityGovernance\termsOfUse\agreements
 type AgreementsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AgreementsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AgreementsRequestBuilderGetOptions options for Get
 type AgreementsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AgreementsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get agreements from identityGovernance
+// agreementsRequestBuilderGetQueryParameters get agreements from identityGovernance
 type AgreementsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AgreementsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AgreementsRequestBuilderPostOptions options for Post
 type AgreementsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Agreement;
@@ -56,10 +56,7 @@ type AgreementsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AgreementsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgreementsRequestBuilderInternal instantiates a new AgreementsRequestBuilder and sets the default values.
 func NewAgreementsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgreementsRequestBuilder) {
     m := &AgreementsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAgreementsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AgreementsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgreementsRequestBuilder instantiates a new AgreementsRequestBuilder and sets the default values.
 func NewAgreementsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgreementsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get agreements from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get agreements from identityGovernance
 func (m *AgreementsRequestBuilder) CreateGetRequestInformation(options *AgreementsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AgreementsRequestBuilder) CreateGetRequestInformation(options *Agreemen
     }
     return requestInfo, nil
 }
-// Create new navigation property to agreements for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to agreements for identityGovernance
 func (m *AgreementsRequestBuilder) CreatePostRequestInformation(options *AgreementsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AgreementsRequestBuilder) CreatePostRequestInformation(options *Agreeme
     }
     return requestInfo, nil
 }
-// Get agreements from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get agreements from identityGovernance
 func (m *AgreementsRequestBuilder) Get(options *AgreementsRequestBuilderGetOptions)(*AgreementsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AgreementsRequestBuilder) Get(options *AgreementsRequestBuilderGetOptio
     }
     return res.(*AgreementsResponse), nil
 }
-// Create new navigation property to agreements for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to agreements for identityGovernance
 func (m *AgreementsRequestBuilder) Post(options *AgreementsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Agreement, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

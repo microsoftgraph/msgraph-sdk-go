@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\people\{person-id}
+// personRequestBuilder builds and executes requests for operations under \users\{user-id}\people\{person-id}
 type PersonRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PersonRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PersonRequestBuilderDeleteOptions options for Delete
 type PersonRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PersonRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PersonRequestBuilderGetOptions options for Get
 type PersonRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,12 +35,12 @@ type PersonRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// People that are relevant to the user. Read-only. Nullable.
+// personRequestBuilderGetQueryParameters people that are relevant to the user. Read-only. Nullable.
 type PersonRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PersonRequestBuilderPatchOptions options for Patch
 type PersonRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Person;
@@ -51,10 +51,7 @@ type PersonRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PersonRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonRequestBuilderInternal instantiates a new PersonRequestBuilder and sets the default values.
 func NewPersonRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonRequestBuilder) {
     m := &PersonRequestBuilder{
     }
@@ -67,18 +64,13 @@ func NewPersonRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PersonRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPersonRequestBuilder instantiates a new PersonRequestBuilder and sets the default values.
 func NewPersonRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PersonRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPersonRequestBuilderInternal(urlParams, requestAdapter)
 }
-// People that are relevant to the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation people that are relevant to the user. Read-only. Nullable.
 func (m *PersonRequestBuilder) CreateDeleteRequestInformation(options *PersonRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,9 +87,7 @@ func (m *PersonRequestBuilder) CreateDeleteRequestInformation(options *PersonReq
     }
     return requestInfo, nil
 }
-// People that are relevant to the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation people that are relevant to the user. Read-only. Nullable.
 func (m *PersonRequestBuilder) CreateGetRequestInformation(options *PersonRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,9 +107,7 @@ func (m *PersonRequestBuilder) CreateGetRequestInformation(options *PersonReques
     }
     return requestInfo, nil
 }
-// People that are relevant to the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation people that are relevant to the user. Read-only. Nullable.
 func (m *PersonRequestBuilder) CreatePatchRequestInformation(options *PersonRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *PersonRequestBuilder) CreatePatchRequestInformation(options *PersonRequ
     }
     return requestInfo, nil
 }
-// People that are relevant to the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete people that are relevant to the user. Read-only. Nullable.
 func (m *PersonRequestBuilder) Delete(options *PersonRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -151,9 +137,7 @@ func (m *PersonRequestBuilder) Delete(options *PersonRequestBuilderDeleteOptions
     }
     return nil
 }
-// People that are relevant to the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get people that are relevant to the user. Read-only. Nullable.
 func (m *PersonRequestBuilder) Get(options *PersonRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Person, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -165,9 +149,7 @@ func (m *PersonRequestBuilder) Get(options *PersonRequestBuilderGetOptions)(*i4a
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Person), nil
 }
-// People that are relevant to the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch people that are relevant to the user. Read-only. Nullable.
 func (m *PersonRequestBuilder) Patch(options *PersonRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

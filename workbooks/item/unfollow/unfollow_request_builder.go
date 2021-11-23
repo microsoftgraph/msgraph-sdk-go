@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.unfollow
+// unfollowRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.unfollow
 type UnfollowRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UnfollowRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UnfollowRequestBuilderPostOptions options for Post
 type UnfollowRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type UnfollowRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnfollowRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnfollowRequestBuilderInternal instantiates a new UnfollowRequestBuilder and sets the default values.
 func NewUnfollowRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnfollowRequestBuilder) {
     m := &UnfollowRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewUnfollowRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnfollowRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnfollowRequestBuilder instantiates a new UnfollowRequestBuilder and sets the default values.
 func NewUnfollowRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnfollowRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnfollowRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action unfollow
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action unfollow
 func (m *UnfollowRequestBuilder) CreatePostRequestInformation(options *UnfollowRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *UnfollowRequestBuilder) CreatePostRequestInformation(options *UnfollowR
     }
     return requestInfo, nil
 }
-// Invoke action unfollow
-// Parameters:
-//  - options : Options for the request
+// Post invoke action unfollow
 func (m *UnfollowRequestBuilder) Post(options *UnfollowRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

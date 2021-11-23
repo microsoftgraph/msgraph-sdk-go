@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.workbookRangeSort\microsoft.graph.apply
+// applyRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.workbookRangeSort\microsoft.graph.apply
 type ApplyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ApplyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ApplyRequestBuilderPostOptions options for Post
 type ApplyRequestBuilderPostOptions struct {
     // 
     Body *ApplyRequestBody;
@@ -24,10 +24,7 @@ type ApplyRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApplyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplyRequestBuilderInternal instantiates a new ApplyRequestBuilder and sets the default values.
 func NewApplyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplyRequestBuilder) {
     m := &ApplyRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewApplyRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApplyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplyRequestBuilder instantiates a new ApplyRequestBuilder and sets the default values.
 func NewApplyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action apply
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action apply
 func (m *ApplyRequestBuilder) CreatePostRequestInformation(options *ApplyRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ApplyRequestBuilder) CreatePostRequestInformation(options *ApplyRequest
     }
     return requestInfo, nil
 }
-// Invoke action apply
-// Parameters:
-//  - options : Options for the request
+// Post invoke action apply
 func (m *ApplyRequestBuilder) Post(options *ApplyRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

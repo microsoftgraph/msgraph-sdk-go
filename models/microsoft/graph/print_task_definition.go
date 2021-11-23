@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// printTaskDefinition 
 type PrintTaskDefinition struct {
     Entity
     // 
@@ -14,14 +14,14 @@ type PrintTaskDefinition struct {
     // A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
     tasks []PrintTask;
 }
-// Instantiates a new printTaskDefinition and sets the default values.
+// NewPrintTaskDefinition instantiates a new printTaskDefinition and sets the default values.
 func NewPrintTaskDefinition()(*PrintTaskDefinition) {
     m := &PrintTaskDefinition{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the createdBy property value. 
+// GetCreatedBy gets the createdBy property value. 
 func (m *PrintTaskDefinition) GetCreatedBy()(*AppIdentity) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *PrintTaskDefinition) GetCreatedBy()(*AppIdentity) {
         return m.createdBy
     }
 }
-// Gets the displayName property value. The name of the printTaskDefinition.
+// GetDisplayName gets the displayName property value. The name of the printTaskDefinition.
 func (m *PrintTaskDefinition) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *PrintTaskDefinition) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the tasks property value. A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+// GetTasks gets the tasks property value. A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskDefinition) GetTasks()([]PrintTask) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *PrintTaskDefinition) GetTasks()([]PrintTask) {
         return m.tasks
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PrintTaskDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,9 +87,7 @@ func (m *PrintTaskDefinition) GetFieldDeserializers()(map[string]func(interface{
 func (m *PrintTaskDefinition) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PrintTaskDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -120,21 +118,15 @@ func (m *PrintTaskDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the createdBy property value. 
-// Parameters:
-//  - value : Value to set for the createdBy property.
+// SetCreatedBy sets the createdBy property value. 
 func (m *PrintTaskDefinition) SetCreatedBy(value *AppIdentity)() {
     m.createdBy = value
 }
-// Sets the displayName property value. The name of the printTaskDefinition.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The name of the printTaskDefinition.
 func (m *PrintTaskDefinition) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the tasks property value. A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-// Parameters:
-//  - value : Value to set for the tasks property.
+// SetTasks sets the tasks property value. A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskDefinition) SetTasks(value []PrintTask)() {
     m.tasks = value
 }

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \security\secureScores\{secureScore-id}
+// secureScoreRequestBuilder builds and executes requests for operations under \security\secureScores\{secureScore-id}
 type SecureScoreRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SecureScoreRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SecureScoreRequestBuilderDeleteOptions options for Delete
 type SecureScoreRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SecureScoreRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SecureScoreRequestBuilderGetOptions options for Get
 type SecureScoreRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SecureScoreRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get secureScores from security
+// secureScoreRequestBuilderGetQueryParameters get secureScores from security
 type SecureScoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SecureScoreRequestBuilderPatchOptions options for Patch
 type SecureScoreRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScore;
@@ -53,10 +53,7 @@ type SecureScoreRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SecureScoreRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSecureScoreRequestBuilderInternal instantiates a new SecureScoreRequestBuilder and sets the default values.
 func NewSecureScoreRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecureScoreRequestBuilder) {
     m := &SecureScoreRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSecureScoreRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SecureScoreRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSecureScoreRequestBuilder instantiates a new SecureScoreRequestBuilder and sets the default values.
 func NewSecureScoreRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecureScoreRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSecureScoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property secureScores for security
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property secureScores for security
 func (m *SecureScoreRequestBuilder) CreateDeleteRequestInformation(options *SecureScoreRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SecureScoreRequestBuilder) CreateDeleteRequestInformation(options *Secu
     }
     return requestInfo, nil
 }
-// Get secureScores from security
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get secureScores from security
 func (m *SecureScoreRequestBuilder) CreateGetRequestInformation(options *SecureScoreRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SecureScoreRequestBuilder) CreateGetRequestInformation(options *SecureS
     }
     return requestInfo, nil
 }
-// Update the navigation property secureScores in security
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property secureScores in security
 func (m *SecureScoreRequestBuilder) CreatePatchRequestInformation(options *SecureScoreRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SecureScoreRequestBuilder) CreatePatchRequestInformation(options *Secur
     }
     return requestInfo, nil
 }
-// Delete navigation property secureScores for security
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property secureScores for security
 func (m *SecureScoreRequestBuilder) Delete(options *SecureScoreRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SecureScoreRequestBuilder) Delete(options *SecureScoreRequestBuilderDel
     }
     return nil
 }
-// Get secureScores from security
-// Parameters:
-//  - options : Options for the request
+// Get get secureScores from security
 func (m *SecureScoreRequestBuilder) Get(options *SecureScoreRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScore, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SecureScoreRequestBuilder) Get(options *SecureScoreRequestBuilderGetOpt
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SecureScore), nil
 }
-// Update the navigation property secureScores in security
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property secureScores in security
 func (m *SecureScoreRequestBuilder) Patch(options *SecureScoreRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

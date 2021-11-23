@@ -10,7 +10,7 @@ import (
     i95cc42ebf62e62fae638fdbde3ef0639a82bf977a185e6897c45996044d76c9d "github.com/microsoftgraph/msgraph-sdk-go/groups/item/onenote/pages/item/parentnotebook/sections/item/pages/item/copytosection"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\onenote\pages\{onenotePage-id}\parentNotebook\sections\{onenoteSection-id}\pages\{onenotePage-id1}
+// onenotePageRequestBuilder builds and executes requests for operations under \groups\{group-id}\onenote\pages\{onenotePage-id}\parentNotebook\sections\{onenoteSection-id}\pages\{onenotePage-id1}
 type OnenotePageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type OnenotePageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OnenotePageRequestBuilderDeleteOptions options for Delete
 type OnenotePageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type OnenotePageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OnenotePageRequestBuilderGetOptions options for Get
 type OnenotePageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type OnenotePageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of pages in the section.  Read-only. Nullable.
+// onenotePageRequestBuilderGetQueryParameters the collection of pages in the section.  Read-only. Nullable.
 type OnenotePageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OnenotePageRequestBuilderPatchOptions options for Patch
 type OnenotePageRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenotePage;
@@ -57,10 +57,7 @@ type OnenotePageRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OnenotePageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnenotePageRequestBuilderInternal instantiates a new OnenotePageRequestBuilder and sets the default values.
 func NewOnenotePageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenotePageRequestBuilder) {
     m := &OnenotePageRequestBuilder{
     }
@@ -73,10 +70,7 @@ func NewOnenotePageRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OnenotePageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnenotePageRequestBuilder instantiates a new OnenotePageRequestBuilder and sets the default values.
 func NewOnenotePageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnenotePageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -88,9 +82,7 @@ func (m *OnenotePageRequestBuilder) Content()(*i8ce2255f7f5c96e05c9424a9c037f86d
 func (m *OnenotePageRequestBuilder) CopyToSection()(*i95cc42ebf62e62fae638fdbde3ef0639a82bf977a185e6897c45996044d76c9d.CopyToSectionRequestBuilder) {
     return i95cc42ebf62e62fae638fdbde3ef0639a82bf977a185e6897c45996044d76c9d.NewCopyToSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of pages in the section.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of pages in the section.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) CreateDeleteRequestInformation(options *OnenotePageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *OnenotePageRequestBuilder) CreateDeleteRequestInformation(options *Onen
     }
     return requestInfo, nil
 }
-// The collection of pages in the section.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of pages in the section.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) CreateGetRequestInformation(options *OnenotePageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *OnenotePageRequestBuilder) CreateGetRequestInformation(options *Onenote
     }
     return requestInfo, nil
 }
-// The collection of pages in the section.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of pages in the section.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) CreatePatchRequestInformation(options *OnenotePageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +137,7 @@ func (m *OnenotePageRequestBuilder) CreatePatchRequestInformation(options *Oneno
     }
     return requestInfo, nil
 }
-// The collection of pages in the section.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of pages in the section.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) Delete(options *OnenotePageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -163,9 +149,7 @@ func (m *OnenotePageRequestBuilder) Delete(options *OnenotePageRequestBuilderDel
     }
     return nil
 }
-// The collection of pages in the section.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of pages in the section.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) Get(options *OnenotePageRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenotePage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -180,9 +164,7 @@ func (m *OnenotePageRequestBuilder) Get(options *OnenotePageRequestBuilderGetOpt
 func (m *OnenotePageRequestBuilder) OnenotePatchContent()(*i1661d41fe3a00cdb8ef4f2cab2dd018dd1e1eca330833b9fcc53ca5868e9bd9f.OnenotePatchContentRequestBuilder) {
     return i1661d41fe3a00cdb8ef4f2cab2dd018dd1e1eca330833b9fcc53ca5868e9bd9f.NewOnenotePatchContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of pages in the section.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of pages in the section.  Read-only. Nullable.
 func (m *OnenotePageRequestBuilder) Patch(options *OnenotePageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -194,7 +176,7 @@ func (m *OnenotePageRequestBuilder) Patch(options *OnenotePageRequestBuilderPatc
     }
     return nil
 }
-// Builds and executes requests for operations under \groups\{group-id}\onenote\pages\{onenotePage-id}\parentNotebook\sections\{onenoteSection-id}\pages\{onenotePage-id1}\microsoft.graph.preview()
+// Preview builds and executes requests for operations under \groups\{group-id}\onenote\pages\{onenotePage-id}\parentNotebook\sections\{onenoteSection-id}\pages\{onenotePage-id1}\microsoft.graph.preview()
 func (m *OnenotePageRequestBuilder) Preview()(*i16b619eed69da869f66f34bb8fc4663fcca20ff2787781f578c08f9475222db3.PreviewRequestBuilder) {
     return i16b619eed69da869f66f34bb8fc4663fcca20ff2787781f578c08f9475222db3.NewPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

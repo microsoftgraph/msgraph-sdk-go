@@ -7,7 +7,7 @@ import (
     i2956685e1650ae34bac110b93cb6164178c9d6915e63e9050f4799a8bb019307 "github.com/microsoftgraph/msgraph-sdk-go/users/item/contactfolders/delta"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\contactFolders
+// contactFoldersRequestBuilder builds and executes requests for operations under \users\{user-id}\contactFolders
 type ContactFoldersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ContactFoldersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ContactFoldersRequestBuilderGetOptions options for Get
 type ContactFoldersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ContactFoldersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user's contacts folders. Read-only. Nullable.
+// contactFoldersRequestBuilderGetQueryParameters the user's contacts folders. Read-only. Nullable.
 type ContactFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -42,7 +42,7 @@ type ContactFoldersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ContactFoldersRequestBuilderPostOptions options for Post
 type ContactFoldersRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolder;
@@ -53,10 +53,7 @@ type ContactFoldersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ContactFoldersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContactFoldersRequestBuilderInternal instantiates a new ContactFoldersRequestBuilder and sets the default values.
 func NewContactFoldersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactFoldersRequestBuilder) {
     m := &ContactFoldersRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewContactFoldersRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ContactFoldersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContactFoldersRequestBuilder instantiates a new ContactFoldersRequestBuilder and sets the default values.
 func NewContactFoldersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactFoldersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewContactFoldersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user's contacts folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user's contacts folders. Read-only. Nullable.
 func (m *ContactFoldersRequestBuilder) CreateGetRequestInformation(options *ContactFoldersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *ContactFoldersRequestBuilder) CreateGetRequestInformation(options *Cont
     }
     return requestInfo, nil
 }
-// The user's contacts folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the user's contacts folders. Read-only. Nullable.
 func (m *ContactFoldersRequestBuilder) CreatePostRequestInformation(options *ContactFoldersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,13 +110,11 @@ func (m *ContactFoldersRequestBuilder) CreatePostRequestInformation(options *Con
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \users\{user-id}\contactFolders\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \users\{user-id}\contactFolders\microsoft.graph.delta()
 func (m *ContactFoldersRequestBuilder) Delta()(*i2956685e1650ae34bac110b93cb6164178c9d6915e63e9050f4799a8bb019307.DeltaRequestBuilder) {
     return i2956685e1650ae34bac110b93cb6164178c9d6915e63e9050f4799a8bb019307.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The user's contacts folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the user's contacts folders. Read-only. Nullable.
 func (m *ContactFoldersRequestBuilder) Get(options *ContactFoldersRequestBuilderGetOptions)(*ContactFoldersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *ContactFoldersRequestBuilder) Get(options *ContactFoldersRequestBuilder
     }
     return res.(*ContactFoldersResponse), nil
 }
-// The user's contacts folders. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the user's contacts folders. Read-only. Nullable.
 func (m *ContactFoldersRequestBuilder) Post(options *ContactFoldersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolder, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

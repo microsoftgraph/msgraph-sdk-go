@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// conditionalAccessPolicy 
 type ConditionalAccessPolicy struct {
     Entity
     // 
@@ -25,14 +25,14 @@ type ConditionalAccessPolicy struct {
     // Specifies the state of the conditionalAccessPolicy object. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required.
     state *ConditionalAccessPolicyState;
 }
-// Instantiates a new conditionalAccessPolicy and sets the default values.
+// NewConditionalAccessPolicy instantiates a new conditionalAccessPolicy and sets the default values.
 func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {
     m := &ConditionalAccessPolicy{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the conditions property value. 
+// GetConditions gets the conditions property value. 
 func (m *ConditionalAccessPolicy) GetConditions()(*ConditionalAccessConditionSet) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *ConditionalAccessPolicy) GetConditions()(*ConditionalAccessConditionSet
         return m.conditions
     }
 }
-// Gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
+// GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
 func (m *ConditionalAccessPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ConditionalAccessPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7
         return m.createdDateTime
     }
 }
-// Gets the description property value. Not used.
+// GetDescription gets the description property value. Not used.
 func (m *ConditionalAccessPolicy) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ConditionalAccessPolicy) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Specifies a display name for the conditionalAccessPolicy object.
+// GetDisplayName gets the displayName property value. Specifies a display name for the conditionalAccessPolicy object.
 func (m *ConditionalAccessPolicy) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *ConditionalAccessPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the grantControls property value. Specifies the grant controls that must be fulfilled to pass the policy.
+// GetGrantControls gets the grantControls property value. Specifies the grant controls that must be fulfilled to pass the policy.
 func (m *ConditionalAccessPolicy) GetGrantControls()(*ConditionalAccessGrantControls) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *ConditionalAccessPolicy) GetGrantControls()(*ConditionalAccessGrantCont
         return m.grantControls
     }
 }
-// Gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
+// GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
 func (m *ConditionalAccessPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *ConditionalAccessPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f
         return m.modifiedDateTime
     }
 }
-// Gets the sessionControls property value. Specifies the session controls that are enforced after sign-in.
+// GetSessionControls gets the sessionControls property value. Specifies the session controls that are enforced after sign-in.
 func (m *ConditionalAccessPolicy) GetSessionControls()(*ConditionalAccessSessionControls) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *ConditionalAccessPolicy) GetSessionControls()(*ConditionalAccessSession
         return m.sessionControls
     }
 }
-// Gets the state property value. Specifies the state of the conditionalAccessPolicy object. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required.
+// GetState gets the state property value. Specifies the state of the conditionalAccessPolicy object. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required.
 func (m *ConditionalAccessPolicy) GetState()(*ConditionalAccessPolicyState) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *ConditionalAccessPolicy) GetState()(*ConditionalAccessPolicyState) {
         return m.state
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["conditions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,9 +185,7 @@ func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(interf
 func (m *ConditionalAccessPolicy) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -244,51 +242,35 @@ func (m *ConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the conditions property value. 
-// Parameters:
-//  - value : Value to set for the conditions property.
+// SetConditions sets the conditions property value. 
 func (m *ConditionalAccessPolicy) SetConditions(value *ConditionalAccessConditionSet)() {
     m.conditions = value
 }
-// Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
 func (m *ConditionalAccessPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the description property value. Not used.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Not used.
 func (m *ConditionalAccessPolicy) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Specifies a display name for the conditionalAccessPolicy object.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Specifies a display name for the conditionalAccessPolicy object.
 func (m *ConditionalAccessPolicy) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the grantControls property value. Specifies the grant controls that must be fulfilled to pass the policy.
-// Parameters:
-//  - value : Value to set for the grantControls property.
+// SetGrantControls sets the grantControls property value. Specifies the grant controls that must be fulfilled to pass the policy.
 func (m *ConditionalAccessPolicy) SetGrantControls(value *ConditionalAccessGrantControls)() {
     m.grantControls = value
 }
-// Sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
-// Parameters:
-//  - value : Value to set for the modifiedDateTime property.
+// SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
 func (m *ConditionalAccessPolicy) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.modifiedDateTime = value
 }
-// Sets the sessionControls property value. Specifies the session controls that are enforced after sign-in.
-// Parameters:
-//  - value : Value to set for the sessionControls property.
+// SetSessionControls sets the sessionControls property value. Specifies the session controls that are enforced after sign-in.
 func (m *ConditionalAccessPolicy) SetSessionControls(value *ConditionalAccessSessionControls)() {
     m.sessionControls = value
 }
-// Sets the state property value. Specifies the state of the conditionalAccessPolicy object. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. Specifies the state of the conditionalAccessPolicy object. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required.
 func (m *ConditionalAccessPolicy) SetState(value *ConditionalAccessPolicyState)() {
     m.state = value
 }

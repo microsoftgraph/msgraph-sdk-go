@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\permissionGrantPolicies\{permissionGrantPolicy-id}\excludes\{permissionGrantConditionSet-id}
+// permissionGrantConditionSetRequestBuilder builds and executes requests for operations under \policies\permissionGrantPolicies\{permissionGrantPolicy-id}\excludes\{permissionGrantConditionSet-id}
 type PermissionGrantConditionSetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PermissionGrantConditionSetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PermissionGrantConditionSetRequestBuilderDeleteOptions options for Delete
 type PermissionGrantConditionSetRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PermissionGrantConditionSetRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PermissionGrantConditionSetRequestBuilderGetOptions options for Get
 type PermissionGrantConditionSetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PermissionGrantConditionSetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+// permissionGrantConditionSetRequestBuilderGetQueryParameters condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
 type PermissionGrantConditionSetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PermissionGrantConditionSetRequestBuilderPatchOptions options for Patch
 type PermissionGrantConditionSetRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantConditionSet;
@@ -53,10 +53,7 @@ type PermissionGrantConditionSetRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PermissionGrantConditionSetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPermissionGrantConditionSetRequestBuilderInternal instantiates a new PermissionGrantConditionSetRequestBuilder and sets the default values.
 func NewPermissionGrantConditionSetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PermissionGrantConditionSetRequestBuilder) {
     m := &PermissionGrantConditionSetRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPermissionGrantConditionSetRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PermissionGrantConditionSetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPermissionGrantConditionSetRequestBuilder instantiates a new PermissionGrantConditionSetRequestBuilder and sets the default values.
 func NewPermissionGrantConditionSetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PermissionGrantConditionSetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantConditionSetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantConditionSetRequestBuilder) CreateDeleteRequestInformation(options *PermissionGrantConditionSetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PermissionGrantConditionSetRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantConditionSetRequestBuilder) CreateGetRequestInformation(options *PermissionGrantConditionSetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PermissionGrantConditionSetRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantConditionSetRequestBuilder) CreatePatchRequestInformation(options *PermissionGrantConditionSetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PermissionGrantConditionSetRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
-// Parameters:
-//  - options : Options for the request
+// Delete condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantConditionSetRequestBuilder) Delete(options *PermissionGrantConditionSetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PermissionGrantConditionSetRequestBuilder) Delete(options *PermissionGr
     }
     return nil
 }
-// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
-// Parameters:
-//  - options : Options for the request
+// Get condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantConditionSetRequestBuilder) Get(options *PermissionGrantConditionSetRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantConditionSet, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PermissionGrantConditionSetRequestBuilder) Get(options *PermissionGrant
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantConditionSet), nil
 }
-// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
-// Parameters:
-//  - options : Options for the request
+// Patch condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantConditionSetRequestBuilder) Patch(options *PermissionGrantConditionSetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

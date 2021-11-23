@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privacy\subjectRightsRequests
+// subjectRightsRequestsRequestBuilder builds and executes requests for operations under \privacy\subjectRightsRequests
 type SubjectRightsRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SubjectRightsRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SubjectRightsRequestsRequestBuilderGetOptions options for Get
 type SubjectRightsRequestsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SubjectRightsRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get subjectRightsRequests from privacy
+// subjectRightsRequestsRequestBuilderGetQueryParameters get subjectRightsRequests from privacy
 type SubjectRightsRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SubjectRightsRequestsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SubjectRightsRequestsRequestBuilderPostOptions options for Post
 type SubjectRightsRequestsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubjectRightsRequest;
@@ -56,10 +56,7 @@ type SubjectRightsRequestsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SubjectRightsRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubjectRightsRequestsRequestBuilderInternal instantiates a new SubjectRightsRequestsRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubjectRightsRequestsRequestBuilder) {
     m := &SubjectRightsRequestsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSubjectRightsRequestsRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SubjectRightsRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubjectRightsRequestsRequestBuilder instantiates a new SubjectRightsRequestsRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubjectRightsRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSubjectRightsRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get subjectRightsRequests from privacy
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get subjectRightsRequests from privacy
 func (m *SubjectRightsRequestsRequestBuilder) CreateGetRequestInformation(options *SubjectRightsRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SubjectRightsRequestsRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Create new navigation property to subjectRightsRequests for privacy
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to subjectRightsRequests for privacy
 func (m *SubjectRightsRequestsRequestBuilder) CreatePostRequestInformation(options *SubjectRightsRequestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SubjectRightsRequestsRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get subjectRightsRequests from privacy
-// Parameters:
-//  - options : Options for the request
+// Get get subjectRightsRequests from privacy
 func (m *SubjectRightsRequestsRequestBuilder) Get(options *SubjectRightsRequestsRequestBuilderGetOptions)(*SubjectRightsRequestsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SubjectRightsRequestsRequestBuilder) Get(options *SubjectRightsRequests
     }
     return res.(*SubjectRightsRequestsResponse), nil
 }
-// Create new navigation property to subjectRightsRequests for privacy
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to subjectRightsRequests for privacy
 func (m *SubjectRightsRequestsRequestBuilder) Post(options *SubjectRightsRequestsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubjectRightsRequest, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

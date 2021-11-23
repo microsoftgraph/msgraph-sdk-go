@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.rebootNow
+// rebootNowRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.rebootNow
 type RebootNowRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RebootNowRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RebootNowRequestBuilderPostOptions options for Post
 type RebootNowRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type RebootNowRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RebootNowRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRebootNowRequestBuilderInternal instantiates a new RebootNowRequestBuilder and sets the default values.
 func NewRebootNowRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RebootNowRequestBuilder) {
     m := &RebootNowRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewRebootNowRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RebootNowRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRebootNowRequestBuilder instantiates a new RebootNowRequestBuilder and sets the default values.
 func NewRebootNowRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RebootNowRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRebootNowRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Reboot device
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation reboot device
 func (m *RebootNowRequestBuilder) CreatePostRequestInformation(options *RebootNowRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *RebootNowRequestBuilder) CreatePostRequestInformation(options *RebootNo
     }
     return requestInfo, nil
 }
-// Reboot device
-// Parameters:
-//  - options : Options for the request
+// Post reboot device
 func (m *RebootNowRequestBuilder) Post(options *RebootNowRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

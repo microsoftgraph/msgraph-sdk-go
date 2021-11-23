@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// settingTemplateValue 
 type SettingTemplateValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type SettingTemplateValue struct {
     // Type of the setting.
     type_escaped *string;
 }
-// Instantiates a new settingTemplateValue and sets the default values.
+// NewSettingTemplateValue instantiates a new settingTemplateValue and sets the default values.
 func NewSettingTemplateValue()(*SettingTemplateValue) {
     m := &SettingTemplateValue{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SettingTemplateValue) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *SettingTemplateValue) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the defaultValue property value. Default value for the setting.
+// GetDefaultValue gets the defaultValue property value. Default value for the setting.
 func (m *SettingTemplateValue) GetDefaultValue()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *SettingTemplateValue) GetDefaultValue()(*string) {
         return m.defaultValue
     }
 }
-// Gets the description property value. Description of the setting.
+// GetDescription gets the description property value. Description of the setting.
 func (m *SettingTemplateValue) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *SettingTemplateValue) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the name property value. Name of the setting.
+// GetName gets the name property value. Name of the setting.
 func (m *SettingTemplateValue) GetName()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *SettingTemplateValue) GetName()(*string) {
         return m.name
     }
 }
-// Gets the type_escaped property value. Type of the setting.
+// GetType_escaped gets the type_escaped property value. Type of the setting.
 func (m *SettingTemplateValue) GetType_escaped()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *SettingTemplateValue) GetType_escaped()(*string) {
         return m.type_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SettingTemplateValue) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["defaultValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *SettingTemplateValue) GetFieldDeserializers()(map[string]func(interface
 func (m *SettingTemplateValue) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SettingTemplateValue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("defaultValue", m.GetDefaultValue())
@@ -148,33 +146,23 @@ func (m *SettingTemplateValue) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SettingTemplateValue) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the defaultValue property value. Default value for the setting.
-// Parameters:
-//  - value : Value to set for the defaultValue property.
+// SetDefaultValue sets the defaultValue property value. Default value for the setting.
 func (m *SettingTemplateValue) SetDefaultValue(value *string)() {
     m.defaultValue = value
 }
-// Sets the description property value. Description of the setting.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Description of the setting.
 func (m *SettingTemplateValue) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the name property value. Name of the setting.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. Name of the setting.
 func (m *SettingTemplateValue) SetName(value *string)() {
     m.name = value
 }
-// Sets the type_escaped property value. Type of the setting.
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. Type of the setting.
 func (m *SettingTemplateValue) SetType_escaped(value *string)() {
     m.type_escaped = value
 }

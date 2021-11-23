@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\applePushNotificationCertificate\microsoft.graph.downloadApplePushNotificationCertificateSigningRequest()
+// downloadApplePushNotificationCertificateSigningRequestRequestBuilder builds and executes requests for operations under \deviceManagement\applePushNotificationCertificate\microsoft.graph.downloadApplePushNotificationCertificateSigningRequest()
 type DownloadApplePushNotificationCertificateSigningRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type DownloadApplePushNotificationCertificateSigningRequestRequestBuilder struct
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetOptions options for Get
 type DownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type DownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetOpti
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DownloadApplePushNotificationCertificateSigningRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDownloadApplePushNotificationCertificateSigningRequestRequestBuilderInternal instantiates a new DownloadApplePushNotificationCertificateSigningRequestRequestBuilder and sets the default values.
 func NewDownloadApplePushNotificationCertificateSigningRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) {
     m := &DownloadApplePushNotificationCertificateSigningRequestRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewDownloadApplePushNotificationCertificateSigningRequestRequestBuilderInte
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DownloadApplePushNotificationCertificateSigningRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDownloadApplePushNotificationCertificateSigningRequestRequestBuilder instantiates a new DownloadApplePushNotificationCertificateSigningRequestRequestBuilder and sets the default values.
 func NewDownloadApplePushNotificationCertificateSigningRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDownloadApplePushNotificationCertificateSigningRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Download Apple push notification certificate signing request
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation download Apple push notification certificate signing request
 func (m *DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) CreateGetRequestInformation(options *DownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) C
     }
     return requestInfo, nil
 }
-// Download Apple push notification certificate signing request
-// Parameters:
-//  - options : Options for the request
+// Get download Apple push notification certificate signing request
 func (m *DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) Get(options *DownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetOptions)(*string, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

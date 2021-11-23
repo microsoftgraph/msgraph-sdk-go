@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\timeOffReasons\{timeOffReason-id}
+// timeOffReasonRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeOffReasons\{timeOffReason-id}
 type TimeOffReasonRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TimeOffReasonRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TimeOffReasonRequestBuilderDeleteOptions options for Delete
 type TimeOffReasonRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TimeOffReasonRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TimeOffReasonRequestBuilderGetOptions options for Get
 type TimeOffReasonRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,12 +35,12 @@ type TimeOffReasonRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The set of reasons for a time off in the schedule.
+// timeOffReasonRequestBuilderGetQueryParameters the set of reasons for a time off in the schedule.
 type TimeOffReasonRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TimeOffReasonRequestBuilderPatchOptions options for Patch
 type TimeOffReasonRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOffReason;
@@ -51,10 +51,7 @@ type TimeOffReasonRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TimeOffReasonRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTimeOffReasonRequestBuilderInternal instantiates a new TimeOffReasonRequestBuilder and sets the default values.
 func NewTimeOffReasonRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TimeOffReasonRequestBuilder) {
     m := &TimeOffReasonRequestBuilder{
     }
@@ -67,18 +64,13 @@ func NewTimeOffReasonRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TimeOffReasonRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTimeOffReasonRequestBuilder instantiates a new TimeOffReasonRequestBuilder and sets the default values.
 func NewTimeOffReasonRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TimeOffReasonRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTimeOffReasonRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The set of reasons for a time off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the set of reasons for a time off in the schedule.
 func (m *TimeOffReasonRequestBuilder) CreateDeleteRequestInformation(options *TimeOffReasonRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,9 +87,7 @@ func (m *TimeOffReasonRequestBuilder) CreateDeleteRequestInformation(options *Ti
     }
     return requestInfo, nil
 }
-// The set of reasons for a time off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the set of reasons for a time off in the schedule.
 func (m *TimeOffReasonRequestBuilder) CreateGetRequestInformation(options *TimeOffReasonRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,9 +107,7 @@ func (m *TimeOffReasonRequestBuilder) CreateGetRequestInformation(options *TimeO
     }
     return requestInfo, nil
 }
-// The set of reasons for a time off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the set of reasons for a time off in the schedule.
 func (m *TimeOffReasonRequestBuilder) CreatePatchRequestInformation(options *TimeOffReasonRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *TimeOffReasonRequestBuilder) CreatePatchRequestInformation(options *Tim
     }
     return requestInfo, nil
 }
-// The set of reasons for a time off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// Delete the set of reasons for a time off in the schedule.
 func (m *TimeOffReasonRequestBuilder) Delete(options *TimeOffReasonRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -151,9 +137,7 @@ func (m *TimeOffReasonRequestBuilder) Delete(options *TimeOffReasonRequestBuilde
     }
     return nil
 }
-// The set of reasons for a time off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// Get the set of reasons for a time off in the schedule.
 func (m *TimeOffReasonRequestBuilder) Get(options *TimeOffReasonRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOffReason, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -165,9 +149,7 @@ func (m *TimeOffReasonRequestBuilder) Get(options *TimeOffReasonRequestBuilderGe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOffReason), nil
 }
-// The set of reasons for a time off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// Patch the set of reasons for a time off in the schedule.
 func (m *TimeOffReasonRequestBuilder) Patch(options *TimeOffReasonRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

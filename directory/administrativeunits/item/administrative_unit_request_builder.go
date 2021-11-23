@@ -11,7 +11,7 @@ import (
     if71e90a642a2c3f3e90bf7d0f3cbe5d719d6ca30c2312110465fc6e587f8ec38 "github.com/microsoftgraph/msgraph-sdk-go/directory/administrativeunits/item/extensions/item"
 )
 
-// Builds and executes requests for operations under \directory\administrativeUnits\{administrativeUnit-id}
+// administrativeUnitRequestBuilder builds and executes requests for operations under \directory\administrativeUnits\{administrativeUnit-id}
 type AdministrativeUnitRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type AdministrativeUnitRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AdministrativeUnitRequestBuilderDeleteOptions options for Delete
 type AdministrativeUnitRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type AdministrativeUnitRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AdministrativeUnitRequestBuilderGetOptions options for Get
 type AdministrativeUnitRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type AdministrativeUnitRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Conceptual container for user and group directory objects.
+// administrativeUnitRequestBuilderGetQueryParameters conceptual container for user and group directory objects.
 type AdministrativeUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AdministrativeUnitRequestBuilderPatchOptions options for Patch
 type AdministrativeUnitRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AdministrativeUnit;
@@ -58,10 +58,7 @@ type AdministrativeUnitRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AdministrativeUnitRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdministrativeUnitRequestBuilderInternal instantiates a new AdministrativeUnitRequestBuilder and sets the default values.
 func NewAdministrativeUnitRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdministrativeUnitRequestBuilder) {
     m := &AdministrativeUnitRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewAdministrativeUnitRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AdministrativeUnitRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdministrativeUnitRequestBuilder instantiates a new AdministrativeUnitRequestBuilder and sets the default values.
 func NewAdministrativeUnitRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdministrativeUnitRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Conceptual container for user and group directory objects.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation conceptual container for user and group directory objects.
 func (m *AdministrativeUnitRequestBuilder) CreateDeleteRequestInformation(options *AdministrativeUnitRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *AdministrativeUnitRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Conceptual container for user and group directory objects.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation conceptual container for user and group directory objects.
 func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformation(options *AdministrativeUnitRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *AdministrativeUnitRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Conceptual container for user and group directory objects.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation conceptual container for user and group directory objects.
 func (m *AdministrativeUnitRequestBuilder) CreatePatchRequestInformation(options *AdministrativeUnitRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *AdministrativeUnitRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Conceptual container for user and group directory objects.
-// Parameters:
-//  - options : Options for the request
+// Delete conceptual container for user and group directory objects.
 func (m *AdministrativeUnitRequestBuilder) Delete(options *AdministrativeUnitRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -161,9 +147,7 @@ func (m *AdministrativeUnitRequestBuilder) Delete(options *AdministrativeUnitReq
 func (m *AdministrativeUnitRequestBuilder) Extensions()(*i94253098475db605e990260e13febd658ee5c0709ceaf573e3f903be950c52b6.ExtensionsRequestBuilder) {
     return i94253098475db605e990260e13febd658ee5c0709ceaf573e3f903be950c52b6.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.administrativeUnits.item.extensions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.administrativeUnits.item.extensions.item collection
 func (m *AdministrativeUnitRequestBuilder) ExtensionsById(id string)(*if71e90a642a2c3f3e90bf7d0f3cbe5d719d6ca30c2312110465fc6e587f8ec38.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -174,9 +158,7 @@ func (m *AdministrativeUnitRequestBuilder) ExtensionsById(id string)(*if71e90a64
     }
     return if71e90a642a2c3f3e90bf7d0f3cbe5d719d6ca30c2312110465fc6e587f8ec38.NewExtensionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Conceptual container for user and group directory objects.
-// Parameters:
-//  - options : Options for the request
+// Get conceptual container for user and group directory objects.
 func (m *AdministrativeUnitRequestBuilder) Get(options *AdministrativeUnitRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AdministrativeUnit, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -191,9 +173,7 @@ func (m *AdministrativeUnitRequestBuilder) Get(options *AdministrativeUnitReques
 func (m *AdministrativeUnitRequestBuilder) Members()(*ia454d456d99bb0ead0e1bfb50c53f817055b0e68ca4356296e7f406ee25d3d77.MembersRequestBuilder) {
     return ia454d456d99bb0ead0e1bfb50c53f817055b0e68ca4356296e7f406ee25d3d77.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Conceptual container for user and group directory objects.
-// Parameters:
-//  - options : Options for the request
+// Patch conceptual container for user and group directory objects.
 func (m *AdministrativeUnitRequestBuilder) Patch(options *AdministrativeUnitRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -208,9 +188,7 @@ func (m *AdministrativeUnitRequestBuilder) Patch(options *AdministrativeUnitRequ
 func (m *AdministrativeUnitRequestBuilder) ScopedRoleMembers()(*i776e11034305b48e5290b2e53dd2f7575359c486273d18f2353ff65faa9063b1.ScopedRoleMembersRequestBuilder) {
     return i776e11034305b48e5290b2e53dd2f7575359c486273d18f2353ff65faa9063b1.NewScopedRoleMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.administrativeUnits.item.scopedRoleMembers.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ScopedRoleMembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.administrativeUnits.item.scopedRoleMembers.item collection
 func (m *AdministrativeUnitRequestBuilder) ScopedRoleMembersById(id string)(*ia9df9f379ea5fc92e0383f29dfd050c3b88591b8f475f586b856fc130a4fd053.ScopedRoleMembershipRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

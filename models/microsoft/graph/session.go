@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// session 
 type Session struct {
     Entity
     // Endpoint that answered the session.
@@ -23,14 +23,14 @@ type Session struct {
     // UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new session and sets the default values.
+// NewSession instantiates a new session and sets the default values.
 func NewSession()(*Session) {
     m := &Session{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the callee property value. Endpoint that answered the session.
+// GetCallee gets the callee property value. Endpoint that answered the session.
 func (m *Session) GetCallee()(*Endpoint) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *Session) GetCallee()(*Endpoint) {
         return m.callee
     }
 }
-// Gets the caller property value. Endpoint that initiated the session.
+// GetCaller gets the caller property value. Endpoint that initiated the session.
 func (m *Session) GetCaller()(*Endpoint) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *Session) GetCaller()(*Endpoint) {
         return m.caller
     }
 }
-// Gets the endDateTime property value. UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetEndDateTime gets the endDateTime property value. UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Session) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *Session) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
         return m.endDateTime
     }
 }
-// Gets the failureInfo property value. Failure information associated with the session if the session failed.
+// GetFailureInfo gets the failureInfo property value. Failure information associated with the session if the session failed.
 func (m *Session) GetFailureInfo()(*FailureInfo) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *Session) GetFailureInfo()(*FailureInfo) {
         return m.failureInfo
     }
 }
-// Gets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
+// GetModalities gets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
 func (m *Session) GetModalities()([]Modality) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *Session) GetModalities()([]Modality) {
         return m.modalities
     }
 }
-// Gets the segments property value. The list of segments involved in the session. Read-only. Nullable.
+// GetSegments gets the segments property value. The list of segments involved in the session. Read-only. Nullable.
 func (m *Session) GetSegments()([]Segment) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *Session) GetSegments()([]Segment) {
         return m.segments
     }
 }
-// Gets the startDateTime property value. UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetStartDateTime gets the startDateTime property value. UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Session) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *Session) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
         return m.startDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["callee"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,9 +172,7 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
 func (m *Session) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Session) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -229,45 +227,31 @@ func (m *Session) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     }
     return nil
 }
-// Sets the callee property value. Endpoint that answered the session.
-// Parameters:
-//  - value : Value to set for the callee property.
+// SetCallee sets the callee property value. Endpoint that answered the session.
 func (m *Session) SetCallee(value *Endpoint)() {
     m.callee = value
 }
-// Sets the caller property value. Endpoint that initiated the session.
-// Parameters:
-//  - value : Value to set for the caller property.
+// SetCaller sets the caller property value. Endpoint that initiated the session.
 func (m *Session) SetCaller(value *Endpoint)() {
     m.caller = value
 }
-// Sets the endDateTime property value. UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the endDateTime property.
+// SetEndDateTime sets the endDateTime property value. UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Session) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.endDateTime = value
 }
-// Sets the failureInfo property value. Failure information associated with the session if the session failed.
-// Parameters:
-//  - value : Value to set for the failureInfo property.
+// SetFailureInfo sets the failureInfo property value. Failure information associated with the session if the session failed.
 func (m *Session) SetFailureInfo(value *FailureInfo)() {
     m.failureInfo = value
 }
-// Sets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the modalities property.
+// SetModalities sets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
 func (m *Session) SetModalities(value []Modality)() {
     m.modalities = value
 }
-// Sets the segments property value. The list of segments involved in the session. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the segments property.
+// SetSegments sets the segments property value. The list of segments involved in the session. Read-only. Nullable.
 func (m *Session) SetSegments(value []Segment)() {
     m.segments = value
 }
-// Sets the startDateTime property value. UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the startDateTime property.
+// SetStartDateTime sets the startDateTime property value. UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Session) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }

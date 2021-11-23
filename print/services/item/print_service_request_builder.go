@@ -8,7 +8,7 @@ import (
     ibd33febbd3b146e44afb8453db5500993eabf62258d8c69bca6851c73b08e6db "github.com/microsoftgraph/msgraph-sdk-go/print/services/item/endpoints/item"
 )
 
-// Builds and executes requests for operations under \print\services\{printService-id}
+// printServiceRequestBuilder builds and executes requests for operations under \print\services\{printService-id}
 type PrintServiceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type PrintServiceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrintServiceRequestBuilderDeleteOptions options for Delete
 type PrintServiceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PrintServiceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrintServiceRequestBuilderGetOptions options for Get
 type PrintServiceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type PrintServiceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of available Universal Print service endpoints.
+// printServiceRequestBuilderGetQueryParameters the list of available Universal Print service endpoints.
 type PrintServiceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrintServiceRequestBuilderPatchOptions options for Patch
 type PrintServiceRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintService;
@@ -55,10 +55,7 @@ type PrintServiceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrintServiceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintServiceRequestBuilderInternal instantiates a new PrintServiceRequestBuilder and sets the default values.
 func NewPrintServiceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintServiceRequestBuilder) {
     m := &PrintServiceRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewPrintServiceRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrintServiceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintServiceRequestBuilder instantiates a new PrintServiceRequestBuilder and sets the default values.
 func NewPrintServiceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintServiceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrintServiceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of available Universal Print service endpoints.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of available Universal Print service endpoints.
 func (m *PrintServiceRequestBuilder) CreateDeleteRequestInformation(options *PrintServiceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *PrintServiceRequestBuilder) CreateDeleteRequestInformation(options *Pri
     }
     return requestInfo, nil
 }
-// The list of available Universal Print service endpoints.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of available Universal Print service endpoints.
 func (m *PrintServiceRequestBuilder) CreateGetRequestInformation(options *PrintServiceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *PrintServiceRequestBuilder) CreateGetRequestInformation(options *PrintS
     }
     return requestInfo, nil
 }
-// The list of available Universal Print service endpoints.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of available Universal Print service endpoints.
 func (m *PrintServiceRequestBuilder) CreatePatchRequestInformation(options *PrintServiceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *PrintServiceRequestBuilder) CreatePatchRequestInformation(options *Prin
     }
     return requestInfo, nil
 }
-// The list of available Universal Print service endpoints.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of available Universal Print service endpoints.
 func (m *PrintServiceRequestBuilder) Delete(options *PrintServiceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *PrintServiceRequestBuilder) Delete(options *PrintServiceRequestBuilderD
 func (m *PrintServiceRequestBuilder) Endpoints()(*i93ba386aae63875a3667b89c639fea4709c20bd1e33ce9c61c135f75a517053e.EndpointsRequestBuilder) {
     return i93ba386aae63875a3667b89c639fea4709c20bd1e33ce9c61c135f75a517053e.NewEndpointsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.services.item.endpoints.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// EndpointsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.services.item.endpoints.item collection
 func (m *PrintServiceRequestBuilder) EndpointsById(id string)(*ibd33febbd3b146e44afb8453db5500993eabf62258d8c69bca6851c73b08e6db.PrintServiceEndpointRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -171,9 +155,7 @@ func (m *PrintServiceRequestBuilder) EndpointsById(id string)(*ibd33febbd3b146e4
     }
     return ibd33febbd3b146e44afb8453db5500993eabf62258d8c69bca6851c73b08e6db.NewPrintServiceEndpointRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The list of available Universal Print service endpoints.
-// Parameters:
-//  - options : Options for the request
+// Get the list of available Universal Print service endpoints.
 func (m *PrintServiceRequestBuilder) Get(options *PrintServiceRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintService, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *PrintServiceRequestBuilder) Get(options *PrintServiceRequestBuilderGetO
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintService), nil
 }
-// The list of available Universal Print service endpoints.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of available Universal Print service endpoints.
 func (m *PrintServiceRequestBuilder) Patch(options *PrintServiceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

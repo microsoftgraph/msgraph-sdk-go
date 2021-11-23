@@ -9,7 +9,7 @@ import (
     if71bc0def059e5cd43ad758ac90e0476d545be67abc269b44c62b0e319bd0c1c "github.com/microsoftgraph/msgraph-sdk-go/print/shares/item/allowedgroups"
 )
 
-// Builds and executes requests for operations under \print\shares\{printerShare-id}
+// printerShareRequestBuilder builds and executes requests for operations under \print\shares\{printerShare-id}
 type PrinterShareRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type PrinterShareRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrinterShareRequestBuilderDeleteOptions options for Delete
 type PrinterShareRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type PrinterShareRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrinterShareRequestBuilderGetOptions options for Get
 type PrinterShareRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type PrinterShareRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of printer shares registered in the tenant.
+// printerShareRequestBuilderGetQueryParameters the list of printer shares registered in the tenant.
 type PrinterShareRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrinterShareRequestBuilderPatchOptions options for Patch
 type PrinterShareRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrinterShare;
@@ -62,10 +62,7 @@ func (m *PrinterShareRequestBuilder) AllowedGroups()(*if71bc0def059e5cd43ad758ac
 func (m *PrinterShareRequestBuilder) AllowedUsers()(*i35c871e364b7bd9c669482c3e558d704d96c2c6922e224cf70fc6ba4cb816548.AllowedUsersRequestBuilder) {
     return i35c871e364b7bd9c669482c3e558d704d96c2c6922e224cf70fc6ba4cb816548.NewAllowedUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new PrinterShareRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrinterShareRequestBuilderInternal instantiates a new PrinterShareRequestBuilder and sets the default values.
 func NewPrinterShareRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrinterShareRequestBuilder) {
     m := &PrinterShareRequestBuilder{
     }
@@ -78,18 +75,13 @@ func NewPrinterShareRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrinterShareRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrinterShareRequestBuilder instantiates a new PrinterShareRequestBuilder and sets the default values.
 func NewPrinterShareRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrinterShareRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterShareRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of printer shares registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of printer shares registered in the tenant.
 func (m *PrinterShareRequestBuilder) CreateDeleteRequestInformation(options *PrinterShareRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,9 +98,7 @@ func (m *PrinterShareRequestBuilder) CreateDeleteRequestInformation(options *Pri
     }
     return requestInfo, nil
 }
-// The list of printer shares registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of printer shares registered in the tenant.
 func (m *PrinterShareRequestBuilder) CreateGetRequestInformation(options *PrinterShareRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,9 +118,7 @@ func (m *PrinterShareRequestBuilder) CreateGetRequestInformation(options *Printe
     }
     return requestInfo, nil
 }
-// The list of printer shares registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of printer shares registered in the tenant.
 func (m *PrinterShareRequestBuilder) CreatePatchRequestInformation(options *PrinterShareRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,9 +136,7 @@ func (m *PrinterShareRequestBuilder) CreatePatchRequestInformation(options *Prin
     }
     return requestInfo, nil
 }
-// The list of printer shares registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of printer shares registered in the tenant.
 func (m *PrinterShareRequestBuilder) Delete(options *PrinterShareRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -162,9 +148,7 @@ func (m *PrinterShareRequestBuilder) Delete(options *PrinterShareRequestBuilderD
     }
     return nil
 }
-// The list of printer shares registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of printer shares registered in the tenant.
 func (m *PrinterShareRequestBuilder) Get(options *PrinterShareRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrinterShare, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -176,9 +160,7 @@ func (m *PrinterShareRequestBuilder) Get(options *PrinterShareRequestBuilderGetO
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrinterShare), nil
 }
-// The list of printer shares registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of printer shares registered in the tenant.
 func (m *PrinterShareRequestBuilder) Patch(options *PrinterShareRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

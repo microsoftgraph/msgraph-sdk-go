@@ -10,7 +10,7 @@ import (
     i619b375874405f8a48a2830bcc3f479ceef5c227f0ff2205d5561454de690fef "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/sets/item"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\termStore
+// termStoreRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore
 type TermStoreRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type TermStoreRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TermStoreRequestBuilderDeleteOptions options for Delete
 type TermStoreRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type TermStoreRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TermStoreRequestBuilderGetOptions options for Get
 type TermStoreRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type TermStoreRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The default termStore under this site.
+// termStoreRequestBuilderGetQueryParameters the default termStore under this site.
 type TermStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TermStoreRequestBuilderPatchOptions options for Patch
 type TermStoreRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Store;
@@ -57,10 +57,7 @@ type TermStoreRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TermStoreRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermStoreRequestBuilderInternal instantiates a new TermStoreRequestBuilder and sets the default values.
 func NewTermStoreRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermStoreRequestBuilder) {
     m := &TermStoreRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewTermStoreRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TermStoreRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermStoreRequestBuilder instantiates a new TermStoreRequestBuilder and sets the default values.
 func NewTermStoreRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermStoreRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTermStoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The default termStore under this site.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the default termStore under this site.
 func (m *TermStoreRequestBuilder) CreateDeleteRequestInformation(options *TermStoreRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *TermStoreRequestBuilder) CreateDeleteRequestInformation(options *TermSt
     }
     return requestInfo, nil
 }
-// The default termStore under this site.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the default termStore under this site.
 func (m *TermStoreRequestBuilder) CreateGetRequestInformation(options *TermStoreRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TermStoreRequestBuilder) CreateGetRequestInformation(options *TermStore
     }
     return requestInfo, nil
 }
-// The default termStore under this site.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the default termStore under this site.
 func (m *TermStoreRequestBuilder) CreatePatchRequestInformation(options *TermStoreRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *TermStoreRequestBuilder) CreatePatchRequestInformation(options *TermSto
     }
     return requestInfo, nil
 }
-// The default termStore under this site.
-// Parameters:
-//  - options : Options for the request
+// Delete the default termStore under this site.
 func (m *TermStoreRequestBuilder) Delete(options *TermStoreRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *TermStoreRequestBuilder) Delete(options *TermStoreRequestBuilderDeleteO
     }
     return nil
 }
-// The default termStore under this site.
-// Parameters:
-//  - options : Options for the request
+// Get the default termStore under this site.
 func (m *TermStoreRequestBuilder) Get(options *TermStoreRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Store, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -174,9 +158,7 @@ func (m *TermStoreRequestBuilder) Get(options *TermStoreRequestBuilderGetOptions
 func (m *TermStoreRequestBuilder) Groups()(*i94e3df8b0a254a0fef7a65f7cbfe92598b1244a4aa6d133096ee43e26c51ba83.GroupsRequestBuilder) {
     return i94e3df8b0a254a0fef7a65f7cbfe92598b1244a4aa6d133096ee43e26c51ba83.NewGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStore.groups.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// GroupsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStore.groups.item collection
 func (m *TermStoreRequestBuilder) GroupsById(id string)(*i48733a2ec09122d42c9462e7a9f1da6b9e730ecb166ca81ee7b3abc4aa6dda9d.GroupRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -187,9 +169,7 @@ func (m *TermStoreRequestBuilder) GroupsById(id string)(*i48733a2ec09122d42c9462
     }
     return i48733a2ec09122d42c9462e7a9f1da6b9e730ecb166ca81ee7b3abc4aa6dda9d.NewGroupRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The default termStore under this site.
-// Parameters:
-//  - options : Options for the request
+// Patch the default termStore under this site.
 func (m *TermStoreRequestBuilder) Patch(options *TermStoreRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -204,9 +184,7 @@ func (m *TermStoreRequestBuilder) Patch(options *TermStoreRequestBuilderPatchOpt
 func (m *TermStoreRequestBuilder) Sets()(*i9c66c577a9424b767c16c7bd6f240fe77c582158fd3831451a8d57ea4b8be5e4.SetsRequestBuilder) {
     return i9c66c577a9424b767c16c7bd6f240fe77c582158fd3831451a8d57ea4b8be5e4.NewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStore.sets.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SetsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStore.sets.item collection
 func (m *TermStoreRequestBuilder) SetsById(id string)(*i619b375874405f8a48a2830bcc3f479ceef5c227f0ff2205d5561454de690fef.SetRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

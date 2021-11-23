@@ -11,7 +11,7 @@ import (
     i5994a0b59bfe11ed3ada24e78d793ae99219e1ed71fe61ccdd3181057f6b3b6d "github.com/microsoftgraph/msgraph-sdk-go/directoryobjects/item/checkmemberobjects"
 )
 
-// Builds and executes requests for operations under \directoryObjects\{directoryObject-id}
+// directoryObjectRequestBuilder builds and executes requests for operations under \directoryObjects\{directoryObject-id}
 type DirectoryObjectRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type DirectoryObjectRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DirectoryObjectRequestBuilderDeleteOptions options for Delete
 type DirectoryObjectRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type DirectoryObjectRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DirectoryObjectRequestBuilderGetOptions options for Get
 type DirectoryObjectRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type DirectoryObjectRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from directoryObjects by key
+// directoryObjectRequestBuilderGetQueryParameters get entity from directoryObjects by key
 type DirectoryObjectRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DirectoryObjectRequestBuilderPatchOptions options for Patch
 type DirectoryObjectRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject;
@@ -64,10 +64,7 @@ func (m *DirectoryObjectRequestBuilder) CheckMemberGroups()(*i2758507168bd1524d0
 func (m *DirectoryObjectRequestBuilder) CheckMemberObjects()(*i5994a0b59bfe11ed3ada24e78d793ae99219e1ed71fe61ccdd3181057f6b3b6d.CheckMemberObjectsRequestBuilder) {
     return i5994a0b59bfe11ed3ada24e78d793ae99219e1ed71fe61ccdd3181057f6b3b6d.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new DirectoryObjectRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryObjectRequestBuilderInternal instantiates a new DirectoryObjectRequestBuilder and sets the default values.
 func NewDirectoryObjectRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryObjectRequestBuilder) {
     m := &DirectoryObjectRequestBuilder{
     }
@@ -80,18 +77,13 @@ func NewDirectoryObjectRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DirectoryObjectRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryObjectRequestBuilder instantiates a new DirectoryObjectRequestBuilder and sets the default values.
 func NewDirectoryObjectRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryObjectRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from directoryObjects
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from directoryObjects
 func (m *DirectoryObjectRequestBuilder) CreateDeleteRequestInformation(options *DirectoryObjectRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *DirectoryObjectRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get entity from directoryObjects by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from directoryObjects by key
 func (m *DirectoryObjectRequestBuilder) CreateGetRequestInformation(options *DirectoryObjectRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,9 +120,7 @@ func (m *DirectoryObjectRequestBuilder) CreateGetRequestInformation(options *Dir
     }
     return requestInfo, nil
 }
-// Update entity in directoryObjects
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in directoryObjects
 func (m *DirectoryObjectRequestBuilder) CreatePatchRequestInformation(options *DirectoryObjectRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +138,7 @@ func (m *DirectoryObjectRequestBuilder) CreatePatchRequestInformation(options *D
     }
     return requestInfo, nil
 }
-// Delete entity from directoryObjects
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from directoryObjects
 func (m *DirectoryObjectRequestBuilder) Delete(options *DirectoryObjectRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -164,9 +150,7 @@ func (m *DirectoryObjectRequestBuilder) Delete(options *DirectoryObjectRequestBu
     }
     return nil
 }
-// Get entity from directoryObjects by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from directoryObjects by key
 func (m *DirectoryObjectRequestBuilder) Get(options *DirectoryObjectRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -184,9 +168,7 @@ func (m *DirectoryObjectRequestBuilder) GetMemberGroups()(*i203da64f5c3eb0f67de8
 func (m *DirectoryObjectRequestBuilder) GetMemberObjects()(*i4373f660e612558db4bd06bb08e3a35adaf199b212501b84beab70f8139714cd.GetMemberObjectsRequestBuilder) {
     return i4373f660e612558db4bd06bb08e3a35adaf199b212501b84beab70f8139714cd.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in directoryObjects
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in directoryObjects
 func (m *DirectoryObjectRequestBuilder) Patch(options *DirectoryObjectRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

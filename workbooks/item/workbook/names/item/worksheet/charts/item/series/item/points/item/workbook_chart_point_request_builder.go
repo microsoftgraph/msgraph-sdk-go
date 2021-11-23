@@ -7,7 +7,7 @@ import (
     i4cf4119635d82798d163828a951da141052ef4fdf4cc0706fcf9a9828da35761 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/series/item/points/item/format"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\{workbookChartPoint-id}
+// workbookChartPointRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\{workbookChartPoint-id}
 type WorkbookChartPointRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type WorkbookChartPointRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorkbookChartPointRequestBuilderDeleteOptions options for Delete
 type WorkbookChartPointRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type WorkbookChartPointRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorkbookChartPointRequestBuilderGetOptions options for Get
 type WorkbookChartPointRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type WorkbookChartPointRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents a collection of all points in the series. Read-only.
+// workbookChartPointRequestBuilderGetQueryParameters represents a collection of all points in the series. Read-only.
 type WorkbookChartPointRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorkbookChartPointRequestBuilderPatchOptions options for Patch
 type WorkbookChartPointRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartPoint;
@@ -54,10 +54,7 @@ type WorkbookChartPointRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WorkbookChartPointRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookChartPointRequestBuilderInternal instantiates a new WorkbookChartPointRequestBuilder and sets the default values.
 func NewWorkbookChartPointRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookChartPointRequestBuilder) {
     m := &WorkbookChartPointRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewWorkbookChartPointRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbookChartPointRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookChartPointRequestBuilder instantiates a new WorkbookChartPointRequestBuilder and sets the default values.
 func NewWorkbookChartPointRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookChartPointRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorkbookChartPointRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents a collection of all points in the series. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents a collection of all points in the series. Read-only.
 func (m *WorkbookChartPointRequestBuilder) CreateDeleteRequestInformation(options *WorkbookChartPointRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *WorkbookChartPointRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Represents a collection of all points in the series. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents a collection of all points in the series. Read-only.
 func (m *WorkbookChartPointRequestBuilder) CreateGetRequestInformation(options *WorkbookChartPointRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *WorkbookChartPointRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Represents a collection of all points in the series. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents a collection of all points in the series. Read-only.
 func (m *WorkbookChartPointRequestBuilder) CreatePatchRequestInformation(options *WorkbookChartPointRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *WorkbookChartPointRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Represents a collection of all points in the series. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents a collection of all points in the series. Read-only.
 func (m *WorkbookChartPointRequestBuilder) Delete(options *WorkbookChartPointRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *WorkbookChartPointRequestBuilder) Delete(options *WorkbookChartPointReq
 func (m *WorkbookChartPointRequestBuilder) Format()(*i4cf4119635d82798d163828a951da141052ef4fdf4cc0706fcf9a9828da35761.FormatRequestBuilder) {
     return i4cf4119635d82798d163828a951da141052ef4fdf4cc0706fcf9a9828da35761.NewFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents a collection of all points in the series. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents a collection of all points in the series. Read-only.
 func (m *WorkbookChartPointRequestBuilder) Get(options *WorkbookChartPointRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartPoint, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *WorkbookChartPointRequestBuilder) Get(options *WorkbookChartPointReques
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartPoint), nil
 }
-// Represents a collection of all points in the series. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents a collection of all points in the series. Read-only.
 func (m *WorkbookChartPointRequestBuilder) Patch(options *WorkbookChartPointRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

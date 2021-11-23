@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.sendActivityNotification
+// sendActivityNotificationRequestBuilder builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.sendActivityNotification
 type SendActivityNotificationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type SendActivityNotificationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// SendActivityNotificationRequestBuilderPostOptions options for Post
 type SendActivityNotificationRequestBuilderPostOptions struct {
     // 
     Body *SendActivityNotificationRequestBody;
@@ -24,10 +24,7 @@ type SendActivityNotificationRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SendActivityNotificationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSendActivityNotificationRequestBuilderInternal instantiates a new SendActivityNotificationRequestBuilder and sets the default values.
 func NewSendActivityNotificationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SendActivityNotificationRequestBuilder) {
     m := &SendActivityNotificationRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewSendActivityNotificationRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SendActivityNotificationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSendActivityNotificationRequestBuilder instantiates a new SendActivityNotificationRequestBuilder and sets the default values.
 func NewSendActivityNotificationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SendActivityNotificationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSendActivityNotificationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action sendActivityNotification
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action sendActivityNotification
 func (m *SendActivityNotificationRequestBuilder) CreatePostRequestInformation(options *SendActivityNotificationRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *SendActivityNotificationRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// Invoke action sendActivityNotification
-// Parameters:
-//  - options : Options for the request
+// Post invoke action sendActivityNotification
 func (m *SendActivityNotificationRequestBuilder) Post(options *SendActivityNotificationRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

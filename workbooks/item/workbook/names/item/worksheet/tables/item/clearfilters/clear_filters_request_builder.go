@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\microsoft.graph.clearFilters
+// clearFiltersRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\microsoft.graph.clearFilters
 type ClearFiltersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ClearFiltersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ClearFiltersRequestBuilderPostOptions options for Post
 type ClearFiltersRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type ClearFiltersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ClearFiltersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewClearFiltersRequestBuilderInternal instantiates a new ClearFiltersRequestBuilder and sets the default values.
 func NewClearFiltersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClearFiltersRequestBuilder) {
     m := &ClearFiltersRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewClearFiltersRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ClearFiltersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewClearFiltersRequestBuilder instantiates a new ClearFiltersRequestBuilder and sets the default values.
 func NewClearFiltersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClearFiltersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClearFiltersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action clearFilters
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action clearFilters
 func (m *ClearFiltersRequestBuilder) CreatePostRequestInformation(options *ClearFiltersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *ClearFiltersRequestBuilder) CreatePostRequestInformation(options *Clear
     }
     return requestInfo, nil
 }
-// Invoke action clearFilters
-// Parameters:
-//  - options : Options for the request
+// Post invoke action clearFilters
 func (m *ClearFiltersRequestBuilder) Post(options *ClearFiltersRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

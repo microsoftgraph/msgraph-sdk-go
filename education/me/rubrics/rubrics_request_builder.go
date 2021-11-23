@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\me\rubrics
+// rubricsRequestBuilder builds and executes requests for operations under \education\me\rubrics
 type RubricsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RubricsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RubricsRequestBuilderGetOptions options for Get
 type RubricsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RubricsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get rubrics from education
+// rubricsRequestBuilderGetQueryParameters get rubrics from education
 type RubricsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RubricsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RubricsRequestBuilderPostOptions options for Post
 type RubricsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationRubric;
@@ -56,10 +56,7 @@ type RubricsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RubricsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRubricsRequestBuilderInternal instantiates a new RubricsRequestBuilder and sets the default values.
 func NewRubricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RubricsRequestBuilder) {
     m := &RubricsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRubricsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RubricsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRubricsRequestBuilder instantiates a new RubricsRequestBuilder and sets the default values.
 func NewRubricsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RubricsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRubricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get rubrics from education
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get rubrics from education
 func (m *RubricsRequestBuilder) CreateGetRequestInformation(options *RubricsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RubricsRequestBuilder) CreateGetRequestInformation(options *RubricsRequ
     }
     return requestInfo, nil
 }
-// Create new navigation property to rubrics for education
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to rubrics for education
 func (m *RubricsRequestBuilder) CreatePostRequestInformation(options *RubricsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RubricsRequestBuilder) CreatePostRequestInformation(options *RubricsReq
     }
     return requestInfo, nil
 }
-// Get rubrics from education
-// Parameters:
-//  - options : Options for the request
+// Get get rubrics from education
 func (m *RubricsRequestBuilder) Get(options *RubricsRequestBuilderGetOptions)(*RubricsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RubricsRequestBuilder) Get(options *RubricsRequestBuilderGetOptions)(*R
     }
     return res.(*RubricsResponse), nil
 }
-// Create new navigation property to rubrics for education
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to rubrics for education
 func (m *RubricsRequestBuilder) Post(options *RubricsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationRubric, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

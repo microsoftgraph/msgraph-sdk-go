@@ -7,7 +7,7 @@ import (
     i112e4ec987a4fbaaaa5244420903ca7d6c9062802d858f06708a183e30fe955e "github.com/microsoftgraph/msgraph-sdk-go/users/item/activities/recent"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\activities
+// activitiesRequestBuilder builds and executes requests for operations under \users\{user-id}\activities
 type ActivitiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ActivitiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ActivitiesRequestBuilderGetOptions options for Get
 type ActivitiesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ActivitiesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user's activities across devices. Read-only. Nullable.
+// activitiesRequestBuilderGetQueryParameters the user's activities across devices. Read-only. Nullable.
 type ActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type ActivitiesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ActivitiesRequestBuilderPostOptions options for Post
 type ActivitiesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserActivity;
@@ -57,10 +57,7 @@ type ActivitiesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ActivitiesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivitiesRequestBuilderInternal instantiates a new ActivitiesRequestBuilder and sets the default values.
 func NewActivitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivitiesRequestBuilder) {
     m := &ActivitiesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewActivitiesRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ActivitiesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivitiesRequestBuilder instantiates a new ActivitiesRequestBuilder and sets the default values.
 func NewActivitiesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivitiesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user's activities across devices. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user's activities across devices. Read-only. Nullable.
 func (m *ActivitiesRequestBuilder) CreateGetRequestInformation(options *ActivitiesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *ActivitiesRequestBuilder) CreateGetRequestInformation(options *Activiti
     }
     return requestInfo, nil
 }
-// The user's activities across devices. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the user's activities across devices. Read-only. Nullable.
 func (m *ActivitiesRequestBuilder) CreatePostRequestInformation(options *ActivitiesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *ActivitiesRequestBuilder) CreatePostRequestInformation(options *Activit
     }
     return requestInfo, nil
 }
-// The user's activities across devices. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the user's activities across devices. Read-only. Nullable.
 func (m *ActivitiesRequestBuilder) Get(options *ActivitiesRequestBuilderGetOptions)(*ActivitiesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -138,9 +126,7 @@ func (m *ActivitiesRequestBuilder) Get(options *ActivitiesRequestBuilderGetOptio
     }
     return res.(*ActivitiesResponse), nil
 }
-// The user's activities across devices. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the user's activities across devices. Read-only. Nullable.
 func (m *ActivitiesRequestBuilder) Post(options *ActivitiesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserActivity, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
@@ -152,7 +138,7 @@ func (m *ActivitiesRequestBuilder) Post(options *ActivitiesRequestBuilderPostOpt
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserActivity), nil
 }
-// Builds and executes requests for operations under \users\{user-id}\activities\microsoft.graph.recent()
+// Recent builds and executes requests for operations under \users\{user-id}\activities\microsoft.graph.recent()
 func (m *ActivitiesRequestBuilder) Recent()(*i112e4ec987a4fbaaaa5244420903ca7d6c9062802d858f06708a183e30fe955e.RecentRequestBuilder) {
     return i112e4ec987a4fbaaaa5244420903ca7d6c9062802d858f06708a183e30fe955e.NewRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

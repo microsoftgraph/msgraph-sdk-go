@@ -7,7 +7,7 @@ import (
     ib2e48fde00117a0e08f57cabf64baeddb35c502a287f5223b636fd4612522619 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/participants/invite"
 )
 
-// Builds and executes requests for operations under \communications\calls\{call-id}\participants
+// participantsRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\participants
 type ParticipantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ParticipantsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ParticipantsRequestBuilderGetOptions options for Get
 type ParticipantsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ParticipantsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable.
+// participantsRequestBuilderGetQueryParameters read-only. Nullable.
 type ParticipantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type ParticipantsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ParticipantsRequestBuilderPostOptions options for Post
 type ParticipantsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Participant;
@@ -57,10 +57,7 @@ type ParticipantsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ParticipantsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewParticipantsRequestBuilderInternal instantiates a new ParticipantsRequestBuilder and sets the default values.
 func NewParticipantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParticipantsRequestBuilder) {
     m := &ParticipantsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewParticipantsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ParticipantsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewParticipantsRequestBuilder instantiates a new ParticipantsRequestBuilder and sets the default values.
 func NewParticipantsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParticipantsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewParticipantsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable.
 func (m *ParticipantsRequestBuilder) CreateGetRequestInformation(options *ParticipantsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *ParticipantsRequestBuilder) CreateGetRequestInformation(options *Partic
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation read-only. Nullable.
 func (m *ParticipantsRequestBuilder) CreatePostRequestInformation(options *ParticipantsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *ParticipantsRequestBuilder) CreatePostRequestInformation(options *Parti
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable.
 func (m *ParticipantsRequestBuilder) Get(options *ParticipantsRequestBuilderGetOptions)(*ParticipantsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *ParticipantsRequestBuilder) Get(options *ParticipantsRequestBuilderGetO
 func (m *ParticipantsRequestBuilder) Invite()(*ib2e48fde00117a0e08f57cabf64baeddb35c502a287f5223b636fd4612522619.InviteRequestBuilder) {
     return ib2e48fde00117a0e08f57cabf64baeddb35c502a287f5223b636fd4612522619.NewInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post read-only. Nullable.
 func (m *ParticipantsRequestBuilder) Post(options *ParticipantsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Participant, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

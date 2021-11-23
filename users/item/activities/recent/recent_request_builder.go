@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\activities\microsoft.graph.recent()
+// recentRequestBuilder builds and executes requests for operations under \users\{user-id}\activities\microsoft.graph.recent()
 type RecentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type RecentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RecentRequestBuilderGetOptions options for Get
 type RecentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type RecentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RecentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRecentRequestBuilderInternal instantiates a new RecentRequestBuilder and sets the default values.
 func NewRecentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RecentRequestBuilder) {
     m := &RecentRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewRecentRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RecentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRecentRequestBuilder instantiates a new RecentRequestBuilder and sets the default values.
 func NewRecentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RecentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRecentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function recent
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function recent
 func (m *RecentRequestBuilder) CreateGetRequestInformation(options *RecentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *RecentRequestBuilder) CreateGetRequestInformation(options *RecentReques
     }
     return requestInfo, nil
 }
-// Invoke function recent
-// Parameters:
-//  - options : Options for the request
+// Get invoke function recent
 func (m *RecentRequestBuilder) Get(options *RecentRequestBuilderGetOptions)([]Recent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

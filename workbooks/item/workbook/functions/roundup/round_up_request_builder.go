@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\functions\microsoft.graph.roundUp
+// roundUpRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\functions\microsoft.graph.roundUp
 type RoundUpRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RoundUpRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RoundUpRequestBuilderPostOptions options for Post
 type RoundUpRequestBuilderPostOptions struct {
     // 
     Body *RoundUpRequestBody;
@@ -26,21 +26,21 @@ type RoundUpRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes workbookFunctionResult
+// roundUpResponse union type wrapper for classes workbookFunctionResult
 type RoundUpResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type workbookFunctionResult
     workbookFunctionResult *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctionResult;
 }
-// Instantiates a new roundUpResponse and sets the default values.
+// NewRoundUpResponse instantiates a new roundUpResponse and sets the default values.
 func NewRoundUpResponse()(*RoundUpResponse) {
     m := &RoundUpResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoundUpResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *RoundUpResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the workbookFunctionResult property value. Union type representation for type workbookFunctionResult
+// GetWorkbookFunctionResult gets the workbookFunctionResult property value. Union type representation for type workbookFunctionResult
 func (m *RoundUpResponse) GetWorkbookFunctionResult()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctionResult) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *RoundUpResponse) GetWorkbookFunctionResult()(*i4a838ef194e4c99e9f2c63ba
         return m.workbookFunctionResult
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RoundUpResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["workbookFunctionResult"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *RoundUpResponse) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *RoundUpResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RoundUpResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("workbookFunctionResult", m.GetWorkbookFunctionResult())
@@ -92,22 +90,15 @@ func (m *RoundUpResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoundUpResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the workbookFunctionResult property value. Union type representation for type workbookFunctionResult
-// Parameters:
-//  - value : Value to set for the workbookFunctionResult property.
+// SetWorkbookFunctionResult sets the workbookFunctionResult property value. Union type representation for type workbookFunctionResult
 func (m *RoundUpResponse) SetWorkbookFunctionResult(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookFunctionResult)() {
     m.workbookFunctionResult = value
 }
-// Instantiates a new RoundUpRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoundUpRequestBuilderInternal instantiates a new RoundUpRequestBuilder and sets the default values.
 func NewRoundUpRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoundUpRequestBuilder) {
     m := &RoundUpRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewRoundUpRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoundUpRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoundUpRequestBuilder instantiates a new RoundUpRequestBuilder and sets the default values.
 func NewRoundUpRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoundUpRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoundUpRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action roundUp
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action roundUp
 func (m *RoundUpRequestBuilder) CreatePostRequestInformation(options *RoundUpRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *RoundUpRequestBuilder) CreatePostRequestInformation(options *RoundUpReq
     }
     return requestInfo, nil
 }
-// Invoke action roundUp
-// Parameters:
-//  - options : Options for the request
+// Post invoke action roundUp
 func (m *RoundUpRequestBuilder) Post(options *RoundUpRequestBuilderPostOptions)(*RoundUpResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

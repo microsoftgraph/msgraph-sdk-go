@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// displayNameLocalization 
 type DisplayNameLocalization struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type DisplayNameLocalization struct {
     // Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
     languageTag *string;
 }
-// Instantiates a new displayNameLocalization and sets the default values.
+// NewDisplayNameLocalization instantiates a new displayNameLocalization and sets the default values.
 func NewDisplayNameLocalization()(*DisplayNameLocalization) {
     m := &DisplayNameLocalization{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DisplayNameLocalization) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *DisplayNameLocalization) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the displayName property value. If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
+// GetDisplayName gets the displayName property value. If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
 func (m *DisplayNameLocalization) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *DisplayNameLocalization) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the languageTag property value. Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
+// GetLanguageTag gets the languageTag property value. Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
 func (m *DisplayNameLocalization) GetLanguageTag()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *DisplayNameLocalization) GetLanguageTag()(*string) {
         return m.languageTag
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DisplayNameLocalization) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *DisplayNameLocalization) GetFieldDeserializers()(map[string]func(interf
 func (m *DisplayNameLocalization) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DisplayNameLocalization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
@@ -96,21 +94,15 @@ func (m *DisplayNameLocalization) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DisplayNameLocalization) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the displayName property value. If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
 func (m *DisplayNameLocalization) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the languageTag property value. Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-// Parameters:
-//  - value : Value to set for the languageTag property.
+// SetLanguageTag sets the languageTag property value. Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
 func (m *DisplayNameLocalization) SetLanguageTag(value *string)() {
     m.languageTag = value
 }

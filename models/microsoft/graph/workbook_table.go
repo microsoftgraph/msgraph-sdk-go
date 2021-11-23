@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// workbookTable 
 type WorkbookTable struct {
     Entity
     // Represents a collection of all the columns in the table. Read-only.
@@ -36,14 +36,14 @@ type WorkbookTable struct {
     // The worksheet containing the current table. Read-only.
     worksheet *WorkbookWorksheet;
 }
-// Instantiates a new workbookTable and sets the default values.
+// NewWorkbookTable instantiates a new workbookTable and sets the default values.
 func NewWorkbookTable()(*WorkbookTable) {
     m := &WorkbookTable{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the columns property value. Represents a collection of all the columns in the table. Read-only.
+// GetColumns gets the columns property value. Represents a collection of all the columns in the table. Read-only.
 func (m *WorkbookTable) GetColumns()([]WorkbookTableColumn) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *WorkbookTable) GetColumns()([]WorkbookTableColumn) {
         return m.columns
     }
 }
-// Gets the highlightFirstColumn property value. Indicates whether the first column contains special formatting.
+// GetHighlightFirstColumn gets the highlightFirstColumn property value. Indicates whether the first column contains special formatting.
 func (m *WorkbookTable) GetHighlightFirstColumn()(*bool) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *WorkbookTable) GetHighlightFirstColumn()(*bool) {
         return m.highlightFirstColumn
     }
 }
-// Gets the highlightLastColumn property value. Indicates whether the last column contains special formatting.
+// GetHighlightLastColumn gets the highlightLastColumn property value. Indicates whether the last column contains special formatting.
 func (m *WorkbookTable) GetHighlightLastColumn()(*bool) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *WorkbookTable) GetHighlightLastColumn()(*bool) {
         return m.highlightLastColumn
     }
 }
-// Gets the legacyId property value. Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
+// GetLegacyId gets the legacyId property value. Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
 func (m *WorkbookTable) GetLegacyId()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *WorkbookTable) GetLegacyId()(*string) {
         return m.legacyId
     }
 }
-// Gets the name property value. Name of the table.
+// GetName gets the name property value. Name of the table.
 func (m *WorkbookTable) GetName()(*string) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *WorkbookTable) GetName()(*string) {
         return m.name
     }
 }
-// Gets the rows property value. Represents a collection of all the rows in the table. Read-only.
+// GetRows gets the rows property value. Represents a collection of all the rows in the table. Read-only.
 func (m *WorkbookTable) GetRows()([]WorkbookTableRow) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *WorkbookTable) GetRows()([]WorkbookTableRow) {
         return m.rows
     }
 }
-// Gets the showBandedColumns property value. Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.
+// GetShowBandedColumns gets the showBandedColumns property value. Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.
 func (m *WorkbookTable) GetShowBandedColumns()(*bool) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *WorkbookTable) GetShowBandedColumns()(*bool) {
         return m.showBandedColumns
     }
 }
-// Gets the showBandedRows property value. Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.
+// GetShowBandedRows gets the showBandedRows property value. Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.
 func (m *WorkbookTable) GetShowBandedRows()(*bool) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *WorkbookTable) GetShowBandedRows()(*bool) {
         return m.showBandedRows
     }
 }
-// Gets the showFilterButton property value. Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.
+// GetShowFilterButton gets the showFilterButton property value. Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.
 func (m *WorkbookTable) GetShowFilterButton()(*bool) {
     if m == nil {
         return nil
@@ -115,7 +115,7 @@ func (m *WorkbookTable) GetShowFilterButton()(*bool) {
         return m.showFilterButton
     }
 }
-// Gets the showHeaders property value. Indicates whether the header row is visible or not. This value can be set to show or remove the header row.
+// GetShowHeaders gets the showHeaders property value. Indicates whether the header row is visible or not. This value can be set to show or remove the header row.
 func (m *WorkbookTable) GetShowHeaders()(*bool) {
     if m == nil {
         return nil
@@ -123,7 +123,7 @@ func (m *WorkbookTable) GetShowHeaders()(*bool) {
         return m.showHeaders
     }
 }
-// Gets the showTotals property value. Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
+// GetShowTotals gets the showTotals property value. Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
 func (m *WorkbookTable) GetShowTotals()(*bool) {
     if m == nil {
         return nil
@@ -131,7 +131,7 @@ func (m *WorkbookTable) GetShowTotals()(*bool) {
         return m.showTotals
     }
 }
-// Gets the sort property value. Represents the sorting for the table. Read-only.
+// GetSort gets the sort property value. Represents the sorting for the table. Read-only.
 func (m *WorkbookTable) GetSort()(*WorkbookTableSort) {
     if m == nil {
         return nil
@@ -139,7 +139,7 @@ func (m *WorkbookTable) GetSort()(*WorkbookTableSort) {
         return m.sort
     }
 }
-// Gets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+// GetStyle gets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
 func (m *WorkbookTable) GetStyle()(*string) {
     if m == nil {
         return nil
@@ -147,7 +147,7 @@ func (m *WorkbookTable) GetStyle()(*string) {
         return m.style
     }
 }
-// Gets the worksheet property value. The worksheet containing the current table. Read-only.
+// GetWorksheet gets the worksheet property value. The worksheet containing the current table. Read-only.
 func (m *WorkbookTable) GetWorksheet()(*WorkbookWorksheet) {
     if m == nil {
         return nil
@@ -155,7 +155,7 @@ func (m *WorkbookTable) GetWorksheet()(*WorkbookWorksheet) {
         return m.worksheet
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["columns"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -311,9 +311,7 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *WorkbookTable) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WorkbookTable) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -415,87 +413,59 @@ func (m *WorkbookTable) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the columns property value. Represents a collection of all the columns in the table. Read-only.
-// Parameters:
-//  - value : Value to set for the columns property.
+// SetColumns sets the columns property value. Represents a collection of all the columns in the table. Read-only.
 func (m *WorkbookTable) SetColumns(value []WorkbookTableColumn)() {
     m.columns = value
 }
-// Sets the highlightFirstColumn property value. Indicates whether the first column contains special formatting.
-// Parameters:
-//  - value : Value to set for the highlightFirstColumn property.
+// SetHighlightFirstColumn sets the highlightFirstColumn property value. Indicates whether the first column contains special formatting.
 func (m *WorkbookTable) SetHighlightFirstColumn(value *bool)() {
     m.highlightFirstColumn = value
 }
-// Sets the highlightLastColumn property value. Indicates whether the last column contains special formatting.
-// Parameters:
-//  - value : Value to set for the highlightLastColumn property.
+// SetHighlightLastColumn sets the highlightLastColumn property value. Indicates whether the last column contains special formatting.
 func (m *WorkbookTable) SetHighlightLastColumn(value *bool)() {
     m.highlightLastColumn = value
 }
-// Sets the legacyId property value. Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
-// Parameters:
-//  - value : Value to set for the legacyId property.
+// SetLegacyId sets the legacyId property value. Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
 func (m *WorkbookTable) SetLegacyId(value *string)() {
     m.legacyId = value
 }
-// Sets the name property value. Name of the table.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. Name of the table.
 func (m *WorkbookTable) SetName(value *string)() {
     m.name = value
 }
-// Sets the rows property value. Represents a collection of all the rows in the table. Read-only.
-// Parameters:
-//  - value : Value to set for the rows property.
+// SetRows sets the rows property value. Represents a collection of all the rows in the table. Read-only.
 func (m *WorkbookTable) SetRows(value []WorkbookTableRow)() {
     m.rows = value
 }
-// Sets the showBandedColumns property value. Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.
-// Parameters:
-//  - value : Value to set for the showBandedColumns property.
+// SetShowBandedColumns sets the showBandedColumns property value. Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.
 func (m *WorkbookTable) SetShowBandedColumns(value *bool)() {
     m.showBandedColumns = value
 }
-// Sets the showBandedRows property value. Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.
-// Parameters:
-//  - value : Value to set for the showBandedRows property.
+// SetShowBandedRows sets the showBandedRows property value. Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.
 func (m *WorkbookTable) SetShowBandedRows(value *bool)() {
     m.showBandedRows = value
 }
-// Sets the showFilterButton property value. Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.
-// Parameters:
-//  - value : Value to set for the showFilterButton property.
+// SetShowFilterButton sets the showFilterButton property value. Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.
 func (m *WorkbookTable) SetShowFilterButton(value *bool)() {
     m.showFilterButton = value
 }
-// Sets the showHeaders property value. Indicates whether the header row is visible or not. This value can be set to show or remove the header row.
-// Parameters:
-//  - value : Value to set for the showHeaders property.
+// SetShowHeaders sets the showHeaders property value. Indicates whether the header row is visible or not. This value can be set to show or remove the header row.
 func (m *WorkbookTable) SetShowHeaders(value *bool)() {
     m.showHeaders = value
 }
-// Sets the showTotals property value. Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
-// Parameters:
-//  - value : Value to set for the showTotals property.
+// SetShowTotals sets the showTotals property value. Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
 func (m *WorkbookTable) SetShowTotals(value *bool)() {
     m.showTotals = value
 }
-// Sets the sort property value. Represents the sorting for the table. Read-only.
-// Parameters:
-//  - value : Value to set for the sort property.
+// SetSort sets the sort property value. Represents the sorting for the table. Read-only.
 func (m *WorkbookTable) SetSort(value *WorkbookTableSort)() {
     m.sort = value
 }
-// Sets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
-// Parameters:
-//  - value : Value to set for the style property.
+// SetStyle sets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
 func (m *WorkbookTable) SetStyle(value *string)() {
     m.style = value
 }
-// Sets the worksheet property value. The worksheet containing the current table. Read-only.
-// Parameters:
-//  - value : Value to set for the worksheet property.
+// SetWorksheet sets the worksheet property value. The worksheet containing the current table. Read-only.
 func (m *WorkbookTable) SetWorksheet(value *WorkbookWorksheet)() {
     m.worksheet = value
 }

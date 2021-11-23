@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// baseItemVersion 
 type BaseItemVersion struct {
     Entity
     // Identity of the user which last modified the version. Read-only.
@@ -15,14 +15,14 @@ type BaseItemVersion struct {
     // Indicates the publication status of this particular version. Read-only.
     publication *PublicationFacet;
 }
-// Instantiates a new baseItemVersion and sets the default values.
+// NewBaseItemVersion instantiates a new baseItemVersion and sets the default values.
 func NewBaseItemVersion()(*BaseItemVersion) {
     m := &BaseItemVersion{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
 func (m *BaseItemVersion) GetLastModifiedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *BaseItemVersion) GetLastModifiedBy()(*IdentitySet) {
         return m.lastModifiedBy
     }
 }
-// Gets the lastModifiedDateTime property value. Date and time the version was last modified. Read-only.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time the version was last modified. Read-only.
 func (m *BaseItemVersion) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *BaseItemVersion) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
         return m.lastModifiedDateTime
     }
 }
-// Gets the publication property value. Indicates the publication status of this particular version. Read-only.
+// GetPublication gets the publication property value. Indicates the publication status of this particular version. Read-only.
 func (m *BaseItemVersion) GetPublication()(*PublicationFacet) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *BaseItemVersion) GetPublication()(*PublicationFacet) {
         return m.publication
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *BaseItemVersion) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastModifiedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,9 +84,7 @@ func (m *BaseItemVersion) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *BaseItemVersion) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *BaseItemVersion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -112,21 +110,15 @@ func (m *BaseItemVersion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
-// Parameters:
-//  - value : Value to set for the lastModifiedBy property.
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
 func (m *BaseItemVersion) SetLastModifiedBy(value *IdentitySet)() {
     m.lastModifiedBy = value
 }
-// Sets the lastModifiedDateTime property value. Date and time the version was last modified. Read-only.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time the version was last modified. Read-only.
 func (m *BaseItemVersion) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the publication property value. Indicates the publication status of this particular version. Read-only.
-// Parameters:
-//  - value : Value to set for the publication property.
+// SetPublication sets the publication property value. Indicates the publication status of this particular version. Read-only.
 func (m *BaseItemVersion) SetPublication(value *PublicationFacet)() {
     m.publication = value
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// signInStatus 
 type SignInStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type SignInStatus struct {
     // Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
     failureReason *string;
 }
-// Instantiates a new signInStatus and sets the default values.
+// NewSignInStatus instantiates a new signInStatus and sets the default values.
 func NewSignInStatus()(*SignInStatus) {
     m := &SignInStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignInStatus) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *SignInStatus) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the additionalDetails property value. Provides additional details on the sign-in activity
+// GetAdditionalDetails gets the additionalDetails property value. Provides additional details on the sign-in activity
 func (m *SignInStatus) GetAdditionalDetails()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *SignInStatus) GetAdditionalDetails()(*string) {
         return m.additionalDetails
     }
 }
-// Gets the errorCode property value. Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
+// GetErrorCode gets the errorCode property value. Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
 func (m *SignInStatus) GetErrorCode()(*int32) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *SignInStatus) GetErrorCode()(*int32) {
         return m.errorCode
     }
 }
-// Gets the failureReason property value. Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
+// GetFailureReason gets the failureReason property value. Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
 func (m *SignInStatus) GetFailureReason()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *SignInStatus) GetFailureReason()(*string) {
         return m.failureReason
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SignInStatus) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["additionalDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *SignInStatus) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *SignInStatus) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SignInStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("additionalDetails", m.GetAdditionalDetails())
@@ -122,27 +120,19 @@ func (m *SignInStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignInStatus) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the additionalDetails property value. Provides additional details on the sign-in activity
-// Parameters:
-//  - value : Value to set for the additionalDetails property.
+// SetAdditionalDetails sets the additionalDetails property value. Provides additional details on the sign-in activity
 func (m *SignInStatus) SetAdditionalDetails(value *string)() {
     m.additionalDetails = value
 }
-// Sets the errorCode property value. Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
-// Parameters:
-//  - value : Value to set for the errorCode property.
+// SetErrorCode sets the errorCode property value. Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
 func (m *SignInStatus) SetErrorCode(value *int32)() {
     m.errorCode = value
 }
-// Sets the failureReason property value. Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
-// Parameters:
-//  - value : Value to set for the failureReason property.
+// SetFailureReason sets the failureReason property value. Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
 func (m *SignInStatus) SetFailureReason(value *string)() {
     m.failureReason = value
 }

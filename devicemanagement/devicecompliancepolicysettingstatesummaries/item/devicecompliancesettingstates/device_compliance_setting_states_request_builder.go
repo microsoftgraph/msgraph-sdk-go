@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicySettingStateSummaries\{deviceCompliancePolicySettingStateSummary-id}\deviceComplianceSettingStates
+// deviceComplianceSettingStatesRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicySettingStateSummaries\{deviceCompliancePolicySettingStateSummary-id}\deviceComplianceSettingStates
 type DeviceComplianceSettingStatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceComplianceSettingStatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceComplianceSettingStatesRequestBuilderGetOptions options for Get
 type DeviceComplianceSettingStatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceComplianceSettingStatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Not yet documented
+// deviceComplianceSettingStatesRequestBuilderGetQueryParameters not yet documented
 type DeviceComplianceSettingStatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceComplianceSettingStatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceComplianceSettingStatesRequestBuilderPostOptions options for Post
 type DeviceComplianceSettingStatesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceSettingState;
@@ -56,10 +56,7 @@ type DeviceComplianceSettingStatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceComplianceSettingStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceComplianceSettingStatesRequestBuilderInternal instantiates a new DeviceComplianceSettingStatesRequestBuilder and sets the default values.
 func NewDeviceComplianceSettingStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceComplianceSettingStatesRequestBuilder) {
     m := &DeviceComplianceSettingStatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceComplianceSettingStatesRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceComplianceSettingStatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceComplianceSettingStatesRequestBuilder instantiates a new DeviceComplianceSettingStatesRequestBuilder and sets the default values.
 func NewDeviceComplianceSettingStatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceComplianceSettingStatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceComplianceSettingStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Not yet documented
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation not yet documented
 func (m *DeviceComplianceSettingStatesRequestBuilder) CreateGetRequestInformation(options *DeviceComplianceSettingStatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceComplianceSettingStatesRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// Not yet documented
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation not yet documented
 func (m *DeviceComplianceSettingStatesRequestBuilder) CreatePostRequestInformation(options *DeviceComplianceSettingStatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceComplianceSettingStatesRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// Not yet documented
-// Parameters:
-//  - options : Options for the request
+// Get not yet documented
 func (m *DeviceComplianceSettingStatesRequestBuilder) Get(options *DeviceComplianceSettingStatesRequestBuilderGetOptions)(*DeviceComplianceSettingStatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceComplianceSettingStatesRequestBuilder) Get(options *DeviceComplia
     }
     return res.(*DeviceComplianceSettingStatesResponse), nil
 }
-// Not yet documented
-// Parameters:
-//  - options : Options for the request
+// Post not yet documented
 func (m *DeviceComplianceSettingStatesRequestBuilder) Post(options *DeviceComplianceSettingStatesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceSettingState, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

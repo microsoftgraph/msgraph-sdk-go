@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// printJob 
 type PrintJob struct {
     Entity
     // 
@@ -27,14 +27,14 @@ type PrintJob struct {
     // A list of printTasks that were triggered by this print job.
     tasks []PrintTask;
 }
-// Instantiates a new printJob and sets the default values.
+// NewPrintJob instantiates a new printJob and sets the default values.
 func NewPrintJob()(*PrintJob) {
     m := &PrintJob{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the configuration property value. 
+// GetConfiguration gets the configuration property value. 
 func (m *PrintJob) GetConfiguration()(*PrintJobConfiguration) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *PrintJob) GetConfiguration()(*PrintJobConfiguration) {
         return m.configuration
     }
 }
-// Gets the createdBy property value. Read-only. Nullable.
+// GetCreatedBy gets the createdBy property value. Read-only. Nullable.
 func (m *PrintJob) GetCreatedBy()(*UserIdentity) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *PrintJob) GetCreatedBy()(*UserIdentity) {
         return m.createdBy
     }
 }
-// Gets the createdDateTime property value. The DateTimeOffset when the job was created. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. The DateTimeOffset when the job was created. Read-only.
 func (m *PrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *PrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
         return m.createdDateTime
     }
 }
-// Gets the documents property value. Read-only.
+// GetDocuments gets the documents property value. Read-only.
 func (m *PrintJob) GetDocuments()([]PrintDocument) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *PrintJob) GetDocuments()([]PrintDocument) {
         return m.documents
     }
 }
-// Gets the isFetchable property value. If true, document can be fetched by printer.
+// GetIsFetchable gets the isFetchable property value. If true, document can be fetched by printer.
 func (m *PrintJob) GetIsFetchable()(*bool) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *PrintJob) GetIsFetchable()(*bool) {
         return m.isFetchable
     }
 }
-// Gets the redirectedFrom property value. Contains the source job URL, if the job has been redirected from another printer.
+// GetRedirectedFrom gets the redirectedFrom property value. Contains the source job URL, if the job has been redirected from another printer.
 func (m *PrintJob) GetRedirectedFrom()(*string) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *PrintJob) GetRedirectedFrom()(*string) {
         return m.redirectedFrom
     }
 }
-// Gets the redirectedTo property value. Contains the destination job URL, if the job has been redirected to another printer.
+// GetRedirectedTo gets the redirectedTo property value. Contains the destination job URL, if the job has been redirected to another printer.
 func (m *PrintJob) GetRedirectedTo()(*string) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *PrintJob) GetRedirectedTo()(*string) {
         return m.redirectedTo
     }
 }
-// Gets the status property value. 
+// GetStatus gets the status property value. 
 func (m *PrintJob) GetStatus()(*PrintJobStatus) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *PrintJob) GetStatus()(*PrintJobStatus) {
         return m.status
     }
 }
-// Gets the tasks property value. A list of printTasks that were triggered by this print job.
+// GetTasks gets the tasks property value. A list of printTasks that were triggered by this print job.
 func (m *PrintJob) GetTasks()([]PrintTask) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *PrintJob) GetTasks()([]PrintTask) {
         return m.tasks
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -212,9 +212,7 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *PrintJob) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PrintJob) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -286,57 +284,39 @@ func (m *PrintJob) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// Sets the configuration property value. 
-// Parameters:
-//  - value : Value to set for the configuration property.
+// SetConfiguration sets the configuration property value. 
 func (m *PrintJob) SetConfiguration(value *PrintJobConfiguration)() {
     m.configuration = value
 }
-// Sets the createdBy property value. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the createdBy property.
+// SetCreatedBy sets the createdBy property value. Read-only. Nullable.
 func (m *PrintJob) SetCreatedBy(value *UserIdentity)() {
     m.createdBy = value
 }
-// Sets the createdDateTime property value. The DateTimeOffset when the job was created. Read-only.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The DateTimeOffset when the job was created. Read-only.
 func (m *PrintJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the documents property value. Read-only.
-// Parameters:
-//  - value : Value to set for the documents property.
+// SetDocuments sets the documents property value. Read-only.
 func (m *PrintJob) SetDocuments(value []PrintDocument)() {
     m.documents = value
 }
-// Sets the isFetchable property value. If true, document can be fetched by printer.
-// Parameters:
-//  - value : Value to set for the isFetchable property.
+// SetIsFetchable sets the isFetchable property value. If true, document can be fetched by printer.
 func (m *PrintJob) SetIsFetchable(value *bool)() {
     m.isFetchable = value
 }
-// Sets the redirectedFrom property value. Contains the source job URL, if the job has been redirected from another printer.
-// Parameters:
-//  - value : Value to set for the redirectedFrom property.
+// SetRedirectedFrom sets the redirectedFrom property value. Contains the source job URL, if the job has been redirected from another printer.
 func (m *PrintJob) SetRedirectedFrom(value *string)() {
     m.redirectedFrom = value
 }
-// Sets the redirectedTo property value. Contains the destination job URL, if the job has been redirected to another printer.
-// Parameters:
-//  - value : Value to set for the redirectedTo property.
+// SetRedirectedTo sets the redirectedTo property value. Contains the destination job URL, if the job has been redirected to another printer.
 func (m *PrintJob) SetRedirectedTo(value *string)() {
     m.redirectedTo = value
 }
-// Sets the status property value. 
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. 
 func (m *PrintJob) SetStatus(value *PrintJobStatus)() {
     m.status = value
 }
-// Sets the tasks property value. A list of printTasks that were triggered by this print job.
-// Parameters:
-//  - value : Value to set for the tasks property.
+// SetTasks sets the tasks property value. A list of printTasks that were triggered by this print job.
 func (m *PrintJob) SetTasks(value []PrintTask)() {
     m.tasks = value
 }

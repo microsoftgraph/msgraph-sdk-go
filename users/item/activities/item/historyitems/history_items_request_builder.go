@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\activities\{userActivity-id}\historyItems
+// historyItemsRequestBuilder builds and executes requests for operations under \users\{user-id}\activities\{userActivity-id}\historyItems
 type HistoryItemsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type HistoryItemsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// HistoryItemsRequestBuilderGetOptions options for Get
 type HistoryItemsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type HistoryItemsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// historyItemsRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 type HistoryItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type HistoryItemsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// HistoryItemsRequestBuilderPostOptions options for Post
 type HistoryItemsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ActivityHistoryItem;
@@ -56,10 +56,7 @@ type HistoryItemsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new HistoryItemsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHistoryItemsRequestBuilderInternal instantiates a new HistoryItemsRequestBuilder and sets the default values.
 func NewHistoryItemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HistoryItemsRequestBuilder) {
     m := &HistoryItemsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewHistoryItemsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new HistoryItemsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHistoryItemsRequestBuilder instantiates a new HistoryItemsRequestBuilder and sets the default values.
 func NewHistoryItemsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HistoryItemsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewHistoryItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *HistoryItemsRequestBuilder) CreateGetRequestInformation(options *HistoryItemsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *HistoryItemsRequestBuilder) CreateGetRequestInformation(options *Histor
     }
     return requestInfo, nil
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *HistoryItemsRequestBuilder) CreatePostRequestInformation(options *HistoryItemsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *HistoryItemsRequestBuilder) CreatePostRequestInformation(options *Histo
     }
     return requestInfo, nil
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-// Parameters:
-//  - options : Options for the request
+// Get optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *HistoryItemsRequestBuilder) Get(options *HistoryItemsRequestBuilderGetOptions)(*HistoryItemsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *HistoryItemsRequestBuilder) Get(options *HistoryItemsRequestBuilderGetO
     }
     return res.(*HistoryItemsResponse), nil
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-// Parameters:
-//  - options : Options for the request
+// Post optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *HistoryItemsRequestBuilder) Post(options *HistoryItemsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ActivityHistoryItem, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

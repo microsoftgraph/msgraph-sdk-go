@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\notes
+// notesRequestBuilder builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\notes
 type NotesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type NotesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// NotesRequestBuilderGetOptions options for Get
 type NotesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type NotesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of notes associcated with the request.
+// notesRequestBuilderGetQueryParameters list of notes associcated with the request.
 type NotesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type NotesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// NotesRequestBuilderPostOptions options for Post
 type NotesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthoredNote;
@@ -56,10 +56,7 @@ type NotesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new NotesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotesRequestBuilderInternal instantiates a new NotesRequestBuilder and sets the default values.
 func NewNotesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotesRequestBuilder) {
     m := &NotesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewNotesRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NotesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotesRequestBuilder instantiates a new NotesRequestBuilder and sets the default values.
 func NewNotesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNotesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of notes associcated with the request.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of notes associcated with the request.
 func (m *NotesRequestBuilder) CreateGetRequestInformation(options *NotesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *NotesRequestBuilder) CreateGetRequestInformation(options *NotesRequestB
     }
     return requestInfo, nil
 }
-// List of notes associcated with the request.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of notes associcated with the request.
 func (m *NotesRequestBuilder) CreatePostRequestInformation(options *NotesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *NotesRequestBuilder) CreatePostRequestInformation(options *NotesRequest
     }
     return requestInfo, nil
 }
-// List of notes associcated with the request.
-// Parameters:
-//  - options : Options for the request
+// Get list of notes associcated with the request.
 func (m *NotesRequestBuilder) Get(options *NotesRequestBuilderGetOptions)(*NotesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *NotesRequestBuilder) Get(options *NotesRequestBuilderGetOptions)(*Notes
     }
     return res.(*NotesResponse), nil
 }
-// List of notes associcated with the request.
-// Parameters:
-//  - options : Options for the request
+// Post list of notes associcated with the request.
 func (m *NotesRequestBuilder) Post(options *NotesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthoredNote, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

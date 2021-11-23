@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\assignments\{deviceConfigurationAssignment-id}
+// deviceConfigurationAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\assignments\{deviceConfigurationAssignment-id}
 type DeviceConfigurationAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceConfigurationAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceConfigurationAssignmentRequestBuilderDeleteOptions options for Delete
 type DeviceConfigurationAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceConfigurationAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceConfigurationAssignmentRequestBuilderGetOptions options for Get
 type DeviceConfigurationAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceConfigurationAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of assignments for the device configuration profile.
+// deviceConfigurationAssignmentRequestBuilderGetQueryParameters the list of assignments for the device configuration profile.
 type DeviceConfigurationAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceConfigurationAssignmentRequestBuilderPatchOptions options for Patch
 type DeviceConfigurationAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationAssignment;
@@ -53,10 +53,7 @@ type DeviceConfigurationAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceConfigurationAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationAssignmentRequestBuilderInternal instantiates a new DeviceConfigurationAssignmentRequestBuilder and sets the default values.
 func NewDeviceConfigurationAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationAssignmentRequestBuilder) {
     m := &DeviceConfigurationAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceConfigurationAssignmentRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceConfigurationAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationAssignmentRequestBuilder instantiates a new DeviceConfigurationAssignmentRequestBuilder and sets the default values.
 func NewDeviceConfigurationAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of assignments for the device configuration profile.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of assignments for the device configuration profile.
 func (m *DeviceConfigurationAssignmentRequestBuilder) CreateDeleteRequestInformation(options *DeviceConfigurationAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceConfigurationAssignmentRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// The list of assignments for the device configuration profile.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of assignments for the device configuration profile.
 func (m *DeviceConfigurationAssignmentRequestBuilder) CreateGetRequestInformation(options *DeviceConfigurationAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceConfigurationAssignmentRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// The list of assignments for the device configuration profile.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of assignments for the device configuration profile.
 func (m *DeviceConfigurationAssignmentRequestBuilder) CreatePatchRequestInformation(options *DeviceConfigurationAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceConfigurationAssignmentRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// The list of assignments for the device configuration profile.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of assignments for the device configuration profile.
 func (m *DeviceConfigurationAssignmentRequestBuilder) Delete(options *DeviceConfigurationAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceConfigurationAssignmentRequestBuilder) Delete(options *DeviceConf
     }
     return nil
 }
-// The list of assignments for the device configuration profile.
-// Parameters:
-//  - options : Options for the request
+// Get the list of assignments for the device configuration profile.
 func (m *DeviceConfigurationAssignmentRequestBuilder) Get(options *DeviceConfigurationAssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceConfigurationAssignmentRequestBuilder) Get(options *DeviceConfigu
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationAssignment), nil
 }
-// The list of assignments for the device configuration profile.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of assignments for the device configuration profile.
 func (m *DeviceConfigurationAssignmentRequestBuilder) Patch(options *DeviceConfigurationAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

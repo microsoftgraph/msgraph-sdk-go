@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\troubleshootingEvents\{deviceManagementTroubleshootingEvent-id}
+// deviceManagementTroubleshootingEventRequestBuilder builds and executes requests for operations under \deviceManagement\troubleshootingEvents\{deviceManagementTroubleshootingEvent-id}
 type DeviceManagementTroubleshootingEventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementTroubleshootingEventRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementTroubleshootingEventRequestBuilderDeleteOptions options for Delete
 type DeviceManagementTroubleshootingEventRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementTroubleshootingEventRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementTroubleshootingEventRequestBuilderGetOptions options for Get
 type DeviceManagementTroubleshootingEventRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementTroubleshootingEventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of troubleshooting events for the tenant.
+// deviceManagementTroubleshootingEventRequestBuilderGetQueryParameters the list of troubleshooting events for the tenant.
 type DeviceManagementTroubleshootingEventRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementTroubleshootingEventRequestBuilderPatchOptions options for Patch
 type DeviceManagementTroubleshootingEventRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementTroubleshootingEvent;
@@ -53,10 +53,7 @@ type DeviceManagementTroubleshootingEventRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementTroubleshootingEventRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementTroubleshootingEventRequestBuilderInternal instantiates a new DeviceManagementTroubleshootingEventRequestBuilder and sets the default values.
 func NewDeviceManagementTroubleshootingEventRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementTroubleshootingEventRequestBuilder) {
     m := &DeviceManagementTroubleshootingEventRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementTroubleshootingEventRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementTroubleshootingEventRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementTroubleshootingEventRequestBuilder instantiates a new DeviceManagementTroubleshootingEventRequestBuilder and sets the default values.
 func NewDeviceManagementTroubleshootingEventRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementTroubleshootingEventRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementTroubleshootingEventRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of troubleshooting events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of troubleshooting events for the tenant.
 func (m *DeviceManagementTroubleshootingEventRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementTroubleshootingEventRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementTroubleshootingEventRequestBuilder) CreateDeleteRequest
     }
     return requestInfo, nil
 }
-// The list of troubleshooting events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of troubleshooting events for the tenant.
 func (m *DeviceManagementTroubleshootingEventRequestBuilder) CreateGetRequestInformation(options *DeviceManagementTroubleshootingEventRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementTroubleshootingEventRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// The list of troubleshooting events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of troubleshooting events for the tenant.
 func (m *DeviceManagementTroubleshootingEventRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementTroubleshootingEventRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementTroubleshootingEventRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// The list of troubleshooting events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of troubleshooting events for the tenant.
 func (m *DeviceManagementTroubleshootingEventRequestBuilder) Delete(options *DeviceManagementTroubleshootingEventRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementTroubleshootingEventRequestBuilder) Delete(options *Dev
     }
     return nil
 }
-// The list of troubleshooting events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of troubleshooting events for the tenant.
 func (m *DeviceManagementTroubleshootingEventRequestBuilder) Get(options *DeviceManagementTroubleshootingEventRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementTroubleshootingEvent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementTroubleshootingEventRequestBuilder) Get(options *Device
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementTroubleshootingEvent), nil
 }
-// The list of troubleshooting events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of troubleshooting events for the tenant.
 func (m *DeviceManagementTroubleshootingEventRequestBuilder) Patch(options *DeviceManagementTroubleshootingEventRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

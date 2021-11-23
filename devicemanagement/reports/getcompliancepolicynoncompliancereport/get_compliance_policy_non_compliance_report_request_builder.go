@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getCompliancePolicyNonComplianceReport
+// getCompliancePolicyNonComplianceReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getCompliancePolicyNonComplianceReport
 type GetCompliancePolicyNonComplianceReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetCompliancePolicyNonComplianceReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetCompliancePolicyNonComplianceReportRequestBuilderPostOptions options for Post
 type GetCompliancePolicyNonComplianceReportRequestBuilderPostOptions struct {
     // 
     Body *GetCompliancePolicyNonComplianceReportRequestBody;
@@ -24,10 +24,7 @@ type GetCompliancePolicyNonComplianceReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetCompliancePolicyNonComplianceReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetCompliancePolicyNonComplianceReportRequestBuilderInternal instantiates a new GetCompliancePolicyNonComplianceReportRequestBuilder and sets the default values.
 func NewGetCompliancePolicyNonComplianceReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCompliancePolicyNonComplianceReportRequestBuilder) {
     m := &GetCompliancePolicyNonComplianceReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetCompliancePolicyNonComplianceReportRequestBuilderInternal(pathParamet
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetCompliancePolicyNonComplianceReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetCompliancePolicyNonComplianceReportRequestBuilder instantiates a new GetCompliancePolicyNonComplianceReportRequestBuilder and sets the default values.
 func NewGetCompliancePolicyNonComplianceReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCompliancePolicyNonComplianceReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetCompliancePolicyNonComplianceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getCompliancePolicyNonComplianceReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getCompliancePolicyNonComplianceReport
 func (m *GetCompliancePolicyNonComplianceReportRequestBuilder) CreatePostRequestInformation(options *GetCompliancePolicyNonComplianceReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetCompliancePolicyNonComplianceReportRequestBuilder) CreatePostRequest
     }
     return requestInfo, nil
 }
-// Invoke action getCompliancePolicyNonComplianceReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getCompliancePolicyNonComplianceReport
 func (m *GetCompliancePolicyNonComplianceReportRequestBuilder) Post(options *GetCompliancePolicyNonComplianceReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\extensionProperties
+// extensionPropertiesRequestBuilder builds and executes requests for operations under \applications\{application-id}\extensionProperties
 type ExtensionPropertiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ExtensionPropertiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ExtensionPropertiesRequestBuilderGetOptions options for Get
 type ExtensionPropertiesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ExtensionPropertiesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable.
+// extensionPropertiesRequestBuilderGetQueryParameters read-only. Nullable.
 type ExtensionPropertiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ExtensionPropertiesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ExtensionPropertiesRequestBuilderPostOptions options for Post
 type ExtensionPropertiesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExtensionProperty;
@@ -56,10 +56,7 @@ type ExtensionPropertiesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExtensionPropertiesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtensionPropertiesRequestBuilderInternal instantiates a new ExtensionPropertiesRequestBuilder and sets the default values.
 func NewExtensionPropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtensionPropertiesRequestBuilder) {
     m := &ExtensionPropertiesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewExtensionPropertiesRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExtensionPropertiesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtensionPropertiesRequestBuilder instantiates a new ExtensionPropertiesRequestBuilder and sets the default values.
 func NewExtensionPropertiesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtensionPropertiesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExtensionPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable.
 func (m *ExtensionPropertiesRequestBuilder) CreateGetRequestInformation(options *ExtensionPropertiesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ExtensionPropertiesRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation read-only. Nullable.
 func (m *ExtensionPropertiesRequestBuilder) CreatePostRequestInformation(options *ExtensionPropertiesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ExtensionPropertiesRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable.
 func (m *ExtensionPropertiesRequestBuilder) Get(options *ExtensionPropertiesRequestBuilderGetOptions)(*ExtensionPropertiesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ExtensionPropertiesRequestBuilder) Get(options *ExtensionPropertiesRequ
     }
     return res.(*ExtensionPropertiesResponse), nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post read-only. Nullable.
 func (m *ExtensionPropertiesRequestBuilder) Post(options *ExtensionPropertiesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExtensionProperty, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

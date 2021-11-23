@@ -20,7 +20,7 @@ import (
     id098e77a8f63642f05aa6cbfc83f6060b05dd7ecdc18b30cb291f7904c1efd00 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/pivottables/item"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet
+// worksheetRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet
 type WorksheetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type WorksheetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorksheetRequestBuilderDeleteOptions options for Delete
 type WorksheetRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -38,7 +38,7 @@ type WorksheetRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorksheetRequestBuilderGetOptions options for Get
 type WorksheetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -49,14 +49,14 @@ type WorksheetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
+// worksheetRequestBuilderGetQueryParameters returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
 type WorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorksheetRequestBuilderPatchOptions options for Patch
 type WorksheetRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheet;
@@ -67,19 +67,14 @@ type WorksheetRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\microsoft.graph.cell(row={row},column={column})
-// Parameters:
-//  - column : Usage: column={column}
-//  - row : Usage: row={row}
+// CellWithRowWithColumn builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\microsoft.graph.cell(row={row},column={column})
 func (m *WorksheetRequestBuilder) CellWithRowWithColumn(row *int32, column *int32)(*i64ccfbae56914e7f7a124e3677fd78e3db5b08b88d24815c9b41646d85c93fb1.CellWithRowWithColumnRequestBuilder) {
     return i64ccfbae56914e7f7a124e3677fd78e3db5b08b88d24815c9b41646d85c93fb1.NewCellWithRowWithColumnRequestBuilderInternal(m.pathParameters, m.requestAdapter, row, column);
 }
 func (m *WorksheetRequestBuilder) Charts()(*iebe192e817f0989a5ac93e7753114363de65420f7846aab0afa7c1b51c50e215.ChartsRequestBuilder) {
     return iebe192e817f0989a5ac93e7753114363de65420f7846aab0afa7c1b51c50e215.NewChartsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.names.item.worksheet.charts.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ChartsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.names.item.worksheet.charts.item collection
 func (m *WorksheetRequestBuilder) ChartsById(id string)(*ia5ecdd25c9e61362a7cab70fef1a86855b8f4b1b4d141525c20606e0826fb816.WorkbookChartRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -90,10 +85,7 @@ func (m *WorksheetRequestBuilder) ChartsById(id string)(*ia5ecdd25c9e61362a7cab7
     }
     return ia5ecdd25c9e61362a7cab70fef1a86855b8f4b1b4d141525c20606e0826fb816.NewWorkbookChartRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new WorksheetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorksheetRequestBuilderInternal instantiates a new WorksheetRequestBuilder and sets the default values.
 func NewWorksheetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorksheetRequestBuilder) {
     m := &WorksheetRequestBuilder{
     }
@@ -106,18 +98,13 @@ func NewWorksheetRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorksheetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorksheetRequestBuilder instantiates a new WorksheetRequestBuilder and sets the default values.
 func NewWorksheetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorksheetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorksheetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
 func (m *WorksheetRequestBuilder) CreateDeleteRequestInformation(options *WorksheetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,9 +121,7 @@ func (m *WorksheetRequestBuilder) CreateDeleteRequestInformation(options *Worksh
     }
     return requestInfo, nil
 }
-// Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
 func (m *WorksheetRequestBuilder) CreateGetRequestInformation(options *WorksheetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -156,9 +141,7 @@ func (m *WorksheetRequestBuilder) CreateGetRequestInformation(options *Worksheet
     }
     return requestInfo, nil
 }
-// Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
 func (m *WorksheetRequestBuilder) CreatePatchRequestInformation(options *WorksheetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -176,9 +159,7 @@ func (m *WorksheetRequestBuilder) CreatePatchRequestInformation(options *Workshe
     }
     return requestInfo, nil
 }
-// Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
 func (m *WorksheetRequestBuilder) Delete(options *WorksheetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -190,9 +171,7 @@ func (m *WorksheetRequestBuilder) Delete(options *WorksheetRequestBuilderDeleteO
     }
     return nil
 }
-// Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
 func (m *WorksheetRequestBuilder) Get(options *WorksheetRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheet, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -207,9 +186,7 @@ func (m *WorksheetRequestBuilder) Get(options *WorksheetRequestBuilderGetOptions
 func (m *WorksheetRequestBuilder) Names()(*if92dc1160b5acc1b3cff97bed31a29c0cd468493dc248cfa779cdae1a1d84751.NamesRequestBuilder) {
     return if92dc1160b5acc1b3cff97bed31a29c0cd468493dc248cfa779cdae1a1d84751.NewNamesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.names.item.worksheet.names.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// NamesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.names.item.worksheet.names.item collection
 func (m *WorksheetRequestBuilder) NamesById(id string)(*i1aaf19edcdc701f5f7ba1313e8a52938d4a98f5ee081bd238323f84d780a8220.WorkbookNamedItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -220,9 +197,7 @@ func (m *WorksheetRequestBuilder) NamesById(id string)(*i1aaf19edcdc701f5f7ba131
     }
     return i1aaf19edcdc701f5f7ba1313e8a52938d4a98f5ee081bd238323f84d780a8220.NewWorkbookNamedItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
 func (m *WorksheetRequestBuilder) Patch(options *WorksheetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -237,9 +212,7 @@ func (m *WorksheetRequestBuilder) Patch(options *WorksheetRequestBuilderPatchOpt
 func (m *WorksheetRequestBuilder) PivotTables()(*ie90ffca7b164359c033847e1f150328fd6989ad1b4e7cf52fa5d53ce6a228106.PivotTablesRequestBuilder) {
     return ie90ffca7b164359c033847e1f150328fd6989ad1b4e7cf52fa5d53ce6a228106.NewPivotTablesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.names.item.worksheet.pivotTables.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PivotTablesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.names.item.worksheet.pivotTables.item collection
 func (m *WorksheetRequestBuilder) PivotTablesById(id string)(*id098e77a8f63642f05aa6cbfc83f6060b05dd7ecdc18b30cb291f7904c1efd00.WorkbookPivotTableRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -253,22 +226,18 @@ func (m *WorksheetRequestBuilder) PivotTablesById(id string)(*id098e77a8f63642f0
 func (m *WorksheetRequestBuilder) Protection()(*i85317c503f2f27185e070ade5b9624ae780d770e19305074b565d7a00d47a3da.ProtectionRequestBuilder) {
     return i85317c503f2f27185e070ade5b9624ae780d770e19305074b565d7a00d47a3da.NewProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\microsoft.graph.range()
+// Range_escaped builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\microsoft.graph.range()
 func (m *WorksheetRequestBuilder) Range_escaped()(*i261678c5f5a15694493963fe717eabe43c4934b5327279953b86ae94225380e4.RangeRequestBuilder) {
     return i261678c5f5a15694493963fe717eabe43c4934b5327279953b86ae94225380e4.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\microsoft.graph.range(address='{address}')
-// Parameters:
-//  - address : Usage: address={address}
+// RangeWithAddress builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\microsoft.graph.range(address='{address}')
 func (m *WorksheetRequestBuilder) RangeWithAddress(address *string)(*if6887ddb306e8a1aee896bc8347e27bdd4d399126be76020ab257042ad9d47d2.RangeWithAddressRequestBuilder) {
     return if6887ddb306e8a1aee896bc8347e27bdd4d399126be76020ab257042ad9d47d2.NewRangeWithAddressRequestBuilderInternal(m.pathParameters, m.requestAdapter, address);
 }
 func (m *WorksheetRequestBuilder) Tables()(*i9ea4a635326d648cea4fd3aa2cd53ff2e732c3d50c1fffe56270a60b299c0eac.TablesRequestBuilder) {
     return i9ea4a635326d648cea4fd3aa2cd53ff2e732c3d50c1fffe56270a60b299c0eac.NewTablesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.names.item.worksheet.tables.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TablesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.names.item.worksheet.tables.item collection
 func (m *WorksheetRequestBuilder) TablesById(id string)(*i38632c08ea0ceaf6e28d20b457b81cf5c5600eb7bd7e290d1f5e6fd03843dbe8.WorkbookTableRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -279,13 +248,11 @@ func (m *WorksheetRequestBuilder) TablesById(id string)(*i38632c08ea0ceaf6e28d20
     }
     return i38632c08ea0ceaf6e28d20b457b81cf5c5600eb7bd7e290d1f5e6fd03843dbe8.NewWorkbookTableRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\microsoft.graph.usedRange()
+// UsedRange builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\microsoft.graph.usedRange()
 func (m *WorksheetRequestBuilder) UsedRange()(*id9cac5cb49a69b54bf5d8a221ad0026911c5b716d04bd5168a55b29dc6cbe016.UsedRangeRequestBuilder) {
     return id9cac5cb49a69b54bf5d8a221ad0026911c5b716d04bd5168a55b29dc6cbe016.NewUsedRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\microsoft.graph.usedRange(valuesOnly={valuesOnly})
-// Parameters:
-//  - valuesOnly : Usage: valuesOnly={valuesOnly}
+// UsedRangeWithValuesOnly builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\microsoft.graph.usedRange(valuesOnly={valuesOnly})
 func (m *WorksheetRequestBuilder) UsedRangeWithValuesOnly(valuesOnly *bool)(*ic81ca612ad48c0f47f947a769ecba949b1d9dc349a3380bf7198be7180b1de93.UsedRangeWithValuesOnlyRequestBuilder) {
     return ic81ca612ad48c0f47f947a769ecba949b1d9dc349a3380bf7198be7180b1de93.NewUsedRangeWithValuesOnlyRequestBuilderInternal(m.pathParameters, m.requestAdapter, valuesOnly);
 }

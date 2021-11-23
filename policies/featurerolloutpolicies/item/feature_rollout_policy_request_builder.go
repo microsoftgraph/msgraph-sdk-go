@@ -8,7 +8,7 @@ import (
     ifaa259a0e1cd5e2894d850f5fae0dac72a248fa7319d019f09dacc7e3865d547 "github.com/microsoftgraph/msgraph-sdk-go/policies/featurerolloutpolicies/item/appliesto/item"
 )
 
-// Builds and executes requests for operations under \policies\featureRolloutPolicies\{featureRolloutPolicy-id}
+// featureRolloutPolicyRequestBuilder builds and executes requests for operations under \policies\featureRolloutPolicies\{featureRolloutPolicy-id}
 type FeatureRolloutPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type FeatureRolloutPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// FeatureRolloutPolicyRequestBuilderDeleteOptions options for Delete
 type FeatureRolloutPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type FeatureRolloutPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// FeatureRolloutPolicyRequestBuilderGetOptions options for Get
 type FeatureRolloutPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type FeatureRolloutPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The feature rollout policy associated with a directory object.
+// featureRolloutPolicyRequestBuilderGetQueryParameters the feature rollout policy associated with a directory object.
 type FeatureRolloutPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FeatureRolloutPolicyRequestBuilderPatchOptions options for Patch
 type FeatureRolloutPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FeatureRolloutPolicy;
@@ -58,9 +58,7 @@ type FeatureRolloutPolicyRequestBuilderPatchOptions struct {
 func (m *FeatureRolloutPolicyRequestBuilder) AppliesTo()(*idd2e041f794d748418c3b9e944c3e7dd3911c8eebd0867361cfa751f9c00567c.AppliesToRequestBuilder) {
     return idd2e041f794d748418c3b9e944c3e7dd3911c8eebd0867361cfa751f9c00567c.NewAppliesToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.featureRolloutPolicies.item.appliesTo.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppliesToById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.featureRolloutPolicies.item.appliesTo.item collection
 func (m *FeatureRolloutPolicyRequestBuilder) AppliesToById(id string)(*ifaa259a0e1cd5e2894d850f5fae0dac72a248fa7319d019f09dacc7e3865d547.DirectoryObjectRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -71,10 +69,7 @@ func (m *FeatureRolloutPolicyRequestBuilder) AppliesToById(id string)(*ifaa259a0
     }
     return ifaa259a0e1cd5e2894d850f5fae0dac72a248fa7319d019f09dacc7e3865d547.NewDirectoryObjectRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new FeatureRolloutPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFeatureRolloutPolicyRequestBuilderInternal instantiates a new FeatureRolloutPolicyRequestBuilder and sets the default values.
 func NewFeatureRolloutPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FeatureRolloutPolicyRequestBuilder) {
     m := &FeatureRolloutPolicyRequestBuilder{
     }
@@ -87,18 +82,13 @@ func NewFeatureRolloutPolicyRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FeatureRolloutPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFeatureRolloutPolicyRequestBuilder instantiates a new FeatureRolloutPolicyRequestBuilder and sets the default values.
 func NewFeatureRolloutPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FeatureRolloutPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFeatureRolloutPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The feature rollout policy associated with a directory object.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the feature rollout policy associated with a directory object.
 func (m *FeatureRolloutPolicyRequestBuilder) CreateDeleteRequestInformation(options *FeatureRolloutPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,9 +105,7 @@ func (m *FeatureRolloutPolicyRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The feature rollout policy associated with a directory object.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the feature rollout policy associated with a directory object.
 func (m *FeatureRolloutPolicyRequestBuilder) CreateGetRequestInformation(options *FeatureRolloutPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *FeatureRolloutPolicyRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// The feature rollout policy associated with a directory object.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the feature rollout policy associated with a directory object.
 func (m *FeatureRolloutPolicyRequestBuilder) CreatePatchRequestInformation(options *FeatureRolloutPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,9 +143,7 @@ func (m *FeatureRolloutPolicyRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The feature rollout policy associated with a directory object.
-// Parameters:
-//  - options : Options for the request
+// Delete the feature rollout policy associated with a directory object.
 func (m *FeatureRolloutPolicyRequestBuilder) Delete(options *FeatureRolloutPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *FeatureRolloutPolicyRequestBuilder) Delete(options *FeatureRolloutPolic
     }
     return nil
 }
-// The feature rollout policy associated with a directory object.
-// Parameters:
-//  - options : Options for the request
+// Get the feature rollout policy associated with a directory object.
 func (m *FeatureRolloutPolicyRequestBuilder) Get(options *FeatureRolloutPolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FeatureRolloutPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -185,9 +167,7 @@ func (m *FeatureRolloutPolicyRequestBuilder) Get(options *FeatureRolloutPolicyRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FeatureRolloutPolicy), nil
 }
-// The feature rollout policy associated with a directory object.
-// Parameters:
-//  - options : Options for the request
+// Patch the feature rollout policy associated with a directory object.
 func (m *FeatureRolloutPolicyRequestBuilder) Patch(options *FeatureRolloutPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// provisioningErrorInfo 
 type ProvisioningErrorInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type ProvisioningErrorInfo struct {
     // Provides the resolution for the corresponding error.
     recommendedAction *string;
 }
-// Instantiates a new provisioningErrorInfo and sets the default values.
+// NewProvisioningErrorInfo instantiates a new provisioningErrorInfo and sets the default values.
 func NewProvisioningErrorInfo()(*ProvisioningErrorInfo) {
     m := &ProvisioningErrorInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisioningErrorInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *ProvisioningErrorInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the additionalDetails property value. Additional details in case of error.
+// GetAdditionalDetails gets the additionalDetails property value. Additional details in case of error.
 func (m *ProvisioningErrorInfo) GetAdditionalDetails()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *ProvisioningErrorInfo) GetAdditionalDetails()(*string) {
         return m.additionalDetails
     }
 }
-// Gets the errorCategory property value. Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
+// GetErrorCategory gets the errorCategory property value. Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
 func (m *ProvisioningErrorInfo) GetErrorCategory()(*ProvisioningStatusErrorCategory) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *ProvisioningErrorInfo) GetErrorCategory()(*ProvisioningStatusErrorCateg
         return m.errorCategory
     }
 }
-// Gets the errorCode property value. Unique error code if any occurred. Learn more
+// GetErrorCode gets the errorCode property value. Unique error code if any occurred. Learn more
 func (m *ProvisioningErrorInfo) GetErrorCode()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *ProvisioningErrorInfo) GetErrorCode()(*string) {
         return m.errorCode
     }
 }
-// Gets the reason property value. Summarizes the status and describes why the status happened.
+// GetReason gets the reason property value. Summarizes the status and describes why the status happened.
 func (m *ProvisioningErrorInfo) GetReason()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *ProvisioningErrorInfo) GetReason()(*string) {
         return m.reason
     }
 }
-// Gets the recommendedAction property value. Provides the resolution for the corresponding error.
+// GetRecommendedAction gets the recommendedAction property value. Provides the resolution for the corresponding error.
 func (m *ProvisioningErrorInfo) GetRecommendedAction()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *ProvisioningErrorInfo) GetRecommendedAction()(*string) {
         return m.recommendedAction
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["additionalDetails"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,9 +133,7 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
 func (m *ProvisioningErrorInfo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ProvisioningErrorInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("additionalDetails", m.GetAdditionalDetails())
@@ -176,39 +174,27 @@ func (m *ProvisioningErrorInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisioningErrorInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the additionalDetails property value. Additional details in case of error.
-// Parameters:
-//  - value : Value to set for the additionalDetails property.
+// SetAdditionalDetails sets the additionalDetails property value. Additional details in case of error.
 func (m *ProvisioningErrorInfo) SetAdditionalDetails(value *string)() {
     m.additionalDetails = value
 }
-// Sets the errorCategory property value. Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
-// Parameters:
-//  - value : Value to set for the errorCategory property.
+// SetErrorCategory sets the errorCategory property value. Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
 func (m *ProvisioningErrorInfo) SetErrorCategory(value *ProvisioningStatusErrorCategory)() {
     m.errorCategory = value
 }
-// Sets the errorCode property value. Unique error code if any occurred. Learn more
-// Parameters:
-//  - value : Value to set for the errorCode property.
+// SetErrorCode sets the errorCode property value. Unique error code if any occurred. Learn more
 func (m *ProvisioningErrorInfo) SetErrorCode(value *string)() {
     m.errorCode = value
 }
-// Sets the reason property value. Summarizes the status and describes why the status happened.
-// Parameters:
-//  - value : Value to set for the reason property.
+// SetReason sets the reason property value. Summarizes the status and describes why the status happened.
 func (m *ProvisioningErrorInfo) SetReason(value *string)() {
     m.reason = value
 }
-// Sets the recommendedAction property value. Provides the resolution for the corresponding error.
-// Parameters:
-//  - value : Value to set for the recommendedAction property.
+// SetRecommendedAction sets the recommendedAction property value. Provides the resolution for the corresponding error.
 func (m *ProvisioningErrorInfo) SetRecommendedAction(value *string)() {
     m.recommendedAction = value
 }

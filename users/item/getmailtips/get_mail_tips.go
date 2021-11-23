@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// getMailTips 
 type GetMailTips struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -34,14 +34,14 @@ type GetMailTips struct {
     // The number of members if the recipient is a distribution list.
     totalMemberCount *int32;
 }
-// Instantiates a new getMailTips and sets the default values.
+// NewGetMailTips instantiates a new getMailTips and sets the default values.
 func NewGetMailTips()(*GetMailTips) {
     m := &GetMailTips{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetMailTips) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *GetMailTips) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the automaticReplies property value. Mail tips for automatic reply if it has been set up by the recipient.
+// GetAutomaticReplies gets the automaticReplies property value. Mail tips for automatic reply if it has been set up by the recipient.
 func (m *GetMailTips) GetAutomaticReplies()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AutomaticRepliesMailTips) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *GetMailTips) GetAutomaticReplies()(*i4a838ef194e4c99e9f2c63ba10dab9cb12
         return m.automaticReplies
     }
 }
-// Gets the customMailTip property value. A custom mail tip that can be set on the recipient's mailbox.
+// GetCustomMailTip gets the customMailTip property value. A custom mail tip that can be set on the recipient's mailbox.
 func (m *GetMailTips) GetCustomMailTip()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *GetMailTips) GetCustomMailTip()(*string) {
         return m.customMailTip
     }
 }
-// Gets the deliveryRestricted property value. Whether the recipient's mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
+// GetDeliveryRestricted gets the deliveryRestricted property value. Whether the recipient's mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
 func (m *GetMailTips) GetDeliveryRestricted()(*bool) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *GetMailTips) GetDeliveryRestricted()(*bool) {
         return m.deliveryRestricted
     }
 }
-// Gets the emailAddress property value. The email address of the recipient to get mailtips for.
+// GetEmailAddress gets the emailAddress property value. The email address of the recipient to get mailtips for.
 func (m *GetMailTips) GetEmailAddress()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EmailAddress) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *GetMailTips) GetEmailAddress()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89
         return m.emailAddress
     }
 }
-// Gets the error property value. Errors that occur during the getMailTips action.
+// GetError gets the error property value. Errors that occur during the getMailTips action.
 func (m *GetMailTips) GetError()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailTipsError) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *GetMailTips) GetError()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4
         return m.error
     }
 }
-// Gets the externalMemberCount property value. The number of external members if the recipient is a distribution list.
+// GetExternalMemberCount gets the externalMemberCount property value. The number of external members if the recipient is a distribution list.
 func (m *GetMailTips) GetExternalMemberCount()(*int32) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *GetMailTips) GetExternalMemberCount()(*int32) {
         return m.externalMemberCount
     }
 }
-// Gets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
+// GetIsModerated gets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
 func (m *GetMailTips) GetIsModerated()(*bool) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *GetMailTips) GetIsModerated()(*bool) {
         return m.isModerated
     }
 }
-// Gets the mailboxFull property value. The mailbox full status of the recipient.
+// GetMailboxFull gets the mailboxFull property value. The mailbox full status of the recipient.
 func (m *GetMailTips) GetMailboxFull()(*bool) {
     if m == nil {
         return nil
@@ -113,7 +113,7 @@ func (m *GetMailTips) GetMailboxFull()(*bool) {
         return m.mailboxFull
     }
 }
-// Gets the maxMessageSize property value. The maximum message size that has been configured for the recipient's organization or mailbox.
+// GetMaxMessageSize gets the maxMessageSize property value. The maximum message size that has been configured for the recipient's organization or mailbox.
 func (m *GetMailTips) GetMaxMessageSize()(*int32) {
     if m == nil {
         return nil
@@ -121,7 +121,7 @@ func (m *GetMailTips) GetMaxMessageSize()(*int32) {
         return m.maxMessageSize
     }
 }
-// Gets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
+// GetRecipientScope gets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
 func (m *GetMailTips) GetRecipientScope()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecipientScopeType) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *GetMailTips) GetRecipientScope()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a
         return m.recipientScope
     }
 }
-// Gets the recipientSuggestions property value. Recipients suggested based on previous contexts where they appear in the same message.
+// GetRecipientSuggestions gets the recipientSuggestions property value. Recipients suggested based on previous contexts where they appear in the same message.
 func (m *GetMailTips) GetRecipientSuggestions()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient) {
     if m == nil {
         return nil
@@ -137,7 +137,7 @@ func (m *GetMailTips) GetRecipientSuggestions()([]i4a838ef194e4c99e9f2c63ba10dab
         return m.recipientSuggestions
     }
 }
-// Gets the totalMemberCount property value. The number of members if the recipient is a distribution list.
+// GetTotalMemberCount gets the totalMemberCount property value. The number of members if the recipient is a distribution list.
 func (m *GetMailTips) GetTotalMemberCount()(*int32) {
     if m == nil {
         return nil
@@ -145,7 +145,7 @@ func (m *GetMailTips) GetTotalMemberCount()(*int32) {
         return m.totalMemberCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *GetMailTips) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["automaticReplies"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -278,9 +278,7 @@ func (m *GetMailTips) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *GetMailTips) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *GetMailTips) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("automaticReplies", m.GetAutomaticReplies())
@@ -368,81 +366,55 @@ func (m *GetMailTips) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetMailTips) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the automaticReplies property value. Mail tips for automatic reply if it has been set up by the recipient.
-// Parameters:
-//  - value : Value to set for the automaticReplies property.
+// SetAutomaticReplies sets the automaticReplies property value. Mail tips for automatic reply if it has been set up by the recipient.
 func (m *GetMailTips) SetAutomaticReplies(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AutomaticRepliesMailTips)() {
     m.automaticReplies = value
 }
-// Sets the customMailTip property value. A custom mail tip that can be set on the recipient's mailbox.
-// Parameters:
-//  - value : Value to set for the customMailTip property.
+// SetCustomMailTip sets the customMailTip property value. A custom mail tip that can be set on the recipient's mailbox.
 func (m *GetMailTips) SetCustomMailTip(value *string)() {
     m.customMailTip = value
 }
-// Sets the deliveryRestricted property value. Whether the recipient's mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
-// Parameters:
-//  - value : Value to set for the deliveryRestricted property.
+// SetDeliveryRestricted sets the deliveryRestricted property value. Whether the recipient's mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
 func (m *GetMailTips) SetDeliveryRestricted(value *bool)() {
     m.deliveryRestricted = value
 }
-// Sets the emailAddress property value. The email address of the recipient to get mailtips for.
-// Parameters:
-//  - value : Value to set for the emailAddress property.
+// SetEmailAddress sets the emailAddress property value. The email address of the recipient to get mailtips for.
 func (m *GetMailTips) SetEmailAddress(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EmailAddress)() {
     m.emailAddress = value
 }
-// Sets the error property value. Errors that occur during the getMailTips action.
-// Parameters:
-//  - value : Value to set for the error property.
+// SetError sets the error property value. Errors that occur during the getMailTips action.
 func (m *GetMailTips) SetError(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailTipsError)() {
     m.error = value
 }
-// Sets the externalMemberCount property value. The number of external members if the recipient is a distribution list.
-// Parameters:
-//  - value : Value to set for the externalMemberCount property.
+// SetExternalMemberCount sets the externalMemberCount property value. The number of external members if the recipient is a distribution list.
 func (m *GetMailTips) SetExternalMemberCount(value *int32)() {
     m.externalMemberCount = value
 }
-// Sets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
-// Parameters:
-//  - value : Value to set for the isModerated property.
+// SetIsModerated sets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
 func (m *GetMailTips) SetIsModerated(value *bool)() {
     m.isModerated = value
 }
-// Sets the mailboxFull property value. The mailbox full status of the recipient.
-// Parameters:
-//  - value : Value to set for the mailboxFull property.
+// SetMailboxFull sets the mailboxFull property value. The mailbox full status of the recipient.
 func (m *GetMailTips) SetMailboxFull(value *bool)() {
     m.mailboxFull = value
 }
-// Sets the maxMessageSize property value. The maximum message size that has been configured for the recipient's organization or mailbox.
-// Parameters:
-//  - value : Value to set for the maxMessageSize property.
+// SetMaxMessageSize sets the maxMessageSize property value. The maximum message size that has been configured for the recipient's organization or mailbox.
 func (m *GetMailTips) SetMaxMessageSize(value *int32)() {
     m.maxMessageSize = value
 }
-// Sets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
-// Parameters:
-//  - value : Value to set for the recipientScope property.
+// SetRecipientScope sets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
 func (m *GetMailTips) SetRecipientScope(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecipientScopeType)() {
     m.recipientScope = value
 }
-// Sets the recipientSuggestions property value. Recipients suggested based on previous contexts where they appear in the same message.
-// Parameters:
-//  - value : Value to set for the recipientSuggestions property.
+// SetRecipientSuggestions sets the recipientSuggestions property value. Recipients suggested based on previous contexts where they appear in the same message.
 func (m *GetMailTips) SetRecipientSuggestions(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient)() {
     m.recipientSuggestions = value
 }
-// Sets the totalMemberCount property value. The number of members if the recipient is a distribution list.
-// Parameters:
-//  - value : Value to set for the totalMemberCount property.
+// SetTotalMemberCount sets the totalMemberCount property value. The number of members if the recipient is a distribution list.
 func (m *GetMailTips) SetTotalMemberCount(value *int32)() {
     m.totalMemberCount = value
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// subscribedSku 
 type SubscribedSku struct {
     Entity
     // For example, 'User' or 'Company'.
@@ -22,14 +22,14 @@ type SubscribedSku struct {
     // The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
     skuPartNumber *string;
 }
-// Instantiates a new subscribedSku and sets the default values.
+// NewSubscribedSku instantiates a new subscribedSku and sets the default values.
 func NewSubscribedSku()(*SubscribedSku) {
     m := &SubscribedSku{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the appliesTo property value. For example, 'User' or 'Company'.
+// GetAppliesTo gets the appliesTo property value. For example, 'User' or 'Company'.
 func (m *SubscribedSku) GetAppliesTo()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *SubscribedSku) GetAppliesTo()(*string) {
         return m.appliesTo
     }
 }
-// Gets the capabilityStatus property value. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
+// GetCapabilityStatus gets the capabilityStatus property value. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
 func (m *SubscribedSku) GetCapabilityStatus()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *SubscribedSku) GetCapabilityStatus()(*string) {
         return m.capabilityStatus
     }
 }
-// Gets the consumedUnits property value. The number of licenses that have been assigned.
+// GetConsumedUnits gets the consumedUnits property value. The number of licenses that have been assigned.
 func (m *SubscribedSku) GetConsumedUnits()(*int32) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *SubscribedSku) GetConsumedUnits()(*int32) {
         return m.consumedUnits
     }
 }
-// Gets the prepaidUnits property value. Information about the number and status of prepaid licenses.
+// GetPrepaidUnits gets the prepaidUnits property value. Information about the number and status of prepaid licenses.
 func (m *SubscribedSku) GetPrepaidUnits()(*LicenseUnitsDetail) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *SubscribedSku) GetPrepaidUnits()(*LicenseUnitsDetail) {
         return m.prepaidUnits
     }
 }
-// Gets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable
+// GetServicePlans gets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable
 func (m *SubscribedSku) GetServicePlans()([]ServicePlanInfo) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *SubscribedSku) GetServicePlans()([]ServicePlanInfo) {
         return m.servicePlans
     }
 }
-// Gets the skuId property value. The unique identifier (GUID) for the service SKU.
+// GetSkuId gets the skuId property value. The unique identifier (GUID) for the service SKU.
 func (m *SubscribedSku) GetSkuId()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *SubscribedSku) GetSkuId()(*string) {
         return m.skuId
     }
 }
-// Gets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
+// GetSkuPartNumber gets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
 func (m *SubscribedSku) GetSkuPartNumber()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *SubscribedSku) GetSkuPartNumber()(*string) {
         return m.skuPartNumber
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appliesTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -167,9 +167,7 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *SubscribedSku) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SubscribedSku) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -224,45 +222,31 @@ func (m *SubscribedSku) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the appliesTo property value. For example, 'User' or 'Company'.
-// Parameters:
-//  - value : Value to set for the appliesTo property.
+// SetAppliesTo sets the appliesTo property value. For example, 'User' or 'Company'.
 func (m *SubscribedSku) SetAppliesTo(value *string)() {
     m.appliesTo = value
 }
-// Sets the capabilityStatus property value. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
-// Parameters:
-//  - value : Value to set for the capabilityStatus property.
+// SetCapabilityStatus sets the capabilityStatus property value. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
 func (m *SubscribedSku) SetCapabilityStatus(value *string)() {
     m.capabilityStatus = value
 }
-// Sets the consumedUnits property value. The number of licenses that have been assigned.
-// Parameters:
-//  - value : Value to set for the consumedUnits property.
+// SetConsumedUnits sets the consumedUnits property value. The number of licenses that have been assigned.
 func (m *SubscribedSku) SetConsumedUnits(value *int32)() {
     m.consumedUnits = value
 }
-// Sets the prepaidUnits property value. Information about the number and status of prepaid licenses.
-// Parameters:
-//  - value : Value to set for the prepaidUnits property.
+// SetPrepaidUnits sets the prepaidUnits property value. Information about the number and status of prepaid licenses.
 func (m *SubscribedSku) SetPrepaidUnits(value *LicenseUnitsDetail)() {
     m.prepaidUnits = value
 }
-// Sets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable
-// Parameters:
-//  - value : Value to set for the servicePlans property.
+// SetServicePlans sets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable
 func (m *SubscribedSku) SetServicePlans(value []ServicePlanInfo)() {
     m.servicePlans = value
 }
-// Sets the skuId property value. The unique identifier (GUID) for the service SKU.
-// Parameters:
-//  - value : Value to set for the skuId property.
+// SetSkuId sets the skuId property value. The unique identifier (GUID) for the service SKU.
 func (m *SubscribedSku) SetSkuId(value *string)() {
     m.skuId = value
 }
-// Sets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
-// Parameters:
-//  - value : Value to set for the skuPartNumber property.
+// SetSkuPartNumber sets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
 func (m *SubscribedSku) SetSkuPartNumber(value *string)() {
     m.skuPartNumber = value
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceComplianceScheduledActionForRule 
 type DeviceComplianceScheduledActionForRule struct {
     Entity
     // Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
@@ -12,14 +12,14 @@ type DeviceComplianceScheduledActionForRule struct {
     // The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
     scheduledActionConfigurations []DeviceComplianceActionItem;
 }
-// Instantiates a new deviceComplianceScheduledActionForRule and sets the default values.
+// NewDeviceComplianceScheduledActionForRule instantiates a new deviceComplianceScheduledActionForRule and sets the default values.
 func NewDeviceComplianceScheduledActionForRule()(*DeviceComplianceScheduledActionForRule) {
     m := &DeviceComplianceScheduledActionForRule{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the ruleName property value. Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
+// GetRuleName gets the ruleName property value. Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
 func (m *DeviceComplianceScheduledActionForRule) GetRuleName()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *DeviceComplianceScheduledActionForRule) GetRuleName()(*string) {
         return m.ruleName
     }
 }
-// Gets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+// GetScheduledActionConfigurations gets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 func (m *DeviceComplianceScheduledActionForRule) GetScheduledActionConfigurations()([]DeviceComplianceActionItem) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *DeviceComplianceScheduledActionForRule) GetScheduledActionConfiguration
         return m.scheduledActionConfigurations
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceScheduledActionForRule) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["ruleName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -67,9 +67,7 @@ func (m *DeviceComplianceScheduledActionForRule) GetFieldDeserializers()(map[str
 func (m *DeviceComplianceScheduledActionForRule) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceComplianceScheduledActionForRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -94,15 +92,11 @@ func (m *DeviceComplianceScheduledActionForRule) Serialize(writer i04eb5309aeaaf
     }
     return nil
 }
-// Sets the ruleName property value. Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
-// Parameters:
-//  - value : Value to set for the ruleName property.
+// SetRuleName sets the ruleName property value. Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
 func (m *DeviceComplianceScheduledActionForRule) SetRuleName(value *string)() {
     m.ruleName = value
 }
-// Sets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-// Parameters:
-//  - value : Value to set for the scheduledActionConfigurations property.
+// SetScheduledActionConfigurations sets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 func (m *DeviceComplianceScheduledActionForRule) SetScheduledActionConfigurations(value []DeviceComplianceActionItem)() {
     m.scheduledActionConfigurations = value
 }

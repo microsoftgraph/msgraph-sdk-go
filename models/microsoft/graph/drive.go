@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// drive 
 type Drive struct {
     BaseItem
     // Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
@@ -30,14 +30,14 @@ type Drive struct {
     // If present, indicates that this is a system-managed drive. Read-only.
     system *SystemFacet;
 }
-// Instantiates a new drive and sets the default values.
+// NewDrive instantiates a new drive and sets the default values.
 func NewDrive()(*Drive) {
     m := &Drive{
         BaseItem: *NewBaseItem(),
     }
     return m
 }
-// Gets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// GetBundles gets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 func (m *Drive) GetBundles()([]DriveItem) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *Drive) GetBundles()([]DriveItem) {
         return m.bundles
     }
 }
-// Gets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+// GetDriveType gets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
 func (m *Drive) GetDriveType()(*string) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *Drive) GetDriveType()(*string) {
         return m.driveType
     }
 }
-// Gets the following property value. The list of items the user is following. Only in OneDrive for Business.
+// GetFollowing gets the following property value. The list of items the user is following. Only in OneDrive for Business.
 func (m *Drive) GetFollowing()([]DriveItem) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *Drive) GetFollowing()([]DriveItem) {
         return m.following
     }
 }
-// Gets the items property value. All items contained in the drive. Read-only. Nullable.
+// GetItems gets the items property value. All items contained in the drive. Read-only. Nullable.
 func (m *Drive) GetItems()([]DriveItem) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *Drive) GetItems()([]DriveItem) {
         return m.items
     }
 }
-// Gets the list property value. For drives in SharePoint, the underlying document library list. Read-only. Nullable.
+// GetList gets the list property value. For drives in SharePoint, the underlying document library list. Read-only. Nullable.
 func (m *Drive) GetList()(*List) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *Drive) GetList()(*List) {
         return m.list
     }
 }
-// Gets the owner property value. Optional. The user account that owns the drive. Read-only.
+// GetOwner gets the owner property value. Optional. The user account that owns the drive. Read-only.
 func (m *Drive) GetOwner()(*IdentitySet) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *Drive) GetOwner()(*IdentitySet) {
         return m.owner
     }
 }
-// Gets the quota property value. Optional. Information about the drive's storage space quota. Read-only.
+// GetQuota gets the quota property value. Optional. Information about the drive's storage space quota. Read-only.
 func (m *Drive) GetQuota()(*Quota) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *Drive) GetQuota()(*Quota) {
         return m.quota
     }
 }
-// Gets the root property value. The root folder of the drive. Read-only.
+// GetRoot gets the root property value. The root folder of the drive. Read-only.
 func (m *Drive) GetRoot()(*DriveItem) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *Drive) GetRoot()(*DriveItem) {
         return m.root
     }
 }
-// Gets the sharePointIds property value. 
+// GetSharePointIds gets the sharePointIds property value. 
 func (m *Drive) GetSharePointIds()(*SharepointIds) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *Drive) GetSharePointIds()(*SharepointIds) {
         return m.sharePointIds
     }
 }
-// Gets the special property value. Collection of common folders available in OneDrive. Read-only. Nullable.
+// GetSpecial gets the special property value. Collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *Drive) GetSpecial()([]DriveItem) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *Drive) GetSpecial()([]DriveItem) {
         return m.special
     }
 }
-// Gets the system property value. If present, indicates that this is a system-managed drive. Read-only.
+// GetSystem gets the system property value. If present, indicates that this is a system-managed drive. Read-only.
 func (m *Drive) GetSystem()(*SystemFacet) {
     if m == nil {
         return nil
@@ -125,7 +125,7 @@ func (m *Drive) GetSystem()(*SystemFacet) {
         return m.system
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Drive) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
     res["bundles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -259,9 +259,7 @@ func (m *Drive) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Drive) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Drive) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.BaseItem.Serialize(writer)
     if err != nil {
@@ -355,69 +353,47 @@ func (m *Drive) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
-// Sets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
-// Parameters:
-//  - value : Value to set for the bundles property.
+// SetBundles sets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 func (m *Drive) SetBundles(value []DriveItem)() {
     m.bundles = value
 }
-// Sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
-// Parameters:
-//  - value : Value to set for the driveType property.
+// SetDriveType sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
 func (m *Drive) SetDriveType(value *string)() {
     m.driveType = value
 }
-// Sets the following property value. The list of items the user is following. Only in OneDrive for Business.
-// Parameters:
-//  - value : Value to set for the following property.
+// SetFollowing sets the following property value. The list of items the user is following. Only in OneDrive for Business.
 func (m *Drive) SetFollowing(value []DriveItem)() {
     m.following = value
 }
-// Sets the items property value. All items contained in the drive. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the items property.
+// SetItems sets the items property value. All items contained in the drive. Read-only. Nullable.
 func (m *Drive) SetItems(value []DriveItem)() {
     m.items = value
 }
-// Sets the list property value. For drives in SharePoint, the underlying document library list. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the list property.
+// SetList sets the list property value. For drives in SharePoint, the underlying document library list. Read-only. Nullable.
 func (m *Drive) SetList(value *List)() {
     m.list = value
 }
-// Sets the owner property value. Optional. The user account that owns the drive. Read-only.
-// Parameters:
-//  - value : Value to set for the owner property.
+// SetOwner sets the owner property value. Optional. The user account that owns the drive. Read-only.
 func (m *Drive) SetOwner(value *IdentitySet)() {
     m.owner = value
 }
-// Sets the quota property value. Optional. Information about the drive's storage space quota. Read-only.
-// Parameters:
-//  - value : Value to set for the quota property.
+// SetQuota sets the quota property value. Optional. Information about the drive's storage space quota. Read-only.
 func (m *Drive) SetQuota(value *Quota)() {
     m.quota = value
 }
-// Sets the root property value. The root folder of the drive. Read-only.
-// Parameters:
-//  - value : Value to set for the root property.
+// SetRoot sets the root property value. The root folder of the drive. Read-only.
 func (m *Drive) SetRoot(value *DriveItem)() {
     m.root = value
 }
-// Sets the sharePointIds property value. 
-// Parameters:
-//  - value : Value to set for the sharePointIds property.
+// SetSharePointIds sets the sharePointIds property value. 
 func (m *Drive) SetSharePointIds(value *SharepointIds)() {
     m.sharePointIds = value
 }
-// Sets the special property value. Collection of common folders available in OneDrive. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the special property.
+// SetSpecial sets the special property value. Collection of common folders available in OneDrive. Read-only. Nullable.
 func (m *Drive) SetSpecial(value []DriveItem)() {
     m.special = value
 }
-// Sets the system property value. If present, indicates that this is a system-managed drive. Read-only.
-// Parameters:
-//  - value : Value to set for the system property.
+// SetSystem sets the system property value. If present, indicates that this is a system-managed drive. Read-only.
 func (m *Drive) SetSystem(value *SystemFacet)() {
     m.system = value
 }

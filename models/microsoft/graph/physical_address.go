@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// physicalAddress 
 type PhysicalAddress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type PhysicalAddress struct {
     // The street.
     street *string;
 }
-// Instantiates a new physicalAddress and sets the default values.
+// NewPhysicalAddress instantiates a new physicalAddress and sets the default values.
 func NewPhysicalAddress()(*PhysicalAddress) {
     m := &PhysicalAddress{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PhysicalAddress) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *PhysicalAddress) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the city property value. The city.
+// GetCity gets the city property value. The city.
 func (m *PhysicalAddress) GetCity()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *PhysicalAddress) GetCity()(*string) {
         return m.city
     }
 }
-// Gets the countryOrRegion property value. The country or region. It's a free-format string value, for example, 'United States'.
+// GetCountryOrRegion gets the countryOrRegion property value. The country or region. It's a free-format string value, for example, 'United States'.
 func (m *PhysicalAddress) GetCountryOrRegion()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *PhysicalAddress) GetCountryOrRegion()(*string) {
         return m.countryOrRegion
     }
 }
-// Gets the postalCode property value. The postal code.
+// GetPostalCode gets the postalCode property value. The postal code.
 func (m *PhysicalAddress) GetPostalCode()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *PhysicalAddress) GetPostalCode()(*string) {
         return m.postalCode
     }
 }
-// Gets the state property value. The state.
+// GetState gets the state property value. The state.
 func (m *PhysicalAddress) GetState()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *PhysicalAddress) GetState()(*string) {
         return m.state
     }
 }
-// Gets the street property value. The street.
+// GetStreet gets the street property value. The street.
 func (m *PhysicalAddress) GetStreet()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *PhysicalAddress) GetStreet()(*string) {
         return m.street
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PhysicalAddress) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["city"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,9 +132,7 @@ func (m *PhysicalAddress) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *PhysicalAddress) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PhysicalAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("city", m.GetCity())
@@ -174,39 +172,27 @@ func (m *PhysicalAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PhysicalAddress) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the city property value. The city.
-// Parameters:
-//  - value : Value to set for the city property.
+// SetCity sets the city property value. The city.
 func (m *PhysicalAddress) SetCity(value *string)() {
     m.city = value
 }
-// Sets the countryOrRegion property value. The country or region. It's a free-format string value, for example, 'United States'.
-// Parameters:
-//  - value : Value to set for the countryOrRegion property.
+// SetCountryOrRegion sets the countryOrRegion property value. The country or region. It's a free-format string value, for example, 'United States'.
 func (m *PhysicalAddress) SetCountryOrRegion(value *string)() {
     m.countryOrRegion = value
 }
-// Sets the postalCode property value. The postal code.
-// Parameters:
-//  - value : Value to set for the postalCode property.
+// SetPostalCode sets the postalCode property value. The postal code.
 func (m *PhysicalAddress) SetPostalCode(value *string)() {
     m.postalCode = value
 }
-// Sets the state property value. The state.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. The state.
 func (m *PhysicalAddress) SetState(value *string)() {
     m.state = value
 }
-// Sets the street property value. The street.
-// Parameters:
-//  - value : Value to set for the street property.
+// SetStreet sets the street property value. The street.
 func (m *PhysicalAddress) SetStreet(value *string)() {
     m.street = value
 }

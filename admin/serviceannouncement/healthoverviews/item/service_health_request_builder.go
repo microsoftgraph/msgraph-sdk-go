@@ -8,7 +8,7 @@ import (
     i6e1a2f8712e9f578e838fffdb3afa8eec075e09a4eb6f822a8b0041305d14e5f "github.com/microsoftgraph/msgraph-sdk-go/admin/serviceannouncement/healthoverviews/item/issues/item"
 )
 
-// Builds and executes requests for operations under \admin\serviceAnnouncement\healthOverviews\{serviceHealth-id}
+// serviceHealthRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\healthOverviews\{serviceHealth-id}
 type ServiceHealthRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ServiceHealthRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ServiceHealthRequestBuilderDeleteOptions options for Delete
 type ServiceHealthRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ServiceHealthRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ServiceHealthRequestBuilderGetOptions options for Get
 type ServiceHealthRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type ServiceHealthRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
+// serviceHealthRequestBuilderGetQueryParameters a collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 type ServiceHealthRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ServiceHealthRequestBuilderPatchOptions options for Patch
 type ServiceHealthRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealth;
@@ -55,10 +55,7 @@ type ServiceHealthRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ServiceHealthRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServiceHealthRequestBuilderInternal instantiates a new ServiceHealthRequestBuilder and sets the default values.
 func NewServiceHealthRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServiceHealthRequestBuilder) {
     m := &ServiceHealthRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewServiceHealthRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ServiceHealthRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServiceHealthRequestBuilder instantiates a new ServiceHealthRequestBuilder and sets the default values.
 func NewServiceHealthRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServiceHealthRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServiceHealthRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceHealthRequestBuilder) CreateDeleteRequestInformation(options *ServiceHealthRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *ServiceHealthRequestBuilder) CreateDeleteRequestInformation(options *Se
     }
     return requestInfo, nil
 }
-// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceHealthRequestBuilder) CreateGetRequestInformation(options *ServiceHealthRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ServiceHealthRequestBuilder) CreateGetRequestInformation(options *Servi
     }
     return requestInfo, nil
 }
-// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceHealthRequestBuilder) CreatePatchRequestInformation(options *ServiceHealthRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *ServiceHealthRequestBuilder) CreatePatchRequestInformation(options *Ser
     }
     return requestInfo, nil
 }
-// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceHealthRequestBuilder) Delete(options *ServiceHealthRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *ServiceHealthRequestBuilder) Delete(options *ServiceHealthRequestBuilde
     }
     return nil
 }
-// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceHealthRequestBuilder) Get(options *ServiceHealthRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealth, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *ServiceHealthRequestBuilder) Get(options *ServiceHealthRequestBuilderGe
 func (m *ServiceHealthRequestBuilder) Issues()(*i354ddacdf1a2eb0d22ba38e8550f9567f1e9d2448c9847848c1e2777b81e9897.IssuesRequestBuilder) {
     return i354ddacdf1a2eb0d22ba38e8550f9567f1e9d2448c9847848c1e2777b81e9897.NewIssuesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.admin.serviceAnnouncement.healthOverviews.item.issues.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// IssuesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.admin.serviceAnnouncement.healthOverviews.item.issues.item collection
 func (m *ServiceHealthRequestBuilder) IssuesById(id string)(*i6e1a2f8712e9f578e838fffdb3afa8eec075e09a4eb6f822a8b0041305d14e5f.ServiceHealthIssueRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *ServiceHealthRequestBuilder) IssuesById(id string)(*i6e1a2f8712e9f578e8
     }
     return i6e1a2f8712e9f578e838fffdb3afa8eec075e09a4eb6f822a8b0041305d14e5f.NewServiceHealthIssueRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceHealthRequestBuilder) Patch(options *ServiceHealthRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

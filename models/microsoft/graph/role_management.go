@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RoleManagement 
 type RoleManagement struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type RoleManagement struct {
     // The RbacApplication for Entitlement Management
     entitlementManagement *RbacApplication;
 }
-// Instantiates a new RoleManagement and sets the default values.
+// NewRoleManagement instantiates a new RoleManagement and sets the default values.
 func NewRoleManagement()(*RoleManagement) {
     m := &RoleManagement{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleManagement) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *RoleManagement) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the directory property value. Read-only. Nullable.
+// GetDirectory gets the directory property value. Read-only. Nullable.
 func (m *RoleManagement) GetDirectory()(*RbacApplication) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *RoleManagement) GetDirectory()(*RbacApplication) {
         return m.directory
     }
 }
-// Gets the entitlementManagement property value. The RbacApplication for Entitlement Management
+// GetEntitlementManagement gets the entitlementManagement property value. The RbacApplication for Entitlement Management
 func (m *RoleManagement) GetEntitlementManagement()(*RbacApplication) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *RoleManagement) GetEntitlementManagement()(*RbacApplication) {
         return m.entitlementManagement
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["directory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *RoleManagement) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RoleManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("directory", m.GetDirectory())
@@ -96,21 +94,15 @@ func (m *RoleManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleManagement) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the directory property value. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the directory property.
+// SetDirectory sets the directory property value. Read-only. Nullable.
 func (m *RoleManagement) SetDirectory(value *RbacApplication)() {
     m.directory = value
 }
-// Sets the entitlementManagement property value. The RbacApplication for Entitlement Management
-// Parameters:
-//  - value : Value to set for the entitlementManagement property.
+// SetEntitlementManagement sets the entitlementManagement property value. The RbacApplication for Entitlement Management
 func (m *RoleManagement) SetEntitlementManagement(value *RbacApplication)() {
     m.entitlementManagement = value
 }

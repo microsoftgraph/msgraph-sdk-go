@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// uploadClientCertificateRequestBody 
 type UploadClientCertificateRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type UploadClientCertificateRequestBody struct {
     // 
     pkcs12Value *string;
 }
-// Instantiates a new uploadClientCertificateRequestBody and sets the default values.
+// NewUploadClientCertificateRequestBody instantiates a new uploadClientCertificateRequestBody and sets the default values.
 func NewUploadClientCertificateRequestBody()(*UploadClientCertificateRequestBody) {
     m := &UploadClientCertificateRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadClientCertificateRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *UploadClientCertificateRequestBody) GetAdditionalData()(map[string]inte
         return m.additionalData
     }
 }
-// Gets the password property value. 
+// GetPassword gets the password property value. 
 func (m *UploadClientCertificateRequestBody) GetPassword()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *UploadClientCertificateRequestBody) GetPassword()(*string) {
         return m.password
     }
 }
-// Gets the pkcs12Value property value. 
+// GetPkcs12Value gets the pkcs12Value property value. 
 func (m *UploadClientCertificateRequestBody) GetPkcs12Value()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *UploadClientCertificateRequestBody) GetPkcs12Value()(*string) {
         return m.pkcs12Value
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UploadClientCertificateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["password"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *UploadClientCertificateRequestBody) GetFieldDeserializers()(map[string]
 func (m *UploadClientCertificateRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UploadClientCertificateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("password", m.GetPassword())
@@ -96,21 +94,15 @@ func (m *UploadClientCertificateRequestBody) Serialize(writer i04eb5309aeaafadd2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadClientCertificateRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the password property value. 
-// Parameters:
-//  - value : Value to set for the password property.
+// SetPassword sets the password property value. 
 func (m *UploadClientCertificateRequestBody) SetPassword(value *string)() {
     m.password = value
 }
-// Sets the pkcs12Value property value. 
-// Parameters:
-//  - value : Value to set for the pkcs12Value property.
+// SetPkcs12Value sets the pkcs12Value property value. 
 func (m *UploadClientCertificateRequestBody) SetPkcs12Value(value *string)() {
     m.pkcs12Value = value
 }

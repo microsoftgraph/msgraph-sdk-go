@@ -9,7 +9,7 @@ import (
     i430970eb1b4b4a416077e3b11ecb887cbb1a66d9913c998c9991f0044691886d "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item"
 )
 
-// Builds and executes requests for operations under \identityGovernance\accessReviews\definitions\{accessReviewScheduleDefinition-id}
+// accessReviewScheduleDefinitionRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\definitions\{accessReviewScheduleDefinition-id}
 type AccessReviewScheduleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type AccessReviewScheduleDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AccessReviewScheduleDefinitionRequestBuilderDeleteOptions options for Delete
 type AccessReviewScheduleDefinitionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AccessReviewScheduleDefinitionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AccessReviewScheduleDefinitionRequestBuilderGetOptions options for Get
 type AccessReviewScheduleDefinitionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type AccessReviewScheduleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get definitions from identityGovernance
+// accessReviewScheduleDefinitionRequestBuilderGetQueryParameters get definitions from identityGovernance
 type AccessReviewScheduleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AccessReviewScheduleDefinitionRequestBuilderPatchOptions options for Patch
 type AccessReviewScheduleDefinitionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewScheduleDefinition;
@@ -56,10 +56,7 @@ type AccessReviewScheduleDefinitionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AccessReviewScheduleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewScheduleDefinitionRequestBuilderInternal instantiates a new AccessReviewScheduleDefinitionRequestBuilder and sets the default values.
 func NewAccessReviewScheduleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewScheduleDefinitionRequestBuilder) {
     m := &AccessReviewScheduleDefinitionRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAccessReviewScheduleDefinitionRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AccessReviewScheduleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAccessReviewScheduleDefinitionRequestBuilder instantiates a new AccessReviewScheduleDefinitionRequestBuilder and sets the default values.
 func NewAccessReviewScheduleDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessReviewScheduleDefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewScheduleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property definitions for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property definitions for identityGovernance
 func (m *AccessReviewScheduleDefinitionRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewScheduleDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// Get definitions from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get definitions from identityGovernance
 func (m *AccessReviewScheduleDefinitionRequestBuilder) CreateGetRequestInformation(options *AccessReviewScheduleDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Update the navigation property definitions in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property definitions in identityGovernance
 func (m *AccessReviewScheduleDefinitionRequestBuilder) CreatePatchRequestInformation(options *AccessReviewScheduleDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +130,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// Delete navigation property definitions for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property definitions for identityGovernance
 func (m *AccessReviewScheduleDefinitionRequestBuilder) Delete(options *AccessReviewScheduleDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -156,9 +142,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) Delete(options *AccessRev
     }
     return nil
 }
-// Get definitions from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get definitions from identityGovernance
 func (m *AccessReviewScheduleDefinitionRequestBuilder) Get(options *AccessReviewScheduleDefinitionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewScheduleDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) Get(options *AccessReview
 func (m *AccessReviewScheduleDefinitionRequestBuilder) Instances()(*ibba6c7035a718e15d1f7f5bbf8521a48e25e6129a3ea1dd9ccde10f862176373.InstancesRequestBuilder) {
     return ibba6c7035a718e15d1f7f5bbf8521a48e25e6129a3ea1dd9ccde10f862176373.NewInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// InstancesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.definitions.item.instances.item collection
 func (m *AccessReviewScheduleDefinitionRequestBuilder) InstancesById(id string)(*i430970eb1b4b4a416077e3b11ecb887cbb1a66d9913c998c9991f0044691886d.AccessReviewInstanceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -186,9 +168,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) InstancesById(id string)(
     }
     return i430970eb1b4b4a416077e3b11ecb887cbb1a66d9913c998c9991f0044691886d.NewAccessReviewInstanceRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update the navigation property definitions in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property definitions in identityGovernance
 func (m *AccessReviewScheduleDefinitionRequestBuilder) Patch(options *AccessReviewScheduleDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

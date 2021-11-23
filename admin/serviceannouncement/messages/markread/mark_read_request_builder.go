@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.markRead
+// markReadRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.markRead
 type MarkReadRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type MarkReadRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// MarkReadRequestBuilderPostOptions options for Post
 type MarkReadRequestBuilderPostOptions struct {
     // 
     Body *MarkReadRequestBody;
@@ -24,10 +24,7 @@ type MarkReadRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MarkReadRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMarkReadRequestBuilderInternal instantiates a new MarkReadRequestBuilder and sets the default values.
 func NewMarkReadRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MarkReadRequestBuilder) {
     m := &MarkReadRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewMarkReadRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MarkReadRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMarkReadRequestBuilder instantiates a new MarkReadRequestBuilder and sets the default values.
 func NewMarkReadRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MarkReadRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMarkReadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action markRead
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action markRead
 func (m *MarkReadRequestBuilder) CreatePostRequestInformation(options *MarkReadRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *MarkReadRequestBuilder) CreatePostRequestInformation(options *MarkReadR
     }
     return requestInfo, nil
 }
-// Invoke action markRead
-// Parameters:
-//  - options : Options for the request
+// Post invoke action markRead
 func (m *MarkReadRequestBuilder) Post(options *MarkReadRequestBuilderPostOptions)(*bool, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

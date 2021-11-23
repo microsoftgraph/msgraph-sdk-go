@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \drive\bundles
+// bundlesRequestBuilder builds and executes requests for operations under \drive\bundles
 type BundlesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BundlesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// BundlesRequestBuilderGetOptions options for Get
 type BundlesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type BundlesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// bundlesRequestBuilderGetQueryParameters collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 type BundlesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type BundlesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// BundlesRequestBuilderPostOptions options for Post
 type BundlesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem;
@@ -56,10 +56,7 @@ type BundlesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BundlesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBundlesRequestBuilderInternal instantiates a new BundlesRequestBuilder and sets the default values.
 func NewBundlesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BundlesRequestBuilder) {
     m := &BundlesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewBundlesRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BundlesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBundlesRequestBuilder instantiates a new BundlesRequestBuilder and sets the default values.
 func NewBundlesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BundlesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBundlesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 func (m *BundlesRequestBuilder) CreateGetRequestInformation(options *BundlesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *BundlesRequestBuilder) CreateGetRequestInformation(options *BundlesRequ
     }
     return requestInfo, nil
 }
-// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 func (m *BundlesRequestBuilder) CreatePostRequestInformation(options *BundlesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *BundlesRequestBuilder) CreatePostRequestInformation(options *BundlesReq
     }
     return requestInfo, nil
 }
-// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
-// Parameters:
-//  - options : Options for the request
+// Get collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 func (m *BundlesRequestBuilder) Get(options *BundlesRequestBuilderGetOptions)(*BundlesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *BundlesRequestBuilder) Get(options *BundlesRequestBuilderGetOptions)(*B
     }
     return res.(*BundlesResponse), nil
 }
-// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
-// Parameters:
-//  - options : Options for the request
+// Post collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 func (m *BundlesRequestBuilder) Post(options *BundlesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

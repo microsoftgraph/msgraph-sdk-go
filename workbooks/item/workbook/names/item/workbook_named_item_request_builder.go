@@ -8,7 +8,7 @@ import (
     iff126fabf2f6effa72b42506f527dedd29b29c861988204fb86bd8a29e4ae839 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}
+// workbookNamedItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}
 type WorkbookNamedItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type WorkbookNamedItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorkbookNamedItemRequestBuilderDeleteOptions options for Delete
 type WorkbookNamedItemRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WorkbookNamedItemRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorkbookNamedItemRequestBuilderGetOptions options for Get
 type WorkbookNamedItemRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type WorkbookNamedItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
+// workbookNamedItemRequestBuilderGetQueryParameters represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 type WorkbookNamedItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorkbookNamedItemRequestBuilderPatchOptions options for Patch
 type WorkbookNamedItemRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookNamedItem;
@@ -55,10 +55,7 @@ type WorkbookNamedItemRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WorkbookNamedItemRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookNamedItemRequestBuilderInternal instantiates a new WorkbookNamedItemRequestBuilder and sets the default values.
 func NewWorkbookNamedItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookNamedItemRequestBuilder) {
     m := &WorkbookNamedItemRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewWorkbookNamedItemRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbookNamedItemRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookNamedItemRequestBuilder instantiates a new WorkbookNamedItemRequestBuilder and sets the default values.
 func NewWorkbookNamedItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookNamedItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorkbookNamedItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *WorkbookNamedItemRequestBuilder) CreateDeleteRequestInformation(options *WorkbookNamedItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *WorkbookNamedItemRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *WorkbookNamedItemRequestBuilder) CreateGetRequestInformation(options *WorkbookNamedItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *WorkbookNamedItemRequestBuilder) CreateGetRequestInformation(options *W
     }
     return requestInfo, nil
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *WorkbookNamedItemRequestBuilder) CreatePatchRequestInformation(options *WorkbookNamedItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *WorkbookNamedItemRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *WorkbookNamedItemRequestBuilder) Delete(options *WorkbookNamedItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *WorkbookNamedItemRequestBuilder) Delete(options *WorkbookNamedItemReque
     }
     return nil
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *WorkbookNamedItemRequestBuilder) Get(options *WorkbookNamedItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookNamedItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *WorkbookNamedItemRequestBuilder) Get(options *WorkbookNamedItemRequestB
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookNamedItem), nil
 }
-// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *WorkbookNamedItemRequestBuilder) Patch(options *WorkbookNamedItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -183,7 +165,7 @@ func (m *WorkbookNamedItemRequestBuilder) Patch(options *WorkbookNamedItemReques
     }
     return nil
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\microsoft.graph.range()
+// Range_escaped builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\microsoft.graph.range()
 func (m *WorkbookNamedItemRequestBuilder) Range_escaped()(*i0575048b69cd227242b893c972fef75762eddf6abdee7231a3820486a585c76e.RangeRequestBuilder) {
     return i0575048b69cd227242b893c972fef75762eddf6abdee7231a3820486a585c76e.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

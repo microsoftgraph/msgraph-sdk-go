@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// importedWindowsAutopilotDeviceIdentity 
 type ImportedWindowsAutopilotDeviceIdentity struct {
     Entity
     // UPN of the user the device will be assigned
@@ -22,14 +22,14 @@ type ImportedWindowsAutopilotDeviceIdentity struct {
     // Current state of the imported device.
     state *ImportedWindowsAutopilotDeviceIdentityState;
 }
-// Instantiates a new importedWindowsAutopilotDeviceIdentity and sets the default values.
+// NewImportedWindowsAutopilotDeviceIdentity instantiates a new importedWindowsAutopilotDeviceIdentity and sets the default values.
 func NewImportedWindowsAutopilotDeviceIdentity()(*ImportedWindowsAutopilotDeviceIdentity) {
     m := &ImportedWindowsAutopilotDeviceIdentity{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the assignedUserPrincipalName property value. UPN of the user the device will be assigned
+// GetAssignedUserPrincipalName gets the assignedUserPrincipalName property value. UPN of the user the device will be assigned
 func (m *ImportedWindowsAutopilotDeviceIdentity) GetAssignedUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetAssignedUserPrincipalName()(
         return m.assignedUserPrincipalName
     }
 }
-// Gets the groupTag property value. Group Tag of the Windows autopilot device.
+// GetGroupTag gets the groupTag property value. Group Tag of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) GetGroupTag()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetGroupTag()(*string) {
         return m.groupTag
     }
 }
-// Gets the hardwareIdentifier property value. Hardware Blob of the Windows autopilot device.
+// GetHardwareIdentifier gets the hardwareIdentifier property value. Hardware Blob of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) GetHardwareIdentifier()([]byte) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetHardwareIdentifier()([]byte)
         return m.hardwareIdentifier
     }
 }
-// Gets the importId property value. The Import Id of the Windows autopilot device.
+// GetImportId gets the importId property value. The Import Id of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) GetImportId()(*string) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetImportId()(*string) {
         return m.importId
     }
 }
-// Gets the productKey property value. Product Key of the Windows autopilot device.
+// GetProductKey gets the productKey property value. Product Key of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) GetProductKey()(*string) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetProductKey()(*string) {
         return m.productKey
     }
 }
-// Gets the serialNumber property value. Serial number of the Windows autopilot device.
+// GetSerialNumber gets the serialNumber property value. Serial number of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) GetSerialNumber()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetSerialNumber()(*string) {
         return m.serialNumber
     }
 }
-// Gets the state property value. Current state of the imported device.
+// GetState gets the state property value. Current state of the imported device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) GetState()(*ImportedWindowsAutopilotDeviceIdentityState) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetState()(*ImportedWindowsAuto
         return m.state
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ImportedWindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignedUserPrincipalName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -163,9 +163,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[str
 func (m *ImportedWindowsAutopilotDeviceIdentity) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ImportedWindowsAutopilotDeviceIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -215,45 +213,31 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) Serialize(writer i04eb5309aeaaf
     }
     return nil
 }
-// Sets the assignedUserPrincipalName property value. UPN of the user the device will be assigned
-// Parameters:
-//  - value : Value to set for the assignedUserPrincipalName property.
+// SetAssignedUserPrincipalName sets the assignedUserPrincipalName property value. UPN of the user the device will be assigned
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetAssignedUserPrincipalName(value *string)() {
     m.assignedUserPrincipalName = value
 }
-// Sets the groupTag property value. Group Tag of the Windows autopilot device.
-// Parameters:
-//  - value : Value to set for the groupTag property.
+// SetGroupTag sets the groupTag property value. Group Tag of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetGroupTag(value *string)() {
     m.groupTag = value
 }
-// Sets the hardwareIdentifier property value. Hardware Blob of the Windows autopilot device.
-// Parameters:
-//  - value : Value to set for the hardwareIdentifier property.
+// SetHardwareIdentifier sets the hardwareIdentifier property value. Hardware Blob of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetHardwareIdentifier(value []byte)() {
     m.hardwareIdentifier = value
 }
-// Sets the importId property value. The Import Id of the Windows autopilot device.
-// Parameters:
-//  - value : Value to set for the importId property.
+// SetImportId sets the importId property value. The Import Id of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetImportId(value *string)() {
     m.importId = value
 }
-// Sets the productKey property value. Product Key of the Windows autopilot device.
-// Parameters:
-//  - value : Value to set for the productKey property.
+// SetProductKey sets the productKey property value. Product Key of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetProductKey(value *string)() {
     m.productKey = value
 }
-// Sets the serialNumber property value. Serial number of the Windows autopilot device.
-// Parameters:
-//  - value : Value to set for the serialNumber property.
+// SetSerialNumber sets the serialNumber property value. Serial number of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetSerialNumber(value *string)() {
     m.serialNumber = value
 }
-// Sets the state property value. Current state of the imported device.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. Current state of the imported device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetState(value *ImportedWindowsAutopilotDeviceIdentityState)() {
     m.state = value
 }

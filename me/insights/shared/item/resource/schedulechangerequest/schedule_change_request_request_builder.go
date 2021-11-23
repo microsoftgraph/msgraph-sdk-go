@@ -6,7 +6,7 @@ import (
     iee277c96a0ecc6f8f85e4b78b4af2a54bb5de24503bd0a912443d697a175af6b "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/resource/schedulechangerequest/approve"
 )
 
-// Builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.scheduleChangeRequest
+// scheduleChangeRequestRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.scheduleChangeRequest
 type ScheduleChangeRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,10 +18,7 @@ type ScheduleChangeRequestRequestBuilder struct {
 func (m *ScheduleChangeRequestRequestBuilder) Approve()(*iee277c96a0ecc6f8f85e4b78b4af2a54bb5de24503bd0a912443d697a175af6b.ApproveRequestBuilder) {
     return iee277c96a0ecc6f8f85e4b78b4af2a54bb5de24503bd0a912443d697a175af6b.NewApproveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ScheduleChangeRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScheduleChangeRequestRequestBuilderInternal instantiates a new ScheduleChangeRequestRequestBuilder and sets the default values.
 func NewScheduleChangeRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScheduleChangeRequestRequestBuilder) {
     m := &ScheduleChangeRequestRequestBuilder{
     }
@@ -34,10 +31,7 @@ func NewScheduleChangeRequestRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ScheduleChangeRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScheduleChangeRequestRequestBuilder instantiates a new ScheduleChangeRequestRequestBuilder and sets the default values.
 func NewScheduleChangeRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScheduleChangeRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

@@ -6,7 +6,7 @@ import (
     i14663737e683f2f05c3c2b7cb0dc9f5cf279802bb096f8a596a2595a702e1a82 "github.com/microsoftgraph/msgraph-sdk-go/print/printers/item/connectors/ref"
 )
 
-// Builds and executes requests for operations under \print\printers\{printer-id}\connectors
+// connectorsRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\connectors
 type ConnectorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConnectorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ConnectorsRequestBuilderGetOptions options for Get
 type ConnectorsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ConnectorsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The connectors that are associated with the printer.
+// connectorsRequestBuilderGetQueryParameters the connectors that are associated with the printer.
 type ConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type ConnectorsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new ConnectorsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConnectorsRequestBuilderInternal instantiates a new ConnectorsRequestBuilder and sets the default values.
 func NewConnectorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectorsRequestBuilder) {
     m := &ConnectorsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewConnectorsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConnectorsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConnectorsRequestBuilder instantiates a new ConnectorsRequestBuilder and sets the default values.
 func NewConnectorsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConnectorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The connectors that are associated with the printer.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the connectors that are associated with the printer.
 func (m *ConnectorsRequestBuilder) CreateGetRequestInformation(options *ConnectorsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *ConnectorsRequestBuilder) CreateGetRequestInformation(options *Connecto
     }
     return requestInfo, nil
 }
-// The connectors that are associated with the printer.
-// Parameters:
-//  - options : Options for the request
+// Get the connectors that are associated with the printer.
 func (m *ConnectorsRequestBuilder) Get(options *ConnectorsRequestBuilderGetOptions)(*ConnectorsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// onlineMeetingInfo 
 type OnlineMeetingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type OnlineMeetingInfo struct {
     // The toll number that can be used to join the conference.
     tollNumber *string;
 }
-// Instantiates a new onlineMeetingInfo and sets the default values.
+// NewOnlineMeetingInfo instantiates a new onlineMeetingInfo and sets the default values.
 func NewOnlineMeetingInfo()(*OnlineMeetingInfo) {
     m := &OnlineMeetingInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnlineMeetingInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *OnlineMeetingInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the conferenceId property value. The ID of the conference.
+// GetConferenceId gets the conferenceId property value. The ID of the conference.
 func (m *OnlineMeetingInfo) GetConferenceId()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *OnlineMeetingInfo) GetConferenceId()(*string) {
         return m.conferenceId
     }
 }
-// Gets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+// GetJoinUrl gets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
 func (m *OnlineMeetingInfo) GetJoinUrl()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *OnlineMeetingInfo) GetJoinUrl()(*string) {
         return m.joinUrl
     }
 }
-// Gets the phones property value. All of the phone numbers associated with this conference.
+// GetPhones gets the phones property value. All of the phone numbers associated with this conference.
 func (m *OnlineMeetingInfo) GetPhones()([]Phone) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *OnlineMeetingInfo) GetPhones()([]Phone) {
         return m.phones
     }
 }
-// Gets the quickDial property value. The pre-formatted quickdial for this call.
+// GetQuickDial gets the quickDial property value. The pre-formatted quickdial for this call.
 func (m *OnlineMeetingInfo) GetQuickDial()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *OnlineMeetingInfo) GetQuickDial()(*string) {
         return m.quickDial
     }
 }
-// Gets the tollFreeNumbers property value. The toll free numbers that can be used to join the conference.
+// GetTollFreeNumbers gets the tollFreeNumbers property value. The toll free numbers that can be used to join the conference.
 func (m *OnlineMeetingInfo) GetTollFreeNumbers()([]string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *OnlineMeetingInfo) GetTollFreeNumbers()([]string) {
         return m.tollFreeNumbers
     }
 }
-// Gets the tollNumber property value. The toll number that can be used to join the conference.
+// GetTollNumber gets the tollNumber property value. The toll number that can be used to join the conference.
 func (m *OnlineMeetingInfo) GetTollNumber()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *OnlineMeetingInfo) GetTollNumber()(*string) {
         return m.tollNumber
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["conferenceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,9 +160,7 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(interface{},
 func (m *OnlineMeetingInfo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *OnlineMeetingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("conferenceId", m.GetConferenceId())
@@ -213,45 +211,31 @@ func (m *OnlineMeetingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnlineMeetingInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the conferenceId property value. The ID of the conference.
-// Parameters:
-//  - value : Value to set for the conferenceId property.
+// SetConferenceId sets the conferenceId property value. The ID of the conference.
 func (m *OnlineMeetingInfo) SetConferenceId(value *string)() {
     m.conferenceId = value
 }
-// Sets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-// Parameters:
-//  - value : Value to set for the joinUrl property.
+// SetJoinUrl sets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
 func (m *OnlineMeetingInfo) SetJoinUrl(value *string)() {
     m.joinUrl = value
 }
-// Sets the phones property value. All of the phone numbers associated with this conference.
-// Parameters:
-//  - value : Value to set for the phones property.
+// SetPhones sets the phones property value. All of the phone numbers associated with this conference.
 func (m *OnlineMeetingInfo) SetPhones(value []Phone)() {
     m.phones = value
 }
-// Sets the quickDial property value. The pre-formatted quickdial for this call.
-// Parameters:
-//  - value : Value to set for the quickDial property.
+// SetQuickDial sets the quickDial property value. The pre-formatted quickdial for this call.
 func (m *OnlineMeetingInfo) SetQuickDial(value *string)() {
     m.quickDial = value
 }
-// Sets the tollFreeNumbers property value. The toll free numbers that can be used to join the conference.
-// Parameters:
-//  - value : Value to set for the tollFreeNumbers property.
+// SetTollFreeNumbers sets the tollFreeNumbers property value. The toll free numbers that can be used to join the conference.
 func (m *OnlineMeetingInfo) SetTollFreeNumbers(value []string)() {
     m.tollFreeNumbers = value
 }
-// Sets the tollNumber property value. The toll number that can be used to join the conference.
-// Parameters:
-//  - value : Value to set for the tollNumber property.
+// SetTollNumber sets the tollNumber property value. The toll number that can be used to join the conference.
 func (m *OnlineMeetingInfo) SetTollNumber(value *string)() {
     m.tollNumber = value
 }

@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// checkMemberGroupsRequestBody 
 type CheckMemberGroupsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // 
     groupIds []string;
 }
-// Instantiates a new checkMemberGroupsRequestBody and sets the default values.
+// NewCheckMemberGroupsRequestBody instantiates a new checkMemberGroupsRequestBody and sets the default values.
 func NewCheckMemberGroupsRequestBody()(*CheckMemberGroupsRequestBody) {
     m := &CheckMemberGroupsRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CheckMemberGroupsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,7 +26,7 @@ func (m *CheckMemberGroupsRequestBody) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// Gets the groupIds property value. 
+// GetGroupIds gets the groupIds property value. 
 func (m *CheckMemberGroupsRequestBody) GetGroupIds()([]string) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *CheckMemberGroupsRequestBody) GetGroupIds()([]string) {
         return m.groupIds
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CheckMemberGroupsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["groupIds"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -56,9 +56,7 @@ func (m *CheckMemberGroupsRequestBody) GetFieldDeserializers()(map[string]func(i
 func (m *CheckMemberGroupsRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CheckMemberGroupsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteCollectionOfStringValues("groupIds", m.GetGroupIds())
@@ -74,15 +72,11 @@ func (m *CheckMemberGroupsRequestBody) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CheckMemberGroupsRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the groupIds property value. 
-// Parameters:
-//  - value : Value to set for the groupIds property.
+// SetGroupIds sets the groupIds property value. 
 func (m *CheckMemberGroupsRequestBody) SetGroupIds(value []string)() {
     m.groupIds = value
 }

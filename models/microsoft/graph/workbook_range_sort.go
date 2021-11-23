@@ -4,18 +4,18 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// workbookRangeSort 
 type WorkbookRangeSort struct {
     Entity
 }
-// Instantiates a new workbookRangeSort and sets the default values.
+// NewWorkbookRangeSort instantiates a new workbookRangeSort and sets the default values.
 func NewWorkbookRangeSort()(*WorkbookRangeSort) {
     m := &WorkbookRangeSort{
         Entity: *NewEntity(),
     }
     return m
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookRangeSort) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     return res
@@ -23,9 +23,7 @@ func (m *WorkbookRangeSort) GetFieldDeserializers()(map[string]func(interface{},
 func (m *WorkbookRangeSort) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WorkbookRangeSort) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {

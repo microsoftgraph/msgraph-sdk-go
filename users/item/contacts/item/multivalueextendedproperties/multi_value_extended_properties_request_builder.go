@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\contacts\{contact-id}\multiValueExtendedProperties
+// multiValueExtendedPropertiesRequestBuilder builds and executes requests for operations under \users\{user-id}\contacts\{contact-id}\multiValueExtendedProperties
 type MultiValueExtendedPropertiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MultiValueExtendedPropertiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MultiValueExtendedPropertiesRequestBuilderGetOptions options for Get
 type MultiValueExtendedPropertiesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MultiValueExtendedPropertiesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
+// multiValueExtendedPropertiesRequestBuilderGetQueryParameters the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
 type MultiValueExtendedPropertiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MultiValueExtendedPropertiesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MultiValueExtendedPropertiesRequestBuilderPostOptions options for Post
 type MultiValueExtendedPropertiesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty;
@@ -56,10 +56,7 @@ type MultiValueExtendedPropertiesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMultiValueExtendedPropertiesRequestBuilderInternal instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.
 func NewMultiValueExtendedPropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MultiValueExtendedPropertiesRequestBuilder) {
     m := &MultiValueExtendedPropertiesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMultiValueExtendedPropertiesRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMultiValueExtendedPropertiesRequestBuilder instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.
 func NewMultiValueExtendedPropertiesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MultiValueExtendedPropertiesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMultiValueExtendedPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
 func (m *MultiValueExtendedPropertiesRequestBuilder) CreateGetRequestInformation(options *MultiValueExtendedPropertiesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MultiValueExtendedPropertiesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
 func (m *MultiValueExtendedPropertiesRequestBuilder) CreatePostRequestInformation(options *MultiValueExtendedPropertiesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MultiValueExtendedPropertiesRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
 func (m *MultiValueExtendedPropertiesRequestBuilder) Get(options *MultiValueExtendedPropertiesRequestBuilderGetOptions)(*MultiValueExtendedPropertiesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MultiValueExtendedPropertiesRequestBuilder) Get(options *MultiValueExte
     }
     return res.(*MultiValueExtendedPropertiesResponse), nil
 }
-// The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
 func (m *MultiValueExtendedPropertiesRequestBuilder) Post(options *MultiValueExtendedPropertiesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

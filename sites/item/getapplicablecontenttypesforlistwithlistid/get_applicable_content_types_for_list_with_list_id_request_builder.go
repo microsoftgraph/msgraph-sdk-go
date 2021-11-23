@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\microsoft.graph.getApplicableContentTypesForList(listId='{listId}')
+// getApplicableContentTypesForListWithListIdRequestBuilder builds and executes requests for operations under \sites\{site-id}\microsoft.graph.getApplicableContentTypesForList(listId='{listId}')
 type GetApplicableContentTypesForListWithListIdRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetApplicableContentTypesForListWithListIdRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetApplicableContentTypesForListWithListIdRequestBuilderGetOptions options for Get
 type GetApplicableContentTypesForListWithListIdRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type GetApplicableContentTypesForListWithListIdRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetApplicableContentTypesForListWithListIdRequestBuilder and sets the default values.
-// Parameters:
-//  - listId : Usage: listId={listId}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetApplicableContentTypesForListWithListIdRequestBuilderInternal instantiates a new GetApplicableContentTypesForListWithListIdRequestBuilder and sets the default values.
 func NewGetApplicableContentTypesForListWithListIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, listId *string)(*GetApplicableContentTypesForListWithListIdRequestBuilder) {
     m := &GetApplicableContentTypesForListWithListIdRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewGetApplicableContentTypesForListWithListIdRequestBuilderInternal(pathPar
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetApplicableContentTypesForListWithListIdRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetApplicableContentTypesForListWithListIdRequestBuilder instantiates a new GetApplicableContentTypesForListWithListIdRequestBuilder and sets the default values.
 func NewGetApplicableContentTypesForListWithListIdRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetApplicableContentTypesForListWithListIdRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetApplicableContentTypesForListWithListIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getApplicableContentTypesForList
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getApplicableContentTypesForList
 func (m *GetApplicableContentTypesForListWithListIdRequestBuilder) CreateGetRequestInformation(options *GetApplicableContentTypesForListWithListIdRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *GetApplicableContentTypesForListWithListIdRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// Invoke function getApplicableContentTypesForList
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getApplicableContentTypesForList
 func (m *GetApplicableContentTypesForListWithListIdRequestBuilder) Get(options *GetApplicableContentTypesForListWithListIdRequestBuilderGetOptions)([]GetApplicableContentTypesForListWithListId, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

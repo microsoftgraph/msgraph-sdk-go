@@ -7,7 +7,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \admin
+// adminRequestBuilder builds and executes requests for operations under \admin
 type AdminRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AdminRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AdminRequestBuilderGetOptions options for Get
 type AdminRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,14 +27,14 @@ type AdminRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get admin
+// adminRequestBuilderGetQueryParameters get admin
 type AdminRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AdminRequestBuilderPatchOptions options for Patch
 type AdminRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Admin;
@@ -45,10 +45,7 @@ type AdminRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AdminRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdminRequestBuilderInternal instantiates a new AdminRequestBuilder and sets the default values.
 func NewAdminRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdminRequestBuilder) {
     m := &AdminRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewAdminRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AdminRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdminRequestBuilder instantiates a new AdminRequestBuilder and sets the default values.
 func NewAdminRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdminRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdminRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get admin
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get admin
 func (m *AdminRequestBuilder) CreateGetRequestInformation(options *AdminRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *AdminRequestBuilder) CreateGetRequestInformation(options *AdminRequestB
     }
     return requestInfo, nil
 }
-// Update admin
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update admin
 func (m *AdminRequestBuilder) CreatePatchRequestInformation(options *AdminRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,9 +102,7 @@ func (m *AdminRequestBuilder) CreatePatchRequestInformation(options *AdminReques
     }
     return requestInfo, nil
 }
-// Get admin
-// Parameters:
-//  - options : Options for the request
+// Get get admin
 func (m *AdminRequestBuilder) Get(options *AdminRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Admin, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -126,9 +114,7 @@ func (m *AdminRequestBuilder) Get(options *AdminRequestBuilderGetOptions)(*i4a83
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Admin), nil
 }
-// Update admin
-// Parameters:
-//  - options : Options for the request
+// Patch update admin
 func (m *AdminRequestBuilder) Patch(options *AdminRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

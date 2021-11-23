@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getCachedReport
+// getCachedReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getCachedReport
 type GetCachedReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetCachedReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetCachedReportRequestBuilderPostOptions options for Post
 type GetCachedReportRequestBuilderPostOptions struct {
     // 
     Body *GetCachedReportRequestBody;
@@ -24,10 +24,7 @@ type GetCachedReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetCachedReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetCachedReportRequestBuilderInternal instantiates a new GetCachedReportRequestBuilder and sets the default values.
 func NewGetCachedReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCachedReportRequestBuilder) {
     m := &GetCachedReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetCachedReportRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetCachedReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetCachedReportRequestBuilder instantiates a new GetCachedReportRequestBuilder and sets the default values.
 func NewGetCachedReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCachedReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetCachedReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getCachedReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getCachedReport
 func (m *GetCachedReportRequestBuilder) CreatePostRequestInformation(options *GetCachedReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetCachedReportRequestBuilder) CreatePostRequestInformation(options *Ge
     }
     return requestInfo, nil
 }
-// Invoke action getCachedReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getCachedReport
 func (m *GetCachedReportRequestBuilder) Post(options *GetCachedReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

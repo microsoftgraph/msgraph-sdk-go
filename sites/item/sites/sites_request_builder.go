@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\sites
+// sitesRequestBuilder builds and executes requests for operations under \sites\{site-id}\sites
 type SitesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SitesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SitesRequestBuilderGetOptions options for Get
 type SitesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SitesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of the sub-sites under this site.
+// sitesRequestBuilderGetQueryParameters the collection of the sub-sites under this site.
 type SitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SitesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SitesRequestBuilderPostOptions options for Post
 type SitesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site;
@@ -56,10 +56,7 @@ type SitesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SitesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSitesRequestBuilderInternal instantiates a new SitesRequestBuilder and sets the default values.
 func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SitesRequestBuilder) {
     m := &SitesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SitesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSitesRequestBuilder instantiates a new SitesRequestBuilder and sets the default values.
 func NewSitesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SitesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of the sub-sites under this site.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of the sub-sites under this site.
 func (m *SitesRequestBuilder) CreateGetRequestInformation(options *SitesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SitesRequestBuilder) CreateGetRequestInformation(options *SitesRequestB
     }
     return requestInfo, nil
 }
-// The collection of the sub-sites under this site.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of the sub-sites under this site.
 func (m *SitesRequestBuilder) CreatePostRequestInformation(options *SitesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SitesRequestBuilder) CreatePostRequestInformation(options *SitesRequest
     }
     return requestInfo, nil
 }
-// The collection of the sub-sites under this site.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of the sub-sites under this site.
 func (m *SitesRequestBuilder) Get(options *SitesRequestBuilderGetOptions)(*SitesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SitesRequestBuilder) Get(options *SitesRequestBuilderGetOptions)(*Sites
     }
     return res.(*SitesResponse), nil
 }
-// The collection of the sub-sites under this site.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of the sub-sites under this site.
 func (m *SitesRequestBuilder) Post(options *SitesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

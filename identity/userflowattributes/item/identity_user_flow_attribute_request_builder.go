@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identity\userFlowAttributes\{identityUserFlowAttribute-id}
+// identityUserFlowAttributeRequestBuilder builds and executes requests for operations under \identity\userFlowAttributes\{identityUserFlowAttribute-id}
 type IdentityUserFlowAttributeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IdentityUserFlowAttributeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// IdentityUserFlowAttributeRequestBuilderDeleteOptions options for Delete
 type IdentityUserFlowAttributeRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type IdentityUserFlowAttributeRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// IdentityUserFlowAttributeRequestBuilderGetOptions options for Get
 type IdentityUserFlowAttributeRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type IdentityUserFlowAttributeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents entry point for identity userflow attributes.
+// identityUserFlowAttributeRequestBuilderGetQueryParameters represents entry point for identity userflow attributes.
 type IdentityUserFlowAttributeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// IdentityUserFlowAttributeRequestBuilderPatchOptions options for Patch
 type IdentityUserFlowAttributeRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttribute;
@@ -53,10 +53,7 @@ type IdentityUserFlowAttributeRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IdentityUserFlowAttributeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityUserFlowAttributeRequestBuilderInternal instantiates a new IdentityUserFlowAttributeRequestBuilder and sets the default values.
 func NewIdentityUserFlowAttributeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityUserFlowAttributeRequestBuilder) {
     m := &IdentityUserFlowAttributeRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewIdentityUserFlowAttributeRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IdentityUserFlowAttributeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityUserFlowAttributeRequestBuilder instantiates a new IdentityUserFlowAttributeRequestBuilder and sets the default values.
 func NewIdentityUserFlowAttributeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityUserFlowAttributeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityUserFlowAttributeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents entry point for identity userflow attributes.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents entry point for identity userflow attributes.
 func (m *IdentityUserFlowAttributeRequestBuilder) CreateDeleteRequestInformation(options *IdentityUserFlowAttributeRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *IdentityUserFlowAttributeRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// Represents entry point for identity userflow attributes.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents entry point for identity userflow attributes.
 func (m *IdentityUserFlowAttributeRequestBuilder) CreateGetRequestInformation(options *IdentityUserFlowAttributeRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *IdentityUserFlowAttributeRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Represents entry point for identity userflow attributes.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents entry point for identity userflow attributes.
 func (m *IdentityUserFlowAttributeRequestBuilder) CreatePatchRequestInformation(options *IdentityUserFlowAttributeRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *IdentityUserFlowAttributeRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Represents entry point for identity userflow attributes.
-// Parameters:
-//  - options : Options for the request
+// Delete represents entry point for identity userflow attributes.
 func (m *IdentityUserFlowAttributeRequestBuilder) Delete(options *IdentityUserFlowAttributeRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *IdentityUserFlowAttributeRequestBuilder) Delete(options *IdentityUserFl
     }
     return nil
 }
-// Represents entry point for identity userflow attributes.
-// Parameters:
-//  - options : Options for the request
+// Get represents entry point for identity userflow attributes.
 func (m *IdentityUserFlowAttributeRequestBuilder) Get(options *IdentityUserFlowAttributeRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttribute, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *IdentityUserFlowAttributeRequestBuilder) Get(options *IdentityUserFlowA
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttribute), nil
 }
-// Represents entry point for identity userflow attributes.
-// Parameters:
-//  - options : Options for the request
+// Patch represents entry point for identity userflow attributes.
 func (m *IdentityUserFlowAttributeRequestBuilder) Patch(options *IdentityUserFlowAttributeRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

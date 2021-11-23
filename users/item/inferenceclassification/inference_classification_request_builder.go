@@ -8,7 +8,7 @@ import (
     iaf2a4cfde77fbaccd51ec8bd60e7c52bf1f5d4301431aedb8bca91697d8829d3 "github.com/microsoftgraph/msgraph-sdk-go/users/item/inferenceclassification/overrides/item"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\inferenceClassification
+// inferenceClassificationRequestBuilder builds and executes requests for operations under \users\{user-id}\inferenceClassification
 type InferenceClassificationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type InferenceClassificationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// InferenceClassificationRequestBuilderDeleteOptions options for Delete
 type InferenceClassificationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type InferenceClassificationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// InferenceClassificationRequestBuilderGetOptions options for Get
 type InferenceClassificationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,12 +37,12 @@ type InferenceClassificationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+// inferenceClassificationRequestBuilderGetQueryParameters relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 type InferenceClassificationRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// InferenceClassificationRequestBuilderPatchOptions options for Patch
 type InferenceClassificationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InferenceClassification;
@@ -53,10 +53,7 @@ type InferenceClassificationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new InferenceClassificationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInferenceClassificationRequestBuilderInternal instantiates a new InferenceClassificationRequestBuilder and sets the default values.
 func NewInferenceClassificationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InferenceClassificationRequestBuilder) {
     m := &InferenceClassificationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewInferenceClassificationRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new InferenceClassificationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInferenceClassificationRequestBuilder instantiates a new InferenceClassificationRequestBuilder and sets the default values.
 func NewInferenceClassificationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InferenceClassificationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInferenceClassificationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 func (m *InferenceClassificationRequestBuilder) CreateDeleteRequestInformation(options *InferenceClassificationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *InferenceClassificationRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 func (m *InferenceClassificationRequestBuilder) CreateGetRequestInformation(options *InferenceClassificationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *InferenceClassificationRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 func (m *InferenceClassificationRequestBuilder) CreatePatchRequestInformation(options *InferenceClassificationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *InferenceClassificationRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
-// Parameters:
-//  - options : Options for the request
+// Delete relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 func (m *InferenceClassificationRequestBuilder) Delete(options *InferenceClassificationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *InferenceClassificationRequestBuilder) Delete(options *InferenceClassif
     }
     return nil
 }
-// Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
-// Parameters:
-//  - options : Options for the request
+// Get relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 func (m *InferenceClassificationRequestBuilder) Get(options *InferenceClassificationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InferenceClassification, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -170,9 +154,7 @@ func (m *InferenceClassificationRequestBuilder) Get(options *InferenceClassifica
 func (m *InferenceClassificationRequestBuilder) Overrides()(*ibfafa6b940886b457653b94b114f2d4cb60996c26c8924e81d4ff1e93746ce0b.OverridesRequestBuilder) {
     return ibfafa6b940886b457653b94b114f2d4cb60996c26c8924e81d4ff1e93746ce0b.NewOverridesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.inferenceClassification.overrides.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// OverridesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.inferenceClassification.overrides.item collection
 func (m *InferenceClassificationRequestBuilder) OverridesById(id string)(*iaf2a4cfde77fbaccd51ec8bd60e7c52bf1f5d4301431aedb8bca91697d8829d3.InferenceClassificationOverrideRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -183,9 +165,7 @@ func (m *InferenceClassificationRequestBuilder) OverridesById(id string)(*iaf2a4
     }
     return iaf2a4cfde77fbaccd51ec8bd60e7c52bf1f5d4301431aedb8bca91697d8829d3.NewInferenceClassificationOverrideRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
-// Parameters:
-//  - options : Options for the request
+// Patch relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 func (m *InferenceClassificationRequestBuilder) Patch(options *InferenceClassificationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

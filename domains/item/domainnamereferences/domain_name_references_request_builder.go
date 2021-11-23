@@ -6,7 +6,7 @@ import (
     i1a99eed9eab3742238c6d4144f66fc101a6663f7151094145daf3b3416ed8753 "github.com/microsoftgraph/msgraph-sdk-go/domains/item/domainnamereferences/ref"
 )
 
-// Builds and executes requests for operations under \domains\{domain-id}\domainNameReferences
+// domainNameReferencesRequestBuilder builds and executes requests for operations under \domains\{domain-id}\domainNameReferences
 type DomainNameReferencesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DomainNameReferencesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DomainNameReferencesRequestBuilderGetOptions options for Get
 type DomainNameReferencesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DomainNameReferencesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only, Nullable
+// domainNameReferencesRequestBuilderGetQueryParameters read-only, Nullable
 type DomainNameReferencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type DomainNameReferencesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new DomainNameReferencesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDomainNameReferencesRequestBuilderInternal instantiates a new DomainNameReferencesRequestBuilder and sets the default values.
 func NewDomainNameReferencesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DomainNameReferencesRequestBuilder) {
     m := &DomainNameReferencesRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewDomainNameReferencesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DomainNameReferencesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDomainNameReferencesRequestBuilder instantiates a new DomainNameReferencesRequestBuilder and sets the default values.
 func NewDomainNameReferencesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DomainNameReferencesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDomainNameReferencesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only, Nullable
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only, Nullable
 func (m *DomainNameReferencesRequestBuilder) CreateGetRequestInformation(options *DomainNameReferencesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *DomainNameReferencesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Read-only, Nullable
-// Parameters:
-//  - options : Options for the request
+// Get read-only, Nullable
 func (m *DomainNameReferencesRequestBuilder) Get(options *DomainNameReferencesRequestBuilderGetOptions)(*DomainNameReferencesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

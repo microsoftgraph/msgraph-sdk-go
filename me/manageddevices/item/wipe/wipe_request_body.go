@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// wipeRequestBody 
 type WipeRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type WipeRequestBody struct {
     // 
     persistEsimDataPlan *bool;
 }
-// Instantiates a new wipeRequestBody and sets the default values.
+// NewWipeRequestBody instantiates a new wipeRequestBody and sets the default values.
 func NewWipeRequestBody()(*WipeRequestBody) {
     m := &WipeRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WipeRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *WipeRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the keepEnrollmentData property value. 
+// GetKeepEnrollmentData gets the keepEnrollmentData property value. 
 func (m *WipeRequestBody) GetKeepEnrollmentData()(*bool) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *WipeRequestBody) GetKeepEnrollmentData()(*bool) {
         return m.keepEnrollmentData
     }
 }
-// Gets the keepUserData property value. 
+// GetKeepUserData gets the keepUserData property value. 
 func (m *WipeRequestBody) GetKeepUserData()(*bool) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *WipeRequestBody) GetKeepUserData()(*bool) {
         return m.keepUserData
     }
 }
-// Gets the macOsUnlockCode property value. 
+// GetMacOsUnlockCode gets the macOsUnlockCode property value. 
 func (m *WipeRequestBody) GetMacOsUnlockCode()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *WipeRequestBody) GetMacOsUnlockCode()(*string) {
         return m.macOsUnlockCode
     }
 }
-// Gets the persistEsimDataPlan property value. 
+// GetPersistEsimDataPlan gets the persistEsimDataPlan property value. 
 func (m *WipeRequestBody) GetPersistEsimDataPlan()(*bool) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *WipeRequestBody) GetPersistEsimDataPlan()(*bool) {
         return m.persistEsimDataPlan
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WipeRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["keepEnrollmentData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *WipeRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *WipeRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WipeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("keepEnrollmentData", m.GetKeepEnrollmentData())
@@ -148,33 +146,23 @@ func (m *WipeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WipeRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the keepEnrollmentData property value. 
-// Parameters:
-//  - value : Value to set for the keepEnrollmentData property.
+// SetKeepEnrollmentData sets the keepEnrollmentData property value. 
 func (m *WipeRequestBody) SetKeepEnrollmentData(value *bool)() {
     m.keepEnrollmentData = value
 }
-// Sets the keepUserData property value. 
-// Parameters:
-//  - value : Value to set for the keepUserData property.
+// SetKeepUserData sets the keepUserData property value. 
 func (m *WipeRequestBody) SetKeepUserData(value *bool)() {
     m.keepUserData = value
 }
-// Sets the macOsUnlockCode property value. 
-// Parameters:
-//  - value : Value to set for the macOsUnlockCode property.
+// SetMacOsUnlockCode sets the macOsUnlockCode property value. 
 func (m *WipeRequestBody) SetMacOsUnlockCode(value *string)() {
     m.macOsUnlockCode = value
 }
-// Sets the persistEsimDataPlan property value. 
-// Parameters:
-//  - value : Value to set for the persistEsimDataPlan property.
+// SetPersistEsimDataPlan sets the persistEsimDataPlan property value. 
 func (m *WipeRequestBody) SetPersistEsimDataPlan(value *bool)() {
     m.persistEsimDataPlan = value
 }

@@ -14,7 +14,7 @@ import (
     if265c839ceb44280882d17ad922716116a39c1ce469abc935e86c7c536ccf9e0 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/managedebooks/item/userstatesummary/item"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}
+// managedEBookRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}
 type ManagedEBookRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -23,7 +23,7 @@ type ManagedEBookRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedEBookRequestBuilderDeleteOptions options for Delete
 type ManagedEBookRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -32,7 +32,7 @@ type ManagedEBookRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedEBookRequestBuilderGetOptions options for Get
 type ManagedEBookRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -43,14 +43,14 @@ type ManagedEBookRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Managed eBook.
+// managedEBookRequestBuilderGetQueryParameters the Managed eBook.
 type ManagedEBookRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedEBookRequestBuilderPatchOptions options for Patch
 type ManagedEBookRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedEBook;
@@ -67,9 +67,7 @@ func (m *ManagedEBookRequestBuilder) Assign()(*idc6ae391c23f1dd68e1a8ab2a8216079
 func (m *ManagedEBookRequestBuilder) Assignments()(*i51b72059dfed2f421aeb43f36dd6cb3a75014ea68e29bfe9f0763a1e28dc32bd.AssignmentsRequestBuilder) {
     return i51b72059dfed2f421aeb43f36dd6cb3a75014ea68e29bfe9f0763a1e28dc32bd.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.assignments.item collection
 func (m *ManagedEBookRequestBuilder) AssignmentsById(id string)(*i162ff3d0f43f21953d43cb94a636ae231382fdb4a6c3f80ff27c8fb165d745cb.ManagedEBookAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -80,10 +78,7 @@ func (m *ManagedEBookRequestBuilder) AssignmentsById(id string)(*i162ff3d0f43f21
     }
     return i162ff3d0f43f21953d43cb94a636ae231382fdb4a6c3f80ff27c8fb165d745cb.NewManagedEBookAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new ManagedEBookRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedEBookRequestBuilderInternal instantiates a new ManagedEBookRequestBuilder and sets the default values.
 func NewManagedEBookRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedEBookRequestBuilder) {
     m := &ManagedEBookRequestBuilder{
     }
@@ -96,18 +91,13 @@ func NewManagedEBookRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedEBookRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedEBookRequestBuilder instantiates a new ManagedEBookRequestBuilder and sets the default values.
 func NewManagedEBookRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedEBookRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedEBookRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Managed eBook.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Managed eBook.
 func (m *ManagedEBookRequestBuilder) CreateDeleteRequestInformation(options *ManagedEBookRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *ManagedEBookRequestBuilder) CreateDeleteRequestInformation(options *Man
     }
     return requestInfo, nil
 }
-// The Managed eBook.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Managed eBook.
 func (m *ManagedEBookRequestBuilder) CreateGetRequestInformation(options *ManagedEBookRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +134,7 @@ func (m *ManagedEBookRequestBuilder) CreateGetRequestInformation(options *Manage
     }
     return requestInfo, nil
 }
-// The Managed eBook.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Managed eBook.
 func (m *ManagedEBookRequestBuilder) CreatePatchRequestInformation(options *ManagedEBookRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -166,9 +152,7 @@ func (m *ManagedEBookRequestBuilder) CreatePatchRequestInformation(options *Mana
     }
     return requestInfo, nil
 }
-// The Managed eBook.
-// Parameters:
-//  - options : Options for the request
+// Delete the Managed eBook.
 func (m *ManagedEBookRequestBuilder) Delete(options *ManagedEBookRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -183,9 +167,7 @@ func (m *ManagedEBookRequestBuilder) Delete(options *ManagedEBookRequestBuilderD
 func (m *ManagedEBookRequestBuilder) DeviceStates()(*i4099812734ce25dbdeab4692470c91900c048e8dee3becb3e5c54a0326239224.DeviceStatesRequestBuilder) {
     return i4099812734ce25dbdeab4692470c91900c048e8dee3becb3e5c54a0326239224.NewDeviceStatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.deviceStates.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DeviceStatesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.deviceStates.item collection
 func (m *ManagedEBookRequestBuilder) DeviceStatesById(id string)(*i9ce747e428e80c804ab60cf526324b5166b04a2d275fe59526d2b02eb3bc9118.DeviceInstallStateRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -196,9 +178,7 @@ func (m *ManagedEBookRequestBuilder) DeviceStatesById(id string)(*i9ce747e428e80
     }
     return i9ce747e428e80c804ab60cf526324b5166b04a2d275fe59526d2b02eb3bc9118.NewDeviceInstallStateRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The Managed eBook.
-// Parameters:
-//  - options : Options for the request
+// Get the Managed eBook.
 func (m *ManagedEBookRequestBuilder) Get(options *ManagedEBookRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedEBook, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -213,9 +193,7 @@ func (m *ManagedEBookRequestBuilder) Get(options *ManagedEBookRequestBuilderGetO
 func (m *ManagedEBookRequestBuilder) InstallSummary()(*i571f8457b84b2b26f1f46b07c4fa37d92628066190b56c6d7b9dc33cbb426950.InstallSummaryRequestBuilder) {
     return i571f8457b84b2b26f1f46b07c4fa37d92628066190b56c6d7b9dc33cbb426950.NewInstallSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The Managed eBook.
-// Parameters:
-//  - options : Options for the request
+// Patch the Managed eBook.
 func (m *ManagedEBookRequestBuilder) Patch(options *ManagedEBookRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -230,9 +208,7 @@ func (m *ManagedEBookRequestBuilder) Patch(options *ManagedEBookRequestBuilderPa
 func (m *ManagedEBookRequestBuilder) UserStateSummary()(*ib4714ec089652eb60ee2444506e153b0e8d535e7937b3b83850dc25a80de4be4.UserStateSummaryRequestBuilder) {
     return ib4714ec089652eb60ee2444506e153b0e8d535e7937b3b83850dc25a80de4be4.NewUserStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.userStateSummary.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UserStateSummaryById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedEBooks.item.userStateSummary.item collection
 func (m *ManagedEBookRequestBuilder) UserStateSummaryById(id string)(*if265c839ceb44280882d17ad922716116a39c1ce469abc935e86c7c536ccf9e0.UserInstallStateSummaryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

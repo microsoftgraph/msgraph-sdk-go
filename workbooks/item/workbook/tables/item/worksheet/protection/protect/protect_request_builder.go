@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\protection\microsoft.graph.protect
+// protectRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\protection\microsoft.graph.protect
 type ProtectRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ProtectRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ProtectRequestBuilderPostOptions options for Post
 type ProtectRequestBuilderPostOptions struct {
     // 
     Body *ProtectRequestBody;
@@ -24,10 +24,7 @@ type ProtectRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ProtectRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProtectRequestBuilderInternal instantiates a new ProtectRequestBuilder and sets the default values.
 func NewProtectRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProtectRequestBuilder) {
     m := &ProtectRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewProtectRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ProtectRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProtectRequestBuilder instantiates a new ProtectRequestBuilder and sets the default values.
 func NewProtectRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProtectRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProtectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action protect
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action protect
 func (m *ProtectRequestBuilder) CreatePostRequestInformation(options *ProtectRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ProtectRequestBuilder) CreatePostRequestInformation(options *ProtectReq
     }
     return requestInfo, nil
 }
-// Invoke action protect
-// Parameters:
-//  - options : Options for the request
+// Post invoke action protect
 func (m *ProtectRequestBuilder) Post(options *ProtectRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

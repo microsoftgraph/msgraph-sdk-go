@@ -6,7 +6,7 @@ import (
     i1ba02fdb19be50febe7ea813d2646f6e555c4ca3fa98622f6280ab89667a381d "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/memberof/ref"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\memberOf
+// memberOfRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\memberOf
 type MemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MemberOfRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MemberOfRequestBuilderGetOptions options for Get
 type MemberOfRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MemberOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
+// memberOfRequestBuilderGetQueryParameters roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
 type MemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type MemberOfRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new MemberOfRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMemberOfRequestBuilderInternal instantiates a new MemberOfRequestBuilder and sets the default values.
 func NewMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MemberOfRequestBuilder) {
     m := &MemberOfRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewMemberOfRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MemberOfRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMemberOfRequestBuilder instantiates a new MemberOfRequestBuilder and sets the default values.
 func NewMemberOfRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MemberOfRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
 func (m *MemberOfRequestBuilder) CreateGetRequestInformation(options *MemberOfRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *MemberOfRequestBuilder) CreateGetRequestInformation(options *MemberOfRe
     }
     return requestInfo, nil
 }
-// Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
 func (m *MemberOfRequestBuilder) Get(options *MemberOfRequestBuilderGetOptions)(*MemberOfResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// redirectRequestBody 
 type RedirectRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,14 +16,14 @@ type RedirectRequestBody struct {
     // 
     timeout *int32;
 }
-// Instantiates a new redirectRequestBody and sets the default values.
+// NewRedirectRequestBody instantiates a new redirectRequestBody and sets the default values.
 func NewRedirectRequestBody()(*RedirectRequestBody) {
     m := &RedirectRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *RedirectRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the callbackUri property value. 
+// GetCallbackUri gets the callbackUri property value. 
 func (m *RedirectRequestBody) GetCallbackUri()(*string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *RedirectRequestBody) GetCallbackUri()(*string) {
         return m.callbackUri
     }
 }
-// Gets the targets property value. 
+// GetTargets gets the targets property value. 
 func (m *RedirectRequestBody) GetTargets()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *RedirectRequestBody) GetTargets()([]i4a838ef194e4c99e9f2c63ba10dab9cb12
         return m.targets
     }
 }
-// Gets the timeout property value. 
+// GetTimeout gets the timeout property value. 
 func (m *RedirectRequestBody) GetTimeout()(*int32) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *RedirectRequestBody) GetTimeout()(*int32) {
         return m.timeout
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["callbackUri"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -97,9 +97,7 @@ func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{
 func (m *RedirectRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RedirectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("callbackUri", m.GetCallbackUri())
@@ -132,27 +130,19 @@ func (m *RedirectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the callbackUri property value. 
-// Parameters:
-//  - value : Value to set for the callbackUri property.
+// SetCallbackUri sets the callbackUri property value. 
 func (m *RedirectRequestBody) SetCallbackUri(value *string)() {
     m.callbackUri = value
 }
-// Sets the targets property value. 
-// Parameters:
-//  - value : Value to set for the targets property.
+// SetTargets sets the targets property value. 
 func (m *RedirectRequestBody) SetTargets(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo)() {
     m.targets = value
 }
-// Sets the timeout property value. 
-// Parameters:
-//  - value : Value to set for the timeout property.
+// SetTimeout sets the timeout property value. 
 func (m *RedirectRequestBody) SetTimeout(value *int32)() {
     m.timeout = value
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// assignedLicense 
 type AssignedLicense struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type AssignedLicense struct {
     // The unique identifier for the SKU.
     skuId *string;
 }
-// Instantiates a new assignedLicense and sets the default values.
+// NewAssignedLicense instantiates a new assignedLicense and sets the default values.
 func NewAssignedLicense()(*AssignedLicense) {
     m := &AssignedLicense{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedLicense) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *AssignedLicense) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.
+// GetDisabledPlans gets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.
 func (m *AssignedLicense) GetDisabledPlans()([]string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *AssignedLicense) GetDisabledPlans()([]string) {
         return m.disabledPlans
     }
 }
-// Gets the skuId property value. The unique identifier for the SKU.
+// GetSkuId gets the skuId property value. The unique identifier for the SKU.
 func (m *AssignedLicense) GetSkuId()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *AssignedLicense) GetSkuId()(*string) {
         return m.skuId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AssignedLicense) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["disabledPlans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,9 +76,7 @@ func (m *AssignedLicense) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *AssignedLicense) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AssignedLicense) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteCollectionOfStringValues("disabledPlans", m.GetDisabledPlans())
@@ -100,21 +98,15 @@ func (m *AssignedLicense) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedLicense) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.
-// Parameters:
-//  - value : Value to set for the disabledPlans property.
+// SetDisabledPlans sets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.
 func (m *AssignedLicense) SetDisabledPlans(value []string)() {
     m.disabledPlans = value
 }
-// Sets the skuId property value. The unique identifier for the SKU.
-// Parameters:
-//  - value : Value to set for the skuId property.
+// SetSkuId sets the skuId property value. The unique identifier for the SKU.
 func (m *AssignedLicense) SetSkuId(value *string)() {
     m.skuId = value
 }

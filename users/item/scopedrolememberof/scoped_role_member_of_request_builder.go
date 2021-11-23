@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\scopedRoleMemberOf
+// scopedRoleMemberOfRequestBuilder builds and executes requests for operations under \users\{user-id}\scopedRoleMemberOf
 type ScopedRoleMemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ScopedRoleMemberOfRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ScopedRoleMemberOfRequestBuilderGetOptions options for Get
 type ScopedRoleMemberOfRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ScopedRoleMemberOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The scoped-role administrative unit memberships for this user. Read-only. Nullable.
+// scopedRoleMemberOfRequestBuilderGetQueryParameters the scoped-role administrative unit memberships for this user. Read-only. Nullable.
 type ScopedRoleMemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ScopedRoleMemberOfRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ScopedRoleMemberOfRequestBuilderPostOptions options for Post
 type ScopedRoleMemberOfRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ScopedRoleMembership;
@@ -56,10 +56,7 @@ type ScopedRoleMemberOfRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ScopedRoleMemberOfRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScopedRoleMemberOfRequestBuilderInternal instantiates a new ScopedRoleMemberOfRequestBuilder and sets the default values.
 func NewScopedRoleMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScopedRoleMemberOfRequestBuilder) {
     m := &ScopedRoleMemberOfRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewScopedRoleMemberOfRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ScopedRoleMemberOfRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScopedRoleMemberOfRequestBuilder instantiates a new ScopedRoleMemberOfRequestBuilder and sets the default values.
 func NewScopedRoleMemberOfRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScopedRoleMemberOfRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewScopedRoleMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the scoped-role administrative unit memberships for this user. Read-only. Nullable.
 func (m *ScopedRoleMemberOfRequestBuilder) CreateGetRequestInformation(options *ScopedRoleMemberOfRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ScopedRoleMemberOfRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the scoped-role administrative unit memberships for this user. Read-only. Nullable.
 func (m *ScopedRoleMemberOfRequestBuilder) CreatePostRequestInformation(options *ScopedRoleMemberOfRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ScopedRoleMemberOfRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the scoped-role administrative unit memberships for this user. Read-only. Nullable.
 func (m *ScopedRoleMemberOfRequestBuilder) Get(options *ScopedRoleMemberOfRequestBuilderGetOptions)(*ScopedRoleMemberOfResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ScopedRoleMemberOfRequestBuilder) Get(options *ScopedRoleMemberOfReques
     }
     return res.(*ScopedRoleMemberOfResponse), nil
 }
-// The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the scoped-role administrative unit memberships for this user. Read-only. Nullable.
 func (m *ScopedRoleMemberOfRequestBuilder) Post(options *ScopedRoleMemberOfRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ScopedRoleMembership, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

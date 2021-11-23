@@ -7,7 +7,7 @@ import (
     ie6b509efff993711a979bb52cb03b0aa4feb18b6624138024a761ff6c89efda6 "github.com/microsoftgraph/msgraph-sdk-go/users/item/contacts/delta"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\contacts
+// contactsRequestBuilder builds and executes requests for operations under \users\{user-id}\contacts
 type ContactsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ContactsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ContactsRequestBuilderGetOptions options for Get
 type ContactsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type ContactsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user's contacts. Read-only. Nullable.
+// contactsRequestBuilderGetQueryParameters the user's contacts. Read-only. Nullable.
 type ContactsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -44,7 +44,7 @@ type ContactsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ContactsRequestBuilderPostOptions options for Post
 type ContactsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Contact;
@@ -55,10 +55,7 @@ type ContactsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ContactsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContactsRequestBuilderInternal instantiates a new ContactsRequestBuilder and sets the default values.
 func NewContactsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactsRequestBuilder) {
     m := &ContactsRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewContactsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ContactsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContactsRequestBuilder instantiates a new ContactsRequestBuilder and sets the default values.
 func NewContactsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewContactsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user's contacts. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user's contacts. Read-only. Nullable.
 func (m *ContactsRequestBuilder) CreateGetRequestInformation(options *ContactsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *ContactsRequestBuilder) CreateGetRequestInformation(options *ContactsRe
     }
     return requestInfo, nil
 }
-// The user's contacts. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the user's contacts. Read-only. Nullable.
 func (m *ContactsRequestBuilder) CreatePostRequestInformation(options *ContactsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,13 +112,11 @@ func (m *ContactsRequestBuilder) CreatePostRequestInformation(options *ContactsR
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \users\{user-id}\contacts\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \users\{user-id}\contacts\microsoft.graph.delta()
 func (m *ContactsRequestBuilder) Delta()(*ie6b509efff993711a979bb52cb03b0aa4feb18b6624138024a761ff6c89efda6.DeltaRequestBuilder) {
     return ie6b509efff993711a979bb52cb03b0aa4feb18b6624138024a761ff6c89efda6.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The user's contacts. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the user's contacts. Read-only. Nullable.
 func (m *ContactsRequestBuilder) Get(options *ContactsRequestBuilderGetOptions)(*ContactsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -140,9 +128,7 @@ func (m *ContactsRequestBuilder) Get(options *ContactsRequestBuilderGetOptions)(
     }
     return res.(*ContactsResponse), nil
 }
-// The user's contacts. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the user's contacts. Read-only. Nullable.
 func (m *ContactsRequestBuilder) Post(options *ContactsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Contact, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

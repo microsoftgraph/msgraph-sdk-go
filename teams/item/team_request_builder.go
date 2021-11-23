@@ -23,7 +23,7 @@ import (
     i95bd316e1af2146251d5c5f8f94d9865c17745b134282c19c4fae4c81ba47474 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/channels/item"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}
+// teamRequestBuilder builds and executes requests for operations under \teams\{team-id}
 type TeamRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -32,7 +32,7 @@ type TeamRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TeamRequestBuilderDeleteOptions options for Delete
 type TeamRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -41,7 +41,7 @@ type TeamRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TeamRequestBuilderGetOptions options for Get
 type TeamRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -52,14 +52,14 @@ type TeamRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from teams by key
+// teamRequestBuilderGetQueryParameters get entity from teams by key
 type TeamRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TeamRequestBuilderPatchOptions options for Patch
 type TeamRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Team;
@@ -76,9 +76,7 @@ func (m *TeamRequestBuilder) Archive()(*i6b2db9d1ed1ca06816d98e7327f880f451780be
 func (m *TeamRequestBuilder) Channels()(*i9c16b9ccd15275976651d11bc1695c103bd12afe48b01714765458594b9f7975.ChannelsRequestBuilder) {
     return i9c16b9ccd15275976651d11bc1695c103bd12afe48b01714765458594b9f7975.NewChannelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.channels.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ChannelsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.channels.item collection
 func (m *TeamRequestBuilder) ChannelsById(id string)(*i95bd316e1af2146251d5c5f8f94d9865c17745b134282c19c4fae4c81ba47474.ChannelRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -95,10 +93,7 @@ func (m *TeamRequestBuilder) Clone()(*i86a4744d5e45722adbed1e0f22b69f1a4b6148d04
 func (m *TeamRequestBuilder) CompleteMigration()(*id19ffdf54b88ab907e8aa643b2969b583758c77cb61e7e304e1e7fbc61c9d1fa.CompleteMigrationRequestBuilder) {
     return id19ffdf54b88ab907e8aa643b2969b583758c77cb61e7e304e1e7fbc61c9d1fa.NewCompleteMigrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new TeamRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamRequestBuilderInternal instantiates a new TeamRequestBuilder and sets the default values.
 func NewTeamRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamRequestBuilder) {
     m := &TeamRequestBuilder{
     }
@@ -111,18 +106,13 @@ func NewTeamRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamRequestBuilder instantiates a new TeamRequestBuilder and sets the default values.
 func NewTeamRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from teams
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from teams
 func (m *TeamRequestBuilder) CreateDeleteRequestInformation(options *TeamRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +129,7 @@ func (m *TeamRequestBuilder) CreateDeleteRequestInformation(options *TeamRequest
     }
     return requestInfo, nil
 }
-// Get entity from teams by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from teams by key
 func (m *TeamRequestBuilder) CreateGetRequestInformation(options *TeamRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,9 +149,7 @@ func (m *TeamRequestBuilder) CreateGetRequestInformation(options *TeamRequestBui
     }
     return requestInfo, nil
 }
-// Update entity in teams
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in teams
 func (m *TeamRequestBuilder) CreatePatchRequestInformation(options *TeamRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -181,9 +167,7 @@ func (m *TeamRequestBuilder) CreatePatchRequestInformation(options *TeamRequestB
     }
     return requestInfo, nil
 }
-// Delete entity from teams
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from teams
 func (m *TeamRequestBuilder) Delete(options *TeamRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -195,9 +179,7 @@ func (m *TeamRequestBuilder) Delete(options *TeamRequestBuilderDeleteOptions)(er
     }
     return nil
 }
-// Get entity from teams by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from teams by key
 func (m *TeamRequestBuilder) Get(options *TeamRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Team, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -215,9 +197,7 @@ func (m *TeamRequestBuilder) Group()(*ic0623992ab864953cddbe4e195f8ecf82c663de82
 func (m *TeamRequestBuilder) InstalledApps()(*i94154a059496bbfe5f4225f44a08db234c17a10c3a7d58124a8fb182751e3bc6.InstalledAppsRequestBuilder) {
     return i94154a059496bbfe5f4225f44a08db234c17a10c3a7d58124a8fb182751e3bc6.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.installedApps.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// InstalledAppsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.installedApps.item collection
 func (m *TeamRequestBuilder) InstalledAppsById(id string)(*i6b8094a2be2251280648d1c8aa1f2cb616745b9111719fe2f3f1b754098a2ea7.TeamsAppInstallationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -231,9 +211,7 @@ func (m *TeamRequestBuilder) InstalledAppsById(id string)(*i6b8094a2be2251280648
 func (m *TeamRequestBuilder) Members()(*ie3ea4358486c3530306ce0ee6275a0285de71b92eff7f63adb5e51ed2ef63235.MembersRequestBuilder) {
     return ie3ea4358486c3530306ce0ee6275a0285de71b92eff7f63adb5e51ed2ef63235.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.members.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.members.item collection
 func (m *TeamRequestBuilder) MembersById(id string)(*i167530cb07fd4387f5ffe0c5a728e41dd5608a4963302dd28d98720ea3c093dc.ConversationMemberRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -247,9 +225,7 @@ func (m *TeamRequestBuilder) MembersById(id string)(*i167530cb07fd4387f5ffe0c5a7
 func (m *TeamRequestBuilder) Operations()(*i0d53f661bb96ea28364f561f24c6a15b30ee8383c8b828dac50eca27ee85d3fa.OperationsRequestBuilder) {
     return i0d53f661bb96ea28364f561f24c6a15b30ee8383c8b828dac50eca27ee85d3fa.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.operations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// OperationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.operations.item collection
 func (m *TeamRequestBuilder) OperationsById(id string)(*i3efb7759b468a039683d7e9a7233c6ef567ad6e2bfdb31d83c6c7c4bfb121545.TeamsAsyncOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -260,9 +236,7 @@ func (m *TeamRequestBuilder) OperationsById(id string)(*i3efb7759b468a039683d7e9
     }
     return i3efb7759b468a039683d7e9a7233c6ef567ad6e2bfdb31d83c6c7c4bfb121545.NewTeamsAsyncOperationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Update entity in teams
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in teams
 func (m *TeamRequestBuilder) Patch(options *TeamRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

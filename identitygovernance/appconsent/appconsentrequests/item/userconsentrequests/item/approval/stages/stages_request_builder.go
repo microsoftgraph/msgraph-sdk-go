@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}\approval\stages
+// stagesRequestBuilder builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}\approval\stages
 type StagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type StagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// StagesRequestBuilderGetOptions options for Get
 type StagesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type StagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of stages in the approval decision.
+// stagesRequestBuilderGetQueryParameters a collection of stages in the approval decision.
 type StagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type StagesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// StagesRequestBuilderPostOptions options for Post
 type StagesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApprovalStage;
@@ -56,10 +56,7 @@ type StagesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new StagesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStagesRequestBuilderInternal instantiates a new StagesRequestBuilder and sets the default values.
 func NewStagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StagesRequestBuilder) {
     m := &StagesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewStagesRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new StagesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewStagesRequestBuilder instantiates a new StagesRequestBuilder and sets the default values.
 func NewStagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewStagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of stages in the approval decision.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of stages in the approval decision.
 func (m *StagesRequestBuilder) CreateGetRequestInformation(options *StagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *StagesRequestBuilder) CreateGetRequestInformation(options *StagesReques
     }
     return requestInfo, nil
 }
-// A collection of stages in the approval decision.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a collection of stages in the approval decision.
 func (m *StagesRequestBuilder) CreatePostRequestInformation(options *StagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *StagesRequestBuilder) CreatePostRequestInformation(options *StagesReque
     }
     return requestInfo, nil
 }
-// A collection of stages in the approval decision.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of stages in the approval decision.
 func (m *StagesRequestBuilder) Get(options *StagesRequestBuilderGetOptions)(*StagesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *StagesRequestBuilder) Get(options *StagesRequestBuilderGetOptions)(*Sta
     }
     return res.(*StagesResponse), nil
 }
-// A collection of stages in the approval decision.
-// Parameters:
-//  - options : Options for the request
+// Post a collection of stages in the approval decision.
 func (m *StagesRequestBuilder) Post(options *StagesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApprovalStage, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

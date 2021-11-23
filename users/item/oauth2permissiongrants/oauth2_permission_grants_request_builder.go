@@ -6,7 +6,7 @@ import (
     i73bd1407e8368bdd39a94e2c0e4537b257fd49dfffbb96281fc96a5c59cbbf17 "github.com/microsoftgraph/msgraph-sdk-go/users/item/oauth2permissiongrants/ref"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\oauth2PermissionGrants
+// oauth2PermissionGrantsRequestBuilder builds and executes requests for operations under \users\{user-id}\oauth2PermissionGrants
 type Oauth2PermissionGrantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type Oauth2PermissionGrantsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// Oauth2PermissionGrantsRequestBuilderGetOptions options for Get
 type Oauth2PermissionGrantsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type Oauth2PermissionGrantsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get oauth2PermissionGrants from users
+// oauth2PermissionGrantsRequestBuilderGetQueryParameters get oauth2PermissionGrants from users
 type Oauth2PermissionGrantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type Oauth2PermissionGrantsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOauth2PermissionGrantsRequestBuilderInternal instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.
 func NewOauth2PermissionGrantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*Oauth2PermissionGrantsRequestBuilder) {
     m := &Oauth2PermissionGrantsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewOauth2PermissionGrantsRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOauth2PermissionGrantsRequestBuilder instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.
 func NewOauth2PermissionGrantsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*Oauth2PermissionGrantsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOauth2PermissionGrantsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get oauth2PermissionGrants from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get oauth2PermissionGrants from users
 func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformation(options *Oauth2PermissionGrantsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get oauth2PermissionGrants from users
-// Parameters:
-//  - options : Options for the request
+// Get get oauth2PermissionGrants from users
 func (m *Oauth2PermissionGrantsRequestBuilder) Get(options *Oauth2PermissionGrantsRequestBuilderGetOptions)(*Oauth2PermissionGrantsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

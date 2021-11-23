@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// toneInfo 
 type ToneInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type ToneInfo struct {
     // Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
     tone *Tone;
 }
-// Instantiates a new toneInfo and sets the default values.
+// NewToneInfo instantiates a new toneInfo and sets the default values.
 func NewToneInfo()(*ToneInfo) {
     m := &ToneInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ToneInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *ToneInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the sequenceId property value. An incremental identifier used for ordering DTMF events.
+// GetSequenceId gets the sequenceId property value. An incremental identifier used for ordering DTMF events.
 func (m *ToneInfo) GetSequenceId()(*int64) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ToneInfo) GetSequenceId()(*int64) {
         return m.sequenceId
     }
 }
-// Gets the tone property value. Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
+// GetTone gets the tone property value. Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
 func (m *ToneInfo) GetTone()(*Tone) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *ToneInfo) GetTone()(*Tone) {
         return m.tone
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ToneInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["sequenceId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *ToneInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *ToneInfo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ToneInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt64Value("sequenceId", m.GetSequenceId())
@@ -98,21 +96,15 @@ func (m *ToneInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ToneInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the sequenceId property value. An incremental identifier used for ordering DTMF events.
-// Parameters:
-//  - value : Value to set for the sequenceId property.
+// SetSequenceId sets the sequenceId property value. An incremental identifier used for ordering DTMF events.
 func (m *ToneInfo) SetSequenceId(value *int64)() {
     m.sequenceId = value
 }
-// Sets the tone property value. Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
-// Parameters:
-//  - value : Value to set for the tone property.
+// SetTone sets the tone property value. Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
 func (m *ToneInfo) SetTone(value *Tone)() {
     m.tone = value
 }

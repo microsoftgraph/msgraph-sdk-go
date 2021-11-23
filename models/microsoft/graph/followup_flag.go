@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// followupFlag 
 type FollowupFlag struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type FollowupFlag struct {
     // The date and time that the follow-up is to begin.
     startDateTime *DateTimeTimeZone;
 }
-// Instantiates a new followupFlag and sets the default values.
+// NewFollowupFlag instantiates a new followupFlag and sets the default values.
 func NewFollowupFlag()(*FollowupFlag) {
     m := &FollowupFlag{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FollowupFlag) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *FollowupFlag) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the completedDateTime property value. The date and time that the follow-up was finished.
+// GetCompletedDateTime gets the completedDateTime property value. The date and time that the follow-up was finished.
 func (m *FollowupFlag) GetCompletedDateTime()(*DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *FollowupFlag) GetCompletedDateTime()(*DateTimeTimeZone) {
         return m.completedDateTime
     }
 }
-// Gets the dueDateTime property value. The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
+// GetDueDateTime gets the dueDateTime property value. The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
 func (m *FollowupFlag) GetDueDateTime()(*DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *FollowupFlag) GetDueDateTime()(*DateTimeTimeZone) {
         return m.dueDateTime
     }
 }
-// Gets the flagStatus property value. The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
+// GetFlagStatus gets the flagStatus property value. The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
 func (m *FollowupFlag) GetFlagStatus()(*FollowupFlagStatus) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *FollowupFlag) GetFlagStatus()(*FollowupFlagStatus) {
         return m.flagStatus
     }
 }
-// Gets the startDateTime property value. The date and time that the follow-up is to begin.
+// GetStartDateTime gets the startDateTime property value. The date and time that the follow-up is to begin.
 func (m *FollowupFlag) GetStartDateTime()(*DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *FollowupFlag) GetStartDateTime()(*DateTimeTimeZone) {
         return m.startDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["completedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,9 +113,7 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *FollowupFlag) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *FollowupFlag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("completedDateTime", m.GetCompletedDateTime())
@@ -150,33 +148,23 @@ func (m *FollowupFlag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FollowupFlag) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the completedDateTime property value. The date and time that the follow-up was finished.
-// Parameters:
-//  - value : Value to set for the completedDateTime property.
+// SetCompletedDateTime sets the completedDateTime property value. The date and time that the follow-up was finished.
 func (m *FollowupFlag) SetCompletedDateTime(value *DateTimeTimeZone)() {
     m.completedDateTime = value
 }
-// Sets the dueDateTime property value. The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
-// Parameters:
-//  - value : Value to set for the dueDateTime property.
+// SetDueDateTime sets the dueDateTime property value. The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
 func (m *FollowupFlag) SetDueDateTime(value *DateTimeTimeZone)() {
     m.dueDateTime = value
 }
-// Sets the flagStatus property value. The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
-// Parameters:
-//  - value : Value to set for the flagStatus property.
+// SetFlagStatus sets the flagStatus property value. The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
 func (m *FollowupFlag) SetFlagStatus(value *FollowupFlagStatus)() {
     m.flagStatus = value
 }
-// Sets the startDateTime property value. The date and time that the follow-up is to begin.
-// Parameters:
-//  - value : Value to set for the startDateTime property.
+// SetStartDateTime sets the startDateTime property value. The date and time that the follow-up is to begin.
 func (m *FollowupFlag) SetStartDateTime(value *DateTimeTimeZone)() {
     m.startDateTime = value
 }

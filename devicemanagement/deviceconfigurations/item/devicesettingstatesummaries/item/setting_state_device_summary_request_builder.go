@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\deviceSettingStateSummaries\{settingStateDeviceSummary-id}
+// settingStateDeviceSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\deviceSettingStateSummaries\{settingStateDeviceSummary-id}
 type SettingStateDeviceSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SettingStateDeviceSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SettingStateDeviceSummaryRequestBuilderDeleteOptions options for Delete
 type SettingStateDeviceSummaryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SettingStateDeviceSummaryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SettingStateDeviceSummaryRequestBuilderGetOptions options for Get
 type SettingStateDeviceSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SettingStateDeviceSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Device Configuration Setting State Device Summary
+// settingStateDeviceSummaryRequestBuilderGetQueryParameters device Configuration Setting State Device Summary
 type SettingStateDeviceSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SettingStateDeviceSummaryRequestBuilderPatchOptions options for Patch
 type SettingStateDeviceSummaryRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SettingStateDeviceSummary;
@@ -53,10 +53,7 @@ type SettingStateDeviceSummaryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SettingStateDeviceSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSettingStateDeviceSummaryRequestBuilderInternal instantiates a new SettingStateDeviceSummaryRequestBuilder and sets the default values.
 func NewSettingStateDeviceSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SettingStateDeviceSummaryRequestBuilder) {
     m := &SettingStateDeviceSummaryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSettingStateDeviceSummaryRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SettingStateDeviceSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSettingStateDeviceSummaryRequestBuilder instantiates a new SettingStateDeviceSummaryRequestBuilder and sets the default values.
 func NewSettingStateDeviceSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SettingStateDeviceSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSettingStateDeviceSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Device Configuration Setting State Device Summary
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation device Configuration Setting State Device Summary
 func (m *SettingStateDeviceSummaryRequestBuilder) CreateDeleteRequestInformation(options *SettingStateDeviceSummaryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SettingStateDeviceSummaryRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// Device Configuration Setting State Device Summary
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation device Configuration Setting State Device Summary
 func (m *SettingStateDeviceSummaryRequestBuilder) CreateGetRequestInformation(options *SettingStateDeviceSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SettingStateDeviceSummaryRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Device Configuration Setting State Device Summary
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation device Configuration Setting State Device Summary
 func (m *SettingStateDeviceSummaryRequestBuilder) CreatePatchRequestInformation(options *SettingStateDeviceSummaryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SettingStateDeviceSummaryRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Device Configuration Setting State Device Summary
-// Parameters:
-//  - options : Options for the request
+// Delete device Configuration Setting State Device Summary
 func (m *SettingStateDeviceSummaryRequestBuilder) Delete(options *SettingStateDeviceSummaryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SettingStateDeviceSummaryRequestBuilder) Delete(options *SettingStateDe
     }
     return nil
 }
-// Device Configuration Setting State Device Summary
-// Parameters:
-//  - options : Options for the request
+// Get device Configuration Setting State Device Summary
 func (m *SettingStateDeviceSummaryRequestBuilder) Get(options *SettingStateDeviceSummaryRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SettingStateDeviceSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SettingStateDeviceSummaryRequestBuilder) Get(options *SettingStateDevic
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SettingStateDeviceSummary), nil
 }
-// Device Configuration Setting State Device Summary
-// Parameters:
-//  - options : Options for the request
+// Patch device Configuration Setting State Device Summary
 func (m *SettingStateDeviceSummaryRequestBuilder) Patch(options *SettingStateDeviceSummaryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

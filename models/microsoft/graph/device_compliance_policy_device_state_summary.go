@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceCompliancePolicyDeviceStateSummary 
 type DeviceCompliancePolicyDeviceStateSummary struct {
     Entity
     // Number of compliant devices
@@ -26,14 +26,14 @@ type DeviceCompliancePolicyDeviceStateSummary struct {
     // Number of unknown devices
     unknownDeviceCount *int32;
 }
-// Instantiates a new deviceCompliancePolicyDeviceStateSummary and sets the default values.
+// NewDeviceCompliancePolicyDeviceStateSummary instantiates a new deviceCompliancePolicyDeviceStateSummary and sets the default values.
 func NewDeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDeviceStateSummary) {
     m := &DeviceCompliancePolicyDeviceStateSummary{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the compliantDeviceCount property value. Number of compliant devices
+// GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetCompliantDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetCompliantDeviceCount()(*in
         return m.compliantDeviceCount
     }
 }
-// Gets the configManagerCount property value. Number of devices that have compliance managed by System Center Configuration Manager
+// GetConfigManagerCount gets the configManagerCount property value. Number of devices that have compliance managed by System Center Configuration Manager
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetConfigManagerCount()(*int32) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetConfigManagerCount()(*int3
         return m.configManagerCount
     }
 }
-// Gets the conflictDeviceCount property value. Number of conflict devices
+// GetConflictDeviceCount gets the conflictDeviceCount property value. Number of conflict devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetConflictDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetConflictDeviceCount()(*int
         return m.conflictDeviceCount
     }
 }
-// Gets the errorDeviceCount property value. Number of error devices
+// GetErrorDeviceCount gets the errorDeviceCount property value. Number of error devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetErrorDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetErrorDeviceCount()(*int32)
         return m.errorDeviceCount
     }
 }
-// Gets the inGracePeriodCount property value. Number of devices that are in grace period
+// GetInGracePeriodCount gets the inGracePeriodCount property value. Number of devices that are in grace period
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetInGracePeriodCount()(*int32) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetInGracePeriodCount()(*int3
         return m.inGracePeriodCount
     }
 }
-// Gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
+// GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetNonCompliantDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetNonCompliantDeviceCount()(
         return m.nonCompliantDeviceCount
     }
 }
-// Gets the notApplicableDeviceCount property value. Number of not applicable devices
+// GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetNotApplicableDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetNotApplicableDeviceCount()
         return m.notApplicableDeviceCount
     }
 }
-// Gets the remediatedDeviceCount property value. Number of remediated devices
+// GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetRemediatedDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetRemediatedDeviceCount()(*i
         return m.remediatedDeviceCount
     }
 }
-// Gets the unknownDeviceCount property value. Number of unknown devices
+// GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetUnknownDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetUnknownDeviceCount()(*int3
         return m.unknownDeviceCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["compliantDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -203,9 +203,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetFieldDeserializers()(map[s
 func (m *DeviceCompliancePolicyDeviceStateSummary) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceCompliancePolicyDeviceStateSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -267,57 +265,39 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) Serialize(writer i04eb5309aea
     }
     return nil
 }
-// Sets the compliantDeviceCount property value. Number of compliant devices
-// Parameters:
-//  - value : Value to set for the compliantDeviceCount property.
+// SetCompliantDeviceCount sets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetCompliantDeviceCount(value *int32)() {
     m.compliantDeviceCount = value
 }
-// Sets the configManagerCount property value. Number of devices that have compliance managed by System Center Configuration Manager
-// Parameters:
-//  - value : Value to set for the configManagerCount property.
+// SetConfigManagerCount sets the configManagerCount property value. Number of devices that have compliance managed by System Center Configuration Manager
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetConfigManagerCount(value *int32)() {
     m.configManagerCount = value
 }
-// Sets the conflictDeviceCount property value. Number of conflict devices
-// Parameters:
-//  - value : Value to set for the conflictDeviceCount property.
+// SetConflictDeviceCount sets the conflictDeviceCount property value. Number of conflict devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetConflictDeviceCount(value *int32)() {
     m.conflictDeviceCount = value
 }
-// Sets the errorDeviceCount property value. Number of error devices
-// Parameters:
-//  - value : Value to set for the errorDeviceCount property.
+// SetErrorDeviceCount sets the errorDeviceCount property value. Number of error devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetErrorDeviceCount(value *int32)() {
     m.errorDeviceCount = value
 }
-// Sets the inGracePeriodCount property value. Number of devices that are in grace period
-// Parameters:
-//  - value : Value to set for the inGracePeriodCount property.
+// SetInGracePeriodCount sets the inGracePeriodCount property value. Number of devices that are in grace period
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetInGracePeriodCount(value *int32)() {
     m.inGracePeriodCount = value
 }
-// Sets the nonCompliantDeviceCount property value. Number of NonCompliant devices
-// Parameters:
-//  - value : Value to set for the nonCompliantDeviceCount property.
+// SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetNonCompliantDeviceCount(value *int32)() {
     m.nonCompliantDeviceCount = value
 }
-// Sets the notApplicableDeviceCount property value. Number of not applicable devices
-// Parameters:
-//  - value : Value to set for the notApplicableDeviceCount property.
+// SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetNotApplicableDeviceCount(value *int32)() {
     m.notApplicableDeviceCount = value
 }
-// Sets the remediatedDeviceCount property value. Number of remediated devices
-// Parameters:
-//  - value : Value to set for the remediatedDeviceCount property.
+// SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Number of remediated devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetRemediatedDeviceCount(value *int32)() {
     m.remediatedDeviceCount = value
 }
-// Sets the unknownDeviceCount property value. Number of unknown devices
-// Parameters:
-//  - value : Value to set for the unknownDeviceCount property.
+// SetUnknownDeviceCount sets the unknownDeviceCount property value. Number of unknown devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetUnknownDeviceCount(value *int32)() {
     m.unknownDeviceCount = value
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// managedAppProtection 
 type ManagedAppProtection struct {
     ManagedAppPolicy
     // Data storage locations where a user may store managed data.
@@ -62,14 +62,14 @@ type ManagedAppProtection struct {
     // Indicates whether simplePin is blocked.
     simplePinBlocked *bool;
 }
-// Instantiates a new managedAppProtection and sets the default values.
+// NewManagedAppProtection instantiates a new managedAppProtection and sets the default values.
 func NewManagedAppProtection()(*ManagedAppProtection) {
     m := &ManagedAppProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
     return m
 }
-// Gets the allowedDataStorageLocations property value. Data storage locations where a user may store managed data.
+// GetAllowedDataStorageLocations gets the allowedDataStorageLocations property value. Data storage locations where a user may store managed data.
 func (m *ManagedAppProtection) GetAllowedDataStorageLocations()([]ManagedAppDataStorageLocation) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *ManagedAppProtection) GetAllowedDataStorageLocations()([]ManagedAppData
         return m.allowedDataStorageLocations
     }
 }
-// Gets the allowedInboundDataTransferSources property value. Sources from which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
+// GetAllowedInboundDataTransferSources gets the allowedInboundDataTransferSources property value. Sources from which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
 func (m *ManagedAppProtection) GetAllowedInboundDataTransferSources()(*ManagedAppDataTransferLevel) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *ManagedAppProtection) GetAllowedInboundDataTransferSources()(*ManagedAp
         return m.allowedInboundDataTransferSources
     }
 }
-// Gets the allowedOutboundClipboardSharingLevel property value. The level to which the clipboard may be shared between apps on the managed device. Possible values are: allApps, managedAppsWithPasteIn, managedApps, blocked.
+// GetAllowedOutboundClipboardSharingLevel gets the allowedOutboundClipboardSharingLevel property value. The level to which the clipboard may be shared between apps on the managed device. Possible values are: allApps, managedAppsWithPasteIn, managedApps, blocked.
 func (m *ManagedAppProtection) GetAllowedOutboundClipboardSharingLevel()(*ManagedAppClipboardSharingLevel) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *ManagedAppProtection) GetAllowedOutboundClipboardSharingLevel()(*Manage
         return m.allowedOutboundClipboardSharingLevel
     }
 }
-// Gets the allowedOutboundDataTransferDestinations property value. Destinations to which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
+// GetAllowedOutboundDataTransferDestinations gets the allowedOutboundDataTransferDestinations property value. Destinations to which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
 func (m *ManagedAppProtection) GetAllowedOutboundDataTransferDestinations()(*ManagedAppDataTransferLevel) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *ManagedAppProtection) GetAllowedOutboundDataTransferDestinations()(*Man
         return m.allowedOutboundDataTransferDestinations
     }
 }
-// Gets the contactSyncBlocked property value. Indicates whether contacts can be synced to the user's device.
+// GetContactSyncBlocked gets the contactSyncBlocked property value. Indicates whether contacts can be synced to the user's device.
 func (m *ManagedAppProtection) GetContactSyncBlocked()(*bool) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *ManagedAppProtection) GetContactSyncBlocked()(*bool) {
         return m.contactSyncBlocked
     }
 }
-// Gets the dataBackupBlocked property value. Indicates whether the backup of a managed app's data is blocked.
+// GetDataBackupBlocked gets the dataBackupBlocked property value. Indicates whether the backup of a managed app's data is blocked.
 func (m *ManagedAppProtection) GetDataBackupBlocked()(*bool) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *ManagedAppProtection) GetDataBackupBlocked()(*bool) {
         return m.dataBackupBlocked
     }
 }
-// Gets the deviceComplianceRequired property value. Indicates whether device compliance is required.
+// GetDeviceComplianceRequired gets the deviceComplianceRequired property value. Indicates whether device compliance is required.
 func (m *ManagedAppProtection) GetDeviceComplianceRequired()(*bool) {
     if m == nil {
         return nil
@@ -125,7 +125,7 @@ func (m *ManagedAppProtection) GetDeviceComplianceRequired()(*bool) {
         return m.deviceComplianceRequired
     }
 }
-// Gets the disableAppPinIfDevicePinIsSet property value. Indicates whether use of the app pin is required if the device pin is set.
+// GetDisableAppPinIfDevicePinIsSet gets the disableAppPinIfDevicePinIsSet property value. Indicates whether use of the app pin is required if the device pin is set.
 func (m *ManagedAppProtection) GetDisableAppPinIfDevicePinIsSet()(*bool) {
     if m == nil {
         return nil
@@ -133,7 +133,7 @@ func (m *ManagedAppProtection) GetDisableAppPinIfDevicePinIsSet()(*bool) {
         return m.disableAppPinIfDevicePinIsSet
     }
 }
-// Gets the fingerprintBlocked property value. Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
+// GetFingerprintBlocked gets the fingerprintBlocked property value. Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
 func (m *ManagedAppProtection) GetFingerprintBlocked()(*bool) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *ManagedAppProtection) GetFingerprintBlocked()(*bool) {
         return m.fingerprintBlocked
     }
 }
-// Gets the managedBrowser property value. Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
+// GetManagedBrowser gets the managedBrowser property value. Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
 func (m *ManagedAppProtection) GetManagedBrowser()(*ManagedBrowserType) {
     if m == nil {
         return nil
@@ -149,7 +149,7 @@ func (m *ManagedAppProtection) GetManagedBrowser()(*ManagedBrowserType) {
         return m.managedBrowser
     }
 }
-// Gets the managedBrowserToOpenLinksRequired property value. Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
+// GetManagedBrowserToOpenLinksRequired gets the managedBrowserToOpenLinksRequired property value. Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
 func (m *ManagedAppProtection) GetManagedBrowserToOpenLinksRequired()(*bool) {
     if m == nil {
         return nil
@@ -157,7 +157,7 @@ func (m *ManagedAppProtection) GetManagedBrowserToOpenLinksRequired()(*bool) {
         return m.managedBrowserToOpenLinksRequired
     }
 }
-// Gets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
+// GetMaximumPinRetries gets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
 func (m *ManagedAppProtection) GetMaximumPinRetries()(*int32) {
     if m == nil {
         return nil
@@ -165,7 +165,7 @@ func (m *ManagedAppProtection) GetMaximumPinRetries()(*int32) {
         return m.maximumPinRetries
     }
 }
-// Gets the minimumPinLength property value. Minimum pin length required for an app-level pin if PinRequired is set to True
+// GetMinimumPinLength gets the minimumPinLength property value. Minimum pin length required for an app-level pin if PinRequired is set to True
 func (m *ManagedAppProtection) GetMinimumPinLength()(*int32) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *ManagedAppProtection) GetMinimumPinLength()(*int32) {
         return m.minimumPinLength
     }
 }
-// Gets the minimumRequiredAppVersion property value. Versions less than the specified version will block the managed app from accessing company data.
+// GetMinimumRequiredAppVersion gets the minimumRequiredAppVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *ManagedAppProtection) GetMinimumRequiredAppVersion()(*string) {
     if m == nil {
         return nil
@@ -181,7 +181,7 @@ func (m *ManagedAppProtection) GetMinimumRequiredAppVersion()(*string) {
         return m.minimumRequiredAppVersion
     }
 }
-// Gets the minimumRequiredOsVersion property value. Versions less than the specified version will block the managed app from accessing company data.
+// GetMinimumRequiredOsVersion gets the minimumRequiredOsVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *ManagedAppProtection) GetMinimumRequiredOsVersion()(*string) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *ManagedAppProtection) GetMinimumRequiredOsVersion()(*string) {
         return m.minimumRequiredOsVersion
     }
 }
-// Gets the minimumWarningAppVersion property value. Versions less than the specified version will result in warning message on the managed app.
+// GetMinimumWarningAppVersion gets the minimumWarningAppVersion property value. Versions less than the specified version will result in warning message on the managed app.
 func (m *ManagedAppProtection) GetMinimumWarningAppVersion()(*string) {
     if m == nil {
         return nil
@@ -197,7 +197,7 @@ func (m *ManagedAppProtection) GetMinimumWarningAppVersion()(*string) {
         return m.minimumWarningAppVersion
     }
 }
-// Gets the minimumWarningOsVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data.
+// GetMinimumWarningOsVersion gets the minimumWarningOsVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data.
 func (m *ManagedAppProtection) GetMinimumWarningOsVersion()(*string) {
     if m == nil {
         return nil
@@ -205,7 +205,7 @@ func (m *ManagedAppProtection) GetMinimumWarningOsVersion()(*string) {
         return m.minimumWarningOsVersion
     }
 }
-// Gets the organizationalCredentialsRequired property value. Indicates whether organizational credentials are required for app use.
+// GetOrganizationalCredentialsRequired gets the organizationalCredentialsRequired property value. Indicates whether organizational credentials are required for app use.
 func (m *ManagedAppProtection) GetOrganizationalCredentialsRequired()(*bool) {
     if m == nil {
         return nil
@@ -213,7 +213,7 @@ func (m *ManagedAppProtection) GetOrganizationalCredentialsRequired()(*bool) {
         return m.organizationalCredentialsRequired
     }
 }
-// Gets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
+// GetPeriodBeforePinReset gets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
 func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*string) {
     if m == nil {
         return nil
@@ -221,7 +221,7 @@ func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*string) {
         return m.periodBeforePinReset
     }
 }
-// Gets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
+// GetPeriodOfflineBeforeAccessCheck gets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
 func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*string) {
     if m == nil {
         return nil
@@ -229,7 +229,7 @@ func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*string) {
         return m.periodOfflineBeforeAccessCheck
     }
 }
-// Gets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
+// GetPeriodOfflineBeforeWipeIsEnforced gets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
 func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*string) {
     if m == nil {
         return nil
@@ -237,7 +237,7 @@ func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*string) {
         return m.periodOfflineBeforeWipeIsEnforced
     }
 }
-// Gets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
+// GetPeriodOnlineBeforeAccessCheck gets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
 func (m *ManagedAppProtection) GetPeriodOnlineBeforeAccessCheck()(*string) {
     if m == nil {
         return nil
@@ -245,7 +245,7 @@ func (m *ManagedAppProtection) GetPeriodOnlineBeforeAccessCheck()(*string) {
         return m.periodOnlineBeforeAccessCheck
     }
 }
-// Gets the pinCharacterSet property value. Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
+// GetPinCharacterSet gets the pinCharacterSet property value. Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
 func (m *ManagedAppProtection) GetPinCharacterSet()(*ManagedAppPinCharacterSet) {
     if m == nil {
         return nil
@@ -253,7 +253,7 @@ func (m *ManagedAppProtection) GetPinCharacterSet()(*ManagedAppPinCharacterSet) 
         return m.pinCharacterSet
     }
 }
-// Gets the pinRequired property value. Indicates whether an app-level pin is required.
+// GetPinRequired gets the pinRequired property value. Indicates whether an app-level pin is required.
 func (m *ManagedAppProtection) GetPinRequired()(*bool) {
     if m == nil {
         return nil
@@ -261,7 +261,7 @@ func (m *ManagedAppProtection) GetPinRequired()(*bool) {
         return m.pinRequired
     }
 }
-// Gets the printBlocked property value. Indicates whether printing is allowed from managed apps.
+// GetPrintBlocked gets the printBlocked property value. Indicates whether printing is allowed from managed apps.
 func (m *ManagedAppProtection) GetPrintBlocked()(*bool) {
     if m == nil {
         return nil
@@ -269,7 +269,7 @@ func (m *ManagedAppProtection) GetPrintBlocked()(*bool) {
         return m.printBlocked
     }
 }
-// Gets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
+// GetSaveAsBlocked gets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
 func (m *ManagedAppProtection) GetSaveAsBlocked()(*bool) {
     if m == nil {
         return nil
@@ -277,7 +277,7 @@ func (m *ManagedAppProtection) GetSaveAsBlocked()(*bool) {
         return m.saveAsBlocked
     }
 }
-// Gets the simplePinBlocked property value. Indicates whether simplePin is blocked.
+// GetSimplePinBlocked gets the simplePinBlocked property value. Indicates whether simplePin is blocked.
 func (m *ManagedAppProtection) GetSimplePinBlocked()(*bool) {
     if m == nil {
         return nil
@@ -285,7 +285,7 @@ func (m *ManagedAppProtection) GetSimplePinBlocked()(*bool) {
         return m.simplePinBlocked
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
     res["allowedDataStorageLocations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -572,9 +572,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
 func (m *ManagedAppProtection) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ManagedAppPolicy.Serialize(writer)
     if err != nil {
@@ -749,165 +747,111 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the allowedDataStorageLocations property value. Data storage locations where a user may store managed data.
-// Parameters:
-//  - value : Value to set for the allowedDataStorageLocations property.
+// SetAllowedDataStorageLocations sets the allowedDataStorageLocations property value. Data storage locations where a user may store managed data.
 func (m *ManagedAppProtection) SetAllowedDataStorageLocations(value []ManagedAppDataStorageLocation)() {
     m.allowedDataStorageLocations = value
 }
-// Sets the allowedInboundDataTransferSources property value. Sources from which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
-// Parameters:
-//  - value : Value to set for the allowedInboundDataTransferSources property.
+// SetAllowedInboundDataTransferSources sets the allowedInboundDataTransferSources property value. Sources from which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
 func (m *ManagedAppProtection) SetAllowedInboundDataTransferSources(value *ManagedAppDataTransferLevel)() {
     m.allowedInboundDataTransferSources = value
 }
-// Sets the allowedOutboundClipboardSharingLevel property value. The level to which the clipboard may be shared between apps on the managed device. Possible values are: allApps, managedAppsWithPasteIn, managedApps, blocked.
-// Parameters:
-//  - value : Value to set for the allowedOutboundClipboardSharingLevel property.
+// SetAllowedOutboundClipboardSharingLevel sets the allowedOutboundClipboardSharingLevel property value. The level to which the clipboard may be shared between apps on the managed device. Possible values are: allApps, managedAppsWithPasteIn, managedApps, blocked.
 func (m *ManagedAppProtection) SetAllowedOutboundClipboardSharingLevel(value *ManagedAppClipboardSharingLevel)() {
     m.allowedOutboundClipboardSharingLevel = value
 }
-// Sets the allowedOutboundDataTransferDestinations property value. Destinations to which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
-// Parameters:
-//  - value : Value to set for the allowedOutboundDataTransferDestinations property.
+// SetAllowedOutboundDataTransferDestinations sets the allowedOutboundDataTransferDestinations property value. Destinations to which data is allowed to be transferred. Possible values are: allApps, managedApps, none.
 func (m *ManagedAppProtection) SetAllowedOutboundDataTransferDestinations(value *ManagedAppDataTransferLevel)() {
     m.allowedOutboundDataTransferDestinations = value
 }
-// Sets the contactSyncBlocked property value. Indicates whether contacts can be synced to the user's device.
-// Parameters:
-//  - value : Value to set for the contactSyncBlocked property.
+// SetContactSyncBlocked sets the contactSyncBlocked property value. Indicates whether contacts can be synced to the user's device.
 func (m *ManagedAppProtection) SetContactSyncBlocked(value *bool)() {
     m.contactSyncBlocked = value
 }
-// Sets the dataBackupBlocked property value. Indicates whether the backup of a managed app's data is blocked.
-// Parameters:
-//  - value : Value to set for the dataBackupBlocked property.
+// SetDataBackupBlocked sets the dataBackupBlocked property value. Indicates whether the backup of a managed app's data is blocked.
 func (m *ManagedAppProtection) SetDataBackupBlocked(value *bool)() {
     m.dataBackupBlocked = value
 }
-// Sets the deviceComplianceRequired property value. Indicates whether device compliance is required.
-// Parameters:
-//  - value : Value to set for the deviceComplianceRequired property.
+// SetDeviceComplianceRequired sets the deviceComplianceRequired property value. Indicates whether device compliance is required.
 func (m *ManagedAppProtection) SetDeviceComplianceRequired(value *bool)() {
     m.deviceComplianceRequired = value
 }
-// Sets the disableAppPinIfDevicePinIsSet property value. Indicates whether use of the app pin is required if the device pin is set.
-// Parameters:
-//  - value : Value to set for the disableAppPinIfDevicePinIsSet property.
+// SetDisableAppPinIfDevicePinIsSet sets the disableAppPinIfDevicePinIsSet property value. Indicates whether use of the app pin is required if the device pin is set.
 func (m *ManagedAppProtection) SetDisableAppPinIfDevicePinIsSet(value *bool)() {
     m.disableAppPinIfDevicePinIsSet = value
 }
-// Sets the fingerprintBlocked property value. Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
-// Parameters:
-//  - value : Value to set for the fingerprintBlocked property.
+// SetFingerprintBlocked sets the fingerprintBlocked property value. Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
 func (m *ManagedAppProtection) SetFingerprintBlocked(value *bool)() {
     m.fingerprintBlocked = value
 }
-// Sets the managedBrowser property value. Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
-// Parameters:
-//  - value : Value to set for the managedBrowser property.
+// SetManagedBrowser sets the managedBrowser property value. Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
 func (m *ManagedAppProtection) SetManagedBrowser(value *ManagedBrowserType)() {
     m.managedBrowser = value
 }
-// Sets the managedBrowserToOpenLinksRequired property value. Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
-// Parameters:
-//  - value : Value to set for the managedBrowserToOpenLinksRequired property.
+// SetManagedBrowserToOpenLinksRequired sets the managedBrowserToOpenLinksRequired property value. Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
 func (m *ManagedAppProtection) SetManagedBrowserToOpenLinksRequired(value *bool)() {
     m.managedBrowserToOpenLinksRequired = value
 }
-// Sets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
-// Parameters:
-//  - value : Value to set for the maximumPinRetries property.
+// SetMaximumPinRetries sets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
 func (m *ManagedAppProtection) SetMaximumPinRetries(value *int32)() {
     m.maximumPinRetries = value
 }
-// Sets the minimumPinLength property value. Minimum pin length required for an app-level pin if PinRequired is set to True
-// Parameters:
-//  - value : Value to set for the minimumPinLength property.
+// SetMinimumPinLength sets the minimumPinLength property value. Minimum pin length required for an app-level pin if PinRequired is set to True
 func (m *ManagedAppProtection) SetMinimumPinLength(value *int32)() {
     m.minimumPinLength = value
 }
-// Sets the minimumRequiredAppVersion property value. Versions less than the specified version will block the managed app from accessing company data.
-// Parameters:
-//  - value : Value to set for the minimumRequiredAppVersion property.
+// SetMinimumRequiredAppVersion sets the minimumRequiredAppVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *ManagedAppProtection) SetMinimumRequiredAppVersion(value *string)() {
     m.minimumRequiredAppVersion = value
 }
-// Sets the minimumRequiredOsVersion property value. Versions less than the specified version will block the managed app from accessing company data.
-// Parameters:
-//  - value : Value to set for the minimumRequiredOsVersion property.
+// SetMinimumRequiredOsVersion sets the minimumRequiredOsVersion property value. Versions less than the specified version will block the managed app from accessing company data.
 func (m *ManagedAppProtection) SetMinimumRequiredOsVersion(value *string)() {
     m.minimumRequiredOsVersion = value
 }
-// Sets the minimumWarningAppVersion property value. Versions less than the specified version will result in warning message on the managed app.
-// Parameters:
-//  - value : Value to set for the minimumWarningAppVersion property.
+// SetMinimumWarningAppVersion sets the minimumWarningAppVersion property value. Versions less than the specified version will result in warning message on the managed app.
 func (m *ManagedAppProtection) SetMinimumWarningAppVersion(value *string)() {
     m.minimumWarningAppVersion = value
 }
-// Sets the minimumWarningOsVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data.
-// Parameters:
-//  - value : Value to set for the minimumWarningOsVersion property.
+// SetMinimumWarningOsVersion sets the minimumWarningOsVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data.
 func (m *ManagedAppProtection) SetMinimumWarningOsVersion(value *string)() {
     m.minimumWarningOsVersion = value
 }
-// Sets the organizationalCredentialsRequired property value. Indicates whether organizational credentials are required for app use.
-// Parameters:
-//  - value : Value to set for the organizationalCredentialsRequired property.
+// SetOrganizationalCredentialsRequired sets the organizationalCredentialsRequired property value. Indicates whether organizational credentials are required for app use.
 func (m *ManagedAppProtection) SetOrganizationalCredentialsRequired(value *bool)() {
     m.organizationalCredentialsRequired = value
 }
-// Sets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
-// Parameters:
-//  - value : Value to set for the periodBeforePinReset property.
+// SetPeriodBeforePinReset sets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
 func (m *ManagedAppProtection) SetPeriodBeforePinReset(value *string)() {
     m.periodBeforePinReset = value
 }
-// Sets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
-// Parameters:
-//  - value : Value to set for the periodOfflineBeforeAccessCheck property.
+// SetPeriodOfflineBeforeAccessCheck sets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
 func (m *ManagedAppProtection) SetPeriodOfflineBeforeAccessCheck(value *string)() {
     m.periodOfflineBeforeAccessCheck = value
 }
-// Sets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
-// Parameters:
-//  - value : Value to set for the periodOfflineBeforeWipeIsEnforced property.
+// SetPeriodOfflineBeforeWipeIsEnforced sets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
 func (m *ManagedAppProtection) SetPeriodOfflineBeforeWipeIsEnforced(value *string)() {
     m.periodOfflineBeforeWipeIsEnforced = value
 }
-// Sets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
-// Parameters:
-//  - value : Value to set for the periodOnlineBeforeAccessCheck property.
+// SetPeriodOnlineBeforeAccessCheck sets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
 func (m *ManagedAppProtection) SetPeriodOnlineBeforeAccessCheck(value *string)() {
     m.periodOnlineBeforeAccessCheck = value
 }
-// Sets the pinCharacterSet property value. Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
-// Parameters:
-//  - value : Value to set for the pinCharacterSet property.
+// SetPinCharacterSet sets the pinCharacterSet property value. Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
 func (m *ManagedAppProtection) SetPinCharacterSet(value *ManagedAppPinCharacterSet)() {
     m.pinCharacterSet = value
 }
-// Sets the pinRequired property value. Indicates whether an app-level pin is required.
-// Parameters:
-//  - value : Value to set for the pinRequired property.
+// SetPinRequired sets the pinRequired property value. Indicates whether an app-level pin is required.
 func (m *ManagedAppProtection) SetPinRequired(value *bool)() {
     m.pinRequired = value
 }
-// Sets the printBlocked property value. Indicates whether printing is allowed from managed apps.
-// Parameters:
-//  - value : Value to set for the printBlocked property.
+// SetPrintBlocked sets the printBlocked property value. Indicates whether printing is allowed from managed apps.
 func (m *ManagedAppProtection) SetPrintBlocked(value *bool)() {
     m.printBlocked = value
 }
-// Sets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
-// Parameters:
-//  - value : Value to set for the saveAsBlocked property.
+// SetSaveAsBlocked sets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
 func (m *ManagedAppProtection) SetSaveAsBlocked(value *bool)() {
     m.saveAsBlocked = value
 }
-// Sets the simplePinBlocked property value. Indicates whether simplePin is blocked.
-// Parameters:
-//  - value : Value to set for the simplePinBlocked property.
+// SetSimplePinBlocked sets the simplePinBlocked property value. Indicates whether simplePin is blocked.
 func (m *ManagedAppProtection) SetSimplePinBlocked(value *bool)() {
     m.simplePinBlocked = value
 }

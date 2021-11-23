@@ -12,7 +12,7 @@ import (
     i8c014196246f79aab4e3ce9c3fa6da286aeeb8d4af36d5f9b7fe584d08030fe6 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/managedappregistrations/item/appliedpolicies/item"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}
+// managedAppRegistrationRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}
 type ManagedAppRegistrationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type ManagedAppRegistrationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedAppRegistrationRequestBuilderDeleteOptions options for Delete
 type ManagedAppRegistrationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type ManagedAppRegistrationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedAppRegistrationRequestBuilderGetOptions options for Get
 type ManagedAppRegistrationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -41,14 +41,14 @@ type ManagedAppRegistrationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The managed app registrations.
+// managedAppRegistrationRequestBuilderGetQueryParameters the managed app registrations.
 type ManagedAppRegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedAppRegistrationRequestBuilderPatchOptions options for Patch
 type ManagedAppRegistrationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppRegistration;
@@ -62,9 +62,7 @@ type ManagedAppRegistrationRequestBuilderPatchOptions struct {
 func (m *ManagedAppRegistrationRequestBuilder) AppliedPolicies()(*ifa8f167e8cac58c1a5037bc99e8f6f25e58a3455715484a9419cebb030ee4304.AppliedPoliciesRequestBuilder) {
     return ifa8f167e8cac58c1a5037bc99e8f6f25e58a3455715484a9419cebb030ee4304.NewAppliedPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedAppRegistrations.item.appliedPolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppliedPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedAppRegistrations.item.appliedPolicies.item collection
 func (m *ManagedAppRegistrationRequestBuilder) AppliedPoliciesById(id string)(*i8c014196246f79aab4e3ce9c3fa6da286aeeb8d4af36d5f9b7fe584d08030fe6.ManagedAppPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -75,10 +73,7 @@ func (m *ManagedAppRegistrationRequestBuilder) AppliedPoliciesById(id string)(*i
     }
     return i8c014196246f79aab4e3ce9c3fa6da286aeeb8d4af36d5f9b7fe584d08030fe6.NewManagedAppPolicyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new ManagedAppRegistrationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedAppRegistrationRequestBuilderInternal instantiates a new ManagedAppRegistrationRequestBuilder and sets the default values.
 func NewManagedAppRegistrationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedAppRegistrationRequestBuilder) {
     m := &ManagedAppRegistrationRequestBuilder{
     }
@@ -91,18 +86,13 @@ func NewManagedAppRegistrationRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedAppRegistrationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedAppRegistrationRequestBuilder instantiates a new ManagedAppRegistrationRequestBuilder and sets the default values.
 func NewManagedAppRegistrationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedAppRegistrationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppRegistrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The managed app registrations.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the managed app registrations.
 func (m *ManagedAppRegistrationRequestBuilder) CreateDeleteRequestInformation(options *ManagedAppRegistrationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ManagedAppRegistrationRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// The managed app registrations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the managed app registrations.
 func (m *ManagedAppRegistrationRequestBuilder) CreateGetRequestInformation(options *ManagedAppRegistrationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *ManagedAppRegistrationRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The managed app registrations.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the managed app registrations.
 func (m *ManagedAppRegistrationRequestBuilder) CreatePatchRequestInformation(options *ManagedAppRegistrationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,9 +147,7 @@ func (m *ManagedAppRegistrationRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The managed app registrations.
-// Parameters:
-//  - options : Options for the request
+// Delete the managed app registrations.
 func (m *ManagedAppRegistrationRequestBuilder) Delete(options *ManagedAppRegistrationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *ManagedAppRegistrationRequestBuilder) Delete(options *ManagedAppRegistr
     }
     return nil
 }
-// The managed app registrations.
-// Parameters:
-//  - options : Options for the request
+// Get the managed app registrations.
 func (m *ManagedAppRegistrationRequestBuilder) Get(options *ManagedAppRegistrationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppRegistration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -192,9 +174,7 @@ func (m *ManagedAppRegistrationRequestBuilder) Get(options *ManagedAppRegistrati
 func (m *ManagedAppRegistrationRequestBuilder) IntendedPolicies()(*i3eed464a4a4f7a056ae78f7d5084484b8e4c7071ced5cd16d8978c75a211418d.IntendedPoliciesRequestBuilder) {
     return i3eed464a4a4f7a056ae78f7d5084484b8e4c7071ced5cd16d8978c75a211418d.NewIntendedPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedAppRegistrations.item.intendedPolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// IntendedPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedAppRegistrations.item.intendedPolicies.item collection
 func (m *ManagedAppRegistrationRequestBuilder) IntendedPoliciesById(id string)(*i0d4a89b01c459a241cf1b150996622b188ac6eefcbb7901958e20402e3fbda2f.ManagedAppPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -208,9 +188,7 @@ func (m *ManagedAppRegistrationRequestBuilder) IntendedPoliciesById(id string)(*
 func (m *ManagedAppRegistrationRequestBuilder) Operations()(*i798793d33f3b0c4349f4a5beaee290369942f7f1d78a4207726bf30670bbf0d0.OperationsRequestBuilder) {
     return i798793d33f3b0c4349f4a5beaee290369942f7f1d78a4207726bf30670bbf0d0.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedAppRegistrations.item.operations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// OperationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.managedAppRegistrations.item.operations.item collection
 func (m *ManagedAppRegistrationRequestBuilder) OperationsById(id string)(*i0a22e7eeb322ca1994c33c38e16e5fe50b47a7810496c52fd2e2c94195f6c08f.ManagedAppOperationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -221,9 +199,7 @@ func (m *ManagedAppRegistrationRequestBuilder) OperationsById(id string)(*i0a22e
     }
     return i0a22e7eeb322ca1994c33c38e16e5fe50b47a7810496c52fd2e2c94195f6c08f.NewManagedAppOperationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The managed app registrations.
-// Parameters:
-//  - options : Options for the request
+// Patch the managed app registrations.
 func (m *ManagedAppRegistrationRequestBuilder) Patch(options *ManagedAppRegistrationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

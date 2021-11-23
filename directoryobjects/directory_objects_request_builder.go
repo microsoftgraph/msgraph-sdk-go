@@ -9,7 +9,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \directoryObjects
+// directoryObjectsRequestBuilder builds and executes requests for operations under \directoryObjects
 type DirectoryObjectsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type DirectoryObjectsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DirectoryObjectsRequestBuilderGetOptions options for Get
 type DirectoryObjectsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type DirectoryObjectsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from directoryObjects
+// directoryObjectsRequestBuilderGetQueryParameters get entities from directoryObjects
 type DirectoryObjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -48,7 +48,7 @@ type DirectoryObjectsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DirectoryObjectsRequestBuilderPostOptions options for Post
 type DirectoryObjectsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject;
@@ -59,10 +59,7 @@ type DirectoryObjectsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DirectoryObjectsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryObjectsRequestBuilderInternal instantiates a new DirectoryObjectsRequestBuilder and sets the default values.
 func NewDirectoryObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryObjectsRequestBuilder) {
     m := &DirectoryObjectsRequestBuilder{
     }
@@ -75,18 +72,13 @@ func NewDirectoryObjectsRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DirectoryObjectsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryObjectsRequestBuilder instantiates a new DirectoryObjectsRequestBuilder and sets the default values.
 func NewDirectoryObjectsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryObjectsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from directoryObjects
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from directoryObjects
 func (m *DirectoryObjectsRequestBuilder) CreateGetRequestInformation(options *DirectoryObjectsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -106,9 +98,7 @@ func (m *DirectoryObjectsRequestBuilder) CreateGetRequestInformation(options *Di
     }
     return requestInfo, nil
 }
-// Add new entity to directoryObjects
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to directoryObjects
 func (m *DirectoryObjectsRequestBuilder) CreatePostRequestInformation(options *DirectoryObjectsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,9 +116,7 @@ func (m *DirectoryObjectsRequestBuilder) CreatePostRequestInformation(options *D
     }
     return requestInfo, nil
 }
-// Get entities from directoryObjects
-// Parameters:
-//  - options : Options for the request
+// Get get entities from directoryObjects
 func (m *DirectoryObjectsRequestBuilder) Get(options *DirectoryObjectsRequestBuilderGetOptions)(*DirectoryObjectsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -146,9 +134,7 @@ func (m *DirectoryObjectsRequestBuilder) GetAvailableExtensionProperties()(*i972
 func (m *DirectoryObjectsRequestBuilder) GetByIds()(*i4e32c69eb0781ba00301b7881eaffc86307a431dad4cb4b131d227f662210091.GetByIdsRequestBuilder) {
     return i4e32c69eb0781ba00301b7881eaffc86307a431dad4cb4b131d227f662210091.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Add new entity to directoryObjects
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to directoryObjects
 func (m *DirectoryObjectsRequestBuilder) Post(options *DirectoryObjectsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\insights\used\{usedInsight-id}\resource\microsoft.graph.mobileAppContentFile\microsoft.graph.renewUpload
+// renewUploadRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\used\{usedInsight-id}\resource\microsoft.graph.mobileAppContentFile\microsoft.graph.renewUpload
 type RenewUploadRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RenewUploadRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RenewUploadRequestBuilderPostOptions options for Post
 type RenewUploadRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type RenewUploadRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RenewUploadRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRenewUploadRequestBuilderInternal instantiates a new RenewUploadRequestBuilder and sets the default values.
 func NewRenewUploadRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RenewUploadRequestBuilder) {
     m := &RenewUploadRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewRenewUploadRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RenewUploadRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRenewUploadRequestBuilder instantiates a new RenewUploadRequestBuilder and sets the default values.
 func NewRenewUploadRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RenewUploadRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRenewUploadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Renews the SAS URI for an application file upload.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation renews the SAS URI for an application file upload.
 func (m *RenewUploadRequestBuilder) CreatePostRequestInformation(options *RenewUploadRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *RenewUploadRequestBuilder) CreatePostRequestInformation(options *RenewU
     }
     return requestInfo, nil
 }
-// Renews the SAS URI for an application file upload.
-// Parameters:
-//  - options : Options for the request
+// Post renews the SAS URI for an application file upload.
 func (m *RenewUploadRequestBuilder) Post(options *RenewUploadRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

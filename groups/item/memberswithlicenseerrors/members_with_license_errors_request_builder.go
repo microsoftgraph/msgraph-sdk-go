@@ -6,7 +6,7 @@ import (
     if47eaf6745fd42e5cb0afbfc57c89f700f0bba6ccd5249fb5d6996926b80339e "github.com/microsoftgraph/msgraph-sdk-go/groups/item/memberswithlicenseerrors/ref"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\membersWithLicenseErrors
+// membersWithLicenseErrorsRequestBuilder builds and executes requests for operations under \groups\{group-id}\membersWithLicenseErrors
 type MembersWithLicenseErrorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MembersWithLicenseErrorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MembersWithLicenseErrorsRequestBuilderGetOptions options for Get
 type MembersWithLicenseErrorsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MembersWithLicenseErrorsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of group members with license errors from this group-based license assignment. Read-only.
+// membersWithLicenseErrorsRequestBuilderGetQueryParameters a list of group members with license errors from this group-based license assignment. Read-only.
 type MembersWithLicenseErrorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type MembersWithLicenseErrorsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new MembersWithLicenseErrorsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMembersWithLicenseErrorsRequestBuilderInternal instantiates a new MembersWithLicenseErrorsRequestBuilder and sets the default values.
 func NewMembersWithLicenseErrorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MembersWithLicenseErrorsRequestBuilder) {
     m := &MembersWithLicenseErrorsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewMembersWithLicenseErrorsRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MembersWithLicenseErrorsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMembersWithLicenseErrorsRequestBuilder instantiates a new MembersWithLicenseErrorsRequestBuilder and sets the default values.
 func NewMembersWithLicenseErrorsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MembersWithLicenseErrorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMembersWithLicenseErrorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of group members with license errors from this group-based license assignment. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of group members with license errors from this group-based license assignment. Read-only.
 func (m *MembersWithLicenseErrorsRequestBuilder) CreateGetRequestInformation(options *MembersWithLicenseErrorsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *MembersWithLicenseErrorsRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// A list of group members with license errors from this group-based license assignment. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get a list of group members with license errors from this group-based license assignment. Read-only.
 func (m *MembersWithLicenseErrorsRequestBuilder) Get(options *MembersWithLicenseErrorsRequestBuilderGetOptions)(*MembersWithLicenseErrorsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

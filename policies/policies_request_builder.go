@@ -27,7 +27,7 @@ import (
     iff6a6d8b424e8a919281280c87147525819afe04366318faafc92dbee9442123 "github.com/microsoftgraph/msgraph-sdk-go/policies/featurerolloutpolicies/item"
 )
 
-// Builds and executes requests for operations under \policies
+// policiesRequestBuilder builds and executes requests for operations under \policies
 type PoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type PoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PoliciesRequestBuilderGetOptions options for Get
 type PoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -47,14 +47,14 @@ type PoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get policies
+// policiesRequestBuilderGetQueryParameters get policies
 type PoliciesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PoliciesRequestBuilderPatchOptions options for Patch
 type PoliciesRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PolicyRoot;
@@ -68,9 +68,7 @@ type PoliciesRequestBuilderPatchOptions struct {
 func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPolicies()(*i50fbe096cb4bcbe54ce4584948f2fa87f8486532011e2c9024a169ba2a3dacde.ActivityBasedTimeoutPoliciesRequestBuilder) {
     return i50fbe096cb4bcbe54ce4584948f2fa87f8486532011e2c9024a169ba2a3dacde.NewActivityBasedTimeoutPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.activityBasedTimeoutPolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ActivityBasedTimeoutPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.activityBasedTimeoutPolicies.item collection
 func (m *PoliciesRequestBuilder) ActivityBasedTimeoutPoliciesById(id string)(*i75b801e9d4a8913922e67e9e75dd091c9280212e449c4d8e76d13ab572b48c86.ActivityBasedTimeoutPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -96,9 +94,7 @@ func (m *PoliciesRequestBuilder) AuthorizationPolicy()(*i7cd232f5a1288d29625a9b1
 func (m *PoliciesRequestBuilder) ClaimsMappingPolicies()(*i800d2e5efbf3f2562fb570f6abc9bec962927b27f95f6e0025aa92bfe23f13ab.ClaimsMappingPoliciesRequestBuilder) {
     return i800d2e5efbf3f2562fb570f6abc9bec962927b27f95f6e0025aa92bfe23f13ab.NewClaimsMappingPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.claimsMappingPolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ClaimsMappingPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.claimsMappingPolicies.item collection
 func (m *PoliciesRequestBuilder) ClaimsMappingPoliciesById(id string)(*ifd481b5a9f37ded8a4d12f7c0db8d1e5cc30754c49b7cbbab66e580c09455018.ClaimsMappingPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -112,9 +108,7 @@ func (m *PoliciesRequestBuilder) ClaimsMappingPoliciesById(id string)(*ifd481b5a
 func (m *PoliciesRequestBuilder) ConditionalAccessPolicies()(*i966a3041c5833ccf56ce1da16c013fd76d376cfc8b939cc01e633d8b495cb208.ConditionalAccessPoliciesRequestBuilder) {
     return i966a3041c5833ccf56ce1da16c013fd76d376cfc8b939cc01e633d8b495cb208.NewConditionalAccessPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.conditionalAccessPolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ConditionalAccessPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.conditionalAccessPolicies.item collection
 func (m *PoliciesRequestBuilder) ConditionalAccessPoliciesById(id string)(*i843df2bef70b4bcdc0e002955adffd0d0793c6957377635528f401c17a961d02.ConditionalAccessPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -125,10 +119,7 @@ func (m *PoliciesRequestBuilder) ConditionalAccessPoliciesById(id string)(*i843d
     }
     return i843df2bef70b4bcdc0e002955adffd0d0793c6957377635528f401c17a961d02.NewConditionalAccessPolicyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new PoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPoliciesRequestBuilderInternal instantiates a new PoliciesRequestBuilder and sets the default values.
 func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PoliciesRequestBuilder) {
     m := &PoliciesRequestBuilder{
     }
@@ -141,18 +132,13 @@ func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPoliciesRequestBuilder instantiates a new PoliciesRequestBuilder and sets the default values.
 func NewPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get policies
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get policies
 func (m *PoliciesRequestBuilder) CreateGetRequestInformation(options *PoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -172,9 +158,7 @@ func (m *PoliciesRequestBuilder) CreateGetRequestInformation(options *PoliciesRe
     }
     return requestInfo, nil
 }
-// Update policies
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update policies
 func (m *PoliciesRequestBuilder) CreatePatchRequestInformation(options *PoliciesRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -195,9 +179,7 @@ func (m *PoliciesRequestBuilder) CreatePatchRequestInformation(options *Policies
 func (m *PoliciesRequestBuilder) FeatureRolloutPolicies()(*i598aadab7f9532dcd78b5237b03ae7e6ac9390b26cc04cb85038bcb797fcb4e3.FeatureRolloutPoliciesRequestBuilder) {
     return i598aadab7f9532dcd78b5237b03ae7e6ac9390b26cc04cb85038bcb797fcb4e3.NewFeatureRolloutPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.featureRolloutPolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// FeatureRolloutPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.featureRolloutPolicies.item collection
 func (m *PoliciesRequestBuilder) FeatureRolloutPoliciesById(id string)(*iff6a6d8b424e8a919281280c87147525819afe04366318faafc92dbee9442123.FeatureRolloutPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -208,9 +190,7 @@ func (m *PoliciesRequestBuilder) FeatureRolloutPoliciesById(id string)(*iff6a6d8
     }
     return iff6a6d8b424e8a919281280c87147525819afe04366318faafc92dbee9442123.NewFeatureRolloutPolicyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get policies
-// Parameters:
-//  - options : Options for the request
+// Get get policies
 func (m *PoliciesRequestBuilder) Get(options *PoliciesRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PolicyRoot, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -225,9 +205,7 @@ func (m *PoliciesRequestBuilder) Get(options *PoliciesRequestBuilderGetOptions)(
 func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPolicies()(*i6894c2598f4ac73a5643fa86cbbf110868e7746e8c9ed5da452b0170eebe03b3.HomeRealmDiscoveryPoliciesRequestBuilder) {
     return i6894c2598f4ac73a5643fa86cbbf110868e7746e8c9ed5da452b0170eebe03b3.NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.homeRealmDiscoveryPolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// HomeRealmDiscoveryPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.homeRealmDiscoveryPolicies.item collection
 func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*iae405fd168f9b22628a993c1d320fde787ac74895fc32dab558860d3df5e3cf7.HomeRealmDiscoveryPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -241,9 +219,7 @@ func (m *PoliciesRequestBuilder) HomeRealmDiscoveryPoliciesById(id string)(*iae4
 func (m *PoliciesRequestBuilder) IdentitySecurityDefaultsEnforcementPolicy()(*i15c1315dca3d448080a500f31a0343661829915a3d57e0bac2b5ef3d5b702cd7.IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) {
     return i15c1315dca3d448080a500f31a0343661829915a3d57e0bac2b5ef3d5b702cd7.NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update policies
-// Parameters:
-//  - options : Options for the request
+// Patch update policies
 func (m *PoliciesRequestBuilder) Patch(options *PoliciesRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -258,9 +234,7 @@ func (m *PoliciesRequestBuilder) Patch(options *PoliciesRequestBuilderPatchOptio
 func (m *PoliciesRequestBuilder) PermissionGrantPolicies()(*i94e6a9fd02466104e1f244dfcb22cf331ccf308e2f911adea2fe5a4a87bf5ccc.PermissionGrantPoliciesRequestBuilder) {
     return i94e6a9fd02466104e1f244dfcb22cf331ccf308e2f911adea2fe5a4a87bf5ccc.NewPermissionGrantPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.permissionGrantPolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PermissionGrantPoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.permissionGrantPolicies.item collection
 func (m *PoliciesRequestBuilder) PermissionGrantPoliciesById(id string)(*ia9d7ff4c255eb343aa34f45265c76078ea351f2ba2bad54efe9863a838dd38f0.PermissionGrantPolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -274,9 +248,7 @@ func (m *PoliciesRequestBuilder) PermissionGrantPoliciesById(id string)(*ia9d7ff
 func (m *PoliciesRequestBuilder) TokenIssuancePolicies()(*i8cf0127b53d26923e1649ec43c875bc6f0f70ece0a4b9d3cf3377d9e0b4720cf.TokenIssuancePoliciesRequestBuilder) {
     return i8cf0127b53d26923e1649ec43c875bc6f0f70ece0a4b9d3cf3377d9e0b4720cf.NewTokenIssuancePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.tokenIssuancePolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TokenIssuancePoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.tokenIssuancePolicies.item collection
 func (m *PoliciesRequestBuilder) TokenIssuancePoliciesById(id string)(*i77b5f2108467d08d93443762e93f7967aca61b1916748814eb2ddc49bc0fb0ed.TokenIssuancePolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -290,9 +262,7 @@ func (m *PoliciesRequestBuilder) TokenIssuancePoliciesById(id string)(*i77b5f210
 func (m *PoliciesRequestBuilder) TokenLifetimePolicies()(*iebb445e03b5a1725abc955bb63d1192b435aa40b5fee4976b801435c3fc9ec06.TokenLifetimePoliciesRequestBuilder) {
     return iebb445e03b5a1725abc955bb63d1192b435aa40b5fee4976b801435c3fc9ec06.NewTokenLifetimePoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.tokenLifetimePolicies.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TokenLifetimePoliciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.tokenLifetimePolicies.item collection
 func (m *PoliciesRequestBuilder) TokenLifetimePoliciesById(id string)(*i569717b3ca8408936df0d0a4e253024a8a7b041522350cb7c8977c2c62a9b9d6.TokenLifetimePolicyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

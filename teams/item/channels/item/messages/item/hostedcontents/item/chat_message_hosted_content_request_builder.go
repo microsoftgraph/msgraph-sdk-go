@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\messages\{chatMessage-id}\hostedContents\{chatMessageHostedContent-id}
+// chatMessageHostedContentRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\messages\{chatMessage-id}\hostedContents\{chatMessageHostedContent-id}
 type ChatMessageHostedContentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ChatMessageHostedContentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ChatMessageHostedContentRequestBuilderDeleteOptions options for Delete
 type ChatMessageHostedContentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ChatMessageHostedContentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ChatMessageHostedContentRequestBuilderGetOptions options for Get
 type ChatMessageHostedContentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ChatMessageHostedContentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+// chatMessageHostedContentRequestBuilderGetQueryParameters content in a message hosted by Microsoft Teams - for example, images or code snippets.
 type ChatMessageHostedContentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ChatMessageHostedContentRequestBuilderPatchOptions options for Patch
 type ChatMessageHostedContentRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageHostedContent;
@@ -53,10 +53,7 @@ type ChatMessageHostedContentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ChatMessageHostedContentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatMessageHostedContentRequestBuilderInternal instantiates a new ChatMessageHostedContentRequestBuilder and sets the default values.
 func NewChatMessageHostedContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatMessageHostedContentRequestBuilder) {
     m := &ChatMessageHostedContentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewChatMessageHostedContentRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChatMessageHostedContentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatMessageHostedContentRequestBuilder instantiates a new ChatMessageHostedContentRequestBuilder and sets the default values.
 func NewChatMessageHostedContentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatMessageHostedContentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChatMessageHostedContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation content in a message hosted by Microsoft Teams - for example, images or code snippets.
 func (m *ChatMessageHostedContentRequestBuilder) CreateDeleteRequestInformation(options *ChatMessageHostedContentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ChatMessageHostedContentRequestBuilder) CreateDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation content in a message hosted by Microsoft Teams - for example, images or code snippets.
 func (m *ChatMessageHostedContentRequestBuilder) CreateGetRequestInformation(options *ChatMessageHostedContentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ChatMessageHostedContentRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation content in a message hosted by Microsoft Teams - for example, images or code snippets.
 func (m *ChatMessageHostedContentRequestBuilder) CreatePatchRequestInformation(options *ChatMessageHostedContentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ChatMessageHostedContentRequestBuilder) CreatePatchRequestInformation(o
     }
     return requestInfo, nil
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-// Parameters:
-//  - options : Options for the request
+// Delete content in a message hosted by Microsoft Teams - for example, images or code snippets.
 func (m *ChatMessageHostedContentRequestBuilder) Delete(options *ChatMessageHostedContentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ChatMessageHostedContentRequestBuilder) Delete(options *ChatMessageHost
     }
     return nil
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-// Parameters:
-//  - options : Options for the request
+// Get content in a message hosted by Microsoft Teams - for example, images or code snippets.
 func (m *ChatMessageHostedContentRequestBuilder) Get(options *ChatMessageHostedContentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageHostedContent, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ChatMessageHostedContentRequestBuilder) Get(options *ChatMessageHostedC
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageHostedContent), nil
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-// Parameters:
-//  - options : Options for the request
+// Patch content in a message hosted by Microsoft Teams - for example, images or code snippets.
 func (m *ChatMessageHostedContentRequestBuilder) Patch(options *ChatMessageHostedContentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\conditionalAccessSettings
+// conditionalAccessSettingsRequestBuilder builds and executes requests for operations under \deviceManagement\conditionalAccessSettings
 type ConditionalAccessSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConditionalAccessSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ConditionalAccessSettingsRequestBuilderDeleteOptions options for Delete
 type ConditionalAccessSettingsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ConditionalAccessSettingsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ConditionalAccessSettingsRequestBuilderGetOptions options for Get
 type ConditionalAccessSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ConditionalAccessSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+// conditionalAccessSettingsRequestBuilderGetQueryParameters the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 type ConditionalAccessSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ConditionalAccessSettingsRequestBuilderPatchOptions options for Patch
 type ConditionalAccessSettingsRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnPremisesConditionalAccessSettings;
@@ -53,10 +53,7 @@ type ConditionalAccessSettingsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConditionalAccessSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConditionalAccessSettingsRequestBuilderInternal instantiates a new ConditionalAccessSettingsRequestBuilder and sets the default values.
 func NewConditionalAccessSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConditionalAccessSettingsRequestBuilder) {
     m := &ConditionalAccessSettingsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewConditionalAccessSettingsRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConditionalAccessSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConditionalAccessSettingsRequestBuilder instantiates a new ConditionalAccessSettingsRequestBuilder and sets the default values.
 func NewConditionalAccessSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConditionalAccessSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 func (m *ConditionalAccessSettingsRequestBuilder) CreateDeleteRequestInformation(options *ConditionalAccessSettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ConditionalAccessSettingsRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 func (m *ConditionalAccessSettingsRequestBuilder) CreateGetRequestInformation(options *ConditionalAccessSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ConditionalAccessSettingsRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 func (m *ConditionalAccessSettingsRequestBuilder) CreatePatchRequestInformation(options *ConditionalAccessSettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ConditionalAccessSettingsRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-// Parameters:
-//  - options : Options for the request
+// Delete the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 func (m *ConditionalAccessSettingsRequestBuilder) Delete(options *ConditionalAccessSettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ConditionalAccessSettingsRequestBuilder) Delete(options *ConditionalAcc
     }
     return nil
 }
-// The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-// Parameters:
-//  - options : Options for the request
+// Get the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 func (m *ConditionalAccessSettingsRequestBuilder) Get(options *ConditionalAccessSettingsRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnPremisesConditionalAccessSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ConditionalAccessSettingsRequestBuilder) Get(options *ConditionalAccess
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnPremisesConditionalAccessSettings), nil
 }
-// The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-// Parameters:
-//  - options : Options for the request
+// Patch the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 func (m *ConditionalAccessSettingsRequestBuilder) Patch(options *ConditionalAccessSettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     i3b111fc110d4275ccdc689a08e783512a6f2e7926fc2ddc23b9437c65b5eab2e "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/microsoftauthenticatormethods/item/device"
 )
 
-// Builds and executes requests for operations under \me\authentication\microsoftAuthenticatorMethods\{microsoftAuthenticatorAuthenticationMethod-id}
+// microsoftAuthenticatorAuthenticationMethodRequestBuilder builds and executes requests for operations under \me\authentication\microsoftAuthenticatorMethods\{microsoftAuthenticatorAuthenticationMethod-id}
 type MicrosoftAuthenticatorAuthenticationMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type MicrosoftAuthenticatorAuthenticationMethodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MicrosoftAuthenticatorAuthenticationMethodRequestBuilderDeleteOptions options for Delete
 type MicrosoftAuthenticatorAuthenticationMethodRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type MicrosoftAuthenticatorAuthenticationMethodRequestBuilderDeleteOptions struc
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetOptions options for Get
 type MicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type MicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get microsoftAuthenticatorMethods from me
+// microsoftAuthenticatorAuthenticationMethodRequestBuilderGetQueryParameters get microsoftAuthenticatorMethods from me
 type MicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MicrosoftAuthenticatorAuthenticationMethodRequestBuilderPatchOptions options for Patch
 type MicrosoftAuthenticatorAuthenticationMethodRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MicrosoftAuthenticatorAuthenticationMethod;
@@ -54,10 +54,7 @@ type MicrosoftAuthenticatorAuthenticationMethodRequestBuilderPatchOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MicrosoftAuthenticatorAuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftAuthenticatorAuthenticationMethodRequestBuilderInternal instantiates a new MicrosoftAuthenticatorAuthenticationMethodRequestBuilder and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) {
     m := &MicrosoftAuthenticatorAuthenticationMethodRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewMicrosoftAuthenticatorAuthenticationMethodRequestBuilderInternal(pathPar
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MicrosoftAuthenticatorAuthenticationMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftAuthenticatorAuthenticationMethodRequestBuilder instantiates a new MicrosoftAuthenticatorAuthenticationMethodRequestBuilder and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftAuthenticatorAuthenticationMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property microsoftAuthenticatorMethods for me
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property microsoftAuthenticatorMethods for me
 func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) CreateDeleteRequestInformation(options *MicrosoftAuthenticatorAuthenticationMethodRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) CreateDeleteR
     }
     return requestInfo, nil
 }
-// Get microsoftAuthenticatorMethods from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get microsoftAuthenticatorMethods from me
 func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) CreateGetRequestInformation(options *MicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// Update the navigation property microsoftAuthenticatorMethods in me
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property microsoftAuthenticatorMethods in me
 func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) CreatePatchRequestInformation(options *MicrosoftAuthenticatorAuthenticationMethodRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) CreatePatchRe
     }
     return requestInfo, nil
 }
-// Delete navigation property microsoftAuthenticatorMethods for me
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property microsoftAuthenticatorMethods for me
 func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) Delete(options *MicrosoftAuthenticatorAuthenticationMethodRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) Delete(option
 func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) Device()(*i3b111fc110d4275ccdc689a08e783512a6f2e7926fc2ddc23b9437c65b5eab2e.DeviceRequestBuilder) {
     return i3b111fc110d4275ccdc689a08e783512a6f2e7926fc2ddc23b9437c65b5eab2e.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get microsoftAuthenticatorMethods from me
-// Parameters:
-//  - options : Options for the request
+// Get get microsoftAuthenticatorMethods from me
 func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) Get(options *MicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MicrosoftAuthenticatorAuthenticationMethod, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) Get(options *
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MicrosoftAuthenticatorAuthenticationMethod), nil
 }
-// Update the navigation property microsoftAuthenticatorMethods in me
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property microsoftAuthenticatorMethods in me
 func (m *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) Patch(options *MicrosoftAuthenticatorAuthenticationMethodRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -9,7 +9,7 @@ import (
     i079873d8184290e06e63c9a04520d4cbb886c99c078b4ea0a493ba22bc14901e "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/notificationmessagetemplates/item/localizednotificationmessages/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\notificationMessageTemplates\{notificationMessageTemplate-id}
+// notificationMessageTemplateRequestBuilder builds and executes requests for operations under \deviceManagement\notificationMessageTemplates\{notificationMessageTemplate-id}
 type NotificationMessageTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type NotificationMessageTemplateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// NotificationMessageTemplateRequestBuilderDeleteOptions options for Delete
 type NotificationMessageTemplateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type NotificationMessageTemplateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// NotificationMessageTemplateRequestBuilderGetOptions options for Get
 type NotificationMessageTemplateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type NotificationMessageTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Notification Message Templates.
+// notificationMessageTemplateRequestBuilderGetQueryParameters the Notification Message Templates.
 type NotificationMessageTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// NotificationMessageTemplateRequestBuilderPatchOptions options for Patch
 type NotificationMessageTemplateRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplate;
@@ -56,10 +56,7 @@ type NotificationMessageTemplateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new NotificationMessageTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotificationMessageTemplateRequestBuilderInternal instantiates a new NotificationMessageTemplateRequestBuilder and sets the default values.
 func NewNotificationMessageTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotificationMessageTemplateRequestBuilder) {
     m := &NotificationMessageTemplateRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewNotificationMessageTemplateRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NotificationMessageTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotificationMessageTemplateRequestBuilder instantiates a new NotificationMessageTemplateRequestBuilder and sets the default values.
 func NewNotificationMessageTemplateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotificationMessageTemplateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNotificationMessageTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Notification Message Templates.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Notification Message Templates.
 func (m *NotificationMessageTemplateRequestBuilder) CreateDeleteRequestInformation(options *NotificationMessageTemplateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *NotificationMessageTemplateRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// The Notification Message Templates.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Notification Message Templates.
 func (m *NotificationMessageTemplateRequestBuilder) CreateGetRequestInformation(options *NotificationMessageTemplateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *NotificationMessageTemplateRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// The Notification Message Templates.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Notification Message Templates.
 func (m *NotificationMessageTemplateRequestBuilder) CreatePatchRequestInformation(options *NotificationMessageTemplateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +130,7 @@ func (m *NotificationMessageTemplateRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// The Notification Message Templates.
-// Parameters:
-//  - options : Options for the request
+// Delete the Notification Message Templates.
 func (m *NotificationMessageTemplateRequestBuilder) Delete(options *NotificationMessageTemplateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -156,9 +142,7 @@ func (m *NotificationMessageTemplateRequestBuilder) Delete(options *Notification
     }
     return nil
 }
-// The Notification Message Templates.
-// Parameters:
-//  - options : Options for the request
+// Get the Notification Message Templates.
 func (m *NotificationMessageTemplateRequestBuilder) Get(options *NotificationMessageTemplateRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NotificationMessageTemplate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *NotificationMessageTemplateRequestBuilder) Get(options *NotificationMes
 func (m *NotificationMessageTemplateRequestBuilder) LocalizedNotificationMessages()(*icc3fe1a1c8b964bc176be6a6d48621fc3548efaeadcb3b10e136af2f19764752.LocalizedNotificationMessagesRequestBuilder) {
     return icc3fe1a1c8b964bc176be6a6d48621fc3548efaeadcb3b10e136af2f19764752.NewLocalizedNotificationMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.notificationMessageTemplates.item.localizedNotificationMessages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// LocalizedNotificationMessagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.notificationMessageTemplates.item.localizedNotificationMessages.item collection
 func (m *NotificationMessageTemplateRequestBuilder) LocalizedNotificationMessagesById(id string)(*i079873d8184290e06e63c9a04520d4cbb886c99c078b4ea0a493ba22bc14901e.LocalizedNotificationMessageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -186,9 +168,7 @@ func (m *NotificationMessageTemplateRequestBuilder) LocalizedNotificationMessage
     }
     return i079873d8184290e06e63c9a04520d4cbb886c99c078b4ea0a493ba22bc14901e.NewLocalizedNotificationMessageRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The Notification Message Templates.
-// Parameters:
-//  - options : Options for the request
+// Patch the Notification Message Templates.
 func (m *NotificationMessageTemplateRequestBuilder) Patch(options *NotificationMessageTemplateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// timeConstraint 
 type TimeConstraint struct {
     // The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
     activityDomain *ActivityDomain;
@@ -13,14 +13,14 @@ type TimeConstraint struct {
     // 
     timeSlots []TimeSlot;
 }
-// Instantiates a new timeConstraint and sets the default values.
+// NewTimeConstraint instantiates a new timeConstraint and sets the default values.
 func NewTimeConstraint()(*TimeConstraint) {
     m := &TimeConstraint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
+// GetActivityDomain gets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
 func (m *TimeConstraint) GetActivityDomain()(*ActivityDomain) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *TimeConstraint) GetActivityDomain()(*ActivityDomain) {
         return m.activityDomain
     }
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeConstraint) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *TimeConstraint) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the timeSlots property value. 
+// GetTimeSlots gets the timeSlots property value. 
 func (m *TimeConstraint) GetTimeSlots()([]TimeSlot) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *TimeConstraint) GetTimeSlots()([]TimeSlot) {
         return m.timeSlots
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TimeConstraint) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["activityDomain"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -77,9 +77,7 @@ func (m *TimeConstraint) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *TimeConstraint) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TimeConstraint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetActivityDomain() != nil {
         cast := m.GetActivityDomain().String()
@@ -107,21 +105,15 @@ func (m *TimeConstraint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
-// Parameters:
-//  - value : Value to set for the activityDomain property.
+// SetActivityDomain sets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
 func (m *TimeConstraint) SetActivityDomain(value *ActivityDomain)() {
     m.activityDomain = value
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeConstraint) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the timeSlots property value. 
-// Parameters:
-//  - value : Value to set for the timeSlots property.
+// SetTimeSlots sets the timeSlots property value. 
 func (m *TimeConstraint) SetTimeSlots(value []TimeSlot)() {
     m.timeSlots = value
 }

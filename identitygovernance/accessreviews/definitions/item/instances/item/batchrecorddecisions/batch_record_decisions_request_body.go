@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// batchRecordDecisionsRequestBody 
 type BatchRecordDecisionsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type BatchRecordDecisionsRequestBody struct {
     // 
     resourceId *string;
 }
-// Instantiates a new batchRecordDecisionsRequestBody and sets the default values.
+// NewBatchRecordDecisionsRequestBody instantiates a new batchRecordDecisionsRequestBody and sets the default values.
 func NewBatchRecordDecisionsRequestBody()(*BatchRecordDecisionsRequestBody) {
     m := &BatchRecordDecisionsRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BatchRecordDecisionsRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *BatchRecordDecisionsRequestBody) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// Gets the decision property value. 
+// GetDecision gets the decision property value. 
 func (m *BatchRecordDecisionsRequestBody) GetDecision()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *BatchRecordDecisionsRequestBody) GetDecision()(*string) {
         return m.decision
     }
 }
-// Gets the justification property value. 
+// GetJustification gets the justification property value. 
 func (m *BatchRecordDecisionsRequestBody) GetJustification()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *BatchRecordDecisionsRequestBody) GetJustification()(*string) {
         return m.justification
     }
 }
-// Gets the principalId property value. 
+// GetPrincipalId gets the principalId property value. 
 func (m *BatchRecordDecisionsRequestBody) GetPrincipalId()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *BatchRecordDecisionsRequestBody) GetPrincipalId()(*string) {
         return m.principalId
     }
 }
-// Gets the resourceId property value. 
+// GetResourceId gets the resourceId property value. 
 func (m *BatchRecordDecisionsRequestBody) GetResourceId()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *BatchRecordDecisionsRequestBody) GetResourceId()(*string) {
         return m.resourceId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *BatchRecordDecisionsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["decision"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *BatchRecordDecisionsRequestBody) GetFieldDeserializers()(map[string]fun
 func (m *BatchRecordDecisionsRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *BatchRecordDecisionsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("decision", m.GetDecision())
@@ -148,33 +146,23 @@ func (m *BatchRecordDecisionsRequestBody) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BatchRecordDecisionsRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the decision property value. 
-// Parameters:
-//  - value : Value to set for the decision property.
+// SetDecision sets the decision property value. 
 func (m *BatchRecordDecisionsRequestBody) SetDecision(value *string)() {
     m.decision = value
 }
-// Sets the justification property value. 
-// Parameters:
-//  - value : Value to set for the justification property.
+// SetJustification sets the justification property value. 
 func (m *BatchRecordDecisionsRequestBody) SetJustification(value *string)() {
     m.justification = value
 }
-// Sets the principalId property value. 
-// Parameters:
-//  - value : Value to set for the principalId property.
+// SetPrincipalId sets the principalId property value. 
 func (m *BatchRecordDecisionsRequestBody) SetPrincipalId(value *string)() {
     m.principalId = value
 }
-// Sets the resourceId property value. 
-// Parameters:
-//  - value : Value to set for the resourceId property.
+// SetResourceId sets the resourceId property value. 
 func (m *BatchRecordDecisionsRequestBody) SetResourceId(value *string)() {
     m.resourceId = value
 }

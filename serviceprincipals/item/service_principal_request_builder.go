@@ -33,7 +33,7 @@ import (
     ieade744732b95d81e11bac4d5146b5ac0bfeb407228f97be47815b5b44c77ff1 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/approleassignedto/item"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}
+// servicePrincipalRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}
 type ServicePrincipalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type ServicePrincipalRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ServicePrincipalRequestBuilderDeleteOptions options for Delete
 type ServicePrincipalRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -51,7 +51,7 @@ type ServicePrincipalRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ServicePrincipalRequestBuilderGetOptions options for Get
 type ServicePrincipalRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -62,14 +62,14 @@ type ServicePrincipalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from servicePrincipals by key
+// servicePrincipalRequestBuilderGetQueryParameters get entity from servicePrincipals by key
 type ServicePrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ServicePrincipalRequestBuilderPatchOptions options for Patch
 type ServicePrincipalRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServicePrincipal;
@@ -89,9 +89,7 @@ func (m *ServicePrincipalRequestBuilder) AddPassword()(*i495446d97cfd23af0607d58
 func (m *ServicePrincipalRequestBuilder) AppRoleAssignedTo()(*id692483c2e6fa4444b9d250ecaa7a6bea16dbc3cd7fa20c05fb69b2f7b69ad46.AppRoleAssignedToRequestBuilder) {
     return id692483c2e6fa4444b9d250ecaa7a6bea16dbc3cd7fa20c05fb69b2f7b69ad46.NewAppRoleAssignedToRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.appRoleAssignedTo.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppRoleAssignedToById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.appRoleAssignedTo.item collection
 func (m *ServicePrincipalRequestBuilder) AppRoleAssignedToById(id string)(*ieade744732b95d81e11bac4d5146b5ac0bfeb407228f97be47815b5b44c77ff1.AppRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -105,9 +103,7 @@ func (m *ServicePrincipalRequestBuilder) AppRoleAssignedToById(id string)(*ieade
 func (m *ServicePrincipalRequestBuilder) AppRoleAssignments()(*i93153ff64f35a046ae51130f6dbc11813af572bf8610f8142e2bebbb77269190.AppRoleAssignmentsRequestBuilder) {
     return i93153ff64f35a046ae51130f6dbc11813af572bf8610f8142e2bebbb77269190.NewAppRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.appRoleAssignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppRoleAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.appRoleAssignments.item collection
 func (m *ServicePrincipalRequestBuilder) AppRoleAssignmentsById(id string)(*i80395ca3a6452268f5c4d3e92f315d7c92e78fef9911bf32e289ea47d6968415.AppRoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -127,10 +123,7 @@ func (m *ServicePrincipalRequestBuilder) CheckMemberObjects()(*i6265425e2a2080af
 func (m *ServicePrincipalRequestBuilder) ClaimsMappingPolicies()(*icc1091ecf66b1de7080efaeb2e59cdf1074f3b116fba7066b71a0d6cd9c57a53.ClaimsMappingPoliciesRequestBuilder) {
     return icc1091ecf66b1de7080efaeb2e59cdf1074f3b116fba7066b71a0d6cd9c57a53.NewClaimsMappingPoliciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ServicePrincipalRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServicePrincipalRequestBuilderInternal instantiates a new ServicePrincipalRequestBuilder and sets the default values.
 func NewServicePrincipalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServicePrincipalRequestBuilder) {
     m := &ServicePrincipalRequestBuilder{
     }
@@ -143,18 +136,13 @@ func NewServicePrincipalRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ServicePrincipalRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServicePrincipalRequestBuilder instantiates a new ServicePrincipalRequestBuilder and sets the default values.
 func NewServicePrincipalRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServicePrincipalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServicePrincipalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from servicePrincipals
 func (m *ServicePrincipalRequestBuilder) CreateDeleteRequestInformation(options *ServicePrincipalRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -174,9 +162,7 @@ func (m *ServicePrincipalRequestBuilder) CreateDeleteRequestInformation(options 
 func (m *ServicePrincipalRequestBuilder) CreatedObjects()(*i1f042d332a3da52b9a4d53ae9423654b32107cbe9b637d9ca95d07e583140364.CreatedObjectsRequestBuilder) {
     return i1f042d332a3da52b9a4d53ae9423654b32107cbe9b637d9ca95d07e583140364.NewCreatedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get entity from servicePrincipals by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from servicePrincipals by key
 func (m *ServicePrincipalRequestBuilder) CreateGetRequestInformation(options *ServicePrincipalRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -196,9 +182,7 @@ func (m *ServicePrincipalRequestBuilder) CreateGetRequestInformation(options *Se
     }
     return requestInfo, nil
 }
-// Update entity in servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in servicePrincipals
 func (m *ServicePrincipalRequestBuilder) CreatePatchRequestInformation(options *ServicePrincipalRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -219,9 +203,7 @@ func (m *ServicePrincipalRequestBuilder) CreatePatchRequestInformation(options *
 func (m *ServicePrincipalRequestBuilder) DelegatedPermissionClassifications()(*iedd8dd60eed89931552d2c873e7c568c2a30c87dee999cc992446db26f8803fc.DelegatedPermissionClassificationsRequestBuilder) {
     return iedd8dd60eed89931552d2c873e7c568c2a30c87dee999cc992446db26f8803fc.NewDelegatedPermissionClassificationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.delegatedPermissionClassifications.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DelegatedPermissionClassificationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.delegatedPermissionClassifications.item collection
 func (m *ServicePrincipalRequestBuilder) DelegatedPermissionClassificationsById(id string)(*i38c5edd99af7364922d88fc2b49de45f320d11c5fa36e8234c12f1d863cbea73.DelegatedPermissionClassificationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -232,9 +214,7 @@ func (m *ServicePrincipalRequestBuilder) DelegatedPermissionClassificationsById(
     }
     return i38c5edd99af7364922d88fc2b49de45f320d11c5fa36e8234c12f1d863cbea73.NewDelegatedPermissionClassificationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Delete entity from servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from servicePrincipals
 func (m *ServicePrincipalRequestBuilder) Delete(options *ServicePrincipalRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -249,9 +229,7 @@ func (m *ServicePrincipalRequestBuilder) Delete(options *ServicePrincipalRequest
 func (m *ServicePrincipalRequestBuilder) Endpoints()(*ic2b775c554f6f0689bed0deb6e610608281614f70275cada61da8274360068d0.EndpointsRequestBuilder) {
     return ic2b775c554f6f0689bed0deb6e610608281614f70275cada61da8274360068d0.NewEndpointsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.endpoints.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// EndpointsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.endpoints.item collection
 func (m *ServicePrincipalRequestBuilder) EndpointsById(id string)(*iae6f1167638ef01ba227e18af033b58e9203edca74b4641453bc1cec1de3aa91.EndpointRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -262,9 +240,7 @@ func (m *ServicePrincipalRequestBuilder) EndpointsById(id string)(*iae6f1167638e
     }
     return iae6f1167638ef01ba227e18af033b58e9203edca74b4641453bc1cec1de3aa91.NewEndpointRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get entity from servicePrincipals by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from servicePrincipals by key
 func (m *ServicePrincipalRequestBuilder) Get(options *ServicePrincipalRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServicePrincipal, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -297,9 +273,7 @@ func (m *ServicePrincipalRequestBuilder) OwnedObjects()(*ia329fbf2e4e7682fe90bdf
 func (m *ServicePrincipalRequestBuilder) Owners()(*ia161e203c4876e46996f4ce25080c383320b3f90c23f41a4644fabc41a122c2c.OwnersRequestBuilder) {
     return ia161e203c4876e46996f4ce25080c383320b3f90c23f41a4644fabc41a122c2c.NewOwnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in servicePrincipals
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in servicePrincipals
 func (m *ServicePrincipalRequestBuilder) Patch(options *ServicePrincipalRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// mdurationRequestBody 
 type MdurationRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -22,14 +22,14 @@ type MdurationRequestBody struct {
     // 
     yld *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
-// Instantiates a new mdurationRequestBody and sets the default values.
+// NewMdurationRequestBody instantiates a new mdurationRequestBody and sets the default values.
 func NewMdurationRequestBody()(*MdurationRequestBody) {
     m := &MdurationRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MdurationRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *MdurationRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the basis property value. 
+// GetBasis gets the basis property value. 
 func (m *MdurationRequestBody) GetBasis()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *MdurationRequestBody) GetBasis()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a
         return m.basis
     }
 }
-// Gets the coupon property value. 
+// GetCoupon gets the coupon property value. 
 func (m *MdurationRequestBody) GetCoupon()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *MdurationRequestBody) GetCoupon()(*i4a838ef194e4c99e9f2c63ba10dab9cb120
         return m.coupon
     }
 }
-// Gets the frequency property value. 
+// GetFrequency gets the frequency property value. 
 func (m *MdurationRequestBody) GetFrequency()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *MdurationRequestBody) GetFrequency()(*i4a838ef194e4c99e9f2c63ba10dab9cb
         return m.frequency
     }
 }
-// Gets the maturity property value. 
+// GetMaturity gets the maturity property value. 
 func (m *MdurationRequestBody) GetMaturity()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *MdurationRequestBody) GetMaturity()(*i4a838ef194e4c99e9f2c63ba10dab9cb1
         return m.maturity
     }
 }
-// Gets the settlement property value. 
+// GetSettlement gets the settlement property value. 
 func (m *MdurationRequestBody) GetSettlement()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *MdurationRequestBody) GetSettlement()(*i4a838ef194e4c99e9f2c63ba10dab9c
         return m.settlement
     }
 }
-// Gets the yld property value. 
+// GetYld gets the yld property value. 
 func (m *MdurationRequestBody) GetYld()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *MdurationRequestBody) GetYld()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89
         return m.yld
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MdurationRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["basis"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,9 +153,7 @@ func (m *MdurationRequestBody) GetFieldDeserializers()(map[string]func(interface
 func (m *MdurationRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MdurationRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("basis", m.GetBasis())
@@ -201,45 +199,31 @@ func (m *MdurationRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MdurationRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the basis property value. 
-// Parameters:
-//  - value : Value to set for the basis property.
+// SetBasis sets the basis property value. 
 func (m *MdurationRequestBody) SetBasis(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.basis = value
 }
-// Sets the coupon property value. 
-// Parameters:
-//  - value : Value to set for the coupon property.
+// SetCoupon sets the coupon property value. 
 func (m *MdurationRequestBody) SetCoupon(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.coupon = value
 }
-// Sets the frequency property value. 
-// Parameters:
-//  - value : Value to set for the frequency property.
+// SetFrequency sets the frequency property value. 
 func (m *MdurationRequestBody) SetFrequency(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.frequency = value
 }
-// Sets the maturity property value. 
-// Parameters:
-//  - value : Value to set for the maturity property.
+// SetMaturity sets the maturity property value. 
 func (m *MdurationRequestBody) SetMaturity(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.maturity = value
 }
-// Sets the settlement property value. 
-// Parameters:
-//  - value : Value to set for the settlement property.
+// SetSettlement sets the settlement property value. 
 func (m *MdurationRequestBody) SetSettlement(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.settlement = value
 }
-// Sets the yld property value. 
-// Parameters:
-//  - value : Value to set for the yld property.
+// SetYld sets the yld property value. 
 func (m *MdurationRequestBody) SetYld(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.yld = value
 }

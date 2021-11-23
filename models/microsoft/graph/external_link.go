@@ -4,21 +4,21 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// externalLink 
 type ExternalLink struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The url of the link.
     href *string;
 }
-// Instantiates a new externalLink and sets the default values.
+// NewExternalLink instantiates a new externalLink and sets the default values.
 func NewExternalLink()(*ExternalLink) {
     m := &ExternalLink{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExternalLink) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -26,7 +26,7 @@ func (m *ExternalLink) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the href property value. The url of the link.
+// GetHref gets the href property value. The url of the link.
 func (m *ExternalLink) GetHref()(*string) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *ExternalLink) GetHref()(*string) {
         return m.href
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalLink) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["href"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -52,9 +52,7 @@ func (m *ExternalLink) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *ExternalLink) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ExternalLink) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("href", m.GetHref())
@@ -70,15 +68,11 @@ func (m *ExternalLink) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExternalLink) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the href property value. The url of the link.
-// Parameters:
-//  - value : Value to set for the href property.
+// SetHref sets the href property value. The url of the link.
 func (m *ExternalLink) SetHref(value *string)() {
     m.href = value
 }

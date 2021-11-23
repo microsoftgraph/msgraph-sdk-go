@@ -8,7 +8,7 @@ import (
     i83d5ad5759d3dd1abfdb0bbfc4b7880eb588d7119e9c37feeb26bdde18091800 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/axes/valueaxis/format/font"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes\valueAxis\format
+// formatRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes\valueAxis\format
 type FormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type FormatRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// FormatRequestBuilderDeleteOptions options for Delete
 type FormatRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type FormatRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// FormatRequestBuilderGetOptions options for Get
 type FormatRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type FormatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the formatting of a chart object, which includes line and font formatting. Read-only.
+// formatRequestBuilderGetQueryParameters represents the formatting of a chart object, which includes line and font formatting. Read-only.
 type FormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FormatRequestBuilderPatchOptions options for Patch
 type FormatRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxisFormat;
@@ -55,10 +55,7 @@ type FormatRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FormatRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFormatRequestBuilderInternal instantiates a new FormatRequestBuilder and sets the default values.
 func NewFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FormatRequestBuilder) {
     m := &FormatRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewFormatRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FormatRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFormatRequestBuilder instantiates a new FormatRequestBuilder and sets the default values.
 func NewFormatRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FormatRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFormatRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the formatting of a chart object, which includes line and font formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the formatting of a chart object, which includes line and font formatting. Read-only.
 func (m *FormatRequestBuilder) CreateDeleteRequestInformation(options *FormatRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *FormatRequestBuilder) CreateDeleteRequestInformation(options *FormatReq
     }
     return requestInfo, nil
 }
-// Represents the formatting of a chart object, which includes line and font formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the formatting of a chart object, which includes line and font formatting. Read-only.
 func (m *FormatRequestBuilder) CreateGetRequestInformation(options *FormatRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *FormatRequestBuilder) CreateGetRequestInformation(options *FormatReques
     }
     return requestInfo, nil
 }
-// Represents the formatting of a chart object, which includes line and font formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the formatting of a chart object, which includes line and font formatting. Read-only.
 func (m *FormatRequestBuilder) CreatePatchRequestInformation(options *FormatRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *FormatRequestBuilder) CreatePatchRequestInformation(options *FormatRequ
     }
     return requestInfo, nil
 }
-// Represents the formatting of a chart object, which includes line and font formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the formatting of a chart object, which includes line and font formatting. Read-only.
 func (m *FormatRequestBuilder) Delete(options *FormatRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *FormatRequestBuilder) Delete(options *FormatRequestBuilderDeleteOptions
 func (m *FormatRequestBuilder) Font()(*i83d5ad5759d3dd1abfdb0bbfc4b7880eb588d7119e9c37feeb26bdde18091800.FontRequestBuilder) {
     return i83d5ad5759d3dd1abfdb0bbfc4b7880eb588d7119e9c37feeb26bdde18091800.NewFontRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents the formatting of a chart object, which includes line and font formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents the formatting of a chart object, which includes line and font formatting. Read-only.
 func (m *FormatRequestBuilder) Get(options *FormatRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxisFormat, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *FormatRequestBuilder) Get(options *FormatRequestBuilderGetOptions)(*i4a
 func (m *FormatRequestBuilder) Line()(*i4127b53b73a69e1193a4c29d43ac7865ee88fd04c12a4069decddcc523ca6210.LineRequestBuilder) {
     return i4127b53b73a69e1193a4c29d43ac7865ee88fd04c12a4069decddcc523ca6210.NewLineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents the formatting of a chart object, which includes line and font formatting. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the formatting of a chart object, which includes line and font formatting. Read-only.
 func (m *FormatRequestBuilder) Patch(options *FormatRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

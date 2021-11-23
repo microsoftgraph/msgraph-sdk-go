@@ -8,7 +8,7 @@ import (
     iec4d66d54f529f97b939337373c84e69dceab72c2e3a51099711260f728124dd "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/devicecompliancepolicies/item/scheduledactionsforrule/item/scheduledactionconfigurations/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\scheduledActionsForRule\{deviceComplianceScheduledActionForRule-id}
+// deviceComplianceScheduledActionForRuleRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\scheduledActionsForRule\{deviceComplianceScheduledActionForRule-id}
 type DeviceComplianceScheduledActionForRuleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type DeviceComplianceScheduledActionForRuleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceComplianceScheduledActionForRuleRequestBuilderDeleteOptions options for Delete
 type DeviceComplianceScheduledActionForRuleRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceComplianceScheduledActionForRuleRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceComplianceScheduledActionForRuleRequestBuilderGetOptions options for Get
 type DeviceComplianceScheduledActionForRuleRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type DeviceComplianceScheduledActionForRuleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+// deviceComplianceScheduledActionForRuleRequestBuilderGetQueryParameters the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 type DeviceComplianceScheduledActionForRuleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceComplianceScheduledActionForRuleRequestBuilderPatchOptions options for Patch
 type DeviceComplianceScheduledActionForRuleRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceScheduledActionForRule;
@@ -55,10 +55,7 @@ type DeviceComplianceScheduledActionForRuleRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceComplianceScheduledActionForRuleRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceComplianceScheduledActionForRuleRequestBuilderInternal instantiates a new DeviceComplianceScheduledActionForRuleRequestBuilder and sets the default values.
 func NewDeviceComplianceScheduledActionForRuleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceComplianceScheduledActionForRuleRequestBuilder) {
     m := &DeviceComplianceScheduledActionForRuleRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewDeviceComplianceScheduledActionForRuleRequestBuilderInternal(pathParamet
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceComplianceScheduledActionForRuleRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceComplianceScheduledActionForRuleRequestBuilder instantiates a new DeviceComplianceScheduledActionForRuleRequestBuilder and sets the default values.
 func NewDeviceComplianceScheduledActionForRuleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceComplianceScheduledActionForRuleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceComplianceScheduledActionForRuleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) CreateDeleteRequestInformation(options *DeviceComplianceScheduledActionForRuleRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) CreateDeleteReque
     }
     return requestInfo, nil
 }
-// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) CreateGetRequestInformation(options *DeviceComplianceScheduledActionForRuleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) CreatePatchRequestInformation(options *DeviceComplianceScheduledActionForRuleRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) CreatePatchReques
     }
     return requestInfo, nil
 }
-// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) Delete(options *DeviceComplianceScheduledActionForRuleRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) Delete(options *D
     }
     return nil
 }
-// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-// Parameters:
-//  - options : Options for the request
+// Get the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) Get(options *DeviceComplianceScheduledActionForRuleRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceScheduledActionForRule, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) Get(options *Devi
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceScheduledActionForRule), nil
 }
-// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) Patch(options *DeviceComplianceScheduledActionForRuleRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) Patch(options *De
 func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) ScheduledActionConfigurations()(*i8d46a6185f24acca885ef9cf0754b19ecec8c203eeb5e10885b1c3f23865a1d4.ScheduledActionConfigurationsRequestBuilder) {
     return i8d46a6185f24acca885ef9cf0754b19ecec8c203eeb5e10885b1c3f23865a1d4.NewScheduledActionConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.deviceCompliancePolicies.item.scheduledActionsForRule.item.scheduledActionConfigurations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ScheduledActionConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.deviceCompliancePolicies.item.scheduledActionsForRule.item.scheduledActionConfigurations.item collection
 func (m *DeviceComplianceScheduledActionForRuleRequestBuilder) ScheduledActionConfigurationsById(id string)(*iec4d66d54f529f97b939337373c84e69dceab72c2e3a51099711260f728124dd.DeviceComplianceActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

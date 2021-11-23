@@ -14,7 +14,7 @@ import (
     i8ab9c44a4a415e76c346c3f6eda2e19ce5ffba6ea1f21df106cb58013b2ec53f "github.com/microsoftgraph/msgraph-sdk-go/auditlogs/directoryaudits/item"
 )
 
-// Builds and executes requests for operations under \auditLogs
+// auditLogsRequestBuilder builds and executes requests for operations under \auditLogs
 type AuditLogsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -23,7 +23,7 @@ type AuditLogsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AuditLogsRequestBuilderGetOptions options for Get
 type AuditLogsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -34,14 +34,14 @@ type AuditLogsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get auditLogs
+// auditLogsRequestBuilderGetQueryParameters get auditLogs
 type AuditLogsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AuditLogsRequestBuilderPatchOptions options for Patch
 type AuditLogsRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuditLogRoot;
@@ -52,10 +52,7 @@ type AuditLogsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AuditLogsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuditLogsRequestBuilderInternal instantiates a new AuditLogsRequestBuilder and sets the default values.
 func NewAuditLogsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuditLogsRequestBuilder) {
     m := &AuditLogsRequestBuilder{
     }
@@ -68,18 +65,13 @@ func NewAuditLogsRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AuditLogsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuditLogsRequestBuilder instantiates a new AuditLogsRequestBuilder and sets the default values.
 func NewAuditLogsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuditLogsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuditLogsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get auditLogs
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get auditLogs
 func (m *AuditLogsRequestBuilder) CreateGetRequestInformation(options *AuditLogsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *AuditLogsRequestBuilder) CreateGetRequestInformation(options *AuditLogs
     }
     return requestInfo, nil
 }
-// Update auditLogs
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update auditLogs
 func (m *AuditLogsRequestBuilder) CreatePatchRequestInformation(options *AuditLogsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *AuditLogsRequestBuilder) CreatePatchRequestInformation(options *AuditLo
 func (m *AuditLogsRequestBuilder) DirectoryAudits()(*i0ffcbd4df9c49ebdf92c325c07b99e822be86d1d7c8ef35696fe1f4c2ebe8ddd.DirectoryAuditsRequestBuilder) {
     return i0ffcbd4df9c49ebdf92c325c07b99e822be86d1d7c8ef35696fe1f4c2ebe8ddd.NewDirectoryAuditsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.auditLogs.directoryAudits.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// DirectoryAuditsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.auditLogs.directoryAudits.item collection
 func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*i8ab9c44a4a415e76c346c3f6eda2e19ce5ffba6ea1f21df106cb58013b2ec53f.DirectoryAuditRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -135,9 +123,7 @@ func (m *AuditLogsRequestBuilder) DirectoryAuditsById(id string)(*i8ab9c44a4a415
     }
     return i8ab9c44a4a415e76c346c3f6eda2e19ce5ffba6ea1f21df106cb58013b2ec53f.NewDirectoryAuditRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get auditLogs
-// Parameters:
-//  - options : Options for the request
+// Get get auditLogs
 func (m *AuditLogsRequestBuilder) Get(options *AuditLogsRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuditLogRoot, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -149,9 +135,7 @@ func (m *AuditLogsRequestBuilder) Get(options *AuditLogsRequestBuilderGetOptions
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuditLogRoot), nil
 }
-// Update auditLogs
-// Parameters:
-//  - options : Options for the request
+// Patch update auditLogs
 func (m *AuditLogsRequestBuilder) Patch(options *AuditLogsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -166,9 +150,7 @@ func (m *AuditLogsRequestBuilder) Patch(options *AuditLogsRequestBuilderPatchOpt
 func (m *AuditLogsRequestBuilder) Provisioning()(*i097180ed0235aaf99aba24bd4318eaecbd7dc30663c7e16f228dcaf593408050.ProvisioningRequestBuilder) {
     return i097180ed0235aaf99aba24bd4318eaecbd7dc30663c7e16f228dcaf593408050.NewProvisioningRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.auditLogs.provisioning.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ProvisioningById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.auditLogs.provisioning.item collection
 func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*i1a750e38628ba45883889a3ea54a13c3e3772956da70ded7ae26f13e0bbbedd2.ProvisioningObjectSummaryRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -182,9 +164,7 @@ func (m *AuditLogsRequestBuilder) ProvisioningById(id string)(*i1a750e38628ba458
 func (m *AuditLogsRequestBuilder) RestrictedSignIns()(*i7625071e63047df95c3e60a95e06a7af646aea10ec9f35f446c2da5700131f2b.RestrictedSignInsRequestBuilder) {
     return i7625071e63047df95c3e60a95e06a7af646aea10ec9f35f446c2da5700131f2b.NewRestrictedSignInsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.auditLogs.restrictedSignIns.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RestrictedSignInsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.auditLogs.restrictedSignIns.item collection
 func (m *AuditLogsRequestBuilder) RestrictedSignInsById(id string)(*i7f3e11d84b38e07c2ad13447d9693f755cb3ec92773d58ec7b0f68b62669249f.RestrictedSignInRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -198,9 +178,7 @@ func (m *AuditLogsRequestBuilder) RestrictedSignInsById(id string)(*i7f3e11d84b3
 func (m *AuditLogsRequestBuilder) SignIns()(*i6856047a3d7bd4c97c5dd10b2289247f2be8a26b5d67f5c0130850c9e19185eb.SignInsRequestBuilder) {
     return i6856047a3d7bd4c97c5dd10b2289247f2be8a26b5d67f5c0130850c9e19185eb.NewSignInsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.auditLogs.signIns.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SignInsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.auditLogs.signIns.item collection
 func (m *AuditLogsRequestBuilder) SignInsById(id string)(*i72f75127bd05e9eb686f047ff40a72bc034bcb41296fc9a2b3b1cc35881c4f3e.SignInRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

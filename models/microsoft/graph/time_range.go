@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// timeRange 
 type TimeRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type TimeRange struct {
     // Start time for the time range.
     startTime *string;
 }
-// Instantiates a new timeRange and sets the default values.
+// NewTimeRange instantiates a new timeRange and sets the default values.
 func NewTimeRange()(*TimeRange) {
     m := &TimeRange{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeRange) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *TimeRange) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the endTime property value. End time for the time range.
+// GetEndTime gets the endTime property value. End time for the time range.
 func (m *TimeRange) GetEndTime()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *TimeRange) GetEndTime()(*string) {
         return m.endTime
     }
 }
-// Gets the startTime property value. Start time for the time range.
+// GetStartTime gets the startTime property value. Start time for the time range.
 func (m *TimeRange) GetStartTime()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *TimeRange) GetStartTime()(*string) {
         return m.startTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TimeRange) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["endTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *TimeRange) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
 func (m *TimeRange) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TimeRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("endTime", m.GetEndTime())
@@ -96,21 +94,15 @@ func (m *TimeRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeRange) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the endTime property value. End time for the time range.
-// Parameters:
-//  - value : Value to set for the endTime property.
+// SetEndTime sets the endTime property value. End time for the time range.
 func (m *TimeRange) SetEndTime(value *string)() {
     m.endTime = value
 }
-// Sets the startTime property value. Start time for the time range.
-// Parameters:
-//  - value : Value to set for the startTime property.
+// SetStartTime sets the startTime property value. Start time for the time range.
 func (m *TimeRange) SetStartTime(value *string)() {
     m.startTime = value
 }

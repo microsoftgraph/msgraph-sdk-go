@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\microsoft.graph.getMemberObjects
+// getMemberObjectsRequestBuilder builds and executes requests for operations under \me\microsoft.graph.getMemberObjects
 type GetMemberObjectsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetMemberObjectsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetMemberObjectsRequestBuilderPostOptions options for Post
 type GetMemberObjectsRequestBuilderPostOptions struct {
     // 
     Body *GetMemberObjectsRequestBody;
@@ -24,10 +24,7 @@ type GetMemberObjectsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetMemberObjectsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetMemberObjectsRequestBuilderInternal instantiates a new GetMemberObjectsRequestBuilder and sets the default values.
 func NewGetMemberObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetMemberObjectsRequestBuilder) {
     m := &GetMemberObjectsRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetMemberObjectsRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetMemberObjectsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetMemberObjectsRequestBuilder instantiates a new GetMemberObjectsRequestBuilder and sets the default values.
 func NewGetMemberObjectsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetMemberObjectsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getMemberObjects
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getMemberObjects
 func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformation(options *GetMemberObjectsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetMemberObjectsRequestBuilder) CreatePostRequestInformation(options *G
     }
     return requestInfo, nil
 }
-// Invoke action getMemberObjects
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getMemberObjects
 func (m *GetMemberObjectsRequestBuilder) Post(options *GetMemberObjectsRequestBuilderPostOptions)([]string, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

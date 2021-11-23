@@ -13,7 +13,7 @@ import (
     iea5b1c178ca0b49715ad6dd95962d56bd9009e8e6ae173d447b2c707504f6edc "github.com/microsoftgraph/msgraph-sdk-go/me/contacts/item/multivalueextendedproperties/item"
 )
 
-// Builds and executes requests for operations under \me\contacts\{contact-id}
+// contactRequestBuilder builds and executes requests for operations under \me\contacts\{contact-id}
 type ContactRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -22,7 +22,7 @@ type ContactRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ContactRequestBuilderDeleteOptions options for Delete
 type ContactRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -31,7 +31,7 @@ type ContactRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ContactRequestBuilderGetOptions options for Get
 type ContactRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -42,12 +42,12 @@ type ContactRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user's contacts. Read-only. Nullable.
+// contactRequestBuilderGetQueryParameters the user's contacts. Read-only. Nullable.
 type ContactRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ContactRequestBuilderPatchOptions options for Patch
 type ContactRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Contact;
@@ -58,10 +58,7 @@ type ContactRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ContactRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContactRequestBuilderInternal instantiates a new ContactRequestBuilder and sets the default values.
 func NewContactRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactRequestBuilder) {
     m := &ContactRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewContactRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ContactRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContactRequestBuilder instantiates a new ContactRequestBuilder and sets the default values.
 func NewContactRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContactRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewContactRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user's contacts. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the user's contacts. Read-only. Nullable.
 func (m *ContactRequestBuilder) CreateDeleteRequestInformation(options *ContactRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *ContactRequestBuilder) CreateDeleteRequestInformation(options *ContactR
     }
     return requestInfo, nil
 }
-// The user's contacts. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user's contacts. Read-only. Nullable.
 func (m *ContactRequestBuilder) CreateGetRequestInformation(options *ContactRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *ContactRequestBuilder) CreateGetRequestInformation(options *ContactRequ
     }
     return requestInfo, nil
 }
-// The user's contacts. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the user's contacts. Read-only. Nullable.
 func (m *ContactRequestBuilder) CreatePatchRequestInformation(options *ContactRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *ContactRequestBuilder) CreatePatchRequestInformation(options *ContactRe
     }
     return requestInfo, nil
 }
-// The user's contacts. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the user's contacts. Read-only. Nullable.
 func (m *ContactRequestBuilder) Delete(options *ContactRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -161,9 +147,7 @@ func (m *ContactRequestBuilder) Delete(options *ContactRequestBuilderDeleteOptio
 func (m *ContactRequestBuilder) Extensions()(*i89438ec9ae223d0bedcb8242f200f32139b896bc60ecdc15e450b1129f445d59.ExtensionsRequestBuilder) {
     return i89438ec9ae223d0bedcb8242f200f32139b896bc60ecdc15e450b1129f445d59.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contacts.item.extensions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contacts.item.extensions.item collection
 func (m *ContactRequestBuilder) ExtensionsById(id string)(*i293cd72f0585f8a5a1ed14a6a1885f09bb2e161afac43c5f2472eb8591edbf68.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -174,9 +158,7 @@ func (m *ContactRequestBuilder) ExtensionsById(id string)(*i293cd72f0585f8a5a1ed
     }
     return i293cd72f0585f8a5a1ed14a6a1885f09bb2e161afac43c5f2472eb8591edbf68.NewExtensionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The user's contacts. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the user's contacts. Read-only. Nullable.
 func (m *ContactRequestBuilder) Get(options *ContactRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Contact, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -191,9 +173,7 @@ func (m *ContactRequestBuilder) Get(options *ContactRequestBuilderGetOptions)(*i
 func (m *ContactRequestBuilder) MultiValueExtendedProperties()(*i7900dfd0bd161ba16cfab166ed3b4b73f28d6b6bdf7693846d0060cbc83fe7c6.MultiValueExtendedPropertiesRequestBuilder) {
     return i7900dfd0bd161ba16cfab166ed3b4b73f28d6b6bdf7693846d0060cbc83fe7c6.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contacts.item.multiValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contacts.item.multiValueExtendedProperties.item collection
 func (m *ContactRequestBuilder) MultiValueExtendedPropertiesById(id string)(*iea5b1c178ca0b49715ad6dd95962d56bd9009e8e6ae173d447b2c707504f6edc.MultiValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -204,9 +184,7 @@ func (m *ContactRequestBuilder) MultiValueExtendedPropertiesById(id string)(*iea
     }
     return iea5b1c178ca0b49715ad6dd95962d56bd9009e8e6ae173d447b2c707504f6edc.NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The user's contacts. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the user's contacts. Read-only. Nullable.
 func (m *ContactRequestBuilder) Patch(options *ContactRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -224,9 +202,7 @@ func (m *ContactRequestBuilder) Photo()(*ib7bc02a205ca7d6cb9706bfaf945847e5f1851
 func (m *ContactRequestBuilder) SingleValueExtendedProperties()(*if2cff29c6c010fcdd117f7b6fb306b963667350bb66aaa169a0bffaa4c5db6aa.SingleValueExtendedPropertiesRequestBuilder) {
     return if2cff29c6c010fcdd117f7b6fb306b963667350bb66aaa169a0bffaa4c5db6aa.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contacts.item.singleValueExtendedProperties.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.contacts.item.singleValueExtendedProperties.item collection
 func (m *ContactRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i26ee4d399149ce9fa1f9599f3cf1e90e8738ca46419f61c3ad0cd866e26072f7.SingleValueLegacyExtendedPropertyRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

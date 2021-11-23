@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// delta 
 type Delta struct {
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OutlookItem
     // The name of the contact's assistant.
@@ -84,14 +84,14 @@ type Delta struct {
     // 
     yomiSurname *string;
 }
-// Instantiates a new delta and sets the default values.
+// NewDelta instantiates a new delta and sets the default values.
 func NewDelta()(*Delta) {
     m := &Delta{
         OutlookItem: *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewOutlookItem(),
     }
     return m
 }
-// Gets the assistantName property value. The name of the contact's assistant.
+// GetAssistantName gets the assistantName property value. The name of the contact's assistant.
 func (m *Delta) GetAssistantName()(*string) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *Delta) GetAssistantName()(*string) {
         return m.assistantName
     }
 }
-// Gets the birthday property value. The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetBirthday gets the birthday property value. The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Delta) GetBirthday()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *Delta) GetBirthday()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec
         return m.birthday
     }
 }
-// Gets the businessAddress property value. The contact's business address.
+// GetBusinessAddress gets the businessAddress property value. The contact's business address.
 func (m *Delta) GetBusinessAddress()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PhysicalAddress) {
     if m == nil {
         return nil
@@ -115,7 +115,7 @@ func (m *Delta) GetBusinessAddress()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.businessAddress
     }
 }
-// Gets the businessHomePage property value. The business home page of the contact.
+// GetBusinessHomePage gets the businessHomePage property value. The business home page of the contact.
 func (m *Delta) GetBusinessHomePage()(*string) {
     if m == nil {
         return nil
@@ -123,7 +123,7 @@ func (m *Delta) GetBusinessHomePage()(*string) {
         return m.businessHomePage
     }
 }
-// Gets the businessPhones property value. The contact's business phone numbers.
+// GetBusinessPhones gets the businessPhones property value. The contact's business phone numbers.
 func (m *Delta) GetBusinessPhones()([]string) {
     if m == nil {
         return nil
@@ -131,7 +131,7 @@ func (m *Delta) GetBusinessPhones()([]string) {
         return m.businessPhones
     }
 }
-// Gets the children property value. The names of the contact's children.
+// GetChildren gets the children property value. The names of the contact's children.
 func (m *Delta) GetChildren()([]string) {
     if m == nil {
         return nil
@@ -139,7 +139,7 @@ func (m *Delta) GetChildren()([]string) {
         return m.children
     }
 }
-// Gets the companyName property value. The name of the contact's company.
+// GetCompanyName gets the companyName property value. The name of the contact's company.
 func (m *Delta) GetCompanyName()(*string) {
     if m == nil {
         return nil
@@ -147,7 +147,7 @@ func (m *Delta) GetCompanyName()(*string) {
         return m.companyName
     }
 }
-// Gets the department property value. The contact's department.
+// GetDepartment gets the department property value. The contact's department.
 func (m *Delta) GetDepartment()(*string) {
     if m == nil {
         return nil
@@ -155,7 +155,7 @@ func (m *Delta) GetDepartment()(*string) {
         return m.department
     }
 }
-// Gets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
+// GetDisplayName gets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
 func (m *Delta) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -163,7 +163,7 @@ func (m *Delta) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the emailAddresses property value. The contact's email addresses.
+// GetEmailAddresses gets the emailAddresses property value. The contact's email addresses.
 func (m *Delta) GetEmailAddresses()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EmailAddress) {
     if m == nil {
         return nil
@@ -171,7 +171,7 @@ func (m *Delta) GetEmailAddresses()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.emailAddresses
     }
 }
-// Gets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
+// GetExtensions gets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
 func (m *Delta) GetExtensions()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension) {
     if m == nil {
         return nil
@@ -179,7 +179,7 @@ func (m *Delta) GetExtensions()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4
         return m.extensions
     }
 }
-// Gets the fileAs property value. The name the contact is filed under.
+// GetFileAs gets the fileAs property value. The name the contact is filed under.
 func (m *Delta) GetFileAs()(*string) {
     if m == nil {
         return nil
@@ -187,7 +187,7 @@ func (m *Delta) GetFileAs()(*string) {
         return m.fileAs
     }
 }
-// Gets the generation property value. The contact's generation.
+// GetGeneration gets the generation property value. The contact's generation.
 func (m *Delta) GetGeneration()(*string) {
     if m == nil {
         return nil
@@ -195,7 +195,7 @@ func (m *Delta) GetGeneration()(*string) {
         return m.generation
     }
 }
-// Gets the givenName property value. The contact's given name.
+// GetGivenName gets the givenName property value. The contact's given name.
 func (m *Delta) GetGivenName()(*string) {
     if m == nil {
         return nil
@@ -203,7 +203,7 @@ func (m *Delta) GetGivenName()(*string) {
         return m.givenName
     }
 }
-// Gets the homeAddress property value. The contact's home address.
+// GetHomeAddress gets the homeAddress property value. The contact's home address.
 func (m *Delta) GetHomeAddress()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PhysicalAddress) {
     if m == nil {
         return nil
@@ -211,7 +211,7 @@ func (m *Delta) GetHomeAddress()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4
         return m.homeAddress
     }
 }
-// Gets the homePhones property value. The contact's home phone numbers.
+// GetHomePhones gets the homePhones property value. The contact's home phone numbers.
 func (m *Delta) GetHomePhones()([]string) {
     if m == nil {
         return nil
@@ -219,7 +219,7 @@ func (m *Delta) GetHomePhones()([]string) {
         return m.homePhones
     }
 }
-// Gets the imAddresses property value. 
+// GetImAddresses gets the imAddresses property value. 
 func (m *Delta) GetImAddresses()([]string) {
     if m == nil {
         return nil
@@ -227,7 +227,7 @@ func (m *Delta) GetImAddresses()([]string) {
         return m.imAddresses
     }
 }
-// Gets the initials property value. 
+// GetInitials gets the initials property value. 
 func (m *Delta) GetInitials()(*string) {
     if m == nil {
         return nil
@@ -235,7 +235,7 @@ func (m *Delta) GetInitials()(*string) {
         return m.initials
     }
 }
-// Gets the jobTitle property value. 
+// GetJobTitle gets the jobTitle property value. 
 func (m *Delta) GetJobTitle()(*string) {
     if m == nil {
         return nil
@@ -243,7 +243,7 @@ func (m *Delta) GetJobTitle()(*string) {
         return m.jobTitle
     }
 }
-// Gets the manager property value. 
+// GetManager gets the manager property value. 
 func (m *Delta) GetManager()(*string) {
     if m == nil {
         return nil
@@ -251,7 +251,7 @@ func (m *Delta) GetManager()(*string) {
         return m.manager
     }
 }
-// Gets the middleName property value. 
+// GetMiddleName gets the middleName property value. 
 func (m *Delta) GetMiddleName()(*string) {
     if m == nil {
         return nil
@@ -259,7 +259,7 @@ func (m *Delta) GetMiddleName()(*string) {
         return m.middleName
     }
 }
-// Gets the mobilePhone property value. 
+// GetMobilePhone gets the mobilePhone property value. 
 func (m *Delta) GetMobilePhone()(*string) {
     if m == nil {
         return nil
@@ -267,7 +267,7 @@ func (m *Delta) GetMobilePhone()(*string) {
         return m.mobilePhone
     }
 }
-// Gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Delta) GetMultiValueExtendedProperties()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -275,7 +275,7 @@ func (m *Delta) GetMultiValueExtendedProperties()([]i4a838ef194e4c99e9f2c63ba10d
         return m.multiValueExtendedProperties
     }
 }
-// Gets the nickName property value. 
+// GetNickName gets the nickName property value. 
 func (m *Delta) GetNickName()(*string) {
     if m == nil {
         return nil
@@ -283,7 +283,7 @@ func (m *Delta) GetNickName()(*string) {
         return m.nickName
     }
 }
-// Gets the officeLocation property value. 
+// GetOfficeLocation gets the officeLocation property value. 
 func (m *Delta) GetOfficeLocation()(*string) {
     if m == nil {
         return nil
@@ -291,7 +291,7 @@ func (m *Delta) GetOfficeLocation()(*string) {
         return m.officeLocation
     }
 }
-// Gets the otherAddress property value. 
+// GetOtherAddress gets the otherAddress property value. 
 func (m *Delta) GetOtherAddress()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PhysicalAddress) {
     if m == nil {
         return nil
@@ -299,7 +299,7 @@ func (m *Delta) GetOtherAddress()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d
         return m.otherAddress
     }
 }
-// Gets the parentFolderId property value. 
+// GetParentFolderId gets the parentFolderId property value. 
 func (m *Delta) GetParentFolderId()(*string) {
     if m == nil {
         return nil
@@ -307,7 +307,7 @@ func (m *Delta) GetParentFolderId()(*string) {
         return m.parentFolderId
     }
 }
-// Gets the personalNotes property value. 
+// GetPersonalNotes gets the personalNotes property value. 
 func (m *Delta) GetPersonalNotes()(*string) {
     if m == nil {
         return nil
@@ -315,7 +315,7 @@ func (m *Delta) GetPersonalNotes()(*string) {
         return m.personalNotes
     }
 }
-// Gets the photo property value. Optional contact picture. You can get or set a photo for a contact.
+// GetPhoto gets the photo property value. Optional contact picture. You can get or set a photo for a contact.
 func (m *Delta) GetPhoto()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto) {
     if m == nil {
         return nil
@@ -323,7 +323,7 @@ func (m *Delta) GetPhoto()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa
         return m.photo
     }
 }
-// Gets the profession property value. 
+// GetProfession gets the profession property value. 
 func (m *Delta) GetProfession()(*string) {
     if m == nil {
         return nil
@@ -331,7 +331,7 @@ func (m *Delta) GetProfession()(*string) {
         return m.profession
     }
 }
-// Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Delta) GetSingleValueExtendedProperties()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -339,7 +339,7 @@ func (m *Delta) GetSingleValueExtendedProperties()([]i4a838ef194e4c99e9f2c63ba10
         return m.singleValueExtendedProperties
     }
 }
-// Gets the spouseName property value. 
+// GetSpouseName gets the spouseName property value. 
 func (m *Delta) GetSpouseName()(*string) {
     if m == nil {
         return nil
@@ -347,7 +347,7 @@ func (m *Delta) GetSpouseName()(*string) {
         return m.spouseName
     }
 }
-// Gets the surname property value. 
+// GetSurname gets the surname property value. 
 func (m *Delta) GetSurname()(*string) {
     if m == nil {
         return nil
@@ -355,7 +355,7 @@ func (m *Delta) GetSurname()(*string) {
         return m.surname
     }
 }
-// Gets the title property value. 
+// GetTitle gets the title property value. 
 func (m *Delta) GetTitle()(*string) {
     if m == nil {
         return nil
@@ -363,7 +363,7 @@ func (m *Delta) GetTitle()(*string) {
         return m.title
     }
 }
-// Gets the yomiCompanyName property value. 
+// GetYomiCompanyName gets the yomiCompanyName property value. 
 func (m *Delta) GetYomiCompanyName()(*string) {
     if m == nil {
         return nil
@@ -371,7 +371,7 @@ func (m *Delta) GetYomiCompanyName()(*string) {
         return m.yomiCompanyName
     }
 }
-// Gets the yomiGivenName property value. 
+// GetYomiGivenName gets the yomiGivenName property value. 
 func (m *Delta) GetYomiGivenName()(*string) {
     if m == nil {
         return nil
@@ -379,7 +379,7 @@ func (m *Delta) GetYomiGivenName()(*string) {
         return m.yomiGivenName
     }
 }
-// Gets the yomiSurname property value. 
+// GetYomiSurname gets the yomiSurname property value. 
 func (m *Delta) GetYomiSurname()(*string) {
     if m == nil {
         return nil
@@ -387,7 +387,7 @@ func (m *Delta) GetYomiSurname()(*string) {
         return m.yomiSurname
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
     res["assistantName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -797,9 +797,7 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Delta) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.OutlookItem.Serialize(writer)
     if err != nil {
@@ -1049,225 +1047,151 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
-// Sets the assistantName property value. The name of the contact's assistant.
-// Parameters:
-//  - value : Value to set for the assistantName property.
+// SetAssistantName sets the assistantName property value. The name of the contact's assistant.
 func (m *Delta) SetAssistantName(value *string)() {
     m.assistantName = value
 }
-// Sets the birthday property value. The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the birthday property.
+// SetBirthday sets the birthday property value. The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Delta) SetBirthday(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.birthday = value
 }
-// Sets the businessAddress property value. The contact's business address.
-// Parameters:
-//  - value : Value to set for the businessAddress property.
+// SetBusinessAddress sets the businessAddress property value. The contact's business address.
 func (m *Delta) SetBusinessAddress(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PhysicalAddress)() {
     m.businessAddress = value
 }
-// Sets the businessHomePage property value. The business home page of the contact.
-// Parameters:
-//  - value : Value to set for the businessHomePage property.
+// SetBusinessHomePage sets the businessHomePage property value. The business home page of the contact.
 func (m *Delta) SetBusinessHomePage(value *string)() {
     m.businessHomePage = value
 }
-// Sets the businessPhones property value. The contact's business phone numbers.
-// Parameters:
-//  - value : Value to set for the businessPhones property.
+// SetBusinessPhones sets the businessPhones property value. The contact's business phone numbers.
 func (m *Delta) SetBusinessPhones(value []string)() {
     m.businessPhones = value
 }
-// Sets the children property value. The names of the contact's children.
-// Parameters:
-//  - value : Value to set for the children property.
+// SetChildren sets the children property value. The names of the contact's children.
 func (m *Delta) SetChildren(value []string)() {
     m.children = value
 }
-// Sets the companyName property value. The name of the contact's company.
-// Parameters:
-//  - value : Value to set for the companyName property.
+// SetCompanyName sets the companyName property value. The name of the contact's company.
 func (m *Delta) SetCompanyName(value *string)() {
     m.companyName = value
 }
-// Sets the department property value. The contact's department.
-// Parameters:
-//  - value : Value to set for the department property.
+// SetDepartment sets the department property value. The contact's department.
 func (m *Delta) SetDepartment(value *string)() {
     m.department = value
 }
-// Sets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
 func (m *Delta) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the emailAddresses property value. The contact's email addresses.
-// Parameters:
-//  - value : Value to set for the emailAddresses property.
+// SetEmailAddresses sets the emailAddresses property value. The contact's email addresses.
 func (m *Delta) SetEmailAddresses(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EmailAddress)() {
     m.emailAddresses = value
 }
-// Sets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the extensions property.
+// SetExtensions sets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
 func (m *Delta) SetExtensions(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension)() {
     m.extensions = value
 }
-// Sets the fileAs property value. The name the contact is filed under.
-// Parameters:
-//  - value : Value to set for the fileAs property.
+// SetFileAs sets the fileAs property value. The name the contact is filed under.
 func (m *Delta) SetFileAs(value *string)() {
     m.fileAs = value
 }
-// Sets the generation property value. The contact's generation.
-// Parameters:
-//  - value : Value to set for the generation property.
+// SetGeneration sets the generation property value. The contact's generation.
 func (m *Delta) SetGeneration(value *string)() {
     m.generation = value
 }
-// Sets the givenName property value. The contact's given name.
-// Parameters:
-//  - value : Value to set for the givenName property.
+// SetGivenName sets the givenName property value. The contact's given name.
 func (m *Delta) SetGivenName(value *string)() {
     m.givenName = value
 }
-// Sets the homeAddress property value. The contact's home address.
-// Parameters:
-//  - value : Value to set for the homeAddress property.
+// SetHomeAddress sets the homeAddress property value. The contact's home address.
 func (m *Delta) SetHomeAddress(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PhysicalAddress)() {
     m.homeAddress = value
 }
-// Sets the homePhones property value. The contact's home phone numbers.
-// Parameters:
-//  - value : Value to set for the homePhones property.
+// SetHomePhones sets the homePhones property value. The contact's home phone numbers.
 func (m *Delta) SetHomePhones(value []string)() {
     m.homePhones = value
 }
-// Sets the imAddresses property value. 
-// Parameters:
-//  - value : Value to set for the imAddresses property.
+// SetImAddresses sets the imAddresses property value. 
 func (m *Delta) SetImAddresses(value []string)() {
     m.imAddresses = value
 }
-// Sets the initials property value. 
-// Parameters:
-//  - value : Value to set for the initials property.
+// SetInitials sets the initials property value. 
 func (m *Delta) SetInitials(value *string)() {
     m.initials = value
 }
-// Sets the jobTitle property value. 
-// Parameters:
-//  - value : Value to set for the jobTitle property.
+// SetJobTitle sets the jobTitle property value. 
 func (m *Delta) SetJobTitle(value *string)() {
     m.jobTitle = value
 }
-// Sets the manager property value. 
-// Parameters:
-//  - value : Value to set for the manager property.
+// SetManager sets the manager property value. 
 func (m *Delta) SetManager(value *string)() {
     m.manager = value
 }
-// Sets the middleName property value. 
-// Parameters:
-//  - value : Value to set for the middleName property.
+// SetMiddleName sets the middleName property value. 
 func (m *Delta) SetMiddleName(value *string)() {
     m.middleName = value
 }
-// Sets the mobilePhone property value. 
-// Parameters:
-//  - value : Value to set for the mobilePhone property.
+// SetMobilePhone sets the mobilePhone property value. 
 func (m *Delta) SetMobilePhone(value *string)() {
     m.mobilePhone = value
 }
-// Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the multiValueExtendedProperties property.
+// SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Delta) SetMultiValueExtendedProperties(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty)() {
     m.multiValueExtendedProperties = value
 }
-// Sets the nickName property value. 
-// Parameters:
-//  - value : Value to set for the nickName property.
+// SetNickName sets the nickName property value. 
 func (m *Delta) SetNickName(value *string)() {
     m.nickName = value
 }
-// Sets the officeLocation property value. 
-// Parameters:
-//  - value : Value to set for the officeLocation property.
+// SetOfficeLocation sets the officeLocation property value. 
 func (m *Delta) SetOfficeLocation(value *string)() {
     m.officeLocation = value
 }
-// Sets the otherAddress property value. 
-// Parameters:
-//  - value : Value to set for the otherAddress property.
+// SetOtherAddress sets the otherAddress property value. 
 func (m *Delta) SetOtherAddress(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PhysicalAddress)() {
     m.otherAddress = value
 }
-// Sets the parentFolderId property value. 
-// Parameters:
-//  - value : Value to set for the parentFolderId property.
+// SetParentFolderId sets the parentFolderId property value. 
 func (m *Delta) SetParentFolderId(value *string)() {
     m.parentFolderId = value
 }
-// Sets the personalNotes property value. 
-// Parameters:
-//  - value : Value to set for the personalNotes property.
+// SetPersonalNotes sets the personalNotes property value. 
 func (m *Delta) SetPersonalNotes(value *string)() {
     m.personalNotes = value
 }
-// Sets the photo property value. Optional contact picture. You can get or set a photo for a contact.
-// Parameters:
-//  - value : Value to set for the photo property.
+// SetPhoto sets the photo property value. Optional contact picture. You can get or set a photo for a contact.
 func (m *Delta) SetPhoto(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto)() {
     m.photo = value
 }
-// Sets the profession property value. 
-// Parameters:
-//  - value : Value to set for the profession property.
+// SetProfession sets the profession property value. 
 func (m *Delta) SetProfession(value *string)() {
     m.profession = value
 }
-// Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the singleValueExtendedProperties property.
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Delta) SetSingleValueExtendedProperties(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty)() {
     m.singleValueExtendedProperties = value
 }
-// Sets the spouseName property value. 
-// Parameters:
-//  - value : Value to set for the spouseName property.
+// SetSpouseName sets the spouseName property value. 
 func (m *Delta) SetSpouseName(value *string)() {
     m.spouseName = value
 }
-// Sets the surname property value. 
-// Parameters:
-//  - value : Value to set for the surname property.
+// SetSurname sets the surname property value. 
 func (m *Delta) SetSurname(value *string)() {
     m.surname = value
 }
-// Sets the title property value. 
-// Parameters:
-//  - value : Value to set for the title property.
+// SetTitle sets the title property value. 
 func (m *Delta) SetTitle(value *string)() {
     m.title = value
 }
-// Sets the yomiCompanyName property value. 
-// Parameters:
-//  - value : Value to set for the yomiCompanyName property.
+// SetYomiCompanyName sets the yomiCompanyName property value. 
 func (m *Delta) SetYomiCompanyName(value *string)() {
     m.yomiCompanyName = value
 }
-// Sets the yomiGivenName property value. 
-// Parameters:
-//  - value : Value to set for the yomiGivenName property.
+// SetYomiGivenName sets the yomiGivenName property value. 
 func (m *Delta) SetYomiGivenName(value *string)() {
     m.yomiGivenName = value
 }
-// Sets the yomiSurname property value. 
-// Parameters:
-//  - value : Value to set for the yomiSurname property.
+// SetYomiSurname sets the yomiSurname property value. 
 func (m *Delta) SetYomiSurname(value *string)() {
     m.yomiSurname = value
 }

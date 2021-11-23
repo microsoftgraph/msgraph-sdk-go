@@ -7,7 +7,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityProviders
+// identityProvidersRequestBuilder builds and executes requests for operations under \identityProviders
 type IdentityProvidersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type IdentityProvidersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IdentityProvidersRequestBuilderGetOptions options for Get
 type IdentityProvidersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type IdentityProvidersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from identityProviders
+// identityProvidersRequestBuilderGetQueryParameters get entities from identityProviders
 type IdentityProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type IdentityProvidersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// IdentityProvidersRequestBuilderPostOptions options for Post
 type IdentityProvidersRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityProvider;
@@ -57,14 +57,11 @@ type IdentityProvidersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \identityProviders\microsoft.graph.availableProviderTypes()
+// AvailableProviderTypes builds and executes requests for operations under \identityProviders\microsoft.graph.availableProviderTypes()
 func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*i0d9345e4ca9c556c18fc66eaf4aa5f4f1bfc4fb76a58f98a0bbf3a68f43ea9e4.AvailableProviderTypesRequestBuilder) {
     return i0d9345e4ca9c556c18fc66eaf4aa5f4f1bfc4fb76a58f98a0bbf3a68f43ea9e4.NewAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new IdentityProvidersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityProvidersRequestBuilderInternal instantiates a new IdentityProvidersRequestBuilder and sets the default values.
 func NewIdentityProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityProvidersRequestBuilder) {
     m := &IdentityProvidersRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewIdentityProvidersRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IdentityProvidersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityProvidersRequestBuilder instantiates a new IdentityProvidersRequestBuilder and sets the default values.
 func NewIdentityProvidersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityProvidersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityProvidersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from identityProviders
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from identityProviders
 func (m *IdentityProvidersRequestBuilder) CreateGetRequestInformation(options *IdentityProvidersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *IdentityProvidersRequestBuilder) CreateGetRequestInformation(options *I
     }
     return requestInfo, nil
 }
-// Add new entity to identityProviders
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to identityProviders
 func (m *IdentityProvidersRequestBuilder) CreatePostRequestInformation(options *IdentityProvidersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,9 +118,7 @@ func (m *IdentityProvidersRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get entities from identityProviders
-// Parameters:
-//  - options : Options for the request
+// Get get entities from identityProviders
 func (m *IdentityProvidersRequestBuilder) Get(options *IdentityProvidersRequestBuilderGetOptions)(*IdentityProvidersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,9 +130,7 @@ func (m *IdentityProvidersRequestBuilder) Get(options *IdentityProvidersRequestB
     }
     return res.(*IdentityProvidersResponse), nil
 }
-// Add new entity to identityProviders
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to identityProviders
 func (m *IdentityProvidersRequestBuilder) Post(options *IdentityProvidersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityProvider, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.cleanWindowsDevice
+// cleanWindowsDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.cleanWindowsDevice
 type CleanWindowsDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type CleanWindowsDeviceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// CleanWindowsDeviceRequestBuilderPostOptions options for Post
 type CleanWindowsDeviceRequestBuilderPostOptions struct {
     // 
     Body *CleanWindowsDeviceRequestBody;
@@ -24,10 +24,7 @@ type CleanWindowsDeviceRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CleanWindowsDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCleanWindowsDeviceRequestBuilderInternal instantiates a new CleanWindowsDeviceRequestBuilder and sets the default values.
 func NewCleanWindowsDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CleanWindowsDeviceRequestBuilder) {
     m := &CleanWindowsDeviceRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewCleanWindowsDeviceRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CleanWindowsDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCleanWindowsDeviceRequestBuilder instantiates a new CleanWindowsDeviceRequestBuilder and sets the default values.
 func NewCleanWindowsDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CleanWindowsDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCleanWindowsDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Clean Windows device
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation clean Windows device
 func (m *CleanWindowsDeviceRequestBuilder) CreatePostRequestInformation(options *CleanWindowsDeviceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *CleanWindowsDeviceRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Clean Windows device
-// Parameters:
-//  - options : Options for the request
+// Post clean Windows device
 func (m *CleanWindowsDeviceRequestBuilder) Post(options *CleanWindowsDeviceRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

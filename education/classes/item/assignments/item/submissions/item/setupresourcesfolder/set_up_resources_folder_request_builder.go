@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}\microsoft.graph.setUpResourcesFolder
+// setUpResourcesFolderRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}\microsoft.graph.setUpResourcesFolder
 type SetUpResourcesFolderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SetUpResourcesFolderRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// SetUpResourcesFolderRequestBuilderPostOptions options for Post
 type SetUpResourcesFolderRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type SetUpResourcesFolderRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes educationSubmission
+// setUpResourcesFolderResponse union type wrapper for classes educationSubmission
 type SetUpResourcesFolderResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type educationSubmission
     educationSubmission *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmission;
 }
-// Instantiates a new setUpResourcesFolderResponse and sets the default values.
+// NewSetUpResourcesFolderResponse instantiates a new setUpResourcesFolderResponse and sets the default values.
 func NewSetUpResourcesFolderResponse()(*SetUpResourcesFolderResponse) {
     m := &SetUpResourcesFolderResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetUpResourcesFolderResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *SetUpResourcesFolderResponse) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// Gets the educationSubmission property value. Union type representation for type educationSubmission
+// GetEducationSubmission gets the educationSubmission property value. Union type representation for type educationSubmission
 func (m *SetUpResourcesFolderResponse) GetEducationSubmission()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmission) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *SetUpResourcesFolderResponse) GetEducationSubmission()(*i4a838ef194e4c9
         return m.educationSubmission
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SetUpResourcesFolderResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["educationSubmission"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *SetUpResourcesFolderResponse) GetFieldDeserializers()(map[string]func(i
 func (m *SetUpResourcesFolderResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SetUpResourcesFolderResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("educationSubmission", m.GetEducationSubmission())
@@ -90,22 +88,15 @@ func (m *SetUpResourcesFolderResponse) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetUpResourcesFolderResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the educationSubmission property value. Union type representation for type educationSubmission
-// Parameters:
-//  - value : Value to set for the educationSubmission property.
+// SetEducationSubmission sets the educationSubmission property value. Union type representation for type educationSubmission
 func (m *SetUpResourcesFolderResponse) SetEducationSubmission(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmission)() {
     m.educationSubmission = value
 }
-// Instantiates a new SetUpResourcesFolderRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSetUpResourcesFolderRequestBuilderInternal instantiates a new SetUpResourcesFolderRequestBuilder and sets the default values.
 func NewSetUpResourcesFolderRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SetUpResourcesFolderRequestBuilder) {
     m := &SetUpResourcesFolderRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewSetUpResourcesFolderRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SetUpResourcesFolderRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSetUpResourcesFolderRequestBuilder instantiates a new SetUpResourcesFolderRequestBuilder and sets the default values.
 func NewSetUpResourcesFolderRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SetUpResourcesFolderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSetUpResourcesFolderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action setUpResourcesFolder
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action setUpResourcesFolder
 func (m *SetUpResourcesFolderRequestBuilder) CreatePostRequestInformation(options *SetUpResourcesFolderRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *SetUpResourcesFolderRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Invoke action setUpResourcesFolder
-// Parameters:
-//  - options : Options for the request
+// Post invoke action setUpResourcesFolder
 func (m *SetUpResourcesFolderRequestBuilder) Post(options *SetUpResourcesFolderRequestBuilderPostOptions)(*SetUpResourcesFolderResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

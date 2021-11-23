@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// createReplyRequestBody 
 type CreateReplyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type CreateReplyRequestBody struct {
     // 
     message *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message;
 }
-// Instantiates a new createReplyRequestBody and sets the default values.
+// NewCreateReplyRequestBody instantiates a new createReplyRequestBody and sets the default values.
 func NewCreateReplyRequestBody()(*CreateReplyRequestBody) {
     m := &CreateReplyRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateReplyRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *CreateReplyRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the Comment property value. 
+// GetComment gets the Comment property value. 
 func (m *CreateReplyRequestBody) GetComment()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *CreateReplyRequestBody) GetComment()(*string) {
         return m.comment
     }
 }
-// Gets the Message property value. 
+// GetMessage gets the Message property value. 
 func (m *CreateReplyRequestBody) GetMessage()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *CreateReplyRequestBody) GetMessage()(*i4a838ef194e4c99e9f2c63ba10dab9cb
         return m.message
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CreateReplyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["comment"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *CreateReplyRequestBody) GetFieldDeserializers()(map[string]func(interfa
 func (m *CreateReplyRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CreateReplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("comment", m.GetComment())
@@ -97,21 +95,15 @@ func (m *CreateReplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateReplyRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the Comment property value. 
-// Parameters:
-//  - value : Value to set for the Comment property.
+// SetComment sets the Comment property value. 
 func (m *CreateReplyRequestBody) SetComment(value *string)() {
     m.comment = value
 }
-// Sets the Message property value. 
-// Parameters:
-//  - value : Value to set for the Message property.
+// SetMessage sets the Message property value. 
 func (m *CreateReplyRequestBody) SetMessage(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message)() {
     m.message = value
 }

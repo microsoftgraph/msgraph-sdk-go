@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\openShiftChangeRequests\{openShiftChangeRequest-id}
+// openShiftChangeRequestRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\openShiftChangeRequests\{openShiftChangeRequest-id}
 type OpenShiftChangeRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OpenShiftChangeRequestRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OpenShiftChangeRequestRequestBuilderDeleteOptions options for Delete
 type OpenShiftChangeRequestRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type OpenShiftChangeRequestRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OpenShiftChangeRequestRequestBuilderGetOptions options for Get
 type OpenShiftChangeRequestRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type OpenShiftChangeRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get openShiftChangeRequests from teams
+// openShiftChangeRequestRequestBuilderGetQueryParameters get openShiftChangeRequests from teams
 type OpenShiftChangeRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OpenShiftChangeRequestRequestBuilderPatchOptions options for Patch
 type OpenShiftChangeRequestRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OpenShiftChangeRequest;
@@ -53,10 +53,7 @@ type OpenShiftChangeRequestRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OpenShiftChangeRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOpenShiftChangeRequestRequestBuilderInternal instantiates a new OpenShiftChangeRequestRequestBuilder and sets the default values.
 func NewOpenShiftChangeRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OpenShiftChangeRequestRequestBuilder) {
     m := &OpenShiftChangeRequestRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewOpenShiftChangeRequestRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OpenShiftChangeRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOpenShiftChangeRequestRequestBuilder instantiates a new OpenShiftChangeRequestRequestBuilder and sets the default values.
 func NewOpenShiftChangeRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OpenShiftChangeRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOpenShiftChangeRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property openShiftChangeRequests for teams
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property openShiftChangeRequests for teams
 func (m *OpenShiftChangeRequestRequestBuilder) CreateDeleteRequestInformation(options *OpenShiftChangeRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *OpenShiftChangeRequestRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// Get openShiftChangeRequests from teams
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get openShiftChangeRequests from teams
 func (m *OpenShiftChangeRequestRequestBuilder) CreateGetRequestInformation(options *OpenShiftChangeRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *OpenShiftChangeRequestRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Update the navigation property openShiftChangeRequests in teams
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property openShiftChangeRequests in teams
 func (m *OpenShiftChangeRequestRequestBuilder) CreatePatchRequestInformation(options *OpenShiftChangeRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *OpenShiftChangeRequestRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Delete navigation property openShiftChangeRequests for teams
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property openShiftChangeRequests for teams
 func (m *OpenShiftChangeRequestRequestBuilder) Delete(options *OpenShiftChangeRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *OpenShiftChangeRequestRequestBuilder) Delete(options *OpenShiftChangeRe
     }
     return nil
 }
-// Get openShiftChangeRequests from teams
-// Parameters:
-//  - options : Options for the request
+// Get get openShiftChangeRequests from teams
 func (m *OpenShiftChangeRequestRequestBuilder) Get(options *OpenShiftChangeRequestRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OpenShiftChangeRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *OpenShiftChangeRequestRequestBuilder) Get(options *OpenShiftChangeReque
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OpenShiftChangeRequest), nil
 }
-// Update the navigation property openShiftChangeRequests in teams
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property openShiftChangeRequests in teams
 func (m *OpenShiftChangeRequestRequestBuilder) Patch(options *OpenShiftChangeRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \admin\serviceAnnouncement\messages\{serviceUpdateMessage-id}
+// serviceUpdateMessageRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages\{serviceUpdateMessage-id}
 type ServiceUpdateMessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ServiceUpdateMessageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ServiceUpdateMessageRequestBuilderDeleteOptions options for Delete
 type ServiceUpdateMessageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ServiceUpdateMessageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ServiceUpdateMessageRequestBuilderGetOptions options for Get
 type ServiceUpdateMessageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ServiceUpdateMessageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+// serviceUpdateMessageRequestBuilderGetQueryParameters a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 type ServiceUpdateMessageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ServiceUpdateMessageRequestBuilderPatchOptions options for Patch
 type ServiceUpdateMessageRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceUpdateMessage;
@@ -53,10 +53,7 @@ type ServiceUpdateMessageRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ServiceUpdateMessageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServiceUpdateMessageRequestBuilderInternal instantiates a new ServiceUpdateMessageRequestBuilder and sets the default values.
 func NewServiceUpdateMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServiceUpdateMessageRequestBuilder) {
     m := &ServiceUpdateMessageRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewServiceUpdateMessageRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ServiceUpdateMessageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewServiceUpdateMessageRequestBuilder instantiates a new ServiceUpdateMessageRequestBuilder and sets the default values.
 func NewServiceUpdateMessageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ServiceUpdateMessageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServiceUpdateMessageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceUpdateMessageRequestBuilder) CreateDeleteRequestInformation(options *ServiceUpdateMessageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ServiceUpdateMessageRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceUpdateMessageRequestBuilder) CreateGetRequestInformation(options *ServiceUpdateMessageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ServiceUpdateMessageRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceUpdateMessageRequestBuilder) CreatePatchRequestInformation(options *ServiceUpdateMessageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ServiceUpdateMessageRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceUpdateMessageRequestBuilder) Delete(options *ServiceUpdateMessageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ServiceUpdateMessageRequestBuilder) Delete(options *ServiceUpdateMessag
     }
     return nil
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceUpdateMessageRequestBuilder) Get(options *ServiceUpdateMessageRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceUpdateMessage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ServiceUpdateMessageRequestBuilder) Get(options *ServiceUpdateMessageRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceUpdateMessage), nil
 }
-// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceUpdateMessageRequestBuilder) Patch(options *ServiceUpdateMessageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// deviceManagementSettings 
 type DeviceManagementSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type DeviceManagementSettings struct {
     // Device should be noncompliant when there is no compliance policy targeted when this is true
     secureByDefault *bool;
 }
-// Instantiates a new deviceManagementSettings and sets the default values.
+// NewDeviceManagementSettings instantiates a new deviceManagementSettings and sets the default values.
 func NewDeviceManagementSettings()(*DeviceManagementSettings) {
     m := &DeviceManagementSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettings) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *DeviceManagementSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
+// GetDeviceComplianceCheckinThresholdDays gets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
 func (m *DeviceManagementSettings) GetDeviceComplianceCheckinThresholdDays()(*int32) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *DeviceManagementSettings) GetDeviceComplianceCheckinThresholdDays()(*in
         return m.deviceComplianceCheckinThresholdDays
     }
 }
-// Gets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
+// GetIsScheduledActionEnabled gets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
 func (m *DeviceManagementSettings) GetIsScheduledActionEnabled()(*bool) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *DeviceManagementSettings) GetIsScheduledActionEnabled()(*bool) {
         return m.isScheduledActionEnabled
     }
 }
-// Gets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
+// GetSecureByDefault gets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
 func (m *DeviceManagementSettings) GetSecureByDefault()(*bool) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *DeviceManagementSettings) GetSecureByDefault()(*bool) {
         return m.secureByDefault
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["deviceComplianceCheckinThresholdDays"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(inter
 func (m *DeviceManagementSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceManagementSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("deviceComplianceCheckinThresholdDays", m.GetDeviceComplianceCheckinThresholdDays())
@@ -122,27 +120,19 @@ func (m *DeviceManagementSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettings) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
-// Parameters:
-//  - value : Value to set for the deviceComplianceCheckinThresholdDays property.
+// SetDeviceComplianceCheckinThresholdDays sets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
 func (m *DeviceManagementSettings) SetDeviceComplianceCheckinThresholdDays(value *int32)() {
     m.deviceComplianceCheckinThresholdDays = value
 }
-// Sets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
-// Parameters:
-//  - value : Value to set for the isScheduledActionEnabled property.
+// SetIsScheduledActionEnabled sets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
 func (m *DeviceManagementSettings) SetIsScheduledActionEnabled(value *bool)() {
     m.isScheduledActionEnabled = value
 }
-// Sets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
-// Parameters:
-//  - value : Value to set for the secureByDefault property.
+// SetSecureByDefault sets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
 func (m *DeviceManagementSettings) SetSecureByDefault(value *bool)() {
     m.secureByDefault = value
 }

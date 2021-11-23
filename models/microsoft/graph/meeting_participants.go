@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// meetingParticipants 
 type MeetingParticipants struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type MeetingParticipants struct {
     // Information of the meeting organizer.
     organizer *MeetingParticipantInfo;
 }
-// Instantiates a new meetingParticipants and sets the default values.
+// NewMeetingParticipants instantiates a new meetingParticipants and sets the default values.
 func NewMeetingParticipants()(*MeetingParticipants) {
     m := &MeetingParticipants{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingParticipants) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *MeetingParticipants) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the attendees property value. Information of the meeting attendees.
+// GetAttendees gets the attendees property value. Information of the meeting attendees.
 func (m *MeetingParticipants) GetAttendees()([]MeetingParticipantInfo) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *MeetingParticipants) GetAttendees()([]MeetingParticipantInfo) {
         return m.attendees
     }
 }
-// Gets the organizer property value. Information of the meeting organizer.
+// GetOrganizer gets the organizer property value. Information of the meeting organizer.
 func (m *MeetingParticipants) GetOrganizer()(*MeetingParticipantInfo) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *MeetingParticipants) GetOrganizer()(*MeetingParticipantInfo) {
         return m.organizer
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["attendees"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -76,9 +76,7 @@ func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(interface{
 func (m *MeetingParticipants) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MeetingParticipants) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttendees()))
@@ -105,21 +103,15 @@ func (m *MeetingParticipants) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingParticipants) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the attendees property value. Information of the meeting attendees.
-// Parameters:
-//  - value : Value to set for the attendees property.
+// SetAttendees sets the attendees property value. Information of the meeting attendees.
 func (m *MeetingParticipants) SetAttendees(value []MeetingParticipantInfo)() {
     m.attendees = value
 }
-// Sets the organizer property value. Information of the meeting organizer.
-// Parameters:
-//  - value : Value to set for the organizer property.
+// SetOrganizer sets the organizer property value. Information of the meeting organizer.
 func (m *MeetingParticipants) SetOrganizer(value *MeetingParticipantInfo)() {
     m.organizer = value
 }
