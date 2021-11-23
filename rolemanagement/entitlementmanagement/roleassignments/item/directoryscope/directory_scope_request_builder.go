@@ -7,7 +7,7 @@ import (
     icf8c5de5310cbc245539d3bdae5d762fa7900e2b585839a1c5e6b294fcf986e5 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/entitlementmanagement/roleassignments/item/directoryscope/ref"
 )
 
-// directoryScopeRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignments\{unifiedRoleAssignment-id}\directoryScope
+// DirectoryScopeRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignments\{unifiedRoleAssignment-id}\directoryScope
 type DirectoryScopeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DirectoryScopeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// directoryScopeRequestBuilderGetQueryParameters the directory object that is the scope of the assignment. Read-only. Supports $expand.
+// DirectoryScopeRequestBuilderGetQueryParameters the directory object that is the scope of the assignment. Read-only. Supports $expand.
 type DirectoryScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

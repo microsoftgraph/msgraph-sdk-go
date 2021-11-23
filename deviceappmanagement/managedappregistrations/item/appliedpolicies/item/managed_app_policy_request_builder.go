@@ -10,7 +10,7 @@ import (
     if611f00b7199e10d62d4352d82898100f56490ff125e7f30e38e42a92f29a086 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/managedappregistrations/item/appliedpolicies/item/managedappprotection"
 )
 
-// managedAppPolicyRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\appliedPolicies\{managedAppPolicy-id}
+// ManagedAppPolicyRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\appliedPolicies\{managedAppPolicy-id}
 type ManagedAppPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type ManagedAppPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedAppPolicyRequestBuilderGetQueryParameters zero or more policys already applied on the registered app when it last synchronized with managment service.
+// ManagedAppPolicyRequestBuilderGetQueryParameters zero or more policys already applied on the registered app when it last synchronized with managment service.
 type ManagedAppPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

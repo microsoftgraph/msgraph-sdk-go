@@ -20,7 +20,7 @@ import (
     idd14bab8677d30ce63eaddea348931c8eb5a02e1d44c4925634f485d79e52037 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/workbookrangesort"
 )
 
-// resourceRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource
+// ResourceRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource
 type ResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type ResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// resourceRequestBuilderGetQueryParameters used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
+// ResourceRequestBuilderGetQueryParameters used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 type ResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

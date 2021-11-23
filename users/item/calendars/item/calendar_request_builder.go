@@ -18,7 +18,7 @@ import (
     ia02c9708adeba39a0c7bb01cfa028dde8889b5c1460ddc0736d84c28c8080558 "github.com/microsoftgraph/msgraph-sdk-go/users/item/calendars/item/calendarview/item"
 )
 
-// calendarRequestBuilder builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}
+// CalendarRequestBuilder builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}
 type CalendarRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type CalendarRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// calendarRequestBuilderGetQueryParameters the user's calendars. Read-only. Nullable.
+// CalendarRequestBuilderGetQueryParameters the user's calendars. Read-only. Nullable.
 type CalendarRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

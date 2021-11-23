@@ -8,7 +8,7 @@ import (
     ic108c37b604b2dcf7318de4762d81b7cbc287a76de67012fe87633d3f377b9fe "github.com/microsoftgraph/msgraph-sdk-go/print/shares/item/printer/restorefactorydefaults"
 )
 
-// printerRequestBuilder builds and executes requests for operations under \print\shares\{printerShare-id}\printer
+// PrinterRequestBuilder builds and executes requests for operations under \print\shares\{printerShare-id}\printer
 type PrinterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type PrinterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// printerRequestBuilderGetQueryParameters the printer that this printer share is related to.
+// PrinterRequestBuilderGetQueryParameters the printer that this printer share is related to.
 type PrinterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

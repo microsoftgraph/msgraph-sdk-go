@@ -6,7 +6,7 @@ import (
     i1ba02fdb19be50febe7ea813d2646f6e555c4ca3fa98622f6280ab89667a381d "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/memberof/ref"
 )
 
-// memberOfRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\memberOf
+// MemberOfRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\memberOf
 type MemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type MemberOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// memberOfRequestBuilderGetQueryParameters roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
+// MemberOfRequestBuilderGetQueryParameters roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
 type MemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

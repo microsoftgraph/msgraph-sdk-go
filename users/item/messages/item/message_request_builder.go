@@ -25,7 +25,7 @@ import (
     iab94264dd4909f265fdecd3eca0cdeb9268a7eec19a0c90bc22d0c9cb1ce414b "github.com/microsoftgraph/msgraph-sdk-go/users/item/messages/item/singlevalueextendedproperties/item"
 )
 
-// messageRequestBuilder builds and executes requests for operations under \users\{user-id}\messages\{message-id}
+// MessageRequestBuilder builds and executes requests for operations under \users\{user-id}\messages\{message-id}
 type MessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ type MessageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// messageRequestBuilderGetQueryParameters the messages in a mailbox or folder. Read-only. Nullable.
+// MessageRequestBuilderGetQueryParameters the messages in a mailbox or folder. Read-only. Nullable.
 type MessageRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

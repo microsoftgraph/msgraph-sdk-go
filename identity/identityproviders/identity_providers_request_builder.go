@@ -7,7 +7,7 @@ import (
     ie514965edd1d1377d2cf429c18762cfeef5cdd3716fda5bbe402efa847551d12 "github.com/microsoftgraph/msgraph-sdk-go/identity/identityproviders/availableprovidertypes"
 )
 
-// identityProvidersRequestBuilder builds and executes requests for operations under \identity\identityProviders
+// IdentityProvidersRequestBuilder builds and executes requests for operations under \identity\identityProviders
 type IdentityProvidersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type IdentityProvidersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// identityProvidersRequestBuilderGetQueryParameters represents entry point for identity provider base.
+// IdentityProvidersRequestBuilderGetQueryParameters represents entry point for identity provider base.
 type IdentityProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

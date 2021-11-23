@@ -8,7 +8,7 @@ import (
     ibd33febbd3b146e44afb8453db5500993eabf62258d8c69bca6851c73b08e6db "github.com/microsoftgraph/msgraph-sdk-go/print/services/item/endpoints/item"
 )
 
-// printServiceRequestBuilder builds and executes requests for operations under \print\services\{printService-id}
+// PrintServiceRequestBuilder builds and executes requests for operations under \print\services\{printService-id}
 type PrintServiceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PrintServiceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// printServiceRequestBuilderGetQueryParameters the list of available Universal Print service endpoints.
+// PrintServiceRequestBuilderGetQueryParameters the list of available Universal Print service endpoints.
 type PrintServiceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

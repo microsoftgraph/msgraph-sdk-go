@@ -10,7 +10,7 @@ import (
     ie74dee05c5a2bc30388fa3bc35898754f6666a2e7747f4d074fce1ef16796a68 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/entitlementmanagement/roleassignments/item/directoryscope"
 )
 
-// unifiedRoleAssignmentRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignments\{unifiedRoleAssignment-id}
+// UnifiedRoleAssignmentRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignments\{unifiedRoleAssignment-id}
 type UnifiedRoleAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type UnifiedRoleAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// unifiedRoleAssignmentRequestBuilderGetQueryParameters resource to grant access to users or groups.
+// UnifiedRoleAssignmentRequestBuilderGetQueryParameters resource to grant access to users or groups.
 type UnifiedRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

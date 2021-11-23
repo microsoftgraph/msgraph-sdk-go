@@ -7,7 +7,7 @@ import (
     i8a112f9bef0ef189294c1f3ecf8b6e6f3da80cb9207f29240296ac2bc4151c97 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/manageddeviceoverview/ref"
 )
 
-// managedDeviceOverviewRequestBuilder builds and executes requests for operations under \deviceManagement\managedDeviceOverview
+// ManagedDeviceOverviewRequestBuilder builds and executes requests for operations under \deviceManagement\managedDeviceOverview
 type ManagedDeviceOverviewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ManagedDeviceOverviewRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedDeviceOverviewRequestBuilderGetQueryParameters device overview
+// ManagedDeviceOverviewRequestBuilderGetQueryParameters device overview
 type ManagedDeviceOverviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

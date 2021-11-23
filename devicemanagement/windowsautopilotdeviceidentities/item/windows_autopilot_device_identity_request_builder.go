@@ -9,7 +9,7 @@ import (
     i7cd71639ba4ffd0557fb1cdc614568052b0ebbec5a93a34ab448d2d4bcced638 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/windowsautopilotdeviceidentities/item/updatedeviceproperties"
 )
 
-// windowsAutopilotDeviceIdentityRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}
+// WindowsAutopilotDeviceIdentityRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}
 type WindowsAutopilotDeviceIdentityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type WindowsAutopilotDeviceIdentityRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsAutopilotDeviceIdentityRequestBuilderGetQueryParameters the Windows autopilot device identities contained collection.
+// WindowsAutopilotDeviceIdentityRequestBuilderGetQueryParameters the Windows autopilot device identities contained collection.
 type WindowsAutopilotDeviceIdentityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

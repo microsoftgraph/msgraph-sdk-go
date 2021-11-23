@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// getSkypeForBusinessDeviceUsageUserDetailWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(period='{period}')
+// GetSkypeForBusinessDeviceUsageUserDetailWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(period='{period}')
 type GetSkypeForBusinessDeviceUsageUserDetailWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

@@ -7,7 +7,7 @@ import (
     i90cc19fdad9e7885738058df0ae9a07e9a7db0de4f1ccbc1780070490e9cedc9 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignments/item/target/ref"
 )
 
-// targetRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\assignments\{accessPackageAssignment-id}\target
+// TargetRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\assignments\{accessPackageAssignment-id}\target
 type TargetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TargetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// targetRequestBuilderGetQueryParameters the subject of the access package assignment. Read-only. Nullable.
+// TargetRequestBuilderGetQueryParameters the subject of the access package assignment. Read-only. Nullable.
 type TargetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

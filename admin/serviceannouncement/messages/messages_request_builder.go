@@ -12,7 +12,7 @@ import (
     if4711e0cd2dcd5bcd3b2fe5ff1a931184507edf584a1b39b0489f9d289e9acff "github.com/microsoftgraph/msgraph-sdk-go/admin/serviceannouncement/messages/unarchive"
 )
 
-// messagesRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages
+// MessagesRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages
 type MessagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -32,7 +32,7 @@ type MessagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// messagesRequestBuilderGetQueryParameters a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+// MessagesRequestBuilderGetQueryParameters a collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 type MessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

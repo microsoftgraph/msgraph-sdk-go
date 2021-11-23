@@ -7,7 +7,7 @@ import (
     iea54a2681e29fba9b8e5f300a867f2d45e13ac9e292ce4fb2b23f13b23fbcca2 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/tabs/item/teamsapp"
 )
 
-// teamsTabRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel\tabs\{teamsTab-id}
+// TeamsTabRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel\tabs\{teamsTab-id}
 type TeamsTabRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type TeamsTabRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// teamsTabRequestBuilderGetQueryParameters a collection of all the tabs in the channel. A navigation property.
+// TeamsTabRequestBuilderGetQueryParameters a collection of all the tabs in the channel. A navigation property.
 type TeamsTabRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

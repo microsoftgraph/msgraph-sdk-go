@@ -11,7 +11,7 @@ import (
     iabffea946aaf9953004feea739fa785cf07d700c84085f7a935b4867be8cfa06 "github.com/microsoftgraph/msgraph-sdk-go/contracts/item/getmembergroups"
 )
 
-// contractRequestBuilder builds and executes requests for operations under \contracts\{contract-id}
+// ContractRequestBuilder builds and executes requests for operations under \contracts\{contract-id}
 type ContractRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type ContractRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// contractRequestBuilderGetQueryParameters get entity from contracts by key
+// ContractRequestBuilderGetQueryParameters get entity from contracts by key
 type ContractRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

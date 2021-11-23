@@ -8,7 +8,7 @@ import (
     id0d15f0c20e289b536f406687c001f0dd217ca0b8887da9f7df46f047d006b0f "github.com/microsoftgraph/msgraph-sdk-go/users/item/presence/clearpresence"
 )
 
-// presenceRequestBuilder builds and executes requests for operations under \users\{user-id}\presence
+// PresenceRequestBuilder builds and executes requests for operations under \users\{user-id}\presence
 type PresenceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PresenceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// presenceRequestBuilderGetQueryParameters get presence from users
+// PresenceRequestBuilderGetQueryParameters get presence from users
 type PresenceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -11,7 +11,7 @@ import (
     iee9a3189c1fe1484426aec41b0bf61667bd357944a598d934891b65f9d744c40 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/planner/plans/item/tasks/item"
 )
 
-// plannerPlanRequestBuilder builds and executes requests for operations under \groups\{group-id}\planner\plans\{plannerPlan-id}
+// PlannerPlanRequestBuilder builds and executes requests for operations under \groups\{group-id}\planner\plans\{plannerPlan-id}
 type PlannerPlanRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type PlannerPlanRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// plannerPlanRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans owned by the group.
+// PlannerPlanRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans owned by the group.
 type PlannerPlanRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

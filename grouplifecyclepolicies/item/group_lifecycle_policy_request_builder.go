@@ -8,7 +8,7 @@ import (
     i5277b129e22dfa5e86980e7eb9e12d613f54e728b67def882071332de9013ba5 "github.com/microsoftgraph/msgraph-sdk-go/grouplifecyclepolicies/item/addgroup"
 )
 
-// groupLifecyclePolicyRequestBuilder builds and executes requests for operations under \groupLifecyclePolicies\{groupLifecyclePolicy-id}
+// GroupLifecyclePolicyRequestBuilder builds and executes requests for operations under \groupLifecyclePolicies\{groupLifecyclePolicy-id}
 type GroupLifecyclePolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type GroupLifecyclePolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupLifecyclePolicyRequestBuilderGetQueryParameters get entity from groupLifecyclePolicies by key
+// GroupLifecyclePolicyRequestBuilderGetQueryParameters get entity from groupLifecyclePolicies by key
 type GroupLifecyclePolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

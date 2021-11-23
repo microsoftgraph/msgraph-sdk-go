@@ -7,7 +7,7 @@ import (
     idaef3be371215ce7c6936adc16ee90036780ee92770faca0639bc219091cf188 "github.com/microsoftgraph/msgraph-sdk-go/identity/apiconnectors/item/uploadclientcertificate"
 )
 
-// identityApiConnectorRequestBuilder builds and executes requests for operations under \identity\apiConnectors\{identityApiConnector-id}
+// IdentityApiConnectorRequestBuilder builds and executes requests for operations under \identity\apiConnectors\{identityApiConnector-id}
 type IdentityApiConnectorRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type IdentityApiConnectorRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// identityApiConnectorRequestBuilderGetQueryParameters represents entry point for API connectors.
+// IdentityApiConnectorRequestBuilderGetQueryParameters represents entry point for API connectors.
 type IdentityApiConnectorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

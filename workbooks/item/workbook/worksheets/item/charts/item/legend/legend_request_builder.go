@@ -7,7 +7,7 @@ import (
     i95908ac1c01191ee9bc903ef4bb8cce4e87e3df6cc27d99d5c253f72b60e3633 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/legend/format"
 )
 
-// legendRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\legend
+// LegendRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\legend
 type LegendRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type LegendRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// legendRequestBuilderGetQueryParameters represents the legend for the chart. Read-only.
+// LegendRequestBuilderGetQueryParameters represents the legend for the chart. Read-only.
 type LegendRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

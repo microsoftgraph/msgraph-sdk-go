@@ -14,7 +14,7 @@ import (
     ia6b9ba2f6ac4b661e1925c06219918528114879cf86ac1234330ab29aa5c8f58 "github.com/microsoftgraph/msgraph-sdk-go/users/item/authentication/methods/item"
 )
 
-// authenticationRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication
+// AuthenticationRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication
 type AuthenticationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -43,7 +43,7 @@ type AuthenticationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// authenticationRequestBuilderGetQueryParameters get authentication from users
+// AuthenticationRequestBuilderGetQueryParameters get authentication from users
 type AuthenticationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

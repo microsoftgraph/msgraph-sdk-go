@@ -8,7 +8,7 @@ import (
     if1f9571513b1bb74e42cbc5688db7636642423bb6ccc5801422a1c43cfaa0c0c "github.com/microsoftgraph/msgraph-sdk-go/groups/item/threads/item/posts/item/inreplyto/reply"
 )
 
-// inReplyToRequestBuilder builds and executes requests for operations under \groups\{group-id}\threads\{conversationThread-id}\posts\{post-id}\inReplyTo
+// InReplyToRequestBuilder builds and executes requests for operations under \groups\{group-id}\threads\{conversationThread-id}\posts\{post-id}\inReplyTo
 type InReplyToRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type InReplyToRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// inReplyToRequestBuilderGetQueryParameters read-only. Supports $expand.
+// InReplyToRequestBuilderGetQueryParameters read-only. Supports $expand.
 type InReplyToRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

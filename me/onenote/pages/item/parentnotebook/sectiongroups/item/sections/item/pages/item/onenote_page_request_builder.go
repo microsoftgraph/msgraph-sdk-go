@@ -10,7 +10,7 @@ import (
     if1d06272629590e94947a08664c2b88dc9905c61c91d2135134028a1894b28ae "github.com/microsoftgraph/msgraph-sdk-go/me/onenote/pages/item/parentnotebook/sectiongroups/item/sections/item/pages/item/onenotepatchcontent"
 )
 
-// onenotePageRequestBuilder builds and executes requests for operations under \me\onenote\pages\{onenotePage-id}\parentNotebook\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}\pages\{onenotePage-id1}
+// OnenotePageRequestBuilder builds and executes requests for operations under \me\onenote\pages\{onenotePage-id}\parentNotebook\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}\pages\{onenotePage-id1}
 type OnenotePageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type OnenotePageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// onenotePageRequestBuilderGetQueryParameters the collection of pages in the section.  Read-only. Nullable.
+// OnenotePageRequestBuilderGetQueryParameters the collection of pages in the section.  Read-only. Nullable.
 type OnenotePageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

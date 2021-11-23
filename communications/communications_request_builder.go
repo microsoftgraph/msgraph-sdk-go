@@ -15,7 +15,7 @@ import (
     ia12cb51356bed2ae549e4383f0c613f371754648330c864ba0a94eed03acad34 "github.com/microsoftgraph/msgraph-sdk-go/communications/onlinemeetings/item"
 )
 
-// communicationsRequestBuilder builds and executes requests for operations under \communications
+// CommunicationsRequestBuilder builds and executes requests for operations under \communications
 type CommunicationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type CommunicationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// communicationsRequestBuilderGetQueryParameters get communications
+// CommunicationsRequestBuilderGetQueryParameters get communications
 type CommunicationsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

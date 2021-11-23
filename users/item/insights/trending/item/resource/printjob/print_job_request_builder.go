@@ -8,7 +8,7 @@ import (
     ifbb148b173aec976e5b568894d783e79db832b6164b1ba06b15ac0f604892087 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/trending/item/resource/printjob/abort"
 )
 
-// printJobRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\trending\{trending-id}\resource\microsoft.graph.printJob
+// PrintJobRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\trending\{trending-id}\resource\microsoft.graph.printJob
 type PrintJobRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

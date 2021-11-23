@@ -7,7 +7,7 @@ import (
     ida214cc23761abf3afd4a561f6203b3b71326b792faffa70462d2d5b0f0912d3 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/worksheet/charts/item/datalabels/format"
 )
 
-// dataLabelsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\dataLabels
+// DataLabelsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\dataLabels
 type DataLabelsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DataLabelsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// dataLabelsRequestBuilderGetQueryParameters represents the datalabels on the chart. Read-only.
+// DataLabelsRequestBuilderGetQueryParameters represents the datalabels on the chart. Read-only.
 type DataLabelsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

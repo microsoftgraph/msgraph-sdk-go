@@ -20,7 +20,7 @@ import (
     ide90b82c9976bd9a2bcbeb3e59519101171b7c3b844b3c76d6a77c8715537d8d "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/trending/item/resource/workbookrangefill"
 )
 
-// resourceRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\trending\{trending-id}\resource
+// ResourceRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\trending\{trending-id}\resource
 type ResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type ResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// resourceRequestBuilderGetQueryParameters used for navigating to the trending document.
+// ResourceRequestBuilderGetQueryParameters used for navigating to the trending document.
 type ResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

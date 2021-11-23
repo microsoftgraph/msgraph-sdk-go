@@ -7,7 +7,7 @@ import (
     i5f25136caed34eb6293541ee95f41562237d9d9698c5b29b791e117a678686c9 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/worksheet/charts/item/series/item/points/item/format"
 )
 
-// workbookChartPointRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\{workbookChartPoint-id}
+// WorkbookChartPointRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\{workbookChartPoint-id}
 type WorkbookChartPointRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type WorkbookChartPointRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// workbookChartPointRequestBuilderGetQueryParameters represents a collection of all points in the series. Read-only.
+// WorkbookChartPointRequestBuilderGetQueryParameters represents a collection of all points in the series. Read-only.
 type WorkbookChartPointRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

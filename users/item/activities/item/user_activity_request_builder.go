@@ -8,7 +8,7 @@ import (
     ia9480708f9227e4169fa25ed641175212a4508510e8240d822c8261975b393f6 "github.com/microsoftgraph/msgraph-sdk-go/users/item/activities/item/historyitems/item"
 )
 
-// userActivityRequestBuilder builds and executes requests for operations under \users\{user-id}\activities\{userActivity-id}
+// UserActivityRequestBuilder builds and executes requests for operations under \users\{user-id}\activities\{userActivity-id}
 type UserActivityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type UserActivityRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userActivityRequestBuilderGetQueryParameters the user's activities across devices. Read-only. Nullable.
+// UserActivityRequestBuilderGetQueryParameters the user's activities across devices. Read-only. Nullable.
 type UserActivityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

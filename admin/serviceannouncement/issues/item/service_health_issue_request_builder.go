@@ -7,7 +7,7 @@ import (
     i6cd25a834a6842f0c9cdba7f1e661c88c86a29b8b8c3d1a5c533ed7a405d8d07 "github.com/microsoftgraph/msgraph-sdk-go/admin/serviceannouncement/issues/item/incidentreport"
 )
 
-// serviceHealthIssueRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\issues\{serviceHealthIssue-id}
+// ServiceHealthIssueRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\issues\{serviceHealthIssue-id}
 type ServiceHealthIssueRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type ServiceHealthIssueRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// serviceHealthIssueRequestBuilderGetQueryParameters a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// ServiceHealthIssueRequestBuilderGetQueryParameters a collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
 type ServiceHealthIssueRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

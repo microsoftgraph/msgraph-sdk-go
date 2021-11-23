@@ -8,7 +8,7 @@ import (
     i0d5f8f6b05ef36affaa4705ed7f63280fb98114a2a0c815ba833448eb3b3afa4 "github.com/microsoftgraph/msgraph-sdk-go/print/taskdefinitions/item/tasks/item"
 )
 
-// printTaskDefinitionRequestBuilder builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}
+// PrintTaskDefinitionRequestBuilder builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}
 type PrintTaskDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PrintTaskDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// printTaskDefinitionRequestBuilderGetQueryParameters list of abstract definition for a task that can be triggered when various events occur within Universal Print.
+// PrintTaskDefinitionRequestBuilderGetQueryParameters list of abstract definition for a task that can be triggered when various events occur within Universal Print.
 type PrintTaskDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

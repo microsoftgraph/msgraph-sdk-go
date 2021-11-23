@@ -8,7 +8,7 @@ import (
     idfd0979380ee406cf120c9d92090ae4275f0a76f93110b942af55b46401862f1 "github.com/microsoftgraph/msgraph-sdk-go/drives/item/list/items/item/versions/item/restoreversion"
 )
 
-// listItemVersionRequestBuilder builds and executes requests for operations under \drives\{drive-id}\list\items\{listItem-id}\versions\{listItemVersion-id}
+// ListItemVersionRequestBuilder builds and executes requests for operations under \drives\{drive-id}\list\items\{listItem-id}\versions\{listItemVersion-id}
 type ListItemVersionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ListItemVersionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// listItemVersionRequestBuilderGetQueryParameters the list of previous versions of the list item.
+// ListItemVersionRequestBuilderGetQueryParameters the list of previous versions of the list item.
 type ListItemVersionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

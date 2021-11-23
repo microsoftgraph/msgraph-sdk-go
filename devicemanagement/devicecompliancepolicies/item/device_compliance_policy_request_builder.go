@@ -20,7 +20,7 @@ import (
     i7fb30de09cd8a009b11319ff0df1e3a97b0ee6a475979d0c276ba707f9024a6b "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/devicecompliancepolicies/item/scheduledactionsforrule/item"
 )
 
-// deviceCompliancePolicyRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}
+// DeviceCompliancePolicyRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}
 type DeviceCompliancePolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type DeviceCompliancePolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceCompliancePolicyRequestBuilderGetQueryParameters the device compliance policies.
+// DeviceCompliancePolicyRequestBuilderGetQueryParameters the device compliance policies.
 type DeviceCompliancePolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

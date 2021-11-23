@@ -20,7 +20,7 @@ import (
     if00fbcd158c4e9a59d7f77fd23ba8ec76eac01483cef335d8ea76e4fdaf651fb "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/lastsharedmethod/workbookrangesort"
 )
 
-// lastSharedMethodRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\lastSharedMethod
+// LastSharedMethodRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\lastSharedMethod
 type LastSharedMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type LastSharedMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// lastSharedMethodRequestBuilderGetQueryParameters get lastSharedMethod from users
+// LastSharedMethodRequestBuilderGetQueryParameters get lastSharedMethod from users
 type LastSharedMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

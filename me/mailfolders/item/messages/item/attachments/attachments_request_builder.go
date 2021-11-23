@@ -7,7 +7,7 @@ import (
     i12bd3bf027c4961f692237b2be5b33e6cc0efb76ff447332292f246f8fc7b138 "github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/messages/item/attachments/createuploadsession"
 )
 
-// attachmentsRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}\attachments
+// AttachmentsRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}\attachments
 type AttachmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AttachmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// attachmentsRequestBuilderGetQueryParameters the fileAttachment and itemAttachment attachments for the message.
+// AttachmentsRequestBuilderGetQueryParameters the fileAttachment and itemAttachment attachments for the message.
 type AttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -6,7 +6,7 @@ import (
     i0b9f8d44e2487ed2063f4d2c4a5e784859c727fc4a363bcfe285e1dedbd30831 "github.com/microsoftgraph/msgraph-sdk-go/users/item/ownedobjects/ref"
 )
 
-// ownedObjectsRequestBuilder builds and executes requests for operations under \users\{user-id}\ownedObjects
+// OwnedObjectsRequestBuilder builds and executes requests for operations under \users\{user-id}\ownedObjects
 type OwnedObjectsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type OwnedObjectsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ownedObjectsRequestBuilderGetQueryParameters directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+// OwnedObjectsRequestBuilderGetQueryParameters directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
 type OwnedObjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

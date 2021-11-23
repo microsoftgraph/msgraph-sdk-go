@@ -7,7 +7,7 @@ import (
     if9b40be5c02c51541e5e3a4c0caa7d8e2d99360f8e5592a4844ffeec98623cc8 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignmentrequests/filterbycurrentuserwithon"
 )
 
-// assignmentRequestsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\assignmentRequests
+// AssignmentRequestsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\assignmentRequests
 type AssignmentRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AssignmentRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// assignmentRequestsRequestBuilderGetQueryParameters get assignmentRequests from identityGovernance
+// AssignmentRequestsRequestBuilderGetQueryParameters get assignmentRequests from identityGovernance
 type AssignmentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

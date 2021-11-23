@@ -7,7 +7,7 @@ import (
     i655eb9d80bf2790160527062220851ccbcd67717334cd52277772567d44d4432 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/vpptokens/item/synclicenses"
 )
 
-// vppTokenRequestBuilder builds and executes requests for operations under \deviceAppManagement\vppTokens\{vppToken-id}
+// VppTokenRequestBuilder builds and executes requests for operations under \deviceAppManagement\vppTokens\{vppToken-id}
 type VppTokenRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type VppTokenRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// vppTokenRequestBuilderGetQueryParameters list of Vpp tokens for this organization.
+// VppTokenRequestBuilderGetQueryParameters list of Vpp tokens for this organization.
 type VppTokenRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

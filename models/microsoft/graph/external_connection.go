@@ -5,7 +5,7 @@ import (
     i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/externalconnectors"
 )
 
-// externalConnection 
+// ExternalConnection 
 type ExternalConnection struct {
     Entity
     // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.

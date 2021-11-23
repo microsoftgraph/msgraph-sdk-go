@@ -7,7 +7,7 @@ import (
     i01c4de2d28c6fb51511afd07cf8f19a4227c25e43d0b4c871b3f824d13fc21ec "github.com/microsoftgraph/msgraph-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device"
 )
 
-// windowsHelloForBusinessAuthenticationMethodRequestBuilder builds and executes requests for operations under \me\authentication\windowsHelloForBusinessMethods\{windowsHelloForBusinessAuthenticationMethod-id}
+// WindowsHelloForBusinessAuthenticationMethodRequestBuilder builds and executes requests for operations under \me\authentication\windowsHelloForBusinessMethods\{windowsHelloForBusinessAuthenticationMethod-id}
 type WindowsHelloForBusinessAuthenticationMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type WindowsHelloForBusinessAuthenticationMethodRequestBuilderGetOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// windowsHelloForBusinessAuthenticationMethodRequestBuilderGetQueryParameters get windowsHelloForBusinessMethods from me
+// WindowsHelloForBusinessAuthenticationMethodRequestBuilderGetQueryParameters get windowsHelloForBusinessMethods from me
 type WindowsHelloForBusinessAuthenticationMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

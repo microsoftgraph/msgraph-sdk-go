@@ -7,7 +7,7 @@ import (
     i23e4001e509987b306ab55a39f125dfb03e832727c8c0609e81d4aef4a43a147 "github.com/microsoftgraph/msgraph-sdk-go/users/item/photos/item/value"
 )
 
-// profilePhotoRequestBuilder builds and executes requests for operations under \users\{user-id}\photos\{profilePhoto-id}
+// ProfilePhotoRequestBuilder builds and executes requests for operations under \users\{user-id}\photos\{profilePhoto-id}
 type ProfilePhotoRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type ProfilePhotoRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// profilePhotoRequestBuilderGetQueryParameters read-only. Nullable.
+// ProfilePhotoRequestBuilderGetQueryParameters read-only. Nullable.
 type ProfilePhotoRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

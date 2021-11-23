@@ -6,7 +6,7 @@ import (
     ic0cee953dd5c4427d3739f2105b634c597ddb28eba623f6eb1c3ff01e93d0217 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/workbookrangeformat/autofitcolumns"
 )
 
-// workbookRangeFormatRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.workbookRangeFormat
+// WorkbookRangeFormatRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.workbookRangeFormat
 type WorkbookRangeFormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

@@ -8,7 +8,7 @@ import (
     i70b93995e7724853559a295c6dee9f1a8559598dadda7b04849f47216770daf0 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/series/count"
 )
 
-// seriesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\series
+// SeriesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\series
 type SeriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type SeriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// seriesRequestBuilderGetQueryParameters represents either a single series or collection of series in the chart. Read-only.
+// SeriesRequestBuilderGetQueryParameters represents either a single series or collection of series in the chart. Read-only.
 type SeriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

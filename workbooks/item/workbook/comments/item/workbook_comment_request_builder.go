@@ -8,7 +8,7 @@ import (
     if7c6b87c26560e612f175717242ca84d813291c0b9bda359fee5f53fa999dea8 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/comments/item/replies/item"
 )
 
-// workbookCommentRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\comments\{workbookComment-id}
+// WorkbookCommentRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\comments\{workbookComment-id}
 type WorkbookCommentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type WorkbookCommentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// workbookCommentRequestBuilderGetQueryParameters get comments from workbooks
+// WorkbookCommentRequestBuilderGetQueryParameters get comments from workbooks
 type WorkbookCommentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

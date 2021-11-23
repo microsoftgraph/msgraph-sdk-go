@@ -7,7 +7,7 @@ import (
     i7e49201e7be85ced9bb8f22a9534bfcce3178bf4a7fb10a1c388d5bcb5ca9335 "github.com/microsoftgraph/msgraph-sdk-go/shares/item/list/contenttypes/item/columns/item/sourcecolumn/ref"
 )
 
-// sourceColumnRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\contentTypes\{contentType-id}\columns\{columnDefinition-id}\sourceColumn
+// SourceColumnRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\contentTypes\{contentType-id}\columns\{columnDefinition-id}\sourceColumn
 type SourceColumnRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type SourceColumnRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// sourceColumnRequestBuilderGetQueryParameters the source column for the content type column.
+// SourceColumnRequestBuilderGetQueryParameters the source column for the content type column.
 type SourceColumnRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

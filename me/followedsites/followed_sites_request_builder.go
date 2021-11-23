@@ -6,7 +6,7 @@ import (
     id564c3c88bd6a7627ea0ca6b1ecfb5ff1d2b02b72d8cf3ea13bb103c434179dd "github.com/microsoftgraph/msgraph-sdk-go/me/followedsites/ref"
 )
 
-// followedSitesRequestBuilder builds and executes requests for operations under \me\followedSites
+// FollowedSitesRequestBuilder builds and executes requests for operations under \me\followedSites
 type FollowedSitesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type FollowedSitesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// followedSitesRequestBuilderGetQueryParameters get followedSites from me
+// FollowedSitesRequestBuilderGetQueryParameters get followedSites from me
 type FollowedSitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

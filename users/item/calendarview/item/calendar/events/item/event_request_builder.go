@@ -13,7 +13,7 @@ import (
     ifd0ff1ba049a75c311a78d36bba9f5f8356e32f2bb44994bf7a064e40774695e "github.com/microsoftgraph/msgraph-sdk-go/users/item/calendarview/item/calendar/events/item/decline"
 )
 
-// eventRequestBuilder builds and executes requests for operations under \users\{user-id}\calendarView\{event-id}\calendar\events\{event-id1}
+// EventRequestBuilder builds and executes requests for operations under \users\{user-id}\calendarView\{event-id}\calendar\events\{event-id1}
 type EventRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type EventRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// eventRequestBuilderGetQueryParameters the events in the calendar. Navigation property. Read-only.
+// EventRequestBuilderGetQueryParameters the events in the calendar. Navigation property. Read-only.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

@@ -7,7 +7,7 @@ import (
     i9f7890c2f1e68ca275270f4cc6918695242510c1392ead7bd6003b900e8479b2 "github.com/microsoftgraph/msgraph-sdk-go/drives/item/special/item/content"
 )
 
-// driveItemRequestBuilder builds and executes requests for operations under \drives\{drive-id}\special\{driveItem-id}
+// DriveItemRequestBuilder builds and executes requests for operations under \drives\{drive-id}\special\{driveItem-id}
 type DriveItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DriveItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// driveItemRequestBuilderGetQueryParameters collection of common folders available in OneDrive. Read-only. Nullable.
+// DriveItemRequestBuilderGetQueryParameters collection of common folders available in OneDrive. Read-only. Nullable.
 type DriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

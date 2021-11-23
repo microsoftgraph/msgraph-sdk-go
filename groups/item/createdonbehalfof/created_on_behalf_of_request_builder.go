@@ -7,7 +7,7 @@ import (
     i734362286a1cd6afdeee161feaac5749005bbfc54be578810820522086f4e6ab "github.com/microsoftgraph/msgraph-sdk-go/groups/item/createdonbehalfof/ref"
 )
 
-// createdOnBehalfOfRequestBuilder builds and executes requests for operations under \groups\{group-id}\createdOnBehalfOf
+// CreatedOnBehalfOfRequestBuilder builds and executes requests for operations under \groups\{group-id}\createdOnBehalfOf
 type CreatedOnBehalfOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type CreatedOnBehalfOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// createdOnBehalfOfRequestBuilderGetQueryParameters the user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
+// CreatedOnBehalfOfRequestBuilderGetQueryParameters the user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
 type CreatedOnBehalfOfRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

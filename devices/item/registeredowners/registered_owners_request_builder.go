@@ -6,7 +6,7 @@ import (
     ib5cc46b500e9b24fa270a613e8e49d845012dfb5efeb884206b23274ffedaa91 "github.com/microsoftgraph/msgraph-sdk-go/devices/item/registeredowners/ref"
 )
 
-// registeredOwnersRequestBuilder builds and executes requests for operations under \devices\{device-id}\registeredOwners
+// RegisteredOwnersRequestBuilder builds and executes requests for operations under \devices\{device-id}\registeredOwners
 type RegisteredOwnersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type RegisteredOwnersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// registeredOwnersRequestBuilderGetQueryParameters the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
+// RegisteredOwnersRequestBuilderGetQueryParameters the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
 type RegisteredOwnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

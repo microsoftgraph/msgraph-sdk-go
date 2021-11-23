@@ -7,7 +7,7 @@ import (
     i9c6bb7ad7557b66945f2617169c94de6e7466213e1ae6056008a37c56c15e001 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/logteleconferencedevicequality"
 )
 
-// callsRequestBuilder builds and executes requests for operations under \communications\calls
+// CallsRequestBuilder builds and executes requests for operations under \communications\calls
 type CallsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type CallsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// callsRequestBuilderGetQueryParameters get calls from communications
+// CallsRequestBuilderGetQueryParameters get calls from communications
 type CallsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

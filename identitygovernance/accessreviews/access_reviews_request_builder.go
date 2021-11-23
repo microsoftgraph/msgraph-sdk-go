@@ -8,7 +8,7 @@ import (
     idcb18c7708e010766ed0434cebbaf8978d559fd3ae0bed76f0413cdd312a9c3f "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item"
 )
 
-// accessReviewsRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews
+// AccessReviewsRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews
 type AccessReviewsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type AccessReviewsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessReviewsRequestBuilderGetQueryParameters get accessReviews from identityGovernance
+// AccessReviewsRequestBuilderGetQueryParameters get accessReviews from identityGovernance
 type AccessReviewsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

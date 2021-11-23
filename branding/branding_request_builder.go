@@ -8,7 +8,7 @@ import (
     i91122bc73f66085eb8e21b0f9aeadfa4ab90c1d5f4782e2d5b68f2f03fbf9409 "github.com/microsoftgraph/msgraph-sdk-go/branding/localizations/item"
 )
 
-// brandingRequestBuilder builds and executes requests for operations under \branding
+// BrandingRequestBuilder builds and executes requests for operations under \branding
 type BrandingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type BrandingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// brandingRequestBuilderGetQueryParameters get branding
+// BrandingRequestBuilderGetQueryParameters get branding
 type BrandingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

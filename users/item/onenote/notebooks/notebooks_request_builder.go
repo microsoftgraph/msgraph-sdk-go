@@ -8,7 +8,7 @@ import (
     ib023b56f02094f7e1b32d57359e26bf9927319b5c68cb9152304cf52d0ab2f3f "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/notebooks/getnotebookfromweburl"
 )
 
-// notebooksRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote\notebooks
+// NotebooksRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote\notebooks
 type NotebooksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type NotebooksRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// notebooksRequestBuilderGetQueryParameters the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// NotebooksRequestBuilderGetQueryParameters the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 type NotebooksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -5,7 +5,7 @@ import (
     iae28b4632aa1049edcd43b0f1b0834502e0787dd1e1068f38f332eb85cc5fd2f "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/calendarsharingmessage/accept"
 )
 
-// calendarSharingMessageRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.calendarSharingMessage
+// CalendarSharingMessageRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.calendarSharingMessage
 type CalendarSharingMessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

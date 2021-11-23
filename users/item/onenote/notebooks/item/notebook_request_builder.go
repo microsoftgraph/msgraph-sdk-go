@@ -11,7 +11,7 @@ import (
     i924dce1f44eed926c934bbe57e6920a2fe0d87e1d68462d38554e17e05f677fc "github.com/microsoftgraph/msgraph-sdk-go/users/item/onenote/notebooks/item/sections/item"
 )
 
-// notebookRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote\notebooks\{notebook-id}
+// NotebookRequestBuilder builds and executes requests for operations under \users\{user-id}\onenote\notebooks\{notebook-id}
 type NotebookRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type NotebookRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// notebookRequestBuilderGetQueryParameters the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// NotebookRequestBuilderGetQueryParameters the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 type NotebookRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

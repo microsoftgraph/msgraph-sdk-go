@@ -17,7 +17,7 @@ import (
     ib133a87f1f6aa82508a13fd26e99937ae943d6e84c9447f4c022ffc647194620 "github.com/microsoftgraph/msgraph-sdk-go/devices/item/extensions/item"
 )
 
-// deviceRequestBuilder builds and executes requests for operations under \devices\{device-id}
+// DeviceRequestBuilder builds and executes requests for operations under \devices\{device-id}
 type DeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -46,7 +46,7 @@ type DeviceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceRequestBuilderGetQueryParameters get entity from devices by key
+// DeviceRequestBuilderGetQueryParameters get entity from devices by key
 type DeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

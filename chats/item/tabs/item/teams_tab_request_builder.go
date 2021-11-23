@@ -7,7 +7,7 @@ import (
     i310a1299ef3af168c8a268f2277470d68464d7949af4d4af3d6678569c4072c4 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/tabs/item/teamsapp"
 )
 
-// teamsTabRequestBuilder builds and executes requests for operations under \chats\{chat-id}\tabs\{teamsTab-id}
+// TeamsTabRequestBuilder builds and executes requests for operations under \chats\{chat-id}\tabs\{teamsTab-id}
 type TeamsTabRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type TeamsTabRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// teamsTabRequestBuilderGetQueryParameters get tabs from chats
+// TeamsTabRequestBuilderGetQueryParameters get tabs from chats
 type TeamsTabRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

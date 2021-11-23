@@ -8,7 +8,7 @@ import (
     i14c154ec7f87196523e6871f4753542ba473a41bf9fae51234d6eb39e8b23566 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/appconsent/appconsentrequests/item"
 )
 
-// appConsentRequestBuilder builds and executes requests for operations under \identityGovernance\appConsent
+// AppConsentRequestBuilder builds and executes requests for operations under \identityGovernance\appConsent
 type AppConsentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type AppConsentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// appConsentRequestBuilderGetQueryParameters get appConsent from identityGovernance
+// AppConsentRequestBuilderGetQueryParameters get appConsent from identityGovernance
 type AppConsentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -25,7 +25,7 @@ import (
     id6d2fdc6b308e5bcba0d92cb156fdfdf7e8749fb58174b0d3bfafaaba4972a32 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/schedule/offershiftrequests/item"
 )
 
-// scheduleRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule
+// ScheduleRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule
 type ScheduleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ type ScheduleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// scheduleRequestBuilderGetQueryParameters the schedule of shifts for this team.
+// ScheduleRequestBuilderGetQueryParameters the schedule of shifts for this team.
 type ScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

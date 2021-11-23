@@ -7,7 +7,7 @@ import (
     i6486c258e4c8307bda79eba0d72214495b33bd172ea3c89852ab9ec21abec430 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/used/item/resource"
 )
 
-// usedInsightRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\used\{usedInsight-id}
+// UsedInsightRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\used\{usedInsight-id}
 type UsedInsightRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type UsedInsightRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// usedInsightRequestBuilderGetQueryParameters calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
+// UsedInsightRequestBuilderGetQueryParameters calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 type UsedInsightRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

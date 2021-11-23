@@ -10,7 +10,7 @@ import (
     iac6cc4119abbf87cd78b8b30a2e5d3c0e8f11efb4c6cdffd9c664bb37f24623e "github.com/microsoftgraph/msgraph-sdk-go/teams/item/primarychannel/messages/item/replies/item"
 )
 
-// chatMessageRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel\messages\{chatMessage-id}
+// ChatMessageRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel\messages\{chatMessage-id}
 type ChatMessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type ChatMessageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// chatMessageRequestBuilderGetQueryParameters a collection of all the messages in the channel. A navigation property. Nullable.
+// ChatMessageRequestBuilderGetQueryParameters a collection of all the messages in the channel. A navigation property. Nullable.
 type ChatMessageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

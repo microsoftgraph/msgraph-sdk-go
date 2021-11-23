@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// messageRule 
+// MessageRule 
 type MessageRule struct {
     Entity
     // Actions to be taken on a message when the corresponding conditions are fulfilled.

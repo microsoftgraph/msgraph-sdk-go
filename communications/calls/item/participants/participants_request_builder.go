@@ -7,7 +7,7 @@ import (
     ib2e48fde00117a0e08f57cabf64baeddb35c502a287f5223b636fd4612522619 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/participants/invite"
 )
 
-// participantsRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\participants
+// ParticipantsRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\participants
 type ParticipantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ParticipantsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// participantsRequestBuilderGetQueryParameters read-only. Nullable.
+// ParticipantsRequestBuilderGetQueryParameters read-only. Nullable.
 type ParticipantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

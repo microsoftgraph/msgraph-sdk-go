@@ -6,7 +6,7 @@ import (
     if894318e5f495560c5f9c87495c11d83f3103df95ee3e8a67b45a6587271bfbb "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/oauth2permissiongrants/ref"
 )
 
-// oauth2PermissionGrantsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\oauth2PermissionGrants
+// Oauth2PermissionGrantsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\oauth2PermissionGrants
 type Oauth2PermissionGrantsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type Oauth2PermissionGrantsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// oauth2PermissionGrantsRequestBuilderGetQueryParameters delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
+// Oauth2PermissionGrantsRequestBuilderGetQueryParameters delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
 type Oauth2PermissionGrantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -7,7 +7,7 @@ import (
     i1d48c7aed7516b1a9c8f8c0f58565c545ebd60e0ed4545f45095b0509b90a576 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/worksheet/charts/item/axes/valueaxis/majorgridlines/format/line/clear"
 )
 
-// lineRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\axes\valueAxis\majorGridlines\format\line
+// LineRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\axes\valueAxis\majorGridlines\format\line
 type LineRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type LineRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// lineRequestBuilderGetQueryParameters represents chart line formatting. Read-only.
+// LineRequestBuilderGetQueryParameters represents chart line formatting. Read-only.
 type LineRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

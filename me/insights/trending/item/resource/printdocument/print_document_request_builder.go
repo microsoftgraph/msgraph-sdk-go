@@ -5,7 +5,7 @@ import (
     i87aeb4b05dcc01f973ed2d571eb3c7db43911fa6f6ff6d11608a8cb4921d4933 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/printdocument/createuploadsession"
 )
 
-// printDocumentRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.printDocument
+// PrintDocumentRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.printDocument
 type PrintDocumentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

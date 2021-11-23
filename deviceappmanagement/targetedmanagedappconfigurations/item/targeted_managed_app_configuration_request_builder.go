@@ -13,7 +13,7 @@ import (
     iae5cd0b807da9eeca622ea354242f60add20264ab977061a2f592e1e2bb4e2ef "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/targetedmanagedappconfigurations/item/assignments/item"
 )
 
-// targetedManagedAppConfigurationRequestBuilder builds and executes requests for operations under \deviceAppManagement\targetedManagedAppConfigurations\{targetedManagedAppConfiguration-id}
+// TargetedManagedAppConfigurationRequestBuilder builds and executes requests for operations under \deviceAppManagement\targetedManagedAppConfigurations\{targetedManagedAppConfiguration-id}
 type TargetedManagedAppConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type TargetedManagedAppConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// targetedManagedAppConfigurationRequestBuilderGetQueryParameters targeted managed app configurations.
+// TargetedManagedAppConfigurationRequestBuilderGetQueryParameters targeted managed app configurations.
 type TargetedManagedAppConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -6,7 +6,7 @@ import (
     if0c6dbf49d279d6471560ceafe87cae0fc10d121f287c487d65f8679959e21b7 "github.com/microsoftgraph/msgraph-sdk-go/print/printers/item/shares/ref"
 )
 
-// sharesRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\shares
+// SharesRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\shares
 type SharesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type SharesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// sharesRequestBuilderGetQueryParameters the list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
+// SharesRequestBuilderGetQueryParameters the list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
 type SharesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

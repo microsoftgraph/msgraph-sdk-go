@@ -7,7 +7,7 @@ import (
     id31ac97457fb39fa6db717f9666ce3c685f8d4543bf55cbc5a792d02c5012725 "github.com/microsoftgraph/msgraph-sdk-go/communications/onlinemeetings/item/attendeereport"
 )
 
-// onlineMeetingRequestBuilder builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}
+// OnlineMeetingRequestBuilder builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}
 type OnlineMeetingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type OnlineMeetingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// onlineMeetingRequestBuilderGetQueryParameters get onlineMeetings from communications
+// OnlineMeetingRequestBuilderGetQueryParameters get onlineMeetings from communications
 type OnlineMeetingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

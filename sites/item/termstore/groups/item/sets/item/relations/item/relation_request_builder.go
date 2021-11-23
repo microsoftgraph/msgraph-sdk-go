@@ -9,7 +9,7 @@ import (
     ib897a00232083c6b4b84e900a2eeceda76c527ec50c761f708bae4ab6f70fd95 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/groups/item/sets/item/relations/item/fromterm"
 )
 
-// relationRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\groups\{group-id}\sets\{set-id}\relations\{relation-id}
+// RelationRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\groups\{group-id}\sets\{set-id}\relations\{relation-id}
 type RelationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type RelationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// relationRequestBuilderGetQueryParameters indicates which terms have been pinned or reused directly under the set.
+// RelationRequestBuilderGetQueryParameters indicates which terms have been pinned or reused directly under the set.
 type RelationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

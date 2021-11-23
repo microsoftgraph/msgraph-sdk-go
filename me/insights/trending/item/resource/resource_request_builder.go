@@ -20,7 +20,7 @@ import (
     ifdcba498de87955cbc3a2bf83de155c2ee78f3458c9bd2f2b2baf5161156dd23 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/workbookrangeformat"
 )
 
-// resourceRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource
+// ResourceRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource
 type ResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type ResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// resourceRequestBuilderGetQueryParameters used for navigating to the trending document.
+// ResourceRequestBuilderGetQueryParameters used for navigating to the trending document.
 type ResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

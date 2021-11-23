@@ -7,7 +7,7 @@ import (
     i75557dde23f5165f06a0e39dd0f0ba0c1b19eb4bfcdb9a006fe55aab55a6dad5 "github.com/microsoftgraph/msgraph-sdk-go/me/todo/lists/item/tasks/delta"
 )
 
-// tasksRequestBuilder builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks
+// TasksRequestBuilder builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks
 type TasksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TasksRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// tasksRequestBuilderGetQueryParameters the tasks in this task list. Read-only. Nullable.
+// TasksRequestBuilderGetQueryParameters the tasks in this task list. Read-only. Nullable.
 type TasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

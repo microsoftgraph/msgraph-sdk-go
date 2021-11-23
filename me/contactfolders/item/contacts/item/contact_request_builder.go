@@ -13,7 +13,7 @@ import (
     ifb7b100c3862aac4d11c9eec0cd8a2dd8abb0681790b9f59c49e5519657c8849 "github.com/microsoftgraph/msgraph-sdk-go/me/contactfolders/item/contacts/item/multivalueextendedproperties/item"
 )
 
-// contactRequestBuilder builds and executes requests for operations under \me\contactFolders\{contactFolder-id}\contacts\{contact-id}
+// ContactRequestBuilder builds and executes requests for operations under \me\contactFolders\{contactFolder-id}\contacts\{contact-id}
 type ContactRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type ContactRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// contactRequestBuilderGetQueryParameters the contacts in the folder. Navigation property. Read-only. Nullable.
+// ContactRequestBuilderGetQueryParameters the contacts in the folder. Navigation property. Read-only. Nullable.
 type ContactRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

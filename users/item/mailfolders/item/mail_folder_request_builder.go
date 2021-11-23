@@ -18,7 +18,7 @@ import (
     if56e053996654e0ad839a540d45995ed16925363ccece02b277bf8d9fe87dd53 "github.com/microsoftgraph/msgraph-sdk-go/users/item/mailfolders/item/messagerules/item"
 )
 
-// mailFolderRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}
+// MailFolderRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}
 type MailFolderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type MailFolderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// mailFolderRequestBuilderGetQueryParameters the user's mail folders. Read-only. Nullable.
+// MailFolderRequestBuilderGetQueryParameters the user's mail folders. Read-only. Nullable.
 type MailFolderRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

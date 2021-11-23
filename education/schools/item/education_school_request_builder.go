@@ -9,7 +9,7 @@ import (
     id764fdef7d1fc1e96b7dd96ba4ca2de348edde4d6b8c59eb7bc5df6cfdbe1fa3 "github.com/microsoftgraph/msgraph-sdk-go/education/schools/item/administrativeunit"
 )
 
-// educationSchoolRequestBuilder builds and executes requests for operations under \education\schools\{educationSchool-id}
+// EducationSchoolRequestBuilder builds and executes requests for operations under \education\schools\{educationSchool-id}
 type EducationSchoolRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type EducationSchoolRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// educationSchoolRequestBuilderGetQueryParameters get schools from education
+// EducationSchoolRequestBuilderGetQueryParameters get schools from education
 type EducationSchoolRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

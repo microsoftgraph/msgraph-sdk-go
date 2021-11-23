@@ -9,7 +9,7 @@ import (
     ia96b6fb366243413b3c64f01d0b11020e423792cf3dd3d1045d1fd9067c440d3 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/installedapps/item/teamsapp"
 )
 
-// teamsAppInstallationRequestBuilder builds and executes requests for operations under \chats\{chat-id}\installedApps\{teamsAppInstallation-id}
+// TeamsAppInstallationRequestBuilder builds and executes requests for operations under \chats\{chat-id}\installedApps\{teamsAppInstallation-id}
 type TeamsAppInstallationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type TeamsAppInstallationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// teamsAppInstallationRequestBuilderGetQueryParameters a collection of all the apps in the chat. Nullable.
+// TeamsAppInstallationRequestBuilderGetQueryParameters a collection of all the apps in the chat. Nullable.
 type TeamsAppInstallationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

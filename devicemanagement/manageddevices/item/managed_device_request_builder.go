@@ -29,7 +29,7 @@ import (
     i30c735a31ceee62863c65dfaa2404ac107c81c4dfd9ccc96d5eee45ca24f04f2 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/manageddevices/item/devicecompliancepolicystates/item"
 )
 
-// managedDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}
+// ManagedDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}
 type ManagedDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -58,7 +58,7 @@ type ManagedDeviceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedDeviceRequestBuilderGetQueryParameters the list of managed devices.
+// ManagedDeviceRequestBuilderGetQueryParameters the list of managed devices.
 type ManagedDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

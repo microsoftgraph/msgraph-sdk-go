@@ -7,7 +7,7 @@ import (
     idd92410e15169a185ac2e938ce1d5d93e3833bcdc4ea7381b979bf41880bd4bb "github.com/microsoftgraph/msgraph-sdk-go/teams/item/template/ref"
 )
 
-// templateRequestBuilder builds and executes requests for operations under \teams\{team-id}\template
+// TemplateRequestBuilder builds and executes requests for operations under \teams\{team-id}\template
 type TemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// templateRequestBuilderGetQueryParameters the template this team was created from. See available templates.
+// TemplateRequestBuilderGetQueryParameters the template this team was created from. See available templates.
 type TemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

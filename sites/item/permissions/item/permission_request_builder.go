@@ -7,7 +7,7 @@ import (
     i6fe268259ebf77068c0974b9675aebf27071d4788a26e53035ca908b5369bb56 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/permissions/item/grant"
 )
 
-// permissionRequestBuilder builds and executes requests for operations under \sites\{site-id}\permissions\{permission-id}
+// PermissionRequestBuilder builds and executes requests for operations under \sites\{site-id}\permissions\{permission-id}
 type PermissionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type PermissionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// permissionRequestBuilderGetQueryParameters the permissions associated with the site. Nullable.
+// PermissionRequestBuilderGetQueryParameters the permissions associated with the site. Nullable.
 type PermissionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

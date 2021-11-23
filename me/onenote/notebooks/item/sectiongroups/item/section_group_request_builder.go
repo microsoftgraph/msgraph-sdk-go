@@ -12,7 +12,7 @@ import (
     i8fc4083bba00c1a4f621f30f336844f1df8f737e67ba0d28420de014b9f93488 "github.com/microsoftgraph/msgraph-sdk-go/me/onenote/notebooks/item/sectiongroups/item/sectiongroups/item"
 )
 
-// sectionGroupRequestBuilder builds and executes requests for operations under \me\onenote\notebooks\{notebook-id}\sectionGroups\{sectionGroup-id}
+// SectionGroupRequestBuilder builds and executes requests for operations under \me\onenote\notebooks\{notebook-id}\sectionGroups\{sectionGroup-id}
 type SectionGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type SectionGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// sectionGroupRequestBuilderGetQueryParameters the section groups in the notebook. Read-only. Nullable.
+// SectionGroupRequestBuilderGetQueryParameters the section groups in the notebook. Read-only. Nullable.
 type SectionGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

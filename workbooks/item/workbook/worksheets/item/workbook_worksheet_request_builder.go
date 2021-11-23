@@ -20,7 +20,7 @@ import (
     iaf6e80887a038f65ff678934a224c20738b5518de1ef6bd042c68d64e3eb866a "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/charts/item"
 )
 
-// workbookWorksheetRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}
+// WorkbookWorksheetRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}
 type WorkbookWorksheetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -49,7 +49,7 @@ type WorkbookWorksheetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// workbookWorksheetRequestBuilderGetQueryParameters represents a collection of worksheets associated with the workbook. Read-only.
+// WorkbookWorksheetRequestBuilderGetQueryParameters represents a collection of worksheets associated with the workbook. Read-only.
 type WorkbookWorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

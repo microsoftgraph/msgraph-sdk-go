@@ -8,7 +8,7 @@ import (
     i12f1eafad8a5dda3d224b2294cb74ffcd273fc24fa377734d6c9c5e07eb0a57e "github.com/microsoftgraph/msgraph-sdk-go/groups/item/conversations/item/threads/item"
 )
 
-// conversationRequestBuilder builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}
+// ConversationRequestBuilder builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}
 type ConversationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ConversationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// conversationRequestBuilderGetQueryParameters the group's conversations.
+// ConversationRequestBuilderGetQueryParameters the group's conversations.
 type ConversationRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

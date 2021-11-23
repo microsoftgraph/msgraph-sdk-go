@@ -11,7 +11,7 @@ import (
     i5994a0b59bfe11ed3ada24e78d793ae99219e1ed71fe61ccdd3181057f6b3b6d "github.com/microsoftgraph/msgraph-sdk-go/directoryobjects/item/checkmemberobjects"
 )
 
-// directoryObjectRequestBuilder builds and executes requests for operations under \directoryObjects\{directoryObject-id}
+// DirectoryObjectRequestBuilder builds and executes requests for operations under \directoryObjects\{directoryObject-id}
 type DirectoryObjectRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type DirectoryObjectRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// directoryObjectRequestBuilderGetQueryParameters get entity from directoryObjects by key
+// DirectoryObjectRequestBuilderGetQueryParameters get entity from directoryObjects by key
 type DirectoryObjectRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

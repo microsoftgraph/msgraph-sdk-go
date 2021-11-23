@@ -20,7 +20,7 @@ import (
     iea260140d987ad9e7e464b0abbd7f734a5df4ffb5180523a47049b434461809b "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/windowsinformationprotection"
 )
 
-// resourceRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource
+// ResourceRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource
 type ResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type ResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// resourceRequestBuilderGetQueryParameters used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
+// ResourceRequestBuilderGetQueryParameters used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 type ResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

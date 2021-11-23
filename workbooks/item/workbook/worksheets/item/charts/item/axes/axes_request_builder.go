@@ -9,7 +9,7 @@ import (
     i893912328db7b32b426fe818be6ceb5f23fab4f07b80c25491bd34cfa4da1f57 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/axes/seriesaxis"
 )
 
-// axesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes
+// AxesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes
 type AxesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type AxesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// axesRequestBuilderGetQueryParameters represents chart axes. Read-only.
+// AxesRequestBuilderGetQueryParameters represents chart axes. Read-only.
 type AxesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

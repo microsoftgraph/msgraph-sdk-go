@@ -10,7 +10,7 @@ import (
     i1de44916490eb612ae701336a2eae5f89d836e0eaae6829aa711a57c559453e1 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/mobileapps/item/assignments/item"
 )
 
-// mobileAppRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}
+// MobileAppRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}
 type MobileAppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type MobileAppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// mobileAppRequestBuilderGetQueryParameters the mobile apps.
+// MobileAppRequestBuilderGetQueryParameters the mobile apps.
 type MobileAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

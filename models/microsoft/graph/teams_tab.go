@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// teamsTab 
+// TeamsTab 
 type TeamsTab struct {
     Entity
     // Container for custom settings applied to a tab. The tab is considered configured only once this property is set.

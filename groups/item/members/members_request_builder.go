@@ -6,7 +6,7 @@ import (
     i12e900b7863a530abb96344b2b364579136e814fd983663c5e21b9ef49ebc17c "github.com/microsoftgraph/msgraph-sdk-go/groups/item/members/ref"
 )
 
-// membersRequestBuilder builds and executes requests for operations under \groups\{group-id}\members
+// MembersRequestBuilder builds and executes requests for operations under \groups\{group-id}\members
 type MembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type MembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// membersRequestBuilderGetQueryParameters users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable. Supports $expand.
+// MembersRequestBuilderGetQueryParameters users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable. Supports $expand.
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

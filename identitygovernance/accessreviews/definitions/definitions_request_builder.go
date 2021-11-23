@@ -7,7 +7,7 @@ import (
     i83923d1578638caabfb5abb6641094364911d936d6586b5498a9161b9662981e "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/filterbycurrentuserwithon"
 )
 
-// definitionsRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\definitions
+// DefinitionsRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\definitions
 type DefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type DefinitionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// definitionsRequestBuilderGetQueryParameters get definitions from identityGovernance
+// DefinitionsRequestBuilderGetQueryParameters get definitions from identityGovernance
 type DefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

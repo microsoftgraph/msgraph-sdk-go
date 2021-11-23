@@ -31,7 +31,7 @@ import (
     if642ca98ef1cfea5e51e56e879548fde41cf1297f3ce162d09a6224e659bc1f8 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/contenttypes/item"
 )
 
-// siteRequestBuilder builds and executes requests for operations under \sites\{site-id}
+// SiteRequestBuilder builds and executes requests for operations under \sites\{site-id}
 type SiteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -60,7 +60,7 @@ type SiteRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// siteRequestBuilderGetQueryParameters get entity from sites by key
+// SiteRequestBuilderGetQueryParameters get entity from sites by key
 type SiteRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

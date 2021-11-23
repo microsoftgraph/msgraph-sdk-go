@@ -10,7 +10,7 @@ import (
     i450e6fa82c54d6f54b7abb6a155c2b0b0cb9aced086261fdf11e3d7d814c6286 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/entitlementmanagement/roledefinitions/item"
 )
 
-// entitlementManagementRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement
+// EntitlementManagementRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement
 type EntitlementManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type EntitlementManagementRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// entitlementManagementRequestBuilderGetQueryParameters the RbacApplication for Entitlement Management
+// EntitlementManagementRequestBuilderGetQueryParameters the RbacApplication for Entitlement Management
 type EntitlementManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

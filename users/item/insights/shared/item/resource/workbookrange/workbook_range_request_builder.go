@@ -32,7 +32,7 @@ import (
     if8efb353e33d9509a82e882b71ea8fb9e197eda2dcdd0038da402313bbf1bcbe "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/workbookrange/lastrow"
 )
 
-// workbookRangeRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource\microsoft.graph.workbookRange
+// WorkbookRangeRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource\microsoft.graph.workbookRange
 type WorkbookRangeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

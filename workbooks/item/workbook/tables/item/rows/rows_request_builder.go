@@ -9,7 +9,7 @@ import (
     iea72d0e6d860e77b3908debb1455ebdcad5ebd3f2fc1fbc9fc82ce17e1c4dd0e "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/rows/add"
 )
 
-// rowsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\rows
+// RowsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\rows
 type RowsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type RowsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// rowsRequestBuilderGetQueryParameters represents a collection of all the rows in the table. Read-only.
+// RowsRequestBuilderGetQueryParameters represents a collection of all the rows in the table. Read-only.
 type RowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

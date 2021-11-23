@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// reminderViewWithStartDateTimeWithEndDateTimeRequestBuilder builds and executes requests for operations under \users\{user-id}\microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')
+// ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder builds and executes requests for operations under \users\{user-id}\microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')
 type ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

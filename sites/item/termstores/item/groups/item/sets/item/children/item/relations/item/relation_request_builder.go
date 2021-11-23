@@ -9,7 +9,7 @@ import (
     if3d3a902e0302ead341e612ef7e71c85f904e66f403e83bf7fad4cd993d8d108 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstores/item/groups/item/sets/item/children/item/relations/item/set"
 )
 
-// relationRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}\sets\{set-id}\children\{term-id}\relations\{relation-id}
+// RelationRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}\sets\{set-id}\children\{term-id}\relations\{relation-id}
 type RelationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type RelationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// relationRequestBuilderGetQueryParameters to indicate which terms are related to the current term as either pinned or reused.
+// RelationRequestBuilderGetQueryParameters to indicate which terms are related to the current term as either pinned or reused.
 type RelationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

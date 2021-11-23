@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// timeOffReasonRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeOffReasons\{timeOffReason-id}
+// TimeOffReasonRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeOffReasons\{timeOffReason-id}
 type TimeOffReasonRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type TimeOffReasonRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// timeOffReasonRequestBuilderGetQueryParameters the set of reasons for a time off in the schedule.
+// TimeOffReasonRequestBuilderGetQueryParameters the set of reasons for a time off in the schedule.
 type TimeOffReasonRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

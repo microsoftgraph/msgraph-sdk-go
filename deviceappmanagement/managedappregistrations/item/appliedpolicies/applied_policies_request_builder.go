@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// appliedPoliciesRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\appliedPolicies
+// AppliedPoliciesRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\appliedPolicies
 type AppliedPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type AppliedPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// appliedPoliciesRequestBuilderGetQueryParameters zero or more policys already applied on the registered app when it last synchronized with managment service.
+// AppliedPoliciesRequestBuilderGetQueryParameters zero or more policys already applied on the registered app when it last synchronized with managment service.
 type AppliedPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

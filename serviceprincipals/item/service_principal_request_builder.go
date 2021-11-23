@@ -33,7 +33,7 @@ import (
     ieade744732b95d81e11bac4d5146b5ac0bfeb407228f97be47815b5b44c77ff1 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/approleassignedto/item"
 )
 
-// servicePrincipalRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}
+// ServicePrincipalRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}
 type ServicePrincipalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -62,7 +62,7 @@ type ServicePrincipalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// servicePrincipalRequestBuilderGetQueryParameters get entity from servicePrincipals by key
+// ServicePrincipalRequestBuilderGetQueryParameters get entity from servicePrincipals by key
 type ServicePrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

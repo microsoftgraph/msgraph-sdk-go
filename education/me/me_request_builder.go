@@ -12,7 +12,7 @@ import (
     ic96595483f91910c603469ce138a672deaf059c7a8c295304a9c2acf2ce6134b "github.com/microsoftgraph/msgraph-sdk-go/education/me/rubrics/item"
 )
 
-// meRequestBuilder builds and executes requests for operations under \education\me
+// MeRequestBuilder builds and executes requests for operations under \education\me
 type MeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type MeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// meRequestBuilderGetQueryParameters get me from education
+// MeRequestBuilderGetQueryParameters get me from education
 type MeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

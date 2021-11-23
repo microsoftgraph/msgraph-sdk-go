@@ -6,7 +6,7 @@ import (
     ibd4538acea21b5ba8dd7f77ee1abdee1c11946ee780f11d87bda5666fe398f10 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/targetedmanagedappprotection/targetapps"
 )
 
-// targetedManagedAppProtectionRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.targetedManagedAppProtection
+// TargetedManagedAppProtectionRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.targetedManagedAppProtection
 type TargetedManagedAppProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

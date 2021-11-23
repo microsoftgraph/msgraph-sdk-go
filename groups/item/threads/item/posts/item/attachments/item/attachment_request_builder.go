@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// attachmentRequestBuilder builds and executes requests for operations under \groups\{group-id}\threads\{conversationThread-id}\posts\{post-id}\attachments\{attachment-id}
+// AttachmentRequestBuilder builds and executes requests for operations under \groups\{group-id}\threads\{conversationThread-id}\posts\{post-id}\attachments\{attachment-id}
 type AttachmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type AttachmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// attachmentRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
+// AttachmentRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type AttachmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

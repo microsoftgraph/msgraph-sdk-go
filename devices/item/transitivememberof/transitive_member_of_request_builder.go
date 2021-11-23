@@ -6,7 +6,7 @@ import (
     ie55f657f849a8f0de2bdf6804a68234facf84d383c9505e027c1ff7b528a0fbf "github.com/microsoftgraph/msgraph-sdk-go/devices/item/transitivememberof/ref"
 )
 
-// transitiveMemberOfRequestBuilder builds and executes requests for operations under \devices\{device-id}\transitiveMemberOf
+// TransitiveMemberOfRequestBuilder builds and executes requests for operations under \devices\{device-id}\transitiveMemberOf
 type TransitiveMemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type TransitiveMemberOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// transitiveMemberOfRequestBuilderGetQueryParameters groups that the device is a member of. This operation is transitive. Supports $expand.
+// TransitiveMemberOfRequestBuilderGetQueryParameters groups that the device is a member of. This operation is transitive. Supports $expand.
 type TransitiveMemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

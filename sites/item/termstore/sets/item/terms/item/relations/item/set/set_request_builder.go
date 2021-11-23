@@ -7,7 +7,7 @@ import (
     i461824cdee254e20809cee7746f1f6a249f7f231f333114f222ba7df3f2bea8d "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/sets/item/terms/item/relations/item/set/ref"
 )
 
-// setRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\sets\{set-id}\terms\{term-id}\relations\{relation-id}\set
+// SetRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\sets\{set-id}\terms\{term-id}\relations\{relation-id}\set
 type SetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type SetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// setRequestBuilderGetQueryParameters the [set] in which the relation is relevant.
+// SetRequestBuilderGetQueryParameters the [set] in which the relation is relevant.
 type SetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
