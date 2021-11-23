@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Directory 
 type Directory struct {
     Entity
     // Conceptual container for user and group directory objects.
@@ -12,14 +12,14 @@ type Directory struct {
     // Recently deleted items. Read-only. Nullable.
     deletedItems []DirectoryObject;
 }
-// Instantiates a new directory and sets the default values.
+// NewDirectory instantiates a new directory and sets the default values.
 func NewDirectory()(*Directory) {
     m := &Directory{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the administrativeUnits property value. Conceptual container for user and group directory objects.
+// GetAdministrativeUnits gets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnit) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnit) {
         return m.administrativeUnits
     }
 }
-// Gets the deletedItems property value. Recently deleted items. Read-only. Nullable.
+// GetDeletedItems gets the deletedItems property value. Recently deleted items. Read-only. Nullable.
 func (m *Directory) GetDeletedItems()([]DirectoryObject) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *Directory) GetDeletedItems()([]DirectoryObject) {
         return m.deletedItems
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["administrativeUnits"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -71,9 +71,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
 func (m *Directory) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -103,15 +101,11 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     }
     return nil
 }
-// Sets the administrativeUnits property value. Conceptual container for user and group directory objects.
-// Parameters:
-//  - value : Value to set for the administrativeUnits property.
+// SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnit)() {
     m.administrativeUnits = value
 }
-// Sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the deletedItems property.
+// SetDeletedItems sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
 func (m *Directory) SetDeletedItems(value []DirectoryObject)() {
     m.deletedItems = value
 }

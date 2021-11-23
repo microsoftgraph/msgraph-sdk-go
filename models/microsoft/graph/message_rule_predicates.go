@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MessageRulePredicates 
 type MessageRulePredicates struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -69,14 +69,14 @@ type MessageRulePredicates struct {
     // Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
     withinSizeRange *SizeRange;
 }
-// Instantiates a new messageRulePredicates and sets the default values.
+// NewMessageRulePredicates instantiates a new messageRulePredicates and sets the default values.
 func NewMessageRulePredicates()(*MessageRulePredicates) {
     m := &MessageRulePredicates{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MessageRulePredicates) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *MessageRulePredicates) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the bodyContains property value. Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
+// GetBodyContains gets the bodyContains property value. Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetBodyContains()([]string) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *MessageRulePredicates) GetBodyContains()([]string) {
         return m.bodyContains
     }
 }
-// Gets the bodyOrSubjectContains property value. Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
+// GetBodyOrSubjectContains gets the bodyOrSubjectContains property value. Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetBodyOrSubjectContains()([]string) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *MessageRulePredicates) GetBodyOrSubjectContains()([]string) {
         return m.bodyOrSubjectContains
     }
 }
-// Gets the categories property value. Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
+// GetCategories gets the categories property value. Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetCategories()([]string) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *MessageRulePredicates) GetCategories()([]string) {
         return m.categories
     }
 }
-// Gets the fromAddresses property value. Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
+// GetFromAddresses gets the fromAddresses property value. Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetFromAddresses()([]Recipient) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *MessageRulePredicates) GetFromAddresses()([]Recipient) {
         return m.fromAddresses
     }
 }
-// Gets the hasAttachments property value. Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
+// GetHasAttachments gets the hasAttachments property value. Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetHasAttachments()(*bool) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *MessageRulePredicates) GetHasAttachments()(*bool) {
         return m.hasAttachments
     }
 }
-// Gets the headerContains property value. Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
+// GetHeaderContains gets the headerContains property value. Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetHeaderContains()([]string) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *MessageRulePredicates) GetHeaderContains()([]string) {
         return m.headerContains
     }
 }
-// Gets the importance property value. The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
+// GetImportance gets the importance property value. The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
 func (m *MessageRulePredicates) GetImportance()(*Importance) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *MessageRulePredicates) GetImportance()(*Importance) {
         return m.importance
     }
 }
-// Gets the isApprovalRequest property value. Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
+// GetIsApprovalRequest gets the isApprovalRequest property value. Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsApprovalRequest()(*bool) {
     if m == nil {
         return nil
@@ -148,7 +148,7 @@ func (m *MessageRulePredicates) GetIsApprovalRequest()(*bool) {
         return m.isApprovalRequest
     }
 }
-// Gets the isAutomaticForward property value. Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
+// GetIsAutomaticForward gets the isAutomaticForward property value. Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsAutomaticForward()(*bool) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *MessageRulePredicates) GetIsAutomaticForward()(*bool) {
         return m.isAutomaticForward
     }
 }
-// Gets the isAutomaticReply property value. Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
+// GetIsAutomaticReply gets the isAutomaticReply property value. Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsAutomaticReply()(*bool) {
     if m == nil {
         return nil
@@ -164,7 +164,7 @@ func (m *MessageRulePredicates) GetIsAutomaticReply()(*bool) {
         return m.isAutomaticReply
     }
 }
-// Gets the isEncrypted property value. Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
+// GetIsEncrypted gets the isEncrypted property value. Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsEncrypted()(*bool) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *MessageRulePredicates) GetIsEncrypted()(*bool) {
         return m.isEncrypted
     }
 }
-// Gets the isMeetingRequest property value. Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
+// GetIsMeetingRequest gets the isMeetingRequest property value. Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsMeetingRequest()(*bool) {
     if m == nil {
         return nil
@@ -180,7 +180,7 @@ func (m *MessageRulePredicates) GetIsMeetingRequest()(*bool) {
         return m.isMeetingRequest
     }
 }
-// Gets the isMeetingResponse property value. Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
+// GetIsMeetingResponse gets the isMeetingResponse property value. Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsMeetingResponse()(*bool) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *MessageRulePredicates) GetIsMeetingResponse()(*bool) {
         return m.isMeetingResponse
     }
 }
-// Gets the isNonDeliveryReport property value. Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
+// GetIsNonDeliveryReport gets the isNonDeliveryReport property value. Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsNonDeliveryReport()(*bool) {
     if m == nil {
         return nil
@@ -196,7 +196,7 @@ func (m *MessageRulePredicates) GetIsNonDeliveryReport()(*bool) {
         return m.isNonDeliveryReport
     }
 }
-// Gets the isPermissionControlled property value. Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
+// GetIsPermissionControlled gets the isPermissionControlled property value. Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsPermissionControlled()(*bool) {
     if m == nil {
         return nil
@@ -204,7 +204,7 @@ func (m *MessageRulePredicates) GetIsPermissionControlled()(*bool) {
         return m.isPermissionControlled
     }
 }
-// Gets the isReadReceipt property value. Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
+// GetIsReadReceipt gets the isReadReceipt property value. Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsReadReceipt()(*bool) {
     if m == nil {
         return nil
@@ -212,7 +212,7 @@ func (m *MessageRulePredicates) GetIsReadReceipt()(*bool) {
         return m.isReadReceipt
     }
 }
-// Gets the isSigned property value. Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
+// GetIsSigned gets the isSigned property value. Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsSigned()(*bool) {
     if m == nil {
         return nil
@@ -220,7 +220,7 @@ func (m *MessageRulePredicates) GetIsSigned()(*bool) {
         return m.isSigned
     }
 }
-// Gets the isVoicemail property value. Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
+// GetIsVoicemail gets the isVoicemail property value. Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetIsVoicemail()(*bool) {
     if m == nil {
         return nil
@@ -228,7 +228,7 @@ func (m *MessageRulePredicates) GetIsVoicemail()(*bool) {
         return m.isVoicemail
     }
 }
-// Gets the messageActionFlag property value. Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
+// GetMessageActionFlag gets the messageActionFlag property value. Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
 func (m *MessageRulePredicates) GetMessageActionFlag()(*MessageActionFlag) {
     if m == nil {
         return nil
@@ -236,7 +236,7 @@ func (m *MessageRulePredicates) GetMessageActionFlag()(*MessageActionFlag) {
         return m.messageActionFlag
     }
 }
-// Gets the notSentToMe property value. Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
+// GetNotSentToMe gets the notSentToMe property value. Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetNotSentToMe()(*bool) {
     if m == nil {
         return nil
@@ -244,7 +244,7 @@ func (m *MessageRulePredicates) GetNotSentToMe()(*bool) {
         return m.notSentToMe
     }
 }
-// Gets the recipientContains property value. Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
+// GetRecipientContains gets the recipientContains property value. Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetRecipientContains()([]string) {
     if m == nil {
         return nil
@@ -252,7 +252,7 @@ func (m *MessageRulePredicates) GetRecipientContains()([]string) {
         return m.recipientContains
     }
 }
-// Gets the senderContains property value. Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
+// GetSenderContains gets the senderContains property value. Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSenderContains()([]string) {
     if m == nil {
         return nil
@@ -260,7 +260,7 @@ func (m *MessageRulePredicates) GetSenderContains()([]string) {
         return m.senderContains
     }
 }
-// Gets the sensitivity property value. Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
+// GetSensitivity gets the sensitivity property value. Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
 func (m *MessageRulePredicates) GetSensitivity()(*Sensitivity) {
     if m == nil {
         return nil
@@ -268,7 +268,7 @@ func (m *MessageRulePredicates) GetSensitivity()(*Sensitivity) {
         return m.sensitivity
     }
 }
-// Gets the sentCcMe property value. Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
+// GetSentCcMe gets the sentCcMe property value. Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSentCcMe()(*bool) {
     if m == nil {
         return nil
@@ -276,7 +276,7 @@ func (m *MessageRulePredicates) GetSentCcMe()(*bool) {
         return m.sentCcMe
     }
 }
-// Gets the sentOnlyToMe property value. Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
+// GetSentOnlyToMe gets the sentOnlyToMe property value. Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSentOnlyToMe()(*bool) {
     if m == nil {
         return nil
@@ -284,7 +284,7 @@ func (m *MessageRulePredicates) GetSentOnlyToMe()(*bool) {
         return m.sentOnlyToMe
     }
 }
-// Gets the sentToAddresses property value. Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
+// GetSentToAddresses gets the sentToAddresses property value. Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSentToAddresses()([]Recipient) {
     if m == nil {
         return nil
@@ -292,7 +292,7 @@ func (m *MessageRulePredicates) GetSentToAddresses()([]Recipient) {
         return m.sentToAddresses
     }
 }
-// Gets the sentToMe property value. Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
+// GetSentToMe gets the sentToMe property value. Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSentToMe()(*bool) {
     if m == nil {
         return nil
@@ -300,7 +300,7 @@ func (m *MessageRulePredicates) GetSentToMe()(*bool) {
         return m.sentToMe
     }
 }
-// Gets the sentToOrCcMe property value. Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
+// GetSentToOrCcMe gets the sentToOrCcMe property value. Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSentToOrCcMe()(*bool) {
     if m == nil {
         return nil
@@ -308,7 +308,7 @@ func (m *MessageRulePredicates) GetSentToOrCcMe()(*bool) {
         return m.sentToOrCcMe
     }
 }
-// Gets the subjectContains property value. Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
+// GetSubjectContains gets the subjectContains property value. Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetSubjectContains()([]string) {
     if m == nil {
         return nil
@@ -316,7 +316,7 @@ func (m *MessageRulePredicates) GetSubjectContains()([]string) {
         return m.subjectContains
     }
 }
-// Gets the withinSizeRange property value. Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
+// GetWithinSizeRange gets the withinSizeRange property value. Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
 func (m *MessageRulePredicates) GetWithinSizeRange()(*SizeRange) {
     if m == nil {
         return nil
@@ -324,7 +324,7 @@ func (m *MessageRulePredicates) GetWithinSizeRange()(*SizeRange) {
         return m.withinSizeRange
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["bodyContains"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -671,9 +671,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
 func (m *MessageRulePredicates) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MessageRulePredicates) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteCollectionOfStringValues("bodyContains", m.GetBodyContains())
@@ -876,189 +874,127 @@ func (m *MessageRulePredicates) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MessageRulePredicates) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the bodyContains property value. Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the bodyContains property.
+// SetBodyContains sets the bodyContains property value. Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetBodyContains(value []string)() {
     m.bodyContains = value
 }
-// Sets the bodyOrSubjectContains property value. Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the bodyOrSubjectContains property.
+// SetBodyOrSubjectContains sets the bodyOrSubjectContains property value. Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetBodyOrSubjectContains(value []string)() {
     m.bodyOrSubjectContains = value
 }
-// Sets the categories property value. Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the categories property.
+// SetCategories sets the categories property value. Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetCategories(value []string)() {
     m.categories = value
 }
-// Sets the fromAddresses property value. Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the fromAddresses property.
+// SetFromAddresses sets the fromAddresses property value. Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetFromAddresses(value []Recipient)() {
     m.fromAddresses = value
 }
-// Sets the hasAttachments property value. Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the hasAttachments property.
+// SetHasAttachments sets the hasAttachments property value. Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetHasAttachments(value *bool)() {
     m.hasAttachments = value
 }
-// Sets the headerContains property value. Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the headerContains property.
+// SetHeaderContains sets the headerContains property value. Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetHeaderContains(value []string)() {
     m.headerContains = value
 }
-// Sets the importance property value. The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
-// Parameters:
-//  - value : Value to set for the importance property.
+// SetImportance sets the importance property value. The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
 func (m *MessageRulePredicates) SetImportance(value *Importance)() {
     m.importance = value
 }
-// Sets the isApprovalRequest property value. Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the isApprovalRequest property.
+// SetIsApprovalRequest sets the isApprovalRequest property value. Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsApprovalRequest(value *bool)() {
     m.isApprovalRequest = value
 }
-// Sets the isAutomaticForward property value. Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the isAutomaticForward property.
+// SetIsAutomaticForward sets the isAutomaticForward property value. Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsAutomaticForward(value *bool)() {
     m.isAutomaticForward = value
 }
-// Sets the isAutomaticReply property value. Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the isAutomaticReply property.
+// SetIsAutomaticReply sets the isAutomaticReply property value. Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsAutomaticReply(value *bool)() {
     m.isAutomaticReply = value
 }
-// Sets the isEncrypted property value. Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the isEncrypted property.
+// SetIsEncrypted sets the isEncrypted property value. Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsEncrypted(value *bool)() {
     m.isEncrypted = value
 }
-// Sets the isMeetingRequest property value. Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the isMeetingRequest property.
+// SetIsMeetingRequest sets the isMeetingRequest property value. Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsMeetingRequest(value *bool)() {
     m.isMeetingRequest = value
 }
-// Sets the isMeetingResponse property value. Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the isMeetingResponse property.
+// SetIsMeetingResponse sets the isMeetingResponse property value. Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsMeetingResponse(value *bool)() {
     m.isMeetingResponse = value
 }
-// Sets the isNonDeliveryReport property value. Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the isNonDeliveryReport property.
+// SetIsNonDeliveryReport sets the isNonDeliveryReport property value. Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsNonDeliveryReport(value *bool)() {
     m.isNonDeliveryReport = value
 }
-// Sets the isPermissionControlled property value. Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the isPermissionControlled property.
+// SetIsPermissionControlled sets the isPermissionControlled property value. Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsPermissionControlled(value *bool)() {
     m.isPermissionControlled = value
 }
-// Sets the isReadReceipt property value. Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the isReadReceipt property.
+// SetIsReadReceipt sets the isReadReceipt property value. Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsReadReceipt(value *bool)() {
     m.isReadReceipt = value
 }
-// Sets the isSigned property value. Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the isSigned property.
+// SetIsSigned sets the isSigned property value. Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsSigned(value *bool)() {
     m.isSigned = value
 }
-// Sets the isVoicemail property value. Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the isVoicemail property.
+// SetIsVoicemail sets the isVoicemail property value. Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetIsVoicemail(value *bool)() {
     m.isVoicemail = value
 }
-// Sets the messageActionFlag property value. Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
-// Parameters:
-//  - value : Value to set for the messageActionFlag property.
+// SetMessageActionFlag sets the messageActionFlag property value. Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
 func (m *MessageRulePredicates) SetMessageActionFlag(value *MessageActionFlag)() {
     m.messageActionFlag = value
 }
-// Sets the notSentToMe property value. Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the notSentToMe property.
+// SetNotSentToMe sets the notSentToMe property value. Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetNotSentToMe(value *bool)() {
     m.notSentToMe = value
 }
-// Sets the recipientContains property value. Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the recipientContains property.
+// SetRecipientContains sets the recipientContains property value. Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetRecipientContains(value []string)() {
     m.recipientContains = value
 }
-// Sets the senderContains property value. Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the senderContains property.
+// SetSenderContains sets the senderContains property value. Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSenderContains(value []string)() {
     m.senderContains = value
 }
-// Sets the sensitivity property value. Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
-// Parameters:
-//  - value : Value to set for the sensitivity property.
+// SetSensitivity sets the sensitivity property value. Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
 func (m *MessageRulePredicates) SetSensitivity(value *Sensitivity)() {
     m.sensitivity = value
 }
-// Sets the sentCcMe property value. Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the sentCcMe property.
+// SetSentCcMe sets the sentCcMe property value. Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSentCcMe(value *bool)() {
     m.sentCcMe = value
 }
-// Sets the sentOnlyToMe property value. Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the sentOnlyToMe property.
+// SetSentOnlyToMe sets the sentOnlyToMe property value. Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSentOnlyToMe(value *bool)() {
     m.sentOnlyToMe = value
 }
-// Sets the sentToAddresses property value. Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the sentToAddresses property.
+// SetSentToAddresses sets the sentToAddresses property value. Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSentToAddresses(value []Recipient)() {
     m.sentToAddresses = value
 }
-// Sets the sentToMe property value. Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the sentToMe property.
+// SetSentToMe sets the sentToMe property value. Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSentToMe(value *bool)() {
     m.sentToMe = value
 }
-// Sets the sentToOrCcMe property value. Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the sentToOrCcMe property.
+// SetSentToOrCcMe sets the sentToOrCcMe property value. Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSentToOrCcMe(value *bool)() {
     m.sentToOrCcMe = value
 }
-// Sets the subjectContains property value. Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the subjectContains property.
+// SetSubjectContains sets the subjectContains property value. Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetSubjectContains(value []string)() {
     m.subjectContains = value
 }
-// Sets the withinSizeRange property value. Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
-// Parameters:
-//  - value : Value to set for the withinSizeRange property.
+// SetWithinSizeRange sets the withinSizeRange property value. Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
 func (m *MessageRulePredicates) SetWithinSizeRange(value *SizeRange)() {
     m.withinSizeRange = value
 }

@@ -9,7 +9,7 @@ import (
     ia96b6fb366243413b3c64f01d0b11020e423792cf3dd3d1045d1fd9067c440d3 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/installedapps/item/teamsapp"
 )
 
-// Builds and executes requests for operations under \chats\{chat-id}\installedApps\{teamsAppInstallation-id}
+// TeamsAppInstallationRequestBuilder builds and executes requests for operations under \chats\{chat-id}\installedApps\{teamsAppInstallation-id}
 type TeamsAppInstallationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type TeamsAppInstallationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TeamsAppInstallationRequestBuilderDeleteOptions options for Delete
 type TeamsAppInstallationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type TeamsAppInstallationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TeamsAppInstallationRequestBuilderGetOptions options for Get
 type TeamsAppInstallationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type TeamsAppInstallationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of all the apps in the chat. Nullable.
+// TeamsAppInstallationRequestBuilderGetQueryParameters a collection of all the apps in the chat. Nullable.
 type TeamsAppInstallationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TeamsAppInstallationRequestBuilderPatchOptions options for Patch
 type TeamsAppInstallationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppInstallation;
@@ -56,10 +56,7 @@ type TeamsAppInstallationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TeamsAppInstallationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppInstallationRequestBuilderInternal instantiates a new TeamsAppInstallationRequestBuilder and sets the default values.
 func NewTeamsAppInstallationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppInstallationRequestBuilder) {
     m := &TeamsAppInstallationRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTeamsAppInstallationRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamsAppInstallationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppInstallationRequestBuilder instantiates a new TeamsAppInstallationRequestBuilder and sets the default values.
 func NewTeamsAppInstallationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppInstallationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppInstallationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of all the apps in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of all the apps in the chat. Nullable.
 func (m *TeamsAppInstallationRequestBuilder) CreateDeleteRequestInformation(options *TeamsAppInstallationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *TeamsAppInstallationRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// A collection of all the apps in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of all the apps in the chat. Nullable.
 func (m *TeamsAppInstallationRequestBuilder) CreateGetRequestInformation(options *TeamsAppInstallationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *TeamsAppInstallationRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// A collection of all the apps in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of all the apps in the chat. Nullable.
 func (m *TeamsAppInstallationRequestBuilder) CreatePatchRequestInformation(options *TeamsAppInstallationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +130,7 @@ func (m *TeamsAppInstallationRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// A collection of all the apps in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of all the apps in the chat. Nullable.
 func (m *TeamsAppInstallationRequestBuilder) Delete(options *TeamsAppInstallationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -156,9 +142,7 @@ func (m *TeamsAppInstallationRequestBuilder) Delete(options *TeamsAppInstallatio
     }
     return nil
 }
-// A collection of all the apps in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of all the apps in the chat. Nullable.
 func (m *TeamsAppInstallationRequestBuilder) Get(options *TeamsAppInstallationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppInstallation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -170,9 +154,7 @@ func (m *TeamsAppInstallationRequestBuilder) Get(options *TeamsAppInstallationRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppInstallation), nil
 }
-// A collection of all the apps in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of all the apps in the chat. Nullable.
 func (m *TeamsAppInstallationRequestBuilder) Patch(options *TeamsAppInstallationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

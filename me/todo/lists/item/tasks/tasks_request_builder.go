@@ -7,7 +7,7 @@ import (
     i75557dde23f5165f06a0e39dd0f0ba0c1b19eb4bfcdb9a006fe55aab55a6dad5 "github.com/microsoftgraph/msgraph-sdk-go/me/todo/lists/item/tasks/delta"
 )
 
-// Builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks
+// TasksRequestBuilder builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks
 type TasksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TasksRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TasksRequestBuilderGetOptions options for Get
 type TasksRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type TasksRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The tasks in this task list. Read-only. Nullable.
+// TasksRequestBuilderGetQueryParameters the tasks in this task list. Read-only. Nullable.
 type TasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type TasksRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TasksRequestBuilderPostOptions options for Post
 type TasksRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TodoTask;
@@ -57,10 +57,7 @@ type TasksRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TasksRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTasksRequestBuilderInternal instantiates a new TasksRequestBuilder and sets the default values.
 func NewTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TasksRequestBuilder) {
     m := &TasksRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewTasksRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TasksRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTasksRequestBuilder instantiates a new TasksRequestBuilder and sets the default values.
 func NewTasksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TasksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTasksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The tasks in this task list. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the tasks in this task list. Read-only. Nullable.
 func (m *TasksRequestBuilder) CreateGetRequestInformation(options *TasksRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *TasksRequestBuilder) CreateGetRequestInformation(options *TasksRequestB
     }
     return requestInfo, nil
 }
-// The tasks in this task list. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the tasks in this task list. Read-only. Nullable.
 func (m *TasksRequestBuilder) CreatePostRequestInformation(options *TasksRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,13 +114,11 @@ func (m *TasksRequestBuilder) CreatePostRequestInformation(options *TasksRequest
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks\microsoft.graph.delta()
 func (m *TasksRequestBuilder) Delta()(*i75557dde23f5165f06a0e39dd0f0ba0c1b19eb4bfcdb9a006fe55aab55a6dad5.DeltaRequestBuilder) {
     return i75557dde23f5165f06a0e39dd0f0ba0c1b19eb4bfcdb9a006fe55aab55a6dad5.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The tasks in this task list. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the tasks in this task list. Read-only. Nullable.
 func (m *TasksRequestBuilder) Get(options *TasksRequestBuilderGetOptions)(*TasksResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,9 +130,7 @@ func (m *TasksRequestBuilder) Get(options *TasksRequestBuilderGetOptions)(*Tasks
     }
     return res.(*TasksResponse), nil
 }
-// The tasks in this task list. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the tasks in this task list. Read-only. Nullable.
 func (m *TasksRequestBuilder) Post(options *TasksRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TodoTask, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

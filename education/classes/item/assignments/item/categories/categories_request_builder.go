@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\categories
+// CategoriesRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\categories
 type CategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CategoriesRequestBuilderGetOptions options for Get
 type CategoriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CategoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+// CategoriesRequestBuilderGetQueryParameters when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 type CategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CategoriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CategoriesRequestBuilderPostOptions options for Post
 type CategoriesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationCategory;
@@ -56,10 +56,7 @@ type CategoriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCategoriesRequestBuilderInternal instantiates a new CategoriesRequestBuilder and sets the default values.
 func NewCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CategoriesRequestBuilder) {
     m := &CategoriesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCategoriesRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCategoriesRequestBuilder instantiates a new CategoriesRequestBuilder and sets the default values.
 func NewCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 func (m *CategoriesRequestBuilder) CreateGetRequestInformation(options *CategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CategoriesRequestBuilder) CreateGetRequestInformation(options *Categori
     }
     return requestInfo, nil
 }
-// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 func (m *CategoriesRequestBuilder) CreatePostRequestInformation(options *CategoriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CategoriesRequestBuilder) CreatePostRequestInformation(options *Categor
     }
     return requestInfo, nil
 }
-// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 func (m *CategoriesRequestBuilder) Get(options *CategoriesRequestBuilderGetOptions)(*CategoriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CategoriesRequestBuilder) Get(options *CategoriesRequestBuilderGetOptio
     }
     return res.(*CategoriesResponse), nil
 }
-// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 func (m *CategoriesRequestBuilder) Post(options *CategoriesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationCategory, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

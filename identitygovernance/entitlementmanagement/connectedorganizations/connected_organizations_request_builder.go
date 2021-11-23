@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\connectedOrganizations
+// ConnectedOrganizationsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\connectedOrganizations
 type ConnectedOrganizationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConnectedOrganizationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ConnectedOrganizationsRequestBuilderGetOptions options for Get
 type ConnectedOrganizationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ConnectedOrganizationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get connectedOrganizations from identityGovernance
+// ConnectedOrganizationsRequestBuilderGetQueryParameters get connectedOrganizations from identityGovernance
 type ConnectedOrganizationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ConnectedOrganizationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ConnectedOrganizationsRequestBuilderPostOptions options for Post
 type ConnectedOrganizationsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConnectedOrganization;
@@ -56,10 +56,7 @@ type ConnectedOrganizationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConnectedOrganizationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConnectedOrganizationsRequestBuilderInternal instantiates a new ConnectedOrganizationsRequestBuilder and sets the default values.
 func NewConnectedOrganizationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectedOrganizationsRequestBuilder) {
     m := &ConnectedOrganizationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewConnectedOrganizationsRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConnectedOrganizationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConnectedOrganizationsRequestBuilder instantiates a new ConnectedOrganizationsRequestBuilder and sets the default values.
 func NewConnectedOrganizationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConnectedOrganizationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConnectedOrganizationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get connectedOrganizations from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get connectedOrganizations from identityGovernance
 func (m *ConnectedOrganizationsRequestBuilder) CreateGetRequestInformation(options *ConnectedOrganizationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ConnectedOrganizationsRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Create new navigation property to connectedOrganizations for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to connectedOrganizations for identityGovernance
 func (m *ConnectedOrganizationsRequestBuilder) CreatePostRequestInformation(options *ConnectedOrganizationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ConnectedOrganizationsRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get connectedOrganizations from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get connectedOrganizations from identityGovernance
 func (m *ConnectedOrganizationsRequestBuilder) Get(options *ConnectedOrganizationsRequestBuilderGetOptions)(*ConnectedOrganizationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ConnectedOrganizationsRequestBuilder) Get(options *ConnectedOrganizatio
     }
     return res.(*ConnectedOrganizationsResponse), nil
 }
-// Create new navigation property to connectedOrganizations for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to connectedOrganizations for identityGovernance
 func (m *ConnectedOrganizationsRequestBuilder) Post(options *ConnectedOrganizationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConnectedOrganization, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

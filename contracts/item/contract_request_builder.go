@@ -11,7 +11,7 @@ import (
     iabffea946aaf9953004feea739fa785cf07d700c84085f7a935b4867be8cfa06 "github.com/microsoftgraph/msgraph-sdk-go/contracts/item/getmembergroups"
 )
 
-// Builds and executes requests for operations under \contracts\{contract-id}
+// ContractRequestBuilder builds and executes requests for operations under \contracts\{contract-id}
 type ContractRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type ContractRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ContractRequestBuilderDeleteOptions options for Delete
 type ContractRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type ContractRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ContractRequestBuilderGetOptions options for Get
 type ContractRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type ContractRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from contracts by key
+// ContractRequestBuilderGetQueryParameters get entity from contracts by key
 type ContractRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ContractRequestBuilderPatchOptions options for Patch
 type ContractRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Contract;
@@ -64,10 +64,7 @@ func (m *ContractRequestBuilder) CheckMemberGroups()(*i9816d6d5fdd8c2b627440ac47
 func (m *ContractRequestBuilder) CheckMemberObjects()(*i634333242efa9a29a6ddf99350f54e41bbbf0133e0686bf1f7528b7eefc8aa1f.CheckMemberObjectsRequestBuilder) {
     return i634333242efa9a29a6ddf99350f54e41bbbf0133e0686bf1f7528b7eefc8aa1f.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ContractRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContractRequestBuilderInternal instantiates a new ContractRequestBuilder and sets the default values.
 func NewContractRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContractRequestBuilder) {
     m := &ContractRequestBuilder{
     }
@@ -80,18 +77,13 @@ func NewContractRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ContractRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContractRequestBuilder instantiates a new ContractRequestBuilder and sets the default values.
 func NewContractRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContractRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewContractRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from contracts
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from contracts
 func (m *ContractRequestBuilder) CreateDeleteRequestInformation(options *ContractRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *ContractRequestBuilder) CreateDeleteRequestInformation(options *Contrac
     }
     return requestInfo, nil
 }
-// Get entity from contracts by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from contracts by key
 func (m *ContractRequestBuilder) CreateGetRequestInformation(options *ContractRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,9 +120,7 @@ func (m *ContractRequestBuilder) CreateGetRequestInformation(options *ContractRe
     }
     return requestInfo, nil
 }
-// Update entity in contracts
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in contracts
 func (m *ContractRequestBuilder) CreatePatchRequestInformation(options *ContractRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +138,7 @@ func (m *ContractRequestBuilder) CreatePatchRequestInformation(options *Contract
     }
     return requestInfo, nil
 }
-// Delete entity from contracts
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from contracts
 func (m *ContractRequestBuilder) Delete(options *ContractRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -164,9 +150,7 @@ func (m *ContractRequestBuilder) Delete(options *ContractRequestBuilderDeleteOpt
     }
     return nil
 }
-// Get entity from contracts by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from contracts by key
 func (m *ContractRequestBuilder) Get(options *ContractRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Contract, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -184,9 +168,7 @@ func (m *ContractRequestBuilder) GetMemberGroups()(*iabffea946aaf9953004feea739f
 func (m *ContractRequestBuilder) GetMemberObjects()(*i68d315812c96beaf0bb656713cc7f6ec30a202d0bd23957081408380e1e7c72b.GetMemberObjectsRequestBuilder) {
     return i68d315812c96beaf0bb656713cc7f6ec30a202d0bd23957081408380e1e7c72b.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in contracts
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in contracts
 func (m *ContractRequestBuilder) Patch(options *ContractRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

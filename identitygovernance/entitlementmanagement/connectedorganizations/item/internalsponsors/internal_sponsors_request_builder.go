@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\connectedOrganizations\{connectedOrganization-id}\internalSponsors
+// InternalSponsorsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\connectedOrganizations\{connectedOrganization-id}\internalSponsors
 type InternalSponsorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type InternalSponsorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// InternalSponsorsRequestBuilderGetOptions options for Get
 type InternalSponsorsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type InternalSponsorsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Nullable.
+// InternalSponsorsRequestBuilderGetQueryParameters nullable.
 type InternalSponsorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type InternalSponsorsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// InternalSponsorsRequestBuilderPostOptions options for Post
 type InternalSponsorsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject;
@@ -56,10 +56,7 @@ type InternalSponsorsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new InternalSponsorsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInternalSponsorsRequestBuilderInternal instantiates a new InternalSponsorsRequestBuilder and sets the default values.
 func NewInternalSponsorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InternalSponsorsRequestBuilder) {
     m := &InternalSponsorsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewInternalSponsorsRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new InternalSponsorsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInternalSponsorsRequestBuilder instantiates a new InternalSponsorsRequestBuilder and sets the default values.
 func NewInternalSponsorsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InternalSponsorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInternalSponsorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation nullable.
 func (m *InternalSponsorsRequestBuilder) CreateGetRequestInformation(options *InternalSponsorsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *InternalSponsorsRequestBuilder) CreateGetRequestInformation(options *In
     }
     return requestInfo, nil
 }
-// Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation nullable.
 func (m *InternalSponsorsRequestBuilder) CreatePostRequestInformation(options *InternalSponsorsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *InternalSponsorsRequestBuilder) CreatePostRequestInformation(options *I
     }
     return requestInfo, nil
 }
-// Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get nullable.
 func (m *InternalSponsorsRequestBuilder) Get(options *InternalSponsorsRequestBuilderGetOptions)(*InternalSponsorsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *InternalSponsorsRequestBuilder) Get(options *InternalSponsorsRequestBui
     }
     return res.(*InternalSponsorsResponse), nil
 }
-// Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post nullable.
 func (m *InternalSponsorsRequestBuilder) Post(options *InternalSponsorsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

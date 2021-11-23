@@ -7,7 +7,7 @@ import (
     i20c52f15404b68f70b77022255ca5bc581fe7ece630f0582a0bb68b499da4883 "github.com/microsoftgraph/msgraph-sdk-go/identity/b2xuserflows/item/languages/item/defaultpages/item/value"
 )
 
-// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}\defaultPages\{userFlowLanguagePage-id}
+// UserFlowLanguagePageRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}\defaultPages\{userFlowLanguagePage-id}
 type UserFlowLanguagePageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UserFlowLanguagePageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserFlowLanguagePageRequestBuilderDeleteOptions options for Delete
 type UserFlowLanguagePageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type UserFlowLanguagePageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserFlowLanguagePageRequestBuilderGetOptions options for Get
 type UserFlowLanguagePageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type UserFlowLanguagePageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+// UserFlowLanguagePageRequestBuilderGetQueryParameters collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 type UserFlowLanguagePageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserFlowLanguagePageRequestBuilderPatchOptions options for Patch
 type UserFlowLanguagePageRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserFlowLanguagePage;
@@ -54,10 +54,7 @@ type UserFlowLanguagePageRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserFlowLanguagePageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserFlowLanguagePageRequestBuilderInternal instantiates a new UserFlowLanguagePageRequestBuilder and sets the default values.
 func NewUserFlowLanguagePageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserFlowLanguagePageRequestBuilder) {
     m := &UserFlowLanguagePageRequestBuilder{
     }
@@ -70,10 +67,7 @@ func NewUserFlowLanguagePageRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserFlowLanguagePageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserFlowLanguagePageRequestBuilder instantiates a new UserFlowLanguagePageRequestBuilder and sets the default values.
 func NewUserFlowLanguagePageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserFlowLanguagePageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -82,9 +76,7 @@ func NewUserFlowLanguagePageRequestBuilder(rawUrl string, requestAdapter ida96af
 func (m *UserFlowLanguagePageRequestBuilder) Content()(*i20c52f15404b68f70b77022255ca5bc581fe7ece630f0582a0bb68b499da4883.ContentRequestBuilder) {
     return i20c52f15404b68f70b77022255ca5bc581fe7ece630f0582a0bb68b499da4883.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 func (m *UserFlowLanguagePageRequestBuilder) CreateDeleteRequestInformation(options *UserFlowLanguagePageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *UserFlowLanguagePageRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 func (m *UserFlowLanguagePageRequestBuilder) CreateGetRequestInformation(options *UserFlowLanguagePageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserFlowLanguagePageRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 func (m *UserFlowLanguagePageRequestBuilder) CreatePatchRequestInformation(options *UserFlowLanguagePageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *UserFlowLanguagePageRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-// Parameters:
-//  - options : Options for the request
+// Delete collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 func (m *UserFlowLanguagePageRequestBuilder) Delete(options *UserFlowLanguagePageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *UserFlowLanguagePageRequestBuilder) Delete(options *UserFlowLanguagePag
     }
     return nil
 }
-// Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-// Parameters:
-//  - options : Options for the request
+// Get collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 func (m *UserFlowLanguagePageRequestBuilder) Get(options *UserFlowLanguagePageRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserFlowLanguagePage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *UserFlowLanguagePageRequestBuilder) Get(options *UserFlowLanguagePageRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserFlowLanguagePage), nil
 }
-// Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-// Parameters:
-//  - options : Options for the request
+// Patch collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 func (m *UserFlowLanguagePageRequestBuilder) Patch(options *UserFlowLanguagePageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

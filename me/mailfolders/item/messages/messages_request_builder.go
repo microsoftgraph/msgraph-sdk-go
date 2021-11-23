@@ -7,7 +7,7 @@ import (
     i78e823f0aa0479b4d56f66e3dab62106b52aefaaff169a02113ea360ded60d77 "github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/messages/delta"
 )
 
-// Builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages
+// MessagesRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages
 type MessagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type MessagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MessagesRequestBuilderGetOptions options for Get
 type MessagesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type MessagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of messages in the mailFolder.
+// MessagesRequestBuilderGetQueryParameters the collection of messages in the mailFolder.
 type MessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type MessagesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MessagesRequestBuilderPostOptions options for Post
 type MessagesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message;
@@ -57,10 +57,7 @@ type MessagesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MessagesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessagesRequestBuilderInternal instantiates a new MessagesRequestBuilder and sets the default values.
 func NewMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessagesRequestBuilder) {
     m := &MessagesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewMessagesRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MessagesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessagesRequestBuilder instantiates a new MessagesRequestBuilder and sets the default values.
 func NewMessagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of messages in the mailFolder.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of messages in the mailFolder.
 func (m *MessagesRequestBuilder) CreateGetRequestInformation(options *MessagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *MessagesRequestBuilder) CreateGetRequestInformation(options *MessagesRe
     }
     return requestInfo, nil
 }
-// The collection of messages in the mailFolder.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of messages in the mailFolder.
 func (m *MessagesRequestBuilder) CreatePostRequestInformation(options *MessagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,13 +114,11 @@ func (m *MessagesRequestBuilder) CreatePostRequestInformation(options *MessagesR
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\microsoft.graph.delta()
 func (m *MessagesRequestBuilder) Delta()(*i78e823f0aa0479b4d56f66e3dab62106b52aefaaff169a02113ea360ded60d77.DeltaRequestBuilder) {
     return i78e823f0aa0479b4d56f66e3dab62106b52aefaaff169a02113ea360ded60d77.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The collection of messages in the mailFolder.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of messages in the mailFolder.
 func (m *MessagesRequestBuilder) Get(options *MessagesRequestBuilderGetOptions)(*MessagesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,9 +130,7 @@ func (m *MessagesRequestBuilder) Get(options *MessagesRequestBuilderGetOptions)(
     }
     return res.(*MessagesResponse), nil
 }
-// The collection of messages in the mailFolder.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of messages in the mailFolder.
 func (m *MessagesRequestBuilder) Post(options *MessagesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

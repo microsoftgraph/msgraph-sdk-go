@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MessageSecurityState 
 type MessageSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -28,14 +28,14 @@ type MessageSecurityState struct {
     // 
     networkMessageId *string;
 }
-// Instantiates a new messageSecurityState and sets the default values.
+// NewMessageSecurityState instantiates a new messageSecurityState and sets the default values.
 func NewMessageSecurityState()(*MessageSecurityState) {
     m := &MessageSecurityState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MessageSecurityState) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *MessageSecurityState) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the connectingIP property value. 
+// GetConnectingIP gets the connectingIP property value. 
 func (m *MessageSecurityState) GetConnectingIP()(*string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *MessageSecurityState) GetConnectingIP()(*string) {
         return m.connectingIP
     }
 }
-// Gets the deliveryAction property value. 
+// GetDeliveryAction gets the deliveryAction property value. 
 func (m *MessageSecurityState) GetDeliveryAction()(*string) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *MessageSecurityState) GetDeliveryAction()(*string) {
         return m.deliveryAction
     }
 }
-// Gets the deliveryLocation property value. 
+// GetDeliveryLocation gets the deliveryLocation property value. 
 func (m *MessageSecurityState) GetDeliveryLocation()(*string) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *MessageSecurityState) GetDeliveryLocation()(*string) {
         return m.deliveryLocation
     }
 }
-// Gets the directionality property value. 
+// GetDirectionality gets the directionality property value. 
 func (m *MessageSecurityState) GetDirectionality()(*string) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *MessageSecurityState) GetDirectionality()(*string) {
         return m.directionality
     }
 }
-// Gets the internetMessageId property value. 
+// GetInternetMessageId gets the internetMessageId property value. 
 func (m *MessageSecurityState) GetInternetMessageId()(*string) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *MessageSecurityState) GetInternetMessageId()(*string) {
         return m.internetMessageId
     }
 }
-// Gets the messageFingerprint property value. 
+// GetMessageFingerprint gets the messageFingerprint property value. 
 func (m *MessageSecurityState) GetMessageFingerprint()(*string) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *MessageSecurityState) GetMessageFingerprint()(*string) {
         return m.messageFingerprint
     }
 }
-// Gets the messageReceivedDateTime property value. 
+// GetMessageReceivedDateTime gets the messageReceivedDateTime property value. 
 func (m *MessageSecurityState) GetMessageReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *MessageSecurityState) GetMessageReceivedDateTime()(*i336074805fc853987a
         return m.messageReceivedDateTime
     }
 }
-// Gets the messageSubject property value. 
+// GetMessageSubject gets the messageSubject property value. 
 func (m *MessageSecurityState) GetMessageSubject()(*string) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *MessageSecurityState) GetMessageSubject()(*string) {
         return m.messageSubject
     }
 }
-// Gets the networkMessageId property value. 
+// GetNetworkMessageId gets the networkMessageId property value. 
 func (m *MessageSecurityState) GetNetworkMessageId()(*string) {
     if m == nil {
         return nil
@@ -115,7 +115,7 @@ func (m *MessageSecurityState) GetNetworkMessageId()(*string) {
         return m.networkMessageId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["connectingIP"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -213,9 +213,7 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(interface
 func (m *MessageSecurityState) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MessageSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("connectingIP", m.GetConnectingIP())
@@ -279,63 +277,43 @@ func (m *MessageSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MessageSecurityState) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the connectingIP property value. 
-// Parameters:
-//  - value : Value to set for the connectingIP property.
+// SetConnectingIP sets the connectingIP property value. 
 func (m *MessageSecurityState) SetConnectingIP(value *string)() {
     m.connectingIP = value
 }
-// Sets the deliveryAction property value. 
-// Parameters:
-//  - value : Value to set for the deliveryAction property.
+// SetDeliveryAction sets the deliveryAction property value. 
 func (m *MessageSecurityState) SetDeliveryAction(value *string)() {
     m.deliveryAction = value
 }
-// Sets the deliveryLocation property value. 
-// Parameters:
-//  - value : Value to set for the deliveryLocation property.
+// SetDeliveryLocation sets the deliveryLocation property value. 
 func (m *MessageSecurityState) SetDeliveryLocation(value *string)() {
     m.deliveryLocation = value
 }
-// Sets the directionality property value. 
-// Parameters:
-//  - value : Value to set for the directionality property.
+// SetDirectionality sets the directionality property value. 
 func (m *MessageSecurityState) SetDirectionality(value *string)() {
     m.directionality = value
 }
-// Sets the internetMessageId property value. 
-// Parameters:
-//  - value : Value to set for the internetMessageId property.
+// SetInternetMessageId sets the internetMessageId property value. 
 func (m *MessageSecurityState) SetInternetMessageId(value *string)() {
     m.internetMessageId = value
 }
-// Sets the messageFingerprint property value. 
-// Parameters:
-//  - value : Value to set for the messageFingerprint property.
+// SetMessageFingerprint sets the messageFingerprint property value. 
 func (m *MessageSecurityState) SetMessageFingerprint(value *string)() {
     m.messageFingerprint = value
 }
-// Sets the messageReceivedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the messageReceivedDateTime property.
+// SetMessageReceivedDateTime sets the messageReceivedDateTime property value. 
 func (m *MessageSecurityState) SetMessageReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.messageReceivedDateTime = value
 }
-// Sets the messageSubject property value. 
-// Parameters:
-//  - value : Value to set for the messageSubject property.
+// SetMessageSubject sets the messageSubject property value. 
 func (m *MessageSecurityState) SetMessageSubject(value *string)() {
     m.messageSubject = value
 }
-// Sets the networkMessageId property value. 
-// Parameters:
-//  - value : Value to set for the networkMessageId property.
+// SetNetworkMessageId sets the networkMessageId property value. 
 func (m *MessageSecurityState) SetNetworkMessageId(value *string)() {
     m.networkMessageId = value
 }

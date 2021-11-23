@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AutomaticRepliesMailTips 
 type AutomaticRepliesMailTips struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type AutomaticRepliesMailTips struct {
     // The date and time that automatic replies are set to begin.
     scheduledStartTime *DateTimeTimeZone;
 }
-// Instantiates a new automaticRepliesMailTips and sets the default values.
+// NewAutomaticRepliesMailTips instantiates a new automaticRepliesMailTips and sets the default values.
 func NewAutomaticRepliesMailTips()(*AutomaticRepliesMailTips) {
     m := &AutomaticRepliesMailTips{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AutomaticRepliesMailTips) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *AutomaticRepliesMailTips) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the message property value. The automatic reply message.
+// GetMessage gets the message property value. The automatic reply message.
 func (m *AutomaticRepliesMailTips) GetMessage()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *AutomaticRepliesMailTips) GetMessage()(*string) {
         return m.message
     }
 }
-// Gets the messageLanguage property value. The language that the automatic reply message is in.
+// GetMessageLanguage gets the messageLanguage property value. The language that the automatic reply message is in.
 func (m *AutomaticRepliesMailTips) GetMessageLanguage()(*LocaleInfo) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *AutomaticRepliesMailTips) GetMessageLanguage()(*LocaleInfo) {
         return m.messageLanguage
     }
 }
-// Gets the scheduledEndTime property value. The date and time that automatic replies are set to end.
+// GetScheduledEndTime gets the scheduledEndTime property value. The date and time that automatic replies are set to end.
 func (m *AutomaticRepliesMailTips) GetScheduledEndTime()(*DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *AutomaticRepliesMailTips) GetScheduledEndTime()(*DateTimeTimeZone) {
         return m.scheduledEndTime
     }
 }
-// Gets the scheduledStartTime property value. The date and time that automatic replies are set to begin.
+// GetScheduledStartTime gets the scheduledStartTime property value. The date and time that automatic replies are set to begin.
 func (m *AutomaticRepliesMailTips) GetScheduledStartTime()(*DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *AutomaticRepliesMailTips) GetScheduledStartTime()(*DateTimeTimeZone) {
         return m.scheduledStartTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AutomaticRepliesMailTips) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["message"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *AutomaticRepliesMailTips) GetFieldDeserializers()(map[string]func(inter
 func (m *AutomaticRepliesMailTips) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AutomaticRepliesMailTips) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("message", m.GetMessage())
@@ -148,33 +146,23 @@ func (m *AutomaticRepliesMailTips) Serialize(writer i04eb5309aeaafadd28374d79c84
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AutomaticRepliesMailTips) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the message property value. The automatic reply message.
-// Parameters:
-//  - value : Value to set for the message property.
+// SetMessage sets the message property value. The automatic reply message.
 func (m *AutomaticRepliesMailTips) SetMessage(value *string)() {
     m.message = value
 }
-// Sets the messageLanguage property value. The language that the automatic reply message is in.
-// Parameters:
-//  - value : Value to set for the messageLanguage property.
+// SetMessageLanguage sets the messageLanguage property value. The language that the automatic reply message is in.
 func (m *AutomaticRepliesMailTips) SetMessageLanguage(value *LocaleInfo)() {
     m.messageLanguage = value
 }
-// Sets the scheduledEndTime property value. The date and time that automatic replies are set to end.
-// Parameters:
-//  - value : Value to set for the scheduledEndTime property.
+// SetScheduledEndTime sets the scheduledEndTime property value. The date and time that automatic replies are set to end.
 func (m *AutomaticRepliesMailTips) SetScheduledEndTime(value *DateTimeTimeZone)() {
     m.scheduledEndTime = value
 }
-// Sets the scheduledStartTime property value. The date and time that automatic replies are set to begin.
-// Parameters:
-//  - value : Value to set for the scheduledStartTime property.
+// SetScheduledStartTime sets the scheduledStartTime property value. The date and time that automatic replies are set to begin.
 func (m *AutomaticRepliesMailTips) SetScheduledStartTime(value *DateTimeTimeZone)() {
     m.scheduledStartTime = value
 }

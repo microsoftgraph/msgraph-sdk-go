@@ -8,7 +8,7 @@ import (
     i9a64128a6cdac7274657acec87208aa9284bb1683560f6445c50346fa4b38ae4 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/roledefinitions/item/roleassignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\roleDefinitions\{roleDefinition-id}
+// RoleDefinitionRequestBuilder builds and executes requests for operations under \deviceManagement\roleDefinitions\{roleDefinition-id}
 type RoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type RoleDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RoleDefinitionRequestBuilderDeleteOptions options for Delete
 type RoleDefinitionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RoleDefinitionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RoleDefinitionRequestBuilderGetOptions options for Get
 type RoleDefinitionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type RoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The Role Definitions.
+// RoleDefinitionRequestBuilderGetQueryParameters the Role Definitions.
 type RoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RoleDefinitionRequestBuilderPatchOptions options for Patch
 type RoleDefinitionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleDefinition;
@@ -55,10 +55,7 @@ type RoleDefinitionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RoleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleDefinitionRequestBuilderInternal instantiates a new RoleDefinitionRequestBuilder and sets the default values.
 func NewRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleDefinitionRequestBuilder) {
     m := &RoleDefinitionRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RoleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRoleDefinitionRequestBuilder instantiates a new RoleDefinitionRequestBuilder and sets the default values.
 func NewRoleDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RoleDefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The Role Definitions.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the Role Definitions.
 func (m *RoleDefinitionRequestBuilder) CreateDeleteRequestInformation(options *RoleDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *RoleDefinitionRequestBuilder) CreateDeleteRequestInformation(options *R
     }
     return requestInfo, nil
 }
-// The Role Definitions.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the Role Definitions.
 func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformation(options *RoleDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformation(options *Role
     }
     return requestInfo, nil
 }
-// The Role Definitions.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the Role Definitions.
 func (m *RoleDefinitionRequestBuilder) CreatePatchRequestInformation(options *RoleDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *RoleDefinitionRequestBuilder) CreatePatchRequestInformation(options *Ro
     }
     return requestInfo, nil
 }
-// The Role Definitions.
-// Parameters:
-//  - options : Options for the request
+// Delete the Role Definitions.
 func (m *RoleDefinitionRequestBuilder) Delete(options *RoleDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *RoleDefinitionRequestBuilder) Delete(options *RoleDefinitionRequestBuil
     }
     return nil
 }
-// The Role Definitions.
-// Parameters:
-//  - options : Options for the request
+// Get the Role Definitions.
 func (m *RoleDefinitionRequestBuilder) Get(options *RoleDefinitionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *RoleDefinitionRequestBuilder) Get(options *RoleDefinitionRequestBuilder
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RoleDefinition), nil
 }
-// The Role Definitions.
-// Parameters:
-//  - options : Options for the request
+// Patch the Role Definitions.
 func (m *RoleDefinitionRequestBuilder) Patch(options *RoleDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *RoleDefinitionRequestBuilder) Patch(options *RoleDefinitionRequestBuild
 func (m *RoleDefinitionRequestBuilder) RoleAssignments()(*ifa547832647c7d9052c8c752460cc37f72b999f4001c299048bb286b36ca6660.RoleAssignmentsRequestBuilder) {
     return ifa547832647c7d9052c8c752460cc37f72b999f4001c299048bb286b36ca6660.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.roleDefinitions.item.roleAssignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// RoleAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.roleDefinitions.item.roleAssignments.item collection
 func (m *RoleDefinitionRequestBuilder) RoleAssignmentsById(id string)(*i9a64128a6cdac7274657acec87208aa9284bb1683560f6445c50346fa4b38ae4.RoleAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

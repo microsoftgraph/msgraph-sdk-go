@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileAppCategories\{mobileAppCategory-id}
+// MobileAppCategoryRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileAppCategories\{mobileAppCategory-id}
 type MobileAppCategoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MobileAppCategoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MobileAppCategoryRequestBuilderDeleteOptions options for Delete
 type MobileAppCategoryRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MobileAppCategoryRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MobileAppCategoryRequestBuilderGetOptions options for Get
 type MobileAppCategoryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type MobileAppCategoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The mobile app categories.
+// MobileAppCategoryRequestBuilderGetQueryParameters the mobile app categories.
 type MobileAppCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MobileAppCategoryRequestBuilderPatchOptions options for Patch
 type MobileAppCategoryRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppCategory;
@@ -53,10 +53,7 @@ type MobileAppCategoryRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MobileAppCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppCategoryRequestBuilderInternal instantiates a new MobileAppCategoryRequestBuilder and sets the default values.
 func NewMobileAppCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppCategoryRequestBuilder) {
     m := &MobileAppCategoryRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewMobileAppCategoryRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MobileAppCategoryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppCategoryRequestBuilder instantiates a new MobileAppCategoryRequestBuilder and sets the default values.
 func NewMobileAppCategoryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppCategoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppCategoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The mobile app categories.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the mobile app categories.
 func (m *MobileAppCategoryRequestBuilder) CreateDeleteRequestInformation(options *MobileAppCategoryRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *MobileAppCategoryRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// The mobile app categories.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the mobile app categories.
 func (m *MobileAppCategoryRequestBuilder) CreateGetRequestInformation(options *MobileAppCategoryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MobileAppCategoryRequestBuilder) CreateGetRequestInformation(options *M
     }
     return requestInfo, nil
 }
-// The mobile app categories.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the mobile app categories.
 func (m *MobileAppCategoryRequestBuilder) CreatePatchRequestInformation(options *MobileAppCategoryRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *MobileAppCategoryRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The mobile app categories.
-// Parameters:
-//  - options : Options for the request
+// Delete the mobile app categories.
 func (m *MobileAppCategoryRequestBuilder) Delete(options *MobileAppCategoryRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *MobileAppCategoryRequestBuilder) Delete(options *MobileAppCategoryReque
     }
     return nil
 }
-// The mobile app categories.
-// Parameters:
-//  - options : Options for the request
+// Get the mobile app categories.
 func (m *MobileAppCategoryRequestBuilder) Get(options *MobileAppCategoryRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppCategory, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *MobileAppCategoryRequestBuilder) Get(options *MobileAppCategoryRequestB
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppCategory), nil
 }
-// The mobile app categories.
-// Parameters:
-//  - options : Options for the request
+// Patch the mobile app categories.
 func (m *MobileAppCategoryRequestBuilder) Patch(options *MobileAppCategoryRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

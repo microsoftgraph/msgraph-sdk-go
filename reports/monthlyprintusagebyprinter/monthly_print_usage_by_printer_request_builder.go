@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\monthlyPrintUsageByPrinter
+// MonthlyPrintUsageByPrinterRequestBuilder builds and executes requests for operations under \reports\monthlyPrintUsageByPrinter
 type MonthlyPrintUsageByPrinterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MonthlyPrintUsageByPrinterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MonthlyPrintUsageByPrinterRequestBuilderGetOptions options for Get
 type MonthlyPrintUsageByPrinterRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MonthlyPrintUsageByPrinterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get monthlyPrintUsageByPrinter from reports
+// MonthlyPrintUsageByPrinterRequestBuilderGetQueryParameters get monthlyPrintUsageByPrinter from reports
 type MonthlyPrintUsageByPrinterRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MonthlyPrintUsageByPrinterRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MonthlyPrintUsageByPrinterRequestBuilderPostOptions options for Post
 type MonthlyPrintUsageByPrinterRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinter;
@@ -56,10 +56,7 @@ type MonthlyPrintUsageByPrinterRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MonthlyPrintUsageByPrinterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMonthlyPrintUsageByPrinterRequestBuilderInternal instantiates a new MonthlyPrintUsageByPrinterRequestBuilder and sets the default values.
 func NewMonthlyPrintUsageByPrinterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MonthlyPrintUsageByPrinterRequestBuilder) {
     m := &MonthlyPrintUsageByPrinterRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMonthlyPrintUsageByPrinterRequestBuilderInternal(pathParameters map[stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MonthlyPrintUsageByPrinterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMonthlyPrintUsageByPrinterRequestBuilder instantiates a new MonthlyPrintUsageByPrinterRequestBuilder and sets the default values.
 func NewMonthlyPrintUsageByPrinterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MonthlyPrintUsageByPrinterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMonthlyPrintUsageByPrinterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get monthlyPrintUsageByPrinter from reports
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get monthlyPrintUsageByPrinter from reports
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreateGetRequestInformation(options *MonthlyPrintUsageByPrinterRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreateGetRequestInformation(o
     }
     return requestInfo, nil
 }
-// Create new navigation property to monthlyPrintUsageByPrinter for reports
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to monthlyPrintUsageByPrinter for reports
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreatePostRequestInformation(options *MonthlyPrintUsageByPrinterRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreatePostRequestInformation(
     }
     return requestInfo, nil
 }
-// Get monthlyPrintUsageByPrinter from reports
-// Parameters:
-//  - options : Options for the request
+// Get get monthlyPrintUsageByPrinter from reports
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) Get(options *MonthlyPrintUsageByPrinterRequestBuilderGetOptions)(*MonthlyPrintUsageByPrinterResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MonthlyPrintUsageByPrinterRequestBuilder) Get(options *MonthlyPrintUsag
     }
     return res.(*MonthlyPrintUsageByPrinterResponse), nil
 }
-// Create new navigation property to monthlyPrintUsageByPrinter for reports
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to monthlyPrintUsageByPrinter for reports
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) Post(options *MonthlyPrintUsageByPrinterRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintUsageByPrinter, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

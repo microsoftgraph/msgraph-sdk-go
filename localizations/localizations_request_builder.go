@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \localizations
+// LocalizationsRequestBuilder builds and executes requests for operations under \localizations
 type LocalizationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type LocalizationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// LocalizationsRequestBuilderGetOptions options for Get
 type LocalizationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type LocalizationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from localizations
+// LocalizationsRequestBuilderGetQueryParameters get entities from localizations
 type LocalizationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type LocalizationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// LocalizationsRequestBuilderPostOptions options for Post
 type LocalizationsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationalBrandingLocalization;
@@ -56,10 +56,7 @@ type LocalizationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LocalizationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLocalizationsRequestBuilderInternal instantiates a new LocalizationsRequestBuilder and sets the default values.
 func NewLocalizationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LocalizationsRequestBuilder) {
     m := &LocalizationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewLocalizationsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LocalizationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLocalizationsRequestBuilder instantiates a new LocalizationsRequestBuilder and sets the default values.
 func NewLocalizationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LocalizationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLocalizationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from localizations
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from localizations
 func (m *LocalizationsRequestBuilder) CreateGetRequestInformation(options *LocalizationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *LocalizationsRequestBuilder) CreateGetRequestInformation(options *Local
     }
     return requestInfo, nil
 }
-// Add new entity to localizations
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to localizations
 func (m *LocalizationsRequestBuilder) CreatePostRequestInformation(options *LocalizationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *LocalizationsRequestBuilder) CreatePostRequestInformation(options *Loca
     }
     return requestInfo, nil
 }
-// Get entities from localizations
-// Parameters:
-//  - options : Options for the request
+// Get get entities from localizations
 func (m *LocalizationsRequestBuilder) Get(options *LocalizationsRequestBuilderGetOptions)(*LocalizationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *LocalizationsRequestBuilder) Get(options *LocalizationsRequestBuilderGe
     }
     return res.(*LocalizationsResponse), nil
 }
-// Add new entity to localizations
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to localizations
 func (m *LocalizationsRequestBuilder) Post(options *LocalizationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationalBrandingLocalization, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

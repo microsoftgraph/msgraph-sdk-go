@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ValidatePropertiesRequestBody 
 type ValidatePropertiesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type ValidatePropertiesRequestBody struct {
     // 
     onBehalfOfUserId *string;
 }
-// Instantiates a new validatePropertiesRequestBody and sets the default values.
+// NewValidatePropertiesRequestBody instantiates a new validatePropertiesRequestBody and sets the default values.
 func NewValidatePropertiesRequestBody()(*ValidatePropertiesRequestBody) {
     m := &ValidatePropertiesRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidatePropertiesRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *ValidatePropertiesRequestBody) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// Gets the displayName property value. 
+// GetDisplayName gets the displayName property value. 
 func (m *ValidatePropertiesRequestBody) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *ValidatePropertiesRequestBody) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the mailNickname property value. 
+// GetMailNickname gets the mailNickname property value. 
 func (m *ValidatePropertiesRequestBody) GetMailNickname()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *ValidatePropertiesRequestBody) GetMailNickname()(*string) {
         return m.mailNickname
     }
 }
-// Gets the onBehalfOfUserId property value. 
+// GetOnBehalfOfUserId gets the onBehalfOfUserId property value. 
 func (m *ValidatePropertiesRequestBody) GetOnBehalfOfUserId()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *ValidatePropertiesRequestBody) GetOnBehalfOfUserId()(*string) {
         return m.onBehalfOfUserId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *ValidatePropertiesRequestBody) GetFieldDeserializers()(map[string]func(
 func (m *ValidatePropertiesRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ValidatePropertiesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
@@ -122,27 +120,19 @@ func (m *ValidatePropertiesRequestBody) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidatePropertiesRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the displayName property value. 
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. 
 func (m *ValidatePropertiesRequestBody) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the mailNickname property value. 
-// Parameters:
-//  - value : Value to set for the mailNickname property.
+// SetMailNickname sets the mailNickname property value. 
 func (m *ValidatePropertiesRequestBody) SetMailNickname(value *string)() {
     m.mailNickname = value
 }
-// Sets the onBehalfOfUserId property value. 
-// Parameters:
-//  - value : Value to set for the onBehalfOfUserId property.
+// SetOnBehalfOfUserId sets the onBehalfOfUserId property value. 
 func (m *ValidatePropertiesRequestBody) SetOnBehalfOfUserId(value *string)() {
     m.onBehalfOfUserId = value
 }

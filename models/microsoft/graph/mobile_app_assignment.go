@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MobileAppAssignment 
 type MobileAppAssignment struct {
     Entity
     // The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
@@ -14,14 +14,14 @@ type MobileAppAssignment struct {
     // The target group assignment defined by the admin.
     target *DeviceAndAppManagementAssignmentTarget;
 }
-// Instantiates a new mobileAppAssignment and sets the default values.
+// NewMobileAppAssignment instantiates a new mobileAppAssignment and sets the default values.
 func NewMobileAppAssignment()(*MobileAppAssignment) {
     m := &MobileAppAssignment{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the intent property value. The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+// GetIntent gets the intent property value. The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
 func (m *MobileAppAssignment) GetIntent()(*InstallIntent) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *MobileAppAssignment) GetIntent()(*InstallIntent) {
         return m.intent
     }
 }
-// Gets the settings property value. The settings for target assignment defined by the admin.
+// GetSettings gets the settings property value. The settings for target assignment defined by the admin.
 func (m *MobileAppAssignment) GetSettings()(*MobileAppAssignmentSettings) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *MobileAppAssignment) GetSettings()(*MobileAppAssignmentSettings) {
         return m.settings
     }
 }
-// Gets the target property value. The target group assignment defined by the admin.
+// GetTarget gets the target property value. The target group assignment defined by the admin.
 func (m *MobileAppAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *MobileAppAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarge
         return m.target
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["intent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,9 +84,7 @@ func (m *MobileAppAssignment) GetFieldDeserializers()(map[string]func(interface{
 func (m *MobileAppAssignment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MobileAppAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -113,21 +111,15 @@ func (m *MobileAppAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the intent property value. The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
-// Parameters:
-//  - value : Value to set for the intent property.
+// SetIntent sets the intent property value. The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
 func (m *MobileAppAssignment) SetIntent(value *InstallIntent)() {
     m.intent = value
 }
-// Sets the settings property value. The settings for target assignment defined by the admin.
-// Parameters:
-//  - value : Value to set for the settings property.
+// SetSettings sets the settings property value. The settings for target assignment defined by the admin.
 func (m *MobileAppAssignment) SetSettings(value *MobileAppAssignmentSettings)() {
     m.settings = value
 }
-// Sets the target property value. The target group assignment defined by the admin.
-// Parameters:
-//  - value : Value to set for the target property.
+// SetTarget sets the target property value. The target group assignment defined by the admin.
 func (m *MobileAppAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
     m.target = value
 }

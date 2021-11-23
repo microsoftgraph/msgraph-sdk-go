@@ -7,7 +7,7 @@ import (
     icd69e766f5b9d3fc765051ec86abfb691915f928ca1e977db7a1d943ea25ee20 "github.com/microsoftgraph/msgraph-sdk-go/me/activities/item/historyitems/item/activity"
 )
 
-// Builds and executes requests for operations under \me\activities\{userActivity-id}\historyItems\{activityHistoryItem-id}
+// ActivityHistoryItemRequestBuilder builds and executes requests for operations under \me\activities\{userActivity-id}\historyItems\{activityHistoryItem-id}
 type ActivityHistoryItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ActivityHistoryItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ActivityHistoryItemRequestBuilderDeleteOptions options for Delete
 type ActivityHistoryItemRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type ActivityHistoryItemRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ActivityHistoryItemRequestBuilderGetOptions options for Get
 type ActivityHistoryItemRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type ActivityHistoryItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// ActivityHistoryItemRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 type ActivityHistoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ActivityHistoryItemRequestBuilderPatchOptions options for Patch
 type ActivityHistoryItemRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ActivityHistoryItem;
@@ -57,10 +57,7 @@ type ActivityHistoryItemRequestBuilderPatchOptions struct {
 func (m *ActivityHistoryItemRequestBuilder) Activity()(*icd69e766f5b9d3fc765051ec86abfb691915f928ca1e977db7a1d943ea25ee20.ActivityRequestBuilder) {
     return icd69e766f5b9d3fc765051ec86abfb691915f928ca1e977db7a1d943ea25ee20.NewActivityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ActivityHistoryItemRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivityHistoryItemRequestBuilderInternal instantiates a new ActivityHistoryItemRequestBuilder and sets the default values.
 func NewActivityHistoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivityHistoryItemRequestBuilder) {
     m := &ActivityHistoryItemRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewActivityHistoryItemRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ActivityHistoryItemRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivityHistoryItemRequestBuilder instantiates a new ActivityHistoryItemRequestBuilder and sets the default values.
 func NewActivityHistoryItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivityHistoryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivityHistoryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *ActivityHistoryItemRequestBuilder) CreateDeleteRequestInformation(options *ActivityHistoryItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *ActivityHistoryItemRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *ActivityHistoryItemRequestBuilder) CreateGetRequestInformation(options *ActivityHistoryItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ActivityHistoryItemRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *ActivityHistoryItemRequestBuilder) CreatePatchRequestInformation(options *ActivityHistoryItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *ActivityHistoryItemRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-// Parameters:
-//  - options : Options for the request
+// Delete optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *ActivityHistoryItemRequestBuilder) Delete(options *ActivityHistoryItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *ActivityHistoryItemRequestBuilder) Delete(options *ActivityHistoryItemR
     }
     return nil
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-// Parameters:
-//  - options : Options for the request
+// Get optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *ActivityHistoryItemRequestBuilder) Get(options *ActivityHistoryItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ActivityHistoryItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *ActivityHistoryItemRequestBuilder) Get(options *ActivityHistoryItemRequ
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ActivityHistoryItem), nil
 }
-// Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-// Parameters:
-//  - options : Options for the request
+// Patch optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 func (m *ActivityHistoryItemRequestBuilder) Patch(options *ActivityHistoryItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

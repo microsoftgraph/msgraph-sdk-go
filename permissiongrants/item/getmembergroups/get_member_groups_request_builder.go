@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \permissionGrants\{resourceSpecificPermissionGrant-id}\microsoft.graph.getMemberGroups
+// GetMemberGroupsRequestBuilder builds and executes requests for operations under \permissionGrants\{resourceSpecificPermissionGrant-id}\microsoft.graph.getMemberGroups
 type GetMemberGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetMemberGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetMemberGroupsRequestBuilderPostOptions options for Post
 type GetMemberGroupsRequestBuilderPostOptions struct {
     // 
     Body *GetMemberGroupsRequestBody;
@@ -24,10 +24,7 @@ type GetMemberGroupsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetMemberGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetMemberGroupsRequestBuilderInternal instantiates a new GetMemberGroupsRequestBuilder and sets the default values.
 func NewGetMemberGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetMemberGroupsRequestBuilder) {
     m := &GetMemberGroupsRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetMemberGroupsRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetMemberGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetMemberGroupsRequestBuilder instantiates a new GetMemberGroupsRequestBuilder and sets the default values.
 func NewGetMemberGroupsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetMemberGroupsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getMemberGroups
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getMemberGroups
 func (m *GetMemberGroupsRequestBuilder) CreatePostRequestInformation(options *GetMemberGroupsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetMemberGroupsRequestBuilder) CreatePostRequestInformation(options *Ge
     }
     return requestInfo, nil
 }
-// Invoke action getMemberGroups
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getMemberGroups
 func (m *GetMemberGroupsRequestBuilder) Post(options *GetMemberGroupsRequestBuilderPostOptions)([]string, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

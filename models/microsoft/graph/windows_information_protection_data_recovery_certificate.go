@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// WindowsInformationProtectionDataRecoveryCertificate 
 type WindowsInformationProtectionDataRecoveryCertificate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,14 +18,14 @@ type WindowsInformationProtectionDataRecoveryCertificate struct {
     // Data recovery Certificate subject name
     subjectName *string;
 }
-// Instantiates a new windowsInformationProtectionDataRecoveryCertificate and sets the default values.
+// NewWindowsInformationProtectionDataRecoveryCertificate instantiates a new windowsInformationProtectionDataRecoveryCertificate and sets the default values.
 func NewWindowsInformationProtectionDataRecoveryCertificate()(*WindowsInformationProtectionDataRecoveryCertificate) {
     m := &WindowsInformationProtectionDataRecoveryCertificate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetAdditionalData(
         return m.additionalData
     }
 }
-// Gets the certificate property value. Data recovery Certificate
+// GetCertificate gets the certificate property value. Data recovery Certificate
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetCertificate()([]byte) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetCertificate()([
         return m.certificate
     }
 }
-// Gets the description property value. Data recovery Certificate description
+// GetDescription gets the description property value. Data recovery Certificate description
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetDescription()(*
         return m.description
     }
 }
-// Gets the expirationDateTime property value. Data recovery Certificate expiration datetime
+// GetExpirationDateTime gets the expirationDateTime property value. Data recovery Certificate expiration datetime
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetExpirationDateT
         return m.expirationDateTime
     }
 }
-// Gets the subjectName property value. Data recovery Certificate subject name
+// GetSubjectName gets the subjectName property value. Data recovery Certificate subject name
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetSubjectName()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetSubjectName()(*
         return m.subjectName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionDataRecoveryCertificate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["certificate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,9 +113,7 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) GetFieldDeserializ
 func (m *WindowsInformationProtectionDataRecoveryCertificate) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WindowsInformationProtectionDataRecoveryCertificate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteByteArrayValue("certificate", m.GetCertificate())
@@ -149,33 +147,23 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) Serialize(writer i
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the certificate property value. Data recovery Certificate
-// Parameters:
-//  - value : Value to set for the certificate property.
+// SetCertificate sets the certificate property value. Data recovery Certificate
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetCertificate(value []byte)() {
     m.certificate = value
 }
-// Sets the description property value. Data recovery Certificate description
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Data recovery Certificate description
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the expirationDateTime property value. Data recovery Certificate expiration datetime
-// Parameters:
-//  - value : Value to set for the expirationDateTime property.
+// SetExpirationDateTime sets the expirationDateTime property value. Data recovery Certificate expiration datetime
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
 }
-// Sets the subjectName property value. Data recovery Certificate subject name
-// Parameters:
-//  - value : Value to set for the subjectName property.
+// SetSubjectName sets the subjectName property value. Data recovery Certificate subject name
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetSubjectName(value *string)() {
     m.subjectName = value
 }

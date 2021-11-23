@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identity\userFlowAttributes
+// UserFlowAttributesRequestBuilder builds and executes requests for operations under \identity\userFlowAttributes
 type UserFlowAttributesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type UserFlowAttributesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserFlowAttributesRequestBuilderGetOptions options for Get
 type UserFlowAttributesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UserFlowAttributesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents entry point for identity userflow attributes.
+// UserFlowAttributesRequestBuilderGetQueryParameters represents entry point for identity userflow attributes.
 type UserFlowAttributesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type UserFlowAttributesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// UserFlowAttributesRequestBuilderPostOptions options for Post
 type UserFlowAttributesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttribute;
@@ -56,10 +56,7 @@ type UserFlowAttributesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UserFlowAttributesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserFlowAttributesRequestBuilderInternal instantiates a new UserFlowAttributesRequestBuilder and sets the default values.
 func NewUserFlowAttributesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserFlowAttributesRequestBuilder) {
     m := &UserFlowAttributesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewUserFlowAttributesRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserFlowAttributesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserFlowAttributesRequestBuilder instantiates a new UserFlowAttributesRequestBuilder and sets the default values.
 func NewUserFlowAttributesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserFlowAttributesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowAttributesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents entry point for identity userflow attributes.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents entry point for identity userflow attributes.
 func (m *UserFlowAttributesRequestBuilder) CreateGetRequestInformation(options *UserFlowAttributesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *UserFlowAttributesRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Represents entry point for identity userflow attributes.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents entry point for identity userflow attributes.
 func (m *UserFlowAttributesRequestBuilder) CreatePostRequestInformation(options *UserFlowAttributesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserFlowAttributesRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Represents entry point for identity userflow attributes.
-// Parameters:
-//  - options : Options for the request
+// Get represents entry point for identity userflow attributes.
 func (m *UserFlowAttributesRequestBuilder) Get(options *UserFlowAttributesRequestBuilderGetOptions)(*UserFlowAttributesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *UserFlowAttributesRequestBuilder) Get(options *UserFlowAttributesReques
     }
     return res.(*UserFlowAttributesResponse), nil
 }
-// Represents entry point for identity userflow attributes.
-// Parameters:
-//  - options : Options for the request
+// Post represents entry point for identity userflow attributes.
 func (m *UserFlowAttributesRequestBuilder) Post(options *UserFlowAttributesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttribute, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

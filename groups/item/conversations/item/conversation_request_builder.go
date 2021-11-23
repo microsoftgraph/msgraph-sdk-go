@@ -8,7 +8,7 @@ import (
     i12f1eafad8a5dda3d224b2294cb74ffcd273fc24fa377734d6c9c5e07eb0a57e "github.com/microsoftgraph/msgraph-sdk-go/groups/item/conversations/item/threads/item"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}
+// ConversationRequestBuilder builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}
 type ConversationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ConversationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ConversationRequestBuilderDeleteOptions options for Delete
 type ConversationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ConversationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ConversationRequestBuilderGetOptions options for Get
 type ConversationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,12 +37,12 @@ type ConversationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The group's conversations.
+// ConversationRequestBuilderGetQueryParameters the group's conversations.
 type ConversationRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ConversationRequestBuilderPatchOptions options for Patch
 type ConversationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Conversation;
@@ -53,10 +53,7 @@ type ConversationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConversationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConversationRequestBuilderInternal instantiates a new ConversationRequestBuilder and sets the default values.
 func NewConversationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConversationRequestBuilder) {
     m := &ConversationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewConversationRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConversationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConversationRequestBuilder instantiates a new ConversationRequestBuilder and sets the default values.
 func NewConversationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConversationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConversationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The group's conversations.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the group's conversations.
 func (m *ConversationRequestBuilder) CreateDeleteRequestInformation(options *ConversationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ConversationRequestBuilder) CreateDeleteRequestInformation(options *Con
     }
     return requestInfo, nil
 }
-// The group's conversations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the group's conversations.
 func (m *ConversationRequestBuilder) CreateGetRequestInformation(options *ConversationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ConversationRequestBuilder) CreateGetRequestInformation(options *Conver
     }
     return requestInfo, nil
 }
-// The group's conversations.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the group's conversations.
 func (m *ConversationRequestBuilder) CreatePatchRequestInformation(options *ConversationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ConversationRequestBuilder) CreatePatchRequestInformation(options *Conv
     }
     return requestInfo, nil
 }
-// The group's conversations.
-// Parameters:
-//  - options : Options for the request
+// Delete the group's conversations.
 func (m *ConversationRequestBuilder) Delete(options *ConversationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ConversationRequestBuilder) Delete(options *ConversationRequestBuilderD
     }
     return nil
 }
-// The group's conversations.
-// Parameters:
-//  - options : Options for the request
+// Get the group's conversations.
 func (m *ConversationRequestBuilder) Get(options *ConversationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Conversation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ConversationRequestBuilder) Get(options *ConversationRequestBuilderGetO
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Conversation), nil
 }
-// The group's conversations.
-// Parameters:
-//  - options : Options for the request
+// Patch the group's conversations.
 func (m *ConversationRequestBuilder) Patch(options *ConversationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -184,9 +166,7 @@ func (m *ConversationRequestBuilder) Patch(options *ConversationRequestBuilderPa
 func (m *ConversationRequestBuilder) Threads()(*if8bad3758622634ed8bd4214cdf616d0b155879c9ce9b4ea892739cca2000e7a.ThreadsRequestBuilder) {
     return if8bad3758622634ed8bd4214cdf616d0b155879c9ce9b4ea892739cca2000e7a.NewThreadsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.conversations.item.threads.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ThreadsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.conversations.item.threads.item collection
 func (m *ConversationRequestBuilder) ThreadsById(id string)(*i12f1eafad8a5dda3d224b2294cb74ffcd273fc24fa377734d6c9c5e07eb0a57e.ConversationThreadRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

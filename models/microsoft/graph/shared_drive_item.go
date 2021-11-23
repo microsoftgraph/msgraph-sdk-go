@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SharedDriveItem 
 type SharedDriveItem struct {
     BaseItem
     // Used to access the underlying driveItem
@@ -24,14 +24,14 @@ type SharedDriveItem struct {
     // Used to access the underlying site
     site *Site;
 }
-// Instantiates a new sharedDriveItem and sets the default values.
+// NewSharedDriveItem instantiates a new sharedDriveItem and sets the default values.
 func NewSharedDriveItem()(*SharedDriveItem) {
     m := &SharedDriveItem{
         BaseItem: *NewBaseItem(),
     }
     return m
 }
-// Gets the driveItem property value. Used to access the underlying driveItem
+// GetDriveItem gets the driveItem property value. Used to access the underlying driveItem
 func (m *SharedDriveItem) GetDriveItem()(*DriveItem) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *SharedDriveItem) GetDriveItem()(*DriveItem) {
         return m.driveItem
     }
 }
-// Gets the items property value. All driveItems contained in the sharing root. This collection cannot be enumerated.
+// GetItems gets the items property value. All driveItems contained in the sharing root. This collection cannot be enumerated.
 func (m *SharedDriveItem) GetItems()([]DriveItem) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *SharedDriveItem) GetItems()([]DriveItem) {
         return m.items
     }
 }
-// Gets the list property value. Used to access the underlying list
+// GetList gets the list property value. Used to access the underlying list
 func (m *SharedDriveItem) GetList()(*List) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *SharedDriveItem) GetList()(*List) {
         return m.list
     }
 }
-// Gets the listItem property value. Used to access the underlying listItem
+// GetListItem gets the listItem property value. Used to access the underlying listItem
 func (m *SharedDriveItem) GetListItem()(*ListItem) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *SharedDriveItem) GetListItem()(*ListItem) {
         return m.listItem
     }
 }
-// Gets the owner property value. Information about the owner of the shared item being referenced.
+// GetOwner gets the owner property value. Information about the owner of the shared item being referenced.
 func (m *SharedDriveItem) GetOwner()(*IdentitySet) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *SharedDriveItem) GetOwner()(*IdentitySet) {
         return m.owner
     }
 }
-// Gets the permission property value. Used to access the permission representing the underlying sharing link
+// GetPermission gets the permission property value. Used to access the permission representing the underlying sharing link
 func (m *SharedDriveItem) GetPermission()(*Permission) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *SharedDriveItem) GetPermission()(*Permission) {
         return m.permission
     }
 }
-// Gets the root property value. Used to access the underlying driveItem. Deprecated -- use driveItem instead.
+// GetRoot gets the root property value. Used to access the underlying driveItem. Deprecated -- use driveItem instead.
 func (m *SharedDriveItem) GetRoot()(*DriveItem) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *SharedDriveItem) GetRoot()(*DriveItem) {
         return m.root
     }
 }
-// Gets the site property value. Used to access the underlying site
+// GetSite gets the site property value. Used to access the underlying site
 func (m *SharedDriveItem) GetSite()(*Site) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *SharedDriveItem) GetSite()(*Site) {
         return m.site
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SharedDriveItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
     res["driveItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -187,9 +187,7 @@ func (m *SharedDriveItem) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *SharedDriveItem) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SharedDriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.BaseItem.Serialize(writer)
     if err != nil {
@@ -250,51 +248,35 @@ func (m *SharedDriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the driveItem property value. Used to access the underlying driveItem
-// Parameters:
-//  - value : Value to set for the driveItem property.
+// SetDriveItem sets the driveItem property value. Used to access the underlying driveItem
 func (m *SharedDriveItem) SetDriveItem(value *DriveItem)() {
     m.driveItem = value
 }
-// Sets the items property value. All driveItems contained in the sharing root. This collection cannot be enumerated.
-// Parameters:
-//  - value : Value to set for the items property.
+// SetItems sets the items property value. All driveItems contained in the sharing root. This collection cannot be enumerated.
 func (m *SharedDriveItem) SetItems(value []DriveItem)() {
     m.items = value
 }
-// Sets the list property value. Used to access the underlying list
-// Parameters:
-//  - value : Value to set for the list property.
+// SetList sets the list property value. Used to access the underlying list
 func (m *SharedDriveItem) SetList(value *List)() {
     m.list = value
 }
-// Sets the listItem property value. Used to access the underlying listItem
-// Parameters:
-//  - value : Value to set for the listItem property.
+// SetListItem sets the listItem property value. Used to access the underlying listItem
 func (m *SharedDriveItem) SetListItem(value *ListItem)() {
     m.listItem = value
 }
-// Sets the owner property value. Information about the owner of the shared item being referenced.
-// Parameters:
-//  - value : Value to set for the owner property.
+// SetOwner sets the owner property value. Information about the owner of the shared item being referenced.
 func (m *SharedDriveItem) SetOwner(value *IdentitySet)() {
     m.owner = value
 }
-// Sets the permission property value. Used to access the permission representing the underlying sharing link
-// Parameters:
-//  - value : Value to set for the permission property.
+// SetPermission sets the permission property value. Used to access the permission representing the underlying sharing link
 func (m *SharedDriveItem) SetPermission(value *Permission)() {
     m.permission = value
 }
-// Sets the root property value. Used to access the underlying driveItem. Deprecated -- use driveItem instead.
-// Parameters:
-//  - value : Value to set for the root property.
+// SetRoot sets the root property value. Used to access the underlying driveItem. Deprecated -- use driveItem instead.
 func (m *SharedDriveItem) SetRoot(value *DriveItem)() {
     m.root = value
 }
-// Sets the site property value. Used to access the underlying site
-// Parameters:
-//  - value : Value to set for the site property.
+// SetSite sets the site property value. Used to access the underlying site
 func (m *SharedDriveItem) SetSite(value *Site)() {
     m.site = value
 }

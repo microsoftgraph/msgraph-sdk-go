@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\planner\plans\{plannerPlan-id}\tasks\{plannerTask-id}\details
+// DetailsRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\plans\{plannerPlan-id}\tasks\{plannerTask-id}\details
 type DetailsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DetailsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DetailsRequestBuilderDeleteOptions options for Delete
 type DetailsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DetailsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DetailsRequestBuilderGetOptions options for Get
 type DetailsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Additional details about the task.
+// DetailsRequestBuilderGetQueryParameters read-only. Nullable. Additional details about the task.
 type DetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DetailsRequestBuilderPatchOptions options for Patch
 type DetailsRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTaskDetails;
@@ -53,10 +53,7 @@ type DetailsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDetailsRequestBuilderInternal instantiates a new DetailsRequestBuilder and sets the default values.
 func NewDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DetailsRequestBuilder) {
     m := &DetailsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDetailsRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DetailsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDetailsRequestBuilder instantiates a new DetailsRequestBuilder and sets the default values.
 func NewDetailsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Additional details about the task.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable. Additional details about the task.
 func (m *DetailsRequestBuilder) CreateDeleteRequestInformation(options *DetailsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DetailsRequestBuilder) CreateDeleteRequestInformation(options *DetailsR
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Additional details about the task.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Additional details about the task.
 func (m *DetailsRequestBuilder) CreateGetRequestInformation(options *DetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DetailsRequestBuilder) CreateGetRequestInformation(options *DetailsRequ
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Additional details about the task.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable. Additional details about the task.
 func (m *DetailsRequestBuilder) CreatePatchRequestInformation(options *DetailsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DetailsRequestBuilder) CreatePatchRequestInformation(options *DetailsRe
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Additional details about the task.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable. Additional details about the task.
 func (m *DetailsRequestBuilder) Delete(options *DetailsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DetailsRequestBuilder) Delete(options *DetailsRequestBuilderDeleteOptio
     }
     return nil
 }
-// Read-only. Nullable. Additional details about the task.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Additional details about the task.
 func (m *DetailsRequestBuilder) Get(options *DetailsRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTaskDetails, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DetailsRequestBuilder) Get(options *DetailsRequestBuilderGetOptions)(*i
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTaskDetails), nil
 }
-// Read-only. Nullable. Additional details about the task.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable. Additional details about the task.
 func (m *DetailsRequestBuilder) Patch(options *DetailsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

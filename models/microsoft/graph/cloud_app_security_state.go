@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// CloudAppSecurityState 
 type CloudAppSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type CloudAppSecurityState struct {
     // Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
     riskScore *string;
 }
-// Instantiates a new cloudAppSecurityState and sets the default values.
+// NewCloudAppSecurityState instantiates a new cloudAppSecurityState and sets the default values.
 func NewCloudAppSecurityState()(*CloudAppSecurityState) {
     m := &CloudAppSecurityState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudAppSecurityState) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *CloudAppSecurityState) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
+// GetDestinationServiceIp gets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
 func (m *CloudAppSecurityState) GetDestinationServiceIp()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *CloudAppSecurityState) GetDestinationServiceIp()(*string) {
         return m.destinationServiceIp
     }
 }
-// Gets the destinationServiceName property value. Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
+// GetDestinationServiceName gets the destinationServiceName property value. Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
 func (m *CloudAppSecurityState) GetDestinationServiceName()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *CloudAppSecurityState) GetDestinationServiceName()(*string) {
         return m.destinationServiceName
     }
 }
-// Gets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
+// GetRiskScore gets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
 func (m *CloudAppSecurityState) GetRiskScore()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *CloudAppSecurityState) GetRiskScore()(*string) {
         return m.riskScore
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["destinationServiceIp"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(interfac
 func (m *CloudAppSecurityState) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *CloudAppSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("destinationServiceIp", m.GetDestinationServiceIp())
@@ -122,27 +120,19 @@ func (m *CloudAppSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudAppSecurityState) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
-// Parameters:
-//  - value : Value to set for the destinationServiceIp property.
+// SetDestinationServiceIp sets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
 func (m *CloudAppSecurityState) SetDestinationServiceIp(value *string)() {
     m.destinationServiceIp = value
 }
-// Sets the destinationServiceName property value. Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
-// Parameters:
-//  - value : Value to set for the destinationServiceName property.
+// SetDestinationServiceName sets the destinationServiceName property value. Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
 func (m *CloudAppSecurityState) SetDestinationServiceName(value *string)() {
     m.destinationServiceName = value
 }
-// Sets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
-// Parameters:
-//  - value : Value to set for the riskScore property.
+// SetRiskScore sets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
 func (m *CloudAppSecurityState) SetRiskScore(value *string)() {
     m.riskScore = value
 }

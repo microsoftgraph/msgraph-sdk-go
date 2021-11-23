@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Trending 
 type Trending struct {
     Entity
     // 
@@ -19,14 +19,14 @@ type Trending struct {
     // Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
     weight *float64;
 }
-// Instantiates a new trending and sets the default values.
+// NewTrending instantiates a new trending and sets the default values.
 func NewTrending()(*Trending) {
     m := &Trending{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the lastModifiedDateTime property value. 
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. 
 func (m *Trending) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *Trending) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.lastModifiedDateTime
     }
 }
-// Gets the resource property value. Used for navigating to the trending document.
+// GetResource gets the resource property value. Used for navigating to the trending document.
 func (m *Trending) GetResource()(*Entity) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *Trending) GetResource()(*Entity) {
         return m.resource
     }
 }
-// Gets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
+// GetResourceReference gets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
 func (m *Trending) GetResourceReference()(*ResourceReference) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *Trending) GetResourceReference()(*ResourceReference) {
         return m.resourceReference
     }
 }
-// Gets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
+// GetResourceVisualization gets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
 func (m *Trending) GetResourceVisualization()(*ResourceVisualization) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *Trending) GetResourceVisualization()(*ResourceVisualization) {
         return m.resourceVisualization
     }
 }
-// Gets the weight property value. Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
+// GetWeight gets the weight property value. Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
 func (m *Trending) GetWeight()(*float64) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *Trending) GetWeight()(*float64) {
         return m.weight
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Trending) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastModifiedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -124,9 +124,7 @@ func (m *Trending) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *Trending) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Trending) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -164,33 +162,23 @@ func (m *Trending) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// Sets the lastModifiedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *Trending) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the resource property value. Used for navigating to the trending document.
-// Parameters:
-//  - value : Value to set for the resource property.
+// SetResource sets the resource property value. Used for navigating to the trending document.
 func (m *Trending) SetResource(value *Entity)() {
     m.resource = value
 }
-// Sets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
-// Parameters:
-//  - value : Value to set for the resourceReference property.
+// SetResourceReference sets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
 func (m *Trending) SetResourceReference(value *ResourceReference)() {
     m.resourceReference = value
 }
-// Sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
-// Parameters:
-//  - value : Value to set for the resourceVisualization property.
+// SetResourceVisualization sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
 func (m *Trending) SetResourceVisualization(value *ResourceVisualization)() {
     m.resourceVisualization = value
 }
-// Sets the weight property value. Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
-// Parameters:
-//  - value : Value to set for the weight property.
+// SetWeight sets the weight property value. Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
 func (m *Trending) SetWeight(value *float64)() {
     m.weight = value
 }

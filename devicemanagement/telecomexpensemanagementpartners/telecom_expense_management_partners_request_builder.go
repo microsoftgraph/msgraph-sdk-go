@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\telecomExpenseManagementPartners
+// TelecomExpenseManagementPartnersRequestBuilder builds and executes requests for operations under \deviceManagement\telecomExpenseManagementPartners
 type TelecomExpenseManagementPartnersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TelecomExpenseManagementPartnersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TelecomExpenseManagementPartnersRequestBuilderGetOptions options for Get
 type TelecomExpenseManagementPartnersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TelecomExpenseManagementPartnersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The telecom expense management partners.
+// TelecomExpenseManagementPartnersRequestBuilderGetQueryParameters the telecom expense management partners.
 type TelecomExpenseManagementPartnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TelecomExpenseManagementPartnersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TelecomExpenseManagementPartnersRequestBuilderPostOptions options for Post
 type TelecomExpenseManagementPartnersRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TelecomExpenseManagementPartner;
@@ -56,10 +56,7 @@ type TelecomExpenseManagementPartnersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TelecomExpenseManagementPartnersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTelecomExpenseManagementPartnersRequestBuilderInternal instantiates a new TelecomExpenseManagementPartnersRequestBuilder and sets the default values.
 func NewTelecomExpenseManagementPartnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TelecomExpenseManagementPartnersRequestBuilder) {
     m := &TelecomExpenseManagementPartnersRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTelecomExpenseManagementPartnersRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TelecomExpenseManagementPartnersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTelecomExpenseManagementPartnersRequestBuilder instantiates a new TelecomExpenseManagementPartnersRequestBuilder and sets the default values.
 func NewTelecomExpenseManagementPartnersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TelecomExpenseManagementPartnersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTelecomExpenseManagementPartnersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The telecom expense management partners.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the telecom expense management partners.
 func (m *TelecomExpenseManagementPartnersRequestBuilder) CreateGetRequestInformation(options *TelecomExpenseManagementPartnersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TelecomExpenseManagementPartnersRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// The telecom expense management partners.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the telecom expense management partners.
 func (m *TelecomExpenseManagementPartnersRequestBuilder) CreatePostRequestInformation(options *TelecomExpenseManagementPartnersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TelecomExpenseManagementPartnersRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// The telecom expense management partners.
-// Parameters:
-//  - options : Options for the request
+// Get the telecom expense management partners.
 func (m *TelecomExpenseManagementPartnersRequestBuilder) Get(options *TelecomExpenseManagementPartnersRequestBuilderGetOptions)(*TelecomExpenseManagementPartnersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TelecomExpenseManagementPartnersRequestBuilder) Get(options *TelecomExp
     }
     return res.(*TelecomExpenseManagementPartnersResponse), nil
 }
-// The telecom expense management partners.
-// Parameters:
-//  - options : Options for the request
+// Post the telecom expense management partners.
 func (m *TelecomExpenseManagementPartnersRequestBuilder) Post(options *TelecomExpenseManagementPartnersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TelecomExpenseManagementPartner, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i71095e1f0098ac4b3abd1b0c194fbaf1aa7f6d49d939ed32f129d5f348a336d2 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/acceptedsenders/ref"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\acceptedSenders
+// AcceptedSendersRequestBuilder builds and executes requests for operations under \groups\{group-id}\acceptedSenders
 type AcceptedSendersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AcceptedSendersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AcceptedSendersRequestBuilderGetOptions options for Get
 type AcceptedSendersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AcceptedSendersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
+// AcceptedSendersRequestBuilderGetQueryParameters the list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
 type AcceptedSendersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -41,10 +41,7 @@ type AcceptedSendersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new AcceptedSendersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAcceptedSendersRequestBuilderInternal instantiates a new AcceptedSendersRequestBuilder and sets the default values.
 func NewAcceptedSendersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AcceptedSendersRequestBuilder) {
     m := &AcceptedSendersRequestBuilder{
     }
@@ -57,18 +54,13 @@ func NewAcceptedSendersRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AcceptedSendersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAcceptedSendersRequestBuilder instantiates a new AcceptedSendersRequestBuilder and sets the default values.
 func NewAcceptedSendersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AcceptedSendersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAcceptedSendersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
 func (m *AcceptedSendersRequestBuilder) CreateGetRequestInformation(options *AcceptedSendersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -88,9 +80,7 @@ func (m *AcceptedSendersRequestBuilder) CreateGetRequestInformation(options *Acc
     }
     return requestInfo, nil
 }
-// The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-// Parameters:
-//  - options : Options for the request
+// Get the list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
 func (m *AcceptedSendersRequestBuilder) Get(options *AcceptedSendersRequestBuilderGetOptions)(*AcceptedSendersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

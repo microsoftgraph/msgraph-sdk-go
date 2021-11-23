@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Security 
 type Security struct {
     Entity
     // Read-only. Nullable.
@@ -14,14 +14,14 @@ type Security struct {
     // 
     secureScores []SecureScore;
 }
-// Instantiates a new security and sets the default values.
+// NewSecurity instantiates a new security and sets the default values.
 func NewSecurity()(*Security) {
     m := &Security{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the alerts property value. Read-only. Nullable.
+// GetAlerts gets the alerts property value. Read-only. Nullable.
 func (m *Security) GetAlerts()([]Alert) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *Security) GetAlerts()([]Alert) {
         return m.alerts
     }
 }
-// Gets the secureScoreControlProfiles property value. 
+// GetSecureScoreControlProfiles gets the secureScoreControlProfiles property value. 
 func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfile) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfile) 
         return m.secureScoreControlProfiles
     }
 }
-// Gets the secureScores property value. 
+// GetSecureScores gets the secureScores property value. 
 func (m *Security) GetSecureScores()([]SecureScore) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *Security) GetSecureScores()([]SecureScore) {
         return m.secureScores
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alerts"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,9 +95,7 @@ func (m *Security) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *Security) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -138,21 +136,15 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// Sets the alerts property value. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the alerts property.
+// SetAlerts sets the alerts property value. Read-only. Nullable.
 func (m *Security) SetAlerts(value []Alert)() {
     m.alerts = value
 }
-// Sets the secureScoreControlProfiles property value. 
-// Parameters:
-//  - value : Value to set for the secureScoreControlProfiles property.
+// SetSecureScoreControlProfiles sets the secureScoreControlProfiles property value. 
 func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfile)() {
     m.secureScoreControlProfiles = value
 }
-// Sets the secureScores property value. 
-// Parameters:
-//  - value : Value to set for the secureScores property.
+// SetSecureScores sets the secureScores property value. 
 func (m *Security) SetSecureScores(value []SecureScore)() {
     m.secureScores = value
 }

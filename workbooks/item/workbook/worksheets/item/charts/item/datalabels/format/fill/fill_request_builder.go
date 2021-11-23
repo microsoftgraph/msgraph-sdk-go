@@ -8,7 +8,7 @@ import (
     if834df7980ee8a5da4d021dab4efac950f7d8b4aca14d5f2a0315ba514f00dda "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/datalabels/format/fill/clear"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\dataLabels\format\fill
+// FillRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\dataLabels\format\fill
 type FillRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type FillRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// FillRequestBuilderDeleteOptions options for Delete
 type FillRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type FillRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// FillRequestBuilderGetOptions options for Get
 type FillRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type FillRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the fill format of the current chart data label. Read-only.
+// FillRequestBuilderGetQueryParameters represents the fill format of the current chart data label. Read-only.
 type FillRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FillRequestBuilderPatchOptions options for Patch
 type FillRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartFill;
@@ -58,10 +58,7 @@ type FillRequestBuilderPatchOptions struct {
 func (m *FillRequestBuilder) Clear()(*if834df7980ee8a5da4d021dab4efac950f7d8b4aca14d5f2a0315ba514f00dda.ClearRequestBuilder) {
     return if834df7980ee8a5da4d021dab4efac950f7d8b4aca14d5f2a0315ba514f00dda.NewClearRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new FillRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFillRequestBuilderInternal instantiates a new FillRequestBuilder and sets the default values.
 func NewFillRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FillRequestBuilder) {
     m := &FillRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewFillRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FillRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFillRequestBuilder instantiates a new FillRequestBuilder and sets the default values.
 func NewFillRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FillRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFillRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the fill format of the current chart data label. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the fill format of the current chart data label. Read-only.
 func (m *FillRequestBuilder) CreateDeleteRequestInformation(options *FillRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *FillRequestBuilder) CreateDeleteRequestInformation(options *FillRequest
     }
     return requestInfo, nil
 }
-// Represents the fill format of the current chart data label. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the fill format of the current chart data label. Read-only.
 func (m *FillRequestBuilder) CreateGetRequestInformation(options *FillRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *FillRequestBuilder) CreateGetRequestInformation(options *FillRequestBui
     }
     return requestInfo, nil
 }
-// Represents the fill format of the current chart data label. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the fill format of the current chart data label. Read-only.
 func (m *FillRequestBuilder) CreatePatchRequestInformation(options *FillRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *FillRequestBuilder) CreatePatchRequestInformation(options *FillRequestB
     }
     return requestInfo, nil
 }
-// Represents the fill format of the current chart data label. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the fill format of the current chart data label. Read-only.
 func (m *FillRequestBuilder) Delete(options *FillRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *FillRequestBuilder) Delete(options *FillRequestBuilderDeleteOptions)(er
     }
     return nil
 }
-// Represents the fill format of the current chart data label. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents the fill format of the current chart data label. Read-only.
 func (m *FillRequestBuilder) Get(options *FillRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartFill, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *FillRequestBuilder) Get(options *FillRequestBuilderGetOptions)(*i4a838e
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartFill), nil
 }
-// Represents the fill format of the current chart data label. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the fill format of the current chart data label. Read-only.
 func (m *FillRequestBuilder) Patch(options *FillRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

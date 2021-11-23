@@ -6,7 +6,7 @@ import (
     i1875315064be9464dcb0ca7a4bda6f2012f1a19b4da5157fbcf8c82aad3bec7c "github.com/microsoftgraph/msgraph-sdk-go/users/item/createdobjects/ref"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\createdObjects
+// CreatedObjectsRequestBuilder builds and executes requests for operations under \users\{user-id}\createdObjects
 type CreatedObjectsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CreatedObjectsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CreatedObjectsRequestBuilderGetOptions options for Get
 type CreatedObjectsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CreatedObjectsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Directory objects that were created by the user. Read-only. Nullable.
+// CreatedObjectsRequestBuilderGetQueryParameters directory objects that were created by the user. Read-only. Nullable.
 type CreatedObjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type CreatedObjectsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new CreatedObjectsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreatedObjectsRequestBuilderInternal instantiates a new CreatedObjectsRequestBuilder and sets the default values.
 func NewCreatedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreatedObjectsRequestBuilder) {
     m := &CreatedObjectsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewCreatedObjectsRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CreatedObjectsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCreatedObjectsRequestBuilder instantiates a new CreatedObjectsRequestBuilder and sets the default values.
 func NewCreatedObjectsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CreatedObjectsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCreatedObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Directory objects that were created by the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation directory objects that were created by the user. Read-only. Nullable.
 func (m *CreatedObjectsRequestBuilder) CreateGetRequestInformation(options *CreatedObjectsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *CreatedObjectsRequestBuilder) CreateGetRequestInformation(options *Crea
     }
     return requestInfo, nil
 }
-// Directory objects that were created by the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get directory objects that were created by the user. Read-only. Nullable.
 func (m *CreatedObjectsRequestBuilder) Get(options *CreatedObjectsRequestBuilderGetOptions)(*CreatedObjectsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

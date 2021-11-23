@@ -7,7 +7,7 @@ import (
     i0d2df331a29a7c4701d8cb0af7f2c9b101f54f6114fb472e89e630598edc5f1f "github.com/microsoftgraph/msgraph-sdk-go/print/taskdefinitions/item/tasks/item/trigger/ref"
 )
 
-// Builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}\tasks\{printTask-id}\trigger
+// TriggerRequestBuilder builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}\tasks\{printTask-id}\trigger
 type TriggerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TriggerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TriggerRequestBuilderGetOptions options for Get
 type TriggerRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type TriggerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The printTaskTrigger that triggered this task's execution. Read-only.
+// TriggerRequestBuilderGetQueryParameters the printTaskTrigger that triggered this task's execution. Read-only.
 type TriggerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new TriggerRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTriggerRequestBuilderInternal instantiates a new TriggerRequestBuilder and sets the default values.
 func NewTriggerRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TriggerRequestBuilder) {
     m := &TriggerRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewTriggerRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TriggerRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTriggerRequestBuilder instantiates a new TriggerRequestBuilder and sets the default values.
 func NewTriggerRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TriggerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTriggerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The printTaskTrigger that triggered this task's execution. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the printTaskTrigger that triggered this task's execution. Read-only.
 func (m *TriggerRequestBuilder) CreateGetRequestInformation(options *TriggerRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *TriggerRequestBuilder) CreateGetRequestInformation(options *TriggerRequ
     }
     return requestInfo, nil
 }
-// The printTaskTrigger that triggered this task's execution. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the printTaskTrigger that triggered this task's execution. Read-only.
 func (m *TriggerRequestBuilder) Get(options *TriggerRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTaskTrigger, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.answer
+// AnswerRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.answer
 type AnswerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type AnswerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// AnswerRequestBuilderPostOptions options for Post
 type AnswerRequestBuilderPostOptions struct {
     // 
     Body *AnswerRequestBody;
@@ -24,10 +24,7 @@ type AnswerRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AnswerRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAnswerRequestBuilderInternal instantiates a new AnswerRequestBuilder and sets the default values.
 func NewAnswerRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AnswerRequestBuilder) {
     m := &AnswerRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewAnswerRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AnswerRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAnswerRequestBuilder instantiates a new AnswerRequestBuilder and sets the default values.
 func NewAnswerRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AnswerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAnswerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action answer
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action answer
 func (m *AnswerRequestBuilder) CreatePostRequestInformation(options *AnswerRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *AnswerRequestBuilder) CreatePostRequestInformation(options *AnswerReque
     }
     return requestInfo, nil
 }
-// Invoke action answer
-// Parameters:
-//  - options : Options for the request
+// Post invoke action answer
 func (m *AnswerRequestBuilder) Post(options *AnswerRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

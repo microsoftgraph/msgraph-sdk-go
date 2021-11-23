@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \localizations\{organizationalBrandingLocalization-id}
+// OrganizationalBrandingLocalizationRequestBuilder builds and executes requests for operations under \localizations\{organizationalBrandingLocalization-id}
 type OrganizationalBrandingLocalizationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OrganizationalBrandingLocalizationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OrganizationalBrandingLocalizationRequestBuilderDeleteOptions options for Delete
 type OrganizationalBrandingLocalizationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type OrganizationalBrandingLocalizationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OrganizationalBrandingLocalizationRequestBuilderGetOptions options for Get
 type OrganizationalBrandingLocalizationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type OrganizationalBrandingLocalizationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from localizations by key
+// OrganizationalBrandingLocalizationRequestBuilderGetQueryParameters get entity from localizations by key
 type OrganizationalBrandingLocalizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OrganizationalBrandingLocalizationRequestBuilderPatchOptions options for Patch
 type OrganizationalBrandingLocalizationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationalBrandingLocalization;
@@ -53,10 +53,7 @@ type OrganizationalBrandingLocalizationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OrganizationalBrandingLocalizationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOrganizationalBrandingLocalizationRequestBuilderInternal instantiates a new OrganizationalBrandingLocalizationRequestBuilder and sets the default values.
 func NewOrganizationalBrandingLocalizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OrganizationalBrandingLocalizationRequestBuilder) {
     m := &OrganizationalBrandingLocalizationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewOrganizationalBrandingLocalizationRequestBuilderInternal(pathParameters 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OrganizationalBrandingLocalizationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOrganizationalBrandingLocalizationRequestBuilder instantiates a new OrganizationalBrandingLocalizationRequestBuilder and sets the default values.
 func NewOrganizationalBrandingLocalizationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OrganizationalBrandingLocalizationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOrganizationalBrandingLocalizationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from localizations
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from localizations
 func (m *OrganizationalBrandingLocalizationRequestBuilder) CreateDeleteRequestInformation(options *OrganizationalBrandingLocalizationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *OrganizationalBrandingLocalizationRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// Get entity from localizations by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from localizations by key
 func (m *OrganizationalBrandingLocalizationRequestBuilder) CreateGetRequestInformation(options *OrganizationalBrandingLocalizationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *OrganizationalBrandingLocalizationRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// Update entity in localizations
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in localizations
 func (m *OrganizationalBrandingLocalizationRequestBuilder) CreatePatchRequestInformation(options *OrganizationalBrandingLocalizationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *OrganizationalBrandingLocalizationRequestBuilder) CreatePatchRequestInf
     }
     return requestInfo, nil
 }
-// Delete entity from localizations
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from localizations
 func (m *OrganizationalBrandingLocalizationRequestBuilder) Delete(options *OrganizationalBrandingLocalizationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *OrganizationalBrandingLocalizationRequestBuilder) Delete(options *Organ
     }
     return nil
 }
-// Get entity from localizations by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from localizations by key
 func (m *OrganizationalBrandingLocalizationRequestBuilder) Get(options *OrganizationalBrandingLocalizationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationalBrandingLocalization, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *OrganizationalBrandingLocalizationRequestBuilder) Get(options *Organiza
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OrganizationalBrandingLocalization), nil
 }
-// Update entity in localizations
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in localizations
 func (m *OrganizationalBrandingLocalizationRequestBuilder) Patch(options *OrganizationalBrandingLocalizationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

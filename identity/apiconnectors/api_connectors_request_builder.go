@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identity\apiConnectors
+// ApiConnectorsRequestBuilder builds and executes requests for operations under \identity\apiConnectors
 type ApiConnectorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ApiConnectorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ApiConnectorsRequestBuilderGetOptions options for Get
 type ApiConnectorsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ApiConnectorsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents entry point for API connectors.
+// ApiConnectorsRequestBuilderGetQueryParameters represents entry point for API connectors.
 type ApiConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ApiConnectorsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ApiConnectorsRequestBuilderPostOptions options for Post
 type ApiConnectorsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityApiConnector;
@@ -56,10 +56,7 @@ type ApiConnectorsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApiConnectorsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApiConnectorsRequestBuilderInternal instantiates a new ApiConnectorsRequestBuilder and sets the default values.
 func NewApiConnectorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApiConnectorsRequestBuilder) {
     m := &ApiConnectorsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewApiConnectorsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApiConnectorsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApiConnectorsRequestBuilder instantiates a new ApiConnectorsRequestBuilder and sets the default values.
 func NewApiConnectorsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApiConnectorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApiConnectorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents entry point for API connectors.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents entry point for API connectors.
 func (m *ApiConnectorsRequestBuilder) CreateGetRequestInformation(options *ApiConnectorsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ApiConnectorsRequestBuilder) CreateGetRequestInformation(options *ApiCo
     }
     return requestInfo, nil
 }
-// Represents entry point for API connectors.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents entry point for API connectors.
 func (m *ApiConnectorsRequestBuilder) CreatePostRequestInformation(options *ApiConnectorsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ApiConnectorsRequestBuilder) CreatePostRequestInformation(options *ApiC
     }
     return requestInfo, nil
 }
-// Represents entry point for API connectors.
-// Parameters:
-//  - options : Options for the request
+// Get represents entry point for API connectors.
 func (m *ApiConnectorsRequestBuilder) Get(options *ApiConnectorsRequestBuilderGetOptions)(*ApiConnectorsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ApiConnectorsRequestBuilder) Get(options *ApiConnectorsRequestBuilderGe
     }
     return res.(*ApiConnectorsResponse), nil
 }
-// Represents entry point for API connectors.
-// Parameters:
-//  - options : Options for the request
+// Post represents entry point for API connectors.
 func (m *ApiConnectorsRequestBuilder) Post(options *ApiConnectorsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityApiConnector, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

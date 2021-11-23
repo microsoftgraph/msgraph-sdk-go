@@ -7,7 +7,7 @@ import (
     icf8c5de5310cbc245539d3bdae5d762fa7900e2b585839a1c5e6b294fcf986e5 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/entitlementmanagement/roleassignments/item/directoryscope/ref"
 )
 
-// Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignments\{unifiedRoleAssignment-id}\directoryScope
+// DirectoryScopeRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignments\{unifiedRoleAssignment-id}\directoryScope
 type DirectoryScopeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DirectoryScopeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DirectoryScopeRequestBuilderGetOptions options for Get
 type DirectoryScopeRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type DirectoryScopeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The directory object that is the scope of the assignment. Read-only. Supports $expand.
+// DirectoryScopeRequestBuilderGetQueryParameters the directory object that is the scope of the assignment. Read-only. Supports $expand.
 type DirectoryScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new DirectoryScopeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryScopeRequestBuilderInternal instantiates a new DirectoryScopeRequestBuilder and sets the default values.
 func NewDirectoryScopeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryScopeRequestBuilder) {
     m := &DirectoryScopeRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewDirectoryScopeRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DirectoryScopeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryScopeRequestBuilder instantiates a new DirectoryScopeRequestBuilder and sets the default values.
 func NewDirectoryScopeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryScopeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The directory object that is the scope of the assignment. Read-only. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the directory object that is the scope of the assignment. Read-only. Supports $expand.
 func (m *DirectoryScopeRequestBuilder) CreateGetRequestInformation(options *DirectoryScopeRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *DirectoryScopeRequestBuilder) CreateGetRequestInformation(options *Dire
     }
     return requestInfo, nil
 }
-// The directory object that is the scope of the assignment. Read-only. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get the directory object that is the scope of the assignment. Read-only. Supports $expand.
 func (m *DirectoryScopeRequestBuilder) Get(options *DirectoryScopeRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

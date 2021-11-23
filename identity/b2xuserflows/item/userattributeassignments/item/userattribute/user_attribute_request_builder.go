@@ -7,7 +7,7 @@ import (
     if6a77197934679078e9db8320807c1e001d2691fbb0f80ba58738cc7374438f7 "github.com/microsoftgraph/msgraph-sdk-go/identity/b2xuserflows/item/userattributeassignments/item/userattribute/ref"
 )
 
-// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\{identityUserFlowAttributeAssignment-id}\userAttribute
+// UserAttributeRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\{identityUserFlowAttributeAssignment-id}\userAttribute
 type UserAttributeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UserAttributeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserAttributeRequestBuilderGetOptions options for Get
 type UserAttributeRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type UserAttributeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user attribute that you want to add to your user flow.
+// UserAttributeRequestBuilderGetQueryParameters the user attribute that you want to add to your user flow.
 type UserAttributeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new UserAttributeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserAttributeRequestBuilderInternal instantiates a new UserAttributeRequestBuilder and sets the default values.
 func NewUserAttributeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserAttributeRequestBuilder) {
     m := &UserAttributeRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewUserAttributeRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserAttributeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserAttributeRequestBuilder instantiates a new UserAttributeRequestBuilder and sets the default values.
 func NewUserAttributeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserAttributeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserAttributeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user attribute that you want to add to your user flow.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user attribute that you want to add to your user flow.
 func (m *UserAttributeRequestBuilder) CreateGetRequestInformation(options *UserAttributeRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *UserAttributeRequestBuilder) CreateGetRequestInformation(options *UserA
     }
     return requestInfo, nil
 }
-// The user attribute that you want to add to your user flow.
-// Parameters:
-//  - options : Options for the request
+// Get the user attribute that you want to add to your user flow.
 func (m *UserAttributeRequestBuilder) Get(options *UserAttributeRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttribute, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

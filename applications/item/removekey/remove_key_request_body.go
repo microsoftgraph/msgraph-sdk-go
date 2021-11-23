@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RemoveKeyRequestBody 
 type RemoveKeyRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type RemoveKeyRequestBody struct {
     // 
     proof *string;
 }
-// Instantiates a new removeKeyRequestBody and sets the default values.
+// NewRemoveKeyRequestBody instantiates a new removeKeyRequestBody and sets the default values.
 func NewRemoveKeyRequestBody()(*RemoveKeyRequestBody) {
     m := &RemoveKeyRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoveKeyRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *RemoveKeyRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the keyId property value. 
+// GetKeyId gets the keyId property value. 
 func (m *RemoveKeyRequestBody) GetKeyId()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *RemoveKeyRequestBody) GetKeyId()(*string) {
         return m.keyId
     }
 }
-// Gets the proof property value. 
+// GetProof gets the proof property value. 
 func (m *RemoveKeyRequestBody) GetProof()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *RemoveKeyRequestBody) GetProof()(*string) {
         return m.proof
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RemoveKeyRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["keyId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *RemoveKeyRequestBody) GetFieldDeserializers()(map[string]func(interface
 func (m *RemoveKeyRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RemoveKeyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("keyId", m.GetKeyId())
@@ -96,21 +94,15 @@ func (m *RemoveKeyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoveKeyRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the keyId property value. 
-// Parameters:
-//  - value : Value to set for the keyId property.
+// SetKeyId sets the keyId property value. 
 func (m *RemoveKeyRequestBody) SetKeyId(value *string)() {
     m.keyId = value
 }
-// Sets the proof property value. 
-// Parameters:
-//  - value : Value to set for the proof property.
+// SetProof sets the proof property value. 
 func (m *RemoveKeyRequestBody) SetProof(value *string)() {
     m.proof = value
 }

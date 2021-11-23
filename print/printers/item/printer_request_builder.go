@@ -11,7 +11,7 @@ import (
     i8a35ad54635f07016096adf7157efc92ede0057cd4a790d06a32332ce94f22cc "github.com/microsoftgraph/msgraph-sdk-go/print/printers/item/tasktriggers/item"
 )
 
-// Builds and executes requests for operations under \print\printers\{printer-id}
+// PrinterRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}
 type PrinterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type PrinterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrinterRequestBuilderDeleteOptions options for Delete
 type PrinterRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type PrinterRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrinterRequestBuilderGetOptions options for Get
 type PrinterRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type PrinterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of printers registered in the tenant.
+// PrinterRequestBuilderGetQueryParameters the list of printers registered in the tenant.
 type PrinterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrinterRequestBuilderPatchOptions options for Patch
 type PrinterRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Printer;
@@ -61,10 +61,7 @@ type PrinterRequestBuilderPatchOptions struct {
 func (m *PrinterRequestBuilder) Connectors()(*i6ef3a73ca24cdfe4f01546d744e3ad5d5f17082ec1283caf5b2176d392cb9cd9.ConnectorsRequestBuilder) {
     return i6ef3a73ca24cdfe4f01546d744e3ad5d5f17082ec1283caf5b2176d392cb9cd9.NewConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new PrinterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrinterRequestBuilderInternal instantiates a new PrinterRequestBuilder and sets the default values.
 func NewPrinterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrinterRequestBuilder) {
     m := &PrinterRequestBuilder{
     }
@@ -77,18 +74,13 @@ func NewPrinterRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrinterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrinterRequestBuilder instantiates a new PrinterRequestBuilder and sets the default values.
 func NewPrinterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrinterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of printers registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of printers registered in the tenant.
 func (m *PrinterRequestBuilder) CreateDeleteRequestInformation(options *PrinterRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *PrinterRequestBuilder) CreateDeleteRequestInformation(options *PrinterR
     }
     return requestInfo, nil
 }
-// The list of printers registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of printers registered in the tenant.
 func (m *PrinterRequestBuilder) CreateGetRequestInformation(options *PrinterRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *PrinterRequestBuilder) CreateGetRequestInformation(options *PrinterRequ
     }
     return requestInfo, nil
 }
-// The list of printers registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of printers registered in the tenant.
 func (m *PrinterRequestBuilder) CreatePatchRequestInformation(options *PrinterRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -147,9 +135,7 @@ func (m *PrinterRequestBuilder) CreatePatchRequestInformation(options *PrinterRe
     }
     return requestInfo, nil
 }
-// The list of printers registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of printers registered in the tenant.
 func (m *PrinterRequestBuilder) Delete(options *PrinterRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -161,9 +147,7 @@ func (m *PrinterRequestBuilder) Delete(options *PrinterRequestBuilderDeleteOptio
     }
     return nil
 }
-// The list of printers registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of printers registered in the tenant.
 func (m *PrinterRequestBuilder) Get(options *PrinterRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Printer, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *PrinterRequestBuilder) Get(options *PrinterRequestBuilderGetOptions)(*i
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Printer), nil
 }
-// The list of printers registered in the tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of printers registered in the tenant.
 func (m *PrinterRequestBuilder) Patch(options *PrinterRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -198,9 +180,7 @@ func (m *PrinterRequestBuilder) Shares()(*i74b470ddc01590a04dfc5ba245b7ccb094a2f
 func (m *PrinterRequestBuilder) TaskTriggers()(*i05f5154d5dc8e1096ef3ba18fb5bdb890712250391686b0ffd44f043e05db1fb.TaskTriggersRequestBuilder) {
     return i05f5154d5dc8e1096ef3ba18fb5bdb890712250391686b0ffd44f043e05db1fb.NewTaskTriggersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.printers.item.taskTriggers.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TaskTriggersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.printers.item.taskTriggers.item collection
 func (m *PrinterRequestBuilder) TaskTriggersById(id string)(*i8a35ad54635f07016096adf7157efc92ede0057cd4a790d06a32332ce94f22cc.PrintTaskTriggerRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// EntitlementManagement 
 type EntitlementManagement struct {
     Entity
     // 
@@ -22,14 +22,14 @@ type EntitlementManagement struct {
     // 
     settings *EntitlementManagementSettings;
 }
-// Instantiates a new entitlementManagement and sets the default values.
+// NewEntitlementManagement instantiates a new entitlementManagement and sets the default values.
 func NewEntitlementManagement()(*EntitlementManagement) {
     m := &EntitlementManagement{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the accessPackageAssignmentApprovals property value. 
+// GetAccessPackageAssignmentApprovals gets the accessPackageAssignmentApprovals property value. 
 func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approval) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approval
         return m.accessPackageAssignmentApprovals
     }
 }
-// Gets the accessPackages property value. 
+// GetAccessPackages gets the accessPackages property value. 
 func (m *EntitlementManagement) GetAccessPackages()([]AccessPackage) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *EntitlementManagement) GetAccessPackages()([]AccessPackage) {
         return m.accessPackages
     }
 }
-// Gets the assignmentRequests property value. 
+// GetAssignmentRequests gets the assignmentRequests property value. 
 func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmentRequest) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmen
         return m.assignmentRequests
     }
 }
-// Gets the assignments property value. 
+// GetAssignments gets the assignments property value. 
 func (m *EntitlementManagement) GetAssignments()([]AccessPackageAssignment) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *EntitlementManagement) GetAssignments()([]AccessPackageAssignment) {
         return m.assignments
     }
 }
-// Gets the catalogs property value. 
+// GetCatalogs gets the catalogs property value. 
 func (m *EntitlementManagement) GetCatalogs()([]AccessPackageCatalog) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *EntitlementManagement) GetCatalogs()([]AccessPackageCatalog) {
         return m.catalogs
     }
 }
-// Gets the connectedOrganizations property value. 
+// GetConnectedOrganizations gets the connectedOrganizations property value. 
 func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganization) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizat
         return m.connectedOrganizations
     }
 }
-// Gets the settings property value. 
+// GetSettings gets the settings property value. 
 func (m *EntitlementManagement) GetSettings()(*EntitlementManagementSettings) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *EntitlementManagement) GetSettings()(*EntitlementManagementSettings) {
         return m.settings
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageAssignmentApprovals"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -187,9 +187,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(interfac
 func (m *EntitlementManagement) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -269,45 +267,31 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the accessPackageAssignmentApprovals property value. 
-// Parameters:
-//  - value : Value to set for the accessPackageAssignmentApprovals property.
+// SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. 
 func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Approval)() {
     m.accessPackageAssignmentApprovals = value
 }
-// Sets the accessPackages property value. 
-// Parameters:
-//  - value : Value to set for the accessPackages property.
+// SetAccessPackages sets the accessPackages property value. 
 func (m *EntitlementManagement) SetAccessPackages(value []AccessPackage)() {
     m.accessPackages = value
 }
-// Sets the assignmentRequests property value. 
-// Parameters:
-//  - value : Value to set for the assignmentRequests property.
+// SetAssignmentRequests sets the assignmentRequests property value. 
 func (m *EntitlementManagement) SetAssignmentRequests(value []AccessPackageAssignmentRequest)() {
     m.assignmentRequests = value
 }
-// Sets the assignments property value. 
-// Parameters:
-//  - value : Value to set for the assignments property.
+// SetAssignments sets the assignments property value. 
 func (m *EntitlementManagement) SetAssignments(value []AccessPackageAssignment)() {
     m.assignments = value
 }
-// Sets the catalogs property value. 
-// Parameters:
-//  - value : Value to set for the catalogs property.
+// SetCatalogs sets the catalogs property value. 
 func (m *EntitlementManagement) SetCatalogs(value []AccessPackageCatalog)() {
     m.catalogs = value
 }
-// Sets the connectedOrganizations property value. 
-// Parameters:
-//  - value : Value to set for the connectedOrganizations property.
+// SetConnectedOrganizations sets the connectedOrganizations property value. 
 func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrganization)() {
     m.connectedOrganizations = value
 }
-// Sets the settings property value. 
-// Parameters:
-//  - value : Value to set for the settings property.
+// SetSettings sets the settings property value. 
 func (m *EntitlementManagement) SetSettings(value *EntitlementManagementSettings)() {
     m.settings = value
 }

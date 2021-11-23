@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// WorkbookChartAxisTitle 
 type WorkbookChartAxisTitle struct {
     Entity
     // Represents the formatting of chart axis title. Read-only.
@@ -14,14 +14,14 @@ type WorkbookChartAxisTitle struct {
     // A boolean that specifies the visibility of an axis title.
     visible *bool;
 }
-// Instantiates a new workbookChartAxisTitle and sets the default values.
+// NewWorkbookChartAxisTitle instantiates a new workbookChartAxisTitle and sets the default values.
 func NewWorkbookChartAxisTitle()(*WorkbookChartAxisTitle) {
     m := &WorkbookChartAxisTitle{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the format property value. Represents the formatting of chart axis title. Read-only.
+// GetFormat gets the format property value. Represents the formatting of chart axis title. Read-only.
 func (m *WorkbookChartAxisTitle) GetFormat()(*WorkbookChartAxisTitleFormat) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *WorkbookChartAxisTitle) GetFormat()(*WorkbookChartAxisTitleFormat) {
         return m.format
     }
 }
-// Gets the text property value. Represents the axis title.
+// GetText gets the text property value. Represents the axis title.
 func (m *WorkbookChartAxisTitle) GetText()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *WorkbookChartAxisTitle) GetText()(*string) {
         return m.text
     }
 }
-// Gets the visible property value. A boolean that specifies the visibility of an axis title.
+// GetVisible gets the visible property value. A boolean that specifies the visibility of an axis title.
 func (m *WorkbookChartAxisTitle) GetVisible()(*bool) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *WorkbookChartAxisTitle) GetVisible()(*bool) {
         return m.visible
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookChartAxisTitle) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["format"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,9 +83,7 @@ func (m *WorkbookChartAxisTitle) GetFieldDeserializers()(map[string]func(interfa
 func (m *WorkbookChartAxisTitle) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WorkbookChartAxisTitle) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -111,21 +109,15 @@ func (m *WorkbookChartAxisTitle) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// Sets the format property value. Represents the formatting of chart axis title. Read-only.
-// Parameters:
-//  - value : Value to set for the format property.
+// SetFormat sets the format property value. Represents the formatting of chart axis title. Read-only.
 func (m *WorkbookChartAxisTitle) SetFormat(value *WorkbookChartAxisTitleFormat)() {
     m.format = value
 }
-// Sets the text property value. Represents the axis title.
-// Parameters:
-//  - value : Value to set for the text property.
+// SetText sets the text property value. Represents the axis title.
 func (m *WorkbookChartAxisTitle) SetText(value *string)() {
     m.text = value
 }
-// Sets the visible property value. A boolean that specifies the visibility of an axis title.
-// Parameters:
-//  - value : Value to set for the visible property.
+// SetVisible sets the visible property value. A boolean that specifies the visibility of an axis title.
 func (m *WorkbookChartAxisTitle) SetVisible(value *bool)() {
     m.visible = value
 }

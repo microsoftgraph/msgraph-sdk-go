@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\assignments\{managedEBookAssignment-id}
+// ManagedEBookAssignmentRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\assignments\{managedEBookAssignment-id}
 type ManagedEBookAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagedEBookAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedEBookAssignmentRequestBuilderDeleteOptions options for Delete
 type ManagedEBookAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ManagedEBookAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedEBookAssignmentRequestBuilderGetOptions options for Get
 type ManagedEBookAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ManagedEBookAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of assignments for this eBook.
+// ManagedEBookAssignmentRequestBuilderGetQueryParameters the list of assignments for this eBook.
 type ManagedEBookAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedEBookAssignmentRequestBuilderPatchOptions options for Patch
 type ManagedEBookAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedEBookAssignment;
@@ -53,10 +53,7 @@ type ManagedEBookAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagedEBookAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedEBookAssignmentRequestBuilderInternal instantiates a new ManagedEBookAssignmentRequestBuilder and sets the default values.
 func NewManagedEBookAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedEBookAssignmentRequestBuilder) {
     m := &ManagedEBookAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewManagedEBookAssignmentRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedEBookAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedEBookAssignmentRequestBuilder instantiates a new ManagedEBookAssignmentRequestBuilder and sets the default values.
 func NewManagedEBookAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedEBookAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedEBookAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of assignments for this eBook.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of assignments for this eBook.
 func (m *ManagedEBookAssignmentRequestBuilder) CreateDeleteRequestInformation(options *ManagedEBookAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ManagedEBookAssignmentRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// The list of assignments for this eBook.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of assignments for this eBook.
 func (m *ManagedEBookAssignmentRequestBuilder) CreateGetRequestInformation(options *ManagedEBookAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ManagedEBookAssignmentRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The list of assignments for this eBook.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of assignments for this eBook.
 func (m *ManagedEBookAssignmentRequestBuilder) CreatePatchRequestInformation(options *ManagedEBookAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ManagedEBookAssignmentRequestBuilder) CreatePatchRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The list of assignments for this eBook.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of assignments for this eBook.
 func (m *ManagedEBookAssignmentRequestBuilder) Delete(options *ManagedEBookAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ManagedEBookAssignmentRequestBuilder) Delete(options *ManagedEBookAssig
     }
     return nil
 }
-// The list of assignments for this eBook.
-// Parameters:
-//  - options : Options for the request
+// Get the list of assignments for this eBook.
 func (m *ManagedEBookAssignmentRequestBuilder) Get(options *ManagedEBookAssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedEBookAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ManagedEBookAssignmentRequestBuilder) Get(options *ManagedEBookAssignme
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedEBookAssignment), nil
 }
-// The list of assignments for this eBook.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of assignments for this eBook.
 func (m *ManagedEBookAssignmentRequestBuilder) Patch(options *ManagedEBookAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

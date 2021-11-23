@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\calendarView\{event-id}\calendar\singleValueExtendedProperties
+// SingleValueExtendedPropertiesRequestBuilder builds and executes requests for operations under \users\{user-id}\calendarView\{event-id}\calendar\singleValueExtendedProperties
 type SingleValueExtendedPropertiesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SingleValueExtendedPropertiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SingleValueExtendedPropertiesRequestBuilderGetOptions options for Get
 type SingleValueExtendedPropertiesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SingleValueExtendedPropertiesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
+// SingleValueExtendedPropertiesRequestBuilderGetQueryParameters the collection of single-value extended properties defined for the calendar. Read-only. Nullable.
 type SingleValueExtendedPropertiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SingleValueExtendedPropertiesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SingleValueExtendedPropertiesRequestBuilderPostOptions options for Post
 type SingleValueExtendedPropertiesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty;
@@ -56,10 +56,7 @@ type SingleValueExtendedPropertiesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SingleValueExtendedPropertiesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSingleValueExtendedPropertiesRequestBuilderInternal instantiates a new SingleValueExtendedPropertiesRequestBuilder and sets the default values.
 func NewSingleValueExtendedPropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SingleValueExtendedPropertiesRequestBuilder) {
     m := &SingleValueExtendedPropertiesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSingleValueExtendedPropertiesRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SingleValueExtendedPropertiesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSingleValueExtendedPropertiesRequestBuilder instantiates a new SingleValueExtendedPropertiesRequestBuilder and sets the default values.
 func NewSingleValueExtendedPropertiesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SingleValueExtendedPropertiesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSingleValueExtendedPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of single-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *SingleValueExtendedPropertiesRequestBuilder) CreateGetRequestInformation(options *SingleValueExtendedPropertiesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SingleValueExtendedPropertiesRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of single-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *SingleValueExtendedPropertiesRequestBuilder) CreatePostRequestInformation(options *SingleValueExtendedPropertiesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SingleValueExtendedPropertiesRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of single-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *SingleValueExtendedPropertiesRequestBuilder) Get(options *SingleValueExtendedPropertiesRequestBuilderGetOptions)(*SingleValueExtendedPropertiesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SingleValueExtendedPropertiesRequestBuilder) Get(options *SingleValueEx
     }
     return res.(*SingleValueExtendedPropertiesResponse), nil
 }
-// The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of single-value extended properties defined for the calendar. Read-only. Nullable.
 func (m *SingleValueExtendedPropertiesRequestBuilder) Post(options *SingleValueExtendedPropertiesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

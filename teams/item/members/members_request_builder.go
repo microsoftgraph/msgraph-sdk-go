@@ -7,7 +7,7 @@ import (
     i5c71a57bb3414bb7d6f9fc92a0d0600c39b9012343730336daf68c8b4a15d84e "github.com/microsoftgraph/msgraph-sdk-go/teams/item/members/add"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\members
+// MembersRequestBuilder builds and executes requests for operations under \teams\{team-id}\members
 type MembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type MembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MembersRequestBuilderGetOptions options for Get
 type MembersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type MembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Members and owners of the team.
+// MembersRequestBuilderGetQueryParameters members and owners of the team.
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type MembersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MembersRequestBuilderPostOptions options for Post
 type MembersRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConversationMember;
@@ -60,10 +60,7 @@ type MembersRequestBuilderPostOptions struct {
 func (m *MembersRequestBuilder) Add()(*i5c71a57bb3414bb7d6f9fc92a0d0600c39b9012343730336daf68c8b4a15d84e.AddRequestBuilder) {
     return i5c71a57bb3414bb7d6f9fc92a0d0600c39b9012343730336daf68c8b4a15d84e.NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new MembersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MembersRequestBuilder) {
     m := &MembersRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MembersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
 func NewMembersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MembersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Members and owners of the team.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation members and owners of the team.
 func (m *MembersRequestBuilder) CreateGetRequestInformation(options *MembersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *MembersRequestBuilder) CreateGetRequestInformation(options *MembersRequ
     }
     return requestInfo, nil
 }
-// Members and owners of the team.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation members and owners of the team.
 func (m *MembersRequestBuilder) CreatePostRequestInformation(options *MembersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *MembersRequestBuilder) CreatePostRequestInformation(options *MembersReq
     }
     return requestInfo, nil
 }
-// Members and owners of the team.
-// Parameters:
-//  - options : Options for the request
+// Get members and owners of the team.
 func (m *MembersRequestBuilder) Get(options *MembersRequestBuilderGetOptions)(*MembersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *MembersRequestBuilder) Get(options *MembersRequestBuilderGetOptions)(*M
     }
     return res.(*MembersResponse), nil
 }
-// Members and owners of the team.
-// Parameters:
-//  - options : Options for the request
+// Post members and owners of the team.
 func (m *MembersRequestBuilder) Post(options *MembersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConversationMember, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

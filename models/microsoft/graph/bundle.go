@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Bundle 
 type Bundle struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type Bundle struct {
     // Number of children contained immediately within this container.
     childCount *int32;
 }
-// Instantiates a new bundle and sets the default values.
+// NewBundle instantiates a new bundle and sets the default values.
 func NewBundle()(*Bundle) {
     m := &Bundle{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Bundle) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *Bundle) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the album property value. If the bundle is an [album][], then the album property is included
+// GetAlbum gets the album property value. If the bundle is an [album][], then the album property is included
 func (m *Bundle) GetAlbum()(*Album) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *Bundle) GetAlbum()(*Album) {
         return m.album
     }
 }
-// Gets the childCount property value. Number of children contained immediately within this container.
+// GetChildCount gets the childCount property value. Number of children contained immediately within this container.
 func (m *Bundle) GetChildCount()(*int32) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *Bundle) GetChildCount()(*int32) {
         return m.childCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Bundle) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["album"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *Bundle) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
 func (m *Bundle) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Bundle) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("album", m.GetAlbum())
@@ -96,21 +94,15 @@ func (m *Bundle) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Bundle) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the album property value. If the bundle is an [album][], then the album property is included
-// Parameters:
-//  - value : Value to set for the album property.
+// SetAlbum sets the album property value. If the bundle is an [album][], then the album property is included
 func (m *Bundle) SetAlbum(value *Album)() {
     m.album = value
 }
-// Sets the childCount property value. Number of children contained immediately within this container.
-// Parameters:
-//  - value : Value to set for the childCount property.
+// SetChildCount sets the childCount property value. Number of children contained immediately within this container.
 func (m *Bundle) SetChildCount(value *int32)() {
     m.childCount = value
 }

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// OnenotePagePreview 
 type OnenotePagePreview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type OnenotePagePreview struct {
     // 
     previewText *string;
 }
-// Instantiates a new onenotePagePreview and sets the default values.
+// NewOnenotePagePreview instantiates a new onenotePagePreview and sets the default values.
 func NewOnenotePagePreview()(*OnenotePagePreview) {
     m := &OnenotePagePreview{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnenotePagePreview) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *OnenotePagePreview) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the links property value. 
+// GetLinks gets the links property value. 
 func (m *OnenotePagePreview) GetLinks()(*OnenotePagePreviewLinks) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *OnenotePagePreview) GetLinks()(*OnenotePagePreviewLinks) {
         return m.links
     }
 }
-// Gets the previewText property value. 
+// GetPreviewText gets the previewText property value. 
 func (m *OnenotePagePreview) GetPreviewText()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *OnenotePagePreview) GetPreviewText()(*string) {
         return m.previewText
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *OnenotePagePreview) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["links"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *OnenotePagePreview) GetFieldDeserializers()(map[string]func(interface{}
 func (m *OnenotePagePreview) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *OnenotePagePreview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("links", m.GetLinks())
@@ -96,21 +94,15 @@ func (m *OnenotePagePreview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnenotePagePreview) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the links property value. 
-// Parameters:
-//  - value : Value to set for the links property.
+// SetLinks sets the links property value. 
 func (m *OnenotePagePreview) SetLinks(value *OnenotePagePreviewLinks)() {
     m.links = value
 }
-// Sets the previewText property value. 
-// Parameters:
-//  - value : Value to set for the previewText property.
+// SetPreviewText sets the previewText property value. 
 func (m *OnenotePagePreview) SetPreviewText(value *string)() {
     m.previewText = value
 }

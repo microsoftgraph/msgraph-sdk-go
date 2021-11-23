@@ -7,7 +7,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \directory\administrativeUnits
+// AdministrativeUnitsRequestBuilder builds and executes requests for operations under \directory\administrativeUnits
 type AdministrativeUnitsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AdministrativeUnitsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AdministrativeUnitsRequestBuilderGetOptions options for Get
 type AdministrativeUnitsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type AdministrativeUnitsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Conceptual container for user and group directory objects.
+// AdministrativeUnitsRequestBuilderGetQueryParameters conceptual container for user and group directory objects.
 type AdministrativeUnitsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type AdministrativeUnitsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AdministrativeUnitsRequestBuilderPostOptions options for Post
 type AdministrativeUnitsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AdministrativeUnit;
@@ -57,10 +57,7 @@ type AdministrativeUnitsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdministrativeUnitsRequestBuilderInternal instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
 func NewAdministrativeUnitsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdministrativeUnitsRequestBuilder) {
     m := &AdministrativeUnitsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewAdministrativeUnitsRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAdministrativeUnitsRequestBuilder instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
 func NewAdministrativeUnitsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AdministrativeUnitsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Conceptual container for user and group directory objects.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation conceptual container for user and group directory objects.
 func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformation(options *AdministrativeUnitsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Conceptual container for user and group directory objects.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation conceptual container for user and group directory objects.
 func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformation(options *AdministrativeUnitsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,13 +114,11 @@ func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \directory\administrativeUnits\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \directory\administrativeUnits\microsoft.graph.delta()
 func (m *AdministrativeUnitsRequestBuilder) Delta()(*i46bd9804c40ad6fd220f710b85a7ba64d9419e51f0025c2e838de11ec2e0aa08.DeltaRequestBuilder) {
     return i46bd9804c40ad6fd220f710b85a7ba64d9419e51f0025c2e838de11ec2e0aa08.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Conceptual container for user and group directory objects.
-// Parameters:
-//  - options : Options for the request
+// Get conceptual container for user and group directory objects.
 func (m *AdministrativeUnitsRequestBuilder) Get(options *AdministrativeUnitsRequestBuilderGetOptions)(*AdministrativeUnitsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,9 +130,7 @@ func (m *AdministrativeUnitsRequestBuilder) Get(options *AdministrativeUnitsRequ
     }
     return res.(*AdministrativeUnitsResponse), nil
 }
-// Conceptual container for user and group directory objects.
-// Parameters:
-//  - options : Options for the request
+// Post conceptual container for user and group directory objects.
 func (m *AdministrativeUnitsRequestBuilder) Post(options *AdministrativeUnitsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AdministrativeUnit, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

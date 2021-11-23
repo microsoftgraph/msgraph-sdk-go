@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\submissions
+// SubmissionsRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\submissions
 type SubmissionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SubmissionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SubmissionsRequestBuilderGetOptions options for Get
 type SubmissionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SubmissionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+// SubmissionsRequestBuilderGetQueryParameters once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 type SubmissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SubmissionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SubmissionsRequestBuilderPostOptions options for Post
 type SubmissionsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmission;
@@ -56,10 +56,7 @@ type SubmissionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SubmissionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubmissionsRequestBuilderInternal instantiates a new SubmissionsRequestBuilder and sets the default values.
 func NewSubmissionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubmissionsRequestBuilder) {
     m := &SubmissionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSubmissionsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SubmissionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubmissionsRequestBuilder instantiates a new SubmissionsRequestBuilder and sets the default values.
 func NewSubmissionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubmissionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSubmissionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *SubmissionsRequestBuilder) CreateGetRequestInformation(options *SubmissionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SubmissionsRequestBuilder) CreateGetRequestInformation(options *Submiss
     }
     return requestInfo, nil
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *SubmissionsRequestBuilder) CreatePostRequestInformation(options *SubmissionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SubmissionsRequestBuilder) CreatePostRequestInformation(options *Submis
     }
     return requestInfo, nil
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *SubmissionsRequestBuilder) Get(options *SubmissionsRequestBuilderGetOptions)(*SubmissionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SubmissionsRequestBuilder) Get(options *SubmissionsRequestBuilderGetOpt
     }
     return res.(*SubmissionsResponse), nil
 }
-// Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *SubmissionsRequestBuilder) Post(options *SubmissionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationSubmission, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

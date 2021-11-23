@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// TeamworkHostedContent 
 type TeamworkHostedContent struct {
     Entity
     // Write only. Bytes for the hosted content (such as images).
@@ -12,14 +12,14 @@ type TeamworkHostedContent struct {
     // Write only. Content type. sicj as image/png, image/jpg.
     contentType *string;
 }
-// Instantiates a new teamworkHostedContent and sets the default values.
+// NewTeamworkHostedContent instantiates a new teamworkHostedContent and sets the default values.
 func NewTeamworkHostedContent()(*TeamworkHostedContent) {
     m := &TeamworkHostedContent{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the contentBytes property value. Write only. Bytes for the hosted content (such as images).
+// GetContentBytes gets the contentBytes property value. Write only. Bytes for the hosted content (such as images).
 func (m *TeamworkHostedContent) GetContentBytes()([]byte) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *TeamworkHostedContent) GetContentBytes()([]byte) {
         return m.contentBytes
     }
 }
-// Gets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
+// GetContentType gets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
 func (m *TeamworkHostedContent) GetContentType()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *TeamworkHostedContent) GetContentType()(*string) {
         return m.contentType
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkHostedContent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contentBytes"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,9 +63,7 @@ func (m *TeamworkHostedContent) GetFieldDeserializers()(map[string]func(interfac
 func (m *TeamworkHostedContent) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *TeamworkHostedContent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -85,15 +83,11 @@ func (m *TeamworkHostedContent) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the contentBytes property value. Write only. Bytes for the hosted content (such as images).
-// Parameters:
-//  - value : Value to set for the contentBytes property.
+// SetContentBytes sets the contentBytes property value. Write only. Bytes for the hosted content (such as images).
 func (m *TeamworkHostedContent) SetContentBytes(value []byte)() {
     m.contentBytes = value
 }
-// Sets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
-// Parameters:
-//  - value : Value to set for the contentType property.
+// SetContentType sets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
 func (m *TeamworkHostedContent) SetContentType(value *string)() {
     m.contentType = value
 }

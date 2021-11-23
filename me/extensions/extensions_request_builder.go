@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\extensions
+// ExtensionsRequestBuilder builds and executes requests for operations under \me\extensions
 type ExtensionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ExtensionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ExtensionsRequestBuilderGetOptions options for Get
 type ExtensionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ExtensionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of open extensions defined for the user. Read-only. Nullable.
+// ExtensionsRequestBuilderGetQueryParameters the collection of open extensions defined for the user. Read-only. Nullable.
 type ExtensionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ExtensionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ExtensionsRequestBuilderPostOptions options for Post
 type ExtensionsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension;
@@ -56,10 +56,7 @@ type ExtensionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExtensionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtensionsRequestBuilderInternal instantiates a new ExtensionsRequestBuilder and sets the default values.
 func NewExtensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtensionsRequestBuilder) {
     m := &ExtensionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewExtensionsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExtensionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtensionsRequestBuilder instantiates a new ExtensionsRequestBuilder and sets the default values.
 func NewExtensionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtensionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExtensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of open extensions defined for the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of open extensions defined for the user. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) CreateGetRequestInformation(options *ExtensionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ExtensionsRequestBuilder) CreateGetRequestInformation(options *Extensio
     }
     return requestInfo, nil
 }
-// The collection of open extensions defined for the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of open extensions defined for the user. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) CreatePostRequestInformation(options *ExtensionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ExtensionsRequestBuilder) CreatePostRequestInformation(options *Extensi
     }
     return requestInfo, nil
 }
-// The collection of open extensions defined for the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of open extensions defined for the user. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) Get(options *ExtensionsRequestBuilderGetOptions)(*ExtensionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ExtensionsRequestBuilder) Get(options *ExtensionsRequestBuilderGetOptio
     }
     return res.(*ExtensionsResponse), nil
 }
-// The collection of open extensions defined for the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of open extensions defined for the user. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) Post(options *ExtensionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

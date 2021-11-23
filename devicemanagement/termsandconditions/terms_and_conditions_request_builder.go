@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\termsAndConditions
+// TermsAndConditionsRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions
 type TermsAndConditionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TermsAndConditionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TermsAndConditionsRequestBuilderGetOptions options for Get
 type TermsAndConditionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TermsAndConditionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The terms and conditions associated with device management of the company.
+// TermsAndConditionsRequestBuilderGetQueryParameters the terms and conditions associated with device management of the company.
 type TermsAndConditionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TermsAndConditionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TermsAndConditionsRequestBuilderPostOptions options for Post
 type TermsAndConditionsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TermsAndConditions;
@@ -56,10 +56,7 @@ type TermsAndConditionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermsAndConditionsRequestBuilderInternal instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
 func NewTermsAndConditionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermsAndConditionsRequestBuilder) {
     m := &TermsAndConditionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTermsAndConditionsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermsAndConditionsRequestBuilder instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
 func NewTermsAndConditionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermsAndConditionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTermsAndConditionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The terms and conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the terms and conditions associated with device management of the company.
 func (m *TermsAndConditionsRequestBuilder) CreateGetRequestInformation(options *TermsAndConditionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TermsAndConditionsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The terms and conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the terms and conditions associated with device management of the company.
 func (m *TermsAndConditionsRequestBuilder) CreatePostRequestInformation(options *TermsAndConditionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TermsAndConditionsRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The terms and conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// Get the terms and conditions associated with device management of the company.
 func (m *TermsAndConditionsRequestBuilder) Get(options *TermsAndConditionsRequestBuilderGetOptions)(*TermsAndConditionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TermsAndConditionsRequestBuilder) Get(options *TermsAndConditionsReques
     }
     return res.(*TermsAndConditionsResponse), nil
 }
-// The terms and conditions associated with device management of the company.
-// Parameters:
-//  - options : Options for the request
+// Post the terms and conditions associated with device management of the company.
 func (m *TermsAndConditionsRequestBuilder) Post(options *TermsAndConditionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TermsAndConditions, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

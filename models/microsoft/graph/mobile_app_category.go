@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MobileAppCategory 
 type MobileAppCategory struct {
     Entity
     // The name of the app category.
@@ -13,14 +13,14 @@ type MobileAppCategory struct {
     // The date and time the mobileAppCategory was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new mobileAppCategory and sets the default values.
+// NewMobileAppCategory instantiates a new mobileAppCategory and sets the default values.
 func NewMobileAppCategory()(*MobileAppCategory) {
     m := &MobileAppCategory{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the displayName property value. The name of the app category.
+// GetDisplayName gets the displayName property value. The name of the app category.
 func (m *MobileAppCategory) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *MobileAppCategory) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified.
 func (m *MobileAppCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *MobileAppCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f7f
         return m.lastModifiedDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppCategory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,9 +64,7 @@ func (m *MobileAppCategory) GetFieldDeserializers()(map[string]func(interface{},
 func (m *MobileAppCategory) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MobileAppCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -86,15 +84,11 @@ func (m *MobileAppCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the displayName property value. The name of the app category.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The name of the app category.
 func (m *MobileAppCategory) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified.
 func (m *MobileAppCategory) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }

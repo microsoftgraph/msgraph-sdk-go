@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\messages\{chatMessage-id}\hostedContents
+// HostedContentsRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\messages\{chatMessage-id}\hostedContents
 type HostedContentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type HostedContentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// HostedContentsRequestBuilderGetOptions options for Get
 type HostedContentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type HostedContentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+// HostedContentsRequestBuilderGetQueryParameters content in a message hosted by Microsoft Teams - for example, images or code snippets.
 type HostedContentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type HostedContentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// HostedContentsRequestBuilderPostOptions options for Post
 type HostedContentsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageHostedContent;
@@ -56,10 +56,7 @@ type HostedContentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new HostedContentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHostedContentsRequestBuilderInternal instantiates a new HostedContentsRequestBuilder and sets the default values.
 func NewHostedContentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HostedContentsRequestBuilder) {
     m := &HostedContentsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewHostedContentsRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new HostedContentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewHostedContentsRequestBuilder instantiates a new HostedContentsRequestBuilder and sets the default values.
 func NewHostedContentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*HostedContentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewHostedContentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation content in a message hosted by Microsoft Teams - for example, images or code snippets.
 func (m *HostedContentsRequestBuilder) CreateGetRequestInformation(options *HostedContentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *HostedContentsRequestBuilder) CreateGetRequestInformation(options *Host
     }
     return requestInfo, nil
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation content in a message hosted by Microsoft Teams - for example, images or code snippets.
 func (m *HostedContentsRequestBuilder) CreatePostRequestInformation(options *HostedContentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *HostedContentsRequestBuilder) CreatePostRequestInformation(options *Hos
     }
     return requestInfo, nil
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-// Parameters:
-//  - options : Options for the request
+// Get content in a message hosted by Microsoft Teams - for example, images or code snippets.
 func (m *HostedContentsRequestBuilder) Get(options *HostedContentsRequestBuilderGetOptions)(*HostedContentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *HostedContentsRequestBuilder) Get(options *HostedContentsRequestBuilder
     }
     return res.(*HostedContentsResponse), nil
 }
-// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-// Parameters:
-//  - options : Options for the request
+// Post content in a message hosted by Microsoft Teams - for example, images or code snippets.
 func (m *HostedContentsRequestBuilder) Post(options *HostedContentsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessageHostedContent, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

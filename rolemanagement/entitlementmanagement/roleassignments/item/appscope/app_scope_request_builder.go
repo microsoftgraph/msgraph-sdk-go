@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignments\{unifiedRoleAssignment-id}\appScope
+// AppScopeRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignments\{unifiedRoleAssignment-id}\appScope
 type AppScopeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppScopeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AppScopeRequestBuilderDeleteOptions options for Delete
 type AppScopeRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AppScopeRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AppScopeRequestBuilderGetOptions options for Get
 type AppScopeRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AppScopeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+// AppScopeRequestBuilderGetQueryParameters read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
 type AppScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AppScopeRequestBuilderPatchOptions options for Patch
 type AppScopeRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppScope;
@@ -53,10 +53,7 @@ type AppScopeRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppScopeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppScopeRequestBuilderInternal instantiates a new AppScopeRequestBuilder and sets the default values.
 func NewAppScopeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppScopeRequestBuilder) {
     m := &AppScopeRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAppScopeRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppScopeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppScopeRequestBuilder instantiates a new AppScopeRequestBuilder and sets the default values.
 func NewAppScopeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppScopeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
 func (m *AppScopeRequestBuilder) CreateDeleteRequestInformation(options *AppScopeRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AppScopeRequestBuilder) CreateDeleteRequestInformation(options *AppScop
     }
     return requestInfo, nil
 }
-// Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
 func (m *AppScopeRequestBuilder) CreateGetRequestInformation(options *AppScopeRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AppScopeRequestBuilder) CreateGetRequestInformation(options *AppScopeRe
     }
     return requestInfo, nil
 }
-// Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
 func (m *AppScopeRequestBuilder) CreatePatchRequestInformation(options *AppScopeRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AppScopeRequestBuilder) CreatePatchRequestInformation(options *AppScope
     }
     return requestInfo, nil
 }
-// Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
 func (m *AppScopeRequestBuilder) Delete(options *AppScopeRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AppScopeRequestBuilder) Delete(options *AppScopeRequestBuilderDeleteOpt
     }
     return nil
 }
-// Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
 func (m *AppScopeRequestBuilder) Get(options *AppScopeRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppScope, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AppScopeRequestBuilder) Get(options *AppScopeRequestBuilderGetOptions)(
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppScope), nil
 }
-// Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
 func (m *AppScopeRequestBuilder) Patch(options *AppScopeRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

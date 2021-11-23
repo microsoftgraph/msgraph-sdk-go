@@ -11,7 +11,7 @@ import (
     iff1e45e5e14f79eaaea630c1948f4ffdd5e56ce522e6fc233cd011734be4178b "github.com/microsoftgraph/msgraph-sdk-go/directoryroletemplates/item/checkmembergroups"
 )
 
-// Builds and executes requests for operations under \directoryRoleTemplates\{directoryRoleTemplate-id}
+// DirectoryRoleTemplateRequestBuilder builds and executes requests for operations under \directoryRoleTemplates\{directoryRoleTemplate-id}
 type DirectoryRoleTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type DirectoryRoleTemplateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DirectoryRoleTemplateRequestBuilderDeleteOptions options for Delete
 type DirectoryRoleTemplateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type DirectoryRoleTemplateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DirectoryRoleTemplateRequestBuilderGetOptions options for Get
 type DirectoryRoleTemplateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type DirectoryRoleTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from directoryRoleTemplates by key
+// DirectoryRoleTemplateRequestBuilderGetQueryParameters get entity from directoryRoleTemplates by key
 type DirectoryRoleTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DirectoryRoleTemplateRequestBuilderPatchOptions options for Patch
 type DirectoryRoleTemplateRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleTemplate;
@@ -64,10 +64,7 @@ func (m *DirectoryRoleTemplateRequestBuilder) CheckMemberGroups()(*iff1e45e5e14f
 func (m *DirectoryRoleTemplateRequestBuilder) CheckMemberObjects()(*i414bcfa81cf62cb492a10891e6ade220e793a207338da61bbf717173d599c787.CheckMemberObjectsRequestBuilder) {
     return i414bcfa81cf62cb492a10891e6ade220e793a207338da61bbf717173d599c787.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new DirectoryRoleTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryRoleTemplateRequestBuilderInternal instantiates a new DirectoryRoleTemplateRequestBuilder and sets the default values.
 func NewDirectoryRoleTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRoleTemplateRequestBuilder) {
     m := &DirectoryRoleTemplateRequestBuilder{
     }
@@ -80,18 +77,13 @@ func NewDirectoryRoleTemplateRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DirectoryRoleTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDirectoryRoleTemplateRequestBuilder instantiates a new DirectoryRoleTemplateRequestBuilder and sets the default values.
 func NewDirectoryRoleTemplateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRoleTemplateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from directoryRoleTemplates
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from directoryRoleTemplates
 func (m *DirectoryRoleTemplateRequestBuilder) CreateDeleteRequestInformation(options *DirectoryRoleTemplateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *DirectoryRoleTemplateRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Get entity from directoryRoleTemplates by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from directoryRoleTemplates by key
 func (m *DirectoryRoleTemplateRequestBuilder) CreateGetRequestInformation(options *DirectoryRoleTemplateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,9 +120,7 @@ func (m *DirectoryRoleTemplateRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Update entity in directoryRoleTemplates
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in directoryRoleTemplates
 func (m *DirectoryRoleTemplateRequestBuilder) CreatePatchRequestInformation(options *DirectoryRoleTemplateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +138,7 @@ func (m *DirectoryRoleTemplateRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delete entity from directoryRoleTemplates
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from directoryRoleTemplates
 func (m *DirectoryRoleTemplateRequestBuilder) Delete(options *DirectoryRoleTemplateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -164,9 +150,7 @@ func (m *DirectoryRoleTemplateRequestBuilder) Delete(options *DirectoryRoleTempl
     }
     return nil
 }
-// Get entity from directoryRoleTemplates by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from directoryRoleTemplates by key
 func (m *DirectoryRoleTemplateRequestBuilder) Get(options *DirectoryRoleTemplateRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryRoleTemplate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -184,9 +168,7 @@ func (m *DirectoryRoleTemplateRequestBuilder) GetMemberGroups()(*iec1a8ab976accb
 func (m *DirectoryRoleTemplateRequestBuilder) GetMemberObjects()(*iaa01455e2185fdd184cd4993202a2e1f3eec805d38e4ba431cce0c3144cca8f4.GetMemberObjectsRequestBuilder) {
     return iaa01455e2185fdd184cd4993202a2e1f3eec805d38e4ba431cce0c3144cca8f4.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in directoryRoleTemplates
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in directoryRoleTemplates
 func (m *DirectoryRoleTemplateRequestBuilder) Patch(options *DirectoryRoleTemplateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

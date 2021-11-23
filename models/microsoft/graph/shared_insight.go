@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SharedInsight 
 type SharedInsight struct {
     Entity
     // Details about the shared item. Read only.
@@ -20,14 +20,14 @@ type SharedInsight struct {
     // 
     sharingHistory []SharingDetail;
 }
-// Instantiates a new sharedInsight and sets the default values.
+// NewSharedInsight instantiates a new sharedInsight and sets the default values.
 func NewSharedInsight()(*SharedInsight) {
     m := &SharedInsight{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the lastShared property value. Details about the shared item. Read only.
+// GetLastShared gets the lastShared property value. Details about the shared item. Read only.
 func (m *SharedInsight) GetLastShared()(*SharingDetail) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *SharedInsight) GetLastShared()(*SharingDetail) {
         return m.lastShared
     }
 }
-// Gets the lastSharedMethod property value. 
+// GetLastSharedMethod gets the lastSharedMethod property value. 
 func (m *SharedInsight) GetLastSharedMethod()(*Entity) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *SharedInsight) GetLastSharedMethod()(*Entity) {
         return m.lastSharedMethod
     }
 }
-// Gets the resource property value. Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
+// GetResource gets the resource property value. Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 func (m *SharedInsight) GetResource()(*Entity) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *SharedInsight) GetResource()(*Entity) {
         return m.resource
     }
 }
-// Gets the resourceReference property value. Reference properties of the shared document, such as the url and type of the document. Read-only
+// GetResourceReference gets the resourceReference property value. Reference properties of the shared document, such as the url and type of the document. Read-only
 func (m *SharedInsight) GetResourceReference()(*ResourceReference) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *SharedInsight) GetResourceReference()(*ResourceReference) {
         return m.resourceReference
     }
 }
-// Gets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
+// GetResourceVisualization gets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
 func (m *SharedInsight) GetResourceVisualization()(*ResourceVisualization) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *SharedInsight) GetResourceVisualization()(*ResourceVisualization) {
         return m.resourceVisualization
     }
 }
-// Gets the sharingHistory property value. 
+// GetSharingHistory gets the sharingHistory property value. 
 func (m *SharedInsight) GetSharingHistory()([]SharingDetail) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *SharedInsight) GetSharingHistory()([]SharingDetail) {
         return m.sharingHistory
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SharedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastShared"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -147,9 +147,7 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *SharedInsight) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SharedInsight) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -198,39 +196,27 @@ func (m *SharedInsight) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the lastShared property value. Details about the shared item. Read only.
-// Parameters:
-//  - value : Value to set for the lastShared property.
+// SetLastShared sets the lastShared property value. Details about the shared item. Read only.
 func (m *SharedInsight) SetLastShared(value *SharingDetail)() {
     m.lastShared = value
 }
-// Sets the lastSharedMethod property value. 
-// Parameters:
-//  - value : Value to set for the lastSharedMethod property.
+// SetLastSharedMethod sets the lastSharedMethod property value. 
 func (m *SharedInsight) SetLastSharedMethod(value *Entity)() {
     m.lastSharedMethod = value
 }
-// Sets the resource property value. Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
-// Parameters:
-//  - value : Value to set for the resource property.
+// SetResource sets the resource property value. Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 func (m *SharedInsight) SetResource(value *Entity)() {
     m.resource = value
 }
-// Sets the resourceReference property value. Reference properties of the shared document, such as the url and type of the document. Read-only
-// Parameters:
-//  - value : Value to set for the resourceReference property.
+// SetResourceReference sets the resourceReference property value. Reference properties of the shared document, such as the url and type of the document. Read-only
 func (m *SharedInsight) SetResourceReference(value *ResourceReference)() {
     m.resourceReference = value
 }
-// Sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
-// Parameters:
-//  - value : Value to set for the resourceVisualization property.
+// SetResourceVisualization sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
 func (m *SharedInsight) SetResourceVisualization(value *ResourceVisualization)() {
     m.resourceVisualization = value
 }
-// Sets the sharingHistory property value. 
-// Parameters:
-//  - value : Value to set for the sharingHistory property.
+// SetSharingHistory sets the sharingHistory property value. 
 func (m *SharedInsight) SetSharingHistory(value []SharingDetail)() {
     m.sharingHistory = value
 }

@@ -9,7 +9,7 @@ import (
     if6109b291ba3a378d96491b8baa924507f4d033156179c31c2846569e488d7e6 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/groups/item/sets/item/terms/item/relations/item/toterm"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\termStore\groups\{group-id}\sets\{set-id}\terms\{term-id}\relations\{relation-id}
+// RelationRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\groups\{group-id}\sets\{set-id}\terms\{term-id}\relations\{relation-id}
 type RelationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type RelationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RelationRequestBuilderDeleteOptions options for Delete
 type RelationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type RelationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RelationRequestBuilderGetOptions options for Get
 type RelationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type RelationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// To indicate which terms are related to the current term as either pinned or reused.
+// RelationRequestBuilderGetQueryParameters to indicate which terms are related to the current term as either pinned or reused.
 type RelationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RelationRequestBuilderPatchOptions options for Patch
 type RelationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Relation;
@@ -56,10 +56,7 @@ type RelationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RelationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRelationRequestBuilderInternal instantiates a new RelationRequestBuilder and sets the default values.
 func NewRelationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RelationRequestBuilder) {
     m := &RelationRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRelationRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RelationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRelationRequestBuilder instantiates a new RelationRequestBuilder and sets the default values.
 func NewRelationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RelationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRelationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// To indicate which terms are related to the current term as either pinned or reused.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation to indicate which terms are related to the current term as either pinned or reused.
 func (m *RelationRequestBuilder) CreateDeleteRequestInformation(options *RelationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *RelationRequestBuilder) CreateDeleteRequestInformation(options *Relatio
     }
     return requestInfo, nil
 }
-// To indicate which terms are related to the current term as either pinned or reused.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation to indicate which terms are related to the current term as either pinned or reused.
 func (m *RelationRequestBuilder) CreateGetRequestInformation(options *RelationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *RelationRequestBuilder) CreateGetRequestInformation(options *RelationRe
     }
     return requestInfo, nil
 }
-// To indicate which terms are related to the current term as either pinned or reused.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation to indicate which terms are related to the current term as either pinned or reused.
 func (m *RelationRequestBuilder) CreatePatchRequestInformation(options *RelationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +130,7 @@ func (m *RelationRequestBuilder) CreatePatchRequestInformation(options *Relation
     }
     return requestInfo, nil
 }
-// To indicate which terms are related to the current term as either pinned or reused.
-// Parameters:
-//  - options : Options for the request
+// Delete to indicate which terms are related to the current term as either pinned or reused.
 func (m *RelationRequestBuilder) Delete(options *RelationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -159,9 +145,7 @@ func (m *RelationRequestBuilder) Delete(options *RelationRequestBuilderDeleteOpt
 func (m *RelationRequestBuilder) FromTerm()(*i22fa9ec37d86e8817b2319935532edd64e998a48306201814b9e8627fb411e63.FromTermRequestBuilder) {
     return i22fa9ec37d86e8817b2319935532edd64e998a48306201814b9e8627fb411e63.NewFromTermRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// To indicate which terms are related to the current term as either pinned or reused.
-// Parameters:
-//  - options : Options for the request
+// Get to indicate which terms are related to the current term as either pinned or reused.
 func (m *RelationRequestBuilder) Get(options *RelationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Relation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *RelationRequestBuilder) Get(options *RelationRequestBuilderGetOptions)(
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Relation), nil
 }
-// To indicate which terms are related to the current term as either pinned or reused.
-// Parameters:
-//  - options : Options for the request
+// Patch to indicate which terms are related to the current term as either pinned or reused.
 func (m *RelationRequestBuilder) Patch(options *RelationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

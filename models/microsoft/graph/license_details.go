@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// LicenseDetails 
 type LicenseDetails struct {
     Entity
     // Information about the service plans assigned with the license. Read-only, Not nullable
@@ -14,14 +14,14 @@ type LicenseDetails struct {
     // Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
     skuPartNumber *string;
 }
-// Instantiates a new licenseDetails and sets the default values.
+// NewLicenseDetails instantiates a new licenseDetails and sets the default values.
 func NewLicenseDetails()(*LicenseDetails) {
     m := &LicenseDetails{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
+// GetServicePlans gets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
 func (m *LicenseDetails) GetServicePlans()([]ServicePlanInfo) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *LicenseDetails) GetServicePlans()([]ServicePlanInfo) {
         return m.servicePlans
     }
 }
-// Gets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+// GetSkuId gets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
 func (m *LicenseDetails) GetSkuId()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *LicenseDetails) GetSkuId()(*string) {
         return m.skuId
     }
 }
-// Gets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
+// GetSkuPartNumber gets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
 func (m *LicenseDetails) GetSkuPartNumber()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *LicenseDetails) GetSkuPartNumber()(*string) {
         return m.skuPartNumber
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["servicePlans"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -87,9 +87,7 @@ func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *LicenseDetails) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *LicenseDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -120,21 +118,15 @@ func (m *LicenseDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
-// Parameters:
-//  - value : Value to set for the servicePlans property.
+// SetServicePlans sets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
 func (m *LicenseDetails) SetServicePlans(value []ServicePlanInfo)() {
     m.servicePlans = value
 }
-// Sets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
-// Parameters:
-//  - value : Value to set for the skuId property.
+// SetSkuId sets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
 func (m *LicenseDetails) SetSkuId(value *string)() {
     m.skuId = value
 }
-// Sets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
-// Parameters:
-//  - value : Value to set for the skuPartNumber property.
+// SetSkuPartNumber sets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
 func (m *LicenseDetails) SetSkuPartNumber(value *string)() {
     m.skuPartNumber = value
 }

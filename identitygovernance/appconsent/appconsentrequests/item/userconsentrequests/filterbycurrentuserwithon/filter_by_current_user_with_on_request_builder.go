@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\microsoft.graph.filterByCurrentUser(on={on})
+// FilterByCurrentUserWithOnRequestBuilder builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\microsoft.graph.filterByCurrentUser(on={on})
 type FilterByCurrentUserWithOnRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type FilterByCurrentUserWithOnRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// FilterByCurrentUserWithOnRequestBuilderGetOptions options for Get
 type FilterByCurrentUserWithOnRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type FilterByCurrentUserWithOnRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FilterByCurrentUserWithOnRequestBuilder and sets the default values.
-// Parameters:
-//  - on : Usage: on={on}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFilterByCurrentUserWithOnRequestBuilderInternal instantiates a new FilterByCurrentUserWithOnRequestBuilder and sets the default values.
 func NewFilterByCurrentUserWithOnRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, on *string)(*FilterByCurrentUserWithOnRequestBuilder) {
     m := &FilterByCurrentUserWithOnRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewFilterByCurrentUserWithOnRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FilterByCurrentUserWithOnRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFilterByCurrentUserWithOnRequestBuilder instantiates a new FilterByCurrentUserWithOnRequestBuilder and sets the default values.
 func NewFilterByCurrentUserWithOnRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FilterByCurrentUserWithOnRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function filterByCurrentUser
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function filterByCurrentUser
 func (m *FilterByCurrentUserWithOnRequestBuilder) CreateGetRequestInformation(options *FilterByCurrentUserWithOnRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *FilterByCurrentUserWithOnRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Invoke function filterByCurrentUser
-// Parameters:
-//  - options : Options for the request
+// Get invoke function filterByCurrentUser
 func (m *FilterByCurrentUserWithOnRequestBuilder) Get(options *FilterByCurrentUserWithOnRequestBuilderGetOptions)([]FilterByCurrentUserWithOn, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter\microsoft.graph.applyTopItemsFilter
+// ApplyTopItemsFilterRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter\microsoft.graph.applyTopItemsFilter
 type ApplyTopItemsFilterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ApplyTopItemsFilterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ApplyTopItemsFilterRequestBuilderPostOptions options for Post
 type ApplyTopItemsFilterRequestBuilderPostOptions struct {
     // 
     Body *ApplyTopItemsFilterRequestBody;
@@ -24,10 +24,7 @@ type ApplyTopItemsFilterRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApplyTopItemsFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplyTopItemsFilterRequestBuilderInternal instantiates a new ApplyTopItemsFilterRequestBuilder and sets the default values.
 func NewApplyTopItemsFilterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplyTopItemsFilterRequestBuilder) {
     m := &ApplyTopItemsFilterRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewApplyTopItemsFilterRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApplyTopItemsFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplyTopItemsFilterRequestBuilder instantiates a new ApplyTopItemsFilterRequestBuilder and sets the default values.
 func NewApplyTopItemsFilterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplyTopItemsFilterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplyTopItemsFilterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action applyTopItemsFilter
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action applyTopItemsFilter
 func (m *ApplyTopItemsFilterRequestBuilder) CreatePostRequestInformation(options *ApplyTopItemsFilterRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ApplyTopItemsFilterRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Invoke action applyTopItemsFilter
-// Parameters:
-//  - options : Options for the request
+// Post invoke action applyTopItemsFilter
 func (m *ApplyTopItemsFilterRequestBuilder) Post(options *ApplyTopItemsFilterRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

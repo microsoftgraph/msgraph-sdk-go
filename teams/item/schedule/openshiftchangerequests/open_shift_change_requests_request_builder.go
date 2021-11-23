@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\openShiftChangeRequests
+// OpenShiftChangeRequestsRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\openShiftChangeRequests
 type OpenShiftChangeRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OpenShiftChangeRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// OpenShiftChangeRequestsRequestBuilderGetOptions options for Get
 type OpenShiftChangeRequestsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type OpenShiftChangeRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get openShiftChangeRequests from teams
+// OpenShiftChangeRequestsRequestBuilderGetQueryParameters get openShiftChangeRequests from teams
 type OpenShiftChangeRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type OpenShiftChangeRequestsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// OpenShiftChangeRequestsRequestBuilderPostOptions options for Post
 type OpenShiftChangeRequestsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OpenShiftChangeRequest;
@@ -56,10 +56,7 @@ type OpenShiftChangeRequestsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OpenShiftChangeRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOpenShiftChangeRequestsRequestBuilderInternal instantiates a new OpenShiftChangeRequestsRequestBuilder and sets the default values.
 func NewOpenShiftChangeRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OpenShiftChangeRequestsRequestBuilder) {
     m := &OpenShiftChangeRequestsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewOpenShiftChangeRequestsRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OpenShiftChangeRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOpenShiftChangeRequestsRequestBuilder instantiates a new OpenShiftChangeRequestsRequestBuilder and sets the default values.
 func NewOpenShiftChangeRequestsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OpenShiftChangeRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOpenShiftChangeRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get openShiftChangeRequests from teams
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get openShiftChangeRequests from teams
 func (m *OpenShiftChangeRequestsRequestBuilder) CreateGetRequestInformation(options *OpenShiftChangeRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *OpenShiftChangeRequestsRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Create new navigation property to openShiftChangeRequests for teams
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to openShiftChangeRequests for teams
 func (m *OpenShiftChangeRequestsRequestBuilder) CreatePostRequestInformation(options *OpenShiftChangeRequestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *OpenShiftChangeRequestsRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Get openShiftChangeRequests from teams
-// Parameters:
-//  - options : Options for the request
+// Get get openShiftChangeRequests from teams
 func (m *OpenShiftChangeRequestsRequestBuilder) Get(options *OpenShiftChangeRequestsRequestBuilderGetOptions)(*OpenShiftChangeRequestsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *OpenShiftChangeRequestsRequestBuilder) Get(options *OpenShiftChangeRequ
     }
     return res.(*OpenShiftChangeRequestsResponse), nil
 }
-// Create new navigation property to openShiftChangeRequests for teams
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to openShiftChangeRequests for teams
 func (m *OpenShiftChangeRequestsRequestBuilder) Post(options *OpenShiftChangeRequestsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OpenShiftChangeRequest, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

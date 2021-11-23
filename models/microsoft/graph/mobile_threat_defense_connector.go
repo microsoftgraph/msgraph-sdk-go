@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MobileThreatDefenseConnector 
 type MobileThreatDefenseConnector struct {
     Entity
     // For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
@@ -25,14 +25,14 @@ type MobileThreatDefenseConnector struct {
     // Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
     partnerUnsupportedOsVersionBlocked *bool;
 }
-// Instantiates a new mobileThreatDefenseConnector and sets the default values.
+// NewMobileThreatDefenseConnector instantiates a new mobileThreatDefenseConnector and sets the default values.
 func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
     m := &MobileThreatDefenseConnector{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+// GetAndroidDeviceBlockedOnMissingPartnerData gets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
 func (m *MobileThreatDefenseConnector) GetAndroidDeviceBlockedOnMissingPartnerData()(*bool) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *MobileThreatDefenseConnector) GetAndroidDeviceBlockedOnMissingPartnerDa
         return m.androidDeviceBlockedOnMissingPartnerData
     }
 }
-// Gets the androidEnabled property value. For Android, set whether data from the data sync partner should be used during compliance evaluations
+// GetAndroidEnabled gets the androidEnabled property value. For Android, set whether data from the data sync partner should be used during compliance evaluations
 func (m *MobileThreatDefenseConnector) GetAndroidEnabled()(*bool) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *MobileThreatDefenseConnector) GetAndroidEnabled()(*bool) {
         return m.androidEnabled
     }
 }
-// Gets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+// GetIosDeviceBlockedOnMissingPartnerData gets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
 func (m *MobileThreatDefenseConnector) GetIosDeviceBlockedOnMissingPartnerData()(*bool) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *MobileThreatDefenseConnector) GetIosDeviceBlockedOnMissingPartnerData()
         return m.iosDeviceBlockedOnMissingPartnerData
     }
 }
-// Gets the iosEnabled property value. For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
+// GetIosEnabled gets the iosEnabled property value. For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
 func (m *MobileThreatDefenseConnector) GetIosEnabled()(*bool) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *MobileThreatDefenseConnector) GetIosEnabled()(*bool) {
         return m.iosEnabled
     }
 }
-// Gets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Data Sync Partner
+// GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Data Sync Partner
 func (m *MobileThreatDefenseConnector) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *MobileThreatDefenseConnector) GetLastHeartbeatDateTime()(*i336074805fc8
         return m.lastHeartbeatDateTime
     }
 }
-// Gets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+// GetPartnerState gets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
 func (m *MobileThreatDefenseConnector) GetPartnerState()(*MobileThreatPartnerTenantState) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *MobileThreatDefenseConnector) GetPartnerState()(*MobileThreatPartnerTen
         return m.partnerState
     }
 }
-// Gets the partnerUnresponsivenessThresholdInDays property value. Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
+// GetPartnerUnresponsivenessThresholdInDays gets the partnerUnresponsivenessThresholdInDays property value. Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
 func (m *MobileThreatDefenseConnector) GetPartnerUnresponsivenessThresholdInDays()(*int32) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *MobileThreatDefenseConnector) GetPartnerUnresponsivenessThresholdInDays
         return m.partnerUnresponsivenessThresholdInDays
     }
 }
-// Gets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+// GetPartnerUnsupportedOsVersionBlocked gets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
 func (m *MobileThreatDefenseConnector) GetPartnerUnsupportedOsVersionBlocked()(*bool) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *MobileThreatDefenseConnector) GetPartnerUnsupportedOsVersionBlocked()(*
         return m.partnerUnsupportedOsVersionBlocked
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["androidDeviceBlockedOnMissingPartnerData"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -185,9 +185,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
 func (m *MobileThreatDefenseConnector) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MobileThreatDefenseConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -244,51 +242,35 @@ func (m *MobileThreatDefenseConnector) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-// Parameters:
-//  - value : Value to set for the androidDeviceBlockedOnMissingPartnerData property.
+// SetAndroidDeviceBlockedOnMissingPartnerData sets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
 func (m *MobileThreatDefenseConnector) SetAndroidDeviceBlockedOnMissingPartnerData(value *bool)() {
     m.androidDeviceBlockedOnMissingPartnerData = value
 }
-// Sets the androidEnabled property value. For Android, set whether data from the data sync partner should be used during compliance evaluations
-// Parameters:
-//  - value : Value to set for the androidEnabled property.
+// SetAndroidEnabled sets the androidEnabled property value. For Android, set whether data from the data sync partner should be used during compliance evaluations
 func (m *MobileThreatDefenseConnector) SetAndroidEnabled(value *bool)() {
     m.androidEnabled = value
 }
-// Sets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-// Parameters:
-//  - value : Value to set for the iosDeviceBlockedOnMissingPartnerData property.
+// SetIosDeviceBlockedOnMissingPartnerData sets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
 func (m *MobileThreatDefenseConnector) SetIosDeviceBlockedOnMissingPartnerData(value *bool)() {
     m.iosDeviceBlockedOnMissingPartnerData = value
 }
-// Sets the iosEnabled property value. For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
-// Parameters:
-//  - value : Value to set for the iosEnabled property.
+// SetIosEnabled sets the iosEnabled property value. For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
 func (m *MobileThreatDefenseConnector) SetIosEnabled(value *bool)() {
     m.iosEnabled = value
 }
-// Sets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Data Sync Partner
-// Parameters:
-//  - value : Value to set for the lastHeartbeatDateTime property.
+// SetLastHeartbeatDateTime sets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Data Sync Partner
 func (m *MobileThreatDefenseConnector) SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastHeartbeatDateTime = value
 }
-// Sets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
-// Parameters:
-//  - value : Value to set for the partnerState property.
+// SetPartnerState sets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
 func (m *MobileThreatDefenseConnector) SetPartnerState(value *MobileThreatPartnerTenantState)() {
     m.partnerState = value
 }
-// Sets the partnerUnresponsivenessThresholdInDays property value. Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
-// Parameters:
-//  - value : Value to set for the partnerUnresponsivenessThresholdInDays property.
+// SetPartnerUnresponsivenessThresholdInDays sets the partnerUnresponsivenessThresholdInDays property value. Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
 func (m *MobileThreatDefenseConnector) SetPartnerUnresponsivenessThresholdInDays(value *int32)() {
     m.partnerUnresponsivenessThresholdInDays = value
 }
-// Sets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
-// Parameters:
-//  - value : Value to set for the partnerUnsupportedOsVersionBlocked property.
+// SetPartnerUnsupportedOsVersionBlocked sets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
 func (m *MobileThreatDefenseConnector) SetPartnerUnsupportedOsVersionBlocked(value *bool)() {
     m.partnerUnsupportedOsVersionBlocked = value
 }

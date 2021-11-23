@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \informationProtection\bitlocker\recoveryKeys
+// RecoveryKeysRequestBuilder builds and executes requests for operations under \informationProtection\bitlocker\recoveryKeys
 type RecoveryKeysRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RecoveryKeysRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RecoveryKeysRequestBuilderGetOptions options for Get
 type RecoveryKeysRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type RecoveryKeysRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The recovery keys associated with the bitlocker entity.
+// RecoveryKeysRequestBuilderGetQueryParameters the recovery keys associated with the bitlocker entity.
 type RecoveryKeysRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type RecoveryKeysRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RecoveryKeysRequestBuilderPostOptions options for Post
 type RecoveryKeysRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BitlockerRecoveryKey;
@@ -56,10 +56,7 @@ type RecoveryKeysRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RecoveryKeysRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRecoveryKeysRequestBuilderInternal instantiates a new RecoveryKeysRequestBuilder and sets the default values.
 func NewRecoveryKeysRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RecoveryKeysRequestBuilder) {
     m := &RecoveryKeysRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewRecoveryKeysRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RecoveryKeysRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRecoveryKeysRequestBuilder instantiates a new RecoveryKeysRequestBuilder and sets the default values.
 func NewRecoveryKeysRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RecoveryKeysRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRecoveryKeysRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The recovery keys associated with the bitlocker entity.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the recovery keys associated with the bitlocker entity.
 func (m *RecoveryKeysRequestBuilder) CreateGetRequestInformation(options *RecoveryKeysRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *RecoveryKeysRequestBuilder) CreateGetRequestInformation(options *Recove
     }
     return requestInfo, nil
 }
-// The recovery keys associated with the bitlocker entity.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the recovery keys associated with the bitlocker entity.
 func (m *RecoveryKeysRequestBuilder) CreatePostRequestInformation(options *RecoveryKeysRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *RecoveryKeysRequestBuilder) CreatePostRequestInformation(options *Recov
     }
     return requestInfo, nil
 }
-// The recovery keys associated with the bitlocker entity.
-// Parameters:
-//  - options : Options for the request
+// Get the recovery keys associated with the bitlocker entity.
 func (m *RecoveryKeysRequestBuilder) Get(options *RecoveryKeysRequestBuilderGetOptions)(*RecoveryKeysResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *RecoveryKeysRequestBuilder) Get(options *RecoveryKeysRequestBuilderGetO
     }
     return res.(*RecoveryKeysResponse), nil
 }
-// The recovery keys associated with the bitlocker entity.
-// Parameters:
-//  - options : Options for the request
+// Post the recovery keys associated with the bitlocker entity.
 func (m *RecoveryKeysRequestBuilder) Post(options *RecoveryKeysRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BitlockerRecoveryKey, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

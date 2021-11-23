@@ -5,7 +5,7 @@ import (
     i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/externalconnectors"
 )
 
-// 
+// ExternalConnection 
 type ExternalConnection struct {
     Entity
     // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
@@ -25,14 +25,14 @@ type ExternalConnection struct {
     // Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
     state *i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionState;
 }
-// Instantiates a new externalConnection and sets the default values.
+// NewExternalConnection instantiates a new externalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
+// GetConfiguration gets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) GetConfiguration()(*Configuration) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *ExternalConnection) GetConfiguration()(*Configuration) {
         return m.configuration
     }
 }
-// Gets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
+// GetDescription gets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ExternalConnection) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the groups property value. Read-only. Nullable.
+// GetGroups gets the groups property value. Read-only. Nullable.
 func (m *ExternalConnection) GetGroups()([]ExternalGroup) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ExternalConnection) GetGroups()([]ExternalGroup) {
         return m.groups
     }
 }
-// Gets the items property value. Read-only. Nullable.
+// GetItems gets the items property value. Read-only. Nullable.
 func (m *ExternalConnection) GetItems()([]ExternalItem) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *ExternalConnection) GetItems()([]ExternalItem) {
         return m.items
     }
 }
-// Gets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
+// GetName gets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
 func (m *ExternalConnection) GetName()(*string) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *ExternalConnection) GetName()(*string) {
         return m.name
     }
 }
-// Gets the operations property value. Read-only. Nullable.
+// GetOperations gets the operations property value. Read-only. Nullable.
 func (m *ExternalConnection) GetOperations()([]ConnectionOperation) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *ExternalConnection) GetOperations()([]ConnectionOperation) {
         return m.operations
     }
 }
-// Gets the schema property value. Read-only. Nullable.
+// GetSchema gets the schema property value. Read-only. Nullable.
 func (m *ExternalConnection) GetSchema()(*Schema) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *ExternalConnection) GetSchema()(*Schema) {
         return m.schema
     }
 }
-// Gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
+// GetState gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 func (m *ExternalConnection) GetState()(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionState) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *ExternalConnection) GetState()(*i611946aca48221be342488e87b2af098783471
         return m.state
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -197,9 +197,7 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(interface{}
 func (m *ExternalConnection) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -271,51 +269,35 @@ func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
-// Parameters:
-//  - value : Value to set for the configuration property.
+// SetConfiguration sets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) SetConfiguration(value *Configuration)() {
     m.configuration = value
 }
-// Sets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the groups property value. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the groups property.
+// SetGroups sets the groups property value. Read-only. Nullable.
 func (m *ExternalConnection) SetGroups(value []ExternalGroup)() {
     m.groups = value
 }
-// Sets the items property value. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the items property.
+// SetItems sets the items property value. Read-only. Nullable.
 func (m *ExternalConnection) SetItems(value []ExternalItem)() {
     m.items = value
 }
-// Sets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
 func (m *ExternalConnection) SetName(value *string)() {
     m.name = value
 }
-// Sets the operations property value. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the operations property.
+// SetOperations sets the operations property value. Read-only. Nullable.
 func (m *ExternalConnection) SetOperations(value []ConnectionOperation)() {
     m.operations = value
 }
-// Sets the schema property value. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the schema property.
+// SetSchema sets the schema property value. Read-only. Nullable.
 func (m *ExternalConnection) SetSchema(value *Schema)() {
     m.schema = value
 }
-// Sets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 func (m *ExternalConnection) SetState(value *i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionState)() {
     m.state = value
 }

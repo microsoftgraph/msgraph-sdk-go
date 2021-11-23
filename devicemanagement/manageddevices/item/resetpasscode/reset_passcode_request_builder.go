@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.resetPasscode
+// ResetPasscodeRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.resetPasscode
 type ResetPasscodeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ResetPasscodeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ResetPasscodeRequestBuilderPostOptions options for Post
 type ResetPasscodeRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type ResetPasscodeRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ResetPasscodeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResetPasscodeRequestBuilderInternal instantiates a new ResetPasscodeRequestBuilder and sets the default values.
 func NewResetPasscodeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResetPasscodeRequestBuilder) {
     m := &ResetPasscodeRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewResetPasscodeRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ResetPasscodeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResetPasscodeRequestBuilder instantiates a new ResetPasscodeRequestBuilder and sets the default values.
 func NewResetPasscodeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResetPasscodeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResetPasscodeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Reset passcode
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation reset passcode
 func (m *ResetPasscodeRequestBuilder) CreatePostRequestInformation(options *ResetPasscodeRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *ResetPasscodeRequestBuilder) CreatePostRequestInformation(options *Rese
     }
     return requestInfo, nil
 }
-// Reset passcode
-// Parameters:
-//  - options : Options for the request
+// Post reset passcode
 func (m *ResetPasscodeRequestBuilder) Post(options *ResetPasscodeRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

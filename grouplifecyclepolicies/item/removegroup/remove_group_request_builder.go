@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \groupLifecyclePolicies\{groupLifecyclePolicy-id}\microsoft.graph.removeGroup
+// RemoveGroupRequestBuilder builds and executes requests for operations under \groupLifecyclePolicies\{groupLifecyclePolicy-id}\microsoft.graph.removeGroup
 type RemoveGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RemoveGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RemoveGroupRequestBuilderPostOptions options for Post
 type RemoveGroupRequestBuilderPostOptions struct {
     // 
     Body *RemoveGroupRequestBody;
@@ -24,10 +24,7 @@ type RemoveGroupRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RemoveGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoveGroupRequestBuilderInternal instantiates a new RemoveGroupRequestBuilder and sets the default values.
 func NewRemoveGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoveGroupRequestBuilder) {
     m := &RemoveGroupRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewRemoveGroupRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RemoveGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoveGroupRequestBuilder instantiates a new RemoveGroupRequestBuilder and sets the default values.
 func NewRemoveGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoveGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action removeGroup
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action removeGroup
 func (m *RemoveGroupRequestBuilder) CreatePostRequestInformation(options *RemoveGroupRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *RemoveGroupRequestBuilder) CreatePostRequestInformation(options *Remove
     }
     return requestInfo, nil
 }
-// Invoke action removeGroup
-// Parameters:
-//  - options : Options for the request
+// Post invoke action removeGroup
 func (m *RemoveGroupRequestBuilder) Post(options *RemoveGroupRequestBuilderPostOptions)(*bool, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     ic9195694371d2c5ddf39c04599379c602d629673f6fcdb64f22af4b2db47f92a "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/add"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets
+// WorksheetsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets
 type WorksheetsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type WorksheetsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// WorksheetsRequestBuilderGetOptions options for Get
 type WorksheetsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type WorksheetsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
+// WorksheetsRequestBuilderGetQueryParameters represents a collection of worksheets associated with the workbook. Read-only.
 type WorksheetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type WorksheetsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// WorksheetsRequestBuilderPostOptions options for Post
 type WorksheetsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheet;
@@ -60,10 +60,7 @@ type WorksheetsRequestBuilderPostOptions struct {
 func (m *WorksheetsRequestBuilder) Add()(*ic9195694371d2c5ddf39c04599379c602d629673f6fcdb64f22af4b2db47f92a.AddRequestBuilder) {
     return ic9195694371d2c5ddf39c04599379c602d629673f6fcdb64f22af4b2db47f92a.NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new WorksheetsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorksheetsRequestBuilderInternal instantiates a new WorksheetsRequestBuilder and sets the default values.
 func NewWorksheetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorksheetsRequestBuilder) {
     m := &WorksheetsRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewWorksheetsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorksheetsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorksheetsRequestBuilder instantiates a new WorksheetsRequestBuilder and sets the default values.
 func NewWorksheetsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorksheetsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorksheetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents a collection of worksheets associated with the workbook. Read-only.
 func (m *WorksheetsRequestBuilder) CreateGetRequestInformation(options *WorksheetsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *WorksheetsRequestBuilder) CreateGetRequestInformation(options *Workshee
     }
     return requestInfo, nil
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents a collection of worksheets associated with the workbook. Read-only.
 func (m *WorksheetsRequestBuilder) CreatePostRequestInformation(options *WorksheetsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *WorksheetsRequestBuilder) CreatePostRequestInformation(options *Workshe
     }
     return requestInfo, nil
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents a collection of worksheets associated with the workbook. Read-only.
 func (m *WorksheetsRequestBuilder) Get(options *WorksheetsRequestBuilderGetOptions)(*WorksheetsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *WorksheetsRequestBuilder) Get(options *WorksheetsRequestBuilderGetOptio
     }
     return res.(*WorksheetsResponse), nil
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post represents a collection of worksheets associated with the workbook. Read-only.
 func (m *WorksheetsRequestBuilder) Post(options *WorksheetsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheet, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

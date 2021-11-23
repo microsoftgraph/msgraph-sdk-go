@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\appliedPolicies
+// AppliedPoliciesRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\appliedPolicies
 type AppliedPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppliedPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppliedPoliciesRequestBuilderGetOptions options for Get
 type AppliedPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AppliedPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
+// AppliedPoliciesRequestBuilderGetQueryParameters zero or more policys already applied on the registered app when it last synchronized with managment service.
 type AppliedPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AppliedPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AppliedPoliciesRequestBuilderPostOptions options for Post
 type AppliedPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicy;
@@ -56,10 +56,7 @@ type AppliedPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppliedPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppliedPoliciesRequestBuilderInternal instantiates a new AppliedPoliciesRequestBuilder and sets the default values.
 func NewAppliedPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppliedPoliciesRequestBuilder) {
     m := &AppliedPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAppliedPoliciesRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppliedPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppliedPoliciesRequestBuilder instantiates a new AppliedPoliciesRequestBuilder and sets the default values.
 func NewAppliedPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppliedPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppliedPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *AppliedPoliciesRequestBuilder) CreateGetRequestInformation(options *AppliedPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AppliedPoliciesRequestBuilder) CreateGetRequestInformation(options *App
     }
     return requestInfo, nil
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *AppliedPoliciesRequestBuilder) CreatePostRequestInformation(options *AppliedPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AppliedPoliciesRequestBuilder) CreatePostRequestInformation(options *Ap
     }
     return requestInfo, nil
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
-// Parameters:
-//  - options : Options for the request
+// Get zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *AppliedPoliciesRequestBuilder) Get(options *AppliedPoliciesRequestBuilderGetOptions)(*AppliedPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AppliedPoliciesRequestBuilder) Get(options *AppliedPoliciesRequestBuild
     }
     return res.(*AppliedPoliciesResponse), nil
 }
-// Zero or more policys already applied on the registered app when it last synchronized with managment service.
-// Parameters:
-//  - options : Options for the request
+// Post zero or more policys already applied on the registered app when it last synchronized with managment service.
 func (m *AppliedPoliciesRequestBuilder) Post(options *AppliedPoliciesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedAppPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

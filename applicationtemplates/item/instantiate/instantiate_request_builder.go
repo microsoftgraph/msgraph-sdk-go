@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \applicationTemplates\{applicationTemplate-id}\microsoft.graph.instantiate
+// InstantiateRequestBuilder builds and executes requests for operations under \applicationTemplates\{applicationTemplate-id}\microsoft.graph.instantiate
 type InstantiateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type InstantiateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// InstantiateRequestBuilderPostOptions options for Post
 type InstantiateRequestBuilderPostOptions struct {
     // 
     Body *InstantiateRequestBody;
@@ -26,21 +26,21 @@ type InstantiateRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes applicationServicePrincipal
+// InstantiateResponse union type wrapper for classes applicationServicePrincipal
 type InstantiateResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type applicationServicePrincipal
     applicationServicePrincipal *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationServicePrincipal;
 }
-// Instantiates a new instantiateResponse and sets the default values.
+// NewInstantiateResponse instantiates a new instantiateResponse and sets the default values.
 func NewInstantiateResponse()(*InstantiateResponse) {
     m := &InstantiateResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InstantiateResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *InstantiateResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the applicationServicePrincipal property value. Union type representation for type applicationServicePrincipal
+// GetApplicationServicePrincipal gets the applicationServicePrincipal property value. Union type representation for type applicationServicePrincipal
 func (m *InstantiateResponse) GetApplicationServicePrincipal()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationServicePrincipal) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *InstantiateResponse) GetApplicationServicePrincipal()(*i4a838ef194e4c99
         return m.applicationServicePrincipal
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *InstantiateResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["applicationServicePrincipal"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *InstantiateResponse) GetFieldDeserializers()(map[string]func(interface{
 func (m *InstantiateResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *InstantiateResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("applicationServicePrincipal", m.GetApplicationServicePrincipal())
@@ -92,22 +90,15 @@ func (m *InstantiateResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InstantiateResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the applicationServicePrincipal property value. Union type representation for type applicationServicePrincipal
-// Parameters:
-//  - value : Value to set for the applicationServicePrincipal property.
+// SetApplicationServicePrincipal sets the applicationServicePrincipal property value. Union type representation for type applicationServicePrincipal
 func (m *InstantiateResponse) SetApplicationServicePrincipal(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationServicePrincipal)() {
     m.applicationServicePrincipal = value
 }
-// Instantiates a new InstantiateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInstantiateRequestBuilderInternal instantiates a new InstantiateRequestBuilder and sets the default values.
 func NewInstantiateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InstantiateRequestBuilder) {
     m := &InstantiateRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewInstantiateRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new InstantiateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInstantiateRequestBuilder instantiates a new InstantiateRequestBuilder and sets the default values.
 func NewInstantiateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InstantiateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInstantiateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action instantiate
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action instantiate
 func (m *InstantiateRequestBuilder) CreatePostRequestInformation(options *InstantiateRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *InstantiateRequestBuilder) CreatePostRequestInformation(options *Instan
     }
     return requestInfo, nil
 }
-// Invoke action instantiate
-// Parameters:
-//  - options : Options for the request
+// Post invoke action instantiate
 func (m *InstantiateRequestBuilder) Post(options *InstantiateRequestBuilderPostOptions)(*InstantiateResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -12,7 +12,7 @@ import (
     iffeb8fd6812998e372f8b86fce623d5b4b055347b27a5e10d253ff43d246f33d "github.com/microsoftgraph/msgraph-sdk-go/identity/b2xuserflows/item/languages/item"
 )
 
-// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}
+// B2xIdentityUserFlowRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}
 type B2xIdentityUserFlowRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type B2xIdentityUserFlowRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// B2xIdentityUserFlowRequestBuilderDeleteOptions options for Delete
 type B2xIdentityUserFlowRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -30,7 +30,7 @@ type B2xIdentityUserFlowRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// B2xIdentityUserFlowRequestBuilderGetOptions options for Get
 type B2xIdentityUserFlowRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -41,14 +41,14 @@ type B2xIdentityUserFlowRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents entry point for B2X/self-service sign-up identity userflows.
+// B2xIdentityUserFlowRequestBuilderGetQueryParameters represents entry point for B2X/self-service sign-up identity userflows.
 type B2xIdentityUserFlowRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// B2xIdentityUserFlowRequestBuilderPatchOptions options for Patch
 type B2xIdentityUserFlowRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.B2xIdentityUserFlow;
@@ -59,10 +59,7 @@ type B2xIdentityUserFlowRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new B2xIdentityUserFlowRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewB2xIdentityUserFlowRequestBuilderInternal instantiates a new B2xIdentityUserFlowRequestBuilder and sets the default values.
 func NewB2xIdentityUserFlowRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*B2xIdentityUserFlowRequestBuilder) {
     m := &B2xIdentityUserFlowRequestBuilder{
     }
@@ -75,18 +72,13 @@ func NewB2xIdentityUserFlowRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new B2xIdentityUserFlowRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewB2xIdentityUserFlowRequestBuilder instantiates a new B2xIdentityUserFlowRequestBuilder and sets the default values.
 func NewB2xIdentityUserFlowRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*B2xIdentityUserFlowRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewB2xIdentityUserFlowRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents entry point for B2X/self-service sign-up identity userflows.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) CreateDeleteRequestInformation(options *B2xIdentityUserFlowRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Represents entry point for B2X/self-service sign-up identity userflows.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) CreateGetRequestInformation(options *B2xIdentityUserFlowRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Represents entry point for B2X/self-service sign-up identity userflows.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) CreatePatchRequestInformation(options *B2xIdentityUserFlowRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,9 +133,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Represents entry point for B2X/self-service sign-up identity userflows.
-// Parameters:
-//  - options : Options for the request
+// Delete represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) Delete(options *B2xIdentityUserFlowRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -159,9 +145,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) Delete(options *B2xIdentityUserFlowR
     }
     return nil
 }
-// Represents entry point for B2X/self-service sign-up identity userflows.
-// Parameters:
-//  - options : Options for the request
+// Get represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) Get(options *B2xIdentityUserFlowRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.B2xIdentityUserFlow, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -179,9 +163,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) IdentityProviders()(*i33898ff3b4aa69
 func (m *B2xIdentityUserFlowRequestBuilder) Languages()(*i21e37932240ac829addd6426fbe4f398cd6c1253e77d14a3a2d0ed32b9860f0d.LanguagesRequestBuilder) {
     return i21e37932240ac829addd6426fbe4f398cd6c1253e77d14a3a2d0ed32b9860f0d.NewLanguagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identity.b2xUserFlows.item.languages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// LanguagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identity.b2xUserFlows.item.languages.item collection
 func (m *B2xIdentityUserFlowRequestBuilder) LanguagesById(id string)(*iffeb8fd6812998e372f8b86fce623d5b4b055347b27a5e10d253ff43d246f33d.UserFlowLanguageConfigurationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -192,9 +174,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) LanguagesById(id string)(*iffeb8fd68
     }
     return iffeb8fd6812998e372f8b86fce623d5b4b055347b27a5e10d253ff43d246f33d.NewUserFlowLanguageConfigurationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Represents entry point for B2X/self-service sign-up identity userflows.
-// Parameters:
-//  - options : Options for the request
+// Patch represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) Patch(options *B2xIdentityUserFlowRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -209,9 +189,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) Patch(options *B2xIdentityUserFlowRe
 func (m *B2xIdentityUserFlowRequestBuilder) UserAttributeAssignments()(*i71e405a8d1fa3f6a758b702c04166c77cbb98f401dadb3fa682f3e2ed2f5589c.UserAttributeAssignmentsRequestBuilder) {
     return i71e405a8d1fa3f6a758b702c04166c77cbb98f401dadb3fa682f3e2ed2f5589c.NewUserAttributeAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identity.b2xUserFlows.item.userAttributeAssignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// UserAttributeAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identity.b2xUserFlows.item.userAttributeAssignments.item collection
 func (m *B2xIdentityUserFlowRequestBuilder) UserAttributeAssignmentsById(id string)(*i4e7268fbaade322b200bff897ba7a9ec706172d25d1fac40768df711c1624a0f.IdentityUserFlowAttributeAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

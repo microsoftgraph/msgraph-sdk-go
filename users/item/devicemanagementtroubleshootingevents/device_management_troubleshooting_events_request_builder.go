@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\deviceManagementTroubleshootingEvents
+// DeviceManagementTroubleshootingEventsRequestBuilder builds and executes requests for operations under \users\{user-id}\deviceManagementTroubleshootingEvents
 type DeviceManagementTroubleshootingEventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementTroubleshootingEventsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceManagementTroubleshootingEventsRequestBuilderGetOptions options for Get
 type DeviceManagementTroubleshootingEventsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceManagementTroubleshootingEventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of troubleshooting events for this user.
+// DeviceManagementTroubleshootingEventsRequestBuilderGetQueryParameters the list of troubleshooting events for this user.
 type DeviceManagementTroubleshootingEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceManagementTroubleshootingEventsRequestBuilderGetQueryParameters struc
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceManagementTroubleshootingEventsRequestBuilderPostOptions options for Post
 type DeviceManagementTroubleshootingEventsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementTroubleshootingEvent;
@@ -56,10 +56,7 @@ type DeviceManagementTroubleshootingEventsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementTroubleshootingEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementTroubleshootingEventsRequestBuilderInternal instantiates a new DeviceManagementTroubleshootingEventsRequestBuilder and sets the default values.
 func NewDeviceManagementTroubleshootingEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementTroubleshootingEventsRequestBuilder) {
     m := &DeviceManagementTroubleshootingEventsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceManagementTroubleshootingEventsRequestBuilderInternal(pathParamete
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementTroubleshootingEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementTroubleshootingEventsRequestBuilder instantiates a new DeviceManagementTroubleshootingEventsRequestBuilder and sets the default values.
 func NewDeviceManagementTroubleshootingEventsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementTroubleshootingEventsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementTroubleshootingEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of troubleshooting events for this user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of troubleshooting events for this user.
 func (m *DeviceManagementTroubleshootingEventsRequestBuilder) CreateGetRequestInformation(options *DeviceManagementTroubleshootingEventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceManagementTroubleshootingEventsRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// The list of troubleshooting events for this user.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of troubleshooting events for this user.
 func (m *DeviceManagementTroubleshootingEventsRequestBuilder) CreatePostRequestInformation(options *DeviceManagementTroubleshootingEventsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceManagementTroubleshootingEventsRequestBuilder) CreatePostRequestI
     }
     return requestInfo, nil
 }
-// The list of troubleshooting events for this user.
-// Parameters:
-//  - options : Options for the request
+// Get the list of troubleshooting events for this user.
 func (m *DeviceManagementTroubleshootingEventsRequestBuilder) Get(options *DeviceManagementTroubleshootingEventsRequestBuilderGetOptions)(*DeviceManagementTroubleshootingEventsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceManagementTroubleshootingEventsRequestBuilder) Get(options *Devic
     }
     return res.(*DeviceManagementTroubleshootingEventsResponse), nil
 }
-// The list of troubleshooting events for this user.
-// Parameters:
-//  - options : Options for the request
+// Post the list of troubleshooting events for this user.
 func (m *DeviceManagementTroubleshootingEventsRequestBuilder) Post(options *DeviceManagementTroubleshootingEventsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementTroubleshootingEvent, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

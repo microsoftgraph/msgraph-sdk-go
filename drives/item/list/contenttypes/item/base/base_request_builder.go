@@ -12,7 +12,7 @@ import (
     ic781016c5523c999c4b1cd671cfb53ed6b10a54462724f42e2aab645055f1897 "github.com/microsoftgraph/msgraph-sdk-go/drives/item/list/contenttypes/item/base/ispublished"
 )
 
-// Builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\{contentType-id}\base
+// BaseRequestBuilder builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\{contentType-id}\base
 type BaseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -21,7 +21,7 @@ type BaseRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// BaseRequestBuilderGetOptions options for Get
 type BaseRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -32,7 +32,7 @@ type BaseRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Parent contentType from which this content type is derived.
+// BaseRequestBuilderGetQueryParameters parent contentType from which this content type is derived.
 type BaseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -42,10 +42,7 @@ type BaseRequestBuilderGetQueryParameters struct {
 func (m *BaseRequestBuilder) AssociateWithHubSites()(*i9640ad4c5f221fa7cf3d22da3713c65bc604c71b2a426c9f22a9b7afcb36eb73.AssociateWithHubSitesRequestBuilder) {
     return i9640ad4c5f221fa7cf3d22da3713c65bc604c71b2a426c9f22a9b7afcb36eb73.NewAssociateWithHubSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new BaseRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBaseRequestBuilderInternal instantiates a new BaseRequestBuilder and sets the default values.
 func NewBaseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BaseRequestBuilder) {
     m := &BaseRequestBuilder{
     }
@@ -58,10 +55,7 @@ func NewBaseRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BaseRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBaseRequestBuilder instantiates a new BaseRequestBuilder and sets the default values.
 func NewBaseRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BaseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -70,9 +64,7 @@ func NewBaseRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
 func (m *BaseRequestBuilder) CopyToDefaultContentLocation()(*i07bdc42ac2dfc520f6f21d728420f445c545c09c072e332673bf36d1e557dabd.CopyToDefaultContentLocationRequestBuilder) {
     return i07bdc42ac2dfc520f6f21d728420f445c545c09c072e332673bf36d1e557dabd.NewCopyToDefaultContentLocationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Parent contentType from which this content type is derived.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation parent contentType from which this content type is derived.
 func (m *BaseRequestBuilder) CreateGetRequestInformation(options *BaseRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *BaseRequestBuilder) CreateGetRequestInformation(options *BaseRequestBui
     }
     return requestInfo, nil
 }
-// Parent contentType from which this content type is derived.
-// Parameters:
-//  - options : Options for the request
+// Get parent contentType from which this content type is derived.
 func (m *BaseRequestBuilder) Get(options *BaseRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentType, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -106,7 +96,7 @@ func (m *BaseRequestBuilder) Get(options *BaseRequestBuilderGetOptions)(*i4a838e
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentType), nil
 }
-// Builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\{contentType-id}\base\microsoft.graph.isPublished()
+// IsPublished builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\{contentType-id}\base\microsoft.graph.isPublished()
 func (m *BaseRequestBuilder) IsPublished()(*ic781016c5523c999c4b1cd671cfb53ed6b10a54462724f42e2aab645055f1897.IsPublishedRequestBuilder) {
     return ic781016c5523c999c4b1cd671cfb53ed6b10a54462724f42e2aab645055f1897.NewIsPublishedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

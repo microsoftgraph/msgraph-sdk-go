@@ -6,7 +6,7 @@ import (
     i38c46eb33f2d36dc59f0ae913c99556a8126694bb4665e210ef3d49ba179a204 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/transitivemembers/ref"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\transitiveMembers
+// TransitiveMembersRequestBuilder builds and executes requests for operations under \groups\{group-id}\transitiveMembers
 type TransitiveMembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TransitiveMembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TransitiveMembersRequestBuilderGetOptions options for Get
 type TransitiveMembersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TransitiveMembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get transitiveMembers from groups
+// TransitiveMembersRequestBuilderGetQueryParameters get transitiveMembers from groups
 type TransitiveMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type TransitiveMembersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new TransitiveMembersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTransitiveMembersRequestBuilderInternal instantiates a new TransitiveMembersRequestBuilder and sets the default values.
 func NewTransitiveMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TransitiveMembersRequestBuilder) {
     m := &TransitiveMembersRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewTransitiveMembersRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TransitiveMembersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTransitiveMembersRequestBuilder instantiates a new TransitiveMembersRequestBuilder and sets the default values.
 func NewTransitiveMembersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TransitiveMembersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTransitiveMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get transitiveMembers from groups
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get transitiveMembers from groups
 func (m *TransitiveMembersRequestBuilder) CreateGetRequestInformation(options *TransitiveMembersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *TransitiveMembersRequestBuilder) CreateGetRequestInformation(options *T
     }
     return requestInfo, nil
 }
-// Get transitiveMembers from groups
-// Parameters:
-//  - options : Options for the request
+// Get get transitiveMembers from groups
 func (m *TransitiveMembersRequestBuilder) Get(options *TransitiveMembersRequestBuilderGetOptions)(*TransitiveMembersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

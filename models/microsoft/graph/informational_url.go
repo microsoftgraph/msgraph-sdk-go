@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// InformationalUrl 
 type InformationalUrl struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type InformationalUrl struct {
     // Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
     termsOfServiceUrl *string;
 }
-// Instantiates a new informationalUrl and sets the default values.
+// NewInformationalUrl instantiates a new informationalUrl and sets the default values.
 func NewInformationalUrl()(*InformationalUrl) {
     m := &InformationalUrl{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationalUrl) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *InformationalUrl) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the logoUrl property value. CDN URL to the application's logo, Read-only.
+// GetLogoUrl gets the logoUrl property value. CDN URL to the application's logo, Read-only.
 func (m *InformationalUrl) GetLogoUrl()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *InformationalUrl) GetLogoUrl()(*string) {
         return m.logoUrl
     }
 }
-// Gets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
+// GetMarketingUrl gets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
 func (m *InformationalUrl) GetMarketingUrl()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *InformationalUrl) GetMarketingUrl()(*string) {
         return m.marketingUrl
     }
 }
-// Gets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
+// GetPrivacyStatementUrl gets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
 func (m *InformationalUrl) GetPrivacyStatementUrl()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *InformationalUrl) GetPrivacyStatementUrl()(*string) {
         return m.privacyStatementUrl
     }
 }
-// Gets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
+// GetSupportUrl gets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
 func (m *InformationalUrl) GetSupportUrl()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *InformationalUrl) GetSupportUrl()(*string) {
         return m.supportUrl
     }
 }
-// Gets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
+// GetTermsOfServiceUrl gets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
 func (m *InformationalUrl) GetTermsOfServiceUrl()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *InformationalUrl) GetTermsOfServiceUrl()(*string) {
         return m.termsOfServiceUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["logoUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,9 +132,7 @@ func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *InformationalUrl) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *InformationalUrl) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("logoUrl", m.GetLogoUrl())
@@ -174,39 +172,27 @@ func (m *InformationalUrl) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationalUrl) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the logoUrl property value. CDN URL to the application's logo, Read-only.
-// Parameters:
-//  - value : Value to set for the logoUrl property.
+// SetLogoUrl sets the logoUrl property value. CDN URL to the application's logo, Read-only.
 func (m *InformationalUrl) SetLogoUrl(value *string)() {
     m.logoUrl = value
 }
-// Sets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
-// Parameters:
-//  - value : Value to set for the marketingUrl property.
+// SetMarketingUrl sets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
 func (m *InformationalUrl) SetMarketingUrl(value *string)() {
     m.marketingUrl = value
 }
-// Sets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
-// Parameters:
-//  - value : Value to set for the privacyStatementUrl property.
+// SetPrivacyStatementUrl sets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
 func (m *InformationalUrl) SetPrivacyStatementUrl(value *string)() {
     m.privacyStatementUrl = value
 }
-// Sets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
-// Parameters:
-//  - value : Value to set for the supportUrl property.
+// SetSupportUrl sets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
 func (m *InformationalUrl) SetSupportUrl(value *string)() {
     m.supportUrl = value
 }
-// Sets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
-// Parameters:
-//  - value : Value to set for the termsOfServiceUrl property.
+// SetTermsOfServiceUrl sets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
 func (m *InformationalUrl) SetTermsOfServiceUrl(value *string)() {
     m.termsOfServiceUrl = value
 }

@@ -11,7 +11,7 @@ import (
     id334b355b0e9c1a808648dc507c9c2722906e5d1665f782a1e2496b2a183da94 "github.com/microsoftgraph/msgraph-sdk-go/agreements/item/files/item"
 )
 
-// Builds and executes requests for operations under \agreements\{agreement-id}
+// AgreementRequestBuilder builds and executes requests for operations under \agreements\{agreement-id}
 type AgreementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type AgreementRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AgreementRequestBuilderDeleteOptions options for Delete
 type AgreementRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type AgreementRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AgreementRequestBuilderGetOptions options for Get
 type AgreementRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,12 +40,12 @@ type AgreementRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from agreements by key
+// AgreementRequestBuilderGetQueryParameters get entity from agreements by key
 type AgreementRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AgreementRequestBuilderPatchOptions options for Patch
 type AgreementRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Agreement;
@@ -59,9 +59,7 @@ type AgreementRequestBuilderPatchOptions struct {
 func (m *AgreementRequestBuilder) Acceptances()(*i340d5d9b1c93dce1b5a110cf5bbac8114c9a4b58e229c9166305cebe2c92e1cb.AcceptancesRequestBuilder) {
     return i340d5d9b1c93dce1b5a110cf5bbac8114c9a4b58e229c9166305cebe2c92e1cb.NewAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.agreements.item.acceptances.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AcceptancesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.agreements.item.acceptances.item collection
 func (m *AgreementRequestBuilder) AcceptancesById(id string)(*ic5f55850233142ac7d28f19d006edf4c80dee8f569419b3a03d839aeeaba1991.AgreementAcceptanceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -72,10 +70,7 @@ func (m *AgreementRequestBuilder) AcceptancesById(id string)(*ic5f55850233142ac7
     }
     return ic5f55850233142ac7d28f19d006edf4c80dee8f569419b3a03d839aeeaba1991.NewAgreementAcceptanceRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new AgreementRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgreementRequestBuilderInternal instantiates a new AgreementRequestBuilder and sets the default values.
 func NewAgreementRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgreementRequestBuilder) {
     m := &AgreementRequestBuilder{
     }
@@ -88,18 +83,13 @@ func NewAgreementRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AgreementRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgreementRequestBuilder instantiates a new AgreementRequestBuilder and sets the default values.
 func NewAgreementRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgreementRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from agreements
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from agreements
 func (m *AgreementRequestBuilder) CreateDeleteRequestInformation(options *AgreementRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,9 +106,7 @@ func (m *AgreementRequestBuilder) CreateDeleteRequestInformation(options *Agreem
     }
     return requestInfo, nil
 }
-// Get entity from agreements by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from agreements by key
 func (m *AgreementRequestBuilder) CreateGetRequestInformation(options *AgreementRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,9 +126,7 @@ func (m *AgreementRequestBuilder) CreateGetRequestInformation(options *Agreement
     }
     return requestInfo, nil
 }
-// Update entity in agreements
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in agreements
 func (m *AgreementRequestBuilder) CreatePatchRequestInformation(options *AgreementRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -158,9 +144,7 @@ func (m *AgreementRequestBuilder) CreatePatchRequestInformation(options *Agreeme
     }
     return requestInfo, nil
 }
-// Delete entity from agreements
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from agreements
 func (m *AgreementRequestBuilder) Delete(options *AgreementRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -178,9 +162,7 @@ func (m *AgreementRequestBuilder) File()(*ibfafeebed2dd285e7305e7475c15f9e74a957
 func (m *AgreementRequestBuilder) Files()(*i534405002975c09989779fd4d2b641edcec6af4615b71a008c4aad75a339f35b.FilesRequestBuilder) {
     return i534405002975c09989779fd4d2b641edcec6af4615b71a008c4aad75a339f35b.NewFilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.agreements.item.files.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// FilesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.agreements.item.files.item collection
 func (m *AgreementRequestBuilder) FilesById(id string)(*id334b355b0e9c1a808648dc507c9c2722906e5d1665f782a1e2496b2a183da94.AgreementFileLocalizationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -191,9 +173,7 @@ func (m *AgreementRequestBuilder) FilesById(id string)(*id334b355b0e9c1a808648dc
     }
     return id334b355b0e9c1a808648dc507c9c2722906e5d1665f782a1e2496b2a183da94.NewAgreementFileLocalizationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get entity from agreements by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from agreements by key
 func (m *AgreementRequestBuilder) Get(options *AgreementRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Agreement, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -205,9 +185,7 @@ func (m *AgreementRequestBuilder) Get(options *AgreementRequestBuilderGetOptions
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Agreement), nil
 }
-// Update entity in agreements
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in agreements
 func (m *AgreementRequestBuilder) Patch(options *AgreementRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

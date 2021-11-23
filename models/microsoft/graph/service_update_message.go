@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ServiceUpdateMessage 
 type ServiceUpdateMessage struct {
     ServiceAnnouncementBase
     // The expected deadline of the action for the message.
@@ -25,14 +25,14 @@ type ServiceUpdateMessage struct {
     // Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
     viewPoint *ServiceUpdateMessageViewpoint;
 }
-// Instantiates a new serviceUpdateMessage and sets the default values.
+// NewServiceUpdateMessage instantiates a new serviceUpdateMessage and sets the default values.
 func NewServiceUpdateMessage()(*ServiceUpdateMessage) {
     m := &ServiceUpdateMessage{
         ServiceAnnouncementBase: *NewServiceAnnouncementBase(),
     }
     return m
 }
-// Gets the actionRequiredByDateTime property value. The expected deadline of the action for the message.
+// GetActionRequiredByDateTime gets the actionRequiredByDateTime property value. The expected deadline of the action for the message.
 func (m *ServiceUpdateMessage) GetActionRequiredByDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *ServiceUpdateMessage) GetActionRequiredByDateTime()(*i336074805fc853987
         return m.actionRequiredByDateTime
     }
 }
-// Gets the body property value. 
+// GetBody gets the body property value. 
 func (m *ServiceUpdateMessage) GetBody()(*ItemBody) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ServiceUpdateMessage) GetBody()(*ItemBody) {
         return m.body
     }
 }
-// Gets the category property value. The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
+// GetCategory gets the category property value. The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
 func (m *ServiceUpdateMessage) GetCategory()(*ServiceUpdateCategory) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ServiceUpdateMessage) GetCategory()(*ServiceUpdateCategory) {
         return m.category
     }
 }
-// Gets the isMajorChange property value. Indicates whether the message describes a major update for the service.
+// GetIsMajorChange gets the isMajorChange property value. Indicates whether the message describes a major update for the service.
 func (m *ServiceUpdateMessage) GetIsMajorChange()(*bool) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *ServiceUpdateMessage) GetIsMajorChange()(*bool) {
         return m.isMajorChange
     }
 }
-// Gets the services property value. The affected services by the service message.
+// GetServices gets the services property value. The affected services by the service message.
 func (m *ServiceUpdateMessage) GetServices()([]string) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *ServiceUpdateMessage) GetServices()([]string) {
         return m.services
     }
 }
-// Gets the severity property value. The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
+// GetSeverity gets the severity property value. The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
 func (m *ServiceUpdateMessage) GetSeverity()(*ServiceUpdateSeverity) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *ServiceUpdateMessage) GetSeverity()(*ServiceUpdateSeverity) {
         return m.severity
     }
 }
-// Gets the tags property value. A collection of tags for the service message.
+// GetTags gets the tags property value. A collection of tags for the service message.
 func (m *ServiceUpdateMessage) GetTags()([]string) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *ServiceUpdateMessage) GetTags()([]string) {
         return m.tags
     }
 }
-// Gets the viewPoint property value. Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
+// GetViewPoint gets the viewPoint property value. Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
 func (m *ServiceUpdateMessage) GetViewPoint()(*ServiceUpdateMessageViewpoint) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *ServiceUpdateMessage) GetViewPoint()(*ServiceUpdateMessageViewpoint) {
         return m.viewPoint
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ServiceAnnouncementBase.GetFieldDeserializers()
     res["actionRequiredByDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -194,9 +194,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
 func (m *ServiceUpdateMessage) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ServiceUpdateMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ServiceAnnouncementBase.Serialize(writer)
     if err != nil {
@@ -254,51 +252,35 @@ func (m *ServiceUpdateMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the actionRequiredByDateTime property value. The expected deadline of the action for the message.
-// Parameters:
-//  - value : Value to set for the actionRequiredByDateTime property.
+// SetActionRequiredByDateTime sets the actionRequiredByDateTime property value. The expected deadline of the action for the message.
 func (m *ServiceUpdateMessage) SetActionRequiredByDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.actionRequiredByDateTime = value
 }
-// Sets the body property value. 
-// Parameters:
-//  - value : Value to set for the body property.
+// SetBody sets the body property value. 
 func (m *ServiceUpdateMessage) SetBody(value *ItemBody)() {
     m.body = value
 }
-// Sets the category property value. The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the category property.
+// SetCategory sets the category property value. The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
 func (m *ServiceUpdateMessage) SetCategory(value *ServiceUpdateCategory)() {
     m.category = value
 }
-// Sets the isMajorChange property value. Indicates whether the message describes a major update for the service.
-// Parameters:
-//  - value : Value to set for the isMajorChange property.
+// SetIsMajorChange sets the isMajorChange property value. Indicates whether the message describes a major update for the service.
 func (m *ServiceUpdateMessage) SetIsMajorChange(value *bool)() {
     m.isMajorChange = value
 }
-// Sets the services property value. The affected services by the service message.
-// Parameters:
-//  - value : Value to set for the services property.
+// SetServices sets the services property value. The affected services by the service message.
 func (m *ServiceUpdateMessage) SetServices(value []string)() {
     m.services = value
 }
-// Sets the severity property value. The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the severity property.
+// SetSeverity sets the severity property value. The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
 func (m *ServiceUpdateMessage) SetSeverity(value *ServiceUpdateSeverity)() {
     m.severity = value
 }
-// Sets the tags property value. A collection of tags for the service message.
-// Parameters:
-//  - value : Value to set for the tags property.
+// SetTags sets the tags property value. A collection of tags for the service message.
 func (m *ServiceUpdateMessage) SetTags(value []string)() {
     m.tags = value
 }
-// Sets the viewPoint property value. Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
-// Parameters:
-//  - value : Value to set for the viewPoint property.
+// SetViewPoint sets the viewPoint property value. Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
 func (m *ServiceUpdateMessage) SetViewPoint(value *ServiceUpdateMessageViewpoint)() {
     m.viewPoint = value
 }

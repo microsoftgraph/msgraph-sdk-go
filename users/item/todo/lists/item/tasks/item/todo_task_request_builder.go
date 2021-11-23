@@ -10,7 +10,7 @@ import (
     ibded91745af4973d993c7591fd0006231f1bf43270adfb384d6f7afa7427e666 "github.com/microsoftgraph/msgraph-sdk-go/users/item/todo/lists/item/tasks/item/extensions/item"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\todo\lists\{todoTaskList-id}\tasks\{todoTask-id}
+// TodoTaskRequestBuilder builds and executes requests for operations under \users\{user-id}\todo\lists\{todoTaskList-id}\tasks\{todoTask-id}
 type TodoTaskRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type TodoTaskRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TodoTaskRequestBuilderDeleteOptions options for Delete
 type TodoTaskRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type TodoTaskRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TodoTaskRequestBuilderGetOptions options for Get
 type TodoTaskRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type TodoTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The tasks in this task list. Read-only. Nullable.
+// TodoTaskRequestBuilderGetQueryParameters the tasks in this task list. Read-only. Nullable.
 type TodoTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TodoTaskRequestBuilderPatchOptions options for Patch
 type TodoTaskRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TodoTask;
@@ -57,10 +57,7 @@ type TodoTaskRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TodoTaskRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTodoTaskRequestBuilderInternal instantiates a new TodoTaskRequestBuilder and sets the default values.
 func NewTodoTaskRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TodoTaskRequestBuilder) {
     m := &TodoTaskRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewTodoTaskRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TodoTaskRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTodoTaskRequestBuilder instantiates a new TodoTaskRequestBuilder and sets the default values.
 func NewTodoTaskRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TodoTaskRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTodoTaskRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The tasks in this task list. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the tasks in this task list. Read-only. Nullable.
 func (m *TodoTaskRequestBuilder) CreateDeleteRequestInformation(options *TodoTaskRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *TodoTaskRequestBuilder) CreateDeleteRequestInformation(options *TodoTas
     }
     return requestInfo, nil
 }
-// The tasks in this task list. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the tasks in this task list. Read-only. Nullable.
 func (m *TodoTaskRequestBuilder) CreateGetRequestInformation(options *TodoTaskRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TodoTaskRequestBuilder) CreateGetRequestInformation(options *TodoTaskRe
     }
     return requestInfo, nil
 }
-// The tasks in this task list. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the tasks in this task list. Read-only. Nullable.
 func (m *TodoTaskRequestBuilder) CreatePatchRequestInformation(options *TodoTaskRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *TodoTaskRequestBuilder) CreatePatchRequestInformation(options *TodoTask
     }
     return requestInfo, nil
 }
-// The tasks in this task list. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the tasks in this task list. Read-only. Nullable.
 func (m *TodoTaskRequestBuilder) Delete(options *TodoTaskRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -160,9 +146,7 @@ func (m *TodoTaskRequestBuilder) Delete(options *TodoTaskRequestBuilderDeleteOpt
 func (m *TodoTaskRequestBuilder) Extensions()(*i5ebd0ff7b1c5a72fa996da9d25188fed331be10734b9158584fca359e3382cc8.ExtensionsRequestBuilder) {
     return i5ebd0ff7b1c5a72fa996da9d25188fed331be10734b9158584fca359e3382cc8.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.todo.lists.item.tasks.item.extensions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.todo.lists.item.tasks.item.extensions.item collection
 func (m *TodoTaskRequestBuilder) ExtensionsById(id string)(*ibded91745af4973d993c7591fd0006231f1bf43270adfb384d6f7afa7427e666.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -173,9 +157,7 @@ func (m *TodoTaskRequestBuilder) ExtensionsById(id string)(*ibded91745af4973d993
     }
     return ibded91745af4973d993c7591fd0006231f1bf43270adfb384d6f7afa7427e666.NewExtensionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The tasks in this task list. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the tasks in this task list. Read-only. Nullable.
 func (m *TodoTaskRequestBuilder) Get(options *TodoTaskRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TodoTask, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -190,9 +172,7 @@ func (m *TodoTaskRequestBuilder) Get(options *TodoTaskRequestBuilderGetOptions)(
 func (m *TodoTaskRequestBuilder) LinkedResources()(*i5ae9cc2252fe39eb1f8922688cd3cd931f7af1d4c5b712b1c8dbcaee74ac0a8b.LinkedResourcesRequestBuilder) {
     return i5ae9cc2252fe39eb1f8922688cd3cd931f7af1d4c5b712b1c8dbcaee74ac0a8b.NewLinkedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.todo.lists.item.tasks.item.linkedResources.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// LinkedResourcesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.todo.lists.item.tasks.item.linkedResources.item collection
 func (m *TodoTaskRequestBuilder) LinkedResourcesById(id string)(*i570f0cd86cb59984a251e242cc6974a8247783f01e37cad24f260d6c4655aad3.LinkedResourceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -203,9 +183,7 @@ func (m *TodoTaskRequestBuilder) LinkedResourcesById(id string)(*i570f0cd86cb599
     }
     return i570f0cd86cb59984a251e242cc6974a8247783f01e37cad24f260d6c4655aad3.NewLinkedResourceRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The tasks in this task list. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the tasks in this task list. Read-only. Nullable.
 func (m *TodoTaskRequestBuilder) Patch(options *TodoTaskRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

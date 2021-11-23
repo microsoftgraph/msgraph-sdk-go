@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \contracts\microsoft.graph.getByIds
+// GetByIdsRequestBuilder builds and executes requests for operations under \contracts\microsoft.graph.getByIds
 type GetByIdsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetByIdsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetByIdsRequestBuilderPostOptions options for Post
 type GetByIdsRequestBuilderPostOptions struct {
     // 
     Body *GetByIdsRequestBody;
@@ -25,10 +25,7 @@ type GetByIdsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetByIdsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetByIdsRequestBuilderInternal instantiates a new GetByIdsRequestBuilder and sets the default values.
 func NewGetByIdsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetByIdsRequestBuilder) {
     m := &GetByIdsRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewGetByIdsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetByIdsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetByIdsRequestBuilder instantiates a new GetByIdsRequestBuilder and sets the default values.
 func NewGetByIdsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetByIdsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getByIds
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getByIds
 func (m *GetByIdsRequestBuilder) CreatePostRequestInformation(options *GetByIdsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *GetByIdsRequestBuilder) CreatePostRequestInformation(options *GetByIdsR
     }
     return requestInfo, nil
 }
-// Invoke action getByIds
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getByIds
 func (m *GetByIdsRequestBuilder) Post(options *GetByIdsRequestBuilderPostOptions)([]GetByIds, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

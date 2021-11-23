@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MeetingParticipantInfo 
 type MeetingParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type MeetingParticipantInfo struct {
     // User principal name of the participant.
     upn *string;
 }
-// Instantiates a new meetingParticipantInfo and sets the default values.
+// NewMeetingParticipantInfo instantiates a new meetingParticipantInfo and sets the default values.
 func NewMeetingParticipantInfo()(*MeetingParticipantInfo) {
     m := &MeetingParticipantInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingParticipantInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *MeetingParticipantInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the identity property value. Identity information of the participant.
+// GetIdentity gets the identity property value. Identity information of the participant.
 func (m *MeetingParticipantInfo) GetIdentity()(*IdentitySet) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *MeetingParticipantInfo) GetIdentity()(*IdentitySet) {
         return m.identity
     }
 }
-// Gets the role property value. Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
+// GetRole gets the role property value. Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
 func (m *MeetingParticipantInfo) GetRole()(*OnlineMeetingRole) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *MeetingParticipantInfo) GetRole()(*OnlineMeetingRole) {
         return m.role
     }
 }
-// Gets the upn property value. User principal name of the participant.
+// GetUpn gets the upn property value. User principal name of the participant.
 func (m *MeetingParticipantInfo) GetUpn()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *MeetingParticipantInfo) GetUpn()(*string) {
         return m.upn
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["identity"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,9 +93,7 @@ func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(interfa
 func (m *MeetingParticipantInfo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MeetingParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("identity", m.GetIdentity())
@@ -124,27 +122,19 @@ func (m *MeetingParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingParticipantInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the identity property value. Identity information of the participant.
-// Parameters:
-//  - value : Value to set for the identity property.
+// SetIdentity sets the identity property value. Identity information of the participant.
 func (m *MeetingParticipantInfo) SetIdentity(value *IdentitySet)() {
     m.identity = value
 }
-// Sets the role property value. Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the role property.
+// SetRole sets the role property value. Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
 func (m *MeetingParticipantInfo) SetRole(value *OnlineMeetingRole)() {
     m.role = value
 }
-// Sets the upn property value. User principal name of the participant.
-// Parameters:
-//  - value : Value to set for the upn property.
+// SetUpn sets the upn property value. User principal name of the participant.
 func (m *MeetingParticipantInfo) SetUpn(value *string)() {
     m.upn = value
 }

@@ -8,7 +8,7 @@ import (
     ifef180b9bd493e18fc2da61d3c17f0b841b4107addfd4dcd6a6d5ded32e0158c "github.com/microsoftgraph/msgraph-sdk-go/drive/list/items/item/versions/item/restoreversion"
 )
 
-// Builds and executes requests for operations under \drive\list\items\{listItem-id}\versions\{listItemVersion-id}
+// ListItemVersionRequestBuilder builds and executes requests for operations under \drive\list\items\{listItem-id}\versions\{listItemVersion-id}
 type ListItemVersionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ListItemVersionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ListItemVersionRequestBuilderDeleteOptions options for Delete
 type ListItemVersionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ListItemVersionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ListItemVersionRequestBuilderGetOptions options for Get
 type ListItemVersionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type ListItemVersionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of previous versions of the list item.
+// ListItemVersionRequestBuilderGetQueryParameters the list of previous versions of the list item.
 type ListItemVersionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ListItemVersionRequestBuilderPatchOptions options for Patch
 type ListItemVersionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItemVersion;
@@ -55,10 +55,7 @@ type ListItemVersionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ListItemVersionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewListItemVersionRequestBuilderInternal instantiates a new ListItemVersionRequestBuilder and sets the default values.
 func NewListItemVersionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ListItemVersionRequestBuilder) {
     m := &ListItemVersionRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewListItemVersionRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ListItemVersionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewListItemVersionRequestBuilder instantiates a new ListItemVersionRequestBuilder and sets the default values.
 func NewListItemVersionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ListItemVersionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewListItemVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of previous versions of the list item.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of previous versions of the list item.
 func (m *ListItemVersionRequestBuilder) CreateDeleteRequestInformation(options *ListItemVersionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *ListItemVersionRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The list of previous versions of the list item.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of previous versions of the list item.
 func (m *ListItemVersionRequestBuilder) CreateGetRequestInformation(options *ListItemVersionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ListItemVersionRequestBuilder) CreateGetRequestInformation(options *Lis
     }
     return requestInfo, nil
 }
-// The list of previous versions of the list item.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of previous versions of the list item.
 func (m *ListItemVersionRequestBuilder) CreatePatchRequestInformation(options *ListItemVersionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *ListItemVersionRequestBuilder) CreatePatchRequestInformation(options *L
     }
     return requestInfo, nil
 }
-// The list of previous versions of the list item.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of previous versions of the list item.
 func (m *ListItemVersionRequestBuilder) Delete(options *ListItemVersionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *ListItemVersionRequestBuilder) Delete(options *ListItemVersionRequestBu
 func (m *ListItemVersionRequestBuilder) Fields()(*i497c14260d0040b60b3a45776d063e6b323663c328bd6d7b0cd2e892159bcc06.FieldsRequestBuilder) {
     return i497c14260d0040b60b3a45776d063e6b323663c328bd6d7b0cd2e892159bcc06.NewFieldsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The list of previous versions of the list item.
-// Parameters:
-//  - options : Options for the request
+// Get the list of previous versions of the list item.
 func (m *ListItemVersionRequestBuilder) Get(options *ListItemVersionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItemVersion, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *ListItemVersionRequestBuilder) Get(options *ListItemVersionRequestBuild
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ListItemVersion), nil
 }
-// The list of previous versions of the list item.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of previous versions of the list item.
 func (m *ListItemVersionRequestBuilder) Patch(options *ListItemVersionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

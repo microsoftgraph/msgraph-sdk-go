@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\assignments\{deviceCompliancePolicyAssignment-id}
+// DeviceCompliancePolicyAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\assignments\{deviceCompliancePolicyAssignment-id}
 type DeviceCompliancePolicyAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceCompliancePolicyAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceCompliancePolicyAssignmentRequestBuilderDeleteOptions options for Delete
 type DeviceCompliancePolicyAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceCompliancePolicyAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceCompliancePolicyAssignmentRequestBuilderGetOptions options for Get
 type DeviceCompliancePolicyAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceCompliancePolicyAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of assignments for this compliance policy.
+// DeviceCompliancePolicyAssignmentRequestBuilderGetQueryParameters the collection of assignments for this compliance policy.
 type DeviceCompliancePolicyAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceCompliancePolicyAssignmentRequestBuilderPatchOptions options for Patch
 type DeviceCompliancePolicyAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignment;
@@ -53,10 +53,7 @@ type DeviceCompliancePolicyAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceCompliancePolicyAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCompliancePolicyAssignmentRequestBuilderInternal instantiates a new DeviceCompliancePolicyAssignmentRequestBuilder and sets the default values.
 func NewDeviceCompliancePolicyAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCompliancePolicyAssignmentRequestBuilder) {
     m := &DeviceCompliancePolicyAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceCompliancePolicyAssignmentRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceCompliancePolicyAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCompliancePolicyAssignmentRequestBuilder instantiates a new DeviceCompliancePolicyAssignmentRequestBuilder and sets the default values.
 func NewDeviceCompliancePolicyAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCompliancePolicyAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCompliancePolicyAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of assignments for this compliance policy.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of assignments for this compliance policy.
 func (m *DeviceCompliancePolicyAssignmentRequestBuilder) CreateDeleteRequestInformation(options *DeviceCompliancePolicyAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceCompliancePolicyAssignmentRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// The collection of assignments for this compliance policy.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of assignments for this compliance policy.
 func (m *DeviceCompliancePolicyAssignmentRequestBuilder) CreateGetRequestInformation(options *DeviceCompliancePolicyAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceCompliancePolicyAssignmentRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// The collection of assignments for this compliance policy.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of assignments for this compliance policy.
 func (m *DeviceCompliancePolicyAssignmentRequestBuilder) CreatePatchRequestInformation(options *DeviceCompliancePolicyAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceCompliancePolicyAssignmentRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// The collection of assignments for this compliance policy.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of assignments for this compliance policy.
 func (m *DeviceCompliancePolicyAssignmentRequestBuilder) Delete(options *DeviceCompliancePolicyAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceCompliancePolicyAssignmentRequestBuilder) Delete(options *DeviceC
     }
     return nil
 }
-// The collection of assignments for this compliance policy.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of assignments for this compliance policy.
 func (m *DeviceCompliancePolicyAssignmentRequestBuilder) Get(options *DeviceCompliancePolicyAssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceCompliancePolicyAssignmentRequestBuilder) Get(options *DeviceComp
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicyAssignment), nil
 }
-// The collection of assignments for this compliance policy.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of assignments for this compliance policy.
 func (m *DeviceCompliancePolicyAssignmentRequestBuilder) Patch(options *DeviceCompliancePolicyAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

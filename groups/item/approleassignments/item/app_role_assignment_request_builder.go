@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\appRoleAssignments\{appRoleAssignment-id}
+// AppRoleAssignmentRequestBuilder builds and executes requests for operations under \groups\{group-id}\appRoleAssignments\{appRoleAssignment-id}
 type AppRoleAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppRoleAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AppRoleAssignmentRequestBuilderDeleteOptions options for Delete
 type AppRoleAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AppRoleAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AppRoleAssignmentRequestBuilderGetOptions options for Get
 type AppRoleAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AppRoleAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the app roles a group has been granted for an application. Supports $expand.
+// AppRoleAssignmentRequestBuilderGetQueryParameters represents the app roles a group has been granted for an application. Supports $expand.
 type AppRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AppRoleAssignmentRequestBuilderPatchOptions options for Patch
 type AppRoleAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppRoleAssignment;
@@ -53,10 +53,7 @@ type AppRoleAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppRoleAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppRoleAssignmentRequestBuilderInternal instantiates a new AppRoleAssignmentRequestBuilder and sets the default values.
 func NewAppRoleAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppRoleAssignmentRequestBuilder) {
     m := &AppRoleAssignmentRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAppRoleAssignmentRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppRoleAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppRoleAssignmentRequestBuilder instantiates a new AppRoleAssignmentRequestBuilder and sets the default values.
 func NewAppRoleAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppRoleAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppRoleAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the app roles a group has been granted for an application. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the app roles a group has been granted for an application. Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) CreateDeleteRequestInformation(options *AppRoleAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AppRoleAssignmentRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// Represents the app roles a group has been granted for an application. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the app roles a group has been granted for an application. Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) CreateGetRequestInformation(options *AppRoleAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AppRoleAssignmentRequestBuilder) CreateGetRequestInformation(options *A
     }
     return requestInfo, nil
 }
-// Represents the app roles a group has been granted for an application. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the app roles a group has been granted for an application. Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) CreatePatchRequestInformation(options *AppRoleAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AppRoleAssignmentRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Represents the app roles a group has been granted for an application. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the app roles a group has been granted for an application. Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) Delete(options *AppRoleAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AppRoleAssignmentRequestBuilder) Delete(options *AppRoleAssignmentReque
     }
     return nil
 }
-// Represents the app roles a group has been granted for an application. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get represents the app roles a group has been granted for an application. Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) Get(options *AppRoleAssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppRoleAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AppRoleAssignmentRequestBuilder) Get(options *AppRoleAssignmentRequestB
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppRoleAssignment), nil
 }
-// Represents the app roles a group has been granted for an application. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the app roles a group has been granted for an application. Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) Patch(options *AppRoleAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

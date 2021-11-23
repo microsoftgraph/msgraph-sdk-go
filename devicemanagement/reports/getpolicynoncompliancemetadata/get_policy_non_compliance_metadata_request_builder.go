@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getPolicyNonComplianceMetadata
+// GetPolicyNonComplianceMetadataRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getPolicyNonComplianceMetadata
 type GetPolicyNonComplianceMetadataRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetPolicyNonComplianceMetadataRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetPolicyNonComplianceMetadataRequestBuilderPostOptions options for Post
 type GetPolicyNonComplianceMetadataRequestBuilderPostOptions struct {
     // 
     Body *GetPolicyNonComplianceMetadataRequestBody;
@@ -24,10 +24,7 @@ type GetPolicyNonComplianceMetadataRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetPolicyNonComplianceMetadataRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetPolicyNonComplianceMetadataRequestBuilderInternal instantiates a new GetPolicyNonComplianceMetadataRequestBuilder and sets the default values.
 func NewGetPolicyNonComplianceMetadataRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetPolicyNonComplianceMetadataRequestBuilder) {
     m := &GetPolicyNonComplianceMetadataRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetPolicyNonComplianceMetadataRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetPolicyNonComplianceMetadataRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetPolicyNonComplianceMetadataRequestBuilder instantiates a new GetPolicyNonComplianceMetadataRequestBuilder and sets the default values.
 func NewGetPolicyNonComplianceMetadataRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetPolicyNonComplianceMetadataRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetPolicyNonComplianceMetadataRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getPolicyNonComplianceMetadata
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getPolicyNonComplianceMetadata
 func (m *GetPolicyNonComplianceMetadataRequestBuilder) CreatePostRequestInformation(options *GetPolicyNonComplianceMetadataRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetPolicyNonComplianceMetadataRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// Invoke action getPolicyNonComplianceMetadata
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getPolicyNonComplianceMetadata
 func (m *GetPolicyNonComplianceMetadataRequestBuilder) Post(options *GetPolicyNonComplianceMetadataRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

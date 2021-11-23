@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\iosUpdateStatuses\{iosUpdateDeviceStatus-id}
+// IosUpdateDeviceStatusRequestBuilder builds and executes requests for operations under \deviceManagement\iosUpdateStatuses\{iosUpdateDeviceStatus-id}
 type IosUpdateDeviceStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IosUpdateDeviceStatusRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// IosUpdateDeviceStatusRequestBuilderDeleteOptions options for Delete
 type IosUpdateDeviceStatusRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type IosUpdateDeviceStatusRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// IosUpdateDeviceStatusRequestBuilderGetOptions options for Get
 type IosUpdateDeviceStatusRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type IosUpdateDeviceStatusRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The IOS software update installation statuses for this account.
+// IosUpdateDeviceStatusRequestBuilderGetQueryParameters the IOS software update installation statuses for this account.
 type IosUpdateDeviceStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// IosUpdateDeviceStatusRequestBuilderPatchOptions options for Patch
 type IosUpdateDeviceStatusRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosUpdateDeviceStatus;
@@ -53,10 +53,7 @@ type IosUpdateDeviceStatusRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IosUpdateDeviceStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosUpdateDeviceStatusRequestBuilderInternal instantiates a new IosUpdateDeviceStatusRequestBuilder and sets the default values.
 func NewIosUpdateDeviceStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosUpdateDeviceStatusRequestBuilder) {
     m := &IosUpdateDeviceStatusRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewIosUpdateDeviceStatusRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IosUpdateDeviceStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosUpdateDeviceStatusRequestBuilder instantiates a new IosUpdateDeviceStatusRequestBuilder and sets the default values.
 func NewIosUpdateDeviceStatusRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosUpdateDeviceStatusRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIosUpdateDeviceStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The IOS software update installation statuses for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the IOS software update installation statuses for this account.
 func (m *IosUpdateDeviceStatusRequestBuilder) CreateDeleteRequestInformation(options *IosUpdateDeviceStatusRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *IosUpdateDeviceStatusRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The IOS software update installation statuses for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the IOS software update installation statuses for this account.
 func (m *IosUpdateDeviceStatusRequestBuilder) CreateGetRequestInformation(options *IosUpdateDeviceStatusRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *IosUpdateDeviceStatusRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// The IOS software update installation statuses for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the IOS software update installation statuses for this account.
 func (m *IosUpdateDeviceStatusRequestBuilder) CreatePatchRequestInformation(options *IosUpdateDeviceStatusRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *IosUpdateDeviceStatusRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The IOS software update installation statuses for this account.
-// Parameters:
-//  - options : Options for the request
+// Delete the IOS software update installation statuses for this account.
 func (m *IosUpdateDeviceStatusRequestBuilder) Delete(options *IosUpdateDeviceStatusRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *IosUpdateDeviceStatusRequestBuilder) Delete(options *IosUpdateDeviceSta
     }
     return nil
 }
-// The IOS software update installation statuses for this account.
-// Parameters:
-//  - options : Options for the request
+// Get the IOS software update installation statuses for this account.
 func (m *IosUpdateDeviceStatusRequestBuilder) Get(options *IosUpdateDeviceStatusRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosUpdateDeviceStatus, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *IosUpdateDeviceStatusRequestBuilder) Get(options *IosUpdateDeviceStatus
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosUpdateDeviceStatus), nil
 }
-// The IOS software update installation statuses for this account.
-// Parameters:
-//  - options : Options for the request
+// Patch the IOS software update installation statuses for this account.
 func (m *IosUpdateDeviceStatusRequestBuilder) Patch(options *IosUpdateDeviceStatusRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

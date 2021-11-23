@@ -8,7 +8,7 @@ import (
     ib411193b5003bbb51d5dee7dd6a2064bf24b4e5e2d93bd42bbe0364186744db3 "github.com/microsoftgraph/msgraph-sdk-go/privacy/subjectrightsrequests/item"
 )
 
-// Builds and executes requests for operations under \privacy
+// PrivacyRequestBuilder builds and executes requests for operations under \privacy
 type PrivacyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type PrivacyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PrivacyRequestBuilderGetOptions options for Get
 type PrivacyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,14 +28,14 @@ type PrivacyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get privacy
+// PrivacyRequestBuilderGetQueryParameters get privacy
 type PrivacyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrivacyRequestBuilderPatchOptions options for Patch
 type PrivacyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Privacy;
@@ -46,10 +46,7 @@ type PrivacyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrivacyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivacyRequestBuilderInternal instantiates a new PrivacyRequestBuilder and sets the default values.
 func NewPrivacyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivacyRequestBuilder) {
     m := &PrivacyRequestBuilder{
     }
@@ -62,18 +59,13 @@ func NewPrivacyRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrivacyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrivacyRequestBuilder instantiates a new PrivacyRequestBuilder and sets the default values.
 func NewPrivacyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrivacyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivacyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get privacy
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get privacy
 func (m *PrivacyRequestBuilder) CreateGetRequestInformation(options *PrivacyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,9 +85,7 @@ func (m *PrivacyRequestBuilder) CreateGetRequestInformation(options *PrivacyRequ
     }
     return requestInfo, nil
 }
-// Update privacy
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update privacy
 func (m *PrivacyRequestBuilder) CreatePatchRequestInformation(options *PrivacyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,9 +103,7 @@ func (m *PrivacyRequestBuilder) CreatePatchRequestInformation(options *PrivacyRe
     }
     return requestInfo, nil
 }
-// Get privacy
-// Parameters:
-//  - options : Options for the request
+// Get get privacy
 func (m *PrivacyRequestBuilder) Get(options *PrivacyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Privacy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -127,9 +115,7 @@ func (m *PrivacyRequestBuilder) Get(options *PrivacyRequestBuilderGetOptions)(*i
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Privacy), nil
 }
-// Update privacy
-// Parameters:
-//  - options : Options for the request
+// Patch update privacy
 func (m *PrivacyRequestBuilder) Patch(options *PrivacyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -144,9 +130,7 @@ func (m *PrivacyRequestBuilder) Patch(options *PrivacyRequestBuilderPatchOptions
 func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*ic3012732ccd21e3ff6a41d4e20000f4750e4877616c1357343148115ac491fa5.SubjectRightsRequestsRequestBuilder) {
     return ic3012732ccd21e3ff6a41d4e20000f4750e4877616c1357343148115ac491fa5.NewSubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.privacy.subjectRightsRequests.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SubjectRightsRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.privacy.subjectRightsRequests.item collection
 func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*ib411193b5003bbb51d5dee7dd6a2064bf24b4e5e2d93bd42bbe0364186744db3.SubjectRightsRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

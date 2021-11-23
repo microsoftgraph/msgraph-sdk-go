@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\planner\plans\{plannerPlan-id}\tasks\{plannerTask-id}\assignedToTaskBoardFormat
+// AssignedToTaskBoardFormatRequestBuilder builds and executes requests for operations under \groups\{group-id}\planner\plans\{plannerPlan-id}\tasks\{plannerTask-id}\assignedToTaskBoardFormat
 type AssignedToTaskBoardFormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AssignedToTaskBoardFormatRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AssignedToTaskBoardFormatRequestBuilderDeleteOptions options for Delete
 type AssignedToTaskBoardFormatRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AssignedToTaskBoardFormatRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AssignedToTaskBoardFormatRequestBuilderGetOptions options for Get
 type AssignedToTaskBoardFormatRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AssignedToTaskBoardFormatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+// AssignedToTaskBoardFormatRequestBuilderGetQueryParameters read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
 type AssignedToTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AssignedToTaskBoardFormatRequestBuilderPatchOptions options for Patch
 type AssignedToTaskBoardFormatRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerAssignedToTaskBoardTaskFormat;
@@ -53,10 +53,7 @@ type AssignedToTaskBoardFormatRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AssignedToTaskBoardFormatRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignedToTaskBoardFormatRequestBuilderInternal instantiates a new AssignedToTaskBoardFormatRequestBuilder and sets the default values.
 func NewAssignedToTaskBoardFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignedToTaskBoardFormatRequestBuilder) {
     m := &AssignedToTaskBoardFormatRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAssignedToTaskBoardFormatRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AssignedToTaskBoardFormatRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignedToTaskBoardFormatRequestBuilder instantiates a new AssignedToTaskBoardFormatRequestBuilder and sets the default values.
 func NewAssignedToTaskBoardFormatRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignedToTaskBoardFormatRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignedToTaskBoardFormatRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
 func (m *AssignedToTaskBoardFormatRequestBuilder) CreateDeleteRequestInformation(options *AssignedToTaskBoardFormatRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AssignedToTaskBoardFormatRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
 func (m *AssignedToTaskBoardFormatRequestBuilder) CreateGetRequestInformation(options *AssignedToTaskBoardFormatRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AssignedToTaskBoardFormatRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
 func (m *AssignedToTaskBoardFormatRequestBuilder) CreatePatchRequestInformation(options *AssignedToTaskBoardFormatRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AssignedToTaskBoardFormatRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
 func (m *AssignedToTaskBoardFormatRequestBuilder) Delete(options *AssignedToTaskBoardFormatRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AssignedToTaskBoardFormatRequestBuilder) Delete(options *AssignedToTask
     }
     return nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
 func (m *AssignedToTaskBoardFormatRequestBuilder) Get(options *AssignedToTaskBoardFormatRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerAssignedToTaskBoardTaskFormat, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AssignedToTaskBoardFormatRequestBuilder) Get(options *AssignedToTaskBoa
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerAssignedToTaskBoardTaskFormat), nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
 func (m *AssignedToTaskBoardFormatRequestBuilder) Patch(options *AssignedToTaskBoardFormatRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

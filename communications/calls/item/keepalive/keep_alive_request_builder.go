@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.keepAlive
+// KeepAliveRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.keepAlive
 type KeepAliveRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type KeepAliveRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// KeepAliveRequestBuilderPostOptions options for Post
 type KeepAliveRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type KeepAliveRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new KeepAliveRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewKeepAliveRequestBuilderInternal instantiates a new KeepAliveRequestBuilder and sets the default values.
 func NewKeepAliveRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*KeepAliveRequestBuilder) {
     m := &KeepAliveRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewKeepAliveRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new KeepAliveRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewKeepAliveRequestBuilder instantiates a new KeepAliveRequestBuilder and sets the default values.
 func NewKeepAliveRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*KeepAliveRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewKeepAliveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action keepAlive
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action keepAlive
 func (m *KeepAliveRequestBuilder) CreatePostRequestInformation(options *KeepAliveRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *KeepAliveRequestBuilder) CreatePostRequestInformation(options *KeepAliv
     }
     return requestInfo, nil
 }
-// Invoke action keepAlive
-// Parameters:
-//  - options : Options for the request
+// Post invoke action keepAlive
 func (m *KeepAliveRequestBuilder) Post(options *KeepAliveRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

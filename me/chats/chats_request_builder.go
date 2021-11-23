@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\chats
+// ChatsRequestBuilder builds and executes requests for operations under \me\chats
 type ChatsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ChatsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ChatsRequestBuilderGetOptions options for Get
 type ChatsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ChatsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get chats from me
+// ChatsRequestBuilderGetQueryParameters get chats from me
 type ChatsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ChatsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ChatsRequestBuilderPostOptions options for Post
 type ChatsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chat;
@@ -56,10 +56,7 @@ type ChatsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ChatsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatsRequestBuilderInternal instantiates a new ChatsRequestBuilder and sets the default values.
 func NewChatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatsRequestBuilder) {
     m := &ChatsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewChatsRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChatsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatsRequestBuilder instantiates a new ChatsRequestBuilder and sets the default values.
 func NewChatsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChatsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get chats from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get chats from me
 func (m *ChatsRequestBuilder) CreateGetRequestInformation(options *ChatsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ChatsRequestBuilder) CreateGetRequestInformation(options *ChatsRequestB
     }
     return requestInfo, nil
 }
-// Create new navigation property to chats for me
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to chats for me
 func (m *ChatsRequestBuilder) CreatePostRequestInformation(options *ChatsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ChatsRequestBuilder) CreatePostRequestInformation(options *ChatsRequest
     }
     return requestInfo, nil
 }
-// Get chats from me
-// Parameters:
-//  - options : Options for the request
+// Get get chats from me
 func (m *ChatsRequestBuilder) Get(options *ChatsRequestBuilderGetOptions)(*ChatsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ChatsRequestBuilder) Get(options *ChatsRequestBuilderGetOptions)(*Chats
     }
     return res.(*ChatsResponse), nil
 }
-// Create new navigation property to chats for me
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to chats for me
 func (m *ChatsRequestBuilder) Post(options *ChatsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chat, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// FeatureRolloutPolicy 
 type FeatureRolloutPolicy struct {
     Entity
     // Nullable. Specifies a list of directoryObjects that feature is enabled for.
@@ -20,14 +20,14 @@ type FeatureRolloutPolicy struct {
     // Indicates whether the feature rollout is enabled.
     isEnabled *bool;
 }
-// Instantiates a new featureRolloutPolicy and sets the default values.
+// NewFeatureRolloutPolicy instantiates a new featureRolloutPolicy and sets the default values.
 func NewFeatureRolloutPolicy()(*FeatureRolloutPolicy) {
     m := &FeatureRolloutPolicy{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
+// GetAppliesTo gets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *FeatureRolloutPolicy) GetAppliesTo()([]DirectoryObject) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *FeatureRolloutPolicy) GetAppliesTo()([]DirectoryObject) {
         return m.appliesTo
     }
 }
-// Gets the description property value. A description for this feature rollout policy.
+// GetDescription gets the description property value. A description for this feature rollout policy.
 func (m *FeatureRolloutPolicy) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *FeatureRolloutPolicy) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. The display name for this  feature rollout policy.
+// GetDisplayName gets the displayName property value. The display name for this  feature rollout policy.
 func (m *FeatureRolloutPolicy) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *FeatureRolloutPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the feature property value. Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, emailAsAlternateId, unknownFutureValue.
+// GetFeature gets the feature property value. Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, emailAsAlternateId, unknownFutureValue.
 func (m *FeatureRolloutPolicy) GetFeature()(*StagedFeatureName) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *FeatureRolloutPolicy) GetFeature()(*StagedFeatureName) {
         return m.feature
     }
 }
-// Gets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
+// GetIsAppliedToOrganization gets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
 func (m *FeatureRolloutPolicy) GetIsAppliedToOrganization()(*bool) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *FeatureRolloutPolicy) GetIsAppliedToOrganization()(*bool) {
         return m.isAppliedToOrganization
     }
 }
-// Gets the isEnabled property value. Indicates whether the feature rollout is enabled.
+// GetIsEnabled gets the isEnabled property value. Indicates whether the feature rollout is enabled.
 func (m *FeatureRolloutPolicy) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *FeatureRolloutPolicy) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appliesTo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -148,9 +148,7 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(interface
 func (m *FeatureRolloutPolicy) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *FeatureRolloutPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -200,39 +198,27 @@ func (m *FeatureRolloutPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
-// Parameters:
-//  - value : Value to set for the appliesTo property.
+// SetAppliesTo sets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *FeatureRolloutPolicy) SetAppliesTo(value []DirectoryObject)() {
     m.appliesTo = value
 }
-// Sets the description property value. A description for this feature rollout policy.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. A description for this feature rollout policy.
 func (m *FeatureRolloutPolicy) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. The display name for this  feature rollout policy.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The display name for this  feature rollout policy.
 func (m *FeatureRolloutPolicy) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the feature property value. Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, emailAsAlternateId, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the feature property.
+// SetFeature sets the feature property value. Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, emailAsAlternateId, unknownFutureValue.
 func (m *FeatureRolloutPolicy) SetFeature(value *StagedFeatureName)() {
     m.feature = value
 }
-// Sets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
-// Parameters:
-//  - value : Value to set for the isAppliedToOrganization property.
+// SetIsAppliedToOrganization sets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
 func (m *FeatureRolloutPolicy) SetIsAppliedToOrganization(value *bool)() {
     m.isAppliedToOrganization = value
 }
-// Sets the isEnabled property value. Indicates whether the feature rollout is enabled.
-// Parameters:
-//  - value : Value to set for the isEnabled property.
+// SetIsEnabled sets the isEnabled property value. Indicates whether the feature rollout is enabled.
 func (m *FeatureRolloutPolicy) SetIsEnabled(value *bool)() {
     m.isEnabled = value
 }

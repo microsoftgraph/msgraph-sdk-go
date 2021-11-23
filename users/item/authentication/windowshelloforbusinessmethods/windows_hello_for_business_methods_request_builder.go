@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\authentication\windowsHelloForBusinessMethods
+// WindowsHelloForBusinessMethodsRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\windowsHelloForBusinessMethods
 type WindowsHelloForBusinessMethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WindowsHelloForBusinessMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// WindowsHelloForBusinessMethodsRequestBuilderGetOptions options for Get
 type WindowsHelloForBusinessMethodsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WindowsHelloForBusinessMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get windowsHelloForBusinessMethods from users
+// WindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters get windowsHelloForBusinessMethods from users
 type WindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type WindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// WindowsHelloForBusinessMethodsRequestBuilderPostOptions options for Post
 type WindowsHelloForBusinessMethodsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsHelloForBusinessAuthenticationMethod;
@@ -56,10 +56,7 @@ type WindowsHelloForBusinessMethodsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsHelloForBusinessMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsHelloForBusinessMethodsRequestBuilderInternal instantiates a new WindowsHelloForBusinessMethodsRequestBuilder and sets the default values.
 func NewWindowsHelloForBusinessMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsHelloForBusinessMethodsRequestBuilder) {
     m := &WindowsHelloForBusinessMethodsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewWindowsHelloForBusinessMethodsRequestBuilderInternal(pathParameters map[
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsHelloForBusinessMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsHelloForBusinessMethodsRequestBuilder instantiates a new WindowsHelloForBusinessMethodsRequestBuilder and sets the default values.
 func NewWindowsHelloForBusinessMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsHelloForBusinessMethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsHelloForBusinessMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get windowsHelloForBusinessMethods from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get windowsHelloForBusinessMethods from users
 func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreateGetRequestInformation(options *WindowsHelloForBusinessMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// Create new navigation property to windowsHelloForBusinessMethods for users
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to windowsHelloForBusinessMethods for users
 func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreatePostRequestInformation(options *WindowsHelloForBusinessMethodsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *WindowsHelloForBusinessMethodsRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// Get windowsHelloForBusinessMethods from users
-// Parameters:
-//  - options : Options for the request
+// Get get windowsHelloForBusinessMethods from users
 func (m *WindowsHelloForBusinessMethodsRequestBuilder) Get(options *WindowsHelloForBusinessMethodsRequestBuilderGetOptions)(*WindowsHelloForBusinessMethodsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *WindowsHelloForBusinessMethodsRequestBuilder) Get(options *WindowsHello
     }
     return res.(*WindowsHelloForBusinessMethodsResponse), nil
 }
-// Create new navigation property to windowsHelloForBusinessMethods for users
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to windowsHelloForBusinessMethods for users
 func (m *WindowsHelloForBusinessMethodsRequestBuilder) Post(options *WindowsHelloForBusinessMethodsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WindowsHelloForBusinessAuthenticationMethod, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

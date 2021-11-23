@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.windowsDefenderScan
+// WindowsDefenderScanRequestBuilder builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.windowsDefenderScan
 type WindowsDefenderScanRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type WindowsDefenderScanRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// WindowsDefenderScanRequestBuilderPostOptions options for Post
 type WindowsDefenderScanRequestBuilderPostOptions struct {
     // 
     Body *WindowsDefenderScanRequestBody;
@@ -24,10 +24,7 @@ type WindowsDefenderScanRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsDefenderScanRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDefenderScanRequestBuilderInternal instantiates a new WindowsDefenderScanRequestBuilder and sets the default values.
 func NewWindowsDefenderScanRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDefenderScanRequestBuilder) {
     m := &WindowsDefenderScanRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewWindowsDefenderScanRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsDefenderScanRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDefenderScanRequestBuilder instantiates a new WindowsDefenderScanRequestBuilder and sets the default values.
 func NewWindowsDefenderScanRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDefenderScanRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDefenderScanRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action windowsDefenderScan
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action windowsDefenderScan
 func (m *WindowsDefenderScanRequestBuilder) CreatePostRequestInformation(options *WindowsDefenderScanRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *WindowsDefenderScanRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Invoke action windowsDefenderScan
-// Parameters:
-//  - options : Options for the request
+// Post invoke action windowsDefenderScan
 func (m *WindowsDefenderScanRequestBuilder) Post(options *WindowsDefenderScanRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

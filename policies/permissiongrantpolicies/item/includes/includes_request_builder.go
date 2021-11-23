@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\permissionGrantPolicies\{permissionGrantPolicy-id}\includes
+// IncludesRequestBuilder builds and executes requests for operations under \policies\permissionGrantPolicies\{permissionGrantPolicy-id}\includes
 type IncludesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type IncludesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// IncludesRequestBuilderGetOptions options for Get
 type IncludesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type IncludesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Condition sets which are included in this permission grant policy. Automatically expanded on GET.
+// IncludesRequestBuilderGetQueryParameters condition sets which are included in this permission grant policy. Automatically expanded on GET.
 type IncludesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type IncludesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// IncludesRequestBuilderPostOptions options for Post
 type IncludesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantConditionSet;
@@ -56,10 +56,7 @@ type IncludesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IncludesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIncludesRequestBuilderInternal instantiates a new IncludesRequestBuilder and sets the default values.
 func NewIncludesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IncludesRequestBuilder) {
     m := &IncludesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewIncludesRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IncludesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIncludesRequestBuilder instantiates a new IncludesRequestBuilder and sets the default values.
 func NewIncludesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IncludesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIncludesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Condition sets which are included in this permission grant policy. Automatically expanded on GET.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation condition sets which are included in this permission grant policy. Automatically expanded on GET.
 func (m *IncludesRequestBuilder) CreateGetRequestInformation(options *IncludesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *IncludesRequestBuilder) CreateGetRequestInformation(options *IncludesRe
     }
     return requestInfo, nil
 }
-// Condition sets which are included in this permission grant policy. Automatically expanded on GET.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation condition sets which are included in this permission grant policy. Automatically expanded on GET.
 func (m *IncludesRequestBuilder) CreatePostRequestInformation(options *IncludesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *IncludesRequestBuilder) CreatePostRequestInformation(options *IncludesR
     }
     return requestInfo, nil
 }
-// Condition sets which are included in this permission grant policy. Automatically expanded on GET.
-// Parameters:
-//  - options : Options for the request
+// Get condition sets which are included in this permission grant policy. Automatically expanded on GET.
 func (m *IncludesRequestBuilder) Get(options *IncludesRequestBuilderGetOptions)(*IncludesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *IncludesRequestBuilder) Get(options *IncludesRequestBuilderGetOptions)(
     }
     return res.(*IncludesResponse), nil
 }
-// Condition sets which are included in this permission grant policy. Automatically expanded on GET.
-// Parameters:
-//  - options : Options for the request
+// Post condition sets which are included in this permission grant policy. Automatically expanded on GET.
 func (m *IncludesRequestBuilder) Post(options *IncludesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantConditionSet, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

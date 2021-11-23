@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RoleDefinition 
 type RoleDefinition struct {
     Entity
     // Description of the Role definition.
@@ -18,14 +18,14 @@ type RoleDefinition struct {
     // List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
     rolePermissions []RolePermission;
 }
-// Instantiates a new roleDefinition and sets the default values.
+// NewRoleDefinition instantiates a new roleDefinition and sets the default values.
 func NewRoleDefinition()(*RoleDefinition) {
     m := &RoleDefinition{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the description property value. Description of the Role definition.
+// GetDescription gets the description property value. Description of the Role definition.
 func (m *RoleDefinition) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *RoleDefinition) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Display Name of the Role definition.
+// GetDisplayName gets the displayName property value. Display Name of the Role definition.
 func (m *RoleDefinition) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *RoleDefinition) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the isBuiltIn property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
+// GetIsBuiltIn gets the isBuiltIn property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
 func (m *RoleDefinition) GetIsBuiltIn()(*bool) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *RoleDefinition) GetIsBuiltIn()(*bool) {
         return m.isBuiltIn
     }
 }
-// Gets the roleAssignments property value. List of Role assignments for this role definition.
+// GetRoleAssignments gets the roleAssignments property value. List of Role assignments for this role definition.
 func (m *RoleDefinition) GetRoleAssignments()([]RoleAssignment) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *RoleDefinition) GetRoleAssignments()([]RoleAssignment) {
         return m.roleAssignments
     }
 }
-// Gets the rolePermissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
+// GetRolePermissions gets the rolePermissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
 func (m *RoleDefinition) GetRolePermissions()([]RolePermission) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *RoleDefinition) GetRolePermissions()([]RolePermission) {
         return m.rolePermissions
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -131,9 +131,7 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *RoleDefinition) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RoleDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -181,33 +179,23 @@ func (m *RoleDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the description property value. Description of the Role definition.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Description of the Role definition.
 func (m *RoleDefinition) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Display Name of the Role definition.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display Name of the Role definition.
 func (m *RoleDefinition) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the isBuiltIn property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
-// Parameters:
-//  - value : Value to set for the isBuiltIn property.
+// SetIsBuiltIn sets the isBuiltIn property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
 func (m *RoleDefinition) SetIsBuiltIn(value *bool)() {
     m.isBuiltIn = value
 }
-// Sets the roleAssignments property value. List of Role assignments for this role definition.
-// Parameters:
-//  - value : Value to set for the roleAssignments property.
+// SetRoleAssignments sets the roleAssignments property value. List of Role assignments for this role definition.
 func (m *RoleDefinition) SetRoleAssignments(value []RoleAssignment)() {
     m.roleAssignments = value
 }
-// Sets the rolePermissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
-// Parameters:
-//  - value : Value to set for the rolePermissions property.
+// SetRolePermissions sets the rolePermissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
 func (m *RoleDefinition) SetRolePermissions(value []RolePermission)() {
     m.rolePermissions = value
 }

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceManagementPartners\{deviceManagementPartner-id}
+// DeviceManagementPartnerRequestBuilder builds and executes requests for operations under \deviceManagement\deviceManagementPartners\{deviceManagementPartner-id}
 type DeviceManagementPartnerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementPartnerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementPartnerRequestBuilderDeleteOptions options for Delete
 type DeviceManagementPartnerRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceManagementPartnerRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementPartnerRequestBuilderGetOptions options for Get
 type DeviceManagementPartnerRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceManagementPartnerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of Device Management Partners configured by the tenant.
+// DeviceManagementPartnerRequestBuilderGetQueryParameters the list of Device Management Partners configured by the tenant.
 type DeviceManagementPartnerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementPartnerRequestBuilderPatchOptions options for Patch
 type DeviceManagementPartnerRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementPartner;
@@ -53,10 +53,7 @@ type DeviceManagementPartnerRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementPartnerRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementPartnerRequestBuilderInternal instantiates a new DeviceManagementPartnerRequestBuilder and sets the default values.
 func NewDeviceManagementPartnerRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementPartnerRequestBuilder) {
     m := &DeviceManagementPartnerRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceManagementPartnerRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementPartnerRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementPartnerRequestBuilder instantiates a new DeviceManagementPartnerRequestBuilder and sets the default values.
 func NewDeviceManagementPartnerRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementPartnerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementPartnerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of Device Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of Device Management Partners configured by the tenant.
 func (m *DeviceManagementPartnerRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementPartnerRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceManagementPartnerRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// The list of Device Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of Device Management Partners configured by the tenant.
 func (m *DeviceManagementPartnerRequestBuilder) CreateGetRequestInformation(options *DeviceManagementPartnerRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceManagementPartnerRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The list of Device Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of Device Management Partners configured by the tenant.
 func (m *DeviceManagementPartnerRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementPartnerRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceManagementPartnerRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// The list of Device Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of Device Management Partners configured by the tenant.
 func (m *DeviceManagementPartnerRequestBuilder) Delete(options *DeviceManagementPartnerRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceManagementPartnerRequestBuilder) Delete(options *DeviceManagement
     }
     return nil
 }
-// The list of Device Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of Device Management Partners configured by the tenant.
 func (m *DeviceManagementPartnerRequestBuilder) Get(options *DeviceManagementPartnerRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementPartner, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceManagementPartnerRequestBuilder) Get(options *DeviceManagementPar
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementPartner), nil
 }
-// The list of Device Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of Device Management Partners configured by the tenant.
 func (m *DeviceManagementPartnerRequestBuilder) Patch(options *DeviceManagementPartnerRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -9,7 +9,7 @@ import (
     i55f341823424fe64c759539b60c8dd7b2233b0db784b5c0c209dbdcc827b89fc "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/iosmanagedappprotections/item/apps/item"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\iosManagedAppProtections\{iosManagedAppProtection-id}
+// IosManagedAppProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\iosManagedAppProtections\{iosManagedAppProtection-id}
 type IosManagedAppProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type IosManagedAppProtectionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// IosManagedAppProtectionRequestBuilderDeleteOptions options for Delete
 type IosManagedAppProtectionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type IosManagedAppProtectionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// IosManagedAppProtectionRequestBuilderGetOptions options for Get
 type IosManagedAppProtectionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type IosManagedAppProtectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// iOS managed app policies.
+// IosManagedAppProtectionRequestBuilderGetQueryParameters iOS managed app policies.
 type IosManagedAppProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// IosManagedAppProtectionRequestBuilderPatchOptions options for Patch
 type IosManagedAppProtectionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosManagedAppProtection;
@@ -59,9 +59,7 @@ type IosManagedAppProtectionRequestBuilderPatchOptions struct {
 func (m *IosManagedAppProtectionRequestBuilder) Apps()(*i0527cdc9fd204c09fc094d9f1e7b55f4ccd84d958a7e0489f836475992dd87bb.AppsRequestBuilder) {
     return i0527cdc9fd204c09fc094d9f1e7b55f4ccd84d958a7e0489f836475992dd87bb.NewAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.iosManagedAppProtections.item.apps.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AppsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceAppManagement.iosManagedAppProtections.item.apps.item collection
 func (m *IosManagedAppProtectionRequestBuilder) AppsById(id string)(*i55f341823424fe64c759539b60c8dd7b2233b0db784b5c0c209dbdcc827b89fc.ManagedMobileAppRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -72,10 +70,7 @@ func (m *IosManagedAppProtectionRequestBuilder) AppsById(id string)(*i55f3418234
     }
     return i55f341823424fe64c759539b60c8dd7b2233b0db784b5c0c209dbdcc827b89fc.NewManagedMobileAppRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new IosManagedAppProtectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosManagedAppProtectionRequestBuilderInternal instantiates a new IosManagedAppProtectionRequestBuilder and sets the default values.
 func NewIosManagedAppProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosManagedAppProtectionRequestBuilder) {
     m := &IosManagedAppProtectionRequestBuilder{
     }
@@ -88,18 +83,13 @@ func NewIosManagedAppProtectionRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IosManagedAppProtectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIosManagedAppProtectionRequestBuilder instantiates a new IosManagedAppProtectionRequestBuilder and sets the default values.
 func NewIosManagedAppProtectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IosManagedAppProtectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIosManagedAppProtectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// iOS managed app policies.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation iOS managed app policies.
 func (m *IosManagedAppProtectionRequestBuilder) CreateDeleteRequestInformation(options *IosManagedAppProtectionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,9 +106,7 @@ func (m *IosManagedAppProtectionRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// iOS managed app policies.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation iOS managed app policies.
 func (m *IosManagedAppProtectionRequestBuilder) CreateGetRequestInformation(options *IosManagedAppProtectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,9 +126,7 @@ func (m *IosManagedAppProtectionRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// iOS managed app policies.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation iOS managed app policies.
 func (m *IosManagedAppProtectionRequestBuilder) CreatePatchRequestInformation(options *IosManagedAppProtectionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -158,9 +144,7 @@ func (m *IosManagedAppProtectionRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// iOS managed app policies.
-// Parameters:
-//  - options : Options for the request
+// Delete iOS managed app policies.
 func (m *IosManagedAppProtectionRequestBuilder) Delete(options *IosManagedAppProtectionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -175,9 +159,7 @@ func (m *IosManagedAppProtectionRequestBuilder) Delete(options *IosManagedAppPro
 func (m *IosManagedAppProtectionRequestBuilder) DeploymentSummary()(*i6ae3cac28f103d10b9e38003e0d0f3659395bfb3860d2aa342dff5dcd0e09b03.DeploymentSummaryRequestBuilder) {
     return i6ae3cac28f103d10b9e38003e0d0f3659395bfb3860d2aa342dff5dcd0e09b03.NewDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// iOS managed app policies.
-// Parameters:
-//  - options : Options for the request
+// Get iOS managed app policies.
 func (m *IosManagedAppProtectionRequestBuilder) Get(options *IosManagedAppProtectionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosManagedAppProtection, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -189,9 +171,7 @@ func (m *IosManagedAppProtectionRequestBuilder) Get(options *IosManagedAppProtec
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IosManagedAppProtection), nil
 }
-// iOS managed app policies.
-// Parameters:
-//  - options : Options for the request
+// Patch iOS managed app policies.
 func (m *IosManagedAppProtectionRequestBuilder) Patch(options *IosManagedAppProtectionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

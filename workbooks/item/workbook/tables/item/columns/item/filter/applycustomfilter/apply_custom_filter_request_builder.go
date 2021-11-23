@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter\microsoft.graph.applyCustomFilter
+// ApplyCustomFilterRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter\microsoft.graph.applyCustomFilter
 type ApplyCustomFilterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ApplyCustomFilterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ApplyCustomFilterRequestBuilderPostOptions options for Post
 type ApplyCustomFilterRequestBuilderPostOptions struct {
     // 
     Body *ApplyCustomFilterRequestBody;
@@ -24,10 +24,7 @@ type ApplyCustomFilterRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApplyCustomFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplyCustomFilterRequestBuilderInternal instantiates a new ApplyCustomFilterRequestBuilder and sets the default values.
 func NewApplyCustomFilterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplyCustomFilterRequestBuilder) {
     m := &ApplyCustomFilterRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewApplyCustomFilterRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApplyCustomFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplyCustomFilterRequestBuilder instantiates a new ApplyCustomFilterRequestBuilder and sets the default values.
 func NewApplyCustomFilterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplyCustomFilterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplyCustomFilterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action applyCustomFilter
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action applyCustomFilter
 func (m *ApplyCustomFilterRequestBuilder) CreatePostRequestInformation(options *ApplyCustomFilterRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ApplyCustomFilterRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Invoke action applyCustomFilter
-// Parameters:
-//  - options : Options for the request
+// Post invoke action applyCustomFilter
 func (m *ApplyCustomFilterRequestBuilder) Post(options *ApplyCustomFilterRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

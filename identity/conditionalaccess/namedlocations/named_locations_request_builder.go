@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identity\conditionalAccess\namedLocations
+// NamedLocationsRequestBuilder builds and executes requests for operations under \identity\conditionalAccess\namedLocations
 type NamedLocationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type NamedLocationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// NamedLocationsRequestBuilderGetOptions options for Get
 type NamedLocationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type NamedLocationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
+// NamedLocationsRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified named locations.
 type NamedLocationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type NamedLocationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// NamedLocationsRequestBuilderPostOptions options for Post
 type NamedLocationsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NamedLocation;
@@ -56,10 +56,7 @@ type NamedLocationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new NamedLocationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNamedLocationsRequestBuilderInternal instantiates a new NamedLocationsRequestBuilder and sets the default values.
 func NewNamedLocationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NamedLocationsRequestBuilder) {
     m := &NamedLocationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewNamedLocationsRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NamedLocationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNamedLocationsRequestBuilder instantiates a new NamedLocationsRequestBuilder and sets the default values.
 func NewNamedLocationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NamedLocationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNamedLocationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified named locations.
 func (m *NamedLocationsRequestBuilder) CreateGetRequestInformation(options *NamedLocationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *NamedLocationsRequestBuilder) CreateGetRequestInformation(options *Name
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation read-only. Nullable. Returns a collection of the specified named locations.
 func (m *NamedLocationsRequestBuilder) CreatePostRequestInformation(options *NamedLocationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *NamedLocationsRequestBuilder) CreatePostRequestInformation(options *Nam
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Returns a collection of the specified named locations.
 func (m *NamedLocationsRequestBuilder) Get(options *NamedLocationsRequestBuilderGetOptions)(*NamedLocationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *NamedLocationsRequestBuilder) Get(options *NamedLocationsRequestBuilder
     }
     return res.(*NamedLocationsResponse), nil
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
-// Parameters:
-//  - options : Options for the request
+// Post read-only. Nullable. Returns a collection of the specified named locations.
 func (m *NamedLocationsRequestBuilder) Post(options *NamedLocationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NamedLocation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

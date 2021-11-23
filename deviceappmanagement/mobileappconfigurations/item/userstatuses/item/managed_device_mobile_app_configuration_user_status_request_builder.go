@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileAppConfigurations\{managedDeviceMobileAppConfiguration-id}\userStatuses\{managedDeviceMobileAppConfigurationUserStatus-id}
+// ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileAppConfigurations\{managedDeviceMobileAppConfiguration-id}\userStatuses\{managedDeviceMobileAppConfigurationUserStatus-id}
 type ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderDeleteOptions options for Delete
 type ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderDeleteOptions st
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderGetOptions options for Get
 type ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderGetOptions struc
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of ManagedDeviceMobileAppConfigurationUserStatus.
+// ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderGetQueryParameters list of ManagedDeviceMobileAppConfigurationUserStatus.
 type ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderPatchOptions options for Patch
 type ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationUserStatus;
@@ -53,10 +53,7 @@ type ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderPatchOptions str
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceMobileAppConfigurationUserStatusRequestBuilderInternal instantiates a new ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder and sets the default values.
 func NewManagedDeviceMobileAppConfigurationUserStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) {
     m := &ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewManagedDeviceMobileAppConfigurationUserStatusRequestBuilderInternal(path
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedDeviceMobileAppConfigurationUserStatusRequestBuilder instantiates a new ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder and sets the default values.
 func NewManagedDeviceMobileAppConfigurationUserStatusRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceMobileAppConfigurationUserStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of ManagedDeviceMobileAppConfigurationUserStatus.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of ManagedDeviceMobileAppConfigurationUserStatus.
 func (m *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) CreateDeleteRequestInformation(options *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) CreateDele
     }
     return requestInfo, nil
 }
-// List of ManagedDeviceMobileAppConfigurationUserStatus.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of ManagedDeviceMobileAppConfigurationUserStatus.
 func (m *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) CreateGetRequestInformation(options *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) CreateGetR
     }
     return requestInfo, nil
 }
-// List of ManagedDeviceMobileAppConfigurationUserStatus.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of ManagedDeviceMobileAppConfigurationUserStatus.
 func (m *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) CreatePatchRequestInformation(options *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) CreatePatc
     }
     return requestInfo, nil
 }
-// List of ManagedDeviceMobileAppConfigurationUserStatus.
-// Parameters:
-//  - options : Options for the request
+// Delete list of ManagedDeviceMobileAppConfigurationUserStatus.
 func (m *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) Delete(options *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) Delete(opt
     }
     return nil
 }
-// List of ManagedDeviceMobileAppConfigurationUserStatus.
-// Parameters:
-//  - options : Options for the request
+// Get list of ManagedDeviceMobileAppConfigurationUserStatus.
 func (m *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) Get(options *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationUserStatus, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) Get(option
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationUserStatus), nil
 }
-// List of ManagedDeviceMobileAppConfigurationUserStatus.
-// Parameters:
-//  - options : Options for the request
+// Patch list of ManagedDeviceMobileAppConfigurationUserStatus.
 func (m *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) Patch(options *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

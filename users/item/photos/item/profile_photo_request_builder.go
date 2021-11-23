@@ -7,7 +7,7 @@ import (
     i23e4001e509987b306ab55a39f125dfb03e832727c8c0609e81d4aef4a43a147 "github.com/microsoftgraph/msgraph-sdk-go/users/item/photos/item/value"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\photos\{profilePhoto-id}
+// ProfilePhotoRequestBuilder builds and executes requests for operations under \users\{user-id}\photos\{profilePhoto-id}
 type ProfilePhotoRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ProfilePhotoRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ProfilePhotoRequestBuilderDeleteOptions options for Delete
 type ProfilePhotoRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type ProfilePhotoRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ProfilePhotoRequestBuilderGetOptions options for Get
 type ProfilePhotoRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,12 +36,12 @@ type ProfilePhotoRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable.
+// ProfilePhotoRequestBuilderGetQueryParameters read-only. Nullable.
 type ProfilePhotoRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ProfilePhotoRequestBuilderPatchOptions options for Patch
 type ProfilePhotoRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto;
@@ -52,10 +52,7 @@ type ProfilePhotoRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ProfilePhotoRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProfilePhotoRequestBuilderInternal instantiates a new ProfilePhotoRequestBuilder and sets the default values.
 func NewProfilePhotoRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProfilePhotoRequestBuilder) {
     m := &ProfilePhotoRequestBuilder{
     }
@@ -68,10 +65,7 @@ func NewProfilePhotoRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ProfilePhotoRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProfilePhotoRequestBuilder instantiates a new ProfilePhotoRequestBuilder and sets the default values.
 func NewProfilePhotoRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProfilePhotoRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -80,9 +74,7 @@ func NewProfilePhotoRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
 func (m *ProfilePhotoRequestBuilder) Content()(*i23e4001e509987b306ab55a39f125dfb03e832727c8c0609e81d4aef4a43a147.ContentRequestBuilder) {
     return i23e4001e509987b306ab55a39f125dfb03e832727c8c0609e81d4aef4a43a147.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable.
 func (m *ProfilePhotoRequestBuilder) CreateDeleteRequestInformation(options *ProfilePhotoRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *ProfilePhotoRequestBuilder) CreateDeleteRequestInformation(options *Pro
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable.
 func (m *ProfilePhotoRequestBuilder) CreateGetRequestInformation(options *ProfilePhotoRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ProfilePhotoRequestBuilder) CreateGetRequestInformation(options *Profil
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable.
 func (m *ProfilePhotoRequestBuilder) CreatePatchRequestInformation(options *ProfilePhotoRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *ProfilePhotoRequestBuilder) CreatePatchRequestInformation(options *Prof
     }
     return requestInfo, nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable.
 func (m *ProfilePhotoRequestBuilder) Delete(options *ProfilePhotoRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *ProfilePhotoRequestBuilder) Delete(options *ProfilePhotoRequestBuilderD
     }
     return nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable.
 func (m *ProfilePhotoRequestBuilder) Get(options *ProfilePhotoRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *ProfilePhotoRequestBuilder) Get(options *ProfilePhotoRequestBuilderGetO
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto), nil
 }
-// Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable.
 func (m *ProfilePhotoRequestBuilder) Patch(options *ProfilePhotoRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

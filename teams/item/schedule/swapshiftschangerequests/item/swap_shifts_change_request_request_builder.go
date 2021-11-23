@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\swapShiftsChangeRequests\{swapShiftsChangeRequest-id}
+// SwapShiftsChangeRequestRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\swapShiftsChangeRequests\{swapShiftsChangeRequest-id}
 type SwapShiftsChangeRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SwapShiftsChangeRequestRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SwapShiftsChangeRequestRequestBuilderDeleteOptions options for Delete
 type SwapShiftsChangeRequestRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SwapShiftsChangeRequestRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SwapShiftsChangeRequestRequestBuilderGetOptions options for Get
 type SwapShiftsChangeRequestRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SwapShiftsChangeRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get swapShiftsChangeRequests from teams
+// SwapShiftsChangeRequestRequestBuilderGetQueryParameters get swapShiftsChangeRequests from teams
 type SwapShiftsChangeRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SwapShiftsChangeRequestRequestBuilderPatchOptions options for Patch
 type SwapShiftsChangeRequestRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SwapShiftsChangeRequest;
@@ -53,10 +53,7 @@ type SwapShiftsChangeRequestRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SwapShiftsChangeRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSwapShiftsChangeRequestRequestBuilderInternal instantiates a new SwapShiftsChangeRequestRequestBuilder and sets the default values.
 func NewSwapShiftsChangeRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SwapShiftsChangeRequestRequestBuilder) {
     m := &SwapShiftsChangeRequestRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSwapShiftsChangeRequestRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SwapShiftsChangeRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSwapShiftsChangeRequestRequestBuilder instantiates a new SwapShiftsChangeRequestRequestBuilder and sets the default values.
 func NewSwapShiftsChangeRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SwapShiftsChangeRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSwapShiftsChangeRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property swapShiftsChangeRequests for teams
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property swapShiftsChangeRequests for teams
 func (m *SwapShiftsChangeRequestRequestBuilder) CreateDeleteRequestInformation(options *SwapShiftsChangeRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SwapShiftsChangeRequestRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// Get swapShiftsChangeRequests from teams
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get swapShiftsChangeRequests from teams
 func (m *SwapShiftsChangeRequestRequestBuilder) CreateGetRequestInformation(options *SwapShiftsChangeRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SwapShiftsChangeRequestRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Update the navigation property swapShiftsChangeRequests in teams
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property swapShiftsChangeRequests in teams
 func (m *SwapShiftsChangeRequestRequestBuilder) CreatePatchRequestInformation(options *SwapShiftsChangeRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SwapShiftsChangeRequestRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// Delete navigation property swapShiftsChangeRequests for teams
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property swapShiftsChangeRequests for teams
 func (m *SwapShiftsChangeRequestRequestBuilder) Delete(options *SwapShiftsChangeRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SwapShiftsChangeRequestRequestBuilder) Delete(options *SwapShiftsChange
     }
     return nil
 }
-// Get swapShiftsChangeRequests from teams
-// Parameters:
-//  - options : Options for the request
+// Get get swapShiftsChangeRequests from teams
 func (m *SwapShiftsChangeRequestRequestBuilder) Get(options *SwapShiftsChangeRequestRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SwapShiftsChangeRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SwapShiftsChangeRequestRequestBuilder) Get(options *SwapShiftsChangeReq
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SwapShiftsChangeRequest), nil
 }
-// Update the navigation property swapShiftsChangeRequests in teams
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property swapShiftsChangeRequests in teams
 func (m *SwapShiftsChangeRequestRequestBuilder) Patch(options *SwapShiftsChangeRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

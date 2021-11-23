@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceConfigurationSettingState 
 type DeviceConfigurationSettingState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -33,14 +33,14 @@ type DeviceConfigurationSettingState struct {
     // UserPrincipalName.
     userPrincipalName *string;
 }
-// Instantiates a new deviceConfigurationSettingState and sets the default values.
+// NewDeviceConfigurationSettingState instantiates a new deviceConfigurationSettingState and sets the default values.
 func NewDeviceConfigurationSettingState()(*DeviceConfigurationSettingState) {
     m := &DeviceConfigurationSettingState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceConfigurationSettingState) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *DeviceConfigurationSettingState) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// Gets the currentValue property value. Current value of setting on device
+// GetCurrentValue gets the currentValue property value. Current value of setting on device
 func (m *DeviceConfigurationSettingState) GetCurrentValue()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *DeviceConfigurationSettingState) GetCurrentValue()(*string) {
         return m.currentValue
     }
 }
-// Gets the errorCode property value. Error code for the setting
+// GetErrorCode gets the errorCode property value. Error code for the setting
 func (m *DeviceConfigurationSettingState) GetErrorCode()(*int64) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *DeviceConfigurationSettingState) GetErrorCode()(*int64) {
         return m.errorCode
     }
 }
-// Gets the errorDescription property value. Error description
+// GetErrorDescription gets the errorDescription property value. Error description
 func (m *DeviceConfigurationSettingState) GetErrorDescription()(*string) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *DeviceConfigurationSettingState) GetErrorDescription()(*string) {
         return m.errorDescription
     }
 }
-// Gets the instanceDisplayName property value. Name of setting instance that is being reported.
+// GetInstanceDisplayName gets the instanceDisplayName property value. Name of setting instance that is being reported.
 func (m *DeviceConfigurationSettingState) GetInstanceDisplayName()(*string) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *DeviceConfigurationSettingState) GetInstanceDisplayName()(*string) {
         return m.instanceDisplayName
     }
 }
-// Gets the setting property value. The setting that is being reported
+// GetSetting gets the setting property value. The setting that is being reported
 func (m *DeviceConfigurationSettingState) GetSetting()(*string) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *DeviceConfigurationSettingState) GetSetting()(*string) {
         return m.setting
     }
 }
-// Gets the settingName property value. Localized/user friendly setting name that is being reported
+// GetSettingName gets the settingName property value. Localized/user friendly setting name that is being reported
 func (m *DeviceConfigurationSettingState) GetSettingName()(*string) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *DeviceConfigurationSettingState) GetSettingName()(*string) {
         return m.settingName
     }
 }
-// Gets the sources property value. Contributing policies
+// GetSources gets the sources property value. Contributing policies
 func (m *DeviceConfigurationSettingState) GetSources()([]SettingSource) {
     if m == nil {
         return nil
@@ -104,7 +104,7 @@ func (m *DeviceConfigurationSettingState) GetSources()([]SettingSource) {
         return m.sources
     }
 }
-// Gets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetState gets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *DeviceConfigurationSettingState) GetState()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -112,7 +112,7 @@ func (m *DeviceConfigurationSettingState) GetState()(*ComplianceStatus) {
         return m.state
     }
 }
-// Gets the userEmail property value. UserEmail
+// GetUserEmail gets the userEmail property value. UserEmail
 func (m *DeviceConfigurationSettingState) GetUserEmail()(*string) {
     if m == nil {
         return nil
@@ -120,7 +120,7 @@ func (m *DeviceConfigurationSettingState) GetUserEmail()(*string) {
         return m.userEmail
     }
 }
-// Gets the userId property value. UserId
+// GetUserId gets the userId property value. UserId
 func (m *DeviceConfigurationSettingState) GetUserId()(*string) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *DeviceConfigurationSettingState) GetUserId()(*string) {
         return m.userId
     }
 }
-// Gets the userName property value. UserName
+// GetUserName gets the userName property value. UserName
 func (m *DeviceConfigurationSettingState) GetUserName()(*string) {
     if m == nil {
         return nil
@@ -136,7 +136,7 @@ func (m *DeviceConfigurationSettingState) GetUserName()(*string) {
         return m.userName
     }
 }
-// Gets the userPrincipalName property value. UserPrincipalName.
+// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceConfigurationSettingState) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -144,7 +144,7 @@ func (m *DeviceConfigurationSettingState) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationSettingState) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["currentValue"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -277,9 +277,7 @@ func (m *DeviceConfigurationSettingState) GetFieldDeserializers()(map[string]fun
 func (m *DeviceConfigurationSettingState) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceConfigurationSettingState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("currentValue", m.GetCurrentValue())
@@ -367,81 +365,55 @@ func (m *DeviceConfigurationSettingState) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceConfigurationSettingState) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the currentValue property value. Current value of setting on device
-// Parameters:
-//  - value : Value to set for the currentValue property.
+// SetCurrentValue sets the currentValue property value. Current value of setting on device
 func (m *DeviceConfigurationSettingState) SetCurrentValue(value *string)() {
     m.currentValue = value
 }
-// Sets the errorCode property value. Error code for the setting
-// Parameters:
-//  - value : Value to set for the errorCode property.
+// SetErrorCode sets the errorCode property value. Error code for the setting
 func (m *DeviceConfigurationSettingState) SetErrorCode(value *int64)() {
     m.errorCode = value
 }
-// Sets the errorDescription property value. Error description
-// Parameters:
-//  - value : Value to set for the errorDescription property.
+// SetErrorDescription sets the errorDescription property value. Error description
 func (m *DeviceConfigurationSettingState) SetErrorDescription(value *string)() {
     m.errorDescription = value
 }
-// Sets the instanceDisplayName property value. Name of setting instance that is being reported.
-// Parameters:
-//  - value : Value to set for the instanceDisplayName property.
+// SetInstanceDisplayName sets the instanceDisplayName property value. Name of setting instance that is being reported.
 func (m *DeviceConfigurationSettingState) SetInstanceDisplayName(value *string)() {
     m.instanceDisplayName = value
 }
-// Sets the setting property value. The setting that is being reported
-// Parameters:
-//  - value : Value to set for the setting property.
+// SetSetting sets the setting property value. The setting that is being reported
 func (m *DeviceConfigurationSettingState) SetSetting(value *string)() {
     m.setting = value
 }
-// Sets the settingName property value. Localized/user friendly setting name that is being reported
-// Parameters:
-//  - value : Value to set for the settingName property.
+// SetSettingName sets the settingName property value. Localized/user friendly setting name that is being reported
 func (m *DeviceConfigurationSettingState) SetSettingName(value *string)() {
     m.settingName = value
 }
-// Sets the sources property value. Contributing policies
-// Parameters:
-//  - value : Value to set for the sources property.
+// SetSources sets the sources property value. Contributing policies
 func (m *DeviceConfigurationSettingState) SetSources(value []SettingSource)() {
     m.sources = value
 }
-// Sets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *DeviceConfigurationSettingState) SetState(value *ComplianceStatus)() {
     m.state = value
 }
-// Sets the userEmail property value. UserEmail
-// Parameters:
-//  - value : Value to set for the userEmail property.
+// SetUserEmail sets the userEmail property value. UserEmail
 func (m *DeviceConfigurationSettingState) SetUserEmail(value *string)() {
     m.userEmail = value
 }
-// Sets the userId property value. UserId
-// Parameters:
-//  - value : Value to set for the userId property.
+// SetUserId sets the userId property value. UserId
 func (m *DeviceConfigurationSettingState) SetUserId(value *string)() {
     m.userId = value
 }
-// Sets the userName property value. UserName
-// Parameters:
-//  - value : Value to set for the userName property.
+// SetUserName sets the userName property value. UserName
 func (m *DeviceConfigurationSettingState) SetUserName(value *string)() {
     m.userName = value
 }
-// Sets the userPrincipalName property value. UserPrincipalName.
-// Parameters:
-//  - value : Value to set for the userPrincipalName property.
+// SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceConfigurationSettingState) SetUserPrincipalName(value *string)() {
     m.userPrincipalName = value
 }

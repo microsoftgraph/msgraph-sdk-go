@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileAppConfigurations\{managedDeviceMobileAppConfiguration-id}\deviceStatuses
+// DeviceStatusesRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileAppConfigurations\{managedDeviceMobileAppConfiguration-id}\deviceStatuses
 type DeviceStatusesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceStatusesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceStatusesRequestBuilderGetOptions options for Get
 type DeviceStatusesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceStatusesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+// DeviceStatusesRequestBuilderGetQueryParameters list of ManagedDeviceMobileAppConfigurationDeviceStatus.
 type DeviceStatusesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceStatusesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceStatusesRequestBuilderPostOptions options for Post
 type DeviceStatusesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationDeviceStatus;
@@ -56,10 +56,7 @@ type DeviceStatusesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceStatusesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceStatusesRequestBuilderInternal instantiates a new DeviceStatusesRequestBuilder and sets the default values.
 func NewDeviceStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceStatusesRequestBuilder) {
     m := &DeviceStatusesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceStatusesRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceStatusesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceStatusesRequestBuilder instantiates a new DeviceStatusesRequestBuilder and sets the default values.
 func NewDeviceStatusesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceStatusesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceStatusesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of ManagedDeviceMobileAppConfigurationDeviceStatus.
 func (m *DeviceStatusesRequestBuilder) CreateGetRequestInformation(options *DeviceStatusesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceStatusesRequestBuilder) CreateGetRequestInformation(options *Devi
     }
     return requestInfo, nil
 }
-// List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of ManagedDeviceMobileAppConfigurationDeviceStatus.
 func (m *DeviceStatusesRequestBuilder) CreatePostRequestInformation(options *DeviceStatusesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceStatusesRequestBuilder) CreatePostRequestInformation(options *Dev
     }
     return requestInfo, nil
 }
-// List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-// Parameters:
-//  - options : Options for the request
+// Get list of ManagedDeviceMobileAppConfigurationDeviceStatus.
 func (m *DeviceStatusesRequestBuilder) Get(options *DeviceStatusesRequestBuilderGetOptions)(*DeviceStatusesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceStatusesRequestBuilder) Get(options *DeviceStatusesRequestBuilder
     }
     return res.(*DeviceStatusesResponse), nil
 }
-// List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-// Parameters:
-//  - options : Options for the request
+// Post list of ManagedDeviceMobileAppConfigurationDeviceStatus.
 func (m *DeviceStatusesRequestBuilder) Post(options *DeviceStatusesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedDeviceMobileAppConfigurationDeviceStatus, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

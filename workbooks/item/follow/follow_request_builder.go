@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.follow
+// FollowRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.follow
 type FollowRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type FollowRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// FollowRequestBuilderPostOptions options for Post
 type FollowRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type FollowRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes driveItem
+// FollowResponse union type wrapper for classes driveItem
 type FollowResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type driveItem
     driveItem *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem;
 }
-// Instantiates a new followResponse and sets the default values.
+// NewFollowResponse instantiates a new followResponse and sets the default values.
 func NewFollowResponse()(*FollowResponse) {
     m := &FollowResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FollowResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *FollowResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the driveItem property value. Union type representation for type driveItem
+// GetDriveItem gets the driveItem property value. Union type representation for type driveItem
 func (m *FollowResponse) GetDriveItem()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *FollowResponse) GetDriveItem()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89
         return m.driveItem
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *FollowResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["driveItem"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *FollowResponse) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *FollowResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *FollowResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("driveItem", m.GetDriveItem())
@@ -90,22 +88,15 @@ func (m *FollowResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FollowResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the driveItem property value. Union type representation for type driveItem
-// Parameters:
-//  - value : Value to set for the driveItem property.
+// SetDriveItem sets the driveItem property value. Union type representation for type driveItem
 func (m *FollowResponse) SetDriveItem(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItem)() {
     m.driveItem = value
 }
-// Instantiates a new FollowRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFollowRequestBuilderInternal instantiates a new FollowRequestBuilder and sets the default values.
 func NewFollowRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FollowRequestBuilder) {
     m := &FollowRequestBuilder{
     }
@@ -118,18 +109,13 @@ func NewFollowRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FollowRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFollowRequestBuilder instantiates a new FollowRequestBuilder and sets the default values.
 func NewFollowRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FollowRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFollowRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action follow
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action follow
 func (m *FollowRequestBuilder) CreatePostRequestInformation(options *FollowRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +132,7 @@ func (m *FollowRequestBuilder) CreatePostRequestInformation(options *FollowReque
     }
     return requestInfo, nil
 }
-// Invoke action follow
-// Parameters:
-//  - options : Options for the request
+// Post invoke action follow
 func (m *FollowRequestBuilder) Post(options *FollowRequestBuilderPostOptions)(*FollowResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

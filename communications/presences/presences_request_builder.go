@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \communications\presences
+// PresencesRequestBuilder builds and executes requests for operations under \communications\presences
 type PresencesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PresencesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PresencesRequestBuilderGetOptions options for Get
 type PresencesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PresencesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get presences from communications
+// PresencesRequestBuilderGetQueryParameters get presences from communications
 type PresencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type PresencesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PresencesRequestBuilderPostOptions options for Post
 type PresencesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Presence;
@@ -56,10 +56,7 @@ type PresencesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PresencesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPresencesRequestBuilderInternal instantiates a new PresencesRequestBuilder and sets the default values.
 func NewPresencesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PresencesRequestBuilder) {
     m := &PresencesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewPresencesRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PresencesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPresencesRequestBuilder instantiates a new PresencesRequestBuilder and sets the default values.
 func NewPresencesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PresencesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPresencesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get presences from communications
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get presences from communications
 func (m *PresencesRequestBuilder) CreateGetRequestInformation(options *PresencesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *PresencesRequestBuilder) CreateGetRequestInformation(options *Presences
     }
     return requestInfo, nil
 }
-// Create new navigation property to presences for communications
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to presences for communications
 func (m *PresencesRequestBuilder) CreatePostRequestInformation(options *PresencesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PresencesRequestBuilder) CreatePostRequestInformation(options *Presence
     }
     return requestInfo, nil
 }
-// Get presences from communications
-// Parameters:
-//  - options : Options for the request
+// Get get presences from communications
 func (m *PresencesRequestBuilder) Get(options *PresencesRequestBuilderGetOptions)(*PresencesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *PresencesRequestBuilder) Get(options *PresencesRequestBuilderGetOptions
     }
     return res.(*PresencesResponse), nil
 }
-// Create new navigation property to presences for communications
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to presences for communications
 func (m *PresencesRequestBuilder) Post(options *PresencesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Presence, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

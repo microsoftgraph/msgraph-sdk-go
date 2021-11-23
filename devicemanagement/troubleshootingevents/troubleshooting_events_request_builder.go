@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\troubleshootingEvents
+// TroubleshootingEventsRequestBuilder builds and executes requests for operations under \deviceManagement\troubleshootingEvents
 type TroubleshootingEventsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TroubleshootingEventsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TroubleshootingEventsRequestBuilderGetOptions options for Get
 type TroubleshootingEventsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TroubleshootingEventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of troubleshooting events for the tenant.
+// TroubleshootingEventsRequestBuilderGetQueryParameters the list of troubleshooting events for the tenant.
 type TroubleshootingEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TroubleshootingEventsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TroubleshootingEventsRequestBuilderPostOptions options for Post
 type TroubleshootingEventsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementTroubleshootingEvent;
@@ -56,10 +56,7 @@ type TroubleshootingEventsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TroubleshootingEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTroubleshootingEventsRequestBuilderInternal instantiates a new TroubleshootingEventsRequestBuilder and sets the default values.
 func NewTroubleshootingEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TroubleshootingEventsRequestBuilder) {
     m := &TroubleshootingEventsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTroubleshootingEventsRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TroubleshootingEventsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTroubleshootingEventsRequestBuilder instantiates a new TroubleshootingEventsRequestBuilder and sets the default values.
 func NewTroubleshootingEventsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TroubleshootingEventsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTroubleshootingEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of troubleshooting events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of troubleshooting events for the tenant.
 func (m *TroubleshootingEventsRequestBuilder) CreateGetRequestInformation(options *TroubleshootingEventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TroubleshootingEventsRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// The list of troubleshooting events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of troubleshooting events for the tenant.
 func (m *TroubleshootingEventsRequestBuilder) CreatePostRequestInformation(options *TroubleshootingEventsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TroubleshootingEventsRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The list of troubleshooting events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of troubleshooting events for the tenant.
 func (m *TroubleshootingEventsRequestBuilder) Get(options *TroubleshootingEventsRequestBuilderGetOptions)(*TroubleshootingEventsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TroubleshootingEventsRequestBuilder) Get(options *TroubleshootingEvents
     }
     return res.(*TroubleshootingEventsResponse), nil
 }
-// The list of troubleshooting events for the tenant.
-// Parameters:
-//  - options : Options for the request
+// Post the list of troubleshooting events for the tenant.
 func (m *TroubleshootingEventsRequestBuilder) Post(options *TroubleshootingEventsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementTroubleshootingEvent, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

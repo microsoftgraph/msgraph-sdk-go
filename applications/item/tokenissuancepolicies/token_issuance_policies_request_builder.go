@@ -6,7 +6,7 @@ import (
     i76eae71f1d2dfce714e601f9c9310637a9b224b3dac53190f11a4812b4c6e5e2 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/tokenissuancepolicies/ref"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\tokenIssuancePolicies
+// TokenIssuancePoliciesRequestBuilder builds and executes requests for operations under \applications\{application-id}\tokenIssuancePolicies
 type TokenIssuancePoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TokenIssuancePoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TokenIssuancePoliciesRequestBuilderGetOptions options for Get
 type TokenIssuancePoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TokenIssuancePoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get tokenIssuancePolicies from applications
+// TokenIssuancePoliciesRequestBuilderGetQueryParameters get tokenIssuancePolicies from applications
 type TokenIssuancePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type TokenIssuancePoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTokenIssuancePoliciesRequestBuilderInternal instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.
 func NewTokenIssuancePoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TokenIssuancePoliciesRequestBuilder) {
     m := &TokenIssuancePoliciesRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewTokenIssuancePoliciesRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTokenIssuancePoliciesRequestBuilder instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.
 func NewTokenIssuancePoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TokenIssuancePoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTokenIssuancePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get tokenIssuancePolicies from applications
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get tokenIssuancePolicies from applications
 func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformation(options *TokenIssuancePoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get tokenIssuancePolicies from applications
-// Parameters:
-//  - options : Options for the request
+// Get get tokenIssuancePolicies from applications
 func (m *TokenIssuancePoliciesRequestBuilder) Get(options *TokenIssuancePoliciesRequestBuilderGetOptions)(*TokenIssuancePoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \shares\{sharedDriveItem-id}\site
+// SiteRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\site
 type SiteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SiteRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SiteRequestBuilderDeleteOptions options for Delete
 type SiteRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SiteRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SiteRequestBuilderGetOptions options for Get
 type SiteRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SiteRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Used to access the underlying site
+// SiteRequestBuilderGetQueryParameters used to access the underlying site
 type SiteRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SiteRequestBuilderPatchOptions options for Patch
 type SiteRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site;
@@ -53,10 +53,7 @@ type SiteRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SiteRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSiteRequestBuilderInternal instantiates a new SiteRequestBuilder and sets the default values.
 func NewSiteRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SiteRequestBuilder) {
     m := &SiteRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSiteRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SiteRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSiteRequestBuilder instantiates a new SiteRequestBuilder and sets the default values.
 func NewSiteRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SiteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSiteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Used to access the underlying site
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation used to access the underlying site
 func (m *SiteRequestBuilder) CreateDeleteRequestInformation(options *SiteRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SiteRequestBuilder) CreateDeleteRequestInformation(options *SiteRequest
     }
     return requestInfo, nil
 }
-// Used to access the underlying site
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation used to access the underlying site
 func (m *SiteRequestBuilder) CreateGetRequestInformation(options *SiteRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SiteRequestBuilder) CreateGetRequestInformation(options *SiteRequestBui
     }
     return requestInfo, nil
 }
-// Used to access the underlying site
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation used to access the underlying site
 func (m *SiteRequestBuilder) CreatePatchRequestInformation(options *SiteRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SiteRequestBuilder) CreatePatchRequestInformation(options *SiteRequestB
     }
     return requestInfo, nil
 }
-// Used to access the underlying site
-// Parameters:
-//  - options : Options for the request
+// Delete used to access the underlying site
 func (m *SiteRequestBuilder) Delete(options *SiteRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SiteRequestBuilder) Delete(options *SiteRequestBuilderDeleteOptions)(er
     }
     return nil
 }
-// Used to access the underlying site
-// Parameters:
-//  - options : Options for the request
+// Get used to access the underlying site
 func (m *SiteRequestBuilder) Get(options *SiteRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SiteRequestBuilder) Get(options *SiteRequestBuilderGetOptions)(*i4a838e
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site), nil
 }
-// Used to access the underlying site
-// Parameters:
-//  - options : Options for the request
+// Patch used to access the underlying site
 func (m *SiteRequestBuilder) Patch(options *SiteRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

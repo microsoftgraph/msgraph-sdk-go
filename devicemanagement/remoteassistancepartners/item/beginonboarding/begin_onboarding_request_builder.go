@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\remoteAssistancePartners\{remoteAssistancePartner-id}\microsoft.graph.beginOnboarding
+// BeginOnboardingRequestBuilder builds and executes requests for operations under \deviceManagement\remoteAssistancePartners\{remoteAssistancePartner-id}\microsoft.graph.beginOnboarding
 type BeginOnboardingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type BeginOnboardingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// BeginOnboardingRequestBuilderPostOptions options for Post
 type BeginOnboardingRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type BeginOnboardingRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BeginOnboardingRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBeginOnboardingRequestBuilderInternal instantiates a new BeginOnboardingRequestBuilder and sets the default values.
 func NewBeginOnboardingRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BeginOnboardingRequestBuilder) {
     m := &BeginOnboardingRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewBeginOnboardingRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BeginOnboardingRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBeginOnboardingRequestBuilder instantiates a new BeginOnboardingRequestBuilder and sets the default values.
 func NewBeginOnboardingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BeginOnboardingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBeginOnboardingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
 func (m *BeginOnboardingRequestBuilder) CreatePostRequestInformation(options *BeginOnboardingRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *BeginOnboardingRequestBuilder) CreatePostRequestInformation(options *Be
     }
     return requestInfo, nil
 }
-// A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-// Parameters:
-//  - options : Options for the request
+// Post a request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
 func (m *BeginOnboardingRequestBuilder) Post(options *BeginOnboardingRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

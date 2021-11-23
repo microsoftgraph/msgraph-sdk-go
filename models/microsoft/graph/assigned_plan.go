@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AssignedPlan 
 type AssignedPlan struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,14 +18,14 @@ type AssignedPlan struct {
     // A GUID that identifies the service plan.
     servicePlanId *string;
 }
-// Instantiates a new assignedPlan and sets the default values.
+// NewAssignedPlan instantiates a new assignedPlan and sets the default values.
 func NewAssignedPlan()(*AssignedPlan) {
     m := &AssignedPlan{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedPlan) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *AssignedPlan) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the assignedDateTime property value. The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetAssignedDateTime gets the assignedDateTime property value. The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AssignedPlan) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *AssignedPlan) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.assignedDateTime
     }
 }
-// Gets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
+// GetCapabilityStatus gets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
 func (m *AssignedPlan) GetCapabilityStatus()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *AssignedPlan) GetCapabilityStatus()(*string) {
         return m.capabilityStatus
     }
 }
-// Gets the service property value. The name of the service; for example, 'Exchange'.
+// GetService gets the service property value. The name of the service; for example, 'Exchange'.
 func (m *AssignedPlan) GetService()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *AssignedPlan) GetService()(*string) {
         return m.service
     }
 }
-// Gets the servicePlanId property value. A GUID that identifies the service plan.
+// GetServicePlanId gets the servicePlanId property value. A GUID that identifies the service plan.
 func (m *AssignedPlan) GetServicePlanId()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *AssignedPlan) GetServicePlanId()(*string) {
         return m.servicePlanId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AssignedPlan) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["assignedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,9 +113,7 @@ func (m *AssignedPlan) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *AssignedPlan) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AssignedPlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("assignedDateTime", m.GetAssignedDateTime())
@@ -149,33 +147,23 @@ func (m *AssignedPlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedPlan) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the assignedDateTime property value. The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-// Parameters:
-//  - value : Value to set for the assignedDateTime property.
+// SetAssignedDateTime sets the assignedDateTime property value. The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AssignedPlan) SetAssignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.assignedDateTime = value
 }
-// Sets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
-// Parameters:
-//  - value : Value to set for the capabilityStatus property.
+// SetCapabilityStatus sets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
 func (m *AssignedPlan) SetCapabilityStatus(value *string)() {
     m.capabilityStatus = value
 }
-// Sets the service property value. The name of the service; for example, 'Exchange'.
-// Parameters:
-//  - value : Value to set for the service property.
+// SetService sets the service property value. The name of the service; for example, 'Exchange'.
 func (m *AssignedPlan) SetService(value *string)() {
     m.service = value
 }
-// Sets the servicePlanId property value. A GUID that identifies the service plan.
-// Parameters:
-//  - value : Value to set for the servicePlanId property.
+// SetServicePlanId sets the servicePlanId property value. A GUID that identifies the service plan.
 func (m *AssignedPlan) SetServicePlanId(value *string)() {
     m.servicePlanId = value
 }

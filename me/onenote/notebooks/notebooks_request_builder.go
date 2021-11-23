@@ -8,7 +8,7 @@ import (
     iff7c4f8543e30753ac0194e7238b74428170fd9f87db8d5dc1c0c31431718d7a "github.com/microsoftgraph/msgraph-sdk-go/me/onenote/notebooks/getnotebookfromweburl"
 )
 
-// Builds and executes requests for operations under \me\onenote\notebooks
+// NotebooksRequestBuilder builds and executes requests for operations under \me\onenote\notebooks
 type NotebooksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type NotebooksRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// NotebooksRequestBuilderGetOptions options for Get
 type NotebooksRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type NotebooksRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// NotebooksRequestBuilderGetQueryParameters the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 type NotebooksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type NotebooksRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// NotebooksRequestBuilderPostOptions options for Post
 type NotebooksRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Notebook;
@@ -58,10 +58,7 @@ type NotebooksRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new NotebooksRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotebooksRequestBuilderInternal instantiates a new NotebooksRequestBuilder and sets the default values.
 func NewNotebooksRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotebooksRequestBuilder) {
     m := &NotebooksRequestBuilder{
     }
@@ -74,18 +71,13 @@ func NewNotebooksRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NotebooksRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNotebooksRequestBuilder instantiates a new NotebooksRequestBuilder and sets the default values.
 func NewNotebooksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NotebooksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNotebooksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *NotebooksRequestBuilder) CreateGetRequestInformation(options *NotebooksRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -105,9 +97,7 @@ func (m *NotebooksRequestBuilder) CreateGetRequestInformation(options *Notebooks
     }
     return requestInfo, nil
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *NotebooksRequestBuilder) CreatePostRequestInformation(options *NotebooksRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,9 +115,7 @@ func (m *NotebooksRequestBuilder) CreatePostRequestInformation(options *Notebook
     }
     return requestInfo, nil
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *NotebooksRequestBuilder) Get(options *NotebooksRequestBuilderGetOptions)(*NotebooksResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,15 +130,11 @@ func (m *NotebooksRequestBuilder) Get(options *NotebooksRequestBuilderGetOptions
 func (m *NotebooksRequestBuilder) GetNotebookFromWebUrl()(*iff7c4f8543e30753ac0194e7238b74428170fd9f87db8d5dc1c0c31431718d7a.GetNotebookFromWebUrlRequestBuilder) {
     return iff7c4f8543e30753ac0194e7238b74428170fd9f87db8d5dc1c0c31431718d7a.NewGetNotebookFromWebUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \me\onenote\notebooks\microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})
-// Parameters:
-//  - includePersonalNotebooks : Usage: includePersonalNotebooks={includePersonalNotebooks}
+// GetRecentNotebooksWithIncludePersonalNotebooks builds and executes requests for operations under \me\onenote\notebooks\microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})
 func (m *NotebooksRequestBuilder) GetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*i47f6f2c05868e3a75e5232a7c8da81a487ae696060792d87aac5c34ae0a590c6.GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
     return i47f6f2c05868e3a75e5232a7c8da81a487ae696060792d87aac5c34ae0a590c6.NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter, includePersonalNotebooks);
 }
-// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *NotebooksRequestBuilder) Post(options *NotebooksRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Notebook, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

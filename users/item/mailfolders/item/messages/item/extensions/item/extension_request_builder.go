@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\extensions\{extension-id}
+// ExtensionRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messages\{message-id}\extensions\{extension-id}
 type ExtensionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ExtensionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ExtensionRequestBuilderDeleteOptions options for Delete
 type ExtensionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ExtensionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ExtensionRequestBuilderGetOptions options for Get
 type ExtensionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ExtensionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of open extensions defined for the message. Nullable.
+// ExtensionRequestBuilderGetQueryParameters the collection of open extensions defined for the message. Nullable.
 type ExtensionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ExtensionRequestBuilderPatchOptions options for Patch
 type ExtensionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension;
@@ -53,10 +53,7 @@ type ExtensionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ExtensionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtensionRequestBuilderInternal instantiates a new ExtensionRequestBuilder and sets the default values.
 func NewExtensionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtensionRequestBuilder) {
     m := &ExtensionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewExtensionRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExtensionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExtensionRequestBuilder instantiates a new ExtensionRequestBuilder and sets the default values.
 func NewExtensionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExtensionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExtensionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of open extensions defined for the message. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of open extensions defined for the message. Nullable.
 func (m *ExtensionRequestBuilder) CreateDeleteRequestInformation(options *ExtensionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ExtensionRequestBuilder) CreateDeleteRequestInformation(options *Extens
     }
     return requestInfo, nil
 }
-// The collection of open extensions defined for the message. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of open extensions defined for the message. Nullable.
 func (m *ExtensionRequestBuilder) CreateGetRequestInformation(options *ExtensionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ExtensionRequestBuilder) CreateGetRequestInformation(options *Extension
     }
     return requestInfo, nil
 }
-// The collection of open extensions defined for the message. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of open extensions defined for the message. Nullable.
 func (m *ExtensionRequestBuilder) CreatePatchRequestInformation(options *ExtensionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ExtensionRequestBuilder) CreatePatchRequestInformation(options *Extensi
     }
     return requestInfo, nil
 }
-// The collection of open extensions defined for the message. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of open extensions defined for the message. Nullable.
 func (m *ExtensionRequestBuilder) Delete(options *ExtensionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ExtensionRequestBuilder) Delete(options *ExtensionRequestBuilderDeleteO
     }
     return nil
 }
-// The collection of open extensions defined for the message. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of open extensions defined for the message. Nullable.
 func (m *ExtensionRequestBuilder) Get(options *ExtensionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ExtensionRequestBuilder) Get(options *ExtensionRequestBuilderGetOptions
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension), nil
 }
-// The collection of open extensions defined for the message. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of open extensions defined for the message. Nullable.
 func (m *ExtensionRequestBuilder) Patch(options *ExtensionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

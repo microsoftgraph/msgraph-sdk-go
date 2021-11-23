@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedTimeZones(TimeZoneStandard={TimeZoneStandard})
+// SupportedTimeZonesWithTimeZoneStandardRequestBuilder builds and executes requests for operations under \users\{user-id}\outlook\microsoft.graph.supportedTimeZones(TimeZoneStandard={TimeZoneStandard})
 type SupportedTimeZonesWithTimeZoneStandardRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type SupportedTimeZonesWithTimeZoneStandardRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetOptions options for Get
 type SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SupportedTimeZonesWithTimeZoneStandardRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
-//  - TimeZoneStandard : Usage: TimeZoneStandard={TimeZoneStandard}
+// NewSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal instantiates a new SupportedTimeZonesWithTimeZoneStandardRequestBuilder and sets the default values.
 func NewSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, timeZoneStandard *string)(*SupportedTimeZonesWithTimeZoneStandardRequestBuilder) {
     m := &SupportedTimeZonesWithTimeZoneStandardRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(pathParamet
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SupportedTimeZonesWithTimeZoneStandardRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSupportedTimeZonesWithTimeZoneStandardRequestBuilder instantiates a new SupportedTimeZonesWithTimeZoneStandardRequestBuilder and sets the default values.
 func NewSupportedTimeZonesWithTimeZoneStandardRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SupportedTimeZonesWithTimeZoneStandardRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSupportedTimeZonesWithTimeZoneStandardRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function supportedTimeZones
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function supportedTimeZones
 func (m *SupportedTimeZonesWithTimeZoneStandardRequestBuilder) CreateGetRequestInformation(options *SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *SupportedTimeZonesWithTimeZoneStandardRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// Invoke function supportedTimeZones
-// Parameters:
-//  - options : Options for the request
+// Get invoke function supportedTimeZones
 func (m *SupportedTimeZonesWithTimeZoneStandardRequestBuilder) Get(options *SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetOptions)([]SupportedTimeZonesWithTimeZoneStandard, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

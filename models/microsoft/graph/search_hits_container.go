@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SearchHitsContainer 
 type SearchHitsContainer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type SearchHitsContainer struct {
     // The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
     total *int32;
 }
-// Instantiates a new searchHitsContainer and sets the default values.
+// NewSearchHitsContainer instantiates a new searchHitsContainer and sets the default values.
 func NewSearchHitsContainer()(*SearchHitsContainer) {
     m := &SearchHitsContainer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchHitsContainer) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *SearchHitsContainer) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the aggregations property value. Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
+// GetAggregations gets the aggregations property value. Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
 func (m *SearchHitsContainer) GetAggregations()([]SearchAggregation) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *SearchHitsContainer) GetAggregations()([]SearchAggregation) {
         return m.aggregations
     }
 }
-// Gets the hits property value. A collection of the search results.
+// GetHits gets the hits property value. A collection of the search results.
 func (m *SearchHitsContainer) GetHits()([]SearchHit) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *SearchHitsContainer) GetHits()([]SearchHit) {
         return m.hits
     }
 }
-// Gets the moreResultsAvailable property value. Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
+// GetMoreResultsAvailable gets the moreResultsAvailable property value. Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
 func (m *SearchHitsContainer) GetMoreResultsAvailable()(*bool) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *SearchHitsContainer) GetMoreResultsAvailable()(*bool) {
         return m.moreResultsAvailable
     }
 }
-// Gets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
+// GetTotal gets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
 func (m *SearchHitsContainer) GetTotal()(*int32) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *SearchHitsContainer) GetTotal()(*int32) {
         return m.total
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["aggregations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -120,9 +120,7 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(interface{
 func (m *SearchHitsContainer) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SearchHitsContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAggregations()))
@@ -166,33 +164,23 @@ func (m *SearchHitsContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchHitsContainer) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the aggregations property value. Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
-// Parameters:
-//  - value : Value to set for the aggregations property.
+// SetAggregations sets the aggregations property value. Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
 func (m *SearchHitsContainer) SetAggregations(value []SearchAggregation)() {
     m.aggregations = value
 }
-// Sets the hits property value. A collection of the search results.
-// Parameters:
-//  - value : Value to set for the hits property.
+// SetHits sets the hits property value. A collection of the search results.
 func (m *SearchHitsContainer) SetHits(value []SearchHit)() {
     m.hits = value
 }
-// Sets the moreResultsAvailable property value. Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
-// Parameters:
-//  - value : Value to set for the moreResultsAvailable property.
+// SetMoreResultsAvailable sets the moreResultsAvailable property value. Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
 func (m *SearchHitsContainer) SetMoreResultsAvailable(value *bool)() {
     m.moreResultsAvailable = value
 }
-// Sets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
-// Parameters:
-//  - value : Value to set for the total property.
+// SetTotal sets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
 func (m *SearchHitsContainer) SetTotal(value *int32)() {
     m.total = value
 }

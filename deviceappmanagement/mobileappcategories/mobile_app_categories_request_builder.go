@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\mobileAppCategories
+// MobileAppCategoriesRequestBuilder builds and executes requests for operations under \deviceAppManagement\mobileAppCategories
 type MobileAppCategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MobileAppCategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MobileAppCategoriesRequestBuilderGetOptions options for Get
 type MobileAppCategoriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MobileAppCategoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The mobile app categories.
+// MobileAppCategoriesRequestBuilderGetQueryParameters the mobile app categories.
 type MobileAppCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MobileAppCategoriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MobileAppCategoriesRequestBuilderPostOptions options for Post
 type MobileAppCategoriesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppCategory;
@@ -56,10 +56,7 @@ type MobileAppCategoriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MobileAppCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppCategoriesRequestBuilderInternal instantiates a new MobileAppCategoriesRequestBuilder and sets the default values.
 func NewMobileAppCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppCategoriesRequestBuilder) {
     m := &MobileAppCategoriesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMobileAppCategoriesRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MobileAppCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileAppCategoriesRequestBuilder instantiates a new MobileAppCategoriesRequestBuilder and sets the default values.
 func NewMobileAppCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileAppCategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The mobile app categories.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the mobile app categories.
 func (m *MobileAppCategoriesRequestBuilder) CreateGetRequestInformation(options *MobileAppCategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MobileAppCategoriesRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The mobile app categories.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the mobile app categories.
 func (m *MobileAppCategoriesRequestBuilder) CreatePostRequestInformation(options *MobileAppCategoriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MobileAppCategoriesRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// The mobile app categories.
-// Parameters:
-//  - options : Options for the request
+// Get the mobile app categories.
 func (m *MobileAppCategoriesRequestBuilder) Get(options *MobileAppCategoriesRequestBuilderGetOptions)(*MobileAppCategoriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MobileAppCategoriesRequestBuilder) Get(options *MobileAppCategoriesRequ
     }
     return res.(*MobileAppCategoriesResponse), nil
 }
-// The mobile app categories.
-// Parameters:
-//  - options : Options for the request
+// Post the mobile app categories.
 func (m *MobileAppCategoriesRequestBuilder) Post(options *MobileAppCategoriesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileAppCategory, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\people
+// PeopleRequestBuilder builds and executes requests for operations under \me\people
 type PeopleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PeopleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PeopleRequestBuilderGetOptions options for Get
 type PeopleRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PeopleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// People that are relevant to the user. Read-only. Nullable.
+// PeopleRequestBuilderGetQueryParameters people that are relevant to the user. Read-only. Nullable.
 type PeopleRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -43,7 +43,7 @@ type PeopleRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PeopleRequestBuilderPostOptions options for Post
 type PeopleRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Person;
@@ -54,10 +54,7 @@ type PeopleRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PeopleRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPeopleRequestBuilderInternal instantiates a new PeopleRequestBuilder and sets the default values.
 func NewPeopleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PeopleRequestBuilder) {
     m := &PeopleRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewPeopleRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PeopleRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPeopleRequestBuilder instantiates a new PeopleRequestBuilder and sets the default values.
 func NewPeopleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PeopleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPeopleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// People that are relevant to the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation people that are relevant to the user. Read-only. Nullable.
 func (m *PeopleRequestBuilder) CreateGetRequestInformation(options *PeopleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *PeopleRequestBuilder) CreateGetRequestInformation(options *PeopleReques
     }
     return requestInfo, nil
 }
-// People that are relevant to the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation people that are relevant to the user. Read-only. Nullable.
 func (m *PeopleRequestBuilder) CreatePostRequestInformation(options *PeopleRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *PeopleRequestBuilder) CreatePostRequestInformation(options *PeopleReque
     }
     return requestInfo, nil
 }
-// People that are relevant to the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get people that are relevant to the user. Read-only. Nullable.
 func (m *PeopleRequestBuilder) Get(options *PeopleRequestBuilderGetOptions)(*PeopleResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -135,9 +123,7 @@ func (m *PeopleRequestBuilder) Get(options *PeopleRequestBuilderGetOptions)(*Peo
     }
     return res.(*PeopleResponse), nil
 }
-// People that are relevant to the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post people that are relevant to the user. Read-only. Nullable.
 func (m *PeopleRequestBuilder) Post(options *PeopleRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Person, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

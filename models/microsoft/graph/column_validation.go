@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ColumnValidation 
 type ColumnValidation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type ColumnValidation struct {
     // The formula to validate column value. For examples, see Examples of common formulas in lists.
     formula *string;
 }
-// Instantiates a new columnValidation and sets the default values.
+// NewColumnValidation instantiates a new columnValidation and sets the default values.
 func NewColumnValidation()(*ColumnValidation) {
     m := &ColumnValidation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ColumnValidation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *ColumnValidation) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the defaultLanguage property value. Default BCP 47 language tag for the description.
+// GetDefaultLanguage gets the defaultLanguage property value. Default BCP 47 language tag for the description.
 func (m *ColumnValidation) GetDefaultLanguage()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *ColumnValidation) GetDefaultLanguage()(*string) {
         return m.defaultLanguage
     }
 }
-// Gets the descriptions property value. Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
+// GetDescriptions gets the descriptions property value. Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
 func (m *ColumnValidation) GetDescriptions()([]DisplayNameLocalization) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *ColumnValidation) GetDescriptions()([]DisplayNameLocalization) {
         return m.descriptions
     }
 }
-// Gets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists.
+// GetFormula gets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists.
 func (m *ColumnValidation) GetFormula()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *ColumnValidation) GetFormula()(*string) {
         return m.formula
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["defaultLanguage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -96,9 +96,7 @@ func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *ColumnValidation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ColumnValidation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("defaultLanguage", m.GetDefaultLanguage())
@@ -131,27 +129,19 @@ func (m *ColumnValidation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ColumnValidation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the defaultLanguage property value. Default BCP 47 language tag for the description.
-// Parameters:
-//  - value : Value to set for the defaultLanguage property.
+// SetDefaultLanguage sets the defaultLanguage property value. Default BCP 47 language tag for the description.
 func (m *ColumnValidation) SetDefaultLanguage(value *string)() {
     m.defaultLanguage = value
 }
-// Sets the descriptions property value. Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
-// Parameters:
-//  - value : Value to set for the descriptions property.
+// SetDescriptions sets the descriptions property value. Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
 func (m *ColumnValidation) SetDescriptions(value []DisplayNameLocalization)() {
     m.descriptions = value
 }
-// Sets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists.
-// Parameters:
-//  - value : Value to set for the formula property.
+// SetFormula sets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists.
 func (m *ColumnValidation) SetFormula(value *string)() {
     m.formula = value
 }

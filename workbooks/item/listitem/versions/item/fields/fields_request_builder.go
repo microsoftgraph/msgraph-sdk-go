@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\listItem\versions\{listItemVersion-id}\fields
+// FieldsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\listItem\versions\{listItemVersion-id}\fields
 type FieldsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type FieldsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// FieldsRequestBuilderDeleteOptions options for Delete
 type FieldsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type FieldsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// FieldsRequestBuilderGetOptions options for Get
 type FieldsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type FieldsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of the fields and values for this version of the list item.
+// FieldsRequestBuilderGetQueryParameters a collection of the fields and values for this version of the list item.
 type FieldsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// FieldsRequestBuilderPatchOptions options for Patch
 type FieldsRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FieldValueSet;
@@ -53,10 +53,7 @@ type FieldsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FieldsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFieldsRequestBuilderInternal instantiates a new FieldsRequestBuilder and sets the default values.
 func NewFieldsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FieldsRequestBuilder) {
     m := &FieldsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewFieldsRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FieldsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFieldsRequestBuilder instantiates a new FieldsRequestBuilder and sets the default values.
 func NewFieldsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FieldsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFieldsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of the fields and values for this version of the list item.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of the fields and values for this version of the list item.
 func (m *FieldsRequestBuilder) CreateDeleteRequestInformation(options *FieldsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *FieldsRequestBuilder) CreateDeleteRequestInformation(options *FieldsReq
     }
     return requestInfo, nil
 }
-// A collection of the fields and values for this version of the list item.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of the fields and values for this version of the list item.
 func (m *FieldsRequestBuilder) CreateGetRequestInformation(options *FieldsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *FieldsRequestBuilder) CreateGetRequestInformation(options *FieldsReques
     }
     return requestInfo, nil
 }
-// A collection of the fields and values for this version of the list item.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of the fields and values for this version of the list item.
 func (m *FieldsRequestBuilder) CreatePatchRequestInformation(options *FieldsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *FieldsRequestBuilder) CreatePatchRequestInformation(options *FieldsRequ
     }
     return requestInfo, nil
 }
-// A collection of the fields and values for this version of the list item.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of the fields and values for this version of the list item.
 func (m *FieldsRequestBuilder) Delete(options *FieldsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *FieldsRequestBuilder) Delete(options *FieldsRequestBuilderDeleteOptions
     }
     return nil
 }
-// A collection of the fields and values for this version of the list item.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of the fields and values for this version of the list item.
 func (m *FieldsRequestBuilder) Get(options *FieldsRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FieldValueSet, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *FieldsRequestBuilder) Get(options *FieldsRequestBuilderGetOptions)(*i4a
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FieldValueSet), nil
 }
-// A collection of the fields and values for this version of the list item.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of the fields and values for this version of the list item.
 func (m *FieldsRequestBuilder) Patch(options *FieldsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

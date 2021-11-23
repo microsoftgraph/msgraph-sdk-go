@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Contact 
 type Contact struct {
     OutlookItem
     // The name of the contact's assistant.
@@ -83,14 +83,14 @@ type Contact struct {
     // 
     yomiSurname *string;
 }
-// Instantiates a new contact and sets the default values.
+// NewContact instantiates a new contact and sets the default values.
 func NewContact()(*Contact) {
     m := &Contact{
         OutlookItem: *NewOutlookItem(),
     }
     return m
 }
-// Gets the assistantName property value. The name of the contact's assistant.
+// GetAssistantName gets the assistantName property value. The name of the contact's assistant.
 func (m *Contact) GetAssistantName()(*string) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *Contact) GetAssistantName()(*string) {
         return m.assistantName
     }
 }
-// Gets the birthday property value. The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetBirthday gets the birthday property value. The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Contact) GetBirthday()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *Contact) GetBirthday()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391f
         return m.birthday
     }
 }
-// Gets the businessAddress property value. The contact's business address.
+// GetBusinessAddress gets the businessAddress property value. The contact's business address.
 func (m *Contact) GetBusinessAddress()(*PhysicalAddress) {
     if m == nil {
         return nil
@@ -114,7 +114,7 @@ func (m *Contact) GetBusinessAddress()(*PhysicalAddress) {
         return m.businessAddress
     }
 }
-// Gets the businessHomePage property value. The business home page of the contact.
+// GetBusinessHomePage gets the businessHomePage property value. The business home page of the contact.
 func (m *Contact) GetBusinessHomePage()(*string) {
     if m == nil {
         return nil
@@ -122,7 +122,7 @@ func (m *Contact) GetBusinessHomePage()(*string) {
         return m.businessHomePage
     }
 }
-// Gets the businessPhones property value. The contact's business phone numbers.
+// GetBusinessPhones gets the businessPhones property value. The contact's business phone numbers.
 func (m *Contact) GetBusinessPhones()([]string) {
     if m == nil {
         return nil
@@ -130,7 +130,7 @@ func (m *Contact) GetBusinessPhones()([]string) {
         return m.businessPhones
     }
 }
-// Gets the children property value. The names of the contact's children.
+// GetChildren gets the children property value. The names of the contact's children.
 func (m *Contact) GetChildren()([]string) {
     if m == nil {
         return nil
@@ -138,7 +138,7 @@ func (m *Contact) GetChildren()([]string) {
         return m.children
     }
 }
-// Gets the companyName property value. The name of the contact's company.
+// GetCompanyName gets the companyName property value. The name of the contact's company.
 func (m *Contact) GetCompanyName()(*string) {
     if m == nil {
         return nil
@@ -146,7 +146,7 @@ func (m *Contact) GetCompanyName()(*string) {
         return m.companyName
     }
 }
-// Gets the department property value. The contact's department.
+// GetDepartment gets the department property value. The contact's department.
 func (m *Contact) GetDepartment()(*string) {
     if m == nil {
         return nil
@@ -154,7 +154,7 @@ func (m *Contact) GetDepartment()(*string) {
         return m.department
     }
 }
-// Gets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
+// GetDisplayName gets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
 func (m *Contact) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -162,7 +162,7 @@ func (m *Contact) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the emailAddresses property value. The contact's email addresses.
+// GetEmailAddresses gets the emailAddresses property value. The contact's email addresses.
 func (m *Contact) GetEmailAddresses()([]EmailAddress) {
     if m == nil {
         return nil
@@ -170,7 +170,7 @@ func (m *Contact) GetEmailAddresses()([]EmailAddress) {
         return m.emailAddresses
     }
 }
-// Gets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
+// GetExtensions gets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
 func (m *Contact) GetExtensions()([]Extension) {
     if m == nil {
         return nil
@@ -178,7 +178,7 @@ func (m *Contact) GetExtensions()([]Extension) {
         return m.extensions
     }
 }
-// Gets the fileAs property value. The name the contact is filed under.
+// GetFileAs gets the fileAs property value. The name the contact is filed under.
 func (m *Contact) GetFileAs()(*string) {
     if m == nil {
         return nil
@@ -186,7 +186,7 @@ func (m *Contact) GetFileAs()(*string) {
         return m.fileAs
     }
 }
-// Gets the generation property value. The contact's generation.
+// GetGeneration gets the generation property value. The contact's generation.
 func (m *Contact) GetGeneration()(*string) {
     if m == nil {
         return nil
@@ -194,7 +194,7 @@ func (m *Contact) GetGeneration()(*string) {
         return m.generation
     }
 }
-// Gets the givenName property value. The contact's given name.
+// GetGivenName gets the givenName property value. The contact's given name.
 func (m *Contact) GetGivenName()(*string) {
     if m == nil {
         return nil
@@ -202,7 +202,7 @@ func (m *Contact) GetGivenName()(*string) {
         return m.givenName
     }
 }
-// Gets the homeAddress property value. The contact's home address.
+// GetHomeAddress gets the homeAddress property value. The contact's home address.
 func (m *Contact) GetHomeAddress()(*PhysicalAddress) {
     if m == nil {
         return nil
@@ -210,7 +210,7 @@ func (m *Contact) GetHomeAddress()(*PhysicalAddress) {
         return m.homeAddress
     }
 }
-// Gets the homePhones property value. The contact's home phone numbers.
+// GetHomePhones gets the homePhones property value. The contact's home phone numbers.
 func (m *Contact) GetHomePhones()([]string) {
     if m == nil {
         return nil
@@ -218,7 +218,7 @@ func (m *Contact) GetHomePhones()([]string) {
         return m.homePhones
     }
 }
-// Gets the imAddresses property value. 
+// GetImAddresses gets the imAddresses property value. 
 func (m *Contact) GetImAddresses()([]string) {
     if m == nil {
         return nil
@@ -226,7 +226,7 @@ func (m *Contact) GetImAddresses()([]string) {
         return m.imAddresses
     }
 }
-// Gets the initials property value. 
+// GetInitials gets the initials property value. 
 func (m *Contact) GetInitials()(*string) {
     if m == nil {
         return nil
@@ -234,7 +234,7 @@ func (m *Contact) GetInitials()(*string) {
         return m.initials
     }
 }
-// Gets the jobTitle property value. 
+// GetJobTitle gets the jobTitle property value. 
 func (m *Contact) GetJobTitle()(*string) {
     if m == nil {
         return nil
@@ -242,7 +242,7 @@ func (m *Contact) GetJobTitle()(*string) {
         return m.jobTitle
     }
 }
-// Gets the manager property value. 
+// GetManager gets the manager property value. 
 func (m *Contact) GetManager()(*string) {
     if m == nil {
         return nil
@@ -250,7 +250,7 @@ func (m *Contact) GetManager()(*string) {
         return m.manager
     }
 }
-// Gets the middleName property value. 
+// GetMiddleName gets the middleName property value. 
 func (m *Contact) GetMiddleName()(*string) {
     if m == nil {
         return nil
@@ -258,7 +258,7 @@ func (m *Contact) GetMiddleName()(*string) {
         return m.middleName
     }
 }
-// Gets the mobilePhone property value. 
+// GetMobilePhone gets the mobilePhone property value. 
 func (m *Contact) GetMobilePhone()(*string) {
     if m == nil {
         return nil
@@ -266,7 +266,7 @@ func (m *Contact) GetMobilePhone()(*string) {
         return m.mobilePhone
     }
 }
-// Gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Contact) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -274,7 +274,7 @@ func (m *Contact) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPr
         return m.multiValueExtendedProperties
     }
 }
-// Gets the nickName property value. 
+// GetNickName gets the nickName property value. 
 func (m *Contact) GetNickName()(*string) {
     if m == nil {
         return nil
@@ -282,7 +282,7 @@ func (m *Contact) GetNickName()(*string) {
         return m.nickName
     }
 }
-// Gets the officeLocation property value. 
+// GetOfficeLocation gets the officeLocation property value. 
 func (m *Contact) GetOfficeLocation()(*string) {
     if m == nil {
         return nil
@@ -290,7 +290,7 @@ func (m *Contact) GetOfficeLocation()(*string) {
         return m.officeLocation
     }
 }
-// Gets the otherAddress property value. 
+// GetOtherAddress gets the otherAddress property value. 
 func (m *Contact) GetOtherAddress()(*PhysicalAddress) {
     if m == nil {
         return nil
@@ -298,7 +298,7 @@ func (m *Contact) GetOtherAddress()(*PhysicalAddress) {
         return m.otherAddress
     }
 }
-// Gets the parentFolderId property value. 
+// GetParentFolderId gets the parentFolderId property value. 
 func (m *Contact) GetParentFolderId()(*string) {
     if m == nil {
         return nil
@@ -306,7 +306,7 @@ func (m *Contact) GetParentFolderId()(*string) {
         return m.parentFolderId
     }
 }
-// Gets the personalNotes property value. 
+// GetPersonalNotes gets the personalNotes property value. 
 func (m *Contact) GetPersonalNotes()(*string) {
     if m == nil {
         return nil
@@ -314,7 +314,7 @@ func (m *Contact) GetPersonalNotes()(*string) {
         return m.personalNotes
     }
 }
-// Gets the photo property value. Optional contact picture. You can get or set a photo for a contact.
+// GetPhoto gets the photo property value. Optional contact picture. You can get or set a photo for a contact.
 func (m *Contact) GetPhoto()(*ProfilePhoto) {
     if m == nil {
         return nil
@@ -322,7 +322,7 @@ func (m *Contact) GetPhoto()(*ProfilePhoto) {
         return m.photo
     }
 }
-// Gets the profession property value. 
+// GetProfession gets the profession property value. 
 func (m *Contact) GetProfession()(*string) {
     if m == nil {
         return nil
@@ -330,7 +330,7 @@ func (m *Contact) GetProfession()(*string) {
         return m.profession
     }
 }
-// Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Contact) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -338,7 +338,7 @@ func (m *Contact) GetSingleValueExtendedProperties()([]SingleValueLegacyExtended
         return m.singleValueExtendedProperties
     }
 }
-// Gets the spouseName property value. 
+// GetSpouseName gets the spouseName property value. 
 func (m *Contact) GetSpouseName()(*string) {
     if m == nil {
         return nil
@@ -346,7 +346,7 @@ func (m *Contact) GetSpouseName()(*string) {
         return m.spouseName
     }
 }
-// Gets the surname property value. 
+// GetSurname gets the surname property value. 
 func (m *Contact) GetSurname()(*string) {
     if m == nil {
         return nil
@@ -354,7 +354,7 @@ func (m *Contact) GetSurname()(*string) {
         return m.surname
     }
 }
-// Gets the title property value. 
+// GetTitle gets the title property value. 
 func (m *Contact) GetTitle()(*string) {
     if m == nil {
         return nil
@@ -362,7 +362,7 @@ func (m *Contact) GetTitle()(*string) {
         return m.title
     }
 }
-// Gets the yomiCompanyName property value. 
+// GetYomiCompanyName gets the yomiCompanyName property value. 
 func (m *Contact) GetYomiCompanyName()(*string) {
     if m == nil {
         return nil
@@ -370,7 +370,7 @@ func (m *Contact) GetYomiCompanyName()(*string) {
         return m.yomiCompanyName
     }
 }
-// Gets the yomiGivenName property value. 
+// GetYomiGivenName gets the yomiGivenName property value. 
 func (m *Contact) GetYomiGivenName()(*string) {
     if m == nil {
         return nil
@@ -378,7 +378,7 @@ func (m *Contact) GetYomiGivenName()(*string) {
         return m.yomiGivenName
     }
 }
-// Gets the yomiSurname property value. 
+// GetYomiSurname gets the yomiSurname property value. 
 func (m *Contact) GetYomiSurname()(*string) {
     if m == nil {
         return nil
@@ -386,7 +386,7 @@ func (m *Contact) GetYomiSurname()(*string) {
         return m.yomiSurname
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Contact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
     res["assistantName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -796,9 +796,7 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
 func (m *Contact) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Contact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.OutlookItem.Serialize(writer)
     if err != nil {
@@ -1048,225 +1046,151 @@ func (m *Contact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     }
     return nil
 }
-// Sets the assistantName property value. The name of the contact's assistant.
-// Parameters:
-//  - value : Value to set for the assistantName property.
+// SetAssistantName sets the assistantName property value. The name of the contact's assistant.
 func (m *Contact) SetAssistantName(value *string)() {
     m.assistantName = value
 }
-// Sets the birthday property value. The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the birthday property.
+// SetBirthday sets the birthday property value. The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Contact) SetBirthday(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.birthday = value
 }
-// Sets the businessAddress property value. The contact's business address.
-// Parameters:
-//  - value : Value to set for the businessAddress property.
+// SetBusinessAddress sets the businessAddress property value. The contact's business address.
 func (m *Contact) SetBusinessAddress(value *PhysicalAddress)() {
     m.businessAddress = value
 }
-// Sets the businessHomePage property value. The business home page of the contact.
-// Parameters:
-//  - value : Value to set for the businessHomePage property.
+// SetBusinessHomePage sets the businessHomePage property value. The business home page of the contact.
 func (m *Contact) SetBusinessHomePage(value *string)() {
     m.businessHomePage = value
 }
-// Sets the businessPhones property value. The contact's business phone numbers.
-// Parameters:
-//  - value : Value to set for the businessPhones property.
+// SetBusinessPhones sets the businessPhones property value. The contact's business phone numbers.
 func (m *Contact) SetBusinessPhones(value []string)() {
     m.businessPhones = value
 }
-// Sets the children property value. The names of the contact's children.
-// Parameters:
-//  - value : Value to set for the children property.
+// SetChildren sets the children property value. The names of the contact's children.
 func (m *Contact) SetChildren(value []string)() {
     m.children = value
 }
-// Sets the companyName property value. The name of the contact's company.
-// Parameters:
-//  - value : Value to set for the companyName property.
+// SetCompanyName sets the companyName property value. The name of the contact's company.
 func (m *Contact) SetCompanyName(value *string)() {
     m.companyName = value
 }
-// Sets the department property value. The contact's department.
-// Parameters:
-//  - value : Value to set for the department property.
+// SetDepartment sets the department property value. The contact's department.
 func (m *Contact) SetDepartment(value *string)() {
     m.department = value
 }
-// Sets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
 func (m *Contact) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the emailAddresses property value. The contact's email addresses.
-// Parameters:
-//  - value : Value to set for the emailAddresses property.
+// SetEmailAddresses sets the emailAddresses property value. The contact's email addresses.
 func (m *Contact) SetEmailAddresses(value []EmailAddress)() {
     m.emailAddresses = value
 }
-// Sets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the extensions property.
+// SetExtensions sets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
 func (m *Contact) SetExtensions(value []Extension)() {
     m.extensions = value
 }
-// Sets the fileAs property value. The name the contact is filed under.
-// Parameters:
-//  - value : Value to set for the fileAs property.
+// SetFileAs sets the fileAs property value. The name the contact is filed under.
 func (m *Contact) SetFileAs(value *string)() {
     m.fileAs = value
 }
-// Sets the generation property value. The contact's generation.
-// Parameters:
-//  - value : Value to set for the generation property.
+// SetGeneration sets the generation property value. The contact's generation.
 func (m *Contact) SetGeneration(value *string)() {
     m.generation = value
 }
-// Sets the givenName property value. The contact's given name.
-// Parameters:
-//  - value : Value to set for the givenName property.
+// SetGivenName sets the givenName property value. The contact's given name.
 func (m *Contact) SetGivenName(value *string)() {
     m.givenName = value
 }
-// Sets the homeAddress property value. The contact's home address.
-// Parameters:
-//  - value : Value to set for the homeAddress property.
+// SetHomeAddress sets the homeAddress property value. The contact's home address.
 func (m *Contact) SetHomeAddress(value *PhysicalAddress)() {
     m.homeAddress = value
 }
-// Sets the homePhones property value. The contact's home phone numbers.
-// Parameters:
-//  - value : Value to set for the homePhones property.
+// SetHomePhones sets the homePhones property value. The contact's home phone numbers.
 func (m *Contact) SetHomePhones(value []string)() {
     m.homePhones = value
 }
-// Sets the imAddresses property value. 
-// Parameters:
-//  - value : Value to set for the imAddresses property.
+// SetImAddresses sets the imAddresses property value. 
 func (m *Contact) SetImAddresses(value []string)() {
     m.imAddresses = value
 }
-// Sets the initials property value. 
-// Parameters:
-//  - value : Value to set for the initials property.
+// SetInitials sets the initials property value. 
 func (m *Contact) SetInitials(value *string)() {
     m.initials = value
 }
-// Sets the jobTitle property value. 
-// Parameters:
-//  - value : Value to set for the jobTitle property.
+// SetJobTitle sets the jobTitle property value. 
 func (m *Contact) SetJobTitle(value *string)() {
     m.jobTitle = value
 }
-// Sets the manager property value. 
-// Parameters:
-//  - value : Value to set for the manager property.
+// SetManager sets the manager property value. 
 func (m *Contact) SetManager(value *string)() {
     m.manager = value
 }
-// Sets the middleName property value. 
-// Parameters:
-//  - value : Value to set for the middleName property.
+// SetMiddleName sets the middleName property value. 
 func (m *Contact) SetMiddleName(value *string)() {
     m.middleName = value
 }
-// Sets the mobilePhone property value. 
-// Parameters:
-//  - value : Value to set for the mobilePhone property.
+// SetMobilePhone sets the mobilePhone property value. 
 func (m *Contact) SetMobilePhone(value *string)() {
     m.mobilePhone = value
 }
-// Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the multiValueExtendedProperties property.
+// SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Contact) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
     m.multiValueExtendedProperties = value
 }
-// Sets the nickName property value. 
-// Parameters:
-//  - value : Value to set for the nickName property.
+// SetNickName sets the nickName property value. 
 func (m *Contact) SetNickName(value *string)() {
     m.nickName = value
 }
-// Sets the officeLocation property value. 
-// Parameters:
-//  - value : Value to set for the officeLocation property.
+// SetOfficeLocation sets the officeLocation property value. 
 func (m *Contact) SetOfficeLocation(value *string)() {
     m.officeLocation = value
 }
-// Sets the otherAddress property value. 
-// Parameters:
-//  - value : Value to set for the otherAddress property.
+// SetOtherAddress sets the otherAddress property value. 
 func (m *Contact) SetOtherAddress(value *PhysicalAddress)() {
     m.otherAddress = value
 }
-// Sets the parentFolderId property value. 
-// Parameters:
-//  - value : Value to set for the parentFolderId property.
+// SetParentFolderId sets the parentFolderId property value. 
 func (m *Contact) SetParentFolderId(value *string)() {
     m.parentFolderId = value
 }
-// Sets the personalNotes property value. 
-// Parameters:
-//  - value : Value to set for the personalNotes property.
+// SetPersonalNotes sets the personalNotes property value. 
 func (m *Contact) SetPersonalNotes(value *string)() {
     m.personalNotes = value
 }
-// Sets the photo property value. Optional contact picture. You can get or set a photo for a contact.
-// Parameters:
-//  - value : Value to set for the photo property.
+// SetPhoto sets the photo property value. Optional contact picture. You can get or set a photo for a contact.
 func (m *Contact) SetPhoto(value *ProfilePhoto)() {
     m.photo = value
 }
-// Sets the profession property value. 
-// Parameters:
-//  - value : Value to set for the profession property.
+// SetProfession sets the profession property value. 
 func (m *Contact) SetProfession(value *string)() {
     m.profession = value
 }
-// Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the singleValueExtendedProperties property.
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
 func (m *Contact) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
     m.singleValueExtendedProperties = value
 }
-// Sets the spouseName property value. 
-// Parameters:
-//  - value : Value to set for the spouseName property.
+// SetSpouseName sets the spouseName property value. 
 func (m *Contact) SetSpouseName(value *string)() {
     m.spouseName = value
 }
-// Sets the surname property value. 
-// Parameters:
-//  - value : Value to set for the surname property.
+// SetSurname sets the surname property value. 
 func (m *Contact) SetSurname(value *string)() {
     m.surname = value
 }
-// Sets the title property value. 
-// Parameters:
-//  - value : Value to set for the title property.
+// SetTitle sets the title property value. 
 func (m *Contact) SetTitle(value *string)() {
     m.title = value
 }
-// Sets the yomiCompanyName property value. 
-// Parameters:
-//  - value : Value to set for the yomiCompanyName property.
+// SetYomiCompanyName sets the yomiCompanyName property value. 
 func (m *Contact) SetYomiCompanyName(value *string)() {
     m.yomiCompanyName = value
 }
-// Sets the yomiGivenName property value. 
-// Parameters:
-//  - value : Value to set for the yomiGivenName property.
+// SetYomiGivenName sets the yomiGivenName property value. 
 func (m *Contact) SetYomiGivenName(value *string)() {
     m.yomiGivenName = value
 }
-// Sets the yomiSurname property value. 
-// Parameters:
-//  - value : Value to set for the yomiSurname property.
+// SetYomiSurname sets the yomiSurname property value. 
 func (m *Contact) SetYomiSurname(value *string)() {
     m.yomiSurname = value
 }

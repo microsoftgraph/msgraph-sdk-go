@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// WorkbookChartGridlinesFormat 
 type WorkbookChartGridlinesFormat struct {
     Entity
     // Represents chart line formatting. Read-only.
     line *WorkbookChartLineFormat;
 }
-// Instantiates a new workbookChartGridlinesFormat and sets the default values.
+// NewWorkbookChartGridlinesFormat instantiates a new workbookChartGridlinesFormat and sets the default values.
 func NewWorkbookChartGridlinesFormat()(*WorkbookChartGridlinesFormat) {
     m := &WorkbookChartGridlinesFormat{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the line property value. Represents chart line formatting. Read-only.
+// GetLine gets the line property value. Represents chart line formatting. Read-only.
 func (m *WorkbookChartGridlinesFormat) GetLine()(*WorkbookChartLineFormat) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *WorkbookChartGridlinesFormat) GetLine()(*WorkbookChartLineFormat) {
         return m.line
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookChartGridlinesFormat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["line"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -43,9 +43,7 @@ func (m *WorkbookChartGridlinesFormat) GetFieldDeserializers()(map[string]func(i
 func (m *WorkbookChartGridlinesFormat) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WorkbookChartGridlinesFormat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -59,9 +57,7 @@ func (m *WorkbookChartGridlinesFormat) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// Sets the line property value. Represents chart line formatting. Read-only.
-// Parameters:
-//  - value : Value to set for the line property.
+// SetLine sets the line property value. Represents chart line formatting. Read-only.
 func (m *WorkbookChartGridlinesFormat) SetLine(value *WorkbookChartLineFormat)() {
     m.line = value
 }

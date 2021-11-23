@@ -10,7 +10,7 @@ import (
     i5bae63f9ea126428555bb4338d2c597964628babb784c2a5f30e3ffc29c7e6bb "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/deviceenrollmentconfigurations/item/assignments/item"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceEnrollmentConfigurations\{deviceEnrollmentConfiguration-id}
+// DeviceEnrollmentConfigurationRequestBuilder builds and executes requests for operations under \deviceManagement\deviceEnrollmentConfigurations\{deviceEnrollmentConfiguration-id}
 type DeviceEnrollmentConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type DeviceEnrollmentConfigurationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceEnrollmentConfigurationRequestBuilderDeleteOptions options for Delete
 type DeviceEnrollmentConfigurationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type DeviceEnrollmentConfigurationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceEnrollmentConfigurationRequestBuilderGetOptions options for Get
 type DeviceEnrollmentConfigurationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type DeviceEnrollmentConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of device enrollment configurations
+// DeviceEnrollmentConfigurationRequestBuilderGetQueryParameters the list of device enrollment configurations
 type DeviceEnrollmentConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceEnrollmentConfigurationRequestBuilderPatchOptions options for Patch
 type DeviceEnrollmentConfigurationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceEnrollmentConfiguration;
@@ -63,9 +63,7 @@ func (m *DeviceEnrollmentConfigurationRequestBuilder) Assign()(*id9a7398da3afd65
 func (m *DeviceEnrollmentConfigurationRequestBuilder) Assignments()(*if663dc8479f3b9f5e6a2081e3f608c0970726f4a06ad253da9b3de49b9527f3f.AssignmentsRequestBuilder) {
     return if663dc8479f3b9f5e6a2081e3f608c0970726f4a06ad253da9b3de49b9527f3f.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.deviceEnrollmentConfigurations.item.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.deviceEnrollmentConfigurations.item.assignments.item collection
 func (m *DeviceEnrollmentConfigurationRequestBuilder) AssignmentsById(id string)(*i5bae63f9ea126428555bb4338d2c597964628babb784c2a5f30e3ffc29c7e6bb.EnrollmentConfigurationAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -76,10 +74,7 @@ func (m *DeviceEnrollmentConfigurationRequestBuilder) AssignmentsById(id string)
     }
     return i5bae63f9ea126428555bb4338d2c597964628babb784c2a5f30e3ffc29c7e6bb.NewEnrollmentConfigurationAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new DeviceEnrollmentConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceEnrollmentConfigurationRequestBuilderInternal instantiates a new DeviceEnrollmentConfigurationRequestBuilder and sets the default values.
 func NewDeviceEnrollmentConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceEnrollmentConfigurationRequestBuilder) {
     m := &DeviceEnrollmentConfigurationRequestBuilder{
     }
@@ -92,18 +87,13 @@ func NewDeviceEnrollmentConfigurationRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceEnrollmentConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceEnrollmentConfigurationRequestBuilder instantiates a new DeviceEnrollmentConfigurationRequestBuilder and sets the default values.
 func NewDeviceEnrollmentConfigurationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceEnrollmentConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceEnrollmentConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of device enrollment configurations
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of device enrollment configurations
 func (m *DeviceEnrollmentConfigurationRequestBuilder) CreateDeleteRequestInformation(options *DeviceEnrollmentConfigurationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *DeviceEnrollmentConfigurationRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// The list of device enrollment configurations
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of device enrollment configurations
 func (m *DeviceEnrollmentConfigurationRequestBuilder) CreateGetRequestInformation(options *DeviceEnrollmentConfigurationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +130,7 @@ func (m *DeviceEnrollmentConfigurationRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// The list of device enrollment configurations
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of device enrollment configurations
 func (m *DeviceEnrollmentConfigurationRequestBuilder) CreatePatchRequestInformation(options *DeviceEnrollmentConfigurationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -162,9 +148,7 @@ func (m *DeviceEnrollmentConfigurationRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// The list of device enrollment configurations
-// Parameters:
-//  - options : Options for the request
+// Delete the list of device enrollment configurations
 func (m *DeviceEnrollmentConfigurationRequestBuilder) Delete(options *DeviceEnrollmentConfigurationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -176,9 +160,7 @@ func (m *DeviceEnrollmentConfigurationRequestBuilder) Delete(options *DeviceEnro
     }
     return nil
 }
-// The list of device enrollment configurations
-// Parameters:
-//  - options : Options for the request
+// Get the list of device enrollment configurations
 func (m *DeviceEnrollmentConfigurationRequestBuilder) Get(options *DeviceEnrollmentConfigurationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceEnrollmentConfiguration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -190,9 +172,7 @@ func (m *DeviceEnrollmentConfigurationRequestBuilder) Get(options *DeviceEnrollm
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceEnrollmentConfiguration), nil
 }
-// The list of device enrollment configurations
-// Parameters:
-//  - options : Options for the request
+// Patch the list of device enrollment configurations
 func (m *DeviceEnrollmentConfigurationRequestBuilder) Patch(options *DeviceEnrollmentConfigurationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

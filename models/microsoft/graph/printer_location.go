@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PrinterLocation 
 type PrinterLocation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -43,14 +43,14 @@ type PrinterLocation struct {
     // 
     subunit []string;
 }
-// Instantiates a new printerLocation and sets the default values.
+// NewPrinterLocation instantiates a new printerLocation and sets the default values.
 func NewPrinterLocation()(*PrinterLocation) {
     m := &PrinterLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterLocation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *PrinterLocation) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the altitudeInMeters property value. The altitude, in meters, that the printer is located at.
+// GetAltitudeInMeters gets the altitudeInMeters property value. The altitude, in meters, that the printer is located at.
 func (m *PrinterLocation) GetAltitudeInMeters()(*int32) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *PrinterLocation) GetAltitudeInMeters()(*int32) {
         return m.altitudeInMeters
     }
 }
-// Gets the building property value. The building that the printer is located in.
+// GetBuilding gets the building property value. The building that the printer is located in.
 func (m *PrinterLocation) GetBuilding()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *PrinterLocation) GetBuilding()(*string) {
         return m.building
     }
 }
-// Gets the city property value. The city that the printer is located in.
+// GetCity gets the city property value. The city that the printer is located in.
 func (m *PrinterLocation) GetCity()(*string) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *PrinterLocation) GetCity()(*string) {
         return m.city
     }
 }
-// Gets the countryOrRegion property value. The country or region that the printer is located in.
+// GetCountryOrRegion gets the countryOrRegion property value. The country or region that the printer is located in.
 func (m *PrinterLocation) GetCountryOrRegion()(*string) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *PrinterLocation) GetCountryOrRegion()(*string) {
         return m.countryOrRegion
     }
 }
-// Gets the floor property value. The floor that the printer is located on. Only numerical values are supported right now.
+// GetFloor gets the floor property value. The floor that the printer is located on. Only numerical values are supported right now.
 func (m *PrinterLocation) GetFloor()(*string) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *PrinterLocation) GetFloor()(*string) {
         return m.floor
     }
 }
-// Gets the floorDescription property value. The description of the floor that the printer is located on.
+// GetFloorDescription gets the floorDescription property value. The description of the floor that the printer is located on.
 func (m *PrinterLocation) GetFloorDescription()(*string) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *PrinterLocation) GetFloorDescription()(*string) {
         return m.floorDescription
     }
 }
-// Gets the latitude property value. The latitude that the printer is located at.
+// GetLatitude gets the latitude property value. The latitude that the printer is located at.
 func (m *PrinterLocation) GetLatitude()(*float64) {
     if m == nil {
         return nil
@@ -114,7 +114,7 @@ func (m *PrinterLocation) GetLatitude()(*float64) {
         return m.latitude
     }
 }
-// Gets the longitude property value. The longitude that the printer is located at.
+// GetLongitude gets the longitude property value. The longitude that the printer is located at.
 func (m *PrinterLocation) GetLongitude()(*float64) {
     if m == nil {
         return nil
@@ -122,7 +122,7 @@ func (m *PrinterLocation) GetLongitude()(*float64) {
         return m.longitude
     }
 }
-// Gets the organization property value. The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
+// GetOrganization gets the organization property value. The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
 func (m *PrinterLocation) GetOrganization()([]string) {
     if m == nil {
         return nil
@@ -130,7 +130,7 @@ func (m *PrinterLocation) GetOrganization()([]string) {
         return m.organization
     }
 }
-// Gets the postalCode property value. The postal code that the printer is located in.
+// GetPostalCode gets the postalCode property value. The postal code that the printer is located in.
 func (m *PrinterLocation) GetPostalCode()(*string) {
     if m == nil {
         return nil
@@ -138,7 +138,7 @@ func (m *PrinterLocation) GetPostalCode()(*string) {
         return m.postalCode
     }
 }
-// Gets the roomDescription property value. The description of the room that the printer is located in.
+// GetRoomDescription gets the roomDescription property value. The description of the room that the printer is located in.
 func (m *PrinterLocation) GetRoomDescription()(*string) {
     if m == nil {
         return nil
@@ -146,7 +146,7 @@ func (m *PrinterLocation) GetRoomDescription()(*string) {
         return m.roomDescription
     }
 }
-// Gets the roomName property value. The room that the printer is located in. Only numerical values are supported right now.
+// GetRoomName gets the roomName property value. The room that the printer is located in. Only numerical values are supported right now.
 func (m *PrinterLocation) GetRoomName()(*string) {
     if m == nil {
         return nil
@@ -154,7 +154,7 @@ func (m *PrinterLocation) GetRoomName()(*string) {
         return m.roomName
     }
 }
-// Gets the site property value. The site that the printer is located in.
+// GetSite gets the site property value. The site that the printer is located in.
 func (m *PrinterLocation) GetSite()(*string) {
     if m == nil {
         return nil
@@ -162,7 +162,7 @@ func (m *PrinterLocation) GetSite()(*string) {
         return m.site
     }
 }
-// Gets the stateOrProvince property value. The state or province that the printer is located in.
+// GetStateOrProvince gets the stateOrProvince property value. The state or province that the printer is located in.
 func (m *PrinterLocation) GetStateOrProvince()(*string) {
     if m == nil {
         return nil
@@ -170,7 +170,7 @@ func (m *PrinterLocation) GetStateOrProvince()(*string) {
         return m.stateOrProvince
     }
 }
-// Gets the streetAddress property value. The street address where the printer is located.
+// GetStreetAddress gets the streetAddress property value. The street address where the printer is located.
 func (m *PrinterLocation) GetStreetAddress()(*string) {
     if m == nil {
         return nil
@@ -178,7 +178,7 @@ func (m *PrinterLocation) GetStreetAddress()(*string) {
         return m.streetAddress
     }
 }
-// Gets the subdivision property value. The subdivision that the printer is located in. The elements should be in hierarchical order.
+// GetSubdivision gets the subdivision property value. The subdivision that the printer is located in. The elements should be in hierarchical order.
 func (m *PrinterLocation) GetSubdivision()([]string) {
     if m == nil {
         return nil
@@ -186,7 +186,7 @@ func (m *PrinterLocation) GetSubdivision()([]string) {
         return m.subdivision
     }
 }
-// Gets the subunit property value. 
+// GetSubunit gets the subunit property value. 
 func (m *PrinterLocation) GetSubunit()([]string) {
     if m == nil {
         return nil
@@ -194,7 +194,7 @@ func (m *PrinterLocation) GetSubunit()([]string) {
         return m.subunit
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["altitudeInMeters"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -384,9 +384,7 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *PrinterLocation) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PrinterLocation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("altitudeInMeters", m.GetAltitudeInMeters())
@@ -498,111 +496,75 @@ func (m *PrinterLocation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterLocation) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the altitudeInMeters property value. The altitude, in meters, that the printer is located at.
-// Parameters:
-//  - value : Value to set for the altitudeInMeters property.
+// SetAltitudeInMeters sets the altitudeInMeters property value. The altitude, in meters, that the printer is located at.
 func (m *PrinterLocation) SetAltitudeInMeters(value *int32)() {
     m.altitudeInMeters = value
 }
-// Sets the building property value. The building that the printer is located in.
-// Parameters:
-//  - value : Value to set for the building property.
+// SetBuilding sets the building property value. The building that the printer is located in.
 func (m *PrinterLocation) SetBuilding(value *string)() {
     m.building = value
 }
-// Sets the city property value. The city that the printer is located in.
-// Parameters:
-//  - value : Value to set for the city property.
+// SetCity sets the city property value. The city that the printer is located in.
 func (m *PrinterLocation) SetCity(value *string)() {
     m.city = value
 }
-// Sets the countryOrRegion property value. The country or region that the printer is located in.
-// Parameters:
-//  - value : Value to set for the countryOrRegion property.
+// SetCountryOrRegion sets the countryOrRegion property value. The country or region that the printer is located in.
 func (m *PrinterLocation) SetCountryOrRegion(value *string)() {
     m.countryOrRegion = value
 }
-// Sets the floor property value. The floor that the printer is located on. Only numerical values are supported right now.
-// Parameters:
-//  - value : Value to set for the floor property.
+// SetFloor sets the floor property value. The floor that the printer is located on. Only numerical values are supported right now.
 func (m *PrinterLocation) SetFloor(value *string)() {
     m.floor = value
 }
-// Sets the floorDescription property value. The description of the floor that the printer is located on.
-// Parameters:
-//  - value : Value to set for the floorDescription property.
+// SetFloorDescription sets the floorDescription property value. The description of the floor that the printer is located on.
 func (m *PrinterLocation) SetFloorDescription(value *string)() {
     m.floorDescription = value
 }
-// Sets the latitude property value. The latitude that the printer is located at.
-// Parameters:
-//  - value : Value to set for the latitude property.
+// SetLatitude sets the latitude property value. The latitude that the printer is located at.
 func (m *PrinterLocation) SetLatitude(value *float64)() {
     m.latitude = value
 }
-// Sets the longitude property value. The longitude that the printer is located at.
-// Parameters:
-//  - value : Value to set for the longitude property.
+// SetLongitude sets the longitude property value. The longitude that the printer is located at.
 func (m *PrinterLocation) SetLongitude(value *float64)() {
     m.longitude = value
 }
-// Sets the organization property value. The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
-// Parameters:
-//  - value : Value to set for the organization property.
+// SetOrganization sets the organization property value. The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
 func (m *PrinterLocation) SetOrganization(value []string)() {
     m.organization = value
 }
-// Sets the postalCode property value. The postal code that the printer is located in.
-// Parameters:
-//  - value : Value to set for the postalCode property.
+// SetPostalCode sets the postalCode property value. The postal code that the printer is located in.
 func (m *PrinterLocation) SetPostalCode(value *string)() {
     m.postalCode = value
 }
-// Sets the roomDescription property value. The description of the room that the printer is located in.
-// Parameters:
-//  - value : Value to set for the roomDescription property.
+// SetRoomDescription sets the roomDescription property value. The description of the room that the printer is located in.
 func (m *PrinterLocation) SetRoomDescription(value *string)() {
     m.roomDescription = value
 }
-// Sets the roomName property value. The room that the printer is located in. Only numerical values are supported right now.
-// Parameters:
-//  - value : Value to set for the roomName property.
+// SetRoomName sets the roomName property value. The room that the printer is located in. Only numerical values are supported right now.
 func (m *PrinterLocation) SetRoomName(value *string)() {
     m.roomName = value
 }
-// Sets the site property value. The site that the printer is located in.
-// Parameters:
-//  - value : Value to set for the site property.
+// SetSite sets the site property value. The site that the printer is located in.
 func (m *PrinterLocation) SetSite(value *string)() {
     m.site = value
 }
-// Sets the stateOrProvince property value. The state or province that the printer is located in.
-// Parameters:
-//  - value : Value to set for the stateOrProvince property.
+// SetStateOrProvince sets the stateOrProvince property value. The state or province that the printer is located in.
 func (m *PrinterLocation) SetStateOrProvince(value *string)() {
     m.stateOrProvince = value
 }
-// Sets the streetAddress property value. The street address where the printer is located.
-// Parameters:
-//  - value : Value to set for the streetAddress property.
+// SetStreetAddress sets the streetAddress property value. The street address where the printer is located.
 func (m *PrinterLocation) SetStreetAddress(value *string)() {
     m.streetAddress = value
 }
-// Sets the subdivision property value. The subdivision that the printer is located in. The elements should be in hierarchical order.
-// Parameters:
-//  - value : Value to set for the subdivision property.
+// SetSubdivision sets the subdivision property value. The subdivision that the printer is located in. The elements should be in hierarchical order.
 func (m *PrinterLocation) SetSubdivision(value []string)() {
     m.subdivision = value
 }
-// Sets the subunit property value. 
-// Parameters:
-//  - value : Value to set for the subunit property.
+// SetSubunit sets the subunit property value. 
 func (m *PrinterLocation) SetSubunit(value []string)() {
     m.subunit = value
 }

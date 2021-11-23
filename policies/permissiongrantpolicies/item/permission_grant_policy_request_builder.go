@@ -10,7 +10,7 @@ import (
     ia8e0f04a057817a8b64c99bfcfceca507e3ffc64a0ce4ab2cfcd9fc69349259f "github.com/microsoftgraph/msgraph-sdk-go/policies/permissiongrantpolicies/item/includes/item"
 )
 
-// Builds and executes requests for operations under \policies\permissionGrantPolicies\{permissionGrantPolicy-id}
+// PermissionGrantPolicyRequestBuilder builds and executes requests for operations under \policies\permissionGrantPolicies\{permissionGrantPolicy-id}
 type PermissionGrantPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type PermissionGrantPolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PermissionGrantPolicyRequestBuilderDeleteOptions options for Delete
 type PermissionGrantPolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type PermissionGrantPolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PermissionGrantPolicyRequestBuilderGetOptions options for Get
 type PermissionGrantPolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type PermissionGrantPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The policy that specifies the conditions under which consent can be granted.
+// PermissionGrantPolicyRequestBuilderGetQueryParameters the policy that specifies the conditions under which consent can be granted.
 type PermissionGrantPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PermissionGrantPolicyRequestBuilderPatchOptions options for Patch
 type PermissionGrantPolicyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicy;
@@ -57,10 +57,7 @@ type PermissionGrantPolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PermissionGrantPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPermissionGrantPolicyRequestBuilderInternal instantiates a new PermissionGrantPolicyRequestBuilder and sets the default values.
 func NewPermissionGrantPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PermissionGrantPolicyRequestBuilder) {
     m := &PermissionGrantPolicyRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewPermissionGrantPolicyRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PermissionGrantPolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPermissionGrantPolicyRequestBuilder instantiates a new PermissionGrantPolicyRequestBuilder and sets the default values.
 func NewPermissionGrantPolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PermissionGrantPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The policy that specifies the conditions under which consent can be granted.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the policy that specifies the conditions under which consent can be granted.
 func (m *PermissionGrantPolicyRequestBuilder) CreateDeleteRequestInformation(options *PermissionGrantPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *PermissionGrantPolicyRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The policy that specifies the conditions under which consent can be granted.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the policy that specifies the conditions under which consent can be granted.
 func (m *PermissionGrantPolicyRequestBuilder) CreateGetRequestInformation(options *PermissionGrantPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *PermissionGrantPolicyRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// The policy that specifies the conditions under which consent can be granted.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the policy that specifies the conditions under which consent can be granted.
 func (m *PermissionGrantPolicyRequestBuilder) CreatePatchRequestInformation(options *PermissionGrantPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *PermissionGrantPolicyRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The policy that specifies the conditions under which consent can be granted.
-// Parameters:
-//  - options : Options for the request
+// Delete the policy that specifies the conditions under which consent can be granted.
 func (m *PermissionGrantPolicyRequestBuilder) Delete(options *PermissionGrantPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -160,9 +146,7 @@ func (m *PermissionGrantPolicyRequestBuilder) Delete(options *PermissionGrantPol
 func (m *PermissionGrantPolicyRequestBuilder) Excludes()(*icde6cf197f013af55fc32ae765cd6718c8283b86b87581a48e55e766347fa252.ExcludesRequestBuilder) {
     return icde6cf197f013af55fc32ae765cd6718c8283b86b87581a48e55e766347fa252.NewExcludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.permissionGrantPolicies.item.excludes.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExcludesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.permissionGrantPolicies.item.excludes.item collection
 func (m *PermissionGrantPolicyRequestBuilder) ExcludesById(id string)(*i02a33916c6ad92e2af8e1a1c3c5bb0b0e4ed56d4de269096ae95977b3c84a597.PermissionGrantConditionSetRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -173,9 +157,7 @@ func (m *PermissionGrantPolicyRequestBuilder) ExcludesById(id string)(*i02a33916
     }
     return i02a33916c6ad92e2af8e1a1c3c5bb0b0e4ed56d4de269096ae95977b3c84a597.NewPermissionGrantConditionSetRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The policy that specifies the conditions under which consent can be granted.
-// Parameters:
-//  - options : Options for the request
+// Get the policy that specifies the conditions under which consent can be granted.
 func (m *PermissionGrantPolicyRequestBuilder) Get(options *PermissionGrantPolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PermissionGrantPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -190,9 +172,7 @@ func (m *PermissionGrantPolicyRequestBuilder) Get(options *PermissionGrantPolicy
 func (m *PermissionGrantPolicyRequestBuilder) Includes()(*i93d6ed019a5688a4e8e0075b0389cf2e1ef569a5a88c931a9822c1aad16943ed.IncludesRequestBuilder) {
     return i93d6ed019a5688a4e8e0075b0389cf2e1ef569a5a88c931a9822c1aad16943ed.NewIncludesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.permissionGrantPolicies.item.includes.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// IncludesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.policies.permissionGrantPolicies.item.includes.item collection
 func (m *PermissionGrantPolicyRequestBuilder) IncludesById(id string)(*ia8e0f04a057817a8b64c99bfcfceca507e3ffc64a0ce4ab2cfcd9fc69349259f.PermissionGrantConditionSetRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -203,9 +183,7 @@ func (m *PermissionGrantPolicyRequestBuilder) IncludesById(id string)(*ia8e0f04a
     }
     return ia8e0f04a057817a8b64c99bfcfceca507e3ffc64a0ce4ab2cfcd9fc69349259f.NewPermissionGrantConditionSetRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// The policy that specifies the conditions under which consent can be granted.
-// Parameters:
-//  - options : Options for the request
+// Patch the policy that specifies the conditions under which consent can be granted.
 func (m *PermissionGrantPolicyRequestBuilder) Patch(options *PermissionGrantPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

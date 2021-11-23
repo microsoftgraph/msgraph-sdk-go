@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ConditionalAccessFilter 
 type ConditionalAccessFilter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type ConditionalAccessFilter struct {
     // Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
     rule *string;
 }
-// Instantiates a new conditionalAccessFilter and sets the default values.
+// NewConditionalAccessFilter instantiates a new conditionalAccessFilter and sets the default values.
 func NewConditionalAccessFilter()(*ConditionalAccessFilter) {
     m := &ConditionalAccessFilter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessFilter) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *ConditionalAccessFilter) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the mode property value. Mode to use for the filter. Possible values are include or exclude.
+// GetMode gets the mode property value. Mode to use for the filter. Possible values are include or exclude.
 func (m *ConditionalAccessFilter) GetMode()(*FilterMode) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ConditionalAccessFilter) GetMode()(*FilterMode) {
         return m.mode
     }
 }
-// Gets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
+// GetRule gets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
 func (m *ConditionalAccessFilter) GetRule()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *ConditionalAccessFilter) GetRule()(*string) {
         return m.rule
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessFilter) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["mode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *ConditionalAccessFilter) GetFieldDeserializers()(map[string]func(interf
 func (m *ConditionalAccessFilter) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ConditionalAccessFilter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetMode() != nil {
         cast := m.GetMode().String()
@@ -98,21 +96,15 @@ func (m *ConditionalAccessFilter) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessFilter) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the mode property value. Mode to use for the filter. Possible values are include or exclude.
-// Parameters:
-//  - value : Value to set for the mode property.
+// SetMode sets the mode property value. Mode to use for the filter. Possible values are include or exclude.
 func (m *ConditionalAccessFilter) SetMode(value *FilterMode)() {
     m.mode = value
 }
-// Sets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
-// Parameters:
-//  - value : Value to set for the rule property.
+// SetRule sets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
 func (m *ConditionalAccessFilter) SetRule(value *string)() {
     m.rule = value
 }

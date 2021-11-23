@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getEmailAppUsageUserCounts(period='{period}')
+// GetEmailAppUsageUserCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getEmailAppUsageUserCounts(period='{period}')
 type GetEmailAppUsageUserCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetEmailAppUsageUserCountsWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,11 +22,7 @@ type GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetEmailAppUsageUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetEmailAppUsageUserCountsWithPeriodRequestBuilderInternal instantiates a new GetEmailAppUsageUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetEmailAppUsageUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetEmailAppUsageUserCountsWithPeriodRequestBuilder) {
     m := &GetEmailAppUsageUserCountsWithPeriodRequestBuilder{
     }
@@ -42,18 +38,13 @@ func NewGetEmailAppUsageUserCountsWithPeriodRequestBuilderInternal(pathParameter
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetEmailAppUsageUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetEmailAppUsageUserCountsWithPeriodRequestBuilder instantiates a new GetEmailAppUsageUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetEmailAppUsageUserCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetEmailAppUsageUserCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetEmailAppUsageUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getEmailAppUsageUserCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getEmailAppUsageUserCounts
 func (m *GetEmailAppUsageUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +61,7 @@ func (m *GetEmailAppUsageUserCountsWithPeriodRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// Invoke function getEmailAppUsageUserCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getEmailAppUsageUserCounts
 func (m *GetEmailAppUsageUserCountsWithPeriodRequestBuilder) Get(options *GetEmailAppUsageUserCountsWithPeriodRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

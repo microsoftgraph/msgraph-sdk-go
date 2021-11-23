@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions
+// AppDefinitionsRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions
 type AppDefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppDefinitionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppDefinitionsRequestBuilderGetOptions options for Get
 type AppDefinitionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AppDefinitionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The details for each version of the app.
+// AppDefinitionsRequestBuilderGetQueryParameters the details for each version of the app.
 type AppDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AppDefinitionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AppDefinitionsRequestBuilderPostOptions options for Post
 type AppDefinitionsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinition;
@@ -56,10 +56,7 @@ type AppDefinitionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppDefinitionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppDefinitionsRequestBuilderInternal instantiates a new AppDefinitionsRequestBuilder and sets the default values.
 func NewAppDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppDefinitionsRequestBuilder) {
     m := &AppDefinitionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAppDefinitionsRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppDefinitionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppDefinitionsRequestBuilder instantiates a new AppDefinitionsRequestBuilder and sets the default values.
 func NewAppDefinitionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppDefinitionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The details for each version of the app.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the details for each version of the app.
 func (m *AppDefinitionsRequestBuilder) CreateGetRequestInformation(options *AppDefinitionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AppDefinitionsRequestBuilder) CreateGetRequestInformation(options *AppD
     }
     return requestInfo, nil
 }
-// The details for each version of the app.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the details for each version of the app.
 func (m *AppDefinitionsRequestBuilder) CreatePostRequestInformation(options *AppDefinitionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AppDefinitionsRequestBuilder) CreatePostRequestInformation(options *App
     }
     return requestInfo, nil
 }
-// The details for each version of the app.
-// Parameters:
-//  - options : Options for the request
+// Get the details for each version of the app.
 func (m *AppDefinitionsRequestBuilder) Get(options *AppDefinitionsRequestBuilderGetOptions)(*AppDefinitionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AppDefinitionsRequestBuilder) Get(options *AppDefinitionsRequestBuilder
     }
     return res.(*AppDefinitionsResponse), nil
 }
-// The details for each version of the app.
-// Parameters:
-//  - options : Options for the request
+// Post the details for each version of the app.
 func (m *AppDefinitionsRequestBuilder) Post(options *AppDefinitionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAppDefinition, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

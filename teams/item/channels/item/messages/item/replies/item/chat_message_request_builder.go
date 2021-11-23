@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\messages\{chatMessage-id}\replies\{chatMessage-id1}
+// ChatMessageRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\messages\{chatMessage-id}\replies\{chatMessage-id1}
 type ChatMessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ChatMessageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ChatMessageRequestBuilderDeleteOptions options for Delete
 type ChatMessageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ChatMessageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ChatMessageRequestBuilderGetOptions options for Get
 type ChatMessageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ChatMessageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Replies for a specified message.
+// ChatMessageRequestBuilderGetQueryParameters replies for a specified message.
 type ChatMessageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ChatMessageRequestBuilderPatchOptions options for Patch
 type ChatMessageRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessage;
@@ -53,10 +53,7 @@ type ChatMessageRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ChatMessageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatMessageRequestBuilderInternal instantiates a new ChatMessageRequestBuilder and sets the default values.
 func NewChatMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatMessageRequestBuilder) {
     m := &ChatMessageRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewChatMessageRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChatMessageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatMessageRequestBuilder instantiates a new ChatMessageRequestBuilder and sets the default values.
 func NewChatMessageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatMessageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChatMessageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Replies for a specified message.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation replies for a specified message.
 func (m *ChatMessageRequestBuilder) CreateDeleteRequestInformation(options *ChatMessageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ChatMessageRequestBuilder) CreateDeleteRequestInformation(options *Chat
     }
     return requestInfo, nil
 }
-// Replies for a specified message.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation replies for a specified message.
 func (m *ChatMessageRequestBuilder) CreateGetRequestInformation(options *ChatMessageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ChatMessageRequestBuilder) CreateGetRequestInformation(options *ChatMes
     }
     return requestInfo, nil
 }
-// Replies for a specified message.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation replies for a specified message.
 func (m *ChatMessageRequestBuilder) CreatePatchRequestInformation(options *ChatMessageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ChatMessageRequestBuilder) CreatePatchRequestInformation(options *ChatM
     }
     return requestInfo, nil
 }
-// Replies for a specified message.
-// Parameters:
-//  - options : Options for the request
+// Delete replies for a specified message.
 func (m *ChatMessageRequestBuilder) Delete(options *ChatMessageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ChatMessageRequestBuilder) Delete(options *ChatMessageRequestBuilderDel
     }
     return nil
 }
-// Replies for a specified message.
-// Parameters:
-//  - options : Options for the request
+// Get replies for a specified message.
 func (m *ChatMessageRequestBuilder) Get(options *ChatMessageRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ChatMessageRequestBuilder) Get(options *ChatMessageRequestBuilderGetOpt
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessage), nil
 }
-// Replies for a specified message.
-// Parameters:
-//  - options : Options for the request
+// Patch replies for a specified message.
 func (m *ChatMessageRequestBuilder) Patch(options *ChatMessageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

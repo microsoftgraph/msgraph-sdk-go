@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\androidManagedAppProtections\{androidManagedAppProtection-id}\apps
+// AppsRequestBuilder builds and executes requests for operations under \deviceAppManagement\androidManagedAppProtections\{androidManagedAppProtection-id}\apps
 type AppsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AppsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AppsRequestBuilderGetOptions options for Get
 type AppsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AppsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of apps to which the policy is deployed.
+// AppsRequestBuilderGetQueryParameters list of apps to which the policy is deployed.
 type AppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AppsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AppsRequestBuilderPostOptions options for Post
 type AppsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedMobileApp;
@@ -56,10 +56,7 @@ type AppsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AppsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppsRequestBuilderInternal instantiates a new AppsRequestBuilder and sets the default values.
 func NewAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppsRequestBuilder) {
     m := &AppsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAppsRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AppsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAppsRequestBuilder instantiates a new AppsRequestBuilder and sets the default values.
 func NewAppsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of apps to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of apps to which the policy is deployed.
 func (m *AppsRequestBuilder) CreateGetRequestInformation(options *AppsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AppsRequestBuilder) CreateGetRequestInformation(options *AppsRequestBui
     }
     return requestInfo, nil
 }
-// List of apps to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of apps to which the policy is deployed.
 func (m *AppsRequestBuilder) CreatePostRequestInformation(options *AppsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AppsRequestBuilder) CreatePostRequestInformation(options *AppsRequestBu
     }
     return requestInfo, nil
 }
-// List of apps to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// Get list of apps to which the policy is deployed.
 func (m *AppsRequestBuilder) Get(options *AppsRequestBuilderGetOptions)(*AppsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AppsRequestBuilder) Get(options *AppsRequestBuilderGetOptions)(*AppsRes
     }
     return res.(*AppsResponse), nil
 }
-// List of apps to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// Post list of apps to which the policy is deployed.
 func (m *AppsRequestBuilder) Post(options *AppsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedMobileApp, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

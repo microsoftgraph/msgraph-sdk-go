@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\mobileThreatDefenseConnectors\{mobileThreatDefenseConnector-id}
+// MobileThreatDefenseConnectorRequestBuilder builds and executes requests for operations under \deviceManagement\mobileThreatDefenseConnectors\{mobileThreatDefenseConnector-id}
 type MobileThreatDefenseConnectorRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MobileThreatDefenseConnectorRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MobileThreatDefenseConnectorRequestBuilderDeleteOptions options for Delete
 type MobileThreatDefenseConnectorRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MobileThreatDefenseConnectorRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MobileThreatDefenseConnectorRequestBuilderGetOptions options for Get
 type MobileThreatDefenseConnectorRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type MobileThreatDefenseConnectorRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of Mobile threat Defense connectors configured by the tenant.
+// MobileThreatDefenseConnectorRequestBuilderGetQueryParameters the list of Mobile threat Defense connectors configured by the tenant.
 type MobileThreatDefenseConnectorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MobileThreatDefenseConnectorRequestBuilderPatchOptions options for Patch
 type MobileThreatDefenseConnectorRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileThreatDefenseConnector;
@@ -53,10 +53,7 @@ type MobileThreatDefenseConnectorRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MobileThreatDefenseConnectorRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileThreatDefenseConnectorRequestBuilderInternal instantiates a new MobileThreatDefenseConnectorRequestBuilder and sets the default values.
 func NewMobileThreatDefenseConnectorRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileThreatDefenseConnectorRequestBuilder) {
     m := &MobileThreatDefenseConnectorRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewMobileThreatDefenseConnectorRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MobileThreatDefenseConnectorRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMobileThreatDefenseConnectorRequestBuilder instantiates a new MobileThreatDefenseConnectorRequestBuilder and sets the default values.
 func NewMobileThreatDefenseConnectorRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MobileThreatDefenseConnectorRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileThreatDefenseConnectorRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of Mobile threat Defense connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of Mobile threat Defense connectors configured by the tenant.
 func (m *MobileThreatDefenseConnectorRequestBuilder) CreateDeleteRequestInformation(options *MobileThreatDefenseConnectorRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *MobileThreatDefenseConnectorRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// The list of Mobile threat Defense connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of Mobile threat Defense connectors configured by the tenant.
 func (m *MobileThreatDefenseConnectorRequestBuilder) CreateGetRequestInformation(options *MobileThreatDefenseConnectorRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *MobileThreatDefenseConnectorRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// The list of Mobile threat Defense connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of Mobile threat Defense connectors configured by the tenant.
 func (m *MobileThreatDefenseConnectorRequestBuilder) CreatePatchRequestInformation(options *MobileThreatDefenseConnectorRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *MobileThreatDefenseConnectorRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// The list of Mobile threat Defense connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of Mobile threat Defense connectors configured by the tenant.
 func (m *MobileThreatDefenseConnectorRequestBuilder) Delete(options *MobileThreatDefenseConnectorRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *MobileThreatDefenseConnectorRequestBuilder) Delete(options *MobileThrea
     }
     return nil
 }
-// The list of Mobile threat Defense connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of Mobile threat Defense connectors configured by the tenant.
 func (m *MobileThreatDefenseConnectorRequestBuilder) Get(options *MobileThreatDefenseConnectorRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileThreatDefenseConnector, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *MobileThreatDefenseConnectorRequestBuilder) Get(options *MobileThreatDe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MobileThreatDefenseConnector), nil
 }
-// The list of Mobile threat Defense connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of Mobile threat Defense connectors configured by the tenant.
 func (m *MobileThreatDefenseConnectorRequestBuilder) Patch(options *MobileThreatDefenseConnectorRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

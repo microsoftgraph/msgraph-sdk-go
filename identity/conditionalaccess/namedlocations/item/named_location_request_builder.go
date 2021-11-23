@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \identity\conditionalAccess\namedLocations\{namedLocation-id}
+// NamedLocationRequestBuilder builds and executes requests for operations under \identity\conditionalAccess\namedLocations\{namedLocation-id}
 type NamedLocationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type NamedLocationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// NamedLocationRequestBuilderDeleteOptions options for Delete
 type NamedLocationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type NamedLocationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// NamedLocationRequestBuilderGetOptions options for Get
 type NamedLocationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type NamedLocationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
+// NamedLocationRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified named locations.
 type NamedLocationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// NamedLocationRequestBuilderPatchOptions options for Patch
 type NamedLocationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NamedLocation;
@@ -53,10 +53,7 @@ type NamedLocationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new NamedLocationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNamedLocationRequestBuilderInternal instantiates a new NamedLocationRequestBuilder and sets the default values.
 func NewNamedLocationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NamedLocationRequestBuilder) {
     m := &NamedLocationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewNamedLocationRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new NamedLocationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewNamedLocationRequestBuilder instantiates a new NamedLocationRequestBuilder and sets the default values.
 func NewNamedLocationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*NamedLocationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNamedLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable. Returns a collection of the specified named locations.
 func (m *NamedLocationRequestBuilder) CreateDeleteRequestInformation(options *NamedLocationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *NamedLocationRequestBuilder) CreateDeleteRequestInformation(options *Na
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified named locations.
 func (m *NamedLocationRequestBuilder) CreateGetRequestInformation(options *NamedLocationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *NamedLocationRequestBuilder) CreateGetRequestInformation(options *Named
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable. Returns a collection of the specified named locations.
 func (m *NamedLocationRequestBuilder) CreatePatchRequestInformation(options *NamedLocationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *NamedLocationRequestBuilder) CreatePatchRequestInformation(options *Nam
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable. Returns a collection of the specified named locations.
 func (m *NamedLocationRequestBuilder) Delete(options *NamedLocationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *NamedLocationRequestBuilder) Delete(options *NamedLocationRequestBuilde
     }
     return nil
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Returns a collection of the specified named locations.
 func (m *NamedLocationRequestBuilder) Get(options *NamedLocationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NamedLocation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *NamedLocationRequestBuilder) Get(options *NamedLocationRequestBuilderGe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NamedLocation), nil
 }
-// Read-only. Nullable. Returns a collection of the specified named locations.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable. Returns a collection of the specified named locations.
 func (m *NamedLocationRequestBuilder) Patch(options *NamedLocationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

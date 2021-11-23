@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.favorite
+// FavoriteRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.favorite
 type FavoriteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type FavoriteRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// FavoriteRequestBuilderPostOptions options for Post
 type FavoriteRequestBuilderPostOptions struct {
     // 
     Body *FavoriteRequestBody;
@@ -24,10 +24,7 @@ type FavoriteRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FavoriteRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFavoriteRequestBuilderInternal instantiates a new FavoriteRequestBuilder and sets the default values.
 func NewFavoriteRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FavoriteRequestBuilder) {
     m := &FavoriteRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewFavoriteRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FavoriteRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFavoriteRequestBuilder instantiates a new FavoriteRequestBuilder and sets the default values.
 func NewFavoriteRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FavoriteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action favorite
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action favorite
 func (m *FavoriteRequestBuilder) CreatePostRequestInformation(options *FavoriteRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *FavoriteRequestBuilder) CreatePostRequestInformation(options *FavoriteR
     }
     return requestInfo, nil
 }
-// Invoke action favorite
-// Parameters:
-//  - options : Options for the request
+// Post invoke action favorite
 func (m *FavoriteRequestBuilder) Post(options *FavoriteRequestBuilderPostOptions)(*bool, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

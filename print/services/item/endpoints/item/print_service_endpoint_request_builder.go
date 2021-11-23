@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \print\services\{printService-id}\endpoints\{printServiceEndpoint-id}
+// PrintServiceEndpointRequestBuilder builds and executes requests for operations under \print\services\{printService-id}\endpoints\{printServiceEndpoint-id}
 type PrintServiceEndpointRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PrintServiceEndpointRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrintServiceEndpointRequestBuilderDeleteOptions options for Delete
 type PrintServiceEndpointRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PrintServiceEndpointRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrintServiceEndpointRequestBuilderGetOptions options for Get
 type PrintServiceEndpointRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PrintServiceEndpointRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Endpoints that can be used to access the service. Read-only. Nullable.
+// PrintServiceEndpointRequestBuilderGetQueryParameters endpoints that can be used to access the service. Read-only. Nullable.
 type PrintServiceEndpointRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrintServiceEndpointRequestBuilderPatchOptions options for Patch
 type PrintServiceEndpointRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintServiceEndpoint;
@@ -53,10 +53,7 @@ type PrintServiceEndpointRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrintServiceEndpointRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintServiceEndpointRequestBuilderInternal instantiates a new PrintServiceEndpointRequestBuilder and sets the default values.
 func NewPrintServiceEndpointRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintServiceEndpointRequestBuilder) {
     m := &PrintServiceEndpointRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPrintServiceEndpointRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrintServiceEndpointRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintServiceEndpointRequestBuilder instantiates a new PrintServiceEndpointRequestBuilder and sets the default values.
 func NewPrintServiceEndpointRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintServiceEndpointRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrintServiceEndpointRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Endpoints that can be used to access the service. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation endpoints that can be used to access the service. Read-only. Nullable.
 func (m *PrintServiceEndpointRequestBuilder) CreateDeleteRequestInformation(options *PrintServiceEndpointRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PrintServiceEndpointRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Endpoints that can be used to access the service. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation endpoints that can be used to access the service. Read-only. Nullable.
 func (m *PrintServiceEndpointRequestBuilder) CreateGetRequestInformation(options *PrintServiceEndpointRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PrintServiceEndpointRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Endpoints that can be used to access the service. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation endpoints that can be used to access the service. Read-only. Nullable.
 func (m *PrintServiceEndpointRequestBuilder) CreatePatchRequestInformation(options *PrintServiceEndpointRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PrintServiceEndpointRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Endpoints that can be used to access the service. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete endpoints that can be used to access the service. Read-only. Nullable.
 func (m *PrintServiceEndpointRequestBuilder) Delete(options *PrintServiceEndpointRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PrintServiceEndpointRequestBuilder) Delete(options *PrintServiceEndpoin
     }
     return nil
 }
-// Endpoints that can be used to access the service. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get endpoints that can be used to access the service. Read-only. Nullable.
 func (m *PrintServiceEndpointRequestBuilder) Get(options *PrintServiceEndpointRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintServiceEndpoint, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PrintServiceEndpointRequestBuilder) Get(options *PrintServiceEndpointRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintServiceEndpoint), nil
 }
-// Endpoints that can be used to access the service. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch endpoints that can be used to access the service. Read-only. Nullable.
 func (m *PrintServiceEndpointRequestBuilder) Patch(options *PrintServiceEndpointRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

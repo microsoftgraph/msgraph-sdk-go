@@ -7,7 +7,7 @@ import (
     i2aaa86bd2ce9f412ef95cc7f6317111f94988c1a46438e4580f8a05b427bdfcf "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/exchangeconnectors/item/sync"
 )
 
-// Builds and executes requests for operations under \deviceManagement\exchangeConnectors\{deviceManagementExchangeConnector-id}
+// DeviceManagementExchangeConnectorRequestBuilder builds and executes requests for operations under \deviceManagement\exchangeConnectors\{deviceManagementExchangeConnector-id}
 type DeviceManagementExchangeConnectorRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type DeviceManagementExchangeConnectorRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceManagementExchangeConnectorRequestBuilderDeleteOptions options for Delete
 type DeviceManagementExchangeConnectorRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type DeviceManagementExchangeConnectorRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceManagementExchangeConnectorRequestBuilderGetOptions options for Get
 type DeviceManagementExchangeConnectorRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type DeviceManagementExchangeConnectorRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of Exchange Connectors configured by the tenant.
+// DeviceManagementExchangeConnectorRequestBuilderGetQueryParameters the list of Exchange Connectors configured by the tenant.
 type DeviceManagementExchangeConnectorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceManagementExchangeConnectorRequestBuilderPatchOptions options for Patch
 type DeviceManagementExchangeConnectorRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementExchangeConnector;
@@ -54,10 +54,7 @@ type DeviceManagementExchangeConnectorRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementExchangeConnectorRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementExchangeConnectorRequestBuilderInternal instantiates a new DeviceManagementExchangeConnectorRequestBuilder and sets the default values.
 func NewDeviceManagementExchangeConnectorRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementExchangeConnectorRequestBuilder) {
     m := &DeviceManagementExchangeConnectorRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewDeviceManagementExchangeConnectorRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementExchangeConnectorRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementExchangeConnectorRequestBuilder instantiates a new DeviceManagementExchangeConnectorRequestBuilder and sets the default values.
 func NewDeviceManagementExchangeConnectorRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementExchangeConnectorRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementExchangeConnectorRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of Exchange Connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of Exchange Connectors configured by the tenant.
 func (m *DeviceManagementExchangeConnectorRequestBuilder) CreateDeleteRequestInformation(options *DeviceManagementExchangeConnectorRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *DeviceManagementExchangeConnectorRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// The list of Exchange Connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of Exchange Connectors configured by the tenant.
 func (m *DeviceManagementExchangeConnectorRequestBuilder) CreateGetRequestInformation(options *DeviceManagementExchangeConnectorRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *DeviceManagementExchangeConnectorRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// The list of Exchange Connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of Exchange Connectors configured by the tenant.
 func (m *DeviceManagementExchangeConnectorRequestBuilder) CreatePatchRequestInformation(options *DeviceManagementExchangeConnectorRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *DeviceManagementExchangeConnectorRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// The list of Exchange Connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of Exchange Connectors configured by the tenant.
 func (m *DeviceManagementExchangeConnectorRequestBuilder) Delete(options *DeviceManagementExchangeConnectorRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *DeviceManagementExchangeConnectorRequestBuilder) Delete(options *Device
     }
     return nil
 }
-// The list of Exchange Connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of Exchange Connectors configured by the tenant.
 func (m *DeviceManagementExchangeConnectorRequestBuilder) Get(options *DeviceManagementExchangeConnectorRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementExchangeConnector, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *DeviceManagementExchangeConnectorRequestBuilder) Get(options *DeviceMan
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementExchangeConnector), nil
 }
-// The list of Exchange Connectors configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of Exchange Connectors configured by the tenant.
 func (m *DeviceManagementExchangeConnectorRequestBuilder) Patch(options *DeviceManagementExchangeConnectorRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

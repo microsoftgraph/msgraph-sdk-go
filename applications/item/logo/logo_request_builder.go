@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\logo
+// LogoRequestBuilder builds and executes requests for operations under \applications\{application-id}\logo
 type LogoRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type LogoRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// LogoRequestBuilderGetOptions options for Get
 type LogoRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,7 +22,7 @@ type LogoRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Put
+// LogoRequestBuilderPutOptions options for Put
 type LogoRequestBuilderPutOptions struct {
     // Binary request body
     Body []byte;
@@ -33,10 +33,7 @@ type LogoRequestBuilderPutOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LogoRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLogoRequestBuilderInternal instantiates a new LogoRequestBuilder and sets the default values.
 func NewLogoRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LogoRequestBuilder) {
     m := &LogoRequestBuilder{
     }
@@ -49,18 +46,13 @@ func NewLogoRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LogoRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLogoRequestBuilder instantiates a new LogoRequestBuilder and sets the default values.
 func NewLogoRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LogoRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLogoRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The main logo for the application. Not nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the main logo for the application. Not nullable.
 func (m *LogoRequestBuilder) CreateGetRequestInformation(options *LogoRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -77,9 +69,7 @@ func (m *LogoRequestBuilder) CreateGetRequestInformation(options *LogoRequestBui
     }
     return requestInfo, nil
 }
-// The main logo for the application. Not nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePutRequestInformation the main logo for the application. Not nullable.
 func (m *LogoRequestBuilder) CreatePutRequestInformation(options *LogoRequestBuilderPutOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +87,7 @@ func (m *LogoRequestBuilder) CreatePutRequestInformation(options *LogoRequestBui
     }
     return requestInfo, nil
 }
-// The main logo for the application. Not nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the main logo for the application. Not nullable.
 func (m *LogoRequestBuilder) Get(options *LogoRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -111,9 +99,7 @@ func (m *LogoRequestBuilder) Get(options *LogoRequestBuilderGetOptions)([]byte, 
     }
     return res.([]byte), nil
 }
-// The main logo for the application. Not nullable.
-// Parameters:
-//  - options : Options for the request
+// Put the main logo for the application. Not nullable.
 func (m *LogoRequestBuilder) Put(options *LogoRequestBuilderPutOptions)(error) {
     requestInfo, err := m.CreatePutRequestInformation(options);
     if err != nil {

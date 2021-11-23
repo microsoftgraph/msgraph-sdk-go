@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// WorkbookTableRow 
 type WorkbookTableRow struct {
     Entity
     // Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
@@ -12,14 +12,14 @@ type WorkbookTableRow struct {
     // Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
     values *Json;
 }
-// Instantiates a new workbookTableRow and sets the default values.
+// NewWorkbookTableRow instantiates a new workbookTableRow and sets the default values.
 func NewWorkbookTableRow()(*WorkbookTableRow) {
     m := &WorkbookTableRow{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
+// GetIndex gets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
 func (m *WorkbookTableRow) GetIndex()(*int32) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *WorkbookTableRow) GetIndex()(*int32) {
         return m.index
     }
 }
-// Gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+// GetValues gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookTableRow) GetValues()(*Json) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *WorkbookTableRow) GetValues()(*Json) {
         return m.values
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookTableRow) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["index"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,9 +63,7 @@ func (m *WorkbookTableRow) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *WorkbookTableRow) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WorkbookTableRow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -85,15 +83,11 @@ func (m *WorkbookTableRow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
-// Parameters:
-//  - value : Value to set for the index property.
+// SetIndex sets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
 func (m *WorkbookTableRow) SetIndex(value *int32)() {
     m.index = value
 }
-// Sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-// Parameters:
-//  - value : Value to set for the values property.
+// SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookTableRow) SetValues(value *Json)() {
     m.values = value
 }

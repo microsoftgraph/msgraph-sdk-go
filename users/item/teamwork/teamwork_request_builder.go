@@ -9,7 +9,7 @@ import (
     iee435d718f79bda17416a95068e5e3c85a9e195e9c04bbaf5277ad506f90aa27 "github.com/microsoftgraph/msgraph-sdk-go/users/item/teamwork/installedapps/item"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\teamwork
+// TeamworkRequestBuilder builds and executes requests for operations under \users\{user-id}\teamwork
 type TeamworkRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type TeamworkRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TeamworkRequestBuilderDeleteOptions options for Delete
 type TeamworkRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type TeamworkRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TeamworkRequestBuilderGetOptions options for Get
 type TeamworkRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -38,14 +38,14 @@ type TeamworkRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A container for Microsoft Teams features available for the user. Read-only. Nullable.
+// TeamworkRequestBuilderGetQueryParameters a container for Microsoft Teams features available for the user. Read-only. Nullable.
 type TeamworkRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TeamworkRequestBuilderPatchOptions options for Patch
 type TeamworkRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserTeamwork;
@@ -56,10 +56,7 @@ type TeamworkRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TeamworkRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamworkRequestBuilderInternal instantiates a new TeamworkRequestBuilder and sets the default values.
 func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamworkRequestBuilder) {
     m := &TeamworkRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamworkRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamworkRequestBuilder instantiates a new TeamworkRequestBuilder and sets the default values.
 func NewTeamworkRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamworkRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamworkRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A container for Microsoft Teams features available for the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *TeamworkRequestBuilder) CreateDeleteRequestInformation(options *TeamworkRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,9 +92,7 @@ func (m *TeamworkRequestBuilder) CreateDeleteRequestInformation(options *Teamwor
     }
     return requestInfo, nil
 }
-// A container for Microsoft Teams features available for the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *TeamworkRequestBuilder) CreateGetRequestInformation(options *TeamworkRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,9 +112,7 @@ func (m *TeamworkRequestBuilder) CreateGetRequestInformation(options *TeamworkRe
     }
     return requestInfo, nil
 }
-// A container for Microsoft Teams features available for the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *TeamworkRequestBuilder) CreatePatchRequestInformation(options *TeamworkRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -142,9 +130,7 @@ func (m *TeamworkRequestBuilder) CreatePatchRequestInformation(options *Teamwork
     }
     return requestInfo, nil
 }
-// A container for Microsoft Teams features available for the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete a container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *TeamworkRequestBuilder) Delete(options *TeamworkRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -156,9 +142,7 @@ func (m *TeamworkRequestBuilder) Delete(options *TeamworkRequestBuilderDeleteOpt
     }
     return nil
 }
-// A container for Microsoft Teams features available for the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get a container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *TeamworkRequestBuilder) Get(options *TeamworkRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserTeamwork, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -173,9 +157,7 @@ func (m *TeamworkRequestBuilder) Get(options *TeamworkRequestBuilderGetOptions)(
 func (m *TeamworkRequestBuilder) InstalledApps()(*ieeac868b02e94c3c2a630277212e3a99a089ebc24dfd34932f8b9c6e7765f874.InstalledAppsRequestBuilder) {
     return ieeac868b02e94c3c2a630277212e3a99a089ebc24dfd34932f8b9c6e7765f874.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.teamwork.installedApps.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// InstalledAppsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.teamwork.installedApps.item collection
 func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*iee435d718f79bda17416a95068e5e3c85a9e195e9c04bbaf5277ad506f90aa27.UserScopeTeamsAppInstallationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -186,9 +168,7 @@ func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*iee435d718f79bda1
     }
     return iee435d718f79bda17416a95068e5e3c85a9e195e9c04bbaf5277ad506f90aa27.NewUserScopeTeamsAppInstallationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// A container for Microsoft Teams features available for the user. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch a container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *TeamworkRequestBuilder) Patch(options *TeamworkRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

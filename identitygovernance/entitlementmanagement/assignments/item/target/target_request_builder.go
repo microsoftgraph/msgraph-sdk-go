@@ -7,7 +7,7 @@ import (
     i90cc19fdad9e7885738058df0ae9a07e9a7db0de4f1ccbc1780070490e9cedc9 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignments/item/target/ref"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\assignments\{accessPackageAssignment-id}\target
+// TargetRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\assignments\{accessPackageAssignment-id}\target
 type TargetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TargetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TargetRequestBuilderGetOptions options for Get
 type TargetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type TargetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The subject of the access package assignment. Read-only. Nullable.
+// TargetRequestBuilderGetQueryParameters the subject of the access package assignment. Read-only. Nullable.
 type TargetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new TargetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetRequestBuilderInternal instantiates a new TargetRequestBuilder and sets the default values.
 func NewTargetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetRequestBuilder) {
     m := &TargetRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewTargetRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TargetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetRequestBuilder instantiates a new TargetRequestBuilder and sets the default values.
 func NewTargetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTargetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The subject of the access package assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the subject of the access package assignment. Read-only. Nullable.
 func (m *TargetRequestBuilder) CreateGetRequestInformation(options *TargetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *TargetRequestBuilder) CreateGetRequestInformation(options *TargetReques
     }
     return requestInfo, nil
 }
-// The subject of the access package assignment. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the subject of the access package assignment. Read-only. Nullable.
 func (m *TargetRequestBuilder) Get(options *TargetRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageSubject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\authentication\microsoftAuthenticatorMethods
+// MicrosoftAuthenticatorMethodsRequestBuilder builds and executes requests for operations under \users\{user-id}\authentication\microsoftAuthenticatorMethods
 type MicrosoftAuthenticatorMethodsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MicrosoftAuthenticatorMethodsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// MicrosoftAuthenticatorMethodsRequestBuilderGetOptions options for Get
 type MicrosoftAuthenticatorMethodsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type MicrosoftAuthenticatorMethodsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get microsoftAuthenticatorMethods from users
+// MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters get microsoftAuthenticatorMethods from users
 type MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// MicrosoftAuthenticatorMethodsRequestBuilderPostOptions options for Post
 type MicrosoftAuthenticatorMethodsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MicrosoftAuthenticatorAuthenticationMethod;
@@ -56,10 +56,7 @@ type MicrosoftAuthenticatorMethodsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftAuthenticatorMethodsRequestBuilderInternal instantiates a new MicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
 func NewMicrosoftAuthenticatorMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftAuthenticatorMethodsRequestBuilder) {
     m := &MicrosoftAuthenticatorMethodsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewMicrosoftAuthenticatorMethodsRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMicrosoftAuthenticatorMethodsRequestBuilder instantiates a new MicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
 func NewMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MicrosoftAuthenticatorMethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftAuthenticatorMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get microsoftAuthenticatorMethods from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get microsoftAuthenticatorMethods from users
 func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformation(options *MicrosoftAuthenticatorMethodsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// Create new navigation property to microsoftAuthenticatorMethods for users
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to microsoftAuthenticatorMethods for users
 func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformation(options *MicrosoftAuthenticatorMethodsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *MicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// Get microsoftAuthenticatorMethods from users
-// Parameters:
-//  - options : Options for the request
+// Get get microsoftAuthenticatorMethods from users
 func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Get(options *MicrosoftAuthenticatorMethodsRequestBuilderGetOptions)(*MicrosoftAuthenticatorMethodsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Get(options *MicrosoftAuth
     }
     return res.(*MicrosoftAuthenticatorMethodsResponse), nil
 }
-// Create new navigation property to microsoftAuthenticatorMethods for users
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to microsoftAuthenticatorMethods for users
 func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Post(options *MicrosoftAuthenticatorMethodsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MicrosoftAuthenticatorAuthenticationMethod, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

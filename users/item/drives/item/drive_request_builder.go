@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\drives\{drive-id}
+// DriveRequestBuilder builds and executes requests for operations under \users\{user-id}\drives\{drive-id}
 type DriveRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DriveRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DriveRequestBuilderDeleteOptions options for Delete
 type DriveRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DriveRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DriveRequestBuilderGetOptions options for Get
 type DriveRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DriveRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of drives available for this user. Read-only.
+// DriveRequestBuilderGetQueryParameters a collection of drives available for this user. Read-only.
 type DriveRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DriveRequestBuilderPatchOptions options for Patch
 type DriveRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Drive;
@@ -53,10 +53,7 @@ type DriveRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DriveRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDriveRequestBuilderInternal instantiates a new DriveRequestBuilder and sets the default values.
 func NewDriveRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveRequestBuilder) {
     m := &DriveRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDriveRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DriveRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDriveRequestBuilder instantiates a new DriveRequestBuilder and sets the default values.
 func NewDriveRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDriveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of drives available for this user. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of drives available for this user. Read-only.
 func (m *DriveRequestBuilder) CreateDeleteRequestInformation(options *DriveRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DriveRequestBuilder) CreateDeleteRequestInformation(options *DriveReque
     }
     return requestInfo, nil
 }
-// A collection of drives available for this user. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of drives available for this user. Read-only.
 func (m *DriveRequestBuilder) CreateGetRequestInformation(options *DriveRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DriveRequestBuilder) CreateGetRequestInformation(options *DriveRequestB
     }
     return requestInfo, nil
 }
-// A collection of drives available for this user. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of drives available for this user. Read-only.
 func (m *DriveRequestBuilder) CreatePatchRequestInformation(options *DriveRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DriveRequestBuilder) CreatePatchRequestInformation(options *DriveReques
     }
     return requestInfo, nil
 }
-// A collection of drives available for this user. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of drives available for this user. Read-only.
 func (m *DriveRequestBuilder) Delete(options *DriveRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DriveRequestBuilder) Delete(options *DriveRequestBuilderDeleteOptions)(
     }
     return nil
 }
-// A collection of drives available for this user. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of drives available for this user. Read-only.
 func (m *DriveRequestBuilder) Get(options *DriveRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Drive, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DriveRequestBuilder) Get(options *DriveRequestBuilderGetOptions)(*i4a83
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Drive), nil
 }
-// A collection of drives available for this user. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of drives available for this user. Read-only.
 func (m *DriveRequestBuilder) Patch(options *DriveRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// WorkingHours 
 type WorkingHours struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type WorkingHours struct {
     // The time zone to which the working hours apply.
     timeZone *TimeZoneBase;
 }
-// Instantiates a new workingHours and sets the default values.
+// NewWorkingHours instantiates a new workingHours and sets the default values.
 func NewWorkingHours()(*WorkingHours) {
     m := &WorkingHours{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkingHours) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *WorkingHours) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the daysOfWeek property value. The days of the week on which the user works.
+// GetDaysOfWeek gets the daysOfWeek property value. The days of the week on which the user works.
 func (m *WorkingHours) GetDaysOfWeek()([]DayOfWeek) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *WorkingHours) GetDaysOfWeek()([]DayOfWeek) {
         return m.daysOfWeek
     }
 }
-// Gets the endTime property value. The time of the day that the user stops working.
+// GetEndTime gets the endTime property value. The time of the day that the user stops working.
 func (m *WorkingHours) GetEndTime()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *WorkingHours) GetEndTime()(*string) {
         return m.endTime
     }
 }
-// Gets the startTime property value. The time of the day that the user starts working.
+// GetStartTime gets the startTime property value. The time of the day that the user starts working.
 func (m *WorkingHours) GetStartTime()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *WorkingHours) GetStartTime()(*string) {
         return m.startTime
     }
 }
-// Gets the timeZone property value. The time zone to which the working hours apply.
+// GetTimeZone gets the timeZone property value. The time zone to which the working hours apply.
 func (m *WorkingHours) GetTimeZone()(*TimeZoneBase) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *WorkingHours) GetTimeZone()(*TimeZoneBase) {
         return m.timeZone
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WorkingHours) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["daysOfWeek"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -116,9 +116,7 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *WorkingHours) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WorkingHours) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteCollectionOfStringValues("daysOfWeek", SerializeDayOfWeek(m.GetDaysOfWeek()))
@@ -152,33 +150,23 @@ func (m *WorkingHours) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkingHours) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the daysOfWeek property value. The days of the week on which the user works.
-// Parameters:
-//  - value : Value to set for the daysOfWeek property.
+// SetDaysOfWeek sets the daysOfWeek property value. The days of the week on which the user works.
 func (m *WorkingHours) SetDaysOfWeek(value []DayOfWeek)() {
     m.daysOfWeek = value
 }
-// Sets the endTime property value. The time of the day that the user stops working.
-// Parameters:
-//  - value : Value to set for the endTime property.
+// SetEndTime sets the endTime property value. The time of the day that the user stops working.
 func (m *WorkingHours) SetEndTime(value *string)() {
     m.endTime = value
 }
-// Sets the startTime property value. The time of the day that the user starts working.
-// Parameters:
-//  - value : Value to set for the startTime property.
+// SetStartTime sets the startTime property value. The time of the day that the user starts working.
 func (m *WorkingHours) SetStartTime(value *string)() {
     m.startTime = value
 }
-// Sets the timeZone property value. The time zone to which the working hours apply.
-// Parameters:
-//  - value : Value to set for the timeZone property.
+// SetTimeZone sets the timeZone property value. The time zone to which the working hours apply.
 func (m *WorkingHours) SetTimeZone(value *TimeZoneBase)() {
     m.timeZone = value
 }

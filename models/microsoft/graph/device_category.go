@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceCategory 
 type DeviceCategory struct {
     Entity
     // Optional description for the device category.
@@ -12,14 +12,14 @@ type DeviceCategory struct {
     // Display name for the device category.
     displayName *string;
 }
-// Instantiates a new deviceCategory and sets the default values.
+// NewDeviceCategory instantiates a new deviceCategory and sets the default values.
 func NewDeviceCategory()(*DeviceCategory) {
     m := &DeviceCategory{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the description property value. Optional description for the device category.
+// GetDescription gets the description property value. Optional description for the device category.
 func (m *DeviceCategory) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *DeviceCategory) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Display name for the device category.
+// GetDisplayName gets the displayName property value. Display name for the device category.
 func (m *DeviceCategory) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *DeviceCategory) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,9 +63,7 @@ func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *DeviceCategory) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -85,15 +83,11 @@ func (m *DeviceCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the description property value. Optional description for the device category.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Optional description for the device category.
 func (m *DeviceCategory) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Display name for the device category.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name for the device category.
 func (m *DeviceCategory) SetDisplayName(value *string)() {
     m.displayName = value
 }

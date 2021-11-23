@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ManagedEBookAssignment 
 type ManagedEBookAssignment struct {
     Entity
     // The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
@@ -12,14 +12,14 @@ type ManagedEBookAssignment struct {
     // The assignment target for eBook.
     target *DeviceAndAppManagementAssignmentTarget;
 }
-// Instantiates a new managedEBookAssignment and sets the default values.
+// NewManagedEBookAssignment instantiates a new managedEBookAssignment and sets the default values.
 func NewManagedEBookAssignment()(*ManagedEBookAssignment) {
     m := &ManagedEBookAssignment{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the installIntent property value. The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+// GetInstallIntent gets the installIntent property value. The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
 func (m *ManagedEBookAssignment) GetInstallIntent()(*InstallIntent) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *ManagedEBookAssignment) GetInstallIntent()(*InstallIntent) {
         return m.installIntent
     }
 }
-// Gets the target property value. The assignment target for eBook.
+// GetTarget gets the target property value. The assignment target for eBook.
 func (m *ManagedEBookAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTarget) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *ManagedEBookAssignment) GetTarget()(*DeviceAndAppManagementAssignmentTa
         return m.target
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedEBookAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["installIntent"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -64,9 +64,7 @@ func (m *ManagedEBookAssignment) GetFieldDeserializers()(map[string]func(interfa
 func (m *ManagedEBookAssignment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ManagedEBookAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -87,15 +85,11 @@ func (m *ManagedEBookAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// Sets the installIntent property value. The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
-// Parameters:
-//  - value : Value to set for the installIntent property.
+// SetInstallIntent sets the installIntent property value. The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
 func (m *ManagedEBookAssignment) SetInstallIntent(value *InstallIntent)() {
     m.installIntent = value
 }
-// Sets the target property value. The assignment target for eBook.
-// Parameters:
-//  - value : Value to set for the target property.
+// SetTarget sets the target property value. The assignment target for eBook.
 func (m *ManagedEBookAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
     m.target = value
 }

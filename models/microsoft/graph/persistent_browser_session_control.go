@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PersistentBrowserSessionControl 
 type PersistentBrowserSessionControl struct {
     ConditionalAccessSessionControl
     // Possible values are: always, never.
     mode *PersistentBrowserSessionMode;
 }
-// Instantiates a new persistentBrowserSessionControl and sets the default values.
+// NewPersistentBrowserSessionControl instantiates a new persistentBrowserSessionControl and sets the default values.
 func NewPersistentBrowserSessionControl()(*PersistentBrowserSessionControl) {
     m := &PersistentBrowserSessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
     }
     return m
 }
-// Gets the mode property value. Possible values are: always, never.
+// GetMode gets the mode property value. Possible values are: always, never.
 func (m *PersistentBrowserSessionControl) GetMode()(*PersistentBrowserSessionMode) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *PersistentBrowserSessionControl) GetMode()(*PersistentBrowserSessionMod
         return m.mode
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PersistentBrowserSessionControl) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ConditionalAccessSessionControl.GetFieldDeserializers()
     res["mode"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -44,9 +44,7 @@ func (m *PersistentBrowserSessionControl) GetFieldDeserializers()(map[string]fun
 func (m *PersistentBrowserSessionControl) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PersistentBrowserSessionControl) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.ConditionalAccessSessionControl.Serialize(writer)
     if err != nil {
@@ -61,9 +59,7 @@ func (m *PersistentBrowserSessionControl) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the mode property value. Possible values are: always, never.
-// Parameters:
-//  - value : Value to set for the mode property.
+// SetMode sets the mode property value. Possible values are: always, never.
 func (m *PersistentBrowserSessionControl) SetMode(value *PersistentBrowserSessionMode)() {
     m.mode = value
 }

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\intendedPolicies\{managedAppPolicy-id}\microsoft.graph.managedAppProtection\microsoft.graph.targetApps
+// TargetAppsRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\intendedPolicies\{managedAppPolicy-id}\microsoft.graph.managedAppProtection\microsoft.graph.targetApps
 type TargetAppsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type TargetAppsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// TargetAppsRequestBuilderPostOptions options for Post
 type TargetAppsRequestBuilderPostOptions struct {
     // 
     Body *TargetAppsRequestBody;
@@ -24,10 +24,7 @@ type TargetAppsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TargetAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetAppsRequestBuilderInternal instantiates a new TargetAppsRequestBuilder and sets the default values.
 func NewTargetAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetAppsRequestBuilder) {
     m := &TargetAppsRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewTargetAppsRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TargetAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTargetAppsRequestBuilder instantiates a new TargetAppsRequestBuilder and sets the default values.
 func NewTargetAppsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TargetAppsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTargetAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action targetApps
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action targetApps
 func (m *TargetAppsRequestBuilder) CreatePostRequestInformation(options *TargetAppsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *TargetAppsRequestBuilder) CreatePostRequestInformation(options *TargetA
     }
     return requestInfo, nil
 }
-// Invoke action targetApps
-// Parameters:
-//  - options : Options for the request
+// Post invoke action targetApps
 func (m *TargetAppsRequestBuilder) Post(options *TargetAppsRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

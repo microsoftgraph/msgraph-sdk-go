@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \deviceManagement\importedWindowsAutopilotDeviceIdentities\microsoft.graph.import
+// ImportRequestBuilder builds and executes requests for operations under \deviceManagement\importedWindowsAutopilotDeviceIdentities\microsoft.graph.import
 type ImportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type ImportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ImportRequestBuilderPostOptions options for Post
 type ImportRequestBuilderPostOptions struct {
     // 
     Body *ImportRequestBody;
@@ -25,10 +25,7 @@ type ImportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ImportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportRequestBuilderInternal instantiates a new ImportRequestBuilder and sets the default values.
 func NewImportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportRequestBuilder) {
     m := &ImportRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewImportRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ImportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImportRequestBuilder instantiates a new ImportRequestBuilder and sets the default values.
 func NewImportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewImportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action import
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action import
 func (m *ImportRequestBuilder) CreatePostRequestInformation(options *ImportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *ImportRequestBuilder) CreatePostRequestInformation(options *ImportReque
     }
     return requestInfo, nil
 }
-// Invoke action import
-// Parameters:
-//  - options : Options for the request
+// Post invoke action import
 func (m *ImportRequestBuilder) Post(options *ImportRequestBuilderPostOptions)([]Import_escaped, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SectionLinks 
 type SectionLinks struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type SectionLinks struct {
     // Opens the section in OneNote on the web.
     oneNoteWebUrl *ExternalLink;
 }
-// Instantiates a new sectionLinks and sets the default values.
+// NewSectionLinks instantiates a new sectionLinks and sets the default values.
 func NewSectionLinks()(*SectionLinks) {
     m := &SectionLinks{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SectionLinks) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *SectionLinks) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the oneNoteClientUrl property value. Opens the section in the OneNote native client if it's installed.
+// GetOneNoteClientUrl gets the oneNoteClientUrl property value. Opens the section in the OneNote native client if it's installed.
 func (m *SectionLinks) GetOneNoteClientUrl()(*ExternalLink) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *SectionLinks) GetOneNoteClientUrl()(*ExternalLink) {
         return m.oneNoteClientUrl
     }
 }
-// Gets the oneNoteWebUrl property value. Opens the section in OneNote on the web.
+// GetOneNoteWebUrl gets the oneNoteWebUrl property value. Opens the section in OneNote on the web.
 func (m *SectionLinks) GetOneNoteWebUrl()(*ExternalLink) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *SectionLinks) GetOneNoteWebUrl()(*ExternalLink) {
         return m.oneNoteWebUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SectionLinks) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["oneNoteClientUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *SectionLinks) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *SectionLinks) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SectionLinks) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("oneNoteClientUrl", m.GetOneNoteClientUrl())
@@ -96,21 +94,15 @@ func (m *SectionLinks) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SectionLinks) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the oneNoteClientUrl property value. Opens the section in the OneNote native client if it's installed.
-// Parameters:
-//  - value : Value to set for the oneNoteClientUrl property.
+// SetOneNoteClientUrl sets the oneNoteClientUrl property value. Opens the section in the OneNote native client if it's installed.
 func (m *SectionLinks) SetOneNoteClientUrl(value *ExternalLink)() {
     m.oneNoteClientUrl = value
 }
-// Sets the oneNoteWebUrl property value. Opens the section in OneNote on the web.
-// Parameters:
-//  - value : Value to set for the oneNoteWebUrl property.
+// SetOneNoteWebUrl sets the oneNoteWebUrl property value. Opens the section in OneNote on the web.
 func (m *SectionLinks) SetOneNoteWebUrl(value *ExternalLink)() {
     m.oneNoteWebUrl = value
 }

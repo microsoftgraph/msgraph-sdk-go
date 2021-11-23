@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// ReminderViewWithStartDateTimeWithEndDateTime 
 type ReminderViewWithStartDateTimeWithEndDateTime struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -26,14 +26,14 @@ type ReminderViewWithStartDateTimeWithEndDateTime struct {
     // The date, time, and time zone that the reminder is set to occur.
     reminderFireTime *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DateTimeTimeZone;
 }
-// Instantiates a new reminderViewWithStartDateTimeWithEndDateTime and sets the default values.
+// NewReminderViewWithStartDateTimeWithEndDateTime instantiates a new reminderViewWithStartDateTimeWithEndDateTime and sets the default values.
 func NewReminderViewWithStartDateTimeWithEndDateTime()(*ReminderViewWithStartDateTimeWithEndDateTime) {
     m := &ReminderViewWithStartDateTimeWithEndDateTime{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetAdditionalData()(map[s
         return m.additionalData
     }
 }
-// Gets the changeKey property value. Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.
+// GetChangeKey gets the changeKey property value. Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetChangeKey()(*string) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetChangeKey()(*string) {
         return m.changeKey
     }
 }
-// Gets the eventEndTime property value. The date, time and time zone that the event ends.
+// GetEventEndTime gets the eventEndTime property value. The date, time and time zone that the event ends.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventEndTime()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventEndTime()(*i4a838
         return m.eventEndTime
     }
 }
-// Gets the eventId property value. The unique ID of the event. Read only.
+// GetEventId gets the eventId property value. The unique ID of the event. Read only.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventId()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventId()(*string) {
         return m.eventId
     }
 }
-// Gets the eventLocation property value. The location of the event.
+// GetEventLocation gets the eventLocation property value. The location of the event.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventLocation()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Location) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventLocation()(*i4a83
         return m.eventLocation
     }
 }
-// Gets the eventStartTime property value. The date, time, and time zone that the event starts.
+// GetEventStartTime gets the eventStartTime property value. The date, time, and time zone that the event starts.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventStartTime()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventStartTime()(*i4a8
         return m.eventStartTime
     }
 }
-// Gets the eventSubject property value. The text of the event's subject line.
+// GetEventSubject gets the eventSubject property value. The text of the event's subject line.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventSubject()(*string) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventSubject()(*string
         return m.eventSubject
     }
 }
-// Gets the eventWebLink property value. The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
+// GetEventWebLink gets the eventWebLink property value. The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventWebLink()(*string) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetEventWebLink()(*string
         return m.eventWebLink
     }
 }
-// Gets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.
+// GetReminderFireTime gets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetReminderFireTime()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetReminderFireTime()(*i4
         return m.reminderFireTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["changeKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -193,9 +193,7 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) GetFieldDeserializers()(m
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("changeKey", m.GetChangeKey())
@@ -253,57 +251,39 @@ func (m *ReminderViewWithStartDateTimeWithEndDateTime) Serialize(writer i04eb530
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the changeKey property value. Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.
-// Parameters:
-//  - value : Value to set for the changeKey property.
+// SetChangeKey sets the changeKey property value. Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) SetChangeKey(value *string)() {
     m.changeKey = value
 }
-// Sets the eventEndTime property value. The date, time and time zone that the event ends.
-// Parameters:
-//  - value : Value to set for the eventEndTime property.
+// SetEventEndTime sets the eventEndTime property value. The date, time and time zone that the event ends.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) SetEventEndTime(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DateTimeTimeZone)() {
     m.eventEndTime = value
 }
-// Sets the eventId property value. The unique ID of the event. Read only.
-// Parameters:
-//  - value : Value to set for the eventId property.
+// SetEventId sets the eventId property value. The unique ID of the event. Read only.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) SetEventId(value *string)() {
     m.eventId = value
 }
-// Sets the eventLocation property value. The location of the event.
-// Parameters:
-//  - value : Value to set for the eventLocation property.
+// SetEventLocation sets the eventLocation property value. The location of the event.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) SetEventLocation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Location)() {
     m.eventLocation = value
 }
-// Sets the eventStartTime property value. The date, time, and time zone that the event starts.
-// Parameters:
-//  - value : Value to set for the eventStartTime property.
+// SetEventStartTime sets the eventStartTime property value. The date, time, and time zone that the event starts.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) SetEventStartTime(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DateTimeTimeZone)() {
     m.eventStartTime = value
 }
-// Sets the eventSubject property value. The text of the event's subject line.
-// Parameters:
-//  - value : Value to set for the eventSubject property.
+// SetEventSubject sets the eventSubject property value. The text of the event's subject line.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) SetEventSubject(value *string)() {
     m.eventSubject = value
 }
-// Sets the eventWebLink property value. The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
-// Parameters:
-//  - value : Value to set for the eventWebLink property.
+// SetEventWebLink sets the eventWebLink property value. The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) SetEventWebLink(value *string)() {
     m.eventWebLink = value
 }
-// Sets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.
-// Parameters:
-//  - value : Value to set for the reminderFireTime property.
+// SetReminderFireTime sets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.
 func (m *ReminderViewWithStartDateTimeWithEndDateTime) SetReminderFireTime(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DateTimeTimeZone)() {
     m.reminderFireTime = value
 }

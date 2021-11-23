@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ReportRoot 
 type ReportRoot struct {
     Entity
     // 
@@ -16,14 +16,14 @@ type ReportRoot struct {
     // 
     monthlyPrintUsageByUser []PrintUsageByUser;
 }
-// Instantiates a new reportRoot and sets the default values.
+// NewReportRoot instantiates a new reportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
     m := &ReportRoot{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the dailyPrintUsageByPrinter property value. 
+// GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. 
 func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinter) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinter) {
         return m.dailyPrintUsageByPrinter
     }
 }
-// Gets the dailyPrintUsageByUser property value. 
+// GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. 
 func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUser) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUser) {
         return m.dailyPrintUsageByUser
     }
 }
-// Gets the monthlyPrintUsageByPrinter property value. 
+// GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. 
 func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinter) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinter) {
         return m.monthlyPrintUsageByPrinter
     }
 }
-// Gets the monthlyPrintUsageByUser property value. 
+// GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. 
 func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUser) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUser) {
         return m.monthlyPrintUsageByUser
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["dailyPrintUsageByPrinter"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -119,9 +119,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
 func (m *ReportRoot) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -173,27 +171,19 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
-// Sets the dailyPrintUsageByPrinter property value. 
-// Parameters:
-//  - value : Value to set for the dailyPrintUsageByPrinter property.
+// SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. 
 func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinter)() {
     m.dailyPrintUsageByPrinter = value
 }
-// Sets the dailyPrintUsageByUser property value. 
-// Parameters:
-//  - value : Value to set for the dailyPrintUsageByUser property.
+// SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. 
 func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUser)() {
     m.dailyPrintUsageByUser = value
 }
-// Sets the monthlyPrintUsageByPrinter property value. 
-// Parameters:
-//  - value : Value to set for the monthlyPrintUsageByPrinter property.
+// SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. 
 func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinter)() {
     m.monthlyPrintUsageByPrinter = value
 }
-// Sets the monthlyPrintUsageByUser property value. 
-// Parameters:
-//  - value : Value to set for the monthlyPrintUsageByUser property.
+// SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. 
 func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUser)() {
     m.monthlyPrintUsageByUser = value
 }

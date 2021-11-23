@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// EducationCourse 
 type EducationCourse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type EducationCourse struct {
     // Subject of the course.
     subject *string;
 }
-// Instantiates a new educationCourse and sets the default values.
+// NewEducationCourse instantiates a new educationCourse and sets the default values.
 func NewEducationCourse()(*EducationCourse) {
     m := &EducationCourse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationCourse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *EducationCourse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the courseNumber property value. Unique identifier for the course.
+// GetCourseNumber gets the courseNumber property value. Unique identifier for the course.
 func (m *EducationCourse) GetCourseNumber()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *EducationCourse) GetCourseNumber()(*string) {
         return m.courseNumber
     }
 }
-// Gets the description property value. Description of the course.
+// GetDescription gets the description property value. Description of the course.
 func (m *EducationCourse) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *EducationCourse) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the displayName property value. Name of the course.
+// GetDisplayName gets the displayName property value. Name of the course.
 func (m *EducationCourse) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *EducationCourse) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the externalId property value. ID of the course from the syncing system.
+// GetExternalId gets the externalId property value. ID of the course from the syncing system.
 func (m *EducationCourse) GetExternalId()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *EducationCourse) GetExternalId()(*string) {
         return m.externalId
     }
 }
-// Gets the subject property value. Subject of the course.
+// GetSubject gets the subject property value. Subject of the course.
 func (m *EducationCourse) GetSubject()(*string) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *EducationCourse) GetSubject()(*string) {
         return m.subject
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EducationCourse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["courseNumber"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,9 +132,7 @@ func (m *EducationCourse) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *EducationCourse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EducationCourse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("courseNumber", m.GetCourseNumber())
@@ -174,39 +172,27 @@ func (m *EducationCourse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationCourse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the courseNumber property value. Unique identifier for the course.
-// Parameters:
-//  - value : Value to set for the courseNumber property.
+// SetCourseNumber sets the courseNumber property value. Unique identifier for the course.
 func (m *EducationCourse) SetCourseNumber(value *string)() {
     m.courseNumber = value
 }
-// Sets the description property value. Description of the course.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Description of the course.
 func (m *EducationCourse) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the displayName property value. Name of the course.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Name of the course.
 func (m *EducationCourse) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the externalId property value. ID of the course from the syncing system.
-// Parameters:
-//  - value : Value to set for the externalId property.
+// SetExternalId sets the externalId property value. ID of the course from the syncing system.
 func (m *EducationCourse) SetExternalId(value *string)() {
     m.externalId = value
 }
-// Sets the subject property value. Subject of the course.
-// Parameters:
-//  - value : Value to set for the subject property.
+// SetSubject sets the subject property value. Subject of the course.
 func (m *EducationCourse) SetSubject(value *string)() {
     m.subject = value
 }

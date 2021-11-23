@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\microsoft.graph.item(name='{name}')
+// ItemWithNameRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\microsoft.graph.item(name='{name}')
 type ItemWithNameRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ItemWithNameRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ItemWithNameRequestBuilderGetOptions options for Get
 type ItemWithNameRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,21 +24,21 @@ type ItemWithNameRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes workbookChart
+// ItemWithNameResponse union type wrapper for classes workbookChart
 type ItemWithNameResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type workbookChart
     workbookChart *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChart;
 }
-// Instantiates a new itemWithNameResponse and sets the default values.
+// NewItemWithNameResponse instantiates a new itemWithNameResponse and sets the default values.
 func NewItemWithNameResponse()(*ItemWithNameResponse) {
     m := &ItemWithNameResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemWithNameResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *ItemWithNameResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the workbookChart property value. Union type representation for type workbookChart
+// GetWorkbookChart gets the workbookChart property value. Union type representation for type workbookChart
 func (m *ItemWithNameResponse) GetWorkbookChart()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChart) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *ItemWithNameResponse) GetWorkbookChart()(*i4a838ef194e4c99e9f2c63ba10da
         return m.workbookChart
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ItemWithNameResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["workbookChart"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *ItemWithNameResponse) GetFieldDeserializers()(map[string]func(interface
 func (m *ItemWithNameResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ItemWithNameResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("workbookChart", m.GetWorkbookChart())
@@ -90,23 +88,15 @@ func (m *ItemWithNameResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemWithNameResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the workbookChart property value. Union type representation for type workbookChart
-// Parameters:
-//  - value : Value to set for the workbookChart property.
+// SetWorkbookChart sets the workbookChart property value. Union type representation for type workbookChart
 func (m *ItemWithNameResponse) SetWorkbookChart(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChart)() {
     m.workbookChart = value
 }
-// Instantiates a new ItemWithNameRequestBuilder and sets the default values.
-// Parameters:
-//  - name : Usage: name={name}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemWithNameRequestBuilderInternal instantiates a new ItemWithNameRequestBuilder and sets the default values.
 func NewItemWithNameRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, name *string)(*ItemWithNameRequestBuilder) {
     m := &ItemWithNameRequestBuilder{
     }
@@ -122,18 +112,13 @@ func NewItemWithNameRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ItemWithNameRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewItemWithNameRequestBuilder instantiates a new ItemWithNameRequestBuilder and sets the default values.
 func NewItemWithNameRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ItemWithNameRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemWithNameRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function item
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function item
 func (m *ItemWithNameRequestBuilder) CreateGetRequestInformation(options *ItemWithNameRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +135,7 @@ func (m *ItemWithNameRequestBuilder) CreateGetRequestInformation(options *ItemWi
     }
     return requestInfo, nil
 }
-// Invoke function item
-// Parameters:
-//  - options : Options for the request
+// Get invoke function item
 func (m *ItemWithNameRequestBuilder) Get(options *ItemWithNameRequestBuilderGetOptions)(*ItemWithNameResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

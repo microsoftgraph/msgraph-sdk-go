@@ -6,7 +6,7 @@ import (
     i0b9f8d44e2487ed2063f4d2c4a5e784859c727fc4a363bcfe285e1dedbd30831 "github.com/microsoftgraph/msgraph-sdk-go/users/item/ownedobjects/ref"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\ownedObjects
+// OwnedObjectsRequestBuilder builds and executes requests for operations under \users\{user-id}\ownedObjects
 type OwnedObjectsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OwnedObjectsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// OwnedObjectsRequestBuilderGetOptions options for Get
 type OwnedObjectsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type OwnedObjectsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+// OwnedObjectsRequestBuilderGetQueryParameters directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
 type OwnedObjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type OwnedObjectsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new OwnedObjectsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOwnedObjectsRequestBuilderInternal instantiates a new OwnedObjectsRequestBuilder and sets the default values.
 func NewOwnedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OwnedObjectsRequestBuilder) {
     m := &OwnedObjectsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewOwnedObjectsRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OwnedObjectsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOwnedObjectsRequestBuilder instantiates a new OwnedObjectsRequestBuilder and sets the default values.
 func NewOwnedObjectsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OwnedObjectsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOwnedObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformation(options *OwnedObjectsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformation(options *OwnedO
     }
     return requestInfo, nil
 }
-// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *OwnedObjectsRequestBuilder) Get(options *OwnedObjectsRequestBuilderGetOptions)(*OwnedObjectsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

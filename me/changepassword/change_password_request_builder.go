@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\microsoft.graph.changePassword
+// ChangePasswordRequestBuilder builds and executes requests for operations under \me\microsoft.graph.changePassword
 type ChangePasswordRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ChangePasswordRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ChangePasswordRequestBuilderPostOptions options for Post
 type ChangePasswordRequestBuilderPostOptions struct {
     // 
     Body *ChangePasswordRequestBody;
@@ -24,10 +24,7 @@ type ChangePasswordRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ChangePasswordRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChangePasswordRequestBuilderInternal instantiates a new ChangePasswordRequestBuilder and sets the default values.
 func NewChangePasswordRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChangePasswordRequestBuilder) {
     m := &ChangePasswordRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewChangePasswordRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChangePasswordRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChangePasswordRequestBuilder instantiates a new ChangePasswordRequestBuilder and sets the default values.
 func NewChangePasswordRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChangePasswordRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChangePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action changePassword
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action changePassword
 func (m *ChangePasswordRequestBuilder) CreatePostRequestInformation(options *ChangePasswordRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ChangePasswordRequestBuilder) CreatePostRequestInformation(options *Cha
     }
     return requestInfo, nil
 }
-// Invoke action changePassword
-// Parameters:
-//  - options : Options for the request
+// Post invoke action changePassword
 func (m *ChangePasswordRequestBuilder) Post(options *ChangePasswordRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

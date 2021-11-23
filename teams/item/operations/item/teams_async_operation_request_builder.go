@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\operations\{teamsAsyncOperation-id}
+// TeamsAsyncOperationRequestBuilder builds and executes requests for operations under \teams\{team-id}\operations\{teamsAsyncOperation-id}
 type TeamsAsyncOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TeamsAsyncOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TeamsAsyncOperationRequestBuilderDeleteOptions options for Delete
 type TeamsAsyncOperationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TeamsAsyncOperationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TeamsAsyncOperationRequestBuilderGetOptions options for Get
 type TeamsAsyncOperationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type TeamsAsyncOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The async operations that ran or are running on this team.
+// TeamsAsyncOperationRequestBuilderGetQueryParameters the async operations that ran or are running on this team.
 type TeamsAsyncOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TeamsAsyncOperationRequestBuilderPatchOptions options for Patch
 type TeamsAsyncOperationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAsyncOperation;
@@ -53,10 +53,7 @@ type TeamsAsyncOperationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TeamsAsyncOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAsyncOperationRequestBuilderInternal instantiates a new TeamsAsyncOperationRequestBuilder and sets the default values.
 func NewTeamsAsyncOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAsyncOperationRequestBuilder) {
     m := &TeamsAsyncOperationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewTeamsAsyncOperationRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamsAsyncOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAsyncOperationRequestBuilder instantiates a new TeamsAsyncOperationRequestBuilder and sets the default values.
 func NewTeamsAsyncOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAsyncOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAsyncOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The async operations that ran or are running on this team.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the async operations that ran or are running on this team.
 func (m *TeamsAsyncOperationRequestBuilder) CreateDeleteRequestInformation(options *TeamsAsyncOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *TeamsAsyncOperationRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The async operations that ran or are running on this team.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the async operations that ran or are running on this team.
 func (m *TeamsAsyncOperationRequestBuilder) CreateGetRequestInformation(options *TeamsAsyncOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *TeamsAsyncOperationRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The async operations that ran or are running on this team.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the async operations that ran or are running on this team.
 func (m *TeamsAsyncOperationRequestBuilder) CreatePatchRequestInformation(options *TeamsAsyncOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *TeamsAsyncOperationRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// The async operations that ran or are running on this team.
-// Parameters:
-//  - options : Options for the request
+// Delete the async operations that ran or are running on this team.
 func (m *TeamsAsyncOperationRequestBuilder) Delete(options *TeamsAsyncOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *TeamsAsyncOperationRequestBuilder) Delete(options *TeamsAsyncOperationR
     }
     return nil
 }
-// The async operations that ran or are running on this team.
-// Parameters:
-//  - options : Options for the request
+// Get the async operations that ran or are running on this team.
 func (m *TeamsAsyncOperationRequestBuilder) Get(options *TeamsAsyncOperationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAsyncOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *TeamsAsyncOperationRequestBuilder) Get(options *TeamsAsyncOperationRequ
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsAsyncOperation), nil
 }
-// The async operations that ran or are running on this team.
-// Parameters:
-//  - options : Options for the request
+// Patch the async operations that ran or are running on this team.
 func (m *TeamsAsyncOperationRequestBuilder) Patch(options *TeamsAsyncOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

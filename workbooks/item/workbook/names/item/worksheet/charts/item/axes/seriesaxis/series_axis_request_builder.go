@@ -10,7 +10,7 @@ import (
     ie5602043db330a26e266e5631bbb40e5986d515c5486c998d9ef40a71a9f1680 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/axes/seriesaxis/title"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes\seriesAxis
+// SeriesAxisRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes\seriesAxis
 type SeriesAxisRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type SeriesAxisRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SeriesAxisRequestBuilderDeleteOptions options for Delete
 type SeriesAxisRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type SeriesAxisRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SeriesAxisRequestBuilderGetOptions options for Get
 type SeriesAxisRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type SeriesAxisRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents the series axis of a 3-dimensional chart. Read-only.
+// SeriesAxisRequestBuilderGetQueryParameters represents the series axis of a 3-dimensional chart. Read-only.
 type SeriesAxisRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SeriesAxisRequestBuilderPatchOptions options for Patch
 type SeriesAxisRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxis;
@@ -57,10 +57,7 @@ type SeriesAxisRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SeriesAxisRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSeriesAxisRequestBuilderInternal instantiates a new SeriesAxisRequestBuilder and sets the default values.
 func NewSeriesAxisRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SeriesAxisRequestBuilder) {
     m := &SeriesAxisRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewSeriesAxisRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SeriesAxisRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSeriesAxisRequestBuilder instantiates a new SeriesAxisRequestBuilder and sets the default values.
 func NewSeriesAxisRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SeriesAxisRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSeriesAxisRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents the series axis of a 3-dimensional chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents the series axis of a 3-dimensional chart. Read-only.
 func (m *SeriesAxisRequestBuilder) CreateDeleteRequestInformation(options *SeriesAxisRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *SeriesAxisRequestBuilder) CreateDeleteRequestInformation(options *Serie
     }
     return requestInfo, nil
 }
-// Represents the series axis of a 3-dimensional chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents the series axis of a 3-dimensional chart. Read-only.
 func (m *SeriesAxisRequestBuilder) CreateGetRequestInformation(options *SeriesAxisRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SeriesAxisRequestBuilder) CreateGetRequestInformation(options *SeriesAx
     }
     return requestInfo, nil
 }
-// Represents the series axis of a 3-dimensional chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents the series axis of a 3-dimensional chart. Read-only.
 func (m *SeriesAxisRequestBuilder) CreatePatchRequestInformation(options *SeriesAxisRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *SeriesAxisRequestBuilder) CreatePatchRequestInformation(options *Series
     }
     return requestInfo, nil
 }
-// Represents the series axis of a 3-dimensional chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents the series axis of a 3-dimensional chart. Read-only.
 func (m *SeriesAxisRequestBuilder) Delete(options *SeriesAxisRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -160,9 +146,7 @@ func (m *SeriesAxisRequestBuilder) Delete(options *SeriesAxisRequestBuilderDelet
 func (m *SeriesAxisRequestBuilder) Format()(*i44f96e98e59299173768dbcdb14ebe50e1b069a70e425feedfd9c6fca0ccb8ce.FormatRequestBuilder) {
     return i44f96e98e59299173768dbcdb14ebe50e1b069a70e425feedfd9c6fca0ccb8ce.NewFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents the series axis of a 3-dimensional chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents the series axis of a 3-dimensional chart. Read-only.
 func (m *SeriesAxisRequestBuilder) Get(options *SeriesAxisRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartAxis, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -180,9 +164,7 @@ func (m *SeriesAxisRequestBuilder) MajorGridlines()(*i7aab3b23e71e3b0e2033234a49
 func (m *SeriesAxisRequestBuilder) MinorGridlines()(*i03561b46244afe5088a415bd8329e4d834e35b3dadd8b241fa1ae45fbdbb12d8.MinorGridlinesRequestBuilder) {
     return i03561b46244afe5088a415bd8329e4d834e35b3dadd8b241fa1ae45fbdbb12d8.NewMinorGridlinesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents the series axis of a 3-dimensional chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents the series axis of a 3-dimensional chart. Read-only.
 func (m *SeriesAxisRequestBuilder) Patch(options *SeriesAxisRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

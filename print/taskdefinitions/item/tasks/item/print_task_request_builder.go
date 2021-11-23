@@ -8,7 +8,7 @@ import (
     ibb48c7cafa0b5be5cfe11fb7d96c2e07c41ca9860e124963f4c1f62ae994a756 "github.com/microsoftgraph/msgraph-sdk-go/print/taskdefinitions/item/tasks/item/trigger"
 )
 
-// Builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}\tasks\{printTask-id}
+// PrintTaskRequestBuilder builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}\tasks\{printTask-id}
 type PrintTaskRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type PrintTaskRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrintTaskRequestBuilderDeleteOptions options for Delete
 type PrintTaskRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PrintTaskRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrintTaskRequestBuilderGetOptions options for Get
 type PrintTaskRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type PrintTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+// PrintTaskRequestBuilderGetQueryParameters a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 type PrintTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrintTaskRequestBuilderPatchOptions options for Patch
 type PrintTaskRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTask;
@@ -55,10 +55,7 @@ type PrintTaskRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrintTaskRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintTaskRequestBuilderInternal instantiates a new PrintTaskRequestBuilder and sets the default values.
 func NewPrintTaskRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintTaskRequestBuilder) {
     m := &PrintTaskRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewPrintTaskRequestBuilderInternal(pathParameters map[string]string, reques
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrintTaskRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintTaskRequestBuilder instantiates a new PrintTaskRequestBuilder and sets the default values.
 func NewPrintTaskRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintTaskRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrintTaskRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskRequestBuilder) CreateDeleteRequestInformation(options *PrintTaskRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *PrintTaskRequestBuilder) CreateDeleteRequestInformation(options *PrintT
     }
     return requestInfo, nil
 }
-// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskRequestBuilder) CreateGetRequestInformation(options *PrintTaskRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *PrintTaskRequestBuilder) CreateGetRequestInformation(options *PrintTask
     }
     return requestInfo, nil
 }
-// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskRequestBuilder) CreatePatchRequestInformation(options *PrintTaskRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *PrintTaskRequestBuilder) CreatePatchRequestInformation(options *PrintTa
 func (m *PrintTaskRequestBuilder) Definition()(*i170d6bd96ed4765ab98f862d2ae3c962180e0a55343f7354a255a1938a1fcf7c.DefinitionRequestBuilder) {
     return i170d6bd96ed4765ab98f862d2ae3c962180e0a55343f7354a255a1938a1fcf7c.NewDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskRequestBuilder) Delete(options *PrintTaskRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *PrintTaskRequestBuilder) Delete(options *PrintTaskRequestBuilderDeleteO
     }
     return nil
 }
-// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskRequestBuilder) Get(options *PrintTaskRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTask, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *PrintTaskRequestBuilder) Get(options *PrintTaskRequestBuilderGetOptions
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTask), nil
 }
-// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch a list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskRequestBuilder) Patch(options *PrintTaskRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

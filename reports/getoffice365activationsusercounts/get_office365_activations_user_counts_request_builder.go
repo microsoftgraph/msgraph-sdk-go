@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActivationsUserCounts()
+// GetOffice365ActivationsUserCountsRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActivationsUserCounts()
 type GetOffice365ActivationsUserCountsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GetOffice365ActivationsUserCountsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetOffice365ActivationsUserCountsRequestBuilderGetOptions options for Get
 type GetOffice365ActivationsUserCountsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,10 +24,7 @@ type GetOffice365ActivationsUserCountsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetOffice365ActivationsUserCountsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOffice365ActivationsUserCountsRequestBuilderInternal instantiates a new GetOffice365ActivationsUserCountsRequestBuilder and sets the default values.
 func NewGetOffice365ActivationsUserCountsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetOffice365ActivationsUserCountsRequestBuilder) {
     m := &GetOffice365ActivationsUserCountsRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetOffice365ActivationsUserCountsRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetOffice365ActivationsUserCountsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOffice365ActivationsUserCountsRequestBuilder instantiates a new GetOffice365ActivationsUserCountsRequestBuilder and sets the default values.
 func NewGetOffice365ActivationsUserCountsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetOffice365ActivationsUserCountsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365ActivationsUserCountsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function getOffice365ActivationsUserCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getOffice365ActivationsUserCounts
 func (m *GetOffice365ActivationsUserCountsRequestBuilder) CreateGetRequestInformation(options *GetOffice365ActivationsUserCountsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -68,9 +60,7 @@ func (m *GetOffice365ActivationsUserCountsRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// Invoke function getOffice365ActivationsUserCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getOffice365ActivationsUserCounts
 func (m *GetOffice365ActivationsUserCountsRequestBuilder) Get(options *GetOffice365ActivationsUserCountsRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

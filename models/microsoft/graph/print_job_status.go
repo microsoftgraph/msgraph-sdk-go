@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PrintJobStatus 
 type PrintJobStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type PrintJobStatus struct {
     // The print job's current processing state. Valid values are described in the following table. Read-only.
     state *PrintJobProcessingState;
 }
-// Instantiates a new printJobStatus and sets the default values.
+// NewPrintJobStatus instantiates a new printJobStatus and sets the default values.
 func NewPrintJobStatus()(*PrintJobStatus) {
     m := &PrintJobStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintJobStatus) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *PrintJobStatus) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the description property value. A human-readable description of the print job's current processing state. Read-only.
+// GetDescription gets the description property value. A human-readable description of the print job's current processing state. Read-only.
 func (m *PrintJobStatus) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *PrintJobStatus) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the details property value. Additional details for print job state. Valid values are described in the following table. Read-only.
+// GetDetails gets the details property value. Additional details for print job state. Valid values are described in the following table. Read-only.
 func (m *PrintJobStatus) GetDetails()([]PrintJobStateDetail) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *PrintJobStatus) GetDetails()([]PrintJobStateDetail) {
         return m.details
     }
 }
-// Gets the isAcquiredByPrinter property value. True if the job was acknowledged by a printer; false otherwise. Read-only.
+// GetIsAcquiredByPrinter gets the isAcquiredByPrinter property value. True if the job was acknowledged by a printer; false otherwise. Read-only.
 func (m *PrintJobStatus) GetIsAcquiredByPrinter()(*bool) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *PrintJobStatus) GetIsAcquiredByPrinter()(*bool) {
         return m.isAcquiredByPrinter
     }
 }
-// Gets the state property value. The print job's current processing state. Valid values are described in the following table. Read-only.
+// GetState gets the state property value. The print job's current processing state. Valid values are described in the following table. Read-only.
 func (m *PrintJobStatus) GetState()(*PrintJobProcessingState) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *PrintJobStatus) GetState()(*PrintJobProcessingState) {
         return m.state
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -117,9 +117,7 @@ func (m *PrintJobStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *PrintJobStatus) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PrintJobStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("description", m.GetDescription())
@@ -154,33 +152,23 @@ func (m *PrintJobStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintJobStatus) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the description property value. A human-readable description of the print job's current processing state. Read-only.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. A human-readable description of the print job's current processing state. Read-only.
 func (m *PrintJobStatus) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the details property value. Additional details for print job state. Valid values are described in the following table. Read-only.
-// Parameters:
-//  - value : Value to set for the details property.
+// SetDetails sets the details property value. Additional details for print job state. Valid values are described in the following table. Read-only.
 func (m *PrintJobStatus) SetDetails(value []PrintJobStateDetail)() {
     m.details = value
 }
-// Sets the isAcquiredByPrinter property value. True if the job was acknowledged by a printer; false otherwise. Read-only.
-// Parameters:
-//  - value : Value to set for the isAcquiredByPrinter property.
+// SetIsAcquiredByPrinter sets the isAcquiredByPrinter property value. True if the job was acknowledged by a printer; false otherwise. Read-only.
 func (m *PrintJobStatus) SetIsAcquiredByPrinter(value *bool)() {
     m.isAcquiredByPrinter = value
 }
-// Sets the state property value. The print job's current processing state. Valid values are described in the following table. Read-only.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. The print job's current processing state. Valid values are described in the following table. Read-only.
 func (m *PrintJobStatus) SetState(value *PrintJobProcessingState)() {
     m.state = value
 }

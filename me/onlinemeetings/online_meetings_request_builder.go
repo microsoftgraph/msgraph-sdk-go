@@ -7,7 +7,7 @@ import (
     ia7e77ca78c49018f1244c5492251f21b175af387522a2329993d957d1e9082c7 "github.com/microsoftgraph/msgraph-sdk-go/me/onlinemeetings/createorget"
 )
 
-// Builds and executes requests for operations under \me\onlineMeetings
+// OnlineMeetingsRequestBuilder builds and executes requests for operations under \me\onlineMeetings
 type OnlineMeetingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type OnlineMeetingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// OnlineMeetingsRequestBuilderGetOptions options for Get
 type OnlineMeetingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type OnlineMeetingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get onlineMeetings from me
+// OnlineMeetingsRequestBuilderGetQueryParameters get onlineMeetings from me
 type OnlineMeetingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type OnlineMeetingsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// OnlineMeetingsRequestBuilderPostOptions options for Post
 type OnlineMeetingsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnlineMeeting;
@@ -57,10 +57,7 @@ type OnlineMeetingsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new OnlineMeetingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnlineMeetingsRequestBuilderInternal instantiates a new OnlineMeetingsRequestBuilder and sets the default values.
 func NewOnlineMeetingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnlineMeetingsRequestBuilder) {
     m := &OnlineMeetingsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewOnlineMeetingsRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OnlineMeetingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOnlineMeetingsRequestBuilder instantiates a new OnlineMeetingsRequestBuilder and sets the default values.
 func NewOnlineMeetingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OnlineMeetingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get onlineMeetings from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get onlineMeetings from me
 func (m *OnlineMeetingsRequestBuilder) CreateGetRequestInformation(options *OnlineMeetingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -107,9 +99,7 @@ func (m *OnlineMeetingsRequestBuilder) CreateGetRequestInformation(options *Onli
 func (m *OnlineMeetingsRequestBuilder) CreateOrGet()(*ia7e77ca78c49018f1244c5492251f21b175af387522a2329993d957d1e9082c7.CreateOrGetRequestBuilder) {
     return ia7e77ca78c49018f1244c5492251f21b175af387522a2329993d957d1e9082c7.NewCreateOrGetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Create new navigation property to onlineMeetings for me
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to onlineMeetings for me
 func (m *OnlineMeetingsRequestBuilder) CreatePostRequestInformation(options *OnlineMeetingsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,9 +117,7 @@ func (m *OnlineMeetingsRequestBuilder) CreatePostRequestInformation(options *Onl
     }
     return requestInfo, nil
 }
-// Get onlineMeetings from me
-// Parameters:
-//  - options : Options for the request
+// Get get onlineMeetings from me
 func (m *OnlineMeetingsRequestBuilder) Get(options *OnlineMeetingsRequestBuilderGetOptions)(*OnlineMeetingsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *OnlineMeetingsRequestBuilder) Get(options *OnlineMeetingsRequestBuilder
     }
     return res.(*OnlineMeetingsResponse), nil
 }
-// Create new navigation property to onlineMeetings for me
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to onlineMeetings for me
 func (m *OnlineMeetingsRequestBuilder) Post(options *OnlineMeetingsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnlineMeeting, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

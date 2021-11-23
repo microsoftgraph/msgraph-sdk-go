@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \chats\{chat-id}\members\{conversationMember-id}
+// ConversationMemberRequestBuilder builds and executes requests for operations under \chats\{chat-id}\members\{conversationMember-id}
 type ConversationMemberRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ConversationMemberRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ConversationMemberRequestBuilderDeleteOptions options for Delete
 type ConversationMemberRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ConversationMemberRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ConversationMemberRequestBuilderGetOptions options for Get
 type ConversationMemberRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ConversationMemberRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of all the members in the chat. Nullable.
+// ConversationMemberRequestBuilderGetQueryParameters a collection of all the members in the chat. Nullable.
 type ConversationMemberRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ConversationMemberRequestBuilderPatchOptions options for Patch
 type ConversationMemberRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConversationMember;
@@ -53,10 +53,7 @@ type ConversationMemberRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ConversationMemberRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConversationMemberRequestBuilderInternal instantiates a new ConversationMemberRequestBuilder and sets the default values.
 func NewConversationMemberRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConversationMemberRequestBuilder) {
     m := &ConversationMemberRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewConversationMemberRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ConversationMemberRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewConversationMemberRequestBuilder instantiates a new ConversationMemberRequestBuilder and sets the default values.
 func NewConversationMemberRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ConversationMemberRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConversationMemberRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of all the members in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a collection of all the members in the chat. Nullable.
 func (m *ConversationMemberRequestBuilder) CreateDeleteRequestInformation(options *ConversationMemberRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ConversationMemberRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// A collection of all the members in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of all the members in the chat. Nullable.
 func (m *ConversationMemberRequestBuilder) CreateGetRequestInformation(options *ConversationMemberRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ConversationMemberRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// A collection of all the members in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a collection of all the members in the chat. Nullable.
 func (m *ConversationMemberRequestBuilder) CreatePatchRequestInformation(options *ConversationMemberRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ConversationMemberRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// A collection of all the members in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete a collection of all the members in the chat. Nullable.
 func (m *ConversationMemberRequestBuilder) Delete(options *ConversationMemberRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ConversationMemberRequestBuilder) Delete(options *ConversationMemberReq
     }
     return nil
 }
-// A collection of all the members in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of all the members in the chat. Nullable.
 func (m *ConversationMemberRequestBuilder) Get(options *ConversationMemberRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConversationMember, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ConversationMemberRequestBuilder) Get(options *ConversationMemberReques
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConversationMember), nil
 }
-// A collection of all the members in the chat. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch a collection of all the members in the chat. Nullable.
 func (m *ConversationMemberRequestBuilder) Patch(options *ConversationMemberRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

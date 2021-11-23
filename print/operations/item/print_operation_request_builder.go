@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \print\operations\{printOperation-id}
+// PrintOperationRequestBuilder builds and executes requests for operations under \print\operations\{printOperation-id}
 type PrintOperationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PrintOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrintOperationRequestBuilderDeleteOptions options for Delete
 type PrintOperationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PrintOperationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrintOperationRequestBuilderGetOptions options for Get
 type PrintOperationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PrintOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of print long running operations.
+// PrintOperationRequestBuilderGetQueryParameters the list of print long running operations.
 type PrintOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrintOperationRequestBuilderPatchOptions options for Patch
 type PrintOperationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintOperation;
@@ -53,10 +53,7 @@ type PrintOperationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrintOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintOperationRequestBuilderInternal instantiates a new PrintOperationRequestBuilder and sets the default values.
 func NewPrintOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintOperationRequestBuilder) {
     m := &PrintOperationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPrintOperationRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrintOperationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintOperationRequestBuilder instantiates a new PrintOperationRequestBuilder and sets the default values.
 func NewPrintOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrintOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of print long running operations.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of print long running operations.
 func (m *PrintOperationRequestBuilder) CreateDeleteRequestInformation(options *PrintOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PrintOperationRequestBuilder) CreateDeleteRequestInformation(options *P
     }
     return requestInfo, nil
 }
-// The list of print long running operations.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of print long running operations.
 func (m *PrintOperationRequestBuilder) CreateGetRequestInformation(options *PrintOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PrintOperationRequestBuilder) CreateGetRequestInformation(options *Prin
     }
     return requestInfo, nil
 }
-// The list of print long running operations.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of print long running operations.
 func (m *PrintOperationRequestBuilder) CreatePatchRequestInformation(options *PrintOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PrintOperationRequestBuilder) CreatePatchRequestInformation(options *Pr
     }
     return requestInfo, nil
 }
-// The list of print long running operations.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of print long running operations.
 func (m *PrintOperationRequestBuilder) Delete(options *PrintOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PrintOperationRequestBuilder) Delete(options *PrintOperationRequestBuil
     }
     return nil
 }
-// The list of print long running operations.
-// Parameters:
-//  - options : Options for the request
+// Get the list of print long running operations.
 func (m *PrintOperationRequestBuilder) Get(options *PrintOperationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PrintOperationRequestBuilder) Get(options *PrintOperationRequestBuilder
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintOperation), nil
 }
-// The list of print long running operations.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of print long running operations.
 func (m *PrintOperationRequestBuilder) Patch(options *PrintOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

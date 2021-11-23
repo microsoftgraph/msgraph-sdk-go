@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.markUnread
+// MarkUnreadRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.markUnread
 type MarkUnreadRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type MarkUnreadRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// MarkUnreadRequestBuilderPostOptions options for Post
 type MarkUnreadRequestBuilderPostOptions struct {
     // 
     Body *MarkUnreadRequestBody;
@@ -24,10 +24,7 @@ type MarkUnreadRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MarkUnreadRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMarkUnreadRequestBuilderInternal instantiates a new MarkUnreadRequestBuilder and sets the default values.
 func NewMarkUnreadRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MarkUnreadRequestBuilder) {
     m := &MarkUnreadRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewMarkUnreadRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MarkUnreadRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMarkUnreadRequestBuilder instantiates a new MarkUnreadRequestBuilder and sets the default values.
 func NewMarkUnreadRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MarkUnreadRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMarkUnreadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action markUnread
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action markUnread
 func (m *MarkUnreadRequestBuilder) CreatePostRequestInformation(options *MarkUnreadRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *MarkUnreadRequestBuilder) CreatePostRequestInformation(options *MarkUnr
     }
     return requestInfo, nil
 }
-// Invoke action markUnread
-// Parameters:
-//  - options : Options for the request
+// Post invoke action markUnread
 func (m *MarkUnreadRequestBuilder) Post(options *MarkUnreadRequestBuilderPostOptions)(*bool, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

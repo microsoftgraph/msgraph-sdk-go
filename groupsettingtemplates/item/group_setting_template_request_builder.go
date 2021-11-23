@@ -11,7 +11,7 @@ import (
     if0de78395fe1dccb1dbdb7b7fe16ca5dd70edd86fe4f481d0b82bca471e231f0 "github.com/microsoftgraph/msgraph-sdk-go/groupsettingtemplates/item/restore"
 )
 
-// Builds and executes requests for operations under \groupSettingTemplates\{groupSettingTemplate-id}
+// GroupSettingTemplateRequestBuilder builds and executes requests for operations under \groupSettingTemplates\{groupSettingTemplate-id}
 type GroupSettingTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -20,7 +20,7 @@ type GroupSettingTemplateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupSettingTemplateRequestBuilderDeleteOptions options for Delete
 type GroupSettingTemplateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type GroupSettingTemplateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupSettingTemplateRequestBuilderGetOptions options for Get
 type GroupSettingTemplateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,14 +40,14 @@ type GroupSettingTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from groupSettingTemplates by key
+// GroupSettingTemplateRequestBuilderGetQueryParameters get entity from groupSettingTemplates by key
 type GroupSettingTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupSettingTemplateRequestBuilderPatchOptions options for Patch
 type GroupSettingTemplateRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupSettingTemplate;
@@ -64,10 +64,7 @@ func (m *GroupSettingTemplateRequestBuilder) CheckMemberGroups()(*ic9284ba20a018
 func (m *GroupSettingTemplateRequestBuilder) CheckMemberObjects()(*i535340b77c27094ee236bb42cd6d6ecb0741e1f8ed70e47b43e92472c1f9535c.CheckMemberObjectsRequestBuilder) {
     return i535340b77c27094ee236bb42cd6d6ecb0741e1f8ed70e47b43e92472c1f9535c.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new GroupSettingTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupSettingTemplateRequestBuilderInternal instantiates a new GroupSettingTemplateRequestBuilder and sets the default values.
 func NewGroupSettingTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupSettingTemplateRequestBuilder) {
     m := &GroupSettingTemplateRequestBuilder{
     }
@@ -80,18 +77,13 @@ func NewGroupSettingTemplateRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupSettingTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupSettingTemplateRequestBuilder instantiates a new GroupSettingTemplateRequestBuilder and sets the default values.
 func NewGroupSettingTemplateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupSettingTemplateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupSettingTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from groupSettingTemplates
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from groupSettingTemplates
 func (m *GroupSettingTemplateRequestBuilder) CreateDeleteRequestInformation(options *GroupSettingTemplateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,9 +100,7 @@ func (m *GroupSettingTemplateRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get entity from groupSettingTemplates by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from groupSettingTemplates by key
 func (m *GroupSettingTemplateRequestBuilder) CreateGetRequestInformation(options *GroupSettingTemplateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,9 +120,7 @@ func (m *GroupSettingTemplateRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update entity in groupSettingTemplates
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in groupSettingTemplates
 func (m *GroupSettingTemplateRequestBuilder) CreatePatchRequestInformation(options *GroupSettingTemplateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,9 +138,7 @@ func (m *GroupSettingTemplateRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete entity from groupSettingTemplates
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from groupSettingTemplates
 func (m *GroupSettingTemplateRequestBuilder) Delete(options *GroupSettingTemplateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -164,9 +150,7 @@ func (m *GroupSettingTemplateRequestBuilder) Delete(options *GroupSettingTemplat
     }
     return nil
 }
-// Get entity from groupSettingTemplates by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from groupSettingTemplates by key
 func (m *GroupSettingTemplateRequestBuilder) Get(options *GroupSettingTemplateRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupSettingTemplate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -184,9 +168,7 @@ func (m *GroupSettingTemplateRequestBuilder) GetMemberGroups()(*id343ec0d598ad13
 func (m *GroupSettingTemplateRequestBuilder) GetMemberObjects()(*ib24705b5e21850aefb572da669580b25cff74a7513ba53674efeff14fe51e5cb.GetMemberObjectsRequestBuilder) {
     return ib24705b5e21850aefb572da669580b25cff74a7513ba53674efeff14fe51e5cb.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in groupSettingTemplates
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in groupSettingTemplates
 func (m *GroupSettingTemplateRequestBuilder) Patch(options *GroupSettingTemplateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

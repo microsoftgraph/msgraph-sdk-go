@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\telecomExpenseManagementPartners\{telecomExpenseManagementPartner-id}
+// TelecomExpenseManagementPartnerRequestBuilder builds and executes requests for operations under \deviceManagement\telecomExpenseManagementPartners\{telecomExpenseManagementPartner-id}
 type TelecomExpenseManagementPartnerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TelecomExpenseManagementPartnerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TelecomExpenseManagementPartnerRequestBuilderDeleteOptions options for Delete
 type TelecomExpenseManagementPartnerRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TelecomExpenseManagementPartnerRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TelecomExpenseManagementPartnerRequestBuilderGetOptions options for Get
 type TelecomExpenseManagementPartnerRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type TelecomExpenseManagementPartnerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The telecom expense management partners.
+// TelecomExpenseManagementPartnerRequestBuilderGetQueryParameters the telecom expense management partners.
 type TelecomExpenseManagementPartnerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TelecomExpenseManagementPartnerRequestBuilderPatchOptions options for Patch
 type TelecomExpenseManagementPartnerRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TelecomExpenseManagementPartner;
@@ -53,10 +53,7 @@ type TelecomExpenseManagementPartnerRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TelecomExpenseManagementPartnerRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTelecomExpenseManagementPartnerRequestBuilderInternal instantiates a new TelecomExpenseManagementPartnerRequestBuilder and sets the default values.
 func NewTelecomExpenseManagementPartnerRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TelecomExpenseManagementPartnerRequestBuilder) {
     m := &TelecomExpenseManagementPartnerRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewTelecomExpenseManagementPartnerRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TelecomExpenseManagementPartnerRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTelecomExpenseManagementPartnerRequestBuilder instantiates a new TelecomExpenseManagementPartnerRequestBuilder and sets the default values.
 func NewTelecomExpenseManagementPartnerRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TelecomExpenseManagementPartnerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTelecomExpenseManagementPartnerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The telecom expense management partners.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the telecom expense management partners.
 func (m *TelecomExpenseManagementPartnerRequestBuilder) CreateDeleteRequestInformation(options *TelecomExpenseManagementPartnerRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *TelecomExpenseManagementPartnerRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// The telecom expense management partners.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the telecom expense management partners.
 func (m *TelecomExpenseManagementPartnerRequestBuilder) CreateGetRequestInformation(options *TelecomExpenseManagementPartnerRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *TelecomExpenseManagementPartnerRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// The telecom expense management partners.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the telecom expense management partners.
 func (m *TelecomExpenseManagementPartnerRequestBuilder) CreatePatchRequestInformation(options *TelecomExpenseManagementPartnerRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *TelecomExpenseManagementPartnerRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// The telecom expense management partners.
-// Parameters:
-//  - options : Options for the request
+// Delete the telecom expense management partners.
 func (m *TelecomExpenseManagementPartnerRequestBuilder) Delete(options *TelecomExpenseManagementPartnerRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *TelecomExpenseManagementPartnerRequestBuilder) Delete(options *TelecomE
     }
     return nil
 }
-// The telecom expense management partners.
-// Parameters:
-//  - options : Options for the request
+// Get the telecom expense management partners.
 func (m *TelecomExpenseManagementPartnerRequestBuilder) Get(options *TelecomExpenseManagementPartnerRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TelecomExpenseManagementPartner, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *TelecomExpenseManagementPartnerRequestBuilder) Get(options *TelecomExpe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TelecomExpenseManagementPartner), nil
 }
-// The telecom expense management partners.
-// Parameters:
-//  - options : Options for the request
+// Patch the telecom expense management partners.
 func (m *TelecomExpenseManagementPartnerRequestBuilder) Patch(options *TelecomExpenseManagementPartnerRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\groupLifecyclePolicies\{groupLifecyclePolicy-id}
+// GroupLifecyclePolicyRequestBuilder builds and executes requests for operations under \groups\{group-id}\groupLifecyclePolicies\{groupLifecyclePolicy-id}
 type GroupLifecyclePolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GroupLifecyclePolicyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupLifecyclePolicyRequestBuilderDeleteOptions options for Delete
 type GroupLifecyclePolicyRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type GroupLifecyclePolicyRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupLifecyclePolicyRequestBuilderGetOptions options for Get
 type GroupLifecyclePolicyRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type GroupLifecyclePolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of lifecycle policies for this group. Read-only. Nullable.
+// GroupLifecyclePolicyRequestBuilderGetQueryParameters the collection of lifecycle policies for this group. Read-only. Nullable.
 type GroupLifecyclePolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupLifecyclePolicyRequestBuilderPatchOptions options for Patch
 type GroupLifecyclePolicyRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupLifecyclePolicy;
@@ -53,10 +53,7 @@ type GroupLifecyclePolicyRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupLifecyclePolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupLifecyclePolicyRequestBuilderInternal instantiates a new GroupLifecyclePolicyRequestBuilder and sets the default values.
 func NewGroupLifecyclePolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupLifecyclePolicyRequestBuilder) {
     m := &GroupLifecyclePolicyRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewGroupLifecyclePolicyRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupLifecyclePolicyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupLifecyclePolicyRequestBuilder instantiates a new GroupLifecyclePolicyRequestBuilder and sets the default values.
 func NewGroupLifecyclePolicyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupLifecyclePolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupLifecyclePolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of lifecycle policies for this group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of lifecycle policies for this group. Read-only. Nullable.
 func (m *GroupLifecyclePolicyRequestBuilder) CreateDeleteRequestInformation(options *GroupLifecyclePolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *GroupLifecyclePolicyRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The collection of lifecycle policies for this group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of lifecycle policies for this group. Read-only. Nullable.
 func (m *GroupLifecyclePolicyRequestBuilder) CreateGetRequestInformation(options *GroupLifecyclePolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *GroupLifecyclePolicyRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// The collection of lifecycle policies for this group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of lifecycle policies for this group. Read-only. Nullable.
 func (m *GroupLifecyclePolicyRequestBuilder) CreatePatchRequestInformation(options *GroupLifecyclePolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *GroupLifecyclePolicyRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The collection of lifecycle policies for this group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of lifecycle policies for this group. Read-only. Nullable.
 func (m *GroupLifecyclePolicyRequestBuilder) Delete(options *GroupLifecyclePolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *GroupLifecyclePolicyRequestBuilder) Delete(options *GroupLifecyclePolic
     }
     return nil
 }
-// The collection of lifecycle policies for this group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of lifecycle policies for this group. Read-only. Nullable.
 func (m *GroupLifecyclePolicyRequestBuilder) Get(options *GroupLifecyclePolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupLifecyclePolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *GroupLifecyclePolicyRequestBuilder) Get(options *GroupLifecyclePolicyRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupLifecyclePolicy), nil
 }
-// The collection of lifecycle policies for this group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of lifecycle policies for this group. Read-only. Nullable.
 func (m *GroupLifecyclePolicyRequestBuilder) Patch(options *GroupLifecyclePolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

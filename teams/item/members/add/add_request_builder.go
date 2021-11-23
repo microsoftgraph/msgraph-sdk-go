@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\members\microsoft.graph.add
+// AddRequestBuilder builds and executes requests for operations under \teams\{team-id}\members\microsoft.graph.add
 type AddRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type AddRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// AddRequestBuilderPostOptions options for Post
 type AddRequestBuilderPostOptions struct {
     // 
     Body *AddRequestBody;
@@ -25,10 +25,7 @@ type AddRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AddRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddRequestBuilderInternal instantiates a new AddRequestBuilder and sets the default values.
 func NewAddRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddRequestBuilder) {
     m := &AddRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewAddRequestBuilderInternal(pathParameters map[string]string, requestAdapt
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AddRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddRequestBuilder instantiates a new AddRequestBuilder and sets the default values.
 func NewAddRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action add
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action add
 func (m *AddRequestBuilder) CreatePostRequestInformation(options *AddRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *AddRequestBuilder) CreatePostRequestInformation(options *AddRequestBuil
     }
     return requestInfo, nil
 }
-// Invoke action add
-// Parameters:
-//  - options : Options for the request
+// Post invoke action add
 func (m *AddRequestBuilder) Post(options *AddRequestBuilderPostOptions)([]Add, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

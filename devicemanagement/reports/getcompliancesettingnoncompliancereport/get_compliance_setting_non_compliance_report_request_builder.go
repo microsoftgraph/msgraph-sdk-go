@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getComplianceSettingNonComplianceReport
+// GetComplianceSettingNonComplianceReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getComplianceSettingNonComplianceReport
 type GetComplianceSettingNonComplianceReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetComplianceSettingNonComplianceReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetComplianceSettingNonComplianceReportRequestBuilderPostOptions options for Post
 type GetComplianceSettingNonComplianceReportRequestBuilderPostOptions struct {
     // 
     Body *GetComplianceSettingNonComplianceReportRequestBody;
@@ -24,10 +24,7 @@ type GetComplianceSettingNonComplianceReportRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetComplianceSettingNonComplianceReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetComplianceSettingNonComplianceReportRequestBuilderInternal instantiates a new GetComplianceSettingNonComplianceReportRequestBuilder and sets the default values.
 func NewGetComplianceSettingNonComplianceReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetComplianceSettingNonComplianceReportRequestBuilder) {
     m := &GetComplianceSettingNonComplianceReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetComplianceSettingNonComplianceReportRequestBuilderInternal(pathParame
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetComplianceSettingNonComplianceReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetComplianceSettingNonComplianceReportRequestBuilder instantiates a new GetComplianceSettingNonComplianceReportRequestBuilder and sets the default values.
 func NewGetComplianceSettingNonComplianceReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetComplianceSettingNonComplianceReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetComplianceSettingNonComplianceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getComplianceSettingNonComplianceReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getComplianceSettingNonComplianceReport
 func (m *GetComplianceSettingNonComplianceReportRequestBuilder) CreatePostRequestInformation(options *GetComplianceSettingNonComplianceReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetComplianceSettingNonComplianceReportRequestBuilder) CreatePostReques
     }
     return requestInfo, nil
 }
-// Invoke action getComplianceSettingNonComplianceReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getComplianceSettingNonComplianceReport
 func (m *GetComplianceSettingNonComplianceReportRequestBuilder) Post(options *GetComplianceSettingNonComplianceReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

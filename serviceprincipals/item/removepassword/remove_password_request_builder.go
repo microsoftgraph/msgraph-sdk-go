@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.removePassword
+// RemovePasswordRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\microsoft.graph.removePassword
 type RemovePasswordRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RemovePasswordRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RemovePasswordRequestBuilderPostOptions options for Post
 type RemovePasswordRequestBuilderPostOptions struct {
     // 
     Body *RemovePasswordRequestBody;
@@ -24,10 +24,7 @@ type RemovePasswordRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RemovePasswordRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemovePasswordRequestBuilderInternal instantiates a new RemovePasswordRequestBuilder and sets the default values.
 func NewRemovePasswordRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemovePasswordRequestBuilder) {
     m := &RemovePasswordRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewRemovePasswordRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RemovePasswordRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemovePasswordRequestBuilder instantiates a new RemovePasswordRequestBuilder and sets the default values.
 func NewRemovePasswordRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemovePasswordRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRemovePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action removePassword
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action removePassword
 func (m *RemovePasswordRequestBuilder) CreatePostRequestInformation(options *RemovePasswordRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *RemovePasswordRequestBuilder) CreatePostRequestInformation(options *Rem
     }
     return requestInfo, nil
 }
-// Invoke action removePassword
-// Parameters:
-//  - options : Options for the request
+// Post invoke action removePassword
 func (m *RemovePasswordRequestBuilder) Post(options *RemovePasswordRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

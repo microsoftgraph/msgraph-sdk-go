@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// IspmtRequestBody 
 type IspmtRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,14 +18,14 @@ type IspmtRequestBody struct {
     // 
     rate *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
-// Instantiates a new ispmtRequestBody and sets the default values.
+// NewIspmtRequestBody instantiates a new ispmtRequestBody and sets the default values.
 func NewIspmtRequestBody()(*IspmtRequestBody) {
     m := &IspmtRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IspmtRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *IspmtRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the nper property value. 
+// GetNper gets the nper property value. 
 func (m *IspmtRequestBody) GetNper()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *IspmtRequestBody) GetNper()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.nper
     }
 }
-// Gets the per property value. 
+// GetPer gets the per property value. 
 func (m *IspmtRequestBody) GetPer()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *IspmtRequestBody) GetPer()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c
         return m.per
     }
 }
-// Gets the pv property value. 
+// GetPv gets the pv property value. 
 func (m *IspmtRequestBody) GetPv()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *IspmtRequestBody) GetPv()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1
         return m.pv
     }
 }
-// Gets the rate property value. 
+// GetRate gets the rate property value. 
 func (m *IspmtRequestBody) GetRate()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *IspmtRequestBody) GetRate()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.rate
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *IspmtRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["nper"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,9 +113,7 @@ func (m *IspmtRequestBody) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *IspmtRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *IspmtRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("nper", m.GetNper())
@@ -149,33 +147,23 @@ func (m *IspmtRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IspmtRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the nper property value. 
-// Parameters:
-//  - value : Value to set for the nper property.
+// SetNper sets the nper property value. 
 func (m *IspmtRequestBody) SetNper(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.nper = value
 }
-// Sets the per property value. 
-// Parameters:
-//  - value : Value to set for the per property.
+// SetPer sets the per property value. 
 func (m *IspmtRequestBody) SetPer(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.per = value
 }
-// Sets the pv property value. 
-// Parameters:
-//  - value : Value to set for the pv property.
+// SetPv sets the pv property value. 
 func (m *IspmtRequestBody) SetPv(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.pv = value
 }
-// Sets the rate property value. 
-// Parameters:
-//  - value : Value to set for the rate property.
+// SetRate sets the rate property value. 
 func (m *IspmtRequestBody) SetRate(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.rate = value
 }

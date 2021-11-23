@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.disableLostMode
+// DisableLostModeRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.disableLostMode
 type DisableLostModeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type DisableLostModeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// DisableLostModeRequestBuilderPostOptions options for Post
 type DisableLostModeRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type DisableLostModeRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DisableLostModeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDisableLostModeRequestBuilderInternal instantiates a new DisableLostModeRequestBuilder and sets the default values.
 func NewDisableLostModeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DisableLostModeRequestBuilder) {
     m := &DisableLostModeRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewDisableLostModeRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DisableLostModeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDisableLostModeRequestBuilder instantiates a new DisableLostModeRequestBuilder and sets the default values.
 func NewDisableLostModeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DisableLostModeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDisableLostModeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Disable lost mode
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation disable lost mode
 func (m *DisableLostModeRequestBuilder) CreatePostRequestInformation(options *DisableLostModeRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *DisableLostModeRequestBuilder) CreatePostRequestInformation(options *Di
     }
     return requestInfo, nil
 }
-// Disable lost mode
-// Parameters:
-//  - options : Options for the request
+// Post disable lost mode
 func (m *DisableLostModeRequestBuilder) Post(options *DisableLostModeRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

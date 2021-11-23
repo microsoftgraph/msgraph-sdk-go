@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RgbColor 
 type RgbColor struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type RgbColor struct {
     // Red value
     r *int32;
 }
-// Instantiates a new rgbColor and sets the default values.
+// NewRgbColor instantiates a new rgbColor and sets the default values.
 func NewRgbColor()(*RgbColor) {
     m := &RgbColor{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RgbColor) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *RgbColor) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the b property value. Blue value
+// GetB gets the b property value. Blue value
 func (m *RgbColor) GetB()(*int32) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *RgbColor) GetB()(*int32) {
         return m.b
     }
 }
-// Gets the g property value. Green value
+// GetG gets the g property value. Green value
 func (m *RgbColor) GetG()(*int32) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *RgbColor) GetG()(*int32) {
         return m.g
     }
 }
-// Gets the r property value. Red value
+// GetR gets the r property value. Red value
 func (m *RgbColor) GetR()(*int32) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *RgbColor) GetR()(*int32) {
         return m.r
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RgbColor) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["b"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *RgbColor) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *RgbColor) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RgbColor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("b", m.GetB())
@@ -122,27 +120,19 @@ func (m *RgbColor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RgbColor) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the b property value. Blue value
-// Parameters:
-//  - value : Value to set for the b property.
+// SetB sets the b property value. Blue value
 func (m *RgbColor) SetB(value *int32)() {
     m.b = value
 }
-// Sets the g property value. Green value
-// Parameters:
-//  - value : Value to set for the g property.
+// SetG sets the g property value. Green value
 func (m *RgbColor) SetG(value *int32)() {
     m.g = value
 }
-// Sets the r property value. Red value
-// Parameters:
-//  - value : Value to set for the r property.
+// SetR sets the r property value. Red value
 func (m *RgbColor) SetR(value *int32)() {
     m.r = value
 }

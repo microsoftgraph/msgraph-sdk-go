@@ -7,7 +7,7 @@ import (
     i3f6d5c694cd80b4ad8d27d98c0ef08ec58ab8cb3b214a01c9af20da86422e742 "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/group/ref"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\group
+// GroupRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\group
 type GroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type GroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GroupRequestBuilderGetOptions options for Get
 type GroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type GroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The underlying Microsoft 365 group object.
+// GroupRequestBuilderGetQueryParameters the underlying Microsoft 365 group object.
 type GroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new GroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupRequestBuilderInternal instantiates a new GroupRequestBuilder and sets the default values.
 func NewGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupRequestBuilder) {
     m := &GroupRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewGroupRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupRequestBuilder instantiates a new GroupRequestBuilder and sets the default values.
 func NewGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The underlying Microsoft 365 group object.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the underlying Microsoft 365 group object.
 func (m *GroupRequestBuilder) CreateGetRequestInformation(options *GroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *GroupRequestBuilder) CreateGetRequestInformation(options *GroupRequestB
     }
     return requestInfo, nil
 }
-// The underlying Microsoft 365 group object.
-// Parameters:
-//  - options : Options for the request
+// Get the underlying Microsoft 365 group object.
 func (m *GroupRequestBuilder) Get(options *GroupRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Group, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

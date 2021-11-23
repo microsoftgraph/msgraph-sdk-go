@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \policies\featureRolloutPolicies
+// FeatureRolloutPoliciesRequestBuilder builds and executes requests for operations under \policies\featureRolloutPolicies
 type FeatureRolloutPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type FeatureRolloutPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// FeatureRolloutPoliciesRequestBuilderGetOptions options for Get
 type FeatureRolloutPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type FeatureRolloutPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The feature rollout policy associated with a directory object.
+// FeatureRolloutPoliciesRequestBuilderGetQueryParameters the feature rollout policy associated with a directory object.
 type FeatureRolloutPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type FeatureRolloutPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// FeatureRolloutPoliciesRequestBuilderPostOptions options for Post
 type FeatureRolloutPoliciesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FeatureRolloutPolicy;
@@ -56,10 +56,7 @@ type FeatureRolloutPoliciesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new FeatureRolloutPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFeatureRolloutPoliciesRequestBuilderInternal instantiates a new FeatureRolloutPoliciesRequestBuilder and sets the default values.
 func NewFeatureRolloutPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FeatureRolloutPoliciesRequestBuilder) {
     m := &FeatureRolloutPoliciesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewFeatureRolloutPoliciesRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FeatureRolloutPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFeatureRolloutPoliciesRequestBuilder instantiates a new FeatureRolloutPoliciesRequestBuilder and sets the default values.
 func NewFeatureRolloutPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FeatureRolloutPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFeatureRolloutPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The feature rollout policy associated with a directory object.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the feature rollout policy associated with a directory object.
 func (m *FeatureRolloutPoliciesRequestBuilder) CreateGetRequestInformation(options *FeatureRolloutPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *FeatureRolloutPoliciesRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// The feature rollout policy associated with a directory object.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the feature rollout policy associated with a directory object.
 func (m *FeatureRolloutPoliciesRequestBuilder) CreatePostRequestInformation(options *FeatureRolloutPoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *FeatureRolloutPoliciesRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// The feature rollout policy associated with a directory object.
-// Parameters:
-//  - options : Options for the request
+// Get the feature rollout policy associated with a directory object.
 func (m *FeatureRolloutPoliciesRequestBuilder) Get(options *FeatureRolloutPoliciesRequestBuilderGetOptions)(*FeatureRolloutPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *FeatureRolloutPoliciesRequestBuilder) Get(options *FeatureRolloutPolici
     }
     return res.(*FeatureRolloutPoliciesResponse), nil
 }
-// The feature rollout policy associated with a directory object.
-// Parameters:
-//  - options : Options for the request
+// Post the feature rollout policy associated with a directory object.
 func (m *FeatureRolloutPoliciesRequestBuilder) Post(options *FeatureRolloutPoliciesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FeatureRolloutPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

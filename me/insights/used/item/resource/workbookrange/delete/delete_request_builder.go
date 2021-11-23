@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRange\microsoft.graph.delete
+// DeleteRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRange\microsoft.graph.delete
 type DeleteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type DeleteRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// DeleteRequestBuilderPostOptions options for Post
 type DeleteRequestBuilderPostOptions struct {
     // 
     Body *DeleteRequestBody;
@@ -24,10 +24,7 @@ type DeleteRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeleteRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeleteRequestBuilderInternal instantiates a new DeleteRequestBuilder and sets the default values.
 func NewDeleteRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeleteRequestBuilder) {
     m := &DeleteRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewDeleteRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeleteRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeleteRequestBuilder instantiates a new DeleteRequestBuilder and sets the default values.
 func NewDeleteRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeleteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action delete
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action delete
 func (m *DeleteRequestBuilder) CreatePostRequestInformation(options *DeleteRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *DeleteRequestBuilder) CreatePostRequestInformation(options *DeleteReque
     }
     return requestInfo, nil
 }
-// Invoke action delete
-// Parameters:
-//  - options : Options for the request
+// Post invoke action delete
 func (m *DeleteRequestBuilder) Post(options *DeleteRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

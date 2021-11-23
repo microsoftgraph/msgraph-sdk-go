@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teamsTemplates
+// TeamsTemplatesRequestBuilder builds and executes requests for operations under \teamsTemplates
 type TeamsTemplatesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TeamsTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TeamsTemplatesRequestBuilderGetOptions options for Get
 type TeamsTemplatesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TeamsTemplatesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from teamsTemplates
+// TeamsTemplatesRequestBuilderGetQueryParameters get entities from teamsTemplates
 type TeamsTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TeamsTemplatesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TeamsTemplatesRequestBuilderPostOptions options for Post
 type TeamsTemplatesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsTemplate;
@@ -56,10 +56,7 @@ type TeamsTemplatesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TeamsTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsTemplatesRequestBuilderInternal instantiates a new TeamsTemplatesRequestBuilder and sets the default values.
 func NewTeamsTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsTemplatesRequestBuilder) {
     m := &TeamsTemplatesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTeamsTemplatesRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamsTemplatesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsTemplatesRequestBuilder instantiates a new TeamsTemplatesRequestBuilder and sets the default values.
 func NewTeamsTemplatesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsTemplatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from teamsTemplates
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from teamsTemplates
 func (m *TeamsTemplatesRequestBuilder) CreateGetRequestInformation(options *TeamsTemplatesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TeamsTemplatesRequestBuilder) CreateGetRequestInformation(options *Team
     }
     return requestInfo, nil
 }
-// Add new entity to teamsTemplates
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to teamsTemplates
 func (m *TeamsTemplatesRequestBuilder) CreatePostRequestInformation(options *TeamsTemplatesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TeamsTemplatesRequestBuilder) CreatePostRequestInformation(options *Tea
     }
     return requestInfo, nil
 }
-// Get entities from teamsTemplates
-// Parameters:
-//  - options : Options for the request
+// Get get entities from teamsTemplates
 func (m *TeamsTemplatesRequestBuilder) Get(options *TeamsTemplatesRequestBuilderGetOptions)(*TeamsTemplatesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TeamsTemplatesRequestBuilder) Get(options *TeamsTemplatesRequestBuilder
     }
     return res.(*TeamsTemplatesResponse), nil
 }
-// Add new entity to teamsTemplates
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to teamsTemplates
 func (m *TeamsTemplatesRequestBuilder) Post(options *TeamsTemplatesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsTemplate, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

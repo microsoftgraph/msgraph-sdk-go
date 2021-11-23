@@ -7,7 +7,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \applicationTemplates\{applicationTemplate-id}
+// ApplicationTemplateRequestBuilder builds and executes requests for operations under \applicationTemplates\{applicationTemplate-id}
 type ApplicationTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ApplicationTemplateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ApplicationTemplateRequestBuilderDeleteOptions options for Delete
 type ApplicationTemplateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type ApplicationTemplateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ApplicationTemplateRequestBuilderGetOptions options for Get
 type ApplicationTemplateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type ApplicationTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from applicationTemplates by key
+// ApplicationTemplateRequestBuilderGetQueryParameters get entity from applicationTemplates by key
 type ApplicationTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ApplicationTemplateRequestBuilderPatchOptions options for Patch
 type ApplicationTemplateRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationTemplate;
@@ -54,10 +54,7 @@ type ApplicationTemplateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApplicationTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplicationTemplateRequestBuilderInternal instantiates a new ApplicationTemplateRequestBuilder and sets the default values.
 func NewApplicationTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplicationTemplateRequestBuilder) {
     m := &ApplicationTemplateRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewApplicationTemplateRequestBuilderInternal(pathParameters map[string]stri
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApplicationTemplateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplicationTemplateRequestBuilder instantiates a new ApplicationTemplateRequestBuilder and sets the default values.
 func NewApplicationTemplateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplicationTemplateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from applicationTemplates
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from applicationTemplates
 func (m *ApplicationTemplateRequestBuilder) CreateDeleteRequestInformation(options *ApplicationTemplateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *ApplicationTemplateRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get entity from applicationTemplates by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from applicationTemplates by key
 func (m *ApplicationTemplateRequestBuilder) CreateGetRequestInformation(options *ApplicationTemplateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *ApplicationTemplateRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Update entity in applicationTemplates
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in applicationTemplates
 func (m *ApplicationTemplateRequestBuilder) CreatePatchRequestInformation(options *ApplicationTemplateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *ApplicationTemplateRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete entity from applicationTemplates
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from applicationTemplates
 func (m *ApplicationTemplateRequestBuilder) Delete(options *ApplicationTemplateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *ApplicationTemplateRequestBuilder) Delete(options *ApplicationTemplateR
     }
     return nil
 }
-// Get entity from applicationTemplates by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from applicationTemplates by key
 func (m *ApplicationTemplateRequestBuilder) Get(options *ApplicationTemplateRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplicationTemplate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *ApplicationTemplateRequestBuilder) Get(options *ApplicationTemplateRequ
 func (m *ApplicationTemplateRequestBuilder) Instantiate()(*i136461ffa9165f3471f6f3ee9d90583b6fc6e55fbeaabaf0122c150cc4fb8f8d.InstantiateRequestBuilder) {
     return i136461ffa9165f3471f6f3ee9d90583b6fc6e55fbeaabaf0122c150cc4fb8f8d.NewInstantiateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in applicationTemplates
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in applicationTemplates
 func (m *ApplicationTemplateRequestBuilder) Patch(options *ApplicationTemplateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

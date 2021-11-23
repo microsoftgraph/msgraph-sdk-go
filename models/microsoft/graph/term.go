@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Term 
 type Term struct {
     Entity
     // Children of current term.
@@ -25,14 +25,14 @@ type Term struct {
     // The [set] in which the term is created.
     set *Set;
 }
-// Instantiates a new term and sets the default values.
+// NewTerm instantiates a new term and sets the default values.
 func NewTerm()(*Term) {
     m := &Term{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the children property value. Children of current term.
+// GetChildren gets the children property value. Children of current term.
 func (m *Term) GetChildren()([]Term) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *Term) GetChildren()([]Term) {
         return m.children
     }
 }
-// Gets the createdDateTime property value. Date and time of term creation. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. Date and time of term creation. Read-only.
 func (m *Term) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *Term) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
         return m.createdDateTime
     }
 }
-// Gets the descriptions property value. Description about term that is dependent on the languageTag.
+// GetDescriptions gets the descriptions property value. Description about term that is dependent on the languageTag.
 func (m *Term) GetDescriptions()([]LocalizedDescription) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *Term) GetDescriptions()([]LocalizedDescription) {
         return m.descriptions
     }
 }
-// Gets the labels property value. Label metadata for a term.
+// GetLabels gets the labels property value. Label metadata for a term.
 func (m *Term) GetLabels()([]LocalizedLabel) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *Term) GetLabels()([]LocalizedLabel) {
         return m.labels
     }
 }
-// Gets the lastModifiedDateTime property value. Last date and time of term modification. Read-only.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last date and time of term modification. Read-only.
 func (m *Term) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *Term) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.lastModifiedDateTime
     }
 }
-// Gets the properties property value. Collection of properties on the term.
+// GetProperties gets the properties property value. Collection of properties on the term.
 func (m *Term) GetProperties()([]KeyValue) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *Term) GetProperties()([]KeyValue) {
         return m.properties
     }
 }
-// Gets the relations property value. To indicate which terms are related to the current term as either pinned or reused.
+// GetRelations gets the relations property value. To indicate which terms are related to the current term as either pinned or reused.
 func (m *Term) GetRelations()([]Relation) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *Term) GetRelations()([]Relation) {
         return m.relations
     }
 }
-// Gets the set property value. The [set] in which the term is created.
+// GetSet gets the set property value. The [set] in which the term is created.
 func (m *Term) GetSet()(*Set) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *Term) GetSet()(*Set) {
         return m.set
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["children"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -204,9 +204,7 @@ func (m *Term) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
 func (m *Term) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Term) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -287,51 +285,35 @@ func (m *Term) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     }
     return nil
 }
-// Sets the children property value. Children of current term.
-// Parameters:
-//  - value : Value to set for the children property.
+// SetChildren sets the children property value. Children of current term.
 func (m *Term) SetChildren(value []Term)() {
     m.children = value
 }
-// Sets the createdDateTime property value. Date and time of term creation. Read-only.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. Date and time of term creation. Read-only.
 func (m *Term) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the descriptions property value. Description about term that is dependent on the languageTag.
-// Parameters:
-//  - value : Value to set for the descriptions property.
+// SetDescriptions sets the descriptions property value. Description about term that is dependent on the languageTag.
 func (m *Term) SetDescriptions(value []LocalizedDescription)() {
     m.descriptions = value
 }
-// Sets the labels property value. Label metadata for a term.
-// Parameters:
-//  - value : Value to set for the labels property.
+// SetLabels sets the labels property value. Label metadata for a term.
 func (m *Term) SetLabels(value []LocalizedLabel)() {
     m.labels = value
 }
-// Sets the lastModifiedDateTime property value. Last date and time of term modification. Read-only.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last date and time of term modification. Read-only.
 func (m *Term) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the properties property value. Collection of properties on the term.
-// Parameters:
-//  - value : Value to set for the properties property.
+// SetProperties sets the properties property value. Collection of properties on the term.
 func (m *Term) SetProperties(value []KeyValue)() {
     m.properties = value
 }
-// Sets the relations property value. To indicate which terms are related to the current term as either pinned or reused.
-// Parameters:
-//  - value : Value to set for the relations property.
+// SetRelations sets the relations property value. To indicate which terms are related to the current term as either pinned or reused.
 func (m *Term) SetRelations(value []Relation)() {
     m.relations = value
 }
-// Sets the set property value. The [set] in which the term is created.
-// Parameters:
-//  - value : Value to set for the set property.
+// SetSet sets the set property value. The [set] in which the term is created.
 func (m *Term) SetSet(value *Set)() {
     m.set = value
 }

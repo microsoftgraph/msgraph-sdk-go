@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// InformationProtection 
 type InformationProtection struct {
     Entity
     // 
@@ -12,14 +12,14 @@ type InformationProtection struct {
     // 
     threatAssessmentRequests []ThreatAssessmentRequest;
 }
-// Instantiates a new informationProtection and sets the default values.
+// NewInformationProtection instantiates a new informationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
     m := &InformationProtection{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the bitlocker property value. 
+// GetBitlocker gets the bitlocker property value. 
 func (m *InformationProtection) GetBitlocker()(*Bitlocker) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *InformationProtection) GetBitlocker()(*Bitlocker) {
         return m.bitlocker
     }
 }
-// Gets the threatAssessmentRequests property value. 
+// GetThreatAssessmentRequests gets the threatAssessmentRequests property value. 
 func (m *InformationProtection) GetThreatAssessmentRequests()([]ThreatAssessmentRequest) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *InformationProtection) GetThreatAssessmentRequests()([]ThreatAssessment
         return m.threatAssessmentRequests
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["bitlocker"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -67,9 +67,7 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
 func (m *InformationProtection) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *InformationProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -94,15 +92,11 @@ func (m *InformationProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the bitlocker property value. 
-// Parameters:
-//  - value : Value to set for the bitlocker property.
+// SetBitlocker sets the bitlocker property value. 
 func (m *InformationProtection) SetBitlocker(value *Bitlocker)() {
     m.bitlocker = value
 }
-// Sets the threatAssessmentRequests property value. 
-// Parameters:
-//  - value : Value to set for the threatAssessmentRequests property.
+// SetThreatAssessmentRequests sets the threatAssessmentRequests property value. 
 func (m *InformationProtection) SetThreatAssessmentRequests(value []ThreatAssessmentRequest)() {
     m.threatAssessmentRequests = value
 }

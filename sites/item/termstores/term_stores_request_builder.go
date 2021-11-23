@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\termStores
+// TermStoresRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStores
 type TermStoresRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TermStoresRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TermStoresRequestBuilderGetOptions options for Get
 type TermStoresRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TermStoresRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of termStores under this site.
+// TermStoresRequestBuilderGetQueryParameters the collection of termStores under this site.
 type TermStoresRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TermStoresRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TermStoresRequestBuilderPostOptions options for Post
 type TermStoresRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Store;
@@ -56,10 +56,7 @@ type TermStoresRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TermStoresRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermStoresRequestBuilderInternal instantiates a new TermStoresRequestBuilder and sets the default values.
 func NewTermStoresRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermStoresRequestBuilder) {
     m := &TermStoresRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTermStoresRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TermStoresRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermStoresRequestBuilder instantiates a new TermStoresRequestBuilder and sets the default values.
 func NewTermStoresRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermStoresRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTermStoresRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of termStores under this site.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of termStores under this site.
 func (m *TermStoresRequestBuilder) CreateGetRequestInformation(options *TermStoresRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TermStoresRequestBuilder) CreateGetRequestInformation(options *TermStor
     }
     return requestInfo, nil
 }
-// The collection of termStores under this site.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the collection of termStores under this site.
 func (m *TermStoresRequestBuilder) CreatePostRequestInformation(options *TermStoresRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TermStoresRequestBuilder) CreatePostRequestInformation(options *TermSto
     }
     return requestInfo, nil
 }
-// The collection of termStores under this site.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of termStores under this site.
 func (m *TermStoresRequestBuilder) Get(options *TermStoresRequestBuilderGetOptions)(*TermStoresResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TermStoresRequestBuilder) Get(options *TermStoresRequestBuilderGetOptio
     }
     return res.(*TermStoresResponse), nil
 }
-// The collection of termStores under this site.
-// Parameters:
-//  - options : Options for the request
+// Post the collection of termStores under this site.
 func (m *TermStoresRequestBuilder) Post(options *TermStoresRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Store, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

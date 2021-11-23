@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ConditionalAccessApplications 
 type ConditionalAccessApplications struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type ConditionalAccessApplications struct {
     // User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
     includeUserActions []string;
 }
-// Instantiates a new conditionalAccessApplications and sets the default values.
+// NewConditionalAccessApplications instantiates a new conditionalAccessApplications and sets the default values.
 func NewConditionalAccessApplications()(*ConditionalAccessApplications) {
     m := &ConditionalAccessApplications{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessApplications) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *ConditionalAccessApplications) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// Gets the excludeApplications property value. The list of application IDs explicitly excluded from the policy.
+// GetExcludeApplications gets the excludeApplications property value. The list of application IDs explicitly excluded from the policy.
 func (m *ConditionalAccessApplications) GetExcludeApplications()([]string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *ConditionalAccessApplications) GetExcludeApplications()([]string) {
         return m.excludeApplications
     }
 }
-// Gets the includeApplications property value. The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
+// GetIncludeApplications gets the includeApplications property value. The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
 func (m *ConditionalAccessApplications) GetIncludeApplications()([]string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ConditionalAccessApplications) GetIncludeApplications()([]string) {
         return m.includeApplications
     }
 }
-// Gets the includeAuthenticationContextClassReferences property value. Authentication context class references include. Supported values are c1 through c25.
+// GetIncludeAuthenticationContextClassReferences gets the includeAuthenticationContextClassReferences property value. Authentication context class references include. Supported values are c1 through c25.
 func (m *ConditionalAccessApplications) GetIncludeAuthenticationContextClassReferences()([]string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ConditionalAccessApplications) GetIncludeAuthenticationContextClassRefe
         return m.includeAuthenticationContextClassReferences
     }
 }
-// Gets the includeUserActions property value. User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
+// GetIncludeUserActions gets the includeUserActions property value. User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
 func (m *ConditionalAccessApplications) GetIncludeUserActions()([]string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *ConditionalAccessApplications) GetIncludeUserActions()([]string) {
         return m.includeUserActions
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["excludeApplications"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -128,9 +128,7 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
 func (m *ConditionalAccessApplications) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ConditionalAccessApplications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteCollectionOfStringValues("excludeApplications", m.GetExcludeApplications())
@@ -164,33 +162,23 @@ func (m *ConditionalAccessApplications) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessApplications) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the excludeApplications property value. The list of application IDs explicitly excluded from the policy.
-// Parameters:
-//  - value : Value to set for the excludeApplications property.
+// SetExcludeApplications sets the excludeApplications property value. The list of application IDs explicitly excluded from the policy.
 func (m *ConditionalAccessApplications) SetExcludeApplications(value []string)() {
     m.excludeApplications = value
 }
-// Sets the includeApplications property value. The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
-// Parameters:
-//  - value : Value to set for the includeApplications property.
+// SetIncludeApplications sets the includeApplications property value. The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
 func (m *ConditionalAccessApplications) SetIncludeApplications(value []string)() {
     m.includeApplications = value
 }
-// Sets the includeAuthenticationContextClassReferences property value. Authentication context class references include. Supported values are c1 through c25.
-// Parameters:
-//  - value : Value to set for the includeAuthenticationContextClassReferences property.
+// SetIncludeAuthenticationContextClassReferences sets the includeAuthenticationContextClassReferences property value. Authentication context class references include. Supported values are c1 through c25.
 func (m *ConditionalAccessApplications) SetIncludeAuthenticationContextClassReferences(value []string)() {
     m.includeAuthenticationContextClassReferences = value
 }
-// Sets the includeUserActions property value. User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
-// Parameters:
-//  - value : Value to set for the includeUserActions property.
+// SetIncludeUserActions sets the includeUserActions property value. User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
 func (m *ConditionalAccessApplications) SetIncludeUserActions(value []string)() {
     m.includeUserActions = value
 }

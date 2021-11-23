@@ -8,7 +8,7 @@ import (
     ia012775db1c00bf654b1da3aac10c30abe613b0bdb7d4bf21219b6a1c4c3b957 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/printjob/abort"
 )
 
-// Builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.printJob
+// PrintJobRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.printJob
 type PrintJobRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -23,10 +23,7 @@ func (m *PrintJobRequestBuilder) Abort()(*ia012775db1c00bf654b1da3aac10c30abe613
 func (m *PrintJobRequestBuilder) Cancel()(*i867fe7d0c3b9b391fcd78f87acae7f35518ace42398c90ca3e8af6fe435830f6.CancelRequestBuilder) {
     return i867fe7d0c3b9b391fcd78f87acae7f35518ace42398c90ca3e8af6fe435830f6.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new PrintJobRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintJobRequestBuilderInternal instantiates a new PrintJobRequestBuilder and sets the default values.
 func NewPrintJobRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintJobRequestBuilder) {
     m := &PrintJobRequestBuilder{
     }
@@ -39,10 +36,7 @@ func NewPrintJobRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrintJobRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintJobRequestBuilder instantiates a new PrintJobRequestBuilder and sets the default values.
 func NewPrintJobRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintJobRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

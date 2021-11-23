@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicySettingStateSummaries
+// DeviceCompliancePolicySettingStateSummariesRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicySettingStateSummaries
 type DeviceCompliancePolicySettingStateSummariesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceCompliancePolicySettingStateSummariesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceCompliancePolicySettingStateSummariesRequestBuilderGetOptions options for Get
 type DeviceCompliancePolicySettingStateSummariesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceCompliancePolicySettingStateSummariesRequestBuilderGetOptions struct 
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The summary states of compliance policy settings for this account.
+// DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParameters the summary states of compliance policy settings for this account.
 type DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParameters
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceCompliancePolicySettingStateSummariesRequestBuilderPostOptions options for Post
 type DeviceCompliancePolicySettingStateSummariesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicySettingStateSummary;
@@ -56,10 +56,7 @@ type DeviceCompliancePolicySettingStateSummariesRequestBuilderPostOptions struct
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceCompliancePolicySettingStateSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal instantiates a new DeviceCompliancePolicySettingStateSummariesRequestBuilder and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCompliancePolicySettingStateSummariesRequestBuilder) {
     m := &DeviceCompliancePolicySettingStateSummariesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(pathPa
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceCompliancePolicySettingStateSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceCompliancePolicySettingStateSummariesRequestBuilder instantiates a new DeviceCompliancePolicySettingStateSummariesRequestBuilder and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummariesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceCompliancePolicySettingStateSummariesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCompliancePolicySettingStateSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The summary states of compliance policy settings for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the summary states of compliance policy settings for this account.
 func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreateGetRequestInformation(options *DeviceCompliancePolicySettingStateSummariesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// The summary states of compliance policy settings for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the summary states of compliance policy settings for this account.
 func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreatePostRequestInformation(options *DeviceCompliancePolicySettingStateSummariesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreatePostRe
     }
     return requestInfo, nil
 }
-// The summary states of compliance policy settings for this account.
-// Parameters:
-//  - options : Options for the request
+// Get the summary states of compliance policy settings for this account.
 func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) Get(options *DeviceCompliancePolicySettingStateSummariesRequestBuilderGetOptions)(*DeviceCompliancePolicySettingStateSummariesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) Get(options 
     }
     return res.(*DeviceCompliancePolicySettingStateSummariesResponse), nil
 }
-// The summary states of compliance policy settings for this account.
-// Parameters:
-//  - options : Options for the request
+// Post the summary states of compliance policy settings for this account.
 func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) Post(options *DeviceCompliancePolicySettingStateSummariesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceCompliancePolicySettingStateSummary, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

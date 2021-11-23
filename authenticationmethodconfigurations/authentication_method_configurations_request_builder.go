@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \authenticationMethodConfigurations
+// AuthenticationMethodConfigurationsRequestBuilder builds and executes requests for operations under \authenticationMethodConfigurations
 type AuthenticationMethodConfigurationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AuthenticationMethodConfigurationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AuthenticationMethodConfigurationsRequestBuilderGetOptions options for Get
 type AuthenticationMethodConfigurationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AuthenticationMethodConfigurationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from authenticationMethodConfigurations
+// AuthenticationMethodConfigurationsRequestBuilderGetQueryParameters get entities from authenticationMethodConfigurations
 type AuthenticationMethodConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AuthenticationMethodConfigurationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AuthenticationMethodConfigurationsRequestBuilderPostOptions options for Post
 type AuthenticationMethodConfigurationsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodConfiguration;
@@ -56,10 +56,7 @@ type AuthenticationMethodConfigurationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AuthenticationMethodConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthenticationMethodConfigurationsRequestBuilderInternal instantiates a new AuthenticationMethodConfigurationsRequestBuilder and sets the default values.
 func NewAuthenticationMethodConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationMethodConfigurationsRequestBuilder) {
     m := &AuthenticationMethodConfigurationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAuthenticationMethodConfigurationsRequestBuilderInternal(pathParameters 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AuthenticationMethodConfigurationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAuthenticationMethodConfigurationsRequestBuilder instantiates a new AuthenticationMethodConfigurationsRequestBuilder and sets the default values.
 func NewAuthenticationMethodConfigurationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationMethodConfigurationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationMethodConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from authenticationMethodConfigurations
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from authenticationMethodConfigurations
 func (m *AuthenticationMethodConfigurationsRequestBuilder) CreateGetRequestInformation(options *AuthenticationMethodConfigurationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// Add new entity to authenticationMethodConfigurations
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to authenticationMethodConfigurations
 func (m *AuthenticationMethodConfigurationsRequestBuilder) CreatePostRequestInformation(options *AuthenticationMethodConfigurationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) CreatePostRequestInfo
     }
     return requestInfo, nil
 }
-// Get entities from authenticationMethodConfigurations
-// Parameters:
-//  - options : Options for the request
+// Get get entities from authenticationMethodConfigurations
 func (m *AuthenticationMethodConfigurationsRequestBuilder) Get(options *AuthenticationMethodConfigurationsRequestBuilderGetOptions)(*AuthenticationMethodConfigurationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) Get(options *Authenti
     }
     return res.(*AuthenticationMethodConfigurationsResponse), nil
 }
-// Add new entity to authenticationMethodConfigurations
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to authenticationMethodConfigurations
 func (m *AuthenticationMethodConfigurationsRequestBuilder) Post(options *AuthenticationMethodConfigurationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AuthenticationMethodConfiguration, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

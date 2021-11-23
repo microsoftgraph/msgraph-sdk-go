@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\photos
+// PhotosRequestBuilder builds and executes requests for operations under \groups\{group-id}\photos
 type PhotosRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PhotosRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// PhotosRequestBuilderGetOptions options for Get
 type PhotosRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type PhotosRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The profile photos owned by the group. Read-only. Nullable.
+// PhotosRequestBuilderGetQueryParameters the profile photos owned by the group. Read-only. Nullable.
 type PhotosRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -41,7 +41,7 @@ type PhotosRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// PhotosRequestBuilderPostOptions options for Post
 type PhotosRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto;
@@ -52,10 +52,7 @@ type PhotosRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PhotosRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPhotosRequestBuilderInternal instantiates a new PhotosRequestBuilder and sets the default values.
 func NewPhotosRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PhotosRequestBuilder) {
     m := &PhotosRequestBuilder{
     }
@@ -68,18 +65,13 @@ func NewPhotosRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PhotosRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPhotosRequestBuilder instantiates a new PhotosRequestBuilder and sets the default values.
 func NewPhotosRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PhotosRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPhotosRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The profile photos owned by the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the profile photos owned by the group. Read-only. Nullable.
 func (m *PhotosRequestBuilder) CreateGetRequestInformation(options *PhotosRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *PhotosRequestBuilder) CreateGetRequestInformation(options *PhotosReques
     }
     return requestInfo, nil
 }
-// The profile photos owned by the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the profile photos owned by the group. Read-only. Nullable.
 func (m *PhotosRequestBuilder) CreatePostRequestInformation(options *PhotosRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PhotosRequestBuilder) CreatePostRequestInformation(options *PhotosReque
     }
     return requestInfo, nil
 }
-// The profile photos owned by the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the profile photos owned by the group. Read-only. Nullable.
 func (m *PhotosRequestBuilder) Get(options *PhotosRequestBuilderGetOptions)(*PhotosResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -133,9 +121,7 @@ func (m *PhotosRequestBuilder) Get(options *PhotosRequestBuilderGetOptions)(*Pho
     }
     return res.(*PhotosResponse), nil
 }
-// The profile photos owned by the group. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post the profile photos owned by the group. Read-only. Nullable.
 func (m *PhotosRequestBuilder) Post(options *PhotosRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\schedulingGroups
+// SchedulingGroupsRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\schedulingGroups
 type SchedulingGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SchedulingGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SchedulingGroupsRequestBuilderGetOptions options for Get
 type SchedulingGroupsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SchedulingGroupsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The logical grouping of users in the schedule (usually by role).
+// SchedulingGroupsRequestBuilderGetQueryParameters the logical grouping of users in the schedule (usually by role).
 type SchedulingGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -43,7 +43,7 @@ type SchedulingGroupsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SchedulingGroupsRequestBuilderPostOptions options for Post
 type SchedulingGroupsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SchedulingGroup;
@@ -54,10 +54,7 @@ type SchedulingGroupsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SchedulingGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSchedulingGroupsRequestBuilderInternal instantiates a new SchedulingGroupsRequestBuilder and sets the default values.
 func NewSchedulingGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SchedulingGroupsRequestBuilder) {
     m := &SchedulingGroupsRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewSchedulingGroupsRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SchedulingGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSchedulingGroupsRequestBuilder instantiates a new SchedulingGroupsRequestBuilder and sets the default values.
 func NewSchedulingGroupsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SchedulingGroupsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSchedulingGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The logical grouping of users in the schedule (usually by role).
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the logical grouping of users in the schedule (usually by role).
 func (m *SchedulingGroupsRequestBuilder) CreateGetRequestInformation(options *SchedulingGroupsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *SchedulingGroupsRequestBuilder) CreateGetRequestInformation(options *Sc
     }
     return requestInfo, nil
 }
-// The logical grouping of users in the schedule (usually by role).
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the logical grouping of users in the schedule (usually by role).
 func (m *SchedulingGroupsRequestBuilder) CreatePostRequestInformation(options *SchedulingGroupsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *SchedulingGroupsRequestBuilder) CreatePostRequestInformation(options *S
     }
     return requestInfo, nil
 }
-// The logical grouping of users in the schedule (usually by role).
-// Parameters:
-//  - options : Options for the request
+// Get the logical grouping of users in the schedule (usually by role).
 func (m *SchedulingGroupsRequestBuilder) Get(options *SchedulingGroupsRequestBuilderGetOptions)(*SchedulingGroupsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -135,9 +123,7 @@ func (m *SchedulingGroupsRequestBuilder) Get(options *SchedulingGroupsRequestBui
     }
     return res.(*SchedulingGroupsResponse), nil
 }
-// The logical grouping of users in the schedule (usually by role).
-// Parameters:
-//  - options : Options for the request
+// Post the logical grouping of users in the schedule (usually by role).
 func (m *SchedulingGroupsRequestBuilder) Post(options *SchedulingGroupsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SchedulingGroup, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

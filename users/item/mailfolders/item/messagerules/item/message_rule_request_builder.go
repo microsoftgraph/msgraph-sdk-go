@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messageRules\{messageRule-id}
+// MessageRuleRequestBuilder builds and executes requests for operations under \users\{user-id}\mailFolders\{mailFolder-id}\messageRules\{messageRule-id}
 type MessageRuleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type MessageRuleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MessageRuleRequestBuilderDeleteOptions options for Delete
 type MessageRuleRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type MessageRuleRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MessageRuleRequestBuilderGetOptions options for Get
 type MessageRuleRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,12 +35,12 @@ type MessageRuleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of rules that apply to the user's Inbox folder.
+// MessageRuleRequestBuilderGetQueryParameters the collection of rules that apply to the user's Inbox folder.
 type MessageRuleRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MessageRuleRequestBuilderPatchOptions options for Patch
 type MessageRuleRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRule;
@@ -51,10 +51,7 @@ type MessageRuleRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MessageRuleRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageRuleRequestBuilderInternal instantiates a new MessageRuleRequestBuilder and sets the default values.
 func NewMessageRuleRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageRuleRequestBuilder) {
     m := &MessageRuleRequestBuilder{
     }
@@ -67,18 +64,13 @@ func NewMessageRuleRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MessageRuleRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMessageRuleRequestBuilder instantiates a new MessageRuleRequestBuilder and sets the default values.
 func NewMessageRuleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MessageRuleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMessageRuleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of rules that apply to the user's Inbox folder.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the collection of rules that apply to the user's Inbox folder.
 func (m *MessageRuleRequestBuilder) CreateDeleteRequestInformation(options *MessageRuleRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,9 +87,7 @@ func (m *MessageRuleRequestBuilder) CreateDeleteRequestInformation(options *Mess
     }
     return requestInfo, nil
 }
-// The collection of rules that apply to the user's Inbox folder.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of rules that apply to the user's Inbox folder.
 func (m *MessageRuleRequestBuilder) CreateGetRequestInformation(options *MessageRuleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,9 +107,7 @@ func (m *MessageRuleRequestBuilder) CreateGetRequestInformation(options *Message
     }
     return requestInfo, nil
 }
-// The collection of rules that apply to the user's Inbox folder.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the collection of rules that apply to the user's Inbox folder.
 func (m *MessageRuleRequestBuilder) CreatePatchRequestInformation(options *MessageRuleRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *MessageRuleRequestBuilder) CreatePatchRequestInformation(options *Messa
     }
     return requestInfo, nil
 }
-// The collection of rules that apply to the user's Inbox folder.
-// Parameters:
-//  - options : Options for the request
+// Delete the collection of rules that apply to the user's Inbox folder.
 func (m *MessageRuleRequestBuilder) Delete(options *MessageRuleRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -151,9 +137,7 @@ func (m *MessageRuleRequestBuilder) Delete(options *MessageRuleRequestBuilderDel
     }
     return nil
 }
-// The collection of rules that apply to the user's Inbox folder.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of rules that apply to the user's Inbox folder.
 func (m *MessageRuleRequestBuilder) Get(options *MessageRuleRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRule, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -165,9 +149,7 @@ func (m *MessageRuleRequestBuilder) Get(options *MessageRuleRequestBuilderGetOpt
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRule), nil
 }
-// The collection of rules that apply to the user's Inbox folder.
-// Parameters:
-//  - options : Options for the request
+// Patch the collection of rules that apply to the user's Inbox folder.
 func (m *MessageRuleRequestBuilder) Patch(options *MessageRuleRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     id904e2826dc43b2b33dd31bd54e45fb55fd92c9fac294996c9bc24a8cf888f64 "github.com/microsoftgraph/msgraph-sdk-go/users/item/contacts/item/photo/value"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\contacts\{contact-id}\photo
+// PhotoRequestBuilder builds and executes requests for operations under \users\{user-id}\contacts\{contact-id}\photo
 type PhotoRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type PhotoRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PhotoRequestBuilderDeleteOptions options for Delete
 type PhotoRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type PhotoRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PhotoRequestBuilderGetOptions options for Get
 type PhotoRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,12 +36,12 @@ type PhotoRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Optional contact picture. You can get or set a photo for a contact.
+// PhotoRequestBuilderGetQueryParameters optional contact picture. You can get or set a photo for a contact.
 type PhotoRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PhotoRequestBuilderPatchOptions options for Patch
 type PhotoRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto;
@@ -52,10 +52,7 @@ type PhotoRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PhotoRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPhotoRequestBuilderInternal instantiates a new PhotoRequestBuilder and sets the default values.
 func NewPhotoRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PhotoRequestBuilder) {
     m := &PhotoRequestBuilder{
     }
@@ -68,10 +65,7 @@ func NewPhotoRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PhotoRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPhotoRequestBuilder instantiates a new PhotoRequestBuilder and sets the default values.
 func NewPhotoRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PhotoRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -80,9 +74,7 @@ func NewPhotoRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
 func (m *PhotoRequestBuilder) Content()(*id904e2826dc43b2b33dd31bd54e45fb55fd92c9fac294996c9bc24a8cf888f64.ContentRequestBuilder) {
     return id904e2826dc43b2b33dd31bd54e45fb55fd92c9fac294996c9bc24a8cf888f64.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Optional contact picture. You can get or set a photo for a contact.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation optional contact picture. You can get or set a photo for a contact.
 func (m *PhotoRequestBuilder) CreateDeleteRequestInformation(options *PhotoRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *PhotoRequestBuilder) CreateDeleteRequestInformation(options *PhotoReque
     }
     return requestInfo, nil
 }
-// Optional contact picture. You can get or set a photo for a contact.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation optional contact picture. You can get or set a photo for a contact.
 func (m *PhotoRequestBuilder) CreateGetRequestInformation(options *PhotoRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *PhotoRequestBuilder) CreateGetRequestInformation(options *PhotoRequestB
     }
     return requestInfo, nil
 }
-// Optional contact picture. You can get or set a photo for a contact.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation optional contact picture. You can get or set a photo for a contact.
 func (m *PhotoRequestBuilder) CreatePatchRequestInformation(options *PhotoRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *PhotoRequestBuilder) CreatePatchRequestInformation(options *PhotoReques
     }
     return requestInfo, nil
 }
-// Optional contact picture. You can get or set a photo for a contact.
-// Parameters:
-//  - options : Options for the request
+// Delete optional contact picture. You can get or set a photo for a contact.
 func (m *PhotoRequestBuilder) Delete(options *PhotoRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *PhotoRequestBuilder) Delete(options *PhotoRequestBuilderDeleteOptions)(
     }
     return nil
 }
-// Optional contact picture. You can get or set a photo for a contact.
-// Parameters:
-//  - options : Options for the request
+// Get optional contact picture. You can get or set a photo for a contact.
 func (m *PhotoRequestBuilder) Get(options *PhotoRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *PhotoRequestBuilder) Get(options *PhotoRequestBuilderGetOptions)(*i4a83
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto), nil
 }
-// Optional contact picture. You can get or set a photo for a contact.
-// Parameters:
-//  - options : Options for the request
+// Patch optional contact picture. You can get or set a photo for a contact.
 func (m *PhotoRequestBuilder) Patch(options *PhotoRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

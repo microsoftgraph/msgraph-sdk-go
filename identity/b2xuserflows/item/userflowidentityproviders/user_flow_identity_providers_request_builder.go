@@ -7,7 +7,7 @@ import (
     id1418e897ecd09b3d256be063da8c4b869278ce8ee0614463dc6dedaeca5afc0 "github.com/microsoftgraph/msgraph-sdk-go/identity/b2xuserflows/item/userflowidentityproviders/ref"
 )
 
-// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userFlowIdentityProviders
+// UserFlowIdentityProvidersRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userFlowIdentityProviders
 type UserFlowIdentityProvidersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UserFlowIdentityProvidersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// UserFlowIdentityProvidersRequestBuilderGetOptions options for Get
 type UserFlowIdentityProvidersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type UserFlowIdentityProvidersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get userFlowIdentityProviders from identity
+// UserFlowIdentityProvidersRequestBuilderGetQueryParameters get userFlowIdentityProviders from identity
 type UserFlowIdentityProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,14 +46,11 @@ type UserFlowIdentityProvidersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userFlowIdentityProviders\microsoft.graph.availableProviderTypes()
+// AvailableProviderTypes builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userFlowIdentityProviders\microsoft.graph.availableProviderTypes()
 func (m *UserFlowIdentityProvidersRequestBuilder) AvailableProviderTypes()(*i7458e2a8c1750e8336a16e93580de785722f2083e4ede36c629a2a3d477240aa.AvailableProviderTypesRequestBuilder) {
     return i7458e2a8c1750e8336a16e93580de785722f2083e4ede36c629a2a3d477240aa.NewAvailableProviderTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new UserFlowIdentityProvidersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserFlowIdentityProvidersRequestBuilderInternal instantiates a new UserFlowIdentityProvidersRequestBuilder and sets the default values.
 func NewUserFlowIdentityProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserFlowIdentityProvidersRequestBuilder) {
     m := &UserFlowIdentityProvidersRequestBuilder{
     }
@@ -66,18 +63,13 @@ func NewUserFlowIdentityProvidersRequestBuilderInternal(pathParameters map[strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserFlowIdentityProvidersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserFlowIdentityProvidersRequestBuilder instantiates a new UserFlowIdentityProvidersRequestBuilder and sets the default values.
 func NewUserFlowIdentityProvidersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserFlowIdentityProvidersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowIdentityProvidersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get userFlowIdentityProviders from identity
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get userFlowIdentityProviders from identity
 func (m *UserFlowIdentityProvidersRequestBuilder) CreateGetRequestInformation(options *UserFlowIdentityProvidersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *UserFlowIdentityProvidersRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// Get userFlowIdentityProviders from identity
-// Parameters:
-//  - options : Options for the request
+// Get get userFlowIdentityProviders from identity
 func (m *UserFlowIdentityProvidersRequestBuilder) Get(options *UserFlowIdentityProvidersRequestBuilderGetOptions)(*UserFlowIdentityProvidersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

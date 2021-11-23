@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \drives\{drive-id}\microsoft.graph.search(q='{q}')
+// SearchWithQRequestBuilder builds and executes requests for operations under \drives\{drive-id}\microsoft.graph.search(q='{q}')
 type SearchWithQRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type SearchWithQRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SearchWithQRequestBuilderGetOptions options for Get
 type SearchWithQRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,11 +23,7 @@ type SearchWithQRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SearchWithQRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - q : Usage: q={q}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSearchWithQRequestBuilderInternal instantiates a new SearchWithQRequestBuilder and sets the default values.
 func NewSearchWithQRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, q *string)(*SearchWithQRequestBuilder) {
     m := &SearchWithQRequestBuilder{
     }
@@ -43,18 +39,13 @@ func NewSearchWithQRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SearchWithQRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSearchWithQRequestBuilder instantiates a new SearchWithQRequestBuilder and sets the default values.
 func NewSearchWithQRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SearchWithQRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSearchWithQRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function search
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function search
 func (m *SearchWithQRequestBuilder) CreateGetRequestInformation(options *SearchWithQRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,9 +62,7 @@ func (m *SearchWithQRequestBuilder) CreateGetRequestInformation(options *SearchW
     }
     return requestInfo, nil
 }
-// Invoke function search
-// Parameters:
-//  - options : Options for the request
+// Get invoke function search
 func (m *SearchWithQRequestBuilder) Get(options *SearchWithQRequestBuilderGetOptions)([]SearchWithQ, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

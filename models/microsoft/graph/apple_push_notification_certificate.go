@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ApplePushNotificationCertificate 
 type ApplePushNotificationCertificate struct {
     Entity
     // Apple Id of the account used to create the MDM push certificate.
@@ -21,14 +21,14 @@ type ApplePushNotificationCertificate struct {
     // Topic Id.
     topicIdentifier *string;
 }
-// Instantiates a new applePushNotificationCertificate and sets the default values.
+// NewApplePushNotificationCertificate instantiates a new applePushNotificationCertificate and sets the default values.
 func NewApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {
     m := &ApplePushNotificationCertificate{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the appleIdentifier property value. Apple Id of the account used to create the MDM push certificate.
+// GetAppleIdentifier gets the appleIdentifier property value. Apple Id of the account used to create the MDM push certificate.
 func (m *ApplePushNotificationCertificate) GetAppleIdentifier()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ApplePushNotificationCertificate) GetAppleIdentifier()(*string) {
         return m.appleIdentifier
     }
 }
-// Gets the certificate property value. Not yet documented
+// GetCertificate gets the certificate property value. Not yet documented
 func (m *ApplePushNotificationCertificate) GetCertificate()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *ApplePushNotificationCertificate) GetCertificate()(*string) {
         return m.certificate
     }
 }
-// Gets the certificateSerialNumber property value. Certificate serial number. This property is read-only.
+// GetCertificateSerialNumber gets the certificateSerialNumber property value. Certificate serial number. This property is read-only.
 func (m *ApplePushNotificationCertificate) GetCertificateSerialNumber()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *ApplePushNotificationCertificate) GetCertificateSerialNumber()(*string)
         return m.certificateSerialNumber
     }
 }
-// Gets the expirationDateTime property value. The expiration date and time for Apple push notification certificate.
+// GetExpirationDateTime gets the expirationDateTime property value. The expiration date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *ApplePushNotificationCertificate) GetExpirationDateTime()(*i336074805fc
         return m.expirationDateTime
     }
 }
-// Gets the lastModifiedDateTime property value. Last modified date and time for Apple push notification certificate.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *ApplePushNotificationCertificate) GetLastModifiedDateTime()(*i336074805
         return m.lastModifiedDateTime
     }
 }
-// Gets the topicIdentifier property value. Topic Id.
+// GetTopicIdentifier gets the topicIdentifier property value. Topic Id.
 func (m *ApplePushNotificationCertificate) GetTopicIdentifier()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *ApplePushNotificationCertificate) GetTopicIdentifier()(*string) {
         return m.topicIdentifier
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appleIdentifier"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -144,9 +144,7 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
 func (m *ApplePushNotificationCertificate) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ApplePushNotificationCertificate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -190,39 +188,27 @@ func (m *ApplePushNotificationCertificate) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
-// Sets the appleIdentifier property value. Apple Id of the account used to create the MDM push certificate.
-// Parameters:
-//  - value : Value to set for the appleIdentifier property.
+// SetAppleIdentifier sets the appleIdentifier property value. Apple Id of the account used to create the MDM push certificate.
 func (m *ApplePushNotificationCertificate) SetAppleIdentifier(value *string)() {
     m.appleIdentifier = value
 }
-// Sets the certificate property value. Not yet documented
-// Parameters:
-//  - value : Value to set for the certificate property.
+// SetCertificate sets the certificate property value. Not yet documented
 func (m *ApplePushNotificationCertificate) SetCertificate(value *string)() {
     m.certificate = value
 }
-// Sets the certificateSerialNumber property value. Certificate serial number. This property is read-only.
-// Parameters:
-//  - value : Value to set for the certificateSerialNumber property.
+// SetCertificateSerialNumber sets the certificateSerialNumber property value. Certificate serial number. This property is read-only.
 func (m *ApplePushNotificationCertificate) SetCertificateSerialNumber(value *string)() {
     m.certificateSerialNumber = value
 }
-// Sets the expirationDateTime property value. The expiration date and time for Apple push notification certificate.
-// Parameters:
-//  - value : Value to set for the expirationDateTime property.
+// SetExpirationDateTime sets the expirationDateTime property value. The expiration date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.expirationDateTime = value
 }
-// Sets the lastModifiedDateTime property value. Last modified date and time for Apple push notification certificate.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the topicIdentifier property value. Topic Id.
-// Parameters:
-//  - value : Value to set for the topicIdentifier property.
+// SetTopicIdentifier sets the topicIdentifier property value. Topic Id.
 func (m *ApplePushNotificationCertificate) SetTopicIdentifier(value *string)() {
     m.topicIdentifier = value
 }

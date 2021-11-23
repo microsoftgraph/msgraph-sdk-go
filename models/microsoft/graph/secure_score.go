@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SecureScore 
 type SecureScore struct {
     Entity
     // Active user count of the given tenant.
@@ -29,14 +29,14 @@ type SecureScore struct {
     // Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
     vendorInformation *SecurityVendorInformation;
 }
-// Instantiates a new secureScore and sets the default values.
+// NewSecureScore instantiates a new secureScore and sets the default values.
 func NewSecureScore()(*SecureScore) {
     m := &SecureScore{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the activeUserCount property value. Active user count of the given tenant.
+// GetActiveUserCount gets the activeUserCount property value. Active user count of the given tenant.
 func (m *SecureScore) GetActiveUserCount()(*int32) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *SecureScore) GetActiveUserCount()(*int32) {
         return m.activeUserCount
     }
 }
-// Gets the averageComparativeScores property value. Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
+// GetAverageComparativeScores gets the averageComparativeScores property value. Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
 func (m *SecureScore) GetAverageComparativeScores()([]AverageComparativeScore) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *SecureScore) GetAverageComparativeScores()([]AverageComparativeScore) {
         return m.averageComparativeScores
     }
 }
-// Gets the azureTenantId property value. GUID string for tenant ID.
+// GetAzureTenantId gets the azureTenantId property value. GUID string for tenant ID.
 func (m *SecureScore) GetAzureTenantId()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *SecureScore) GetAzureTenantId()(*string) {
         return m.azureTenantId
     }
 }
-// Gets the controlScores property value. Contains tenant scores for a set of controls.
+// GetControlScores gets the controlScores property value. Contains tenant scores for a set of controls.
 func (m *SecureScore) GetControlScores()([]ControlScore) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *SecureScore) GetControlScores()([]ControlScore) {
         return m.controlScores
     }
 }
-// Gets the createdDateTime property value. The date when the entity is created.
+// GetCreatedDateTime gets the createdDateTime property value. The date when the entity is created.
 func (m *SecureScore) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *SecureScore) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.createdDateTime
     }
 }
-// Gets the currentScore property value. Tenant current attained score on specified date.
+// GetCurrentScore gets the currentScore property value. Tenant current attained score on specified date.
 func (m *SecureScore) GetCurrentScore()(*float64) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *SecureScore) GetCurrentScore()(*float64) {
         return m.currentScore
     }
 }
-// Gets the enabledServices property value. Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
+// GetEnabledServices gets the enabledServices property value. Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
 func (m *SecureScore) GetEnabledServices()([]string) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *SecureScore) GetEnabledServices()([]string) {
         return m.enabledServices
     }
 }
-// Gets the licensedUserCount property value. Licensed user count of the given tenant.
+// GetLicensedUserCount gets the licensedUserCount property value. Licensed user count of the given tenant.
 func (m *SecureScore) GetLicensedUserCount()(*int32) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *SecureScore) GetLicensedUserCount()(*int32) {
         return m.licensedUserCount
     }
 }
-// Gets the maxScore property value. Tenant maximum possible score on specified date.
+// GetMaxScore gets the maxScore property value. Tenant maximum possible score on specified date.
 func (m *SecureScore) GetMaxScore()(*float64) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *SecureScore) GetMaxScore()(*float64) {
         return m.maxScore
     }
 }
-// Gets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
+// GetVendorInformation gets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
 func (m *SecureScore) GetVendorInformation()(*SecurityVendorInformation) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *SecureScore) GetVendorInformation()(*SecurityVendorInformation) {
         return m.vendorInformation
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeUserCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -236,9 +236,7 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *SecureScore) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SecureScore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -316,63 +314,43 @@ func (m *SecureScore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// Sets the activeUserCount property value. Active user count of the given tenant.
-// Parameters:
-//  - value : Value to set for the activeUserCount property.
+// SetActiveUserCount sets the activeUserCount property value. Active user count of the given tenant.
 func (m *SecureScore) SetActiveUserCount(value *int32)() {
     m.activeUserCount = value
 }
-// Sets the averageComparativeScores property value. Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
-// Parameters:
-//  - value : Value to set for the averageComparativeScores property.
+// SetAverageComparativeScores sets the averageComparativeScores property value. Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
 func (m *SecureScore) SetAverageComparativeScores(value []AverageComparativeScore)() {
     m.averageComparativeScores = value
 }
-// Sets the azureTenantId property value. GUID string for tenant ID.
-// Parameters:
-//  - value : Value to set for the azureTenantId property.
+// SetAzureTenantId sets the azureTenantId property value. GUID string for tenant ID.
 func (m *SecureScore) SetAzureTenantId(value *string)() {
     m.azureTenantId = value
 }
-// Sets the controlScores property value. Contains tenant scores for a set of controls.
-// Parameters:
-//  - value : Value to set for the controlScores property.
+// SetControlScores sets the controlScores property value. Contains tenant scores for a set of controls.
 func (m *SecureScore) SetControlScores(value []ControlScore)() {
     m.controlScores = value
 }
-// Sets the createdDateTime property value. The date when the entity is created.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The date when the entity is created.
 func (m *SecureScore) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the currentScore property value. Tenant current attained score on specified date.
-// Parameters:
-//  - value : Value to set for the currentScore property.
+// SetCurrentScore sets the currentScore property value. Tenant current attained score on specified date.
 func (m *SecureScore) SetCurrentScore(value *float64)() {
     m.currentScore = value
 }
-// Sets the enabledServices property value. Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
-// Parameters:
-//  - value : Value to set for the enabledServices property.
+// SetEnabledServices sets the enabledServices property value. Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
 func (m *SecureScore) SetEnabledServices(value []string)() {
     m.enabledServices = value
 }
-// Sets the licensedUserCount property value. Licensed user count of the given tenant.
-// Parameters:
-//  - value : Value to set for the licensedUserCount property.
+// SetLicensedUserCount sets the licensedUserCount property value. Licensed user count of the given tenant.
 func (m *SecureScore) SetLicensedUserCount(value *int32)() {
     m.licensedUserCount = value
 }
-// Sets the maxScore property value. Tenant maximum possible score on specified date.
-// Parameters:
-//  - value : Value to set for the maxScore property.
+// SetMaxScore sets the maxScore property value. Tenant maximum possible score on specified date.
 func (m *SecureScore) SetMaxScore(value *float64)() {
     m.maxScore = value
 }
-// Sets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
-// Parameters:
-//  - value : Value to set for the vendorInformation property.
+// SetVendorInformation sets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
 func (m *SecureScore) SetVendorInformation(value *SecurityVendorInformation)() {
     m.vendorInformation = value
 }

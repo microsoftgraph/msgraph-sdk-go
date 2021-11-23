@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.transfer
+// TransferRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.transfer
 type TransferRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type TransferRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// TransferRequestBuilderPostOptions options for Post
 type TransferRequestBuilderPostOptions struct {
     // 
     Body *TransferRequestBody;
@@ -24,10 +24,7 @@ type TransferRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TransferRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTransferRequestBuilderInternal instantiates a new TransferRequestBuilder and sets the default values.
 func NewTransferRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TransferRequestBuilder) {
     m := &TransferRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewTransferRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TransferRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTransferRequestBuilder instantiates a new TransferRequestBuilder and sets the default values.
 func NewTransferRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TransferRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTransferRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action transfer
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action transfer
 func (m *TransferRequestBuilder) CreatePostRequestInformation(options *TransferRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *TransferRequestBuilder) CreatePostRequestInformation(options *TransferR
     }
     return requestInfo, nil
 }
-// Invoke action transfer
-// Parameters:
-//  - options : Options for the request
+// Post invoke action transfer
 func (m *TransferRequestBuilder) Post(options *TransferRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

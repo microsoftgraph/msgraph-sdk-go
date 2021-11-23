@@ -7,7 +7,7 @@ import (
     i5b32cfd5acc1556b0931d9cbe7d57a9918a3e9e2c0c23de83a82d647b87311c2 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/messages/item/replies/delta"
 )
 
-// Builds and executes requests for operations under \chats\{chat-id}\messages\{chatMessage-id}\replies
+// RepliesRequestBuilder builds and executes requests for operations under \chats\{chat-id}\messages\{chatMessage-id}\replies
 type RepliesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type RepliesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// RepliesRequestBuilderGetOptions options for Get
 type RepliesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type RepliesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Replies for a specified message.
+// RepliesRequestBuilderGetQueryParameters replies for a specified message.
 type RepliesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type RepliesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// RepliesRequestBuilderPostOptions options for Post
 type RepliesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessage;
@@ -57,10 +57,7 @@ type RepliesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RepliesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRepliesRequestBuilderInternal instantiates a new RepliesRequestBuilder and sets the default values.
 func NewRepliesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RepliesRequestBuilder) {
     m := &RepliesRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewRepliesRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RepliesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRepliesRequestBuilder instantiates a new RepliesRequestBuilder and sets the default values.
 func NewRepliesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RepliesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRepliesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Replies for a specified message.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation replies for a specified message.
 func (m *RepliesRequestBuilder) CreateGetRequestInformation(options *RepliesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *RepliesRequestBuilder) CreateGetRequestInformation(options *RepliesRequ
     }
     return requestInfo, nil
 }
-// Replies for a specified message.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation replies for a specified message.
 func (m *RepliesRequestBuilder) CreatePostRequestInformation(options *RepliesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,13 +114,11 @@ func (m *RepliesRequestBuilder) CreatePostRequestInformation(options *RepliesReq
     }
     return requestInfo, nil
 }
-// Builds and executes requests for operations under \chats\{chat-id}\messages\{chatMessage-id}\replies\microsoft.graph.delta()
+// Delta builds and executes requests for operations under \chats\{chat-id}\messages\{chatMessage-id}\replies\microsoft.graph.delta()
 func (m *RepliesRequestBuilder) Delta()(*i5b32cfd5acc1556b0931d9cbe7d57a9918a3e9e2c0c23de83a82d647b87311c2.DeltaRequestBuilder) {
     return i5b32cfd5acc1556b0931d9cbe7d57a9918a3e9e2c0c23de83a82d647b87311c2.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Replies for a specified message.
-// Parameters:
-//  - options : Options for the request
+// Get replies for a specified message.
 func (m *RepliesRequestBuilder) Get(options *RepliesRequestBuilderGetOptions)(*RepliesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -142,9 +130,7 @@ func (m *RepliesRequestBuilder) Get(options *RepliesRequestBuilderGetOptions)(*R
     }
     return res.(*RepliesResponse), nil
 }
-// Replies for a specified message.
-// Parameters:
-//  - options : Options for the request
+// Post replies for a specified message.
 func (m *RepliesRequestBuilder) Post(options *RepliesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatMessage, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

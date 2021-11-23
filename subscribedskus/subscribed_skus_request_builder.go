@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \subscribedSkus
+// SubscribedSkusRequestBuilder builds and executes requests for operations under \subscribedSkus
 type SubscribedSkusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SubscribedSkusRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SubscribedSkusRequestBuilderGetOptions options for Get
 type SubscribedSkusRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SubscribedSkusRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entities from subscribedSkus
+// SubscribedSkusRequestBuilderGetQueryParameters get entities from subscribedSkus
 type SubscribedSkusRequestBuilderGetQueryParameters struct {
     // Order items by property values
     Orderby []string;
@@ -35,7 +35,7 @@ type SubscribedSkusRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Post
+// SubscribedSkusRequestBuilderPostOptions options for Post
 type SubscribedSkusRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribedSku;
@@ -46,10 +46,7 @@ type SubscribedSkusRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SubscribedSkusRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubscribedSkusRequestBuilderInternal instantiates a new SubscribedSkusRequestBuilder and sets the default values.
 func NewSubscribedSkusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubscribedSkusRequestBuilder) {
     m := &SubscribedSkusRequestBuilder{
     }
@@ -62,18 +59,13 @@ func NewSubscribedSkusRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SubscribedSkusRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubscribedSkusRequestBuilder instantiates a new SubscribedSkusRequestBuilder and sets the default values.
 func NewSubscribedSkusRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubscribedSkusRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSubscribedSkusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get entities from subscribedSkus
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entities from subscribedSkus
 func (m *SubscribedSkusRequestBuilder) CreateGetRequestInformation(options *SubscribedSkusRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,9 +85,7 @@ func (m *SubscribedSkusRequestBuilder) CreateGetRequestInformation(options *Subs
     }
     return requestInfo, nil
 }
-// Add new entity to subscribedSkus
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation add new entity to subscribedSkus
 func (m *SubscribedSkusRequestBuilder) CreatePostRequestInformation(options *SubscribedSkusRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,9 +103,7 @@ func (m *SubscribedSkusRequestBuilder) CreatePostRequestInformation(options *Sub
     }
     return requestInfo, nil
 }
-// Get entities from subscribedSkus
-// Parameters:
-//  - options : Options for the request
+// Get get entities from subscribedSkus
 func (m *SubscribedSkusRequestBuilder) Get(options *SubscribedSkusRequestBuilderGetOptions)(*SubscribedSkusResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -127,9 +115,7 @@ func (m *SubscribedSkusRequestBuilder) Get(options *SubscribedSkusRequestBuilder
     }
     return res.(*SubscribedSkusResponse), nil
 }
-// Add new entity to subscribedSkus
-// Parameters:
-//  - options : Options for the request
+// Post add new entity to subscribedSkus
 func (m *SubscribedSkusRequestBuilder) Post(options *SubscribedSkusRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SubscribedSku, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

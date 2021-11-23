@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// UserSettings 
 type UserSettings struct {
     Entity
     // Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
@@ -14,14 +14,14 @@ type UserSettings struct {
     // The shift preferences for the user.
     shiftPreferences *ShiftPreferences;
 }
-// Instantiates a new userSettings and sets the default values.
+// NewUserSettings instantiates a new userSettings and sets the default values.
 func NewUserSettings()(*UserSettings) {
     m := &UserSettings{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+// GetContributionToContentDiscoveryAsOrganizationDisabled gets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
 func (m *UserSettings) GetContributionToContentDiscoveryAsOrganizationDisabled()(*bool) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *UserSettings) GetContributionToContentDiscoveryAsOrganizationDisabled()
         return m.contributionToContentDiscoveryAsOrganizationDisabled
     }
 }
-// Gets the contributionToContentDiscoveryDisabled property value. When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
+// GetContributionToContentDiscoveryDisabled gets the contributionToContentDiscoveryDisabled property value. When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
 func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
         return m.contributionToContentDiscoveryDisabled
     }
 }
-// Gets the shiftPreferences property value. The shift preferences for the user.
+// GetShiftPreferences gets the shiftPreferences property value. The shift preferences for the user.
 func (m *UserSettings) GetShiftPreferences()(*ShiftPreferences) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *UserSettings) GetShiftPreferences()(*ShiftPreferences) {
         return m.shiftPreferences
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contributionToContentDiscoveryAsOrganizationDisabled"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -83,9 +83,7 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *UserSettings) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -111,21 +109,15 @@ func (m *UserSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
-// Parameters:
-//  - value : Value to set for the contributionToContentDiscoveryAsOrganizationDisabled property.
+// SetContributionToContentDiscoveryAsOrganizationDisabled sets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
 func (m *UserSettings) SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)() {
     m.contributionToContentDiscoveryAsOrganizationDisabled = value
 }
-// Sets the contributionToContentDiscoveryDisabled property value. When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
-// Parameters:
-//  - value : Value to set for the contributionToContentDiscoveryDisabled property.
+// SetContributionToContentDiscoveryDisabled sets the contributionToContentDiscoveryDisabled property value. When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
 func (m *UserSettings) SetContributionToContentDiscoveryDisabled(value *bool)() {
     m.contributionToContentDiscoveryDisabled = value
 }
-// Sets the shiftPreferences property value. The shift preferences for the user.
-// Parameters:
-//  - value : Value to set for the shiftPreferences property.
+// SetShiftPreferences sets the shiftPreferences property value. The shift preferences for the user.
 func (m *UserSettings) SetShiftPreferences(value *ShiftPreferences)() {
     m.shiftPreferences = value
 }

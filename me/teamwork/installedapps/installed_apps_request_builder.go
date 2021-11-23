@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\teamwork\installedApps
+// InstalledAppsRequestBuilder builds and executes requests for operations under \me\teamwork\installedApps
 type InstalledAppsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type InstalledAppsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// InstalledAppsRequestBuilderGetOptions options for Get
 type InstalledAppsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type InstalledAppsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The apps installed in the personal scope of this user.
+// InstalledAppsRequestBuilderGetQueryParameters the apps installed in the personal scope of this user.
 type InstalledAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type InstalledAppsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// InstalledAppsRequestBuilderPostOptions options for Post
 type InstalledAppsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserScopeTeamsAppInstallation;
@@ -56,10 +56,7 @@ type InstalledAppsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new InstalledAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInstalledAppsRequestBuilderInternal instantiates a new InstalledAppsRequestBuilder and sets the default values.
 func NewInstalledAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InstalledAppsRequestBuilder) {
     m := &InstalledAppsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewInstalledAppsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new InstalledAppsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInstalledAppsRequestBuilder instantiates a new InstalledAppsRequestBuilder and sets the default values.
 func NewInstalledAppsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InstalledAppsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInstalledAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The apps installed in the personal scope of this user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the apps installed in the personal scope of this user.
 func (m *InstalledAppsRequestBuilder) CreateGetRequestInformation(options *InstalledAppsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *InstalledAppsRequestBuilder) CreateGetRequestInformation(options *Insta
     }
     return requestInfo, nil
 }
-// The apps installed in the personal scope of this user.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the apps installed in the personal scope of this user.
 func (m *InstalledAppsRequestBuilder) CreatePostRequestInformation(options *InstalledAppsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *InstalledAppsRequestBuilder) CreatePostRequestInformation(options *Inst
     }
     return requestInfo, nil
 }
-// The apps installed in the personal scope of this user.
-// Parameters:
-//  - options : Options for the request
+// Get the apps installed in the personal scope of this user.
 func (m *InstalledAppsRequestBuilder) Get(options *InstalledAppsRequestBuilderGetOptions)(*InstalledAppsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *InstalledAppsRequestBuilder) Get(options *InstalledAppsRequestBuilderGe
     }
     return res.(*InstalledAppsResponse), nil
 }
-// The apps installed in the personal scope of this user.
-// Parameters:
-//  - options : Options for the request
+// Post the apps installed in the personal scope of this user.
 func (m *InstalledAppsRequestBuilder) Post(options *InstalledAppsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserScopeTeamsAppInstallation, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

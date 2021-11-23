@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// WorkforceIntegrationEncryption 
 type WorkforceIntegrationEncryption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type WorkforceIntegrationEncryption struct {
     // Encryption shared secret.
     secret *string;
 }
-// Instantiates a new workforceIntegrationEncryption and sets the default values.
+// NewWorkforceIntegrationEncryption instantiates a new workforceIntegrationEncryption and sets the default values.
 func NewWorkforceIntegrationEncryption()(*WorkforceIntegrationEncryption) {
     m := &WorkforceIntegrationEncryption{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkforceIntegrationEncryption) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *WorkforceIntegrationEncryption) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// Gets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
+// GetProtocol gets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
 func (m *WorkforceIntegrationEncryption) GetProtocol()(*WorkforceIntegrationEncryptionProtocol) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *WorkforceIntegrationEncryption) GetProtocol()(*WorkforceIntegrationEncr
         return m.protocol
     }
 }
-// Gets the secret property value. Encryption shared secret.
+// GetSecret gets the secret property value. Encryption shared secret.
 func (m *WorkforceIntegrationEncryption) GetSecret()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *WorkforceIntegrationEncryption) GetSecret()(*string) {
         return m.secret
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["protocol"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func
 func (m *WorkforceIntegrationEncryption) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WorkforceIntegrationEncryption) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetProtocol() != nil {
         cast := m.GetProtocol().String()
@@ -98,21 +96,15 @@ func (m *WorkforceIntegrationEncryption) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkforceIntegrationEncryption) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the protocol property.
+// SetProtocol sets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
 func (m *WorkforceIntegrationEncryption) SetProtocol(value *WorkforceIntegrationEncryptionProtocol)() {
     m.protocol = value
 }
-// Sets the secret property value. Encryption shared secret.
-// Parameters:
-//  - value : Value to set for the secret property.
+// SetSecret sets the secret property value. Encryption shared secret.
 func (m *WorkforceIntegrationEncryption) SetSecret(value *string)() {
     m.secret = value
 }

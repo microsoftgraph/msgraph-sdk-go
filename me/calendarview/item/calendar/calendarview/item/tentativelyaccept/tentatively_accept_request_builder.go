@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\calendarView\{event-id}\calendar\calendarView\{event-id1}\microsoft.graph.tentativelyAccept
+// TentativelyAcceptRequestBuilder builds and executes requests for operations under \me\calendarView\{event-id}\calendar\calendarView\{event-id1}\microsoft.graph.tentativelyAccept
 type TentativelyAcceptRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type TentativelyAcceptRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// TentativelyAcceptRequestBuilderPostOptions options for Post
 type TentativelyAcceptRequestBuilderPostOptions struct {
     // 
     Body *TentativelyAcceptRequestBody;
@@ -24,10 +24,7 @@ type TentativelyAcceptRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TentativelyAcceptRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTentativelyAcceptRequestBuilderInternal instantiates a new TentativelyAcceptRequestBuilder and sets the default values.
 func NewTentativelyAcceptRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TentativelyAcceptRequestBuilder) {
     m := &TentativelyAcceptRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewTentativelyAcceptRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TentativelyAcceptRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTentativelyAcceptRequestBuilder instantiates a new TentativelyAcceptRequestBuilder and sets the default values.
 func NewTentativelyAcceptRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TentativelyAcceptRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTentativelyAcceptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action tentativelyAccept
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action tentativelyAccept
 func (m *TentativelyAcceptRequestBuilder) CreatePostRequestInformation(options *TentativelyAcceptRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *TentativelyAcceptRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Invoke action tentativelyAccept
-// Parameters:
-//  - options : Options for the request
+// Post invoke action tentativelyAccept
 func (m *TentativelyAcceptRequestBuilder) Post(options *TentativelyAcceptRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

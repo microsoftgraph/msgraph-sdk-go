@@ -6,7 +6,7 @@ import (
     i7561827c7bf6a1d5e7586808487675d9f7bc93ac11d07b8d8cdba84b59ddb8c5 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/externalcolumns/ref"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\externalColumns
+// ExternalColumnsRequestBuilder builds and executes requests for operations under \sites\{site-id}\externalColumns
 type ExternalColumnsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ExternalColumnsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ExternalColumnsRequestBuilderGetOptions options for Get
 type ExternalColumnsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ExternalColumnsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// ExternalColumnsRequestBuilderGetQueryParameters the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 type ExternalColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type ExternalColumnsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new ExternalColumnsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExternalColumnsRequestBuilderInternal instantiates a new ExternalColumnsRequestBuilder and sets the default values.
 func NewExternalColumnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExternalColumnsRequestBuilder) {
     m := &ExternalColumnsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewExternalColumnsRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ExternalColumnsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewExternalColumnsRequestBuilder instantiates a new ExternalColumnsRequestBuilder and sets the default values.
 func NewExternalColumnsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ExternalColumnsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExternalColumnsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformation(options *ExternalColumnsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformation(options *Ext
     }
     return requestInfo, nil
 }
-// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-// Parameters:
-//  - options : Options for the request
+// Get the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 func (m *ExternalColumnsRequestBuilder) Get(options *ExternalColumnsRequestBuilderGetOptions)(*ExternalColumnsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

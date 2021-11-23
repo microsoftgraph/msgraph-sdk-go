@@ -6,7 +6,7 @@ import (
     i3618d16e9f96f71930e05a5ffd7e9f975dcd6f084db12a5aa1f82e13193cea4f "github.com/microsoftgraph/msgraph-sdk-go/print/shares/item/allowedgroups/ref"
 )
 
-// Builds and executes requests for operations under \print\shares\{printerShare-id}\allowedGroups
+// AllowedGroupsRequestBuilder builds and executes requests for operations under \print\shares\{printerShare-id}\allowedGroups
 type AllowedGroupsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AllowedGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AllowedGroupsRequestBuilderGetOptions options for Get
 type AllowedGroupsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AllowedGroupsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The groups whose users have access to print using the printer.
+// AllowedGroupsRequestBuilderGetQueryParameters the groups whose users have access to print using the printer.
 type AllowedGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type AllowedGroupsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new AllowedGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAllowedGroupsRequestBuilderInternal instantiates a new AllowedGroupsRequestBuilder and sets the default values.
 func NewAllowedGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AllowedGroupsRequestBuilder) {
     m := &AllowedGroupsRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewAllowedGroupsRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AllowedGroupsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAllowedGroupsRequestBuilder instantiates a new AllowedGroupsRequestBuilder and sets the default values.
 func NewAllowedGroupsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AllowedGroupsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAllowedGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The groups whose users have access to print using the printer.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the groups whose users have access to print using the printer.
 func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformation(options *AllowedGroupsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *AllowedGroupsRequestBuilder) CreateGetRequestInformation(options *Allow
     }
     return requestInfo, nil
 }
-// The groups whose users have access to print using the printer.
-// Parameters:
-//  - options : Options for the request
+// Get the groups whose users have access to print using the printer.
 func (m *AllowedGroupsRequestBuilder) Get(options *AllowedGroupsRequestBuilderGetOptions)(*AllowedGroupsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

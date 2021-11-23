@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DataSubject 
 type DataSubject struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type DataSubject struct {
     // The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
     residency *string;
 }
-// Instantiates a new dataSubject and sets the default values.
+// NewDataSubject instantiates a new dataSubject and sets the default values.
 func NewDataSubject()(*DataSubject) {
     m := &DataSubject{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DataSubject) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *DataSubject) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the email property value. Email of the data subject.
+// GetEmail gets the email property value. Email of the data subject.
 func (m *DataSubject) GetEmail()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *DataSubject) GetEmail()(*string) {
         return m.email
     }
 }
-// Gets the firstName property value. First name of the data subject.
+// GetFirstName gets the firstName property value. First name of the data subject.
 func (m *DataSubject) GetFirstName()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *DataSubject) GetFirstName()(*string) {
         return m.firstName
     }
 }
-// Gets the lastName property value. Last Name of the data subject.
+// GetLastName gets the lastName property value. Last Name of the data subject.
 func (m *DataSubject) GetLastName()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *DataSubject) GetLastName()(*string) {
         return m.lastName
     }
 }
-// Gets the residency property value. The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
+// GetResidency gets the residency property value. The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
 func (m *DataSubject) GetResidency()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *DataSubject) GetResidency()(*string) {
         return m.residency
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DataSubject) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["email"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *DataSubject) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *DataSubject) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DataSubject) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("email", m.GetEmail())
@@ -148,33 +146,23 @@ func (m *DataSubject) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DataSubject) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the email property value. Email of the data subject.
-// Parameters:
-//  - value : Value to set for the email property.
+// SetEmail sets the email property value. Email of the data subject.
 func (m *DataSubject) SetEmail(value *string)() {
     m.email = value
 }
-// Sets the firstName property value. First name of the data subject.
-// Parameters:
-//  - value : Value to set for the firstName property.
+// SetFirstName sets the firstName property value. First name of the data subject.
 func (m *DataSubject) SetFirstName(value *string)() {
     m.firstName = value
 }
-// Sets the lastName property value. Last Name of the data subject.
-// Parameters:
-//  - value : Value to set for the lastName property.
+// SetLastName sets the lastName property value. Last Name of the data subject.
 func (m *DataSubject) SetLastName(value *string)() {
     m.lastName = value
 }
-// Sets the residency property value. The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
-// Parameters:
-//  - value : Value to set for the residency property.
+// SetResidency sets the residency property value. The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
 func (m *DataSubject) SetResidency(value *string)() {
     m.residency = value
 }

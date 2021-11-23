@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// DeviceExchangeAccessStateSummary 
 type DeviceExchangeAccessStateSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -19,14 +19,14 @@ type DeviceExchangeAccessStateSummary struct {
     // Total count of devices with Exchange Access State: Unknown.
     unknownDeviceCount *int32;
 }
-// Instantiates a new deviceExchangeAccessStateSummary and sets the default values.
+// NewDeviceExchangeAccessStateSummary instantiates a new deviceExchangeAccessStateSummary and sets the default values.
 func NewDeviceExchangeAccessStateSummary()(*DeviceExchangeAccessStateSummary) {
     m := &DeviceExchangeAccessStateSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceExchangeAccessStateSummary) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *DeviceExchangeAccessStateSummary) GetAdditionalData()(map[string]interf
         return m.additionalData
     }
 }
-// Gets the allowedDeviceCount property value. Total count of devices with Exchange Access State: Allowed.
+// GetAllowedDeviceCount gets the allowedDeviceCount property value. Total count of devices with Exchange Access State: Allowed.
 func (m *DeviceExchangeAccessStateSummary) GetAllowedDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *DeviceExchangeAccessStateSummary) GetAllowedDeviceCount()(*int32) {
         return m.allowedDeviceCount
     }
 }
-// Gets the blockedDeviceCount property value. Total count of devices with Exchange Access State: Blocked.
+// GetBlockedDeviceCount gets the blockedDeviceCount property value. Total count of devices with Exchange Access State: Blocked.
 func (m *DeviceExchangeAccessStateSummary) GetBlockedDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *DeviceExchangeAccessStateSummary) GetBlockedDeviceCount()(*int32) {
         return m.blockedDeviceCount
     }
 }
-// Gets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
+// GetQuarantinedDeviceCount gets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
 func (m *DeviceExchangeAccessStateSummary) GetQuarantinedDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *DeviceExchangeAccessStateSummary) GetQuarantinedDeviceCount()(*int32) {
         return m.quarantinedDeviceCount
     }
 }
-// Gets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.
+// GetUnavailableDeviceCount gets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.
 func (m *DeviceExchangeAccessStateSummary) GetUnavailableDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *DeviceExchangeAccessStateSummary) GetUnavailableDeviceCount()(*int32) {
         return m.unavailableDeviceCount
     }
 }
-// Gets the unknownDeviceCount property value. Total count of devices with Exchange Access State: Unknown.
+// GetUnknownDeviceCount gets the unknownDeviceCount property value. Total count of devices with Exchange Access State: Unknown.
 func (m *DeviceExchangeAccessStateSummary) GetUnknownDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *DeviceExchangeAccessStateSummary) GetUnknownDeviceCount()(*int32) {
         return m.unknownDeviceCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["allowedDeviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -132,9 +132,7 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
 func (m *DeviceExchangeAccessStateSummary) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *DeviceExchangeAccessStateSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("allowedDeviceCount", m.GetAllowedDeviceCount())
@@ -174,39 +172,27 @@ func (m *DeviceExchangeAccessStateSummary) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceExchangeAccessStateSummary) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the allowedDeviceCount property value. Total count of devices with Exchange Access State: Allowed.
-// Parameters:
-//  - value : Value to set for the allowedDeviceCount property.
+// SetAllowedDeviceCount sets the allowedDeviceCount property value. Total count of devices with Exchange Access State: Allowed.
 func (m *DeviceExchangeAccessStateSummary) SetAllowedDeviceCount(value *int32)() {
     m.allowedDeviceCount = value
 }
-// Sets the blockedDeviceCount property value. Total count of devices with Exchange Access State: Blocked.
-// Parameters:
-//  - value : Value to set for the blockedDeviceCount property.
+// SetBlockedDeviceCount sets the blockedDeviceCount property value. Total count of devices with Exchange Access State: Blocked.
 func (m *DeviceExchangeAccessStateSummary) SetBlockedDeviceCount(value *int32)() {
     m.blockedDeviceCount = value
 }
-// Sets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
-// Parameters:
-//  - value : Value to set for the quarantinedDeviceCount property.
+// SetQuarantinedDeviceCount sets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
 func (m *DeviceExchangeAccessStateSummary) SetQuarantinedDeviceCount(value *int32)() {
     m.quarantinedDeviceCount = value
 }
-// Sets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.
-// Parameters:
-//  - value : Value to set for the unavailableDeviceCount property.
+// SetUnavailableDeviceCount sets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.
 func (m *DeviceExchangeAccessStateSummary) SetUnavailableDeviceCount(value *int32)() {
     m.unavailableDeviceCount = value
 }
-// Sets the unknownDeviceCount property value. Total count of devices with Exchange Access State: Unknown.
-// Parameters:
-//  - value : Value to set for the unknownDeviceCount property.
+// SetUnknownDeviceCount sets the unknownDeviceCount property value. Total count of devices with Exchange Access State: Unknown.
 func (m *DeviceExchangeAccessStateSummary) SetUnknownDeviceCount(value *int32)() {
     m.unknownDeviceCount = value
 }

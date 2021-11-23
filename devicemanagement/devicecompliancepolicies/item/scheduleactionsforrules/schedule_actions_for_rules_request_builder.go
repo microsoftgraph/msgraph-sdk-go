@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\microsoft.graph.scheduleActionsForRules
+// ScheduleActionsForRulesRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\microsoft.graph.scheduleActionsForRules
 type ScheduleActionsForRulesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ScheduleActionsForRulesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ScheduleActionsForRulesRequestBuilderPostOptions options for Post
 type ScheduleActionsForRulesRequestBuilderPostOptions struct {
     // 
     Body *ScheduleActionsForRulesRequestBody;
@@ -24,10 +24,7 @@ type ScheduleActionsForRulesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ScheduleActionsForRulesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScheduleActionsForRulesRequestBuilderInternal instantiates a new ScheduleActionsForRulesRequestBuilder and sets the default values.
 func NewScheduleActionsForRulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScheduleActionsForRulesRequestBuilder) {
     m := &ScheduleActionsForRulesRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewScheduleActionsForRulesRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ScheduleActionsForRulesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScheduleActionsForRulesRequestBuilder instantiates a new ScheduleActionsForRulesRequestBuilder and sets the default values.
 func NewScheduleActionsForRulesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScheduleActionsForRulesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewScheduleActionsForRulesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action scheduleActionsForRules
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action scheduleActionsForRules
 func (m *ScheduleActionsForRulesRequestBuilder) CreatePostRequestInformation(options *ScheduleActionsForRulesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ScheduleActionsForRulesRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Invoke action scheduleActionsForRules
-// Parameters:
-//  - options : Options for the request
+// Post invoke action scheduleActionsForRules
 func (m *ScheduleActionsForRulesRequestBuilder) Post(options *ScheduleActionsForRulesRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\timeOffRequests\{timeOffRequest-id}
+// TimeOffRequestRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timeOffRequests\{timeOffRequest-id}
 type TimeOffRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TimeOffRequestRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TimeOffRequestRequestBuilderDeleteOptions options for Delete
 type TimeOffRequestRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TimeOffRequestRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TimeOffRequestRequestBuilderGetOptions options for Get
 type TimeOffRequestRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,12 +35,12 @@ type TimeOffRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get timeOffRequests from teams
+// TimeOffRequestRequestBuilderGetQueryParameters get timeOffRequests from teams
 type TimeOffRequestRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TimeOffRequestRequestBuilderPatchOptions options for Patch
 type TimeOffRequestRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOffRequest;
@@ -51,10 +51,7 @@ type TimeOffRequestRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TimeOffRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTimeOffRequestRequestBuilderInternal instantiates a new TimeOffRequestRequestBuilder and sets the default values.
 func NewTimeOffRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TimeOffRequestRequestBuilder) {
     m := &TimeOffRequestRequestBuilder{
     }
@@ -67,18 +64,13 @@ func NewTimeOffRequestRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TimeOffRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTimeOffRequestRequestBuilder instantiates a new TimeOffRequestRequestBuilder and sets the default values.
 func NewTimeOffRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TimeOffRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTimeOffRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property timeOffRequests for teams
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property timeOffRequests for teams
 func (m *TimeOffRequestRequestBuilder) CreateDeleteRequestInformation(options *TimeOffRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,9 +87,7 @@ func (m *TimeOffRequestRequestBuilder) CreateDeleteRequestInformation(options *T
     }
     return requestInfo, nil
 }
-// Get timeOffRequests from teams
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get timeOffRequests from teams
 func (m *TimeOffRequestRequestBuilder) CreateGetRequestInformation(options *TimeOffRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,9 +107,7 @@ func (m *TimeOffRequestRequestBuilder) CreateGetRequestInformation(options *Time
     }
     return requestInfo, nil
 }
-// Update the navigation property timeOffRequests in teams
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property timeOffRequests in teams
 func (m *TimeOffRequestRequestBuilder) CreatePatchRequestInformation(options *TimeOffRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *TimeOffRequestRequestBuilder) CreatePatchRequestInformation(options *Ti
     }
     return requestInfo, nil
 }
-// Delete navigation property timeOffRequests for teams
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property timeOffRequests for teams
 func (m *TimeOffRequestRequestBuilder) Delete(options *TimeOffRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -151,9 +137,7 @@ func (m *TimeOffRequestRequestBuilder) Delete(options *TimeOffRequestRequestBuil
     }
     return nil
 }
-// Get timeOffRequests from teams
-// Parameters:
-//  - options : Options for the request
+// Get get timeOffRequests from teams
 func (m *TimeOffRequestRequestBuilder) Get(options *TimeOffRequestRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOffRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -165,9 +149,7 @@ func (m *TimeOffRequestRequestBuilder) Get(options *TimeOffRequestRequestBuilder
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOffRequest), nil
 }
-// Update the navigation property timeOffRequests in teams
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property timeOffRequests in teams
 func (m *TimeOffRequestRequestBuilder) Patch(options *TimeOffRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

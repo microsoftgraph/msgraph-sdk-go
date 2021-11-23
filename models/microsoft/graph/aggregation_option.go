@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AggregationOption 
 type AggregationOption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type AggregationOption struct {
     // The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
     size *int32;
 }
-// Instantiates a new aggregationOption and sets the default values.
+// NewAggregationOption instantiates a new aggregationOption and sets the default values.
 func NewAggregationOption()(*AggregationOption) {
     m := &AggregationOption{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AggregationOption) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *AggregationOption) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the bucketDefinition property value. 
+// GetBucketDefinition gets the bucketDefinition property value. 
 func (m *AggregationOption) GetBucketDefinition()(*BucketAggregationDefinition) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *AggregationOption) GetBucketDefinition()(*BucketAggregationDefinition) 
         return m.bucketDefinition
     }
 }
-// Gets the field property value. Computes aggregation on the field while the field exists in current entity type. Required.
+// GetField gets the field property value. Computes aggregation on the field while the field exists in current entity type. Required.
 func (m *AggregationOption) GetField()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *AggregationOption) GetField()(*string) {
         return m.field
     }
 }
-// Gets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+// GetSize gets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
 func (m *AggregationOption) GetSize()(*int32) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *AggregationOption) GetSize()(*int32) {
         return m.size
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AggregationOption) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["bucketDefinition"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *AggregationOption) GetFieldDeserializers()(map[string]func(interface{},
 func (m *AggregationOption) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AggregationOption) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("bucketDefinition", m.GetBucketDefinition())
@@ -122,27 +120,19 @@ func (m *AggregationOption) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AggregationOption) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the bucketDefinition property value. 
-// Parameters:
-//  - value : Value to set for the bucketDefinition property.
+// SetBucketDefinition sets the bucketDefinition property value. 
 func (m *AggregationOption) SetBucketDefinition(value *BucketAggregationDefinition)() {
     m.bucketDefinition = value
 }
-// Sets the field property value. Computes aggregation on the field while the field exists in current entity type. Required.
-// Parameters:
-//  - value : Value to set for the field property.
+// SetField sets the field property value. Computes aggregation on the field while the field exists in current entity type. Required.
 func (m *AggregationOption) SetField(value *string)() {
     m.field = value
 }
-// Sets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
-// Parameters:
-//  - value : Value to set for the size property.
+// SetSize sets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
 func (m *AggregationOption) SetSize(value *int32)() {
     m.size = value
 }

@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// Confidence_NormRequestBody 
 type Confidence_NormRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,14 +16,14 @@ type Confidence_NormRequestBody struct {
     // 
     standardDev *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
-// Instantiates a new confidence_NormRequestBody and sets the default values.
+// NewConfidence_NormRequestBody instantiates a new confidence_NormRequestBody and sets the default values.
 func NewConfidence_NormRequestBody()(*Confidence_NormRequestBody) {
     m := &Confidence_NormRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Confidence_NormRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *Confidence_NormRequestBody) GetAdditionalData()(map[string]interface{})
         return m.additionalData
     }
 }
-// Gets the alpha property value. 
+// GetAlpha gets the alpha property value. 
 func (m *Confidence_NormRequestBody) GetAlpha()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *Confidence_NormRequestBody) GetAlpha()(*i4a838ef194e4c99e9f2c63ba10dab9
         return m.alpha
     }
 }
-// Gets the size property value. 
+// GetSize gets the size property value. 
 func (m *Confidence_NormRequestBody) GetSize()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *Confidence_NormRequestBody) GetSize()(*i4a838ef194e4c99e9f2c63ba10dab9c
         return m.size
     }
 }
-// Gets the standardDev property value. 
+// GetStandardDev gets the standardDev property value. 
 func (m *Confidence_NormRequestBody) GetStandardDev()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *Confidence_NormRequestBody) GetStandardDev()(*i4a838ef194e4c99e9f2c63ba
         return m.standardDev
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Confidence_NormRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["alpha"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,9 +93,7 @@ func (m *Confidence_NormRequestBody) GetFieldDeserializers()(map[string]func(int
 func (m *Confidence_NormRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Confidence_NormRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("alpha", m.GetAlpha())
@@ -123,27 +121,19 @@ func (m *Confidence_NormRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Confidence_NormRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the alpha property value. 
-// Parameters:
-//  - value : Value to set for the alpha property.
+// SetAlpha sets the alpha property value. 
 func (m *Confidence_NormRequestBody) SetAlpha(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.alpha = value
 }
-// Sets the size property value. 
-// Parameters:
-//  - value : Value to set for the size property.
+// SetSize sets the size property value. 
 func (m *Confidence_NormRequestBody) SetSize(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.size = value
 }
-// Sets the standardDev property value. 
-// Parameters:
-//  - value : Value to set for the standardDev property.
+// SetStandardDev sets the standardDev property value. 
 func (m *Confidence_NormRequestBody) SetStandardDev(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.standardDev = value
 }

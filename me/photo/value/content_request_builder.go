@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\photo\$value
+// ContentRequestBuilder builds and executes requests for operations under \me\photo\$value
 type ContentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ContentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ContentRequestBuilderGetOptions options for Get
 type ContentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,7 +22,7 @@ type ContentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Put
+// ContentRequestBuilderPutOptions options for Put
 type ContentRequestBuilderPutOptions struct {
     // Binary request body
     Body []byte;
@@ -33,10 +33,7 @@ type ContentRequestBuilderPutOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ContentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
 func NewContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContentRequestBuilder) {
     m := &ContentRequestBuilder{
     }
@@ -49,18 +46,13 @@ func NewContentRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ContentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.
 func NewContentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ContentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user's profile photo. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user's profile photo. Read-only.
 func (m *ContentRequestBuilder) CreateGetRequestInformation(options *ContentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -77,9 +69,7 @@ func (m *ContentRequestBuilder) CreateGetRequestInformation(options *ContentRequ
     }
     return requestInfo, nil
 }
-// The user's profile photo. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePutRequestInformation the user's profile photo. Read-only.
 func (m *ContentRequestBuilder) CreatePutRequestInformation(options *ContentRequestBuilderPutOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +87,7 @@ func (m *ContentRequestBuilder) CreatePutRequestInformation(options *ContentRequ
     }
     return requestInfo, nil
 }
-// The user's profile photo. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get the user's profile photo. Read-only.
 func (m *ContentRequestBuilder) Get(options *ContentRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -111,9 +99,7 @@ func (m *ContentRequestBuilder) Get(options *ContentRequestBuilderGetOptions)([]
     }
     return res.([]byte), nil
 }
-// The user's profile photo. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Put the user's profile photo. Read-only.
 func (m *ContentRequestBuilder) Put(options *ContentRequestBuilderPutOptions)(error) {
     requestInfo, err := m.CreatePutRequestInformation(options);
     if err != nil {

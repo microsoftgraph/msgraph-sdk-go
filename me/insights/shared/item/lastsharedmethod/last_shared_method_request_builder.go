@@ -20,7 +20,7 @@ import (
     ieea8499a6b9140ef511ce921340edd0a6ffa314d2dc7545baba72a6a52627bd1 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/ref"
 )
 
-// Builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod
+// LastSharedMethodRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod
 type LastSharedMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type LastSharedMethodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// LastSharedMethodRequestBuilderGetOptions options for Get
 type LastSharedMethodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,7 +40,7 @@ type LastSharedMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get lastSharedMethod from me
+// LastSharedMethodRequestBuilderGetQueryParameters get lastSharedMethod from me
 type LastSharedMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -50,10 +50,7 @@ type LastSharedMethodRequestBuilderGetQueryParameters struct {
 func (m *LastSharedMethodRequestBuilder) CalendarSharingMessage()(*i565ca0b1b9ad912766fbf0e58273b9b820797d53acf7b1a52b069c653ed89642.CalendarSharingMessageRequestBuilder) {
     return i565ca0b1b9ad912766fbf0e58273b9b820797d53acf7b1a52b069c653ed89642.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new LastSharedMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLastSharedMethodRequestBuilderInternal instantiates a new LastSharedMethodRequestBuilder and sets the default values.
 func NewLastSharedMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LastSharedMethodRequestBuilder) {
     m := &LastSharedMethodRequestBuilder{
     }
@@ -66,18 +63,13 @@ func NewLastSharedMethodRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LastSharedMethodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLastSharedMethodRequestBuilder instantiates a new LastSharedMethodRequestBuilder and sets the default values.
 func NewLastSharedMethodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LastSharedMethodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLastSharedMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lastSharedMethod from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get lastSharedMethod from me
 func (m *LastSharedMethodRequestBuilder) CreateGetRequestInformation(options *LastSharedMethodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *LastSharedMethodRequestBuilder) CreateGetRequestInformation(options *La
     }
     return requestInfo, nil
 }
-// Get lastSharedMethod from me
-// Parameters:
-//  - options : Options for the request
+// Get get lastSharedMethod from me
 func (m *LastSharedMethodRequestBuilder) Get(options *LastSharedMethodRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Entity, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

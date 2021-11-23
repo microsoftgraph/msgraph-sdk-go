@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// MultiValueLegacyExtendedProperty 
 type MultiValueLegacyExtendedProperty struct {
     Entity
     // A collection of property values.
     value []string;
 }
-// Instantiates a new multiValueLegacyExtendedProperty and sets the default values.
+// NewMultiValueLegacyExtendedProperty instantiates a new multiValueLegacyExtendedProperty and sets the default values.
 func NewMultiValueLegacyExtendedProperty()(*MultiValueLegacyExtendedProperty) {
     m := &MultiValueLegacyExtendedProperty{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the value property value. A collection of property values.
+// GetValue gets the value property value. A collection of property values.
 func (m *MultiValueLegacyExtendedProperty) GetValue()([]string) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *MultiValueLegacyExtendedProperty) GetValue()([]string) {
         return m.value
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *MultiValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -47,9 +47,7 @@ func (m *MultiValueLegacyExtendedProperty) GetFieldDeserializers()(map[string]fu
 func (m *MultiValueLegacyExtendedProperty) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *MultiValueLegacyExtendedProperty) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -63,9 +61,7 @@ func (m *MultiValueLegacyExtendedProperty) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
-// Sets the value property value. A collection of property values.
-// Parameters:
-//  - value : Value to set for the value property.
+// SetValue sets the value property value. A collection of property values.
 func (m *MultiValueLegacyExtendedProperty) SetValue(value []string)() {
     m.value = value
 }

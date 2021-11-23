@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SubjectRightsRequestDetail 
 type SubjectRightsRequestDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,14 +23,14 @@ type SubjectRightsRequestDetail struct {
     // Total item size in bytes.
     totalItemSize *int64;
 }
-// Instantiates a new subjectRightsRequestDetail and sets the default values.
+// NewSubjectRightsRequestDetail instantiates a new subjectRightsRequestDetail and sets the default values.
 func NewSubjectRightsRequestDetail()(*SubjectRightsRequestDetail) {
     m := &SubjectRightsRequestDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestDetail) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *SubjectRightsRequestDetail) GetAdditionalData()(map[string]interface{})
         return m.additionalData
     }
 }
-// Gets the excludedItemCount property value. Count of items that are excluded from the request.
+// GetExcludedItemCount gets the excludedItemCount property value. Count of items that are excluded from the request.
 func (m *SubjectRightsRequestDetail) GetExcludedItemCount()(*int64) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *SubjectRightsRequestDetail) GetExcludedItemCount()(*int64) {
         return m.excludedItemCount
     }
 }
-// Gets the insightCounts property value. Count of items per insight.
+// GetInsightCounts gets the insightCounts property value. Count of items per insight.
 func (m *SubjectRightsRequestDetail) GetInsightCounts()([]KeyValuePair) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *SubjectRightsRequestDetail) GetInsightCounts()([]KeyValuePair) {
         return m.insightCounts
     }
 }
-// Gets the itemCount property value. Count of items found.
+// GetItemCount gets the itemCount property value. Count of items found.
 func (m *SubjectRightsRequestDetail) GetItemCount()(*int64) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *SubjectRightsRequestDetail) GetItemCount()(*int64) {
         return m.itemCount
     }
 }
-// Gets the itemNeedReview property value. Count of item that need review.
+// GetItemNeedReview gets the itemNeedReview property value. Count of item that need review.
 func (m *SubjectRightsRequestDetail) GetItemNeedReview()(*int64) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *SubjectRightsRequestDetail) GetItemNeedReview()(*int64) {
         return m.itemNeedReview
     }
 }
-// Gets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
+// GetProductItemCounts gets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
 func (m *SubjectRightsRequestDetail) GetProductItemCounts()([]KeyValuePair) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *SubjectRightsRequestDetail) GetProductItemCounts()([]KeyValuePair) {
         return m.productItemCounts
     }
 }
-// Gets the signedOffItemCount property value. Count of items signed off by the administrator.
+// GetSignedOffItemCount gets the signedOffItemCount property value. Count of items signed off by the administrator.
 func (m *SubjectRightsRequestDetail) GetSignedOffItemCount()(*int64) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *SubjectRightsRequestDetail) GetSignedOffItemCount()(*int64) {
         return m.signedOffItemCount
     }
 }
-// Gets the totalItemSize property value. Total item size in bytes.
+// GetTotalItemSize gets the totalItemSize property value. Total item size in bytes.
 func (m *SubjectRightsRequestDetail) GetTotalItemSize()(*int64) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *SubjectRightsRequestDetail) GetTotalItemSize()(*int64) {
         return m.totalItemSize
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["excludedItemCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -180,9 +180,7 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(int
 func (m *SubjectRightsRequestDetail) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SubjectRightsRequestDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt64Value("excludedItemCount", m.GetExcludedItemCount())
@@ -244,51 +242,35 @@ func (m *SubjectRightsRequestDetail) Serialize(writer i04eb5309aeaafadd28374d79c
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestDetail) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the excludedItemCount property value. Count of items that are excluded from the request.
-// Parameters:
-//  - value : Value to set for the excludedItemCount property.
+// SetExcludedItemCount sets the excludedItemCount property value. Count of items that are excluded from the request.
 func (m *SubjectRightsRequestDetail) SetExcludedItemCount(value *int64)() {
     m.excludedItemCount = value
 }
-// Sets the insightCounts property value. Count of items per insight.
-// Parameters:
-//  - value : Value to set for the insightCounts property.
+// SetInsightCounts sets the insightCounts property value. Count of items per insight.
 func (m *SubjectRightsRequestDetail) SetInsightCounts(value []KeyValuePair)() {
     m.insightCounts = value
 }
-// Sets the itemCount property value. Count of items found.
-// Parameters:
-//  - value : Value to set for the itemCount property.
+// SetItemCount sets the itemCount property value. Count of items found.
 func (m *SubjectRightsRequestDetail) SetItemCount(value *int64)() {
     m.itemCount = value
 }
-// Sets the itemNeedReview property value. Count of item that need review.
-// Parameters:
-//  - value : Value to set for the itemNeedReview property.
+// SetItemNeedReview sets the itemNeedReview property value. Count of item that need review.
 func (m *SubjectRightsRequestDetail) SetItemNeedReview(value *int64)() {
     m.itemNeedReview = value
 }
-// Sets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
-// Parameters:
-//  - value : Value to set for the productItemCounts property.
+// SetProductItemCounts sets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
 func (m *SubjectRightsRequestDetail) SetProductItemCounts(value []KeyValuePair)() {
     m.productItemCounts = value
 }
-// Sets the signedOffItemCount property value. Count of items signed off by the administrator.
-// Parameters:
-//  - value : Value to set for the signedOffItemCount property.
+// SetSignedOffItemCount sets the signedOffItemCount property value. Count of items signed off by the administrator.
 func (m *SubjectRightsRequestDetail) SetSignedOffItemCount(value *int64)() {
     m.signedOffItemCount = value
 }
-// Sets the totalItemSize property value. Total item size in bytes.
-// Parameters:
-//  - value : Value to set for the totalItemSize property.
+// SetTotalItemSize sets the totalItemSize property value. Total item size in bytes.
 func (m *SubjectRightsRequestDetail) SetTotalItemSize(value *int64)() {
     m.totalItemSize = value
 }

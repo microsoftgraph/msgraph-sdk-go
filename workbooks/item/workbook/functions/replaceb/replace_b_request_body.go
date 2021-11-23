@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// ReplaceBRequestBody 
 type ReplaceBRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -18,14 +18,14 @@ type ReplaceBRequestBody struct {
     // 
     startNum *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
-// Instantiates a new replaceBRequestBody and sets the default values.
+// NewReplaceBRequestBody instantiates a new replaceBRequestBody and sets the default values.
 func NewReplaceBRequestBody()(*ReplaceBRequestBody) {
     m := &ReplaceBRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReplaceBRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *ReplaceBRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the newText property value. 
+// GetNewText gets the newText property value. 
 func (m *ReplaceBRequestBody) GetNewText()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *ReplaceBRequestBody) GetNewText()(*i4a838ef194e4c99e9f2c63ba10dab9cb120
         return m.newText
     }
 }
-// Gets the numBytes property value. 
+// GetNumBytes gets the numBytes property value. 
 func (m *ReplaceBRequestBody) GetNumBytes()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *ReplaceBRequestBody) GetNumBytes()(*i4a838ef194e4c99e9f2c63ba10dab9cb12
         return m.numBytes
     }
 }
-// Gets the oldText property value. 
+// GetOldText gets the oldText property value. 
 func (m *ReplaceBRequestBody) GetOldText()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *ReplaceBRequestBody) GetOldText()(*i4a838ef194e4c99e9f2c63ba10dab9cb120
         return m.oldText
     }
 }
-// Gets the startNum property value. 
+// GetStartNum gets the startNum property value. 
 func (m *ReplaceBRequestBody) GetStartNum()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *ReplaceBRequestBody) GetStartNum()(*i4a838ef194e4c99e9f2c63ba10dab9cb12
         return m.startNum
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ReplaceBRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["newText"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -113,9 +113,7 @@ func (m *ReplaceBRequestBody) GetFieldDeserializers()(map[string]func(interface{
 func (m *ReplaceBRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ReplaceBRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("newText", m.GetNewText())
@@ -149,33 +147,23 @@ func (m *ReplaceBRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReplaceBRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the newText property value. 
-// Parameters:
-//  - value : Value to set for the newText property.
+// SetNewText sets the newText property value. 
 func (m *ReplaceBRequestBody) SetNewText(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.newText = value
 }
-// Sets the numBytes property value. 
-// Parameters:
-//  - value : Value to set for the numBytes property.
+// SetNumBytes sets the numBytes property value. 
 func (m *ReplaceBRequestBody) SetNumBytes(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.numBytes = value
 }
-// Sets the oldText property value. 
-// Parameters:
-//  - value : Value to set for the oldText property.
+// SetOldText sets the oldText property value. 
 func (m *ReplaceBRequestBody) SetOldText(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.oldText = value
 }
-// Sets the startNum property value. 
-// Parameters:
-//  - value : Value to set for the startNum property.
+// SetStartNum sets the startNum property value. 
 func (m *ReplaceBRequestBody) SetStartNum(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.startNum = value
 }

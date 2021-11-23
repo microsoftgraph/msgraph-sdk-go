@@ -6,7 +6,7 @@ import (
     if16d68f8f5e29587f2c3f4904b28d4809aef9ba1ded5e7526612370ed1a35458 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/owners/ref"
 )
 
-// Builds and executes requests for operations under \applications\{application-id}\owners
+// OwnersRequestBuilder builds and executes requests for operations under \applications\{application-id}\owners
 type OwnersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type OwnersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// OwnersRequestBuilderGetOptions options for Get
 type OwnersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type OwnersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+// OwnersRequestBuilderGetQueryParameters directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
 type OwnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type OwnersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new OwnersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOwnersRequestBuilderInternal instantiates a new OwnersRequestBuilder and sets the default values.
 func NewOwnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OwnersRequestBuilder) {
     m := &OwnersRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewOwnersRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OwnersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOwnersRequestBuilder instantiates a new OwnersRequestBuilder and sets the default values.
 func NewOwnersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OwnersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOwnersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
 func (m *OwnersRequestBuilder) CreateGetRequestInformation(options *OwnersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *OwnersRequestBuilder) CreateGetRequestInformation(options *OwnersReques
     }
     return requestInfo, nil
 }
-// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
 func (m *OwnersRequestBuilder) Get(options *OwnersRequestBuilderGetOptions)(*OwnersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

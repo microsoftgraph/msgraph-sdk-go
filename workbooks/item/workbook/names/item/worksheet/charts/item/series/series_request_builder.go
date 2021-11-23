@@ -8,7 +8,7 @@ import (
     i9aacf6866aeb863346ce6e0d0e843162f72a42f33907f7858194d5e0638b1df5 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/series/count"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series
+// SeriesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series
 type SeriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type SeriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SeriesRequestBuilderGetOptions options for Get
 type SeriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type SeriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents either a single series or collection of series in the chart. Read-only.
+// SeriesRequestBuilderGetQueryParameters represents either a single series or collection of series in the chart. Read-only.
 type SeriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -47,7 +47,7 @@ type SeriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SeriesRequestBuilderPostOptions options for Post
 type SeriesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartSeries;
@@ -58,10 +58,7 @@ type SeriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SeriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSeriesRequestBuilderInternal instantiates a new SeriesRequestBuilder and sets the default values.
 func NewSeriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SeriesRequestBuilder) {
     m := &SeriesRequestBuilder{
     }
@@ -74,22 +71,17 @@ func NewSeriesRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SeriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSeriesRequestBuilder instantiates a new SeriesRequestBuilder and sets the default values.
 func NewSeriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SeriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSeriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\microsoft.graph.count()
+// Count builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\microsoft.graph.count()
 func (m *SeriesRequestBuilder) Count()(*i9aacf6866aeb863346ce6e0d0e843162f72a42f33907f7858194d5e0638b1df5.CountRequestBuilder) {
     return i9aacf6866aeb863346ce6e0d0e843162f72a42f33907f7858194d5e0638b1df5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Represents either a single series or collection of series in the chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents either a single series or collection of series in the chart. Read-only.
 func (m *SeriesRequestBuilder) CreateGetRequestInformation(options *SeriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,9 +101,7 @@ func (m *SeriesRequestBuilder) CreateGetRequestInformation(options *SeriesReques
     }
     return requestInfo, nil
 }
-// Represents either a single series or collection of series in the chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation represents either a single series or collection of series in the chart. Read-only.
 func (m *SeriesRequestBuilder) CreatePostRequestInformation(options *SeriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,9 +119,7 @@ func (m *SeriesRequestBuilder) CreatePostRequestInformation(options *SeriesReque
     }
     return requestInfo, nil
 }
-// Represents either a single series or collection of series in the chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents either a single series or collection of series in the chart. Read-only.
 func (m *SeriesRequestBuilder) Get(options *SeriesRequestBuilderGetOptions)(*SeriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -143,15 +131,11 @@ func (m *SeriesRequestBuilder) Get(options *SeriesRequestBuilderGetOptions)(*Ser
     }
     return res.(*SeriesResponse), nil
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\microsoft.graph.itemAt(index={index})
-// Parameters:
-//  - index : Usage: index={index}
+// ItemAtWithIndex builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\microsoft.graph.itemAt(index={index})
 func (m *SeriesRequestBuilder) ItemAtWithIndex(index *int32)(*i4629f121b2a51b3298a4020a66e19bbc1c78f15f9d2298ecf6397c82f9606d80.ItemAtWithIndexRequestBuilder) {
     return i4629f121b2a51b3298a4020a66e19bbc1c78f15f9d2298ecf6397c82f9606d80.NewItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index);
 }
-// Represents either a single series or collection of series in the chart. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post represents either a single series or collection of series in the chart. Read-only.
 func (m *SeriesRequestBuilder) Post(options *SeriesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartSeries, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     i63eaf7dba6e4a00ceb87474ce57d05e742de6ce3f96284c2c22227d2b7a5efa6 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/axes/seriesaxis/minorgridlines/format"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes\seriesAxis\minorGridlines
+// MinorGridlinesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes\seriesAxis\minorGridlines
 type MinorGridlinesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type MinorGridlinesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MinorGridlinesRequestBuilderDeleteOptions options for Delete
 type MinorGridlinesRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type MinorGridlinesRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MinorGridlinesRequestBuilderGetOptions options for Get
 type MinorGridlinesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type MinorGridlinesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
+// MinorGridlinesRequestBuilderGetQueryParameters returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
 type MinorGridlinesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MinorGridlinesRequestBuilderPatchOptions options for Patch
 type MinorGridlinesRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartGridlines;
@@ -54,10 +54,7 @@ type MinorGridlinesRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MinorGridlinesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMinorGridlinesRequestBuilderInternal instantiates a new MinorGridlinesRequestBuilder and sets the default values.
 func NewMinorGridlinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MinorGridlinesRequestBuilder) {
     m := &MinorGridlinesRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewMinorGridlinesRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MinorGridlinesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMinorGridlinesRequestBuilder instantiates a new MinorGridlinesRequestBuilder and sets the default values.
 func NewMinorGridlinesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MinorGridlinesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMinorGridlinesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
 func (m *MinorGridlinesRequestBuilder) CreateDeleteRequestInformation(options *MinorGridlinesRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *MinorGridlinesRequestBuilder) CreateDeleteRequestInformation(options *M
     }
     return requestInfo, nil
 }
-// Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
 func (m *MinorGridlinesRequestBuilder) CreateGetRequestInformation(options *MinorGridlinesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *MinorGridlinesRequestBuilder) CreateGetRequestInformation(options *Mino
     }
     return requestInfo, nil
 }
-// Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
 func (m *MinorGridlinesRequestBuilder) CreatePatchRequestInformation(options *MinorGridlinesRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *MinorGridlinesRequestBuilder) CreatePatchRequestInformation(options *Mi
     }
     return requestInfo, nil
 }
-// Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
 func (m *MinorGridlinesRequestBuilder) Delete(options *MinorGridlinesRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *MinorGridlinesRequestBuilder) Delete(options *MinorGridlinesRequestBuil
 func (m *MinorGridlinesRequestBuilder) Format()(*i63eaf7dba6e4a00ceb87474ce57d05e742de6ce3f96284c2c22227d2b7a5efa6.FormatRequestBuilder) {
     return i63eaf7dba6e4a00ceb87474ce57d05e742de6ce3f96284c2c22227d2b7a5efa6.NewFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
 func (m *MinorGridlinesRequestBuilder) Get(options *MinorGridlinesRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartGridlines, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *MinorGridlinesRequestBuilder) Get(options *MinorGridlinesRequestBuilder
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartGridlines), nil
 }
-// Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
 func (m *MinorGridlinesRequestBuilder) Patch(options *MinorGridlinesRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

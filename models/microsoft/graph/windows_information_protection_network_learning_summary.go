@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// WindowsInformationProtectionNetworkLearningSummary 
 type WindowsInformationProtectionNetworkLearningSummary struct {
     Entity
     // Device Count
@@ -12,14 +12,14 @@ type WindowsInformationProtectionNetworkLearningSummary struct {
     // Website url
     url *string;
 }
-// Instantiates a new windowsInformationProtectionNetworkLearningSummary and sets the default values.
+// NewWindowsInformationProtectionNetworkLearningSummary instantiates a new windowsInformationProtectionNetworkLearningSummary and sets the default values.
 func NewWindowsInformationProtectionNetworkLearningSummary()(*WindowsInformationProtectionNetworkLearningSummary) {
     m := &WindowsInformationProtectionNetworkLearningSummary{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the deviceCount property value. Device Count
+// GetDeviceCount gets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionNetworkLearningSummary) GetDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) GetDeviceCount()(*i
         return m.deviceCount
     }
 }
-// Gets the url property value. Website url
+// GetUrl gets the url property value. Website url
 func (m *WindowsInformationProtectionNetworkLearningSummary) GetUrl()(*string) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) GetUrl()(*string) {
         return m.url
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionNetworkLearningSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceCount"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -63,9 +63,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) GetFieldDeserialize
 func (m *WindowsInformationProtectionNetworkLearningSummary) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WindowsInformationProtectionNetworkLearningSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -85,15 +83,11 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) Serialize(writer i0
     }
     return nil
 }
-// Sets the deviceCount property value. Device Count
-// Parameters:
-//  - value : Value to set for the deviceCount property.
+// SetDeviceCount sets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionNetworkLearningSummary) SetDeviceCount(value *int32)() {
     m.deviceCount = value
 }
-// Sets the url property value. Website url
-// Parameters:
-//  - value : Value to set for the url property.
+// SetUrl sets the url property value. Website url
 func (m *WindowsInformationProtectionNetworkLearningSummary) SetUrl(value *string)() {
     m.url = value
 }

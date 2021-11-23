@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \domains\{domain-id}\verificationDnsRecords
+// VerificationDnsRecordsRequestBuilder builds and executes requests for operations under \domains\{domain-id}\verificationDnsRecords
 type VerificationDnsRecordsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type VerificationDnsRecordsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// VerificationDnsRecordsRequestBuilderGetOptions options for Get
 type VerificationDnsRecordsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type VerificationDnsRecordsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
+// VerificationDnsRecordsRequestBuilderGetQueryParameters dNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
 type VerificationDnsRecordsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type VerificationDnsRecordsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// VerificationDnsRecordsRequestBuilderPostOptions options for Post
 type VerificationDnsRecordsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DomainDnsRecord;
@@ -56,10 +56,7 @@ type VerificationDnsRecordsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new VerificationDnsRecordsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVerificationDnsRecordsRequestBuilderInternal instantiates a new VerificationDnsRecordsRequestBuilder and sets the default values.
 func NewVerificationDnsRecordsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VerificationDnsRecordsRequestBuilder) {
     m := &VerificationDnsRecordsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewVerificationDnsRecordsRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new VerificationDnsRecordsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewVerificationDnsRecordsRequestBuilder instantiates a new VerificationDnsRecordsRequestBuilder and sets the default values.
 func NewVerificationDnsRecordsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*VerificationDnsRecordsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVerificationDnsRecordsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation dNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
 func (m *VerificationDnsRecordsRequestBuilder) CreateGetRequestInformation(options *VerificationDnsRecordsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *VerificationDnsRecordsRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation dNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
 func (m *VerificationDnsRecordsRequestBuilder) CreatePostRequestInformation(options *VerificationDnsRecordsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *VerificationDnsRecordsRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
-// Parameters:
-//  - options : Options for the request
+// Get dNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
 func (m *VerificationDnsRecordsRequestBuilder) Get(options *VerificationDnsRecordsRequestBuilderGetOptions)(*VerificationDnsRecordsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *VerificationDnsRecordsRequestBuilder) Get(options *VerificationDnsRecor
     }
     return res.(*VerificationDnsRecordsResponse), nil
 }
-// DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
-// Parameters:
-//  - options : Options for the request
+// Post dNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
 func (m *VerificationDnsRecordsRequestBuilder) Post(options *VerificationDnsRecordsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DomainDnsRecord, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

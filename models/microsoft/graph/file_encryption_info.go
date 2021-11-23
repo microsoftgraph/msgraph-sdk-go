@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// FileEncryptionInfo 
 type FileEncryptionInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,14 +23,14 @@ type FileEncryptionInfo struct {
     // The the profile identifier.
     profileIdentifier *string;
 }
-// Instantiates a new fileEncryptionInfo and sets the default values.
+// NewFileEncryptionInfo instantiates a new fileEncryptionInfo and sets the default values.
 func NewFileEncryptionInfo()(*FileEncryptionInfo) {
     m := &FileEncryptionInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileEncryptionInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *FileEncryptionInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the encryptionKey property value. The key used to encrypt the file content.
+// GetEncryptionKey gets the encryptionKey property value. The key used to encrypt the file content.
 func (m *FileEncryptionInfo) GetEncryptionKey()([]byte) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *FileEncryptionInfo) GetEncryptionKey()([]byte) {
         return m.encryptionKey
     }
 }
-// Gets the fileDigest property value. The file digest prior to encryption.
+// GetFileDigest gets the fileDigest property value. The file digest prior to encryption.
 func (m *FileEncryptionInfo) GetFileDigest()([]byte) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *FileEncryptionInfo) GetFileDigest()([]byte) {
         return m.fileDigest
     }
 }
-// Gets the fileDigestAlgorithm property value. The file digest algorithm.
+// GetFileDigestAlgorithm gets the fileDigestAlgorithm property value. The file digest algorithm.
 func (m *FileEncryptionInfo) GetFileDigestAlgorithm()(*string) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *FileEncryptionInfo) GetFileDigestAlgorithm()(*string) {
         return m.fileDigestAlgorithm
     }
 }
-// Gets the initializationVector property value. The initialization vector used for the encryption algorithm.
+// GetInitializationVector gets the initializationVector property value. The initialization vector used for the encryption algorithm.
 func (m *FileEncryptionInfo) GetInitializationVector()([]byte) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *FileEncryptionInfo) GetInitializationVector()([]byte) {
         return m.initializationVector
     }
 }
-// Gets the mac property value. The hash of the encrypted file content + IV (content hash).
+// GetMac gets the mac property value. The hash of the encrypted file content + IV (content hash).
 func (m *FileEncryptionInfo) GetMac()([]byte) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *FileEncryptionInfo) GetMac()([]byte) {
         return m.mac
     }
 }
-// Gets the macKey property value. The key used to get mac.
+// GetMacKey gets the macKey property value. The key used to get mac.
 func (m *FileEncryptionInfo) GetMacKey()([]byte) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *FileEncryptionInfo) GetMacKey()([]byte) {
         return m.macKey
     }
 }
-// Gets the profileIdentifier property value. The the profile identifier.
+// GetProfileIdentifier gets the profileIdentifier property value. The the profile identifier.
 func (m *FileEncryptionInfo) GetProfileIdentifier()(*string) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *FileEncryptionInfo) GetProfileIdentifier()(*string) {
         return m.profileIdentifier
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *FileEncryptionInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["encryptionKey"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -172,9 +172,7 @@ func (m *FileEncryptionInfo) GetFieldDeserializers()(map[string]func(interface{}
 func (m *FileEncryptionInfo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *FileEncryptionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteByteArrayValue("encryptionKey", m.GetEncryptionKey())
@@ -226,51 +224,35 @@ func (m *FileEncryptionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileEncryptionInfo) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the encryptionKey property value. The key used to encrypt the file content.
-// Parameters:
-//  - value : Value to set for the encryptionKey property.
+// SetEncryptionKey sets the encryptionKey property value. The key used to encrypt the file content.
 func (m *FileEncryptionInfo) SetEncryptionKey(value []byte)() {
     m.encryptionKey = value
 }
-// Sets the fileDigest property value. The file digest prior to encryption.
-// Parameters:
-//  - value : Value to set for the fileDigest property.
+// SetFileDigest sets the fileDigest property value. The file digest prior to encryption.
 func (m *FileEncryptionInfo) SetFileDigest(value []byte)() {
     m.fileDigest = value
 }
-// Sets the fileDigestAlgorithm property value. The file digest algorithm.
-// Parameters:
-//  - value : Value to set for the fileDigestAlgorithm property.
+// SetFileDigestAlgorithm sets the fileDigestAlgorithm property value. The file digest algorithm.
 func (m *FileEncryptionInfo) SetFileDigestAlgorithm(value *string)() {
     m.fileDigestAlgorithm = value
 }
-// Sets the initializationVector property value. The initialization vector used for the encryption algorithm.
-// Parameters:
-//  - value : Value to set for the initializationVector property.
+// SetInitializationVector sets the initializationVector property value. The initialization vector used for the encryption algorithm.
 func (m *FileEncryptionInfo) SetInitializationVector(value []byte)() {
     m.initializationVector = value
 }
-// Sets the mac property value. The hash of the encrypted file content + IV (content hash).
-// Parameters:
-//  - value : Value to set for the mac property.
+// SetMac sets the mac property value. The hash of the encrypted file content + IV (content hash).
 func (m *FileEncryptionInfo) SetMac(value []byte)() {
     m.mac = value
 }
-// Sets the macKey property value. The key used to get mac.
-// Parameters:
-//  - value : Value to set for the macKey property.
+// SetMacKey sets the macKey property value. The key used to get mac.
 func (m *FileEncryptionInfo) SetMacKey(value []byte)() {
     m.macKey = value
 }
-// Sets the profileIdentifier property value. The the profile identifier.
-// Parameters:
-//  - value : Value to set for the profileIdentifier property.
+// SetProfileIdentifier sets the profileIdentifier property value. The the profile identifier.
 func (m *FileEncryptionInfo) SetProfileIdentifier(value *string)() {
     m.profileIdentifier = value
 }

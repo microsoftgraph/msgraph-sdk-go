@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// WindowsInformationProtectionAppLearningSummary 
 type WindowsInformationProtectionAppLearningSummary struct {
     Entity
     // Application Name
@@ -14,14 +14,14 @@ type WindowsInformationProtectionAppLearningSummary struct {
     // Device Count
     deviceCount *int32;
 }
-// Instantiates a new windowsInformationProtectionAppLearningSummary and sets the default values.
+// NewWindowsInformationProtectionAppLearningSummary instantiates a new windowsInformationProtectionAppLearningSummary and sets the default values.
 func NewWindowsInformationProtectionAppLearningSummary()(*WindowsInformationProtectionAppLearningSummary) {
     m := &WindowsInformationProtectionAppLearningSummary{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the applicationName property value. Application Name
+// GetApplicationName gets the applicationName property value. Application Name
 func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationName()(*string) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationName()(*s
         return m.applicationName
     }
 }
-// Gets the applicationType property value. Application Type. Possible values are: universal, desktop.
+// GetApplicationType gets the applicationType property value. Application Type. Possible values are: universal, desktop.
 func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationType()(*ApplicationType) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationType()(*A
         return m.applicationType
     }
 }
-// Gets the deviceCount property value. Device Count
+// GetDeviceCount gets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionAppLearningSummary) GetDeviceCount()(*int32) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetDeviceCount()(*int32
         return m.deviceCount
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionAppLearningSummary) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicationName"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -84,9 +84,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetFieldDeserializers()
 func (m *WindowsInformationProtectionAppLearningSummary) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *WindowsInformationProtectionAppLearningSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -113,21 +111,15 @@ func (m *WindowsInformationProtectionAppLearningSummary) Serialize(writer i04eb5
     }
     return nil
 }
-// Sets the applicationName property value. Application Name
-// Parameters:
-//  - value : Value to set for the applicationName property.
+// SetApplicationName sets the applicationName property value. Application Name
 func (m *WindowsInformationProtectionAppLearningSummary) SetApplicationName(value *string)() {
     m.applicationName = value
 }
-// Sets the applicationType property value. Application Type. Possible values are: universal, desktop.
-// Parameters:
-//  - value : Value to set for the applicationType property.
+// SetApplicationType sets the applicationType property value. Application Type. Possible values are: universal, desktop.
 func (m *WindowsInformationProtectionAppLearningSummary) SetApplicationType(value *ApplicationType)() {
     m.applicationType = value
 }
-// Sets the deviceCount property value. Device Count
-// Parameters:
-//  - value : Value to set for the deviceCount property.
+// SetDeviceCount sets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionAppLearningSummary) SetDeviceCount(value *int32)() {
     m.deviceCount = value
 }

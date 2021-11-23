@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceManagementPartners
+// DeviceManagementPartnersRequestBuilder builds and executes requests for operations under \deviceManagement\deviceManagementPartners
 type DeviceManagementPartnersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceManagementPartnersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DeviceManagementPartnersRequestBuilderGetOptions options for Get
 type DeviceManagementPartnersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DeviceManagementPartnersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of Device Management Partners configured by the tenant.
+// DeviceManagementPartnersRequestBuilderGetQueryParameters the list of Device Management Partners configured by the tenant.
 type DeviceManagementPartnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DeviceManagementPartnersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DeviceManagementPartnersRequestBuilderPostOptions options for Post
 type DeviceManagementPartnersRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementPartner;
@@ -56,10 +56,7 @@ type DeviceManagementPartnersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceManagementPartnersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementPartnersRequestBuilderInternal instantiates a new DeviceManagementPartnersRequestBuilder and sets the default values.
 func NewDeviceManagementPartnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementPartnersRequestBuilder) {
     m := &DeviceManagementPartnersRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDeviceManagementPartnersRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceManagementPartnersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceManagementPartnersRequestBuilder instantiates a new DeviceManagementPartnersRequestBuilder and sets the default values.
 func NewDeviceManagementPartnersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceManagementPartnersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementPartnersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of Device Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of Device Management Partners configured by the tenant.
 func (m *DeviceManagementPartnersRequestBuilder) CreateGetRequestInformation(options *DeviceManagementPartnersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DeviceManagementPartnersRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// The list of Device Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the list of Device Management Partners configured by the tenant.
 func (m *DeviceManagementPartnersRequestBuilder) CreatePostRequestInformation(options *DeviceManagementPartnersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DeviceManagementPartnersRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// The list of Device Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of Device Management Partners configured by the tenant.
 func (m *DeviceManagementPartnersRequestBuilder) Get(options *DeviceManagementPartnersRequestBuilderGetOptions)(*DeviceManagementPartnersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DeviceManagementPartnersRequestBuilder) Get(options *DeviceManagementPa
     }
     return res.(*DeviceManagementPartnersResponse), nil
 }
-// The list of Device Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Post the list of Device Management Partners configured by the tenant.
 func (m *DeviceManagementPartnersRequestBuilder) Post(options *DeviceManagementPartnersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementPartner, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

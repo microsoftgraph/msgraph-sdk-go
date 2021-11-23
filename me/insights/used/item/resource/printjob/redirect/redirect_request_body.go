@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// RedirectRequestBody 
 type RedirectRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -14,14 +14,14 @@ type RedirectRequestBody struct {
     // 
     destinationPrinterId *string;
 }
-// Instantiates a new redirectRequestBody and sets the default values.
+// NewRedirectRequestBody instantiates a new redirectRequestBody and sets the default values.
 func NewRedirectRequestBody()(*RedirectRequestBody) {
     m := &RedirectRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *RedirectRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the configuration property value. 
+// GetConfiguration gets the configuration property value. 
 func (m *RedirectRequestBody) GetConfiguration()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintJobConfiguration) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *RedirectRequestBody) GetConfiguration()(*i4a838ef194e4c99e9f2c63ba10dab
         return m.configuration
     }
 }
-// Gets the destinationPrinterId property value. 
+// GetDestinationPrinterId gets the destinationPrinterId property value. 
 func (m *RedirectRequestBody) GetDestinationPrinterId()(*string) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *RedirectRequestBody) GetDestinationPrinterId()(*string) {
         return m.destinationPrinterId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["configuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -73,9 +73,7 @@ func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{
 func (m *RedirectRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RedirectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("configuration", m.GetConfiguration())
@@ -97,21 +95,15 @@ func (m *RedirectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the configuration property value. 
-// Parameters:
-//  - value : Value to set for the configuration property.
+// SetConfiguration sets the configuration property value. 
 func (m *RedirectRequestBody) SetConfiguration(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintJobConfiguration)() {
     m.configuration = value
 }
-// Sets the destinationPrinterId property value. 
-// Parameters:
-//  - value : Value to set for the destinationPrinterId property.
+// SetDestinationPrinterId sets the destinationPrinterId property value. 
 func (m *RedirectRequestBody) SetDestinationPrinterId(value *string)() {
     m.destinationPrinterId = value
 }

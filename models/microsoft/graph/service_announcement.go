@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ServiceAnnouncement 
 type ServiceAnnouncement struct {
     Entity
     // A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
@@ -14,14 +14,14 @@ type ServiceAnnouncement struct {
     // A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
     messages []ServiceUpdateMessage;
 }
-// Instantiates a new serviceAnnouncement and sets the default values.
+// NewServiceAnnouncement instantiates a new serviceAnnouncement and sets the default values.
 func NewServiceAnnouncement()(*ServiceAnnouncement) {
     m := &ServiceAnnouncement{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
+// GetHealthOverviews gets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) GetHealthOverviews()([]ServiceHealth) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *ServiceAnnouncement) GetHealthOverviews()([]ServiceHealth) {
         return m.healthOverviews
     }
 }
-// Gets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// GetIssues gets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) GetIssues()([]ServiceHealthIssue) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *ServiceAnnouncement) GetIssues()([]ServiceHealthIssue) {
         return m.issues
     }
 }
-// Gets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+// GetMessages gets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) GetMessages()([]ServiceUpdateMessage) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *ServiceAnnouncement) GetMessages()([]ServiceUpdateMessage) {
         return m.messages
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["healthOverviews"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -95,9 +95,7 @@ func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(interface{
 func (m *ServiceAnnouncement) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ServiceAnnouncement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -138,21 +136,15 @@ func (m *ServiceAnnouncement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - value : Value to set for the healthOverviews property.
+// SetHealthOverviews sets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) SetHealthOverviews(value []ServiceHealth)() {
     m.healthOverviews = value
 }
-// Sets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - value : Value to set for the issues property.
+// SetIssues sets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) SetIssues(value []ServiceHealthIssue)() {
     m.issues = value
 }
-// Sets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
-// Parameters:
-//  - value : Value to set for the messages property.
+// SetMessages sets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) SetMessages(value []ServiceUpdateMessage)() {
     m.messages = value
 }

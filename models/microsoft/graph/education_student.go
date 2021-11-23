@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// EducationStudent 
 type EducationStudent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type EducationStudent struct {
     // Student Number.
     studentNumber *string;
 }
-// Instantiates a new educationStudent and sets the default values.
+// NewEducationStudent instantiates a new educationStudent and sets the default values.
 func NewEducationStudent()(*EducationStudent) {
     m := &EducationStudent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationStudent) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *EducationStudent) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the birthDate property value. Birth date of the student.
+// GetBirthDate gets the birthDate property value. Birth date of the student.
 func (m *EducationStudent) GetBirthDate()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *EducationStudent) GetBirthDate()(*string) {
         return m.birthDate
     }
 }
-// Gets the externalId property value. ID of the student in the source system.
+// GetExternalId gets the externalId property value. ID of the student in the source system.
 func (m *EducationStudent) GetExternalId()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *EducationStudent) GetExternalId()(*string) {
         return m.externalId
     }
 }
-// Gets the gender property value. The possible values are: female, male, other, unknownFutureValue.
+// GetGender gets the gender property value. The possible values are: female, male, other, unknownFutureValue.
 func (m *EducationStudent) GetGender()(*EducationGender) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *EducationStudent) GetGender()(*EducationGender) {
         return m.gender
     }
 }
-// Gets the grade property value. Current grade level of the student.
+// GetGrade gets the grade property value. Current grade level of the student.
 func (m *EducationStudent) GetGrade()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *EducationStudent) GetGrade()(*string) {
         return m.grade
     }
 }
-// Gets the graduationYear property value. Year the student is graduating from the school.
+// GetGraduationYear gets the graduationYear property value. Year the student is graduating from the school.
 func (m *EducationStudent) GetGraduationYear()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *EducationStudent) GetGraduationYear()(*string) {
         return m.graduationYear
     }
 }
-// Gets the studentNumber property value. Student Number.
+// GetStudentNumber gets the studentNumber property value. Student Number.
 func (m *EducationStudent) GetStudentNumber()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *EducationStudent) GetStudentNumber()(*string) {
         return m.studentNumber
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EducationStudent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["birthDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -153,9 +153,7 @@ func (m *EducationStudent) GetFieldDeserializers()(map[string]func(interface{}, 
 func (m *EducationStudent) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EducationStudent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("birthDate", m.GetBirthDate())
@@ -202,45 +200,31 @@ func (m *EducationStudent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationStudent) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the birthDate property value. Birth date of the student.
-// Parameters:
-//  - value : Value to set for the birthDate property.
+// SetBirthDate sets the birthDate property value. Birth date of the student.
 func (m *EducationStudent) SetBirthDate(value *string)() {
     m.birthDate = value
 }
-// Sets the externalId property value. ID of the student in the source system.
-// Parameters:
-//  - value : Value to set for the externalId property.
+// SetExternalId sets the externalId property value. ID of the student in the source system.
 func (m *EducationStudent) SetExternalId(value *string)() {
     m.externalId = value
 }
-// Sets the gender property value. The possible values are: female, male, other, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the gender property.
+// SetGender sets the gender property value. The possible values are: female, male, other, unknownFutureValue.
 func (m *EducationStudent) SetGender(value *EducationGender)() {
     m.gender = value
 }
-// Sets the grade property value. Current grade level of the student.
-// Parameters:
-//  - value : Value to set for the grade property.
+// SetGrade sets the grade property value. Current grade level of the student.
 func (m *EducationStudent) SetGrade(value *string)() {
     m.grade = value
 }
-// Sets the graduationYear property value. Year the student is graduating from the school.
-// Parameters:
-//  - value : Value to set for the graduationYear property.
+// SetGraduationYear sets the graduationYear property value. Year the student is graduating from the school.
 func (m *EducationStudent) SetGraduationYear(value *string)() {
     m.graduationYear = value
 }
-// Sets the studentNumber property value. Student Number.
-// Parameters:
-//  - value : Value to set for the studentNumber property.
+// SetStudentNumber sets the studentNumber property value. Student Number.
 func (m *EducationStudent) SetStudentNumber(value *string)() {
     m.studentNumber = value
 }

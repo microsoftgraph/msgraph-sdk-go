@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\chats\{chat-id}
+// ChatRequestBuilder builds and executes requests for operations under \me\chats\{chat-id}
 type ChatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ChatRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ChatRequestBuilderDeleteOptions options for Delete
 type ChatRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ChatRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ChatRequestBuilderGetOptions options for Get
 type ChatRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ChatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get chats from me
+// ChatRequestBuilderGetQueryParameters get chats from me
 type ChatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ChatRequestBuilderPatchOptions options for Patch
 type ChatRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chat;
@@ -53,10 +53,7 @@ type ChatRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ChatRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatRequestBuilderInternal instantiates a new ChatRequestBuilder and sets the default values.
 func NewChatRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatRequestBuilder) {
     m := &ChatRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewChatRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChatRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatRequestBuilder instantiates a new ChatRequestBuilder and sets the default values.
 func NewChatRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChatRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property chats for me
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property chats for me
 func (m *ChatRequestBuilder) CreateDeleteRequestInformation(options *ChatRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ChatRequestBuilder) CreateDeleteRequestInformation(options *ChatRequest
     }
     return requestInfo, nil
 }
-// Get chats from me
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get chats from me
 func (m *ChatRequestBuilder) CreateGetRequestInformation(options *ChatRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ChatRequestBuilder) CreateGetRequestInformation(options *ChatRequestBui
     }
     return requestInfo, nil
 }
-// Update the navigation property chats in me
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property chats in me
 func (m *ChatRequestBuilder) CreatePatchRequestInformation(options *ChatRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ChatRequestBuilder) CreatePatchRequestInformation(options *ChatRequestB
     }
     return requestInfo, nil
 }
-// Delete navigation property chats for me
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property chats for me
 func (m *ChatRequestBuilder) Delete(options *ChatRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ChatRequestBuilder) Delete(options *ChatRequestBuilderDeleteOptions)(er
     }
     return nil
 }
-// Get chats from me
-// Parameters:
-//  - options : Options for the request
+// Get get chats from me
 func (m *ChatRequestBuilder) Get(options *ChatRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chat, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ChatRequestBuilder) Get(options *ChatRequestBuilderGetOptions)(*i4a838e
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chat), nil
 }
-// Update the navigation property chats in me
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property chats in me
 func (m *ChatRequestBuilder) Patch(options *ChatRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

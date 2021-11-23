@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceAppManagement\defaultManagedAppProtections\{defaultManagedAppProtection-id}\apps\{managedMobileApp-id}
+// ManagedMobileAppRequestBuilder builds and executes requests for operations under \deviceAppManagement\defaultManagedAppProtections\{defaultManagedAppProtection-id}\apps\{managedMobileApp-id}
 type ManagedMobileAppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ManagedMobileAppRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ManagedMobileAppRequestBuilderDeleteOptions options for Delete
 type ManagedMobileAppRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ManagedMobileAppRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ManagedMobileAppRequestBuilderGetOptions options for Get
 type ManagedMobileAppRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ManagedMobileAppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of apps to which the policy is deployed.
+// ManagedMobileAppRequestBuilderGetQueryParameters list of apps to which the policy is deployed.
 type ManagedMobileAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ManagedMobileAppRequestBuilderPatchOptions options for Patch
 type ManagedMobileAppRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedMobileApp;
@@ -53,10 +53,7 @@ type ManagedMobileAppRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ManagedMobileAppRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedMobileAppRequestBuilderInternal instantiates a new ManagedMobileAppRequestBuilder and sets the default values.
 func NewManagedMobileAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedMobileAppRequestBuilder) {
     m := &ManagedMobileAppRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewManagedMobileAppRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ManagedMobileAppRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewManagedMobileAppRequestBuilder instantiates a new ManagedMobileAppRequestBuilder and sets the default values.
 func NewManagedMobileAppRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ManagedMobileAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedMobileAppRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of apps to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation list of apps to which the policy is deployed.
 func (m *ManagedMobileAppRequestBuilder) CreateDeleteRequestInformation(options *ManagedMobileAppRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ManagedMobileAppRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// List of apps to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of apps to which the policy is deployed.
 func (m *ManagedMobileAppRequestBuilder) CreateGetRequestInformation(options *ManagedMobileAppRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ManagedMobileAppRequestBuilder) CreateGetRequestInformation(options *Ma
     }
     return requestInfo, nil
 }
-// List of apps to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation list of apps to which the policy is deployed.
 func (m *ManagedMobileAppRequestBuilder) CreatePatchRequestInformation(options *ManagedMobileAppRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ManagedMobileAppRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// List of apps to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// Delete list of apps to which the policy is deployed.
 func (m *ManagedMobileAppRequestBuilder) Delete(options *ManagedMobileAppRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ManagedMobileAppRequestBuilder) Delete(options *ManagedMobileAppRequest
     }
     return nil
 }
-// List of apps to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// Get list of apps to which the policy is deployed.
 func (m *ManagedMobileAppRequestBuilder) Get(options *ManagedMobileAppRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedMobileApp, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ManagedMobileAppRequestBuilder) Get(options *ManagedMobileAppRequestBui
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ManagedMobileApp), nil
 }
-// List of apps to which the policy is deployed.
-// Parameters:
-//  - options : Options for the request
+// Patch list of apps to which the policy is deployed.
 func (m *ManagedMobileAppRequestBuilder) Patch(options *ManagedMobileAppRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

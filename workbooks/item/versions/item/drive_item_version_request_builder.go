@@ -8,7 +8,7 @@ import (
     id981ee64657be3af79e7c7dfe58c56bcf87ddcf180c5d2e9f52c4d57ea184479 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/versions/item/content"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\versions\{driveItemVersion-id}
+// DriveItemVersionRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\versions\{driveItemVersion-id}
 type DriveItemVersionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type DriveItemVersionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DriveItemVersionRequestBuilderDeleteOptions options for Delete
 type DriveItemVersionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DriveItemVersionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DriveItemVersionRequestBuilderGetOptions options for Get
 type DriveItemVersionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type DriveItemVersionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// DriveItemVersionRequestBuilderGetQueryParameters the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
 type DriveItemVersionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DriveItemVersionRequestBuilderPatchOptions options for Patch
 type DriveItemVersionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemVersion;
@@ -55,10 +55,7 @@ type DriveItemVersionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DriveItemVersionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDriveItemVersionRequestBuilderInternal instantiates a new DriveItemVersionRequestBuilder and sets the default values.
 func NewDriveItemVersionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveItemVersionRequestBuilder) {
     m := &DriveItemVersionRequestBuilder{
     }
@@ -71,10 +68,7 @@ func NewDriveItemVersionRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DriveItemVersionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDriveItemVersionRequestBuilder instantiates a new DriveItemVersionRequestBuilder and sets the default values.
 func NewDriveItemVersionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveItemVersionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -83,9 +77,7 @@ func NewDriveItemVersionRequestBuilder(rawUrl string, requestAdapter ida96af0f17
 func (m *DriveItemVersionRequestBuilder) Content()(*id981ee64657be3af79e7c7dfe58c56bcf87ddcf180c5d2e9f52c4d57ea184479.ContentRequestBuilder) {
     return id981ee64657be3af79e7c7dfe58c56bcf87ddcf180c5d2e9f52c4d57ea184479.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
 func (m *DriveItemVersionRequestBuilder) CreateDeleteRequestInformation(options *DriveItemVersionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,9 +94,7 @@ func (m *DriveItemVersionRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
 func (m *DriveItemVersionRequestBuilder) CreateGetRequestInformation(options *DriveItemVersionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *DriveItemVersionRequestBuilder) CreateGetRequestInformation(options *Dr
     }
     return requestInfo, nil
 }
-// The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
 func (m *DriveItemVersionRequestBuilder) CreatePatchRequestInformation(options *DriveItemVersionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,9 +132,7 @@ func (m *DriveItemVersionRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
 func (m *DriveItemVersionRequestBuilder) Delete(options *DriveItemVersionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -158,9 +144,7 @@ func (m *DriveItemVersionRequestBuilder) Delete(options *DriveItemVersionRequest
     }
     return nil
 }
-// The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
 func (m *DriveItemVersionRequestBuilder) Get(options *DriveItemVersionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemVersion, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *DriveItemVersionRequestBuilder) Get(options *DriveItemVersionRequestBui
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveItemVersion), nil
 }
-// The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
 func (m *DriveItemVersionRequestBuilder) Patch(options *DriveItemVersionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

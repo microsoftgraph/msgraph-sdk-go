@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\rubric
+// RubricRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\rubric
 type RubricRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type RubricRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// RubricRequestBuilderDeleteOptions options for Delete
 type RubricRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type RubricRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// RubricRequestBuilderGetOptions options for Get
 type RubricRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type RubricRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// When set, the grading rubric attached to this assignment.
+// RubricRequestBuilderGetQueryParameters when set, the grading rubric attached to this assignment.
 type RubricRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// RubricRequestBuilderPatchOptions options for Patch
 type RubricRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationRubric;
@@ -53,10 +53,7 @@ type RubricRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RubricRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRubricRequestBuilderInternal instantiates a new RubricRequestBuilder and sets the default values.
 func NewRubricRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RubricRequestBuilder) {
     m := &RubricRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewRubricRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RubricRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRubricRequestBuilder instantiates a new RubricRequestBuilder and sets the default values.
 func NewRubricRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RubricRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRubricRequestBuilderInternal(urlParams, requestAdapter)
 }
-// When set, the grading rubric attached to this assignment.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation when set, the grading rubric attached to this assignment.
 func (m *RubricRequestBuilder) CreateDeleteRequestInformation(options *RubricRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *RubricRequestBuilder) CreateDeleteRequestInformation(options *RubricReq
     }
     return requestInfo, nil
 }
-// When set, the grading rubric attached to this assignment.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation when set, the grading rubric attached to this assignment.
 func (m *RubricRequestBuilder) CreateGetRequestInformation(options *RubricRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *RubricRequestBuilder) CreateGetRequestInformation(options *RubricReques
     }
     return requestInfo, nil
 }
-// When set, the grading rubric attached to this assignment.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation when set, the grading rubric attached to this assignment.
 func (m *RubricRequestBuilder) CreatePatchRequestInformation(options *RubricRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *RubricRequestBuilder) CreatePatchRequestInformation(options *RubricRequ
     }
     return requestInfo, nil
 }
-// When set, the grading rubric attached to this assignment.
-// Parameters:
-//  - options : Options for the request
+// Delete when set, the grading rubric attached to this assignment.
 func (m *RubricRequestBuilder) Delete(options *RubricRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *RubricRequestBuilder) Delete(options *RubricRequestBuilderDeleteOptions
     }
     return nil
 }
-// When set, the grading rubric attached to this assignment.
-// Parameters:
-//  - options : Options for the request
+// Get when set, the grading rubric attached to this assignment.
 func (m *RubricRequestBuilder) Get(options *RubricRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationRubric, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *RubricRequestBuilder) Get(options *RubricRequestBuilderGetOptions)(*i4a
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationRubric), nil
 }
-// When set, the grading rubric attached to this assignment.
-// Parameters:
-//  - options : Options for the request
+// Patch when set, the grading rubric attached to this assignment.
 func (m *RubricRequestBuilder) Patch(options *RubricRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

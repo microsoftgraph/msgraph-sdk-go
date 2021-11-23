@@ -8,7 +8,7 @@ import (
     ie1fe3518c284b06e6ec565c94f993b81cc576ab7618cae24b542e89b0d014b59 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/worksheet/pivottables/item/refresh"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\pivotTables\{workbookPivotTable-id}
+// WorkbookPivotTableRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\pivotTables\{workbookPivotTable-id}
 type WorkbookPivotTableRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type WorkbookPivotTableRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorkbookPivotTableRequestBuilderDeleteOptions options for Delete
 type WorkbookPivotTableRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type WorkbookPivotTableRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorkbookPivotTableRequestBuilderGetOptions options for Get
 type WorkbookPivotTableRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type WorkbookPivotTableRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of PivotTables that are part of the worksheet.
+// WorkbookPivotTableRequestBuilderGetQueryParameters collection of PivotTables that are part of the worksheet.
 type WorkbookPivotTableRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorkbookPivotTableRequestBuilderPatchOptions options for Patch
 type WorkbookPivotTableRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookPivotTable;
@@ -55,10 +55,7 @@ type WorkbookPivotTableRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WorkbookPivotTableRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookPivotTableRequestBuilderInternal instantiates a new WorkbookPivotTableRequestBuilder and sets the default values.
 func NewWorkbookPivotTableRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookPivotTableRequestBuilder) {
     m := &WorkbookPivotTableRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewWorkbookPivotTableRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbookPivotTableRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookPivotTableRequestBuilder instantiates a new WorkbookPivotTableRequestBuilder and sets the default values.
 func NewWorkbookPivotTableRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookPivotTableRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorkbookPivotTableRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of PivotTables that are part of the worksheet.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of PivotTables that are part of the worksheet.
 func (m *WorkbookPivotTableRequestBuilder) CreateDeleteRequestInformation(options *WorkbookPivotTableRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *WorkbookPivotTableRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Collection of PivotTables that are part of the worksheet.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of PivotTables that are part of the worksheet.
 func (m *WorkbookPivotTableRequestBuilder) CreateGetRequestInformation(options *WorkbookPivotTableRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *WorkbookPivotTableRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Collection of PivotTables that are part of the worksheet.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of PivotTables that are part of the worksheet.
 func (m *WorkbookPivotTableRequestBuilder) CreatePatchRequestInformation(options *WorkbookPivotTableRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *WorkbookPivotTableRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Collection of PivotTables that are part of the worksheet.
-// Parameters:
-//  - options : Options for the request
+// Delete collection of PivotTables that are part of the worksheet.
 func (m *WorkbookPivotTableRequestBuilder) Delete(options *WorkbookPivotTableRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *WorkbookPivotTableRequestBuilder) Delete(options *WorkbookPivotTableReq
     }
     return nil
 }
-// Collection of PivotTables that are part of the worksheet.
-// Parameters:
-//  - options : Options for the request
+// Get collection of PivotTables that are part of the worksheet.
 func (m *WorkbookPivotTableRequestBuilder) Get(options *WorkbookPivotTableRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookPivotTable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *WorkbookPivotTableRequestBuilder) Get(options *WorkbookPivotTableReques
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookPivotTable), nil
 }
-// Collection of PivotTables that are part of the worksheet.
-// Parameters:
-//  - options : Options for the request
+// Patch collection of PivotTables that are part of the worksheet.
 func (m *WorkbookPivotTableRequestBuilder) Patch(options *WorkbookPivotTableRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

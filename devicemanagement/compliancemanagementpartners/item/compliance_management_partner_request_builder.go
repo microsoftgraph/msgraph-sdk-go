@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\complianceManagementPartners\{complianceManagementPartner-id}
+// ComplianceManagementPartnerRequestBuilder builds and executes requests for operations under \deviceManagement\complianceManagementPartners\{complianceManagementPartner-id}
 type ComplianceManagementPartnerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ComplianceManagementPartnerRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ComplianceManagementPartnerRequestBuilderDeleteOptions options for Delete
 type ComplianceManagementPartnerRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ComplianceManagementPartnerRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ComplianceManagementPartnerRequestBuilderGetOptions options for Get
 type ComplianceManagementPartnerRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ComplianceManagementPartnerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of Compliance Management Partners configured by the tenant.
+// ComplianceManagementPartnerRequestBuilderGetQueryParameters the list of Compliance Management Partners configured by the tenant.
 type ComplianceManagementPartnerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ComplianceManagementPartnerRequestBuilderPatchOptions options for Patch
 type ComplianceManagementPartnerRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ComplianceManagementPartner;
@@ -53,10 +53,7 @@ type ComplianceManagementPartnerRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ComplianceManagementPartnerRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComplianceManagementPartnerRequestBuilderInternal instantiates a new ComplianceManagementPartnerRequestBuilder and sets the default values.
 func NewComplianceManagementPartnerRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComplianceManagementPartnerRequestBuilder) {
     m := &ComplianceManagementPartnerRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewComplianceManagementPartnerRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ComplianceManagementPartnerRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewComplianceManagementPartnerRequestBuilder instantiates a new ComplianceManagementPartnerRequestBuilder and sets the default values.
 func NewComplianceManagementPartnerRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ComplianceManagementPartnerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewComplianceManagementPartnerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of Compliance Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of Compliance Management Partners configured by the tenant.
 func (m *ComplianceManagementPartnerRequestBuilder) CreateDeleteRequestInformation(options *ComplianceManagementPartnerRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ComplianceManagementPartnerRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// The list of Compliance Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of Compliance Management Partners configured by the tenant.
 func (m *ComplianceManagementPartnerRequestBuilder) CreateGetRequestInformation(options *ComplianceManagementPartnerRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ComplianceManagementPartnerRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// The list of Compliance Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of Compliance Management Partners configured by the tenant.
 func (m *ComplianceManagementPartnerRequestBuilder) CreatePatchRequestInformation(options *ComplianceManagementPartnerRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ComplianceManagementPartnerRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// The list of Compliance Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of Compliance Management Partners configured by the tenant.
 func (m *ComplianceManagementPartnerRequestBuilder) Delete(options *ComplianceManagementPartnerRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ComplianceManagementPartnerRequestBuilder) Delete(options *ComplianceMa
     }
     return nil
 }
-// The list of Compliance Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Get the list of Compliance Management Partners configured by the tenant.
 func (m *ComplianceManagementPartnerRequestBuilder) Get(options *ComplianceManagementPartnerRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ComplianceManagementPartner, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ComplianceManagementPartnerRequestBuilder) Get(options *ComplianceManag
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ComplianceManagementPartner), nil
 }
-// The list of Compliance Management Partners configured by the tenant.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of Compliance Management Partners configured by the tenant.
 func (m *ComplianceManagementPartnerRequestBuilder) Patch(options *ComplianceManagementPartnerRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

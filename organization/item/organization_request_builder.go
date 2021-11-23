@@ -16,7 +16,7 @@ import (
     iead5f0a6000982961cff6f0e297f9427177afc718378c21027082d54c9ed6105 "github.com/microsoftgraph/msgraph-sdk-go/organization/item/extensions/item"
 )
 
-// Builds and executes requests for operations under \organization\{organization-id}
+// OrganizationRequestBuilder builds and executes requests for operations under \organization\{organization-id}
 type OrganizationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -25,7 +25,7 @@ type OrganizationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// OrganizationRequestBuilderDeleteOptions options for Delete
 type OrganizationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -34,7 +34,7 @@ type OrganizationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// OrganizationRequestBuilderGetOptions options for Get
 type OrganizationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -45,14 +45,14 @@ type OrganizationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from organization by key
+// OrganizationRequestBuilderGetQueryParameters get entity from organization by key
 type OrganizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// OrganizationRequestBuilderPatchOptions options for Patch
 type OrganizationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Organization;
@@ -75,10 +75,7 @@ func (m *OrganizationRequestBuilder) CheckMemberGroups()(*i6d71976a15ac6f607366b
 func (m *OrganizationRequestBuilder) CheckMemberObjects()(*i3d6521f9c6af801263d8177b58bd3f14c44b32d31606bcefa9d9284325e9ae05.CheckMemberObjectsRequestBuilder) {
     return i3d6521f9c6af801263d8177b58bd3f14c44b32d31606bcefa9d9284325e9ae05.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new OrganizationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOrganizationRequestBuilderInternal instantiates a new OrganizationRequestBuilder and sets the default values.
 func NewOrganizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OrganizationRequestBuilder) {
     m := &OrganizationRequestBuilder{
     }
@@ -91,18 +88,13 @@ func NewOrganizationRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new OrganizationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewOrganizationRequestBuilder instantiates a new OrganizationRequestBuilder and sets the default values.
 func NewOrganizationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*OrganizationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOrganizationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from organization
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from organization
 func (m *OrganizationRequestBuilder) CreateDeleteRequestInformation(options *OrganizationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +111,7 @@ func (m *OrganizationRequestBuilder) CreateDeleteRequestInformation(options *Org
     }
     return requestInfo, nil
 }
-// Get entity from organization by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from organization by key
 func (m *OrganizationRequestBuilder) CreateGetRequestInformation(options *OrganizationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +131,7 @@ func (m *OrganizationRequestBuilder) CreateGetRequestInformation(options *Organi
     }
     return requestInfo, nil
 }
-// Update entity in organization
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in organization
 func (m *OrganizationRequestBuilder) CreatePatchRequestInformation(options *OrganizationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,9 +149,7 @@ func (m *OrganizationRequestBuilder) CreatePatchRequestInformation(options *Orga
     }
     return requestInfo, nil
 }
-// Delete entity from organization
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from organization
 func (m *OrganizationRequestBuilder) Delete(options *OrganizationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -178,9 +164,7 @@ func (m *OrganizationRequestBuilder) Delete(options *OrganizationRequestBuilderD
 func (m *OrganizationRequestBuilder) Extensions()(*i62fcec4c98d8f7e9caa7bd4b260ea9d20f54a28de6683ff87d4101316c41f38a.ExtensionsRequestBuilder) {
     return i62fcec4c98d8f7e9caa7bd4b260ea9d20f54a28de6683ff87d4101316c41f38a.NewExtensionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.organization.item.extensions.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ExtensionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.organization.item.extensions.item collection
 func (m *OrganizationRequestBuilder) ExtensionsById(id string)(*iead5f0a6000982961cff6f0e297f9427177afc718378c21027082d54c9ed6105.ExtensionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -191,9 +175,7 @@ func (m *OrganizationRequestBuilder) ExtensionsById(id string)(*iead5f0a60009829
     }
     return iead5f0a6000982961cff6f0e297f9427177afc718378c21027082d54c9ed6105.NewExtensionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get entity from organization by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from organization by key
 func (m *OrganizationRequestBuilder) Get(options *OrganizationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Organization, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -211,9 +193,7 @@ func (m *OrganizationRequestBuilder) GetMemberGroups()(*i2c3e7e24e2730178382d4ad
 func (m *OrganizationRequestBuilder) GetMemberObjects()(*i8885d5cee4c4d28a727da7b8bbf4e0a830b801820a872d899634b98dea40da8c.GetMemberObjectsRequestBuilder) {
     return i8885d5cee4c4d28a727da7b8bbf4e0a830b801820a872d899634b98dea40da8c.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in organization
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in organization
 func (m *OrganizationRequestBuilder) Patch(options *OrganizationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

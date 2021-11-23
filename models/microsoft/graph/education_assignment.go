@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// EducationAssignment 
 type EducationAssignment struct {
     Entity
     // Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
@@ -57,14 +57,14 @@ type EducationAssignment struct {
     // The deep link URL for the given assignment.
     webUrl *string;
 }
-// Instantiates a new educationAssignment and sets the default values.
+// NewEducationAssignment instantiates a new educationAssignment and sets the default values.
 func NewEducationAssignment()(*EducationAssignment) {
     m := &EducationAssignment{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
+// GetAddedStudentAction gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
 func (m *EducationAssignment) GetAddedStudentAction()(*EducationAddedStudentAction) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *EducationAssignment) GetAddedStudentAction()(*EducationAddedStudentActi
         return m.addedStudentAction
     }
 }
-// Gets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
+// GetAllowLateSubmissions gets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
 func (m *EducationAssignment) GetAllowLateSubmissions()(*bool) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *EducationAssignment) GetAllowLateSubmissions()(*bool) {
         return m.allowLateSubmissions
     }
 }
-// Gets the allowStudentsToAddResourcesToSubmission property value. Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.
+// GetAllowStudentsToAddResourcesToSubmission gets the allowStudentsToAddResourcesToSubmission property value. Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.
 func (m *EducationAssignment) GetAllowStudentsToAddResourcesToSubmission()(*bool) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *EducationAssignment) GetAllowStudentsToAddResourcesToSubmission()(*bool
         return m.allowStudentsToAddResourcesToSubmission
     }
 }
-// Gets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetAssignDateTime gets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) GetAssignDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *EducationAssignment) GetAssignDateTime()(*i336074805fc853987abe6f7fe3ad
         return m.assignDateTime
     }
 }
-// Gets the assignedDateTime property value. The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetAssignedDateTime gets the assignedDateTime property value. The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -104,7 +104,7 @@ func (m *EducationAssignment) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3
         return m.assignedDateTime
     }
 }
-// Gets the assignTo property value. Which users, or whole class should receive a submission object once the assignment is published.
+// GetAssignTo gets the assignTo property value. Which users, or whole class should receive a submission object once the assignment is published.
 func (m *EducationAssignment) GetAssignTo()(*EducationAssignmentRecipient) {
     if m == nil {
         return nil
@@ -112,7 +112,7 @@ func (m *EducationAssignment) GetAssignTo()(*EducationAssignmentRecipient) {
         return m.assignTo
     }
 }
-// Gets the categories property value. When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+// GetCategories gets the categories property value. When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 func (m *EducationAssignment) GetCategories()([]EducationCategory) {
     if m == nil {
         return nil
@@ -120,7 +120,7 @@ func (m *EducationAssignment) GetCategories()([]EducationCategory) {
         return m.categories
     }
 }
-// Gets the classId property value. Class which this assignment belongs.
+// GetClassId gets the classId property value. Class which this assignment belongs.
 func (m *EducationAssignment) GetClassId()(*string) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *EducationAssignment) GetClassId()(*string) {
         return m.classId
     }
 }
-// Gets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetCloseDateTime gets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) GetCloseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -136,7 +136,7 @@ func (m *EducationAssignment) GetCloseDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.closeDateTime
     }
 }
-// Gets the createdBy property value. Who created the assignment.
+// GetCreatedBy gets the createdBy property value. Who created the assignment.
 func (m *EducationAssignment) GetCreatedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -144,7 +144,7 @@ func (m *EducationAssignment) GetCreatedBy()(*IdentitySet) {
         return m.createdBy
     }
 }
-// Gets the createdDateTime property value. Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetCreatedDateTime gets the createdDateTime property value. Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -152,7 +152,7 @@ func (m *EducationAssignment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
         return m.createdDateTime
     }
 }
-// Gets the displayName property value. Name of the assignment.
+// GetDisplayName gets the displayName property value. Name of the assignment.
 func (m *EducationAssignment) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -160,7 +160,7 @@ func (m *EducationAssignment) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the dueDateTime property value. Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetDueDateTime gets the dueDateTime property value. Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -168,7 +168,7 @@ func (m *EducationAssignment) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.dueDateTime
     }
 }
-// Gets the grading property value. How the assignment will be graded.
+// GetGrading gets the grading property value. How the assignment will be graded.
 func (m *EducationAssignment) GetGrading()(*EducationAssignmentGradeType) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *EducationAssignment) GetGrading()(*EducationAssignmentGradeType) {
         return m.grading
     }
 }
-// Gets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
+// GetInstructions gets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
 func (m *EducationAssignment) GetInstructions()(*EducationItemBody) {
     if m == nil {
         return nil
@@ -184,7 +184,7 @@ func (m *EducationAssignment) GetInstructions()(*EducationItemBody) {
         return m.instructions
     }
 }
-// Gets the lastModifiedBy property value. Who last modified the assignment.
+// GetLastModifiedBy gets the lastModifiedBy property value. Who last modified the assignment.
 func (m *EducationAssignment) GetLastModifiedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -192,7 +192,7 @@ func (m *EducationAssignment) GetLastModifiedBy()(*IdentitySet) {
         return m.lastModifiedBy
     }
 }
-// Gets the lastModifiedDateTime property value. Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -200,7 +200,7 @@ func (m *EducationAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f
         return m.lastModifiedDateTime
     }
 }
-// Gets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
+// GetNotificationChannelUrl gets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
 func (m *EducationAssignment) GetNotificationChannelUrl()(*string) {
     if m == nil {
         return nil
@@ -208,7 +208,7 @@ func (m *EducationAssignment) GetNotificationChannelUrl()(*string) {
         return m.notificationChannelUrl
     }
 }
-// Gets the resources property value. Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
+// GetResources gets the resources property value. Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
 func (m *EducationAssignment) GetResources()([]EducationAssignmentResource) {
     if m == nil {
         return nil
@@ -216,7 +216,7 @@ func (m *EducationAssignment) GetResources()([]EducationAssignmentResource) {
         return m.resources
     }
 }
-// Gets the resourcesFolderUrl property value. Folder URL where all the file resources for this assignment are stored.
+// GetResourcesFolderUrl gets the resourcesFolderUrl property value. Folder URL where all the file resources for this assignment are stored.
 func (m *EducationAssignment) GetResourcesFolderUrl()(*string) {
     if m == nil {
         return nil
@@ -224,7 +224,7 @@ func (m *EducationAssignment) GetResourcesFolderUrl()(*string) {
         return m.resourcesFolderUrl
     }
 }
-// Gets the rubric property value. When set, the grading rubric attached to this assignment.
+// GetRubric gets the rubric property value. When set, the grading rubric attached to this assignment.
 func (m *EducationAssignment) GetRubric()(*EducationRubric) {
     if m == nil {
         return nil
@@ -232,7 +232,7 @@ func (m *EducationAssignment) GetRubric()(*EducationRubric) {
         return m.rubric
     }
 }
-// Gets the status property value. Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
+// GetStatus gets the status property value. Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
 func (m *EducationAssignment) GetStatus()(*EducationAssignmentStatus) {
     if m == nil {
         return nil
@@ -240,7 +240,7 @@ func (m *EducationAssignment) GetStatus()(*EducationAssignmentStatus) {
         return m.status
     }
 }
-// Gets the submissions property value. Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+// GetSubmissions gets the submissions property value. Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *EducationAssignment) GetSubmissions()([]EducationSubmission) {
     if m == nil {
         return nil
@@ -248,7 +248,7 @@ func (m *EducationAssignment) GetSubmissions()([]EducationSubmission) {
         return m.submissions
     }
 }
-// Gets the webUrl property value. The deep link URL for the given assignment.
+// GetWebUrl gets the webUrl property value. The deep link URL for the given assignment.
 func (m *EducationAssignment) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -256,7 +256,7 @@ func (m *EducationAssignment) GetWebUrl()(*string) {
         return m.webUrl
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["addedStudentAction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -518,9 +518,7 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(interface{
 func (m *EducationAssignment) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EducationAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -689,147 +687,99 @@ func (m *EducationAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
-// Parameters:
-//  - value : Value to set for the addedStudentAction property.
+// SetAddedStudentAction sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
 func (m *EducationAssignment) SetAddedStudentAction(value *EducationAddedStudentAction)() {
     m.addedStudentAction = value
 }
-// Sets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
-// Parameters:
-//  - value : Value to set for the allowLateSubmissions property.
+// SetAllowLateSubmissions sets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
 func (m *EducationAssignment) SetAllowLateSubmissions(value *bool)() {
     m.allowLateSubmissions = value
 }
-// Sets the allowStudentsToAddResourcesToSubmission property value. Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.
-// Parameters:
-//  - value : Value to set for the allowStudentsToAddResourcesToSubmission property.
+// SetAllowStudentsToAddResourcesToSubmission sets the allowStudentsToAddResourcesToSubmission property value. Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.
 func (m *EducationAssignment) SetAllowStudentsToAddResourcesToSubmission(value *bool)() {
     m.allowStudentsToAddResourcesToSubmission = value
 }
-// Sets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the assignDateTime property.
+// SetAssignDateTime sets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) SetAssignDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.assignDateTime = value
 }
-// Sets the assignedDateTime property value. The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the assignedDateTime property.
+// SetAssignedDateTime sets the assignedDateTime property value. The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) SetAssignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.assignedDateTime = value
 }
-// Sets the assignTo property value. Which users, or whole class should receive a submission object once the assignment is published.
-// Parameters:
-//  - value : Value to set for the assignTo property.
+// SetAssignTo sets the assignTo property value. Which users, or whole class should receive a submission object once the assignment is published.
 func (m *EducationAssignment) SetAssignTo(value *EducationAssignmentRecipient)() {
     m.assignTo = value
 }
-// Sets the categories property value. When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the categories property.
+// SetCategories sets the categories property value. When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 func (m *EducationAssignment) SetCategories(value []EducationCategory)() {
     m.categories = value
 }
-// Sets the classId property value. Class which this assignment belongs.
-// Parameters:
-//  - value : Value to set for the classId property.
+// SetClassId sets the classId property value. Class which this assignment belongs.
 func (m *EducationAssignment) SetClassId(value *string)() {
     m.classId = value
 }
-// Sets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the closeDateTime property.
+// SetCloseDateTime sets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) SetCloseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.closeDateTime = value
 }
-// Sets the createdBy property value. Who created the assignment.
-// Parameters:
-//  - value : Value to set for the createdBy property.
+// SetCreatedBy sets the createdBy property value. Who created the assignment.
 func (m *EducationAssignment) SetCreatedBy(value *IdentitySet)() {
     m.createdBy = value
 }
-// Sets the createdDateTime property value. Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the displayName property value. Name of the assignment.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Name of the assignment.
 func (m *EducationAssignment) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the dueDateTime property value. Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the dueDateTime property.
+// SetDueDateTime sets the dueDateTime property value. Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.dueDateTime = value
 }
-// Sets the grading property value. How the assignment will be graded.
-// Parameters:
-//  - value : Value to set for the grading property.
+// SetGrading sets the grading property value. How the assignment will be graded.
 func (m *EducationAssignment) SetGrading(value *EducationAssignmentGradeType)() {
     m.grading = value
 }
-// Sets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
-// Parameters:
-//  - value : Value to set for the instructions property.
+// SetInstructions sets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
 func (m *EducationAssignment) SetInstructions(value *EducationItemBody)() {
     m.instructions = value
 }
-// Sets the lastModifiedBy property value. Who last modified the assignment.
-// Parameters:
-//  - value : Value to set for the lastModifiedBy property.
+// SetLastModifiedBy sets the lastModifiedBy property value. Who last modified the assignment.
 func (m *EducationAssignment) SetLastModifiedBy(value *IdentitySet)() {
     m.lastModifiedBy = value
 }
-// Sets the lastModifiedDateTime property value. Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
-// Parameters:
-//  - value : Value to set for the notificationChannelUrl property.
+// SetNotificationChannelUrl sets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
 func (m *EducationAssignment) SetNotificationChannelUrl(value *string)() {
     m.notificationChannelUrl = value
 }
-// Sets the resources property value. Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-// Parameters:
-//  - value : Value to set for the resources property.
+// SetResources sets the resources property value. Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
 func (m *EducationAssignment) SetResources(value []EducationAssignmentResource)() {
     m.resources = value
 }
-// Sets the resourcesFolderUrl property value. Folder URL where all the file resources for this assignment are stored.
-// Parameters:
-//  - value : Value to set for the resourcesFolderUrl property.
+// SetResourcesFolderUrl sets the resourcesFolderUrl property value. Folder URL where all the file resources for this assignment are stored.
 func (m *EducationAssignment) SetResourcesFolderUrl(value *string)() {
     m.resourcesFolderUrl = value
 }
-// Sets the rubric property value. When set, the grading rubric attached to this assignment.
-// Parameters:
-//  - value : Value to set for the rubric property.
+// SetRubric sets the rubric property value. When set, the grading rubric attached to this assignment.
 func (m *EducationAssignment) SetRubric(value *EducationRubric)() {
     m.rubric = value
 }
-// Sets the status property value. Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
 func (m *EducationAssignment) SetStatus(value *EducationAssignmentStatus)() {
     m.status = value
 }
-// Sets the submissions property value. Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the submissions property.
+// SetSubmissions sets the submissions property value. Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *EducationAssignment) SetSubmissions(value []EducationSubmission)() {
     m.submissions = value
 }
-// Sets the webUrl property value. The deep link URL for the given assignment.
-// Parameters:
-//  - value : Value to set for the webUrl property.
+// SetWebUrl sets the webUrl property value. The deep link URL for the given assignment.
 func (m *EducationAssignment) SetWebUrl(value *string)() {
     m.webUrl = value
 }

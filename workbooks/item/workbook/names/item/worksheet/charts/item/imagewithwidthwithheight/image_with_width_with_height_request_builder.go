@@ -5,7 +5,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\microsoft.graph.image(width={width},height={height})
+// ImageWithWidthWithHeightRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\microsoft.graph.image(width={width},height={height})
 type ImageWithWidthWithHeightRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type ImageWithWidthWithHeightRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ImageWithWidthWithHeightRequestBuilderGetOptions options for Get
 type ImageWithWidthWithHeightRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,12 +23,7 @@ type ImageWithWidthWithHeightRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ImageWithWidthWithHeightRequestBuilder and sets the default values.
-// Parameters:
-//  - height : Usage: height={height}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
-//  - width : Usage: width={width}
+// NewImageWithWidthWithHeightRequestBuilderInternal instantiates a new ImageWithWidthWithHeightRequestBuilder and sets the default values.
 func NewImageWithWidthWithHeightRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, width *int32, height *int32)(*ImageWithWidthWithHeightRequestBuilder) {
     m := &ImageWithWidthWithHeightRequestBuilder{
     }
@@ -47,18 +42,13 @@ func NewImageWithWidthWithHeightRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ImageWithWidthWithHeightRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewImageWithWidthWithHeightRequestBuilder instantiates a new ImageWithWidthWithHeightRequestBuilder and sets the default values.
 func NewImageWithWidthWithHeightRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ImageWithWidthWithHeightRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewImageWithWidthWithHeightRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Invoke function image
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function image
 func (m *ImageWithWidthWithHeightRequestBuilder) CreateGetRequestInformation(options *ImageWithWidthWithHeightRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -75,9 +65,7 @@ func (m *ImageWithWidthWithHeightRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Invoke function image
-// Parameters:
-//  - options : Options for the request
+// Get invoke function image
 func (m *ImageWithWidthWithHeightRequestBuilder) Get(options *ImageWithWidthWithHeightRequestBuilderGetOptions)(*string, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

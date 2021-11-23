@@ -8,7 +8,7 @@ import (
     ife007862126c9f65faff019cd009f1d0b9034527a12b551209fd7a081d559486 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/entitlementmanagement/roledefinitions/item/inheritspermissionsfrom/item"
 )
 
-// Builds and executes requests for operations under \roleManagement\entitlementManagement\roleDefinitions\{unifiedRoleDefinition-id}
+// UnifiedRoleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleDefinitions\{unifiedRoleDefinition-id}
 type UnifiedRoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type UnifiedRoleDefinitionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UnifiedRoleDefinitionRequestBuilderDeleteOptions options for Delete
 type UnifiedRoleDefinitionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type UnifiedRoleDefinitionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UnifiedRoleDefinitionRequestBuilderGetOptions options for Get
 type UnifiedRoleDefinitionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type UnifiedRoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+// UnifiedRoleDefinitionRequestBuilderGetQueryParameters resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 type UnifiedRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UnifiedRoleDefinitionRequestBuilderPatchOptions options for Patch
 type UnifiedRoleDefinitionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition;
@@ -55,10 +55,7 @@ type UnifiedRoleDefinitionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnifiedRoleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleDefinitionRequestBuilderInternal instantiates a new UnifiedRoleDefinitionRequestBuilder and sets the default values.
 func NewUnifiedRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleDefinitionRequestBuilder) {
     m := &UnifiedRoleDefinitionRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewUnifiedRoleDefinitionRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnifiedRoleDefinitionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleDefinitionRequestBuilder instantiates a new UnifiedRoleDefinitionRequestBuilder and sets the default values.
 func NewUnifiedRoleDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleDefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *UnifiedRoleDefinitionRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRoleDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *UnifiedRoleDefinitionRequestBuilder) CreateGetRequestInformation(options *UnifiedRoleDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *UnifiedRoleDefinitionRequestBuilder) CreatePatchRequestInformation(options *UnifiedRoleDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-// Parameters:
-//  - options : Options for the request
+// Delete resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *UnifiedRoleDefinitionRequestBuilder) Delete(options *UnifiedRoleDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) Delete(options *UnifiedRoleDefinit
     }
     return nil
 }
-// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-// Parameters:
-//  - options : Options for the request
+// Get resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *UnifiedRoleDefinitionRequestBuilder) Get(options *UnifiedRoleDefinitionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) Get(options *UnifiedRoleDefinition
 func (m *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFrom()(*if43ff838a669d789f6bf5e5519a0db5b7c62c11b92b86af060a06f6beb730529.InheritsPermissionsFromRequestBuilder) {
     return if43ff838a669d789f6bf5e5519a0db5b7c62c11b92b86af060a06f6beb730529.NewInheritsPermissionsFromRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleDefinitions.item.inheritsPermissionsFrom.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// InheritsPermissionsFromById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleDefinitions.item.inheritsPermissionsFrom.item collection
 func (m *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFromById(id string)(*ife007862126c9f65faff019cd009f1d0b9034527a12b551209fd7a081d559486.UnifiedRoleDefinitionRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -185,9 +167,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFromById(id str
     }
     return ife007862126c9f65faff019cd009f1d0b9034527a12b551209fd7a081d559486.NewUnifiedRoleDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-// Parameters:
-//  - options : Options for the request
+// Patch resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *UnifiedRoleDefinitionRequestBuilder) Patch(options *UnifiedRoleDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

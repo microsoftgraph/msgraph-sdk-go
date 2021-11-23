@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getOneDriveActivityUserCounts(period='{period}')
+// GetOneDriveActivityUserCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getOneDriveActivityUserCounts(period='{period}')
 type GetOneDriveActivityUserCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GetOneDriveActivityUserCountsWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetOneDriveActivityUserCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetOneDriveActivityUserCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,11 +24,7 @@ type GetOneDriveActivityUserCountsWithPeriodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetOneDriveActivityUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOneDriveActivityUserCountsWithPeriodRequestBuilderInternal instantiates a new GetOneDriveActivityUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetOneDriveActivityUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetOneDriveActivityUserCountsWithPeriodRequestBuilder) {
     m := &GetOneDriveActivityUserCountsWithPeriodRequestBuilder{
     }
@@ -44,18 +40,13 @@ func NewGetOneDriveActivityUserCountsWithPeriodRequestBuilderInternal(pathParame
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetOneDriveActivityUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetOneDriveActivityUserCountsWithPeriodRequestBuilder instantiates a new GetOneDriveActivityUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetOneDriveActivityUserCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetOneDriveActivityUserCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetOneDriveActivityUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getOneDriveActivityUserCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getOneDriveActivityUserCounts
 func (m *GetOneDriveActivityUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetOneDriveActivityUserCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -72,9 +63,7 @@ func (m *GetOneDriveActivityUserCountsWithPeriodRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// Invoke function getOneDriveActivityUserCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getOneDriveActivityUserCounts
 func (m *GetOneDriveActivityUserCountsWithPeriodRequestBuilder) Get(options *GetOneDriveActivityUserCountsWithPeriodRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

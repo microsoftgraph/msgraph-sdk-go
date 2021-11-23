@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\assignmentCategories
+// AssignmentCategoriesRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignmentCategories
 type AssignmentCategoriesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AssignmentCategoriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AssignmentCategoriesRequestBuilderGetOptions options for Get
 type AssignmentCategoriesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type AssignmentCategoriesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get assignmentCategories from education
+// AssignmentCategoriesRequestBuilderGetQueryParameters get assignmentCategories from education
 type AssignmentCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type AssignmentCategoriesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// AssignmentCategoriesRequestBuilderPostOptions options for Post
 type AssignmentCategoriesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationCategory;
@@ -56,10 +56,7 @@ type AssignmentCategoriesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AssignmentCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignmentCategoriesRequestBuilderInternal instantiates a new AssignmentCategoriesRequestBuilder and sets the default values.
 func NewAssignmentCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignmentCategoriesRequestBuilder) {
     m := &AssignmentCategoriesRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewAssignmentCategoriesRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AssignmentCategoriesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignmentCategoriesRequestBuilder instantiates a new AssignmentCategoriesRequestBuilder and sets the default values.
 func NewAssignmentCategoriesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignmentCategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get assignmentCategories from education
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get assignmentCategories from education
 func (m *AssignmentCategoriesRequestBuilder) CreateGetRequestInformation(options *AssignmentCategoriesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *AssignmentCategoriesRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Create new navigation property to assignmentCategories for education
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to assignmentCategories for education
 func (m *AssignmentCategoriesRequestBuilder) CreatePostRequestInformation(options *AssignmentCategoriesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *AssignmentCategoriesRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get assignmentCategories from education
-// Parameters:
-//  - options : Options for the request
+// Get get assignmentCategories from education
 func (m *AssignmentCategoriesRequestBuilder) Get(options *AssignmentCategoriesRequestBuilderGetOptions)(*AssignmentCategoriesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *AssignmentCategoriesRequestBuilder) Get(options *AssignmentCategoriesRe
     }
     return res.(*AssignmentCategoriesResponse), nil
 }
-// Create new navigation property to assignmentCategories for education
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to assignmentCategories for education
 func (m *AssignmentCategoriesRequestBuilder) Post(options *AssignmentCategoriesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationCategory, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

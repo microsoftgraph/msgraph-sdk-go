@@ -7,7 +7,7 @@ import (
     i98038c57b60b04d09501501acf47529409f1308caaeb4fa6eb2428843589ba22 "github.com/microsoftgraph/msgraph-sdk-go/invitations/item/inviteduser"
 )
 
-// Builds and executes requests for operations under \invitations\{invitation-id}
+// InvitationRequestBuilder builds and executes requests for operations under \invitations\{invitation-id}
 type InvitationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type InvitationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// InvitationRequestBuilderDeleteOptions options for Delete
 type InvitationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type InvitationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// InvitationRequestBuilderGetOptions options for Get
 type InvitationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type InvitationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from invitations by key
+// InvitationRequestBuilderGetQueryParameters get entity from invitations by key
 type InvitationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// InvitationRequestBuilderPatchOptions options for Patch
 type InvitationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Invitation;
@@ -54,10 +54,7 @@ type InvitationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new InvitationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInvitationRequestBuilderInternal instantiates a new InvitationRequestBuilder and sets the default values.
 func NewInvitationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InvitationRequestBuilder) {
     m := &InvitationRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewInvitationRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new InvitationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInvitationRequestBuilder instantiates a new InvitationRequestBuilder and sets the default values.
 func NewInvitationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InvitationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInvitationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from invitations
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from invitations
 func (m *InvitationRequestBuilder) CreateDeleteRequestInformation(options *InvitationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *InvitationRequestBuilder) CreateDeleteRequestInformation(options *Invit
     }
     return requestInfo, nil
 }
-// Get entity from invitations by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from invitations by key
 func (m *InvitationRequestBuilder) CreateGetRequestInformation(options *InvitationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *InvitationRequestBuilder) CreateGetRequestInformation(options *Invitati
     }
     return requestInfo, nil
 }
-// Update entity in invitations
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in invitations
 func (m *InvitationRequestBuilder) CreatePatchRequestInformation(options *InvitationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *InvitationRequestBuilder) CreatePatchRequestInformation(options *Invita
     }
     return requestInfo, nil
 }
-// Delete entity from invitations
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from invitations
 func (m *InvitationRequestBuilder) Delete(options *InvitationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *InvitationRequestBuilder) Delete(options *InvitationRequestBuilderDelet
     }
     return nil
 }
-// Get entity from invitations by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from invitations by key
 func (m *InvitationRequestBuilder) Get(options *InvitationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Invitation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *InvitationRequestBuilder) Get(options *InvitationRequestBuilderGetOptio
 func (m *InvitationRequestBuilder) InvitedUser()(*i98038c57b60b04d09501501acf47529409f1308caaeb4fa6eb2428843589ba22.InvitedUserRequestBuilder) {
     return i98038c57b60b04d09501501acf47529409f1308caaeb4fa6eb2428843589ba22.NewInvitedUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Update entity in invitations
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in invitations
 func (m *InvitationRequestBuilder) Patch(options *InvitationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter\microsoft.graph.applyBottomItemsFilter
+// ApplyBottomItemsFilterRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter\microsoft.graph.applyBottomItemsFilter
 type ApplyBottomItemsFilterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ApplyBottomItemsFilterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ApplyBottomItemsFilterRequestBuilderPostOptions options for Post
 type ApplyBottomItemsFilterRequestBuilderPostOptions struct {
     // 
     Body *ApplyBottomItemsFilterRequestBody;
@@ -24,10 +24,7 @@ type ApplyBottomItemsFilterRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApplyBottomItemsFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplyBottomItemsFilterRequestBuilderInternal instantiates a new ApplyBottomItemsFilterRequestBuilder and sets the default values.
 func NewApplyBottomItemsFilterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplyBottomItemsFilterRequestBuilder) {
     m := &ApplyBottomItemsFilterRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewApplyBottomItemsFilterRequestBuilderInternal(pathParameters map[string]s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApplyBottomItemsFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplyBottomItemsFilterRequestBuilder instantiates a new ApplyBottomItemsFilterRequestBuilder and sets the default values.
 func NewApplyBottomItemsFilterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplyBottomItemsFilterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplyBottomItemsFilterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action applyBottomItemsFilter
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action applyBottomItemsFilter
 func (m *ApplyBottomItemsFilterRequestBuilder) CreatePostRequestInformation(options *ApplyBottomItemsFilterRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ApplyBottomItemsFilterRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Invoke action applyBottomItemsFilter
-// Parameters:
-//  - options : Options for the request
+// Post invoke action applyBottomItemsFilter
 func (m *ApplyBottomItemsFilterRequestBuilder) Post(options *ApplyBottomItemsFilterRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

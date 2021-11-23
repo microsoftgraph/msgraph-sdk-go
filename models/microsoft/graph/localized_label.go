@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// LocalizedLabel 
 type LocalizedLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type LocalizedLabel struct {
     // The name of the label.
     name *string;
 }
-// Instantiates a new localizedLabel and sets the default values.
+// NewLocalizedLabel instantiates a new localizedLabel and sets the default values.
 func NewLocalizedLabel()(*LocalizedLabel) {
     m := &LocalizedLabel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LocalizedLabel) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *LocalizedLabel) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the isDefault property value. Indicates whether the label is the default label.
+// GetIsDefault gets the isDefault property value. Indicates whether the label is the default label.
 func (m *LocalizedLabel) GetIsDefault()(*bool) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *LocalizedLabel) GetIsDefault()(*bool) {
         return m.isDefault
     }
 }
-// Gets the languageTag property value. The language tag for the label.
+// GetLanguageTag gets the languageTag property value. The language tag for the label.
 func (m *LocalizedLabel) GetLanguageTag()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *LocalizedLabel) GetLanguageTag()(*string) {
         return m.languageTag
     }
 }
-// Gets the name property value. The name of the label.
+// GetName gets the name property value. The name of the label.
 func (m *LocalizedLabel) GetName()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *LocalizedLabel) GetName()(*string) {
         return m.name
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *LocalizedLabel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["isDefault"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -92,9 +92,7 @@ func (m *LocalizedLabel) GetFieldDeserializers()(map[string]func(interface{}, i0
 func (m *LocalizedLabel) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *LocalizedLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isDefault", m.GetIsDefault())
@@ -122,27 +120,19 @@ func (m *LocalizedLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LocalizedLabel) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the isDefault property value. Indicates whether the label is the default label.
-// Parameters:
-//  - value : Value to set for the isDefault property.
+// SetIsDefault sets the isDefault property value. Indicates whether the label is the default label.
 func (m *LocalizedLabel) SetIsDefault(value *bool)() {
     m.isDefault = value
 }
-// Sets the languageTag property value. The language tag for the label.
-// Parameters:
-//  - value : Value to set for the languageTag property.
+// SetLanguageTag sets the languageTag property value. The language tag for the label.
 func (m *LocalizedLabel) SetLanguageTag(value *string)() {
     m.languageTag = value
 }
-// Sets the name property value. The name of the label.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. The name of the label.
 func (m *LocalizedLabel) SetName(value *string)() {
     m.name = value
 }

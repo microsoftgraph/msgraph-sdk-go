@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\presence\microsoft.graph.clearPresence
+// ClearPresenceRequestBuilder builds and executes requests for operations under \me\presence\microsoft.graph.clearPresence
 type ClearPresenceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ClearPresenceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ClearPresenceRequestBuilderPostOptions options for Post
 type ClearPresenceRequestBuilderPostOptions struct {
     // 
     Body *ClearPresenceRequestBody;
@@ -24,10 +24,7 @@ type ClearPresenceRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ClearPresenceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewClearPresenceRequestBuilderInternal instantiates a new ClearPresenceRequestBuilder and sets the default values.
 func NewClearPresenceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClearPresenceRequestBuilder) {
     m := &ClearPresenceRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewClearPresenceRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ClearPresenceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewClearPresenceRequestBuilder instantiates a new ClearPresenceRequestBuilder and sets the default values.
 func NewClearPresenceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClearPresenceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClearPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action clearPresence
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action clearPresence
 func (m *ClearPresenceRequestBuilder) CreatePostRequestInformation(options *ClearPresenceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ClearPresenceRequestBuilder) CreatePostRequestInformation(options *Clea
     }
     return requestInfo, nil
 }
-// Invoke action clearPresence
-// Parameters:
-//  - options : Options for the request
+// Post invoke action clearPresence
 func (m *ClearPresenceRequestBuilder) Post(options *ClearPresenceRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

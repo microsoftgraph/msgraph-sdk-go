@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \certificateBasedAuthConfiguration\{certificateBasedAuthConfiguration-id}
+// CertificateBasedAuthConfigurationRequestBuilder builds and executes requests for operations under \certificateBasedAuthConfiguration\{certificateBasedAuthConfiguration-id}
 type CertificateBasedAuthConfigurationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CertificateBasedAuthConfigurationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// CertificateBasedAuthConfigurationRequestBuilderDeleteOptions options for Delete
 type CertificateBasedAuthConfigurationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type CertificateBasedAuthConfigurationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// CertificateBasedAuthConfigurationRequestBuilderGetOptions options for Get
 type CertificateBasedAuthConfigurationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type CertificateBasedAuthConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from certificateBasedAuthConfiguration by key
+// CertificateBasedAuthConfigurationRequestBuilderGetQueryParameters get entity from certificateBasedAuthConfiguration by key
 type CertificateBasedAuthConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// CertificateBasedAuthConfigurationRequestBuilderPatchOptions options for Patch
 type CertificateBasedAuthConfigurationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CertificateBasedAuthConfiguration;
@@ -53,10 +53,7 @@ type CertificateBasedAuthConfigurationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CertificateBasedAuthConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCertificateBasedAuthConfigurationRequestBuilderInternal instantiates a new CertificateBasedAuthConfigurationRequestBuilder and sets the default values.
 func NewCertificateBasedAuthConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CertificateBasedAuthConfigurationRequestBuilder) {
     m := &CertificateBasedAuthConfigurationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewCertificateBasedAuthConfigurationRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CertificateBasedAuthConfigurationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCertificateBasedAuthConfigurationRequestBuilder instantiates a new CertificateBasedAuthConfigurationRequestBuilder and sets the default values.
 func NewCertificateBasedAuthConfigurationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CertificateBasedAuthConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCertificateBasedAuthConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from certificateBasedAuthConfiguration
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from certificateBasedAuthConfiguration
 func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateDeleteRequestInformation(options *CertificateBasedAuthConfigurationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// Get entity from certificateBasedAuthConfiguration by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from certificateBasedAuthConfiguration by key
 func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInformation(options *CertificateBasedAuthConfigurationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// Update entity in certificateBasedAuthConfiguration
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in certificateBasedAuthConfiguration
 func (m *CertificateBasedAuthConfigurationRequestBuilder) CreatePatchRequestInformation(options *CertificateBasedAuthConfigurationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// Delete entity from certificateBasedAuthConfiguration
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from certificateBasedAuthConfiguration
 func (m *CertificateBasedAuthConfigurationRequestBuilder) Delete(options *CertificateBasedAuthConfigurationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) Delete(options *Certif
     }
     return nil
 }
-// Get entity from certificateBasedAuthConfiguration by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from certificateBasedAuthConfiguration by key
 func (m *CertificateBasedAuthConfigurationRequestBuilder) Get(options *CertificateBasedAuthConfigurationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CertificateBasedAuthConfiguration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) Get(options *Certifica
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CertificateBasedAuthConfiguration), nil
 }
-// Update entity in certificateBasedAuthConfiguration
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in certificateBasedAuthConfiguration
 func (m *CertificateBasedAuthConfigurationRequestBuilder) Patch(options *CertificateBasedAuthConfigurationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

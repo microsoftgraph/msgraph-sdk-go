@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.windowsDefenderUpdateSignatures
+// WindowsDefenderUpdateSignaturesRequestBuilder builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.windowsDefenderUpdateSignatures
 type WindowsDefenderUpdateSignaturesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type WindowsDefenderUpdateSignaturesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// WindowsDefenderUpdateSignaturesRequestBuilderPostOptions options for Post
 type WindowsDefenderUpdateSignaturesRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type WindowsDefenderUpdateSignaturesRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WindowsDefenderUpdateSignaturesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDefenderUpdateSignaturesRequestBuilderInternal instantiates a new WindowsDefenderUpdateSignaturesRequestBuilder and sets the default values.
 func NewWindowsDefenderUpdateSignaturesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDefenderUpdateSignaturesRequestBuilder) {
     m := &WindowsDefenderUpdateSignaturesRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewWindowsDefenderUpdateSignaturesRequestBuilderInternal(pathParameters map
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsDefenderUpdateSignaturesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsDefenderUpdateSignaturesRequestBuilder instantiates a new WindowsDefenderUpdateSignaturesRequestBuilder and sets the default values.
 func NewWindowsDefenderUpdateSignaturesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsDefenderUpdateSignaturesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDefenderUpdateSignaturesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action windowsDefenderUpdateSignatures
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action windowsDefenderUpdateSignatures
 func (m *WindowsDefenderUpdateSignaturesRequestBuilder) CreatePostRequestInformation(options *WindowsDefenderUpdateSignaturesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *WindowsDefenderUpdateSignaturesRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// Invoke action windowsDefenderUpdateSignatures
-// Parameters:
-//  - options : Options for the request
+// Post invoke action windowsDefenderUpdateSignatures
 func (m *WindowsDefenderUpdateSignaturesRequestBuilder) Post(options *WindowsDefenderUpdateSignaturesRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

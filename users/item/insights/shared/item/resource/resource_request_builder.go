@@ -20,7 +20,7 @@ import (
     iea260140d987ad9e7e464b0abbd7f734a5df4ffb5180523a47049b434461809b "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/windowsinformationprotection"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource
+// ResourceRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource
 type ResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type ResourceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ResourceRequestBuilderGetOptions options for Get
 type ResourceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -40,7 +40,7 @@ type ResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
+// ResourceRequestBuilderGetQueryParameters used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 type ResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -50,10 +50,7 @@ type ResourceRequestBuilderGetQueryParameters struct {
 func (m *ResourceRequestBuilder) CalendarSharingMessage()(*i89ca78a87910a4d326eebc0ff244cb6c019d297c07a94b543d3173c95db7ecd2.CalendarSharingMessageRequestBuilder) {
     return i89ca78a87910a4d326eebc0ff244cb6c019d297c07a94b543d3173c95db7ecd2.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceRequestBuilderInternal instantiates a new ResourceRequestBuilder and sets the default values.
 func NewResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceRequestBuilder) {
     m := &ResourceRequestBuilder{
     }
@@ -66,18 +63,13 @@ func NewResourceRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewResourceRequestBuilder instantiates a new ResourceRequestBuilder and sets the default values.
 func NewResourceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ResourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResourceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 func (m *ResourceRequestBuilder) CreateGetRequestInformation(options *ResourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ResourceRequestBuilder) CreateGetRequestInformation(options *ResourceRe
     }
     return requestInfo, nil
 }
-// Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
-// Parameters:
-//  - options : Options for the request
+// Get used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 func (m *ResourceRequestBuilder) Get(options *ResourceRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Entity, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\planner\plans\{plannerPlan-id}\tasks
+// TasksRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\plans\{plannerPlan-id}\tasks
 type TasksRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TasksRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TasksRequestBuilderGetOptions options for Get
 type TasksRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TasksRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Collection of tasks in the plan.
+// TasksRequestBuilderGetQueryParameters read-only. Nullable. Collection of tasks in the plan.
 type TasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TasksRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TasksRequestBuilderPostOptions options for Post
 type TasksRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTask;
@@ -56,10 +56,7 @@ type TasksRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TasksRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTasksRequestBuilderInternal instantiates a new TasksRequestBuilder and sets the default values.
 func NewTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TasksRequestBuilder) {
     m := &TasksRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTasksRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TasksRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTasksRequestBuilder instantiates a new TasksRequestBuilder and sets the default values.
 func NewTasksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TasksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTasksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Collection of tasks in the plan.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Collection of tasks in the plan.
 func (m *TasksRequestBuilder) CreateGetRequestInformation(options *TasksRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TasksRequestBuilder) CreateGetRequestInformation(options *TasksRequestB
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Collection of tasks in the plan.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation read-only. Nullable. Collection of tasks in the plan.
 func (m *TasksRequestBuilder) CreatePostRequestInformation(options *TasksRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TasksRequestBuilder) CreatePostRequestInformation(options *TasksRequest
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Collection of tasks in the plan.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Collection of tasks in the plan.
 func (m *TasksRequestBuilder) Get(options *TasksRequestBuilderGetOptions)(*TasksResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TasksRequestBuilder) Get(options *TasksRequestBuilderGetOptions)(*Tasks
     }
     return res.(*TasksResponse), nil
 }
-// Read-only. Nullable. Collection of tasks in the plan.
-// Parameters:
-//  - options : Options for the request
+// Post read-only. Nullable. Collection of tasks in the plan.
 func (m *TasksRequestBuilder) Post(options *TasksRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTask, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

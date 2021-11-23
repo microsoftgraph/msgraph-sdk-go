@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getCompliancePolicyNonComplianceSummaryReport
+// GetCompliancePolicyNonComplianceSummaryReportRequestBuilder builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getCompliancePolicyNonComplianceSummaryReport
 type GetCompliancePolicyNonComplianceSummaryReportRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetCompliancePolicyNonComplianceSummaryReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostOptions options for Post
 type GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostOptions struct {
     // 
     Body *GetCompliancePolicyNonComplianceSummaryReportRequestBody;
@@ -24,10 +24,7 @@ type GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostOptions stru
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetCompliancePolicyNonComplianceSummaryReportRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetCompliancePolicyNonComplianceSummaryReportRequestBuilderInternal instantiates a new GetCompliancePolicyNonComplianceSummaryReportRequestBuilder and sets the default values.
 func NewGetCompliancePolicyNonComplianceSummaryReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) {
     m := &GetCompliancePolicyNonComplianceSummaryReportRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewGetCompliancePolicyNonComplianceSummaryReportRequestBuilderInternal(path
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetCompliancePolicyNonComplianceSummaryReportRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetCompliancePolicyNonComplianceSummaryReportRequestBuilder instantiates a new GetCompliancePolicyNonComplianceSummaryReportRequestBuilder and sets the default values.
 func NewGetCompliancePolicyNonComplianceSummaryReportRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetCompliancePolicyNonComplianceSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action getCompliancePolicyNonComplianceSummaryReport
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action getCompliancePolicyNonComplianceSummaryReport
 func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) CreatePostRequestInformation(options *GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) CreatePost
     }
     return requestInfo, nil
 }
-// Invoke action getCompliancePolicyNonComplianceSummaryReport
-// Parameters:
-//  - options : Options for the request
+// Post invoke action getCompliancePolicyNonComplianceSummaryReport
 func (m *GetCompliancePolicyNonComplianceSummaryReportRequestBuilder) Post(options *GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostOptions)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

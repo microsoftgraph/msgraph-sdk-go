@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityUserDetail(date={date})
+// GetTeamsUserActivityUserDetailWithDateRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityUserDetail(date={date})
 type GetTeamsUserActivityUserDetailWithDateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type GetTeamsUserActivityUserDetailWithDateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetTeamsUserActivityUserDetailWithDateRequestBuilderGetOptions options for Get
 type GetTeamsUserActivityUserDetailWithDateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -22,11 +22,7 @@ type GetTeamsUserActivityUserDetailWithDateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetTeamsUserActivityUserDetailWithDateRequestBuilder and sets the default values.
-// Parameters:
-//  - date : Usage: date={date}
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal instantiates a new GetTeamsUserActivityUserDetailWithDateRequestBuilder and sets the default values.
 func NewGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *string)(*GetTeamsUserActivityUserDetailWithDateRequestBuilder) {
     m := &GetTeamsUserActivityUserDetailWithDateRequestBuilder{
     }
@@ -42,18 +38,13 @@ func NewGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal(pathParamet
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetTeamsUserActivityUserDetailWithDateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetTeamsUserActivityUserDetailWithDateRequestBuilder instantiates a new GetTeamsUserActivityUserDetailWithDateRequestBuilder and sets the default values.
 func NewGetTeamsUserActivityUserDetailWithDateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetTeamsUserActivityUserDetailWithDateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsUserActivityUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getTeamsUserActivityUserDetail
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getTeamsUserActivityUserDetail
 func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) CreateGetRequestInformation(options *GetTeamsUserActivityUserDetailWithDateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +61,7 @@ func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// Invoke function getTeamsUserActivityUserDetail
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getTeamsUserActivityUserDetail
 func (m *GetTeamsUserActivityUserDetailWithDateRequestBuilder) Get(options *GetTeamsUserActivityUserDetailWithDateRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

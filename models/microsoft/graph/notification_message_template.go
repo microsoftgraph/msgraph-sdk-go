@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// NotificationMessageTemplate 
 type NotificationMessageTemplate struct {
     Entity
     // The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
@@ -19,14 +19,14 @@ type NotificationMessageTemplate struct {
     // The list of localized messages for this Notification Message Template.
     localizedNotificationMessages []LocalizedNotificationMessage;
 }
-// Instantiates a new notificationMessageTemplate and sets the default values.
+// NewNotificationMessageTemplate instantiates a new notificationMessageTemplate and sets the default values.
 func NewNotificationMessageTemplate()(*NotificationMessageTemplate) {
     m := &NotificationMessageTemplate{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
+// GetBrandingOptions gets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
 func (m *NotificationMessageTemplate) GetBrandingOptions()(*NotificationTemplateBrandingOptions) {
     if m == nil {
         return nil
@@ -34,7 +34,7 @@ func (m *NotificationMessageTemplate) GetBrandingOptions()(*NotificationTemplate
         return m.brandingOptions
     }
 }
-// Gets the defaultLocale property value. The default locale to fallback onto when the requested locale is not available.
+// GetDefaultLocale gets the defaultLocale property value. The default locale to fallback onto when the requested locale is not available.
 func (m *NotificationMessageTemplate) GetDefaultLocale()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *NotificationMessageTemplate) GetDefaultLocale()(*string) {
         return m.defaultLocale
     }
 }
-// Gets the displayName property value. Display name for the Notification Message Template.
+// GetDisplayName gets the displayName property value. Display name for the Notification Message Template.
 func (m *NotificationMessageTemplate) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *NotificationMessageTemplate) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *NotificationMessageTemplate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *NotificationMessageTemplate) GetLastModifiedDateTime()(*i336074805fc853
         return m.lastModifiedDateTime
     }
 }
-// Gets the localizedNotificationMessages property value. The list of localized messages for this Notification Message Template.
+// GetLocalizedNotificationMessages gets the localizedNotificationMessages property value. The list of localized messages for this Notification Message Template.
 func (m *NotificationMessageTemplate) GetLocalizedNotificationMessages()([]LocalizedNotificationMessage) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *NotificationMessageTemplate) GetLocalizedNotificationMessages()([]Local
         return m.localizedNotificationMessages
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["brandingOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -129,9 +129,7 @@ func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(in
 func (m *NotificationMessageTemplate) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *NotificationMessageTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -175,33 +173,23 @@ func (m *NotificationMessageTemplate) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
-// Parameters:
-//  - value : Value to set for the brandingOptions property.
+// SetBrandingOptions sets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
 func (m *NotificationMessageTemplate) SetBrandingOptions(value *NotificationTemplateBrandingOptions)() {
     m.brandingOptions = value
 }
-// Sets the defaultLocale property value. The default locale to fallback onto when the requested locale is not available.
-// Parameters:
-//  - value : Value to set for the defaultLocale property.
+// SetDefaultLocale sets the defaultLocale property value. The default locale to fallback onto when the requested locale is not available.
 func (m *NotificationMessageTemplate) SetDefaultLocale(value *string)() {
     m.defaultLocale = value
 }
-// Sets the displayName property value. Display name for the Notification Message Template.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Display name for the Notification Message Template.
 func (m *NotificationMessageTemplate) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the lastModifiedDateTime property value. DateTime the object was last modified.
-// Parameters:
-//  - value : Value to set for the lastModifiedDateTime property.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *NotificationMessageTemplate) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastModifiedDateTime = value
 }
-// Sets the localizedNotificationMessages property value. The list of localized messages for this Notification Message Template.
-// Parameters:
-//  - value : Value to set for the localizedNotificationMessages property.
+// SetLocalizedNotificationMessages sets the localizedNotificationMessages property value. The list of localized messages for this Notification Message Template.
 func (m *NotificationMessageTemplate) SetLocalizedNotificationMessages(value []LocalizedNotificationMessage)() {
     m.localizedNotificationMessages = value
 }

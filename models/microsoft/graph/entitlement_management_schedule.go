@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// EntitlementManagementSchedule 
 type EntitlementManagementSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -16,14 +16,14 @@ type EntitlementManagementSchedule struct {
     // 
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
-// Instantiates a new entitlementManagementSchedule and sets the default values.
+// NewEntitlementManagementSchedule instantiates a new entitlementManagementSchedule and sets the default values.
 func NewEntitlementManagementSchedule()(*EntitlementManagementSchedule) {
     m := &EntitlementManagementSchedule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EntitlementManagementSchedule) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *EntitlementManagementSchedule) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// Gets the expiration property value. 
+// GetExpiration gets the expiration property value. 
 func (m *EntitlementManagementSchedule) GetExpiration()(*ExpirationPattern) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *EntitlementManagementSchedule) GetExpiration()(*ExpirationPattern) {
         return m.expiration
     }
 }
-// Gets the recurrence property value. 
+// GetRecurrence gets the recurrence property value. 
 func (m *EntitlementManagementSchedule) GetRecurrence()(*PatternedRecurrence) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *EntitlementManagementSchedule) GetRecurrence()(*PatternedRecurrence) {
         return m.recurrence
     }
 }
-// Gets the startDateTime property value. 
+// GetStartDateTime gets the startDateTime property value. 
 func (m *EntitlementManagementSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *EntitlementManagementSchedule) GetStartDateTime()(*i336074805fc853987ab
         return m.startDateTime
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *EntitlementManagementSchedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["expiration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,9 +93,7 @@ func (m *EntitlementManagementSchedule) GetFieldDeserializers()(map[string]func(
 func (m *EntitlementManagementSchedule) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *EntitlementManagementSchedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("expiration", m.GetExpiration())
@@ -123,27 +121,19 @@ func (m *EntitlementManagementSchedule) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EntitlementManagementSchedule) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the expiration property value. 
-// Parameters:
-//  - value : Value to set for the expiration property.
+// SetExpiration sets the expiration property value. 
 func (m *EntitlementManagementSchedule) SetExpiration(value *ExpirationPattern)() {
     m.expiration = value
 }
-// Sets the recurrence property value. 
-// Parameters:
-//  - value : Value to set for the recurrence property.
+// SetRecurrence sets the recurrence property value. 
 func (m *EntitlementManagementSchedule) SetRecurrence(value *PatternedRecurrence)() {
     m.recurrence = value
 }
-// Sets the startDateTime property value. 
-// Parameters:
-//  - value : Value to set for the startDateTime property.
+// SetStartDateTime sets the startDateTime property value. 
 func (m *EntitlementManagementSchedule) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.startDateTime = value
 }

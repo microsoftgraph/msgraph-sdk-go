@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// Beta_InvRequestBody 
 type Beta_InvRequestBody struct {
     // 
     a *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
@@ -20,14 +20,14 @@ type Beta_InvRequestBody struct {
     // 
     probability *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
-// Instantiates a new beta_InvRequestBody and sets the default values.
+// NewBeta_InvRequestBody instantiates a new beta_InvRequestBody and sets the default values.
 func NewBeta_InvRequestBody()(*Beta_InvRequestBody) {
     m := &Beta_InvRequestBody{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the A property value. 
+// GetA gets the A property value. 
 func (m *Beta_InvRequestBody) GetA()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *Beta_InvRequestBody) GetA()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.a
     }
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Beta_InvRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *Beta_InvRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the alpha property value. 
+// GetAlpha gets the alpha property value. 
 func (m *Beta_InvRequestBody) GetAlpha()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *Beta_InvRequestBody) GetAlpha()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a8
         return m.alpha
     }
 }
-// Gets the B property value. 
+// GetB gets the B property value. 
 func (m *Beta_InvRequestBody) GetB()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *Beta_InvRequestBody) GetB()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.b
     }
 }
-// Gets the beta property value. 
+// GetBeta gets the beta property value. 
 func (m *Beta_InvRequestBody) GetBeta()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *Beta_InvRequestBody) GetBeta()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89
         return m.beta
     }
 }
-// Gets the probability property value. 
+// GetProbability gets the probability property value. 
 func (m *Beta_InvRequestBody) GetProbability()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *Beta_InvRequestBody) GetProbability()(*i4a838ef194e4c99e9f2c63ba10dab9c
         return m.probability
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Beta_InvRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["a"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -133,9 +133,7 @@ func (m *Beta_InvRequestBody) GetFieldDeserializers()(map[string]func(interface{
 func (m *Beta_InvRequestBody) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Beta_InvRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("a", m.GetA())
@@ -175,39 +173,27 @@ func (m *Beta_InvRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// Sets the A property value. 
-// Parameters:
-//  - value : Value to set for the A property.
+// SetA sets the A property value. 
 func (m *Beta_InvRequestBody) SetA(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.a = value
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Beta_InvRequestBody) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the alpha property value. 
-// Parameters:
-//  - value : Value to set for the alpha property.
+// SetAlpha sets the alpha property value. 
 func (m *Beta_InvRequestBody) SetAlpha(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.alpha = value
 }
-// Sets the B property value. 
-// Parameters:
-//  - value : Value to set for the B property.
+// SetB sets the B property value. 
 func (m *Beta_InvRequestBody) SetB(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.b = value
 }
-// Sets the beta property value. 
-// Parameters:
-//  - value : Value to set for the beta property.
+// SetBeta sets the beta property value. 
 func (m *Beta_InvRequestBody) SetBeta(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.beta = value
 }
-// Sets the probability property value. 
-// Parameters:
-//  - value : Value to set for the probability property.
+// SetProbability sets the probability property value. 
 func (m *Beta_InvRequestBody) SetProbability(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     m.probability = value
 }

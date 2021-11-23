@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \directoryRoles\{directoryRole-id}\scopedMembers
+// ScopedMembersRequestBuilder builds and executes requests for operations under \directoryRoles\{directoryRole-id}\scopedMembers
 type ScopedMembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ScopedMembersRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ScopedMembersRequestBuilderGetOptions options for Get
 type ScopedMembersRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ScopedMembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+// ScopedMembersRequestBuilderGetQueryParameters members of this directory role that are scoped to administrative units. Read-only. Nullable.
 type ScopedMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ScopedMembersRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ScopedMembersRequestBuilderPostOptions options for Post
 type ScopedMembersRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ScopedRoleMembership;
@@ -56,10 +56,7 @@ type ScopedMembersRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ScopedMembersRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScopedMembersRequestBuilderInternal instantiates a new ScopedMembersRequestBuilder and sets the default values.
 func NewScopedMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScopedMembersRequestBuilder) {
     m := &ScopedMembersRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewScopedMembersRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ScopedMembersRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewScopedMembersRequestBuilder instantiates a new ScopedMembersRequestBuilder and sets the default values.
 func NewScopedMembersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ScopedMembersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewScopedMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation members of this directory role that are scoped to administrative units. Read-only. Nullable.
 func (m *ScopedMembersRequestBuilder) CreateGetRequestInformation(options *ScopedMembersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ScopedMembersRequestBuilder) CreateGetRequestInformation(options *Scope
     }
     return requestInfo, nil
 }
-// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation members of this directory role that are scoped to administrative units. Read-only. Nullable.
 func (m *ScopedMembersRequestBuilder) CreatePostRequestInformation(options *ScopedMembersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ScopedMembersRequestBuilder) CreatePostRequestInformation(options *Scop
     }
     return requestInfo, nil
 }
-// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get members of this directory role that are scoped to administrative units. Read-only. Nullable.
 func (m *ScopedMembersRequestBuilder) Get(options *ScopedMembersRequestBuilderGetOptions)(*ScopedMembersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ScopedMembersRequestBuilder) Get(options *ScopedMembersRequestBuilderGe
     }
     return res.(*ScopedMembersResponse), nil
 }
-// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Post members of this directory role that are scoped to administrative units. Read-only. Nullable.
 func (m *ScopedMembersRequestBuilder) Post(options *ScopedMembersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ScopedRoleMembership, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

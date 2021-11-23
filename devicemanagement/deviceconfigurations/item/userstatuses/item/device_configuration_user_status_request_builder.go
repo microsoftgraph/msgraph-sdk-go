@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\userStatuses\{deviceConfigurationUserStatus-id}
+// DeviceConfigurationUserStatusRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\userStatuses\{deviceConfigurationUserStatus-id}
 type DeviceConfigurationUserStatusRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceConfigurationUserStatusRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceConfigurationUserStatusRequestBuilderDeleteOptions options for Delete
 type DeviceConfigurationUserStatusRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceConfigurationUserStatusRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceConfigurationUserStatusRequestBuilderGetOptions options for Get
 type DeviceConfigurationUserStatusRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceConfigurationUserStatusRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Device configuration installation status by user.
+// DeviceConfigurationUserStatusRequestBuilderGetQueryParameters device configuration installation status by user.
 type DeviceConfigurationUserStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceConfigurationUserStatusRequestBuilderPatchOptions options for Patch
 type DeviceConfigurationUserStatusRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationUserStatus;
@@ -53,10 +53,7 @@ type DeviceConfigurationUserStatusRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceConfigurationUserStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationUserStatusRequestBuilderInternal instantiates a new DeviceConfigurationUserStatusRequestBuilder and sets the default values.
 func NewDeviceConfigurationUserStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationUserStatusRequestBuilder) {
     m := &DeviceConfigurationUserStatusRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceConfigurationUserStatusRequestBuilderInternal(pathParameters map[s
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceConfigurationUserStatusRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationUserStatusRequestBuilder instantiates a new DeviceConfigurationUserStatusRequestBuilder and sets the default values.
 func NewDeviceConfigurationUserStatusRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationUserStatusRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationUserStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Device configuration installation status by user.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation device configuration installation status by user.
 func (m *DeviceConfigurationUserStatusRequestBuilder) CreateDeleteRequestInformation(options *DeviceConfigurationUserStatusRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceConfigurationUserStatusRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// Device configuration installation status by user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation device configuration installation status by user.
 func (m *DeviceConfigurationUserStatusRequestBuilder) CreateGetRequestInformation(options *DeviceConfigurationUserStatusRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceConfigurationUserStatusRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// Device configuration installation status by user.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation device configuration installation status by user.
 func (m *DeviceConfigurationUserStatusRequestBuilder) CreatePatchRequestInformation(options *DeviceConfigurationUserStatusRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceConfigurationUserStatusRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// Device configuration installation status by user.
-// Parameters:
-//  - options : Options for the request
+// Delete device configuration installation status by user.
 func (m *DeviceConfigurationUserStatusRequestBuilder) Delete(options *DeviceConfigurationUserStatusRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceConfigurationUserStatusRequestBuilder) Delete(options *DeviceConf
     }
     return nil
 }
-// Device configuration installation status by user.
-// Parameters:
-//  - options : Options for the request
+// Get device configuration installation status by user.
 func (m *DeviceConfigurationUserStatusRequestBuilder) Get(options *DeviceConfigurationUserStatusRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationUserStatus, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceConfigurationUserStatusRequestBuilder) Get(options *DeviceConfigu
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationUserStatus), nil
 }
-// Device configuration installation status by user.
-// Parameters:
-//  - options : Options for the request
+// Patch device configuration installation status by user.
 func (m *DeviceConfigurationUserStatusRequestBuilder) Patch(options *DeviceConfigurationUserStatusRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

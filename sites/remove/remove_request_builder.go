@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \sites\microsoft.graph.remove
+// RemoveRequestBuilder builds and executes requests for operations under \sites\microsoft.graph.remove
 type RemoveRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type RemoveRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RemoveRequestBuilderPostOptions options for Post
 type RemoveRequestBuilderPostOptions struct {
     // 
     Body *RemoveRequestBody;
@@ -25,10 +25,7 @@ type RemoveRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RemoveRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoveRequestBuilderInternal instantiates a new RemoveRequestBuilder and sets the default values.
 func NewRemoveRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoveRequestBuilder) {
     m := &RemoveRequestBuilder{
     }
@@ -41,18 +38,13 @@ func NewRemoveRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RemoveRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRemoveRequestBuilder instantiates a new RemoveRequestBuilder and sets the default values.
 func NewRemoveRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RemoveRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action remove
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action remove
 func (m *RemoveRequestBuilder) CreatePostRequestInformation(options *RemoveRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,9 +62,7 @@ func (m *RemoveRequestBuilder) CreatePostRequestInformation(options *RemoveReque
     }
     return requestInfo, nil
 }
-// Invoke action remove
-// Parameters:
-//  - options : Options for the request
+// Post invoke action remove
 func (m *RemoveRequestBuilder) Post(options *RemoveRequestBuilderPostOptions)([]Remove, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

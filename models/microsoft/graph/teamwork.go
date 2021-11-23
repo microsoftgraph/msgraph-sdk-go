@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Teamwork 
 type Teamwork struct {
     Entity
     // 
     workforceIntegrations []WorkforceIntegration;
 }
-// Instantiates a new teamwork and sets the default values.
+// NewTeamwork instantiates a new teamwork and sets the default values.
 func NewTeamwork()(*Teamwork) {
     m := &Teamwork{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the workforceIntegrations property value. 
+// GetWorkforceIntegrations gets the workforceIntegrations property value. 
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegration) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegration) {
         return m.workforceIntegrations
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Teamwork) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["workforceIntegrations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -47,9 +47,7 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
 func (m *Teamwork) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -68,9 +66,7 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// Sets the workforceIntegrations property value. 
-// Parameters:
-//  - value : Value to set for the workforceIntegrations property.
+// SetWorkforceIntegrations sets the workforceIntegrations property value. 
 func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegration)() {
     m.workforceIntegrations = value
 }

@@ -8,7 +8,7 @@ import (
     i14568e1ff2392ccb9d0ba3bdfad7cdfa2dee715cba8a018193738536c1616614 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/appconsent/appconsentrequests/item/userconsentrequests/item/approval/stages/item"
 )
 
-// Builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}\approval
+// ApprovalRequestBuilder builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}\approval
 type ApprovalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type ApprovalRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ApprovalRequestBuilderDeleteOptions options for Delete
 type ApprovalRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ApprovalRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ApprovalRequestBuilderGetOptions options for Get
 type ApprovalRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type ApprovalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Approval decisions associated with a request.
+// ApprovalRequestBuilderGetQueryParameters approval decisions associated with a request.
 type ApprovalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ApprovalRequestBuilderPatchOptions options for Patch
 type ApprovalRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Approval;
@@ -55,10 +55,7 @@ type ApprovalRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApprovalRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApprovalRequestBuilderInternal instantiates a new ApprovalRequestBuilder and sets the default values.
 func NewApprovalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalRequestBuilder) {
     m := &ApprovalRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewApprovalRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApprovalRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApprovalRequestBuilder instantiates a new ApprovalRequestBuilder and sets the default values.
 func NewApprovalRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApprovalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Approval decisions associated with a request.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation approval decisions associated with a request.
 func (m *ApprovalRequestBuilder) CreateDeleteRequestInformation(options *ApprovalRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *ApprovalRequestBuilder) CreateDeleteRequestInformation(options *Approva
     }
     return requestInfo, nil
 }
-// Approval decisions associated with a request.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation approval decisions associated with a request.
 func (m *ApprovalRequestBuilder) CreateGetRequestInformation(options *ApprovalRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *ApprovalRequestBuilder) CreateGetRequestInformation(options *ApprovalRe
     }
     return requestInfo, nil
 }
-// Approval decisions associated with a request.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation approval decisions associated with a request.
 func (m *ApprovalRequestBuilder) CreatePatchRequestInformation(options *ApprovalRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *ApprovalRequestBuilder) CreatePatchRequestInformation(options *Approval
     }
     return requestInfo, nil
 }
-// Approval decisions associated with a request.
-// Parameters:
-//  - options : Options for the request
+// Delete approval decisions associated with a request.
 func (m *ApprovalRequestBuilder) Delete(options *ApprovalRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *ApprovalRequestBuilder) Delete(options *ApprovalRequestBuilderDeleteOpt
     }
     return nil
 }
-// Approval decisions associated with a request.
-// Parameters:
-//  - options : Options for the request
+// Get approval decisions associated with a request.
 func (m *ApprovalRequestBuilder) Get(options *ApprovalRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Approval, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *ApprovalRequestBuilder) Get(options *ApprovalRequestBuilderGetOptions)(
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Approval), nil
 }
-// Approval decisions associated with a request.
-// Parameters:
-//  - options : Options for the request
+// Patch approval decisions associated with a request.
 func (m *ApprovalRequestBuilder) Patch(options *ApprovalRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *ApprovalRequestBuilder) Patch(options *ApprovalRequestBuilderPatchOptio
 func (m *ApprovalRequestBuilder) Stages()(*id36a4d4dca3dc188c084b8a588a67c55237b92797cb4ff62a21f9303fd3cc0ea.StagesRequestBuilder) {
     return id36a4d4dca3dc188c084b8a588a67c55237b92797cb4ff62a21f9303fd3cc0ea.NewStagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.appConsent.appConsentRequests.item.userConsentRequests.item.approval.stages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// StagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.appConsent.appConsentRequests.item.userConsentRequests.item.approval.stages.item collection
 func (m *ApprovalRequestBuilder) StagesById(id string)(*i14568e1ff2392ccb9d0ba3bdfad7cdfa2dee715cba8a018193738536c1616614.ApprovalStageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

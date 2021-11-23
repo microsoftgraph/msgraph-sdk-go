@@ -8,7 +8,7 @@ import (
     i5fdd48054605d51ed33ea2d41b75d39ed3218582993ba4e6df34e3814d837ebd "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstores/item/groups/item/sets/item"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}
+// GroupRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}
 type GroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,7 +17,7 @@ type GroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// GroupRequestBuilderDeleteOptions options for Delete
 type GroupRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type GroupRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// GroupRequestBuilderGetOptions options for Get
 type GroupRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -37,14 +37,14 @@ type GroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of all groups available in the term store.
+// GroupRequestBuilderGetQueryParameters collection of all groups available in the term store.
 type GroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// GroupRequestBuilderPatchOptions options for Patch
 type GroupRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Group;
@@ -55,10 +55,7 @@ type GroupRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupRequestBuilderInternal instantiates a new GroupRequestBuilder and sets the default values.
 func NewGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupRequestBuilder) {
     m := &GroupRequestBuilder{
     }
@@ -71,18 +68,13 @@ func NewGroupRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGroupRequestBuilder instantiates a new GroupRequestBuilder and sets the default values.
 func NewGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Collection of all groups available in the term store.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation collection of all groups available in the term store.
 func (m *GroupRequestBuilder) CreateDeleteRequestInformation(options *GroupRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,9 +91,7 @@ func (m *GroupRequestBuilder) CreateDeleteRequestInformation(options *GroupReque
     }
     return requestInfo, nil
 }
-// Collection of all groups available in the term store.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of all groups available in the term store.
 func (m *GroupRequestBuilder) CreateGetRequestInformation(options *GroupRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,9 +111,7 @@ func (m *GroupRequestBuilder) CreateGetRequestInformation(options *GroupRequestB
     }
     return requestInfo, nil
 }
-// Collection of all groups available in the term store.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation collection of all groups available in the term store.
 func (m *GroupRequestBuilder) CreatePatchRequestInformation(options *GroupRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,9 +129,7 @@ func (m *GroupRequestBuilder) CreatePatchRequestInformation(options *GroupReques
     }
     return requestInfo, nil
 }
-// Collection of all groups available in the term store.
-// Parameters:
-//  - options : Options for the request
+// Delete collection of all groups available in the term store.
 func (m *GroupRequestBuilder) Delete(options *GroupRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -155,9 +141,7 @@ func (m *GroupRequestBuilder) Delete(options *GroupRequestBuilderDeleteOptions)(
     }
     return nil
 }
-// Collection of all groups available in the term store.
-// Parameters:
-//  - options : Options for the request
+// Get collection of all groups available in the term store.
 func (m *GroupRequestBuilder) Get(options *GroupRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Group, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,9 +153,7 @@ func (m *GroupRequestBuilder) Get(options *GroupRequestBuilderGetOptions)(*i4a83
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Group), nil
 }
-// Collection of all groups available in the term store.
-// Parameters:
-//  - options : Options for the request
+// Patch collection of all groups available in the term store.
 func (m *GroupRequestBuilder) Patch(options *GroupRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -186,9 +168,7 @@ func (m *GroupRequestBuilder) Patch(options *GroupRequestBuilderPatchOptions)(er
 func (m *GroupRequestBuilder) Sets()(*ide829bd6cd70d7fada81aa62bf6320e030449525807f8037dbf60251fd03a8c1.SetsRequestBuilder) {
     return ide829bd6cd70d7fada81aa62bf6320e030449525807f8037dbf60251fd03a8c1.NewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item.groups.item.sets.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// SetsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item.groups.item.sets.item collection
 func (m *GroupRequestBuilder) SetsById(id string)(*i5fdd48054605d51ed33ea2d41b75d39ed3218582993ba4e6df34e3814d837ebd.SetRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {

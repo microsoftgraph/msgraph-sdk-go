@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.unfavorite
+// UnfavoriteRequestBuilder builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.unfavorite
 type UnfavoriteRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type UnfavoriteRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// UnfavoriteRequestBuilderPostOptions options for Post
 type UnfavoriteRequestBuilderPostOptions struct {
     // 
     Body *UnfavoriteRequestBody;
@@ -24,10 +24,7 @@ type UnfavoriteRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new UnfavoriteRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnfavoriteRequestBuilderInternal instantiates a new UnfavoriteRequestBuilder and sets the default values.
 func NewUnfavoriteRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnfavoriteRequestBuilder) {
     m := &UnfavoriteRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewUnfavoriteRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnfavoriteRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnfavoriteRequestBuilder instantiates a new UnfavoriteRequestBuilder and sets the default values.
 func NewUnfavoriteRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnfavoriteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnfavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action unfavorite
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action unfavorite
 func (m *UnfavoriteRequestBuilder) CreatePostRequestInformation(options *UnfavoriteRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *UnfavoriteRequestBuilder) CreatePostRequestInformation(options *Unfavor
     }
     return requestInfo, nil
 }
-// Invoke action unfavorite
-// Parameters:
-//  - options : Options for the request
+// Post invoke action unfavorite
 func (m *UnfavoriteRequestBuilder) Post(options *UnfavoriteRequestBuilderPostOptions)(*bool, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

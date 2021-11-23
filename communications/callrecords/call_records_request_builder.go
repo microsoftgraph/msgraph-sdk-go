@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \communications\callRecords
+// CallRecordsRequestBuilder builds and executes requests for operations under \communications\callRecords
 type CallRecordsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CallRecordsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CallRecordsRequestBuilderGetOptions options for Get
 type CallRecordsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CallRecordsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get callRecords from communications
+// CallRecordsRequestBuilderGetQueryParameters get callRecords from communications
 type CallRecordsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CallRecordsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CallRecordsRequestBuilderPostOptions options for Post
 type CallRecordsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CallRecord;
@@ -56,10 +56,7 @@ type CallRecordsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CallRecordsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCallRecordsRequestBuilderInternal instantiates a new CallRecordsRequestBuilder and sets the default values.
 func NewCallRecordsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CallRecordsRequestBuilder) {
     m := &CallRecordsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCallRecordsRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CallRecordsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCallRecordsRequestBuilder instantiates a new CallRecordsRequestBuilder and sets the default values.
 func NewCallRecordsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CallRecordsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallRecordsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get callRecords from communications
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get callRecords from communications
 func (m *CallRecordsRequestBuilder) CreateGetRequestInformation(options *CallRecordsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CallRecordsRequestBuilder) CreateGetRequestInformation(options *CallRec
     }
     return requestInfo, nil
 }
-// Create new navigation property to callRecords for communications
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to callRecords for communications
 func (m *CallRecordsRequestBuilder) CreatePostRequestInformation(options *CallRecordsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CallRecordsRequestBuilder) CreatePostRequestInformation(options *CallRe
     }
     return requestInfo, nil
 }
-// Get callRecords from communications
-// Parameters:
-//  - options : Options for the request
+// Get get callRecords from communications
 func (m *CallRecordsRequestBuilder) Get(options *CallRecordsRequestBuilderGetOptions)(*CallRecordsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CallRecordsRequestBuilder) Get(options *CallRecordsRequestBuilderGetOpt
     }
     return res.(*CallRecordsResponse), nil
 }
-// Create new navigation property to callRecords for communications
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to callRecords for communications
 func (m *CallRecordsRequestBuilder) Post(options *CallRecordsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.CallRecord, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

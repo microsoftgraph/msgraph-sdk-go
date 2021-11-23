@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RubricLevel 
 type RubricLevel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type RubricLevel struct {
     // The ID of this resource.
     levelId *string;
 }
-// Instantiates a new rubricLevel and sets the default values.
+// NewRubricLevel instantiates a new rubricLevel and sets the default values.
 func NewRubricLevel()(*RubricLevel) {
     m := &RubricLevel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RubricLevel) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *RubricLevel) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the description property value. The description of this rubric level.
+// GetDescription gets the description property value. The description of this rubric level.
 func (m *RubricLevel) GetDescription()(*EducationItemBody) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *RubricLevel) GetDescription()(*EducationItemBody) {
         return m.description
     }
 }
-// Gets the displayName property value. The name of this rubric level.
+// GetDisplayName gets the displayName property value. The name of this rubric level.
 func (m *RubricLevel) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *RubricLevel) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
+// GetGrading gets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
 func (m *RubricLevel) GetGrading()(*EducationAssignmentGradeType) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *RubricLevel) GetGrading()(*EducationAssignmentGradeType) {
         return m.grading
     }
 }
-// Gets the levelId property value. The ID of this resource.
+// GetLevelId gets the levelId property value. The ID of this resource.
 func (m *RubricLevel) GetLevelId()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *RubricLevel) GetLevelId()(*string) {
         return m.levelId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RubricLevel) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["description"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *RubricLevel) GetFieldDeserializers()(map[string]func(interface{}, i04eb
 func (m *RubricLevel) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RubricLevel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("description", m.GetDescription())
@@ -148,33 +146,23 @@ func (m *RubricLevel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RubricLevel) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the description property value. The description of this rubric level.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. The description of this rubric level.
 func (m *RubricLevel) SetDescription(value *EducationItemBody)() {
     m.description = value
 }
-// Sets the displayName property value. The name of this rubric level.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The name of this rubric level.
 func (m *RubricLevel) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
-// Parameters:
-//  - value : Value to set for the grading property.
+// SetGrading sets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
 func (m *RubricLevel) SetGrading(value *EducationAssignmentGradeType)() {
     m.grading = value
 }
-// Sets the levelId property value. The ID of this resource.
-// Parameters:
-//  - value : Value to set for the levelId property.
+// SetLevelId sets the levelId property value. The ID of this resource.
 func (m *RubricLevel) SetLevelId(value *string)() {
     m.levelId = value
 }

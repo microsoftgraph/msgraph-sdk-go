@@ -4,25 +4,25 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AuthenticationMethodsRegistrationCampaignIncludeTarget 
 type AuthenticationMethodsRegistrationCampaignIncludeTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The object identifier of an Azure AD user or group.
+    // The object identifier of an Azure Active Directory user or group.
     id *string;
     // The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
     targetedAuthenticationMethod *string;
     // The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
     targetType *AuthenticationMethodTargetType;
 }
-// Instantiates a new authenticationMethodsRegistrationCampaignIncludeTarget and sets the default values.
+// NewAuthenticationMethodsRegistrationCampaignIncludeTarget instantiates a new authenticationMethodsRegistrationCampaignIncludeTarget and sets the default values.
 func NewAuthenticationMethodsRegistrationCampaignIncludeTarget()(*AuthenticationMethodsRegistrationCampaignIncludeTarget) {
     m := &AuthenticationMethodsRegistrationCampaignIncludeTarget{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetAdditionalDa
         return m.additionalData
     }
 }
-// Gets the id property value. The object identifier of an Azure AD user or group.
+// GetId gets the id property value. The object identifier of an Azure Active Directory user or group.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetId()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetId()(*string
         return m.id
     }
 }
-// Gets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
+// GetTargetedAuthenticationMethod gets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetedAuthenticationMethod()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetedAuth
         return m.targetedAuthenticationMethod
     }
 }
-// Gets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
+// GetTargetType gets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetType()(*AuthenticationMethodTargetType) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetTargetType()
         return m.targetType
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["id"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -93,9 +93,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeseria
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("id", m.GetId())
@@ -124,27 +122,19 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) Serialize(write
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the id property value. The object identifier of an Azure AD user or group.
-// Parameters:
-//  - value : Value to set for the id property.
+// SetId sets the id property value. The object identifier of an Azure Active Directory user or group.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetId(value *string)() {
     m.id = value
 }
-// Sets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
-// Parameters:
-//  - value : Value to set for the targetedAuthenticationMethod property.
+// SetTargetedAuthenticationMethod sets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetTargetedAuthenticationMethod(value *string)() {
     m.targetedAuthenticationMethod = value
 }
-// Sets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the targetType property.
+// SetTargetType sets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
     m.targetType = value
 }

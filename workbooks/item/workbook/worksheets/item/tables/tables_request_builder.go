@@ -9,7 +9,7 @@ import (
     iab88673533a546bde641ef0cfb518238289fd0eef5f3037de784941546eda6a8 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/tables/itematwithindex"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\tables
+// TablesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\tables
 type TablesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -18,7 +18,7 @@ type TablesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TablesRequestBuilderGetOptions options for Get
 type TablesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -29,7 +29,7 @@ type TablesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Collection of tables that are part of the worksheet. Read-only.
+// TablesRequestBuilderGetQueryParameters collection of tables that are part of the worksheet. Read-only.
 type TablesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -48,7 +48,7 @@ type TablesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TablesRequestBuilderPostOptions options for Post
 type TablesRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookTable;
@@ -62,10 +62,7 @@ type TablesRequestBuilderPostOptions struct {
 func (m *TablesRequestBuilder) Add()(*i5bf21b5adfc6a6b6c448f15cf13b3f865ef1ca01346dd7e11688ceb6e580f7dd.AddRequestBuilder) {
     return i5bf21b5adfc6a6b6c448f15cf13b3f865ef1ca01346dd7e11688ceb6e580f7dd.NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new TablesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTablesRequestBuilderInternal instantiates a new TablesRequestBuilder and sets the default values.
 func NewTablesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TablesRequestBuilder) {
     m := &TablesRequestBuilder{
     }
@@ -78,22 +75,17 @@ func NewTablesRequestBuilderInternal(pathParameters map[string]string, requestAd
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TablesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTablesRequestBuilder instantiates a new TablesRequestBuilder and sets the default values.
 func NewTablesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TablesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTablesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\tables\microsoft.graph.count()
+// Count builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\tables\microsoft.graph.count()
 func (m *TablesRequestBuilder) Count()(*i647a268371061a4812d2cc2e1fd73ced539a723bc1f651f92e4e3e2544fd16b7.CountRequestBuilder) {
     return i647a268371061a4812d2cc2e1fd73ced539a723bc1f651f92e4e3e2544fd16b7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Collection of tables that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation collection of tables that are part of the worksheet. Read-only.
 func (m *TablesRequestBuilder) CreateGetRequestInformation(options *TablesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,9 +105,7 @@ func (m *TablesRequestBuilder) CreateGetRequestInformation(options *TablesReques
     }
     return requestInfo, nil
 }
-// Collection of tables that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation collection of tables that are part of the worksheet. Read-only.
 func (m *TablesRequestBuilder) CreatePostRequestInformation(options *TablesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,9 +123,7 @@ func (m *TablesRequestBuilder) CreatePostRequestInformation(options *TablesReque
     }
     return requestInfo, nil
 }
-// Collection of tables that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get collection of tables that are part of the worksheet. Read-only.
 func (m *TablesRequestBuilder) Get(options *TablesRequestBuilderGetOptions)(*TablesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -147,15 +135,11 @@ func (m *TablesRequestBuilder) Get(options *TablesRequestBuilderGetOptions)(*Tab
     }
     return res.(*TablesResponse), nil
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\tables\microsoft.graph.itemAt(index={index})
-// Parameters:
-//  - index : Usage: index={index}
+// ItemAtWithIndex builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\tables\microsoft.graph.itemAt(index={index})
 func (m *TablesRequestBuilder) ItemAtWithIndex(index *int32)(*iab88673533a546bde641ef0cfb518238289fd0eef5f3037de784941546eda6a8.ItemAtWithIndexRequestBuilder) {
     return iab88673533a546bde641ef0cfb518238289fd0eef5f3037de784941546eda6a8.NewItemAtWithIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter, index);
 }
-// Collection of tables that are part of the worksheet. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Post collection of tables that are part of the worksheet. Read-only.
 func (m *TablesRequestBuilder) Post(options *TablesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookTable, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

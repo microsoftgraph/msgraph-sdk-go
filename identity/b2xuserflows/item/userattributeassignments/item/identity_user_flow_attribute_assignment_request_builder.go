@@ -7,7 +7,7 @@ import (
     i88edf949a04628ad6a57b407c823d5d70c810aca66a9df20e3440fa83a4f79e0 "github.com/microsoftgraph/msgraph-sdk-go/identity/b2xuserflows/item/userattributeassignments/item/userattribute"
 )
 
-// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\{identityUserFlowAttributeAssignment-id}
+// IdentityUserFlowAttributeAssignmentRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\{identityUserFlowAttributeAssignment-id}
 type IdentityUserFlowAttributeAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type IdentityUserFlowAttributeAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// IdentityUserFlowAttributeAssignmentRequestBuilderDeleteOptions options for Delete
 type IdentityUserFlowAttributeAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type IdentityUserFlowAttributeAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// IdentityUserFlowAttributeAssignmentRequestBuilderGetOptions options for Get
 type IdentityUserFlowAttributeAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type IdentityUserFlowAttributeAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user attribute assignments included in the user flow.
+// IdentityUserFlowAttributeAssignmentRequestBuilderGetQueryParameters the user attribute assignments included in the user flow.
 type IdentityUserFlowAttributeAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// IdentityUserFlowAttributeAssignmentRequestBuilderPatchOptions options for Patch
 type IdentityUserFlowAttributeAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttributeAssignment;
@@ -54,10 +54,7 @@ type IdentityUserFlowAttributeAssignmentRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new IdentityUserFlowAttributeAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityUserFlowAttributeAssignmentRequestBuilderInternal instantiates a new IdentityUserFlowAttributeAssignmentRequestBuilder and sets the default values.
 func NewIdentityUserFlowAttributeAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityUserFlowAttributeAssignmentRequestBuilder) {
     m := &IdentityUserFlowAttributeAssignmentRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewIdentityUserFlowAttributeAssignmentRequestBuilderInternal(pathParameters
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new IdentityUserFlowAttributeAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewIdentityUserFlowAttributeAssignmentRequestBuilder instantiates a new IdentityUserFlowAttributeAssignmentRequestBuilder and sets the default values.
 func NewIdentityUserFlowAttributeAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*IdentityUserFlowAttributeAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityUserFlowAttributeAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user attribute assignments included in the user flow.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the user attribute assignments included in the user flow.
 func (m *IdentityUserFlowAttributeAssignmentRequestBuilder) CreateDeleteRequestInformation(options *IdentityUserFlowAttributeAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *IdentityUserFlowAttributeAssignmentRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// The user attribute assignments included in the user flow.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user attribute assignments included in the user flow.
 func (m *IdentityUserFlowAttributeAssignmentRequestBuilder) CreateGetRequestInformation(options *IdentityUserFlowAttributeAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *IdentityUserFlowAttributeAssignmentRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// The user attribute assignments included in the user flow.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the user attribute assignments included in the user flow.
 func (m *IdentityUserFlowAttributeAssignmentRequestBuilder) CreatePatchRequestInformation(options *IdentityUserFlowAttributeAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *IdentityUserFlowAttributeAssignmentRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// The user attribute assignments included in the user flow.
-// Parameters:
-//  - options : Options for the request
+// Delete the user attribute assignments included in the user flow.
 func (m *IdentityUserFlowAttributeAssignmentRequestBuilder) Delete(options *IdentityUserFlowAttributeAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,9 +140,7 @@ func (m *IdentityUserFlowAttributeAssignmentRequestBuilder) Delete(options *Iden
     }
     return nil
 }
-// The user attribute assignments included in the user flow.
-// Parameters:
-//  - options : Options for the request
+// Get the user attribute assignments included in the user flow.
 func (m *IdentityUserFlowAttributeAssignmentRequestBuilder) Get(options *IdentityUserFlowAttributeAssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttributeAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,9 +152,7 @@ func (m *IdentityUserFlowAttributeAssignmentRequestBuilder) Get(options *Identit
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.IdentityUserFlowAttributeAssignment), nil
 }
-// The user attribute assignments included in the user flow.
-// Parameters:
-//  - options : Options for the request
+// Patch the user attribute assignments included in the user flow.
 func (m *IdentityUserFlowAttributeAssignmentRequestBuilder) Patch(options *IdentityUserFlowAttributeAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

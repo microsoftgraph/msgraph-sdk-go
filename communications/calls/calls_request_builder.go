@@ -7,7 +7,7 @@ import (
     i9c6bb7ad7557b66945f2617169c94de6e7466213e1ae6056008a37c56c15e001 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/logteleconferencedevicequality"
 )
 
-// Builds and executes requests for operations under \communications\calls
+// CallsRequestBuilder builds and executes requests for operations under \communications\calls
 type CallsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type CallsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CallsRequestBuilderGetOptions options for Get
 type CallsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,7 +27,7 @@ type CallsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get calls from communications
+// CallsRequestBuilderGetQueryParameters get calls from communications
 type CallsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -46,7 +46,7 @@ type CallsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CallsRequestBuilderPostOptions options for Post
 type CallsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Call;
@@ -57,10 +57,7 @@ type CallsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CallsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCallsRequestBuilderInternal instantiates a new CallsRequestBuilder and sets the default values.
 func NewCallsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CallsRequestBuilder) {
     m := &CallsRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewCallsRequestBuilderInternal(pathParameters map[string]string, requestAda
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CallsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCallsRequestBuilder instantiates a new CallsRequestBuilder and sets the default values.
 func NewCallsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CallsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get calls from communications
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get calls from communications
 func (m *CallsRequestBuilder) CreateGetRequestInformation(options *CallsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *CallsRequestBuilder) CreateGetRequestInformation(options *CallsRequestB
     }
     return requestInfo, nil
 }
-// Create new navigation property to calls for communications
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to calls for communications
 func (m *CallsRequestBuilder) CreatePostRequestInformation(options *CallsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -124,9 +114,7 @@ func (m *CallsRequestBuilder) CreatePostRequestInformation(options *CallsRequest
     }
     return requestInfo, nil
 }
-// Get calls from communications
-// Parameters:
-//  - options : Options for the request
+// Get get calls from communications
 func (m *CallsRequestBuilder) Get(options *CallsRequestBuilderGetOptions)(*CallsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -141,9 +129,7 @@ func (m *CallsRequestBuilder) Get(options *CallsRequestBuilderGetOptions)(*Calls
 func (m *CallsRequestBuilder) LogTeleconferenceDeviceQuality()(*i9c6bb7ad7557b66945f2617169c94de6e7466213e1ae6056008a37c56c15e001.LogTeleconferenceDeviceQualityRequestBuilder) {
     return i9c6bb7ad7557b66945f2617169c94de6e7466213e1ae6056008a37c56c15e001.NewLogTeleconferenceDeviceQualityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Create new navigation property to calls for communications
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to calls for communications
 func (m *CallsRequestBuilder) Post(options *CallsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Call, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

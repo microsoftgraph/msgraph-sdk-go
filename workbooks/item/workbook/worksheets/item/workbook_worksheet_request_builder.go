@@ -20,7 +20,7 @@ import (
     iaf6e80887a038f65ff678934a224c20738b5518de1ef6bd042c68d64e3eb866a "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/charts/item"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}
+// WorkbookWorksheetRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}
 type WorkbookWorksheetRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type WorkbookWorksheetRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorkbookWorksheetRequestBuilderDeleteOptions options for Delete
 type WorkbookWorksheetRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -38,7 +38,7 @@ type WorkbookWorksheetRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorkbookWorksheetRequestBuilderGetOptions options for Get
 type WorkbookWorksheetRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -49,14 +49,14 @@ type WorkbookWorksheetRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
+// WorkbookWorksheetRequestBuilderGetQueryParameters represents a collection of worksheets associated with the workbook. Read-only.
 type WorkbookWorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorkbookWorksheetRequestBuilderPatchOptions options for Patch
 type WorkbookWorksheetRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheet;
@@ -67,19 +67,14 @@ type WorkbookWorksheetRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\microsoft.graph.cell(row={row},column={column})
-// Parameters:
-//  - column : Usage: column={column}
-//  - row : Usage: row={row}
+// CellWithRowWithColumn builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\microsoft.graph.cell(row={row},column={column})
 func (m *WorkbookWorksheetRequestBuilder) CellWithRowWithColumn(row *int32, column *int32)(*ie4b7c6c1c8b3e34e3e51127f9ebb673f0a04c788986d8229f1a710411d5f225d.CellWithRowWithColumnRequestBuilder) {
     return ie4b7c6c1c8b3e34e3e51127f9ebb673f0a04c788986d8229f1a710411d5f225d.NewCellWithRowWithColumnRequestBuilderInternal(m.pathParameters, m.requestAdapter, row, column);
 }
 func (m *WorkbookWorksheetRequestBuilder) Charts()(*iad940f8124c7334170f4bc84a78fc081f07f84f05e2bbcdad79b8c17146992f2.ChartsRequestBuilder) {
     return iad940f8124c7334170f4bc84a78fc081f07f84f05e2bbcdad79b8c17146992f2.NewChartsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.worksheets.item.charts.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ChartsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.worksheets.item.charts.item collection
 func (m *WorkbookWorksheetRequestBuilder) ChartsById(id string)(*iaf6e80887a038f65ff678934a224c20738b5518de1ef6bd042c68d64e3eb866a.WorkbookChartRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -90,10 +85,7 @@ func (m *WorkbookWorksheetRequestBuilder) ChartsById(id string)(*iaf6e80887a038f
     }
     return iaf6e80887a038f65ff678934a224c20738b5518de1ef6bd042c68d64e3eb866a.NewWorkbookChartRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new WorkbookWorksheetRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookWorksheetRequestBuilderInternal instantiates a new WorkbookWorksheetRequestBuilder and sets the default values.
 func NewWorkbookWorksheetRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookWorksheetRequestBuilder) {
     m := &WorkbookWorksheetRequestBuilder{
     }
@@ -106,18 +98,13 @@ func NewWorkbookWorksheetRequestBuilderInternal(pathParameters map[string]string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkbookWorksheetRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkbookWorksheetRequestBuilder instantiates a new WorkbookWorksheetRequestBuilder and sets the default values.
 func NewWorkbookWorksheetRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkbookWorksheetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorkbookWorksheetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation represents a collection of worksheets associated with the workbook. Read-only.
 func (m *WorkbookWorksheetRequestBuilder) CreateDeleteRequestInformation(options *WorkbookWorksheetRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -134,9 +121,7 @@ func (m *WorkbookWorksheetRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation represents a collection of worksheets associated with the workbook. Read-only.
 func (m *WorkbookWorksheetRequestBuilder) CreateGetRequestInformation(options *WorkbookWorksheetRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -156,9 +141,7 @@ func (m *WorkbookWorksheetRequestBuilder) CreateGetRequestInformation(options *W
     }
     return requestInfo, nil
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation represents a collection of worksheets associated with the workbook. Read-only.
 func (m *WorkbookWorksheetRequestBuilder) CreatePatchRequestInformation(options *WorkbookWorksheetRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -176,9 +159,7 @@ func (m *WorkbookWorksheetRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete represents a collection of worksheets associated with the workbook. Read-only.
 func (m *WorkbookWorksheetRequestBuilder) Delete(options *WorkbookWorksheetRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -190,9 +171,7 @@ func (m *WorkbookWorksheetRequestBuilder) Delete(options *WorkbookWorksheetReque
     }
     return nil
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get represents a collection of worksheets associated with the workbook. Read-only.
 func (m *WorkbookWorksheetRequestBuilder) Get(options *WorkbookWorksheetRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookWorksheet, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -207,9 +186,7 @@ func (m *WorkbookWorksheetRequestBuilder) Get(options *WorkbookWorksheetRequestB
 func (m *WorkbookWorksheetRequestBuilder) Names()(*i9e565a8c9d35090b91ddaf8942fefd178ab4d8274ecd66a46cebd61471579ac8.NamesRequestBuilder) {
     return i9e565a8c9d35090b91ddaf8942fefd178ab4d8274ecd66a46cebd61471579ac8.NewNamesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.worksheets.item.names.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// NamesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.worksheets.item.names.item collection
 func (m *WorkbookWorksheetRequestBuilder) NamesById(id string)(*i8dc6bf9c3cd413c8da2a0e6e6c76573ab0a8670c078efc72a8efa32a1950ad10.WorkbookNamedItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -220,9 +197,7 @@ func (m *WorkbookWorksheetRequestBuilder) NamesById(id string)(*i8dc6bf9c3cd413c
     }
     return i8dc6bf9c3cd413c8da2a0e6e6c76573ab0a8670c078efc72a8efa32a1950ad10.NewWorkbookNamedItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Represents a collection of worksheets associated with the workbook. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch represents a collection of worksheets associated with the workbook. Read-only.
 func (m *WorkbookWorksheetRequestBuilder) Patch(options *WorkbookWorksheetRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
@@ -237,9 +212,7 @@ func (m *WorkbookWorksheetRequestBuilder) Patch(options *WorkbookWorksheetReques
 func (m *WorkbookWorksheetRequestBuilder) PivotTables()(*i9c65a5e0511223ed4b7aadfa985f3cecba8763d0234d695c0eba9470b08105fd.PivotTablesRequestBuilder) {
     return i9c65a5e0511223ed4b7aadfa985f3cecba8763d0234d695c0eba9470b08105fd.NewPivotTablesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.worksheets.item.pivotTables.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// PivotTablesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.worksheets.item.pivotTables.item collection
 func (m *WorkbookWorksheetRequestBuilder) PivotTablesById(id string)(*i2b7eb38de9f32e0a84e0f4d15c3dfa5d1787f849e6127d28c3c84d7fb2c68f22.WorkbookPivotTableRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -253,22 +226,18 @@ func (m *WorkbookWorksheetRequestBuilder) PivotTablesById(id string)(*i2b7eb38de
 func (m *WorkbookWorksheetRequestBuilder) Protection()(*i0ffc856a99ab076eacab92d71f01358a27ce7f82ca9cea1eeef71ccc0b690b04.ProtectionRequestBuilder) {
     return i0ffc856a99ab076eacab92d71f01358a27ce7f82ca9cea1eeef71ccc0b690b04.NewProtectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\microsoft.graph.range()
+// Range_escaped builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\microsoft.graph.range()
 func (m *WorkbookWorksheetRequestBuilder) Range_escaped()(*ia27bd953af5b50bd89e1ac4a64ebdd5fc2bc7d28f43a08e7f1892e8d22f44739.RangeRequestBuilder) {
     return ia27bd953af5b50bd89e1ac4a64ebdd5fc2bc7d28f43a08e7f1892e8d22f44739.NewRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\microsoft.graph.range(address='{address}')
-// Parameters:
-//  - address : Usage: address={address}
+// RangeWithAddress builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\microsoft.graph.range(address='{address}')
 func (m *WorkbookWorksheetRequestBuilder) RangeWithAddress(address *string)(*ib8d36af0717b2669dc8b8889287197f9036d4251ba8a717b88522dcf0bc194d8.RangeWithAddressRequestBuilder) {
     return ib8d36af0717b2669dc8b8889287197f9036d4251ba8a717b88522dcf0bc194d8.NewRangeWithAddressRequestBuilderInternal(m.pathParameters, m.requestAdapter, address);
 }
 func (m *WorkbookWorksheetRequestBuilder) Tables()(*i63bfade034059e0bafdeccc55d1d84a9578056cd0b4452d244d1ea48d219bfd5.TablesRequestBuilder) {
     return i63bfade034059e0bafdeccc55d1d84a9578056cd0b4452d244d1ea48d219bfd5.NewTablesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.worksheets.item.tables.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// TablesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.workbook.worksheets.item.tables.item collection
 func (m *WorkbookWorksheetRequestBuilder) TablesById(id string)(*i3ecee7d2013b82649254a2abcecff10c453e98848525efb8661b8198de377cbd.WorkbookTableRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -279,13 +248,11 @@ func (m *WorkbookWorksheetRequestBuilder) TablesById(id string)(*i3ecee7d2013b82
     }
     return i3ecee7d2013b82649254a2abcecff10c453e98848525efb8661b8198de377cbd.NewWorkbookTableRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\microsoft.graph.usedRange()
+// UsedRange builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\microsoft.graph.usedRange()
 func (m *WorkbookWorksheetRequestBuilder) UsedRange()(*i100ec4503074fbce609d04c7af9f3038ecbe146a28dd1e9696d968fa800e43fb.UsedRangeRequestBuilder) {
     return i100ec4503074fbce609d04c7af9f3038ecbe146a28dd1e9696d968fa800e43fb.NewUsedRangeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\microsoft.graph.usedRange(valuesOnly={valuesOnly})
-// Parameters:
-//  - valuesOnly : Usage: valuesOnly={valuesOnly}
+// UsedRangeWithValuesOnly builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\microsoft.graph.usedRange(valuesOnly={valuesOnly})
 func (m *WorkbookWorksheetRequestBuilder) UsedRangeWithValuesOnly(valuesOnly *bool)(*ia4b371526ab2f408171fc46a799dd775d49573d38da9d1f1459fa6b1e8cc5242.UsedRangeWithValuesOnlyRequestBuilder) {
     return ia4b371526ab2f408171fc46a799dd775d49573d38da9d1f1459fa6b1e8cc5242.NewUsedRangeWithValuesOnlyRequestBuilderInternal(m.pathParameters, m.requestAdapter, valuesOnly);
 }

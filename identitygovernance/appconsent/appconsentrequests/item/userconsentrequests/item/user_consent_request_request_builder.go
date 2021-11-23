@@ -7,7 +7,7 @@ import (
     i521601d13f6de9b4e636f379203b06857b5159a6cc9842f8625a00ebd3cba62c "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/appconsent/appconsentrequests/item/userconsentrequests/item/approval"
 )
 
-// Builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}
+// UserConsentRequestRequestBuilder builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests\{appConsentRequest-id}\userConsentRequests\{userConsentRequest-id}
 type UserConsentRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type UserConsentRequestRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UserConsentRequestRequestBuilderDeleteOptions options for Delete
 type UserConsentRequestRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type UserConsentRequestRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UserConsentRequestRequestBuilderGetOptions options for Get
 type UserConsentRequestRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type UserConsentRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A list of pending user consent requests.
+// UserConsentRequestRequestBuilderGetQueryParameters a list of pending user consent requests.
 type UserConsentRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UserConsentRequestRequestBuilderPatchOptions options for Patch
 type UserConsentRequestRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserConsentRequest;
@@ -57,10 +57,7 @@ type UserConsentRequestRequestBuilderPatchOptions struct {
 func (m *UserConsentRequestRequestBuilder) Approval()(*i521601d13f6de9b4e636f379203b06857b5159a6cc9842f8625a00ebd3cba62c.ApprovalRequestBuilder) {
     return i521601d13f6de9b4e636f379203b06857b5159a6cc9842f8625a00ebd3cba62c.NewApprovalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new UserConsentRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserConsentRequestRequestBuilderInternal instantiates a new UserConsentRequestRequestBuilder and sets the default values.
 func NewUserConsentRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserConsentRequestRequestBuilder) {
     m := &UserConsentRequestRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewUserConsentRequestRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UserConsentRequestRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUserConsentRequestRequestBuilder instantiates a new UserConsentRequestRequestBuilder and sets the default values.
 func NewUserConsentRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UserConsentRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserConsentRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A list of pending user consent requests.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation a list of pending user consent requests.
 func (m *UserConsentRequestRequestBuilder) CreateDeleteRequestInformation(options *UserConsentRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *UserConsentRequestRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// A list of pending user consent requests.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a list of pending user consent requests.
 func (m *UserConsentRequestRequestBuilder) CreateGetRequestInformation(options *UserConsentRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *UserConsentRequestRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// A list of pending user consent requests.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation a list of pending user consent requests.
 func (m *UserConsentRequestRequestBuilder) CreatePatchRequestInformation(options *UserConsentRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *UserConsentRequestRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// A list of pending user consent requests.
-// Parameters:
-//  - options : Options for the request
+// Delete a list of pending user consent requests.
 func (m *UserConsentRequestRequestBuilder) Delete(options *UserConsentRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *UserConsentRequestRequestBuilder) Delete(options *UserConsentRequestReq
     }
     return nil
 }
-// A list of pending user consent requests.
-// Parameters:
-//  - options : Options for the request
+// Get a list of pending user consent requests.
 func (m *UserConsentRequestRequestBuilder) Get(options *UserConsentRequestRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserConsentRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *UserConsentRequestRequestBuilder) Get(options *UserConsentRequestReques
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserConsentRequest), nil
 }
-// A list of pending user consent requests.
-// Parameters:
-//  - options : Options for the request
+// Patch a list of pending user consent requests.
 func (m *UserConsentRequestRequestBuilder) Patch(options *UserConsentRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\comments
+// CommentsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\comments
 type CommentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type CommentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// CommentsRequestBuilderGetOptions options for Get
 type CommentsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type CommentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get comments from workbooks
+// CommentsRequestBuilderGetQueryParameters get comments from workbooks
 type CommentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type CommentsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// CommentsRequestBuilderPostOptions options for Post
 type CommentsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookComment;
@@ -56,10 +56,7 @@ type CommentsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new CommentsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCommentsRequestBuilderInternal instantiates a new CommentsRequestBuilder and sets the default values.
 func NewCommentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CommentsRequestBuilder) {
     m := &CommentsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewCommentsRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new CommentsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewCommentsRequestBuilder instantiates a new CommentsRequestBuilder and sets the default values.
 func NewCommentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CommentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCommentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get comments from workbooks
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get comments from workbooks
 func (m *CommentsRequestBuilder) CreateGetRequestInformation(options *CommentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *CommentsRequestBuilder) CreateGetRequestInformation(options *CommentsRe
     }
     return requestInfo, nil
 }
-// Create new navigation property to comments for workbooks
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to comments for workbooks
 func (m *CommentsRequestBuilder) CreatePostRequestInformation(options *CommentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *CommentsRequestBuilder) CreatePostRequestInformation(options *CommentsR
     }
     return requestInfo, nil
 }
-// Get comments from workbooks
-// Parameters:
-//  - options : Options for the request
+// Get get comments from workbooks
 func (m *CommentsRequestBuilder) Get(options *CommentsRequestBuilderGetOptions)(*CommentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *CommentsRequestBuilder) Get(options *CommentsRequestBuilderGetOptions)(
     }
     return res.(*CommentsResponse), nil
 }
-// Create new navigation property to comments for workbooks
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to comments for workbooks
 func (m *CommentsRequestBuilder) Post(options *CommentsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookComment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

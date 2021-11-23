@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \reports\microsoft.graph.getSharePointActivityUserCounts(period='{period}')
+// GetSharePointActivityUserCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getSharePointActivityUserCounts(period='{period}')
 type GetSharePointActivityUserCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type GetSharePointActivityUserCountsWithPeriodRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetSharePointActivityUserCountsWithPeriodRequestBuilderGetOptions options for Get
 type GetSharePointActivityUserCountsWithPeriodRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -24,11 +24,7 @@ type GetSharePointActivityUserCountsWithPeriodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetSharePointActivityUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - period : Usage: period={period}
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetSharePointActivityUserCountsWithPeriodRequestBuilderInternal instantiates a new GetSharePointActivityUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetSharePointActivityUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, period *string)(*GetSharePointActivityUserCountsWithPeriodRequestBuilder) {
     m := &GetSharePointActivityUserCountsWithPeriodRequestBuilder{
     }
@@ -44,18 +40,13 @@ func NewGetSharePointActivityUserCountsWithPeriodRequestBuilderInternal(pathPara
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetSharePointActivityUserCountsWithPeriodRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetSharePointActivityUserCountsWithPeriodRequestBuilder instantiates a new GetSharePointActivityUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetSharePointActivityUserCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetSharePointActivityUserCountsWithPeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetSharePointActivityUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Invoke function getSharePointActivityUserCounts
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function getSharePointActivityUserCounts
 func (m *GetSharePointActivityUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation(options *GetSharePointActivityUserCountsWithPeriodRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -72,9 +63,7 @@ func (m *GetSharePointActivityUserCountsWithPeriodRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// Invoke function getSharePointActivityUserCounts
-// Parameters:
-//  - options : Options for the request
+// Get invoke function getSharePointActivityUserCounts
 func (m *GetSharePointActivityUserCountsWithPeriodRequestBuilder) Get(options *GetSharePointActivityUserCountsWithPeriodRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Report, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

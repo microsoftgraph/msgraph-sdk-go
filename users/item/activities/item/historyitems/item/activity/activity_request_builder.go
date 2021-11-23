@@ -7,7 +7,7 @@ import (
     i34d1347f093de9fc20937a7c50d5f2cbc701b66e21908e9cfacf8aca36e29c27 "github.com/microsoftgraph/msgraph-sdk-go/users/item/activities/item/historyitems/item/activity/ref"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\activities\{userActivity-id}\historyItems\{activityHistoryItem-id}\activity
+// ActivityRequestBuilder builds and executes requests for operations under \users\{user-id}\activities\{userActivity-id}\historyItems\{activityHistoryItem-id}\activity
 type ActivityRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ActivityRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ActivityRequestBuilderGetOptions options for Get
 type ActivityRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ActivityRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Optional. NavigationProperty/Containment; navigation property to the associated activity.
+// ActivityRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the associated activity.
 type ActivityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ActivityRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivityRequestBuilderInternal instantiates a new ActivityRequestBuilder and sets the default values.
 func NewActivityRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivityRequestBuilder) {
     m := &ActivityRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewActivityRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ActivityRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewActivityRequestBuilder instantiates a new ActivityRequestBuilder and sets the default values.
 func NewActivityRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ActivityRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewActivityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Optional. NavigationProperty/Containment; navigation property to the associated activity.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation optional. NavigationProperty/Containment; navigation property to the associated activity.
 func (m *ActivityRequestBuilder) CreateGetRequestInformation(options *ActivityRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ActivityRequestBuilder) CreateGetRequestInformation(options *ActivityRe
     }
     return requestInfo, nil
 }
-// Optional. NavigationProperty/Containment; navigation property to the associated activity.
-// Parameters:
-//  - options : Options for the request
+// Get optional. NavigationProperty/Containment; navigation property to the associated activity.
 func (m *ActivityRequestBuilder) Get(options *ActivityRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UserActivity, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

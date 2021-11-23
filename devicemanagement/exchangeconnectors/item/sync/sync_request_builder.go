@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\exchangeConnectors\{deviceManagementExchangeConnector-id}\microsoft.graph.sync
+// SyncRequestBuilder builds and executes requests for operations under \deviceManagement\exchangeConnectors\{deviceManagementExchangeConnector-id}\microsoft.graph.sync
 type SyncRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type SyncRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// SyncRequestBuilderPostOptions options for Post
 type SyncRequestBuilderPostOptions struct {
     // 
     Body *SyncRequestBody;
@@ -24,10 +24,7 @@ type SyncRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SyncRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSyncRequestBuilderInternal instantiates a new SyncRequestBuilder and sets the default values.
 func NewSyncRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SyncRequestBuilder) {
     m := &SyncRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewSyncRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SyncRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSyncRequestBuilder instantiates a new SyncRequestBuilder and sets the default values.
 func NewSyncRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SyncRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSyncRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action sync
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action sync
 func (m *SyncRequestBuilder) CreatePostRequestInformation(options *SyncRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *SyncRequestBuilder) CreatePostRequestInformation(options *SyncRequestBu
     }
     return requestInfo, nil
 }
-// Invoke action sync
-// Parameters:
-//  - options : Options for the request
+// Post invoke action sync
 func (m *SyncRequestBuilder) Post(options *SyncRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

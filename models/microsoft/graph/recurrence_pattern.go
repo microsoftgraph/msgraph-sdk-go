@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// RecurrencePattern 
 type RecurrencePattern struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -23,14 +23,14 @@ type RecurrencePattern struct {
     // The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
     type_escaped *RecurrencePatternType;
 }
-// Instantiates a new recurrencePattern and sets the default values.
+// NewRecurrencePattern instantiates a new recurrencePattern and sets the default values.
 func NewRecurrencePattern()(*RecurrencePattern) {
     m := &RecurrencePattern{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecurrencePattern) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *RecurrencePattern) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the dayOfMonth property value. The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
+// GetDayOfMonth gets the dayOfMonth property value. The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
 func (m *RecurrencePattern) GetDayOfMonth()(*int32) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *RecurrencePattern) GetDayOfMonth()(*int32) {
         return m.dayOfMonth
     }
 }
-// Gets the daysOfWeek property value. A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
+// GetDaysOfWeek gets the daysOfWeek property value. A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
 func (m *RecurrencePattern) GetDaysOfWeek()([]DayOfWeek) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *RecurrencePattern) GetDaysOfWeek()([]DayOfWeek) {
         return m.daysOfWeek
     }
 }
-// Gets the firstDayOfWeek property value. The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.
+// GetFirstDayOfWeek gets the firstDayOfWeek property value. The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.
 func (m *RecurrencePattern) GetFirstDayOfWeek()(*DayOfWeek) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *RecurrencePattern) GetFirstDayOfWeek()(*DayOfWeek) {
         return m.firstDayOfWeek
     }
 }
-// Gets the index property value. Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.
+// GetIndex gets the index property value. Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.
 func (m *RecurrencePattern) GetIndex()(*WeekIndex) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *RecurrencePattern) GetIndex()(*WeekIndex) {
         return m.index
     }
 }
-// Gets the interval property value. The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
+// GetInterval gets the interval property value. The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
 func (m *RecurrencePattern) GetInterval()(*int32) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *RecurrencePattern) GetInterval()(*int32) {
         return m.interval
     }
 }
-// Gets the month property value. The month in which the event occurs.  This is a number from 1 to 12.
+// GetMonth gets the month property value. The month in which the event occurs.  This is a number from 1 to 12.
 func (m *RecurrencePattern) GetMonth()(*int32) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *RecurrencePattern) GetMonth()(*int32) {
         return m.month
     }
 }
-// Gets the type_escaped property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
+// GetType_escaped gets the type_escaped property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
 func (m *RecurrencePattern) GetType_escaped()(*RecurrencePatternType) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *RecurrencePattern) GetType_escaped()(*RecurrencePatternType) {
         return m.type_escaped
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["dayOfMonth"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -179,9 +179,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
 func (m *RecurrencePattern) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *RecurrencePattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("dayOfMonth", m.GetDayOfMonth())
@@ -236,51 +234,35 @@ func (m *RecurrencePattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecurrencePattern) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the dayOfMonth property value. The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
-// Parameters:
-//  - value : Value to set for the dayOfMonth property.
+// SetDayOfMonth sets the dayOfMonth property value. The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
 func (m *RecurrencePattern) SetDayOfMonth(value *int32)() {
     m.dayOfMonth = value
 }
-// Sets the daysOfWeek property value. A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
-// Parameters:
-//  - value : Value to set for the daysOfWeek property.
+// SetDaysOfWeek sets the daysOfWeek property value. A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
 func (m *RecurrencePattern) SetDaysOfWeek(value []DayOfWeek)() {
     m.daysOfWeek = value
 }
-// Sets the firstDayOfWeek property value. The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.
-// Parameters:
-//  - value : Value to set for the firstDayOfWeek property.
+// SetFirstDayOfWeek sets the firstDayOfWeek property value. The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.
 func (m *RecurrencePattern) SetFirstDayOfWeek(value *DayOfWeek)() {
     m.firstDayOfWeek = value
 }
-// Sets the index property value. Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.
-// Parameters:
-//  - value : Value to set for the index property.
+// SetIndex sets the index property value. Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.
 func (m *RecurrencePattern) SetIndex(value *WeekIndex)() {
     m.index = value
 }
-// Sets the interval property value. The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
-// Parameters:
-//  - value : Value to set for the interval property.
+// SetInterval sets the interval property value. The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
 func (m *RecurrencePattern) SetInterval(value *int32)() {
     m.interval = value
 }
-// Sets the month property value. The month in which the event occurs.  This is a number from 1 to 12.
-// Parameters:
-//  - value : Value to set for the month property.
+// SetMonth sets the month property value. The month in which the event occurs.  This is a number from 1 to 12.
 func (m *RecurrencePattern) SetMonth(value *int32)() {
     m.month = value
 }
-// Sets the type_escaped property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
-// Parameters:
-//  - value : Value to set for the type_escaped property.
+// SetType_escaped sets the type_escaped property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
 func (m *RecurrencePattern) SetType_escaped(value *RecurrencePatternType)() {
     m.type_escaped = value
 }

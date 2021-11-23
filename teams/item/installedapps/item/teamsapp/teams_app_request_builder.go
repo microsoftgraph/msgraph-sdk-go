@@ -7,7 +7,7 @@ import (
     i68271cb131bc84004710b4616f4354038783592cf56501f3d7f554f66d6fd3ba "github.com/microsoftgraph/msgraph-sdk-go/teams/item/installedapps/item/teamsapp/ref"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\installedApps\{teamsAppInstallation-id}\teamsApp
+// TeamsAppRequestBuilder builds and executes requests for operations under \teams\{team-id}\installedApps\{teamsAppInstallation-id}\teamsApp
 type TeamsAppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type TeamsAppRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TeamsAppRequestBuilderGetOptions options for Get
 type TeamsAppRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type TeamsAppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The app that is installed.
+// TeamsAppRequestBuilderGetQueryParameters the app that is installed.
 type TeamsAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new TeamsAppRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppRequestBuilderInternal instantiates a new TeamsAppRequestBuilder and sets the default values.
 func NewTeamsAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppRequestBuilder) {
     m := &TeamsAppRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewTeamsAppRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TeamsAppRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTeamsAppRequestBuilder instantiates a new TeamsAppRequestBuilder and sets the default values.
 func NewTeamsAppRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TeamsAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The app that is installed.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the app that is installed.
 func (m *TeamsAppRequestBuilder) CreateGetRequestInformation(options *TeamsAppRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *TeamsAppRequestBuilder) CreateGetRequestInformation(options *TeamsAppRe
     }
     return requestInfo, nil
 }
-// The app that is installed.
-// Parameters:
-//  - options : Options for the request
+// Get the app that is installed.
 func (m *TeamsAppRequestBuilder) Get(options *TeamsAppRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsApp, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

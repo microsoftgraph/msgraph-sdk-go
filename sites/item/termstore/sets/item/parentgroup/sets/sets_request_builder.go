@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\termStore\sets\{set-id}\parentGroup\sets
+// SetsRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\sets\{set-id}\parentGroup\sets
 type SetsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SetsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SetsRequestBuilderGetOptions options for Get
 type SetsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type SetsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// All sets under the group in a term [store].
+// SetsRequestBuilderGetQueryParameters all sets under the group in a term [store].
 type SetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type SetsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// SetsRequestBuilderPostOptions options for Post
 type SetsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Set;
@@ -56,10 +56,7 @@ type SetsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SetsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSetsRequestBuilderInternal instantiates a new SetsRequestBuilder and sets the default values.
 func NewSetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SetsRequestBuilder) {
     m := &SetsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewSetsRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SetsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSetsRequestBuilder instantiates a new SetsRequestBuilder and sets the default values.
 func NewSetsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SetsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// All sets under the group in a term [store].
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation all sets under the group in a term [store].
 func (m *SetsRequestBuilder) CreateGetRequestInformation(options *SetsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *SetsRequestBuilder) CreateGetRequestInformation(options *SetsRequestBui
     }
     return requestInfo, nil
 }
-// All sets under the group in a term [store].
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation all sets under the group in a term [store].
 func (m *SetsRequestBuilder) CreatePostRequestInformation(options *SetsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *SetsRequestBuilder) CreatePostRequestInformation(options *SetsRequestBu
     }
     return requestInfo, nil
 }
-// All sets under the group in a term [store].
-// Parameters:
-//  - options : Options for the request
+// Get all sets under the group in a term [store].
 func (m *SetsRequestBuilder) Get(options *SetsRequestBuilderGetOptions)(*SetsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *SetsRequestBuilder) Get(options *SetsRequestBuilderGetOptions)(*SetsRes
     }
     return res.(*SetsResponse), nil
 }
-// All sets under the group in a term [store].
-// Parameters:
-//  - options : Options for the request
+// Post all sets under the group in a term [store].
 func (m *SetsRequestBuilder) Post(options *SetsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Set, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

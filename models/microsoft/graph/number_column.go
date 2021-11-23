@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// NumberColumn 
 type NumberColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type NumberColumn struct {
     // The minimum permitted value.
     minimum *float64;
 }
-// Instantiates a new numberColumn and sets the default values.
+// NewNumberColumn instantiates a new numberColumn and sets the default values.
 func NewNumberColumn()(*NumberColumn) {
     m := &NumberColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NumberColumn) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *NumberColumn) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the decimalPlaces property value. How many decimal places to display. See below for information about the possible values.
+// GetDecimalPlaces gets the decimalPlaces property value. How many decimal places to display. See below for information about the possible values.
 func (m *NumberColumn) GetDecimalPlaces()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *NumberColumn) GetDecimalPlaces()(*string) {
         return m.decimalPlaces
     }
 }
-// Gets the displayAs property value. How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.
+// GetDisplayAs gets the displayAs property value. How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.
 func (m *NumberColumn) GetDisplayAs()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *NumberColumn) GetDisplayAs()(*string) {
         return m.displayAs
     }
 }
-// Gets the maximum property value. The maximum permitted value.
+// GetMaximum gets the maximum property value. The maximum permitted value.
 func (m *NumberColumn) GetMaximum()(*float64) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *NumberColumn) GetMaximum()(*float64) {
         return m.maximum
     }
 }
-// Gets the minimum property value. The minimum permitted value.
+// GetMinimum gets the minimum property value. The minimum permitted value.
 func (m *NumberColumn) GetMinimum()(*float64) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *NumberColumn) GetMinimum()(*float64) {
         return m.minimum
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *NumberColumn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["decimalPlaces"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *NumberColumn) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *NumberColumn) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *NumberColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("decimalPlaces", m.GetDecimalPlaces())
@@ -148,33 +146,23 @@ func (m *NumberColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NumberColumn) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the decimalPlaces property value. How many decimal places to display. See below for information about the possible values.
-// Parameters:
-//  - value : Value to set for the decimalPlaces property.
+// SetDecimalPlaces sets the decimalPlaces property value. How many decimal places to display. See below for information about the possible values.
 func (m *NumberColumn) SetDecimalPlaces(value *string)() {
     m.decimalPlaces = value
 }
-// Sets the displayAs property value. How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.
-// Parameters:
-//  - value : Value to set for the displayAs property.
+// SetDisplayAs sets the displayAs property value. How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.
 func (m *NumberColumn) SetDisplayAs(value *string)() {
     m.displayAs = value
 }
-// Sets the maximum property value. The maximum permitted value.
-// Parameters:
-//  - value : Value to set for the maximum property.
+// SetMaximum sets the maximum property value. The maximum permitted value.
 func (m *NumberColumn) SetMaximum(value *float64)() {
     m.maximum = value
 }
-// Sets the minimum property value. The minimum permitted value.
-// Parameters:
-//  - value : Value to set for the minimum property.
+// SetMinimum sets the minimum property value. The minimum permitted value.
 func (m *NumberColumn) SetMinimum(value *float64)() {
     m.minimum = value
 }

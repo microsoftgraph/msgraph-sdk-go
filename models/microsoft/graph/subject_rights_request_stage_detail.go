@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SubjectRightsRequestStageDetail 
 type SubjectRightsRequestStageDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -15,14 +15,14 @@ type SubjectRightsRequestStageDetail struct {
     // Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
     status *SubjectRightsRequestStageStatus;
 }
-// Instantiates a new subjectRightsRequestStageDetail and sets the default values.
+// NewSubjectRightsRequestStageDetail instantiates a new subjectRightsRequestStageDetail and sets the default values.
 func NewSubjectRightsRequestStageDetail()(*SubjectRightsRequestStageDetail) {
     m := &SubjectRightsRequestStageDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestStageDetail) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -30,7 +30,7 @@ func (m *SubjectRightsRequestStageDetail) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// Gets the error property value. Describes the error, if any, for the current stage.
+// GetError gets the error property value. Describes the error, if any, for the current stage.
 func (m *SubjectRightsRequestStageDetail) GetError()(*PublicError) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *SubjectRightsRequestStageDetail) GetError()(*PublicError) {
         return m.error
     }
 }
-// Gets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
+// GetStage gets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) GetStage()(*SubjectRightsRequestStage) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *SubjectRightsRequestStageDetail) GetStage()(*SubjectRightsRequestStage)
         return m.stage
     }
 }
-// Gets the status property value. Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
+// GetStatus gets the status property value. Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) GetStatus()(*SubjectRightsRequestStageStatus) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *SubjectRightsRequestStageDetail) GetStatus()(*SubjectRightsRequestStage
         return m.status
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["error"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -94,9 +94,7 @@ func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]fun
 func (m *SubjectRightsRequestStageDetail) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SubjectRightsRequestStageDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("error", m.GetError())
@@ -126,27 +124,19 @@ func (m *SubjectRightsRequestStageDetail) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestStageDetail) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the error property value. Describes the error, if any, for the current stage.
-// Parameters:
-//  - value : Value to set for the error property.
+// SetError sets the error property value. Describes the error, if any, for the current stage.
 func (m *SubjectRightsRequestStageDetail) SetError(value *PublicError)() {
     m.error = value
 }
-// Sets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the stage property.
+// SetStage sets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) SetStage(value *SubjectRightsRequestStage)() {
     m.stage = value
 }
-// Sets the status property value. Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) SetStatus(value *SubjectRightsRequestStageStatus)() {
     m.status = value
 }

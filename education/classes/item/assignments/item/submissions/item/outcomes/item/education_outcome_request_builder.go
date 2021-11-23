@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}\outcomes\{educationOutcome-id}
+// EducationOutcomeRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}\outcomes\{educationOutcome-id}
 type EducationOutcomeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EducationOutcomeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EducationOutcomeRequestBuilderDeleteOptions options for Delete
 type EducationOutcomeRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type EducationOutcomeRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EducationOutcomeRequestBuilderGetOptions options for Get
 type EducationOutcomeRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type EducationOutcomeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-Write. Nullable.
+// EducationOutcomeRequestBuilderGetQueryParameters read-Write. Nullable.
 type EducationOutcomeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EducationOutcomeRequestBuilderPatchOptions options for Patch
 type EducationOutcomeRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationOutcome;
@@ -53,10 +53,7 @@ type EducationOutcomeRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EducationOutcomeRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationOutcomeRequestBuilderInternal instantiates a new EducationOutcomeRequestBuilder and sets the default values.
 func NewEducationOutcomeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationOutcomeRequestBuilder) {
     m := &EducationOutcomeRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewEducationOutcomeRequestBuilderInternal(pathParameters map[string]string,
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EducationOutcomeRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationOutcomeRequestBuilder instantiates a new EducationOutcomeRequestBuilder and sets the default values.
 func NewEducationOutcomeRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationOutcomeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEducationOutcomeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-Write. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-Write. Nullable.
 func (m *EducationOutcomeRequestBuilder) CreateDeleteRequestInformation(options *EducationOutcomeRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *EducationOutcomeRequestBuilder) CreateDeleteRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Read-Write. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-Write. Nullable.
 func (m *EducationOutcomeRequestBuilder) CreateGetRequestInformation(options *EducationOutcomeRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *EducationOutcomeRequestBuilder) CreateGetRequestInformation(options *Ed
     }
     return requestInfo, nil
 }
-// Read-Write. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-Write. Nullable.
 func (m *EducationOutcomeRequestBuilder) CreatePatchRequestInformation(options *EducationOutcomeRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *EducationOutcomeRequestBuilder) CreatePatchRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Read-Write. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete read-Write. Nullable.
 func (m *EducationOutcomeRequestBuilder) Delete(options *EducationOutcomeRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *EducationOutcomeRequestBuilder) Delete(options *EducationOutcomeRequest
     }
     return nil
 }
-// Read-Write. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get read-Write. Nullable.
 func (m *EducationOutcomeRequestBuilder) Get(options *EducationOutcomeRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationOutcome, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *EducationOutcomeRequestBuilder) Get(options *EducationOutcomeRequestBui
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationOutcome), nil
 }
-// Read-Write. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch read-Write. Nullable.
 func (m *EducationOutcomeRequestBuilder) Patch(options *EducationOutcomeRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

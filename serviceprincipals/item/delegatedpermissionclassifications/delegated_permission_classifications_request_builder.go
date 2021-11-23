@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\delegatedPermissionClassifications
+// DelegatedPermissionClassificationsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\delegatedPermissionClassifications
 type DelegatedPermissionClassificationsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DelegatedPermissionClassificationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// DelegatedPermissionClassificationsRequestBuilderGetOptions options for Get
 type DelegatedPermissionClassificationsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type DelegatedPermissionClassificationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
+// DelegatedPermissionClassificationsRequestBuilderGetQueryParameters the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
 type DelegatedPermissionClassificationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type DelegatedPermissionClassificationsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// DelegatedPermissionClassificationsRequestBuilderPostOptions options for Post
 type DelegatedPermissionClassificationsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DelegatedPermissionClassification;
@@ -56,10 +56,7 @@ type DelegatedPermissionClassificationsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DelegatedPermissionClassificationsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDelegatedPermissionClassificationsRequestBuilderInternal instantiates a new DelegatedPermissionClassificationsRequestBuilder and sets the default values.
 func NewDelegatedPermissionClassificationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DelegatedPermissionClassificationsRequestBuilder) {
     m := &DelegatedPermissionClassificationsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewDelegatedPermissionClassificationsRequestBuilderInternal(pathParameters 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DelegatedPermissionClassificationsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDelegatedPermissionClassificationsRequestBuilder instantiates a new DelegatedPermissionClassificationsRequestBuilder and sets the default values.
 func NewDelegatedPermissionClassificationsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DelegatedPermissionClassificationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDelegatedPermissionClassificationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
 func (m *DelegatedPermissionClassificationsRequestBuilder) CreateGetRequestInformation(options *DelegatedPermissionClassificationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *DelegatedPermissionClassificationsRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
 func (m *DelegatedPermissionClassificationsRequestBuilder) CreatePostRequestInformation(options *DelegatedPermissionClassificationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *DelegatedPermissionClassificationsRequestBuilder) CreatePostRequestInfo
     }
     return requestInfo, nil
 }
-// The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
 func (m *DelegatedPermissionClassificationsRequestBuilder) Get(options *DelegatedPermissionClassificationsRequestBuilderGetOptions)(*DelegatedPermissionClassificationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *DelegatedPermissionClassificationsRequestBuilder) Get(options *Delegate
     }
     return res.(*DelegatedPermissionClassificationsResponse), nil
 }
-// The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Post the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
 func (m *DelegatedPermissionClassificationsRequestBuilder) Post(options *DelegatedPermissionClassificationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DelegatedPermissionClassification, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

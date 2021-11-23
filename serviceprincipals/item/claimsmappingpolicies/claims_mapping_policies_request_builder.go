@@ -6,7 +6,7 @@ import (
     ie96b10b05fa092aeda21c6fbf2ab8c04052ed6d7e1492222a2227051af1098d4 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/claimsmappingpolicies/ref"
 )
 
-// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\claimsMappingPolicies
+// ClaimsMappingPoliciesRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\claimsMappingPolicies
 type ClaimsMappingPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ClaimsMappingPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ClaimsMappingPoliciesRequestBuilderGetOptions options for Get
 type ClaimsMappingPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ClaimsMappingPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The claimsMappingPolicies assigned to this service principal. Supports $expand.
+// ClaimsMappingPoliciesRequestBuilderGetQueryParameters the claimsMappingPolicies assigned to this service principal. Supports $expand.
 type ClaimsMappingPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type ClaimsMappingPoliciesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new ClaimsMappingPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewClaimsMappingPoliciesRequestBuilderInternal instantiates a new ClaimsMappingPoliciesRequestBuilder and sets the default values.
 func NewClaimsMappingPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClaimsMappingPoliciesRequestBuilder) {
     m := &ClaimsMappingPoliciesRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewClaimsMappingPoliciesRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ClaimsMappingPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewClaimsMappingPoliciesRequestBuilder instantiates a new ClaimsMappingPoliciesRequestBuilder and sets the default values.
 func NewClaimsMappingPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ClaimsMappingPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClaimsMappingPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The claimsMappingPolicies assigned to this service principal. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the claimsMappingPolicies assigned to this service principal. Supports $expand.
 func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformation(options *ClaimsMappingPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// The claimsMappingPolicies assigned to this service principal. Supports $expand.
-// Parameters:
-//  - options : Options for the request
+// Get the claimsMappingPolicies assigned to this service principal. Supports $expand.
 func (m *ClaimsMappingPoliciesRequestBuilder) Get(options *ClaimsMappingPoliciesRequestBuilderGetOptions)(*ClaimsMappingPoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

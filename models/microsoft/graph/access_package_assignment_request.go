@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AccessPackageAssignmentRequest 
 type AccessPackageAssignmentRequest struct {
     Entity
     // The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
@@ -27,14 +27,14 @@ type AccessPackageAssignmentRequest struct {
     // 
     status *string;
 }
-// Instantiates a new accessPackageAssignmentRequest and sets the default values.
+// NewAccessPackageAssignmentRequest instantiates a new accessPackageAssignmentRequest and sets the default values.
 func NewAccessPackageAssignmentRequest()(*AccessPackageAssignmentRequest) {
     m := &AccessPackageAssignmentRequest{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+// GetAccessPackage gets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
 func (m *AccessPackageAssignmentRequest) GetAccessPackage()(*AccessPackage) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *AccessPackageAssignmentRequest) GetAccessPackage()(*AccessPackage) {
         return m.accessPackage
     }
 }
-// Gets the assignment property value. 
+// GetAssignment gets the assignment property value. 
 func (m *AccessPackageAssignmentRequest) GetAssignment()(*AccessPackageAssignment) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *AccessPackageAssignmentRequest) GetAssignment()(*AccessPackageAssignmen
         return m.assignment
     }
 }
-// Gets the completedDateTime property value. 
+// GetCompletedDateTime gets the completedDateTime property value. 
 func (m *AccessPackageAssignmentRequest) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *AccessPackageAssignmentRequest) GetCompletedDateTime()(*i336074805fc853
         return m.completedDateTime
     }
 }
-// Gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageAssignmentRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *AccessPackageAssignmentRequest) GetCreatedDateTime()(*i336074805fc85398
         return m.createdDateTime
     }
 }
-// Gets the requestor property value. The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
+// GetRequestor gets the requestor property value. The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentRequest) GetRequestor()(*AccessPackageSubject) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestor()(*AccessPackageSubject) {
         return m.requestor
     }
 }
-// Gets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+// GetRequestType gets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
 func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageRequestType) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageRequestT
         return m.requestType
     }
 }
-// Gets the schedule property value. The range of dates that access is to be assigned to the requestor. Read-only.
+// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. Read-only.
 func (m *AccessPackageAssignmentRequest) GetSchedule()(*EntitlementManagementSchedule) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *AccessPackageAssignmentRequest) GetSchedule()(*EntitlementManagementSch
         return m.schedule
     }
 }
-// Gets the state property value. 
+// GetState gets the state property value. 
 func (m *AccessPackageAssignmentRequest) GetState()(*AccessPackageRequestState) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *AccessPackageAssignmentRequest) GetState()(*AccessPackageRequestState) 
         return m.state
     }
 }
-// Gets the status property value. 
+// GetStatus gets the status property value. 
 func (m *AccessPackageAssignmentRequest) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *AccessPackageAssignmentRequest) GetStatus()(*string) {
         return m.status
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackage"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -206,9 +206,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
 func (m *AccessPackageAssignmentRequest) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AccessPackageAssignmentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -272,57 +270,39 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// Sets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
-// Parameters:
-//  - value : Value to set for the accessPackage property.
+// SetAccessPackage sets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetAccessPackage(value *AccessPackage)() {
     m.accessPackage = value
 }
-// Sets the assignment property value. 
-// Parameters:
-//  - value : Value to set for the assignment property.
+// SetAssignment sets the assignment property value. 
 func (m *AccessPackageAssignmentRequest) SetAssignment(value *AccessPackageAssignment)() {
     m.assignment = value
 }
-// Sets the completedDateTime property value. 
-// Parameters:
-//  - value : Value to set for the completedDateTime property.
+// SetCompletedDateTime sets the completedDateTime property value. 
 func (m *AccessPackageAssignmentRequest) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.completedDateTime = value
 }
-// Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-// Parameters:
-//  - value : Value to set for the createdDateTime property.
+// SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageAssignmentRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.createdDateTime = value
 }
-// Sets the requestor property value. The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
-// Parameters:
-//  - value : Value to set for the requestor property.
+// SetRequestor sets the requestor property value. The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetRequestor(value *AccessPackageSubject)() {
     m.requestor = value
 }
-// Sets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
-// Parameters:
-//  - value : Value to set for the requestType property.
+// SetRequestType sets the requestType property value. One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
 func (m *AccessPackageAssignmentRequest) SetRequestType(value *AccessPackageRequestType)() {
     m.requestType = value
 }
-// Sets the schedule property value. The range of dates that access is to be assigned to the requestor. Read-only.
-// Parameters:
-//  - value : Value to set for the schedule property.
+// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. Read-only.
 func (m *AccessPackageAssignmentRequest) SetSchedule(value *EntitlementManagementSchedule)() {
     m.schedule = value
 }
-// Sets the state property value. 
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. 
 func (m *AccessPackageAssignmentRequest) SetState(value *AccessPackageRequestState)() {
     m.state = value
 }
-// Sets the status property value. 
-// Parameters:
-//  - value : Value to set for the status property.
+// SetStatus sets the status property value. 
 func (m *AccessPackageAssignmentRequest) SetStatus(value *string)() {
     m.status = value
 }

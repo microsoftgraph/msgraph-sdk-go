@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.shutDown
+// ShutDownRequestBuilder builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.shutDown
 type ShutDownRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ShutDownRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ShutDownRequestBuilderPostOptions options for Post
 type ShutDownRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type ShutDownRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ShutDownRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewShutDownRequestBuilderInternal instantiates a new ShutDownRequestBuilder and sets the default values.
 func NewShutDownRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ShutDownRequestBuilder) {
     m := &ShutDownRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewShutDownRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ShutDownRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewShutDownRequestBuilder instantiates a new ShutDownRequestBuilder and sets the default values.
 func NewShutDownRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ShutDownRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewShutDownRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Shut down device
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation shut down device
 func (m *ShutDownRequestBuilder) CreatePostRequestInformation(options *ShutDownRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *ShutDownRequestBuilder) CreatePostRequestInformation(options *ShutDownR
     }
     return requestInfo, nil
 }
-// Shut down device
-// Parameters:
-//  - options : Options for the request
+// Post shut down device
 func (m *ShutDownRequestBuilder) Post(options *ShutDownRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

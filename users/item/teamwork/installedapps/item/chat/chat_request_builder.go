@@ -7,7 +7,7 @@ import (
     ie4dd3f1c37d8656a9e493f06a8c2e816aed018d2de1f8598c083a9360640fccd "github.com/microsoftgraph/msgraph-sdk-go/users/item/teamwork/installedapps/item/chat/ref"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\teamwork\installedApps\{userScopeTeamsAppInstallation-id}\chat
+// ChatRequestBuilder builds and executes requests for operations under \users\{user-id}\teamwork\installedApps\{userScopeTeamsAppInstallation-id}\chat
 type ChatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ChatRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ChatRequestBuilderGetOptions options for Get
 type ChatRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type ChatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The chat between the user and Teams app.
+// ChatRequestBuilderGetQueryParameters the chat between the user and Teams app.
 type ChatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new ChatRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatRequestBuilderInternal instantiates a new ChatRequestBuilder and sets the default values.
 func NewChatRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatRequestBuilder) {
     m := &ChatRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewChatRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ChatRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewChatRequestBuilder instantiates a new ChatRequestBuilder and sets the default values.
 func NewChatRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ChatRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewChatRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The chat between the user and Teams app.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the chat between the user and Teams app.
 func (m *ChatRequestBuilder) CreateGetRequestInformation(options *ChatRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *ChatRequestBuilder) CreateGetRequestInformation(options *ChatRequestBui
     }
     return requestInfo, nil
 }
-// The chat between the user and Teams app.
-// Parameters:
-//  - options : Options for the request
+// Get the chat between the user and Teams app.
 func (m *ChatRequestBuilder) Get(options *ChatRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Chat, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\resources\{educationAssignmentResource-id}
+// EducationAssignmentResourceRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\resources\{educationAssignmentResource-id}
 type EducationAssignmentResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type EducationAssignmentResourceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EducationAssignmentResourceRequestBuilderDeleteOptions options for Delete
 type EducationAssignmentResourceRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type EducationAssignmentResourceRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EducationAssignmentResourceRequestBuilderGetOptions options for Get
 type EducationAssignmentResourceRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type EducationAssignmentResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
+// EducationAssignmentResourceRequestBuilderGetQueryParameters learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
 type EducationAssignmentResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EducationAssignmentResourceRequestBuilderPatchOptions options for Patch
 type EducationAssignmentResourceRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentResource;
@@ -53,10 +53,7 @@ type EducationAssignmentResourceRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new EducationAssignmentResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationAssignmentResourceRequestBuilderInternal instantiates a new EducationAssignmentResourceRequestBuilder and sets the default values.
 func NewEducationAssignmentResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationAssignmentResourceRequestBuilder) {
     m := &EducationAssignmentResourceRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewEducationAssignmentResourceRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EducationAssignmentResourceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEducationAssignmentResourceRequestBuilder instantiates a new EducationAssignmentResourceRequestBuilder and sets the default values.
 func NewEducationAssignmentResourceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationAssignmentResourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEducationAssignmentResourceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
 func (m *EducationAssignmentResourceRequestBuilder) CreateDeleteRequestInformation(options *EducationAssignmentResourceRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *EducationAssignmentResourceRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
 func (m *EducationAssignmentResourceRequestBuilder) CreateGetRequestInformation(options *EducationAssignmentResourceRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *EducationAssignmentResourceRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
 func (m *EducationAssignmentResourceRequestBuilder) CreatePatchRequestInformation(options *EducationAssignmentResourceRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *EducationAssignmentResourceRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Delete learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
 func (m *EducationAssignmentResourceRequestBuilder) Delete(options *EducationAssignmentResourceRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *EducationAssignmentResourceRequestBuilder) Delete(options *EducationAss
     }
     return nil
 }
-// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Get learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
 func (m *EducationAssignmentResourceRequestBuilder) Get(options *EducationAssignmentResourceRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentResource, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *EducationAssignmentResourceRequestBuilder) Get(options *EducationAssign
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentResource), nil
 }
-// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
-// Parameters:
-//  - options : Options for the request
+// Patch learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
 func (m *EducationAssignmentResourceRequestBuilder) Patch(options *EducationAssignmentResourceRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

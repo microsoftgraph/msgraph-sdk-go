@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \me\planner\plans\{plannerPlan-id}\tasks\{plannerTask-id}\bucketTaskBoardFormat
+// BucketTaskBoardFormatRequestBuilder builds and executes requests for operations under \me\planner\plans\{plannerPlan-id}\tasks\{plannerTask-id}\bucketTaskBoardFormat
 type BucketTaskBoardFormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type BucketTaskBoardFormatRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// BucketTaskBoardFormatRequestBuilderDeleteOptions options for Delete
 type BucketTaskBoardFormatRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type BucketTaskBoardFormatRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// BucketTaskBoardFormatRequestBuilderGetOptions options for Get
 type BucketTaskBoardFormatRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type BucketTaskBoardFormatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+// BucketTaskBoardFormatRequestBuilderGetQueryParameters read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 type BucketTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// BucketTaskBoardFormatRequestBuilderPatchOptions options for Patch
 type BucketTaskBoardFormatRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucketTaskBoardTaskFormat;
@@ -53,10 +53,7 @@ type BucketTaskBoardFormatRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new BucketTaskBoardFormatRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBucketTaskBoardFormatRequestBuilderInternal instantiates a new BucketTaskBoardFormatRequestBuilder and sets the default values.
 func NewBucketTaskBoardFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BucketTaskBoardFormatRequestBuilder) {
     m := &BucketTaskBoardFormatRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewBucketTaskBoardFormatRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new BucketTaskBoardFormatRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewBucketTaskBoardFormatRequestBuilder instantiates a new BucketTaskBoardFormatRequestBuilder and sets the default values.
 func NewBucketTaskBoardFormatRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*BucketTaskBoardFormatRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBucketTaskBoardFormatRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 func (m *BucketTaskBoardFormatRequestBuilder) CreateDeleteRequestInformation(options *BucketTaskBoardFormatRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *BucketTaskBoardFormatRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 func (m *BucketTaskBoardFormatRequestBuilder) CreateGetRequestInformation(options *BucketTaskBoardFormatRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *BucketTaskBoardFormatRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 func (m *BucketTaskBoardFormatRequestBuilder) CreatePatchRequestInformation(options *BucketTaskBoardFormatRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *BucketTaskBoardFormatRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 func (m *BucketTaskBoardFormatRequestBuilder) Delete(options *BucketTaskBoardFormatRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *BucketTaskBoardFormatRequestBuilder) Delete(options *BucketTaskBoardFor
     }
     return nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 func (m *BucketTaskBoardFormatRequestBuilder) Get(options *BucketTaskBoardFormatRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucketTaskBoardTaskFormat, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *BucketTaskBoardFormatRequestBuilder) Get(options *BucketTaskBoardFormat
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucketTaskBoardTaskFormat), nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 func (m *BucketTaskBoardFormatRequestBuilder) Patch(options *BucketTaskBoardFormatRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

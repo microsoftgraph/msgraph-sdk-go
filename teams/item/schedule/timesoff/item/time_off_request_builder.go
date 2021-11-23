@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\schedule\timesOff\{timeOff-id}
+// TimeOffRequestBuilder builds and executes requests for operations under \teams\{team-id}\schedule\timesOff\{timeOff-id}
 type TimeOffRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TimeOffRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TimeOffRequestBuilderDeleteOptions options for Delete
 type TimeOffRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type TimeOffRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TimeOffRequestBuilderGetOptions options for Get
 type TimeOffRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,12 +35,12 @@ type TimeOffRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The instances of times off in the schedule.
+// TimeOffRequestBuilderGetQueryParameters the instances of times off in the schedule.
 type TimeOffRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TimeOffRequestBuilderPatchOptions options for Patch
 type TimeOffRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOff;
@@ -51,10 +51,7 @@ type TimeOffRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TimeOffRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTimeOffRequestBuilderInternal instantiates a new TimeOffRequestBuilder and sets the default values.
 func NewTimeOffRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TimeOffRequestBuilder) {
     m := &TimeOffRequestBuilder{
     }
@@ -67,18 +64,13 @@ func NewTimeOffRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TimeOffRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTimeOffRequestBuilder instantiates a new TimeOffRequestBuilder and sets the default values.
 func NewTimeOffRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TimeOffRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTimeOffRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The instances of times off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the instances of times off in the schedule.
 func (m *TimeOffRequestBuilder) CreateDeleteRequestInformation(options *TimeOffRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,9 +87,7 @@ func (m *TimeOffRequestBuilder) CreateDeleteRequestInformation(options *TimeOffR
     }
     return requestInfo, nil
 }
-// The instances of times off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the instances of times off in the schedule.
 func (m *TimeOffRequestBuilder) CreateGetRequestInformation(options *TimeOffRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,9 +107,7 @@ func (m *TimeOffRequestBuilder) CreateGetRequestInformation(options *TimeOffRequ
     }
     return requestInfo, nil
 }
-// The instances of times off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the instances of times off in the schedule.
 func (m *TimeOffRequestBuilder) CreatePatchRequestInformation(options *TimeOffRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,9 +125,7 @@ func (m *TimeOffRequestBuilder) CreatePatchRequestInformation(options *TimeOffRe
     }
     return requestInfo, nil
 }
-// The instances of times off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// Delete the instances of times off in the schedule.
 func (m *TimeOffRequestBuilder) Delete(options *TimeOffRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -151,9 +137,7 @@ func (m *TimeOffRequestBuilder) Delete(options *TimeOffRequestBuilderDeleteOptio
     }
     return nil
 }
-// The instances of times off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// Get the instances of times off in the schedule.
 func (m *TimeOffRequestBuilder) Get(options *TimeOffRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOff, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -165,9 +149,7 @@ func (m *TimeOffRequestBuilder) Get(options *TimeOffRequestBuilderGetOptions)(*i
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeOff), nil
 }
-// The instances of times off in the schedule.
-// Parameters:
-//  - options : Options for the request
+// Patch the instances of times off in the schedule.
 func (m *TimeOffRequestBuilder) Patch(options *TimeOffRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

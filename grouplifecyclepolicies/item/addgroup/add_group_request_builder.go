@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \groupLifecyclePolicies\{groupLifecyclePolicy-id}\microsoft.graph.addGroup
+// AddGroupRequestBuilder builds and executes requests for operations under \groupLifecyclePolicies\{groupLifecyclePolicy-id}\microsoft.graph.addGroup
 type AddGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type AddGroupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// AddGroupRequestBuilderPostOptions options for Post
 type AddGroupRequestBuilderPostOptions struct {
     // 
     Body *AddGroupRequestBody;
@@ -24,10 +24,7 @@ type AddGroupRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AddGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddGroupRequestBuilderInternal instantiates a new AddGroupRequestBuilder and sets the default values.
 func NewAddGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddGroupRequestBuilder) {
     m := &AddGroupRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewAddGroupRequestBuilderInternal(pathParameters map[string]string, request
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AddGroupRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddGroupRequestBuilder instantiates a new AddGroupRequestBuilder and sets the default values.
 func NewAddGroupRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAddGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action addGroup
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action addGroup
 func (m *AddGroupRequestBuilder) CreatePostRequestInformation(options *AddGroupRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *AddGroupRequestBuilder) CreatePostRequestInformation(options *AddGroupR
     }
     return requestInfo, nil
 }
-// Invoke action addGroup
-// Parameters:
-//  - options : Options for the request
+// Post invoke action addGroup
 func (m *AddGroupRequestBuilder) Post(options *AddGroupRequestBuilderPostOptions)(*bool, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

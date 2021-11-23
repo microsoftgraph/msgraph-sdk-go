@@ -7,7 +7,7 @@ import (
     i89266147459be47604a3bc71c8b8a481a9f0e411a5aa2e53b24d4a9ffdea1e5d "github.com/microsoftgraph/msgraph-sdk-go/invitations/item/inviteduser/ref"
 )
 
-// Builds and executes requests for operations under \invitations\{invitation-id}\invitedUser
+// InvitedUserRequestBuilder builds and executes requests for operations under \invitations\{invitation-id}\invitedUser
 type InvitedUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type InvitedUserRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// InvitedUserRequestBuilderGetOptions options for Get
 type InvitedUserRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type InvitedUserRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The user created as part of the invitation creation. Read-Only
+// InvitedUserRequestBuilderGetQueryParameters the user created as part of the invitation creation. Read-Only
 type InvitedUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new InvitedUserRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInvitedUserRequestBuilderInternal instantiates a new InvitedUserRequestBuilder and sets the default values.
 func NewInvitedUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InvitedUserRequestBuilder) {
     m := &InvitedUserRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewInvitedUserRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new InvitedUserRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewInvitedUserRequestBuilder instantiates a new InvitedUserRequestBuilder and sets the default values.
 func NewInvitedUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*InvitedUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInvitedUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The user created as part of the invitation creation. Read-Only
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the user created as part of the invitation creation. Read-Only
 func (m *InvitedUserRequestBuilder) CreateGetRequestInformation(options *InvitedUserRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *InvitedUserRequestBuilder) CreateGetRequestInformation(options *Invited
     }
     return requestInfo, nil
 }
-// The user created as part of the invitation creation. Read-Only
-// Parameters:
-//  - options : Options for the request
+// Get the user created as part of the invitation creation. Read-Only
 func (m *InvitedUserRequestBuilder) Get(options *InvitedUserRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.User, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

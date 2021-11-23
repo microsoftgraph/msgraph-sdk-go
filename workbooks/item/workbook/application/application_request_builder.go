@@ -7,7 +7,7 @@ import (
     i50f7eb6cc2120ef77c3b1c444d4d9b9a8850ad23d8b7696d4650b062998df564 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/application/calculate"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\application
+// ApplicationRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\application
 type ApplicationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ApplicationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ApplicationRequestBuilderDeleteOptions options for Delete
 type ApplicationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type ApplicationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ApplicationRequestBuilderGetOptions options for Get
 type ApplicationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type ApplicationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get application from workbooks
+// ApplicationRequestBuilderGetQueryParameters get application from workbooks
 type ApplicationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ApplicationRequestBuilderPatchOptions options for Patch
 type ApplicationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookApplication;
@@ -57,10 +57,7 @@ type ApplicationRequestBuilderPatchOptions struct {
 func (m *ApplicationRequestBuilder) Calculate()(*i50f7eb6cc2120ef77c3b1c444d4d9b9a8850ad23d8b7696d4650b062998df564.CalculateRequestBuilder) {
     return i50f7eb6cc2120ef77c3b1c444d4d9b9a8850ad23d8b7696d4650b062998df564.NewCalculateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new ApplicationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplicationRequestBuilderInternal instantiates a new ApplicationRequestBuilder and sets the default values.
 func NewApplicationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplicationRequestBuilder) {
     m := &ApplicationRequestBuilder{
     }
@@ -73,18 +70,13 @@ func NewApplicationRequestBuilderInternal(pathParameters map[string]string, requ
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApplicationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplicationRequestBuilder instantiates a new ApplicationRequestBuilder and sets the default values.
 func NewApplicationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplicationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property application for workbooks
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property application for workbooks
 func (m *ApplicationRequestBuilder) CreateDeleteRequestInformation(options *ApplicationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,9 +93,7 @@ func (m *ApplicationRequestBuilder) CreateDeleteRequestInformation(options *Appl
     }
     return requestInfo, nil
 }
-// Get application from workbooks
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get application from workbooks
 func (m *ApplicationRequestBuilder) CreateGetRequestInformation(options *ApplicationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ApplicationRequestBuilder) CreateGetRequestInformation(options *Applica
     }
     return requestInfo, nil
 }
-// Update the navigation property application in workbooks
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property application in workbooks
 func (m *ApplicationRequestBuilder) CreatePatchRequestInformation(options *ApplicationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,9 +131,7 @@ func (m *ApplicationRequestBuilder) CreatePatchRequestInformation(options *Appli
     }
     return requestInfo, nil
 }
-// Delete navigation property application for workbooks
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property application for workbooks
 func (m *ApplicationRequestBuilder) Delete(options *ApplicationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *ApplicationRequestBuilder) Delete(options *ApplicationRequestBuilderDel
     }
     return nil
 }
-// Get application from workbooks
-// Parameters:
-//  - options : Options for the request
+// Get get application from workbooks
 func (m *ApplicationRequestBuilder) Get(options *ApplicationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookApplication, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *ApplicationRequestBuilder) Get(options *ApplicationRequestBuilderGetOpt
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookApplication), nil
 }
-// Update the navigation property application in workbooks
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property application in workbooks
 func (m *ApplicationRequestBuilder) Patch(options *ApplicationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

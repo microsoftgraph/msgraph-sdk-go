@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.revokeSignInSessions
+// RevokeSignInSessionsRequestBuilder builds and executes requests for operations under \users\{user-id}\microsoft.graph.revokeSignInSessions
 type RevokeSignInSessionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type RevokeSignInSessionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// RevokeSignInSessionsRequestBuilderPostOptions options for Post
 type RevokeSignInSessionsRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type RevokeSignInSessionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new RevokeSignInSessionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRevokeSignInSessionsRequestBuilderInternal instantiates a new RevokeSignInSessionsRequestBuilder and sets the default values.
 func NewRevokeSignInSessionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RevokeSignInSessionsRequestBuilder) {
     m := &RevokeSignInSessionsRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewRevokeSignInSessionsRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new RevokeSignInSessionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewRevokeSignInSessionsRequestBuilder instantiates a new RevokeSignInSessionsRequestBuilder and sets the default values.
 func NewRevokeSignInSessionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*RevokeSignInSessionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRevokeSignInSessionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action revokeSignInSessions
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action revokeSignInSessions
 func (m *RevokeSignInSessionsRequestBuilder) CreatePostRequestInformation(options *RevokeSignInSessionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *RevokeSignInSessionsRequestBuilder) CreatePostRequestInformation(option
     }
     return requestInfo, nil
 }
-// Invoke action revokeSignInSessions
-// Parameters:
-//  - options : Options for the request
+// Post invoke action revokeSignInSessions
 func (m *RevokeSignInSessionsRequestBuilder) Post(options *RevokeSignInSessionsRequestBuilderPostOptions)(*bool, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

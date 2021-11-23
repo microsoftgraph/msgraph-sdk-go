@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ControlScore 
 type ControlScore struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -17,14 +17,14 @@ type ControlScore struct {
     // Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
     score *float64;
 }
-// Instantiates a new controlScore and sets the default values.
+// NewControlScore instantiates a new controlScore and sets the default values.
 func NewControlScore()(*ControlScore) {
     m := &ControlScore{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ControlScore) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *ControlScore) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
+// GetControlCategory gets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
 func (m *ControlScore) GetControlCategory()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *ControlScore) GetControlCategory()(*string) {
         return m.controlCategory
     }
 }
-// Gets the controlName property value. Control unique name.
+// GetControlName gets the controlName property value. Control unique name.
 func (m *ControlScore) GetControlName()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *ControlScore) GetControlName()(*string) {
         return m.controlName
     }
 }
-// Gets the description property value. Description of the control.
+// GetDescription gets the description property value. Description of the control.
 func (m *ControlScore) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *ControlScore) GetDescription()(*string) {
         return m.description
     }
 }
-// Gets the score property value. Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
+// GetScore gets the score property value. Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
 func (m *ControlScore) GetScore()(*float64) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *ControlScore) GetScore()(*float64) {
         return m.score
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ControlScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["controlCategory"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -112,9 +112,7 @@ func (m *ControlScore) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *ControlScore) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ControlScore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("controlCategory", m.GetControlCategory())
@@ -148,33 +146,23 @@ func (m *ControlScore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ControlScore) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
-// Parameters:
-//  - value : Value to set for the controlCategory property.
+// SetControlCategory sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
 func (m *ControlScore) SetControlCategory(value *string)() {
     m.controlCategory = value
 }
-// Sets the controlName property value. Control unique name.
-// Parameters:
-//  - value : Value to set for the controlName property.
+// SetControlName sets the controlName property value. Control unique name.
 func (m *ControlScore) SetControlName(value *string)() {
     m.controlName = value
 }
-// Sets the description property value. Description of the control.
-// Parameters:
-//  - value : Value to set for the description property.
+// SetDescription sets the description property value. Description of the control.
 func (m *ControlScore) SetDescription(value *string)() {
     m.description = value
 }
-// Sets the score property value. Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
-// Parameters:
-//  - value : Value to set for the score property.
+// SetScore sets the score property value. Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
 func (m *ControlScore) SetScore(value *float64)() {
     m.score = value
 }

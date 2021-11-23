@@ -10,7 +10,7 @@ import (
     if58558aaf7d3a571a2b7b154eaf42dbeae3dfda757c15665c189420b3fc2cc8f "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/termsofuse/agreementacceptances/item"
 )
 
-// Builds and executes requests for operations under \identityGovernance\termsOfUse
+// TermsOfUseRequestBuilder builds and executes requests for operations under \identityGovernance\termsOfUse
 type TermsOfUseRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type TermsOfUseRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// TermsOfUseRequestBuilderDeleteOptions options for Delete
 type TermsOfUseRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type TermsOfUseRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// TermsOfUseRequestBuilderGetOptions options for Get
 type TermsOfUseRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type TermsOfUseRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get termsOfUse from identityGovernance
+// TermsOfUseRequestBuilderGetQueryParameters get termsOfUse from identityGovernance
 type TermsOfUseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// TermsOfUseRequestBuilderPatchOptions options for Patch
 type TermsOfUseRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TermsOfUseContainer;
@@ -60,9 +60,7 @@ type TermsOfUseRequestBuilderPatchOptions struct {
 func (m *TermsOfUseRequestBuilder) AgreementAcceptances()(*i1ce056d01800dfdf0c63c27efbc64f7896ea760db3ba778ace708aeddd054d0f.AgreementAcceptancesRequestBuilder) {
     return i1ce056d01800dfdf0c63c27efbc64f7896ea760db3ba778ace708aeddd054d0f.NewAgreementAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.termsOfUse.agreementAcceptances.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AgreementAcceptancesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.termsOfUse.agreementAcceptances.item collection
 func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*if58558aaf7d3a571a2b7b154eaf42dbeae3dfda757c15665c189420b3fc2cc8f.AgreementAcceptanceRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -76,9 +74,7 @@ func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*if58558a
 func (m *TermsOfUseRequestBuilder) Agreements()(*iacf793fb78f5c5f75bf9b848a21075f45ec242f4bcf7744ebdca694da4a5802c.AgreementsRequestBuilder) {
     return iacf793fb78f5c5f75bf9b848a21075f45ec242f4bcf7744ebdca694da4a5802c.NewAgreementsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.termsOfUse.agreements.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AgreementsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.termsOfUse.agreements.item collection
 func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*ied57f20b5e5c3beb8344ef3753e6a67a240318854397236c0cd83ef4d9597226.AgreementRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -89,10 +85,7 @@ func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*ied57f20b5e5c3beb8
     }
     return ied57f20b5e5c3beb8344ef3753e6a67a240318854397236c0cd83ef4d9597226.NewAgreementRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new TermsOfUseRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermsOfUseRequestBuilderInternal instantiates a new TermsOfUseRequestBuilder and sets the default values.
 func NewTermsOfUseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermsOfUseRequestBuilder) {
     m := &TermsOfUseRequestBuilder{
     }
@@ -105,18 +98,13 @@ func NewTermsOfUseRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TermsOfUseRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTermsOfUseRequestBuilder instantiates a new TermsOfUseRequestBuilder and sets the default values.
 func NewTermsOfUseRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermsOfUseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTermsOfUseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property termsOfUse for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property termsOfUse for identityGovernance
 func (m *TermsOfUseRequestBuilder) CreateDeleteRequestInformation(options *TermsOfUseRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,9 +121,7 @@ func (m *TermsOfUseRequestBuilder) CreateDeleteRequestInformation(options *Terms
     }
     return requestInfo, nil
 }
-// Get termsOfUse from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get termsOfUse from identityGovernance
 func (m *TermsOfUseRequestBuilder) CreateGetRequestInformation(options *TermsOfUseRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -155,9 +141,7 @@ func (m *TermsOfUseRequestBuilder) CreateGetRequestInformation(options *TermsOfU
     }
     return requestInfo, nil
 }
-// Update the navigation property termsOfUse in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property termsOfUse in identityGovernance
 func (m *TermsOfUseRequestBuilder) CreatePatchRequestInformation(options *TermsOfUseRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -175,9 +159,7 @@ func (m *TermsOfUseRequestBuilder) CreatePatchRequestInformation(options *TermsO
     }
     return requestInfo, nil
 }
-// Delete navigation property termsOfUse for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property termsOfUse for identityGovernance
 func (m *TermsOfUseRequestBuilder) Delete(options *TermsOfUseRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -189,9 +171,7 @@ func (m *TermsOfUseRequestBuilder) Delete(options *TermsOfUseRequestBuilderDelet
     }
     return nil
 }
-// Get termsOfUse from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get termsOfUse from identityGovernance
 func (m *TermsOfUseRequestBuilder) Get(options *TermsOfUseRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TermsOfUseContainer, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -203,9 +183,7 @@ func (m *TermsOfUseRequestBuilder) Get(options *TermsOfUseRequestBuilderGetOptio
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TermsOfUseContainer), nil
 }
-// Update the navigation property termsOfUse in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property termsOfUse in identityGovernance
 func (m *TermsOfUseRequestBuilder) Patch(options *TermsOfUseRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

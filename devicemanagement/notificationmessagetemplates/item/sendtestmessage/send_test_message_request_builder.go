@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\notificationMessageTemplates\{notificationMessageTemplate-id}\microsoft.graph.sendTestMessage
+// SendTestMessageRequestBuilder builds and executes requests for operations under \deviceManagement\notificationMessageTemplates\{notificationMessageTemplate-id}\microsoft.graph.sendTestMessage
 type SendTestMessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type SendTestMessageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// SendTestMessageRequestBuilderPostOptions options for Post
 type SendTestMessageRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type SendTestMessageRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SendTestMessageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSendTestMessageRequestBuilderInternal instantiates a new SendTestMessageRequestBuilder and sets the default values.
 func NewSendTestMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SendTestMessageRequestBuilder) {
     m := &SendTestMessageRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewSendTestMessageRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SendTestMessageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSendTestMessageRequestBuilder instantiates a new SendTestMessageRequestBuilder and sets the default values.
 func NewSendTestMessageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SendTestMessageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSendTestMessageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Sends test message using the specified notificationMessageTemplate in the default locale
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation sends test message using the specified notificationMessageTemplate in the default locale
 func (m *SendTestMessageRequestBuilder) CreatePostRequestInformation(options *SendTestMessageRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *SendTestMessageRequestBuilder) CreatePostRequestInformation(options *Se
     }
     return requestInfo, nil
 }
-// Sends test message using the specified notificationMessageTemplate in the default locale
-// Parameters:
-//  - options : Options for the request
+// Post sends test message using the specified notificationMessageTemplate in the default locale
 func (m *SendTestMessageRequestBuilder) Post(options *SendTestMessageRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

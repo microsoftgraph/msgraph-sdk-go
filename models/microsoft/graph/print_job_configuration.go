@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PrintJobConfiguration 
 type PrintJobConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -47,14 +47,14 @@ type PrintJobConfiguration struct {
     // Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
     scaling *PrintScaling;
 }
-// Instantiates a new printJobConfiguration and sets the default values.
+// NewPrintJobConfiguration instantiates a new printJobConfiguration and sets the default values.
 func NewPrintJobConfiguration()(*PrintJobConfiguration) {
     m := &PrintJobConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintJobConfiguration) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *PrintJobConfiguration) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+// GetCollate gets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
 func (m *PrintJobConfiguration) GetCollate()(*bool) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *PrintJobConfiguration) GetCollate()(*bool) {
         return m.collate
     }
 }
-// Gets the colorMode property value. The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
+// GetColorMode gets the colorMode property value. The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
 func (m *PrintJobConfiguration) GetColorMode()(*PrintColorMode) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *PrintJobConfiguration) GetColorMode()(*PrintColorMode) {
         return m.colorMode
     }
 }
-// Gets the copies property value. The number of copies that should be printed. Read-only.
+// GetCopies gets the copies property value. The number of copies that should be printed. Read-only.
 func (m *PrintJobConfiguration) GetCopies()(*int32) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *PrintJobConfiguration) GetCopies()(*int32) {
         return m.copies
     }
 }
-// Gets the dpi property value. The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
+// GetDpi gets the dpi property value. The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
 func (m *PrintJobConfiguration) GetDpi()(*int32) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *PrintJobConfiguration) GetDpi()(*int32) {
         return m.dpi
     }
 }
-// Gets the duplexMode property value. The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.
+// GetDuplexMode gets the duplexMode property value. The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.
 func (m *PrintJobConfiguration) GetDuplexMode()(*PrintDuplexMode) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *PrintJobConfiguration) GetDuplexMode()(*PrintDuplexMode) {
         return m.duplexMode
     }
 }
-// Gets the feedOrientation property value. The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.
+// GetFeedOrientation gets the feedOrientation property value. The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.
 func (m *PrintJobConfiguration) GetFeedOrientation()(*PrinterFeedOrientation) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *PrintJobConfiguration) GetFeedOrientation()(*PrinterFeedOrientation) {
         return m.feedOrientation
     }
 }
-// Gets the finishings property value. Finishing processes to use when printing.
+// GetFinishings gets the finishings property value. Finishing processes to use when printing.
 func (m *PrintJobConfiguration) GetFinishings()([]PrintFinishing) {
     if m == nil {
         return nil
@@ -118,7 +118,7 @@ func (m *PrintJobConfiguration) GetFinishings()([]PrintFinishing) {
         return m.finishings
     }
 }
-// Gets the fitPdfToPage property value. 
+// GetFitPdfToPage gets the fitPdfToPage property value. 
 func (m *PrintJobConfiguration) GetFitPdfToPage()(*bool) {
     if m == nil {
         return nil
@@ -126,7 +126,7 @@ func (m *PrintJobConfiguration) GetFitPdfToPage()(*bool) {
         return m.fitPdfToPage
     }
 }
-// Gets the inputBin property value. The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
+// GetInputBin gets the inputBin property value. The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
 func (m *PrintJobConfiguration) GetInputBin()(*string) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *PrintJobConfiguration) GetInputBin()(*string) {
         return m.inputBin
     }
 }
-// Gets the margin property value. The margin settings to use when printing.
+// GetMargin gets the margin property value. The margin settings to use when printing.
 func (m *PrintJobConfiguration) GetMargin()(*PrintMargin) {
     if m == nil {
         return nil
@@ -142,7 +142,7 @@ func (m *PrintJobConfiguration) GetMargin()(*PrintMargin) {
         return m.margin
     }
 }
-// Gets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
+// GetMediaSize gets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
 func (m *PrintJobConfiguration) GetMediaSize()(*string) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *PrintJobConfiguration) GetMediaSize()(*string) {
         return m.mediaSize
     }
 }
-// Gets the mediaType property value. The default media (such as paper) type to print the document on.
+// GetMediaType gets the mediaType property value. The default media (such as paper) type to print the document on.
 func (m *PrintJobConfiguration) GetMediaType()(*string) {
     if m == nil {
         return nil
@@ -158,7 +158,7 @@ func (m *PrintJobConfiguration) GetMediaType()(*string) {
         return m.mediaType
     }
 }
-// Gets the multipageLayout property value. The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
+// GetMultipageLayout gets the multipageLayout property value. The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
 func (m *PrintJobConfiguration) GetMultipageLayout()(*PrintMultipageLayout) {
     if m == nil {
         return nil
@@ -166,7 +166,7 @@ func (m *PrintJobConfiguration) GetMultipageLayout()(*PrintMultipageLayout) {
         return m.multipageLayout
     }
 }
-// Gets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.
+// GetOrientation gets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.
 func (m *PrintJobConfiguration) GetOrientation()(*PrintOrientation) {
     if m == nil {
         return nil
@@ -174,7 +174,7 @@ func (m *PrintJobConfiguration) GetOrientation()(*PrintOrientation) {
         return m.orientation
     }
 }
-// Gets the outputBin property value. The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
+// GetOutputBin gets the outputBin property value. The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
 func (m *PrintJobConfiguration) GetOutputBin()(*string) {
     if m == nil {
         return nil
@@ -182,7 +182,7 @@ func (m *PrintJobConfiguration) GetOutputBin()(*string) {
         return m.outputBin
     }
 }
-// Gets the pageRanges property value. The page ranges to print. Read-only.
+// GetPageRanges gets the pageRanges property value. The page ranges to print. Read-only.
 func (m *PrintJobConfiguration) GetPageRanges()([]IntegerRange) {
     if m == nil {
         return nil
@@ -190,7 +190,7 @@ func (m *PrintJobConfiguration) GetPageRanges()([]IntegerRange) {
         return m.pageRanges
     }
 }
-// Gets the pagesPerSheet property value. The number of document pages to print on each sheet.
+// GetPagesPerSheet gets the pagesPerSheet property value. The number of document pages to print on each sheet.
 func (m *PrintJobConfiguration) GetPagesPerSheet()(*int32) {
     if m == nil {
         return nil
@@ -198,7 +198,7 @@ func (m *PrintJobConfiguration) GetPagesPerSheet()(*int32) {
         return m.pagesPerSheet
     }
 }
-// Gets the quality property value. The print quality to use when printing the job. Valid values are described in the table below. Read-only.
+// GetQuality gets the quality property value. The print quality to use when printing the job. Valid values are described in the table below. Read-only.
 func (m *PrintJobConfiguration) GetQuality()(*PrintQuality) {
     if m == nil {
         return nil
@@ -206,7 +206,7 @@ func (m *PrintJobConfiguration) GetQuality()(*PrintQuality) {
         return m.quality
     }
 }
-// Gets the scaling property value. Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
+// GetScaling gets the scaling property value. Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
 func (m *PrintJobConfiguration) GetScaling()(*PrintScaling) {
     if m == nil {
         return nil
@@ -214,7 +214,7 @@ func (m *PrintJobConfiguration) GetScaling()(*PrintScaling) {
         return m.scaling
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["collate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -427,9 +427,7 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
 func (m *PrintJobConfiguration) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PrintJobConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("collate", m.GetCollate())
@@ -565,123 +563,83 @@ func (m *PrintJobConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintJobConfiguration) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
-// Parameters:
-//  - value : Value to set for the collate property.
+// SetCollate sets the collate property value. Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
 func (m *PrintJobConfiguration) SetCollate(value *bool)() {
     m.collate = value
 }
-// Sets the colorMode property value. The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
-// Parameters:
-//  - value : Value to set for the colorMode property.
+// SetColorMode sets the colorMode property value. The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
 func (m *PrintJobConfiguration) SetColorMode(value *PrintColorMode)() {
     m.colorMode = value
 }
-// Sets the copies property value. The number of copies that should be printed. Read-only.
-// Parameters:
-//  - value : Value to set for the copies property.
+// SetCopies sets the copies property value. The number of copies that should be printed. Read-only.
 func (m *PrintJobConfiguration) SetCopies(value *int32)() {
     m.copies = value
 }
-// Sets the dpi property value. The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
-// Parameters:
-//  - value : Value to set for the dpi property.
+// SetDpi sets the dpi property value. The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
 func (m *PrintJobConfiguration) SetDpi(value *int32)() {
     m.dpi = value
 }
-// Sets the duplexMode property value. The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.
-// Parameters:
-//  - value : Value to set for the duplexMode property.
+// SetDuplexMode sets the duplexMode property value. The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.
 func (m *PrintJobConfiguration) SetDuplexMode(value *PrintDuplexMode)() {
     m.duplexMode = value
 }
-// Sets the feedOrientation property value. The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.
-// Parameters:
-//  - value : Value to set for the feedOrientation property.
+// SetFeedOrientation sets the feedOrientation property value. The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.
 func (m *PrintJobConfiguration) SetFeedOrientation(value *PrinterFeedOrientation)() {
     m.feedOrientation = value
 }
-// Sets the finishings property value. Finishing processes to use when printing.
-// Parameters:
-//  - value : Value to set for the finishings property.
+// SetFinishings sets the finishings property value. Finishing processes to use when printing.
 func (m *PrintJobConfiguration) SetFinishings(value []PrintFinishing)() {
     m.finishings = value
 }
-// Sets the fitPdfToPage property value. 
-// Parameters:
-//  - value : Value to set for the fitPdfToPage property.
+// SetFitPdfToPage sets the fitPdfToPage property value. 
 func (m *PrintJobConfiguration) SetFitPdfToPage(value *bool)() {
     m.fitPdfToPage = value
 }
-// Sets the inputBin property value. The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
-// Parameters:
-//  - value : Value to set for the inputBin property.
+// SetInputBin sets the inputBin property value. The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
 func (m *PrintJobConfiguration) SetInputBin(value *string)() {
     m.inputBin = value
 }
-// Sets the margin property value. The margin settings to use when printing.
-// Parameters:
-//  - value : Value to set for the margin property.
+// SetMargin sets the margin property value. The margin settings to use when printing.
 func (m *PrintJobConfiguration) SetMargin(value *PrintMargin)() {
     m.margin = value
 }
-// Sets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
-// Parameters:
-//  - value : Value to set for the mediaSize property.
+// SetMediaSize sets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
 func (m *PrintJobConfiguration) SetMediaSize(value *string)() {
     m.mediaSize = value
 }
-// Sets the mediaType property value. The default media (such as paper) type to print the document on.
-// Parameters:
-//  - value : Value to set for the mediaType property.
+// SetMediaType sets the mediaType property value. The default media (such as paper) type to print the document on.
 func (m *PrintJobConfiguration) SetMediaType(value *string)() {
     m.mediaType = value
 }
-// Sets the multipageLayout property value. The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
-// Parameters:
-//  - value : Value to set for the multipageLayout property.
+// SetMultipageLayout sets the multipageLayout property value. The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
 func (m *PrintJobConfiguration) SetMultipageLayout(value *PrintMultipageLayout)() {
     m.multipageLayout = value
 }
-// Sets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.
-// Parameters:
-//  - value : Value to set for the orientation property.
+// SetOrientation sets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.
 func (m *PrintJobConfiguration) SetOrientation(value *PrintOrientation)() {
     m.orientation = value
 }
-// Sets the outputBin property value. The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
-// Parameters:
-//  - value : Value to set for the outputBin property.
+// SetOutputBin sets the outputBin property value. The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
 func (m *PrintJobConfiguration) SetOutputBin(value *string)() {
     m.outputBin = value
 }
-// Sets the pageRanges property value. The page ranges to print. Read-only.
-// Parameters:
-//  - value : Value to set for the pageRanges property.
+// SetPageRanges sets the pageRanges property value. The page ranges to print. Read-only.
 func (m *PrintJobConfiguration) SetPageRanges(value []IntegerRange)() {
     m.pageRanges = value
 }
-// Sets the pagesPerSheet property value. The number of document pages to print on each sheet.
-// Parameters:
-//  - value : Value to set for the pagesPerSheet property.
+// SetPagesPerSheet sets the pagesPerSheet property value. The number of document pages to print on each sheet.
 func (m *PrintJobConfiguration) SetPagesPerSheet(value *int32)() {
     m.pagesPerSheet = value
 }
-// Sets the quality property value. The print quality to use when printing the job. Valid values are described in the table below. Read-only.
-// Parameters:
-//  - value : Value to set for the quality property.
+// SetQuality sets the quality property value. The print quality to use when printing the job. Valid values are described in the table below. Read-only.
 func (m *PrintJobConfiguration) SetQuality(value *PrintQuality)() {
     m.quality = value
 }
-// Sets the scaling property value. Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
-// Parameters:
-//  - value : Value to set for the scaling property.
+// SetScaling sets the scaling property value. Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
 func (m *PrintJobConfiguration) SetScaling(value *PrintScaling)() {
     m.scaling = value
 }

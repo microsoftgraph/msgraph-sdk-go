@@ -6,7 +6,7 @@ import (
     i6679b1724d9da04ca2cfb8a7899bbc65aae875e9d06f5baa6e12c779636563db "github.com/microsoftgraph/msgraph-sdk-go/users/item/followedsites/ref"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\followedSites
+// FollowedSitesRequestBuilder builds and executes requests for operations under \users\{user-id}\followedSites
 type FollowedSitesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type FollowedSitesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// FollowedSitesRequestBuilderGetOptions options for Get
 type FollowedSitesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type FollowedSitesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get followedSites from users
+// FollowedSitesRequestBuilderGetQueryParameters get followedSites from users
 type FollowedSitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,10 +45,7 @@ type FollowedSitesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Instantiates a new FollowedSitesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFollowedSitesRequestBuilderInternal instantiates a new FollowedSitesRequestBuilder and sets the default values.
 func NewFollowedSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FollowedSitesRequestBuilder) {
     m := &FollowedSitesRequestBuilder{
     }
@@ -61,18 +58,13 @@ func NewFollowedSitesRequestBuilderInternal(pathParameters map[string]string, re
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new FollowedSitesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewFollowedSitesRequestBuilder instantiates a new FollowedSitesRequestBuilder and sets the default values.
 func NewFollowedSitesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*FollowedSitesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFollowedSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get followedSites from users
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get followedSites from users
 func (m *FollowedSitesRequestBuilder) CreateGetRequestInformation(options *FollowedSitesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,9 +84,7 @@ func (m *FollowedSitesRequestBuilder) CreateGetRequestInformation(options *Follo
     }
     return requestInfo, nil
 }
-// Get followedSites from users
-// Parameters:
-//  - options : Options for the request
+// Get get followedSites from users
 func (m *FollowedSitesRequestBuilder) Get(options *FollowedSitesRequestBuilderGetOptions)(*FollowedSitesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

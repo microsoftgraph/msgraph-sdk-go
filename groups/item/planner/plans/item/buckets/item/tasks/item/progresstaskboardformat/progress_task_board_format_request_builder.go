@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \groups\{group-id}\planner\plans\{plannerPlan-id}\buckets\{plannerBucket-id}\tasks\{plannerTask-id}\progressTaskBoardFormat
+// ProgressTaskBoardFormatRequestBuilder builds and executes requests for operations under \groups\{group-id}\planner\plans\{plannerPlan-id}\buckets\{plannerBucket-id}\tasks\{plannerTask-id}\progressTaskBoardFormat
 type ProgressTaskBoardFormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ProgressTaskBoardFormatRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ProgressTaskBoardFormatRequestBuilderDeleteOptions options for Delete
 type ProgressTaskBoardFormatRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type ProgressTaskBoardFormatRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ProgressTaskBoardFormatRequestBuilderGetOptions options for Get
 type ProgressTaskBoardFormatRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type ProgressTaskBoardFormatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+// ProgressTaskBoardFormatRequestBuilderGetQueryParameters read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 type ProgressTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ProgressTaskBoardFormatRequestBuilderPatchOptions options for Patch
 type ProgressTaskBoardFormatRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerProgressTaskBoardTaskFormat;
@@ -53,10 +53,7 @@ type ProgressTaskBoardFormatRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ProgressTaskBoardFormatRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProgressTaskBoardFormatRequestBuilderInternal instantiates a new ProgressTaskBoardFormatRequestBuilder and sets the default values.
 func NewProgressTaskBoardFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProgressTaskBoardFormatRequestBuilder) {
     m := &ProgressTaskBoardFormatRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewProgressTaskBoardFormatRequestBuilderInternal(pathParameters map[string]
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ProgressTaskBoardFormatRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewProgressTaskBoardFormatRequestBuilder instantiates a new ProgressTaskBoardFormatRequestBuilder and sets the default values.
 func NewProgressTaskBoardFormatRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProgressTaskBoardFormatRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewProgressTaskBoardFormatRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 func (m *ProgressTaskBoardFormatRequestBuilder) CreateDeleteRequestInformation(options *ProgressTaskBoardFormatRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *ProgressTaskBoardFormatRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 func (m *ProgressTaskBoardFormatRequestBuilder) CreateGetRequestInformation(options *ProgressTaskBoardFormatRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *ProgressTaskBoardFormatRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 func (m *ProgressTaskBoardFormatRequestBuilder) CreatePatchRequestInformation(options *ProgressTaskBoardFormatRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *ProgressTaskBoardFormatRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-// Parameters:
-//  - options : Options for the request
+// Delete read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 func (m *ProgressTaskBoardFormatRequestBuilder) Delete(options *ProgressTaskBoardFormatRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *ProgressTaskBoardFormatRequestBuilder) Delete(options *ProgressTaskBoar
     }
     return nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-// Parameters:
-//  - options : Options for the request
+// Get read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 func (m *ProgressTaskBoardFormatRequestBuilder) Get(options *ProgressTaskBoardFormatRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerProgressTaskBoardTaskFormat, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *ProgressTaskBoardFormatRequestBuilder) Get(options *ProgressTaskBoardFo
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerProgressTaskBoardTaskFormat), nil
 }
-// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-// Parameters:
-//  - options : Options for the request
+// Patch read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 func (m *ProgressTaskBoardFormatRequestBuilder) Patch(options *ProgressTaskBoardFormatRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// UserTeamwork 
 type UserTeamwork struct {
     Entity
     // The apps installed in the personal scope of this user.
     installedApps []UserScopeTeamsAppInstallation;
 }
-// Instantiates a new userTeamwork and sets the default values.
+// NewUserTeamwork instantiates a new userTeamwork and sets the default values.
 func NewUserTeamwork()(*UserTeamwork) {
     m := &UserTeamwork{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the installedApps property value. The apps installed in the personal scope of this user.
+// GetInstalledApps gets the installedApps property value. The apps installed in the personal scope of this user.
 func (m *UserTeamwork) GetInstalledApps()([]UserScopeTeamsAppInstallation) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *UserTeamwork) GetInstalledApps()([]UserScopeTeamsAppInstallation) {
         return m.installedApps
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["installedApps"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -47,9 +47,7 @@ func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(interface{}, i04e
 func (m *UserTeamwork) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *UserTeamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -68,9 +66,7 @@ func (m *UserTeamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// Sets the installedApps property value. The apps installed in the personal scope of this user.
-// Parameters:
-//  - value : Value to set for the installedApps property.
+// SetInstalledApps sets the installedApps property value. The apps installed in the personal scope of this user.
 func (m *UserTeamwork) SetInstalledApps(value []UserScopeTeamsAppInstallation)() {
     m.installedApps = value
 }

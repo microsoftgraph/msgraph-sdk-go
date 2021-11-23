@@ -7,7 +7,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\softwareUpdateStatusSummary
+// SoftwareUpdateStatusSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\softwareUpdateStatusSummary
 type SoftwareUpdateStatusSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type SoftwareUpdateStatusSummaryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SoftwareUpdateStatusSummaryRequestBuilderGetOptions options for Get
 type SoftwareUpdateStatusSummaryRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type SoftwareUpdateStatusSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The software update status summary.
+// SoftwareUpdateStatusSummaryRequestBuilderGetQueryParameters the software update status summary.
 type SoftwareUpdateStatusSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new SoftwareUpdateStatusSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSoftwareUpdateStatusSummaryRequestBuilderInternal instantiates a new SoftwareUpdateStatusSummaryRequestBuilder and sets the default values.
 func NewSoftwareUpdateStatusSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SoftwareUpdateStatusSummaryRequestBuilder) {
     m := &SoftwareUpdateStatusSummaryRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewSoftwareUpdateStatusSummaryRequestBuilderInternal(pathParameters map[str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SoftwareUpdateStatusSummaryRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSoftwareUpdateStatusSummaryRequestBuilder instantiates a new SoftwareUpdateStatusSummaryRequestBuilder and sets the default values.
 func NewSoftwareUpdateStatusSummaryRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SoftwareUpdateStatusSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSoftwareUpdateStatusSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The software update status summary.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the software update status summary.
 func (m *SoftwareUpdateStatusSummaryRequestBuilder) CreateGetRequestInformation(options *SoftwareUpdateStatusSummaryRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *SoftwareUpdateStatusSummaryRequestBuilder) CreateGetRequestInformation(
     }
     return requestInfo, nil
 }
-// The software update status summary.
-// Parameters:
-//  - options : Options for the request
+// Get the software update status summary.
 func (m *SoftwareUpdateStatusSummaryRequestBuilder) Get(options *SoftwareUpdateStatusSummaryRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SoftwareUpdateStatusSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

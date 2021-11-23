@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AverageComparativeScore 
 type AverageComparativeScore struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -13,14 +13,14 @@ type AverageComparativeScore struct {
     // Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
     basis *string;
 }
-// Instantiates a new averageComparativeScore and sets the default values.
+// NewAverageComparativeScore instantiates a new averageComparativeScore and sets the default values.
 func NewAverageComparativeScore()(*AverageComparativeScore) {
     m := &AverageComparativeScore{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AverageComparativeScore) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -28,7 +28,7 @@ func (m *AverageComparativeScore) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the averageScore property value. Average score within specified basis.
+// GetAverageScore gets the averageScore property value. Average score within specified basis.
 func (m *AverageComparativeScore) GetAverageScore()(*float64) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *AverageComparativeScore) GetAverageScore()(*float64) {
         return m.averageScore
     }
 }
-// Gets the basis property value. Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
+// GetBasis gets the basis property value. Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
 func (m *AverageComparativeScore) GetBasis()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *AverageComparativeScore) GetBasis()(*string) {
         return m.basis
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AverageComparativeScore) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["averageScore"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -72,9 +72,7 @@ func (m *AverageComparativeScore) GetFieldDeserializers()(map[string]func(interf
 func (m *AverageComparativeScore) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AverageComparativeScore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteFloat64Value("averageScore", m.GetAverageScore())
@@ -96,21 +94,15 @@ func (m *AverageComparativeScore) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AverageComparativeScore) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the averageScore property value. Average score within specified basis.
-// Parameters:
-//  - value : Value to set for the averageScore property.
+// SetAverageScore sets the averageScore property value. Average score within specified basis.
 func (m *AverageComparativeScore) SetAverageScore(value *float64)() {
     m.averageScore = value
 }
-// Sets the basis property value. Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
-// Parameters:
-//  - value : Value to set for the basis property.
+// SetBasis sets the basis property value. Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
 func (m *AverageComparativeScore) SetBasis(value *string)() {
     m.basis = value
 }

@@ -7,7 +7,7 @@ import (
     i3167fc0d3573aa6387fa2213d95d55168e8447ad0cc9e0793f011143e8bdab91 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/axes/valueaxis/majorgridlines/format"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\valueAxis\majorGridlines
+// MajorGridlinesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\valueAxis\majorGridlines
 type MajorGridlinesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type MajorGridlinesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// MajorGridlinesRequestBuilderDeleteOptions options for Delete
 type MajorGridlinesRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type MajorGridlinesRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// MajorGridlinesRequestBuilderGetOptions options for Get
 type MajorGridlinesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type MajorGridlinesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
+// MajorGridlinesRequestBuilderGetQueryParameters returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
 type MajorGridlinesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// MajorGridlinesRequestBuilderPatchOptions options for Patch
 type MajorGridlinesRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartGridlines;
@@ -54,10 +54,7 @@ type MajorGridlinesRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new MajorGridlinesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMajorGridlinesRequestBuilderInternal instantiates a new MajorGridlinesRequestBuilder and sets the default values.
 func NewMajorGridlinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MajorGridlinesRequestBuilder) {
     m := &MajorGridlinesRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewMajorGridlinesRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new MajorGridlinesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewMajorGridlinesRequestBuilder instantiates a new MajorGridlinesRequestBuilder and sets the default values.
 func NewMajorGridlinesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*MajorGridlinesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMajorGridlinesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
 func (m *MajorGridlinesRequestBuilder) CreateDeleteRequestInformation(options *MajorGridlinesRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *MajorGridlinesRequestBuilder) CreateDeleteRequestInformation(options *M
     }
     return requestInfo, nil
 }
-// Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
 func (m *MajorGridlinesRequestBuilder) CreateGetRequestInformation(options *MajorGridlinesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *MajorGridlinesRequestBuilder) CreateGetRequestInformation(options *Majo
     }
     return requestInfo, nil
 }
-// Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
 func (m *MajorGridlinesRequestBuilder) CreatePatchRequestInformation(options *MajorGridlinesRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *MajorGridlinesRequestBuilder) CreatePatchRequestInformation(options *Ma
     }
     return requestInfo, nil
 }
-// Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Delete returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
 func (m *MajorGridlinesRequestBuilder) Delete(options *MajorGridlinesRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,9 +143,7 @@ func (m *MajorGridlinesRequestBuilder) Delete(options *MajorGridlinesRequestBuil
 func (m *MajorGridlinesRequestBuilder) Format()(*i3167fc0d3573aa6387fa2213d95d55168e8447ad0cc9e0793f011143e8bdab91.FormatRequestBuilder) {
     return i3167fc0d3573aa6387fa2213d95d55168e8447ad0cc9e0793f011143e8bdab91.NewFormatRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Get returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
 func (m *MajorGridlinesRequestBuilder) Get(options *MajorGridlinesRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartGridlines, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -171,9 +155,7 @@ func (m *MajorGridlinesRequestBuilder) Get(options *MajorGridlinesRequestBuilder
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookChartGridlines), nil
 }
-// Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
-// Parameters:
-//  - options : Options for the request
+// Patch returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
 func (m *MajorGridlinesRequestBuilder) Patch(options *MajorGridlinesRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

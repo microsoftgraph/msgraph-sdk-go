@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\deviceConfigurationDeviceStateSummaries
+// DeviceConfigurationDeviceStateSummariesRequestBuilder builds and executes requests for operations under \deviceManagement\deviceConfigurationDeviceStateSummaries
 type DeviceConfigurationDeviceStateSummariesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type DeviceConfigurationDeviceStateSummariesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// DeviceConfigurationDeviceStateSummariesRequestBuilderDeleteOptions options for Delete
 type DeviceConfigurationDeviceStateSummariesRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type DeviceConfigurationDeviceStateSummariesRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// DeviceConfigurationDeviceStateSummariesRequestBuilderGetOptions options for Get
 type DeviceConfigurationDeviceStateSummariesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type DeviceConfigurationDeviceStateSummariesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The device configuration device state summary for this account.
+// DeviceConfigurationDeviceStateSummariesRequestBuilderGetQueryParameters the device configuration device state summary for this account.
 type DeviceConfigurationDeviceStateSummariesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// DeviceConfigurationDeviceStateSummariesRequestBuilderPatchOptions options for Patch
 type DeviceConfigurationDeviceStateSummariesRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationDeviceStateSummary;
@@ -53,10 +53,7 @@ type DeviceConfigurationDeviceStateSummariesRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new DeviceConfigurationDeviceStateSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationDeviceStateSummariesRequestBuilderInternal instantiates a new DeviceConfigurationDeviceStateSummariesRequestBuilder and sets the default values.
 func NewDeviceConfigurationDeviceStateSummariesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationDeviceStateSummariesRequestBuilder) {
     m := &DeviceConfigurationDeviceStateSummariesRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewDeviceConfigurationDeviceStateSummariesRequestBuilderInternal(pathParame
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new DeviceConfigurationDeviceStateSummariesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewDeviceConfigurationDeviceStateSummariesRequestBuilder instantiates a new DeviceConfigurationDeviceStateSummariesRequestBuilder and sets the default values.
 func NewDeviceConfigurationDeviceStateSummariesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DeviceConfigurationDeviceStateSummariesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationDeviceStateSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The device configuration device state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the device configuration device state summary for this account.
 func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) CreateDeleteRequestInformation(options *DeviceConfigurationDeviceStateSummariesRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) CreateDeleteRequ
     }
     return requestInfo, nil
 }
-// The device configuration device state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the device configuration device state summary for this account.
 func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) CreateGetRequestInformation(options *DeviceConfigurationDeviceStateSummariesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// The device configuration device state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the device configuration device state summary for this account.
 func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) CreatePatchRequestInformation(options *DeviceConfigurationDeviceStateSummariesRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) CreatePatchReque
     }
     return requestInfo, nil
 }
-// The device configuration device state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// Delete the device configuration device state summary for this account.
 func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) Delete(options *DeviceConfigurationDeviceStateSummariesRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) Delete(options *
     }
     return nil
 }
-// The device configuration device state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// Get the device configuration device state summary for this account.
 func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) Get(options *DeviceConfigurationDeviceStateSummariesRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationDeviceStateSummary, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) Get(options *Dev
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceConfigurationDeviceStateSummary), nil
 }
-// The device configuration device state summary for this account.
-// Parameters:
-//  - options : Options for the request
+// Patch the device configuration device state summary for this account.
 func (m *DeviceConfigurationDeviceStateSummariesRequestBuilder) Patch(options *DeviceConfigurationDeviceStateSummariesRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

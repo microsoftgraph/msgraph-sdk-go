@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// Todo 
 type Todo struct {
     Entity
     // The task lists in the users mailbox.
     lists []TodoTaskList;
 }
-// Instantiates a new todo and sets the default values.
+// NewTodo instantiates a new todo and sets the default values.
 func NewTodo()(*Todo) {
     m := &Todo{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the lists property value. The task lists in the users mailbox.
+// GetLists gets the lists property value. The task lists in the users mailbox.
 func (m *Todo) GetLists()([]TodoTaskList) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *Todo) GetLists()([]TodoTaskList) {
         return m.lists
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Todo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lists"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -47,9 +47,7 @@ func (m *Todo) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
 func (m *Todo) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Todo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -68,9 +66,7 @@ func (m *Todo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     }
     return nil
 }
-// Sets the lists property value. The task lists in the users mailbox.
-// Parameters:
-//  - value : Value to set for the lists property.
+// SetLists sets the lists property value. The task lists in the users mailbox.
 func (m *Todo) SetLists(value []TodoTaskList)() {
     m.lists = value
 }

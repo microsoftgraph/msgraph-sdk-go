@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teamwork\workforceIntegrations\{workforceIntegration-id}
+// WorkforceIntegrationRequestBuilder builds and executes requests for operations under \teamwork\workforceIntegrations\{workforceIntegration-id}
 type WorkforceIntegrationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type WorkforceIntegrationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// WorkforceIntegrationRequestBuilderDeleteOptions options for Delete
 type WorkforceIntegrationRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type WorkforceIntegrationRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// WorkforceIntegrationRequestBuilderGetOptions options for Get
 type WorkforceIntegrationRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type WorkforceIntegrationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get workforceIntegrations from teamwork
+// WorkforceIntegrationRequestBuilderGetQueryParameters get workforceIntegrations from teamwork
 type WorkforceIntegrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// WorkforceIntegrationRequestBuilderPatchOptions options for Patch
 type WorkforceIntegrationRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkforceIntegration;
@@ -53,10 +53,7 @@ type WorkforceIntegrationRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new WorkforceIntegrationRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkforceIntegrationRequestBuilderInternal instantiates a new WorkforceIntegrationRequestBuilder and sets the default values.
 func NewWorkforceIntegrationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkforceIntegrationRequestBuilder) {
     m := &WorkforceIntegrationRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewWorkforceIntegrationRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WorkforceIntegrationRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWorkforceIntegrationRequestBuilder instantiates a new WorkforceIntegrationRequestBuilder and sets the default values.
 func NewWorkforceIntegrationRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WorkforceIntegrationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWorkforceIntegrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property workforceIntegrations for teamwork
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property workforceIntegrations for teamwork
 func (m *WorkforceIntegrationRequestBuilder) CreateDeleteRequestInformation(options *WorkforceIntegrationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *WorkforceIntegrationRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get workforceIntegrations from teamwork
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationRequestBuilder) CreateGetRequestInformation(options *WorkforceIntegrationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *WorkforceIntegrationRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update the navigation property workforceIntegrations in teamwork
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property workforceIntegrations in teamwork
 func (m *WorkforceIntegrationRequestBuilder) CreatePatchRequestInformation(options *WorkforceIntegrationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *WorkforceIntegrationRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete navigation property workforceIntegrations for teamwork
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property workforceIntegrations for teamwork
 func (m *WorkforceIntegrationRequestBuilder) Delete(options *WorkforceIntegrationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *WorkforceIntegrationRequestBuilder) Delete(options *WorkforceIntegratio
     }
     return nil
 }
-// Get workforceIntegrations from teamwork
-// Parameters:
-//  - options : Options for the request
+// Get get workforceIntegrations from teamwork
 func (m *WorkforceIntegrationRequestBuilder) Get(options *WorkforceIntegrationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkforceIntegration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *WorkforceIntegrationRequestBuilder) Get(options *WorkforceIntegrationRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkforceIntegration), nil
 }
-// Update the navigation property workforceIntegrations in teamwork
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property workforceIntegrations in teamwork
 func (m *WorkforceIntegrationRequestBuilder) Patch(options *WorkforceIntegrationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

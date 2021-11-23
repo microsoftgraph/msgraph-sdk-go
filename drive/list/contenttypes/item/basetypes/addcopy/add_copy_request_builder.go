@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}\baseTypes\microsoft.graph.addCopy
+// AddCopyRequestBuilder builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}\baseTypes\microsoft.graph.addCopy
 type AddCopyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AddCopyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// AddCopyRequestBuilderPostOptions options for Post
 type AddCopyRequestBuilderPostOptions struct {
     // 
     Body *AddCopyRequestBody;
@@ -26,21 +26,21 @@ type AddCopyRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Union type wrapper for classes contentType
+// AddCopyResponse union type wrapper for classes contentType
 type AddCopyResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Union type representation for type contentType
     contentType *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentType;
 }
-// Instantiates a new addCopyResponse and sets the default values.
+// NewAddCopyResponse instantiates a new addCopyResponse and sets the default values.
 func NewAddCopyResponse()(*AddCopyResponse) {
     m := &AddCopyResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddCopyResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *AddCopyResponse) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the contentType property value. Union type representation for type contentType
+// GetContentType gets the contentType property value. Union type representation for type contentType
 func (m *AddCopyResponse) GetContentType()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentType) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *AddCopyResponse) GetContentType()(*i4a838ef194e4c99e9f2c63ba10dab9cb120
         return m.contentType
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AddCopyResponse) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["contentType"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -74,9 +74,7 @@ func (m *AddCopyResponse) GetFieldDeserializers()(map[string]func(interface{}, i
 func (m *AddCopyResponse) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AddCopyResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("contentType", m.GetContentType())
@@ -92,22 +90,15 @@ func (m *AddCopyResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddCopyResponse) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the contentType property value. Union type representation for type contentType
-// Parameters:
-//  - value : Value to set for the contentType property.
+// SetContentType sets the contentType property value. Union type representation for type contentType
 func (m *AddCopyResponse) SetContentType(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContentType)() {
     m.contentType = value
 }
-// Instantiates a new AddCopyRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddCopyRequestBuilderInternal instantiates a new AddCopyRequestBuilder and sets the default values.
 func NewAddCopyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddCopyRequestBuilder) {
     m := &AddCopyRequestBuilder{
     }
@@ -120,18 +111,13 @@ func NewAddCopyRequestBuilderInternal(pathParameters map[string]string, requestA
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AddCopyRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAddCopyRequestBuilder instantiates a new AddCopyRequestBuilder and sets the default values.
 func NewAddCopyRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AddCopyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAddCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action addCopy
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action addCopy
 func (m *AddCopyRequestBuilder) CreatePostRequestInformation(options *AddCopyRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,9 +135,7 @@ func (m *AddCopyRequestBuilder) CreatePostRequestInformation(options *AddCopyReq
     }
     return requestInfo, nil
 }
-// Invoke action addCopy
-// Parameters:
-//  - options : Options for the request
+// Post invoke action addCopy
 func (m *AddCopyRequestBuilder) Post(options *AddCopyRequestBuilderPostOptions)(*AddCopyResponse, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

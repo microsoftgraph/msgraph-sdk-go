@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PhysicalOfficeAddress 
 type PhysicalOfficeAddress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
@@ -21,14 +21,14 @@ type PhysicalOfficeAddress struct {
     // The street.
     street *string;
 }
-// Instantiates a new physicalOfficeAddress and sets the default values.
+// NewPhysicalOfficeAddress instantiates a new physicalOfficeAddress and sets the default values.
 func NewPhysicalOfficeAddress()(*PhysicalOfficeAddress) {
     m := &PhysicalOfficeAddress{
     }
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PhysicalOfficeAddress) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *PhysicalOfficeAddress) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// Gets the city property value. The city.
+// GetCity gets the city property value. The city.
 func (m *PhysicalOfficeAddress) GetCity()(*string) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *PhysicalOfficeAddress) GetCity()(*string) {
         return m.city
     }
 }
-// Gets the countryOrRegion property value. The country or region. It's a free-format string value, for example, 'United States'.
+// GetCountryOrRegion gets the countryOrRegion property value. The country or region. It's a free-format string value, for example, 'United States'.
 func (m *PhysicalOfficeAddress) GetCountryOrRegion()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *PhysicalOfficeAddress) GetCountryOrRegion()(*string) {
         return m.countryOrRegion
     }
 }
-// Gets the officeLocation property value. Office location such as building and office number for an organizational contact.
+// GetOfficeLocation gets the officeLocation property value. Office location such as building and office number for an organizational contact.
 func (m *PhysicalOfficeAddress) GetOfficeLocation()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *PhysicalOfficeAddress) GetOfficeLocation()(*string) {
         return m.officeLocation
     }
 }
-// Gets the postalCode property value. The postal code.
+// GetPostalCode gets the postalCode property value. The postal code.
 func (m *PhysicalOfficeAddress) GetPostalCode()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *PhysicalOfficeAddress) GetPostalCode()(*string) {
         return m.postalCode
     }
 }
-// Gets the state property value. The state.
+// GetState gets the state property value. The state.
 func (m *PhysicalOfficeAddress) GetState()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *PhysicalOfficeAddress) GetState()(*string) {
         return m.state
     }
 }
-// Gets the street property value. The street.
+// GetStreet gets the street property value. The street.
 func (m *PhysicalOfficeAddress) GetStreet()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *PhysicalOfficeAddress) GetStreet()(*string) {
         return m.street
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["city"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -152,9 +152,7 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
 func (m *PhysicalOfficeAddress) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PhysicalOfficeAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("city", m.GetCity())
@@ -200,45 +198,31 @@ func (m *PhysicalOfficeAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// Parameters:
-//  - value : Value to set for the AdditionalData property.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PhysicalOfficeAddress) SetAdditionalData(value map[string]interface{})() {
     m.additionalData = value
 }
-// Sets the city property value. The city.
-// Parameters:
-//  - value : Value to set for the city property.
+// SetCity sets the city property value. The city.
 func (m *PhysicalOfficeAddress) SetCity(value *string)() {
     m.city = value
 }
-// Sets the countryOrRegion property value. The country or region. It's a free-format string value, for example, 'United States'.
-// Parameters:
-//  - value : Value to set for the countryOrRegion property.
+// SetCountryOrRegion sets the countryOrRegion property value. The country or region. It's a free-format string value, for example, 'United States'.
 func (m *PhysicalOfficeAddress) SetCountryOrRegion(value *string)() {
     m.countryOrRegion = value
 }
-// Sets the officeLocation property value. Office location such as building and office number for an organizational contact.
-// Parameters:
-//  - value : Value to set for the officeLocation property.
+// SetOfficeLocation sets the officeLocation property value. Office location such as building and office number for an organizational contact.
 func (m *PhysicalOfficeAddress) SetOfficeLocation(value *string)() {
     m.officeLocation = value
 }
-// Sets the postalCode property value. The postal code.
-// Parameters:
-//  - value : Value to set for the postalCode property.
+// SetPostalCode sets the postalCode property value. The postal code.
 func (m *PhysicalOfficeAddress) SetPostalCode(value *string)() {
     m.postalCode = value
 }
-// Sets the state property value. The state.
-// Parameters:
-//  - value : Value to set for the state property.
+// SetState sets the state property value. The state.
 func (m *PhysicalOfficeAddress) SetState(value *string)() {
     m.state = value
 }
-// Sets the street property value. The street.
-// Parameters:
-//  - value : Value to set for the street property.
+// SetStreet sets the street property value. The street.
 func (m *PhysicalOfficeAddress) SetStreet(value *string)() {
     m.street = value
 }

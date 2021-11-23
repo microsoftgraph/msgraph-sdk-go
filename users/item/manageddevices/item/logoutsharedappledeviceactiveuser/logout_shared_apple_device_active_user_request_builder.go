@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.logoutSharedAppleDeviceActiveUser
+// LogoutSharedAppleDeviceActiveUserRequestBuilder builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.logoutSharedAppleDeviceActiveUser
 type LogoutSharedAppleDeviceActiveUserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type LogoutSharedAppleDeviceActiveUserRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// LogoutSharedAppleDeviceActiveUserRequestBuilderPostOptions options for Post
 type LogoutSharedAppleDeviceActiveUserRequestBuilderPostOptions struct {
     // Request headers
     H map[string]string;
@@ -22,10 +22,7 @@ type LogoutSharedAppleDeviceActiveUserRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LogoutSharedAppleDeviceActiveUserRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLogoutSharedAppleDeviceActiveUserRequestBuilderInternal instantiates a new LogoutSharedAppleDeviceActiveUserRequestBuilder and sets the default values.
 func NewLogoutSharedAppleDeviceActiveUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LogoutSharedAppleDeviceActiveUserRequestBuilder) {
     m := &LogoutSharedAppleDeviceActiveUserRequestBuilder{
     }
@@ -38,18 +35,13 @@ func NewLogoutSharedAppleDeviceActiveUserRequestBuilderInternal(pathParameters m
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LogoutSharedAppleDeviceActiveUserRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLogoutSharedAppleDeviceActiveUserRequestBuilder instantiates a new LogoutSharedAppleDeviceActiveUserRequestBuilder and sets the default values.
 func NewLogoutSharedAppleDeviceActiveUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LogoutSharedAppleDeviceActiveUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLogoutSharedAppleDeviceActiveUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Logout shared Apple device active user
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation logout shared Apple device active user
 func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) CreatePostRequestInformation(options *LogoutSharedAppleDeviceActiveUserRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -66,9 +58,7 @@ func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// Logout shared Apple device active user
-// Parameters:
-//  - options : Options for the request
+// Post logout shared Apple device active user
 func (m *LogoutSharedAppleDeviceActiveUserRequestBuilder) Post(options *LogoutSharedAppleDeviceActiveUserRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

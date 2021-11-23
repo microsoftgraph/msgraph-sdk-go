@@ -7,7 +7,7 @@ import (
     i482f227ac4bd4380b177e3e3f8b72c41cdcc85934d2a835befef25b8352aeb4d "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignmentrequests/item/assignment/ref"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement\assignmentRequests\{accessPackageAssignmentRequest-id}\assignment
+// AssignmentRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\assignmentRequests\{accessPackageAssignmentRequest-id}\assignment
 type AssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type AssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// AssignmentRequestBuilderGetOptions options for Get
 type AssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type AssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get assignment from identityGovernance
+// AssignmentRequestBuilderGetQueryParameters get assignment from identityGovernance
 type AssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new AssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignmentRequestBuilderInternal instantiates a new AssignmentRequestBuilder and sets the default values.
 func NewAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignmentRequestBuilder) {
     m := &AssignmentRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewAssignmentRequestBuilderInternal(pathParameters map[string]string, reque
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignmentRequestBuilder instantiates a new AssignmentRequestBuilder and sets the default values.
 func NewAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get assignment from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get assignment from identityGovernance
 func (m *AssignmentRequestBuilder) CreateGetRequestInformation(options *AssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *AssignmentRequestBuilder) CreateGetRequestInformation(options *Assignme
     }
     return requestInfo, nil
 }
-// Get assignment from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get assignment from identityGovernance
 func (m *AssignmentRequestBuilder) Get(options *AssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

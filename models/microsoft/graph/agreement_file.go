@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// AgreementFile 
 type AgreementFile struct {
     AgreementFileProperties
     // 
     localizations []AgreementFileLocalization;
 }
-// Instantiates a new agreementFile and sets the default values.
+// NewAgreementFile instantiates a new agreementFile and sets the default values.
 func NewAgreementFile()(*AgreementFile) {
     m := &AgreementFile{
         AgreementFileProperties: *NewAgreementFileProperties(),
     }
     return m
 }
-// Gets the localizations property value. 
+// GetLocalizations gets the localizations property value. 
 func (m *AgreementFile) GetLocalizations()([]AgreementFileLocalization) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *AgreementFile) GetLocalizations()([]AgreementFileLocalization) {
         return m.localizations
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *AgreementFile) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.AgreementFileProperties.GetFieldDeserializers()
     res["localizations"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -47,9 +47,7 @@ func (m *AgreementFile) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *AgreementFile) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *AgreementFile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.AgreementFileProperties.Serialize(writer)
     if err != nil {
@@ -68,9 +66,7 @@ func (m *AgreementFile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the localizations property value. 
-// Parameters:
-//  - value : Value to set for the localizations property.
+// SetLocalizations sets the localizations property value. 
 func (m *AgreementFile) SetLocalizations(value []AgreementFileLocalization)() {
     m.localizations = value
 }

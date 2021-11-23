@@ -7,7 +7,7 @@ import (
     i76453f4e3faeef1e82b0e80fa116f995db25e5b1abf269182ae606f42b33461d "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/applepushnotificationcertificate/downloadapplepushnotificationcertificatesigningrequest"
 )
 
-// Builds and executes requests for operations under \deviceManagement\applePushNotificationCertificate
+// ApplePushNotificationCertificateRequestBuilder builds and executes requests for operations under \deviceManagement\applePushNotificationCertificate
 type ApplePushNotificationCertificateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type ApplePushNotificationCertificateRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// ApplePushNotificationCertificateRequestBuilderDeleteOptions options for Delete
 type ApplePushNotificationCertificateRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -25,7 +25,7 @@ type ApplePushNotificationCertificateRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// ApplePushNotificationCertificateRequestBuilderGetOptions options for Get
 type ApplePushNotificationCertificateRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -36,14 +36,14 @@ type ApplePushNotificationCertificateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Apple push notification certificate.
+// ApplePushNotificationCertificateRequestBuilderGetQueryParameters apple push notification certificate.
 type ApplePushNotificationCertificateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// ApplePushNotificationCertificateRequestBuilderPatchOptions options for Patch
 type ApplePushNotificationCertificateRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplePushNotificationCertificate;
@@ -54,10 +54,7 @@ type ApplePushNotificationCertificateRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApplePushNotificationCertificateRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplePushNotificationCertificateRequestBuilderInternal instantiates a new ApplePushNotificationCertificateRequestBuilder and sets the default values.
 func NewApplePushNotificationCertificateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplePushNotificationCertificateRequestBuilder) {
     m := &ApplePushNotificationCertificateRequestBuilder{
     }
@@ -70,18 +67,13 @@ func NewApplePushNotificationCertificateRequestBuilderInternal(pathParameters ma
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApplePushNotificationCertificateRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplePushNotificationCertificateRequestBuilder instantiates a new ApplePushNotificationCertificateRequestBuilder and sets the default values.
 func NewApplePushNotificationCertificateRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplePushNotificationCertificateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplePushNotificationCertificateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Apple push notification certificate.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation apple push notification certificate.
 func (m *ApplePushNotificationCertificateRequestBuilder) CreateDeleteRequestInformation(options *ApplePushNotificationCertificateRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,9 +90,7 @@ func (m *ApplePushNotificationCertificateRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// Apple push notification certificate.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation apple push notification certificate.
 func (m *ApplePushNotificationCertificateRequestBuilder) CreateGetRequestInformation(options *ApplePushNotificationCertificateRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -120,9 +110,7 @@ func (m *ApplePushNotificationCertificateRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// Apple push notification certificate.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation apple push notification certificate.
 func (m *ApplePushNotificationCertificateRequestBuilder) CreatePatchRequestInformation(options *ApplePushNotificationCertificateRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,9 +128,7 @@ func (m *ApplePushNotificationCertificateRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// Apple push notification certificate.
-// Parameters:
-//  - options : Options for the request
+// Delete apple push notification certificate.
 func (m *ApplePushNotificationCertificateRequestBuilder) Delete(options *ApplePushNotificationCertificateRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -154,13 +140,11 @@ func (m *ApplePushNotificationCertificateRequestBuilder) Delete(options *ApplePu
     }
     return nil
 }
-// Builds and executes requests for operations under \deviceManagement\applePushNotificationCertificate\microsoft.graph.downloadApplePushNotificationCertificateSigningRequest()
+// DownloadApplePushNotificationCertificateSigningRequest builds and executes requests for operations under \deviceManagement\applePushNotificationCertificate\microsoft.graph.downloadApplePushNotificationCertificateSigningRequest()
 func (m *ApplePushNotificationCertificateRequestBuilder) DownloadApplePushNotificationCertificateSigningRequest()(*i76453f4e3faeef1e82b0e80fa116f995db25e5b1abf269182ae606f42b33461d.DownloadApplePushNotificationCertificateSigningRequestRequestBuilder) {
     return i76453f4e3faeef1e82b0e80fa116f995db25e5b1abf269182ae606f42b33461d.NewDownloadApplePushNotificationCertificateSigningRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Apple push notification certificate.
-// Parameters:
-//  - options : Options for the request
+// Get apple push notification certificate.
 func (m *ApplePushNotificationCertificateRequestBuilder) Get(options *ApplePushNotificationCertificateRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplePushNotificationCertificate, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -172,9 +156,7 @@ func (m *ApplePushNotificationCertificateRequestBuilder) Get(options *ApplePushN
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApplePushNotificationCertificate), nil
 }
-// Apple push notification certificate.
-// Parameters:
-//  - options : Options for the request
+// Patch apple push notification certificate.
 func (m *ApplePushNotificationCertificateRequestBuilder) Patch(options *ApplePushNotificationCertificateRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

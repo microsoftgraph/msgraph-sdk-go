@@ -5,7 +5,7 @@ import (
     i99cbaf77e9315d21214bad4d02b7fa2b52e44174ebf0bfb3a0a26eeeda93ebd2 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/windowsinformationprotection/assign"
 )
 
-// Builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.windowsInformationProtection
+// WindowsInformationProtectionRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.windowsInformationProtection
 type WindowsInformationProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -17,10 +17,7 @@ type WindowsInformationProtectionRequestBuilder struct {
 func (m *WindowsInformationProtectionRequestBuilder) Assign()(*i99cbaf77e9315d21214bad4d02b7fa2b52e44174ebf0bfb3a0a26eeeda93ebd2.AssignRequestBuilder) {
     return i99cbaf77e9315d21214bad4d02b7fa2b52e44174ebf0bfb3a0a26eeeda93ebd2.NewAssignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new WindowsInformationProtectionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsInformationProtectionRequestBuilderInternal instantiates a new WindowsInformationProtectionRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsInformationProtectionRequestBuilder) {
     m := &WindowsInformationProtectionRequestBuilder{
     }
@@ -33,10 +30,7 @@ func NewWindowsInformationProtectionRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new WindowsInformationProtectionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewWindowsInformationProtectionRequestBuilder instantiates a new WindowsInformationProtectionRequestBuilder and sets the default values.
 func NewWindowsInformationProtectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*WindowsInformationProtectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

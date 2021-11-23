@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \deviceManagement\notificationMessageTemplates\{notificationMessageTemplate-id}\localizedNotificationMessages\{localizedNotificationMessage-id}
+// LocalizedNotificationMessageRequestBuilder builds and executes requests for operations under \deviceManagement\notificationMessageTemplates\{notificationMessageTemplate-id}\localizedNotificationMessages\{localizedNotificationMessage-id}
 type LocalizedNotificationMessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type LocalizedNotificationMessageRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// LocalizedNotificationMessageRequestBuilderDeleteOptions options for Delete
 type LocalizedNotificationMessageRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type LocalizedNotificationMessageRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// LocalizedNotificationMessageRequestBuilderGetOptions options for Get
 type LocalizedNotificationMessageRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type LocalizedNotificationMessageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of localized messages for this Notification Message Template.
+// LocalizedNotificationMessageRequestBuilderGetQueryParameters the list of localized messages for this Notification Message Template.
 type LocalizedNotificationMessageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// LocalizedNotificationMessageRequestBuilderPatchOptions options for Patch
 type LocalizedNotificationMessageRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocalizedNotificationMessage;
@@ -53,10 +53,7 @@ type LocalizedNotificationMessageRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new LocalizedNotificationMessageRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLocalizedNotificationMessageRequestBuilderInternal instantiates a new LocalizedNotificationMessageRequestBuilder and sets the default values.
 func NewLocalizedNotificationMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LocalizedNotificationMessageRequestBuilder) {
     m := &LocalizedNotificationMessageRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewLocalizedNotificationMessageRequestBuilderInternal(pathParameters map[st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new LocalizedNotificationMessageRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewLocalizedNotificationMessageRequestBuilder instantiates a new LocalizedNotificationMessageRequestBuilder and sets the default values.
 func NewLocalizedNotificationMessageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*LocalizedNotificationMessageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLocalizedNotificationMessageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of localized messages for this Notification Message Template.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of localized messages for this Notification Message Template.
 func (m *LocalizedNotificationMessageRequestBuilder) CreateDeleteRequestInformation(options *LocalizedNotificationMessageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *LocalizedNotificationMessageRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// The list of localized messages for this Notification Message Template.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of localized messages for this Notification Message Template.
 func (m *LocalizedNotificationMessageRequestBuilder) CreateGetRequestInformation(options *LocalizedNotificationMessageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *LocalizedNotificationMessageRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// The list of localized messages for this Notification Message Template.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of localized messages for this Notification Message Template.
 func (m *LocalizedNotificationMessageRequestBuilder) CreatePatchRequestInformation(options *LocalizedNotificationMessageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *LocalizedNotificationMessageRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// The list of localized messages for this Notification Message Template.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of localized messages for this Notification Message Template.
 func (m *LocalizedNotificationMessageRequestBuilder) Delete(options *LocalizedNotificationMessageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *LocalizedNotificationMessageRequestBuilder) Delete(options *LocalizedNo
     }
     return nil
 }
-// The list of localized messages for this Notification Message Template.
-// Parameters:
-//  - options : Options for the request
+// Get the list of localized messages for this Notification Message Template.
 func (m *LocalizedNotificationMessageRequestBuilder) Get(options *LocalizedNotificationMessageRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocalizedNotificationMessage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *LocalizedNotificationMessageRequestBuilder) Get(options *LocalizedNotif
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocalizedNotificationMessage), nil
 }
-// The list of localized messages for this Notification Message Template.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of localized messages for this Notification Message Template.
 func (m *LocalizedNotificationMessageRequestBuilder) Patch(options *LocalizedNotificationMessageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

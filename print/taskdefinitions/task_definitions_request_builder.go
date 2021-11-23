@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \print\taskDefinitions
+// TaskDefinitionsRequestBuilder builds and executes requests for operations under \print\taskDefinitions
 type TaskDefinitionsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TaskDefinitionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TaskDefinitionsRequestBuilderGetOptions options for Get
 type TaskDefinitionsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TaskDefinitionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// List of abstract definition for a task that can be triggered when various events occur within Universal Print.
+// TaskDefinitionsRequestBuilderGetQueryParameters list of abstract definition for a task that can be triggered when various events occur within Universal Print.
 type TaskDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TaskDefinitionsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TaskDefinitionsRequestBuilderPostOptions options for Post
 type TaskDefinitionsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTaskDefinition;
@@ -56,10 +56,7 @@ type TaskDefinitionsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TaskDefinitionsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaskDefinitionsRequestBuilderInternal instantiates a new TaskDefinitionsRequestBuilder and sets the default values.
 func NewTaskDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaskDefinitionsRequestBuilder) {
     m := &TaskDefinitionsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTaskDefinitionsRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TaskDefinitionsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTaskDefinitionsRequestBuilder instantiates a new TaskDefinitionsRequestBuilder and sets the default values.
 func NewTaskDefinitionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TaskDefinitionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTaskDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// List of abstract definition for a task that can be triggered when various events occur within Universal Print.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation list of abstract definition for a task that can be triggered when various events occur within Universal Print.
 func (m *TaskDefinitionsRequestBuilder) CreateGetRequestInformation(options *TaskDefinitionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TaskDefinitionsRequestBuilder) CreateGetRequestInformation(options *Tas
     }
     return requestInfo, nil
 }
-// List of abstract definition for a task that can be triggered when various events occur within Universal Print.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation list of abstract definition for a task that can be triggered when various events occur within Universal Print.
 func (m *TaskDefinitionsRequestBuilder) CreatePostRequestInformation(options *TaskDefinitionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TaskDefinitionsRequestBuilder) CreatePostRequestInformation(options *Ta
     }
     return requestInfo, nil
 }
-// List of abstract definition for a task that can be triggered when various events occur within Universal Print.
-// Parameters:
-//  - options : Options for the request
+// Get list of abstract definition for a task that can be triggered when various events occur within Universal Print.
 func (m *TaskDefinitionsRequestBuilder) Get(options *TaskDefinitionsRequestBuilderGetOptions)(*TaskDefinitionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TaskDefinitionsRequestBuilder) Get(options *TaskDefinitionsRequestBuild
     }
     return res.(*TaskDefinitionsResponse), nil
 }
-// List of abstract definition for a task that can be triggered when various events occur within Universal Print.
-// Parameters:
-//  - options : Options for the request
+// Post list of abstract definition for a task that can be triggered when various events occur within Universal Print.
 func (m *TaskDefinitionsRequestBuilder) Post(options *TaskDefinitionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintTaskDefinition, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

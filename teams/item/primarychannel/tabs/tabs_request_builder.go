@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \teams\{team-id}\primaryChannel\tabs
+// TabsRequestBuilder builds and executes requests for operations under \teams\{team-id}\primaryChannel\tabs
 type TabsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type TabsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// TabsRequestBuilderGetOptions options for Get
 type TabsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type TabsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// A collection of all the tabs in the channel. A navigation property.
+// TabsRequestBuilderGetQueryParameters a collection of all the tabs in the channel. A navigation property.
 type TabsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type TabsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// TabsRequestBuilderPostOptions options for Post
 type TabsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsTab;
@@ -56,10 +56,7 @@ type TabsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new TabsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTabsRequestBuilderInternal instantiates a new TabsRequestBuilder and sets the default values.
 func NewTabsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TabsRequestBuilder) {
     m := &TabsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewTabsRequestBuilderInternal(pathParameters map[string]string, requestAdap
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new TabsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewTabsRequestBuilder instantiates a new TabsRequestBuilder and sets the default values.
 func NewTabsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TabsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTabsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// A collection of all the tabs in the channel. A navigation property.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation a collection of all the tabs in the channel. A navigation property.
 func (m *TabsRequestBuilder) CreateGetRequestInformation(options *TabsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *TabsRequestBuilder) CreateGetRequestInformation(options *TabsRequestBui
     }
     return requestInfo, nil
 }
-// A collection of all the tabs in the channel. A navigation property.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation a collection of all the tabs in the channel. A navigation property.
 func (m *TabsRequestBuilder) CreatePostRequestInformation(options *TabsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *TabsRequestBuilder) CreatePostRequestInformation(options *TabsRequestBu
     }
     return requestInfo, nil
 }
-// A collection of all the tabs in the channel. A navigation property.
-// Parameters:
-//  - options : Options for the request
+// Get a collection of all the tabs in the channel. A navigation property.
 func (m *TabsRequestBuilder) Get(options *TabsRequestBuilderGetOptions)(*TabsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *TabsRequestBuilder) Get(options *TabsRequestBuilderGetOptions)(*TabsRes
     }
     return res.(*TabsResponse), nil
 }
-// A collection of all the tabs in the channel. A navigation property.
-// Parameters:
-//  - options : Options for the request
+// Post a collection of all the tabs in the channel. A navigation property.
 func (m *TabsRequestBuilder) Post(options *TabsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsTab, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

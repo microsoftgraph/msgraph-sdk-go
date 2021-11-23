@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \agreements\{agreement-id}\file\localizations\{agreementFileLocalization-id}\versions\{agreementFileVersion-id}
+// AgreementFileVersionRequestBuilder builds and executes requests for operations under \agreements\{agreement-id}\file\localizations\{agreementFileLocalization-id}\versions\{agreementFileVersion-id}
 type AgreementFileVersionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AgreementFileVersionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AgreementFileVersionRequestBuilderDeleteOptions options for Delete
 type AgreementFileVersionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AgreementFileVersionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AgreementFileVersionRequestBuilderGetOptions options for Get
 type AgreementFileVersionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AgreementFileVersionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get versions from agreements
+// AgreementFileVersionRequestBuilderGetQueryParameters get versions from agreements
 type AgreementFileVersionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AgreementFileVersionRequestBuilderPatchOptions options for Patch
 type AgreementFileVersionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileVersion;
@@ -53,10 +53,7 @@ type AgreementFileVersionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AgreementFileVersionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgreementFileVersionRequestBuilderInternal instantiates a new AgreementFileVersionRequestBuilder and sets the default values.
 func NewAgreementFileVersionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgreementFileVersionRequestBuilder) {
     m := &AgreementFileVersionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAgreementFileVersionRequestBuilderInternal(pathParameters map[string]str
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AgreementFileVersionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAgreementFileVersionRequestBuilder instantiates a new AgreementFileVersionRequestBuilder and sets the default values.
 func NewAgreementFileVersionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AgreementFileVersionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementFileVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property versions for agreements
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property versions for agreements
 func (m *AgreementFileVersionRequestBuilder) CreateDeleteRequestInformation(options *AgreementFileVersionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AgreementFileVersionRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get versions from agreements
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get versions from agreements
 func (m *AgreementFileVersionRequestBuilder) CreateGetRequestInformation(options *AgreementFileVersionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AgreementFileVersionRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// Update the navigation property versions in agreements
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property versions in agreements
 func (m *AgreementFileVersionRequestBuilder) CreatePatchRequestInformation(options *AgreementFileVersionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AgreementFileVersionRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete navigation property versions for agreements
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property versions for agreements
 func (m *AgreementFileVersionRequestBuilder) Delete(options *AgreementFileVersionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AgreementFileVersionRequestBuilder) Delete(options *AgreementFileVersio
     }
     return nil
 }
-// Get versions from agreements
-// Parameters:
-//  - options : Options for the request
+// Get get versions from agreements
 func (m *AgreementFileVersionRequestBuilder) Get(options *AgreementFileVersionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileVersion, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AgreementFileVersionRequestBuilder) Get(options *AgreementFileVersionRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileVersion), nil
 }
-// Update the navigation property versions in agreements
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property versions in agreements
 func (m *AgreementFileVersionRequestBuilder) Patch(options *AgreementFileVersionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

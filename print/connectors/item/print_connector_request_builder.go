@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \print\connectors\{printConnector-id}
+// PrintConnectorRequestBuilder builds and executes requests for operations under \print\connectors\{printConnector-id}
 type PrintConnectorRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type PrintConnectorRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// PrintConnectorRequestBuilderDeleteOptions options for Delete
 type PrintConnectorRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type PrintConnectorRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// PrintConnectorRequestBuilderGetOptions options for Get
 type PrintConnectorRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type PrintConnectorRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The list of available print connectors.
+// PrintConnectorRequestBuilderGetQueryParameters the list of available print connectors.
 type PrintConnectorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// PrintConnectorRequestBuilderPatchOptions options for Patch
 type PrintConnectorRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintConnector;
@@ -53,10 +53,7 @@ type PrintConnectorRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new PrintConnectorRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintConnectorRequestBuilderInternal instantiates a new PrintConnectorRequestBuilder and sets the default values.
 func NewPrintConnectorRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintConnectorRequestBuilder) {
     m := &PrintConnectorRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewPrintConnectorRequestBuilderInternal(pathParameters map[string]string, r
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new PrintConnectorRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewPrintConnectorRequestBuilder instantiates a new PrintConnectorRequestBuilder and sets the default values.
 func NewPrintConnectorRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintConnectorRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrintConnectorRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The list of available print connectors.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the list of available print connectors.
 func (m *PrintConnectorRequestBuilder) CreateDeleteRequestInformation(options *PrintConnectorRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *PrintConnectorRequestBuilder) CreateDeleteRequestInformation(options *P
     }
     return requestInfo, nil
 }
-// The list of available print connectors.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the list of available print connectors.
 func (m *PrintConnectorRequestBuilder) CreateGetRequestInformation(options *PrintConnectorRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *PrintConnectorRequestBuilder) CreateGetRequestInformation(options *Prin
     }
     return requestInfo, nil
 }
-// The list of available print connectors.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the list of available print connectors.
 func (m *PrintConnectorRequestBuilder) CreatePatchRequestInformation(options *PrintConnectorRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *PrintConnectorRequestBuilder) CreatePatchRequestInformation(options *Pr
     }
     return requestInfo, nil
 }
-// The list of available print connectors.
-// Parameters:
-//  - options : Options for the request
+// Delete the list of available print connectors.
 func (m *PrintConnectorRequestBuilder) Delete(options *PrintConnectorRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *PrintConnectorRequestBuilder) Delete(options *PrintConnectorRequestBuil
     }
     return nil
 }
-// The list of available print connectors.
-// Parameters:
-//  - options : Options for the request
+// Get the list of available print connectors.
 func (m *PrintConnectorRequestBuilder) Get(options *PrintConnectorRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintConnector, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *PrintConnectorRequestBuilder) Get(options *PrintConnectorRequestBuilder
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintConnector), nil
 }
-// The list of available print connectors.
-// Parameters:
-//  - options : Options for the request
+// Patch the list of available print connectors.
 func (m *PrintConnectorRequestBuilder) Patch(options *PrintConnectorRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

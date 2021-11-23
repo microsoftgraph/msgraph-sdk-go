@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// PlannerBucket 
 type PlannerBucket struct {
     Entity
     // Name of the bucket.
@@ -16,14 +16,14 @@ type PlannerBucket struct {
     // Read-only. Nullable. The collection of tasks in the bucket.
     tasks []PlannerTask;
 }
-// Instantiates a new plannerBucket and sets the default values.
+// NewPlannerBucket instantiates a new plannerBucket and sets the default values.
 func NewPlannerBucket()(*PlannerBucket) {
     m := &PlannerBucket{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the name property value. Name of the bucket.
+// GetName gets the name property value. Name of the bucket.
 func (m *PlannerBucket) GetName()(*string) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *PlannerBucket) GetName()(*string) {
         return m.name
     }
 }
-// Gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+// GetOrderHint gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerBucket) GetOrderHint()(*string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *PlannerBucket) GetOrderHint()(*string) {
         return m.orderHint
     }
 }
-// Gets the planId property value. Plan ID to which the bucket belongs.
+// GetPlanId gets the planId property value. Plan ID to which the bucket belongs.
 func (m *PlannerBucket) GetPlanId()(*string) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *PlannerBucket) GetPlanId()(*string) {
         return m.planId
     }
 }
-// Gets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
+// GetTasks gets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
 func (m *PlannerBucket) GetTasks()([]PlannerTask) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *PlannerBucket) GetTasks()([]PlannerTask) {
         return m.tasks
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["name"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -107,9 +107,7 @@ func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(interface{}, i04
 func (m *PlannerBucket) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *PlannerBucket) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -146,27 +144,19 @@ func (m *PlannerBucket) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// Sets the name property value. Name of the bucket.
-// Parameters:
-//  - value : Value to set for the name property.
+// SetName sets the name property value. Name of the bucket.
 func (m *PlannerBucket) SetName(value *string)() {
     m.name = value
 }
-// Sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
-// Parameters:
-//  - value : Value to set for the orderHint property.
+// SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerBucket) SetOrderHint(value *string)() {
     m.orderHint = value
 }
-// Sets the planId property value. Plan ID to which the bucket belongs.
-// Parameters:
-//  - value : Value to set for the planId property.
+// SetPlanId sets the planId property value. Plan ID to which the bucket belongs.
 func (m *PlannerBucket) SetPlanId(value *string)() {
     m.planId = value
 }
-// Sets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
-// Parameters:
-//  - value : Value to set for the tasks property.
+// SetTasks sets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
 func (m *PlannerBucket) SetTasks(value []PlannerTask)() {
     m.tasks = value
 }

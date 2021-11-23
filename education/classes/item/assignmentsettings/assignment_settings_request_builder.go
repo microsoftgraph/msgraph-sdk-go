@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \education\classes\{educationClass-id}\assignmentSettings
+// AssignmentSettingsRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignmentSettings
 type AssignmentSettingsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type AssignmentSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// AssignmentSettingsRequestBuilderDeleteOptions options for Delete
 type AssignmentSettingsRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type AssignmentSettingsRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// AssignmentSettingsRequestBuilderGetOptions options for Get
 type AssignmentSettingsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type AssignmentSettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get assignmentSettings from education
+// AssignmentSettingsRequestBuilderGetQueryParameters get assignmentSettings from education
 type AssignmentSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// AssignmentSettingsRequestBuilderPatchOptions options for Patch
 type AssignmentSettingsRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentSettings;
@@ -53,10 +53,7 @@ type AssignmentSettingsRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AssignmentSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignmentSettingsRequestBuilderInternal instantiates a new AssignmentSettingsRequestBuilder and sets the default values.
 func NewAssignmentSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignmentSettingsRequestBuilder) {
     m := &AssignmentSettingsRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewAssignmentSettingsRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AssignmentSettingsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignmentSettingsRequestBuilder instantiates a new AssignmentSettingsRequestBuilder and sets the default values.
 func NewAssignmentSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignmentSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property assignmentSettings for education
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property assignmentSettings for education
 func (m *AssignmentSettingsRequestBuilder) CreateDeleteRequestInformation(options *AssignmentSettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *AssignmentSettingsRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// Get assignmentSettings from education
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get assignmentSettings from education
 func (m *AssignmentSettingsRequestBuilder) CreateGetRequestInformation(options *AssignmentSettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *AssignmentSettingsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Update the navigation property assignmentSettings in education
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property assignmentSettings in education
 func (m *AssignmentSettingsRequestBuilder) CreatePatchRequestInformation(options *AssignmentSettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *AssignmentSettingsRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete navigation property assignmentSettings for education
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property assignmentSettings for education
 func (m *AssignmentSettingsRequestBuilder) Delete(options *AssignmentSettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *AssignmentSettingsRequestBuilder) Delete(options *AssignmentSettingsReq
     }
     return nil
 }
-// Get assignmentSettings from education
-// Parameters:
-//  - options : Options for the request
+// Get get assignmentSettings from education
 func (m *AssignmentSettingsRequestBuilder) Get(options *AssignmentSettingsRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *AssignmentSettingsRequestBuilder) Get(options *AssignmentSettingsReques
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignmentSettings), nil
 }
-// Update the navigation property assignmentSettings in education
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property assignmentSettings in education
 func (m *AssignmentSettingsRequestBuilder) Patch(options *AssignmentSettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -7,7 +7,7 @@ import (
     i8650f0300ef92abaf1c5d9de569d3d0947fa2874bceab5b3cef1fe7d5daae05c "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/columns/item/sourcecolumn/ref"
 )
 
-// Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\columns\{columnDefinition-id}\sourceColumn
+// SourceColumnRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\columns\{columnDefinition-id}\sourceColumn
 type SourceColumnRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -16,7 +16,7 @@ type SourceColumnRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SourceColumnRequestBuilderGetOptions options for Get
 type SourceColumnRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -27,17 +27,14 @@ type SourceColumnRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The source column for the content type column.
+// SourceColumnRequestBuilderGetQueryParameters the source column for the content type column.
 type SourceColumnRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Instantiates a new SourceColumnRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSourceColumnRequestBuilderInternal instantiates a new SourceColumnRequestBuilder and sets the default values.
 func NewSourceColumnRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SourceColumnRequestBuilder) {
     m := &SourceColumnRequestBuilder{
     }
@@ -50,18 +47,13 @@ func NewSourceColumnRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SourceColumnRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSourceColumnRequestBuilder instantiates a new SourceColumnRequestBuilder and sets the default values.
 func NewSourceColumnRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SourceColumnRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSourceColumnRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The source column for the content type column.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the source column for the content type column.
 func (m *SourceColumnRequestBuilder) CreateGetRequestInformation(options *SourceColumnRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -81,9 +73,7 @@ func (m *SourceColumnRequestBuilder) CreateGetRequestInformation(options *Source
     }
     return requestInfo, nil
 }
-// The source column for the content type column.
-// Parameters:
-//  - options : Options for the request
+// Get the source column for the content type column.
 func (m *SourceColumnRequestBuilder) Get(options *SourceColumnRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ColumnDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter\microsoft.graph.applyTopPercentFilter
+// ApplyTopPercentFilterRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter\microsoft.graph.applyTopPercentFilter
 type ApplyTopPercentFilterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type ApplyTopPercentFilterRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// ApplyTopPercentFilterRequestBuilderPostOptions options for Post
 type ApplyTopPercentFilterRequestBuilderPostOptions struct {
     // 
     Body *ApplyTopPercentFilterRequestBody;
@@ -24,10 +24,7 @@ type ApplyTopPercentFilterRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ApplyTopPercentFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplyTopPercentFilterRequestBuilderInternal instantiates a new ApplyTopPercentFilterRequestBuilder and sets the default values.
 func NewApplyTopPercentFilterRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplyTopPercentFilterRequestBuilder) {
     m := &ApplyTopPercentFilterRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewApplyTopPercentFilterRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ApplyTopPercentFilterRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewApplyTopPercentFilterRequestBuilder instantiates a new ApplyTopPercentFilterRequestBuilder and sets the default values.
 func NewApplyTopPercentFilterRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ApplyTopPercentFilterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplyTopPercentFilterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke action applyTopPercentFilter
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation invoke action applyTopPercentFilter
 func (m *ApplyTopPercentFilterRequestBuilder) CreatePostRequestInformation(options *ApplyTopPercentFilterRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *ApplyTopPercentFilterRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Invoke action applyTopPercentFilter
-// Parameters:
-//  - options : Options for the request
+// Post invoke action applyTopPercentFilter
 func (m *ApplyTopPercentFilterRequestBuilder) Post(options *ApplyTopPercentFilterRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

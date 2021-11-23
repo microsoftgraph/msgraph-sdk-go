@@ -19,7 +19,7 @@ import (
     ib6ba4a2debf33ace4ef4d7d21e119e5c8a37451c871b2845657ae921beea0814 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentapprovals/item"
 )
 
-// Builds and executes requests for operations under \identityGovernance\entitlementManagement
+// EntitlementManagementRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement
 type EntitlementManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type EntitlementManagementRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// EntitlementManagementRequestBuilderDeleteOptions options for Delete
 type EntitlementManagementRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -37,7 +37,7 @@ type EntitlementManagementRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// EntitlementManagementRequestBuilderGetOptions options for Get
 type EntitlementManagementRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -48,14 +48,14 @@ type EntitlementManagementRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entitlementManagement from identityGovernance
+// EntitlementManagementRequestBuilderGetQueryParameters get entitlementManagement from identityGovernance
 type EntitlementManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// EntitlementManagementRequestBuilderPatchOptions options for Patch
 type EntitlementManagementRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EntitlementManagement;
@@ -69,9 +69,7 @@ type EntitlementManagementRequestBuilderPatchOptions struct {
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovals()(*i4a6e5bbedb985fd4e83bec609cf8d21a776d26a1c6807eac6ae0d88110984ab9.AccessPackageAssignmentApprovalsRequestBuilder) {
     return i4a6e5bbedb985fd4e83bec609cf8d21a776d26a1c6807eac6ae0d88110984ab9.NewAccessPackageAssignmentApprovalsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentApprovals.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AccessPackageAssignmentApprovalsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.accessPackageAssignmentApprovals.item collection
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovalsById(id string)(*ib6ba4a2debf33ace4ef4d7d21e119e5c8a37451c871b2845657ae921beea0814.ApprovalRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -85,9 +83,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovalsBy
 func (m *EntitlementManagementRequestBuilder) AccessPackages()(*i458b5d51a7c8ed196efc57bee2af7eeeea44a7093ec6fe9b40b0d87560256cca.AccessPackagesRequestBuilder) {
     return i458b5d51a7c8ed196efc57bee2af7eeeea44a7093ec6fe9b40b0d87560256cca.NewAccessPackagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AccessPackagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.accessPackages.item collection
 func (m *EntitlementManagementRequestBuilder) AccessPackagesById(id string)(*i98d02a4533e64ff168c5023553f526cbe65a72cacee2308e1a90cb06055c2a93.AccessPackageRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -101,9 +97,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackagesById(id string)(*i98
 func (m *EntitlementManagementRequestBuilder) AssignmentRequests()(*i8d2bfa033b27ef0ce19de47e723f8c3475251f8917d2cbf768fc4e424505f65e.AssignmentRequestsRequestBuilder) {
     return i8d2bfa033b27ef0ce19de47e723f8c3475251f8917d2cbf768fc4e424505f65e.NewAssignmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.assignmentRequests.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.assignmentRequests.item collection
 func (m *EntitlementManagementRequestBuilder) AssignmentRequestsById(id string)(*i76acc551f9c3cb51943981936cb0b2aa4089fd504de3bf817176dbbe448d3fb7.AccessPackageAssignmentRequestRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -117,9 +111,7 @@ func (m *EntitlementManagementRequestBuilder) AssignmentRequestsById(id string)(
 func (m *EntitlementManagementRequestBuilder) Assignments()(*i3e9bbff4ac7b59c7638e82a3457169acb55d826f7187ac6e78fbe6ec1bb80d7d.AssignmentsRequestBuilder) {
     return i3e9bbff4ac7b59c7638e82a3457169acb55d826f7187ac6e78fbe6ec1bb80d7d.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.assignments.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.assignments.item collection
 func (m *EntitlementManagementRequestBuilder) AssignmentsById(id string)(*i558fcddcc0d01116d05fce610754153bd32852762580e628e25c34b7d8fffa4a.AccessPackageAssignmentRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -133,9 +125,7 @@ func (m *EntitlementManagementRequestBuilder) AssignmentsById(id string)(*i558fc
 func (m *EntitlementManagementRequestBuilder) Catalogs()(*i069e71eb6a0d6756f4420f4f811017c7470620ad5174a1e3aab2db0d8cb430c2.CatalogsRequestBuilder) {
     return i069e71eb6a0d6756f4420f4f811017c7470620ad5174a1e3aab2db0d8cb430c2.NewCatalogsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.catalogs.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// CatalogsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.catalogs.item collection
 func (m *EntitlementManagementRequestBuilder) CatalogsById(id string)(*i9f1127e219619b20720c5350652063980d97d3210fea76590720646f27ba45bb.AccessPackageCatalogRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -149,9 +139,7 @@ func (m *EntitlementManagementRequestBuilder) CatalogsById(id string)(*i9f1127e2
 func (m *EntitlementManagementRequestBuilder) ConnectedOrganizations()(*i890fb4653f4dff2b9ab5a72705a40947b79d9bb64793d05773197622a996fc61.ConnectedOrganizationsRequestBuilder) {
     return i890fb4653f4dff2b9ab5a72705a40947b79d9bb64793d05773197622a996fc61.NewConnectedOrganizationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.connectedOrganizations.item collection
-// Parameters:
-//  - id : Unique identifier of the item
+// ConnectedOrganizationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.connectedOrganizations.item collection
 func (m *EntitlementManagementRequestBuilder) ConnectedOrganizationsById(id string)(*i3a731cbed9792cd58eb16385c435f4b1af4fafbdc6a965b8534ab7ff7df19e39.ConnectedOrganizationRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
@@ -162,10 +150,7 @@ func (m *EntitlementManagementRequestBuilder) ConnectedOrganizationsById(id stri
     }
     return i3a731cbed9792cd58eb16385c435f4b1af4fafbdc6a965b8534ab7ff7df19e39.NewConnectedOrganizationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Instantiates a new EntitlementManagementRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEntitlementManagementRequestBuilderInternal instantiates a new EntitlementManagementRequestBuilder and sets the default values.
 func NewEntitlementManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EntitlementManagementRequestBuilder) {
     m := &EntitlementManagementRequestBuilder{
     }
@@ -178,18 +163,13 @@ func NewEntitlementManagementRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new EntitlementManagementRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewEntitlementManagementRequestBuilder instantiates a new EntitlementManagementRequestBuilder and sets the default values.
 func NewEntitlementManagementRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EntitlementManagementRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete navigation property entitlementManagement for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete navigation property entitlementManagement for identityGovernance
 func (m *EntitlementManagementRequestBuilder) CreateDeleteRequestInformation(options *EntitlementManagementRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -206,9 +186,7 @@ func (m *EntitlementManagementRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Get entitlementManagement from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entitlementManagement from identityGovernance
 func (m *EntitlementManagementRequestBuilder) CreateGetRequestInformation(options *EntitlementManagementRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -228,9 +206,7 @@ func (m *EntitlementManagementRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Update the navigation property entitlementManagement in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update the navigation property entitlementManagement in identityGovernance
 func (m *EntitlementManagementRequestBuilder) CreatePatchRequestInformation(options *EntitlementManagementRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -248,9 +224,7 @@ func (m *EntitlementManagementRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delete navigation property entitlementManagement for identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Delete delete navigation property entitlementManagement for identityGovernance
 func (m *EntitlementManagementRequestBuilder) Delete(options *EntitlementManagementRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -262,9 +236,7 @@ func (m *EntitlementManagementRequestBuilder) Delete(options *EntitlementManagem
     }
     return nil
 }
-// Get entitlementManagement from identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Get get entitlementManagement from identityGovernance
 func (m *EntitlementManagementRequestBuilder) Get(options *EntitlementManagementRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EntitlementManagement, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -276,9 +248,7 @@ func (m *EntitlementManagementRequestBuilder) Get(options *EntitlementManagement
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EntitlementManagement), nil
 }
-// Update the navigation property entitlementManagement in identityGovernance
-// Parameters:
-//  - options : Options for the request
+// Patch update the navigation property entitlementManagement in identityGovernance
 func (m *EntitlementManagementRequestBuilder) Patch(options *EntitlementManagementRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

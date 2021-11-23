@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// ComplianceManagementPartner 
 type ComplianceManagementPartner struct {
     Entity
     // User groups which enroll Android devices through partner.
@@ -27,14 +27,14 @@ type ComplianceManagementPartner struct {
     // Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
     partnerState *DeviceManagementPartnerTenantState;
 }
-// Instantiates a new complianceManagementPartner and sets the default values.
+// NewComplianceManagementPartner instantiates a new complianceManagementPartner and sets the default values.
 func NewComplianceManagementPartner()(*ComplianceManagementPartner) {
     m := &ComplianceManagementPartner{
         Entity: *NewEntity(),
     }
     return m
 }
-// Gets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
+// GetAndroidEnrollmentAssignments gets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
 func (m *ComplianceManagementPartner) GetAndroidEnrollmentAssignments()([]ComplianceManagementPartnerAssignment) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *ComplianceManagementPartner) GetAndroidEnrollmentAssignments()([]Compli
         return m.androidEnrollmentAssignments
     }
 }
-// Gets the androidOnboarded property value. Partner onboarded for Android devices.
+// GetAndroidOnboarded gets the androidOnboarded property value. Partner onboarded for Android devices.
 func (m *ComplianceManagementPartner) GetAndroidOnboarded()(*bool) {
     if m == nil {
         return nil
@@ -50,7 +50,7 @@ func (m *ComplianceManagementPartner) GetAndroidOnboarded()(*bool) {
         return m.androidOnboarded
     }
 }
-// Gets the displayName property value. Partner display name
+// GetDisplayName gets the displayName property value. Partner display name
 func (m *ComplianceManagementPartner) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *ComplianceManagementPartner) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
+// GetIosEnrollmentAssignments gets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
 func (m *ComplianceManagementPartner) GetIosEnrollmentAssignments()([]ComplianceManagementPartnerAssignment) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *ComplianceManagementPartner) GetIosEnrollmentAssignments()([]Compliance
         return m.iosEnrollmentAssignments
     }
 }
-// Gets the iosOnboarded property value. Partner onboarded for ios devices.
+// GetIosOnboarded gets the iosOnboarded property value. Partner onboarded for ios devices.
 func (m *ComplianceManagementPartner) GetIosOnboarded()(*bool) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *ComplianceManagementPartner) GetIosOnboarded()(*bool) {
         return m.iosOnboarded
     }
 }
-// Gets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin onboarded to the compliance management partner
+// GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin onboarded to the compliance management partner
 func (m *ComplianceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *ComplianceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc85
         return m.lastHeartbeatDateTime
     }
 }
-// Gets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
+// GetMacOsEnrollmentAssignments gets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
 func (m *ComplianceManagementPartner) GetMacOsEnrollmentAssignments()([]ComplianceManagementPartnerAssignment) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *ComplianceManagementPartner) GetMacOsEnrollmentAssignments()([]Complian
         return m.macOsEnrollmentAssignments
     }
 }
-// Gets the macOsOnboarded property value. Partner onboarded for Mac devices.
+// GetMacOsOnboarded gets the macOsOnboarded property value. Partner onboarded for Mac devices.
 func (m *ComplianceManagementPartner) GetMacOsOnboarded()(*bool) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *ComplianceManagementPartner) GetMacOsOnboarded()(*bool) {
         return m.macOsOnboarded
     }
 }
-// Gets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+// GetPartnerState gets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
 func (m *ComplianceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTenantState) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *ComplianceManagementPartner) GetPartnerState()(*DeviceManagementPartner
         return m.partnerState
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["androidEnrollmentAssignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -217,9 +217,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
 func (m *ComplianceManagementPartner) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *ComplianceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -297,57 +295,39 @@ func (m *ComplianceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// Sets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
-// Parameters:
-//  - value : Value to set for the androidEnrollmentAssignments property.
+// SetAndroidEnrollmentAssignments sets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
 func (m *ComplianceManagementPartner) SetAndroidEnrollmentAssignments(value []ComplianceManagementPartnerAssignment)() {
     m.androidEnrollmentAssignments = value
 }
-// Sets the androidOnboarded property value. Partner onboarded for Android devices.
-// Parameters:
-//  - value : Value to set for the androidOnboarded property.
+// SetAndroidOnboarded sets the androidOnboarded property value. Partner onboarded for Android devices.
 func (m *ComplianceManagementPartner) SetAndroidOnboarded(value *bool)() {
     m.androidOnboarded = value
 }
-// Sets the displayName property value. Partner display name
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. Partner display name
 func (m *ComplianceManagementPartner) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
-// Parameters:
-//  - value : Value to set for the iosEnrollmentAssignments property.
+// SetIosEnrollmentAssignments sets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
 func (m *ComplianceManagementPartner) SetIosEnrollmentAssignments(value []ComplianceManagementPartnerAssignment)() {
     m.iosEnrollmentAssignments = value
 }
-// Sets the iosOnboarded property value. Partner onboarded for ios devices.
-// Parameters:
-//  - value : Value to set for the iosOnboarded property.
+// SetIosOnboarded sets the iosOnboarded property value. Partner onboarded for ios devices.
 func (m *ComplianceManagementPartner) SetIosOnboarded(value *bool)() {
     m.iosOnboarded = value
 }
-// Sets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin onboarded to the compliance management partner
-// Parameters:
-//  - value : Value to set for the lastHeartbeatDateTime property.
+// SetLastHeartbeatDateTime sets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin onboarded to the compliance management partner
 func (m *ComplianceManagementPartner) SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.lastHeartbeatDateTime = value
 }
-// Sets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
-// Parameters:
-//  - value : Value to set for the macOsEnrollmentAssignments property.
+// SetMacOsEnrollmentAssignments sets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
 func (m *ComplianceManagementPartner) SetMacOsEnrollmentAssignments(value []ComplianceManagementPartnerAssignment)() {
     m.macOsEnrollmentAssignments = value
 }
-// Sets the macOsOnboarded property value. Partner onboarded for Mac devices.
-// Parameters:
-//  - value : Value to set for the macOsOnboarded property.
+// SetMacOsOnboarded sets the macOsOnboarded property value. Partner onboarded for Mac devices.
 func (m *ComplianceManagementPartner) SetMacOsOnboarded(value *bool)() {
     m.macOsOnboarded = value
 }
-// Sets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
-// Parameters:
-//  - value : Value to set for the partnerState property.
+// SetPartnerState sets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
 func (m *ComplianceManagementPartner) SetPartnerState(value *DeviceManagementPartnerTenantState)() {
     m.partnerState = value
 }

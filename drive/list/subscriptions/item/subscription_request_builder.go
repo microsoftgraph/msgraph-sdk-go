@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \drive\list\subscriptions\{subscription-id}
+// SubscriptionRequestBuilder builds and executes requests for operations under \drive\list\subscriptions\{subscription-id}
 type SubscriptionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SubscriptionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SubscriptionRequestBuilderDeleteOptions options for Delete
 type SubscriptionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SubscriptionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SubscriptionRequestBuilderGetOptions options for Get
 type SubscriptionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SubscriptionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// The set of subscriptions on the list.
+// SubscriptionRequestBuilderGetQueryParameters the set of subscriptions on the list.
 type SubscriptionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SubscriptionRequestBuilderPatchOptions options for Patch
 type SubscriptionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Subscription;
@@ -53,10 +53,7 @@ type SubscriptionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SubscriptionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubscriptionRequestBuilderInternal instantiates a new SubscriptionRequestBuilder and sets the default values.
 func NewSubscriptionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubscriptionRequestBuilder) {
     m := &SubscriptionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSubscriptionRequestBuilderInternal(pathParameters map[string]string, req
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SubscriptionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSubscriptionRequestBuilder instantiates a new SubscriptionRequestBuilder and sets the default values.
 func NewSubscriptionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SubscriptionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSubscriptionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// The set of subscriptions on the list.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation the set of subscriptions on the list.
 func (m *SubscriptionRequestBuilder) CreateDeleteRequestInformation(options *SubscriptionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SubscriptionRequestBuilder) CreateDeleteRequestInformation(options *Sub
     }
     return requestInfo, nil
 }
-// The set of subscriptions on the list.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation the set of subscriptions on the list.
 func (m *SubscriptionRequestBuilder) CreateGetRequestInformation(options *SubscriptionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SubscriptionRequestBuilder) CreateGetRequestInformation(options *Subscr
     }
     return requestInfo, nil
 }
-// The set of subscriptions on the list.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation the set of subscriptions on the list.
 func (m *SubscriptionRequestBuilder) CreatePatchRequestInformation(options *SubscriptionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SubscriptionRequestBuilder) CreatePatchRequestInformation(options *Subs
     }
     return requestInfo, nil
 }
-// The set of subscriptions on the list.
-// Parameters:
-//  - options : Options for the request
+// Delete the set of subscriptions on the list.
 func (m *SubscriptionRequestBuilder) Delete(options *SubscriptionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SubscriptionRequestBuilder) Delete(options *SubscriptionRequestBuilderD
     }
     return nil
 }
-// The set of subscriptions on the list.
-// Parameters:
-//  - options : Options for the request
+// Get the set of subscriptions on the list.
 func (m *SubscriptionRequestBuilder) Get(options *SubscriptionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Subscription, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SubscriptionRequestBuilder) Get(options *SubscriptionRequestBuilderGetO
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Subscription), nil
 }
-// The set of subscriptions on the list.
-// Parameters:
-//  - options : Options for the request
+// Patch the set of subscriptions on the list.
 func (m *SubscriptionRequestBuilder) Patch(options *SubscriptionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

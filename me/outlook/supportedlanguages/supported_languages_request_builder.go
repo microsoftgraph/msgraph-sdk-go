@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \me\outlook\microsoft.graph.supportedLanguages()
+// SupportedLanguagesRequestBuilder builds and executes requests for operations under \me\outlook\microsoft.graph.supportedLanguages()
 type SupportedLanguagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type SupportedLanguagesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// SupportedLanguagesRequestBuilderGetOptions options for Get
 type SupportedLanguagesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type SupportedLanguagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SupportedLanguagesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSupportedLanguagesRequestBuilderInternal instantiates a new SupportedLanguagesRequestBuilder and sets the default values.
 func NewSupportedLanguagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SupportedLanguagesRequestBuilder) {
     m := &SupportedLanguagesRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewSupportedLanguagesRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SupportedLanguagesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSupportedLanguagesRequestBuilder instantiates a new SupportedLanguagesRequestBuilder and sets the default values.
 func NewSupportedLanguagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SupportedLanguagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSupportedLanguagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Invoke function supportedLanguages
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation invoke function supportedLanguages
 func (m *SupportedLanguagesRequestBuilder) CreateGetRequestInformation(options *SupportedLanguagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *SupportedLanguagesRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Invoke function supportedLanguages
-// Parameters:
-//  - options : Options for the request
+// Get invoke function supportedLanguages
 func (m *SupportedLanguagesRequestBuilder) Get(options *SupportedLanguagesRequestBuilderGetOptions)([]SupportedLanguages, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// 
+// Delta 
 type Delta struct {
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Entity
     // The collection of child folders in the folder. Navigation property. Read-only. Nullable.
@@ -21,14 +21,14 @@ type Delta struct {
     // The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
     singleValueExtendedProperties []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty;
 }
-// Instantiates a new delta and sets the default values.
+// NewDelta instantiates a new delta and sets the default values.
 func NewDelta()(*Delta) {
     m := &Delta{
         Entity: *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewEntity(),
     }
     return m
 }
-// Gets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+// GetChildFolders gets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
 func (m *Delta) GetChildFolders()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolder) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *Delta) GetChildFolders()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1
         return m.childFolders
     }
 }
-// Gets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
+// GetContacts gets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
 func (m *Delta) GetContacts()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Contact) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *Delta) GetContacts()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab
         return m.contacts
     }
 }
-// Gets the displayName property value. The folder's display name.
+// GetDisplayName gets the displayName property value. The folder's display name.
 func (m *Delta) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *Delta) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// Gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
 func (m *Delta) GetMultiValueExtendedProperties()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *Delta) GetMultiValueExtendedProperties()([]i4a838ef194e4c99e9f2c63ba10d
         return m.multiValueExtendedProperties
     }
 }
-// Gets the parentFolderId property value. The ID of the folder's parent folder.
+// GetParentFolderId gets the parentFolderId property value. The ID of the folder's parent folder.
 func (m *Delta) GetParentFolderId()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *Delta) GetParentFolderId()(*string) {
         return m.parentFolderId
     }
 }
-// Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
 func (m *Delta) GetSingleValueExtendedProperties()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *Delta) GetSingleValueExtendedProperties()([]i4a838ef194e4c99e9f2c63ba10
         return m.singleValueExtendedProperties
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["childFolders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -160,9 +160,7 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
 func (m *Delta) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
@@ -226,39 +224,27 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
-// Sets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the childFolders property.
+// SetChildFolders sets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
 func (m *Delta) SetChildFolders(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ContactFolder)() {
     m.childFolders = value
 }
-// Sets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the contacts property.
+// SetContacts sets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
 func (m *Delta) SetContacts(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Contact)() {
     m.contacts = value
 }
-// Sets the displayName property value. The folder's display name.
-// Parameters:
-//  - value : Value to set for the displayName property.
+// SetDisplayName sets the displayName property value. The folder's display name.
 func (m *Delta) SetDisplayName(value *string)() {
     m.displayName = value
 }
-// Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the multiValueExtendedProperties property.
+// SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
 func (m *Delta) SetMultiValueExtendedProperties(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty)() {
     m.multiValueExtendedProperties = value
 }
-// Sets the parentFolderId property value. The ID of the folder's parent folder.
-// Parameters:
-//  - value : Value to set for the parentFolderId property.
+// SetParentFolderId sets the parentFolderId property value. The ID of the folder's parent folder.
 func (m *Delta) SetParentFolderId(value *string)() {
     m.parentFolderId = value
 }
-// Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-// Parameters:
-//  - value : Value to set for the singleValueExtendedProperties property.
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
 func (m *Delta) SetSingleValueExtendedProperties(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty)() {
     m.singleValueExtendedProperties = value
 }

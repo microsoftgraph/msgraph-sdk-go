@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\microsoft.graph.assignUserToDevice
+// AssignUserToDeviceRequestBuilder builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\microsoft.graph.assignUserToDevice
 type AssignUserToDeviceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -13,7 +13,7 @@ type AssignUserToDeviceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Post
+// AssignUserToDeviceRequestBuilderPostOptions options for Post
 type AssignUserToDeviceRequestBuilderPostOptions struct {
     // 
     Body *AssignUserToDeviceRequestBody;
@@ -24,10 +24,7 @@ type AssignUserToDeviceRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new AssignUserToDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignUserToDeviceRequestBuilderInternal instantiates a new AssignUserToDeviceRequestBuilder and sets the default values.
 func NewAssignUserToDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignUserToDeviceRequestBuilder) {
     m := &AssignUserToDeviceRequestBuilder{
     }
@@ -40,18 +37,13 @@ func NewAssignUserToDeviceRequestBuilderInternal(pathParameters map[string]strin
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new AssignUserToDeviceRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewAssignUserToDeviceRequestBuilder instantiates a new AssignUserToDeviceRequestBuilder and sets the default values.
 func NewAssignUserToDeviceRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AssignUserToDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignUserToDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Assigns user to Autopilot devices.
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation assigns user to Autopilot devices.
 func (m *AssignUserToDeviceRequestBuilder) CreatePostRequestInformation(options *AssignUserToDeviceRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,9 +61,7 @@ func (m *AssignUserToDeviceRequestBuilder) CreatePostRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Assigns user to Autopilot devices.
-// Parameters:
-//  - options : Options for the request
+// Post assigns user to Autopilot devices.
 func (m *AssignUserToDeviceRequestBuilder) Post(options *AssignUserToDeviceRequestBuilderPostOptions)(error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

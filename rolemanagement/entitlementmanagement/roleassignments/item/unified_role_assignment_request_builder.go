@@ -10,7 +10,7 @@ import (
     ie74dee05c5a2bc30388fa3bc35898754f6666a2e7747f4d074fce1ef16796a68 "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/entitlementmanagement/roleassignments/item/directoryscope"
 )
 
-// Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignments\{unifiedRoleAssignment-id}
+// UnifiedRoleAssignmentRequestBuilder builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignments\{unifiedRoleAssignment-id}
 type UnifiedRoleAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -19,7 +19,7 @@ type UnifiedRoleAssignmentRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// UnifiedRoleAssignmentRequestBuilderDeleteOptions options for Delete
 type UnifiedRoleAssignmentRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -28,7 +28,7 @@ type UnifiedRoleAssignmentRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// UnifiedRoleAssignmentRequestBuilderGetOptions options for Get
 type UnifiedRoleAssignmentRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -39,14 +39,14 @@ type UnifiedRoleAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Resource to grant access to users or groups.
+// UnifiedRoleAssignmentRequestBuilderGetQueryParameters resource to grant access to users or groups.
 type UnifiedRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// UnifiedRoleAssignmentRequestBuilderPatchOptions options for Patch
 type UnifiedRoleAssignmentRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleAssignment;
@@ -60,10 +60,7 @@ type UnifiedRoleAssignmentRequestBuilderPatchOptions struct {
 func (m *UnifiedRoleAssignmentRequestBuilder) AppScope()(*ic4c721a6468a7f4e9de2a19e2983ef41cf8472cc41c3aef1dcd61d1ce5a3e997.AppScopeRequestBuilder) {
     return ic4c721a6468a7f4e9de2a19e2983ef41cf8472cc41c3aef1dcd61d1ce5a3e997.NewAppScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Instantiates a new UnifiedRoleAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleAssignmentRequestBuilderInternal instantiates a new UnifiedRoleAssignmentRequestBuilder and sets the default values.
 func NewUnifiedRoleAssignmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleAssignmentRequestBuilder) {
     m := &UnifiedRoleAssignmentRequestBuilder{
     }
@@ -76,18 +73,13 @@ func NewUnifiedRoleAssignmentRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new UnifiedRoleAssignmentRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewUnifiedRoleAssignmentRequestBuilder instantiates a new UnifiedRoleAssignmentRequestBuilder and sets the default values.
 func NewUnifiedRoleAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnifiedRoleAssignmentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Resource to grant access to users or groups.
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation resource to grant access to users or groups.
 func (m *UnifiedRoleAssignmentRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRoleAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -104,9 +96,7 @@ func (m *UnifiedRoleAssignmentRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Resource to grant access to users or groups.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation resource to grant access to users or groups.
 func (m *UnifiedRoleAssignmentRequestBuilder) CreateGetRequestInformation(options *UnifiedRoleAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -126,9 +116,7 @@ func (m *UnifiedRoleAssignmentRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Resource to grant access to users or groups.
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation resource to grant access to users or groups.
 func (m *UnifiedRoleAssignmentRequestBuilder) CreatePatchRequestInformation(options *UnifiedRoleAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -146,9 +134,7 @@ func (m *UnifiedRoleAssignmentRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Resource to grant access to users or groups.
-// Parameters:
-//  - options : Options for the request
+// Delete resource to grant access to users or groups.
 func (m *UnifiedRoleAssignmentRequestBuilder) Delete(options *UnifiedRoleAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -163,9 +149,7 @@ func (m *UnifiedRoleAssignmentRequestBuilder) Delete(options *UnifiedRoleAssignm
 func (m *UnifiedRoleAssignmentRequestBuilder) DirectoryScope()(*ie74dee05c5a2bc30388fa3bc35898754f6666a2e7747f4d074fce1ef16796a68.DirectoryScopeRequestBuilder) {
     return ie74dee05c5a2bc30388fa3bc35898754f6666a2e7747f4d074fce1ef16796a68.NewDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Resource to grant access to users or groups.
-// Parameters:
-//  - options : Options for the request
+// Get resource to grant access to users or groups.
 func (m *UnifiedRoleAssignmentRequestBuilder) Get(options *UnifiedRoleAssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -177,9 +161,7 @@ func (m *UnifiedRoleAssignmentRequestBuilder) Get(options *UnifiedRoleAssignment
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleAssignment), nil
 }
-// Resource to grant access to users or groups.
-// Parameters:
-//  - options : Options for the request
+// Patch resource to grant access to users or groups.
 func (m *UnifiedRoleAssignmentRequestBuilder) Patch(options *UnifiedRoleAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

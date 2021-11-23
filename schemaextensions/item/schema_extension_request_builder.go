@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \schemaExtensions\{schemaExtension-id}
+// SchemaExtensionRequestBuilder builds and executes requests for operations under \schemaExtensions\{schemaExtension-id}
 type SchemaExtensionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type SchemaExtensionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Delete
+// SchemaExtensionRequestBuilderDeleteOptions options for Delete
 type SchemaExtensionRequestBuilderDeleteOptions struct {
     // Request headers
     H map[string]string;
@@ -24,7 +24,7 @@ type SchemaExtensionRequestBuilderDeleteOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Options for Get
+// SchemaExtensionRequestBuilderGetOptions options for Get
 type SchemaExtensionRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -35,14 +35,14 @@ type SchemaExtensionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get entity from schemaExtensions by key
+// SchemaExtensionRequestBuilderGetQueryParameters get entity from schemaExtensions by key
 type SchemaExtensionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
     Select_escaped []string;
 }
-// Options for Patch
+// SchemaExtensionRequestBuilderPatchOptions options for Patch
 type SchemaExtensionRequestBuilderPatchOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SchemaExtension;
@@ -53,10 +53,7 @@ type SchemaExtensionRequestBuilderPatchOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new SchemaExtensionRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSchemaExtensionRequestBuilderInternal instantiates a new SchemaExtensionRequestBuilder and sets the default values.
 func NewSchemaExtensionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SchemaExtensionRequestBuilder) {
     m := &SchemaExtensionRequestBuilder{
     }
@@ -69,18 +66,13 @@ func NewSchemaExtensionRequestBuilderInternal(pathParameters map[string]string, 
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new SchemaExtensionRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewSchemaExtensionRequestBuilder instantiates a new SchemaExtensionRequestBuilder and sets the default values.
 func NewSchemaExtensionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SchemaExtensionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSchemaExtensionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete entity from schemaExtensions
-// Parameters:
-//  - options : Options for the request
+// CreateDeleteRequestInformation delete entity from schemaExtensions
 func (m *SchemaExtensionRequestBuilder) CreateDeleteRequestInformation(options *SchemaExtensionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,9 +89,7 @@ func (m *SchemaExtensionRequestBuilder) CreateDeleteRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get entity from schemaExtensions by key
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get entity from schemaExtensions by key
 func (m *SchemaExtensionRequestBuilder) CreateGetRequestInformation(options *SchemaExtensionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,9 +109,7 @@ func (m *SchemaExtensionRequestBuilder) CreateGetRequestInformation(options *Sch
     }
     return requestInfo, nil
 }
-// Update entity in schemaExtensions
-// Parameters:
-//  - options : Options for the request
+// CreatePatchRequestInformation update entity in schemaExtensions
 func (m *SchemaExtensionRequestBuilder) CreatePatchRequestInformation(options *SchemaExtensionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -139,9 +127,7 @@ func (m *SchemaExtensionRequestBuilder) CreatePatchRequestInformation(options *S
     }
     return requestInfo, nil
 }
-// Delete entity from schemaExtensions
-// Parameters:
-//  - options : Options for the request
+// Delete delete entity from schemaExtensions
 func (m *SchemaExtensionRequestBuilder) Delete(options *SchemaExtensionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -153,9 +139,7 @@ func (m *SchemaExtensionRequestBuilder) Delete(options *SchemaExtensionRequestBu
     }
     return nil
 }
-// Get entity from schemaExtensions by key
-// Parameters:
-//  - options : Options for the request
+// Get get entity from schemaExtensions by key
 func (m *SchemaExtensionRequestBuilder) Get(options *SchemaExtensionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SchemaExtension, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,9 +151,7 @@ func (m *SchemaExtensionRequestBuilder) Get(options *SchemaExtensionRequestBuild
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SchemaExtension), nil
 }
-// Update entity in schemaExtensions
-// Parameters:
-//  - options : Options for the request
+// Patch update entity in schemaExtensions
 func (m *SchemaExtensionRequestBuilder) Patch(options *SchemaExtensionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

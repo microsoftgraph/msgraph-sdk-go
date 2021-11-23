@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedAppPolicies()
+// GetManagedAppPoliciesRequestBuilder builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedAppPolicies()
 type GetManagedAppPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -14,7 +14,7 @@ type GetManagedAppPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// GetManagedAppPoliciesRequestBuilderGetOptions options for Get
 type GetManagedAppPoliciesRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -23,10 +23,7 @@ type GetManagedAppPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new GetManagedAppPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetManagedAppPoliciesRequestBuilderInternal instantiates a new GetManagedAppPoliciesRequestBuilder and sets the default values.
 func NewGetManagedAppPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetManagedAppPoliciesRequestBuilder) {
     m := &GetManagedAppPoliciesRequestBuilder{
     }
@@ -39,18 +36,13 @@ func NewGetManagedAppPoliciesRequestBuilderInternal(pathParameters map[string]st
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new GetManagedAppPoliciesRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewGetManagedAppPoliciesRequestBuilder instantiates a new GetManagedAppPoliciesRequestBuilder and sets the default values.
 func NewGetManagedAppPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*GetManagedAppPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGetManagedAppPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Gets app restrictions for a given user.
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation gets app restrictions for a given user.
 func (m *GetManagedAppPoliciesRequestBuilder) CreateGetRequestInformation(options *GetManagedAppPoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -67,9 +59,7 @@ func (m *GetManagedAppPoliciesRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// Gets app restrictions for a given user.
-// Parameters:
-//  - options : Options for the request
+// Get gets app restrictions for a given user.
 func (m *GetManagedAppPoliciesRequestBuilder) Get(options *GetManagedAppPoliciesRequestBuilderGetOptions)([]GetManagedAppPolicies, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

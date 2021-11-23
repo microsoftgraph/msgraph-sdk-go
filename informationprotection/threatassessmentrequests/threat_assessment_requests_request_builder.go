@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// Builds and executes requests for operations under \informationProtection\threatAssessmentRequests
+// ThreatAssessmentRequestsRequestBuilder builds and executes requests for operations under \informationProtection\threatAssessmentRequests
 type ThreatAssessmentRequestsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -15,7 +15,7 @@ type ThreatAssessmentRequestsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
 }
-// Options for Get
+// ThreatAssessmentRequestsRequestBuilderGetOptions options for Get
 type ThreatAssessmentRequestsRequestBuilderGetOptions struct {
     // Request headers
     H map[string]string;
@@ -26,7 +26,7 @@ type ThreatAssessmentRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Get threatAssessmentRequests from informationProtection
+// ThreatAssessmentRequestsRequestBuilderGetQueryParameters get threatAssessmentRequests from informationProtection
 type ThreatAssessmentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -45,7 +45,7 @@ type ThreatAssessmentRequestsRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// Options for Post
+// ThreatAssessmentRequestsRequestBuilderPostOptions options for Post
 type ThreatAssessmentRequestsRequestBuilderPostOptions struct {
     // 
     Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ThreatAssessmentRequest;
@@ -56,10 +56,7 @@ type ThreatAssessmentRequestsRequestBuilderPostOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// Instantiates a new ThreatAssessmentRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - pathParameters : Path parameters for the request
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewThreatAssessmentRequestsRequestBuilderInternal instantiates a new ThreatAssessmentRequestsRequestBuilder and sets the default values.
 func NewThreatAssessmentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ThreatAssessmentRequestsRequestBuilder) {
     m := &ThreatAssessmentRequestsRequestBuilder{
     }
@@ -72,18 +69,13 @@ func NewThreatAssessmentRequestsRequestBuilderInternal(pathParameters map[string
     m.requestAdapter = requestAdapter;
     return m
 }
-// Instantiates a new ThreatAssessmentRequestsRequestBuilder and sets the default values.
-// Parameters:
-//  - rawUrl : The raw URL to use for the request builder.
-//  - requestAdapter : The request adapter to use to execute the requests.
+// NewThreatAssessmentRequestsRequestBuilder instantiates a new ThreatAssessmentRequestsRequestBuilder and sets the default values.
 func NewThreatAssessmentRequestsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ThreatAssessmentRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatAssessmentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get threatAssessmentRequests from informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreateGetRequestInformation get threatAssessmentRequests from informationProtection
 func (m *ThreatAssessmentRequestsRequestBuilder) CreateGetRequestInformation(options *ThreatAssessmentRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,9 +95,7 @@ func (m *ThreatAssessmentRequestsRequestBuilder) CreateGetRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Create new navigation property to threatAssessmentRequests for informationProtection
-// Parameters:
-//  - options : Options for the request
+// CreatePostRequestInformation create new navigation property to threatAssessmentRequests for informationProtection
 func (m *ThreatAssessmentRequestsRequestBuilder) CreatePostRequestInformation(options *ThreatAssessmentRequestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,9 +113,7 @@ func (m *ThreatAssessmentRequestsRequestBuilder) CreatePostRequestInformation(op
     }
     return requestInfo, nil
 }
-// Get threatAssessmentRequests from informationProtection
-// Parameters:
-//  - options : Options for the request
+// Get get threatAssessmentRequests from informationProtection
 func (m *ThreatAssessmentRequestsRequestBuilder) Get(options *ThreatAssessmentRequestsRequestBuilderGetOptions)(*ThreatAssessmentRequestsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -137,9 +125,7 @@ func (m *ThreatAssessmentRequestsRequestBuilder) Get(options *ThreatAssessmentRe
     }
     return res.(*ThreatAssessmentRequestsResponse), nil
 }
-// Create new navigation property to threatAssessmentRequests for informationProtection
-// Parameters:
-//  - options : Options for the request
+// Post create new navigation property to threatAssessmentRequests for informationProtection
 func (m *ThreatAssessmentRequestsRequestBuilder) Post(options *ThreatAssessmentRequestsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ThreatAssessmentRequest, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

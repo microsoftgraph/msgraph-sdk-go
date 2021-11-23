@@ -4,20 +4,20 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// 
+// SwapShiftsChangeRequest 
 type SwapShiftsChangeRequest struct {
     OfferShiftRequest
     // ShiftId for the recipient user with whom the request is to swap.
     recipientShiftId *string;
 }
-// Instantiates a new swapShiftsChangeRequest and sets the default values.
+// NewSwapShiftsChangeRequest instantiates a new swapShiftsChangeRequest and sets the default values.
 func NewSwapShiftsChangeRequest()(*SwapShiftsChangeRequest) {
     m := &SwapShiftsChangeRequest{
         OfferShiftRequest: *NewOfferShiftRequest(),
     }
     return m
 }
-// Gets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
+// GetRecipientShiftId gets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
 func (m *SwapShiftsChangeRequest) GetRecipientShiftId()(*string) {
     if m == nil {
         return nil
@@ -25,7 +25,7 @@ func (m *SwapShiftsChangeRequest) GetRecipientShiftId()(*string) {
         return m.recipientShiftId
     }
 }
-// The deserialization information for the current model
+// GetFieldDeserializers the deserialization information for the current model
 func (m *SwapShiftsChangeRequest) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.OfferShiftRequest.GetFieldDeserializers()
     res["recipientShiftId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
@@ -43,9 +43,7 @@ func (m *SwapShiftsChangeRequest) GetFieldDeserializers()(map[string]func(interf
 func (m *SwapShiftsChangeRequest) IsNil()(bool) {
     return m == nil
 }
-// Serializes information the current object
-// Parameters:
-//  - writer : Serialization writer to use to serialize this model
+// Serialize serializes information the current object
 func (m *SwapShiftsChangeRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     err := m.OfferShiftRequest.Serialize(writer)
     if err != nil {
@@ -59,9 +57,7 @@ func (m *SwapShiftsChangeRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// Sets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
-// Parameters:
-//  - value : Value to set for the recipientShiftId property.
+// SetRecipientShiftId sets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
 func (m *SwapShiftsChangeRequest) SetRecipientShiftId(value *string)() {
     m.recipientShiftId = value
 }
