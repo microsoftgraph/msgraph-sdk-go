@@ -9,7 +9,7 @@ import (
     i659b297028b74e3a18c01e4f6242341e9360bead5d183bdcbdf963849b8fef6a "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/tables/item/columns/count"
 )
 
-// columnsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\tables\{workbookTable-id}\columns
+// ColumnsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\tables\{workbookTable-id}\columns
 type ColumnsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type ColumnsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// columnsRequestBuilderGetQueryParameters represents a collection of all the columns in the table. Read-only.
+// ColumnsRequestBuilderGetQueryParameters represents a collection of all the columns in the table. Read-only.
 type ColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

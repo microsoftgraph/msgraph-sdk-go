@@ -7,7 +7,7 @@ import (
     ib113fbaca0760022878dc58540a742e1c1b8cf8914e6d8e83c3a98937e058882 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/channels/item/members/add"
 )
 
-// membersRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\members
+// MembersRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\members
 type MembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type MembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// membersRequestBuilderGetQueryParameters a collection of membership records associated with the channel.
+// MembersRequestBuilderGetQueryParameters a collection of membership records associated with the channel.
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -24,7 +24,7 @@ import (
     i485f9fd192f0985070e6776ebbebebbeab22aaa9df64be7131a3e622b77e1c4e "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/reports/exportjobs/item"
 )
 
-// reportsRequestBuilder builds and executes requests for operations under \deviceManagement\reports
+// ReportsRequestBuilder builds and executes requests for operations under \deviceManagement\reports
 type ReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -53,7 +53,7 @@ type ReportsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// reportsRequestBuilderGetQueryParameters reports singleton
+// ReportsRequestBuilderGetQueryParameters reports singleton
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

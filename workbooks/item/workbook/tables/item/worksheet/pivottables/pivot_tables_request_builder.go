@@ -7,7 +7,7 @@ import (
     ie76143d81616af8c6d3bdc2a9bd821f88f0a803687c919ab29183997d1479fa3 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/worksheet/pivottables/refreshall"
 )
 
-// pivotTablesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\pivotTables
+// PivotTablesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\pivotTables
 type PivotTablesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type PivotTablesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// pivotTablesRequestBuilderGetQueryParameters collection of PivotTables that are part of the worksheet.
+// PivotTablesRequestBuilderGetQueryParameters collection of PivotTables that are part of the worksheet.
 type PivotTablesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

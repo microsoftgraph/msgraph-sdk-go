@@ -8,7 +8,7 @@ import (
     i526f8febb10205573c5dd2e17b0c9f845b7b7aa8f86cebe17e6e7b83e19bbf56 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/devicecompliancepolicysettingstatesummaries/item/devicecompliancesettingstates/item"
 )
 
-// deviceCompliancePolicySettingStateSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicySettingStateSummaries\{deviceCompliancePolicySettingStateSummary-id}
+// DeviceCompliancePolicySettingStateSummaryRequestBuilder builds and executes requests for operations under \deviceManagement\deviceCompliancePolicySettingStateSummaries\{deviceCompliancePolicySettingStateSummary-id}
 type DeviceCompliancePolicySettingStateSummaryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type DeviceCompliancePolicySettingStateSummaryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceCompliancePolicySettingStateSummaryRequestBuilderGetQueryParameters the summary states of compliance policy settings for this account.
+// DeviceCompliancePolicySettingStateSummaryRequestBuilderGetQueryParameters the summary states of compliance policy settings for this account.
 type DeviceCompliancePolicySettingStateSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -5,7 +5,7 @@ import (
     idf46c124575976a4098d2b096490b134839ddc753873ab29efbc9596891aaad8 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/windowsinformationprotection/assign"
 )
 
-// windowsInformationProtectionRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.windowsInformationProtection
+// WindowsInformationProtectionRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.windowsInformationProtection
 type WindowsInformationProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

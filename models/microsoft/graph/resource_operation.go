@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// resourceOperation 
+// ResourceOperation 
 type ResourceOperation struct {
     Entity
     // Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.

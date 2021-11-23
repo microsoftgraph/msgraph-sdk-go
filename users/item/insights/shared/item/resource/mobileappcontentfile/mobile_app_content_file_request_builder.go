@@ -6,7 +6,7 @@ import (
     i1498cecb70176119b7d7e17d3fabf65d01f3bd3b91651e805cf5918ccd6ccb9d "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/mobileappcontentfile/renewupload"
 )
 
-// mobileAppContentFileRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource\microsoft.graph.mobileAppContentFile
+// MobileAppContentFileRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource\microsoft.graph.mobileAppContentFile
 type MobileAppContentFileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

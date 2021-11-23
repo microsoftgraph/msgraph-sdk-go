@@ -10,7 +10,7 @@ import (
     i87168d76d278ba19d5bf4864ada7dbaff8c9afe027072ddeb1dec7c4368fda6f "github.com/microsoftgraph/msgraph-sdk-go/chats/item/messages/item/replies/item"
 )
 
-// chatMessageRequestBuilder builds and executes requests for operations under \chats\{chat-id}\messages\{chatMessage-id}
+// ChatMessageRequestBuilder builds and executes requests for operations under \chats\{chat-id}\messages\{chatMessage-id}
 type ChatMessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type ChatMessageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// chatMessageRequestBuilderGetQueryParameters a collection of all the messages in the chat. Nullable.
+// ChatMessageRequestBuilderGetQueryParameters a collection of all the messages in the chat. Nullable.
 type ChatMessageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

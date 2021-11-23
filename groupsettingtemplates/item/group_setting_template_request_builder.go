@@ -11,7 +11,7 @@ import (
     if0de78395fe1dccb1dbdb7b7fe16ca5dd70edd86fe4f481d0b82bca471e231f0 "github.com/microsoftgraph/msgraph-sdk-go/groupsettingtemplates/item/restore"
 )
 
-// groupSettingTemplateRequestBuilder builds and executes requests for operations under \groupSettingTemplates\{groupSettingTemplate-id}
+// GroupSettingTemplateRequestBuilder builds and executes requests for operations under \groupSettingTemplates\{groupSettingTemplate-id}
 type GroupSettingTemplateRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type GroupSettingTemplateRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// groupSettingTemplateRequestBuilderGetQueryParameters get entity from groupSettingTemplates by key
+// GroupSettingTemplateRequestBuilderGetQueryParameters get entity from groupSettingTemplates by key
 type GroupSettingTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

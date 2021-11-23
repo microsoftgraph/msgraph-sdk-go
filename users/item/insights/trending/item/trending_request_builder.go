@@ -7,7 +7,7 @@ import (
     i09c89b405280cd1597608608b0d0c819d9c63ef00525b9cf521f43a5db826c5e "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/trending/item/resource"
 )
 
-// trendingRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\trending\{trending-id}
+// TrendingRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\trending\{trending-id}
 type TrendingRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type TrendingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// trendingRequestBuilderGetQueryParameters calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
+// TrendingRequestBuilderGetQueryParameters calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 type TrendingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

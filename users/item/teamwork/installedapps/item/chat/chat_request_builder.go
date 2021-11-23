@@ -7,7 +7,7 @@ import (
     ie4dd3f1c37d8656a9e493f06a8c2e816aed018d2de1f8598c083a9360640fccd "github.com/microsoftgraph/msgraph-sdk-go/users/item/teamwork/installedapps/item/chat/ref"
 )
 
-// chatRequestBuilder builds and executes requests for operations under \users\{user-id}\teamwork\installedApps\{userScopeTeamsAppInstallation-id}\chat
+// ChatRequestBuilder builds and executes requests for operations under \users\{user-id}\teamwork\installedApps\{userScopeTeamsAppInstallation-id}\chat
 type ChatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ChatRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// chatRequestBuilderGetQueryParameters the chat between the user and Teams app.
+// ChatRequestBuilderGetQueryParameters the chat between the user and Teams app.
 type ChatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

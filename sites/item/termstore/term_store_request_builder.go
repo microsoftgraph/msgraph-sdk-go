@@ -10,7 +10,7 @@ import (
     i619b375874405f8a48a2830bcc3f479ceef5c227f0ff2205d5561454de690fef "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/sets/item"
 )
 
-// termStoreRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore
+// TermStoreRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore
 type TermStoreRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type TermStoreRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// termStoreRequestBuilderGetQueryParameters the default termStore under this site.
+// TermStoreRequestBuilderGetQueryParameters the default termStore under this site.
 type TermStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

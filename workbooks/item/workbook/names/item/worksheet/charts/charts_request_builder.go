@@ -10,7 +10,7 @@ import (
     ied7b61575feaa2e13a72ce52d62b8a82b8bb62ec4ff1bfa69cb45de337dc7c7b "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/itematwithindex"
 )
 
-// chartsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts
+// ChartsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts
 type ChartsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type ChartsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// chartsRequestBuilderGetQueryParameters returns collection of charts that are part of the worksheet. Read-only.
+// ChartsRequestBuilderGetQueryParameters returns collection of charts that are part of the worksheet. Read-only.
 type ChartsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

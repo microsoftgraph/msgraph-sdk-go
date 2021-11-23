@@ -19,7 +19,7 @@ import (
     ica9449d8925b6e3e2256625a3ef2607a71dc8f95b414fc729ef5e2761a6f56e7 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/rows/item"
 )
 
-// workbookTableRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}
+// WorkbookTableRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}
 type WorkbookTableRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -48,7 +48,7 @@ type WorkbookTableRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// workbookTableRequestBuilderGetQueryParameters represents a collection of tables associated with the workbook. Read-only.
+// WorkbookTableRequestBuilderGetQueryParameters represents a collection of tables associated with the workbook. Read-only.
 type WorkbookTableRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

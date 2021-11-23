@@ -7,7 +7,7 @@ import (
     if211efc5dc293703e5237fde4c59f3b6f563036b5478a8aeabd1e37c9670bb99 "github.com/microsoftgraph/msgraph-sdk-go/education/users/item/user/ref"
 )
 
-// userRequestBuilder builds and executes requests for operations under \education\users\{educationUser-id}\user
+// UserRequestBuilder builds and executes requests for operations under \education\users\{educationUser-id}\user
 type UserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type UserRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userRequestBuilderGetQueryParameters the directory user corresponding to this user.
+// UserRequestBuilderGetQueryParameters the directory user corresponding to this user.
 type UserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

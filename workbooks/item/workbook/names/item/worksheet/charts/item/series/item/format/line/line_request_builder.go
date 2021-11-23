@@ -7,7 +7,7 @@ import (
     if5e204db23fa2b8470f2af88e0b2d35fabd68032bf51743090532fe94c5feb11 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/item/worksheet/charts/item/series/item/format/line/clear"
 )
 
-// lineRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\format\line
+// LineRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\format\line
 type LineRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type LineRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// lineRequestBuilderGetQueryParameters represents line formatting. Read-only.
+// LineRequestBuilderGetQueryParameters represents line formatting. Read-only.
 type LineRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

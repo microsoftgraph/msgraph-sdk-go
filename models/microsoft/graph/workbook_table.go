@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// workbookTable 
+// WorkbookTable 
 type WorkbookTable struct {
     Entity
     // Represents a collection of all the columns in the table. Read-only.

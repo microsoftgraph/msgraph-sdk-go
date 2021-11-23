@@ -8,7 +8,7 @@ import (
     i4937f4dc6a66215167ecba05b855cf0f74fe5d9e664ba8cf75023f47fd473166 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod"
 )
 
-// sharedInsightRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}
+// SharedInsightRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}
 type SharedInsightRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type SharedInsightRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// sharedInsightRequestBuilderGetQueryParameters calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
+// SharedInsightRequestBuilderGetQueryParameters calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 type SharedInsightRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

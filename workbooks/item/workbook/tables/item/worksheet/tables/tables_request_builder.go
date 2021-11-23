@@ -9,7 +9,7 @@ import (
     ib415e5f6df547c00658667b5f14ddfd2a45f2062fac744035a34420985392b32 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/worksheet/tables/count"
 )
 
-// tablesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables
+// TablesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables
 type TablesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -29,7 +29,7 @@ type TablesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// tablesRequestBuilderGetQueryParameters collection of tables that are part of the worksheet. Read-only.
+// TablesRequestBuilderGetQueryParameters collection of tables that are part of the worksheet. Read-only.
 type TablesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

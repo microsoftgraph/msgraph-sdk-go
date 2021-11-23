@@ -9,7 +9,7 @@ import (
     i61980b8fddd9659b7077791f193bc75e71a71475ff9efa632dd2c50bc47e5cc7 "github.com/microsoftgraph/msgraph-sdk-go/communications/calls/item/participants/item/stopholdmusic"
 )
 
-// participantRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\participants\{participant-id}
+// ParticipantRequestBuilder builds and executes requests for operations under \communications\calls\{call-id}\participants\{participant-id}
 type ParticipantRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type ParticipantRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// participantRequestBuilderGetQueryParameters read-only. Nullable.
+// ParticipantRequestBuilderGetQueryParameters read-only. Nullable.
 type ParticipantRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

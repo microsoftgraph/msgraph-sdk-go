@@ -32,7 +32,7 @@ import (
     ifde463e810689c7072c7d9277a46137bfa317a65065935fd36040a8fa123d142 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/workbookrange/entirerow"
 )
 
-// workbookRangeRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.workbookRange
+// WorkbookRangeRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.workbookRange
 type WorkbookRangeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

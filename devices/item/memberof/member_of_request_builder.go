@@ -6,7 +6,7 @@ import (
     i6ae77cb3c838a1e2aad7693813f80a21e8980e0894550318058caa7a7c4b52be "github.com/microsoftgraph/msgraph-sdk-go/devices/item/memberof/ref"
 )
 
-// memberOfRequestBuilder builds and executes requests for operations under \devices\{device-id}\memberOf
+// MemberOfRequestBuilder builds and executes requests for operations under \devices\{device-id}\memberOf
 type MemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type MemberOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// memberOfRequestBuilderGetQueryParameters groups that this device is a member of. Read-only. Nullable. Supports $expand.
+// MemberOfRequestBuilderGetQueryParameters groups that this device is a member of. Read-only. Nullable. Supports $expand.
 type MemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

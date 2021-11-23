@@ -13,7 +13,7 @@ import (
     if238474bb023ee1ae7b1e221337d6649adb30bb8a532c530686588c4d8f149e4 "github.com/microsoftgraph/msgraph-sdk-go/domains/item/serviceconfigurationrecords/item"
 )
 
-// domainRequestBuilder builds and executes requests for operations under \domains\{domain-id}
+// DomainRequestBuilder builds and executes requests for operations under \domains\{domain-id}
 type DomainRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type DomainRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// domainRequestBuilderGetQueryParameters get entity from domains by key
+// DomainRequestBuilderGetQueryParameters get entity from domains by key
 type DomainRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

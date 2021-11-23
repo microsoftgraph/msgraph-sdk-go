@@ -5,7 +5,7 @@ import (
     i76aacfb067a1e483b22fb61e45d085cf28f06465deb59912ac5fb4691594ee79 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/managedappprotection/targetapps"
 )
 
-// managedAppProtectionRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.managedAppProtection
+// ManagedAppProtectionRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.managedAppProtection
 type ManagedAppProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

@@ -7,7 +7,7 @@ import (
     i4461915ea762d47e34c6845e61a25a9fca9dd3039732803b3506921d5cbabb25 "github.com/microsoftgraph/msgraph-sdk-go/chats/item/messages/delta"
 )
 
-// messagesRequestBuilder builds and executes requests for operations under \chats\{chat-id}\messages
+// MessagesRequestBuilder builds and executes requests for operations under \chats\{chat-id}\messages
 type MessagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type MessagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// messagesRequestBuilderGetQueryParameters a collection of all the messages in the chat. Nullable.
+// MessagesRequestBuilderGetQueryParameters a collection of all the messages in the chat. Nullable.
 type MessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

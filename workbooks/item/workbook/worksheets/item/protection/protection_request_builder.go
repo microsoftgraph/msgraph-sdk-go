@@ -8,7 +8,7 @@ import (
     i7d3f9508cb1c09556e3c1cec582a9e569a8d1d0f5b4c66af46496ee14bc8c9de "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/protection/unprotect"
 )
 
-// protectionRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\protection
+// ProtectionRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\protection
 type ProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ProtectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// protectionRequestBuilderGetQueryParameters returns sheet protection object for a worksheet. Read-only.
+// ProtectionRequestBuilderGetQueryParameters returns sheet protection object for a worksheet. Read-only.
 type ProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

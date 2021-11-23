@@ -5,7 +5,7 @@ import (
     i48bb4c4ad9b00e257ad888a69f5d2ebd9afa2982a69d66e19dc4cce9db02f8d7 "github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/messages/item/calendarsharingmessage/accept"
 )
 
-// calendarSharingMessageRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.calendarSharingMessage
+// CalendarSharingMessageRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.calendarSharingMessage
 type CalendarSharingMessageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

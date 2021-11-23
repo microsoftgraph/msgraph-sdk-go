@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// refRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\tokenLifetimePolicies\$ref
+// RefRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\tokenLifetimePolicies\$ref
 type RefRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -25,7 +25,7 @@ type RefRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// refRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this service principal.
+// RefRequestBuilderGetQueryParameters the tokenLifetimePolicies assigned to this service principal.
 type RefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

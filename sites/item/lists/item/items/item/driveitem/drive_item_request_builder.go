@@ -7,7 +7,7 @@ import (
     i73c6218c11aa29424d7ac3f0f6de2772296cf03800149ace1398ab87fb2903f3 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/items/item/driveitem/content"
 )
 
-// driveItemRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\items\{listItem-id}\driveItem
+// DriveItemRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\items\{listItem-id}\driveItem
 type DriveItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DriveItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// driveItemRequestBuilderGetQueryParameters for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+// DriveItemRequestBuilderGetQueryParameters for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 type DriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

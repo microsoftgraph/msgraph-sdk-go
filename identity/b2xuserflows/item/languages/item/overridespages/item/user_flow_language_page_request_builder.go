@@ -7,7 +7,7 @@ import (
     i2bcb22cbe22f892f3cdece3c2040e9c0ca9e851cc0c4fc5413d75d5a6dd08b38 "github.com/microsoftgraph/msgraph-sdk-go/identity/b2xuserflows/item/languages/item/overridespages/item/value"
 )
 
-// userFlowLanguagePageRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}\overridesPages\{userFlowLanguagePage-id}
+// UserFlowLanguagePageRequestBuilder builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}\overridesPages\{userFlowLanguagePage-id}
 type UserFlowLanguagePageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type UserFlowLanguagePageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userFlowLanguagePageRequestBuilderGetQueryParameters collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+// UserFlowLanguagePageRequestBuilderGetQueryParameters collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
 type UserFlowLanguagePageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

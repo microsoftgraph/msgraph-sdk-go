@@ -7,7 +7,7 @@ import (
     id3aa218f65fd74b2e00676c38fb1cdabdfd0681f7c5e3504a3a3fdb452b26bf1 "github.com/microsoftgraph/msgraph-sdk-go/education/users/item/classes/ref"
 )
 
-// classesRequestBuilder builds and executes requests for operations under \education\users\{educationUser-id}\classes
+// ClassesRequestBuilder builds and executes requests for operations under \education\users\{educationUser-id}\classes
 type ClassesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ClassesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// classesRequestBuilderGetQueryParameters classes to which the user belongs. Nullable.
+// ClassesRequestBuilderGetQueryParameters classes to which the user belongs. Nullable.
 type ClassesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

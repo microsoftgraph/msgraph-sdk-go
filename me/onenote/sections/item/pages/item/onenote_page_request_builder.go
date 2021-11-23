@@ -12,7 +12,7 @@ import (
     ifd009e2732076c58239c1cff81f23d9b97386c2b7aef691c1aa5a32235ee9e0b "github.com/microsoftgraph/msgraph-sdk-go/me/onenote/sections/item/pages/item/preview"
 )
 
-// onenotePageRequestBuilder builds and executes requests for operations under \me\onenote\sections\{onenoteSection-id}\pages\{onenotePage-id}
+// OnenotePageRequestBuilder builds and executes requests for operations under \me\onenote\sections\{onenoteSection-id}\pages\{onenotePage-id}
 type OnenotePageRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -41,7 +41,7 @@ type OnenotePageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// onenotePageRequestBuilderGetQueryParameters the collection of pages in the section.  Read-only. Nullable.
+// OnenotePageRequestBuilderGetQueryParameters the collection of pages in the section.  Read-only. Nullable.
 type OnenotePageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

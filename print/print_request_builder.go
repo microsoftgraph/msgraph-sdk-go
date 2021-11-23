@@ -18,7 +18,7 @@ import (
     iebd42d165d4ff6aca1eec85e8351f67b97a4208ea00a5bc8ac67f4f1f191b677 "github.com/microsoftgraph/msgraph-sdk-go/print/connectors/item"
 )
 
-// printRequestBuilder builds and executes requests for operations under \print
+// PrintRequestBuilder builds and executes requests for operations under \print
 type PrintRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type PrintRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// printRequestBuilderGetQueryParameters get print
+// PrintRequestBuilderGetQueryParameters get print
 type PrintRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

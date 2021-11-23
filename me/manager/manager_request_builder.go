@@ -7,7 +7,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// managerRequestBuilder builds and executes requests for operations under \me\manager
+// ManagerRequestBuilder builds and executes requests for operations under \me\manager
 type ManagerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ManagerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managerRequestBuilderGetQueryParameters the user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+// ManagerRequestBuilderGetQueryParameters the user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
 type ManagerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

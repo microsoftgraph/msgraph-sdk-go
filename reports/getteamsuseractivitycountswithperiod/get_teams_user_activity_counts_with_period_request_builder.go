@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// getTeamsUserActivityCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityCounts(period='{period}')
+// GetTeamsUserActivityCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityCounts(period='{period}')
 type GetTeamsUserActivityCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

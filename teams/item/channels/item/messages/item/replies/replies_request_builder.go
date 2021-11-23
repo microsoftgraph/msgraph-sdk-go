@@ -7,7 +7,7 @@ import (
     i6ce7c0204deca59a19126898a76271cf6bff6dc7a4f894899eb811dbc5f75937 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/channels/item/messages/item/replies/delta"
 )
 
-// repliesRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\messages\{chatMessage-id}\replies
+// RepliesRequestBuilder builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\messages\{chatMessage-id}\replies
 type RepliesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type RepliesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// repliesRequestBuilderGetQueryParameters replies for a specified message.
+// RepliesRequestBuilderGetQueryParameters replies for a specified message.
 type RepliesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

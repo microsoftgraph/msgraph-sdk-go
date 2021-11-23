@@ -8,7 +8,7 @@ import (
     ic0dc56f620001a78f10e220a38cfda92ea81c50e16ac619fcd0904e1ef140bb8 "github.com/microsoftgraph/msgraph-sdk-go/appcatalogs/teamsapps/item/appdefinitions/item"
 )
 
-// teamsAppRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}
+// TeamsAppRequestBuilder builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}
 type TeamsAppRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type TeamsAppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// teamsAppRequestBuilderGetQueryParameters get teamsApps from appCatalogs
+// TeamsAppRequestBuilderGetQueryParameters get teamsApps from appCatalogs
 type TeamsAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -4,7 +4,7 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
 )
 
-// restoreVersionRequestBuilder builds and executes requests for operations under \drive\list\items\{listItem-id}\versions\{listItemVersion-id}\microsoft.graph.restoreVersion
+// RestoreVersionRequestBuilder builds and executes requests for operations under \drive\list\items\{listItem-id}\versions\{listItemVersion-id}\microsoft.graph.restoreVersion
 type RestoreVersionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

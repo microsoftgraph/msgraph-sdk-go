@@ -7,7 +7,7 @@ import (
     i353c71cf4e7f00f79bca7c43c481c2b7fccfaf2bc763be7f85e457bcdb2a832b "github.com/microsoftgraph/msgraph-sdk-go/drives/item/root/content"
 )
 
-// rootRequestBuilder builds and executes requests for operations under \drives\{drive-id}\root
+// RootRequestBuilder builds and executes requests for operations under \drives\{drive-id}\root
 type RootRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type RootRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// rootRequestBuilderGetQueryParameters the root folder of the drive. Read-only.
+// RootRequestBuilderGetQueryParameters the root folder of the drive. Read-only.
 type RootRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

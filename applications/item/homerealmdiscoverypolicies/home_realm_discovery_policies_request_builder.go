@@ -6,7 +6,7 @@ import (
     i5100c50b74e865863e76ed5317c3a3e5eaaf2d3ac97a24b0d880f184ec6a63c0 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/homerealmdiscoverypolicies/ref"
 )
 
-// homeRealmDiscoveryPoliciesRequestBuilder builds and executes requests for operations under \applications\{application-id}\homeRealmDiscoveryPolicies
+// HomeRealmDiscoveryPoliciesRequestBuilder builds and executes requests for operations under \applications\{application-id}\homeRealmDiscoveryPolicies
 type HomeRealmDiscoveryPoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type HomeRealmDiscoveryPoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// homeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters get homeRealmDiscoveryPolicies from applications
+// HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters get homeRealmDiscoveryPolicies from applications
 type HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

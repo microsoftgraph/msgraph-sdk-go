@@ -7,7 +7,7 @@ import (
     ic6a59f2d268c2e11cd934d013493304cb6ccccabb99ca15f63e8cb181abb042b "github.com/microsoftgraph/msgraph-sdk-go/drives/item/bundles/item/content"
 )
 
-// driveItemRequestBuilder builds and executes requests for operations under \drives\{drive-id}\bundles\{driveItem-id}
+// DriveItemRequestBuilder builds and executes requests for operations under \drives\{drive-id}\bundles\{driveItem-id}
 type DriveItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DriveItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// driveItemRequestBuilderGetQueryParameters collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// DriveItemRequestBuilderGetQueryParameters collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 type DriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

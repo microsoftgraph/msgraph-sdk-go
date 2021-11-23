@@ -7,7 +7,7 @@ import (
     i4473756039a845fc0a692e35f89b429e6fd8d553718dd03c71b352e66f1b8e0e "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstores/item/groups/item/sets/item/children/item/relations/item/fromterm/ref"
 )
 
-// fromTermRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}\sets\{set-id}\children\{term-id}\relations\{relation-id}\fromTerm
+// FromTermRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}\sets\{set-id}\children\{term-id}\relations\{relation-id}\fromTerm
 type FromTermRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type FromTermRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// fromTermRequestBuilderGetQueryParameters the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
+// FromTermRequestBuilderGetQueryParameters the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
 type FromTermRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

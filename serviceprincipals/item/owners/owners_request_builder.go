@@ -6,7 +6,7 @@ import (
     i3fd51d7cedbd61b7eb9da3199c41a984c523da2ba70cd0061dbe5ac3af02d349 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/owners/ref"
 )
 
-// ownersRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\owners
+// OwnersRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\owners
 type OwnersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type OwnersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ownersRequestBuilderGetQueryParameters directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+// OwnersRequestBuilderGetQueryParameters directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
 type OwnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

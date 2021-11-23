@@ -6,7 +6,7 @@ import (
     i338af079c1d310df949b8daa59a8a574649b4664977177dd614afe267428f5a9 "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/transitivememberof/ref"
 )
 
-// transitiveMemberOfRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}\transitiveMemberOf
+// TransitiveMemberOfRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}\transitiveMemberOf
 type TransitiveMemberOfRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type TransitiveMemberOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// transitiveMemberOfRequestBuilderGetQueryParameters get transitiveMemberOf from contacts
+// TransitiveMemberOfRequestBuilderGetQueryParameters get transitiveMemberOf from contacts
 type TransitiveMemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

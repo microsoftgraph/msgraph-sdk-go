@@ -6,7 +6,7 @@ import (
     idaae4450e591ac442b1cb2f77e54de461531f1290690feef370377c9f3dfa839 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/ownedobjects/ref"
 )
 
-// ownedObjectsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\ownedObjects
+// OwnedObjectsRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\ownedObjects
 type OwnedObjectsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type OwnedObjectsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ownedObjectsRequestBuilderGetQueryParameters directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+// OwnedObjectsRequestBuilderGetQueryParameters directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
 type OwnedObjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

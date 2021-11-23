@@ -7,7 +7,7 @@ import (
     i42f0e2349ba329f7e2bafaa8e7e58d15e631ccb3f422bc18825a30beb3bf043e "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/catalogs/item/accesspackages/item/catalog/ref"
 )
 
-// catalogRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\catalogs\{accessPackageCatalog-id}\accessPackages\{accessPackage-id}\catalog
+// CatalogRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\catalogs\{accessPackageCatalog-id}\accessPackages\{accessPackage-id}\catalog
 type CatalogRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type CatalogRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// catalogRequestBuilderGetQueryParameters get catalog from identityGovernance
+// CatalogRequestBuilderGetQueryParameters get catalog from identityGovernance
 type CatalogRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

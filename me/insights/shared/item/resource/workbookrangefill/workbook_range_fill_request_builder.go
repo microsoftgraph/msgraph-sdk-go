@@ -5,7 +5,7 @@ import (
     i82c6bf85b2492322ba6fb9c982c87ddc6ebcb18961a81c582df903cee20da37b "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/resource/workbookrangefill/clear"
 )
 
-// workbookRangeFillRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.workbookRangeFill
+// WorkbookRangeFillRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.workbookRangeFill
 type WorkbookRangeFillRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

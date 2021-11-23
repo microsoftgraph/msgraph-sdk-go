@@ -32,7 +32,7 @@ import (
     iefe5f75095bc26602696a7643255e6c4c3650219bb4d1eb8c3361ae039b10826 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/used/item/resource/workbookrange/unmerge"
 )
 
-// workbookRangeRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRange
+// WorkbookRangeRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRange
 type WorkbookRangeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

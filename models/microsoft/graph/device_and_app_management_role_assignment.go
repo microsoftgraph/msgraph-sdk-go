@@ -4,7 +4,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// deviceAndAppManagementRoleAssignment 
+// DeviceAndAppManagementRoleAssignment 
 type DeviceAndAppManagementRoleAssignment struct {
     RoleAssignment
     // The list of ids of role member security groups. These are IDs from Azure Active Directory.

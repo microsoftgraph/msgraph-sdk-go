@@ -7,7 +7,7 @@ import (
     ie45ff0e090df50836660ea986038b4c5986591b821d55bfffca360094a24155f "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/permissions/item/grant"
 )
 
-// permissionRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\permissions\{permission-id}
+// PermissionRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\permissions\{permission-id}
 type PermissionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type PermissionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// permissionRequestBuilderGetQueryParameters the set of permissions for the item. Read-only. Nullable.
+// PermissionRequestBuilderGetQueryParameters the set of permissions for the item. Read-only. Nullable.
 type PermissionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

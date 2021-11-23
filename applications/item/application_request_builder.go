@@ -25,7 +25,7 @@ import (
     ie9db136445b8a8e3d0b048cc9910b564635f65b63edab67c97c083c411010b77 "github.com/microsoftgraph/msgraph-sdk-go/applications/item/extensionproperties/item"
 )
 
-// applicationRequestBuilder builds and executes requests for operations under \applications\{application-id}
+// ApplicationRequestBuilder builds and executes requests for operations under \applications\{application-id}
 type ApplicationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -54,7 +54,7 @@ type ApplicationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// applicationRequestBuilderGetQueryParameters get entity from applications by key
+// ApplicationRequestBuilderGetQueryParameters get entity from applications by key
 type ApplicationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

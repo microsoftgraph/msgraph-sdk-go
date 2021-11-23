@@ -9,7 +9,7 @@ import (
     i664cce9ac6a8d066456ffc5e2e02eef4dbe7ba1273babaff744dd6346838dd7d "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/defaultmanagedappprotections/item/apps/item"
 )
 
-// defaultManagedAppProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\defaultManagedAppProtections\{defaultManagedAppProtection-id}
+// DefaultManagedAppProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\defaultManagedAppProtections\{defaultManagedAppProtection-id}
 type DefaultManagedAppProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type DefaultManagedAppProtectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// defaultManagedAppProtectionRequestBuilderGetQueryParameters default managed app policies.
+// DefaultManagedAppProtectionRequestBuilderGetQueryParameters default managed app policies.
 type DefaultManagedAppProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

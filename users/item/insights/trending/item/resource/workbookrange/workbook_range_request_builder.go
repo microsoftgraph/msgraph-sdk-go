@@ -32,7 +32,7 @@ import (
     ieb975fb512abf3424ad8d1953634695043f973a4b7470ad74ff9a8429749e4c2 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/trending/item/resource/workbookrange/usedrangewithvaluesonly"
 )
 
-// workbookRangeRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\trending\{trending-id}\resource\microsoft.graph.workbookRange
+// WorkbookRangeRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\trending\{trending-id}\resource\microsoft.graph.workbookRange
 type WorkbookRangeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

@@ -15,7 +15,7 @@ import (
     if1844020acb9c67e872cff770020bec5e9fbe0ec4bdb729561240d6a686db31c "github.com/microsoftgraph/msgraph-sdk-go/drive/list/items/item"
 )
 
-// listRequestBuilder builds and executes requests for operations under \drive\list
+// ListRequestBuilder builds and executes requests for operations under \drive\list
 type ListRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type ListRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// listRequestBuilderGetQueryParameters for drives in SharePoint, the underlying document library list. Read-only. Nullable.
+// ListRequestBuilderGetQueryParameters for drives in SharePoint, the underlying document library list. Read-only. Nullable.
 type ListRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

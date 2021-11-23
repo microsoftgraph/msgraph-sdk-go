@@ -8,7 +8,7 @@ import (
     i53a72d4c5b633ebaf2e92a3eae90f203f023e1af23ceaaa7b670a43df7cb21ed "github.com/microsoftgraph/msgraph-sdk-go/informationprotection/bitlocker/recoverykeys/item"
 )
 
-// bitlockerRequestBuilder builds and executes requests for operations under \informationProtection\bitlocker
+// BitlockerRequestBuilder builds and executes requests for operations under \informationProtection\bitlocker
 type BitlockerRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type BitlockerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// bitlockerRequestBuilderGetQueryParameters get bitlocker from informationProtection
+// BitlockerRequestBuilderGetQueryParameters get bitlocker from informationProtection
 type BitlockerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

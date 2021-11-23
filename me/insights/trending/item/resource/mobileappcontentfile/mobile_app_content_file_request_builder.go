@@ -6,7 +6,7 @@ import (
     ib1e234b4ff408390909249e7bb9f4912b7ceb64c4587784c93396fe7dc824c48 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/mobileappcontentfile/commit"
 )
 
-// mobileAppContentFileRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.mobileAppContentFile
+// MobileAppContentFileRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.mobileAppContentFile
 type MobileAppContentFileRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

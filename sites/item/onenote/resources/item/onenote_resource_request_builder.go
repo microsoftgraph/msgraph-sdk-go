@@ -7,7 +7,7 @@ import (
     i0058f3cb4cd7d36b8b742ff6afdf49aefd107a63099279fc274eea28abfa4c44 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/resources/item/content"
 )
 
-// onenoteResourceRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\resources\{onenoteResource-id}
+// OnenoteResourceRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\resources\{onenoteResource-id}
 type OnenoteResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type OnenoteResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// onenoteResourceRequestBuilderGetQueryParameters the image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+// OnenoteResourceRequestBuilderGetQueryParameters the image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
 type OnenoteResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

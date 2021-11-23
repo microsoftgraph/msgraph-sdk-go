@@ -6,7 +6,7 @@ import (
     ie51f6eaf3322f04272ba503f4fdac7aa0e94f9cb0e83f6be7d022757848e95b3 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/workbookrangeformat/autofitrows"
 )
 
-// workbookRangeFormatRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRangeFormat
+// WorkbookRangeFormatRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRangeFormat
 type WorkbookRangeFormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

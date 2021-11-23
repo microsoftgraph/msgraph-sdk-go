@@ -7,7 +7,7 @@ import (
     i7b8d852dcc88526ec1543bc4d4f553673878b1d434b82a42a5e0bf78caad5d8c "github.com/microsoftgraph/msgraph-sdk-go/groups/item/conversations/item/threads/item/posts/item/attachments/createuploadsession"
 )
 
-// attachmentsRequestBuilder builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}\threads\{conversationThread-id}\posts\{post-id}\attachments
+// AttachmentsRequestBuilder builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}\threads\{conversationThread-id}\posts\{post-id}\attachments
 type AttachmentsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AttachmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// attachmentsRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
+// AttachmentsRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type AttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

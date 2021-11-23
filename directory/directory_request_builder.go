@@ -10,7 +10,7 @@ import (
     ic11656dccc6289d407b8e6129a339cd67d5b4802e9850fa2b7197192054f419c "github.com/microsoftgraph/msgraph-sdk-go/directory/deleteditems/item"
 )
 
-// directoryRequestBuilder builds and executes requests for operations under \directory
+// DirectoryRequestBuilder builds and executes requests for operations under \directory
 type DirectoryRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -30,7 +30,7 @@ type DirectoryRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// directoryRequestBuilderGetQueryParameters get directory
+// DirectoryRequestBuilderGetQueryParameters get directory
 type DirectoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

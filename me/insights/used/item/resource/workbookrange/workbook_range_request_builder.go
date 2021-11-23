@@ -32,7 +32,7 @@ import (
     ifc399aa733120668ba9af582c106b5d4b087bc7861bb94067311c6fa09714cae "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/workbookrange/entirecolumn"
 )
 
-// workbookRangeRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRange
+// WorkbookRangeRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRange
 type WorkbookRangeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

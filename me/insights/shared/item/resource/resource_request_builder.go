@@ -20,7 +20,7 @@ import (
     ie4d5700d495bc4a2cc7061c6607509408a3cca4be4bd731eeff67486e856b6a3 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/resource/printjob"
 )
 
-// resourceRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource
+// ResourceRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource
 type ResourceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type ResourceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// resourceRequestBuilderGetQueryParameters used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
+// ResourceRequestBuilderGetQueryParameters used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 type ResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

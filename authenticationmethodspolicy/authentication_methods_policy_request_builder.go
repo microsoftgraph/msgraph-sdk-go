@@ -8,7 +8,7 @@ import (
     i64f858c8627e84ac3553655f2bc7b8c678e19238c74dba447be61b60e81acf4a "github.com/microsoftgraph/msgraph-sdk-go/authenticationmethodspolicy/authenticationmethodconfigurations/item"
 )
 
-// authenticationMethodsPolicyRequestBuilder builds and executes requests for operations under \authenticationMethodsPolicy
+// AuthenticationMethodsPolicyRequestBuilder builds and executes requests for operations under \authenticationMethodsPolicy
 type AuthenticationMethodsPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type AuthenticationMethodsPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// authenticationMethodsPolicyRequestBuilderGetQueryParameters get authenticationMethodsPolicy
+// AuthenticationMethodsPolicyRequestBuilderGetQueryParameters get authenticationMethodsPolicy
 type AuthenticationMethodsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

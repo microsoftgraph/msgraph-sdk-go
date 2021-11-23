@@ -107,7 +107,7 @@ import (
     if4346a9921b148666613b317b233f49301e4eef2f130f6b9e02414250e5a2294 "github.com/microsoftgraph/msgraph-sdk-go/reports/monthlyprintusagebyuser/item"
 )
 
-// reportsRequestBuilder builds and executes requests for operations under \reports
+// ReportsRequestBuilder builds and executes requests for operations under \reports
 type ReportsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -127,7 +127,7 @@ type ReportsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// reportsRequestBuilderGetQueryParameters get reports
+// ReportsRequestBuilderGetQueryParameters get reports
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     iea086e9a0e5c814bf8fffa6f32e7e5ee0acad87d9a30672e5faffb72ae926046 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/printjob/abort"
 )
 
-// printJobRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.printJob
+// PrintJobRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.printJob
 type PrintJobRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

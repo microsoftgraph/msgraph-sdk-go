@@ -8,7 +8,7 @@ import (
     ieaff4eee239d8360b36ad4df1cdfe2674177722f7f98b169c7f9c37129d6f807 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/pivottables/item/worksheet"
 )
 
-// workbookPivotTableRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}
+// WorkbookPivotTableRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\{workbookPivotTable-id}
 type WorkbookPivotTableRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type WorkbookPivotTableRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// workbookPivotTableRequestBuilderGetQueryParameters collection of PivotTables that are part of the worksheet.
+// WorkbookPivotTableRequestBuilderGetQueryParameters collection of PivotTables that are part of the worksheet.
 type WorkbookPivotTableRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

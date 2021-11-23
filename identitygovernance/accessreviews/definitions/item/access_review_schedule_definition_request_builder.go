@@ -9,7 +9,7 @@ import (
     i430970eb1b4b4a416077e3b11ecb887cbb1a66d9913c998c9991f0044691886d "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item/instances/item"
 )
 
-// accessReviewScheduleDefinitionRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\definitions\{accessReviewScheduleDefinition-id}
+// AccessReviewScheduleDefinitionRequestBuilder builds and executes requests for operations under \identityGovernance\accessReviews\definitions\{accessReviewScheduleDefinition-id}
 type AccessReviewScheduleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type AccessReviewScheduleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessReviewScheduleDefinitionRequestBuilderGetQueryParameters get definitions from identityGovernance
+// AccessReviewScheduleDefinitionRequestBuilderGetQueryParameters get definitions from identityGovernance
 type AccessReviewScheduleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

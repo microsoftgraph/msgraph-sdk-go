@@ -7,7 +7,7 @@ import (
     ic9195694371d2c5ddf39c04599379c602d629673f6fcdb64f22af4b2db47f92a "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/add"
 )
 
-// worksheetsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets
+// WorksheetsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets
 type WorksheetsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type WorksheetsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// worksheetsRequestBuilderGetQueryParameters represents a collection of worksheets associated with the workbook. Read-only.
+// WorksheetsRequestBuilderGetQueryParameters represents a collection of worksheets associated with the workbook. Read-only.
 type WorksheetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

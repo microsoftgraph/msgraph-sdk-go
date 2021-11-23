@@ -18,7 +18,7 @@ import (
     ideca945de53e399384bbc41ab854b4d1cdb613880c5e7a4e63c7ef95ee5a8490 "github.com/microsoftgraph/msgraph-sdk-go/me/calendarview/item/calendar/singlevalueextendedproperties/item"
 )
 
-// calendarRequestBuilder builds and executes requests for operations under \me\calendarView\{event-id}\calendar
+// CalendarRequestBuilder builds and executes requests for operations under \me\calendarView\{event-id}\calendar
 type CalendarRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type CalendarRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// calendarRequestBuilderGetQueryParameters the calendar that contains the event. Navigation property. Read-only.
+// CalendarRequestBuilderGetQueryParameters the calendar that contains the event. Navigation property. Read-only.
 type CalendarRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

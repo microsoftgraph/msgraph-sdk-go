@@ -6,7 +6,7 @@ import (
     iffdc112027db305c5e8673cd0e0cc837fb3f9c085722ce9321bf70bad6906019 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/lastsharedmethod/schedulechangerequest/decline"
 )
 
-// scheduleChangeRequestRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.scheduleChangeRequest
+// ScheduleChangeRequestRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.scheduleChangeRequest
 type ScheduleChangeRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

@@ -8,7 +8,7 @@ import (
     if8636381f75fc79aa28d0be5a77c579b52432e4b8470d09141bf7ea48ebb3996 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/lastsharedmethod/printjob/redirect"
 )
 
-// printJobRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.printJob
+// PrintJobRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.printJob
 type PrintJobRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

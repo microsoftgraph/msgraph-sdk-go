@@ -8,7 +8,7 @@ import (
     i1ef5fbb0cce8b4737a261a47bbfeffed1b76c297c38d2e60f3ce462dab50574b "github.com/microsoftgraph/msgraph-sdk-go/agreements/item/file/localizations/item/versions/item"
 )
 
-// agreementFileLocalizationRequestBuilder builds and executes requests for operations under \agreements\{agreement-id}\file\localizations\{agreementFileLocalization-id}
+// AgreementFileLocalizationRequestBuilder builds and executes requests for operations under \agreements\{agreement-id}\file\localizations\{agreementFileLocalization-id}
 type AgreementFileLocalizationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type AgreementFileLocalizationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// agreementFileLocalizationRequestBuilderGetQueryParameters get localizations from agreements
+// AgreementFileLocalizationRequestBuilderGetQueryParameters get localizations from agreements
 type AgreementFileLocalizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -6,7 +6,7 @@ import (
     iee277c96a0ecc6f8f85e4b78b4af2a54bb5de24503bd0a912443d697a175af6b "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/resource/schedulechangerequest/approve"
 )
 
-// scheduleChangeRequestRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.scheduleChangeRequest
+// ScheduleChangeRequestRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.scheduleChangeRequest
 type ScheduleChangeRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

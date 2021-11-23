@@ -6,7 +6,7 @@ import (
     i83ccca1cb18c681737f19af20e0ab9c3017e2b4ebf440721c6f60eed7f05bfd4 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/tokenissuancepolicies/ref"
 )
 
-// tokenIssuancePoliciesRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\tokenIssuancePolicies
+// TokenIssuancePoliciesRequestBuilder builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\tokenIssuancePolicies
 type TokenIssuancePoliciesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type TokenIssuancePoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// tokenIssuancePoliciesRequestBuilderGetQueryParameters the tokenIssuancePolicies assigned to this service principal.
+// TokenIssuancePoliciesRequestBuilderGetQueryParameters the tokenIssuancePolicies assigned to this service principal.
 type TokenIssuancePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

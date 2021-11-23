@@ -11,7 +11,7 @@ import (
     i6c110150728c2510de287369490ff5244652e45910711f67afd3aa83d2b107b7 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstores/item/groups/item/sets/item/children/item/relations/item"
 )
 
-// termRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}\sets\{set-id}\children\{term-id}
+// TermRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStores\{store-id}\groups\{group-id}\sets\{set-id}\children\{term-id}
 type TermRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type TermRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// termRequestBuilderGetQueryParameters children terms of set in term [store].
+// TermRequestBuilderGetQueryParameters children terms of set in term [store].
 type TermRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

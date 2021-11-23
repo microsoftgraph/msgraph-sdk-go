@@ -5,7 +5,7 @@ import (
     i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/externalconnectors"
 )
 
-// connectionOperation 
+// ConnectionOperation 
 type ConnectionOperation struct {
     Entity
     // If status is failed, provides more information about the error that caused the failure.

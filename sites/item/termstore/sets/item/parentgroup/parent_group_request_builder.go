@@ -8,7 +8,7 @@ import (
     i07c679d5935e10d8aa0397aa234ec621d81c0e4c89a8a2085cd7e9c060b89da1 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/sets/item/parentgroup/sets/item"
 )
 
-// parentGroupRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\sets\{set-id}\parentGroup
+// ParentGroupRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\sets\{set-id}\parentGroup
 type ParentGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ParentGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// parentGroupRequestBuilderGetQueryParameters the parent [group] that contains the set.
+// ParentGroupRequestBuilderGetQueryParameters the parent [group] that contains the set.
 type ParentGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

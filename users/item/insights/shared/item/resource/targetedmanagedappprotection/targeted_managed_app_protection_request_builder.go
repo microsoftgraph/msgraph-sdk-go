@@ -6,7 +6,7 @@ import (
     i613774739b5a2db00c3d21802a28927d9dad6cc5d965dc3e396fe7b7d0af3595 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/targetedmanagedappprotection/assign"
 )
 
-// targetedManagedAppProtectionRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource\microsoft.graph.targetedManagedAppProtection
+// TargetedManagedAppProtectionRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource\microsoft.graph.targetedManagedAppProtection
 type TargetedManagedAppProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

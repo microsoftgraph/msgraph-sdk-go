@@ -6,7 +6,7 @@ import (
     i14663737e683f2f05c3c2b7cb0dc9f5cf279802bb096f8a596a2595a702e1a82 "github.com/microsoftgraph/msgraph-sdk-go/print/printers/item/connectors/ref"
 )
 
-// connectorsRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\connectors
+// ConnectorsRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}\connectors
 type ConnectorsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type ConnectorsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// connectorsRequestBuilderGetQueryParameters the connectors that are associated with the printer.
+// ConnectorsRequestBuilderGetQueryParameters the connectors that are associated with the printer.
 type ConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

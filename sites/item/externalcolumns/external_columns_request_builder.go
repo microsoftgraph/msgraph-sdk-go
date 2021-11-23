@@ -6,7 +6,7 @@ import (
     i7561827c7bf6a1d5e7586808487675d9f7bc93ac11d07b8d8cdba84b59ddb8c5 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/externalcolumns/ref"
 )
 
-// externalColumnsRequestBuilder builds and executes requests for operations under \sites\{site-id}\externalColumns
+// ExternalColumnsRequestBuilder builds and executes requests for operations under \sites\{site-id}\externalColumns
 type ExternalColumnsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type ExternalColumnsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// externalColumnsRequestBuilderGetQueryParameters the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// ExternalColumnsRequestBuilderGetQueryParameters the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 type ExternalColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

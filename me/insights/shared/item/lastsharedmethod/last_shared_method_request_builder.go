@@ -20,7 +20,7 @@ import (
     ieea8499a6b9140ef511ce921340edd0a6ffa314d2dc7545baba72a6a52627bd1 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/ref"
 )
 
-// lastSharedMethodRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod
+// LastSharedMethodRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod
 type LastSharedMethodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type LastSharedMethodRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// lastSharedMethodRequestBuilderGetQueryParameters get lastSharedMethod from me
+// LastSharedMethodRequestBuilderGetQueryParameters get lastSharedMethod from me
 type LastSharedMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

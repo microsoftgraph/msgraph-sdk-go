@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// termsAndConditionsAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}\assignments\{termsAndConditionsAssignment-id}
+// TermsAndConditionsAssignmentRequestBuilder builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}\assignments\{termsAndConditionsAssignment-id}
 type TermsAndConditionsAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -35,7 +35,7 @@ type TermsAndConditionsAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// termsAndConditionsAssignmentRequestBuilderGetQueryParameters the list of assignments for this T&C policy.
+// TermsAndConditionsAssignmentRequestBuilderGetQueryParameters the list of assignments for this T&C policy.
 type TermsAndConditionsAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

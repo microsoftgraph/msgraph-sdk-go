@@ -7,7 +7,7 @@ import (
     i4d2f5f472627698f468195fa4249de1683e3e0ef5f9671359d1d7890cdf86243 "github.com/microsoftgraph/msgraph-sdk-go/users/item/activities/item/historyitems/item/activity"
 )
 
-// activityHistoryItemRequestBuilder builds and executes requests for operations under \users\{user-id}\activities\{userActivity-id}\historyItems\{activityHistoryItem-id}
+// ActivityHistoryItemRequestBuilder builds and executes requests for operations under \users\{user-id}\activities\{userActivity-id}\historyItems\{activityHistoryItem-id}
 type ActivityHistoryItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type ActivityHistoryItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// activityHistoryItemRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// ActivityHistoryItemRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
 type ActivityHistoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

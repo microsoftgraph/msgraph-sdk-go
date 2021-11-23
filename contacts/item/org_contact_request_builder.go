@@ -15,7 +15,7 @@ import (
     ifff3f2949bd5013659a326ca1cde357b44996411a8f259036c89d4ee51051f34 "github.com/microsoftgraph/msgraph-sdk-go/contacts/item/getmemberobjects"
 )
 
-// orgContactRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}
+// OrgContactRequestBuilder builds and executes requests for operations under \contacts\{orgContact-id}
 type OrgContactRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type OrgContactRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// orgContactRequestBuilderGetQueryParameters get entity from contacts by key
+// OrgContactRequestBuilderGetQueryParameters get entity from contacts by key
 type OrgContactRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     i50f7eb6cc2120ef77c3b1c444d4d9b9a8850ad23d8b7696d4650b062998df564 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/application/calculate"
 )
 
-// applicationRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\application
+// ApplicationRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\application
 type ApplicationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type ApplicationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// applicationRequestBuilderGetQueryParameters get application from workbooks
+// ApplicationRequestBuilderGetQueryParameters get application from workbooks
 type ApplicationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

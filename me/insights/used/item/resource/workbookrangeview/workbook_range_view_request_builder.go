@@ -5,7 +5,7 @@ import (
     ic05fecab786dbace1a31b4bc589e370751f9ee06abda243e9194fa7908f5b130 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/workbookrangeview/range_escaped"
 )
 
-// workbookRangeViewRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRangeView
+// WorkbookRangeViewRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRangeView
 type WorkbookRangeViewRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

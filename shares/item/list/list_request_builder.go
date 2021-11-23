@@ -15,7 +15,7 @@ import (
     ifd1fbca74ca99c59f8151a23008189eb5fa814dfb2bdb94e0592368b94d84ebe "github.com/microsoftgraph/msgraph-sdk-go/shares/item/list/columns/item"
 )
 
-// listRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\list
+// ListRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}\list
 type ListRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type ListRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// listRequestBuilderGetQueryParameters used to access the underlying list
+// ListRequestBuilderGetQueryParameters used to access the underlying list
 type ListRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

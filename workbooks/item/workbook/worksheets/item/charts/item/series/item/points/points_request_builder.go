@@ -8,7 +8,7 @@ import (
     i9231fbdbc9e7e8f545561a539e097b02404f2f681db14449fe5908c27e254caa "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/worksheets/item/charts/item/series/item/points/itematwithindex"
 )
 
-// pointsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points
+// PointsRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points
 type PointsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type PointsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// pointsRequestBuilderGetQueryParameters represents a collection of all points in the series. Read-only.
+// PointsRequestBuilderGetQueryParameters represents a collection of all points in the series. Read-only.
 type PointsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

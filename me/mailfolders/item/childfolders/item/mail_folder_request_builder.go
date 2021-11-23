@@ -8,7 +8,7 @@ import (
     i1743205569c2a7c4d5bb6d44ff0107a2e7e60d549e2b33fc00b68911f1572aaa "github.com/microsoftgraph/msgraph-sdk-go/me/mailfolders/item/childfolders/item/copy"
 )
 
-// mailFolderRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\childFolders\{mailFolder-id1}
+// MailFolderRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\childFolders\{mailFolder-id1}
 type MailFolderRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type MailFolderRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// mailFolderRequestBuilderGetQueryParameters the collection of child folders in the mailFolder.
+// MailFolderRequestBuilderGetQueryParameters the collection of child folders in the mailFolder.
 type MailFolderRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

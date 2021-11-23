@@ -6,7 +6,7 @@ import (
     ifc82e34929252e43b26961c4aa1341cdd29b763a4e341c8bd7002b8d7770e3ec "github.com/microsoftgraph/msgraph-sdk-go/directory/administrativeunits/item/members/ref"
 )
 
-// membersRequestBuilder builds and executes requests for operations under \directory\administrativeUnits\{administrativeUnit-id}\members
+// MembersRequestBuilder builds and executes requests for operations under \directory\administrativeUnits\{administrativeUnit-id}\members
 type MembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type MembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// membersRequestBuilderGetQueryParameters users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
+// MembersRequestBuilderGetQueryParameters users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

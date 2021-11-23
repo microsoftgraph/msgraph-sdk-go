@@ -13,7 +13,7 @@ import (
     ie4696deb90abb7ecec8da795c90a12b52f9218953b092733c93bbe7dcf472577 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/items/item/versions/item"
 )
 
-// listItemRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\items\{listItem-id}
+// ListItemRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\items\{listItem-id}
 type ListItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -42,7 +42,7 @@ type ListItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// listItemRequestBuilderGetQueryParameters all items contained in the list.
+// ListItemRequestBuilderGetQueryParameters all items contained in the list.
 type ListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

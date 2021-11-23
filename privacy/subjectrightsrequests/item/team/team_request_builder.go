@@ -7,7 +7,7 @@ import (
     i0a1d3e1945db6b7d4136012b3f94b87bb840ddf91d4b121c484d8ae1d673a287 "github.com/microsoftgraph/msgraph-sdk-go/privacy/subjectrightsrequests/item/team/ref"
 )
 
-// teamRequestBuilder builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\team
+// TeamRequestBuilder builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\team
 type TeamRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type TeamRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// teamRequestBuilderGetQueryParameters information about the Microsoft Teams team that was created for the request.
+// TeamRequestBuilderGetQueryParameters information about the Microsoft Teams team that was created for the request.
 type TeamRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

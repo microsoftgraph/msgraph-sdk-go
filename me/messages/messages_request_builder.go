@@ -7,7 +7,7 @@ import (
     idf952c9a6f08534d43d1914f25757696333070a2cdb9938bb34dd244e84403f5 "github.com/microsoftgraph/msgraph-sdk-go/me/messages/delta"
 )
 
-// messagesRequestBuilder builds and executes requests for operations under \me\messages
+// MessagesRequestBuilder builds and executes requests for operations under \me\messages
 type MessagesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type MessagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// messagesRequestBuilderGetQueryParameters the messages in a mailbox or folder. Read-only. Nullable.
+// MessagesRequestBuilderGetQueryParameters the messages in a mailbox or folder. Read-only. Nullable.
 type MessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

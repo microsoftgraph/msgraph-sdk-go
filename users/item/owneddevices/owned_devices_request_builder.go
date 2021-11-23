@@ -6,7 +6,7 @@ import (
     i8bc4d63c1d6679d7014de544e6e3189959c82f63b43b96151001ac723c903a0d "github.com/microsoftgraph/msgraph-sdk-go/users/item/owneddevices/ref"
 )
 
-// ownedDevicesRequestBuilder builds and executes requests for operations under \users\{user-id}\ownedDevices
+// OwnedDevicesRequestBuilder builds and executes requests for operations under \users\{user-id}\ownedDevices
 type OwnedDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type OwnedDevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ownedDevicesRequestBuilderGetQueryParameters devices that are owned by the user. Read-only. Nullable. Supports $expand.
+// OwnedDevicesRequestBuilderGetQueryParameters devices that are owned by the user. Read-only. Nullable. Supports $expand.
 type OwnedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

@@ -15,7 +15,7 @@ import (
     ieb0811fa685bb225bf1a7f78082f07573e816696c309fce9d12e426d809e5daa "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignments/item/resources/item"
 )
 
-// educationAssignmentRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}
+// EducationAssignmentRequestBuilder builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}
 type EducationAssignmentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -44,7 +44,7 @@ type EducationAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// educationAssignmentRequestBuilderGetQueryParameters all assignments associated with this class. Nullable.
+// EducationAssignmentRequestBuilderGetQueryParameters all assignments associated with this class. Nullable.
 type EducationAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

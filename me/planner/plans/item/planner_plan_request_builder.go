@@ -11,7 +11,7 @@ import (
     i73511b20272f66b82b7aa067d7a59dd84908a7478b0d91553243df5d8bcc734e "github.com/microsoftgraph/msgraph-sdk-go/me/planner/plans/item/tasks/item"
 )
 
-// plannerPlanRequestBuilder builds and executes requests for operations under \me\planner\plans\{plannerPlan-id}
+// PlannerPlanRequestBuilder builds and executes requests for operations under \me\planner\plans\{plannerPlan-id}
 type PlannerPlanRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type PlannerPlanRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// plannerPlanRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerTasks assigned to the user.
+// PlannerPlanRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerTasks assigned to the user.
 type PlannerPlanRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -7,7 +7,7 @@ import (
     if70ee87995626bbd7ed35ea286081201986d3ba653c3232ecf291ce869e8c1da "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/tables/item/worksheet/charts/item/axes/seriesaxis/title/format"
 )
 
-// titleRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\axes\seriesAxis\title
+// TitleRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\axes\seriesAxis\title
 type TitleRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type TitleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// titleRequestBuilderGetQueryParameters represents the axis title. Read-only.
+// TitleRequestBuilderGetQueryParameters represents the axis title. Read-only.
 type TitleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

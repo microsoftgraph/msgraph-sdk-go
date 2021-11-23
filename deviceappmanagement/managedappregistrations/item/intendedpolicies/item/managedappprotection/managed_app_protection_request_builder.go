@@ -5,7 +5,7 @@ import (
     ie069d21a1aa15ae08e559adf0a299a83e54acfc3e2b51d572e1771413be72b2d "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/managedappregistrations/item/intendedpolicies/item/managedappprotection/targetapps"
 )
 
-// managedAppProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\intendedPolicies\{managedAppPolicy-id}\microsoft.graph.managedAppProtection
+// ManagedAppProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\intendedPolicies\{managedAppPolicy-id}\microsoft.graph.managedAppProtection
 type ManagedAppProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

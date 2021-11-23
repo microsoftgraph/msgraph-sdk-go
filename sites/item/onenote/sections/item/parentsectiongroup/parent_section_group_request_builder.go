@@ -11,7 +11,7 @@ import (
     i8403b8eeaee9d6e4dfa4fea71aaf1b05d611572caa0fd8213ab3bb728173bffd "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/sections/item/parentsectiongroup/sectiongroups/item"
 )
 
-// parentSectionGroupRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\sections\{onenoteSection-id}\parentSectionGroup
+// ParentSectionGroupRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\sections\{onenoteSection-id}\parentSectionGroup
 type ParentSectionGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type ParentSectionGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// parentSectionGroupRequestBuilderGetQueryParameters the section group that contains the section.  Read-only.
+// ParentSectionGroupRequestBuilderGetQueryParameters the section group that contains the section.  Read-only.
 type ParentSectionGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -6,7 +6,7 @@ import (
     i31b110b87a150128d0be2fb38c3d1a41d8789a05c1bdb153ed1383f78798d28a "github.com/microsoftgraph/msgraph-sdk-go/devices/item/registeredusers/ref"
 )
 
-// registeredUsersRequestBuilder builds and executes requests for operations under \devices\{device-id}\registeredUsers
+// RegisteredUsersRequestBuilder builds and executes requests for operations under \devices\{device-id}\registeredUsers
 type RegisteredUsersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type RegisteredUsersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// registeredUsersRequestBuilderGetQueryParameters collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
+// RegisteredUsersRequestBuilderGetQueryParameters collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 type RegisteredUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

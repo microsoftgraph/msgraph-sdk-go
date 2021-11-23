@@ -18,7 +18,7 @@ import (
     ia4e76c4ea17d224738d3bd333eae6742adbcd53e331ba5959a9aed631af5d7c2 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/lists/item/contenttypes/item/columnlinks/item"
 )
 
-// contentTypeRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}
+// ContentTypeRequestBuilder builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}
 type ContentTypeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -47,7 +47,7 @@ type ContentTypeRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// contentTypeRequestBuilderGetQueryParameters the collection of content types present in this list.
+// ContentTypeRequestBuilderGetQueryParameters the collection of content types present in this list.
 type ContentTypeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

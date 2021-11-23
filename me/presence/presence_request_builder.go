@@ -8,7 +8,7 @@ import (
     ie9f3d6636a19dc2982d31154f9d808e88d5ed9b5fd077aa65f4b406a36b3a3ef "github.com/microsoftgraph/msgraph-sdk-go/me/presence/setpresence"
 )
 
-// presenceRequestBuilder builds and executes requests for operations under \me\presence
+// PresenceRequestBuilder builds and executes requests for operations under \me\presence
 type PresenceRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type PresenceRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// presenceRequestBuilderGetQueryParameters get presence from me
+// PresenceRequestBuilderGetQueryParameters get presence from me
 type PresenceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

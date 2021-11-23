@@ -6,7 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
-// getSharePointActivityFileCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getSharePointActivityFileCounts(period='{period}')
+// GetSharePointActivityFileCountsWithPeriodRequestBuilder builds and executes requests for operations under \reports\microsoft.graph.getSharePointActivityFileCounts(period='{period}')
 type GetSharePointActivityFileCountsWithPeriodRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

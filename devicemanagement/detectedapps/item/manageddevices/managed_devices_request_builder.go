@@ -6,7 +6,7 @@ import (
     i2792a5120ea45b4f996b8ba72f53ac860fd299e21ce9a8e9e10f8be999841e76 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/detectedapps/item/manageddevices/ref"
 )
 
-// managedDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\detectedApps\{detectedApp-id}\managedDevices
+// ManagedDevicesRequestBuilder builds and executes requests for operations under \deviceManagement\detectedApps\{detectedApp-id}\managedDevices
 type ManagedDevicesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type ManagedDevicesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// managedDevicesRequestBuilderGetQueryParameters the devices that have the discovered application installed
+// ManagedDevicesRequestBuilderGetQueryParameters the devices that have the discovered application installed
 type ManagedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

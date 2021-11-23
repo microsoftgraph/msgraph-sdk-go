@@ -6,7 +6,7 @@ import (
     i38c46eb33f2d36dc59f0ae913c99556a8126694bb4665e210ef3d49ba179a204 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/transitivemembers/ref"
 )
 
-// transitiveMembersRequestBuilder builds and executes requests for operations under \groups\{group-id}\transitiveMembers
+// TransitiveMembersRequestBuilder builds and executes requests for operations under \groups\{group-id}\transitiveMembers
 type TransitiveMembersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -26,7 +26,7 @@ type TransitiveMembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// transitiveMembersRequestBuilderGetQueryParameters get transitiveMembers from groups
+// TransitiveMembersRequestBuilderGetQueryParameters get transitiveMembers from groups
 type TransitiveMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

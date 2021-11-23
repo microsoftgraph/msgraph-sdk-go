@@ -5,7 +5,7 @@ import (
     idafc31cb3efe67519e041243be66cc326597c21b815856349d7f14cbc41d04b2 "github.com/microsoftgraph/msgraph-sdk-go/users/item/insights/shared/item/resource/printdocument/createuploadsession"
 )
 
-// printDocumentRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource\microsoft.graph.printDocument
+// PrintDocumentRequestBuilder builds and executes requests for operations under \users\{user-id}\insights\shared\{sharedInsight-id}\resource\microsoft.graph.printDocument
 type PrintDocumentRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

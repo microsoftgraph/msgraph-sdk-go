@@ -23,7 +23,7 @@ import (
     i95bd316e1af2146251d5c5f8f94d9865c17745b134282c19c4fae4c81ba47474 "github.com/microsoftgraph/msgraph-sdk-go/teams/item/channels/item"
 )
 
-// teamRequestBuilder builds and executes requests for operations under \teams\{team-id}
+// TeamRequestBuilder builds and executes requests for operations under \teams\{team-id}
 type TeamRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -52,7 +52,7 @@ type TeamRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// teamRequestBuilderGetQueryParameters get entity from teams by key
+// TeamRequestBuilderGetQueryParameters get entity from teams by key
 type TeamRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

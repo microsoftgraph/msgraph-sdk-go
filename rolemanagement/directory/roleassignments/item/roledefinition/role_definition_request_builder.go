@@ -7,7 +7,7 @@ import (
     if6cd2253ea200d5def87691ba4ad13a44d3fbf67b2023aba24fb2abe8da4d39a "github.com/microsoftgraph/msgraph-sdk-go/rolemanagement/directory/roleassignments/item/roledefinition/ref"
 )
 
-// roleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignments\{unifiedRoleAssignment-id}\roleDefinition
+// RoleDefinitionRequestBuilder builds and executes requests for operations under \roleManagement\directory\roleAssignments\{unifiedRoleAssignment-id}\roleDefinition
 type RoleDefinitionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type RoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// roleDefinitionRequestBuilderGetQueryParameters the roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+// RoleDefinitionRequestBuilderGetQueryParameters the roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
 type RoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -8,7 +8,7 @@ import (
     if3310ca6b788a2306a23917469f9361a0218fae09344d900fdd19f9e1bd8ab74 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/printjob/start"
 )
 
-// printJobRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.printJob
+// PrintJobRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.printJob
 type PrintJobRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

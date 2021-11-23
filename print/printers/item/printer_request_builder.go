@@ -11,7 +11,7 @@ import (
     i8a35ad54635f07016096adf7157efc92ede0057cd4a790d06a32332ce94f22cc "github.com/microsoftgraph/msgraph-sdk-go/print/printers/item/tasktriggers/item"
 )
 
-// printerRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}
+// PrinterRequestBuilder builds and executes requests for operations under \print\printers\{printer-id}
 type PrinterRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type PrinterRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// printerRequestBuilderGetQueryParameters the list of printers registered in the tenant.
+// PrinterRequestBuilderGetQueryParameters the list of printers registered in the tenant.
 type PrinterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

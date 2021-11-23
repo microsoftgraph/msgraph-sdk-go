@@ -91,7 +91,7 @@ import (
     ifdc39e295bcc2e19fecc18f2ae737ddb8fe9018d8753e81ef0c2de8bb37638da "github.com/microsoftgraph/msgraph-sdk-go/users/item/events/item"
 )
 
-// userRequestBuilder builds and executes requests for operations under \users\{user-id}
+// UserRequestBuilder builds and executes requests for operations under \users\{user-id}
 type UserRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -120,7 +120,7 @@ type UserRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// userRequestBuilderGetQueryParameters get entity from users by key
+// UserRequestBuilderGetQueryParameters get entity from users by key
 type UserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -62,7 +62,7 @@ import (
     ie2787738d6d6382b33609c61cb384a808f64e6df1c1b03c2b26417c950b5b448 "github.com/microsoftgraph/msgraph-sdk-go/devicemanagement/exchangeconnectors/item"
 )
 
-// deviceManagementRequestBuilder builds and executes requests for operations under \deviceManagement
+// DeviceManagementRequestBuilder builds and executes requests for operations under \deviceManagement
 type DeviceManagementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -82,7 +82,7 @@ type DeviceManagementRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// deviceManagementRequestBuilderGetQueryParameters get deviceManagement
+// DeviceManagementRequestBuilderGetQueryParameters get deviceManagement
 type DeviceManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

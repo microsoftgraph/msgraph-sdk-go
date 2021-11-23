@@ -11,7 +11,7 @@ import (
     ic47fb69b7ecc13ce7f81973ffdde08efe7b70445311d1e83964064ef79497098 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item"
 )
 
-// insightsRequestBuilder builds and executes requests for operations under \me\insights
+// InsightsRequestBuilder builds and executes requests for operations under \me\insights
 type InsightsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type InsightsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// insightsRequestBuilderGetQueryParameters read-only. Nullable.
+// InsightsRequestBuilderGetQueryParameters read-only. Nullable.
 type InsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

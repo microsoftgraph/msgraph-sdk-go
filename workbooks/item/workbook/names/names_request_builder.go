@@ -8,7 +8,7 @@ import (
     ic164c81c5d28bd5f950f84060e47239ac6719d76dd43039350dfeb58699dc2da "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/workbook/names/add"
 )
 
-// namesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names
+// NamesRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names
 type NamesRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type NamesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// namesRequestBuilderGetQueryParameters represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
+// NamesRequestBuilderGetQueryParameters represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 type NamesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

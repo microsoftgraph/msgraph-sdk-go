@@ -11,7 +11,7 @@ import (
     id334b355b0e9c1a808648dc507c9c2722906e5d1665f782a1e2496b2a183da94 "github.com/microsoftgraph/msgraph-sdk-go/agreements/item/files/item"
 )
 
-// agreementRequestBuilder builds and executes requests for operations under \agreements\{agreement-id}
+// AgreementRequestBuilder builds and executes requests for operations under \agreements\{agreement-id}
 type AgreementRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type AgreementRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// agreementRequestBuilderGetQueryParameters get entity from agreements by key
+// AgreementRequestBuilderGetQueryParameters get entity from agreements by key
 type AgreementRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select_escaped []string;

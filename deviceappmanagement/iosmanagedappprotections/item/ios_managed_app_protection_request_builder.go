@@ -9,7 +9,7 @@ import (
     i55f341823424fe64c759539b60c8dd7b2233b0db784b5c0c209dbdcc827b89fc "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement/iosmanagedappprotections/item/apps/item"
 )
 
-// iosManagedAppProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\iosManagedAppProtections\{iosManagedAppProtection-id}
+// IosManagedAppProtectionRequestBuilder builds and executes requests for operations under \deviceAppManagement\iosManagedAppProtections\{iosManagedAppProtection-id}
 type IosManagedAppProtectionRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -38,7 +38,7 @@ type IosManagedAppProtectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// iosManagedAppProtectionRequestBuilderGetQueryParameters iOS managed app policies.
+// IosManagedAppProtectionRequestBuilderGetQueryParameters iOS managed app policies.
 type IosManagedAppProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

@@ -11,7 +11,7 @@ import (
     i01c49ff8ee7f291e6ef03661dd6de1defbca61ef00e7cc93142b70cd237aae9e "github.com/microsoftgraph/msgraph-sdk-go/privacy/subjectrightsrequests/item/notes/item"
 )
 
-// subjectRightsRequestRequestBuilder builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}
+// SubjectRightsRequestRequestBuilder builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}
 type SubjectRightsRequestRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -40,7 +40,7 @@ type SubjectRightsRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// subjectRightsRequestRequestBuilderGetQueryParameters get subjectRightsRequests from privacy
+// SubjectRightsRequestRequestBuilderGetQueryParameters get subjectRightsRequests from privacy
 type SubjectRightsRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

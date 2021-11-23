@@ -6,7 +6,7 @@ import (
     ic7d62f81fffb8eeca19a8b0ef08616810723885319cdf8d99c7263146be1edcd "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/resource/workbookrangeformat/autofitcolumns"
 )
 
-// workbookRangeFormatRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.workbookRangeFormat
+// WorkbookRangeFormatRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\resource\microsoft.graph.workbookRangeFormat
 type WorkbookRangeFormatRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

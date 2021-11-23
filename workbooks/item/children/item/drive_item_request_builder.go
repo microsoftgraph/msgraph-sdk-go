@@ -7,7 +7,7 @@ import (
     i1695c9fb33779ab1edf680753a69ef0a408d72ae7be185fc6161bccb1f3e890a "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/children/item/content"
 )
 
-// driveItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\children\{driveItem-id1}
+// DriveItemRequestBuilder builds and executes requests for operations under \workbooks\{driveItem-id}\children\{driveItem-id1}
 type DriveItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type DriveItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// driveItemRequestBuilderGetQueryParameters collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+// DriveItemRequestBuilderGetQueryParameters collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
 type DriveItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

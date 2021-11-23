@@ -8,7 +8,7 @@ import (
     i577c32b3546bb944ef6f26d23de16748f1a577be367300410114bee1d27f70cb "github.com/microsoftgraph/msgraph-sdk-go/external/connections/item"
 )
 
-// externalRequestBuilder builds and executes requests for operations under \external
+// ExternalRequestBuilder builds and executes requests for operations under \external
 type ExternalRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -28,7 +28,7 @@ type ExternalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// externalRequestBuilderGetQueryParameters get external
+// ExternalRequestBuilderGetQueryParameters get external
 type ExternalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

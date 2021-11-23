@@ -7,7 +7,7 @@ import (
     i98038c57b60b04d09501501acf47529409f1308caaeb4fa6eb2428843589ba22 "github.com/microsoftgraph/msgraph-sdk-go/invitations/item/inviteduser"
 )
 
-// invitationRequestBuilder builds and executes requests for operations under \invitations\{invitation-id}
+// InvitationRequestBuilder builds and executes requests for operations under \invitations\{invitation-id}
 type InvitationRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -36,7 +36,7 @@ type InvitationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// invitationRequestBuilderGetQueryParameters get entity from invitations by key
+// InvitationRequestBuilderGetQueryParameters get entity from invitations by key
 type InvitationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

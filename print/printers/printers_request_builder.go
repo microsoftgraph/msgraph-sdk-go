@@ -7,7 +7,7 @@ import (
     i57474785aaf38791fd572894dfce0d112e847998d671fcf614b23be5c7b8d7ed "github.com/microsoftgraph/msgraph-sdk-go/print/printers/create"
 )
 
-// printersRequestBuilder builds and executes requests for operations under \print\printers
+// PrintersRequestBuilder builds and executes requests for operations under \print\printers
 type PrintersRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type PrintersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// printersRequestBuilderGetQueryParameters the list of printers registered in the tenant.
+// PrintersRequestBuilderGetQueryParameters the list of printers registered in the tenant.
 type PrintersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

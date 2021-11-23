@@ -32,7 +32,7 @@ import (
     iefde87583ee1f0a0fc47032a7b2ee2ce5b68ae18538ee231123be2c834f492dc "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item/lastsharedmethod/workbookrange/columnsafterwithcount"
 )
 
-// workbookRangeRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.workbookRange
+// WorkbookRangeRequestBuilder builds and executes requests for operations under \me\insights\shared\{sharedInsight-id}\lastSharedMethod\microsoft.graph.workbookRange
 type WorkbookRangeRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

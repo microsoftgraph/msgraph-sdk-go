@@ -8,7 +8,7 @@ import (
     ifaa259a0e1cd5e2894d850f5fae0dac72a248fa7319d019f09dacc7e3865d547 "github.com/microsoftgraph/msgraph-sdk-go/policies/featurerolloutpolicies/item/appliesto/item"
 )
 
-// featureRolloutPolicyRequestBuilder builds and executes requests for operations under \policies\featureRolloutPolicies\{featureRolloutPolicy-id}
+// FeatureRolloutPolicyRequestBuilder builds and executes requests for operations under \policies\featureRolloutPolicies\{featureRolloutPolicy-id}
 type FeatureRolloutPolicyRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type FeatureRolloutPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// featureRolloutPolicyRequestBuilderGetQueryParameters the feature rollout policy associated with a directory object.
+// FeatureRolloutPolicyRequestBuilderGetQueryParameters the feature rollout policy associated with a directory object.
 type FeatureRolloutPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

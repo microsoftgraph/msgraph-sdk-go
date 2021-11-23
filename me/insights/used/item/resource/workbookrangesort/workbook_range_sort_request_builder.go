@@ -5,7 +5,7 @@ import (
     i6c95955a067a609fddc6e3bc5b423c8c7ad728194ed90bd02b3cefae415ed186 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item/resource/workbookrangesort/apply"
 )
 
-// workbookRangeSortRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRangeSort
+// WorkbookRangeSortRequestBuilder builds and executes requests for operations under \me\insights\used\{usedInsight-id}\resource\microsoft.graph.workbookRangeSort
 type WorkbookRangeSortRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

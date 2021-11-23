@@ -5,7 +5,7 @@ import (
     i6da293e4b823640bac7b47af9990d3f95f0f6748794c761e1e5d9eb8cbe6aea6 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item/resource/workbookrangefill/clear"
 )
 
-// workbookRangeFillRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.workbookRangeFill
+// WorkbookRangeFillRequestBuilder builds and executes requests for operations under \me\insights\trending\{trending-id}\resource\microsoft.graph.workbookRangeFill
 type WorkbookRangeFillRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;

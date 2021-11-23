@@ -7,7 +7,7 @@ import (
     i212015a520d042e8af8937d2d38609bd403b7a8a3abe7bda2f82711520e2b0fc "github.com/microsoftgraph/msgraph-sdk-go/sites/item/termstore/groups/item/sets/item/relations/item/toterm/ref"
 )
 
-// toTermRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\groups\{group-id}\sets\{set-id}\relations\{relation-id}\toTerm
+// ToTermRequestBuilder builds and executes requests for operations under \sites\{site-id}\termStore\groups\{group-id}\sets\{set-id}\relations\{relation-id}\toTerm
 type ToTermRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type ToTermRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// toTermRequestBuilderGetQueryParameters the to [term] of the relation. The term to which the relationship is defined.
+// ToTermRequestBuilderGetQueryParameters the to [term] of the relation. The term to which the relationship is defined.
 type ToTermRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

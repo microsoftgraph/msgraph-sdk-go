@@ -7,7 +7,7 @@ import (
     ia71d5a5b6b3ea77f765bc2b0175ea2dbe4bccb5b112d222630b4264a2bd127e5 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentapprovals/filterbycurrentuserwithon"
 )
 
-// accessPackageAssignmentApprovalsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentApprovals
+// AccessPackageAssignmentApprovalsRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentApprovals
 type AccessPackageAssignmentApprovalsRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -27,7 +27,7 @@ type AccessPackageAssignmentApprovalsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// accessPackageAssignmentApprovalsRequestBuilderGetQueryParameters get accessPackageAssignmentApprovals from identityGovernance
+// AccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters get accessPackageAssignmentApprovals from identityGovernance
 type AccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;

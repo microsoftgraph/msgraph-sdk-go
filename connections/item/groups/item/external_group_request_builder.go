@@ -8,7 +8,7 @@ import (
     ic50b14a0e54ff71be7722a78ea802d3159c32ea452a5c07b697e520926f67def "github.com/microsoftgraph/msgraph-sdk-go/connections/item/groups/item/members/item"
 )
 
-// externalGroupRequestBuilder builds and executes requests for operations under \connections\{externalConnection-id}\groups\{externalGroup-id}
+// ExternalGroupRequestBuilder builds and executes requests for operations under \connections\{externalConnection-id}\groups\{externalGroup-id}
 type ExternalGroupRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -37,7 +37,7 @@ type ExternalGroupRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// externalGroupRequestBuilderGetQueryParameters read-only. Nullable.
+// ExternalGroupRequestBuilderGetQueryParameters read-only. Nullable.
 type ExternalGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;

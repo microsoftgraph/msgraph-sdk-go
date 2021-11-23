@@ -10,7 +10,7 @@ import (
     ib2b8f5248db7438332c718c2347c94bd8a607394f927f2305f9ea2dbfa0a8c78 "github.com/microsoftgraph/msgraph-sdk-go/users/item/planner/tasks/item/assignedtotaskboardformat"
 )
 
-// plannerTaskRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\tasks\{plannerTask-id}
+// PlannerTaskRequestBuilder builds and executes requests for operations under \users\{user-id}\planner\tasks\{plannerTask-id}
 type PlannerTaskRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string;
@@ -39,7 +39,7 @@ type PlannerTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// plannerTaskRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans shared with the user.
+// PlannerTaskRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans shared with the user.
 type PlannerTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
