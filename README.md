@@ -80,17 +80,42 @@ After you have a **GraphServiceClient** that is authenticated, you can begin mak
 To retrieve the user's drive:
 
 ```Golang
-result, err := client
-  .Me()
-  .Drive()
-  .Get(nil)
+result, err := client.Me().Drive().Get(nil)
 if err != nil {
     fmt.Printf("Error getting the drive: %v\n", err)
 }
 fmt.Printf("Found Drive : %v\n", result.GetId())
 ```
 
-## 4. Documentation
+## 4. Getting results that span across multiple pages
+
+Items in a collection response can span across multiple pages. To get the complete set of items in the collection, your application must make additional calls to get the subsequent pages until no more next link is provided in the response.
+
+### 4.1 Get all the users in an environment
+
+To retrieve the users:
+
+```Golang
+result, err := client.Users().Get(nil)
+if err != nil {
+    fmt.Printf("Error getting users: %v\n", err)
+    return err
+}
+
+for {
+    if result.GetNextLink() == nil {
+        break
+    }
+
+    result, err = users.NewUsersRequestBuilder(*result.GetNextLink(), adapter).Get(nil)
+    if err != nil {
+        fmt.Printf("Error getting users: %v\n", err)
+        break
+    }
+}
+```
+
+## 5. Documentation
 
 For more detailed documentation, see:
 
@@ -100,18 +125,18 @@ For more detailed documentation, see:
 * [Known issues](https://github.com/MicrosoftGraph/msgraph-sdk-go/issues)
 * [Contributions](https://github.com/microsoftgraph/msgraph-sdk-go/blob/main/CONTRIBUTING.md)
 
-## 5. Issues
+## 6. Issues
 
 For known issues, see [issues](https://github.com/MicrosoftGraph/msgraph-sdk-go/issues).
 
-## 6. Contributions
+## 7. Contributions
 
 The Microsoft Graph SDK is open for contribution. To contribute to this project, see [Contributing](https://github.com/microsoftgraph/msgraph-sdk-go/blob/main/CONTRIBUTING.md).
 
-## 7. License
+## 8. License
 
 Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the [MIT license](LICENSE).
 
-## 8. Third-party notices
+## 9. Third-party notices
 
 [Third-party notices](THIRD%20PARTY%20NOTICES)
