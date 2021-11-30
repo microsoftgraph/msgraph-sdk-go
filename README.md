@@ -89,7 +89,7 @@ fmt.Printf("Found Drive : %v\n", result.GetId())
 
 ## 4. Getting results that span across multiple pages
 
-Items in a collection response call can span across multiple pages. To get the complete set of items in the collection, your application must make additional calls to get the subsequent pages until no more next link is provided in the response.
+Items in a collection response can span across multiple pages. To get the complete set of items in the collection, your application must make additional calls to get the subsequent pages until no more next link is provided in the response.
 
 ### 4.1 Get all the users in an environment
 
