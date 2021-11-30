@@ -7,17 +7,17 @@ import (
 // ServicePrincipal 
 type ServicePrincipal struct {
     DirectoryObject
-    // true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, NOT, in).
+    // true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
     accountEnabled *bool;
     // Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
     addIns []AddIn;
-    // Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, NOT, ge, le, startsWith).
+    // Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
     alternativeNames []string;
     // The description exposed by the associated application.
     appDescription *string;
     // The display name exposed by the associated application.
     appDisplayName *string;
-    // The unique identifier for the associated application (its appId property).
+    // The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
     appId *string;
     // Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).
     applicationTemplateId *string;
@@ -37,11 +37,11 @@ type ServicePrincipal struct {
     createdObjects []DirectoryObject;
     // The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
     delegatedPermissionClassifications []DelegatedPermissionClassification;
-    // Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
+    // Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string;
-    // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).
+    // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
     disabledByMicrosoftStatus *string;
-    // The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+    // The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string;
     // Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
     endpoints []Endpoint;
@@ -49,9 +49,9 @@ type ServicePrincipal struct {
     homepage *string;
     // The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
     homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicy;
-    // Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
+    // Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
     info *InformationalUrl;
-    // The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, NOT, ge, le).
+    // The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
     keyCredentials []KeyCredential;
     // Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
     loginUrl *string;
@@ -81,13 +81,13 @@ type ServicePrincipal struct {
     replyUrls []string;
     // The collection for settings related to saml single sign-on.
     samlSingleSignOnSettings *SamlSingleSignOnSettings;
-    // Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, NOT, ge, le, startsWith).
+    // Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
     servicePrincipalNames []string;
     // Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
     servicePrincipalType *string;
     // Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
     signInAudience *string;
-    // Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
+    // Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
     tags []string;
     // Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
     tokenEncryptionKeyId *string;
@@ -105,7 +105,7 @@ func NewServicePrincipal()(*ServicePrincipal) {
     }
     return m
 }
-// GetAccountEnabled gets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, NOT, in).
+// GetAccountEnabled gets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
 func (m *ServicePrincipal) GetAccountEnabled()(*bool) {
     if m == nil {
         return nil
@@ -121,7 +121,7 @@ func (m *ServicePrincipal) GetAddIns()([]AddIn) {
         return m.addIns
     }
 }
-// GetAlternativeNames gets the alternativeNames property value. Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, NOT, ge, le, startsWith).
+// GetAlternativeNames gets the alternativeNames property value. Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) GetAlternativeNames()([]string) {
     if m == nil {
         return nil
@@ -145,7 +145,7 @@ func (m *ServicePrincipal) GetAppDisplayName()(*string) {
         return m.appDisplayName
     }
 }
-// GetAppId gets the appId property value. The unique identifier for the associated application (its appId property).
+// GetAppId gets the appId property value. The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
 func (m *ServicePrincipal) GetAppId()(*string) {
     if m == nil {
         return nil
@@ -225,7 +225,7 @@ func (m *ServicePrincipal) GetDelegatedPermissionClassifications()([]DelegatedPe
         return m.delegatedPermissionClassifications
     }
 }
-// GetDescription gets the description property value. Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
+// GetDescription gets the description property value. Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *ServicePrincipal) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -233,7 +233,7 @@ func (m *ServicePrincipal) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisabledByMicrosoftStatus gets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).
+// GetDisabledByMicrosoftStatus gets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
 func (m *ServicePrincipal) GetDisabledByMicrosoftStatus()(*string) {
     if m == nil {
         return nil
@@ -241,7 +241,7 @@ func (m *ServicePrincipal) GetDisabledByMicrosoftStatus()(*string) {
         return m.disabledByMicrosoftStatus
     }
 }
-// GetDisplayName gets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// GetDisplayName gets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *ServicePrincipal) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -273,7 +273,7 @@ func (m *ServicePrincipal) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryP
         return m.homeRealmDiscoveryPolicies
     }
 }
-// GetInfo gets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
+// GetInfo gets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *ServicePrincipal) GetInfo()(*InformationalUrl) {
     if m == nil {
         return nil
@@ -281,7 +281,7 @@ func (m *ServicePrincipal) GetInfo()(*InformationalUrl) {
         return m.info
     }
 }
-// GetKeyCredentials gets the keyCredentials property value. The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, NOT, ge, le).
+// GetKeyCredentials gets the keyCredentials property value. The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *ServicePrincipal) GetKeyCredentials()([]KeyCredential) {
     if m == nil {
         return nil
@@ -401,7 +401,7 @@ func (m *ServicePrincipal) GetSamlSingleSignOnSettings()(*SamlSingleSignOnSettin
         return m.samlSingleSignOnSettings
     }
 }
-// GetServicePrincipalNames gets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, NOT, ge, le, startsWith).
+// GetServicePrincipalNames gets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) GetServicePrincipalNames()([]string) {
     if m == nil {
         return nil
@@ -425,7 +425,7 @@ func (m *ServicePrincipal) GetSignInAudience()(*string) {
         return m.signInAudience
     }
 }
-// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
+// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) GetTags()([]string) {
     if m == nil {
         return nil
@@ -1392,7 +1392,7 @@ func (m *ServicePrincipal) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, NOT, in).
+// SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
 func (m *ServicePrincipal) SetAccountEnabled(value *bool)() {
     m.accountEnabled = value
 }
@@ -1400,7 +1400,7 @@ func (m *ServicePrincipal) SetAccountEnabled(value *bool)() {
 func (m *ServicePrincipal) SetAddIns(value []AddIn)() {
     m.addIns = value
 }
-// SetAlternativeNames sets the alternativeNames property value. Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, NOT, ge, le, startsWith).
+// SetAlternativeNames sets the alternativeNames property value. Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) SetAlternativeNames(value []string)() {
     m.alternativeNames = value
 }
@@ -1412,7 +1412,7 @@ func (m *ServicePrincipal) SetAppDescription(value *string)() {
 func (m *ServicePrincipal) SetAppDisplayName(value *string)() {
     m.appDisplayName = value
 }
-// SetAppId sets the appId property value. The unique identifier for the associated application (its appId property).
+// SetAppId sets the appId property value. The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
 func (m *ServicePrincipal) SetAppId(value *string)() {
     m.appId = value
 }
@@ -1452,15 +1452,15 @@ func (m *ServicePrincipal) SetCreatedObjects(value []DirectoryObject)() {
 func (m *ServicePrincipal) SetDelegatedPermissionClassifications(value []DelegatedPermissionClassification)() {
     m.delegatedPermissionClassifications = value
 }
-// SetDescription sets the description property value. Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
+// SetDescription sets the description property value. Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *ServicePrincipal) SetDescription(value *string)() {
     m.description = value
 }
-// SetDisabledByMicrosoftStatus sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).
+// SetDisabledByMicrosoftStatus sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
 func (m *ServicePrincipal) SetDisabledByMicrosoftStatus(value *string)() {
     m.disabledByMicrosoftStatus = value
 }
-// SetDisplayName sets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// SetDisplayName sets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *ServicePrincipal) SetDisplayName(value *string)() {
     m.displayName = value
 }
@@ -1476,11 +1476,11 @@ func (m *ServicePrincipal) SetHomepage(value *string)() {
 func (m *ServicePrincipal) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicy)() {
     m.homeRealmDiscoveryPolicies = value
 }
-// SetInfo sets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
+// SetInfo sets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *ServicePrincipal) SetInfo(value *InformationalUrl)() {
     m.info = value
 }
-// SetKeyCredentials sets the keyCredentials property value. The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, NOT, ge, le).
+// SetKeyCredentials sets the keyCredentials property value. The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *ServicePrincipal) SetKeyCredentials(value []KeyCredential)() {
     m.keyCredentials = value
 }
@@ -1540,7 +1540,7 @@ func (m *ServicePrincipal) SetReplyUrls(value []string)() {
 func (m *ServicePrincipal) SetSamlSingleSignOnSettings(value *SamlSingleSignOnSettings)() {
     m.samlSingleSignOnSettings = value
 }
-// SetServicePrincipalNames sets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, NOT, ge, le, startsWith).
+// SetServicePrincipalNames sets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) SetServicePrincipalNames(value []string)() {
     m.servicePrincipalNames = value
 }
@@ -1552,7 +1552,7 @@ func (m *ServicePrincipal) SetServicePrincipalType(value *string)() {
 func (m *ServicePrincipal) SetSignInAudience(value *string)() {
     m.signInAudience = value
 }
-// SetTags sets the tags property value. Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
+// SetTags sets the tags property value. Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) SetTags(value []string)() {
     m.tags = value
 }

@@ -17,7 +17,7 @@ type EducationClass struct {
     assignmentSettings *EducationAssignmentSettings;
     // Class code used by the school to identify the class.
     classCode *string;
-    // Course information for the class
+    // Course information for the class.
     course *EducationCourse;
     // Entity who created the class
     createdBy *IdentitySet;
@@ -95,7 +95,7 @@ func (m *EducationClass) GetClassCode()(*string) {
         return m.classCode
     }
 }
-// GetCourse gets the course property value. Course information for the class
+// GetCourse gets the course property value. Course information for the class.
 func (m *EducationClass) GetCourse()(*EducationCourse) {
     if m == nil {
         return nil
@@ -618,7 +618,7 @@ func (m *EducationClass) SetAssignmentSettings(value *EducationAssignmentSetting
 func (m *EducationClass) SetClassCode(value *string)() {
     m.classCode = value
 }
-// SetCourse sets the course property value. Course information for the class
+// SetCourse sets the course property value. Course information for the class.
 func (m *EducationClass) SetCourse(value *EducationCourse)() {
     m.course = value
 }
