@@ -45,7 +45,7 @@ type ResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 func (m *ResourceRequestBuilder) CalendarSharingMessage()(*i919e2f7c61a582a751e71e7f9d8c3fc3c17163411877b465756860f8c36a89c6.CalendarSharingMessageRequestBuilder) {
     return i919e2f7c61a582a751e71e7f9d8c3fc3c17163411877b465756860f8c36a89c6.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -61,5 +61,7 @@ func (m *CloudAppSecuritySessionControl) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetCloudAppSecurityType sets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
 func (m *CloudAppSecuritySessionControl) SetCloudAppSecurityType(value *CloudAppSecuritySessionControlType)() {
-    m.cloudAppSecurityType = value
+    if m != nil {
+        m.cloudAppSecurityType = value
+    }
 }

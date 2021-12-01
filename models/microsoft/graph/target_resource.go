@@ -211,29 +211,43 @@ func (m *TargetResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TargetResource) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Indicates the visible name defined for the resource. Typically specified when the resource is created.
 func (m *TargetResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetGroupType sets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
 func (m *TargetResource) SetGroupType(value *GroupType)() {
-    m.groupType = value
+    if m != nil {
+        m.groupType = value
+    }
 }
 // SetId sets the id property value. Indicates the unique ID of the resource.
 func (m *TargetResource) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetModifiedProperties sets the modifiedProperties property value. Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
 func (m *TargetResource) SetModifiedProperties(value []ModifiedProperty)() {
-    m.modifiedProperties = value
+    if m != nil {
+        m.modifiedProperties = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
 func (m *TargetResource) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. When type is set to User, this includes the user name that initiated the action; null for other types.
 func (m *TargetResource) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

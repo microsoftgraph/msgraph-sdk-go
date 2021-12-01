@@ -227,33 +227,49 @@ func (m *VdbRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VdbRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCost sets the cost property value. 
 func (m *VdbRequestBody) SetCost(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.cost = value
+    if m != nil {
+        m.cost = value
+    }
 }
 // SetEndPeriod sets the endPeriod property value. 
 func (m *VdbRequestBody) SetEndPeriod(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.endPeriod = value
+    if m != nil {
+        m.endPeriod = value
+    }
 }
 // SetFactor sets the factor property value. 
 func (m *VdbRequestBody) SetFactor(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.factor = value
+    if m != nil {
+        m.factor = value
+    }
 }
 // SetLife sets the life property value. 
 func (m *VdbRequestBody) SetLife(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.life = value
+    if m != nil {
+        m.life = value
+    }
 }
 // SetNoSwitch sets the noSwitch property value. 
 func (m *VdbRequestBody) SetNoSwitch(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.noSwitch = value
+    if m != nil {
+        m.noSwitch = value
+    }
 }
 // SetSalvage sets the salvage property value. 
 func (m *VdbRequestBody) SetSalvage(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.salvage = value
+    if m != nil {
+        m.salvage = value
+    }
 }
 // SetStartPeriod sets the startPeriod property value. 
 func (m *VdbRequestBody) SetStartPeriod(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.startPeriod = value
+    if m != nil {
+        m.startPeriod = value
+    }
 }

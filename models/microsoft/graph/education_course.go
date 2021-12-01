@@ -174,25 +174,37 @@ func (m *EducationCourse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationCourse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCourseNumber sets the courseNumber property value. Unique identifier for the course.
 func (m *EducationCourse) SetCourseNumber(value *string)() {
-    m.courseNumber = value
+    if m != nil {
+        m.courseNumber = value
+    }
 }
 // SetDescription sets the description property value. Description of the course.
 func (m *EducationCourse) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the course.
 func (m *EducationCourse) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExternalId sets the externalId property value. ID of the course from the syncing system.
 func (m *EducationCourse) SetExternalId(value *string)() {
-    m.externalId = value
+    if m != nil {
+        m.externalId = value
+    }
 }
 // SetSubject sets the subject property value. Subject of the course.
 func (m *EducationCourse) SetSubject(value *string)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }

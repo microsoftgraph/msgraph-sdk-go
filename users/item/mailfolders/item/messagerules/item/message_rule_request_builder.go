@@ -38,7 +38,7 @@ type MessageRuleRequestBuilderGetOptions struct {
 // MessageRuleRequestBuilderGetQueryParameters the collection of rules that apply to the user's Inbox folder.
 type MessageRuleRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MessageRuleRequestBuilderPatchOptions options for Patch
 type MessageRuleRequestBuilderPatchOptions struct {

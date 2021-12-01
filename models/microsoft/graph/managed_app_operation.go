@@ -138,17 +138,25 @@ func (m *ManagedAppOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetDisplayName sets the displayName property value. The operation name.
 func (m *ManagedAppOperation) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The last time the app operation was modified.
 func (m *ManagedAppOperation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetState sets the state property value. The current state of the operation
 func (m *ManagedAppOperation) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetVersion sets the version property value. Version of the entity.
 func (m *ManagedAppOperation) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

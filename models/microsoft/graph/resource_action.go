@@ -104,13 +104,19 @@ func (m *ResourceAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceAction) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedResourceActions sets the allowedResourceActions property value. Allowed Actions
 func (m *ResourceAction) SetAllowedResourceActions(value []string)() {
-    m.allowedResourceActions = value
+    if m != nil {
+        m.allowedResourceActions = value
+    }
 }
 // SetNotAllowedResourceActions sets the notAllowedResourceActions property value. Not Allowed Actions.
 func (m *ResourceAction) SetNotAllowedResourceActions(value []string)() {
-    m.notAllowedResourceActions = value
+    if m != nil {
+        m.notAllowedResourceActions = value
+    }
 }

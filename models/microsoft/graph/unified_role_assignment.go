@@ -267,37 +267,55 @@ func (m *UnifiedRoleAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAppScope sets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
 func (m *UnifiedRoleAssignment) SetAppScope(value *AppScope)() {
-    m.appScope = value
+    if m != nil {
+        m.appScope = value
+    }
 }
 // SetAppScopeId sets the appScopeId property value. Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) SetAppScopeId(value *string)() {
-    m.appScopeId = value
+    if m != nil {
+        m.appScopeId = value
+    }
 }
 // SetCondition sets the condition property value. 
 func (m *UnifiedRoleAssignment) SetCondition(value *string)() {
-    m.condition = value
+    if m != nil {
+        m.condition = value
+    }
 }
 // SetDirectoryScope sets the directoryScope property value. The directory object that is the scope of the assignment. Read-only. Supports $expand.
 func (m *UnifiedRoleAssignment) SetDirectoryScope(value *DirectoryObject)() {
-    m.directoryScope = value
+    if m != nil {
+        m.directoryScope = value
+    }
 }
 // SetDirectoryScopeId sets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) SetDirectoryScopeId(value *string)() {
-    m.directoryScopeId = value
+    if m != nil {
+        m.directoryScopeId = value
+    }
 }
 // SetPrincipal sets the principal property value. Referencing the assigned principal. Read-only. Supports $expand.
 func (m *UnifiedRoleAssignment) SetPrincipal(value *DirectoryObject)() {
-    m.principal = value
+    if m != nil {
+        m.principal = value
+    }
 }
 // SetPrincipalId sets the principalId property value. Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) SetPrincipalId(value *string)() {
-    m.principalId = value
+    if m != nil {
+        m.principalId = value
+    }
 }
 // SetRoleDefinition sets the roleDefinition property value. The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
 func (m *UnifiedRoleAssignment) SetRoleDefinition(value *UnifiedRoleDefinition)() {
-    m.roleDefinition = value
+    if m != nil {
+        m.roleDefinition = value
+    }
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
 func (m *UnifiedRoleAssignment) SetRoleDefinitionId(value *string)() {
-    m.roleDefinitionId = value
+    if m != nil {
+        m.roleDefinitionId = value
+    }
 }

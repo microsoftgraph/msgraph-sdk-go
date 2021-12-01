@@ -279,41 +279,61 @@ func (m *Photo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Photo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCameraMake sets the cameraMake property value. Camera manufacturer. Read-only.
 func (m *Photo) SetCameraMake(value *string)() {
-    m.cameraMake = value
+    if m != nil {
+        m.cameraMake = value
+    }
 }
 // SetCameraModel sets the cameraModel property value. Camera model. Read-only.
 func (m *Photo) SetCameraModel(value *string)() {
-    m.cameraModel = value
+    if m != nil {
+        m.cameraModel = value
+    }
 }
 // SetExposureDenominator sets the exposureDenominator property value. The denominator for the exposure time fraction from the camera. Read-only.
 func (m *Photo) SetExposureDenominator(value *float64)() {
-    m.exposureDenominator = value
+    if m != nil {
+        m.exposureDenominator = value
+    }
 }
 // SetExposureNumerator sets the exposureNumerator property value. The numerator for the exposure time fraction from the camera. Read-only.
 func (m *Photo) SetExposureNumerator(value *float64)() {
-    m.exposureNumerator = value
+    if m != nil {
+        m.exposureNumerator = value
+    }
 }
 // SetFNumber sets the fNumber property value. The F-stop value from the camera. Read-only.
 func (m *Photo) SetFNumber(value *float64)() {
-    m.fNumber = value
+    if m != nil {
+        m.fNumber = value
+    }
 }
 // SetFocalLength sets the focalLength property value. The focal length from the camera. Read-only.
 func (m *Photo) SetFocalLength(value *float64)() {
-    m.focalLength = value
+    if m != nil {
+        m.focalLength = value
+    }
 }
 // SetIso sets the iso property value. The ISO value from the camera. Read-only.
 func (m *Photo) SetIso(value *int32)() {
-    m.iso = value
+    if m != nil {
+        m.iso = value
+    }
 }
 // SetOrientation sets the orientation property value. The orientation value from the camera. Writable on OneDrive Personal.
 func (m *Photo) SetOrientation(value *int32)() {
-    m.orientation = value
+    if m != nil {
+        m.orientation = value
+    }
 }
 // SetTakenDateTime sets the takenDateTime property value. Represents the date and time the photo was taken. Read-only.
 func (m *Photo) SetTakenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.takenDateTime = value
+    if m != nil {
+        m.takenDateTime = value
+    }
 }

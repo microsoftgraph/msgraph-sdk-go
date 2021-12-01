@@ -250,33 +250,49 @@ func (m *SharedDriveItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetDriveItem sets the driveItem property value. Used to access the underlying driveItem
 func (m *SharedDriveItem) SetDriveItem(value *DriveItem)() {
-    m.driveItem = value
+    if m != nil {
+        m.driveItem = value
+    }
 }
 // SetItems sets the items property value. All driveItems contained in the sharing root. This collection cannot be enumerated.
 func (m *SharedDriveItem) SetItems(value []DriveItem)() {
-    m.items = value
+    if m != nil {
+        m.items = value
+    }
 }
 // SetList sets the list property value. Used to access the underlying list
 func (m *SharedDriveItem) SetList(value *List)() {
-    m.list = value
+    if m != nil {
+        m.list = value
+    }
 }
 // SetListItem sets the listItem property value. Used to access the underlying listItem
 func (m *SharedDriveItem) SetListItem(value *ListItem)() {
-    m.listItem = value
+    if m != nil {
+        m.listItem = value
+    }
 }
 // SetOwner sets the owner property value. Information about the owner of the shared item being referenced.
 func (m *SharedDriveItem) SetOwner(value *IdentitySet)() {
-    m.owner = value
+    if m != nil {
+        m.owner = value
+    }
 }
 // SetPermission sets the permission property value. Used to access the permission representing the underlying sharing link
 func (m *SharedDriveItem) SetPermission(value *Permission)() {
-    m.permission = value
+    if m != nil {
+        m.permission = value
+    }
 }
 // SetRoot sets the root property value. Used to access the underlying driveItem. Deprecated -- use driveItem instead.
 func (m *SharedDriveItem) SetRoot(value *DriveItem)() {
-    m.root = value
+    if m != nil {
+        m.root = value
+    }
 }
 // SetSite sets the site property value. Used to access the underlying site
 func (m *SharedDriveItem) SetSite(value *Site)() {
-    m.site = value
+    if m != nil {
+        m.site = value
+    }
 }

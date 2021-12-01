@@ -140,17 +140,25 @@ func (m *RemoteAssistancePartner) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetDisplayName sets the displayName property value. Display name of the partner.
 func (m *RemoteAssistancePartner) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastConnectionDateTime sets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
 func (m *RemoteAssistancePartner) SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastConnectionDateTime = value
+    if m != nil {
+        m.lastConnectionDateTime = value
+    }
 }
 // SetOnboardingStatus sets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
 func (m *RemoteAssistancePartner) SetOnboardingStatus(value *RemoteAssistanceOnboardingStatus)() {
-    m.onboardingStatus = value
+    if m != nil {
+        m.onboardingStatus = value
+    }
 }
 // SetOnboardingUrl sets the onboardingUrl property value. URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
 func (m *RemoteAssistancePartner) SetOnboardingUrl(value *string)() {
-    m.onboardingUrl = value
+    if m != nil {
+        m.onboardingUrl = value
+    }
 }

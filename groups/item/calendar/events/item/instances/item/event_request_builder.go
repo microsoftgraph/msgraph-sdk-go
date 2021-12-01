@@ -45,7 +45,7 @@ type EventRequestBuilderGetOptions struct {
 // EventRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // EventRequestBuilderPatchOptions options for Patch
 type EventRequestBuilderPatchOptions struct {

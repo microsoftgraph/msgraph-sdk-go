@@ -85,9 +85,13 @@ func (m *WorkbookChartDataLabelFormat) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetFill sets the fill property value. Represents the fill format of the current chart data label. Read-only.
 func (m *WorkbookChartDataLabelFormat) SetFill(value *WorkbookChartFill)() {
-    m.fill = value
+    if m != nil {
+        m.fill = value
+    }
 }
 // SetFont sets the font property value. Represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.
 func (m *WorkbookChartDataLabelFormat) SetFont(value *WorkbookChartFont)() {
-    m.font = value
+    if m != nil {
+        m.font = value
+    }
 }

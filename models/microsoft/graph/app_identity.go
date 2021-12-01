@@ -148,21 +148,31 @@ func (m *AppIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppIdentity) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppId sets the appId property value. Refers to the Unique GUID representing Application Id in the Azure Active Directory.
 func (m *AppIdentity) SetAppId(value *string)() {
-    m.appId = value
+    if m != nil {
+        m.appId = value
+    }
 }
 // SetDisplayName sets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
 func (m *AppIdentity) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetServicePrincipalId sets the servicePrincipalId property value. Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
 func (m *AppIdentity) SetServicePrincipalId(value *string)() {
-    m.servicePrincipalId = value
+    if m != nil {
+        m.servicePrincipalId = value
+    }
 }
 // SetServicePrincipalName sets the servicePrincipalName property value. Refers to the Service Principal Name is the Application name in the tenant.
 func (m *AppIdentity) SetServicePrincipalName(value *string)() {
-    m.servicePrincipalName = value
+    if m != nil {
+        m.servicePrincipalName = value
+    }
 }

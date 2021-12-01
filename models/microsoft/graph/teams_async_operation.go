@@ -246,33 +246,49 @@ func (m *TeamsAsyncOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAttemptsCount sets the attemptsCount property value. Number of times the operation was attempted before being marked successful or failed.
 func (m *TeamsAsyncOperation) SetAttemptsCount(value *int32)() {
-    m.attemptsCount = value
+    if m != nil {
+        m.attemptsCount = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Time when the operation was created.
 func (m *TeamsAsyncOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetError sets the error property value. Any error that causes the async operation to fail.
 func (m *TeamsAsyncOperation) SetError(value *OperationError)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. Time when the async operation was last updated.
 func (m *TeamsAsyncOperation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActionDateTime = value
+    if m != nil {
+        m.lastActionDateTime = value
+    }
 }
 // SetOperationType sets the operationType property value. Denotes which type of operation is being described.
 func (m *TeamsAsyncOperation) SetOperationType(value *TeamsAsyncOperationType)() {
-    m.operationType = value
+    if m != nil {
+        m.operationType = value
+    }
 }
 // SetStatus sets the status property value. Operation status.
 func (m *TeamsAsyncOperation) SetStatus(value *TeamsAsyncOperationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTargetResourceId sets the targetResourceId property value. The ID of the object that's created or modified as result of this async operation, typically a team.
 func (m *TeamsAsyncOperation) SetTargetResourceId(value *string)() {
-    m.targetResourceId = value
+    if m != nil {
+        m.targetResourceId = value
+    }
 }
 // SetTargetResourceLocation sets the targetResourceLocation property value. The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
 func (m *TeamsAsyncOperation) SetTargetResourceLocation(value *string)() {
-    m.targetResourceLocation = value
+    if m != nil {
+        m.targetResourceLocation = value
+    }
 }

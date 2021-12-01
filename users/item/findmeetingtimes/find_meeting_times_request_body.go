@@ -262,37 +262,55 @@ func (m *FindMeetingTimesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FindMeetingTimesRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttendees sets the attendees property value. 
 func (m *FindMeetingTimesRequestBody) SetAttendees(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AttendeeBase)() {
-    m.attendees = value
+    if m != nil {
+        m.attendees = value
+    }
 }
 // SetIsOrganizerOptional sets the isOrganizerOptional property value. 
 func (m *FindMeetingTimesRequestBody) SetIsOrganizerOptional(value *bool)() {
-    m.isOrganizerOptional = value
+    if m != nil {
+        m.isOrganizerOptional = value
+    }
 }
 // SetLocationConstraint sets the locationConstraint property value. 
 func (m *FindMeetingTimesRequestBody) SetLocationConstraint(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.LocationConstraint)() {
-    m.locationConstraint = value
+    if m != nil {
+        m.locationConstraint = value
+    }
 }
 // SetMaxCandidates sets the maxCandidates property value. 
 func (m *FindMeetingTimesRequestBody) SetMaxCandidates(value *int32)() {
-    m.maxCandidates = value
+    if m != nil {
+        m.maxCandidates = value
+    }
 }
 // SetMeetingDuration sets the meetingDuration property value. 
 func (m *FindMeetingTimesRequestBody) SetMeetingDuration(value *string)() {
-    m.meetingDuration = value
+    if m != nil {
+        m.meetingDuration = value
+    }
 }
 // SetMinimumAttendeePercentage sets the minimumAttendeePercentage property value. 
 func (m *FindMeetingTimesRequestBody) SetMinimumAttendeePercentage(value *float64)() {
-    m.minimumAttendeePercentage = value
+    if m != nil {
+        m.minimumAttendeePercentage = value
+    }
 }
 // SetReturnSuggestionReasons sets the returnSuggestionReasons property value. 
 func (m *FindMeetingTimesRequestBody) SetReturnSuggestionReasons(value *bool)() {
-    m.returnSuggestionReasons = value
+    if m != nil {
+        m.returnSuggestionReasons = value
+    }
 }
 // SetTimeConstraint sets the timeConstraint property value. 
 func (m *FindMeetingTimesRequestBody) SetTimeConstraint(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeConstraint)() {
-    m.timeConstraint = value
+    if m != nil {
+        m.timeConstraint = value
+    }
 }

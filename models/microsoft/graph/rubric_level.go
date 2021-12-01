@@ -148,21 +148,31 @@ func (m *RubricLevel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RubricLevel) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. The description of this rubric level.
 func (m *RubricLevel) SetDescription(value *EducationItemBody)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of this rubric level.
 func (m *RubricLevel) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetGrading sets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
 func (m *RubricLevel) SetGrading(value *EducationAssignmentGradeType)() {
-    m.grading = value
+    if m != nil {
+        m.grading = value
+    }
 }
 // SetLevelId sets the levelId property value. The ID of this resource.
 func (m *RubricLevel) SetLevelId(value *string)() {
-    m.levelId = value
+    if m != nil {
+        m.levelId = value
+    }
 }

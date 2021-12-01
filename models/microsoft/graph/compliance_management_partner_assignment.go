@@ -70,9 +70,13 @@ func (m *ComplianceManagementPartnerAssignment) Serialize(writer i04eb5309aeaafa
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ComplianceManagementPartnerAssignment) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTarget sets the target property value. Group assignment target.
 func (m *ComplianceManagementPartnerAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

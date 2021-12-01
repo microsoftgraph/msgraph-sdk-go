@@ -202,29 +202,43 @@ func (m *CreateOrGetRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateOrGetRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetChatInfo sets the chatInfo property value. 
 func (m *CreateOrGetRequestBody) SetChatInfo(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ChatInfo)() {
-    m.chatInfo = value
+    if m != nil {
+        m.chatInfo = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. 
 func (m *CreateOrGetRequestBody) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetExternalId sets the externalId property value. 
 func (m *CreateOrGetRequestBody) SetExternalId(value *string)() {
-    m.externalId = value
+    if m != nil {
+        m.externalId = value
+    }
 }
 // SetParticipants sets the participants property value. 
 func (m *CreateOrGetRequestBody) SetParticipants(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MeetingParticipants)() {
-    m.participants = value
+    if m != nil {
+        m.participants = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. 
 func (m *CreateOrGetRequestBody) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
 // SetSubject sets the subject property value. 
 func (m *CreateOrGetRequestBody) SetSubject(value *string)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }

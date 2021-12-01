@@ -164,21 +164,31 @@ func (m *Attachment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetContentType sets the contentType property value. The MIME type.
 func (m *Attachment) SetContentType(value *string)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }
 // SetIsInline sets the isInline property value. true if the attachment is an inline attachment; otherwise, false.
 func (m *Attachment) SetIsInline(value *bool)() {
-    m.isInline = value
+    if m != nil {
+        m.isInline = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Attachment) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetName sets the name property value. The attachment's file name.
 func (m *Attachment) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetSize sets the size property value. The length of the attachment in bytes.
 func (m *Attachment) SetSize(value *int32)() {
-    m.size = value
+    if m != nil {
+        m.size = value
+    }
 }

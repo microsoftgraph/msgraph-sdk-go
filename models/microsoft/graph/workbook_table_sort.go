@@ -120,13 +120,19 @@ func (m *WorkbookTableSort) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetFields sets the fields property value. Represents the current conditions used to last sort the table. Read-only.
 func (m *WorkbookTableSort) SetFields(value []WorkbookSortField)() {
-    m.fields = value
+    if m != nil {
+        m.fields = value
+    }
 }
 // SetMatchCase sets the matchCase property value. Represents whether the casing impacted the last sort of the table. Read-only.
 func (m *WorkbookTableSort) SetMatchCase(value *bool)() {
-    m.matchCase = value
+    if m != nil {
+        m.matchCase = value
+    }
 }
 // SetMethod sets the method property value. Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
 func (m *WorkbookTableSort) SetMethod(value *string)() {
-    m.method = value
+    if m != nil {
+        m.method = value
+    }
 }

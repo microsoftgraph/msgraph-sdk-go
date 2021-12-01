@@ -290,41 +290,61 @@ func (m *GetConfigurationSettingNonComplianceReportRequestBody) Serialize(writer
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetConfigurationSettingNonComplianceReportRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFilter sets the filter property value. 
 func (m *GetConfigurationSettingNonComplianceReportRequestBody) SetFilter(value *string)() {
-    m.filter = value
+    if m != nil {
+        m.filter = value
+    }
 }
 // SetGroupBy sets the groupBy property value. 
 func (m *GetConfigurationSettingNonComplianceReportRequestBody) SetGroupBy(value []string)() {
-    m.groupBy = value
+    if m != nil {
+        m.groupBy = value
+    }
 }
 // SetName sets the name property value. 
 func (m *GetConfigurationSettingNonComplianceReportRequestBody) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetOrderBy sets the orderBy property value. 
 func (m *GetConfigurationSettingNonComplianceReportRequestBody) SetOrderBy(value []string)() {
-    m.orderBy = value
+    if m != nil {
+        m.orderBy = value
+    }
 }
 // SetSearch sets the search property value. 
 func (m *GetConfigurationSettingNonComplianceReportRequestBody) SetSearch(value *string)() {
-    m.search = value
+    if m != nil {
+        m.search = value
+    }
 }
 // SetSelect_escaped sets the select_escaped property value. 
 func (m *GetConfigurationSettingNonComplianceReportRequestBody) SetSelect_escaped(value []string)() {
-    m.select_escaped = value
+    if m != nil {
+        m.select_escaped = value
+    }
 }
 // SetSessionId sets the sessionId property value. 
 func (m *GetConfigurationSettingNonComplianceReportRequestBody) SetSessionId(value *string)() {
-    m.sessionId = value
+    if m != nil {
+        m.sessionId = value
+    }
 }
 // SetSkip sets the skip property value. 
 func (m *GetConfigurationSettingNonComplianceReportRequestBody) SetSkip(value *int32)() {
-    m.skip = value
+    if m != nil {
+        m.skip = value
+    }
 }
 // SetTop sets the top property value. 
 func (m *GetConfigurationSettingNonComplianceReportRequestBody) SetTop(value *int32)() {
-    m.top = value
+    if m != nil {
+        m.top = value
+    }
 }

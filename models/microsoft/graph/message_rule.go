@@ -241,33 +241,49 @@ func (m *MessageRule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetActions sets the actions property value. Actions to be taken on a message when the corresponding conditions are fulfilled.
 func (m *MessageRule) SetActions(value *MessageRuleActions)() {
-    m.actions = value
+    if m != nil {
+        m.actions = value
+    }
 }
 // SetConditions sets the conditions property value. Conditions that when fulfilled, will trigger the corresponding actions for that rule.
 func (m *MessageRule) SetConditions(value *MessageRulePredicates)() {
-    m.conditions = value
+    if m != nil {
+        m.conditions = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the rule.
 func (m *MessageRule) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExceptions sets the exceptions property value. Exception conditions for the rule.
 func (m *MessageRule) SetExceptions(value *MessageRulePredicates)() {
-    m.exceptions = value
+    if m != nil {
+        m.exceptions = value
+    }
 }
 // SetHasError sets the hasError property value. Indicates whether the rule is in an error condition. Read-only.
 func (m *MessageRule) SetHasError(value *bool)() {
-    m.hasError = value
+    if m != nil {
+        m.hasError = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether the rule is enabled to be applied to messages.
 func (m *MessageRule) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetIsReadOnly sets the isReadOnly property value. Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
 func (m *MessageRule) SetIsReadOnly(value *bool)() {
-    m.isReadOnly = value
+    if m != nil {
+        m.isReadOnly = value
+    }
 }
 // SetSequence sets the sequence property value. Indicates the order in which the rule is executed, among other rules.
 func (m *MessageRule) SetSequence(value *int32)() {
-    m.sequence = value
+    if m != nil {
+        m.sequence = value
+    }
 }

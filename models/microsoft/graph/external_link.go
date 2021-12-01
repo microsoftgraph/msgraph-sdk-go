@@ -70,9 +70,13 @@ func (m *ExternalLink) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExternalLink) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetHref sets the href property value. The url of the link.
 func (m *ExternalLink) SetHref(value *string)() {
-    m.href = value
+    if m != nil {
+        m.href = value
+    }
 }

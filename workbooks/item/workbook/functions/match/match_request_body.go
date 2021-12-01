@@ -123,17 +123,25 @@ func (m *MatchRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLookupArray sets the lookupArray property value. 
 func (m *MatchRequestBody) SetLookupArray(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.lookupArray = value
+    if m != nil {
+        m.lookupArray = value
+    }
 }
 // SetLookupValue sets the lookupValue property value. 
 func (m *MatchRequestBody) SetLookupValue(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.lookupValue = value
+    if m != nil {
+        m.lookupValue = value
+    }
 }
 // SetMatchType sets the matchType property value. 
 func (m *MatchRequestBody) SetMatchType(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.matchType = value
+    if m != nil {
+        m.matchType = value
+    }
 }

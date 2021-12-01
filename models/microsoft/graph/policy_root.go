@@ -443,53 +443,79 @@ func (m *PolicyRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetActivityBasedTimeoutPolicies sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
 func (m *PolicyRoot) SetActivityBasedTimeoutPolicies(value []ActivityBasedTimeoutPolicy)() {
-    m.activityBasedTimeoutPolicies = value
+    if m != nil {
+        m.activityBasedTimeoutPolicies = value
+    }
 }
 // SetAdminConsentRequestPolicy sets the adminConsentRequestPolicy property value. The policy by which consent requests are created and managed for the entire tenant.
 func (m *PolicyRoot) SetAdminConsentRequestPolicy(value *AdminConsentRequestPolicy)() {
-    m.adminConsentRequestPolicy = value
+    if m != nil {
+        m.adminConsentRequestPolicy = value
+    }
 }
 // SetAuthenticationFlowsPolicy sets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
 func (m *PolicyRoot) SetAuthenticationFlowsPolicy(value *AuthenticationFlowsPolicy)() {
-    m.authenticationFlowsPolicy = value
+    if m != nil {
+        m.authenticationFlowsPolicy = value
+    }
 }
 // SetAuthenticationMethodsPolicy sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
 func (m *PolicyRoot) SetAuthenticationMethodsPolicy(value *AuthenticationMethodsPolicy)() {
-    m.authenticationMethodsPolicy = value
+    if m != nil {
+        m.authenticationMethodsPolicy = value
+    }
 }
 // SetAuthorizationPolicy sets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
 func (m *PolicyRoot) SetAuthorizationPolicy(value *AuthorizationPolicy)() {
-    m.authorizationPolicy = value
+    if m != nil {
+        m.authorizationPolicy = value
+    }
 }
 // SetClaimsMappingPolicies sets the claimsMappingPolicies property value. The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 func (m *PolicyRoot) SetClaimsMappingPolicies(value []ClaimsMappingPolicy)() {
-    m.claimsMappingPolicies = value
+    if m != nil {
+        m.claimsMappingPolicies = value
+    }
 }
 // SetConditionalAccessPolicies sets the conditionalAccessPolicies property value. The custom rules that define an access scenario.
 func (m *PolicyRoot) SetConditionalAccessPolicies(value []ConditionalAccessPolicy)() {
-    m.conditionalAccessPolicies = value
+    if m != nil {
+        m.conditionalAccessPolicies = value
+    }
 }
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
 func (m *PolicyRoot) SetFeatureRolloutPolicies(value []FeatureRolloutPolicy)() {
-    m.featureRolloutPolicies = value
+    if m != nil {
+        m.featureRolloutPolicies = value
+    }
 }
 // SetHomeRealmDiscoveryPolicies sets the homeRealmDiscoveryPolicies property value. The policy to control Azure AD authentication behavior for federated users.
 func (m *PolicyRoot) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicy)() {
-    m.homeRealmDiscoveryPolicies = value
+    if m != nil {
+        m.homeRealmDiscoveryPolicies = value
+    }
 }
 // SetIdentitySecurityDefaultsEnforcementPolicy sets the identitySecurityDefaultsEnforcementPolicy property value. The policy that represents the security defaults that protect against common attacks.
 func (m *PolicyRoot) SetIdentitySecurityDefaultsEnforcementPolicy(value *IdentitySecurityDefaultsEnforcementPolicy)() {
-    m.identitySecurityDefaultsEnforcementPolicy = value
+    if m != nil {
+        m.identitySecurityDefaultsEnforcementPolicy = value
+    }
 }
 // SetPermissionGrantPolicies sets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
 func (m *PolicyRoot) SetPermissionGrantPolicies(value []PermissionGrantPolicy)() {
-    m.permissionGrantPolicies = value
+    if m != nil {
+        m.permissionGrantPolicies = value
+    }
 }
 // SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *PolicyRoot) SetTokenIssuancePolicies(value []TokenIssuancePolicy)() {
-    m.tokenIssuancePolicies = value
+    if m != nil {
+        m.tokenIssuancePolicies = value
+    }
 }
 // SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
 func (m *PolicyRoot) SetTokenLifetimePolicies(value []TokenLifetimePolicy)() {
-    m.tokenLifetimePolicies = value
+    if m != nil {
+        m.tokenLifetimePolicies = value
+    }
 }

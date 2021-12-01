@@ -96,13 +96,19 @@ func (m *NotebookLinks) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NotebookLinks) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOneNoteClientUrl sets the oneNoteClientUrl property value. Opens the notebook in the OneNote native client if it's installed.
 func (m *NotebookLinks) SetOneNoteClientUrl(value *ExternalLink)() {
-    m.oneNoteClientUrl = value
+    if m != nil {
+        m.oneNoteClientUrl = value
+    }
 }
 // SetOneNoteWebUrl sets the oneNoteWebUrl property value. Opens the notebook in OneNote on the web.
 func (m *NotebookLinks) SetOneNoteWebUrl(value *ExternalLink)() {
-    m.oneNoteWebUrl = value
+    if m != nil {
+        m.oneNoteWebUrl = value
+    }
 }

@@ -215,29 +215,43 @@ func (m *DeviceConfigurationDeviceStateSummary) Serialize(writer i04eb5309aeaafa
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceConfigurationDeviceStateSummary) SetCompliantDeviceCount(value *int32)() {
-    m.compliantDeviceCount = value
+    if m != nil {
+        m.compliantDeviceCount = value
+    }
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. Number of conflict devices
 func (m *DeviceConfigurationDeviceStateSummary) SetConflictDeviceCount(value *int32)() {
-    m.conflictDeviceCount = value
+    if m != nil {
+        m.conflictDeviceCount = value
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Number of error devices
 func (m *DeviceConfigurationDeviceStateSummary) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    if m != nil {
+        m.errorDeviceCount = value
+    }
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *DeviceConfigurationDeviceStateSummary) SetNonCompliantDeviceCount(value *int32)() {
-    m.nonCompliantDeviceCount = value
+    if m != nil {
+        m.nonCompliantDeviceCount = value
+    }
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *DeviceConfigurationDeviceStateSummary) SetNotApplicableDeviceCount(value *int32)() {
-    m.notApplicableDeviceCount = value
+    if m != nil {
+        m.notApplicableDeviceCount = value
+    }
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Number of remediated devices
 func (m *DeviceConfigurationDeviceStateSummary) SetRemediatedDeviceCount(value *int32)() {
-    m.remediatedDeviceCount = value
+    if m != nil {
+        m.remediatedDeviceCount = value
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Number of unknown devices
 func (m *DeviceConfigurationDeviceStateSummary) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    if m != nil {
+        m.unknownDeviceCount = value
+    }
 }

@@ -200,29 +200,43 @@ func (m *WorkbookSortField) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookSortField) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAscending sets the ascending property value. Represents whether the sorting is done in an ascending fashion.
 func (m *WorkbookSortField) SetAscending(value *bool)() {
-    m.ascending = value
+    if m != nil {
+        m.ascending = value
+    }
 }
 // SetColor sets the color property value. Represents the color that is the target of the condition if the sorting is on font or cell color.
 func (m *WorkbookSortField) SetColor(value *string)() {
-    m.color = value
+    if m != nil {
+        m.color = value
+    }
 }
 // SetDataOption sets the dataOption property value. Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
 func (m *WorkbookSortField) SetDataOption(value *string)() {
-    m.dataOption = value
+    if m != nil {
+        m.dataOption = value
+    }
 }
 // SetIcon sets the icon property value. Represents the icon that is the target of the condition if the sorting is on the cell's icon.
 func (m *WorkbookSortField) SetIcon(value *WorkbookIcon)() {
-    m.icon = value
+    if m != nil {
+        m.icon = value
+    }
 }
 // SetKey sets the key property value. Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
 func (m *WorkbookSortField) SetKey(value *int32)() {
-    m.key = value
+    if m != nil {
+        m.key = value
+    }
 }
 // SetSortOn sets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
 func (m *WorkbookSortField) SetSortOn(value *string)() {
-    m.sortOn = value
+    if m != nil {
+        m.sortOn = value
+    }
 }

@@ -175,25 +175,37 @@ func (m *PriceDiscRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PriceDiscRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBasis sets the basis property value. 
 func (m *PriceDiscRequestBody) SetBasis(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.basis = value
+    if m != nil {
+        m.basis = value
+    }
 }
 // SetDiscount sets the discount property value. 
 func (m *PriceDiscRequestBody) SetDiscount(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.discount = value
+    if m != nil {
+        m.discount = value
+    }
 }
 // SetMaturity sets the maturity property value. 
 func (m *PriceDiscRequestBody) SetMaturity(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.maturity = value
+    if m != nil {
+        m.maturity = value
+    }
 }
 // SetRedemption sets the redemption property value. 
 func (m *PriceDiscRequestBody) SetRedemption(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.redemption = value
+    if m != nil {
+        m.redemption = value
+    }
 }
 // SetSettlement sets the settlement property value. 
 func (m *PriceDiscRequestBody) SetSettlement(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.settlement = value
+    if m != nil {
+        m.settlement = value
+    }
 }

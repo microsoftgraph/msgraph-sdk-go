@@ -63,5 +63,7 @@ func (m *MultiValueLegacyExtendedProperty) Serialize(writer i04eb5309aeaafadd283
 }
 // SetValue sets the value property value. A collection of property values.
 func (m *MultiValueLegacyExtendedProperty) SetValue(value []string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

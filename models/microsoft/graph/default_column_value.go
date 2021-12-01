@@ -96,13 +96,19 @@ func (m *DefaultColumnValue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DefaultColumnValue) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFormula sets the formula property value. The formula used to compute the default value for this column.
 func (m *DefaultColumnValue) SetFormula(value *string)() {
-    m.formula = value
+    if m != nil {
+        m.formula = value
+    }
 }
 // SetValue sets the value property value. The direct value to use as the default value for this column.
 func (m *DefaultColumnValue) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

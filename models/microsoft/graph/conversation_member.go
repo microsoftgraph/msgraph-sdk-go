@@ -116,13 +116,19 @@ func (m *ConversationMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetDisplayName sets the displayName property value. The display name of the user.
 func (m *ConversationMember) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetRoles sets the roles property value. The roles for that user.
 func (m *ConversationMember) SetRoles(value []string)() {
-    m.roles = value
+    if m != nil {
+        m.roles = value
+    }
 }
 // SetVisibleHistoryStartDateTime sets the visibleHistoryStartDateTime property value. The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
 func (m *ConversationMember) SetVisibleHistoryStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.visibleHistoryStartDateTime = value
+    if m != nil {
+        m.visibleHistoryStartDateTime = value
+    }
 }

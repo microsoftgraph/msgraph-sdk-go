@@ -183,25 +183,37 @@ func (m *RubricQuality) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RubricQuality) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCriteria sets the criteria property value. The collection of criteria for this rubric quality.
 func (m *RubricQuality) SetCriteria(value []RubricCriterion)() {
-    m.criteria = value
+    if m != nil {
+        m.criteria = value
+    }
 }
 // SetDescription sets the description property value. The description of this rubric quality.
 func (m *RubricQuality) SetDescription(value *EducationItemBody)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of this rubric quality.
 func (m *RubricQuality) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetQualityId sets the qualityId property value. The ID of this resource.
 func (m *RubricQuality) SetQualityId(value *string)() {
-    m.qualityId = value
+    if m != nil {
+        m.qualityId = value
+    }
 }
 // SetWeight sets the weight property value. If present, a numerical weight for this quality.  Weights must add up to 100.
 func (m *RubricQuality) SetWeight(value *float32)() {
-    m.weight = value
+    if m != nil {
+        m.weight = value
+    }
 }

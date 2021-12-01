@@ -59,5 +59,7 @@ func (m *SwapShiftsChangeRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetRecipientShiftId sets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
 func (m *SwapShiftsChangeRequest) SetRecipientShiftId(value *string)() {
-    m.recipientShiftId = value
+    if m != nil {
+        m.recipientShiftId = value
+    }
 }

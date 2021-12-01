@@ -224,29 +224,43 @@ func (m *ConditionalAccessUsers) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessUsers) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExcludeGroups sets the excludeGroups property value. Group IDs excluded from scope of policy.
 func (m *ConditionalAccessUsers) SetExcludeGroups(value []string)() {
-    m.excludeGroups = value
+    if m != nil {
+        m.excludeGroups = value
+    }
 }
 // SetExcludeRoles sets the excludeRoles property value. Role IDs excluded from scope of policy.
 func (m *ConditionalAccessUsers) SetExcludeRoles(value []string)() {
-    m.excludeRoles = value
+    if m != nil {
+        m.excludeRoles = value
+    }
 }
 // SetExcludeUsers sets the excludeUsers property value. User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
 func (m *ConditionalAccessUsers) SetExcludeUsers(value []string)() {
-    m.excludeUsers = value
+    if m != nil {
+        m.excludeUsers = value
+    }
 }
 // SetIncludeGroups sets the includeGroups property value. Group IDs in scope of policy unless explicitly excluded, or All.
 func (m *ConditionalAccessUsers) SetIncludeGroups(value []string)() {
-    m.includeGroups = value
+    if m != nil {
+        m.includeGroups = value
+    }
 }
 // SetIncludeRoles sets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded, or All.
 func (m *ConditionalAccessUsers) SetIncludeRoles(value []string)() {
-    m.includeRoles = value
+    if m != nil {
+        m.includeRoles = value
+    }
 }
 // SetIncludeUsers sets the includeUsers property value. User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
 func (m *ConditionalAccessUsers) SetIncludeUsers(value []string)() {
-    m.includeUsers = value
+    if m != nil {
+        m.includeUsers = value
+    }
 }

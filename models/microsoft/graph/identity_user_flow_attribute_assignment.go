@@ -200,25 +200,37 @@ func (m *IdentityUserFlowAttributeAssignment) Serialize(writer i04eb5309aeaafadd
 }
 // SetDisplayName sets the displayName property value. The display name of the identityUserFlowAttribute within a user flow.
 func (m *IdentityUserFlowAttributeAssignment) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsOptional sets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
 func (m *IdentityUserFlowAttributeAssignment) SetIsOptional(value *bool)() {
-    m.isOptional = value
+    if m != nil {
+        m.isOptional = value
+    }
 }
 // SetRequiresVerification sets the requiresVerification property value. Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
 func (m *IdentityUserFlowAttributeAssignment) SetRequiresVerification(value *bool)() {
-    m.requiresVerification = value
+    if m != nil {
+        m.requiresVerification = value
+    }
 }
 // SetUserAttribute sets the userAttribute property value. The user attribute that you want to add to your user flow.
 func (m *IdentityUserFlowAttributeAssignment) SetUserAttribute(value *IdentityUserFlowAttribute)() {
-    m.userAttribute = value
+    if m != nil {
+        m.userAttribute = value
+    }
 }
 // SetUserAttributeValues sets the userAttributeValues property value. The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
 func (m *IdentityUserFlowAttributeAssignment) SetUserAttributeValues(value []UserAttributeValuesItem)() {
-    m.userAttributeValues = value
+    if m != nil {
+        m.userAttributeValues = value
+    }
 }
 // SetUserInputType sets the userInputType property value. The input type of the user flow attribute. Possible values are: textBox, dateTimeDropdown, radioSingleSelect, dropdownSingleSelect, emailBox, checkboxMultiSelect.
 func (m *IdentityUserFlowAttributeAssignment) SetUserInputType(value *IdentityUserFlowAttributeInputType)() {
-    m.userInputType = value
+    if m != nil {
+        m.userInputType = value
+    }
 }

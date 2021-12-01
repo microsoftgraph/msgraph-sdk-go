@@ -40,7 +40,7 @@ type WindowsInformationProtectionAppLearningSummaryRequestBuilderGetQueryParamet
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WindowsInformationProtectionAppLearningSummaryRequestBuilderPatchOptions options for Patch
 type WindowsInformationProtectionAppLearningSummaryRequestBuilderPatchOptions struct {

@@ -42,7 +42,7 @@ type AccessPackageAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AccessPackageAssignmentRequestBuilderPatchOptions options for Patch
 type AccessPackageAssignmentRequestBuilderPatchOptions struct {

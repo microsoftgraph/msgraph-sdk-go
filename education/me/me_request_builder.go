@@ -46,7 +46,7 @@ type MeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MeRequestBuilderPatchOptions options for Patch
 type MeRequestBuilderPatchOptions struct {

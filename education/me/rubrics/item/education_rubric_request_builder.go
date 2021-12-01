@@ -40,7 +40,7 @@ type EducationRubricRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // EducationRubricRequestBuilderPatchOptions options for Patch
 type EducationRubricRequestBuilderPatchOptions struct {

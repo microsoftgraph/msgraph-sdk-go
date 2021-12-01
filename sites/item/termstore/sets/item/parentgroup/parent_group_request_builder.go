@@ -42,7 +42,7 @@ type ParentGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ParentGroupRequestBuilderPatchOptions options for Patch
 type ParentGroupRequestBuilderPatchOptions struct {

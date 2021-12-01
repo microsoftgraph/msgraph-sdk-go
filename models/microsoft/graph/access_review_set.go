@@ -68,5 +68,7 @@ func (m *AccessReviewSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetDefinitions sets the definitions property value. 
 func (m *AccessReviewSet) SetDefinitions(value []AccessReviewScheduleDefinition)() {
-    m.definitions = value
+    if m != nil {
+        m.definitions = value
+    }
 }

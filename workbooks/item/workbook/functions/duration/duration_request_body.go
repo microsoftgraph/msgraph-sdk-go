@@ -201,29 +201,43 @@ func (m *DurationRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DurationRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBasis sets the basis property value. 
 func (m *DurationRequestBody) SetBasis(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.basis = value
+    if m != nil {
+        m.basis = value
+    }
 }
 // SetCoupon sets the coupon property value. 
 func (m *DurationRequestBody) SetCoupon(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.coupon = value
+    if m != nil {
+        m.coupon = value
+    }
 }
 // SetFrequency sets the frequency property value. 
 func (m *DurationRequestBody) SetFrequency(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.frequency = value
+    if m != nil {
+        m.frequency = value
+    }
 }
 // SetMaturity sets the maturity property value. 
 func (m *DurationRequestBody) SetMaturity(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.maturity = value
+    if m != nil {
+        m.maturity = value
+    }
 }
 // SetSettlement sets the settlement property value. 
 func (m *DurationRequestBody) SetSettlement(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.settlement = value
+    if m != nil {
+        m.settlement = value
+    }
 }
 // SetYld sets the yld property value. 
 func (m *DurationRequestBody) SetYld(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.yld = value
+    if m != nil {
+        m.yld = value
+    }
 }

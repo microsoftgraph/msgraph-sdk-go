@@ -96,13 +96,19 @@ func (m *SortProperty) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SortProperty) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsDescending sets the isDescending property value. True if the sort order is descending. Default is false, with the sort order as ascending. Optional.
 func (m *SortProperty) SetIsDescending(value *bool)() {
-    m.isDescending = value
+    if m != nil {
+        m.isDescending = value
+    }
 }
 // SetName sets the name property value. The name of the property to sort on. Required.
 func (m *SortProperty) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

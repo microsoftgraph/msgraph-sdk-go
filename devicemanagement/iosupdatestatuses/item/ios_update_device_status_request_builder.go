@@ -40,7 +40,7 @@ type IosUpdateDeviceStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // IosUpdateDeviceStatusRequestBuilderPatchOptions options for Patch
 type IosUpdateDeviceStatusRequestBuilderPatchOptions struct {

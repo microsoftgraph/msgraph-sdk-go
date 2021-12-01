@@ -122,17 +122,25 @@ func (m *AccessReviewReviewerScope) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewReviewerScope) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetQuery sets the query property value. The query specifying who will be the reviewer. See table for examples.
 func (m *AccessReviewReviewerScope) SetQuery(value *string)() {
-    m.query = value
+    if m != nil {
+        m.query = value
+    }
 }
 // SetQueryRoot sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
 func (m *AccessReviewReviewerScope) SetQueryRoot(value *string)() {
-    m.queryRoot = value
+    if m != nil {
+        m.queryRoot = value
+    }
 }
 // SetQueryType sets the queryType property value. The type of query. Examples include MicrosoftGraph and ARM.
 func (m *AccessReviewReviewerScope) SetQueryType(value *string)() {
-    m.queryType = value
+    if m != nil {
+        m.queryType = value
+    }
 }

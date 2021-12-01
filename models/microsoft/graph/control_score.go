@@ -148,21 +148,31 @@ func (m *ControlScore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ControlScore) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetControlCategory sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
 func (m *ControlScore) SetControlCategory(value *string)() {
-    m.controlCategory = value
+    if m != nil {
+        m.controlCategory = value
+    }
 }
 // SetControlName sets the controlName property value. Control unique name.
 func (m *ControlScore) SetControlName(value *string)() {
-    m.controlName = value
+    if m != nil {
+        m.controlName = value
+    }
 }
 // SetDescription sets the description property value. Description of the control.
 func (m *ControlScore) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetScore sets the score property value. Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
 func (m *ControlScore) SetScore(value *float64)() {
-    m.score = value
+    if m != nil {
+        m.score = value
+    }
 }

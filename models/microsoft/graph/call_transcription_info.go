@@ -99,13 +99,19 @@ func (m *CallTranscriptionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallTranscriptionInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The state modified time in UTC.
 func (m *CallTranscriptionInfo) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetState sets the state property value. Possible values are: notStarted, active, inactive.
 func (m *CallTranscriptionInfo) SetState(value *CallTranscriptionState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

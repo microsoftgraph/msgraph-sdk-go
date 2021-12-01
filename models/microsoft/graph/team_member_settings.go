@@ -200,29 +200,43 @@ func (m *TeamMemberSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamMemberSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowAddRemoveApps sets the allowAddRemoveApps property value. If set to true, members can add and remove apps.
 func (m *TeamMemberSettings) SetAllowAddRemoveApps(value *bool)() {
-    m.allowAddRemoveApps = value
+    if m != nil {
+        m.allowAddRemoveApps = value
+    }
 }
 // SetAllowCreatePrivateChannels sets the allowCreatePrivateChannels property value. If set to true, members can add and update private channels.
 func (m *TeamMemberSettings) SetAllowCreatePrivateChannels(value *bool)() {
-    m.allowCreatePrivateChannels = value
+    if m != nil {
+        m.allowCreatePrivateChannels = value
+    }
 }
 // SetAllowCreateUpdateChannels sets the allowCreateUpdateChannels property value. If set to true, members can add and update channels.
 func (m *TeamMemberSettings) SetAllowCreateUpdateChannels(value *bool)() {
-    m.allowCreateUpdateChannels = value
+    if m != nil {
+        m.allowCreateUpdateChannels = value
+    }
 }
 // SetAllowCreateUpdateRemoveConnectors sets the allowCreateUpdateRemoveConnectors property value. If set to true, members can add, update, and remove connectors.
 func (m *TeamMemberSettings) SetAllowCreateUpdateRemoveConnectors(value *bool)() {
-    m.allowCreateUpdateRemoveConnectors = value
+    if m != nil {
+        m.allowCreateUpdateRemoveConnectors = value
+    }
 }
 // SetAllowCreateUpdateRemoveTabs sets the allowCreateUpdateRemoveTabs property value. If set to true, members can add, update, and remove tabs.
 func (m *TeamMemberSettings) SetAllowCreateUpdateRemoveTabs(value *bool)() {
-    m.allowCreateUpdateRemoveTabs = value
+    if m != nil {
+        m.allowCreateUpdateRemoveTabs = value
+    }
 }
 // SetAllowDeleteChannels sets the allowDeleteChannels property value. If set to true, members can delete channels.
 func (m *TeamMemberSettings) SetAllowDeleteChannels(value *bool)() {
-    m.allowDeleteChannels = value
+    if m != nil {
+        m.allowDeleteChannels = value
+    }
 }

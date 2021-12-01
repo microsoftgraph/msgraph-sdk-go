@@ -148,21 +148,31 @@ func (m *NumberColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NumberColumn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDecimalPlaces sets the decimalPlaces property value. How many decimal places to display. See below for information about the possible values.
 func (m *NumberColumn) SetDecimalPlaces(value *string)() {
-    m.decimalPlaces = value
+    if m != nil {
+        m.decimalPlaces = value
+    }
 }
 // SetDisplayAs sets the displayAs property value. How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.
 func (m *NumberColumn) SetDisplayAs(value *string)() {
-    m.displayAs = value
+    if m != nil {
+        m.displayAs = value
+    }
 }
 // SetMaximum sets the maximum property value. The maximum permitted value.
 func (m *NumberColumn) SetMaximum(value *float64)() {
-    m.maximum = value
+    if m != nil {
+        m.maximum = value
+    }
 }
 // SetMinimum sets the minimum property value. The minimum permitted value.
 func (m *NumberColumn) SetMinimum(value *float64)() {
-    m.minimum = value
+    if m != nil {
+        m.minimum = value
+    }
 }

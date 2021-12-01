@@ -105,13 +105,19 @@ func (m *MeetingTimeSuggestionsResult) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingTimeSuggestionsResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEmptySuggestionsReason sets the emptySuggestionsReason property value. A reason for not returning any meeting suggestions. The possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.
 func (m *MeetingTimeSuggestionsResult) SetEmptySuggestionsReason(value *string)() {
-    m.emptySuggestionsReason = value
+    if m != nil {
+        m.emptySuggestionsReason = value
+    }
 }
 // SetMeetingTimeSuggestions sets the meetingTimeSuggestions property value. An array of meeting suggestions.
 func (m *MeetingTimeSuggestionsResult) SetMeetingTimeSuggestions(value []MeetingTimeSuggestion)() {
-    m.meetingTimeSuggestions = value
+    if m != nil {
+        m.meetingTimeSuggestions = value
+    }
 }

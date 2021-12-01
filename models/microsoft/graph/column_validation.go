@@ -131,17 +131,25 @@ func (m *ColumnValidation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ColumnValidation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefaultLanguage sets the defaultLanguage property value. Default BCP 47 language tag for the description.
 func (m *ColumnValidation) SetDefaultLanguage(value *string)() {
-    m.defaultLanguage = value
+    if m != nil {
+        m.defaultLanguage = value
+    }
 }
 // SetDescriptions sets the descriptions property value. Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
 func (m *ColumnValidation) SetDescriptions(value []DisplayNameLocalization)() {
-    m.descriptions = value
+    if m != nil {
+        m.descriptions = value
+    }
 }
 // SetFormula sets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists.
 func (m *ColumnValidation) SetFormula(value *string)() {
-    m.formula = value
+    if m != nil {
+        m.formula = value
+    }
 }

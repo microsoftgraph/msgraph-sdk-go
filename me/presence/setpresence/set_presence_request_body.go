@@ -148,21 +148,31 @@ func (m *SetPresenceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetActivity sets the activity property value. 
 func (m *SetPresenceRequestBody) SetActivity(value *string)() {
-    m.activity = value
+    if m != nil {
+        m.activity = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetPresenceRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAvailability sets the availability property value. 
 func (m *SetPresenceRequestBody) SetAvailability(value *string)() {
-    m.availability = value
+    if m != nil {
+        m.availability = value
+    }
 }
 // SetExpirationDuration sets the expirationDuration property value. 
 func (m *SetPresenceRequestBody) SetExpirationDuration(value *string)() {
-    m.expirationDuration = value
+    if m != nil {
+        m.expirationDuration = value
+    }
 }
 // SetSessionId sets the sessionId property value. 
 func (m *SetPresenceRequestBody) SetSessionId(value *string)() {
-    m.sessionId = value
+    if m != nil {
+        m.sessionId = value
+    }
 }

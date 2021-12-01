@@ -123,17 +123,25 @@ func (m *Ceiling_MathRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Ceiling_MathRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMode sets the mode property value. 
 func (m *Ceiling_MathRequestBody) SetMode(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.mode = value
+    if m != nil {
+        m.mode = value
+    }
 }
 // SetNumber sets the number property value. 
 func (m *Ceiling_MathRequestBody) SetNumber(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetSignificance sets the significance property value. 
 func (m *Ceiling_MathRequestBody) SetSignificance(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.significance = value
+    if m != nil {
+        m.significance = value
+    }
 }

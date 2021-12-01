@@ -59,5 +59,7 @@ func (m *WorkbookApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetCalculationMode sets the calculationMode property value. Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
 func (m *WorkbookApplication) SetCalculationMode(value *string)() {
-    m.calculationMode = value
+    if m != nil {
+        m.calculationMode = value
+    }
 }

@@ -44,5 +44,7 @@ func (m *Json) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Json) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }

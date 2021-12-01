@@ -71,9 +71,13 @@ func (m *CountBlankRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CountBlankRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRange_escaped sets the range_escaped property value. 
 func (m *CountBlankRequestBody) SetRange_escaped(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.range_escaped = value
+    if m != nil {
+        m.range_escaped = value
+    }
 }

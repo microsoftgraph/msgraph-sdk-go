@@ -41,7 +41,7 @@ type WindowsHelloForBusinessAuthenticationMethodRequestBuilderGetQueryParameters
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WindowsHelloForBusinessAuthenticationMethodRequestBuilderPatchOptions options for Patch
 type WindowsHelloForBusinessAuthenticationMethodRequestBuilderPatchOptions struct {

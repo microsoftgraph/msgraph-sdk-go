@@ -41,7 +41,7 @@ type MicrosoftAuthenticatorAuthenticationMethodRequestBuilderGetQueryParameters 
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MicrosoftAuthenticatorAuthenticationMethodRequestBuilderPatchOptions options for Patch
 type MicrosoftAuthenticatorAuthenticationMethodRequestBuilderPatchOptions struct {

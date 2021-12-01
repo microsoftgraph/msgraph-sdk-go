@@ -120,13 +120,19 @@ func (m *ShiftItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetActivities sets the activities property value. An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
 func (m *ShiftItem) SetActivities(value []ShiftActivity)() {
-    m.activities = value
+    if m != nil {
+        m.activities = value
+    }
 }
 // SetDisplayName sets the displayName property value. The shift label of the shiftItem.
 func (m *ShiftItem) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetNotes sets the notes property value. The shift notes for the shiftItem.
 func (m *ShiftItem) SetNotes(value *string)() {
-    m.notes = value
+    if m != nil {
+        m.notes = value
+    }
 }

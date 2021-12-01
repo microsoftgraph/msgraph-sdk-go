@@ -131,17 +131,25 @@ func (m *ShiftAvailability) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ShiftAvailability) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRecurrence sets the recurrence property value. Specifies the pattern for recurrence
 func (m *ShiftAvailability) SetRecurrence(value *PatternedRecurrence)() {
-    m.recurrence = value
+    if m != nil {
+        m.recurrence = value
+    }
 }
 // SetTimeSlots sets the timeSlots property value. The time slot(s) preferred by the user.
 func (m *ShiftAvailability) SetTimeSlots(value []TimeRange)() {
-    m.timeSlots = value
+    if m != nil {
+        m.timeSlots = value
+    }
 }
 // SetTimeZone sets the timeZone property value. Specifies the time zone for the indicated time.
 func (m *ShiftAvailability) SetTimeZone(value *string)() {
-    m.timeZone = value
+    if m != nil {
+        m.timeZone = value
+    }
 }

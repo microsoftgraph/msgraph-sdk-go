@@ -100,13 +100,19 @@ func (m *AssignedLicense) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedLicense) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisabledPlans sets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.
 func (m *AssignedLicense) SetDisabledPlans(value []string)() {
-    m.disabledPlans = value
+    if m != nil {
+        m.disabledPlans = value
+    }
 }
 // SetSkuId sets the skuId property value. The unique identifier for the SKU.
 func (m *AssignedLicense) SetSkuId(value *string)() {
-    m.skuId = value
+    if m != nil {
+        m.skuId = value
+    }
 }

@@ -226,33 +226,49 @@ func (m *DeviceDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceDetail) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBrowser sets the browser property value. Indicates the browser information of the used for signing in.
 func (m *DeviceDetail) SetBrowser(value *string)() {
-    m.browser = value
+    if m != nil {
+        m.browser = value
+    }
 }
 // SetDeviceId sets the deviceId property value. Refers to the UniqueID of the device used for signing in.
 func (m *DeviceDetail) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetDisplayName sets the displayName property value. Refers to the name of the device used for signing in.
 func (m *DeviceDetail) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsCompliant sets the isCompliant property value. Indicates whether the device is compliant.
 func (m *DeviceDetail) SetIsCompliant(value *bool)() {
-    m.isCompliant = value
+    if m != nil {
+        m.isCompliant = value
+    }
 }
 // SetIsManaged sets the isManaged property value. Indicates whether the device is managed.
 func (m *DeviceDetail) SetIsManaged(value *bool)() {
-    m.isManaged = value
+    if m != nil {
+        m.isManaged = value
+    }
 }
 // SetOperatingSystem sets the operatingSystem property value. Indicates the operating system name and version used for signing in.
 func (m *DeviceDetail) SetOperatingSystem(value *string)() {
-    m.operatingSystem = value
+    if m != nil {
+        m.operatingSystem = value
+    }
 }
 // SetTrustType sets the trustType property value. Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
 func (m *DeviceDetail) SetTrustType(value *string)() {
-    m.trustType = value
+    if m != nil {
+        m.trustType = value
+    }
 }

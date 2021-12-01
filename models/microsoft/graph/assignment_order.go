@@ -74,9 +74,13 @@ func (m *AssignmentOrder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentOrder) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOrder sets the order property value. A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
 func (m *AssignmentOrder) SetOrder(value []string)() {
-    m.order = value
+    if m != nil {
+        m.order = value
+    }
 }

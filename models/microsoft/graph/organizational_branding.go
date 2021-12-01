@@ -68,5 +68,7 @@ func (m *OrganizationalBranding) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetLocalizations sets the localizations property value. Add different branding based on a locale.
 func (m *OrganizationalBranding) SetLocalizations(value []OrganizationalBrandingLocalization)() {
-    m.localizations = value
+    if m != nil {
+        m.localizations = value
+    }
 }

@@ -282,37 +282,55 @@ func (m *ServiceHealthIssue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetClassification sets the classification property value. The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.
 func (m *ServiceHealthIssue) SetClassification(value *ServiceHealthClassificationType)() {
-    m.classification = value
+    if m != nil {
+        m.classification = value
+    }
 }
 // SetFeature sets the feature property value. The feature name of the service issue.
 func (m *ServiceHealthIssue) SetFeature(value *string)() {
-    m.feature = value
+    if m != nil {
+        m.feature = value
+    }
 }
 // SetFeatureGroup sets the featureGroup property value. The feature group name of the service issue.
 func (m *ServiceHealthIssue) SetFeatureGroup(value *string)() {
-    m.featureGroup = value
+    if m != nil {
+        m.featureGroup = value
+    }
 }
 // SetImpactDescription sets the impactDescription property value. The description of the service issue impact.
 func (m *ServiceHealthIssue) SetImpactDescription(value *string)() {
-    m.impactDescription = value
+    if m != nil {
+        m.impactDescription = value
+    }
 }
 // SetIsResolved sets the isResolved property value. Indicates whether the issue is resolved.
 func (m *ServiceHealthIssue) SetIsResolved(value *bool)() {
-    m.isResolved = value
+    if m != nil {
+        m.isResolved = value
+    }
 }
 // SetOrigin sets the origin property value. Indicates the origin of the service issue. Possible values are: microsoft, thirdParty, customer, unknownFutureValue.
 func (m *ServiceHealthIssue) SetOrigin(value *ServiceHealthOrigin)() {
-    m.origin = value
+    if m != nil {
+        m.origin = value
+    }
 }
 // SetPosts sets the posts property value. Collection of historical posts for the service issue.
 func (m *ServiceHealthIssue) SetPosts(value []ServiceHealthIssuePost)() {
-    m.posts = value
+    if m != nil {
+        m.posts = value
+    }
 }
 // SetService sets the service property value. Indicates the service affected by the issue.
 func (m *ServiceHealthIssue) SetService(value *string)() {
-    m.service = value
+    if m != nil {
+        m.service = value
+    }
 }
 // SetStatus sets the status property value. The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue.
 func (m *ServiceHealthIssue) SetStatus(value *ServiceHealthStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

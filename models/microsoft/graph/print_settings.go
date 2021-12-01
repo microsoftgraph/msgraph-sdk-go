@@ -70,9 +70,13 @@ func (m *PrintSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDocumentConversionEnabled sets the documentConversionEnabled property value. Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.
 func (m *PrintSettings) SetDocumentConversionEnabled(value *bool)() {
-    m.documentConversionEnabled = value
+    if m != nil {
+        m.documentConversionEnabled = value
+    }
 }

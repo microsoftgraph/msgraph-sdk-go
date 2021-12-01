@@ -100,13 +100,19 @@ func (m *RefResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RefResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNextLink sets the nextLink property value. 
 func (m *RefResponse) SetNextLink(value *string)() {
-    m.nextLink = value
+    if m != nil {
+        m.nextLink = value
+    }
 }
 // SetValue sets the value property value. 
 func (m *RefResponse) SetValue(value []string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

@@ -122,17 +122,25 @@ func (m *ChatInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMessageId sets the messageId property value. The unique identifier of a message in a Microsoft Teams channel.
 func (m *ChatInfo) SetMessageId(value *string)() {
-    m.messageId = value
+    if m != nil {
+        m.messageId = value
+    }
 }
 // SetReplyChainMessageId sets the replyChainMessageId property value. The ID of the reply message.
 func (m *ChatInfo) SetReplyChainMessageId(value *string)() {
-    m.replyChainMessageId = value
+    if m != nil {
+        m.replyChainMessageId = value
+    }
 }
 // SetThreadId sets the threadId property value. The unique identifier for a thread in Microsoft Teams.
 func (m *ChatInfo) SetThreadId(value *string)() {
-    m.threadId = value
+    if m != nil {
+        m.threadId = value
+    }
 }

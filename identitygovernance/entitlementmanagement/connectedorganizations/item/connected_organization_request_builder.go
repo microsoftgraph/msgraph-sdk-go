@@ -44,7 +44,7 @@ type ConnectedOrganizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ConnectedOrganizationRequestBuilderPatchOptions options for Patch
 type ConnectedOrganizationRequestBuilderPatchOptions struct {

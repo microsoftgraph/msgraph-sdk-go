@@ -40,7 +40,7 @@ type ColumnLinkRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ColumnLinkRequestBuilderPatchOptions options for Patch
 type ColumnLinkRequestBuilderPatchOptions struct {

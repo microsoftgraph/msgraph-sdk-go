@@ -85,9 +85,13 @@ func (m *ProvisionedIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetDetails sets the details property value. Details of the identity.
 func (m *ProvisionedIdentity) SetDetails(value *DetailsInfo)() {
-    m.details = value
+    if m != nil {
+        m.details = value
+    }
 }
 // SetIdentityType sets the identityType property value. Type of identity that has been provisioned, such as 'user' or 'group'.
 func (m *ProvisionedIdentity) SetIdentityType(value *string)() {
-    m.identityType = value
+    if m != nil {
+        m.identityType = value
+    }
 }

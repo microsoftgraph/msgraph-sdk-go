@@ -41,7 +41,7 @@ type OnlineMeetingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OnlineMeetingRequestBuilderPatchOptions options for Patch
 type OnlineMeetingRequestBuilderPatchOptions struct {

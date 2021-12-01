@@ -79,9 +79,13 @@ func (m *External) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *External) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConnections sets the connections property value. 
 func (m *External) SetConnections(value []ExternalConnection)() {
-    m.connections = value
+    if m != nil {
+        m.connections = value
+    }
 }

@@ -97,13 +97,19 @@ func (m *ExactRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExactRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetText1 sets the text1 property value. 
 func (m *ExactRequestBody) SetText1(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.text1 = value
+    if m != nil {
+        m.text1 = value
+    }
 }
 // SetText2 sets the text2 property value. 
 func (m *ExactRequestBody) SetText2(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.text2 = value
+    if m != nil {
+        m.text2 = value
+    }
 }

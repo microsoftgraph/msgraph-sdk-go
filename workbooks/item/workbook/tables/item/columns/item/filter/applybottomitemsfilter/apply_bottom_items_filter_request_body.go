@@ -70,9 +70,13 @@ func (m *ApplyBottomItemsFilterRequestBody) Serialize(writer i04eb5309aeaafadd28
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyBottomItemsFilterRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCount sets the count property value. 
 func (m *ApplyBottomItemsFilterRequestBody) SetCount(value *int32)() {
-    m.count = value
+    if m != nil {
+        m.count = value
+    }
 }

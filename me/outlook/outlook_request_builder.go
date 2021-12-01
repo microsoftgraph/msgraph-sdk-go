@@ -43,7 +43,7 @@ type OutlookRequestBuilderGetOptions struct {
 // OutlookRequestBuilderGetQueryParameters read-only.
 type OutlookRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OutlookRequestBuilderPatchOptions options for Patch
 type OutlookRequestBuilderPatchOptions struct {

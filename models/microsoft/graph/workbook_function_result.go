@@ -85,9 +85,13 @@ func (m *WorkbookFunctionResult) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetError sets the error property value. 
 func (m *WorkbookFunctionResult) SetError(value *string)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetValue sets the value property value. 
 func (m *WorkbookFunctionResult) SetValue(value *Json)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

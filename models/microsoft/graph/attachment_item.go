@@ -176,25 +176,37 @@ func (m *AttachmentItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttachmentItem) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttachmentType sets the attachmentType property value. The type of attachment. Possible values are: file, item, reference. Required.
 func (m *AttachmentItem) SetAttachmentType(value *AttachmentType)() {
-    m.attachmentType = value
+    if m != nil {
+        m.attachmentType = value
+    }
 }
 // SetContentType sets the contentType property value. The nature of the data in the attachment. Optional.
 func (m *AttachmentItem) SetContentType(value *string)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }
 // SetIsInline sets the isInline property value. true if the attachment is an inline attachment; otherwise, false. Optional.
 func (m *AttachmentItem) SetIsInline(value *bool)() {
-    m.isInline = value
+    if m != nil {
+        m.isInline = value
+    }
 }
 // SetName sets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
 func (m *AttachmentItem) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetSize sets the size property value. The length of the attachment in bytes. Required.
 func (m *AttachmentItem) SetSize(value *int64)() {
-    m.size = value
+    if m != nil {
+        m.size = value
+    }
 }

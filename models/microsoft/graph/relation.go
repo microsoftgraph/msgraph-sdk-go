@@ -140,17 +140,25 @@ func (m *Relation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetFromTerm sets the fromTerm property value. The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
 func (m *Relation) SetFromTerm(value *Term)() {
-    m.fromTerm = value
+    if m != nil {
+        m.fromTerm = value
+    }
 }
 // SetRelationship sets the relationship property value. The type of relation. Possible values are: pin, reuse.
 func (m *Relation) SetRelationship(value *id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.RelationType)() {
-    m.relationship = value
+    if m != nil {
+        m.relationship = value
+    }
 }
 // SetSet sets the set property value. The [set] in which the relation is relevant.
 func (m *Relation) SetSet(value *Set)() {
-    m.set = value
+    if m != nil {
+        m.set = value
+    }
 }
 // SetToTerm sets the toTerm property value. The to [term] of the relation. The term to which the relationship is defined.
 func (m *Relation) SetToTerm(value *Term)() {
-    m.toTerm = value
+    if m != nil {
+        m.toTerm = value
+    }
 }

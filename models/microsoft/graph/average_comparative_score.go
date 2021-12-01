@@ -96,13 +96,19 @@ func (m *AverageComparativeScore) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AverageComparativeScore) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAverageScore sets the averageScore property value. Average score within specified basis.
 func (m *AverageComparativeScore) SetAverageScore(value *float64)() {
-    m.averageScore = value
+    if m != nil {
+        m.averageScore = value
+    }
 }
 // SetBasis sets the basis property value. Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
 func (m *AverageComparativeScore) SetBasis(value *string)() {
-    m.basis = value
+    if m != nil {
+        m.basis = value
+    }
 }

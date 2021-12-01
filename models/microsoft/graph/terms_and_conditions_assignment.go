@@ -59,5 +59,7 @@ func (m *TermsAndConditionsAssignment) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetTarget sets the target property value. Assignment target that the T&C policy is assigned to.
 func (m *TermsAndConditionsAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

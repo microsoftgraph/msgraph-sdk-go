@@ -38,7 +38,7 @@ type InferenceClassificationOverrideRequestBuilderGetOptions struct {
 // InferenceClassificationOverrideRequestBuilderGetQueryParameters a set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 type InferenceClassificationOverrideRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // InferenceClassificationOverrideRequestBuilderPatchOptions options for Patch
 type InferenceClassificationOverrideRequestBuilderPatchOptions struct {

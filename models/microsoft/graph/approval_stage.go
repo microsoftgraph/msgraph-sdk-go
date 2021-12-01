@@ -216,29 +216,43 @@ func (m *ApprovalStage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAssignedToMe sets the assignedToMe property value. Indicates whether the stage is assigned to the calling user to review. Read-only.
 func (m *ApprovalStage) SetAssignedToMe(value *bool)() {
-    m.assignedToMe = value
+    if m != nil {
+        m.assignedToMe = value
+    }
 }
 // SetDisplayName sets the displayName property value. The label provided by the policy creator to identify an approval stage. Read-only.
 func (m *ApprovalStage) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetJustification sets the justification property value. The justification associated with the approval stage decision.
 func (m *ApprovalStage) SetJustification(value *string)() {
-    m.justification = value
+    if m != nil {
+        m.justification = value
+    }
 }
 // SetReviewedBy sets the reviewedBy property value. The identifier of the reviewer. Read-only.
 func (m *ApprovalStage) SetReviewedBy(value *Identity)() {
-    m.reviewedBy = value
+    if m != nil {
+        m.reviewedBy = value
+    }
 }
 // SetReviewedDateTime sets the reviewedDateTime property value. The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ApprovalStage) SetReviewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.reviewedDateTime = value
+    if m != nil {
+        m.reviewedDateTime = value
+    }
 }
 // SetReviewResult sets the reviewResult property value. The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
 func (m *ApprovalStage) SetReviewResult(value *string)() {
-    m.reviewResult = value
+    if m != nil {
+        m.reviewResult = value
+    }
 }
 // SetStatus sets the status property value. The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
 func (m *ApprovalStage) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

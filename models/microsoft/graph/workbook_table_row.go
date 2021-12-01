@@ -85,9 +85,13 @@ func (m *WorkbookTableRow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetIndex sets the index property value. Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
 func (m *WorkbookTableRow) SetIndex(value *int32)() {
-    m.index = value
+    if m != nil {
+        m.index = value
+    }
 }
 // SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookTableRow) SetValues(value *Json)() {
-    m.values = value
+    if m != nil {
+        m.values = value
+    }
 }

@@ -96,13 +96,19 @@ func (m *InternetMessageHeader) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InternetMessageHeader) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetName sets the name property value. Represents the key in a key-value pair.
 func (m *InternetMessageHeader) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetValue sets the value property value. The value in a key-value pair.
 func (m *InternetMessageHeader) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

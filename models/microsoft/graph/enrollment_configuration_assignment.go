@@ -59,5 +59,7 @@ func (m *EnrollmentConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28
 }
 // SetTarget sets the target property value. Represents an assignment to managed devices in the tenant
 func (m *EnrollmentConfigurationAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

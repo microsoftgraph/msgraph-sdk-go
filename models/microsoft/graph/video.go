@@ -304,45 +304,67 @@ func (m *Video) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Video) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAudioBitsPerSample sets the audioBitsPerSample property value. Number of audio bits per sample.
 func (m *Video) SetAudioBitsPerSample(value *int32)() {
-    m.audioBitsPerSample = value
+    if m != nil {
+        m.audioBitsPerSample = value
+    }
 }
 // SetAudioChannels sets the audioChannels property value. Number of audio channels.
 func (m *Video) SetAudioChannels(value *int32)() {
-    m.audioChannels = value
+    if m != nil {
+        m.audioChannels = value
+    }
 }
 // SetAudioFormat sets the audioFormat property value. Name of the audio format (AAC, MP3, etc.).
 func (m *Video) SetAudioFormat(value *string)() {
-    m.audioFormat = value
+    if m != nil {
+        m.audioFormat = value
+    }
 }
 // SetAudioSamplesPerSecond sets the audioSamplesPerSecond property value. Number of audio samples per second.
 func (m *Video) SetAudioSamplesPerSecond(value *int32)() {
-    m.audioSamplesPerSecond = value
+    if m != nil {
+        m.audioSamplesPerSecond = value
+    }
 }
 // SetBitrate sets the bitrate property value. Bit rate of the video in bits per second.
 func (m *Video) SetBitrate(value *int32)() {
-    m.bitrate = value
+    if m != nil {
+        m.bitrate = value
+    }
 }
 // SetDuration sets the duration property value. Duration of the file in milliseconds.
 func (m *Video) SetDuration(value *int64)() {
-    m.duration = value
+    if m != nil {
+        m.duration = value
+    }
 }
 // SetFourCC sets the fourCC property value. 'Four character code' name of the video format.
 func (m *Video) SetFourCC(value *string)() {
-    m.fourCC = value
+    if m != nil {
+        m.fourCC = value
+    }
 }
 // SetFrameRate sets the frameRate property value. Frame rate of the video.
 func (m *Video) SetFrameRate(value *float64)() {
-    m.frameRate = value
+    if m != nil {
+        m.frameRate = value
+    }
 }
 // SetHeight sets the height property value. Height of the video, in pixels.
 func (m *Video) SetHeight(value *int32)() {
-    m.height = value
+    if m != nil {
+        m.height = value
+    }
 }
 // SetWidth sets the width property value. Width of the video, in pixels.
 func (m *Video) SetWidth(value *int32)() {
-    m.width = value
+    if m != nil {
+        m.width = value
+    }
 }

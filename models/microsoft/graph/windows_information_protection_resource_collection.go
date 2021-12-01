@@ -100,13 +100,19 @@ func (m *WindowsInformationProtectionResourceCollection) Serialize(writer i04eb5
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionResourceCollection) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name
 func (m *WindowsInformationProtectionResourceCollection) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetResources sets the resources property value. Collection of resources
 func (m *WindowsInformationProtectionResourceCollection) SetResources(value []string)() {
-    m.resources = value
+    if m != nil {
+        m.resources = value
+    }
 }

@@ -415,57 +415,85 @@ func (m *WorkbookTable) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetColumns sets the columns property value. Represents a collection of all the columns in the table. Read-only.
 func (m *WorkbookTable) SetColumns(value []WorkbookTableColumn)() {
-    m.columns = value
+    if m != nil {
+        m.columns = value
+    }
 }
 // SetHighlightFirstColumn sets the highlightFirstColumn property value. Indicates whether the first column contains special formatting.
 func (m *WorkbookTable) SetHighlightFirstColumn(value *bool)() {
-    m.highlightFirstColumn = value
+    if m != nil {
+        m.highlightFirstColumn = value
+    }
 }
 // SetHighlightLastColumn sets the highlightLastColumn property value. Indicates whether the last column contains special formatting.
 func (m *WorkbookTable) SetHighlightLastColumn(value *bool)() {
-    m.highlightLastColumn = value
+    if m != nil {
+        m.highlightLastColumn = value
+    }
 }
 // SetLegacyId sets the legacyId property value. Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
 func (m *WorkbookTable) SetLegacyId(value *string)() {
-    m.legacyId = value
+    if m != nil {
+        m.legacyId = value
+    }
 }
 // SetName sets the name property value. Name of the table.
 func (m *WorkbookTable) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetRows sets the rows property value. Represents a collection of all the rows in the table. Read-only.
 func (m *WorkbookTable) SetRows(value []WorkbookTableRow)() {
-    m.rows = value
+    if m != nil {
+        m.rows = value
+    }
 }
 // SetShowBandedColumns sets the showBandedColumns property value. Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.
 func (m *WorkbookTable) SetShowBandedColumns(value *bool)() {
-    m.showBandedColumns = value
+    if m != nil {
+        m.showBandedColumns = value
+    }
 }
 // SetShowBandedRows sets the showBandedRows property value. Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.
 func (m *WorkbookTable) SetShowBandedRows(value *bool)() {
-    m.showBandedRows = value
+    if m != nil {
+        m.showBandedRows = value
+    }
 }
 // SetShowFilterButton sets the showFilterButton property value. Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.
 func (m *WorkbookTable) SetShowFilterButton(value *bool)() {
-    m.showFilterButton = value
+    if m != nil {
+        m.showFilterButton = value
+    }
 }
 // SetShowHeaders sets the showHeaders property value. Indicates whether the header row is visible or not. This value can be set to show or remove the header row.
 func (m *WorkbookTable) SetShowHeaders(value *bool)() {
-    m.showHeaders = value
+    if m != nil {
+        m.showHeaders = value
+    }
 }
 // SetShowTotals sets the showTotals property value. Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
 func (m *WorkbookTable) SetShowTotals(value *bool)() {
-    m.showTotals = value
+    if m != nil {
+        m.showTotals = value
+    }
 }
 // SetSort sets the sort property value. Represents the sorting for the table. Read-only.
 func (m *WorkbookTable) SetSort(value *WorkbookTableSort)() {
-    m.sort = value
+    if m != nil {
+        m.sort = value
+    }
 }
 // SetStyle sets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
 func (m *WorkbookTable) SetStyle(value *string)() {
-    m.style = value
+    if m != nil {
+        m.style = value
+    }
 }
 // SetWorksheet sets the worksheet property value. The worksheet containing the current table. Read-only.
 func (m *WorkbookTable) SetWorksheet(value *WorkbookWorksheet)() {
-    m.worksheet = value
+    if m != nil {
+        m.worksheet = value
+    }
 }

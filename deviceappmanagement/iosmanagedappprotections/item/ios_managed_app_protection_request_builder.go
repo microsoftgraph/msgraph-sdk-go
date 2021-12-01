@@ -43,7 +43,7 @@ type IosManagedAppProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // IosManagedAppProtectionRequestBuilderPatchOptions options for Patch
 type IosManagedAppProtectionRequestBuilderPatchOptions struct {

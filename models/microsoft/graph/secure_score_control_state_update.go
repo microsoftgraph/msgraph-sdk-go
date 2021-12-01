@@ -175,25 +175,37 @@ func (m *SecureScoreControlStateUpdate) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecureScoreControlStateUpdate) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedTo sets the assignedTo property value. 
 func (m *SecureScoreControlStateUpdate) SetAssignedTo(value *string)() {
-    m.assignedTo = value
+    if m != nil {
+        m.assignedTo = value
+    }
 }
 // SetComment sets the comment property value. 
 func (m *SecureScoreControlStateUpdate) SetComment(value *string)() {
-    m.comment = value
+    if m != nil {
+        m.comment = value
+    }
 }
 // SetState sets the state property value. 
 func (m *SecureScoreControlStateUpdate) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetUpdatedBy sets the updatedBy property value. 
 func (m *SecureScoreControlStateUpdate) SetUpdatedBy(value *string)() {
-    m.updatedBy = value
+    if m != nil {
+        m.updatedBy = value
+    }
 }
 // SetUpdatedDateTime sets the updatedDateTime property value. 
 func (m *SecureScoreControlStateUpdate) SetUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.updatedDateTime = value
+    if m != nil {
+        m.updatedDateTime = value
+    }
 }

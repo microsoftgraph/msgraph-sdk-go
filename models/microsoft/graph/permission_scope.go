@@ -278,41 +278,61 @@ func (m *PermissionScope) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PermissionScope) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdminConsentDescription sets the adminConsentDescription property value. A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.
 func (m *PermissionScope) SetAdminConsentDescription(value *string)() {
-    m.adminConsentDescription = value
+    if m != nil {
+        m.adminConsentDescription = value
+    }
 }
 // SetAdminConsentDisplayName sets the adminConsentDisplayName property value. The permission's title, intended to be read by an administrator granting the permission on behalf of all users.
 func (m *PermissionScope) SetAdminConsentDisplayName(value *string)() {
-    m.adminConsentDisplayName = value
+    if m != nil {
+        m.adminConsentDisplayName = value
+    }
 }
 // SetId sets the id property value. Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
 func (m *PermissionScope) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
 func (m *PermissionScope) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetOrigin sets the origin property value. 
 func (m *PermissionScope) SetOrigin(value *string)() {
-    m.origin = value
+    if m != nil {
+        m.origin = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator should be required for consent to the permissions. This will be the default behavior, but each customer can choose to customize the behavior in their organization (by allowing, restricting or limiting user consent to this delegated permission.)
 func (m *PermissionScope) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetUserConsentDescription sets the userConsentDescription property value. A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
 func (m *PermissionScope) SetUserConsentDescription(value *string)() {
-    m.userConsentDescription = value
+    if m != nil {
+        m.userConsentDescription = value
+    }
 }
 // SetUserConsentDisplayName sets the userConsentDisplayName property value. A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
 func (m *PermissionScope) SetUserConsentDisplayName(value *string)() {
-    m.userConsentDisplayName = value
+    if m != nil {
+        m.userConsentDisplayName = value
+    }
 }
 // SetValue sets the value property value. Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..
 func (m *PermissionScope) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

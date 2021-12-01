@@ -59,5 +59,7 @@ func (m *EducationAssignmentSettings) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetSubmissionAnimationDisabled sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
 func (m *EducationAssignmentSettings) SetSubmissionAnimationDisabled(value *bool)() {
-    m.submissionAnimationDisabled = value
+    if m != nil {
+        m.submissionAnimationDisabled = value
+    }
 }

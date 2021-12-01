@@ -40,7 +40,7 @@ type IdentityProviderBaseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // IdentityProviderBaseRequestBuilderPatchOptions options for Patch
 type IdentityProviderBaseRequestBuilderPatchOptions struct {

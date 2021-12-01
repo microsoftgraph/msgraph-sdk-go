@@ -85,9 +85,13 @@ func (m *UserIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetIpAddress sets the ipAddress property value. Indicates the client IP address used by user performing the activity (audit log only).
 func (m *UserIdentity) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    if m != nil {
+        m.ipAddress = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName attribute of the user.
 func (m *UserIdentity) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

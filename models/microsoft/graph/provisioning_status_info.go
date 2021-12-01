@@ -98,13 +98,19 @@ func (m *ProvisioningStatusInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisioningStatusInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetErrorInformation sets the errorInformation property value. 
 func (m *ProvisioningStatusInfo) SetErrorInformation(value *ProvisioningErrorInfo)() {
-    m.errorInformation = value
+    if m != nil {
+        m.errorInformation = value
+    }
 }
 // SetStatus sets the status property value. Possible values are: success, warning, failure, skipped, unknownFutureValue.
 func (m *ProvisioningStatusInfo) SetStatus(value *ProvisioningResult)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

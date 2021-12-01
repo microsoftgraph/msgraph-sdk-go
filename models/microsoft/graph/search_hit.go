@@ -174,25 +174,37 @@ func (m *SearchHit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchHit) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentSource sets the contentSource property value. The name of the content source which the externalItem is part of .
 func (m *SearchHit) SetContentSource(value *string)() {
-    m.contentSource = value
+    if m != nil {
+        m.contentSource = value
+    }
 }
 // SetHitId sets the hitId property value. The internal identifier for the item.
 func (m *SearchHit) SetHitId(value *string)() {
-    m.hitId = value
+    if m != nil {
+        m.hitId = value
+    }
 }
 // SetRank sets the rank property value. The rank or the order of the result.
 func (m *SearchHit) SetRank(value *int32)() {
-    m.rank = value
+    if m != nil {
+        m.rank = value
+    }
 }
 // SetResource sets the resource property value. 
 func (m *SearchHit) SetResource(value *Entity)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }
 // SetSummary sets the summary property value. A summary of the result, if a summary is available.
 func (m *SearchHit) SetSummary(value *string)() {
-    m.summary = value
+    if m != nil {
+        m.summary = value
+    }
 }

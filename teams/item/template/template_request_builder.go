@@ -32,7 +32,7 @@ type TemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // NewTemplateRequestBuilderInternal instantiates a new TemplateRequestBuilder and sets the default values.
 func NewTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TemplateRequestBuilder) {

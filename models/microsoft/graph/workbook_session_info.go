@@ -96,13 +96,19 @@ func (m *WorkbookSessionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookSessionInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. Id of the workbook session.
 func (m *WorkbookSessionInfo) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetPersistChanges sets the persistChanges property value. true for persistent session. false for non-persistent session (view mode)
 func (m *WorkbookSessionInfo) SetPersistChanges(value *bool)() {
-    m.persistChanges = value
+    if m != nil {
+        m.persistChanges = value
+    }
 }

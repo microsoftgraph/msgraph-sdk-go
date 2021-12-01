@@ -59,5 +59,7 @@ func (m *SingleValueLegacyExtendedProperty) Serialize(writer i04eb5309aeaafadd28
 }
 // SetValue sets the value property value. A property value.
 func (m *SingleValueLegacyExtendedProperty) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

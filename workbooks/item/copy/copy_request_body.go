@@ -97,13 +97,19 @@ func (m *CopyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetName sets the name property value. 
 func (m *CopyRequestBody) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetParentReference sets the parentReference property value. 
 func (m *CopyRequestBody) SetParentReference(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemReference)() {
-    m.parentReference = value
+    if m != nil {
+        m.parentReference = value
+    }
 }

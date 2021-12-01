@@ -96,13 +96,19 @@ func (m *ItemActionStat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetActionCount sets the actionCount property value. The number of times the action took place. Read-only.
 func (m *ItemActionStat) SetActionCount(value *int32)() {
-    m.actionCount = value
+    if m != nil {
+        m.actionCount = value
+    }
 }
 // SetActorCount sets the actorCount property value. The number of distinct actors that performed the action. Read-only.
 func (m *ItemActionStat) SetActorCount(value *int32)() {
-    m.actorCount = value
+    if m != nil {
+        m.actorCount = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemActionStat) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }

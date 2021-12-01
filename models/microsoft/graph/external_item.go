@@ -120,13 +120,19 @@ func (m *ExternalItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAcl sets the acl property value. An array of access control entries. Each entry specifies the access granted to a user or group. Required.
 func (m *ExternalItem) SetAcl(value []Acl)() {
-    m.acl = value
+    if m != nil {
+        m.acl = value
+    }
 }
 // SetContent sets the content property value. A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
 func (m *ExternalItem) SetContent(value *ExternalItemContent)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }
 // SetProperties sets the properties property value. A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
 func (m *ExternalItem) SetProperties(value *Properties)() {
-    m.properties = value
+    if m != nil {
+        m.properties = value
+    }
 }

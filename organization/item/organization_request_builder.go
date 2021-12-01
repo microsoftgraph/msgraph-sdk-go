@@ -50,7 +50,7 @@ type OrganizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OrganizationRequestBuilderPatchOptions options for Patch
 type OrganizationRequestBuilderPatchOptions struct {

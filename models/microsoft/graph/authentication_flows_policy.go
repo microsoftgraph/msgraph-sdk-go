@@ -111,13 +111,19 @@ func (m *AuthenticationFlowsPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetDescription sets the description property value. Inherited property. A description of the policy. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Inherited property. The human-readable name of the policy. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetSelfServiceSignUp sets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) SetSelfServiceSignUp(value *SelfServiceSignUpAuthenticationFlowConfiguration)() {
-    m.selfServiceSignUp = value
+    if m != nil {
+        m.selfServiceSignUp = value
+    }
 }

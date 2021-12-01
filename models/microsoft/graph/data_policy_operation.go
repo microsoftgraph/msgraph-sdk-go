@@ -192,25 +192,37 @@ func (m *DataPolicyOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetCompletedDateTime sets the completedDateTime property value. Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
 func (m *DataPolicyOperation) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.completedDateTime = value
+    if m != nil {
+        m.completedDateTime = value
+    }
 }
 // SetProgress sets the progress property value. Specifies the progress of an operation.
 func (m *DataPolicyOperation) SetProgress(value *float64)() {
-    m.progress = value
+    if m != nil {
+        m.progress = value
+    }
 }
 // SetStatus sets the status property value. Possible values are: notStarted, running, complete, failed, unknownFutureValue.
 func (m *DataPolicyOperation) SetStatus(value *DataPolicyOperationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetStorageLocation sets the storageLocation property value. The URL location to where data is being exported for export requests.
 func (m *DataPolicyOperation) SetStorageLocation(value *string)() {
-    m.storageLocation = value
+    if m != nil {
+        m.storageLocation = value
+    }
 }
 // SetSubmittedDateTime sets the submittedDateTime property value. Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *DataPolicyOperation) SetSubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.submittedDateTime = value
+    if m != nil {
+        m.submittedDateTime = value
+    }
 }
 // SetUserId sets the userId property value. The id for the user on whom the operation is performed.
 func (m *DataPolicyOperation) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

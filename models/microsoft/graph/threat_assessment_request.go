@@ -261,33 +261,49 @@ func (m *ThreatAssessmentRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetCategory sets the category property value. The threat category. Possible values are: spam, phishing, malware.
 func (m *ThreatAssessmentRequest) SetCategory(value *ThreatCategory)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetContentType sets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
 func (m *ThreatAssessmentRequest) SetContentType(value *ThreatAssessmentContentType)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. The threat assessment request creator.
 func (m *ThreatAssessmentRequest) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ThreatAssessmentRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetExpectedAssessment sets the expectedAssessment property value. The expected assessment from submitter. Possible values are: block, unblock.
 func (m *ThreatAssessmentRequest) SetExpectedAssessment(value *ThreatExpectedAssessment)() {
-    m.expectedAssessment = value
+    if m != nil {
+        m.expectedAssessment = value
+    }
 }
 // SetRequestSource sets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
 func (m *ThreatAssessmentRequest) SetRequestSource(value *ThreatAssessmentRequestSource)() {
-    m.requestSource = value
+    if m != nil {
+        m.requestSource = value
+    }
 }
 // SetResults sets the results property value. A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
 func (m *ThreatAssessmentRequest) SetResults(value []ThreatAssessmentResult)() {
-    m.results = value
+    if m != nil {
+        m.results = value
+    }
 }
 // SetStatus sets the status property value. The assessment process status. Possible values are: pending, completed.
 func (m *ThreatAssessmentRequest) SetStatus(value *ThreatAssessmentStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

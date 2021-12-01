@@ -40,7 +40,7 @@ type ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderGetQueryParamete
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderPatchOptions options for Patch
 type ManagedDeviceMobileAppConfigurationUserStatusRequestBuilderPatchOptions struct {

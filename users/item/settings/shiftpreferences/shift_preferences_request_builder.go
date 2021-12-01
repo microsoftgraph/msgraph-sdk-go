@@ -40,7 +40,7 @@ type ShiftPreferencesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ShiftPreferencesRequestBuilderPatchOptions options for Patch
 type ShiftPreferencesRequestBuilderPatchOptions struct {

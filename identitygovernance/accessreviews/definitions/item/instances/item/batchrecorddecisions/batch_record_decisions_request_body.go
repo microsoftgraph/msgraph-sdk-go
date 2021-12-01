@@ -148,21 +148,31 @@ func (m *BatchRecordDecisionsRequestBody) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BatchRecordDecisionsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDecision sets the decision property value. 
 func (m *BatchRecordDecisionsRequestBody) SetDecision(value *string)() {
-    m.decision = value
+    if m != nil {
+        m.decision = value
+    }
 }
 // SetJustification sets the justification property value. 
 func (m *BatchRecordDecisionsRequestBody) SetJustification(value *string)() {
-    m.justification = value
+    if m != nil {
+        m.justification = value
+    }
 }
 // SetPrincipalId sets the principalId property value. 
 func (m *BatchRecordDecisionsRequestBody) SetPrincipalId(value *string)() {
-    m.principalId = value
+    if m != nil {
+        m.principalId = value
+    }
 }
 // SetResourceId sets the resourceId property value. 
 func (m *BatchRecordDecisionsRequestBody) SetResourceId(value *string)() {
-    m.resourceId = value
+    if m != nil {
+        m.resourceId = value
+    }
 }

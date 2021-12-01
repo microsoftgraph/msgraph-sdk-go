@@ -227,33 +227,49 @@ func (m *YieldRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *YieldRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBasis sets the basis property value. 
 func (m *YieldRequestBody) SetBasis(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.basis = value
+    if m != nil {
+        m.basis = value
+    }
 }
 // SetFrequency sets the frequency property value. 
 func (m *YieldRequestBody) SetFrequency(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.frequency = value
+    if m != nil {
+        m.frequency = value
+    }
 }
 // SetMaturity sets the maturity property value. 
 func (m *YieldRequestBody) SetMaturity(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.maturity = value
+    if m != nil {
+        m.maturity = value
+    }
 }
 // SetPr sets the pr property value. 
 func (m *YieldRequestBody) SetPr(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.pr = value
+    if m != nil {
+        m.pr = value
+    }
 }
 // SetRate sets the rate property value. 
 func (m *YieldRequestBody) SetRate(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.rate = value
+    if m != nil {
+        m.rate = value
+    }
 }
 // SetRedemption sets the redemption property value. 
 func (m *YieldRequestBody) SetRedemption(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.redemption = value
+    if m != nil {
+        m.redemption = value
+    }
 }
 // SetSettlement sets the settlement property value. 
 func (m *YieldRequestBody) SetSettlement(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.settlement = value
+    if m != nil {
+        m.settlement = value
+    }
 }

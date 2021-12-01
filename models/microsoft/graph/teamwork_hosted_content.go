@@ -85,9 +85,13 @@ func (m *TeamworkHostedContent) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetContentBytes sets the contentBytes property value. Write only. Bytes for the hosted content (such as images).
 func (m *TeamworkHostedContent) SetContentBytes(value []byte)() {
-    m.contentBytes = value
+    if m != nil {
+        m.contentBytes = value
+    }
 }
 // SetContentType sets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
 func (m *TeamworkHostedContent) SetContentType(value *string)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }

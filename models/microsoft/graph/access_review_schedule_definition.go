@@ -434,57 +434,85 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalNotificationRecipients sets the additionalNotificationRecipients property value. Defines the list of additional users or group members to be notified of the access review progress.
 func (m *AccessReviewScheduleDefinition) SetAdditionalNotificationRecipients(value []AccessReviewNotificationRecipientItem)() {
-    m.additionalNotificationRecipients = value
+    if m != nil {
+        m.additionalNotificationRecipients = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. User who created this review. Read-only.
 func (m *AccessReviewScheduleDefinition) SetCreatedBy(value *UserIdentity)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
 func (m *AccessReviewScheduleDefinition) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescriptionForAdmins sets the descriptionForAdmins property value. Description provided by review creators to provide more context of the review to admins. Supports $select.
 func (m *AccessReviewScheduleDefinition) SetDescriptionForAdmins(value *string)() {
-    m.descriptionForAdmins = value
+    if m != nil {
+        m.descriptionForAdmins = value
+    }
 }
 // SetDescriptionForReviewers sets the descriptionForReviewers property value. Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports $select.
 func (m *AccessReviewScheduleDefinition) SetDescriptionForReviewers(value *string)() {
-    m.descriptionForReviewers = value
+    if m != nil {
+        m.descriptionForReviewers = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the access review series. Supports $select and $orderBy. Required on create.
 func (m *AccessReviewScheduleDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetFallbackReviewers sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select.
 func (m *AccessReviewScheduleDefinition) SetFallbackReviewers(value []AccessReviewReviewerScope)() {
-    m.fallbackReviewers = value
+    if m != nil {
+        m.fallbackReviewers = value
+    }
 }
 // SetInstanceEnumerationScope sets the instanceEnumerationScope property value. This property is required when scoping a review to guest users' access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope. Supports $select. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.
 func (m *AccessReviewScheduleDefinition) SetInstanceEnumerationScope(value *AccessReviewScope)() {
-    m.instanceEnumerationScope = value
+    if m != nil {
+        m.instanceEnumerationScope = value
+    }
 }
 // SetInstances sets the instances property value. If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
 func (m *AccessReviewScheduleDefinition) SetInstances(value []AccessReviewInstance)() {
-    m.instances = value
+    if m != nil {
+        m.instances = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Timestamp when the access review series was last modified. Supports $select. Read-only.
 func (m *AccessReviewScheduleDefinition) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetReviewers sets the reviewers property value. This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
 func (m *AccessReviewScheduleDefinition) SetReviewers(value []AccessReviewReviewerScope)() {
-    m.reviewers = value
+    if m != nil {
+        m.reviewers = value
+    }
 }
 // SetScope sets the scope property value. Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
 func (m *AccessReviewScheduleDefinition) SetScope(value *AccessReviewScope)() {
-    m.scope = value
+    if m != nil {
+        m.scope = value
+    }
 }
 // SetSettings sets the settings property value. The settings for an access review series, see type definition below. Supports $select. Required on create.
 func (m *AccessReviewScheduleDefinition) SetSettings(value *AccessReviewScheduleSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }
 // SetStatus sets the status property value. This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
 func (m *AccessReviewScheduleDefinition) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

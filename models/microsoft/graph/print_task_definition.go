@@ -120,13 +120,19 @@ func (m *PrintTaskDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetCreatedBy sets the createdBy property value. 
 func (m *PrintTaskDefinition) SetCreatedBy(value *AppIdentity)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the printTaskDefinition.
 func (m *PrintTaskDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetTasks sets the tasks property value. A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
 func (m *PrintTaskDefinition) SetTasks(value []PrintTask)() {
-    m.tasks = value
+    if m != nil {
+        m.tasks = value
+    }
 }

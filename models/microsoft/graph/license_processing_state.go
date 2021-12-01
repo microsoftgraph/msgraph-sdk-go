@@ -70,9 +70,13 @@ func (m *LicenseProcessingState) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LicenseProcessingState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetState sets the state property value. 
 func (m *LicenseProcessingState) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

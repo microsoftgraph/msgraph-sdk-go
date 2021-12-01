@@ -122,17 +122,25 @@ func (m *DriveRecipient) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DriveRecipient) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlias sets the alias property value. The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
 func (m *DriveRecipient) SetAlias(value *string)() {
-    m.alias = value
+    if m != nil {
+        m.alias = value
+    }
 }
 // SetEmail sets the email property value. The email address for the recipient, if the recipient has an associated email address.
 func (m *DriveRecipient) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetObjectId sets the objectId property value. The unique identifier for the recipient in the directory.
 func (m *DriveRecipient) SetObjectId(value *string)() {
-    m.objectId = value
+    if m != nil {
+        m.objectId = value
+    }
 }

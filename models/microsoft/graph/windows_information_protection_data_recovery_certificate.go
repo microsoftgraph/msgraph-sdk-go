@@ -149,21 +149,31 @@ func (m *WindowsInformationProtectionDataRecoveryCertificate) Serialize(writer i
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificate sets the certificate property value. Data recovery Certificate
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetCertificate(value []byte)() {
-    m.certificate = value
+    if m != nil {
+        m.certificate = value
+    }
 }
 // SetDescription sets the description property value. Data recovery Certificate description
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Data recovery Certificate expiration datetime
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetSubjectName sets the subjectName property value. Data recovery Certificate subject name
 func (m *WindowsInformationProtectionDataRecoveryCertificate) SetSubjectName(value *string)() {
-    m.subjectName = value
+    if m != nil {
+        m.subjectName = value
+    }
 }

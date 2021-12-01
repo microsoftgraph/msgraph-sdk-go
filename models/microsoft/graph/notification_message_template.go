@@ -175,21 +175,31 @@ func (m *NotificationMessageTemplate) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetBrandingOptions sets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
 func (m *NotificationMessageTemplate) SetBrandingOptions(value *NotificationTemplateBrandingOptions)() {
-    m.brandingOptions = value
+    if m != nil {
+        m.brandingOptions = value
+    }
 }
 // SetDefaultLocale sets the defaultLocale property value. The default locale to fallback onto when the requested locale is not available.
 func (m *NotificationMessageTemplate) SetDefaultLocale(value *string)() {
-    m.defaultLocale = value
+    if m != nil {
+        m.defaultLocale = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name for the Notification Message Template.
 func (m *NotificationMessageTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *NotificationMessageTemplate) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetLocalizedNotificationMessages sets the localizedNotificationMessages property value. The list of localized messages for this Notification Message Template.
 func (m *NotificationMessageTemplate) SetLocalizedNotificationMessages(value []LocalizedNotificationMessage)() {
-    m.localizedNotificationMessages = value
+    if m != nil {
+        m.localizedNotificationMessages = value
+    }
 }

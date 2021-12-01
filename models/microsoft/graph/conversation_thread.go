@@ -299,37 +299,55 @@ func (m *ConversationThread) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetCcRecipients sets the ccRecipients property value. The Cc: recipients for the thread. Returned only on $select.
 func (m *ConversationThread) SetCcRecipients(value []Recipient)() {
-    m.ccRecipients = value
+    if m != nil {
+        m.ccRecipients = value
+    }
 }
 // SetHasAttachments sets the hasAttachments property value. Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
 func (m *ConversationThread) SetHasAttachments(value *bool)() {
-    m.hasAttachments = value
+    if m != nil {
+        m.hasAttachments = value
+    }
 }
 // SetIsLocked sets the isLocked property value. Indicates if the thread is locked. Returned by default.
 func (m *ConversationThread) SetIsLocked(value *bool)() {
-    m.isLocked = value
+    if m != nil {
+        m.isLocked = value
+    }
 }
 // SetLastDeliveredDateTime sets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.
 func (m *ConversationThread) SetLastDeliveredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastDeliveredDateTime = value
+    if m != nil {
+        m.lastDeliveredDateTime = value
+    }
 }
 // SetPosts sets the posts property value. Read-only. Nullable.
 func (m *ConversationThread) SetPosts(value []Post)() {
-    m.posts = value
+    if m != nil {
+        m.posts = value
+    }
 }
 // SetPreview sets the preview property value. A short summary from the body of the latest post in this conversation. Returned by default.
 func (m *ConversationThread) SetPreview(value *string)() {
-    m.preview = value
+    if m != nil {
+        m.preview = value
+    }
 }
 // SetTopic sets the topic property value. The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.
 func (m *ConversationThread) SetTopic(value *string)() {
-    m.topic = value
+    if m != nil {
+        m.topic = value
+    }
 }
 // SetToRecipients sets the toRecipients property value. The To: recipients for the thread. Returned only on $select.
 func (m *ConversationThread) SetToRecipients(value []Recipient)() {
-    m.toRecipients = value
+    if m != nil {
+        m.toRecipients = value
+    }
 }
 // SetUniqueSenders sets the uniqueSenders property value. All the users that sent a message to this thread. Returned by default.
 func (m *ConversationThread) SetUniqueSenders(value []string)() {
-    m.uniqueSenders = value
+    if m != nil {
+        m.uniqueSenders = value
+    }
 }

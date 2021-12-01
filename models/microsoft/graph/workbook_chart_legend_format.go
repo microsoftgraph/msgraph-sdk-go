@@ -85,9 +85,13 @@ func (m *WorkbookChartLegendFormat) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetFill sets the fill property value. Represents the fill format of an object, which includes background formating information. Read-only.
 func (m *WorkbookChartLegendFormat) SetFill(value *WorkbookChartFill)() {
-    m.fill = value
+    if m != nil {
+        m.fill = value
+    }
 }
 // SetFont sets the font property value. Represents the font attributes such as font name, font size, color, etc. of a chart legend. Read-only.
 func (m *WorkbookChartLegendFormat) SetFont(value *WorkbookChartFont)() {
-    m.font = value
+    if m != nil {
+        m.font = value
+    }
 }

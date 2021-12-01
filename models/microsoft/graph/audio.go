@@ -460,69 +460,103 @@ func (m *Audio) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Audio) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlbum sets the album property value. The title of the album for this audio file.
 func (m *Audio) SetAlbum(value *string)() {
-    m.album = value
+    if m != nil {
+        m.album = value
+    }
 }
 // SetAlbumArtist sets the albumArtist property value. The artist named on the album for the audio file.
 func (m *Audio) SetAlbumArtist(value *string)() {
-    m.albumArtist = value
+    if m != nil {
+        m.albumArtist = value
+    }
 }
 // SetArtist sets the artist property value. The performing artist for the audio file.
 func (m *Audio) SetArtist(value *string)() {
-    m.artist = value
+    if m != nil {
+        m.artist = value
+    }
 }
 // SetBitrate sets the bitrate property value. Bitrate expressed in kbps.
 func (m *Audio) SetBitrate(value *int64)() {
-    m.bitrate = value
+    if m != nil {
+        m.bitrate = value
+    }
 }
 // SetComposers sets the composers property value. The name of the composer of the audio file.
 func (m *Audio) SetComposers(value *string)() {
-    m.composers = value
+    if m != nil {
+        m.composers = value
+    }
 }
 // SetCopyright sets the copyright property value. Copyright information for the audio file.
 func (m *Audio) SetCopyright(value *string)() {
-    m.copyright = value
+    if m != nil {
+        m.copyright = value
+    }
 }
 // SetDisc sets the disc property value. The number of the disc this audio file came from.
 func (m *Audio) SetDisc(value *int32)() {
-    m.disc = value
+    if m != nil {
+        m.disc = value
+    }
 }
 // SetDiscCount sets the discCount property value. The total number of discs in this album.
 func (m *Audio) SetDiscCount(value *int32)() {
-    m.discCount = value
+    if m != nil {
+        m.discCount = value
+    }
 }
 // SetDuration sets the duration property value. Duration of the audio file, expressed in milliseconds
 func (m *Audio) SetDuration(value *int64)() {
-    m.duration = value
+    if m != nil {
+        m.duration = value
+    }
 }
 // SetGenre sets the genre property value. The genre of this audio file.
 func (m *Audio) SetGenre(value *string)() {
-    m.genre = value
+    if m != nil {
+        m.genre = value
+    }
 }
 // SetHasDrm sets the hasDrm property value. Indicates if the file is protected with digital rights management.
 func (m *Audio) SetHasDrm(value *bool)() {
-    m.hasDrm = value
+    if m != nil {
+        m.hasDrm = value
+    }
 }
 // SetIsVariableBitrate sets the isVariableBitrate property value. Indicates if the file is encoded with a variable bitrate.
 func (m *Audio) SetIsVariableBitrate(value *bool)() {
-    m.isVariableBitrate = value
+    if m != nil {
+        m.isVariableBitrate = value
+    }
 }
 // SetTitle sets the title property value. The title of the audio file.
 func (m *Audio) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }
 // SetTrack sets the track property value. The number of the track on the original disc for this audio file.
 func (m *Audio) SetTrack(value *int32)() {
-    m.track = value
+    if m != nil {
+        m.track = value
+    }
 }
 // SetTrackCount sets the trackCount property value. The total number of tracks on the original disc for this audio file.
 func (m *Audio) SetTrackCount(value *int32)() {
-    m.trackCount = value
+    if m != nil {
+        m.trackCount = value
+    }
 }
 // SetYear sets the year property value. The year the audio file was recorded.
 func (m *Audio) SetYear(value *int32)() {
-    m.year = value
+    if m != nil {
+        m.year = value
+    }
 }

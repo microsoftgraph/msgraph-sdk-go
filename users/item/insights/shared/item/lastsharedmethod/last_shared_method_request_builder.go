@@ -45,7 +45,7 @@ type LastSharedMethodRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 func (m *LastSharedMethodRequestBuilder) CalendarSharingMessage()(*i1c5e952cbcca5bb0561f018e495d472c32de97497ee9f2dcea5c10787062433c.CalendarSharingMessageRequestBuilder) {
     return i1c5e952cbcca5bb0561f018e495d472c32de97497ee9f2dcea5c10787062433c.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);

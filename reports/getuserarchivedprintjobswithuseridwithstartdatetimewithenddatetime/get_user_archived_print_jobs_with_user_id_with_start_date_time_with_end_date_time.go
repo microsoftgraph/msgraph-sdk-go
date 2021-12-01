@@ -44,5 +44,7 @@ func (m *GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime) Ser
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }

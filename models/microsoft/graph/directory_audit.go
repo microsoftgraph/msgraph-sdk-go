@@ -340,45 +340,67 @@ func (m *DirectoryAudit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetActivityDateTime sets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *DirectoryAudit) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.activityDateTime = value
+    if m != nil {
+        m.activityDateTime = value
+    }
 }
 // SetActivityDisplayName sets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
 func (m *DirectoryAudit) SetActivityDisplayName(value *string)() {
-    m.activityDisplayName = value
+    if m != nil {
+        m.activityDisplayName = value
+    }
 }
 // SetAdditionalDetails sets the additionalDetails property value. Indicates additional details on the activity.
 func (m *DirectoryAudit) SetAdditionalDetails(value []KeyValue)() {
-    m.additionalDetails = value
+    if m != nil {
+        m.additionalDetails = value
+    }
 }
 // SetCategory sets the category property value. Indicates which resource category that's targeted by the activity. (For example: User Management, Group Management etc..)
 func (m *DirectoryAudit) SetCategory(value *string)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetCorrelationId sets the correlationId property value. Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
 func (m *DirectoryAudit) SetCorrelationId(value *string)() {
-    m.correlationId = value
+    if m != nil {
+        m.correlationId = value
+    }
 }
 // SetInitiatedBy sets the initiatedBy property value. 
 func (m *DirectoryAudit) SetInitiatedBy(value *AuditActivityInitiator)() {
-    m.initiatedBy = value
+    if m != nil {
+        m.initiatedBy = value
+    }
 }
 // SetLoggedByService sets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
 func (m *DirectoryAudit) SetLoggedByService(value *string)() {
-    m.loggedByService = value
+    if m != nil {
+        m.loggedByService = value
+    }
 }
 // SetOperationType sets the operationType property value. 
 func (m *DirectoryAudit) SetOperationType(value *string)() {
-    m.operationType = value
+    if m != nil {
+        m.operationType = value
+    }
 }
 // SetResult sets the result property value. Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
 func (m *DirectoryAudit) SetResult(value *OperationResult)() {
-    m.result = value
+    if m != nil {
+        m.result = value
+    }
 }
 // SetResultReason sets the resultReason property value. Indicates the reason for failure if the result is failure or timeout.
 func (m *DirectoryAudit) SetResultReason(value *string)() {
-    m.resultReason = value
+    if m != nil {
+        m.resultReason = value
+    }
 }
 // SetTargetResources sets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
 func (m *DirectoryAudit) SetTargetResources(value []TargetResource)() {
-    m.targetResources = value
+    if m != nil {
+        m.targetResources = value
+    }
 }

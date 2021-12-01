@@ -172,21 +172,31 @@ func (m *DetectedApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetDeviceCount sets the deviceCount property value. The number of devices that have installed this application
 func (m *DetectedApp) SetDeviceCount(value *int32)() {
-    m.deviceCount = value
+    if m != nil {
+        m.deviceCount = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the discovered application. Read-only
 func (m *DetectedApp) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetManagedDevices sets the managedDevices property value. The devices that have the discovered application installed
 func (m *DetectedApp) SetManagedDevices(value []ManagedDevice)() {
-    m.managedDevices = value
+    if m != nil {
+        m.managedDevices = value
+    }
 }
 // SetSizeInByte sets the sizeInByte property value. Discovered application size in bytes. Read-only
 func (m *DetectedApp) SetSizeInByte(value *int64)() {
-    m.sizeInByte = value
+    if m != nil {
+        m.sizeInByte = value
+    }
 }
 // SetVersion sets the version property value. Version of the discovered application. Read-only
 func (m *DetectedApp) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

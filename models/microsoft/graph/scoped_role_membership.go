@@ -111,13 +111,19 @@ func (m *ScopedRoleMembership) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdministrativeUnitId sets the administrativeUnitId property value. Unique identifier for the administrative unit that the directory role is scoped to
 func (m *ScopedRoleMembership) SetAdministrativeUnitId(value *string)() {
-    m.administrativeUnitId = value
+    if m != nil {
+        m.administrativeUnitId = value
+    }
 }
 // SetRoleId sets the roleId property value. Unique identifier for the directory role that the member is in.
 func (m *ScopedRoleMembership) SetRoleId(value *string)() {
-    m.roleId = value
+    if m != nil {
+        m.roleId = value
+    }
 }
 // SetRoleMemberInfo sets the roleMemberInfo property value. 
 func (m *ScopedRoleMembership) SetRoleMemberInfo(value *Identity)() {
-    m.roleMemberInfo = value
+    if m != nil {
+        m.roleMemberInfo = value
+    }
 }

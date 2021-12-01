@@ -123,17 +123,25 @@ func (m *ShareRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ShareRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. 
 func (m *ShareRequestBody) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetNotifyTeam sets the notifyTeam property value. 
 func (m *ShareRequestBody) SetNotifyTeam(value *bool)() {
-    m.notifyTeam = value
+    if m != nil {
+        m.notifyTeam = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. 
 func (m *ShareRequestBody) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }

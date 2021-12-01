@@ -70,9 +70,13 @@ func (m *GetNotebookFromWebUrlRequestBody) Serialize(writer i04eb5309aeaafadd283
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetNotebookFromWebUrlRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetWebUrl sets the webUrl property value. 
 func (m *GetNotebookFromWebUrlRequestBody) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

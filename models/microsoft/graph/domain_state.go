@@ -123,17 +123,25 @@ func (m *DomainState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DomainState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. Timestamp for when the last activity occurred. The value is updated when an operation is scheduled, the asynchronous task starts, and when the operation completes.
 func (m *DomainState) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActionDateTime = value
+    if m != nil {
+        m.lastActionDateTime = value
+    }
 }
 // SetOperation sets the operation property value. Type of asynchronous operation. The values can be ForceDelete or Verification
 func (m *DomainState) SetOperation(value *string)() {
-    m.operation = value
+    if m != nil {
+        m.operation = value
+    }
 }
 // SetStatus sets the status property value. Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
 func (m *DomainState) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

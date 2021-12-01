@@ -57,7 +57,7 @@ type MessageRequestBuilderGetOptions struct {
 // MessageRequestBuilderGetQueryParameters the messages in a mailbox or folder. Read-only. Nullable.
 type MessageRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MessageRequestBuilderPatchOptions options for Patch
 type MessageRequestBuilderPatchOptions struct {

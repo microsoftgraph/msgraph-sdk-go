@@ -70,9 +70,13 @@ func (m *ConditionalAccessDevices) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessDevices) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceFilter sets the deviceFilter property value. Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
 func (m *ConditionalAccessDevices) SetDeviceFilter(value *ConditionalAccessFilter)() {
-    m.deviceFilter = value
+    if m != nil {
+        m.deviceFilter = value
+    }
 }

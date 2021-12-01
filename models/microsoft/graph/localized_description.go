@@ -96,13 +96,19 @@ func (m *LocalizedDescription) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LocalizedDescription) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. The description in the localized language.
 func (m *LocalizedDescription) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetLanguageTag sets the languageTag property value. The language tag for the label.
 func (m *LocalizedDescription) SetLanguageTag(value *string)() {
-    m.languageTag = value
+    if m != nil {
+        m.languageTag = value
+    }
 }

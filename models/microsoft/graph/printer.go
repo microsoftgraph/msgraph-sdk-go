@@ -243,29 +243,43 @@ func (m *Printer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetConnectors sets the connectors property value. The connectors that are associated with the printer.
 func (m *Printer) SetConnectors(value []PrintConnector)() {
-    m.connectors = value
+    if m != nil {
+        m.connectors = value
+    }
 }
 // SetHasPhysicalDevice sets the hasPhysicalDevice property value. True if the printer has a physical device for printing. Read-only.
 func (m *Printer) SetHasPhysicalDevice(value *bool)() {
-    m.hasPhysicalDevice = value
+    if m != nil {
+        m.hasPhysicalDevice = value
+    }
 }
 // SetIsShared sets the isShared property value. True if the printer is shared; false otherwise. Read-only.
 func (m *Printer) SetIsShared(value *bool)() {
-    m.isShared = value
+    if m != nil {
+        m.isShared = value
+    }
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
 func (m *Printer) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSeenDateTime = value
+    if m != nil {
+        m.lastSeenDateTime = value
+    }
 }
 // SetRegisteredDateTime sets the registeredDateTime property value. The DateTimeOffset when the printer was registered. Read-only.
 func (m *Printer) SetRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.registeredDateTime = value
+    if m != nil {
+        m.registeredDateTime = value
+    }
 }
 // SetShares sets the shares property value. The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
 func (m *Printer) SetShares(value []PrinterShare)() {
-    m.shares = value
+    if m != nil {
+        m.shares = value
+    }
 }
 // SetTaskTriggers sets the taskTriggers property value. A list of task triggers that are associated with the printer.
 func (m *Printer) SetTaskTriggers(value []PrintTaskTrigger)() {
-    m.taskTriggers = value
+    if m != nil {
+        m.taskTriggers = value
+    }
 }

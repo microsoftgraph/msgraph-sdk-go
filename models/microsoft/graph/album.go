@@ -70,9 +70,13 @@ func (m *Album) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Album) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCoverImageItemId sets the coverImageItemId property value. Unique identifier of the [driveItem][] that is the cover of the album.
 func (m *Album) SetCoverImageItemId(value *string)() {
-    m.coverImageItemId = value
+    if m != nil {
+        m.coverImageItemId = value
+    }
 }

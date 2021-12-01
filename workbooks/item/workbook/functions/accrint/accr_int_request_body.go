@@ -253,37 +253,55 @@ func (m *AccrIntRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccrIntRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBasis sets the basis property value. 
 func (m *AccrIntRequestBody) SetBasis(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.basis = value
+    if m != nil {
+        m.basis = value
+    }
 }
 // SetCalcMethod sets the calcMethod property value. 
 func (m *AccrIntRequestBody) SetCalcMethod(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.calcMethod = value
+    if m != nil {
+        m.calcMethod = value
+    }
 }
 // SetFirstInterest sets the firstInterest property value. 
 func (m *AccrIntRequestBody) SetFirstInterest(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.firstInterest = value
+    if m != nil {
+        m.firstInterest = value
+    }
 }
 // SetFrequency sets the frequency property value. 
 func (m *AccrIntRequestBody) SetFrequency(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.frequency = value
+    if m != nil {
+        m.frequency = value
+    }
 }
 // SetIssue sets the issue property value. 
 func (m *AccrIntRequestBody) SetIssue(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.issue = value
+    if m != nil {
+        m.issue = value
+    }
 }
 // SetPar sets the par property value. 
 func (m *AccrIntRequestBody) SetPar(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.par = value
+    if m != nil {
+        m.par = value
+    }
 }
 // SetRate sets the rate property value. 
 func (m *AccrIntRequestBody) SetRate(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.rate = value
+    if m != nil {
+        m.rate = value
+    }
 }
 // SetSettlement sets the settlement property value. 
 func (m *AccrIntRequestBody) SetSettlement(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.settlement = value
+    if m != nil {
+        m.settlement = value
+    }
 }

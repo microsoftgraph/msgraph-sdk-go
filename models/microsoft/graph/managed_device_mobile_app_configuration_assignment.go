@@ -59,5 +59,7 @@ func (m *ManagedDeviceMobileAppConfigurationAssignment) Serialize(writer i04eb53
 }
 // SetTarget sets the target property value. Assignment target that the T&C policy is assigned to.
 func (m *ManagedDeviceMobileAppConfigurationAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

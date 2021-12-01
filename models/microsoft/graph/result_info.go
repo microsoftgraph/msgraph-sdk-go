@@ -122,17 +122,25 @@ func (m *ResultInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResultInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCode sets the code property value. The result code.
 func (m *ResultInfo) SetCode(value *int32)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetMessage sets the message property value. The message.
 func (m *ResultInfo) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }
 // SetSubcode sets the subcode property value. The result sub-code.
 func (m *ResultInfo) SetSubcode(value *int32)() {
-    m.subcode = value
+    if m != nil {
+        m.subcode = value
+    }
 }

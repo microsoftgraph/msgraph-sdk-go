@@ -96,13 +96,19 @@ func (m *ApplicationServicePrincipal) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplicationServicePrincipal) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplication sets the application property value. 
 func (m *ApplicationServicePrincipal) SetApplication(value *Application)() {
-    m.application = value
+    if m != nil {
+        m.application = value
+    }
 }
 // SetServicePrincipal sets the servicePrincipal property value. 
 func (m *ApplicationServicePrincipal) SetServicePrincipal(value *ServicePrincipal)() {
-    m.servicePrincipal = value
+    if m != nil {
+        m.servicePrincipal = value
+    }
 }

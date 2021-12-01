@@ -201,29 +201,43 @@ func (m *CumIPmtRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CumIPmtRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEndPeriod sets the endPeriod property value. 
 func (m *CumIPmtRequestBody) SetEndPeriod(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.endPeriod = value
+    if m != nil {
+        m.endPeriod = value
+    }
 }
 // SetNper sets the nper property value. 
 func (m *CumIPmtRequestBody) SetNper(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.nper = value
+    if m != nil {
+        m.nper = value
+    }
 }
 // SetPv sets the pv property value. 
 func (m *CumIPmtRequestBody) SetPv(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.pv = value
+    if m != nil {
+        m.pv = value
+    }
 }
 // SetRate sets the rate property value. 
 func (m *CumIPmtRequestBody) SetRate(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.rate = value
+    if m != nil {
+        m.rate = value
+    }
 }
 // SetStartPeriod sets the startPeriod property value. 
 func (m *CumIPmtRequestBody) SetStartPeriod(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.startPeriod = value
+    if m != nil {
+        m.startPeriod = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. 
 func (m *CumIPmtRequestBody) SetType_escaped(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

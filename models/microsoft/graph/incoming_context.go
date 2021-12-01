@@ -148,21 +148,31 @@ func (m *IncomingContext) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IncomingContext) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetObservedParticipantId sets the observedParticipantId property value. The ID of the participant that is under observation. Read-only.
 func (m *IncomingContext) SetObservedParticipantId(value *string)() {
-    m.observedParticipantId = value
+    if m != nil {
+        m.observedParticipantId = value
+    }
 }
 // SetOnBehalfOf sets the onBehalfOf property value. The identity that the call is happening on behalf of.
 func (m *IncomingContext) SetOnBehalfOf(value *IdentitySet)() {
-    m.onBehalfOf = value
+    if m != nil {
+        m.onBehalfOf = value
+    }
 }
 // SetSourceParticipantId sets the sourceParticipantId property value. The ID of the participant that triggered the incoming call. Read-only.
 func (m *IncomingContext) SetSourceParticipantId(value *string)() {
-    m.sourceParticipantId = value
+    if m != nil {
+        m.sourceParticipantId = value
+    }
 }
 // SetTransferor sets the transferor property value. The identity that transferred the call.
 func (m *IncomingContext) SetTransferor(value *IdentitySet)() {
-    m.transferor = value
+    if m != nil {
+        m.transferor = value
+    }
 }

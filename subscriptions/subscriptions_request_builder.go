@@ -31,7 +31,7 @@ type SubscriptionsRequestBuilderGetQueryParameters struct {
     // Search items by search phrases
     Search *string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // SubscriptionsRequestBuilderPostOptions options for Post
 type SubscriptionsRequestBuilderPostOptions struct {

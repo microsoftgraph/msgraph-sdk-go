@@ -70,9 +70,13 @@ func (m *CreateSessionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateSessionRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPersistChanges sets the persistChanges property value. 
 func (m *CreateSessionRequestBody) SetPersistChanges(value *bool)() {
-    m.persistChanges = value
+    if m != nil {
+        m.persistChanges = value
+    }
 }

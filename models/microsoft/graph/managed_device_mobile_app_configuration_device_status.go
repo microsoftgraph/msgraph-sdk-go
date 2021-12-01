@@ -218,29 +218,43 @@ func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) Serialize(writer i04eb
 }
 // SetComplianceGracePeriodExpirationDateTime sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetComplianceGracePeriodExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.complianceGracePeriodExpirationDateTime = value
+    if m != nil {
+        m.complianceGracePeriodExpirationDateTime = value
+    }
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. Device name of the DevicePolicyStatus.
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetDeviceDisplayName(value *string)() {
-    m.deviceDisplayName = value
+    if m != nil {
+        m.deviceDisplayName = value
+    }
 }
 // SetDeviceModel sets the deviceModel property value. The device model that is being reported
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetDeviceModel(value *string)() {
-    m.deviceModel = value
+    if m != nil {
+        m.deviceModel = value
+    }
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastReportedDateTime = value
+    if m != nil {
+        m.lastReportedDateTime = value
+    }
 }
 // SetStatus sets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetStatus(value *ComplianceStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetUserName sets the userName property value. The User Name that is being reported
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetUserName(value *string)() {
-    m.userName = value
+    if m != nil {
+        m.userName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

@@ -217,29 +217,43 @@ func (m *AccessPackageSubject) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetConnectedOrganization sets the connectedOrganization property value. The connected organization of the subject. Read-only. Nullable.
 func (m *AccessPackageSubject) SetConnectedOrganization(value *ConnectedOrganization)() {
-    m.connectedOrganization = value
+    if m != nil {
+        m.connectedOrganization = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the subject.
 func (m *AccessPackageSubject) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEmail sets the email property value. The email address of the subject.
 func (m *AccessPackageSubject) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetObjectId sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
 func (m *AccessPackageSubject) SetObjectId(value *string)() {
-    m.objectId = value
+    if m != nil {
+        m.objectId = value
+    }
 }
 // SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. 
 func (m *AccessPackageSubject) SetOnPremisesSecurityIdentifier(value *string)() {
-    m.onPremisesSecurityIdentifier = value
+    if m != nil {
+        m.onPremisesSecurityIdentifier = value
+    }
 }
 // SetPrincipalName sets the principalName property value. The principal name, if known, of the subject.
 func (m *AccessPackageSubject) SetPrincipalName(value *string)() {
-    m.principalName = value
+    if m != nil {
+        m.principalName = value
+    }
 }
 // SetSubjectType sets the subjectType property value. 
 func (m *AccessPackageSubject) SetSubjectType(value *AccessPackageSubjectType)() {
-    m.subjectType = value
+    if m != nil {
+        m.subjectType = value
+    }
 }

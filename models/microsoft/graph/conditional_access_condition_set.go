@@ -264,37 +264,55 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessConditionSet) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplications sets the applications property value. Applications and user actions included in and excluded from the policy. Required.
 func (m *ConditionalAccessConditionSet) SetApplications(value *ConditionalAccessApplications)() {
-    m.applications = value
+    if m != nil {
+        m.applications = value
+    }
 }
 // SetClientAppTypes sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
 func (m *ConditionalAccessConditionSet) SetClientAppTypes(value []ConditionalAccessClientApp)() {
-    m.clientAppTypes = value
+    if m != nil {
+        m.clientAppTypes = value
+    }
 }
 // SetDevices sets the devices property value. Devices in the policy.
 func (m *ConditionalAccessConditionSet) SetDevices(value *ConditionalAccessDevices)() {
-    m.devices = value
+    if m != nil {
+        m.devices = value
+    }
 }
 // SetLocations sets the locations property value. Locations included in and excluded from the policy.
 func (m *ConditionalAccessConditionSet) SetLocations(value *ConditionalAccessLocations)() {
-    m.locations = value
+    if m != nil {
+        m.locations = value
+    }
 }
 // SetPlatforms sets the platforms property value. Platforms included in and excluded from the policy.
 func (m *ConditionalAccessConditionSet) SetPlatforms(value *ConditionalAccessPlatforms)() {
-    m.platforms = value
+    if m != nil {
+        m.platforms = value
+    }
 }
 // SetSignInRiskLevels sets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 func (m *ConditionalAccessConditionSet) SetSignInRiskLevels(value []RiskLevel)() {
-    m.signInRiskLevels = value
+    if m != nil {
+        m.signInRiskLevels = value
+    }
 }
 // SetUserRiskLevels sets the userRiskLevels property value. User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 func (m *ConditionalAccessConditionSet) SetUserRiskLevels(value []RiskLevel)() {
-    m.userRiskLevels = value
+    if m != nil {
+        m.userRiskLevels = value
+    }
 }
 // SetUsers sets the users property value. 
 func (m *ConditionalAccessConditionSet) SetUsers(value *ConditionalAccessUsers)() {
-    m.users = value
+    if m != nil {
+        m.users = value
+    }
 }

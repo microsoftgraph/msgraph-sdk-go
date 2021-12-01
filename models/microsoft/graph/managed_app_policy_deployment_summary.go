@@ -173,21 +173,31 @@ func (m *ManagedAppPolicyDeploymentSummary) Serialize(writer i04eb5309aeaafadd28
 }
 // SetConfigurationDeployedUserCount sets the configurationDeployedUserCount property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) SetConfigurationDeployedUserCount(value *int32)() {
-    m.configurationDeployedUserCount = value
+    if m != nil {
+        m.configurationDeployedUserCount = value
+    }
 }
 // SetConfigurationDeploymentSummaryPerApp sets the configurationDeploymentSummaryPerApp property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) SetConfigurationDeploymentSummaryPerApp(value []ManagedAppPolicyDeploymentSummaryPerApp)() {
-    m.configurationDeploymentSummaryPerApp = value
+    if m != nil {
+        m.configurationDeploymentSummaryPerApp = value
+    }
 }
 // SetDisplayName sets the displayName property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastRefreshTime sets the lastRefreshTime property value. Not yet documented
 func (m *ManagedAppPolicyDeploymentSummary) SetLastRefreshTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastRefreshTime = value
+    if m != nil {
+        m.lastRefreshTime = value
+    }
 }
 // SetVersion sets the version property value. Version of the entity.
 func (m *ManagedAppPolicyDeploymentSummary) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

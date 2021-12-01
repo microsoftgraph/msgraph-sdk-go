@@ -87,9 +87,13 @@ func (m *EntitlementManagementSettings) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetDurationUntilExternalUserDeletedAfterBlocked sets the durationUntilExternalUserDeletedAfterBlocked property value. 
 func (m *EntitlementManagementSettings) SetDurationUntilExternalUserDeletedAfterBlocked(value *string)() {
-    m.durationUntilExternalUserDeletedAfterBlocked = value
+    if m != nil {
+        m.durationUntilExternalUserDeletedAfterBlocked = value
+    }
 }
 // SetExternalUserLifecycleAction sets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
 func (m *EntitlementManagementSettings) SetExternalUserLifecycleAction(value *AccessPackageExternalUserLifecycleAction)() {
-    m.externalUserLifecycleAction = value
+    if m != nil {
+        m.externalUserLifecycleAction = value
+    }
 }

@@ -59,5 +59,7 @@ func (m *WorkbookFilter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetCriteria sets the criteria property value. The currently applied filter on the given column. Read-only.
 func (m *WorkbookFilter) SetCriteria(value *WorkbookFilterCriteria)() {
-    m.criteria = value
+    if m != nil {
+        m.criteria = value
+    }
 }

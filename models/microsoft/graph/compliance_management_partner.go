@@ -297,37 +297,55 @@ func (m *ComplianceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAndroidEnrollmentAssignments sets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
 func (m *ComplianceManagementPartner) SetAndroidEnrollmentAssignments(value []ComplianceManagementPartnerAssignment)() {
-    m.androidEnrollmentAssignments = value
+    if m != nil {
+        m.androidEnrollmentAssignments = value
+    }
 }
 // SetAndroidOnboarded sets the androidOnboarded property value. Partner onboarded for Android devices.
 func (m *ComplianceManagementPartner) SetAndroidOnboarded(value *bool)() {
-    m.androidOnboarded = value
+    if m != nil {
+        m.androidOnboarded = value
+    }
 }
 // SetDisplayName sets the displayName property value. Partner display name
 func (m *ComplianceManagementPartner) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIosEnrollmentAssignments sets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
 func (m *ComplianceManagementPartner) SetIosEnrollmentAssignments(value []ComplianceManagementPartnerAssignment)() {
-    m.iosEnrollmentAssignments = value
+    if m != nil {
+        m.iosEnrollmentAssignments = value
+    }
 }
 // SetIosOnboarded sets the iosOnboarded property value. Partner onboarded for ios devices.
 func (m *ComplianceManagementPartner) SetIosOnboarded(value *bool)() {
-    m.iosOnboarded = value
+    if m != nil {
+        m.iosOnboarded = value
+    }
 }
 // SetLastHeartbeatDateTime sets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin onboarded to the compliance management partner
 func (m *ComplianceManagementPartner) SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastHeartbeatDateTime = value
+    if m != nil {
+        m.lastHeartbeatDateTime = value
+    }
 }
 // SetMacOsEnrollmentAssignments sets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
 func (m *ComplianceManagementPartner) SetMacOsEnrollmentAssignments(value []ComplianceManagementPartnerAssignment)() {
-    m.macOsEnrollmentAssignments = value
+    if m != nil {
+        m.macOsEnrollmentAssignments = value
+    }
 }
 // SetMacOsOnboarded sets the macOsOnboarded property value. Partner onboarded for Mac devices.
 func (m *ComplianceManagementPartner) SetMacOsOnboarded(value *bool)() {
-    m.macOsOnboarded = value
+    if m != nil {
+        m.macOsOnboarded = value
+    }
 }
 // SetPartnerState sets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
 func (m *ComplianceManagementPartner) SetPartnerState(value *DeviceManagementPartnerTenantState)() {
-    m.partnerState = value
+    if m != nil {
+        m.partnerState = value
+    }
 }

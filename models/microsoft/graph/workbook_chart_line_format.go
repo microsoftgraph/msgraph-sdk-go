@@ -59,5 +59,7 @@ func (m *WorkbookChartLineFormat) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetColor sets the color property value. HTML color code representing the color of lines in the chart.
 func (m *WorkbookChartLineFormat) SetColor(value *string)() {
-    m.color = value
+    if m != nil {
+        m.color = value
+    }
 }

@@ -202,25 +202,37 @@ func (m *DeviceConfigurationState) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetDisplayName sets the displayName property value. The name of the policy for this policyBase
 func (m *DeviceConfigurationState) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetPlatformType sets the platformType property value. Platform type that the policy applies to
 func (m *DeviceConfigurationState) SetPlatformType(value *PolicyPlatformType)() {
-    m.platformType = value
+    if m != nil {
+        m.platformType = value
+    }
 }
 // SetSettingCount sets the settingCount property value. Count of how many setting a policy holds
 func (m *DeviceConfigurationState) SetSettingCount(value *int32)() {
-    m.settingCount = value
+    if m != nil {
+        m.settingCount = value
+    }
 }
 // SetSettingStates sets the settingStates property value. 
 func (m *DeviceConfigurationState) SetSettingStates(value []DeviceConfigurationSettingState)() {
-    m.settingStates = value
+    if m != nil {
+        m.settingStates = value
+    }
 }
 // SetState sets the state property value. The compliance state of the policy
 func (m *DeviceConfigurationState) SetState(value *ComplianceStatus)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetVersion sets the version property value. The version of the policy
 func (m *DeviceConfigurationState) SetVersion(value *int32)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

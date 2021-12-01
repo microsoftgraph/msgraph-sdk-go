@@ -40,7 +40,7 @@ type SingleValueLegacyExtendedPropertyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // SingleValueLegacyExtendedPropertyRequestBuilderPatchOptions options for Patch
 type SingleValueLegacyExtendedPropertyRequestBuilderPatchOptions struct {

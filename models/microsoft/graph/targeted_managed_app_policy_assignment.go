@@ -59,5 +59,7 @@ func (m *TargetedManagedAppPolicyAssignment) Serialize(writer i04eb5309aeaafadd2
 }
 // SetTarget sets the target property value. Identifier for deployment to a group or app
 func (m *TargetedManagedAppPolicyAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

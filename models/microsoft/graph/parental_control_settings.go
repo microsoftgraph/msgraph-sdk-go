@@ -100,13 +100,19 @@ func (m *ParentalControlSettings) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParentalControlSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCountriesBlockedForMinors sets the countriesBlockedForMinors property value. Specifies the two-letter ISO country codes. Access to the application will be blocked for minors from the countries specified in this list.
 func (m *ParentalControlSettings) SetCountriesBlockedForMinors(value []string)() {
-    m.countriesBlockedForMinors = value
+    if m != nil {
+        m.countriesBlockedForMinors = value
+    }
 }
 // SetLegalAgeGroupRule sets the legalAgeGroupRule property value. Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: ValueDescriptionAllowDefault. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.RequireConsentForPrivacyServicesEnforces the user to specify date of birth to comply with COPPA rules. RequireConsentForMinorsRequires parental consent for ages below 18, regardless of country minor rules.RequireConsentForKidsRequires parental consent for ages below 14, regardless of country minor rules.BlockMinorsBlocks minors from using the app.
 func (m *ParentalControlSettings) SetLegalAgeGroupRule(value *string)() {
-    m.legalAgeGroupRule = value
+    if m != nil {
+        m.legalAgeGroupRule = value
+    }
 }

@@ -92,11 +92,15 @@ func (m *StopHoldMusicResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StopHoldMusicResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetStopHoldMusicOperation sets the stopHoldMusicOperation property value. Union type representation for type stopHoldMusicOperation
 func (m *StopHoldMusicResponse) SetStopHoldMusicOperation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StopHoldMusicOperation)() {
-    m.stopHoldMusicOperation = value
+    if m != nil {
+        m.stopHoldMusicOperation = value
+    }
 }
 // NewStopHoldMusicRequestBuilderInternal instantiates a new StopHoldMusicRequestBuilder and sets the default values.
 func NewStopHoldMusicRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StopHoldMusicRequestBuilder) {

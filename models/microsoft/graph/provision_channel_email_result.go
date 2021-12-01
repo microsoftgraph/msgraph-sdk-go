@@ -70,9 +70,13 @@ func (m *ProvisionChannelEmailResult) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisionChannelEmailResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEmail sets the email property value. Represents the provisioned email address.
 func (m *ProvisionChannelEmailResult) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }

@@ -215,29 +215,43 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) Serialize(writer i04eb5309aeaaf
 }
 // SetAssignedUserPrincipalName sets the assignedUserPrincipalName property value. UPN of the user the device will be assigned
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetAssignedUserPrincipalName(value *string)() {
-    m.assignedUserPrincipalName = value
+    if m != nil {
+        m.assignedUserPrincipalName = value
+    }
 }
 // SetGroupTag sets the groupTag property value. Group Tag of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetGroupTag(value *string)() {
-    m.groupTag = value
+    if m != nil {
+        m.groupTag = value
+    }
 }
 // SetHardwareIdentifier sets the hardwareIdentifier property value. Hardware Blob of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetHardwareIdentifier(value []byte)() {
-    m.hardwareIdentifier = value
+    if m != nil {
+        m.hardwareIdentifier = value
+    }
 }
 // SetImportId sets the importId property value. The Import Id of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetImportId(value *string)() {
-    m.importId = value
+    if m != nil {
+        m.importId = value
+    }
 }
 // SetProductKey sets the productKey property value. Product Key of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetProductKey(value *string)() {
-    m.productKey = value
+    if m != nil {
+        m.productKey = value
+    }
 }
 // SetSerialNumber sets the serialNumber property value. Serial number of the Windows autopilot device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetSerialNumber(value *string)() {
-    m.serialNumber = value
+    if m != nil {
+        m.serialNumber = value
+    }
 }
 // SetState sets the state property value. Current state of the imported device.
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetState(value *ImportedWindowsAutopilotDeviceIdentityState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

@@ -96,13 +96,19 @@ func (m *MimeContent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MimeContent) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Indicates the content mime type.
 func (m *MimeContent) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetValue sets the value property value. The byte array that contains the actual content.
 func (m *MimeContent) SetValue(value []byte)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

@@ -40,7 +40,7 @@ type FieldsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // FieldsRequestBuilderPatchOptions options for Patch
 type FieldsRequestBuilderPatchOptions struct {

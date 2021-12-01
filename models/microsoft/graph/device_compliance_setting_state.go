@@ -322,45 +322,67 @@ func (m *DeviceComplianceSettingState) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetComplianceGracePeriodExpirationDateTime sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
 func (m *DeviceComplianceSettingState) SetComplianceGracePeriodExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.complianceGracePeriodExpirationDateTime = value
+    if m != nil {
+        m.complianceGracePeriodExpirationDateTime = value
+    }
 }
 // SetDeviceId sets the deviceId property value. The Device Id that is being reported
 func (m *DeviceComplianceSettingState) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetDeviceModel sets the deviceModel property value. The device model that is being reported
 func (m *DeviceComplianceSettingState) SetDeviceModel(value *string)() {
-    m.deviceModel = value
+    if m != nil {
+        m.deviceModel = value
+    }
 }
 // SetDeviceName sets the deviceName property value. The Device Name that is being reported
 func (m *DeviceComplianceSettingState) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetSetting sets the setting property value. The setting class name and property name.
 func (m *DeviceComplianceSettingState) SetSetting(value *string)() {
-    m.setting = value
+    if m != nil {
+        m.setting = value
+    }
 }
 // SetSettingName sets the settingName property value. The Setting Name that is being reported
 func (m *DeviceComplianceSettingState) SetSettingName(value *string)() {
-    m.settingName = value
+    if m != nil {
+        m.settingName = value
+    }
 }
 // SetState sets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *DeviceComplianceSettingState) SetState(value *ComplianceStatus)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetUserEmail sets the userEmail property value. The User email address that is being reported
 func (m *DeviceComplianceSettingState) SetUserEmail(value *string)() {
-    m.userEmail = value
+    if m != nil {
+        m.userEmail = value
+    }
 }
 // SetUserId sets the userId property value. The user Id that is being reported
 func (m *DeviceComplianceSettingState) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }
 // SetUserName sets the userName property value. The User Name that is being reported
 func (m *DeviceComplianceSettingState) SetUserName(value *string)() {
-    m.userName = value
+    if m != nil {
+        m.userName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The User PrincipalName that is being reported
 func (m *DeviceComplianceSettingState) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

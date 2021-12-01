@@ -216,29 +216,43 @@ func (m *DeviceConfigurationDeviceOverview) Serialize(writer i04eb5309aeaafadd28
 }
 // SetConfigurationVersion sets the configurationVersion property value. Version of the policy for that overview
 func (m *DeviceConfigurationDeviceOverview) SetConfigurationVersion(value *int32)() {
-    m.configurationVersion = value
+    if m != nil {
+        m.configurationVersion = value
+    }
 }
 // SetErrorCount sets the errorCount property value. Number of error devices
 func (m *DeviceConfigurationDeviceOverview) SetErrorCount(value *int32)() {
-    m.errorCount = value
+    if m != nil {
+        m.errorCount = value
+    }
 }
 // SetFailedCount sets the failedCount property value. Number of failed devices
 func (m *DeviceConfigurationDeviceOverview) SetFailedCount(value *int32)() {
-    m.failedCount = value
+    if m != nil {
+        m.failedCount = value
+    }
 }
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. Last update time
 func (m *DeviceConfigurationDeviceOverview) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdateDateTime = value
+    if m != nil {
+        m.lastUpdateDateTime = value
+    }
 }
 // SetNotApplicableCount sets the notApplicableCount property value. Number of not applicable devices
 func (m *DeviceConfigurationDeviceOverview) SetNotApplicableCount(value *int32)() {
-    m.notApplicableCount = value
+    if m != nil {
+        m.notApplicableCount = value
+    }
 }
 // SetPendingCount sets the pendingCount property value. Number of pending devices
 func (m *DeviceConfigurationDeviceOverview) SetPendingCount(value *int32)() {
-    m.pendingCount = value
+    if m != nil {
+        m.pendingCount = value
+    }
 }
 // SetSuccessCount sets the successCount property value. Number of succeeded devices
 func (m *DeviceConfigurationDeviceOverview) SetSuccessCount(value *int32)() {
-    m.successCount = value
+    if m != nil {
+        m.successCount = value
+    }
 }

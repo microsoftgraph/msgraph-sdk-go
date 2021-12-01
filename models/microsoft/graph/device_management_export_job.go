@@ -304,41 +304,61 @@ func (m *DeviceManagementExportJob) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Time that the exported report expires
 func (m *DeviceManagementExportJob) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetFilter sets the filter property value. Filters applied on the report
 func (m *DeviceManagementExportJob) SetFilter(value *string)() {
-    m.filter = value
+    if m != nil {
+        m.filter = value
+    }
 }
 // SetFormat sets the format property value. Format of the exported report. Possible values are: csv, pdf.
 func (m *DeviceManagementExportJob) SetFormat(value *DeviceManagementReportFileFormat)() {
-    m.format = value
+    if m != nil {
+        m.format = value
+    }
 }
 // SetLocalizationType sets the localizationType property value. Configures how the requested export job is localized. Possible values are: localizedValuesAsAdditionalColumn, replaceLocalizableValues.
 func (m *DeviceManagementExportJob) SetLocalizationType(value *DeviceManagementExportJobLocalizationType)() {
-    m.localizationType = value
+    if m != nil {
+        m.localizationType = value
+    }
 }
 // SetReportName sets the reportName property value. Name of the report
 func (m *DeviceManagementExportJob) SetReportName(value *string)() {
-    m.reportName = value
+    if m != nil {
+        m.reportName = value
+    }
 }
 // SetRequestDateTime sets the requestDateTime property value. Time that the exported report was requested
 func (m *DeviceManagementExportJob) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.requestDateTime = value
+    if m != nil {
+        m.requestDateTime = value
+    }
 }
 // SetSelect_escaped sets the select_escaped property value. Columns selected from the report
 func (m *DeviceManagementExportJob) SetSelect_escaped(value []string)() {
-    m.select_escaped = value
+    if m != nil {
+        m.select_escaped = value
+    }
 }
 // SetSnapshotId sets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
 func (m *DeviceManagementExportJob) SetSnapshotId(value *string)() {
-    m.snapshotId = value
+    if m != nil {
+        m.snapshotId = value
+    }
 }
 // SetStatus sets the status property value. Status of the export job. Possible values are: unknown, notStarted, inProgress, completed, failed.
 func (m *DeviceManagementExportJob) SetStatus(value *DeviceManagementReportStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetUrl sets the url property value. Temporary location of the exported report
 func (m *DeviceManagementExportJob) SetUrl(value *string)() {
-    m.url = value
+    if m != nil {
+        m.url = value
+    }
 }

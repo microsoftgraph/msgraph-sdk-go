@@ -137,17 +137,25 @@ func (m *LinkedResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetApplicationName sets the applicationName property value. Field indicating the app name of the source that is sending the linkedResource.
 func (m *LinkedResource) SetApplicationName(value *string)() {
-    m.applicationName = value
+    if m != nil {
+        m.applicationName = value
+    }
 }
 // SetDisplayName sets the displayName property value. Field indicating the title of the linkedResource.
 func (m *LinkedResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExternalId sets the externalId property value. Id of the object that is associated with this task on the third-party/partner system.
 func (m *LinkedResource) SetExternalId(value *string)() {
-    m.externalId = value
+    if m != nil {
+        m.externalId = value
+    }
 }
 // SetWebUrl sets the webUrl property value. Deep link to the linkedResource.
 func (m *LinkedResource) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

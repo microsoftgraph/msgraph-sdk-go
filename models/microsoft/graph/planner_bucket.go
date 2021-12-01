@@ -146,17 +146,25 @@ func (m *PlannerBucket) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetName sets the name property value. Name of the bucket.
 func (m *PlannerBucket) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerBucket) SetOrderHint(value *string)() {
-    m.orderHint = value
+    if m != nil {
+        m.orderHint = value
+    }
 }
 // SetPlanId sets the planId property value. Plan ID to which the bucket belongs.
 func (m *PlannerBucket) SetPlanId(value *string)() {
-    m.planId = value
+    if m != nil {
+        m.planId = value
+    }
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
 func (m *PlannerBucket) SetTasks(value []PlannerTask)() {
-    m.tasks = value
+    if m != nil {
+        m.tasks = value
+    }
 }

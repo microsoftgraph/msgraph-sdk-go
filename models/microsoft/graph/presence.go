@@ -85,9 +85,13 @@ func (m *Presence) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetActivity sets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
 func (m *Presence) SetActivity(value *string)() {
-    m.activity = value
+    if m != nil {
+        m.activity = value
+    }
 }
 // SetAvailability sets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
 func (m *Presence) SetAvailability(value *string)() {
-    m.availability = value
+    if m != nil {
+        m.availability = value
+    }
 }

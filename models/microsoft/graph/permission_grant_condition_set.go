@@ -259,33 +259,49 @@ func (m *PermissionGrantConditionSet) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetClientApplicationIds sets the clientApplicationIds property value. A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
 func (m *PermissionGrantConditionSet) SetClientApplicationIds(value []string)() {
-    m.clientApplicationIds = value
+    if m != nil {
+        m.clientApplicationIds = value
+    }
 }
 // SetClientApplicationPublisherIds sets the clientApplicationPublisherIds property value. A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
 func (m *PermissionGrantConditionSet) SetClientApplicationPublisherIds(value []string)() {
-    m.clientApplicationPublisherIds = value
+    if m != nil {
+        m.clientApplicationPublisherIds = value
+    }
 }
 // SetClientApplicationsFromVerifiedPublisherOnly sets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
 func (m *PermissionGrantConditionSet) SetClientApplicationsFromVerifiedPublisherOnly(value *bool)() {
-    m.clientApplicationsFromVerifiedPublisherOnly = value
+    if m != nil {
+        m.clientApplicationsFromVerifiedPublisherOnly = value
+    }
 }
 // SetClientApplicationTenantIds sets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
 func (m *PermissionGrantConditionSet) SetClientApplicationTenantIds(value []string)() {
-    m.clientApplicationTenantIds = value
+    if m != nil {
+        m.clientApplicationTenantIds = value
+    }
 }
 // SetPermissionClassification sets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
 func (m *PermissionGrantConditionSet) SetPermissionClassification(value *string)() {
-    m.permissionClassification = value
+    if m != nil {
+        m.permissionClassification = value
+    }
 }
 // SetPermissions sets the permissions property value. The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
 func (m *PermissionGrantConditionSet) SetPermissions(value []string)() {
-    m.permissions = value
+    if m != nil {
+        m.permissions = value
+    }
 }
 // SetPermissionType sets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
 func (m *PermissionGrantConditionSet) SetPermissionType(value *PermissionType)() {
-    m.permissionType = value
+    if m != nil {
+        m.permissionType = value
+    }
 }
 // SetResourceApplication sets the resourceApplication property value. The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
 func (m *PermissionGrantConditionSet) SetResourceApplication(value *string)() {
-    m.resourceApplication = value
+    if m != nil {
+        m.resourceApplication = value
+    }
 }

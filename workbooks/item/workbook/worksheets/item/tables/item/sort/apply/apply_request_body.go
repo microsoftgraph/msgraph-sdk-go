@@ -132,17 +132,25 @@ func (m *ApplyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFields sets the fields property value. 
 func (m *ApplyRequestBody) SetFields(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookSortField)() {
-    m.fields = value
+    if m != nil {
+        m.fields = value
+    }
 }
 // SetMatchCase sets the matchCase property value. 
 func (m *ApplyRequestBody) SetMatchCase(value *bool)() {
-    m.matchCase = value
+    if m != nil {
+        m.matchCase = value
+    }
 }
 // SetMethod sets the method property value. 
 func (m *ApplyRequestBody) SetMethod(value *string)() {
-    m.method = value
+    if m != nil {
+        m.method = value
+    }
 }

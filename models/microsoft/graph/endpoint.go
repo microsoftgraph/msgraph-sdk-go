@@ -163,21 +163,31 @@ func (m *Endpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetCapability sets the capability property value. Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.
 func (m *Endpoint) SetCapability(value *string)() {
-    m.capability = value
+    if m != nil {
+        m.capability = value
+    }
 }
 // SetProviderId sets the providerId property value. Application id of the publishing underlying service. Not nullable. Read-only.
 func (m *Endpoint) SetProviderId(value *string)() {
-    m.providerId = value
+    if m != nil {
+        m.providerId = value
+    }
 }
 // SetProviderName sets the providerName property value. Name of the publishing underlying service. Read-only.
 func (m *Endpoint) SetProviderName(value *string)() {
-    m.providerName = value
+    if m != nil {
+        m.providerName = value
+    }
 }
 // SetProviderResourceId sets the providerResourceId property value. For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
 func (m *Endpoint) SetProviderResourceId(value *string)() {
-    m.providerResourceId = value
+    if m != nil {
+        m.providerResourceId = value
+    }
 }
 // SetUri sets the uri property value. URL of the published resource. Not nullable. Read-only.
 func (m *Endpoint) SetUri(value *string)() {
-    m.uri = value
+    if m != nil {
+        m.uri = value
+    }
 }

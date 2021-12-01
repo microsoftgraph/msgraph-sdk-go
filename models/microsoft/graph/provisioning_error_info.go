@@ -176,25 +176,37 @@ func (m *ProvisioningErrorInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisioningErrorInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdditionalDetails sets the additionalDetails property value. Additional details in case of error.
 func (m *ProvisioningErrorInfo) SetAdditionalDetails(value *string)() {
-    m.additionalDetails = value
+    if m != nil {
+        m.additionalDetails = value
+    }
 }
 // SetErrorCategory sets the errorCategory property value. Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
 func (m *ProvisioningErrorInfo) SetErrorCategory(value *ProvisioningStatusErrorCategory)() {
-    m.errorCategory = value
+    if m != nil {
+        m.errorCategory = value
+    }
 }
 // SetErrorCode sets the errorCode property value. Unique error code if any occurred. Learn more
 func (m *ProvisioningErrorInfo) SetErrorCode(value *string)() {
-    m.errorCode = value
+    if m != nil {
+        m.errorCode = value
+    }
 }
 // SetReason sets the reason property value. Summarizes the status and describes why the status happened.
 func (m *ProvisioningErrorInfo) SetReason(value *string)() {
-    m.reason = value
+    if m != nil {
+        m.reason = value
+    }
 }
 // SetRecommendedAction sets the recommendedAction property value. Provides the resolution for the corresponding error.
 func (m *ProvisioningErrorInfo) SetRecommendedAction(value *string)() {
-    m.recommendedAction = value
+    if m != nil {
+        m.recommendedAction = value
+    }
 }

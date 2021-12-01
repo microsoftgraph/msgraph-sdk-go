@@ -98,13 +98,19 @@ func (m *ExcludeTarget) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExcludeTarget) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. The object identifier of an Azure Active Directory user or group.
 func (m *ExcludeTarget) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetTargetType sets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
 func (m *ExcludeTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
-    m.targetType = value
+    if m != nil {
+        m.targetType = value
+    }
 }

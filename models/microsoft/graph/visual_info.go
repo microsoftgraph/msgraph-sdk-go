@@ -174,25 +174,37 @@ func (m *VisualInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VisualInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttribution sets the attribution property value. Optional. JSON object used to represent an icon which represents the application used to generate the activity
 func (m *VisualInfo) SetAttribution(value *ImageInfo)() {
-    m.attribution = value
+    if m != nil {
+        m.attribution = value
+    }
 }
 // SetBackgroundColor sets the backgroundColor property value. Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
 func (m *VisualInfo) SetBackgroundColor(value *string)() {
-    m.backgroundColor = value
+    if m != nil {
+        m.backgroundColor = value
+    }
 }
 // SetContent sets the content property value. Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
 func (m *VisualInfo) SetContent(value *Json)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }
 // SetDescription sets the description property value. Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
 func (m *VisualInfo) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayText sets the displayText property value. Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
 func (m *VisualInfo) SetDisplayText(value *string)() {
-    m.displayText = value
+    if m != nil {
+        m.displayText = value
+    }
 }

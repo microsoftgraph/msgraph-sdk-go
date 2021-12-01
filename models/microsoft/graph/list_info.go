@@ -122,17 +122,25 @@ func (m *ListInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ListInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentTypesEnabled sets the contentTypesEnabled property value. If true, indicates that content types are enabled for this list.
 func (m *ListInfo) SetContentTypesEnabled(value *bool)() {
-    m.contentTypesEnabled = value
+    if m != nil {
+        m.contentTypesEnabled = value
+    }
 }
 // SetHidden sets the hidden property value. If true, indicates that the list is not normally visible in the SharePoint user experience.
 func (m *ListInfo) SetHidden(value *bool)() {
-    m.hidden = value
+    if m != nil {
+        m.hidden = value
+    }
 }
 // SetTemplate sets the template property value. An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
 func (m *ListInfo) SetTemplate(value *string)() {
-    m.template = value
+    if m != nil {
+        m.template = value
+    }
 }

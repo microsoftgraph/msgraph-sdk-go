@@ -96,13 +96,19 @@ func (m *PublicationFacet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublicationFacet) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLevel sets the level property value. The state of publication for this document. Either published or checkout. Read-only.
 func (m *PublicationFacet) SetLevel(value *string)() {
-    m.level = value
+    if m != nil {
+        m.level = value
+    }
 }
 // SetVersionId sets the versionId property value. The unique identifier for the version that is visible to the current caller. Read-only.
 func (m *PublicationFacet) SetVersionId(value *string)() {
-    m.versionId = value
+    if m != nil {
+        m.versionId = value
+    }
 }

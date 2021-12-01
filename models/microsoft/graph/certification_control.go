@@ -96,13 +96,19 @@ func (m *CertificationControl) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificationControl) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetName sets the name property value. Certification control name
 func (m *CertificationControl) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetUrl sets the url property value. URL for the Microsoft Service Trust Portal
 func (m *CertificationControl) SetUrl(value *string)() {
-    m.url = value
+    if m != nil {
+        m.url = value
+    }
 }

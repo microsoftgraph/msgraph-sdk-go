@@ -68,5 +68,7 @@ func (m *PlannerGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetPlans sets the plans property value. Read-only. Nullable. Returns the plannerPlans owned by the group.
 func (m *PlannerGroup) SetPlans(value []PlannerPlan)() {
-    m.plans = value
+    if m != nil {
+        m.plans = value
+    }
 }

@@ -122,17 +122,25 @@ func (m *RgbColor) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RgbColor) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetB sets the b property value. Blue value
 func (m *RgbColor) SetB(value *int32)() {
-    m.b = value
+    if m != nil {
+        m.b = value
+    }
 }
 // SetG sets the g property value. Green value
 func (m *RgbColor) SetG(value *int32)() {
-    m.g = value
+    if m != nil {
+        m.g = value
+    }
 }
 // SetR sets the r property value. Red value
 func (m *RgbColor) SetR(value *int32)() {
-    m.r = value
+    if m != nil {
+        m.r = value
+    }
 }

@@ -137,17 +137,25 @@ func (m *Place) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAddress sets the address property value. The street address of the place.
 func (m *Place) SetAddress(value *PhysicalAddress)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name associated with the place.
 func (m *Place) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetGeoCoordinates sets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
 func (m *Place) SetGeoCoordinates(value *OutlookGeoCoordinates)() {
-    m.geoCoordinates = value
+    if m != nil {
+        m.geoCoordinates = value
+    }
 }
 // SetPhone sets the phone property value. The phone number of the place.
 func (m *Place) SetPhone(value *string)() {
-    m.phone = value
+    if m != nil {
+        m.phone = value
+    }
 }

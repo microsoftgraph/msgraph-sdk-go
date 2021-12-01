@@ -225,29 +225,43 @@ func (m *AuthenticationMethodsPolicy) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAuthenticationMethodConfigurations sets the authenticationMethodConfigurations property value. Represents the settings for each authentication method.
 func (m *AuthenticationMethodsPolicy) SetAuthenticationMethodConfigurations(value []AuthenticationMethodConfiguration)() {
-    m.authenticationMethodConfigurations = value
+    if m != nil {
+        m.authenticationMethodConfigurations = value
+    }
 }
 // SetDescription sets the description property value. A description of the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time of the last update to the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPolicyVersion sets the policyVersion property value. The version of the policy in use. Read-only.
 func (m *AuthenticationMethodsPolicy) SetPolicyVersion(value *string)() {
-    m.policyVersion = value
+    if m != nil {
+        m.policyVersion = value
+    }
 }
 // SetReconfirmationInDays sets the reconfirmationInDays property value. 
 func (m *AuthenticationMethodsPolicy) SetReconfirmationInDays(value *int32)() {
-    m.reconfirmationInDays = value
+    if m != nil {
+        m.reconfirmationInDays = value
+    }
 }
 // SetRegistrationEnforcement sets the registrationEnforcement property value. Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
 func (m *AuthenticationMethodsPolicy) SetRegistrationEnforcement(value *RegistrationEnforcement)() {
-    m.registrationEnforcement = value
+    if m != nil {
+        m.registrationEnforcement = value
+    }
 }

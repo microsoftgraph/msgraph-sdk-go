@@ -138,17 +138,25 @@ func (m *ItemActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAccess sets the access property value. An item was accessed.
 func (m *ItemActivity) SetAccess(value *AccessAction)() {
-    m.access = value
+    if m != nil {
+        m.access = value
+    }
 }
 // SetActivityDateTime sets the activityDateTime property value. Details about when the activity took place. Read-only.
 func (m *ItemActivity) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.activityDateTime = value
+    if m != nil {
+        m.activityDateTime = value
+    }
 }
 // SetActor sets the actor property value. Identity of who performed the action. Read-only.
 func (m *ItemActivity) SetActor(value *IdentitySet)() {
-    m.actor = value
+    if m != nil {
+        m.actor = value
+    }
 }
 // SetDriveItem sets the driveItem property value. Exposes the driveItem that was the target of this activity.
 func (m *ItemActivity) SetDriveItem(value *DriveItem)() {
-    m.driveItem = value
+    if m != nil {
+        m.driveItem = value
+    }
 }

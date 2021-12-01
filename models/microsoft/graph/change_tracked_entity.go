@@ -112,13 +112,19 @@ func (m *ChangeTrackedEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *ChangeTrackedEntity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the person who last modified the entity.
 func (m *ChangeTrackedEntity) SetLastModifiedBy(value *IdentitySet)() {
-    m.lastModifiedBy = value
+    if m != nil {
+        m.lastModifiedBy = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *ChangeTrackedEntity) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }

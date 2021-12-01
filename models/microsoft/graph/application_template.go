@@ -253,33 +253,49 @@ func (m *ApplicationTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetCategories sets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
 func (m *ApplicationTemplate) SetCategories(value []string)() {
-    m.categories = value
+    if m != nil {
+        m.categories = value
+    }
 }
 // SetDescription sets the description property value. A description of the application.
 func (m *ApplicationTemplate) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the application.
 func (m *ApplicationTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetHomePageUrl sets the homePageUrl property value. The home page URL of the application.
 func (m *ApplicationTemplate) SetHomePageUrl(value *string)() {
-    m.homePageUrl = value
+    if m != nil {
+        m.homePageUrl = value
+    }
 }
 // SetLogoUrl sets the logoUrl property value. The URL to get the logo for this application.
 func (m *ApplicationTemplate) SetLogoUrl(value *string)() {
-    m.logoUrl = value
+    if m != nil {
+        m.logoUrl = value
+    }
 }
 // SetPublisher sets the publisher property value. The name of the publisher for this application.
 func (m *ApplicationTemplate) SetPublisher(value *string)() {
-    m.publisher = value
+    if m != nil {
+        m.publisher = value
+    }
 }
 // SetSupportedProvisioningTypes sets the supportedProvisioningTypes property value. The list of provisioning modes supported by this application. The only valid value is sync.
 func (m *ApplicationTemplate) SetSupportedProvisioningTypes(value []string)() {
-    m.supportedProvisioningTypes = value
+    if m != nil {
+        m.supportedProvisioningTypes = value
+    }
 }
 // SetSupportedSingleSignOnModes sets the supportedSingleSignOnModes property value. The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
 func (m *ApplicationTemplate) SetSupportedSingleSignOnModes(value []string)() {
-    m.supportedSingleSignOnModes = value
+    if m != nil {
+        m.supportedSingleSignOnModes = value
+    }
 }

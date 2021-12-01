@@ -41,7 +41,7 @@ type UserScopeTeamsAppInstallationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UserScopeTeamsAppInstallationRequestBuilderPatchOptions options for Patch
 type UserScopeTeamsAppInstallationRequestBuilderPatchOptions struct {

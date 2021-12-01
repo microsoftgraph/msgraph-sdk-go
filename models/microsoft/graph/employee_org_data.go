@@ -96,13 +96,19 @@ func (m *EmployeeOrgData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EmployeeOrgData) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCostCenter sets the costCenter property value. The cost center associated with the user. Returned only on $select. Supports $filter.
 func (m *EmployeeOrgData) SetCostCenter(value *string)() {
-    m.costCenter = value
+    if m != nil {
+        m.costCenter = value
+    }
 }
 // SetDivision sets the division property value. The name of the division in which the user works. Returned only on $select. Supports $filter.
 func (m *EmployeeOrgData) SetDivision(value *string)() {
-    m.division = value
+    if m != nil {
+        m.division = value
+    }
 }

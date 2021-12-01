@@ -38,7 +38,7 @@ type TimeOffReasonRequestBuilderGetOptions struct {
 // TimeOffReasonRequestBuilderGetQueryParameters the set of reasons for a time off in the schedule.
 type TimeOffReasonRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TimeOffReasonRequestBuilderPatchOptions options for Patch
 type TimeOffReasonRequestBuilderPatchOptions struct {

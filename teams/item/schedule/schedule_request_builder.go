@@ -59,7 +59,7 @@ type ScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ScheduleRequestBuilderPatchOptions options for Patch
 type ScheduleRequestBuilderPatchOptions struct {

@@ -40,7 +40,7 @@ type DriveRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DriveRequestBuilderPatchOptions options for Patch
 type DriveRequestBuilderPatchOptions struct {

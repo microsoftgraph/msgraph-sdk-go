@@ -122,17 +122,25 @@ func (m *ServiceUpdateMessageViewpoint) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServiceUpdateMessageViewpoint) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsArchived sets the isArchived property value. Indicates whether the user archived the message.
 func (m *ServiceUpdateMessageViewpoint) SetIsArchived(value *bool)() {
-    m.isArchived = value
+    if m != nil {
+        m.isArchived = value
+    }
 }
 // SetIsFavorited sets the isFavorited property value. Indicates whether the user marked the message as favorite.
 func (m *ServiceUpdateMessageViewpoint) SetIsFavorited(value *bool)() {
-    m.isFavorited = value
+    if m != nil {
+        m.isFavorited = value
+    }
 }
 // SetIsRead sets the isRead property value. Indicates whether the user read the message.
 func (m *ServiceUpdateMessageViewpoint) SetIsRead(value *bool)() {
-    m.isRead = value
+    if m != nil {
+        m.isRead = value
+    }
 }

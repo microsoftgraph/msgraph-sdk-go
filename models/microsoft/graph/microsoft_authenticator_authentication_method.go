@@ -164,21 +164,31 @@ func (m *MicrosoftAuthenticatorAuthenticationMethod) Serialize(writer i04eb5309a
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDevice sets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDevice(value *Device)() {
-    m.device = value
+    if m != nil {
+        m.device = value
+    }
 }
 // SetDeviceTag sets the deviceTag property value. Tags containing app metadata.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDeviceTag(value *string)() {
-    m.deviceTag = value
+    if m != nil {
+        m.deviceTag = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the device on which this app is registered.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetPhoneAppVersion sets the phoneAppVersion property value. Numerical version of this instance of the Authenticator app.
 func (m *MicrosoftAuthenticatorAuthenticationMethod) SetPhoneAppVersion(value *string)() {
-    m.phoneAppVersion = value
+    if m != nil {
+        m.phoneAppVersion = value
+    }
 }

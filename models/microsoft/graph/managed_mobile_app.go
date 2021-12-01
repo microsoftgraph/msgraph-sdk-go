@@ -85,9 +85,13 @@ func (m *ManagedMobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetMobileAppIdentifier sets the mobileAppIdentifier property value. The identifier for an app with it's operating system type.
 func (m *ManagedMobileApp) SetMobileAppIdentifier(value *MobileAppIdentifier)() {
-    m.mobileAppIdentifier = value
+    if m != nil {
+        m.mobileAppIdentifier = value
+    }
 }
 // SetVersion sets the version property value. Version of the entity.
 func (m *ManagedMobileApp) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

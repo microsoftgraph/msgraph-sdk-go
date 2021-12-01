@@ -226,33 +226,49 @@ func (m *SharepointIds) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharepointIds) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetListId sets the listId property value. The unique identifier (guid) for the item's list in SharePoint.
 func (m *SharepointIds) SetListId(value *string)() {
-    m.listId = value
+    if m != nil {
+        m.listId = value
+    }
 }
 // SetListItemId sets the listItemId property value. An integer identifier for the item within the containing list.
 func (m *SharepointIds) SetListItemId(value *string)() {
-    m.listItemId = value
+    if m != nil {
+        m.listItemId = value
+    }
 }
 // SetListItemUniqueId sets the listItemUniqueId property value. The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
 func (m *SharepointIds) SetListItemUniqueId(value *string)() {
-    m.listItemUniqueId = value
+    if m != nil {
+        m.listItemUniqueId = value
+    }
 }
 // SetSiteId sets the siteId property value. The unique identifier (guid) for the item's site collection (SPSite).
 func (m *SharepointIds) SetSiteId(value *string)() {
-    m.siteId = value
+    if m != nil {
+        m.siteId = value
+    }
 }
 // SetSiteUrl sets the siteUrl property value. The SharePoint URL for the site that contains the item.
 func (m *SharepointIds) SetSiteUrl(value *string)() {
-    m.siteUrl = value
+    if m != nil {
+        m.siteUrl = value
+    }
 }
 // SetTenantId sets the tenantId property value. The unique identifier (guid) for the tenancy.
 func (m *SharepointIds) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }
 // SetWebId sets the webId property value. The unique identifier (guid) for the item's site (SPWeb).
 func (m *SharepointIds) SetWebId(value *string)() {
-    m.webId = value
+    if m != nil {
+        m.webId = value
+    }
 }

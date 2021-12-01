@@ -176,25 +176,37 @@ func (m *RecurrenceRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecurrenceRange) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEndDate sets the endDate property value. The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.
 func (m *RecurrenceRange) SetEndDate(value *string)() {
-    m.endDate = value
+    if m != nil {
+        m.endDate = value
+    }
 }
 // SetNumberOfOccurrences sets the numberOfOccurrences property value. The number of times to repeat the event. Required and must be positive if type is numbered.
 func (m *RecurrenceRange) SetNumberOfOccurrences(value *int32)() {
-    m.numberOfOccurrences = value
+    if m != nil {
+        m.numberOfOccurrences = value
+    }
 }
 // SetRecurrenceTimeZone sets the recurrenceTimeZone property value. Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
 func (m *RecurrenceRange) SetRecurrenceTimeZone(value *string)() {
-    m.recurrenceTimeZone = value
+    if m != nil {
+        m.recurrenceTimeZone = value
+    }
 }
 // SetStartDate sets the startDate property value. The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
 func (m *RecurrenceRange) SetStartDate(value *string)() {
-    m.startDate = value
+    if m != nil {
+        m.startDate = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
 func (m *RecurrenceRange) SetType_escaped(value *RecurrenceRangeType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

@@ -124,17 +124,25 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) Serialize(write
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. The object identifier of an Azure Active Directory user or group.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetTargetedAuthenticationMethod sets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetTargetedAuthenticationMethod(value *string)() {
-    m.targetedAuthenticationMethod = value
+    if m != nil {
+        m.targetedAuthenticationMethod = value
+    }
 }
 // SetTargetType sets the targetType property value. The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
-    m.targetType = value
+    if m != nil {
+        m.targetType = value
+    }
 }

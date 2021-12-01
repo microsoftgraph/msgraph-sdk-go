@@ -122,17 +122,25 @@ func (m *InsightIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InsightIdentity) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAddress sets the address property value. The email address of the user who shared the item.
 func (m *InsightIdentity) SetAddress(value *string)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the user who shared the item.
 func (m *InsightIdentity) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetId sets the id property value. The id of the user who shared the item.
 func (m *InsightIdentity) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }

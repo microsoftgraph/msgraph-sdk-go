@@ -96,13 +96,19 @@ func (m *Folder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Folder) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetChildCount sets the childCount property value. Number of children contained immediately within this container.
 func (m *Folder) SetChildCount(value *int32)() {
-    m.childCount = value
+    if m != nil {
+        m.childCount = value
+    }
 }
 // SetView sets the view property value. A collection of properties defining the recommended view for the folder.
 func (m *Folder) SetView(value *FolderView)() {
-    m.view = value
+    if m != nil {
+        m.view = value
+    }
 }

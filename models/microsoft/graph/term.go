@@ -287,33 +287,49 @@ func (m *Term) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
 }
 // SetChildren sets the children property value. Children of current term.
 func (m *Term) SetChildren(value []Term)() {
-    m.children = value
+    if m != nil {
+        m.children = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time of term creation. Read-only.
 func (m *Term) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescriptions sets the descriptions property value. Description about term that is dependent on the languageTag.
 func (m *Term) SetDescriptions(value []LocalizedDescription)() {
-    m.descriptions = value
+    if m != nil {
+        m.descriptions = value
+    }
 }
 // SetLabels sets the labels property value. Label metadata for a term.
 func (m *Term) SetLabels(value []LocalizedLabel)() {
-    m.labels = value
+    if m != nil {
+        m.labels = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last date and time of term modification. Read-only.
 func (m *Term) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetProperties sets the properties property value. Collection of properties on the term.
 func (m *Term) SetProperties(value []KeyValue)() {
-    m.properties = value
+    if m != nil {
+        m.properties = value
+    }
 }
 // SetRelations sets the relations property value. To indicate which terms are related to the current term as either pinned or reused.
 func (m *Term) SetRelations(value []Relation)() {
-    m.relations = value
+    if m != nil {
+        m.relations = value
+    }
 }
 // SetSet sets the set property value. The [set] in which the term is created.
 func (m *Term) SetSet(value *Set)() {
-    m.set = value
+    if m != nil {
+        m.set = value
+    }
 }

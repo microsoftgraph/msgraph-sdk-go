@@ -209,29 +209,43 @@ func (m *Media) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Media) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCalleeDevice sets the calleeDevice property value. Device information associated with the callee endpoint of this media.
 func (m *Media) SetCalleeDevice(value *DeviceInfo)() {
-    m.calleeDevice = value
+    if m != nil {
+        m.calleeDevice = value
+    }
 }
 // SetCalleeNetwork sets the calleeNetwork property value. Network information associated with the callee endpoint of this media.
 func (m *Media) SetCalleeNetwork(value *NetworkInfo)() {
-    m.calleeNetwork = value
+    if m != nil {
+        m.calleeNetwork = value
+    }
 }
 // SetCallerDevice sets the callerDevice property value. Device information associated with the caller endpoint of this media.
 func (m *Media) SetCallerDevice(value *DeviceInfo)() {
-    m.callerDevice = value
+    if m != nil {
+        m.callerDevice = value
+    }
 }
 // SetCallerNetwork sets the callerNetwork property value. Network information associated with the caller endpoint of this media.
 func (m *Media) SetCallerNetwork(value *NetworkInfo)() {
-    m.callerNetwork = value
+    if m != nil {
+        m.callerNetwork = value
+    }
 }
 // SetLabel sets the label property value. How the media was identified during media negotiation stage.
 func (m *Media) SetLabel(value *string)() {
-    m.label = value
+    if m != nil {
+        m.label = value
+    }
 }
 // SetStreams sets the streams property value. Network streams associated with this media.
 func (m *Media) SetStreams(value []MediaStream)() {
-    m.streams = value
+    if m != nil {
+        m.streams = value
+    }
 }

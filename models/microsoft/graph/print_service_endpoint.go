@@ -85,9 +85,13 @@ func (m *PrintServiceEndpoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetDisplayName sets the displayName property value. A human-readable display name for the endpoint.
 func (m *PrintServiceEndpoint) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetUri sets the uri property value. The URI that can be used to access the service.
 func (m *PrintServiceEndpoint) SetUri(value *string)() {
-    m.uri = value
+    if m != nil {
+        m.uri = value
+    }
 }

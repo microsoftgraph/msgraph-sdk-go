@@ -201,29 +201,43 @@ func (m *RateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RateRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFv sets the fv property value. 
 func (m *RateRequestBody) SetFv(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.fv = value
+    if m != nil {
+        m.fv = value
+    }
 }
 // SetGuess sets the guess property value. 
 func (m *RateRequestBody) SetGuess(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.guess = value
+    if m != nil {
+        m.guess = value
+    }
 }
 // SetNper sets the nper property value. 
 func (m *RateRequestBody) SetNper(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.nper = value
+    if m != nil {
+        m.nper = value
+    }
 }
 // SetPmt sets the pmt property value. 
 func (m *RateRequestBody) SetPmt(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.pmt = value
+    if m != nil {
+        m.pmt = value
+    }
 }
 // SetPv sets the pv property value. 
 func (m *RateRequestBody) SetPv(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.pv = value
+    if m != nil {
+        m.pv = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. 
 func (m *RateRequestBody) SetType_escaped(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

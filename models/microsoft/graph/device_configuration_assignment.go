@@ -59,5 +59,7 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetTarget sets the target property value. The assignment target for the device configuration.
 func (m *DeviceConfigurationAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

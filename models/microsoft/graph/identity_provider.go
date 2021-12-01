@@ -137,17 +137,25 @@ func (m *IdentityProvider) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetClientId sets the clientId property value. The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
 func (m *IdentityProvider) SetClientId(value *string)() {
-    m.clientId = value
+    if m != nil {
+        m.clientId = value
+    }
 }
 // SetClientSecret sets the clientSecret property value. The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
 func (m *IdentityProvider) SetClientSecret(value *string)() {
-    m.clientSecret = value
+    if m != nil {
+        m.clientSecret = value
+    }
 }
 // SetName sets the name property value. The display name of the identity provider. Not nullable.
 func (m *IdentityProvider) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
 func (m *IdentityProvider) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

@@ -111,13 +111,19 @@ func (m *WorkbookChartAxes) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetCategoryAxis sets the categoryAxis property value. Represents the category axis in a chart. Read-only.
 func (m *WorkbookChartAxes) SetCategoryAxis(value *WorkbookChartAxis)() {
-    m.categoryAxis = value
+    if m != nil {
+        m.categoryAxis = value
+    }
 }
 // SetSeriesAxis sets the seriesAxis property value. Represents the series axis of a 3-dimensional chart. Read-only.
 func (m *WorkbookChartAxes) SetSeriesAxis(value *WorkbookChartAxis)() {
-    m.seriesAxis = value
+    if m != nil {
+        m.seriesAxis = value
+    }
 }
 // SetValueAxis sets the valueAxis property value. Represents the value axis in an axis. Read-only.
 func (m *WorkbookChartAxes) SetValueAxis(value *WorkbookChartAxis)() {
-    m.valueAxis = value
+    if m != nil {
+        m.valueAxis = value
+    }
 }

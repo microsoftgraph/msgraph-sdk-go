@@ -50,7 +50,7 @@ type CalendarRequestBuilderGetOptions struct {
 // CalendarRequestBuilderGetQueryParameters the calendar that contains the event. Navigation property. Read-only.
 type CalendarRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // CalendarRequestBuilderPatchOptions options for Patch
 type CalendarRequestBuilderPatchOptions struct {

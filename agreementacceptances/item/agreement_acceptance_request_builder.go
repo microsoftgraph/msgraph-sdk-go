@@ -38,7 +38,7 @@ type AgreementAcceptanceRequestBuilderGetOptions struct {
 // AgreementAcceptanceRequestBuilderGetQueryParameters get entity from agreementAcceptances by key
 type AgreementAcceptanceRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AgreementAcceptanceRequestBuilderPatchOptions options for Patch
 type AgreementAcceptanceRequestBuilderPatchOptions struct {

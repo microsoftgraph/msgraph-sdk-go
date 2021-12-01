@@ -175,25 +175,37 @@ func (m *NperRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NperRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFv sets the fv property value. 
 func (m *NperRequestBody) SetFv(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.fv = value
+    if m != nil {
+        m.fv = value
+    }
 }
 // SetPmt sets the pmt property value. 
 func (m *NperRequestBody) SetPmt(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.pmt = value
+    if m != nil {
+        m.pmt = value
+    }
 }
 // SetPv sets the pv property value. 
 func (m *NperRequestBody) SetPv(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.pv = value
+    if m != nil {
+        m.pv = value
+    }
 }
 // SetRate sets the rate property value. 
 func (m *NperRequestBody) SetRate(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.rate = value
+    if m != nil {
+        m.rate = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. 
 func (m *NperRequestBody) SetType_escaped(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

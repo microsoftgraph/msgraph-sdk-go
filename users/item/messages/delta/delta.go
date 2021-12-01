@@ -900,121 +900,181 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAttachments sets the attachments property value. The fileAttachment and itemAttachment attachments for the message.
 func (m *Delta) SetAttachments(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment)() {
-    m.attachments = value
+    if m != nil {
+        m.attachments = value
+    }
 }
 // SetBccRecipients sets the bccRecipients property value. The Bcc: recipients for the message.
 func (m *Delta) SetBccRecipients(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient)() {
-    m.bccRecipients = value
+    if m != nil {
+        m.bccRecipients = value
+    }
 }
 // SetBody sets the body property value. The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
 func (m *Delta) SetBody(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBody)() {
-    m.body = value
+    if m != nil {
+        m.body = value
+    }
 }
 // SetBodyPreview sets the bodyPreview property value. The first 255 characters of the message body. It is in text format.
 func (m *Delta) SetBodyPreview(value *string)() {
-    m.bodyPreview = value
+    if m != nil {
+        m.bodyPreview = value
+    }
 }
 // SetCcRecipients sets the ccRecipients property value. The Cc: recipients for the message.
 func (m *Delta) SetCcRecipients(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient)() {
-    m.ccRecipients = value
+    if m != nil {
+        m.ccRecipients = value
+    }
 }
 // SetConversationId sets the conversationId property value. The ID of the conversation the email belongs to.
 func (m *Delta) SetConversationId(value *string)() {
-    m.conversationId = value
+    if m != nil {
+        m.conversationId = value
+    }
 }
 // SetConversationIndex sets the conversationIndex property value. Indicates the position of the message within the conversation.
 func (m *Delta) SetConversationIndex(value []byte)() {
-    m.conversationIndex = value
+    if m != nil {
+        m.conversationIndex = value
+    }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the message. Nullable.
 func (m *Delta) SetExtensions(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension)() {
-    m.extensions = value
+    if m != nil {
+        m.extensions = value
+    }
 }
 // SetFlag sets the flag property value. The flag value that indicates the status, start date, due date, or completion date for the message.
 func (m *Delta) SetFlag(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FollowupFlag)() {
-    m.flag = value
+    if m != nil {
+        m.flag = value
+    }
 }
 // SetFrom sets the from property value. The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.
 func (m *Delta) SetFrom(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient)() {
-    m.from = value
+    if m != nil {
+        m.from = value
+    }
 }
 // SetHasAttachments sets the hasAttachments property value. Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
 func (m *Delta) SetHasAttachments(value *bool)() {
-    m.hasAttachments = value
+    if m != nil {
+        m.hasAttachments = value
+    }
 }
 // SetImportance sets the importance property value. 
 func (m *Delta) SetImportance(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Importance)() {
-    m.importance = value
+    if m != nil {
+        m.importance = value
+    }
 }
 // SetInferenceClassification sets the inferenceClassification property value. 
 func (m *Delta) SetInferenceClassification(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InferenceClassificationType)() {
-    m.inferenceClassification = value
+    if m != nil {
+        m.inferenceClassification = value
+    }
 }
 // SetInternetMessageHeaders sets the internetMessageHeaders property value. 
 func (m *Delta) SetInternetMessageHeaders(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InternetMessageHeader)() {
-    m.internetMessageHeaders = value
+    if m != nil {
+        m.internetMessageHeaders = value
+    }
 }
 // SetInternetMessageId sets the internetMessageId property value. 
 func (m *Delta) SetInternetMessageId(value *string)() {
-    m.internetMessageId = value
+    if m != nil {
+        m.internetMessageId = value
+    }
 }
 // SetIsDeliveryReceiptRequested sets the isDeliveryReceiptRequested property value. 
 func (m *Delta) SetIsDeliveryReceiptRequested(value *bool)() {
-    m.isDeliveryReceiptRequested = value
+    if m != nil {
+        m.isDeliveryReceiptRequested = value
+    }
 }
 // SetIsDraft sets the isDraft property value. 
 func (m *Delta) SetIsDraft(value *bool)() {
-    m.isDraft = value
+    if m != nil {
+        m.isDraft = value
+    }
 }
 // SetIsRead sets the isRead property value. 
 func (m *Delta) SetIsRead(value *bool)() {
-    m.isRead = value
+    if m != nil {
+        m.isRead = value
+    }
 }
 // SetIsReadReceiptRequested sets the isReadReceiptRequested property value. 
 func (m *Delta) SetIsReadReceiptRequested(value *bool)() {
-    m.isReadReceiptRequested = value
+    if m != nil {
+        m.isReadReceiptRequested = value
+    }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the message. Nullable.
 func (m *Delta) SetMultiValueExtendedProperties(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty)() {
-    m.multiValueExtendedProperties = value
+    if m != nil {
+        m.multiValueExtendedProperties = value
+    }
 }
 // SetParentFolderId sets the parentFolderId property value. 
 func (m *Delta) SetParentFolderId(value *string)() {
-    m.parentFolderId = value
+    if m != nil {
+        m.parentFolderId = value
+    }
 }
 // SetReceivedDateTime sets the receivedDateTime property value. 
 func (m *Delta) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.receivedDateTime = value
+    if m != nil {
+        m.receivedDateTime = value
+    }
 }
 // SetReplyTo sets the replyTo property value. 
 func (m *Delta) SetReplyTo(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient)() {
-    m.replyTo = value
+    if m != nil {
+        m.replyTo = value
+    }
 }
 // SetSender sets the sender property value. 
 func (m *Delta) SetSender(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient)() {
-    m.sender = value
+    if m != nil {
+        m.sender = value
+    }
 }
 // SetSentDateTime sets the sentDateTime property value. 
 func (m *Delta) SetSentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.sentDateTime = value
+    if m != nil {
+        m.sentDateTime = value
+    }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the message. Nullable.
 func (m *Delta) SetSingleValueExtendedProperties(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty)() {
-    m.singleValueExtendedProperties = value
+    if m != nil {
+        m.singleValueExtendedProperties = value
+    }
 }
 // SetSubject sets the subject property value. 
 func (m *Delta) SetSubject(value *string)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }
 // SetToRecipients sets the toRecipients property value. 
 func (m *Delta) SetToRecipients(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient)() {
-    m.toRecipients = value
+    if m != nil {
+        m.toRecipients = value
+    }
 }
 // SetUniqueBody sets the uniqueBody property value. 
 func (m *Delta) SetUniqueBody(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBody)() {
-    m.uniqueBody = value
+    if m != nil {
+        m.uniqueBody = value
+    }
 }
 // SetWebLink sets the webLink property value. 
 func (m *Delta) SetWebLink(value *string)() {
-    m.webLink = value
+    if m != nil {
+        m.webLink = value
+    }
 }

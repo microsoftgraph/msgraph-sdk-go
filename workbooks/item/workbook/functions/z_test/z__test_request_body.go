@@ -123,17 +123,25 @@ func (m *Z_TestRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Z_TestRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetArray sets the array property value. 
 func (m *Z_TestRequestBody) SetArray(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.array = value
+    if m != nil {
+        m.array = value
+    }
 }
 // SetSigma sets the sigma property value. 
 func (m *Z_TestRequestBody) SetSigma(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.sigma = value
+    if m != nil {
+        m.sigma = value
+    }
 }
 // SetX sets the x property value. 
 func (m *Z_TestRequestBody) SetX(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.x = value
+    if m != nil {
+        m.x = value
+    }
 }

@@ -85,9 +85,13 @@ func (m *DirectoryRoleTemplate) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetDescription sets the description property value. The description to set for the directory role. Read-only.
 func (m *DirectoryRoleTemplate) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name to set for the directory role. Read-only.
 func (m *DirectoryRoleTemplate) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

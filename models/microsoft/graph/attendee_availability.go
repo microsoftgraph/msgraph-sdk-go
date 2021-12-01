@@ -98,13 +98,19 @@ func (m *AttendeeAvailability) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttendeeAvailability) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttendee sets the attendee property value. The email address and type of attendee - whether it's a person or a resource, and whether required or optional if it's a person.
 func (m *AttendeeAvailability) SetAttendee(value *AttendeeBase)() {
-    m.attendee = value
+    if m != nil {
+        m.attendee = value
+    }
 }
 // SetAvailability sets the availability property value. The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *AttendeeAvailability) SetAvailability(value *FreeBusyStatus)() {
-    m.availability = value
+    if m != nil {
+        m.availability = value
+    }
 }

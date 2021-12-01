@@ -159,17 +159,25 @@ func (m *Store) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetDefaultLanguageTag sets the defaultLanguageTag property value. Default language of the term store.
 func (m *Store) SetDefaultLanguageTag(value *string)() {
-    m.defaultLanguageTag = value
+    if m != nil {
+        m.defaultLanguageTag = value
+    }
 }
 // SetGroups sets the groups property value. Collection of all groups available in the term store.
 func (m *Store) SetGroups(value []Group)() {
-    m.groups = value
+    if m != nil {
+        m.groups = value
+    }
 }
 // SetLanguageTags sets the languageTags property value. List of languages for the term store.
 func (m *Store) SetLanguageTags(value []string)() {
-    m.languageTags = value
+    if m != nil {
+        m.languageTags = value
+    }
 }
 // SetSets sets the sets property value. Collection of all sets available in the term store.
 func (m *Store) SetSets(value []Set)() {
-    m.sets = value
+    if m != nil {
+        m.sets = value
+    }
 }

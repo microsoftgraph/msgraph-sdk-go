@@ -123,17 +123,25 @@ func (m *PercentRank_IncRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PercentRank_IncRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetArray sets the array property value. 
 func (m *PercentRank_IncRequestBody) SetArray(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.array = value
+    if m != nil {
+        m.array = value
+    }
 }
 // SetSignificance sets the significance property value. 
 func (m *PercentRank_IncRequestBody) SetSignificance(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.significance = value
+    if m != nil {
+        m.significance = value
+    }
 }
 // SetX sets the x property value. 
 func (m *PercentRank_IncRequestBody) SetX(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.x = value
+    if m != nil {
+        m.x = value
+    }
 }

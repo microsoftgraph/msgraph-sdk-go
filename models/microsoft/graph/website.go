@@ -124,17 +124,25 @@ func (m *Website) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Website) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAddress sets the address property value. The URL of the website.
 func (m *Website) SetAddress(value *string)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the web site.
 func (m *Website) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. The possible values are: other, home, work, blog, profile.
 func (m *Website) SetType_escaped(value *WebsiteType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

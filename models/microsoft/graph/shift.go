@@ -137,17 +137,25 @@ func (m *Shift) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetDraftShift sets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
 func (m *Shift) SetDraftShift(value *ShiftItem)() {
-    m.draftShift = value
+    if m != nil {
+        m.draftShift = value
+    }
 }
 // SetSchedulingGroupId sets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
 func (m *Shift) SetSchedulingGroupId(value *string)() {
-    m.schedulingGroupId = value
+    if m != nil {
+        m.schedulingGroupId = value
+    }
 }
 // SetSharedShift sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
 func (m *Shift) SetSharedShift(value *ShiftItem)() {
-    m.sharedShift = value
+    if m != nil {
+        m.sharedShift = value
+    }
 }
 // SetUserId sets the userId property value. ID of the user assigned to the shift. Required.
 func (m *Shift) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

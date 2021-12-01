@@ -50,7 +50,7 @@ type MailFolderRequestBuilderGetOptions struct {
 // MailFolderRequestBuilderGetQueryParameters the user's mail folders. Read-only. Nullable.
 type MailFolderRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MailFolderRequestBuilderPatchOptions options for Patch
 type MailFolderRequestBuilderPatchOptions struct {

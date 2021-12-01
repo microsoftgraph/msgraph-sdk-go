@@ -138,13 +138,19 @@ func (m *ServiceAnnouncement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetHealthOverviews sets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) SetHealthOverviews(value []ServiceHealth)() {
-    m.healthOverviews = value
+    if m != nil {
+        m.healthOverviews = value
+    }
 }
 // SetIssues sets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) SetIssues(value []ServiceHealthIssue)() {
-    m.issues = value
+    if m != nil {
+        m.issues = value
+    }
 }
 // SetMessages sets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
 func (m *ServiceAnnouncement) SetMessages(value []ServiceUpdateMessage)() {
-    m.messages = value
+    if m != nil {
+        m.messages = value
+    }
 }

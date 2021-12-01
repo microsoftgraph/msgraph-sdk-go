@@ -85,9 +85,13 @@ func (m *OnenoteResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetContent sets the content property value. The content stream
 func (m *OnenoteResource) SetContent(value []byte)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }
 // SetContentUrl sets the contentUrl property value. The URL for downloading the content
 func (m *OnenoteResource) SetContentUrl(value *string)() {
-    m.contentUrl = value
+    if m != nil {
+        m.contentUrl = value
+    }
 }

@@ -238,33 +238,49 @@ func (m *GetCachedReportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetCachedReportRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetGroupBy sets the groupBy property value. 
 func (m *GetCachedReportRequestBody) SetGroupBy(value []string)() {
-    m.groupBy = value
+    if m != nil {
+        m.groupBy = value
+    }
 }
 // SetId sets the id property value. 
 func (m *GetCachedReportRequestBody) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetOrderBy sets the orderBy property value. 
 func (m *GetCachedReportRequestBody) SetOrderBy(value []string)() {
-    m.orderBy = value
+    if m != nil {
+        m.orderBy = value
+    }
 }
 // SetSearch sets the search property value. 
 func (m *GetCachedReportRequestBody) SetSearch(value *string)() {
-    m.search = value
+    if m != nil {
+        m.search = value
+    }
 }
 // SetSelect_escaped sets the select_escaped property value. 
 func (m *GetCachedReportRequestBody) SetSelect_escaped(value []string)() {
-    m.select_escaped = value
+    if m != nil {
+        m.select_escaped = value
+    }
 }
 // SetSkip sets the skip property value. 
 func (m *GetCachedReportRequestBody) SetSkip(value *int32)() {
-    m.skip = value
+    if m != nil {
+        m.skip = value
+    }
 }
 // SetTop sets the top property value. 
 func (m *GetCachedReportRequestBody) SetTop(value *int32)() {
-    m.top = value
+    if m != nil {
+        m.top = value
+    }
 }

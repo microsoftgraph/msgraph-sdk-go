@@ -94,9 +94,13 @@ func (m *Schema) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
 }
 // SetBaseType sets the baseType property value. Must be set to microsoft.graph.externalConnector.externalItem. Required.
 func (m *Schema) SetBaseType(value *string)() {
-    m.baseType = value
+    if m != nil {
+        m.baseType = value
+    }
 }
 // SetProperties sets the properties property value. The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
 func (m *Schema) SetProperties(value []Property)() {
-    m.properties = value
+    if m != nil {
+        m.properties = value
+    }
 }

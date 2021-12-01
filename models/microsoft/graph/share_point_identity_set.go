@@ -111,13 +111,19 @@ func (m *SharePointIdentitySet) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetGroup sets the group property value. 
 func (m *SharePointIdentitySet) SetGroup(value *Identity)() {
-    m.group = value
+    if m != nil {
+        m.group = value
+    }
 }
 // SetSiteGroup sets the siteGroup property value. 
 func (m *SharePointIdentitySet) SetSiteGroup(value *SharePointIdentity)() {
-    m.siteGroup = value
+    if m != nil {
+        m.siteGroup = value
+    }
 }
 // SetSiteUser sets the siteUser property value. 
 func (m *SharePointIdentitySet) SetSiteUser(value *SharePointIdentity)() {
-    m.siteUser = value
+    if m != nil {
+        m.siteUser = value
+    }
 }

@@ -122,17 +122,25 @@ func (m *AlternativeSecurityId) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlternativeSecurityId) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIdentityProvider sets the identityProvider property value. For internal use only
 func (m *AlternativeSecurityId) SetIdentityProvider(value *string)() {
-    m.identityProvider = value
+    if m != nil {
+        m.identityProvider = value
+    }
 }
 // SetKey sets the key property value. For internal use only
 func (m *AlternativeSecurityId) SetKey(value []byte)() {
-    m.key = value
+    if m != nil {
+        m.key = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. For internal use only
 func (m *AlternativeSecurityId) SetType_escaped(value *int32)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

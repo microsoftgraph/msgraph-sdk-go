@@ -152,21 +152,31 @@ func (m *OnenotePatchContentCommand) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAction sets the action property value. The action to perform on the target element. The possible values are: replace, append, delete, insert, or prepend.
 func (m *OnenotePatchContentCommand) SetAction(value *OnenotePatchActionType)() {
-    m.action = value
+    if m != nil {
+        m.action = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnenotePatchContentCommand) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContent sets the content property value. A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
 func (m *OnenotePatchContentCommand) SetContent(value *string)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }
 // SetPosition sets the position property value. The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
 func (m *OnenotePatchContentCommand) SetPosition(value *OnenotePatchInsertPosition)() {
-    m.position = value
+    if m != nil {
+        m.position = value
+    }
 }
 // SetTarget sets the target property value. The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.
 func (m *OnenotePatchContentCommand) SetTarget(value *string)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

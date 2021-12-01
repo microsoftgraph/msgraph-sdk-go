@@ -96,13 +96,19 @@ func (m *AuditActivityInitiator) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuditActivityInitiator) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApp sets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
 func (m *AuditActivityInitiator) SetApp(value *AppIdentity)() {
-    m.app = value
+    if m != nil {
+        m.app = value
+    }
 }
 // SetUser sets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
 func (m *AuditActivityInitiator) SetUser(value *UserIdentity)() {
-    m.user = value
+    if m != nil {
+        m.user = value
+    }
 }

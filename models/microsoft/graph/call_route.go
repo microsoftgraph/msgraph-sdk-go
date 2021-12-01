@@ -124,17 +124,25 @@ func (m *CallRoute) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CallRoute) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFinal sets the final property value. 
 func (m *CallRoute) SetFinal(value *IdentitySet)() {
-    m.final = value
+    if m != nil {
+        m.final = value
+    }
 }
 // SetOriginal sets the original property value. 
 func (m *CallRoute) SetOriginal(value *IdentitySet)() {
-    m.original = value
+    if m != nil {
+        m.original = value
+    }
 }
 // SetRoutingType sets the routingType property value. Possible values are: forwarded, lookup, selfFork.
 func (m *CallRoute) SetRoutingType(value *RoutingType)() {
-    m.routingType = value
+    if m != nil {
+        m.routingType = value
+    }
 }

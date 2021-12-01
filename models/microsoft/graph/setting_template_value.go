@@ -148,21 +148,31 @@ func (m *SettingTemplateValue) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SettingTemplateValue) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefaultValue sets the defaultValue property value. Default value for the setting.
 func (m *SettingTemplateValue) SetDefaultValue(value *string)() {
-    m.defaultValue = value
+    if m != nil {
+        m.defaultValue = value
+    }
 }
 // SetDescription sets the description property value. Description of the setting.
 func (m *SettingTemplateValue) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetName sets the name property value. Name of the setting.
 func (m *SettingTemplateValue) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Type of the setting.
 func (m *SettingTemplateValue) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

@@ -132,17 +132,25 @@ func (m *RedirectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCallbackUri sets the callbackUri property value. 
 func (m *RedirectRequestBody) SetCallbackUri(value *string)() {
-    m.callbackUri = value
+    if m != nil {
+        m.callbackUri = value
+    }
 }
 // SetTargets sets the targets property value. 
 func (m *RedirectRequestBody) SetTargets(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.InvitationParticipantInfo)() {
-    m.targets = value
+    if m != nil {
+        m.targets = value
+    }
 }
 // SetTimeout sets the timeout property value. 
 func (m *RedirectRequestBody) SetTimeout(value *int32)() {
-    m.timeout = value
+    if m != nil {
+        m.timeout = value
+    }
 }

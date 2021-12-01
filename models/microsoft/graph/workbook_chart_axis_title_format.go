@@ -59,5 +59,7 @@ func (m *WorkbookChartAxisTitleFormat) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetFont sets the font property value. Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.
 func (m *WorkbookChartAxisTitleFormat) SetFont(value *WorkbookChartFont)() {
-    m.font = value
+    if m != nil {
+        m.font = value
+    }
 }

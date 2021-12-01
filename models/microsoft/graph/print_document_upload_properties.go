@@ -122,17 +122,25 @@ func (m *PrintDocumentUploadProperties) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintDocumentUploadProperties) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentType sets the contentType property value. The document's content (MIME) type.
 func (m *PrintDocumentUploadProperties) SetContentType(value *string)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }
 // SetDocumentName sets the documentName property value. The document's name.
 func (m *PrintDocumentUploadProperties) SetDocumentName(value *string)() {
-    m.documentName = value
+    if m != nil {
+        m.documentName = value
+    }
 }
 // SetSize sets the size property value. The document's size in bytes.
 func (m *PrintDocumentUploadProperties) SetSize(value *int64)() {
-    m.size = value
+    if m != nil {
+        m.size = value
+    }
 }

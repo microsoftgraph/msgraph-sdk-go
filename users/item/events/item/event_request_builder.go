@@ -56,7 +56,7 @@ type EventRequestBuilderGetOptions struct {
 // EventRequestBuilderGetQueryParameters the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // EventRequestBuilderPatchOptions options for Patch
 type EventRequestBuilderPatchOptions struct {

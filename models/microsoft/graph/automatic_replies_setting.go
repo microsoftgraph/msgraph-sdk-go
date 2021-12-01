@@ -204,29 +204,43 @@ func (m *AutomaticRepliesSetting) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AutomaticRepliesSetting) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExternalAudience sets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
 func (m *AutomaticRepliesSetting) SetExternalAudience(value *ExternalAudienceScope)() {
-    m.externalAudience = value
+    if m != nil {
+        m.externalAudience = value
+    }
 }
 // SetExternalReplyMessage sets the externalReplyMessage property value. The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
 func (m *AutomaticRepliesSetting) SetExternalReplyMessage(value *string)() {
-    m.externalReplyMessage = value
+    if m != nil {
+        m.externalReplyMessage = value
+    }
 }
 // SetInternalReplyMessage sets the internalReplyMessage property value. The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
 func (m *AutomaticRepliesSetting) SetInternalReplyMessage(value *string)() {
-    m.internalReplyMessage = value
+    if m != nil {
+        m.internalReplyMessage = value
+    }
 }
 // SetScheduledEndDateTime sets the scheduledEndDateTime property value. The date and time that automatic replies are set to end, if Status is set to Scheduled.
 func (m *AutomaticRepliesSetting) SetScheduledEndDateTime(value *DateTimeTimeZone)() {
-    m.scheduledEndDateTime = value
+    if m != nil {
+        m.scheduledEndDateTime = value
+    }
 }
 // SetScheduledStartDateTime sets the scheduledStartDateTime property value. The date and time that automatic replies are set to begin, if Status is set to Scheduled.
 func (m *AutomaticRepliesSetting) SetScheduledStartDateTime(value *DateTimeTimeZone)() {
-    m.scheduledStartDateTime = value
+    if m != nil {
+        m.scheduledStartDateTime = value
+    }
 }
 // SetStatus sets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
 func (m *AutomaticRepliesSetting) SetStatus(value *AutomaticRepliesStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

@@ -124,17 +124,25 @@ func (m *MeetingParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingParticipantInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIdentity sets the identity property value. Identity information of the participant.
 func (m *MeetingParticipantInfo) SetIdentity(value *IdentitySet)() {
-    m.identity = value
+    if m != nil {
+        m.identity = value
+    }
 }
 // SetRole sets the role property value. Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
 func (m *MeetingParticipantInfo) SetRole(value *OnlineMeetingRole)() {
-    m.role = value
+    if m != nil {
+        m.role = value
+    }
 }
 // SetUpn sets the upn property value. User principal name of the participant.
 func (m *MeetingParticipantInfo) SetUpn(value *string)() {
-    m.upn = value
+    if m != nil {
+        m.upn = value
+    }
 }

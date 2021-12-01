@@ -137,17 +137,25 @@ func (m *WorkbookTableColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetFilter sets the filter property value. Retrieve the filter applied to the column. Read-only.
 func (m *WorkbookTableColumn) SetFilter(value *WorkbookFilter)() {
-    m.filter = value
+    if m != nil {
+        m.filter = value
+    }
 }
 // SetIndex sets the index property value. Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.
 func (m *WorkbookTableColumn) SetIndex(value *int32)() {
-    m.index = value
+    if m != nil {
+        m.index = value
+    }
 }
 // SetName sets the name property value. Returns the name of the table column.
 func (m *WorkbookTableColumn) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookTableColumn) SetValues(value *Json)() {
-    m.values = value
+    if m != nil {
+        m.values = value
+    }
 }

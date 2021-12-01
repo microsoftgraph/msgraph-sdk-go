@@ -198,25 +198,37 @@ func (m *ListItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAnalytics sets the analytics property value. Analytics about the view activities that took place on this item.
 func (m *ListItem) SetAnalytics(value *ItemAnalytics)() {
-    m.analytics = value
+    if m != nil {
+        m.analytics = value
+    }
 }
 // SetContentType sets the contentType property value. The content type of this list item
 func (m *ListItem) SetContentType(value *ContentTypeInfo)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }
 // SetDriveItem sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 func (m *ListItem) SetDriveItem(value *DriveItem)() {
-    m.driveItem = value
+    if m != nil {
+        m.driveItem = value
+    }
 }
 // SetFields sets the fields property value. The values of the columns set on this list item.
 func (m *ListItem) SetFields(value *FieldValueSet)() {
-    m.fields = value
+    if m != nil {
+        m.fields = value
+    }
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *ListItem) SetSharepointIds(value *SharepointIds)() {
-    m.sharepointIds = value
+    if m != nil {
+        m.sharepointIds = value
+    }
 }
 // SetVersions sets the versions property value. The list of previous versions of the list item.
 func (m *ListItem) SetVersions(value []ListItemVersion)() {
-    m.versions = value
+    if m != nil {
+        m.versions = value
+    }
 }

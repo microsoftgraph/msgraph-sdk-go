@@ -68,5 +68,7 @@ func (m *AppConsentApprovalRoute) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAppConsentRequests sets the appConsentRequests property value. 
 func (m *AppConsentApprovalRoute) SetAppConsentRequests(value []AppConsentRequest)() {
-    m.appConsentRequests = value
+    if m != nil {
+        m.appConsentRequests = value
+    }
 }

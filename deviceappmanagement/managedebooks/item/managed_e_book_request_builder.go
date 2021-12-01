@@ -48,7 +48,7 @@ type ManagedEBookRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ManagedEBookRequestBuilderPatchOptions options for Patch
 type ManagedEBookRequestBuilderPatchOptions struct {

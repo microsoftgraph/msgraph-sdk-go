@@ -189,25 +189,37 @@ func (m *EBookInstallSummary) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. Number of Devices that have failed to install this book.
 func (m *EBookInstallSummary) SetFailedDeviceCount(value *int32)() {
-    m.failedDeviceCount = value
+    if m != nil {
+        m.failedDeviceCount = value
+    }
 }
 // SetFailedUserCount sets the failedUserCount property value. Number of Users that have 1 or more device that failed to install this book.
 func (m *EBookInstallSummary) SetFailedUserCount(value *int32)() {
-    m.failedUserCount = value
+    if m != nil {
+        m.failedUserCount = value
+    }
 }
 // SetInstalledDeviceCount sets the installedDeviceCount property value. Number of Devices that have successfully installed this book.
 func (m *EBookInstallSummary) SetInstalledDeviceCount(value *int32)() {
-    m.installedDeviceCount = value
+    if m != nil {
+        m.installedDeviceCount = value
+    }
 }
 // SetInstalledUserCount sets the installedUserCount property value. Number of Users whose devices have all succeeded to install this book.
 func (m *EBookInstallSummary) SetInstalledUserCount(value *int32)() {
-    m.installedUserCount = value
+    if m != nil {
+        m.installedUserCount = value
+    }
 }
 // SetNotInstalledDeviceCount sets the notInstalledDeviceCount property value. Number of Devices that does not have this book installed.
 func (m *EBookInstallSummary) SetNotInstalledDeviceCount(value *int32)() {
-    m.notInstalledDeviceCount = value
+    if m != nil {
+        m.notInstalledDeviceCount = value
+    }
 }
 // SetNotInstalledUserCount sets the notInstalledUserCount property value. Number of Users that did not install this book.
 func (m *EBookInstallSummary) SetNotInstalledUserCount(value *int32)() {
-    m.notInstalledUserCount = value
+    if m != nil {
+        m.notInstalledUserCount = value
+    }
 }

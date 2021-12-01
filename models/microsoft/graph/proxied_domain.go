@@ -96,13 +96,19 @@ func (m *ProxiedDomain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProxiedDomain) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIpAddressOrFQDN sets the ipAddressOrFQDN property value. The IP address or FQDN
 func (m *ProxiedDomain) SetIpAddressOrFQDN(value *string)() {
-    m.ipAddressOrFQDN = value
+    if m != nil {
+        m.ipAddressOrFQDN = value
+    }
 }
 // SetProxy sets the proxy property value. Proxy IP or FQDN
 func (m *ProxiedDomain) SetProxy(value *string)() {
-    m.proxy = value
+    if m != nil {
+        m.proxy = value
+    }
 }

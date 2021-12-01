@@ -190,25 +190,37 @@ func (m *ApplePushNotificationCertificate) Serialize(writer i04eb5309aeaafadd283
 }
 // SetAppleIdentifier sets the appleIdentifier property value. Apple Id of the account used to create the MDM push certificate.
 func (m *ApplePushNotificationCertificate) SetAppleIdentifier(value *string)() {
-    m.appleIdentifier = value
+    if m != nil {
+        m.appleIdentifier = value
+    }
 }
 // SetCertificate sets the certificate property value. Not yet documented
 func (m *ApplePushNotificationCertificate) SetCertificate(value *string)() {
-    m.certificate = value
+    if m != nil {
+        m.certificate = value
+    }
 }
 // SetCertificateSerialNumber sets the certificateSerialNumber property value. Certificate serial number. This property is read-only.
 func (m *ApplePushNotificationCertificate) SetCertificateSerialNumber(value *string)() {
-    m.certificateSerialNumber = value
+    if m != nil {
+        m.certificateSerialNumber = value
+    }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expiration date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetTopicIdentifier sets the topicIdentifier property value. Topic Id.
 func (m *ApplePushNotificationCertificate) SetTopicIdentifier(value *string)() {
-    m.topicIdentifier = value
+    if m != nil {
+        m.topicIdentifier = value
+    }
 }

@@ -137,17 +137,25 @@ func (m *PrintTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetDefinition sets the definition property value. 
 func (m *PrintTask) SetDefinition(value *PrintTaskDefinition)() {
-    m.definition = value
+    if m != nil {
+        m.definition = value
+    }
 }
 // SetParentUrl sets the parentUrl property value. The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
 func (m *PrintTask) SetParentUrl(value *string)() {
-    m.parentUrl = value
+    if m != nil {
+        m.parentUrl = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *PrintTask) SetStatus(value *PrintTaskStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTrigger sets the trigger property value. 
 func (m *PrintTask) SetTrigger(value *PrintTaskTrigger)() {
-    m.trigger = value
+    if m != nil {
+        m.trigger = value
+    }
 }

@@ -155,17 +155,25 @@ func (m *AppConsentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAppDisplayName sets the appDisplayName property value. The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
 func (m *AppConsentRequest) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    if m != nil {
+        m.appDisplayName = value
+    }
 }
 // SetAppId sets the appId property value. The identifier of the application. Required. Supports $filter (eq only) and $orderby.
 func (m *AppConsentRequest) SetAppId(value *string)() {
-    m.appId = value
+    if m != nil {
+        m.appId = value
+    }
 }
 // SetPendingScopes sets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
 func (m *AppConsentRequest) SetPendingScopes(value []AppConsentRequestScope)() {
-    m.pendingScopes = value
+    if m != nil {
+        m.pendingScopes = value
+    }
 }
 // SetUserConsentRequests sets the userConsentRequests property value. A list of pending user consent requests.
 func (m *AppConsentRequest) SetUserConsentRequests(value []UserConsentRequest)() {
-    m.userConsentRequests = value
+    if m != nil {
+        m.userConsentRequests = value
+    }
 }

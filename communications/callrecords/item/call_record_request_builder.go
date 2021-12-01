@@ -42,7 +42,7 @@ type CallRecordRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // CallRecordRequestBuilderPatchOptions options for Patch
 type CallRecordRequestBuilderPatchOptions struct {

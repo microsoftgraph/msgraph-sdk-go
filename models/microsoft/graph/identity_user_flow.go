@@ -87,9 +87,13 @@ func (m *IdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetUserFlowType sets the userFlowType property value. 
 func (m *IdentityUserFlow) SetUserFlowType(value *UserFlowType)() {
-    m.userFlowType = value
+    if m != nil {
+        m.userFlowType = value
+    }
 }
 // SetUserFlowTypeVersion sets the userFlowTypeVersion property value. 
 func (m *IdentityUserFlow) SetUserFlowTypeVersion(value *float32)() {
-    m.userFlowTypeVersion = value
+    if m != nil {
+        m.userFlowTypeVersion = value
+    }
 }

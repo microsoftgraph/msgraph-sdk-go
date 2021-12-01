@@ -58,7 +58,7 @@ type EventRequestBuilderGetQueryParameters struct {
     // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
     EndDateTime *string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
     // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
     StartDateTime *string;
 }

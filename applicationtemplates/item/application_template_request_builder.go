@@ -41,7 +41,7 @@ type ApplicationTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ApplicationTemplateRequestBuilderPatchOptions options for Patch
 type ApplicationTemplateRequestBuilderPatchOptions struct {

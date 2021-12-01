@@ -68,5 +68,7 @@ func (m *PrintService) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetEndpoints sets the endpoints property value. Endpoints that can be used to access the service. Read-only. Nullable.
 func (m *PrintService) SetEndpoints(value []PrintServiceEndpoint)() {
-    m.endpoints = value
+    if m != nil {
+        m.endpoints = value
+    }
 }

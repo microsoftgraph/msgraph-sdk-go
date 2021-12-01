@@ -122,17 +122,25 @@ func (m *ResourceReference) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceReference) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. The item's unique identifier.
 func (m *ResourceReference) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
 func (m *ResourceReference) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetWebUrl sets the webUrl property value. A URL leading to the referenced item.
 func (m *ResourceReference) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

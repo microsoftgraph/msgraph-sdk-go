@@ -59,5 +59,7 @@ func (m *IdentityProviderBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetDisplayName sets the displayName property value. The display name of the identity provider.
 func (m *IdentityProviderBase) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

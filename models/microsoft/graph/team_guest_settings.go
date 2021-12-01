@@ -96,13 +96,19 @@ func (m *TeamGuestSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamGuestSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowCreateUpdateChannels sets the allowCreateUpdateChannels property value. If set to true, guests can add and update channels.
 func (m *TeamGuestSettings) SetAllowCreateUpdateChannels(value *bool)() {
-    m.allowCreateUpdateChannels = value
+    if m != nil {
+        m.allowCreateUpdateChannels = value
+    }
 }
 // SetAllowDeleteChannels sets the allowDeleteChannels property value. If set to true, guests can delete channels.
 func (m *TeamGuestSettings) SetAllowDeleteChannels(value *bool)() {
-    m.allowDeleteChannels = value
+    if m != nil {
+        m.allowDeleteChannels = value
+    }
 }

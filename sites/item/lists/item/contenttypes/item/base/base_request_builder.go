@@ -37,7 +37,7 @@ type BaseRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 func (m *BaseRequestBuilder) AssociateWithHubSites()(*i662ea0f4d893f61f005e23e62b72156cd39ad88e8c990bc431b36ac5c1063c4a.AssociateWithHubSitesRequestBuilder) {
     return i662ea0f4d893f61f005e23e62b72156cd39ad88e8c990bc431b36ac5c1063c4a.NewAssociateWithHubSitesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

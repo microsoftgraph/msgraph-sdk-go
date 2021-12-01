@@ -96,13 +96,19 @@ func (m *PatternedRecurrence) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PatternedRecurrence) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPattern sets the pattern property value. The frequency of an event. Do not specify for a one-time access review.
 func (m *PatternedRecurrence) SetPattern(value *RecurrencePattern)() {
-    m.pattern = value
+    if m != nil {
+        m.pattern = value
+    }
 }
 // SetRange_escaped sets the range_escaped property value. The duration of an event.
 func (m *PatternedRecurrence) SetRange_escaped(value *RecurrenceRange)() {
-    m.range_escaped = value
+    if m != nil {
+        m.range_escaped = value
+    }
 }

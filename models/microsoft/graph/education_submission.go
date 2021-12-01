@@ -375,49 +375,73 @@ func (m *EducationSubmission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetOutcomes sets the outcomes property value. Read-Write. Nullable.
 func (m *EducationSubmission) SetOutcomes(value []EducationOutcome)() {
-    m.outcomes = value
+    if m != nil {
+        m.outcomes = value
+    }
 }
 // SetRecipient sets the recipient property value. Who this submission is assigned to.
 func (m *EducationSubmission) SetRecipient(value *EducationSubmissionRecipient)() {
-    m.recipient = value
+    if m != nil {
+        m.recipient = value
+    }
 }
 // SetResources sets the resources property value. Nullable.
 func (m *EducationSubmission) SetResources(value []EducationSubmissionResource)() {
-    m.resources = value
+    if m != nil {
+        m.resources = value
+    }
 }
 // SetResourcesFolderUrl sets the resourcesFolderUrl property value. Folder where all file resources for this submission need to be stored.
 func (m *EducationSubmission) SetResourcesFolderUrl(value *string)() {
-    m.resourcesFolderUrl = value
+    if m != nil {
+        m.resourcesFolderUrl = value
+    }
 }
 // SetReturnedBy sets the returnedBy property value. User who moved the status of this submission to returned.
 func (m *EducationSubmission) SetReturnedBy(value *IdentitySet)() {
-    m.returnedBy = value
+    if m != nil {
+        m.returnedBy = value
+    }
 }
 // SetReturnedDateTime sets the returnedDateTime property value. Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationSubmission) SetReturnedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.returnedDateTime = value
+    if m != nil {
+        m.returnedDateTime = value
+    }
 }
 // SetStatus sets the status property value. Read-Only. Possible values are: working, submitted, released, returned.
 func (m *EducationSubmission) SetStatus(value *EducationSubmissionStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetSubmittedBy sets the submittedBy property value. User who moved the resource into the submitted state.
 func (m *EducationSubmission) SetSubmittedBy(value *IdentitySet)() {
-    m.submittedBy = value
+    if m != nil {
+        m.submittedBy = value
+    }
 }
 // SetSubmittedDateTime sets the submittedDateTime property value. Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationSubmission) SetSubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.submittedDateTime = value
+    if m != nil {
+        m.submittedDateTime = value
+    }
 }
 // SetSubmittedResources sets the submittedResources property value. Read-only. Nullable.
 func (m *EducationSubmission) SetSubmittedResources(value []EducationSubmissionResource)() {
-    m.submittedResources = value
+    if m != nil {
+        m.submittedResources = value
+    }
 }
 // SetUnsubmittedBy sets the unsubmittedBy property value. User who moved the resource from submitted into the working state.
 func (m *EducationSubmission) SetUnsubmittedBy(value *IdentitySet)() {
-    m.unsubmittedBy = value
+    if m != nil {
+        m.unsubmittedBy = value
+    }
 }
 // SetUnsubmittedDateTime sets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationSubmission) SetUnsubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.unsubmittedDateTime = value
+    if m != nil {
+        m.unsubmittedDateTime = value
+    }
 }

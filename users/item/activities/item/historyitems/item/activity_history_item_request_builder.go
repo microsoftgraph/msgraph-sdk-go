@@ -41,7 +41,7 @@ type ActivityHistoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ActivityHistoryItemRequestBuilderPatchOptions options for Patch
 type ActivityHistoryItemRequestBuilderPatchOptions struct {

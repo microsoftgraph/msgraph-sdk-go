@@ -113,13 +113,19 @@ func (m *MobileAppAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetIntent sets the intent property value. The install intent defined by the admin. Possible values are: available, required, uninstall, availableWithoutEnrollment.
 func (m *MobileAppAssignment) SetIntent(value *InstallIntent)() {
-    m.intent = value
+    if m != nil {
+        m.intent = value
+    }
 }
 // SetSettings sets the settings property value. The settings for target assignment defined by the admin.
 func (m *MobileAppAssignment) SetSettings(value *MobileAppAssignmentSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }
 // SetTarget sets the target property value. The target group assignment defined by the admin.
 func (m *MobileAppAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

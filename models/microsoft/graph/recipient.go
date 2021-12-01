@@ -70,9 +70,13 @@ func (m *Recipient) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Recipient) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEmailAddress sets the emailAddress property value. The recipient's email address.
 func (m *Recipient) SetEmailAddress(value *EmailAddress)() {
-    m.emailAddress = value
+    if m != nil {
+        m.emailAddress = value
+    }
 }

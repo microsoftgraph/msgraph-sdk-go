@@ -59,5 +59,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) Serialize(writer i04eb5309ae
 }
 // SetIsEnabled sets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
 func (m *IdentitySecurityDefaultsEnforcementPolicy) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }

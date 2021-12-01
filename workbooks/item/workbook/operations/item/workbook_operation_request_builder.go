@@ -40,7 +40,7 @@ type WorkbookOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WorkbookOperationRequestBuilderPatchOptions options for Patch
 type WorkbookOperationRequestBuilderPatchOptions struct {

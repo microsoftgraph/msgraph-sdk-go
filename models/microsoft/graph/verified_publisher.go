@@ -123,17 +123,25 @@ func (m *VerifiedPublisher) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAddedDateTime sets the addedDateTime property value. The timestamp when the verified publisher was first added or most recently updated.
 func (m *VerifiedPublisher) SetAddedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.addedDateTime = value
+    if m != nil {
+        m.addedDateTime = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedPublisher) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The verified publisher name from the app publisher's Partner Center account.
 func (m *VerifiedPublisher) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetVerifiedPublisherId sets the verifiedPublisherId property value. The ID of the verified publisher from the app publisher's Partner Center account.
 func (m *VerifiedPublisher) SetVerifiedPublisherId(value *string)() {
-    m.verifiedPublisherId = value
+    if m != nil {
+        m.verifiedPublisherId = value
+    }
 }

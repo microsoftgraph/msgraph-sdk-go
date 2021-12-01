@@ -98,13 +98,19 @@ func (m *WorkforceIntegrationEncryption) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkforceIntegrationEncryption) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetProtocol sets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
 func (m *WorkforceIntegrationEncryption) SetProtocol(value *WorkforceIntegrationEncryptionProtocol)() {
-    m.protocol = value
+    if m != nil {
+        m.protocol = value
+    }
 }
 // SetSecret sets the secret property value. Encryption shared secret.
 func (m *WorkforceIntegrationEncryption) SetSecret(value *string)() {
-    m.secret = value
+    if m != nil {
+        m.secret = value
+    }
 }

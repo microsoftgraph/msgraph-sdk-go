@@ -417,53 +417,79 @@ func (m *Post) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
 }
 // SetAttachments sets the attachments property value. Read-only. Nullable. Supports $expand.
 func (m *Post) SetAttachments(value []Attachment)() {
-    m.attachments = value
+    if m != nil {
+        m.attachments = value
+    }
 }
 // SetBody sets the body property value. The contents of the post. This is a default property. This property can be null.
 func (m *Post) SetBody(value *ItemBody)() {
-    m.body = value
+    if m != nil {
+        m.body = value
+    }
 }
 // SetConversationId sets the conversationId property value. Unique ID of the conversation. Read-only.
 func (m *Post) SetConversationId(value *string)() {
-    m.conversationId = value
+    if m != nil {
+        m.conversationId = value
+    }
 }
 // SetConversationThreadId sets the conversationThreadId property value. Unique ID of the conversation thread. Read-only.
 func (m *Post) SetConversationThreadId(value *string)() {
-    m.conversationThreadId = value
+    if m != nil {
+        m.conversationThreadId = value
+    }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
 func (m *Post) SetExtensions(value []Extension)() {
-    m.extensions = value
+    if m != nil {
+        m.extensions = value
+    }
 }
 // SetFrom sets the from property value. 
 func (m *Post) SetFrom(value *Recipient)() {
-    m.from = value
+    if m != nil {
+        m.from = value
+    }
 }
 // SetHasAttachments sets the hasAttachments property value. Indicates whether the post has at least one attachment. This is a default property.
 func (m *Post) SetHasAttachments(value *bool)() {
-    m.hasAttachments = value
+    if m != nil {
+        m.hasAttachments = value
+    }
 }
 // SetInReplyTo sets the inReplyTo property value. Read-only. Supports $expand.
 func (m *Post) SetInReplyTo(value *Post)() {
-    m.inReplyTo = value
+    if m != nil {
+        m.inReplyTo = value
+    }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the post. Read-only. Nullable.
 func (m *Post) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
-    m.multiValueExtendedProperties = value
+    if m != nil {
+        m.multiValueExtendedProperties = value
+    }
 }
 // SetNewParticipants sets the newParticipants property value. Conversation participants that were added to the thread as part of this post.
 func (m *Post) SetNewParticipants(value []Recipient)() {
-    m.newParticipants = value
+    if m != nil {
+        m.newParticipants = value
+    }
 }
 // SetReceivedDateTime sets the receivedDateTime property value. Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Post) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.receivedDateTime = value
+    if m != nil {
+        m.receivedDateTime = value
+    }
 }
 // SetSender sets the sender property value. Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
 func (m *Post) SetSender(value *Recipient)() {
-    m.sender = value
+    if m != nil {
+        m.sender = value
+    }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the post. Read-only. Nullable.
 func (m *Post) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
-    m.singleValueExtendedProperties = value
+    if m != nil {
+        m.singleValueExtendedProperties = value
+    }
 }

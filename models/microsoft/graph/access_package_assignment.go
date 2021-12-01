@@ -192,25 +192,37 @@ func (m *AccessPackageAssignment) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAccessPackage sets the accessPackage property value. Read-only. Nullable.
 func (m *AccessPackageAssignment) SetAccessPackage(value *AccessPackage)() {
-    m.accessPackage = value
+    if m != nil {
+        m.accessPackage = value
+    }
 }
 // SetExpiredDateTime sets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignment) SetExpiredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expiredDateTime = value
+    if m != nil {
+        m.expiredDateTime = value
+    }
 }
 // SetSchedule sets the schedule property value. When the access assignment is to be in place. Read-only.
 func (m *AccessPackageAssignment) SetSchedule(value *EntitlementManagementSchedule)() {
-    m.schedule = value
+    if m != nil {
+        m.schedule = value
+    }
 }
 // SetState sets the state property value. 
 func (m *AccessPackageAssignment) SetState(value *AccessPackageAssignmentState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *AccessPackageAssignment) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTarget sets the target property value. The subject of the access package assignment. Read-only. Nullable.
 func (m *AccessPackageAssignment) SetTarget(value *AccessPackageSubject)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

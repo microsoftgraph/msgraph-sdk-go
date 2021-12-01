@@ -59,5 +59,7 @@ func (m *OpenShiftItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetOpenSlotCount sets the openSlotCount property value. Count of the number of slots for the given open shift.
 func (m *OpenShiftItem) SetOpenSlotCount(value *int32)() {
-    m.openSlotCount = value
+    if m != nil {
+        m.openSlotCount = value
+    }
 }

@@ -115,13 +115,19 @@ func (m *SchedulingGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetDisplayName sets the displayName property value. The display name for the schedulingGroup. Required.
 func (m *SchedulingGroup) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsActive sets the isActive property value. Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
 func (m *SchedulingGroup) SetIsActive(value *bool)() {
-    m.isActive = value
+    if m != nil {
+        m.isActive = value
+    }
 }
 // SetUserIds sets the userIds property value. The list of user IDs that are a member of the schedulingGroup. Required.
 func (m *SchedulingGroup) SetUserIds(value []string)() {
-    m.userIds = value
+    if m != nil {
+        m.userIds = value
+    }
 }

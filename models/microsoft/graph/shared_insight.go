@@ -198,25 +198,37 @@ func (m *SharedInsight) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetLastShared sets the lastShared property value. Details about the shared item. Read only.
 func (m *SharedInsight) SetLastShared(value *SharingDetail)() {
-    m.lastShared = value
+    if m != nil {
+        m.lastShared = value
+    }
 }
 // SetLastSharedMethod sets the lastSharedMethod property value. 
 func (m *SharedInsight) SetLastSharedMethod(value *Entity)() {
-    m.lastSharedMethod = value
+    if m != nil {
+        m.lastSharedMethod = value
+    }
 }
 // SetResource sets the resource property value. Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
 func (m *SharedInsight) SetResource(value *Entity)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }
 // SetResourceReference sets the resourceReference property value. Reference properties of the shared document, such as the url and type of the document. Read-only
 func (m *SharedInsight) SetResourceReference(value *ResourceReference)() {
-    m.resourceReference = value
+    if m != nil {
+        m.resourceReference = value
+    }
 }
 // SetResourceVisualization sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
 func (m *SharedInsight) SetResourceVisualization(value *ResourceVisualization)() {
-    m.resourceVisualization = value
+    if m != nil {
+        m.resourceVisualization = value
+    }
 }
 // SetSharingHistory sets the sharingHistory property value. 
 func (m *SharedInsight) SetSharingHistory(value []SharingDetail)() {
-    m.sharingHistory = value
+    if m != nil {
+        m.sharingHistory = value
+    }
 }

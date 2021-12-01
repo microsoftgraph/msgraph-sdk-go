@@ -96,13 +96,19 @@ func (m *ContentTypeOrder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentTypeOrder) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefault_escaped sets the default_escaped property value. Whether this is the default Content Type
 func (m *ContentTypeOrder) SetDefault_escaped(value *bool)() {
-    m.default_escaped = value
+    if m != nil {
+        m.default_escaped = value
+    }
 }
 // SetPosition sets the position property value. Specifies the position in which the Content Type appears in the selection UI.
 func (m *ContentTypeOrder) SetPosition(value *int32)() {
-    m.position = value
+    if m != nil {
+        m.position = value
+    }
 }

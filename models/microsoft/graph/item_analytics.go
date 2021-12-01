@@ -120,13 +120,19 @@ func (m *ItemAnalytics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAllTime sets the allTime property value. 
 func (m *ItemAnalytics) SetAllTime(value *ItemActivityStat)() {
-    m.allTime = value
+    if m != nil {
+        m.allTime = value
+    }
 }
 // SetItemActivityStats sets the itemActivityStats property value. 
 func (m *ItemAnalytics) SetItemActivityStats(value []ItemActivityStat)() {
-    m.itemActivityStats = value
+    if m != nil {
+        m.itemActivityStats = value
+    }
 }
 // SetLastSevenDays sets the lastSevenDays property value. 
 func (m *ItemAnalytics) SetLastSevenDays(value *ItemActivityStat)() {
-    m.lastSevenDays = value
+    if m != nil {
+        m.lastSevenDays = value
+    }
 }
