@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.3.1] - 2021-12-01
+
+### Changed
+
+- Fixes an issue where select query parameters would not work #31.
+
 ## [0.3.0] - 2021-11-23
 
 ### Changed
