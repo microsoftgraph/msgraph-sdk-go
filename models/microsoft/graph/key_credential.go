@@ -22,7 +22,7 @@ type KeyCredential struct {
     // The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The type of key credential; for example, Symmetric.
-    type_escaped *string;
+    type *string;
     // A string that describes the purpose for which the key can be used; for example, Verify.
     usage *string;
 }
@@ -89,12 +89,12 @@ func (m *KeyCredential) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.startDateTime
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of key credential; for example, Symmetric.
-func (m *KeyCredential) GetType_escaped()(*string) {
+// GetType gets the type property value. The type of key credential; for example, Symmetric.
+func (m *KeyCredential) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetUsage gets the usage property value. A string that describes the purpose for which the key can be used; for example, Verify.
@@ -168,13 +168,13 @@ func (m *KeyCredential) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -232,7 +232,7 @@ func (m *KeyCredential) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -253,37 +253,55 @@ func (m *KeyCredential) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KeyCredential) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCustomKeyIdentifier sets the customKeyIdentifier property value. Custom key identifier
 func (m *KeyCredential) SetCustomKeyIdentifier(value []byte)() {
-    m.customKeyIdentifier = value
+    if m != nil {
+        m.customKeyIdentifier = value
+    }
 }
 // SetDisplayName sets the displayName property value. Friendly name for the key. Optional.
 func (m *KeyCredential) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. The date and time at which the credential expires.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *KeyCredential) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetKey sets the key property value. The certificate's raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).
 func (m *KeyCredential) SetKey(value []byte)() {
-    m.key = value
+    if m != nil {
+        m.key = value
+    }
 }
 // SetKeyId sets the keyId property value. The unique identifier (GUID) for the key.
 func (m *KeyCredential) SetKeyId(value *string)() {
-    m.keyId = value
+    if m != nil {
+        m.keyId = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *KeyCredential) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The type of key credential; for example, Symmetric.
-func (m *KeyCredential) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. The type of key credential; for example, Symmetric.
+func (m *KeyCredential) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetUsage sets the usage property value. A string that describes the purpose for which the key can be used; for example, Verify.
 func (m *KeyCredential) SetUsage(value *string)() {
-    m.usage = value
+    if m != nil {
+        m.usage = value
+    }
 }

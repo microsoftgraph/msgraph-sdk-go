@@ -213,29 +213,43 @@ func (m *OnlineMeetingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnlineMeetingInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConferenceId sets the conferenceId property value. The ID of the conference.
 func (m *OnlineMeetingInfo) SetConferenceId(value *string)() {
-    m.conferenceId = value
+    if m != nil {
+        m.conferenceId = value
+    }
 }
 // SetJoinUrl sets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
 func (m *OnlineMeetingInfo) SetJoinUrl(value *string)() {
-    m.joinUrl = value
+    if m != nil {
+        m.joinUrl = value
+    }
 }
 // SetPhones sets the phones property value. All of the phone numbers associated with this conference.
 func (m *OnlineMeetingInfo) SetPhones(value []Phone)() {
-    m.phones = value
+    if m != nil {
+        m.phones = value
+    }
 }
 // SetQuickDial sets the quickDial property value. The pre-formatted quickdial for this call.
 func (m *OnlineMeetingInfo) SetQuickDial(value *string)() {
-    m.quickDial = value
+    if m != nil {
+        m.quickDial = value
+    }
 }
 // SetTollFreeNumbers sets the tollFreeNumbers property value. The toll free numbers that can be used to join the conference.
 func (m *OnlineMeetingInfo) SetTollFreeNumbers(value []string)() {
-    m.tollFreeNumbers = value
+    if m != nil {
+        m.tollFreeNumbers = value
+    }
 }
 // SetTollNumber sets the tollNumber property value. The toll number that can be used to join the conference.
 func (m *OnlineMeetingInfo) SetTollNumber(value *string)() {
-    m.tollNumber = value
+    if m != nil {
+        m.tollNumber = value
+    }
 }

@@ -68,5 +68,7 @@ func (m *InferenceClassification) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetOverrides sets the overrides property value. A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
 func (m *InferenceClassification) SetOverrides(value []InferenceClassificationOverride)() {
-    m.overrides = value
+    if m != nil {
+        m.overrides = value
+    }
 }

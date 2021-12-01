@@ -105,13 +105,19 @@ func (m *MeetingParticipants) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingParticipants) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttendees sets the attendees property value. Information of the meeting attendees.
 func (m *MeetingParticipants) SetAttendees(value []MeetingParticipantInfo)() {
-    m.attendees = value
+    if m != nil {
+        m.attendees = value
+    }
 }
 // SetOrganizer sets the organizer property value. Information of the meeting organizer.
 func (m *MeetingParticipants) SetOrganizer(value *MeetingParticipantInfo)() {
-    m.organizer = value
+    if m != nil {
+        m.organizer = value
+    }
 }

@@ -148,17 +148,25 @@ func (m *TeamsApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAppDefinitions sets the appDefinitions property value. The details for each version of the app.
 func (m *TeamsApp) SetAppDefinitions(value []TeamsAppDefinition)() {
-    m.appDefinitions = value
+    if m != nil {
+        m.appDefinitions = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
 func (m *TeamsApp) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetDistributionMethod sets the distributionMethod property value. The method of distribution for the app. Read-only.
 func (m *TeamsApp) SetDistributionMethod(value *TeamsAppDistributionMethod)() {
-    m.distributionMethod = value
+    if m != nil {
+        m.distributionMethod = value
+    }
 }
 // SetExternalId sets the externalId property value. The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
 func (m *TeamsApp) SetExternalId(value *string)() {
-    m.externalId = value
+    if m != nil {
+        m.externalId = value
+    }
 }

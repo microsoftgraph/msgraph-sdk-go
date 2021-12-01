@@ -342,45 +342,67 @@ func (m *Permission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetExpirationDateTime sets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
 func (m *Permission) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetGrantedTo sets the grantedTo property value. For user type permissions, the details of the users & applications for this permission. Read-only.
 func (m *Permission) SetGrantedTo(value *IdentitySet)() {
-    m.grantedTo = value
+    if m != nil {
+        m.grantedTo = value
+    }
 }
 // SetGrantedToIdentities sets the grantedToIdentities property value. For link type permissions, the details of the users to whom permission was granted. Read-only.
 func (m *Permission) SetGrantedToIdentities(value []IdentitySet)() {
-    m.grantedToIdentities = value
+    if m != nil {
+        m.grantedToIdentities = value
+    }
 }
 // SetGrantedToIdentitiesV2 sets the grantedToIdentitiesV2 property value. 
 func (m *Permission) SetGrantedToIdentitiesV2(value []SharePointIdentitySet)() {
-    m.grantedToIdentitiesV2 = value
+    if m != nil {
+        m.grantedToIdentitiesV2 = value
+    }
 }
 // SetGrantedToV2 sets the grantedToV2 property value. 
 func (m *Permission) SetGrantedToV2(value *SharePointIdentitySet)() {
-    m.grantedToV2 = value
+    if m != nil {
+        m.grantedToV2 = value
+    }
 }
 // SetHasPassword sets the hasPassword property value. This indicates whether password is set for this permission, it's only showing in response. Optional and Read-only and for OneDrive Personal only.
 func (m *Permission) SetHasPassword(value *bool)() {
-    m.hasPassword = value
+    if m != nil {
+        m.hasPassword = value
+    }
 }
 // SetInheritedFrom sets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
 func (m *Permission) SetInheritedFrom(value *ItemReference)() {
-    m.inheritedFrom = value
+    if m != nil {
+        m.inheritedFrom = value
+    }
 }
 // SetInvitation sets the invitation property value. Details of any associated sharing invitation for this permission. Read-only.
 func (m *Permission) SetInvitation(value *SharingInvitation)() {
-    m.invitation = value
+    if m != nil {
+        m.invitation = value
+    }
 }
 // SetLink sets the link property value. Provides the link details of the current permission, if it is a link type permissions. Read-only.
 func (m *Permission) SetLink(value *SharingLink)() {
-    m.link = value
+    if m != nil {
+        m.link = value
+    }
 }
 // SetRoles sets the roles property value. The type of permission, e.g. read. See below for the full list of roles. Read-only.
 func (m *Permission) SetRoles(value []string)() {
-    m.roles = value
+    if m != nil {
+        m.roles = value
+    }
 }
 // SetShareId sets the shareId property value. A unique token that can be used to access this shared item via the **shares** API. Read-only.
 func (m *Permission) SetShareId(value *string)() {
-    m.shareId = value
+    if m != nil {
+        m.shareId = value
+    }
 }

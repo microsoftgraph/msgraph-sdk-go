@@ -32,7 +32,7 @@ type ToTermRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // NewToTermRequestBuilderInternal instantiates a new ToTermRequestBuilder and sets the default values.
 func NewToTermRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ToTermRequestBuilder) {

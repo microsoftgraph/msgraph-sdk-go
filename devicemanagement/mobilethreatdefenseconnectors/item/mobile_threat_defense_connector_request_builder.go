@@ -40,7 +40,7 @@ type MobileThreatDefenseConnectorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MobileThreatDefenseConnectorRequestBuilderPatchOptions options for Patch
 type MobileThreatDefenseConnectorRequestBuilderPatchOptions struct {

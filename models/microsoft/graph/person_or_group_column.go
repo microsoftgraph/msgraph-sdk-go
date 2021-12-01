@@ -122,17 +122,25 @@ func (m *PersonOrGroupColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PersonOrGroupColumn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowMultipleSelection sets the allowMultipleSelection property value. Indicates whether multiple values can be selected from the source.
 func (m *PersonOrGroupColumn) SetAllowMultipleSelection(value *bool)() {
-    m.allowMultipleSelection = value
+    if m != nil {
+        m.allowMultipleSelection = value
+    }
 }
 // SetChooseFromType sets the chooseFromType property value. Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
 func (m *PersonOrGroupColumn) SetChooseFromType(value *string)() {
-    m.chooseFromType = value
+    if m != nil {
+        m.chooseFromType = value
+    }
 }
 // SetDisplayAs sets the displayAs property value. How to display the information about the person or group chosen. See below.
 func (m *PersonOrGroupColumn) SetDisplayAs(value *string)() {
-    m.displayAs = value
+    if m != nil {
+        m.displayAs = value
+    }
 }

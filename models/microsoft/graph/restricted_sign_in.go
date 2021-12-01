@@ -59,5 +59,7 @@ func (m *RestrictedSignIn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetTargetTenantId sets the targetTenantId property value. 
 func (m *RestrictedSignIn) SetTargetTenantId(value *string)() {
-    m.targetTenantId = value
+    if m != nil {
+        m.targetTenantId = value
+    }
 }

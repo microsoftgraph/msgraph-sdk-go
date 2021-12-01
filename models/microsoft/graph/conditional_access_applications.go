@@ -164,21 +164,31 @@ func (m *ConditionalAccessApplications) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessApplications) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExcludeApplications sets the excludeApplications property value. The list of application IDs explicitly excluded from the policy.
 func (m *ConditionalAccessApplications) SetExcludeApplications(value []string)() {
-    m.excludeApplications = value
+    if m != nil {
+        m.excludeApplications = value
+    }
 }
 // SetIncludeApplications sets the includeApplications property value. The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
 func (m *ConditionalAccessApplications) SetIncludeApplications(value []string)() {
-    m.includeApplications = value
+    if m != nil {
+        m.includeApplications = value
+    }
 }
 // SetIncludeAuthenticationContextClassReferences sets the includeAuthenticationContextClassReferences property value. Authentication context class references include. Supported values are c1 through c25.
 func (m *ConditionalAccessApplications) SetIncludeAuthenticationContextClassReferences(value []string)() {
-    m.includeAuthenticationContextClassReferences = value
+    if m != nil {
+        m.includeAuthenticationContextClassReferences = value
+    }
 }
 // SetIncludeUserActions sets the includeUserActions property value. User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
 func (m *ConditionalAccessApplications) SetIncludeUserActions(value []string)() {
-    m.includeUserActions = value
+    if m != nil {
+        m.includeUserActions = value
+    }
 }

@@ -68,5 +68,7 @@ func (m *OutlookUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetMasterCategories sets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) SetMasterCategories(value []OutlookCategory)() {
-    m.masterCategories = value
+    if m != nil {
+        m.masterCategories = value
+    }
 }

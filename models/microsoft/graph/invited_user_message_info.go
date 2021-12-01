@@ -131,17 +131,25 @@ func (m *InvitedUserMessageInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitedUserMessageInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCcRecipients sets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
 func (m *InvitedUserMessageInfo) SetCcRecipients(value []Recipient)() {
-    m.ccRecipients = value
+    if m != nil {
+        m.ccRecipients = value
+    }
 }
 // SetCustomizedMessageBody sets the customizedMessageBody property value. Customized message body you want to send if you don't want the default message.
 func (m *InvitedUserMessageInfo) SetCustomizedMessageBody(value *string)() {
-    m.customizedMessageBody = value
+    if m != nil {
+        m.customizedMessageBody = value
+    }
 }
 // SetMessageLanguage sets the messageLanguage property value. The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
 func (m *InvitedUserMessageInfo) SetMessageLanguage(value *string)() {
-    m.messageLanguage = value
+    if m != nil {
+        m.messageLanguage = value
+    }
 }

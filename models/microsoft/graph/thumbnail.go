@@ -174,25 +174,37 @@ func (m *Thumbnail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Thumbnail) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContent sets the content property value. The content stream for the thumbnail.
 func (m *Thumbnail) SetContent(value []byte)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }
 // SetHeight sets the height property value. The height of the thumbnail, in pixels.
 func (m *Thumbnail) SetHeight(value *int32)() {
-    m.height = value
+    if m != nil {
+        m.height = value
+    }
 }
 // SetSourceItemId sets the sourceItemId property value. The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
 func (m *Thumbnail) SetSourceItemId(value *string)() {
-    m.sourceItemId = value
+    if m != nil {
+        m.sourceItemId = value
+    }
 }
 // SetUrl sets the url property value. The URL used to fetch the thumbnail content.
 func (m *Thumbnail) SetUrl(value *string)() {
-    m.url = value
+    if m != nil {
+        m.url = value
+    }
 }
 // SetWidth sets the width property value. The width of the thumbnail, in pixels.
 func (m *Thumbnail) SetWidth(value *int32)() {
-    m.width = value
+    if m != nil {
+        m.width = value
+    }
 }

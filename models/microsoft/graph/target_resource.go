@@ -17,7 +17,7 @@ type TargetResource struct {
     // Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
     modifiedProperties []ModifiedProperty;
     // Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
-    type_escaped *string;
+    type *string;
     // When type is set to User, this includes the user name that initiated the action; null for other types.
     userPrincipalName *string;
 }
@@ -68,12 +68,12 @@ func (m *TargetResource) GetModifiedProperties()([]ModifiedProperty) {
         return m.modifiedProperties
     }
 }
-// GetType_escaped gets the type_escaped property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
-func (m *TargetResource) GetType_escaped()(*string) {
+// GetType gets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
+func (m *TargetResource) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetUserPrincipalName gets the userPrincipalName property value. When type is set to User, this includes the user name that initiated the action; null for other types.
@@ -132,13 +132,13 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(interface{}, i0
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -190,7 +190,7 @@ func (m *TargetResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -211,29 +211,43 @@ func (m *TargetResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TargetResource) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Indicates the visible name defined for the resource. Typically specified when the resource is created.
 func (m *TargetResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetGroupType sets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
 func (m *TargetResource) SetGroupType(value *GroupType)() {
-    m.groupType = value
+    if m != nil {
+        m.groupType = value
+    }
 }
 // SetId sets the id property value. Indicates the unique ID of the resource.
 func (m *TargetResource) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetModifiedProperties sets the modifiedProperties property value. Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
 func (m *TargetResource) SetModifiedProperties(value []ModifiedProperty)() {
-    m.modifiedProperties = value
+    if m != nil {
+        m.modifiedProperties = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
-func (m *TargetResource) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
+func (m *TargetResource) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. When type is set to User, this includes the user name that initiated the action; null for other types.
 func (m *TargetResource) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

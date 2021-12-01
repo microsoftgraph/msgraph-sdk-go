@@ -87,9 +87,13 @@ func (m *PrintTaskTrigger) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetDefinition sets the definition property value. 
 func (m *PrintTaskTrigger) SetDefinition(value *PrintTaskDefinition)() {
-    m.definition = value
+    if m != nil {
+        m.definition = value
+    }
 }
 // SetEvent sets the event property value. The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.
 func (m *PrintTaskTrigger) SetEvent(value *PrintEvent)() {
-    m.event = value
+    if m != nil {
+        m.event = value
+    }
 }

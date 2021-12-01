@@ -61,5 +61,7 @@ func (m *Initiator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetInitiatorType sets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
 func (m *Initiator) SetInitiatorType(value *InitiatorType)() {
-    m.initiatorType = value
+    if m != nil {
+        m.initiatorType = value
+    }
 }

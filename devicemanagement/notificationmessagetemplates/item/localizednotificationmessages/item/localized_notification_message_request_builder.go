@@ -40,7 +40,7 @@ type LocalizedNotificationMessageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // LocalizedNotificationMessageRequestBuilderPatchOptions options for Patch
 type LocalizedNotificationMessageRequestBuilderPatchOptions struct {

@@ -85,9 +85,13 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) Serialize(writer i0
 }
 // SetDeviceCount sets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionNetworkLearningSummary) SetDeviceCount(value *int32)() {
-    m.deviceCount = value
+    if m != nil {
+        m.deviceCount = value
+    }
 }
 // SetUrl sets the url property value. Website url
 func (m *WindowsInformationProtectionNetworkLearningSummary) SetUrl(value *string)() {
-    m.url = value
+    if m != nil {
+        m.url = value
+    }
 }

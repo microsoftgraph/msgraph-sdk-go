@@ -40,7 +40,7 @@ type BucketTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // BucketTaskBoardFormatRequestBuilderPatchOptions options for Patch
 type BucketTaskBoardFormatRequestBuilderPatchOptions struct {

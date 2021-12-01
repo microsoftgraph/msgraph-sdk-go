@@ -40,7 +40,7 @@ type ManagedAppStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ManagedAppStatusRequestBuilderPatchOptions options for Patch
 type ManagedAppStatusRequestBuilderPatchOptions struct {

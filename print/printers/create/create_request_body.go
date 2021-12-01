@@ -227,33 +227,49 @@ func (m *CreateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificateSigningRequest sets the certificateSigningRequest property value. 
 func (m *CreateRequestBody) SetCertificateSigningRequest(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PrintCertificateSigningRequest)() {
-    m.certificateSigningRequest = value
+    if m != nil {
+        m.certificateSigningRequest = value
+    }
 }
 // SetConnectorId sets the connectorId property value. 
 func (m *CreateRequestBody) SetConnectorId(value *string)() {
-    m.connectorId = value
+    if m != nil {
+        m.connectorId = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *CreateRequestBody) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetHasPhysicalDevice sets the hasPhysicalDevice property value. 
 func (m *CreateRequestBody) SetHasPhysicalDevice(value *bool)() {
-    m.hasPhysicalDevice = value
+    if m != nil {
+        m.hasPhysicalDevice = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. 
 func (m *CreateRequestBody) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetModel sets the model property value. 
 func (m *CreateRequestBody) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }
 // SetPhysicalDeviceId sets the physicalDeviceId property value. 
 func (m *CreateRequestBody) SetPhysicalDeviceId(value *string)() {
-    m.physicalDeviceId = value
+    if m != nil {
+        m.physicalDeviceId = value
+    }
 }

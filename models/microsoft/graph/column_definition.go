@@ -66,7 +66,7 @@ type ColumnDefinition struct {
     // This column stores thumbnail values.
     thumbnail *ThumbnailColumn;
     // For site columns, the type of column. Read-only.
-    type_escaped *ColumnTypes;
+    type *ColumnTypes;
     // This column stores validation formula and message for the column.
     validation *ColumnValidation;
 }
@@ -309,12 +309,12 @@ func (m *ColumnDefinition) GetThumbnail()(*ThumbnailColumn) {
         return m.thumbnail
     }
 }
-// GetType_escaped gets the type_escaped property value. For site columns, the type of column. Read-only.
-func (m *ColumnDefinition) GetType_escaped()(*ColumnTypes) {
+// GetType gets the type property value. For site columns, the type of column. Read-only.
+func (m *ColumnDefinition) GetType()(*ColumnTypes) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetValidation gets the validation property value. This column stores validation formula and message for the column.
@@ -618,14 +618,14 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseColumnTypes)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(ColumnTypes)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -824,9 +824,9 @@ func (m *ColumnDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -841,125 +841,187 @@ func (m *ColumnDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetBoolean sets the boolean property value. This column stores boolean values.
 func (m *ColumnDefinition) SetBoolean(value *BooleanColumn)() {
-    m.boolean = value
+    if m != nil {
+        m.boolean = value
+    }
 }
 // SetCalculated sets the calculated property value. This column's data is calculated based on other columns.
 func (m *ColumnDefinition) SetCalculated(value *CalculatedColumn)() {
-    m.calculated = value
+    if m != nil {
+        m.calculated = value
+    }
 }
 // SetChoice sets the choice property value. This column stores data from a list of choices.
 func (m *ColumnDefinition) SetChoice(value *ChoiceColumn)() {
-    m.choice = value
+    if m != nil {
+        m.choice = value
+    }
 }
 // SetColumnGroup sets the columnGroup property value. For site columns, the name of the group this column belongs to. Helps organize related columns.
 func (m *ColumnDefinition) SetColumnGroup(value *string)() {
-    m.columnGroup = value
+    if m != nil {
+        m.columnGroup = value
+    }
 }
 // SetContentApprovalStatus sets the contentApprovalStatus property value. This column stores content approval status.
 func (m *ColumnDefinition) SetContentApprovalStatus(value *ContentApprovalStatusColumn)() {
-    m.contentApprovalStatus = value
+    if m != nil {
+        m.contentApprovalStatus = value
+    }
 }
 // SetCurrency sets the currency property value. This column stores currency values.
 func (m *ColumnDefinition) SetCurrency(value *CurrencyColumn)() {
-    m.currency = value
+    if m != nil {
+        m.currency = value
+    }
 }
 // SetDateTime sets the dateTime property value. This column stores DateTime values.
 func (m *ColumnDefinition) SetDateTime(value *DateTimeColumn)() {
-    m.dateTime = value
+    if m != nil {
+        m.dateTime = value
+    }
 }
 // SetDefaultValue sets the defaultValue property value. The default value for this column.
 func (m *ColumnDefinition) SetDefaultValue(value *DefaultColumnValue)() {
-    m.defaultValue = value
+    if m != nil {
+        m.defaultValue = value
+    }
 }
 // SetDescription sets the description property value. The user-facing description of the column.
 func (m *ColumnDefinition) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The user-facing name of the column.
 func (m *ColumnDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEnforceUniqueValues sets the enforceUniqueValues property value. If true, no two list items may have the same value for this column.
 func (m *ColumnDefinition) SetEnforceUniqueValues(value *bool)() {
-    m.enforceUniqueValues = value
+    if m != nil {
+        m.enforceUniqueValues = value
+    }
 }
 // SetGeolocation sets the geolocation property value. This column stores a geolocation.
 func (m *ColumnDefinition) SetGeolocation(value *GeolocationColumn)() {
-    m.geolocation = value
+    if m != nil {
+        m.geolocation = value
+    }
 }
 // SetHidden sets the hidden property value. Specifies whether the column is displayed in the user interface.
 func (m *ColumnDefinition) SetHidden(value *bool)() {
-    m.hidden = value
+    if m != nil {
+        m.hidden = value
+    }
 }
 // SetHyperlinkOrPicture sets the hyperlinkOrPicture property value. This column stores hyperlink or picture values.
 func (m *ColumnDefinition) SetHyperlinkOrPicture(value *HyperlinkOrPictureColumn)() {
-    m.hyperlinkOrPicture = value
+    if m != nil {
+        m.hyperlinkOrPicture = value
+    }
 }
 // SetIndexed sets the indexed property value. Specifies whether the column values can be used for sorting and searching.
 func (m *ColumnDefinition) SetIndexed(value *bool)() {
-    m.indexed = value
+    if m != nil {
+        m.indexed = value
+    }
 }
 // SetIsDeletable sets the isDeletable property value. Indicates whether this column can be deleted.
 func (m *ColumnDefinition) SetIsDeletable(value *bool)() {
-    m.isDeletable = value
+    if m != nil {
+        m.isDeletable = value
+    }
 }
 // SetIsReorderable sets the isReorderable property value. Indicates whether values in the column can be reordered. Read-only.
 func (m *ColumnDefinition) SetIsReorderable(value *bool)() {
-    m.isReorderable = value
+    if m != nil {
+        m.isReorderable = value
+    }
 }
 // SetIsSealed sets the isSealed property value. Specifies whether the column can be changed.
 func (m *ColumnDefinition) SetIsSealed(value *bool)() {
-    m.isSealed = value
+    if m != nil {
+        m.isSealed = value
+    }
 }
 // SetLookup sets the lookup property value. This column's data is looked up from another source in the site.
 func (m *ColumnDefinition) SetLookup(value *LookupColumn)() {
-    m.lookup = value
+    if m != nil {
+        m.lookup = value
+    }
 }
 // SetName sets the name property value. The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.
 func (m *ColumnDefinition) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetNumber sets the number property value. This column stores number values.
 func (m *ColumnDefinition) SetNumber(value *NumberColumn)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetPersonOrGroup sets the personOrGroup property value. This column stores Person or Group values.
 func (m *ColumnDefinition) SetPersonOrGroup(value *PersonOrGroupColumn)() {
-    m.personOrGroup = value
+    if m != nil {
+        m.personOrGroup = value
+    }
 }
 // SetPropagateChanges sets the propagateChanges property value. If 'true', changes to this column will be propagated to lists that implement the column.
 func (m *ColumnDefinition) SetPropagateChanges(value *bool)() {
-    m.propagateChanges = value
+    if m != nil {
+        m.propagateChanges = value
+    }
 }
 // SetReadOnly sets the readOnly property value. Specifies whether the column values can be modified.
 func (m *ColumnDefinition) SetReadOnly(value *bool)() {
-    m.readOnly = value
+    if m != nil {
+        m.readOnly = value
+    }
 }
 // SetRequired sets the required property value. Specifies whether the column value isn't optional.
 func (m *ColumnDefinition) SetRequired(value *bool)() {
-    m.required = value
+    if m != nil {
+        m.required = value
+    }
 }
 // SetSourceColumn sets the sourceColumn property value. The source column for the content type column.
 func (m *ColumnDefinition) SetSourceColumn(value *ColumnDefinition)() {
-    m.sourceColumn = value
+    if m != nil {
+        m.sourceColumn = value
+    }
 }
 // SetTerm sets the term property value. This column stores taxonomy terms.
 func (m *ColumnDefinition) SetTerm(value *TermColumn)() {
-    m.term = value
+    if m != nil {
+        m.term = value
+    }
 }
 // SetText sets the text property value. This column stores text values.
 func (m *ColumnDefinition) SetText(value *TextColumn)() {
-    m.text = value
+    if m != nil {
+        m.text = value
+    }
 }
 // SetThumbnail sets the thumbnail property value. This column stores thumbnail values.
 func (m *ColumnDefinition) SetThumbnail(value *ThumbnailColumn)() {
-    m.thumbnail = value
+    if m != nil {
+        m.thumbnail = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. For site columns, the type of column. Read-only.
-func (m *ColumnDefinition) SetType_escaped(value *ColumnTypes)() {
-    m.type_escaped = value
+// SetType sets the type property value. For site columns, the type of column. Read-only.
+func (m *ColumnDefinition) SetType(value *ColumnTypes)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetValidation sets the validation property value. This column stores validation formula and message for the column.
 func (m *ColumnDefinition) SetValidation(value *ColumnValidation)() {
-    m.validation = value
+    if m != nil {
+        m.validation = value
+    }
 }

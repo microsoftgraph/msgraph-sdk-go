@@ -14,7 +14,7 @@ type WorkbookNamedItem struct {
     // Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
     scope *string;
     // Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
-    type_escaped *string;
+    type *string;
     // Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
     value *Json;
     // Specifies whether the object is visible or not.
@@ -53,12 +53,12 @@ func (m *WorkbookNamedItem) GetScope()(*string) {
         return m.scope
     }
 }
-// GetType_escaped gets the type_escaped property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
-func (m *WorkbookNamedItem) GetType_escaped()(*string) {
+// GetType gets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
+func (m *WorkbookNamedItem) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetValue gets the value property value. Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
@@ -118,13 +118,13 @@ func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -188,7 +188,7 @@ func (m *WorkbookNamedItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -215,29 +215,43 @@ func (m *WorkbookNamedItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetComment sets the comment property value. Represents the comment associated with this name.
 func (m *WorkbookNamedItem) SetComment(value *string)() {
-    m.comment = value
+    if m != nil {
+        m.comment = value
+    }
 }
 // SetName sets the name property value. The name of the object. Read-only.
 func (m *WorkbookNamedItem) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetScope sets the scope property value. Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
 func (m *WorkbookNamedItem) SetScope(value *string)() {
-    m.scope = value
+    if m != nil {
+        m.scope = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
-func (m *WorkbookNamedItem) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
+func (m *WorkbookNamedItem) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetValue sets the value property value. Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
 func (m *WorkbookNamedItem) SetValue(value *Json)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }
 // SetVisible sets the visible property value. Specifies whether the object is visible or not.
 func (m *WorkbookNamedItem) SetVisible(value *bool)() {
-    m.visible = value
+    if m != nil {
+        m.visible = value
+    }
 }
 // SetWorksheet sets the worksheet property value. Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
 func (m *WorkbookNamedItem) SetWorksheet(value *WorkbookWorksheet)() {
-    m.worksheet = value
+    if m != nil {
+        m.worksheet = value
+    }
 }

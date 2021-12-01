@@ -13,7 +13,7 @@ type AlternativeSecurityId struct {
     // For internal use only
     key []byte;
     // For internal use only
-    type_escaped *int32;
+    type *int32;
 }
 // NewAlternativeSecurityId instantiates a new alternativeSecurityId and sets the default values.
 func NewAlternativeSecurityId()(*AlternativeSecurityId) {
@@ -46,12 +46,12 @@ func (m *AlternativeSecurityId) GetKey()([]byte) {
         return m.key
     }
 }
-// GetType_escaped gets the type_escaped property value. For internal use only
-func (m *AlternativeSecurityId) GetType_escaped()(*int32) {
+// GetType gets the type property value. For internal use only
+func (m *AlternativeSecurityId) GetType()(*int32) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -77,13 +77,13 @@ func (m *AlternativeSecurityId) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -107,7 +107,7 @@ func (m *AlternativeSecurityId) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     {
-        err := writer.WriteInt32Value("type_escaped", m.GetType_escaped())
+        err := writer.WriteInt32Value("type", m.GetType())
         if err != nil {
             return err
         }
@@ -122,17 +122,25 @@ func (m *AlternativeSecurityId) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlternativeSecurityId) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIdentityProvider sets the identityProvider property value. For internal use only
 func (m *AlternativeSecurityId) SetIdentityProvider(value *string)() {
-    m.identityProvider = value
+    if m != nil {
+        m.identityProvider = value
+    }
 }
 // SetKey sets the key property value. For internal use only
 func (m *AlternativeSecurityId) SetKey(value []byte)() {
-    m.key = value
+    if m != nil {
+        m.key = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. For internal use only
-func (m *AlternativeSecurityId) SetType_escaped(value *int32)() {
-    m.type_escaped = value
+// SetType sets the type property value. For internal use only
+func (m *AlternativeSecurityId) SetType(value *int32)() {
+    if m != nil {
+        m.type = value
+    }
 }

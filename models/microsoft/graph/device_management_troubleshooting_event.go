@@ -86,9 +86,13 @@ func (m *DeviceManagementTroubleshootingEvent) Serialize(writer i04eb5309aeaafad
 }
 // SetCorrelationId sets the correlationId property value. Id used for tracing the failure in the service.
 func (m *DeviceManagementTroubleshootingEvent) SetCorrelationId(value *string)() {
-    m.correlationId = value
+    if m != nil {
+        m.correlationId = value
+    }
 }
 // SetEventDateTime sets the eventDateTime property value. Time when the event occurred .
 func (m *DeviceManagementTroubleshootingEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.eventDateTime = value
+    if m != nil {
+        m.eventDateTime = value
+    }
 }

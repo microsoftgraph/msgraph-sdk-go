@@ -54,7 +54,7 @@ type DeviceCompliancePolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceCompliancePolicyRequestBuilderPatchOptions options for Patch
 type DeviceCompliancePolicyRequestBuilderPatchOptions struct {

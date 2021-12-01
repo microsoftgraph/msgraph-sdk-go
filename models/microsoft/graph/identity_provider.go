@@ -14,7 +14,7 @@ type IdentityProvider struct {
     // The display name of the identity provider. Not nullable.
     name *string;
     // The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
-    type_escaped *string;
+    type *string;
 }
 // NewIdentityProvider instantiates a new identityProvider and sets the default values.
 func NewIdentityProvider()(*IdentityProvider) {
@@ -47,12 +47,12 @@ func (m *IdentityProvider) GetName()(*string) {
         return m.name
     }
 }
-// GetType_escaped gets the type_escaped property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
-func (m *IdentityProvider) GetType_escaped()(*string) {
+// GetType gets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
+func (m *IdentityProvider) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -88,13 +88,13 @@ func (m *IdentityProvider) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -128,7 +128,7 @@ func (m *IdentityProvider) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -137,17 +137,25 @@ func (m *IdentityProvider) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetClientId sets the clientId property value. The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
 func (m *IdentityProvider) SetClientId(value *string)() {
-    m.clientId = value
+    if m != nil {
+        m.clientId = value
+    }
 }
 // SetClientSecret sets the clientSecret property value. The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
 func (m *IdentityProvider) SetClientSecret(value *string)() {
-    m.clientSecret = value
+    if m != nil {
+        m.clientSecret = value
+    }
 }
 // SetName sets the name property value. The display name of the identity provider. Not nullable.
 func (m *IdentityProvider) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
-func (m *IdentityProvider) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
+func (m *IdentityProvider) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }

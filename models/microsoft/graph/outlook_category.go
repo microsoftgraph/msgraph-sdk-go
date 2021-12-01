@@ -87,9 +87,13 @@ func (m *OutlookCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetColor sets the color property value. A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.
 func (m *OutlookCategory) SetColor(value *CategoryColor)() {
-    m.color = value
+    if m != nil {
+        m.color = value
+    }
 }
 // SetDisplayName sets the displayName property value. A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.
 func (m *OutlookCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

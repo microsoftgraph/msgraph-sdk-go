@@ -70,9 +70,13 @@ func (m *HyperlinkOrPictureColumn) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HyperlinkOrPictureColumn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsPicture sets the isPicture property value. Specifies whether the display format used for URL columns is an image or a hyperlink.
 func (m *HyperlinkOrPictureColumn) SetIsPicture(value *bool)() {
-    m.isPicture = value
+    if m != nil {
+        m.isPicture = value
+    }
 }

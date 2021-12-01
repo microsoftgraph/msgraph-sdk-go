@@ -164,21 +164,31 @@ func (m *Trending) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. 
 func (m *Trending) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetResource sets the resource property value. Used for navigating to the trending document.
 func (m *Trending) SetResource(value *Entity)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }
 // SetResourceReference sets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
 func (m *Trending) SetResourceReference(value *ResourceReference)() {
-    m.resourceReference = value
+    if m != nil {
+        m.resourceReference = value
+    }
 }
 // SetResourceVisualization sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
 func (m *Trending) SetResourceVisualization(value *ResourceVisualization)() {
-    m.resourceVisualization = value
+    if m != nil {
+        m.resourceVisualization = value
+    }
 }
 // SetWeight sets the weight property value. Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
 func (m *Trending) SetWeight(value *float64)() {
-    m.weight = value
+    if m != nil {
+        m.weight = value
+    }
 }

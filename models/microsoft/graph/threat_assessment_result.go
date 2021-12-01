@@ -114,13 +114,19 @@ func (m *ThreatAssessmentResult) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ThreatAssessmentResult) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetMessage sets the message property value. The result message for each threat assessment.
 func (m *ThreatAssessmentResult) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }
 // SetResultType sets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
 func (m *ThreatAssessmentResult) SetResultType(value *ThreatAssessmentResultType)() {
-    m.resultType = value
+    if m != nil {
+        m.resultType = value
+    }
 }

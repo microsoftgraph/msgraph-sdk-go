@@ -59,5 +59,7 @@ func (m *ProvisioningSystem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetDetails sets the details property value. Details of the system.
 func (m *ProvisioningSystem) SetDetails(value *DetailsInfo)() {
-    m.details = value
+    if m != nil {
+        m.details = value
+    }
 }

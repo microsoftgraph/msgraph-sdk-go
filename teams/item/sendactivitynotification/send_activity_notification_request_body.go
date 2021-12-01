@@ -210,29 +210,43 @@ func (m *SendActivityNotificationRequestBody) Serialize(writer i04eb5309aeaafadd
 }
 // SetActivityType sets the activityType property value. 
 func (m *SendActivityNotificationRequestBody) SetActivityType(value *string)() {
-    m.activityType = value
+    if m != nil {
+        m.activityType = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendActivityNotificationRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetChainId sets the chainId property value. 
 func (m *SendActivityNotificationRequestBody) SetChainId(value *int64)() {
-    m.chainId = value
+    if m != nil {
+        m.chainId = value
+    }
 }
 // SetPreviewText sets the previewText property value. 
 func (m *SendActivityNotificationRequestBody) SetPreviewText(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBody)() {
-    m.previewText = value
+    if m != nil {
+        m.previewText = value
+    }
 }
 // SetRecipient sets the recipient property value. 
 func (m *SendActivityNotificationRequestBody) SetRecipient(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamworkNotificationRecipient)() {
-    m.recipient = value
+    if m != nil {
+        m.recipient = value
+    }
 }
 // SetTemplateParameters sets the templateParameters property value. 
 func (m *SendActivityNotificationRequestBody) SetTemplateParameters(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.KeyValuePair)() {
-    m.templateParameters = value
+    if m != nil {
+        m.templateParameters = value
+    }
 }
 // SetTopic sets the topic property value. 
 func (m *SendActivityNotificationRequestBody) SetTopic(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamworkActivityTopic)() {
-    m.topic = value
+    if m != nil {
+        m.topic = value
+    }
 }

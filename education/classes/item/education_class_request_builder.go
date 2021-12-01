@@ -50,7 +50,7 @@ type EducationClassRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // EducationClassRequestBuilderPatchOptions options for Patch
 type EducationClassRequestBuilderPatchOptions struct {

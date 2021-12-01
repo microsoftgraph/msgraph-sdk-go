@@ -59,7 +59,7 @@ type CallRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // CallRequestBuilderPatchOptions options for Patch
 type CallRequestBuilderPatchOptions struct {

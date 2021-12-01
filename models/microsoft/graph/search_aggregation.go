@@ -105,13 +105,19 @@ func (m *SearchAggregation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchAggregation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBuckets sets the buckets property value. Defines the actual buckets of the computed aggregation.
 func (m *SearchAggregation) SetBuckets(value []SearchBucket)() {
-    m.buckets = value
+    if m != nil {
+        m.buckets = value
+    }
 }
 // SetField sets the field property value. Defines on which field the aggregation was computed on.
 func (m *SearchAggregation) SetField(value *string)() {
-    m.field = value
+    if m != nil {
+        m.field = value
+    }
 }

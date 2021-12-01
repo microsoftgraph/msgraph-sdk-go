@@ -85,9 +85,13 @@ func (m *UserConsentRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetApproval sets the approval property value. Approval decisions associated with a request.
 func (m *UserConsentRequest) SetApproval(value *Approval)() {
-    m.approval = value
+    if m != nil {
+        m.approval = value
+    }
 }
 // SetReason sets the reason property value. The user's justification for requiring access to the app. Supports $filter (eq only) and $orderby.
 func (m *UserConsentRequest) SetReason(value *string)() {
-    m.reason = value
+    if m != nil {
+        m.reason = value
+    }
 }

@@ -199,25 +199,37 @@ func (m *Segment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetCallee sets the callee property value. Endpoint that answered this segment.
 func (m *Segment) SetCallee(value *Endpoint)() {
-    m.callee = value
+    if m != nil {
+        m.callee = value
+    }
 }
 // SetCaller sets the caller property value. Endpoint that initiated this segment.
 func (m *Segment) SetCaller(value *Endpoint)() {
-    m.caller = value
+    if m != nil {
+        m.caller = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Segment) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetFailureInfo sets the failureInfo property value. Failure information associated with the segment if it failed.
 func (m *Segment) SetFailureInfo(value *FailureInfo)() {
-    m.failureInfo = value
+    if m != nil {
+        m.failureInfo = value
+    }
 }
 // SetMedia sets the media property value. Media associated with this segment.
 func (m *Segment) SetMedia(value []Media)() {
-    m.media = value
+    if m != nil {
+        m.media = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Segment) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }

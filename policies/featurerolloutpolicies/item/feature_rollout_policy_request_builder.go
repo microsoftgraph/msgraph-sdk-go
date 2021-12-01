@@ -42,7 +42,7 @@ type FeatureRolloutPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // FeatureRolloutPolicyRequestBuilderPatchOptions options for Patch
 type FeatureRolloutPolicyRequestBuilderPatchOptions struct {

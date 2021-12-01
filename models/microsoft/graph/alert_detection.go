@@ -122,17 +122,25 @@ func (m *AlertDetection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlertDetection) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDetectionType sets the detectionType property value. 
 func (m *AlertDetection) SetDetectionType(value *string)() {
-    m.detectionType = value
+    if m != nil {
+        m.detectionType = value
+    }
 }
 // SetMethod sets the method property value. 
 func (m *AlertDetection) SetMethod(value *string)() {
-    m.method = value
+    if m != nil {
+        m.method = value
+    }
 }
 // SetName sets the name property value. 
 func (m *AlertDetection) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

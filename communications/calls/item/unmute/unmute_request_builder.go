@@ -92,11 +92,15 @@ func (m *UnmuteResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnmuteResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetUnmuteParticipantOperation sets the unmuteParticipantOperation property value. Union type representation for type unmuteParticipantOperation
 func (m *UnmuteResponse) SetUnmuteParticipantOperation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnmuteParticipantOperation)() {
-    m.unmuteParticipantOperation = value
+    if m != nil {
+        m.unmuteParticipantOperation = value
+    }
 }
 // NewUnmuteRequestBuilderInternal instantiates a new UnmuteRequestBuilder and sets the default values.
 func NewUnmuteRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*UnmuteRequestBuilder) {

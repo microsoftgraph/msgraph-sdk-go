@@ -123,17 +123,25 @@ func (m *DateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DateRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDay sets the day property value. 
 func (m *DateRequestBody) SetDay(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.day = value
+    if m != nil {
+        m.day = value
+    }
 }
 // SetMonth sets the month property value. 
 func (m *DateRequestBody) SetMonth(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.month = value
+    if m != nil {
+        m.month = value
+    }
 }
 // SetYear sets the year property value. 
 func (m *DateRequestBody) SetYear(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.year = value
+    if m != nil {
+        m.year = value
+    }
 }

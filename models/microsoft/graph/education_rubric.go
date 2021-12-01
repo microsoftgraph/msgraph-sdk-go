@@ -286,37 +286,55 @@ func (m *EducationRubric) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetCreatedBy sets the createdBy property value. The user who created this resource.
 func (m *EducationRubric) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationRubric) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. The description of this rubric.
 func (m *EducationRubric) SetDescription(value *EducationItemBody)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of this rubric.
 func (m *EducationRubric) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetGrading sets the grading property value. The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.
 func (m *EducationRubric) SetGrading(value *EducationAssignmentGradeType)() {
-    m.grading = value
+    if m != nil {
+        m.grading = value
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The last user to modify the resource.
 func (m *EducationRubric) SetLastModifiedBy(value *IdentitySet)() {
-    m.lastModifiedBy = value
+    if m != nil {
+        m.lastModifiedBy = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationRubric) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetLevels sets the levels property value. The collection of levels making up this rubric.
 func (m *EducationRubric) SetLevels(value []RubricLevel)() {
-    m.levels = value
+    if m != nil {
+        m.levels = value
+    }
 }
 // SetQualities sets the qualities property value. The collection of qualities making up this rubric.
 func (m *EducationRubric) SetQualities(value []RubricQuality)() {
-    m.qualities = value
+    if m != nil {
+        m.qualities = value
+    }
 }

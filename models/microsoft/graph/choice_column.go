@@ -126,17 +126,25 @@ func (m *ChoiceColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChoiceColumn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowTextEntry sets the allowTextEntry property value. If true, allows custom values that aren't in the configured choices.
 func (m *ChoiceColumn) SetAllowTextEntry(value *bool)() {
-    m.allowTextEntry = value
+    if m != nil {
+        m.allowTextEntry = value
+    }
 }
 // SetChoices sets the choices property value. The list of values available for this column.
 func (m *ChoiceColumn) SetChoices(value []string)() {
-    m.choices = value
+    if m != nil {
+        m.choices = value
+    }
 }
 // SetDisplayAs sets the displayAs property value. How the choices are to be presented in the UX. Must be one of checkBoxes, dropDownMenu, or radioButtons
 func (m *ChoiceColumn) SetDisplayAs(value *string)() {
-    m.displayAs = value
+    if m != nil {
+        m.displayAs = value
+    }
 }

@@ -13,7 +13,7 @@ type Website struct {
     // The display name of the web site.
     displayName *string;
     // The possible values are: other, home, work, blog, profile.
-    type_escaped *WebsiteType;
+    type *WebsiteType;
 }
 // NewWebsite instantiates a new website and sets the default values.
 func NewWebsite()(*Website) {
@@ -46,12 +46,12 @@ func (m *Website) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetType_escaped gets the type_escaped property value. The possible values are: other, home, work, blog, profile.
-func (m *Website) GetType_escaped()(*WebsiteType) {
+// GetType gets the type property value. The possible values are: other, home, work, blog, profile.
+func (m *Website) GetType()(*WebsiteType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -77,14 +77,14 @@ func (m *Website) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseWebsiteType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(WebsiteType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -107,9 +107,9 @@ func (m *Website) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -124,17 +124,25 @@ func (m *Website) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Website) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAddress sets the address property value. The URL of the website.
 func (m *Website) SetAddress(value *string)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the web site.
 func (m *Website) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The possible values are: other, home, work, blog, profile.
-func (m *Website) SetType_escaped(value *WebsiteType)() {
-    m.type_escaped = value
+// SetType sets the type property value. The possible values are: other, home, work, blog, profile.
+func (m *Website) SetType(value *WebsiteType)() {
+    if m != nil {
+        m.type = value
+    }
 }

@@ -103,9 +103,13 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnit)() {
-    m.administrativeUnits = value
+    if m != nil {
+        m.administrativeUnits = value
+    }
 }
 // SetDeletedItems sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
 func (m *Directory) SetDeletedItems(value []DirectoryObject)() {
-    m.deletedItems = value
+    if m != nil {
+        m.deletedItems = value
+    }
 }

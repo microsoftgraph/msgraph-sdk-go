@@ -59,5 +59,7 @@ func (m *PrintUsageByUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The UPN of the user represented by these statistics.
 func (m *PrintUsageByUser) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

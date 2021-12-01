@@ -74,9 +74,13 @@ func (m *MarkUnreadRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MarkUnreadRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMessageIds sets the messageIds property value. 
 func (m *MarkUnreadRequestBody) SetMessageIds(value []string)() {
-    m.messageIds = value
+    if m != nil {
+        m.messageIds = value
+    }
 }

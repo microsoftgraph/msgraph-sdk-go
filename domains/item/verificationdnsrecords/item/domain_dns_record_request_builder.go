@@ -40,7 +40,7 @@ type DomainDnsRecordRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DomainDnsRecordRequestBuilderPatchOptions options for Patch
 type DomainDnsRecordRequestBuilderPatchOptions struct {

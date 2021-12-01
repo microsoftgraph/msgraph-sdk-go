@@ -660,97 +660,145 @@ func (m *PlannerTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetActiveChecklistItemCount sets the activeChecklistItemCount property value. Number of checklist items with value set to false, representing incomplete items.
 func (m *PlannerTask) SetActiveChecklistItemCount(value *int32)() {
-    m.activeChecklistItemCount = value
+    if m != nil {
+        m.activeChecklistItemCount = value
+    }
 }
 // SetAppliedCategories sets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
 func (m *PlannerTask) SetAppliedCategories(value *PlannerAppliedCategories)() {
-    m.appliedCategories = value
+    if m != nil {
+        m.appliedCategories = value
+    }
 }
 // SetAssignedToTaskBoardFormat sets the assignedToTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
 func (m *PlannerTask) SetAssignedToTaskBoardFormat(value *PlannerAssignedToTaskBoardTaskFormat)() {
-    m.assignedToTaskBoardFormat = value
+    if m != nil {
+        m.assignedToTaskBoardFormat = value
+    }
 }
 // SetAssigneePriority sets the assigneePriority property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerTask) SetAssigneePriority(value *string)() {
-    m.assigneePriority = value
+    if m != nil {
+        m.assigneePriority = value
+    }
 }
 // SetAssignments sets the assignments property value. The set of assignees the task is assigned to.
 func (m *PlannerTask) SetAssignments(value *PlannerAssignments)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetBucketId sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
 func (m *PlannerTask) SetBucketId(value *string)() {
-    m.bucketId = value
+    if m != nil {
+        m.bucketId = value
+    }
 }
 // SetBucketTaskBoardFormat sets the bucketTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
 func (m *PlannerTask) SetBucketTaskBoardFormat(value *PlannerBucketTaskBoardTaskFormat)() {
-    m.bucketTaskBoardFormat = value
+    if m != nil {
+        m.bucketTaskBoardFormat = value
+    }
 }
 // SetChecklistItemCount sets the checklistItemCount property value. Number of checklist items that are present on the task.
 func (m *PlannerTask) SetChecklistItemCount(value *int32)() {
-    m.checklistItemCount = value
+    if m != nil {
+        m.checklistItemCount = value
+    }
 }
 // SetCompletedBy sets the completedBy property value. Identity of the user that completed the task.
 func (m *PlannerTask) SetCompletedBy(value *IdentitySet)() {
-    m.completedBy = value
+    if m != nil {
+        m.completedBy = value
+    }
 }
 // SetCompletedDateTime sets the completedDateTime property value. Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.completedDateTime = value
+    if m != nil {
+        m.completedDateTime = value
+    }
 }
 // SetConversationThreadId sets the conversationThreadId property value. Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
 func (m *PlannerTask) SetConversationThreadId(value *string)() {
-    m.conversationThreadId = value
+    if m != nil {
+        m.conversationThreadId = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user that created the task.
 func (m *PlannerTask) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDetails sets the details property value. Read-only. Nullable. Additional details about the task.
 func (m *PlannerTask) SetDetails(value *PlannerTaskDetails)() {
-    m.details = value
+    if m != nil {
+        m.details = value
+    }
 }
 // SetDueDateTime sets the dueDateTime property value. Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.dueDateTime = value
+    if m != nil {
+        m.dueDateTime = value
+    }
 }
 // SetHasDescription sets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
 func (m *PlannerTask) SetHasDescription(value *bool)() {
-    m.hasDescription = value
+    if m != nil {
+        m.hasDescription = value
+    }
 }
 // SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
 func (m *PlannerTask) SetOrderHint(value *string)() {
-    m.orderHint = value
+    if m != nil {
+        m.orderHint = value
+    }
 }
 // SetPercentComplete sets the percentComplete property value. Percentage of task completion. When set to 100, the task is considered completed.
 func (m *PlannerTask) SetPercentComplete(value *int32)() {
-    m.percentComplete = value
+    if m != nil {
+        m.percentComplete = value
+    }
 }
 // SetPlanId sets the planId property value. Plan ID to which the task belongs.
 func (m *PlannerTask) SetPlanId(value *string)() {
-    m.planId = value
+    if m != nil {
+        m.planId = value
+    }
 }
 // SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
 func (m *PlannerTask) SetPreviewType(value *PlannerPreviewType)() {
-    m.previewType = value
+    if m != nil {
+        m.previewType = value
+    }
 }
 // SetProgressTaskBoardFormat sets the progressTaskBoardFormat property value. Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
 func (m *PlannerTask) SetProgressTaskBoardFormat(value *PlannerProgressTaskBoardTaskFormat)() {
-    m.progressTaskBoardFormat = value
+    if m != nil {
+        m.progressTaskBoardFormat = value
+    }
 }
 // SetReferenceCount sets the referenceCount property value. Number of external references that exist on the task.
 func (m *PlannerTask) SetReferenceCount(value *int32)() {
-    m.referenceCount = value
+    if m != nil {
+        m.referenceCount = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
 // SetTitle sets the title property value. Title of the task.
 func (m *PlannerTask) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }

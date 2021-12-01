@@ -148,21 +148,31 @@ func (m *TeamsTabConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamsTabConfiguration) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentUrl sets the contentUrl property value. Url used for rendering tab contents in Teams. Required.
 func (m *TeamsTabConfiguration) SetContentUrl(value *string)() {
-    m.contentUrl = value
+    if m != nil {
+        m.contentUrl = value
+    }
 }
 // SetEntityId sets the entityId property value. Identifier for the entity hosted by the tab provider.
 func (m *TeamsTabConfiguration) SetEntityId(value *string)() {
-    m.entityId = value
+    if m != nil {
+        m.entityId = value
+    }
 }
 // SetRemoveUrl sets the removeUrl property value. Url called by Teams client when a Tab is removed using the Teams Client.
 func (m *TeamsTabConfiguration) SetRemoveUrl(value *string)() {
-    m.removeUrl = value
+    if m != nil {
+        m.removeUrl = value
+    }
 }
 // SetWebsiteUrl sets the websiteUrl property value. Url for showing tab contents outside of Teams.
 func (m *TeamsTabConfiguration) SetWebsiteUrl(value *string)() {
-    m.websiteUrl = value
+    if m != nil {
+        m.websiteUrl = value
+    }
 }

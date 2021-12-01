@@ -70,9 +70,13 @@ func (m *ExportPersonalDataRequestBody) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExportPersonalDataRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetStorageLocation sets the storageLocation property value. 
 func (m *ExportPersonalDataRequestBody) SetStorageLocation(value *string)() {
-    m.storageLocation = value
+    if m != nil {
+        m.storageLocation = value
+    }
 }

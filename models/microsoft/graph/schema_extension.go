@@ -176,21 +176,31 @@ func (m *SchemaExtension) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetDescription sets the description property value. Description for the schema extension. Supports $filter (eq).
 func (m *SchemaExtension) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetOwner sets the owner property value. The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application's appId will be set as the owner. In either case, the signed-in user must be the owner of the application. So, for example, if creating a new schema extension definition using Graph Explorer, you must supply the owner property. Once set, this property is read-only and cannot be changed. Supports $filter (eq).
 func (m *SchemaExtension) SetOwner(value *string)() {
-    m.owner = value
+    if m != nil {
+        m.owner = value
+    }
 }
 // SetProperties sets the properties property value. The collection of property names and types that make up the schema extension definition.
 func (m *SchemaExtension) SetProperties(value []ExtensionSchemaProperty)() {
-    m.properties = value
+    if m != nil {
+        m.properties = value
+    }
 }
 // SetStatus sets the status property value. The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports $filter (eq).
 func (m *SchemaExtension) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTargetTypes sets the targetTypes property value. Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
 func (m *SchemaExtension) SetTargetTypes(value []string)() {
-    m.targetTypes = value
+    if m != nil {
+        m.targetTypes = value
+    }
 }

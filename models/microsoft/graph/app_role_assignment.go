@@ -216,29 +216,43 @@ func (m *AppRoleAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAppRoleId sets the appRoleId property value. The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
 func (m *AppRoleAssignment) SetAppRoleId(value *string)() {
-    m.appRoleId = value
+    if m != nil {
+        m.appRoleId = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AppRoleAssignment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetPrincipalDisplayName sets the principalDisplayName property value. The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
 func (m *AppRoleAssignment) SetPrincipalDisplayName(value *string)() {
-    m.principalDisplayName = value
+    if m != nil {
+        m.principalDisplayName = value
+    }
 }
 // SetPrincipalId sets the principalId property value. The unique identifier (id) for the user, group or service principal being granted the app role. Required on create.
 func (m *AppRoleAssignment) SetPrincipalId(value *string)() {
-    m.principalId = value
+    if m != nil {
+        m.principalId = value
+    }
 }
 // SetPrincipalType sets the principalType property value. The type of the assigned principal. This can either be User, Group or ServicePrincipal. Read-only.
 func (m *AppRoleAssignment) SetPrincipalType(value *string)() {
-    m.principalType = value
+    if m != nil {
+        m.principalType = value
+    }
 }
 // SetResourceDisplayName sets the resourceDisplayName property value. The display name of the resource app's service principal to which the assignment is made.
 func (m *AppRoleAssignment) SetResourceDisplayName(value *string)() {
-    m.resourceDisplayName = value
+    if m != nil {
+        m.resourceDisplayName = value
+    }
 }
 // SetResourceId sets the resourceId property value. The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
 func (m *AppRoleAssignment) SetResourceId(value *string)() {
-    m.resourceId = value
+    if m != nil {
+        m.resourceId = value
+    }
 }

@@ -152,21 +152,31 @@ func (m *WorkingHours) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkingHours) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDaysOfWeek sets the daysOfWeek property value. The days of the week on which the user works.
 func (m *WorkingHours) SetDaysOfWeek(value []DayOfWeek)() {
-    m.daysOfWeek = value
+    if m != nil {
+        m.daysOfWeek = value
+    }
 }
 // SetEndTime sets the endTime property value. The time of the day that the user stops working.
 func (m *WorkingHours) SetEndTime(value *string)() {
-    m.endTime = value
+    if m != nil {
+        m.endTime = value
+    }
 }
 // SetStartTime sets the startTime property value. The time of the day that the user starts working.
 func (m *WorkingHours) SetStartTime(value *string)() {
-    m.startTime = value
+    if m != nil {
+        m.startTime = value
+    }
 }
 // SetTimeZone sets the timeZone property value. The time zone to which the working hours apply.
 func (m *WorkingHours) SetTimeZone(value *TimeZoneBase)() {
-    m.timeZone = value
+    if m != nil {
+        m.timeZone = value
+    }
 }

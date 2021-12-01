@@ -139,17 +139,25 @@ func (m *EducationOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetDescription sets the description property value. Organization description.
 func (m *EducationOrganization) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Organization display name.
 func (m *EducationOrganization) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExternalSource sets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
 func (m *EducationOrganization) SetExternalSource(value *EducationExternalSource)() {
-    m.externalSource = value
+    if m != nil {
+        m.externalSource = value
+    }
 }
 // SetExternalSourceDetail sets the externalSourceDetail property value. The name of the external source this resources was generated from.
 func (m *EducationOrganization) SetExternalSourceDetail(value *string)() {
-    m.externalSourceDetail = value
+    if m != nil {
+        m.externalSourceDetail = value
+    }
 }

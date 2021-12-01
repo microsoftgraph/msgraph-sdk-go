@@ -68,5 +68,7 @@ func (m *Approval) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetStages sets the stages property value. A collection of stages in the approval decision.
 func (m *Approval) SetStages(value []ApprovalStage)() {
-    m.stages = value
+    if m != nil {
+        m.stages = value
+    }
 }

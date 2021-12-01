@@ -150,21 +150,31 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) Serialize(writer i04eb5309
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImportedWindowsAutopilotDeviceIdentityState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceErrorCode sets the deviceErrorCode property value. Device error code reported by Device Directory Service(DDS).
 func (m *ImportedWindowsAutopilotDeviceIdentityState) SetDeviceErrorCode(value *int32)() {
-    m.deviceErrorCode = value
+    if m != nil {
+        m.deviceErrorCode = value
+    }
 }
 // SetDeviceErrorName sets the deviceErrorName property value. Device error name reported by Device Directory Service(DDS).
 func (m *ImportedWindowsAutopilotDeviceIdentityState) SetDeviceErrorName(value *string)() {
-    m.deviceErrorName = value
+    if m != nil {
+        m.deviceErrorName = value
+    }
 }
 // SetDeviceImportStatus sets the deviceImportStatus property value. Device status reported by Device Directory Service(DDS). Possible values are: unknown, pending, partial, complete, error.
 func (m *ImportedWindowsAutopilotDeviceIdentityState) SetDeviceImportStatus(value *ImportedWindowsAutopilotDeviceIdentityImportStatus)() {
-    m.deviceImportStatus = value
+    if m != nil {
+        m.deviceImportStatus = value
+    }
 }
 // SetDeviceRegistrationId sets the deviceRegistrationId property value. Device Registration ID for successfully added device reported by Device Directory Service(DDS).
 func (m *ImportedWindowsAutopilotDeviceIdentityState) SetDeviceRegistrationId(value *string)() {
-    m.deviceRegistrationId = value
+    if m != nil {
+        m.deviceRegistrationId = value
+    }
 }

@@ -38,7 +38,7 @@ type CalendarViewRequestBuilderGetQueryParameters struct {
     // Order items by property values
     Orderby []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
     // Skip the first n items
     Skip *int32;
     // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00

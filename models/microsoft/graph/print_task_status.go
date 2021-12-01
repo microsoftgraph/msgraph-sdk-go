@@ -98,13 +98,19 @@ func (m *PrintTaskStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintTaskStatus) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. A human-readable description of the current processing state of the printTask.
 func (m *PrintTaskStatus) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetState sets the state property value. The current processing state of the printTask. Valid values are described in the following table.
 func (m *PrintTaskStatus) SetState(value *PrintTaskProcessingState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

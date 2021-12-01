@@ -111,13 +111,19 @@ func (m *GroupLifecyclePolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAlternateNotificationEmails sets the alternateNotificationEmails property value. List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
 func (m *GroupLifecyclePolicy) SetAlternateNotificationEmails(value *string)() {
-    m.alternateNotificationEmails = value
+    if m != nil {
+        m.alternateNotificationEmails = value
+    }
 }
 // SetGroupLifetimeInDays sets the groupLifetimeInDays property value. Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
 func (m *GroupLifecyclePolicy) SetGroupLifetimeInDays(value *int32)() {
-    m.groupLifetimeInDays = value
+    if m != nil {
+        m.groupLifetimeInDays = value
+    }
 }
 // SetManagedGroupTypes sets the managedGroupTypes property value. The group type for which the expiration policy applies. Possible values are All, Selected or None.
 func (m *GroupLifecyclePolicy) SetManagedGroupTypes(value *string)() {
-    m.managedGroupTypes = value
+    if m != nil {
+        m.managedGroupTypes = value
+    }
 }

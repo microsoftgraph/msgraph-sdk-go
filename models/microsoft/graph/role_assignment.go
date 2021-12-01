@@ -141,17 +141,25 @@ func (m *RoleAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetDescription sets the description property value. Description of the Role Assignment.
 func (m *RoleAssignment) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display or friendly name of the role Assignment.
 func (m *RoleAssignment) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetResourceScopes sets the resourceScopes property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
 func (m *RoleAssignment) SetResourceScopes(value []string)() {
-    m.resourceScopes = value
+    if m != nil {
+        m.resourceScopes = value
+    }
 }
 // SetRoleDefinition sets the roleDefinition property value. Role definition this assignment is part of.
 func (m *RoleAssignment) SetRoleDefinition(value *RoleDefinition)() {
-    m.roleDefinition = value
+    if m != nil {
+        m.roleDefinition = value
+    }
 }

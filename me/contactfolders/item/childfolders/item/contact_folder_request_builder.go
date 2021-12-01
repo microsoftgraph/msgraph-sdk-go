@@ -40,7 +40,7 @@ type ContactFolderRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ContactFolderRequestBuilderPatchOptions options for Patch
 type ContactFolderRequestBuilderPatchOptions struct {

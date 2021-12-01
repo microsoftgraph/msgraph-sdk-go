@@ -244,33 +244,49 @@ func (m *SubjectRightsRequestDetail) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestDetail) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExcludedItemCount sets the excludedItemCount property value. Count of items that are excluded from the request.
 func (m *SubjectRightsRequestDetail) SetExcludedItemCount(value *int64)() {
-    m.excludedItemCount = value
+    if m != nil {
+        m.excludedItemCount = value
+    }
 }
 // SetInsightCounts sets the insightCounts property value. Count of items per insight.
 func (m *SubjectRightsRequestDetail) SetInsightCounts(value []KeyValuePair)() {
-    m.insightCounts = value
+    if m != nil {
+        m.insightCounts = value
+    }
 }
 // SetItemCount sets the itemCount property value. Count of items found.
 func (m *SubjectRightsRequestDetail) SetItemCount(value *int64)() {
-    m.itemCount = value
+    if m != nil {
+        m.itemCount = value
+    }
 }
 // SetItemNeedReview sets the itemNeedReview property value. Count of item that need review.
 func (m *SubjectRightsRequestDetail) SetItemNeedReview(value *int64)() {
-    m.itemNeedReview = value
+    if m != nil {
+        m.itemNeedReview = value
+    }
 }
 // SetProductItemCounts sets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
 func (m *SubjectRightsRequestDetail) SetProductItemCounts(value []KeyValuePair)() {
-    m.productItemCounts = value
+    if m != nil {
+        m.productItemCounts = value
+    }
 }
 // SetSignedOffItemCount sets the signedOffItemCount property value. Count of items signed off by the administrator.
 func (m *SubjectRightsRequestDetail) SetSignedOffItemCount(value *int64)() {
-    m.signedOffItemCount = value
+    if m != nil {
+        m.signedOffItemCount = value
+    }
 }
 // SetTotalItemSize sets the totalItemSize property value. Total item size in bytes.
 func (m *SubjectRightsRequestDetail) SetTotalItemSize(value *int64)() {
-    m.totalItemSize = value
+    if m != nil {
+        m.totalItemSize = value
+    }
 }

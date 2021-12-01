@@ -42,7 +42,7 @@ type TodoRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TodoRequestBuilderPatchOptions options for Patch
 type TodoRequestBuilderPatchOptions struct {

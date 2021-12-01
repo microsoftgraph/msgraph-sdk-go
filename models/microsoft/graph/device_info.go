@@ -590,89 +590,133 @@ func (m *DeviceInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCaptureDeviceDriver sets the captureDeviceDriver property value. Name of the capture device driver used by the media endpoint.
 func (m *DeviceInfo) SetCaptureDeviceDriver(value *string)() {
-    m.captureDeviceDriver = value
+    if m != nil {
+        m.captureDeviceDriver = value
+    }
 }
 // SetCaptureDeviceName sets the captureDeviceName property value. Name of the capture device used by the media endpoint.
 func (m *DeviceInfo) SetCaptureDeviceName(value *string)() {
-    m.captureDeviceName = value
+    if m != nil {
+        m.captureDeviceName = value
+    }
 }
 // SetCaptureNotFunctioningEventRatio sets the captureNotFunctioningEventRatio property value. Fraction of the call that the media endpoint detected the capture device was not working properly.
 func (m *DeviceInfo) SetCaptureNotFunctioningEventRatio(value *float32)() {
-    m.captureNotFunctioningEventRatio = value
+    if m != nil {
+        m.captureNotFunctioningEventRatio = value
+    }
 }
 // SetCpuInsufficentEventRatio sets the cpuInsufficentEventRatio property value. Fraction of the call that the media endpoint detected the CPU resources available were insufficient and caused poor quality of the audio sent and received.
 func (m *DeviceInfo) SetCpuInsufficentEventRatio(value *float32)() {
-    m.cpuInsufficentEventRatio = value
+    if m != nil {
+        m.cpuInsufficentEventRatio = value
+    }
 }
 // SetDeviceClippingEventRatio sets the deviceClippingEventRatio property value. Fraction of the call that the media endpoint detected clipping in the captured audio that caused poor quality of the audio being sent.
 func (m *DeviceInfo) SetDeviceClippingEventRatio(value *float32)() {
-    m.deviceClippingEventRatio = value
+    if m != nil {
+        m.deviceClippingEventRatio = value
+    }
 }
 // SetDeviceGlitchEventRatio sets the deviceGlitchEventRatio property value. Fraction of the call that the media endpoint detected glitches or gaps in the audio played or captured that caused poor quality of the audio being sent or received.
 func (m *DeviceInfo) SetDeviceGlitchEventRatio(value *float32)() {
-    m.deviceGlitchEventRatio = value
+    if m != nil {
+        m.deviceGlitchEventRatio = value
+    }
 }
 // SetHowlingEventCount sets the howlingEventCount property value. Number of times during the call that the media endpoint detected howling or screeching audio.
 func (m *DeviceInfo) SetHowlingEventCount(value *int32)() {
-    m.howlingEventCount = value
+    if m != nil {
+        m.howlingEventCount = value
+    }
 }
 // SetInitialSignalLevelRootMeanSquare sets the initialSignalLevelRootMeanSquare property value. The root mean square (RMS) of the incoming signal of up to the first 30 seconds of the call.
 func (m *DeviceInfo) SetInitialSignalLevelRootMeanSquare(value *float32)() {
-    m.initialSignalLevelRootMeanSquare = value
+    if m != nil {
+        m.initialSignalLevelRootMeanSquare = value
+    }
 }
 // SetLowSpeechLevelEventRatio sets the lowSpeechLevelEventRatio property value. Fraction of the call that the media endpoint detected low speech level that caused poor quality of the audio being sent.
 func (m *DeviceInfo) SetLowSpeechLevelEventRatio(value *float32)() {
-    m.lowSpeechLevelEventRatio = value
+    if m != nil {
+        m.lowSpeechLevelEventRatio = value
+    }
 }
 // SetLowSpeechToNoiseEventRatio sets the lowSpeechToNoiseEventRatio property value. Fraction of the call that the media endpoint detected low speech to noise level that caused poor quality of the audio being sent.
 func (m *DeviceInfo) SetLowSpeechToNoiseEventRatio(value *float32)() {
-    m.lowSpeechToNoiseEventRatio = value
+    if m != nil {
+        m.lowSpeechToNoiseEventRatio = value
+    }
 }
 // SetMicGlitchRate sets the micGlitchRate property value. Glitches per 5 minute interval for the media endpoint's microphone.
 func (m *DeviceInfo) SetMicGlitchRate(value *float32)() {
-    m.micGlitchRate = value
+    if m != nil {
+        m.micGlitchRate = value
+    }
 }
 // SetReceivedNoiseLevel sets the receivedNoiseLevel property value. Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
 func (m *DeviceInfo) SetReceivedNoiseLevel(value *int32)() {
-    m.receivedNoiseLevel = value
+    if m != nil {
+        m.receivedNoiseLevel = value
+    }
 }
 // SetReceivedSignalLevel sets the receivedSignalLevel property value. Average energy level of received audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.
 func (m *DeviceInfo) SetReceivedSignalLevel(value *int32)() {
-    m.receivedSignalLevel = value
+    if m != nil {
+        m.receivedSignalLevel = value
+    }
 }
 // SetRenderDeviceDriver sets the renderDeviceDriver property value. Name of the render device driver used by the media endpoint.
 func (m *DeviceInfo) SetRenderDeviceDriver(value *string)() {
-    m.renderDeviceDriver = value
+    if m != nil {
+        m.renderDeviceDriver = value
+    }
 }
 // SetRenderDeviceName sets the renderDeviceName property value. Name of the render device used by the media endpoint.
 func (m *DeviceInfo) SetRenderDeviceName(value *string)() {
-    m.renderDeviceName = value
+    if m != nil {
+        m.renderDeviceName = value
+    }
 }
 // SetRenderMuteEventRatio sets the renderMuteEventRatio property value. Fraction of the call that media endpoint detected device render is muted.
 func (m *DeviceInfo) SetRenderMuteEventRatio(value *float32)() {
-    m.renderMuteEventRatio = value
+    if m != nil {
+        m.renderMuteEventRatio = value
+    }
 }
 // SetRenderNotFunctioningEventRatio sets the renderNotFunctioningEventRatio property value. Fraction of the call that the media endpoint detected the render device was not working properly.
 func (m *DeviceInfo) SetRenderNotFunctioningEventRatio(value *float32)() {
-    m.renderNotFunctioningEventRatio = value
+    if m != nil {
+        m.renderNotFunctioningEventRatio = value
+    }
 }
 // SetRenderZeroVolumeEventRatio sets the renderZeroVolumeEventRatio property value. Fraction of the call that media endpoint detected device render volume is set to 0.
 func (m *DeviceInfo) SetRenderZeroVolumeEventRatio(value *float32)() {
-    m.renderZeroVolumeEventRatio = value
+    if m != nil {
+        m.renderZeroVolumeEventRatio = value
+    }
 }
 // SetSentNoiseLevel sets the sentNoiseLevel property value. Average energy level of sent audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
 func (m *DeviceInfo) SetSentNoiseLevel(value *int32)() {
-    m.sentNoiseLevel = value
+    if m != nil {
+        m.sentNoiseLevel = value
+    }
 }
 // SetSentSignalLevel sets the sentSignalLevel property value. Average energy level of sent audio for audio classified as mono speech, or left channel of stereo speech by the media endpoint.
 func (m *DeviceInfo) SetSentSignalLevel(value *int32)() {
-    m.sentSignalLevel = value
+    if m != nil {
+        m.sentSignalLevel = value
+    }
 }
 // SetSpeakerGlitchRate sets the speakerGlitchRate property value. Glitches per 5 minute internal for the media endpoint's loudspeaker.
 func (m *DeviceInfo) SetSpeakerGlitchRate(value *float32)() {
-    m.speakerGlitchRate = value
+    if m != nil {
+        m.speakerGlitchRate = value
+    }
 }

@@ -96,13 +96,19 @@ func (m *Image) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Image) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetHeight sets the height property value. Optional. Height of the image, in pixels. Read-only.
 func (m *Image) SetHeight(value *int32)() {
-    m.height = value
+    if m != nil {
+        m.height = value
+    }
 }
 // SetWidth sets the width property value. Optional. Width of the image, in pixels. Read-only.
 func (m *Image) SetWidth(value *int32)() {
-    m.width = value
+    if m != nil {
+        m.width = value
+    }
 }

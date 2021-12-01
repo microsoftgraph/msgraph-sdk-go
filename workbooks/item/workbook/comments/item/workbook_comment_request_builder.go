@@ -42,7 +42,7 @@ type WorkbookCommentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WorkbookCommentRequestBuilderPatchOptions options for Patch
 type WorkbookCommentRequestBuilderPatchOptions struct {

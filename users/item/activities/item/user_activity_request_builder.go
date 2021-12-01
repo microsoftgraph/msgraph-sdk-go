@@ -42,7 +42,7 @@ type UserActivityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UserActivityRequestBuilderPatchOptions options for Patch
 type UserActivityRequestBuilderPatchOptions struct {

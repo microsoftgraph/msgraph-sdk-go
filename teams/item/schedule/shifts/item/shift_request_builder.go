@@ -38,7 +38,7 @@ type ShiftRequestBuilderGetOptions struct {
 // ShiftRequestBuilderGetQueryParameters the shifts in the schedule.
 type ShiftRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ShiftRequestBuilderPatchOptions options for Patch
 type ShiftRequestBuilderPatchOptions struct {

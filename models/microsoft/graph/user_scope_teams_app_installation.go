@@ -59,5 +59,7 @@ func (m *UserScopeTeamsAppInstallation) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetChat sets the chat property value. The chat between the user and Teams app.
 func (m *UserScopeTeamsAppInstallation) SetChat(value *Chat)() {
-    m.chat = value
+    if m != nil {
+        m.chat = value
+    }
 }

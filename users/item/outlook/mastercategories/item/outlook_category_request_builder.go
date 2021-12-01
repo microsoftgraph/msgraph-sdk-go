@@ -38,7 +38,7 @@ type OutlookCategoryRequestBuilderGetOptions struct {
 // OutlookCategoryRequestBuilderGetQueryParameters a list of categories defined for the user.
 type OutlookCategoryRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OutlookCategoryRequestBuilderPatchOptions options for Patch
 type OutlookCategoryRequestBuilderPatchOptions struct {

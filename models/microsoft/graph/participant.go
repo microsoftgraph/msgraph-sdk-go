@@ -198,25 +198,37 @@ func (m *Participant) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetInfo sets the info property value. 
 func (m *Participant) SetInfo(value *ParticipantInfo)() {
-    m.info = value
+    if m != nil {
+        m.info = value
+    }
 }
 // SetIsInLobby sets the isInLobby property value. true if the participant is in lobby.
 func (m *Participant) SetIsInLobby(value *bool)() {
-    m.isInLobby = value
+    if m != nil {
+        m.isInLobby = value
+    }
 }
 // SetIsMuted sets the isMuted property value. true if the participant is muted (client or server muted).
 func (m *Participant) SetIsMuted(value *bool)() {
-    m.isMuted = value
+    if m != nil {
+        m.isMuted = value
+    }
 }
 // SetMediaStreams sets the mediaStreams property value. The list of media streams.
 func (m *Participant) SetMediaStreams(value []MediaStream)() {
-    m.mediaStreams = value
+    if m != nil {
+        m.mediaStreams = value
+    }
 }
 // SetMetadata sets the metadata property value. A blob of data provided by the participant in the roster.
 func (m *Participant) SetMetadata(value *string)() {
-    m.metadata = value
+    if m != nil {
+        m.metadata = value
+    }
 }
 // SetRecordingInfo sets the recordingInfo property value. Information about whether the participant has recording capability.
 func (m *Participant) SetRecordingInfo(value *RecordingInfo)() {
-    m.recordingInfo = value
+    if m != nil {
+        m.recordingInfo = value
+    }
 }

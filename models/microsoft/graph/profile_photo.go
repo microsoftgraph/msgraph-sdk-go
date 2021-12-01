@@ -85,9 +85,13 @@ func (m *ProfilePhoto) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetHeight sets the height property value. The height of the photo. Read-only.
 func (m *ProfilePhoto) SetHeight(value *int32)() {
-    m.height = value
+    if m != nil {
+        m.height = value
+    }
 }
 // SetWidth sets the width property value. The width of the photo. Read-only.
 func (m *ProfilePhoto) SetWidth(value *int32)() {
-    m.width = value
+    if m != nil {
+        m.width = value
+    }
 }

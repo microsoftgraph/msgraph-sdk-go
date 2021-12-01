@@ -85,9 +85,13 @@ func (m *WorkbookChartPoint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetFormat sets the format property value. Encapsulates the format properties chart point. Read-only.
 func (m *WorkbookChartPoint) SetFormat(value *WorkbookChartPointFormat)() {
-    m.format = value
+    if m != nil {
+        m.format = value
+    }
 }
 // SetValue sets the value property value. Returns the value of a chart point. Read-only.
 func (m *WorkbookChartPoint) SetValue(value *Json)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

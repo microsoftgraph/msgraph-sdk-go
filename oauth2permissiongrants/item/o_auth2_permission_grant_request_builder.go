@@ -40,7 +40,7 @@ type OAuth2PermissionGrantRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OAuth2PermissionGrantRequestBuilderPatchOptions options for Patch
 type OAuth2PermissionGrantRequestBuilderPatchOptions struct {

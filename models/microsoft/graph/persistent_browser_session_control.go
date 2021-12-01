@@ -61,5 +61,7 @@ func (m *PersistentBrowserSessionControl) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetMode sets the mode property value. Possible values are: always, never.
 func (m *PersistentBrowserSessionControl) SetMode(value *PersistentBrowserSessionMode)() {
-    m.mode = value
+    if m != nil {
+        m.mode = value
+    }
 }

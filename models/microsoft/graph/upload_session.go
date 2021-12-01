@@ -127,17 +127,25 @@ func (m *UploadSession) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadSession) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
 func (m *UploadSession) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetNextExpectedRanges sets the nextExpectedRanges property value. A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
 func (m *UploadSession) SetNextExpectedRanges(value []string)() {
-    m.nextExpectedRanges = value
+    if m != nil {
+        m.nextExpectedRanges = value
+    }
 }
 // SetUploadUrl sets the uploadUrl property value. The URL endpoint that accepts PUT requests for byte ranges of the file.
 func (m *UploadSession) SetUploadUrl(value *string)() {
-    m.uploadUrl = value
+    if m != nil {
+        m.uploadUrl = value
+    }
 }

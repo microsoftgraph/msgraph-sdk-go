@@ -287,33 +287,49 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
 }
 // SetChildren sets the children property value. Children terms of set in term [store].
 func (m *Set) SetChildren(value []Term)() {
-    m.children = value
+    if m != nil {
+        m.children = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time of set creation. Read-only.
 func (m *Set) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. Description that gives details on the term usage.
 func (m *Set) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetLocalizedNames sets the localizedNames property value. Name of the set for each languageTag.
 func (m *Set) SetLocalizedNames(value []LocalizedName)() {
-    m.localizedNames = value
+    if m != nil {
+        m.localizedNames = value
+    }
 }
 // SetParentGroup sets the parentGroup property value. 
 func (m *Set) SetParentGroup(value *Group)() {
-    m.parentGroup = value
+    if m != nil {
+        m.parentGroup = value
+    }
 }
 // SetProperties sets the properties property value. Custom properties for the set.
 func (m *Set) SetProperties(value []KeyValue)() {
-    m.properties = value
+    if m != nil {
+        m.properties = value
+    }
 }
 // SetRelations sets the relations property value. Indicates which terms have been pinned or reused directly under the set.
 func (m *Set) SetRelations(value []Relation)() {
-    m.relations = value
+    if m != nil {
+        m.relations = value
+    }
 }
 // SetTerms sets the terms property value. All the terms under the set.
 func (m *Set) SetTerms(value []Term)() {
-    m.terms = value
+    if m != nil {
+        m.terms = value
+    }
 }

@@ -70,9 +70,13 @@ func (m *CleanWindowsDeviceRequestBody) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CleanWindowsDeviceRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetKeepUserData sets the keepUserData property value. 
 func (m *CleanWindowsDeviceRequestBody) SetKeepUserData(value *bool)() {
-    m.keepUserData = value
+    if m != nil {
+        m.keepUserData = value
+    }
 }

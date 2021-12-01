@@ -96,13 +96,19 @@ func (m *ImplicitGrantSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImplicitGrantSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnableAccessTokenIssuance sets the enableAccessTokenIssuance property value. Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
 func (m *ImplicitGrantSettings) SetEnableAccessTokenIssuance(value *bool)() {
-    m.enableAccessTokenIssuance = value
+    if m != nil {
+        m.enableAccessTokenIssuance = value
+    }
 }
 // SetEnableIdTokenIssuance sets the enableIdTokenIssuance property value. Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
 func (m *ImplicitGrantSettings) SetEnableIdTokenIssuance(value *bool)() {
-    m.enableIdTokenIssuance = value
+    if m != nil {
+        m.enableIdTokenIssuance = value
+    }
 }

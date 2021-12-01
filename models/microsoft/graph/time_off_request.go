@@ -112,13 +112,19 @@ func (m *TimeOffRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetEndDateTime sets the endDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *TimeOffRequest) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *TimeOffRequest) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
 // SetTimeOffReasonId sets the timeOffReasonId property value. The reason for the time off.
 func (m *TimeOffRequest) SetTimeOffReasonId(value *string)() {
-    m.timeOffReasonId = value
+    if m != nil {
+        m.timeOffReasonId = value
+    }
 }

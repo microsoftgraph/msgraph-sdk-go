@@ -372,53 +372,79 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i04eb5309aeaafadd283
 }
 // SetAccessReviewId sets the accessReviewId property value. The identifier of the accessReviewInstance parent. Supports $select. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetAccessReviewId(value *string)() {
-    m.accessReviewId = value
+    if m != nil {
+        m.accessReviewId = value
+    }
 }
 // SetAppliedBy sets the appliedBy property value. The identifier of the user who applied the decision. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetAppliedBy(value *UserIdentity)() {
-    m.appliedBy = value
+    if m != nil {
+        m.appliedBy = value
+    }
 }
 // SetAppliedDateTime sets the appliedDateTime property value. The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetAppliedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.appliedDateTime = value
+    if m != nil {
+        m.appliedDateTime = value
+    }
 }
 // SetApplyResult sets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetApplyResult(value *string)() {
-    m.applyResult = value
+    if m != nil {
+        m.applyResult = value
+    }
 }
 // SetDecision sets the decision property value. Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow. Supports $select, $orderby, and $filter (eq only).
 func (m *AccessReviewInstanceDecisionItem) SetDecision(value *string)() {
-    m.decision = value
+    if m != nil {
+        m.decision = value
+    }
 }
 // SetJustification sets the justification property value. Justification left by the reviewer when they made the decision.
 func (m *AccessReviewInstanceDecisionItem) SetJustification(value *string)() {
-    m.justification = value
+    if m != nil {
+        m.justification = value
+    }
 }
 // SetPrincipal sets the principal property value. Every decision item in an access review represents a principal's access to a resource. This property represents details of the principal. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is 'Bob' and the resource is 'Sales'. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetPrincipal(value *Identity)() {
-    m.principal = value
+    if m != nil {
+        m.principal = value
+    }
 }
 // SetPrincipalLink sets the principalLink property value. A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetPrincipalLink(value *string)() {
-    m.principalLink = value
+    if m != nil {
+        m.principalLink = value
+    }
 }
 // SetRecommendation sets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetRecommendation(value *string)() {
-    m.recommendation = value
+    if m != nil {
+        m.recommendation = value
+    }
 }
 // SetResource sets the resource property value. Every decision item in an access review represents a principal's access to a resource. This property represents details of the resource. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is Bob and the resource is 'Sales'. Resources can be of multiple types. See accessReviewInstanceDecisionItemResource. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetResource(value *AccessReviewInstanceDecisionItemResource)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }
 // SetResourceLink sets the resourceLink property value. A link to the resource. For example, https://graph.microsoft.com/v1.0/servicePrincipals/c86300f3-8695-4320-9f6e-32a2555f5ff8. Supports $select. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetResourceLink(value *string)() {
-    m.resourceLink = value
+    if m != nil {
+        m.resourceLink = value
+    }
 }
 // SetReviewedBy sets the reviewedBy property value. The identifier of the reviewer. Supports $select. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetReviewedBy(value *UserIdentity)() {
-    m.reviewedBy = value
+    if m != nil {
+        m.reviewedBy = value
+    }
 }
 // SetReviewedDateTime sets the reviewedDateTime property value. The timestamp when the review decision occurred. Supports $select. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetReviewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.reviewedDateTime = value
+    if m != nil {
+        m.reviewedDateTime = value
+    }
 }

@@ -96,13 +96,19 @@ func (m *TimeRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeRange) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEndTime sets the endTime property value. End time for the time range.
 func (m *TimeRange) SetEndTime(value *string)() {
-    m.endTime = value
+    if m != nil {
+        m.endTime = value
+    }
 }
 // SetStartTime sets the startTime property value. Start time for the time range.
 func (m *TimeRange) SetStartTime(value *string)() {
-    m.startTime = value
+    if m != nil {
+        m.startTime = value
+    }
 }

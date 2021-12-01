@@ -180,25 +180,37 @@ func (m *ChatMessagePolicyViolation) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessagePolicyViolation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDlpAction sets the dlpAction property value. The action taken by the DLP provider on the message with sensitive content. Supported values are: NoneNotifySender -- Inform the sender of the violation but allow readers to read the message.BlockAccess -- Block readers from reading the message.BlockAccessExternal -- Block users outside the organization from reading the message, while allowing users within the organization to read the message.
 func (m *ChatMessagePolicyViolation) SetDlpAction(value *ChatMessagePolicyViolationDlpActionTypes)() {
-    m.dlpAction = value
+    if m != nil {
+        m.dlpAction = value
+    }
 }
 // SetJustificationText sets the justificationText property value. Justification text provided by the sender of the message when overriding a policy violation.
 func (m *ChatMessagePolicyViolation) SetJustificationText(value *string)() {
-    m.justificationText = value
+    if m != nil {
+        m.justificationText = value
+    }
 }
 // SetPolicyTip sets the policyTip property value. Information to display to the message sender about why the message was flagged as a violation.
 func (m *ChatMessagePolicyViolation) SetPolicyTip(value *ChatMessagePolicyViolationPolicyTip)() {
-    m.policyTip = value
+    if m != nil {
+        m.policyTip = value
+    }
 }
 // SetUserAction sets the userAction property value. Indicates the action taken by the user on a message blocked by the DLP provider. Supported values are: NoneOverrideReportFalsePositiveWhen the DLP provider is updating the message for blocking sensitive content, userAction is not required.
 func (m *ChatMessagePolicyViolation) SetUserAction(value *ChatMessagePolicyViolationUserActionTypes)() {
-    m.userAction = value
+    if m != nil {
+        m.userAction = value
+    }
 }
 // SetVerdictDetails sets the verdictDetails property value. Indicates what actions the sender may take in response to the policy violation. Supported values are: NoneAllowFalsePositiveOverride -- Allows the sender to declare the policyViolation to be an error in the DLP app and its rules, and allow readers to see the message again if the dlpAction had hidden it.AllowOverrideWithoutJustification -- Allows the sender to overriide the DLP violation and allow readers to see the message again if the dlpAction had hidden it, without needing to provide an explanation for doing so. AllowOverrideWithJustification -- Allows the sender to overriide the DLP violation and allow readers to see the message again if the dlpAction had hidden it, after providing an explanation for doing so.AllowOverrideWithoutJustification and AllowOverrideWithJustification are mutually exclusive.
 func (m *ChatMessagePolicyViolation) SetVerdictDetails(value *ChatMessagePolicyViolationVerdictDetailsTypes)() {
-    m.verdictDetails = value
+    if m != nil {
+        m.verdictDetails = value
+    }
 }

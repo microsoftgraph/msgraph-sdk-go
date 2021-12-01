@@ -85,9 +85,13 @@ func (m *PolicyBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetDescription sets the description property value. Description for this policy. Required.
 func (m *PolicyBase) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name for this policy. Required.
 func (m *PolicyBase) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

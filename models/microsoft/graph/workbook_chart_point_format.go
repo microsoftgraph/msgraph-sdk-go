@@ -59,5 +59,7 @@ func (m *WorkbookChartPointFormat) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetFill sets the fill property value. Represents the fill format of a chart, which includes background formating information. Read-only.
 func (m *WorkbookChartPointFormat) SetFill(value *WorkbookChartFill)() {
-    m.fill = value
+    if m != nil {
+        m.fill = value
+    }
 }

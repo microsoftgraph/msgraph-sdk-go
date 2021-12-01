@@ -227,33 +227,49 @@ func (m *AmorDegrcRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AmorDegrcRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBasis sets the basis property value. 
 func (m *AmorDegrcRequestBody) SetBasis(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.basis = value
+    if m != nil {
+        m.basis = value
+    }
 }
 // SetCost sets the cost property value. 
 func (m *AmorDegrcRequestBody) SetCost(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.cost = value
+    if m != nil {
+        m.cost = value
+    }
 }
 // SetDatePurchased sets the datePurchased property value. 
 func (m *AmorDegrcRequestBody) SetDatePurchased(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.datePurchased = value
+    if m != nil {
+        m.datePurchased = value
+    }
 }
 // SetFirstPeriod sets the firstPeriod property value. 
 func (m *AmorDegrcRequestBody) SetFirstPeriod(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.firstPeriod = value
+    if m != nil {
+        m.firstPeriod = value
+    }
 }
 // SetPeriod sets the period property value. 
 func (m *AmorDegrcRequestBody) SetPeriod(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.period = value
+    if m != nil {
+        m.period = value
+    }
 }
 // SetRate sets the rate property value. 
 func (m *AmorDegrcRequestBody) SetRate(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.rate = value
+    if m != nil {
+        m.rate = value
+    }
 }
 // SetSalvage sets the salvage property value. 
 func (m *AmorDegrcRequestBody) SetSalvage(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.salvage = value
+    if m != nil {
+        m.salvage = value
+    }
 }

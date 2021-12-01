@@ -38,7 +38,7 @@ type SubscribedSkuRequestBuilderGetOptions struct {
 // SubscribedSkuRequestBuilderGetQueryParameters get entity from subscribedSkus by key
 type SubscribedSkuRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // SubscribedSkuRequestBuilderPatchOptions options for Patch
 type SubscribedSkuRequestBuilderPatchOptions struct {

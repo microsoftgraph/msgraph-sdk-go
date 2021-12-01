@@ -103,9 +103,13 @@ func (m *RbacApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetRoleAssignments sets the roleAssignments property value. Resource to grant access to users or groups.
 func (m *RbacApplication) SetRoleAssignments(value []UnifiedRoleAssignment)() {
-    m.roleAssignments = value
+    if m != nil {
+        m.roleAssignments = value
+    }
 }
 // SetRoleDefinitions sets the roleDefinitions property value. Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
 func (m *RbacApplication) SetRoleDefinitions(value []UnifiedRoleDefinition)() {
-    m.roleDefinitions = value
+    if m != nil {
+        m.roleDefinitions = value
+    }
 }

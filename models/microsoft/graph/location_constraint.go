@@ -131,17 +131,25 @@ func (m *LocationConstraint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LocationConstraint) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsRequired sets the isRequired property value. The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
 func (m *LocationConstraint) SetIsRequired(value *bool)() {
-    m.isRequired = value
+    if m != nil {
+        m.isRequired = value
+    }
 }
 // SetLocations sets the locations property value. Constraint information for one or more locations that the client requests for the meeting.
 func (m *LocationConstraint) SetLocations(value []LocationConstraintItem)() {
-    m.locations = value
+    if m != nil {
+        m.locations = value
+    }
 }
 // SetSuggestLocation sets the suggestLocation property value. The client requests the service to suggest one or more meeting locations.
 func (m *LocationConstraint) SetSuggestLocation(value *bool)() {
-    m.suggestLocation = value
+    if m != nil {
+        m.suggestLocation = value
+    }
 }

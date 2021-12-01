@@ -150,21 +150,31 @@ func (m *TeamFunSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamFunSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowCustomMemes sets the allowCustomMemes property value. If set to true, enables users to include custom memes.
 func (m *TeamFunSettings) SetAllowCustomMemes(value *bool)() {
-    m.allowCustomMemes = value
+    if m != nil {
+        m.allowCustomMemes = value
+    }
 }
 // SetAllowGiphy sets the allowGiphy property value. If set to true, enables Giphy use.
 func (m *TeamFunSettings) SetAllowGiphy(value *bool)() {
-    m.allowGiphy = value
+    if m != nil {
+        m.allowGiphy = value
+    }
 }
 // SetAllowStickersAndMemes sets the allowStickersAndMemes property value. If set to true, enables users to include stickers and memes.
 func (m *TeamFunSettings) SetAllowStickersAndMemes(value *bool)() {
-    m.allowStickersAndMemes = value
+    if m != nil {
+        m.allowStickersAndMemes = value
+    }
 }
 // SetGiphyContentRating sets the giphyContentRating property value. Giphy content rating. Possible values are: moderate, strict.
 func (m *TeamFunSettings) SetGiphyContentRating(value *GiphyRatingType)() {
-    m.giphyContentRating = value
+    if m != nil {
+        m.giphyContentRating = value
+    }
 }

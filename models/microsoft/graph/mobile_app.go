@@ -444,61 +444,91 @@ func (m *MobileApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAssignments sets the assignments property value. The list of group assignments for this mobile app.
 func (m *MobileApp) SetAssignments(value []MobileAppAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetCategories sets the categories property value. The list of categories for this app.
 func (m *MobileApp) SetCategories(value []MobileAppCategory)() {
-    m.categories = value
+    if m != nil {
+        m.categories = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the app was created.
 func (m *MobileApp) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. The description of the app.
 func (m *MobileApp) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDeveloper sets the developer property value. The developer of the app.
 func (m *MobileApp) SetDeveloper(value *string)() {
-    m.developer = value
+    if m != nil {
+        m.developer = value
+    }
 }
 // SetDisplayName sets the displayName property value. The admin provided or imported title of the app.
 func (m *MobileApp) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetInformationUrl sets the informationUrl property value. The more information Url.
 func (m *MobileApp) SetInformationUrl(value *string)() {
-    m.informationUrl = value
+    if m != nil {
+        m.informationUrl = value
+    }
 }
 // SetIsFeatured sets the isFeatured property value. The value indicating whether the app is marked as featured by the admin.
 func (m *MobileApp) SetIsFeatured(value *bool)() {
-    m.isFeatured = value
+    if m != nil {
+        m.isFeatured = value
+    }
 }
 // SetLargeIcon sets the largeIcon property value. The large icon, to be displayed in the app details and used for upload of the icon.
 func (m *MobileApp) SetLargeIcon(value *MimeContent)() {
-    m.largeIcon = value
+    if m != nil {
+        m.largeIcon = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the app was last modified.
 func (m *MobileApp) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetNotes sets the notes property value. Notes for the app.
 func (m *MobileApp) SetNotes(value *string)() {
-    m.notes = value
+    if m != nil {
+        m.notes = value
+    }
 }
 // SetOwner sets the owner property value. The owner of the app.
 func (m *MobileApp) SetOwner(value *string)() {
-    m.owner = value
+    if m != nil {
+        m.owner = value
+    }
 }
 // SetPrivacyInformationUrl sets the privacyInformationUrl property value. The privacy statement Url.
 func (m *MobileApp) SetPrivacyInformationUrl(value *string)() {
-    m.privacyInformationUrl = value
+    if m != nil {
+        m.privacyInformationUrl = value
+    }
 }
 // SetPublisher sets the publisher property value. The publisher of the app.
 func (m *MobileApp) SetPublisher(value *string)() {
-    m.publisher = value
+    if m != nil {
+        m.publisher = value
+    }
 }
 // SetPublishingState sets the publishingState property value. The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
 func (m *MobileApp) SetPublishingState(value *MobileAppPublishingState)() {
-    m.publishingState = value
+    if m != nil {
+        m.publishingState = value
+    }
 }

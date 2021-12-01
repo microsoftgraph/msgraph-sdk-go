@@ -98,13 +98,19 @@ func (m *RecordingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordingInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetInitiator sets the initiator property value. The identities of the recording initiator.
 func (m *RecordingInfo) SetInitiator(value *IdentitySet)() {
-    m.initiator = value
+    if m != nil {
+        m.initiator = value
+    }
 }
 // SetRecordingStatus sets the recordingStatus property value. Possible values are: unknown, notRecording, recording, or failed.
 func (m *RecordingInfo) SetRecordingStatus(value *RecordingStatus)() {
-    m.recordingStatus = value
+    if m != nil {
+        m.recordingStatus = value
+    }
 }

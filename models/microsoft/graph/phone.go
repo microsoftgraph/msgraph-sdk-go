@@ -15,7 +15,7 @@ type Phone struct {
     // 
     region *string;
     // The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-    type_escaped *PhoneType;
+    type *PhoneType;
 }
 // NewPhone instantiates a new phone and sets the default values.
 func NewPhone()(*Phone) {
@@ -56,12 +56,12 @@ func (m *Phone) GetRegion()(*string) {
         return m.region
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-func (m *Phone) GetType_escaped()(*PhoneType) {
+// GetType gets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+func (m *Phone) GetType()(*PhoneType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -97,14 +97,14 @@ func (m *Phone) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParsePhoneType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(PhoneType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -133,9 +133,9 @@ func (m *Phone) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -150,21 +150,31 @@ func (m *Phone) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Phone) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLanguage sets the language property value. 
 func (m *Phone) SetLanguage(value *string)() {
-    m.language = value
+    if m != nil {
+        m.language = value
+    }
 }
 // SetNumber sets the number property value. The phone number.
 func (m *Phone) SetNumber(value *string)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetRegion sets the region property value. 
 func (m *Phone) SetRegion(value *string)() {
-    m.region = value
+    if m != nil {
+        m.region = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-func (m *Phone) SetType_escaped(value *PhoneType)() {
-    m.type_escaped = value
+// SetType sets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+func (m *Phone) SetType(value *PhoneType)() {
+    if m != nil {
+        m.type = value
+    }
 }

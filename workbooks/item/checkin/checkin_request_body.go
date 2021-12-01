@@ -96,13 +96,19 @@ func (m *CheckinRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CheckinRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCheckInAs sets the checkInAs property value. 
 func (m *CheckinRequestBody) SetCheckInAs(value *string)() {
-    m.checkInAs = value
+    if m != nil {
+        m.checkInAs = value
+    }
 }
 // SetComment sets the comment property value. 
 func (m *CheckinRequestBody) SetComment(value *string)() {
-    m.comment = value
+    if m != nil {
+        m.comment = value
+    }
 }

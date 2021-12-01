@@ -70,9 +70,13 @@ func (m *DeleteUserFromSharedAppleDeviceRequestBody) Serialize(writer i04eb5309a
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeleteUserFromSharedAppleDeviceRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *DeleteUserFromSharedAppleDeviceRequestBody) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

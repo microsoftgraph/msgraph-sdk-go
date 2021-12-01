@@ -44,7 +44,7 @@ type MobileAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MobileAppRequestBuilderPatchOptions options for Patch
 type MobileAppRequestBuilderPatchOptions struct {

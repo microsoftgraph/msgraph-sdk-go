@@ -286,37 +286,55 @@ func (m *PrintJob) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetConfiguration sets the configuration property value. 
 func (m *PrintJob) SetConfiguration(value *PrintJobConfiguration)() {
-    m.configuration = value
+    if m != nil {
+        m.configuration = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. Read-only. Nullable.
 func (m *PrintJob) SetCreatedBy(value *UserIdentity)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The DateTimeOffset when the job was created. Read-only.
 func (m *PrintJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDocuments sets the documents property value. Read-only.
 func (m *PrintJob) SetDocuments(value []PrintDocument)() {
-    m.documents = value
+    if m != nil {
+        m.documents = value
+    }
 }
 // SetIsFetchable sets the isFetchable property value. If true, document can be fetched by printer.
 func (m *PrintJob) SetIsFetchable(value *bool)() {
-    m.isFetchable = value
+    if m != nil {
+        m.isFetchable = value
+    }
 }
 // SetRedirectedFrom sets the redirectedFrom property value. Contains the source job URL, if the job has been redirected from another printer.
 func (m *PrintJob) SetRedirectedFrom(value *string)() {
-    m.redirectedFrom = value
+    if m != nil {
+        m.redirectedFrom = value
+    }
 }
 // SetRedirectedTo sets the redirectedTo property value. Contains the destination job URL, if the job has been redirected to another printer.
 func (m *PrintJob) SetRedirectedTo(value *string)() {
-    m.redirectedTo = value
+    if m != nil {
+        m.redirectedTo = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *PrintJob) SetStatus(value *PrintJobStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTasks sets the tasks property value. A list of printTasks that were triggered by this print job.
 func (m *PrintJob) SetTasks(value []PrintTask)() {
-    m.tasks = value
+    if m != nil {
+        m.tasks = value
+    }
 }

@@ -96,13 +96,19 @@ func (m *SupportedTimeZones) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SupportedTimeZones) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlias sets the alias property value. An identifier for the time zone.
 func (m *SupportedTimeZones) SetAlias(value *string)() {
-    m.alias = value
+    if m != nil {
+        m.alias = value
+    }
 }
 // SetDisplayName sets the displayName property value. A display string that represents the time zone.
 func (m *SupportedTimeZones) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

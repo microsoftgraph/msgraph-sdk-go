@@ -173,17 +173,25 @@ func (m *CloudCommunications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetCallRecords sets the callRecords property value. 
 func (m *CloudCommunications) SetCallRecords(value []CallRecord)() {
-    m.callRecords = value
+    if m != nil {
+        m.callRecords = value
+    }
 }
 // SetCalls sets the calls property value. 
 func (m *CloudCommunications) SetCalls(value []Call)() {
-    m.calls = value
+    if m != nil {
+        m.calls = value
+    }
 }
 // SetOnlineMeetings sets the onlineMeetings property value. 
 func (m *CloudCommunications) SetOnlineMeetings(value []OnlineMeeting)() {
-    m.onlineMeetings = value
+    if m != nil {
+        m.onlineMeetings = value
+    }
 }
 // SetPresences sets the presences property value. 
 func (m *CloudCommunications) SetPresences(value []Presence)() {
-    m.presences = value
+    if m != nil {
+        m.presences = value
+    }
 }

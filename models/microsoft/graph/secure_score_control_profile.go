@@ -550,77 +550,115 @@ func (m *SecureScoreControlProfile) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetActionType sets the actionType property value. Control action type (Config, Review, Behavior).
 func (m *SecureScoreControlProfile) SetActionType(value *string)() {
-    m.actionType = value
+    if m != nil {
+        m.actionType = value
+    }
 }
 // SetActionUrl sets the actionUrl property value. URL to where the control can be actioned.
 func (m *SecureScoreControlProfile) SetActionUrl(value *string)() {
-    m.actionUrl = value
+    if m != nil {
+        m.actionUrl = value
+    }
 }
 // SetAzureTenantId sets the azureTenantId property value. GUID string for tenant ID.
 func (m *SecureScoreControlProfile) SetAzureTenantId(value *string)() {
-    m.azureTenantId = value
+    if m != nil {
+        m.azureTenantId = value
+    }
 }
 // SetComplianceInformation sets the complianceInformation property value. The collection of compliance information associated with secure score control
 func (m *SecureScoreControlProfile) SetComplianceInformation(value []ComplianceInformation)() {
-    m.complianceInformation = value
+    if m != nil {
+        m.complianceInformation = value
+    }
 }
 // SetControlCategory sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
 func (m *SecureScoreControlProfile) SetControlCategory(value *string)() {
-    m.controlCategory = value
+    if m != nil {
+        m.controlCategory = value
+    }
 }
 // SetControlStateUpdates sets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
 func (m *SecureScoreControlProfile) SetControlStateUpdates(value []SecureScoreControlStateUpdate)() {
-    m.controlStateUpdates = value
+    if m != nil {
+        m.controlStateUpdates = value
+    }
 }
 // SetDeprecated sets the deprecated property value. Flag to indicate if a control is depreciated.
 func (m *SecureScoreControlProfile) SetDeprecated(value *bool)() {
-    m.deprecated = value
+    if m != nil {
+        m.deprecated = value
+    }
 }
 // SetImplementationCost sets the implementationCost property value. Resource cost of implemmentating control (low, moderate, high).
 func (m *SecureScoreControlProfile) SetImplementationCost(value *string)() {
-    m.implementationCost = value
+    if m != nil {
+        m.implementationCost = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
 func (m *SecureScoreControlProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetMaxScore sets the maxScore property value. max attainable score for the control.
 func (m *SecureScoreControlProfile) SetMaxScore(value *float64)() {
-    m.maxScore = value
+    if m != nil {
+        m.maxScore = value
+    }
 }
 // SetRank sets the rank property value. Microsoft's stack ranking of control.
 func (m *SecureScoreControlProfile) SetRank(value *int32)() {
-    m.rank = value
+    if m != nil {
+        m.rank = value
+    }
 }
 // SetRemediation sets the remediation property value. Description of what the control will help remediate.
 func (m *SecureScoreControlProfile) SetRemediation(value *string)() {
-    m.remediation = value
+    if m != nil {
+        m.remediation = value
+    }
 }
 // SetRemediationImpact sets the remediationImpact property value. Description of the impact on users of the remediation.
 func (m *SecureScoreControlProfile) SetRemediationImpact(value *string)() {
-    m.remediationImpact = value
+    if m != nil {
+        m.remediationImpact = value
+    }
 }
 // SetService sets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
 func (m *SecureScoreControlProfile) SetService(value *string)() {
-    m.service = value
+    if m != nil {
+        m.service = value
+    }
 }
 // SetThreats sets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
 func (m *SecureScoreControlProfile) SetThreats(value []string)() {
-    m.threats = value
+    if m != nil {
+        m.threats = value
+    }
 }
 // SetTier sets the tier property value. Control tier (Core, Defense in Depth, Advanced.)
 func (m *SecureScoreControlProfile) SetTier(value *string)() {
-    m.tier = value
+    if m != nil {
+        m.tier = value
+    }
 }
 // SetTitle sets the title property value. Title of the control.
 func (m *SecureScoreControlProfile) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }
 // SetUserImpact sets the userImpact property value. User impact of implementing control (low, moderate, high).
 func (m *SecureScoreControlProfile) SetUserImpact(value *string)() {
-    m.userImpact = value
+    if m != nil {
+        m.userImpact = value
+    }
 }
 // SetVendorInformation sets the vendorInformation property value. 
 func (m *SecureScoreControlProfile) SetVendorInformation(value *SecurityVendorInformation)() {
-    m.vendorInformation = value
+    if m != nil {
+        m.vendorInformation = value
+    }
 }

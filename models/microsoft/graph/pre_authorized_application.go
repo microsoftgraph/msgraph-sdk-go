@@ -100,13 +100,19 @@ func (m *PreAuthorizedApplication) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreAuthorizedApplication) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppId sets the appId property value. The unique identifier for the application.
 func (m *PreAuthorizedApplication) SetAppId(value *string)() {
-    m.appId = value
+    if m != nil {
+        m.appId = value
+    }
 }
 // SetDelegatedPermissionIds sets the delegatedPermissionIds property value. 
 func (m *PreAuthorizedApplication) SetDelegatedPermissionIds(value []string)() {
-    m.delegatedPermissionIds = value
+    if m != nil {
+        m.delegatedPermissionIds = value
+    }
 }

@@ -681,93 +681,139 @@ func (m *ChatMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAttachments sets the attachments property value. References to attached objects like files, tabs, meetings etc.
 func (m *ChatMessage) SetAttachments(value []ChatMessageAttachment)() {
-    m.attachments = value
+    if m != nil {
+        m.attachments = value
+    }
 }
 // SetBody sets the body property value. 
 func (m *ChatMessage) SetBody(value *ItemBody)() {
-    m.body = value
+    if m != nil {
+        m.body = value
+    }
 }
 // SetChannelIdentity sets the channelIdentity property value. If the message was sent in a channel, represents identity of the channel.
 func (m *ChatMessage) SetChannelIdentity(value *ChannelIdentity)() {
-    m.channelIdentity = value
+    if m != nil {
+        m.channelIdentity = value
+    }
 }
 // SetChatId sets the chatId property value. If the message was sent in a chat, represents the identity of the chat.
 func (m *ChatMessage) SetChatId(value *string)() {
-    m.chatId = value
+    if m != nil {
+        m.chatId = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the chat message was created.
 func (m *ChatMessage) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDeletedDateTime sets the deletedDateTime property value. Read only. Timestamp at which the chat message was deleted, or null if not deleted.
 func (m *ChatMessage) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.deletedDateTime = value
+    if m != nil {
+        m.deletedDateTime = value
+    }
 }
 // SetEtag sets the etag property value. Read-only. Version number of the chat message.
 func (m *ChatMessage) SetEtag(value *string)() {
-    m.etag = value
+    if m != nil {
+        m.etag = value
+    }
 }
 // SetEventDetail sets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
 func (m *ChatMessage) SetEventDetail(value *EventMessageDetail)() {
-    m.eventDetail = value
+    if m != nil {
+        m.eventDetail = value
+    }
 }
 // SetFrom sets the from property value. Details of the sender of the chat message. Can only be set during migration.
 func (m *ChatMessage) SetFrom(value *ChatMessageFromIdentitySet)() {
-    m.from = value
+    if m != nil {
+        m.from = value
+    }
 }
 // SetHostedContents sets the hostedContents property value. Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 func (m *ChatMessage) SetHostedContents(value []ChatMessageHostedContent)() {
-    m.hostedContents = value
+    if m != nil {
+        m.hostedContents = value
+    }
 }
 // SetImportance sets the importance property value. The importance of the chat message. The possible values are: normal, high, urgent.
 func (m *ChatMessage) SetImportance(value *ChatMessageImportance)() {
-    m.importance = value
+    if m != nil {
+        m.importance = value
+    }
 }
 // SetLastEditedDateTime sets the lastEditedDateTime property value. Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
 func (m *ChatMessage) SetLastEditedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastEditedDateTime = value
+    if m != nil {
+        m.lastEditedDateTime = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
 func (m *ChatMessage) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetLocale sets the locale property value. Locale of the chat message set by the client. Always set to en-us.
 func (m *ChatMessage) SetLocale(value *string)() {
-    m.locale = value
+    if m != nil {
+        m.locale = value
+    }
 }
 // SetMentions sets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
 func (m *ChatMessage) SetMentions(value []ChatMessageMention)() {
-    m.mentions = value
+    if m != nil {
+        m.mentions = value
+    }
 }
 // SetMessageType sets the messageType property value. The type of chat message. The possible values are: message, chatEvent, typing, unknownFutureValue, systemEventMessage. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: systemEventMessage.
 func (m *ChatMessage) SetMessageType(value *ChatMessageType)() {
-    m.messageType = value
+    if m != nil {
+        m.messageType = value
+    }
 }
 // SetPolicyViolation sets the policyViolation property value. Defines the properties of a policy violation set by a data loss prevention (DLP) application.
 func (m *ChatMessage) SetPolicyViolation(value *ChatMessagePolicyViolation)() {
-    m.policyViolation = value
+    if m != nil {
+        m.policyViolation = value
+    }
 }
 // SetReactions sets the reactions property value. Reactions for this chat message (for example, Like).
 func (m *ChatMessage) SetReactions(value []ChatMessageReaction)() {
-    m.reactions = value
+    if m != nil {
+        m.reactions = value
+    }
 }
 // SetReplies sets the replies property value. Replies for a specified message.
 func (m *ChatMessage) SetReplies(value []ChatMessage)() {
-    m.replies = value
+    if m != nil {
+        m.replies = value
+    }
 }
 // SetReplyToId sets the replyToId property value. Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
 func (m *ChatMessage) SetReplyToId(value *string)() {
-    m.replyToId = value
+    if m != nil {
+        m.replyToId = value
+    }
 }
 // SetSubject sets the subject property value. The subject of the chat message, in plaintext.
 func (m *ChatMessage) SetSubject(value *string)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }
 // SetSummary sets the summary property value. Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
 func (m *ChatMessage) SetSummary(value *string)() {
-    m.summary = value
+    if m != nil {
+        m.summary = value
+    }
 }
 // SetWebUrl sets the webUrl property value. Read-only. Link to the message in Microsoft Teams.
 func (m *ChatMessage) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

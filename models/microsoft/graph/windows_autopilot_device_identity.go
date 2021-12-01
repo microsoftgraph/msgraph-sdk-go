@@ -452,65 +452,97 @@ func (m *WindowsAutopilotDeviceIdentity) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAddressableUserName sets the addressableUserName property value. Addressable user name.
 func (m *WindowsAutopilotDeviceIdentity) SetAddressableUserName(value *string)() {
-    m.addressableUserName = value
+    if m != nil {
+        m.addressableUserName = value
+    }
 }
 // SetAzureActiveDirectoryDeviceId sets the azureActiveDirectoryDeviceId property value. AAD Device ID - to be deprecated
 func (m *WindowsAutopilotDeviceIdentity) SetAzureActiveDirectoryDeviceId(value *string)() {
-    m.azureActiveDirectoryDeviceId = value
+    if m != nil {
+        m.azureActiveDirectoryDeviceId = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display Name
 func (m *WindowsAutopilotDeviceIdentity) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEnrollmentState sets the enrollmentState property value. Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted.
 func (m *WindowsAutopilotDeviceIdentity) SetEnrollmentState(value *EnrollmentState)() {
-    m.enrollmentState = value
+    if m != nil {
+        m.enrollmentState = value
+    }
 }
 // SetGroupTag sets the groupTag property value. Group Tag of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetGroupTag(value *string)() {
-    m.groupTag = value
+    if m != nil {
+        m.groupTag = value
+    }
 }
 // SetLastContactedDateTime sets the lastContactedDateTime property value. Intune Last Contacted Date Time of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetLastContactedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastContactedDateTime = value
+    if m != nil {
+        m.lastContactedDateTime = value
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. Managed Device ID
 func (m *WindowsAutopilotDeviceIdentity) SetManagedDeviceId(value *string)() {
-    m.managedDeviceId = value
+    if m != nil {
+        m.managedDeviceId = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. Oem manufacturer of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetModel sets the model property value. Model name of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }
 // SetProductKey sets the productKey property value. Product Key of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetProductKey(value *string)() {
-    m.productKey = value
+    if m != nil {
+        m.productKey = value
+    }
 }
 // SetPurchaseOrderIdentifier sets the purchaseOrderIdentifier property value. Purchase Order Identifier of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetPurchaseOrderIdentifier(value *string)() {
-    m.purchaseOrderIdentifier = value
+    if m != nil {
+        m.purchaseOrderIdentifier = value
+    }
 }
 // SetResourceName sets the resourceName property value. Resource Name.
 func (m *WindowsAutopilotDeviceIdentity) SetResourceName(value *string)() {
-    m.resourceName = value
+    if m != nil {
+        m.resourceName = value
+    }
 }
 // SetSerialNumber sets the serialNumber property value. Serial number of the Windows autopilot device.
 func (m *WindowsAutopilotDeviceIdentity) SetSerialNumber(value *string)() {
-    m.serialNumber = value
+    if m != nil {
+        m.serialNumber = value
+    }
 }
 // SetSkuNumber sets the skuNumber property value. SKU Number
 func (m *WindowsAutopilotDeviceIdentity) SetSkuNumber(value *string)() {
-    m.skuNumber = value
+    if m != nil {
+        m.skuNumber = value
+    }
 }
 // SetSystemFamily sets the systemFamily property value. System Family
 func (m *WindowsAutopilotDeviceIdentity) SetSystemFamily(value *string)() {
-    m.systemFamily = value
+    if m != nil {
+        m.systemFamily = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name.
 func (m *WindowsAutopilotDeviceIdentity) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

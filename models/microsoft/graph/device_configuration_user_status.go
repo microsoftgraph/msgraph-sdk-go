@@ -166,21 +166,31 @@ func (m *DeviceConfigurationUserStatus) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetDevicesCount sets the devicesCount property value. Devices count for that user.
 func (m *DeviceConfigurationUserStatus) SetDevicesCount(value *int32)() {
-    m.devicesCount = value
+    if m != nil {
+        m.devicesCount = value
+    }
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *DeviceConfigurationUserStatus) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastReportedDateTime = value
+    if m != nil {
+        m.lastReportedDateTime = value
+    }
 }
 // SetStatus sets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *DeviceConfigurationUserStatus) SetStatus(value *ComplianceStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetUserDisplayName sets the userDisplayName property value. User name of the DevicePolicyStatus.
 func (m *DeviceConfigurationUserStatus) SetUserDisplayName(value *string)() {
-    m.userDisplayName = value
+    if m != nil {
+        m.userDisplayName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceConfigurationUserStatus) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

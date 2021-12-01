@@ -143,17 +143,25 @@ func (m *DeviceComplianceActionItem) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetActionType sets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification.
 func (m *DeviceComplianceActionItem) SetActionType(value *DeviceComplianceActionType)() {
-    m.actionType = value
+    if m != nil {
+        m.actionType = value
+    }
 }
 // SetGracePeriodHours sets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
 func (m *DeviceComplianceActionItem) SetGracePeriodHours(value *int32)() {
-    m.gracePeriodHours = value
+    if m != nil {
+        m.gracePeriodHours = value
+    }
 }
 // SetNotificationMessageCCList sets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to.
 func (m *DeviceComplianceActionItem) SetNotificationMessageCCList(value []string)() {
-    m.notificationMessageCCList = value
+    if m != nil {
+        m.notificationMessageCCList = value
+    }
 }
 // SetNotificationTemplateId sets the notificationTemplateId property value. What notification Message template to use
 func (m *DeviceComplianceActionItem) SetNotificationTemplateId(value *string)() {
-    m.notificationTemplateId = value
+    if m != nil {
+        m.notificationTemplateId = value
+    }
 }

@@ -70,9 +70,13 @@ func (m *AgreementFileData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AgreementFileData) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetData sets the data property value. 
 func (m *AgreementFileData) SetData(value []byte)() {
-    m.data = value
+    if m != nil {
+        m.data = value
+    }
 }

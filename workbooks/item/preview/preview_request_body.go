@@ -96,13 +96,19 @@ func (m *PreviewRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PreviewRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPage sets the page property value. 
 func (m *PreviewRequestBody) SetPage(value *string)() {
-    m.page = value
+    if m != nil {
+        m.page = value
+    }
 }
 // SetZoom sets the zoom property value. 
 func (m *PreviewRequestBody) SetZoom(value *float64)() {
-    m.zoom = value
+    if m != nil {
+        m.zoom = value
+    }
 }

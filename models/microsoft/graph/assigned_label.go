@@ -96,13 +96,19 @@ func (m *AssignedLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedLabel) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the label. Read-only.
 func (m *AssignedLabel) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLabelId sets the labelId property value. The unique identifier of the label.
 func (m *AssignedLabel) SetLabelId(value *string)() {
-    m.labelId = value
+    if m != nil {
+        m.labelId = value
+    }
 }

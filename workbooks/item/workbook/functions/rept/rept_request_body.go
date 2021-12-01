@@ -97,13 +97,19 @@ func (m *ReptRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReptRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNumberTimes sets the numberTimes property value. 
 func (m *ReptRequestBody) SetNumberTimes(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.numberTimes = value
+    if m != nil {
+        m.numberTimes = value
+    }
 }
 // SetText sets the text property value. 
 func (m *ReptRequestBody) SetText(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.text = value
+    if m != nil {
+        m.text = value
+    }
 }

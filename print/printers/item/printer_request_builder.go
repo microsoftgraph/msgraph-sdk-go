@@ -45,7 +45,7 @@ type PrinterRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PrinterRequestBuilderPatchOptions options for Patch
 type PrinterRequestBuilderPatchOptions struct {

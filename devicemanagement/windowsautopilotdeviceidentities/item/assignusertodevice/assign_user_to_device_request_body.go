@@ -96,13 +96,19 @@ func (m *AssignUserToDeviceRequestBody) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignUserToDeviceRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAddressableUserName sets the addressableUserName property value. 
 func (m *AssignUserToDeviceRequestBody) SetAddressableUserName(value *string)() {
-    m.addressableUserName = value
+    if m != nil {
+        m.addressableUserName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *AssignUserToDeviceRequestBody) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

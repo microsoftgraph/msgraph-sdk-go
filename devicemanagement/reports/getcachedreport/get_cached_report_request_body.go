@@ -17,7 +17,7 @@ type GetCachedReportRequestBody struct {
     // 
     search *string;
     // 
-    select_escaped []string;
+    select []string;
     // 
     skip *int32;
     // 
@@ -70,12 +70,12 @@ func (m *GetCachedReportRequestBody) GetSearch()(*string) {
         return m.search
     }
 }
-// GetSelect_escaped gets the select_escaped property value. 
-func (m *GetCachedReportRequestBody) GetSelect_escaped()([]string) {
+// GetSelect gets the select property value. 
+func (m *GetCachedReportRequestBody) GetSelect()([]string) {
     if m == nil {
         return nil
     } else {
-        return m.select_escaped
+        return m.select
     }
 }
 // GetSkip gets the skip property value. 
@@ -145,7 +145,7 @@ func (m *GetCachedReportRequestBody) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *GetCachedReportRequestBody) GetFieldDeserializers()(map[string]func(int
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetSelect_escaped(res)
+            m.SetSelect(res)
         }
         return nil
     }
@@ -211,7 +211,7 @@ func (m *GetCachedReportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     {
-        err := writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
+        err := writer.WriteCollectionOfStringValues("select", m.GetSelect())
         if err != nil {
             return err
         }
@@ -238,33 +238,49 @@ func (m *GetCachedReportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetCachedReportRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetGroupBy sets the groupBy property value. 
 func (m *GetCachedReportRequestBody) SetGroupBy(value []string)() {
-    m.groupBy = value
+    if m != nil {
+        m.groupBy = value
+    }
 }
 // SetId sets the id property value. 
 func (m *GetCachedReportRequestBody) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetOrderBy sets the orderBy property value. 
 func (m *GetCachedReportRequestBody) SetOrderBy(value []string)() {
-    m.orderBy = value
+    if m != nil {
+        m.orderBy = value
+    }
 }
 // SetSearch sets the search property value. 
 func (m *GetCachedReportRequestBody) SetSearch(value *string)() {
-    m.search = value
+    if m != nil {
+        m.search = value
+    }
 }
-// SetSelect_escaped sets the select_escaped property value. 
-func (m *GetCachedReportRequestBody) SetSelect_escaped(value []string)() {
-    m.select_escaped = value
+// SetSelect sets the select property value. 
+func (m *GetCachedReportRequestBody) SetSelect(value []string)() {
+    if m != nil {
+        m.select = value
+    }
 }
 // SetSkip sets the skip property value. 
 func (m *GetCachedReportRequestBody) SetSkip(value *int32)() {
-    m.skip = value
+    if m != nil {
+        m.skip = value
+    }
 }
 // SetTop sets the top property value. 
 func (m *GetCachedReportRequestBody) SetTop(value *int32)() {
-    m.top = value
+    if m != nil {
+        m.top = value
+    }
 }

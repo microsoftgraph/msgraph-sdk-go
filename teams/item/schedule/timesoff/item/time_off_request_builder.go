@@ -38,7 +38,7 @@ type TimeOffRequestBuilderGetOptions struct {
 // TimeOffRequestBuilderGetQueryParameters the instances of times off in the schedule.
 type TimeOffRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TimeOffRequestBuilderPatchOptions options for Patch
 type TimeOffRequestBuilderPatchOptions struct {

@@ -94,9 +94,13 @@ func (m *DeviceComplianceScheduledActionForRule) Serialize(writer i04eb5309aeaaf
 }
 // SetRuleName sets the ruleName property value. Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
 func (m *DeviceComplianceScheduledActionForRule) SetRuleName(value *string)() {
-    m.ruleName = value
+    if m != nil {
+        m.ruleName = value
+    }
 }
 // SetScheduledActionConfigurations sets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
 func (m *DeviceComplianceScheduledActionForRule) SetScheduledActionConfigurations(value []DeviceComplianceActionItem)() {
-    m.scheduledActionConfigurations = value
+    if m != nil {
+        m.scheduledActionConfigurations = value
+    }
 }

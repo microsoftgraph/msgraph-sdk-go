@@ -178,25 +178,37 @@ func (m *LicenseAssignmentState) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LicenseAssignmentState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedByGroup sets the assignedByGroup property value. The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.
 func (m *LicenseAssignmentState) SetAssignedByGroup(value *string)() {
-    m.assignedByGroup = value
+    if m != nil {
+        m.assignedByGroup = value
+    }
 }
 // SetDisabledPlans sets the disabledPlans property value. The service plans that are disabled in this assignment. Read-Only.
 func (m *LicenseAssignmentState) SetDisabledPlans(value []string)() {
-    m.disabledPlans = value
+    if m != nil {
+        m.disabledPlans = value
+    }
 }
 // SetError sets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.
 func (m *LicenseAssignmentState) SetError(value *string)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetSkuId sets the skuId property value. The unique identifier for the SKU. Read-Only.
 func (m *LicenseAssignmentState) SetSkuId(value *string)() {
-    m.skuId = value
+    if m != nil {
+        m.skuId = value
+    }
 }
 // SetState sets the state property value. Indicate the current state of this assignment. Read-Only. Possible values: Active, ActiveWithError, Disabled and Error.
 func (m *LicenseAssignmentState) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

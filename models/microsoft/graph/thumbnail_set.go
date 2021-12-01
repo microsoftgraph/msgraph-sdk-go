@@ -137,17 +137,25 @@ func (m *ThumbnailSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetLarge sets the large property value. A 1920x1920 scaled thumbnail.
 func (m *ThumbnailSet) SetLarge(value *Thumbnail)() {
-    m.large = value
+    if m != nil {
+        m.large = value
+    }
 }
 // SetMedium sets the medium property value. A 176x176 scaled thumbnail.
 func (m *ThumbnailSet) SetMedium(value *Thumbnail)() {
-    m.medium = value
+    if m != nil {
+        m.medium = value
+    }
 }
 // SetSmall sets the small property value. A 48x48 cropped thumbnail.
 func (m *ThumbnailSet) SetSmall(value *Thumbnail)() {
-    m.small = value
+    if m != nil {
+        m.small = value
+    }
 }
 // SetSource sets the source property value. A custom thumbnail image or the original image used to generate other thumbnails.
 func (m *ThumbnailSet) SetSource(value *Thumbnail)() {
-    m.source = value
+    if m != nil {
+        m.source = value
+    }
 }

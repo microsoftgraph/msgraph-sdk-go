@@ -243,29 +243,43 @@ func (m *AccessReviewInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetDecisions sets the decisions property value. Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstance) SetDecisions(value []AccessReviewInstanceDecisionItem)() {
-    m.decisions = value
+    if m != nil {
+        m.decisions = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
 func (m *AccessReviewInstance) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.endDateTime = value
+    if m != nil {
+        m.endDateTime = value
+    }
 }
 // SetFallbackReviewers sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
 func (m *AccessReviewInstance) SetFallbackReviewers(value []AccessReviewReviewerScope)() {
-    m.fallbackReviewers = value
+    if m != nil {
+        m.fallbackReviewers = value
+    }
 }
 // SetReviewers sets the reviewers property value. This collection of access review scopes is used to define who the reviewers are. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
 func (m *AccessReviewInstance) SetReviewers(value []AccessReviewReviewerScope)() {
-    m.reviewers = value
+    if m != nil {
+        m.reviewers = value
+    }
 }
 // SetScope sets the scope property value. Created based on scope and instanceEnumerationScope at the accessReviewScheduleDefinition level. Defines the scope of users reviewed in a group. Supports $select and $filter (contains only). Read-only.
 func (m *AccessReviewInstance) SetScope(value *AccessReviewScope)() {
-    m.scope = value
+    if m != nil {
+        m.scope = value
+    }
 }
 // SetStartDateTime sets the startDateTime property value. DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
 func (m *AccessReviewInstance) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startDateTime = value
+    if m != nil {
+        m.startDateTime = value
+    }
 }
 // SetStatus sets the status property value. Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
 func (m *AccessReviewInstance) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

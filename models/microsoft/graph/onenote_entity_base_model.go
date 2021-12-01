@@ -59,5 +59,7 @@ func (m *OnenoteEntityBaseModel) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetSelf sets the self property value. The endpoint where you can get details about the page. Read-only.
 func (m *OnenoteEntityBaseModel) SetSelf(value *string)() {
-    m.self = value
+    if m != nil {
+        m.self = value
+    }
 }

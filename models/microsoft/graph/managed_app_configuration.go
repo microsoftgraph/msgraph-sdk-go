@@ -68,5 +68,7 @@ func (m *ManagedAppConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetCustomSettings sets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
 func (m *ManagedAppConfiguration) SetCustomSettings(value []KeyValuePair)() {
-    m.customSettings = value
+    if m != nil {
+        m.customSettings = value
+    }
 }

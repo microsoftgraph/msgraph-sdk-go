@@ -152,21 +152,31 @@ func (m *DefaultUserRolePermissions) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DefaultUserRolePermissions) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedToCreateApps sets the allowedToCreateApps property value. Indicates whether the default user role can create applications.
 func (m *DefaultUserRolePermissions) SetAllowedToCreateApps(value *bool)() {
-    m.allowedToCreateApps = value
+    if m != nil {
+        m.allowedToCreateApps = value
+    }
 }
 // SetAllowedToCreateSecurityGroups sets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups.
 func (m *DefaultUserRolePermissions) SetAllowedToCreateSecurityGroups(value *bool)() {
-    m.allowedToCreateSecurityGroups = value
+    if m != nil {
+        m.allowedToCreateSecurityGroups = value
+    }
 }
 // SetAllowedToReadOtherUsers sets the allowedToReadOtherUsers property value. Indicates whether the default user role can read other users.
 func (m *DefaultUserRolePermissions) SetAllowedToReadOtherUsers(value *bool)() {
-    m.allowedToReadOtherUsers = value
+    if m != nil {
+        m.allowedToReadOtherUsers = value
+    }
 }
 // SetPermissionGrantPoliciesAssigned sets the permissionGrantPoliciesAssigned property value. Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
 func (m *DefaultUserRolePermissions) SetPermissionGrantPoliciesAssigned(value []string)() {
-    m.permissionGrantPoliciesAssigned = value
+    if m != nil {
+        m.permissionGrantPoliciesAssigned = value
+    }
 }

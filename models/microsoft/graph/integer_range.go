@@ -96,13 +96,19 @@ func (m *IntegerRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IntegerRange) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnd sets the end property value. The inclusive upper bound of the integer range.
 func (m *IntegerRange) SetEnd(value *int64)() {
-    m.end = value
+    if m != nil {
+        m.end = value
+    }
 }
 // SetStart sets the start property value. The inclusive lower bound of the integer range.
 func (m *IntegerRange) SetStart(value *int64)() {
-    m.start = value
+    if m != nil {
+        m.start = value
+    }
 }

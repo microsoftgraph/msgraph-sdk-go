@@ -181,21 +181,31 @@ func (m *DirectoryRole) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetDescription sets the description property value. The description for the directory role. Read-only.
 func (m *DirectoryRole) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the directory role. Read-only.
 func (m *DirectoryRole) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetMembers sets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
 func (m *DirectoryRole) SetMembers(value []DirectoryObject)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }
 // SetRoleTemplateId sets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only.
 func (m *DirectoryRole) SetRoleTemplateId(value *string)() {
-    m.roleTemplateId = value
+    if m != nil {
+        m.roleTemplateId = value
+    }
 }
 // SetScopedMembers sets the scopedMembers property value. Members of this directory role that are scoped to administrative units. Read-only. Nullable.
 func (m *DirectoryRole) SetScopedMembers(value []ScopedRoleMembership)() {
-    m.scopedMembers = value
+    if m != nil {
+        m.scopedMembers = value
+    }
 }

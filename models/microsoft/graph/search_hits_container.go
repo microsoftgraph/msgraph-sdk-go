@@ -166,21 +166,31 @@ func (m *SearchHitsContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchHitsContainer) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAggregations sets the aggregations property value. Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
 func (m *SearchHitsContainer) SetAggregations(value []SearchAggregation)() {
-    m.aggregations = value
+    if m != nil {
+        m.aggregations = value
+    }
 }
 // SetHits sets the hits property value. A collection of the search results.
 func (m *SearchHitsContainer) SetHits(value []SearchHit)() {
-    m.hits = value
+    if m != nil {
+        m.hits = value
+    }
 }
 // SetMoreResultsAvailable sets the moreResultsAvailable property value. Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
 func (m *SearchHitsContainer) SetMoreResultsAvailable(value *bool)() {
-    m.moreResultsAvailable = value
+    if m != nil {
+        m.moreResultsAvailable = value
+    }
 }
 // SetTotal sets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
 func (m *SearchHitsContainer) SetTotal(value *int32)() {
-    m.total = value
+    if m != nil {
+        m.total = value
+    }
 }

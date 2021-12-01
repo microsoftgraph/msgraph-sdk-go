@@ -200,29 +200,43 @@ func (m *Quota) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Quota) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeleted sets the deleted property value. Total space consumed by files in the recycle bin, in bytes. Read-only.
 func (m *Quota) SetDeleted(value *int64)() {
-    m.deleted = value
+    if m != nil {
+        m.deleted = value
+    }
 }
 // SetRemaining sets the remaining property value. Total space remaining before reaching the quota limit, in bytes. Read-only.
 func (m *Quota) SetRemaining(value *int64)() {
-    m.remaining = value
+    if m != nil {
+        m.remaining = value
+    }
 }
 // SetState sets the state property value. Enumeration value that indicates the state of the storage space. Read-only.
 func (m *Quota) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetStoragePlanInformation sets the storagePlanInformation property value. Information about the drive's storage quota plans. Only in Personal OneDrive.
 func (m *Quota) SetStoragePlanInformation(value *StoragePlanInformation)() {
-    m.storagePlanInformation = value
+    if m != nil {
+        m.storagePlanInformation = value
+    }
 }
 // SetTotal sets the total property value. Total allowed storage space, in bytes. Read-only.
 func (m *Quota) SetTotal(value *int64)() {
-    m.total = value
+    if m != nil {
+        m.total = value
+    }
 }
 // SetUsed sets the used property value. Total space used, in bytes. Read-only.
 func (m *Quota) SetUsed(value *int64)() {
-    m.used = value
+    if m != nil {
+        m.used = value
+    }
 }

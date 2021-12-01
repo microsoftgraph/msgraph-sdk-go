@@ -13,7 +13,7 @@ type AccessReviewInstanceDecisionItemResource struct {
     // Identifier of the resource
     id *string;
     // Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
-    type_escaped *string;
+    type *string;
 }
 // NewAccessReviewInstanceDecisionItemResource instantiates a new accessReviewInstanceDecisionItemResource and sets the default values.
 func NewAccessReviewInstanceDecisionItemResource()(*AccessReviewInstanceDecisionItemResource) {
@@ -46,12 +46,12 @@ func (m *AccessReviewInstanceDecisionItemResource) GetId()(*string) {
         return m.id
     }
 }
-// GetType_escaped gets the type_escaped property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
-func (m *AccessReviewInstanceDecisionItemResource) GetType_escaped()(*string) {
+// GetType gets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
+func (m *AccessReviewInstanceDecisionItemResource) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -77,13 +77,13 @@ func (m *AccessReviewInstanceDecisionItemResource) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -107,7 +107,7 @@ func (m *AccessReviewInstanceDecisionItemResource) Serialize(writer i04eb5309aea
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -122,17 +122,25 @@ func (m *AccessReviewInstanceDecisionItemResource) Serialize(writer i04eb5309aea
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewInstanceDecisionItemResource) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the resource
 func (m *AccessReviewInstanceDecisionItemResource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetId sets the id property value. Identifier of the resource
 func (m *AccessReviewInstanceDecisionItemResource) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
-func (m *AccessReviewInstanceDecisionItemResource) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
+func (m *AccessReviewInstanceDecisionItemResource) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }

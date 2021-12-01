@@ -31,7 +31,7 @@ type AgreementAcceptancesRequestBuilderGetQueryParameters struct {
     // Search items by search phrases
     Search *string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AgreementAcceptancesRequestBuilderPostOptions options for Post
 type AgreementAcceptancesRequestBuilderPostOptions struct {

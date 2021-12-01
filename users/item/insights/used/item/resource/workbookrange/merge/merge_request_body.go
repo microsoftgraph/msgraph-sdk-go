@@ -70,9 +70,13 @@ func (m *MergeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAcross sets the across property value. 
 func (m *MergeRequestBody) SetAcross(value *bool)() {
-    m.across = value
+    if m != nil {
+        m.across = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MergeRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }

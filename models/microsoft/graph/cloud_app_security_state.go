@@ -122,17 +122,25 @@ func (m *CloudAppSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudAppSecurityState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDestinationServiceIp sets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
 func (m *CloudAppSecurityState) SetDestinationServiceIp(value *string)() {
-    m.destinationServiceIp = value
+    if m != nil {
+        m.destinationServiceIp = value
+    }
 }
 // SetDestinationServiceName sets the destinationServiceName property value. Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
 func (m *CloudAppSecurityState) SetDestinationServiceName(value *string)() {
-    m.destinationServiceName = value
+    if m != nil {
+        m.destinationServiceName = value
+    }
 }
 // SetRiskScore sets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
 func (m *CloudAppSecurityState) SetRiskScore(value *string)() {
-    m.riskScore = value
+    if m != nil {
+        m.riskScore = value
+    }
 }

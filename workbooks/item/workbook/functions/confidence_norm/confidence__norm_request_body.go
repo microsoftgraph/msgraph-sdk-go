@@ -123,17 +123,25 @@ func (m *Confidence_NormRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Confidence_NormRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlpha sets the alpha property value. 
 func (m *Confidence_NormRequestBody) SetAlpha(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.alpha = value
+    if m != nil {
+        m.alpha = value
+    }
 }
 // SetSize sets the size property value. 
 func (m *Confidence_NormRequestBody) SetSize(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.size = value
+    if m != nil {
+        m.size = value
+    }
 }
 // SetStandardDev sets the standardDev property value. 
 func (m *Confidence_NormRequestBody) SetStandardDev(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.standardDev = value
+    if m != nil {
+        m.standardDev = value
+    }
 }

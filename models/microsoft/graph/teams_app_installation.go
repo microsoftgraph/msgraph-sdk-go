@@ -85,9 +85,13 @@ func (m *TeamsAppInstallation) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetTeamsApp sets the teamsApp property value. The app that is installed.
 func (m *TeamsAppInstallation) SetTeamsApp(value *TeamsApp)() {
-    m.teamsApp = value
+    if m != nil {
+        m.teamsApp = value
+    }
 }
 // SetTeamsAppDefinition sets the teamsAppDefinition property value. The details of this version of the app.
 func (m *TeamsAppInstallation) SetTeamsAppDefinition(value *TeamsAppDefinition)() {
-    m.teamsAppDefinition = value
+    if m != nil {
+        m.teamsAppDefinition = value
+    }
 }

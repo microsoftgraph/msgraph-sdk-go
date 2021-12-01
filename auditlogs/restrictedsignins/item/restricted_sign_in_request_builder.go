@@ -40,7 +40,7 @@ type RestrictedSignInRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // RestrictedSignInRequestBuilderPatchOptions options for Patch
 type RestrictedSignInRequestBuilderPatchOptions struct {

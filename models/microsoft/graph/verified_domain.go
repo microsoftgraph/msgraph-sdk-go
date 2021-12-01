@@ -17,7 +17,7 @@ type VerifiedDomain struct {
     // The domain name; for example, 'contoso.onmicrosoft.com'
     name *string;
     // For example, 'Managed'.
-    type_escaped *string;
+    type *string;
 }
 // NewVerifiedDomain instantiates a new verifiedDomain and sets the default values.
 func NewVerifiedDomain()(*VerifiedDomain) {
@@ -66,12 +66,12 @@ func (m *VerifiedDomain) GetName()(*string) {
         return m.name
     }
 }
-// GetType_escaped gets the type_escaped property value. For example, 'Managed'.
-func (m *VerifiedDomain) GetType_escaped()(*string) {
+// GetType gets the type property value. For example, 'Managed'.
+func (m *VerifiedDomain) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -117,13 +117,13 @@ func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(interface{}, i0
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -159,7 +159,7 @@ func (m *VerifiedDomain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -174,25 +174,37 @@ func (m *VerifiedDomain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedDomain) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCapabilities sets the capabilities property value. For example, 'Email', 'OfficeCommunicationsOnline'.
 func (m *VerifiedDomain) SetCapabilities(value *string)() {
-    m.capabilities = value
+    if m != nil {
+        m.capabilities = value
+    }
 }
 // SetIsDefault sets the isDefault property value. true if this is the default domain associated with the tenant; otherwise, false.
 func (m *VerifiedDomain) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetIsInitial sets the isInitial property value. true if this is the initial domain associated with the tenant; otherwise, false
 func (m *VerifiedDomain) SetIsInitial(value *bool)() {
-    m.isInitial = value
+    if m != nil {
+        m.isInitial = value
+    }
 }
 // SetName sets the name property value. The domain name; for example, 'contoso.onmicrosoft.com'
 func (m *VerifiedDomain) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. For example, 'Managed'.
-func (m *VerifiedDomain) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. For example, 'Managed'.
+func (m *VerifiedDomain) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }

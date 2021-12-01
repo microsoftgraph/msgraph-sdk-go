@@ -160,21 +160,31 @@ func (m *ConditionalAccessGrantControls) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessGrantControls) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBuiltInControls sets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
 func (m *ConditionalAccessGrantControls) SetBuiltInControls(value []ConditionalAccessGrantControl)() {
-    m.builtInControls = value
+    if m != nil {
+        m.builtInControls = value
+    }
 }
 // SetCustomAuthenticationFactors sets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. For more information, see Custom controls.
 func (m *ConditionalAccessGrantControls) SetCustomAuthenticationFactors(value []string)() {
-    m.customAuthenticationFactors = value
+    if m != nil {
+        m.customAuthenticationFactors = value
+    }
 }
 // SetOperator sets the operator property value. Defines the relationship of the grant controls. Possible values: AND, OR.
 func (m *ConditionalAccessGrantControls) SetOperator(value *string)() {
-    m.operator = value
+    if m != nil {
+        m.operator = value
+    }
 }
 // SetTermsOfUse sets the termsOfUse property value. List of terms of use IDs required by the policy.
 func (m *ConditionalAccessGrantControls) SetTermsOfUse(value []string)() {
-    m.termsOfUse = value
+    if m != nil {
+        m.termsOfUse = value
+    }
 }

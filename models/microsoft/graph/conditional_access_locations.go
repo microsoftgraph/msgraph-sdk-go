@@ -104,13 +104,19 @@ func (m *ConditionalAccessLocations) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessLocations) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExcludeLocations sets the excludeLocations property value. Location IDs excluded from scope of policy.
 func (m *ConditionalAccessLocations) SetExcludeLocations(value []string)() {
-    m.excludeLocations = value
+    if m != nil {
+        m.excludeLocations = value
+    }
 }
 // SetIncludeLocations sets the includeLocations property value. Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
 func (m *ConditionalAccessLocations) SetIncludeLocations(value []string)() {
-    m.includeLocations = value
+    if m != nil {
+        m.includeLocations = value
+    }
 }

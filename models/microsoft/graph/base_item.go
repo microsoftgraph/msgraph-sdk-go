@@ -320,45 +320,67 @@ func (m *BaseItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user, device, or application which created the item. Read-only.
 func (m *BaseItem) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedByUser sets the createdByUser property value. Identity of the user who created the item. Read-only.
 func (m *BaseItem) SetCreatedByUser(value *User)() {
-    m.createdByUser = value
+    if m != nil {
+        m.createdByUser = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time of item creation. Read-only.
 func (m *BaseItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. Provides a user-visible description of the item. Optional.
 func (m *BaseItem) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetETag sets the eTag property value. ETag for the item. Read-only.
 func (m *BaseItem) SetETag(value *string)() {
-    m.eTag = value
+    if m != nil {
+        m.eTag = value
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
 func (m *BaseItem) SetLastModifiedBy(value *IdentitySet)() {
-    m.lastModifiedBy = value
+    if m != nil {
+        m.lastModifiedBy = value
+    }
 }
 // SetLastModifiedByUser sets the lastModifiedByUser property value. Identity of the user who last modified the item. Read-only.
 func (m *BaseItem) SetLastModifiedByUser(value *User)() {
-    m.lastModifiedByUser = value
+    if m != nil {
+        m.lastModifiedByUser = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
 func (m *BaseItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetName sets the name property value. The name of the item. Read-write.
 func (m *BaseItem) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetParentReference sets the parentReference property value. Parent information, if the item has a parent. Read-write.
 func (m *BaseItem) SetParentReference(value *ItemReference)() {
-    m.parentReference = value
+    if m != nil {
+        m.parentReference = value
+    }
 }
 // SetWebUrl sets the webUrl property value. URL that displays the resource in the browser. Read-only.
 func (m *BaseItem) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

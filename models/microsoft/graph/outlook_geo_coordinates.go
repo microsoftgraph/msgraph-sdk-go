@@ -174,25 +174,37 @@ func (m *OutlookGeoCoordinates) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAccuracy sets the accuracy property value. The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
 func (m *OutlookGeoCoordinates) SetAccuracy(value *float64)() {
-    m.accuracy = value
+    if m != nil {
+        m.accuracy = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OutlookGeoCoordinates) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAltitude sets the altitude property value. The altitude of the location.
 func (m *OutlookGeoCoordinates) SetAltitude(value *float64)() {
-    m.altitude = value
+    if m != nil {
+        m.altitude = value
+    }
 }
 // SetAltitudeAccuracy sets the altitudeAccuracy property value. The accuracy of the altitude.
 func (m *OutlookGeoCoordinates) SetAltitudeAccuracy(value *float64)() {
-    m.altitudeAccuracy = value
+    if m != nil {
+        m.altitudeAccuracy = value
+    }
 }
 // SetLatitude sets the latitude property value. The latitude of the location.
 func (m *OutlookGeoCoordinates) SetLatitude(value *float64)() {
-    m.latitude = value
+    if m != nil {
+        m.latitude = value
+    }
 }
 // SetLongitude sets the longitude property value. The longitude of the location.
 func (m *OutlookGeoCoordinates) SetLongitude(value *float64)() {
-    m.longitude = value
+    if m != nil {
+        m.longitude = value
+    }
 }

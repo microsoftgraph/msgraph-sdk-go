@@ -96,13 +96,19 @@ func (m *OnenotePagePreview) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnenotePagePreview) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLinks sets the links property value. 
 func (m *OnenotePagePreview) SetLinks(value *OnenotePagePreviewLinks)() {
-    m.links = value
+    if m != nil {
+        m.links = value
+    }
 }
 // SetPreviewText sets the previewText property value. 
 func (m *OnenotePagePreview) SetPreviewText(value *string)() {
-    m.previewText = value
+    if m != nil {
+        m.previewText = value
+    }
 }

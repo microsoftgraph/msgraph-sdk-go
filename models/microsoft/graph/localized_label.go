@@ -122,17 +122,25 @@ func (m *LocalizedLabel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LocalizedLabel) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsDefault sets the isDefault property value. Indicates whether the label is the default label.
 func (m *LocalizedLabel) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetLanguageTag sets the languageTag property value. The language tag for the label.
 func (m *LocalizedLabel) SetLanguageTag(value *string)() {
-    m.languageTag = value
+    if m != nil {
+        m.languageTag = value
+    }
 }
 // SetName sets the name property value. The name of the label.
 func (m *LocalizedLabel) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

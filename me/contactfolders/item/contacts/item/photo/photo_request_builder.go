@@ -39,7 +39,7 @@ type PhotoRequestBuilderGetOptions struct {
 // PhotoRequestBuilderGetQueryParameters optional contact picture. You can get or set a photo for a contact.
 type PhotoRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PhotoRequestBuilderPatchOptions options for Patch
 type PhotoRequestBuilderPatchOptions struct {

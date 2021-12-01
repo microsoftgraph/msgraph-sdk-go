@@ -40,7 +40,7 @@ type ScopedRoleMembershipRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ScopedRoleMembershipRequestBuilderPatchOptions options for Patch
 type ScopedRoleMembershipRequestBuilderPatchOptions struct {

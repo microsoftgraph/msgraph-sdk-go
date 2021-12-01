@@ -338,45 +338,67 @@ func (m *SearchRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchRequest) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAggregationFilters sets the aggregationFilters property value. Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
 func (m *SearchRequest) SetAggregationFilters(value []string)() {
-    m.aggregationFilters = value
+    if m != nil {
+        m.aggregationFilters = value
+    }
 }
 // SetAggregations sets the aggregations property value. Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
 func (m *SearchRequest) SetAggregations(value []AggregationOption)() {
-    m.aggregations = value
+    if m != nil {
+        m.aggregations = value
+    }
 }
 // SetContentSources sets the contentSources property value. Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
 func (m *SearchRequest) SetContentSources(value []string)() {
-    m.contentSources = value
+    if m != nil {
+        m.contentSources = value
+    }
 }
 // SetEnableTopResults sets the enableTopResults property value. This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
 func (m *SearchRequest) SetEnableTopResults(value *bool)() {
-    m.enableTopResults = value
+    if m != nil {
+        m.enableTopResults = value
+    }
 }
 // SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
 func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
-    m.entityTypes = value
+    if m != nil {
+        m.entityTypes = value
+    }
 }
 // SetFields sets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
 func (m *SearchRequest) SetFields(value []string)() {
-    m.fields = value
+    if m != nil {
+        m.fields = value
+    }
 }
 // SetFrom sets the from property value. Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
 func (m *SearchRequest) SetFrom(value *int32)() {
-    m.from = value
+    if m != nil {
+        m.from = value
+    }
 }
 // SetQuery sets the query property value. 
 func (m *SearchRequest) SetQuery(value *SearchQuery)() {
-    m.query = value
+    if m != nil {
+        m.query = value
+    }
 }
 // SetSize sets the size property value. The size of the page to be retrieved. Optional.
 func (m *SearchRequest) SetSize(value *int32)() {
-    m.size = value
+    if m != nil {
+        m.size = value
+    }
 }
 // SetSortProperties sets the sortProperties property value. Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
 func (m *SearchRequest) SetSortProperties(value []SortProperty)() {
-    m.sortProperties = value
+    if m != nil {
+        m.sortProperties = value
+    }
 }

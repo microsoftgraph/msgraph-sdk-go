@@ -175,25 +175,37 @@ func (m *Beta_InvRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetA sets the A property value. 
 func (m *Beta_InvRequestBody) SetA(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.a = value
+    if m != nil {
+        m.a = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Beta_InvRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlpha sets the alpha property value. 
 func (m *Beta_InvRequestBody) SetAlpha(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.alpha = value
+    if m != nil {
+        m.alpha = value
+    }
 }
 // SetB sets the B property value. 
 func (m *Beta_InvRequestBody) SetB(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.b = value
+    if m != nil {
+        m.b = value
+    }
 }
 // SetBeta sets the beta property value. 
 func (m *Beta_InvRequestBody) SetBeta(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.beta = value
+    if m != nil {
+        m.beta = value
+    }
 }
 // SetProbability sets the probability property value. 
 func (m *Beta_InvRequestBody) SetProbability(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.probability = value
+    if m != nil {
+        m.probability = value
+    }
 }

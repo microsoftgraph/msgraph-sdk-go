@@ -40,7 +40,7 @@ type CalendarGroupRequestBuilderGetOptions struct {
 // CalendarGroupRequestBuilderGetQueryParameters the user's calendar groups. Read-only. Nullable.
 type CalendarGroupRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // CalendarGroupRequestBuilderPatchOptions options for Patch
 type CalendarGroupRequestBuilderPatchOptions struct {

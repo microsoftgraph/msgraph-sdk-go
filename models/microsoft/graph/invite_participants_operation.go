@@ -68,5 +68,7 @@ func (m *InviteParticipantsOperation) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetParticipants sets the participants property value. The participants to invite.
 func (m *InviteParticipantsOperation) SetParticipants(value []InvitationParticipantInfo)() {
-    m.participants = value
+    if m != nil {
+        m.participants = value
+    }
 }

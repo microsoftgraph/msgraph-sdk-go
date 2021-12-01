@@ -174,25 +174,37 @@ func (m *LookupColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LookupColumn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowMultipleValues sets the allowMultipleValues property value. Indicates whether multiple values can be selected from the source.
 func (m *LookupColumn) SetAllowMultipleValues(value *bool)() {
-    m.allowMultipleValues = value
+    if m != nil {
+        m.allowMultipleValues = value
+    }
 }
 // SetAllowUnlimitedLength sets the allowUnlimitedLength property value. Indicates whether values in the column should be able to exceed the standard limit of 255 characters.
 func (m *LookupColumn) SetAllowUnlimitedLength(value *bool)() {
-    m.allowUnlimitedLength = value
+    if m != nil {
+        m.allowUnlimitedLength = value
+    }
 }
 // SetColumnName sets the columnName property value. The name of the lookup source column.
 func (m *LookupColumn) SetColumnName(value *string)() {
-    m.columnName = value
+    if m != nil {
+        m.columnName = value
+    }
 }
 // SetListId sets the listId property value. The unique identifier of the lookup source list.
 func (m *LookupColumn) SetListId(value *string)() {
-    m.listId = value
+    if m != nil {
+        m.listId = value
+    }
 }
 // SetPrimaryLookupColumnId sets the primaryLookupColumnId property value. If specified, this column is a secondary lookup, pulling an additional field from the list item looked up by the primary lookup. Use the list item looked up by the primary as the source for the column named here.
 func (m *LookupColumn) SetPrimaryLookupColumnId(value *string)() {
-    m.primaryLookupColumnId = value
+    if m != nil {
+        m.primaryLookupColumnId = value
+    }
 }

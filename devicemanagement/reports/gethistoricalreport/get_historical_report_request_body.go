@@ -19,7 +19,7 @@ type GetHistoricalReportRequestBody struct {
     // 
     search *string;
     // 
-    select_escaped []string;
+    select []string;
     // 
     skip *int32;
     // 
@@ -80,12 +80,12 @@ func (m *GetHistoricalReportRequestBody) GetSearch()(*string) {
         return m.search
     }
 }
-// GetSelect_escaped gets the select_escaped property value. 
-func (m *GetHistoricalReportRequestBody) GetSelect_escaped()([]string) {
+// GetSelect gets the select property value. 
+func (m *GetHistoricalReportRequestBody) GetSelect()([]string) {
     if m == nil {
         return nil
     } else {
-        return m.select_escaped
+        return m.select
     }
 }
 // GetSkip gets the skip property value. 
@@ -165,7 +165,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *GetHistoricalReportRequestBody) GetFieldDeserializers()(map[string]func
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetSelect_escaped(res)
+            m.SetSelect(res)
         }
         return nil
     }
@@ -237,7 +237,7 @@ func (m *GetHistoricalReportRequestBody) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     {
-        err := writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
+        err := writer.WriteCollectionOfStringValues("select", m.GetSelect())
         if err != nil {
             return err
         }
@@ -264,37 +264,55 @@ func (m *GetHistoricalReportRequestBody) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetHistoricalReportRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFilter sets the filter property value. 
 func (m *GetHistoricalReportRequestBody) SetFilter(value *string)() {
-    m.filter = value
+    if m != nil {
+        m.filter = value
+    }
 }
 // SetGroupBy sets the groupBy property value. 
 func (m *GetHistoricalReportRequestBody) SetGroupBy(value []string)() {
-    m.groupBy = value
+    if m != nil {
+        m.groupBy = value
+    }
 }
 // SetName sets the name property value. 
 func (m *GetHistoricalReportRequestBody) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetOrderBy sets the orderBy property value. 
 func (m *GetHistoricalReportRequestBody) SetOrderBy(value []string)() {
-    m.orderBy = value
+    if m != nil {
+        m.orderBy = value
+    }
 }
 // SetSearch sets the search property value. 
 func (m *GetHistoricalReportRequestBody) SetSearch(value *string)() {
-    m.search = value
+    if m != nil {
+        m.search = value
+    }
 }
-// SetSelect_escaped sets the select_escaped property value. 
-func (m *GetHistoricalReportRequestBody) SetSelect_escaped(value []string)() {
-    m.select_escaped = value
+// SetSelect sets the select property value. 
+func (m *GetHistoricalReportRequestBody) SetSelect(value []string)() {
+    if m != nil {
+        m.select = value
+    }
 }
 // SetSkip sets the skip property value. 
 func (m *GetHistoricalReportRequestBody) SetSkip(value *int32)() {
-    m.skip = value
+    if m != nil {
+        m.skip = value
+    }
 }
 // SetTop sets the top property value. 
 func (m *GetHistoricalReportRequestBody) SetTop(value *int32)() {
-    m.top = value
+    if m != nil {
+        m.top = value
+    }
 }

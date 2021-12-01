@@ -122,17 +122,25 @@ func (m *SiteCollection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SiteCollection) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDataLocationCode sets the dataLocationCode property value. The geographic region code for where this site collection resides. Read-only.
 func (m *SiteCollection) SetDataLocationCode(value *string)() {
-    m.dataLocationCode = value
+    if m != nil {
+        m.dataLocationCode = value
+    }
 }
 // SetHostname sets the hostname property value. The hostname for the site collection. Read-only.
 func (m *SiteCollection) SetHostname(value *string)() {
-    m.hostname = value
+    if m != nil {
+        m.hostname = value
+    }
 }
 // SetRoot sets the root property value. If present, indicates that this is a root site collection in SharePoint. Read-only.
 func (m *SiteCollection) SetRoot(value *Root)() {
-    m.root = value
+    if m != nil {
+        m.root = value
+    }
 }

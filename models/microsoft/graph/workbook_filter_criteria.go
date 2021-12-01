@@ -252,37 +252,55 @@ func (m *WorkbookFilterCriteria) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkbookFilterCriteria) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetColor sets the color property value. 
 func (m *WorkbookFilterCriteria) SetColor(value *string)() {
-    m.color = value
+    if m != nil {
+        m.color = value
+    }
 }
 // SetCriterion1 sets the criterion1 property value. 
 func (m *WorkbookFilterCriteria) SetCriterion1(value *string)() {
-    m.criterion1 = value
+    if m != nil {
+        m.criterion1 = value
+    }
 }
 // SetCriterion2 sets the criterion2 property value. 
 func (m *WorkbookFilterCriteria) SetCriterion2(value *string)() {
-    m.criterion2 = value
+    if m != nil {
+        m.criterion2 = value
+    }
 }
 // SetDynamicCriteria sets the dynamicCriteria property value. 
 func (m *WorkbookFilterCriteria) SetDynamicCriteria(value *string)() {
-    m.dynamicCriteria = value
+    if m != nil {
+        m.dynamicCriteria = value
+    }
 }
 // SetFilterOn sets the filterOn property value. 
 func (m *WorkbookFilterCriteria) SetFilterOn(value *string)() {
-    m.filterOn = value
+    if m != nil {
+        m.filterOn = value
+    }
 }
 // SetIcon sets the icon property value. 
 func (m *WorkbookFilterCriteria) SetIcon(value *WorkbookIcon)() {
-    m.icon = value
+    if m != nil {
+        m.icon = value
+    }
 }
 // SetOperator sets the operator property value. 
 func (m *WorkbookFilterCriteria) SetOperator(value *string)() {
-    m.operator = value
+    if m != nil {
+        m.operator = value
+    }
 }
 // SetValues sets the values property value. 
 func (m *WorkbookFilterCriteria) SetValues(value *Json)() {
-    m.values = value
+    if m != nil {
+        m.values = value
+    }
 }

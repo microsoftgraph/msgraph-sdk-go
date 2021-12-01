@@ -675,101 +675,151 @@ func (m *NetworkInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBandwidthLowEventRatio sets the bandwidthLowEventRatio property value. Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
 func (m *NetworkInfo) SetBandwidthLowEventRatio(value *float32)() {
-    m.bandwidthLowEventRatio = value
+    if m != nil {
+        m.bandwidthLowEventRatio = value
+    }
 }
 // SetBasicServiceSetIdentifier sets the basicServiceSetIdentifier property value. The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
 func (m *NetworkInfo) SetBasicServiceSetIdentifier(value *string)() {
-    m.basicServiceSetIdentifier = value
+    if m != nil {
+        m.basicServiceSetIdentifier = value
+    }
 }
 // SetConnectionType sets the connectionType property value. Type of network used by the media endpoint. Possible values are: unknown, wired, wifi, mobile, tunnel, unknownFutureValue.
 func (m *NetworkInfo) SetConnectionType(value *i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.NetworkConnectionType)() {
-    m.connectionType = value
+    if m != nil {
+        m.connectionType = value
+    }
 }
 // SetDelayEventRatio sets the delayEventRatio property value. Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
 func (m *NetworkInfo) SetDelayEventRatio(value *float32)() {
-    m.delayEventRatio = value
+    if m != nil {
+        m.delayEventRatio = value
+    }
 }
 // SetDnsSuffix sets the dnsSuffix property value. DNS suffix associated with the network adapter of the media endpoint.
 func (m *NetworkInfo) SetDnsSuffix(value *string)() {
-    m.dnsSuffix = value
+    if m != nil {
+        m.dnsSuffix = value
+    }
 }
 // SetIpAddress sets the ipAddress property value. IP address of the media endpoint.
 func (m *NetworkInfo) SetIpAddress(value *string)() {
-    m.ipAddress = value
+    if m != nil {
+        m.ipAddress = value
+    }
 }
 // SetLinkSpeed sets the linkSpeed property value. Link speed in bits per second reported by the network adapter used by the media endpoint.
 func (m *NetworkInfo) SetLinkSpeed(value *int64)() {
-    m.linkSpeed = value
+    if m != nil {
+        m.linkSpeed = value
+    }
 }
 // SetMacAddress sets the macAddress property value. The media access control (MAC) address of the media endpoint's network device.
 func (m *NetworkInfo) SetMacAddress(value *string)() {
-    m.macAddress = value
+    if m != nil {
+        m.macAddress = value
+    }
 }
 // SetPort sets the port property value. Network port number used by media endpoint.
 func (m *NetworkInfo) SetPort(value *int32)() {
-    m.port = value
+    if m != nil {
+        m.port = value
+    }
 }
 // SetReceivedQualityEventRatio sets the receivedQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
 func (m *NetworkInfo) SetReceivedQualityEventRatio(value *float32)() {
-    m.receivedQualityEventRatio = value
+    if m != nil {
+        m.receivedQualityEventRatio = value
+    }
 }
 // SetReflexiveIPAddress sets the reflexiveIPAddress property value. IP address of the media endpoint as seen by the media relay server. This is typically the public internet IP address associated to the endpoint.
 func (m *NetworkInfo) SetReflexiveIPAddress(value *string)() {
-    m.reflexiveIPAddress = value
+    if m != nil {
+        m.reflexiveIPAddress = value
+    }
 }
 // SetRelayIPAddress sets the relayIPAddress property value. IP address of the media relay server allocated by the media endpoint.
 func (m *NetworkInfo) SetRelayIPAddress(value *string)() {
-    m.relayIPAddress = value
+    if m != nil {
+        m.relayIPAddress = value
+    }
 }
 // SetRelayPort sets the relayPort property value. Network port number allocated on the media relay server by the media endpoint.
 func (m *NetworkInfo) SetRelayPort(value *int32)() {
-    m.relayPort = value
+    if m != nil {
+        m.relayPort = value
+    }
 }
 // SetSentQualityEventRatio sets the sentQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.
 func (m *NetworkInfo) SetSentQualityEventRatio(value *float32)() {
-    m.sentQualityEventRatio = value
+    if m != nil {
+        m.sentQualityEventRatio = value
+    }
 }
 // SetSubnet sets the subnet property value. Subnet used for media stream by the media endpoint.
 func (m *NetworkInfo) SetSubnet(value *string)() {
-    m.subnet = value
+    if m != nil {
+        m.subnet = value
+    }
 }
 // SetWifiBand sets the wifiBand property value. WiFi band used by the media endpoint. Possible values are: unknown, frequency24GHz, frequency50GHz, frequency60GHz, unknownFutureValue.
 func (m *NetworkInfo) SetWifiBand(value *i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiBand)() {
-    m.wifiBand = value
+    if m != nil {
+        m.wifiBand = value
+    }
 }
 // SetWifiBatteryCharge sets the wifiBatteryCharge property value. Estimated remaining battery charge in percentage reported by the media endpoint.
 func (m *NetworkInfo) SetWifiBatteryCharge(value *int32)() {
-    m.wifiBatteryCharge = value
+    if m != nil {
+        m.wifiBatteryCharge = value
+    }
 }
 // SetWifiChannel sets the wifiChannel property value. WiFi channel used by the media endpoint.
 func (m *NetworkInfo) SetWifiChannel(value *int32)() {
-    m.wifiChannel = value
+    if m != nil {
+        m.wifiChannel = value
+    }
 }
 // SetWifiMicrosoftDriver sets the wifiMicrosoftDriver property value. Name of the Microsoft WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
 func (m *NetworkInfo) SetWifiMicrosoftDriver(value *string)() {
-    m.wifiMicrosoftDriver = value
+    if m != nil {
+        m.wifiMicrosoftDriver = value
+    }
 }
 // SetWifiMicrosoftDriverVersion sets the wifiMicrosoftDriverVersion property value. Version of the Microsoft WiFi driver used by the media endpoint.
 func (m *NetworkInfo) SetWifiMicrosoftDriverVersion(value *string)() {
-    m.wifiMicrosoftDriverVersion = value
+    if m != nil {
+        m.wifiMicrosoftDriverVersion = value
+    }
 }
 // SetWifiRadioType sets the wifiRadioType property value. Type of WiFi radio used by the media endpoint. Possible values are: unknown, wifi80211a, wifi80211b, wifi80211g, wifi80211n, wifi80211ac, wifi80211ax, unknownFutureValue.
 func (m *NetworkInfo) SetWifiRadioType(value *i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiRadioType)() {
-    m.wifiRadioType = value
+    if m != nil {
+        m.wifiRadioType = value
+    }
 }
 // SetWifiSignalStrength sets the wifiSignalStrength property value. WiFi signal strength in percentage reported by the media endpoint.
 func (m *NetworkInfo) SetWifiSignalStrength(value *int32)() {
-    m.wifiSignalStrength = value
+    if m != nil {
+        m.wifiSignalStrength = value
+    }
 }
 // SetWifiVendorDriver sets the wifiVendorDriver property value. Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
 func (m *NetworkInfo) SetWifiVendorDriver(value *string)() {
-    m.wifiVendorDriver = value
+    if m != nil {
+        m.wifiVendorDriver = value
+    }
 }
 // SetWifiVendorDriverVersion sets the wifiVendorDriverVersion property value. Version of the WiFi driver used by the media endpoint.
 func (m *NetworkInfo) SetWifiVendorDriverVersion(value *string)() {
-    m.wifiVendorDriverVersion = value
+    if m != nil {
+        m.wifiVendorDriverVersion = value
+    }
 }

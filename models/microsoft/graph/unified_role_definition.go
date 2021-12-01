@@ -289,37 +289,55 @@ func (m *UnifiedRoleDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetDescription sets the description property value. The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
 func (m *UnifiedRoleDefinition) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).
 func (m *UnifiedRoleDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetInheritsPermissionsFrom sets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
 func (m *UnifiedRoleDefinition) SetInheritsPermissionsFrom(value []UnifiedRoleDefinition)() {
-    m.inheritsPermissionsFrom = value
+    if m != nil {
+        m.inheritsPermissionsFrom = value
+    }
 }
 // SetIsBuiltIn sets the isBuiltIn property value. Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).
 func (m *UnifiedRoleDefinition) SetIsBuiltIn(value *bool)() {
-    m.isBuiltIn = value
+    if m != nil {
+        m.isBuiltIn = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
 func (m *UnifiedRoleDefinition) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetResourceScopes sets the resourceScopes property value. List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
 func (m *UnifiedRoleDefinition) SetResourceScopes(value []string)() {
-    m.resourceScopes = value
+    if m != nil {
+        m.resourceScopes = value
+    }
 }
 // SetRolePermissions sets the rolePermissions property value. List of permissions included in the role. Read-only when isBuiltIn is true. Required.
 func (m *UnifiedRoleDefinition) SetRolePermissions(value []UnifiedRolePermission)() {
-    m.rolePermissions = value
+    if m != nil {
+        m.rolePermissions = value
+    }
 }
 // SetTemplateId sets the templateId property value. Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
 func (m *UnifiedRoleDefinition) SetTemplateId(value *string)() {
-    m.templateId = value
+    if m != nil {
+        m.templateId = value
+    }
 }
 // SetVersion sets the version property value. Indicates version of the role definition. Read-only when isBuiltIn is true.
 func (m *UnifiedRoleDefinition) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

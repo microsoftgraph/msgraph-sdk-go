@@ -43,7 +43,7 @@ type AndroidManagedAppProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AndroidManagedAppProtectionRequestBuilderPatchOptions options for Patch
 type AndroidManagedAppProtectionRequestBuilderPatchOptions struct {

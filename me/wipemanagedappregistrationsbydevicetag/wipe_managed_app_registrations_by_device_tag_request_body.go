@@ -70,9 +70,13 @@ func (m *WipeManagedAppRegistrationsByDeviceTagRequestBody) Serialize(writer i04
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WipeManagedAppRegistrationsByDeviceTagRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceTag sets the deviceTag property value. 
 func (m *WipeManagedAppRegistrationsByDeviceTagRequestBody) SetDeviceTag(value *string)() {
-    m.deviceTag = value
+    if m != nil {
+        m.deviceTag = value
+    }
 }

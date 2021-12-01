@@ -620,85 +620,127 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
 }
 // SetChannels sets the channels property value. The collection of channels & messages associated with the team.
 func (m *Team) SetChannels(value []Channel)() {
-    m.channels = value
+    if m != nil {
+        m.channels = value
+    }
 }
 // SetClassification sets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
 func (m *Team) SetClassification(value *string)() {
-    m.classification = value
+    if m != nil {
+        m.classification = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Timestamp at which the team was created.
 func (m *Team) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. An optional description for the team. Maximum length: 1024 characters.
 func (m *Team) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the team.
 func (m *Team) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetFunSettings sets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
 func (m *Team) SetFunSettings(value *TeamFunSettings)() {
-    m.funSettings = value
+    if m != nil {
+        m.funSettings = value
+    }
 }
 // SetGroup sets the group property value. 
 func (m *Team) SetGroup(value *Group)() {
-    m.group = value
+    if m != nil {
+        m.group = value
+    }
 }
 // SetGuestSettings sets the guestSettings property value. Settings to configure whether guests can create, update, or delete channels in the team.
 func (m *Team) SetGuestSettings(value *TeamGuestSettings)() {
-    m.guestSettings = value
+    if m != nil {
+        m.guestSettings = value
+    }
 }
 // SetInstalledApps sets the installedApps property value. The apps installed in this team.
 func (m *Team) SetInstalledApps(value []TeamsAppInstallation)() {
-    m.installedApps = value
+    if m != nil {
+        m.installedApps = value
+    }
 }
 // SetInternalId sets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
 func (m *Team) SetInternalId(value *string)() {
-    m.internalId = value
+    if m != nil {
+        m.internalId = value
+    }
 }
 // SetIsArchived sets the isArchived property value. Whether this team is in read-only mode.
 func (m *Team) SetIsArchived(value *bool)() {
-    m.isArchived = value
+    if m != nil {
+        m.isArchived = value
+    }
 }
 // SetMembers sets the members property value. Members and owners of the team.
 func (m *Team) SetMembers(value []ConversationMember)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }
 // SetMemberSettings sets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
 func (m *Team) SetMemberSettings(value *TeamMemberSettings)() {
-    m.memberSettings = value
+    if m != nil {
+        m.memberSettings = value
+    }
 }
 // SetMessagingSettings sets the messagingSettings property value. Settings to configure messaging and mentions in the team.
 func (m *Team) SetMessagingSettings(value *TeamMessagingSettings)() {
-    m.messagingSettings = value
+    if m != nil {
+        m.messagingSettings = value
+    }
 }
 // SetOperations sets the operations property value. The async operations that ran or are running on this team.
 func (m *Team) SetOperations(value []TeamsAsyncOperation)() {
-    m.operations = value
+    if m != nil {
+        m.operations = value
+    }
 }
 // SetPrimaryChannel sets the primaryChannel property value. The general channel for the team.
 func (m *Team) SetPrimaryChannel(value *Channel)() {
-    m.primaryChannel = value
+    if m != nil {
+        m.primaryChannel = value
+    }
 }
 // SetSchedule sets the schedule property value. The schedule of shifts for this team.
 func (m *Team) SetSchedule(value *Schedule)() {
-    m.schedule = value
+    if m != nil {
+        m.schedule = value
+    }
 }
 // SetSpecialization sets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
 func (m *Team) SetSpecialization(value *TeamSpecialization)() {
-    m.specialization = value
+    if m != nil {
+        m.specialization = value
+    }
 }
 // SetTemplate sets the template property value. The template this team was created from. See available templates.
 func (m *Team) SetTemplate(value *TeamsTemplate)() {
-    m.template = value
+    if m != nil {
+        m.template = value
+    }
 }
 // SetVisibility sets the visibility property value. The visibility of the group and team. Defaults to Public.
 func (m *Team) SetVisibility(value *TeamVisibilityType)() {
-    m.visibility = value
+    if m != nil {
+        m.visibility = value
+    }
 }
 // SetWebUrl sets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
 func (m *Team) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

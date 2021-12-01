@@ -85,9 +85,13 @@ func (m *EducationAssignmentResource) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetDistributeForStudentWork sets the distributeForStudentWork property value. Indicates whether this resource should be copied to each student submission for modification and submission. Required
 func (m *EducationAssignmentResource) SetDistributeForStudentWork(value *bool)() {
-    m.distributeForStudentWork = value
+    if m != nil {
+        m.distributeForStudentWork = value
+    }
 }
 // SetResource sets the resource property value. Resource object that has been associated with this assignment.
 func (m *EducationAssignmentResource) SetResource(value *EducationResource)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }

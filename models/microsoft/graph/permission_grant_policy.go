@@ -103,9 +103,13 @@ func (m *PermissionGrantPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetExcludes sets the excludes property value. Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantPolicy) SetExcludes(value []PermissionGrantConditionSet)() {
-    m.excludes = value
+    if m != nil {
+        m.excludes = value
+    }
 }
 // SetIncludes sets the includes property value. Condition sets which are included in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantPolicy) SetIncludes(value []PermissionGrantConditionSet)() {
-    m.includes = value
+    if m != nil {
+        m.includes = value
+    }
 }

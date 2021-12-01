@@ -71,9 +71,13 @@ func (m *CreateUploadSessionRequestBody) Serialize(writer i04eb5309aeaafadd28374
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateUploadSessionRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttachmentItem sets the AttachmentItem property value. 
 func (m *CreateUploadSessionRequestBody) SetAttachmentItem(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AttachmentItem)() {
-    m.attachmentItem = value
+    if m != nil {
+        m.attachmentItem = value
+    }
 }

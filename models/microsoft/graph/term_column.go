@@ -148,21 +148,31 @@ func (m *TermColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TermColumn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowMultipleValues sets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
 func (m *TermColumn) SetAllowMultipleValues(value *bool)() {
-    m.allowMultipleValues = value
+    if m != nil {
+        m.allowMultipleValues = value
+    }
 }
 // SetParentTerm sets the parentTerm property value. 
 func (m *TermColumn) SetParentTerm(value *Term)() {
-    m.parentTerm = value
+    if m != nil {
+        m.parentTerm = value
+    }
 }
 // SetShowFullyQualifiedName sets the showFullyQualifiedName property value. Specifies whether to display the entire term path or only the term label.
 func (m *TermColumn) SetShowFullyQualifiedName(value *bool)() {
-    m.showFullyQualifiedName = value
+    if m != nil {
+        m.showFullyQualifiedName = value
+    }
 }
 // SetTermSet sets the termSet property value. 
 func (m *TermColumn) SetTermSet(value *Set)() {
-    m.termSet = value
+    if m != nil {
+        m.termSet = value
+    }
 }

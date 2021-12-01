@@ -113,13 +113,19 @@ func (m *TimeOffReason) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetDisplayName sets the displayName property value. The name of the timeOffReason. Required.
 func (m *TimeOffReason) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIconType sets the iconType property value. Supported icon types: none; car; calendar; running; plane; firstAid; doctor; notWorking; clock; juryDuty; globe; cup; phone; weather; umbrella; piggyBank; dog; cake; trafficCone; pin; sunny. Required.
 func (m *TimeOffReason) SetIconType(value *TimeOffReasonIconType)() {
-    m.iconType = value
+    if m != nil {
+        m.iconType = value
+    }
 }
 // SetIsActive sets the isActive property value. Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
 func (m *TimeOffReason) SetIsActive(value *bool)() {
-    m.isActive = value
+    if m != nil {
+        m.isActive = value
+    }
 }

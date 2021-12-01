@@ -42,7 +42,7 @@ type InReplyToRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // InReplyToRequestBuilderPatchOptions options for Patch
 type InReplyToRequestBuilderPatchOptions struct {

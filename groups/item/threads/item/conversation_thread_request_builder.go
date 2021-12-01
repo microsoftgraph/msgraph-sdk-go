@@ -41,7 +41,7 @@ type ConversationThreadRequestBuilderGetOptions struct {
 // ConversationThreadRequestBuilderGetQueryParameters the group's conversation threads. Nullable.
 type ConversationThreadRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ConversationThreadRequestBuilderPatchOptions options for Patch
 type ConversationThreadRequestBuilderPatchOptions struct {

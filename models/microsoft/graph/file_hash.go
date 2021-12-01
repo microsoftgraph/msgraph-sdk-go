@@ -98,13 +98,19 @@ func (m *FileHash) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileHash) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetHashType sets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
 func (m *FileHash) SetHashType(value *FileHashType)() {
-    m.hashType = value
+    if m != nil {
+        m.hashType = value
+    }
 }
 // SetHashValue sets the hashValue property value. Value of the file hash.
 func (m *FileHash) SetHashValue(value *string)() {
-    m.hashValue = value
+    if m != nil {
+        m.hashValue = value
+    }
 }

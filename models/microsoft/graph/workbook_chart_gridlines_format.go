@@ -59,5 +59,7 @@ func (m *WorkbookChartGridlinesFormat) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetLine sets the line property value. Represents chart line formatting. Read-only.
 func (m *WorkbookChartGridlinesFormat) SetLine(value *WorkbookChartLineFormat)() {
-    m.line = value
+    if m != nil {
+        m.line = value
+    }
 }

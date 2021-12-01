@@ -13,7 +13,7 @@ type AddIn struct {
     // 
     properties []KeyValue;
     // 
-    type_escaped *string;
+    type *string;
 }
 // NewAddIn instantiates a new addIn and sets the default values.
 func NewAddIn()(*AddIn) {
@@ -46,12 +46,12 @@ func (m *AddIn) GetProperties()([]KeyValue) {
         return m.properties
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *AddIn) GetType_escaped()(*string) {
+// GetType gets the type property value. 
+func (m *AddIn) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -81,13 +81,13 @@ func (m *AddIn) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -116,7 +116,7 @@ func (m *AddIn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -131,17 +131,25 @@ func (m *AddIn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddIn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. 
 func (m *AddIn) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetProperties sets the properties property value. 
 func (m *AddIn) SetProperties(value []KeyValue)() {
-    m.properties = value
+    if m != nil {
+        m.properties = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *AddIn) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. 
+func (m *AddIn) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }

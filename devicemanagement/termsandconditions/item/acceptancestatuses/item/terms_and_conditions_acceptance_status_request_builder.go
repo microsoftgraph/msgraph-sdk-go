@@ -41,7 +41,7 @@ type TermsAndConditionsAcceptanceStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TermsAndConditionsAcceptanceStatusRequestBuilderPatchOptions options for Patch
 type TermsAndConditionsAcceptanceStatusRequestBuilderPatchOptions struct {

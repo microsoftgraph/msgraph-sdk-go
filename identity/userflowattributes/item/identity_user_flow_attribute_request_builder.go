@@ -40,7 +40,7 @@ type IdentityUserFlowAttributeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // IdentityUserFlowAttributeRequestBuilderPatchOptions options for Patch
 type IdentityUserFlowAttributeRequestBuilderPatchOptions struct {

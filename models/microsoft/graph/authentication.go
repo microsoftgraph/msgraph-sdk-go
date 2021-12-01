@@ -173,17 +173,25 @@ func (m *Authentication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetFido2Methods sets the fido2Methods property value. 
 func (m *Authentication) SetFido2Methods(value []Fido2AuthenticationMethod)() {
-    m.fido2Methods = value
+    if m != nil {
+        m.fido2Methods = value
+    }
 }
 // SetMethods sets the methods property value. 
 func (m *Authentication) SetMethods(value []AuthenticationMethod)() {
-    m.methods = value
+    if m != nil {
+        m.methods = value
+    }
 }
 // SetMicrosoftAuthenticatorMethods sets the microsoftAuthenticatorMethods property value. 
 func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethod)() {
-    m.microsoftAuthenticatorMethods = value
+    if m != nil {
+        m.microsoftAuthenticatorMethods = value
+    }
 }
 // SetWindowsHelloForBusinessMethods sets the windowsHelloForBusinessMethods property value. 
 func (m *Authentication) SetWindowsHelloForBusinessMethods(value []WindowsHelloForBusinessAuthenticationMethod)() {
-    m.windowsHelloForBusinessMethods = value
+    if m != nil {
+        m.windowsHelloForBusinessMethods = value
+    }
 }

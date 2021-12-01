@@ -40,7 +40,7 @@ type InferenceClassificationRequestBuilderGetOptions struct {
 // InferenceClassificationRequestBuilderGetQueryParameters relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 type InferenceClassificationRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // InferenceClassificationRequestBuilderPatchOptions options for Patch
 type InferenceClassificationRequestBuilderPatchOptions struct {

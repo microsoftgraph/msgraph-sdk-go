@@ -90,11 +90,15 @@ func (m *ProvisionEmailResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisionEmailResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetProvisionChannelEmailResult sets the provisionChannelEmailResult property value. Union type representation for type provisionChannelEmailResult
 func (m *ProvisionEmailResponse) SetProvisionChannelEmailResult(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProvisionChannelEmailResult)() {
-    m.provisionChannelEmailResult = value
+    if m != nil {
+        m.provisionChannelEmailResult = value
+    }
 }
 // NewProvisionEmailRequestBuilderInternal instantiates a new ProvisionEmailRequestBuilder and sets the default values.
 func NewProvisionEmailRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ProvisionEmailRequestBuilder) {

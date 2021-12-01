@@ -240,33 +240,49 @@ func (m *InviteRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InviteRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. 
 func (m *InviteRequestBody) SetExpirationDateTime(value *string)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetMessage sets the message property value. 
 func (m *InviteRequestBody) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }
 // SetPassword sets the password property value. 
 func (m *InviteRequestBody) SetPassword(value *string)() {
-    m.password = value
+    if m != nil {
+        m.password = value
+    }
 }
 // SetRecipients sets the recipients property value. 
 func (m *InviteRequestBody) SetRecipients(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DriveRecipient)() {
-    m.recipients = value
+    if m != nil {
+        m.recipients = value
+    }
 }
 // SetRequireSignIn sets the requireSignIn property value. 
 func (m *InviteRequestBody) SetRequireSignIn(value *bool)() {
-    m.requireSignIn = value
+    if m != nil {
+        m.requireSignIn = value
+    }
 }
 // SetRoles sets the roles property value. 
 func (m *InviteRequestBody) SetRoles(value []string)() {
-    m.roles = value
+    if m != nil {
+        m.roles = value
+    }
 }
 // SetSendInvitation sets the sendInvitation property value. 
 func (m *InviteRequestBody) SetSendInvitation(value *bool)() {
-    m.sendInvitation = value
+    if m != nil {
+        m.sendInvitation = value
+    }
 }

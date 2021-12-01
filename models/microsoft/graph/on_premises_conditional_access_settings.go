@@ -145,17 +145,25 @@ func (m *OnPremisesConditionalAccessSettings) Serialize(writer i04eb5309aeaafadd
 }
 // SetEnabled sets the enabled property value. Indicates if on premises conditional access is enabled for this organization
 func (m *OnPremisesConditionalAccessSettings) SetEnabled(value *bool)() {
-    m.enabled = value
+    if m != nil {
+        m.enabled = value
+    }
 }
 // SetExcludedGroups sets the excludedGroups property value. User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
 func (m *OnPremisesConditionalAccessSettings) SetExcludedGroups(value []string)() {
-    m.excludedGroups = value
+    if m != nil {
+        m.excludedGroups = value
+    }
 }
 // SetIncludedGroups sets the includedGroups property value. User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
 func (m *OnPremisesConditionalAccessSettings) SetIncludedGroups(value []string)() {
-    m.includedGroups = value
+    if m != nil {
+        m.includedGroups = value
+    }
 }
 // SetOverrideDefaultRule sets the overrideDefaultRule property value. Override the default access rule when allowing a device to ensure access is granted.
 func (m *OnPremisesConditionalAccessSettings) SetOverrideDefaultRule(value *bool)() {
-    m.overrideDefaultRule = value
+    if m != nil {
+        m.overrideDefaultRule = value
+    }
 }

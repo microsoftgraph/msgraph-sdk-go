@@ -96,13 +96,19 @@ func (m *UploadClientCertificateRequestBody) Serialize(writer i04eb5309aeaafadd2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadClientCertificateRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPassword sets the password property value. 
 func (m *UploadClientCertificateRequestBody) SetPassword(value *string)() {
-    m.password = value
+    if m != nil {
+        m.password = value
+    }
 }
 // SetPkcs12Value sets the pkcs12Value property value. 
 func (m *UploadClientCertificateRequestBody) SetPkcs12Value(value *string)() {
-    m.pkcs12Value = value
+    if m != nil {
+        m.pkcs12Value = value
+    }
 }

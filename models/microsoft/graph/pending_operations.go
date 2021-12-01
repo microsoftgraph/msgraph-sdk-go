@@ -70,9 +70,13 @@ func (m *PendingOperations) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PendingOperations) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPendingContentUpdate sets the pendingContentUpdate property value. A property that indicates that an operation that might update the binary content of a file is pending completion.
 func (m *PendingOperations) SetPendingContentUpdate(value *PendingContentUpdate)() {
-    m.pendingContentUpdate = value
+    if m != nil {
+        m.pendingContentUpdate = value
+    }
 }

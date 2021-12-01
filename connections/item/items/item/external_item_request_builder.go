@@ -40,7 +40,7 @@ type ExternalItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ExternalItemRequestBuilderPatchOptions options for Patch
 type ExternalItemRequestBuilderPatchOptions struct {

@@ -149,21 +149,31 @@ func (m *HlookupRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *HlookupRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLookupValue sets the lookupValue property value. 
 func (m *HlookupRequestBody) SetLookupValue(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.lookupValue = value
+    if m != nil {
+        m.lookupValue = value
+    }
 }
 // SetRangeLookup sets the rangeLookup property value. 
 func (m *HlookupRequestBody) SetRangeLookup(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.rangeLookup = value
+    if m != nil {
+        m.rangeLookup = value
+    }
 }
 // SetRowIndexNum sets the rowIndexNum property value. 
 func (m *HlookupRequestBody) SetRowIndexNum(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.rowIndexNum = value
+    if m != nil {
+        m.rowIndexNum = value
+    }
 }
 // SetTableArray sets the tableArray property value. 
 func (m *HlookupRequestBody) SetTableArray(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.tableArray = value
+    if m != nil {
+        m.tableArray = value
+    }
 }

@@ -68,5 +68,7 @@ func (m *Bitlocker) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetRecoveryKeys sets the recoveryKeys property value. The recovery keys associated with the bitlocker entity.
 func (m *Bitlocker) SetRecoveryKeys(value []BitlockerRecoveryKey)() {
-    m.recoveryKeys = value
+    if m != nil {
+        m.recoveryKeys = value
+    }
 }

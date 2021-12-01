@@ -181,21 +181,31 @@ func (m *RoleDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetDescription sets the description property value. Description of the Role definition.
 func (m *RoleDefinition) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display Name of the Role definition.
 func (m *RoleDefinition) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsBuiltIn sets the isBuiltIn property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
 func (m *RoleDefinition) SetIsBuiltIn(value *bool)() {
-    m.isBuiltIn = value
+    if m != nil {
+        m.isBuiltIn = value
+    }
 }
 // SetRoleAssignments sets the roleAssignments property value. List of Role assignments for this role definition.
 func (m *RoleDefinition) SetRoleAssignments(value []RoleAssignment)() {
-    m.roleAssignments = value
+    if m != nil {
+        m.roleAssignments = value
+    }
 }
 // SetRolePermissions sets the rolePermissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
 func (m *RoleDefinition) SetRolePermissions(value []RolePermission)() {
-    m.rolePermissions = value
+    if m != nil {
+        m.rolePermissions = value
+    }
 }

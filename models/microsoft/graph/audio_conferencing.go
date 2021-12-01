@@ -208,29 +208,43 @@ func (m *AudioConferencing) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AudioConferencing) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConferenceId sets the conferenceId property value. The conference id of the online meeting.
 func (m *AudioConferencing) SetConferenceId(value *string)() {
-    m.conferenceId = value
+    if m != nil {
+        m.conferenceId = value
+    }
 }
 // SetDialinUrl sets the dialinUrl property value. A URL to the externally-accessible web page that contains dial-in information.
 func (m *AudioConferencing) SetDialinUrl(value *string)() {
-    m.dialinUrl = value
+    if m != nil {
+        m.dialinUrl = value
+    }
 }
 // SetTollFreeNumber sets the tollFreeNumber property value. 
 func (m *AudioConferencing) SetTollFreeNumber(value *string)() {
-    m.tollFreeNumber = value
+    if m != nil {
+        m.tollFreeNumber = value
+    }
 }
 // SetTollFreeNumbers sets the tollFreeNumbers property value. List of toll-free numbers that are displayed in the meeting invite.
 func (m *AudioConferencing) SetTollFreeNumbers(value []string)() {
-    m.tollFreeNumbers = value
+    if m != nil {
+        m.tollFreeNumbers = value
+    }
 }
 // SetTollNumber sets the tollNumber property value. 
 func (m *AudioConferencing) SetTollNumber(value *string)() {
-    m.tollNumber = value
+    if m != nil {
+        m.tollNumber = value
+    }
 }
 // SetTollNumbers sets the tollNumbers property value. List of toll numbers that are displayed in the meeting invite.
 func (m *AudioConferencing) SetTollNumbers(value []string)() {
-    m.tollNumbers = value
+    if m != nil {
+        m.tollNumbers = value
+    }
 }

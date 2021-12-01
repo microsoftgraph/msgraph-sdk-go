@@ -39,7 +39,7 @@ type PhotoRequestBuilderGetOptions struct {
 // PhotoRequestBuilderGetQueryParameters the group's profile photo
 type PhotoRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PhotoRequestBuilderPatchOptions options for Patch
 type PhotoRequestBuilderPatchOptions struct {

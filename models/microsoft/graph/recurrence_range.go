@@ -17,7 +17,7 @@ type RecurrenceRange struct {
     // The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
     startDate *string;
     // The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-    type_escaped *RecurrenceRangeType;
+    type *RecurrenceRangeType;
 }
 // NewRecurrenceRange instantiates a new recurrenceRange and sets the default values.
 func NewRecurrenceRange()(*RecurrenceRange) {
@@ -66,12 +66,12 @@ func (m *RecurrenceRange) GetStartDate()(*string) {
         return m.startDate
     }
 }
-// GetType_escaped gets the type_escaped property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-func (m *RecurrenceRange) GetType_escaped()(*RecurrenceRangeType) {
+// GetType gets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
+func (m *RecurrenceRange) GetType()(*RecurrenceRangeType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -117,14 +117,14 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseRecurrenceRangeType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(RecurrenceRangeType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -159,9 +159,9 @@ func (m *RecurrenceRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -176,25 +176,37 @@ func (m *RecurrenceRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecurrenceRange) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEndDate sets the endDate property value. The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.
 func (m *RecurrenceRange) SetEndDate(value *string)() {
-    m.endDate = value
+    if m != nil {
+        m.endDate = value
+    }
 }
 // SetNumberOfOccurrences sets the numberOfOccurrences property value. The number of times to repeat the event. Required and must be positive if type is numbered.
 func (m *RecurrenceRange) SetNumberOfOccurrences(value *int32)() {
-    m.numberOfOccurrences = value
+    if m != nil {
+        m.numberOfOccurrences = value
+    }
 }
 // SetRecurrenceTimeZone sets the recurrenceTimeZone property value. Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
 func (m *RecurrenceRange) SetRecurrenceTimeZone(value *string)() {
-    m.recurrenceTimeZone = value
+    if m != nil {
+        m.recurrenceTimeZone = value
+    }
 }
 // SetStartDate sets the startDate property value. The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
 func (m *RecurrenceRange) SetStartDate(value *string)() {
-    m.startDate = value
+    if m != nil {
+        m.startDate = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-func (m *RecurrenceRange) SetType_escaped(value *RecurrenceRangeType)() {
-    m.type_escaped = value
+// SetType sets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
+func (m *RecurrenceRange) SetType(value *RecurrenceRangeType)() {
+    if m != nil {
+        m.type = value
+    }
 }

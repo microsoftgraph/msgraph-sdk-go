@@ -146,17 +146,25 @@ func (m *CalendarGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetCalendars sets the calendars property value. The calendars in the calendar group. Navigation property. Read-only. Nullable.
 func (m *CalendarGroup) SetCalendars(value []Calendar)() {
-    m.calendars = value
+    if m != nil {
+        m.calendars = value
+    }
 }
 // SetChangeKey sets the changeKey property value. Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
 func (m *CalendarGroup) SetChangeKey(value *string)() {
-    m.changeKey = value
+    if m != nil {
+        m.changeKey = value
+    }
 }
 // SetClassId sets the classId property value. The class identifier. Read-only.
 func (m *CalendarGroup) SetClassId(value *string)() {
-    m.classId = value
+    if m != nil {
+        m.classId = value
+    }
 }
 // SetName sets the name property value. The group name.
 func (m *CalendarGroup) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

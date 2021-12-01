@@ -185,25 +185,37 @@ func (m *BucketAggregationDefinition) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BucketAggregationDefinition) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsDescending sets the isDescending property value. True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.
 func (m *BucketAggregationDefinition) SetIsDescending(value *bool)() {
-    m.isDescending = value
+    if m != nil {
+        m.isDescending = value
+    }
 }
 // SetMinimumCount sets the minimumCount property value. The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
 func (m *BucketAggregationDefinition) SetMinimumCount(value *int32)() {
-    m.minimumCount = value
+    if m != nil {
+        m.minimumCount = value
+    }
 }
 // SetPrefixFilter sets the prefixFilter property value. A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
 func (m *BucketAggregationDefinition) SetPrefixFilter(value *string)() {
-    m.prefixFilter = value
+    if m != nil {
+        m.prefixFilter = value
+    }
 }
 // SetRanges sets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
 func (m *BucketAggregationDefinition) SetRanges(value []BucketAggregationRange)() {
-    m.ranges = value
+    if m != nil {
+        m.ranges = value
+    }
 }
 // SetSortBy sets the sortBy property value. The possible values are count to sort by the number of matches in the aggregation, keyAsStringto sort alphabeticaly based on the key in the aggregation, keyAsNumber for numerical sorting based on the key in the aggregation. Required.
 func (m *BucketAggregationDefinition) SetSortBy(value *BucketAggregationSortProperty)() {
-    m.sortBy = value
+    if m != nil {
+        m.sortBy = value
+    }
 }

@@ -218,29 +218,43 @@ func (m *DeviceComplianceDeviceStatus) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetComplianceGracePeriodExpirationDateTime sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
 func (m *DeviceComplianceDeviceStatus) SetComplianceGracePeriodExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.complianceGracePeriodExpirationDateTime = value
+    if m != nil {
+        m.complianceGracePeriodExpirationDateTime = value
+    }
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. Device name of the DevicePolicyStatus.
 func (m *DeviceComplianceDeviceStatus) SetDeviceDisplayName(value *string)() {
-    m.deviceDisplayName = value
+    if m != nil {
+        m.deviceDisplayName = value
+    }
 }
 // SetDeviceModel sets the deviceModel property value. The device model that is being reported
 func (m *DeviceComplianceDeviceStatus) SetDeviceModel(value *string)() {
-    m.deviceModel = value
+    if m != nil {
+        m.deviceModel = value
+    }
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *DeviceComplianceDeviceStatus) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastReportedDateTime = value
+    if m != nil {
+        m.lastReportedDateTime = value
+    }
 }
 // SetStatus sets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *DeviceComplianceDeviceStatus) SetStatus(value *ComplianceStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetUserName sets the userName property value. The User Name that is being reported
 func (m *DeviceComplianceDeviceStatus) SetUserName(value *string)() {
-    m.userName = value
+    if m != nil {
+        m.userName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceComplianceDeviceStatus) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

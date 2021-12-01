@@ -70,9 +70,13 @@ func (m *SearchQuery) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchQuery) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetQueryString sets the queryString property value. The search query containing the search terms. Required.
 func (m *SearchQuery) SetQueryString(value *string)() {
-    m.queryString = value
+    if m != nil {
+        m.queryString = value
+    }
 }

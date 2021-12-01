@@ -363,49 +363,73 @@ func (m *MessageRuleActions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MessageRuleActions) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignCategories sets the assignCategories property value. A list of categories to be assigned to a message.
 func (m *MessageRuleActions) SetAssignCategories(value []string)() {
-    m.assignCategories = value
+    if m != nil {
+        m.assignCategories = value
+    }
 }
 // SetCopyToFolder sets the copyToFolder property value. The ID of a folder that a message is to be copied to.
 func (m *MessageRuleActions) SetCopyToFolder(value *string)() {
-    m.copyToFolder = value
+    if m != nil {
+        m.copyToFolder = value
+    }
 }
 // SetDelete sets the delete property value. Indicates whether a message should be moved to the Deleted Items folder.
 func (m *MessageRuleActions) SetDelete(value *bool)() {
-    m.delete = value
+    if m != nil {
+        m.delete = value
+    }
 }
 // SetForwardAsAttachmentTo sets the forwardAsAttachmentTo property value. The email addresses of the recipients to which a message should be forwarded as an attachment.
 func (m *MessageRuleActions) SetForwardAsAttachmentTo(value []Recipient)() {
-    m.forwardAsAttachmentTo = value
+    if m != nil {
+        m.forwardAsAttachmentTo = value
+    }
 }
 // SetForwardTo sets the forwardTo property value. The email addresses of the recipients to which a message should be forwarded.
 func (m *MessageRuleActions) SetForwardTo(value []Recipient)() {
-    m.forwardTo = value
+    if m != nil {
+        m.forwardTo = value
+    }
 }
 // SetMarkAsRead sets the markAsRead property value. Indicates whether a message should be marked as read.
 func (m *MessageRuleActions) SetMarkAsRead(value *bool)() {
-    m.markAsRead = value
+    if m != nil {
+        m.markAsRead = value
+    }
 }
 // SetMarkImportance sets the markImportance property value. Sets the importance of the message, which can be: low, normal, high.
 func (m *MessageRuleActions) SetMarkImportance(value *Importance)() {
-    m.markImportance = value
+    if m != nil {
+        m.markImportance = value
+    }
 }
 // SetMoveToFolder sets the moveToFolder property value. The ID of the folder that a message will be moved to.
 func (m *MessageRuleActions) SetMoveToFolder(value *string)() {
-    m.moveToFolder = value
+    if m != nil {
+        m.moveToFolder = value
+    }
 }
 // SetPermanentDelete sets the permanentDelete property value. Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
 func (m *MessageRuleActions) SetPermanentDelete(value *bool)() {
-    m.permanentDelete = value
+    if m != nil {
+        m.permanentDelete = value
+    }
 }
 // SetRedirectTo sets the redirectTo property value. The email addresses to which a message should be redirected.
 func (m *MessageRuleActions) SetRedirectTo(value []Recipient)() {
-    m.redirectTo = value
+    if m != nil {
+        m.redirectTo = value
+    }
 }
 // SetStopProcessingRules sets the stopProcessingRules property value. Indicates whether subsequent rules should be evaluated.
 func (m *MessageRuleActions) SetStopProcessingRules(value *bool)() {
-    m.stopProcessingRules = value
+    if m != nil {
+        m.stopProcessingRules = value
+    }
 }

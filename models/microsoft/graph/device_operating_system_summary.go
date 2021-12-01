@@ -200,29 +200,43 @@ func (m *DeviceOperatingSystemSummary) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceOperatingSystemSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAndroidCount sets the androidCount property value. Number of android device count.
 func (m *DeviceOperatingSystemSummary) SetAndroidCount(value *int32)() {
-    m.androidCount = value
+    if m != nil {
+        m.androidCount = value
+    }
 }
 // SetIosCount sets the iosCount property value. Number of iOS device count.
 func (m *DeviceOperatingSystemSummary) SetIosCount(value *int32)() {
-    m.iosCount = value
+    if m != nil {
+        m.iosCount = value
+    }
 }
 // SetMacOSCount sets the macOSCount property value. Number of Mac OS X device count.
 func (m *DeviceOperatingSystemSummary) SetMacOSCount(value *int32)() {
-    m.macOSCount = value
+    if m != nil {
+        m.macOSCount = value
+    }
 }
 // SetUnknownCount sets the unknownCount property value. Number of unknown device count.
 func (m *DeviceOperatingSystemSummary) SetUnknownCount(value *int32)() {
-    m.unknownCount = value
+    if m != nil {
+        m.unknownCount = value
+    }
 }
 // SetWindowsCount sets the windowsCount property value. Number of Windows device count.
 func (m *DeviceOperatingSystemSummary) SetWindowsCount(value *int32)() {
-    m.windowsCount = value
+    if m != nil {
+        m.windowsCount = value
+    }
 }
 // SetWindowsMobileCount sets the windowsMobileCount property value. Number of Windows mobile device count.
 func (m *DeviceOperatingSystemSummary) SetWindowsMobileCount(value *int32)() {
-    m.windowsMobileCount = value
+    if m != nil {
+        m.windowsMobileCount = value
+    }
 }

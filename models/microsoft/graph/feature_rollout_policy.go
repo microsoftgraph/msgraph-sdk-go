@@ -200,25 +200,37 @@ func (m *FeatureRolloutPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAppliesTo sets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *FeatureRolloutPolicy) SetAppliesTo(value []DirectoryObject)() {
-    m.appliesTo = value
+    if m != nil {
+        m.appliesTo = value
+    }
 }
 // SetDescription sets the description property value. A description for this feature rollout policy.
 func (m *FeatureRolloutPolicy) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name for this  feature rollout policy.
 func (m *FeatureRolloutPolicy) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetFeature sets the feature property value. Possible values are: passthroughAuthentication, seamlessSso, passwordHashSync, emailAsAlternateId, unknownFutureValue.
 func (m *FeatureRolloutPolicy) SetFeature(value *StagedFeatureName)() {
-    m.feature = value
+    if m != nil {
+        m.feature = value
+    }
 }
 // SetIsAppliedToOrganization sets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
 func (m *FeatureRolloutPolicy) SetIsAppliedToOrganization(value *bool)() {
-    m.isAppliedToOrganization = value
+    if m != nil {
+        m.isAppliedToOrganization = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether the feature rollout is enabled.
 func (m *FeatureRolloutPolicy) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }

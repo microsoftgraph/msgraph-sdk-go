@@ -43,7 +43,7 @@ type AccessReviewScheduleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AccessReviewScheduleDefinitionRequestBuilderPatchOptions options for Patch
 type AccessReviewScheduleDefinitionRequestBuilderPatchOptions struct {

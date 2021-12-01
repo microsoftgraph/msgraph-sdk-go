@@ -201,29 +201,43 @@ func (m *UriClickSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UriClickSecurityState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClickAction sets the clickAction property value. 
 func (m *UriClickSecurityState) SetClickAction(value *string)() {
-    m.clickAction = value
+    if m != nil {
+        m.clickAction = value
+    }
 }
 // SetClickDateTime sets the clickDateTime property value. 
 func (m *UriClickSecurityState) SetClickDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.clickDateTime = value
+    if m != nil {
+        m.clickDateTime = value
+    }
 }
 // SetId sets the id property value. 
 func (m *UriClickSecurityState) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetSourceId sets the sourceId property value. 
 func (m *UriClickSecurityState) SetSourceId(value *string)() {
-    m.sourceId = value
+    if m != nil {
+        m.sourceId = value
+    }
 }
 // SetUriDomain sets the uriDomain property value. 
 func (m *UriClickSecurityState) SetUriDomain(value *string)() {
-    m.uriDomain = value
+    if m != nil {
+        m.uriDomain = value
+    }
 }
 // SetVerdict sets the verdict property value. 
 func (m *UriClickSecurityState) SetVerdict(value *string)() {
-    m.verdict = value
+    if m != nil {
+        m.verdict = value
+    }
 }

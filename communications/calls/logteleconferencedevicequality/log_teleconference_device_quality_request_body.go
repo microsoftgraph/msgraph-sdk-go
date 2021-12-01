@@ -71,9 +71,13 @@ func (m *LogTeleconferenceDeviceQualityRequestBody) Serialize(writer i04eb5309ae
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LogTeleconferenceDeviceQualityRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetQuality sets the quality property value. 
 func (m *LogTeleconferenceDeviceQualityRequestBody) SetQuality(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeleconferenceDeviceQuality)() {
-    m.quality = value
+    if m != nil {
+        m.quality = value
+    }
 }

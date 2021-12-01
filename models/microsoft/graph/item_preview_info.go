@@ -122,17 +122,25 @@ func (m *ItemPreviewInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemPreviewInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetGetUrl sets the getUrl property value. 
 func (m *ItemPreviewInfo) SetGetUrl(value *string)() {
-    m.getUrl = value
+    if m != nil {
+        m.getUrl = value
+    }
 }
 // SetPostParameters sets the postParameters property value. 
 func (m *ItemPreviewInfo) SetPostParameters(value *string)() {
-    m.postParameters = value
+    if m != nil {
+        m.postParameters = value
+    }
 }
 // SetPostUrl sets the postUrl property value. 
 func (m *ItemPreviewInfo) SetPostUrl(value *string)() {
-    m.postUrl = value
+    if m != nil {
+        m.postUrl = value
+    }
 }

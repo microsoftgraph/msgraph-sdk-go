@@ -15,7 +15,7 @@ type SharingLink struct {
     // The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.
     scope *string;
     // The type of the link created.
-    type_escaped *string;
+    type *string;
     // For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
     webHtml *string;
     // A URL that opens the item in the browser on the OneDrive website.
@@ -60,12 +60,12 @@ func (m *SharingLink) GetScope()(*string) {
         return m.scope
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of the link created.
-func (m *SharingLink) GetType_escaped()(*string) {
+// GetType gets the type property value. The type of the link created.
+func (m *SharingLink) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetWebHtml gets the webHtml property value. For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
@@ -117,13 +117,13 @@ func (m *SharingLink) GetFieldDeserializers()(map[string]func(interface{}, i04eb
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -173,7 +173,7 @@ func (m *SharingLink) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -200,29 +200,43 @@ func (m *SharingLink) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharingLink) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplication sets the application property value. The app the link is associated with.
 func (m *SharingLink) SetApplication(value *Identity)() {
-    m.application = value
+    if m != nil {
+        m.application = value
+    }
 }
 // SetPreventsDownload sets the preventsDownload property value. If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
 func (m *SharingLink) SetPreventsDownload(value *bool)() {
-    m.preventsDownload = value
+    if m != nil {
+        m.preventsDownload = value
+    }
 }
 // SetScope sets the scope property value. The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.
 func (m *SharingLink) SetScope(value *string)() {
-    m.scope = value
+    if m != nil {
+        m.scope = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The type of the link created.
-func (m *SharingLink) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. The type of the link created.
+func (m *SharingLink) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }
 // SetWebHtml sets the webHtml property value. For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
 func (m *SharingLink) SetWebHtml(value *string)() {
-    m.webHtml = value
+    if m != nil {
+        m.webHtml = value
+    }
 }
 // SetWebUrl sets the webUrl property value. A URL that opens the item in the browser on the OneDrive website.
 func (m *SharingLink) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

@@ -209,25 +209,37 @@ func (m *TodoTaskList) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetDisplayName sets the displayName property value. The name of the task list.
 func (m *TodoTaskList) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the task list. Nullable.
 func (m *TodoTaskList) SetExtensions(value []Extension)() {
-    m.extensions = value
+    if m != nil {
+        m.extensions = value
+    }
 }
 // SetIsOwner sets the isOwner property value. True if the user is owner of the given task list.
 func (m *TodoTaskList) SetIsOwner(value *bool)() {
-    m.isOwner = value
+    if m != nil {
+        m.isOwner = value
+    }
 }
 // SetIsShared sets the isShared property value. True if the task list is shared with other users
 func (m *TodoTaskList) SetIsShared(value *bool)() {
-    m.isShared = value
+    if m != nil {
+        m.isShared = value
+    }
 }
 // SetTasks sets the tasks property value. The tasks in this task list. Read-only. Nullable.
 func (m *TodoTaskList) SetTasks(value []TodoTask)() {
-    m.tasks = value
+    if m != nil {
+        m.tasks = value
+    }
 }
 // SetWellknownListName sets the wellknownListName property value. Property indicating the list name if the given list is a well-known list. Possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
 func (m *TodoTaskList) SetWellknownListName(value *WellknownListName)() {
-    m.wellknownListName = value
+    if m != nil {
+        m.wellknownListName = value
+    }
 }

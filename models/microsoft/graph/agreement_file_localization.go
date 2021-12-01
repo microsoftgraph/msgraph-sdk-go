@@ -68,5 +68,7 @@ func (m *AgreementFileLocalization) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetVersions sets the versions property value. 
 func (m *AgreementFileLocalization) SetVersions(value []AgreementFileVersion)() {
-    m.versions = value
+    if m != nil {
+        m.versions = value
+    }
 }

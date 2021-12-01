@@ -87,9 +87,13 @@ func (m *ManagedEBookAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetInstallIntent sets the installIntent property value. The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
 func (m *ManagedEBookAssignment) SetInstallIntent(value *InstallIntent)() {
-    m.installIntent = value
+    if m != nil {
+        m.installIntent = value
+    }
 }
 // SetTarget sets the target property value. The assignment target for eBook.
 func (m *ManagedEBookAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

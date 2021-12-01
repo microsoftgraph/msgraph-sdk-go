@@ -96,13 +96,19 @@ func (m *InvitationParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitationParticipantInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIdentity sets the identity property value. 
 func (m *InvitationParticipantInfo) SetIdentity(value *IdentitySet)() {
-    m.identity = value
+    if m != nil {
+        m.identity = value
+    }
 }
 // SetReplacesCallId sets the replacesCallId property value. Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
 func (m *InvitationParticipantInfo) SetReplacesCallId(value *string)() {
-    m.replacesCallId = value
+    if m != nil {
+        m.replacesCallId = value
+    }
 }

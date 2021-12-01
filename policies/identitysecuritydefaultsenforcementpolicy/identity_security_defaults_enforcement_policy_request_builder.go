@@ -40,7 +40,7 @@ type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters s
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchOptions options for Patch
 type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchOptions struct {

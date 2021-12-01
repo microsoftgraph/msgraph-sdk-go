@@ -61,5 +61,7 @@ func (m *TeamworkConversationIdentity) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetConversationIdentityType sets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
 func (m *TeamworkConversationIdentity) SetConversationIdentityType(value *TeamworkConversationIdentityType)() {
-    m.conversationIdentityType = value
+    if m != nil {
+        m.conversationIdentityType = value
+    }
 }

@@ -155,17 +155,25 @@ func (m *UserFlowLanguageConfiguration) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetDefaultPages sets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
 func (m *UserFlowLanguageConfiguration) SetDefaultPages(value []UserFlowLanguagePage)() {
-    m.defaultPages = value
+    if m != nil {
+        m.defaultPages = value
+    }
 }
 // SetDisplayName sets the displayName property value. The language name to display. This property is read-only.
 func (m *UserFlowLanguageConfiguration) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether the language is enabled within the user flow.
 func (m *UserFlowLanguageConfiguration) SetIsEnabled(value *bool)() {
-    m.isEnabled = value
+    if m != nil {
+        m.isEnabled = value
+    }
 }
 // SetOverridesPages sets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
 func (m *UserFlowLanguageConfiguration) SetOverridesPages(value []UserFlowLanguagePage)() {
-    m.overridesPages = value
+    if m != nil {
+        m.overridesPages = value
+    }
 }

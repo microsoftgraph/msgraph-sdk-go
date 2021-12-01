@@ -96,13 +96,19 @@ func (m *AccessReviewNotificationRecipientItem) Serialize(writer i04eb5309aeaafa
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewNotificationRecipientItem) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNotificationRecipientScope sets the notificationRecipientScope property value. Determines the recipient of the notification email.
 func (m *AccessReviewNotificationRecipientItem) SetNotificationRecipientScope(value *AccessReviewNotificationRecipientScope)() {
-    m.notificationRecipientScope = value
+    if m != nil {
+        m.notificationRecipientScope = value
+    }
 }
 // SetNotificationTemplateType sets the notificationTemplateType property value. Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
 func (m *AccessReviewNotificationRecipientItem) SetNotificationTemplateType(value *string)() {
-    m.notificationTemplateType = value
+    if m != nil {
+        m.notificationTemplateType = value
+    }
 }

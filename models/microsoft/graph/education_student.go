@@ -202,29 +202,43 @@ func (m *EducationStudent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationStudent) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBirthDate sets the birthDate property value. Birth date of the student.
 func (m *EducationStudent) SetBirthDate(value *string)() {
-    m.birthDate = value
+    if m != nil {
+        m.birthDate = value
+    }
 }
 // SetExternalId sets the externalId property value. ID of the student in the source system.
 func (m *EducationStudent) SetExternalId(value *string)() {
-    m.externalId = value
+    if m != nil {
+        m.externalId = value
+    }
 }
 // SetGender sets the gender property value. The possible values are: female, male, other, unknownFutureValue.
 func (m *EducationStudent) SetGender(value *EducationGender)() {
-    m.gender = value
+    if m != nil {
+        m.gender = value
+    }
 }
 // SetGrade sets the grade property value. Current grade level of the student.
 func (m *EducationStudent) SetGrade(value *string)() {
-    m.grade = value
+    if m != nil {
+        m.grade = value
+    }
 }
 // SetGraduationYear sets the graduationYear property value. Year the student is graduating from the school.
 func (m *EducationStudent) SetGraduationYear(value *string)() {
-    m.graduationYear = value
+    if m != nil {
+        m.graduationYear = value
+    }
 }
 // SetStudentNumber sets the studentNumber property value. Student Number.
 func (m *EducationStudent) SetStudentNumber(value *string)() {
-    m.studentNumber = value
+    if m != nil {
+        m.studentNumber = value
+    }
 }

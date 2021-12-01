@@ -122,17 +122,25 @@ func (m *LicenseUnitsDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LicenseUnitsDetail) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnabled sets the enabled property value. The number of units that are enabled for the active subscription of the service SKU.
 func (m *LicenseUnitsDetail) SetEnabled(value *int32)() {
-    m.enabled = value
+    if m != nil {
+        m.enabled = value
+    }
 }
 // SetSuspended sets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
 func (m *LicenseUnitsDetail) SetSuspended(value *int32)() {
-    m.suspended = value
+    if m != nil {
+        m.suspended = value
+    }
 }
 // SetWarning sets the warning property value. The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).
 func (m *LicenseUnitsDetail) SetWarning(value *int32)() {
-    m.warning = value
+    if m != nil {
+        m.warning = value
+    }
 }

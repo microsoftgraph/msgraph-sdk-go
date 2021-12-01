@@ -148,21 +148,31 @@ func (m *FileSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileSecurityState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFileHash sets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
 func (m *FileSecurityState) SetFileHash(value *FileHash)() {
-    m.fileHash = value
+    if m != nil {
+        m.fileHash = value
+    }
 }
 // SetName sets the name property value. File name (without path).
 func (m *FileSecurityState) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetPath sets the path property value. Full file path of the file/imageFile.
 func (m *FileSecurityState) SetPath(value *string)() {
-    m.path = value
+    if m != nil {
+        m.path = value
+    }
 }
 // SetRiskScore sets the riskScore property value. Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
 func (m *FileSecurityState) SetRiskScore(value *string)() {
-    m.riskScore = value
+    if m != nil {
+        m.riskScore = value
+    }
 }

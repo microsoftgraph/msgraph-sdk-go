@@ -56,7 +56,7 @@ type EventRequestBuilderGetOptions struct {
 // EventRequestBuilderGetQueryParameters the group's calendar events.
 type EventRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // EventRequestBuilderPatchOptions options for Patch
 type EventRequestBuilderPatchOptions struct {

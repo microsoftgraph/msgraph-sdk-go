@@ -313,45 +313,67 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewScheduleSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplyActions sets the applyActions property value. Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
 func (m *AccessReviewScheduleSettings) SetApplyActions(value []AccessReviewApplyAction)() {
-    m.applyActions = value
+    if m != nil {
+        m.applyActions = value
+    }
 }
 // SetAutoApplyDecisionsEnabled sets the autoApplyDecisionsEnabled property value. Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
 func (m *AccessReviewScheduleSettings) SetAutoApplyDecisionsEnabled(value *bool)() {
-    m.autoApplyDecisionsEnabled = value
+    if m != nil {
+        m.autoApplyDecisionsEnabled = value
+    }
 }
 // SetDefaultDecision sets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
 func (m *AccessReviewScheduleSettings) SetDefaultDecision(value *string)() {
-    m.defaultDecision = value
+    if m != nil {
+        m.defaultDecision = value
+    }
 }
 // SetDefaultDecisionEnabled sets the defaultDecisionEnabled property value. Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
 func (m *AccessReviewScheduleSettings) SetDefaultDecisionEnabled(value *bool)() {
-    m.defaultDecisionEnabled = value
+    if m != nil {
+        m.defaultDecisionEnabled = value
+    }
 }
 // SetInstanceDurationInDays sets the instanceDurationInDays property value. Duration of each recurrence of review (accessReviewInstance) in number of days.
 func (m *AccessReviewScheduleSettings) SetInstanceDurationInDays(value *int32)() {
-    m.instanceDurationInDays = value
+    if m != nil {
+        m.instanceDurationInDays = value
+    }
 }
 // SetJustificationRequiredOnApproval sets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide justification with their decision. Default value is false.
 func (m *AccessReviewScheduleSettings) SetJustificationRequiredOnApproval(value *bool)() {
-    m.justificationRequiredOnApproval = value
+    if m != nil {
+        m.justificationRequiredOnApproval = value
+    }
 }
 // SetMailNotificationsEnabled sets the mailNotificationsEnabled property value. Indicates whether emails are enabled or disabled. Default value is false.
 func (m *AccessReviewScheduleSettings) SetMailNotificationsEnabled(value *bool)() {
-    m.mailNotificationsEnabled = value
+    if m != nil {
+        m.mailNotificationsEnabled = value
+    }
 }
 // SetRecommendationsEnabled sets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled.
 func (m *AccessReviewScheduleSettings) SetRecommendationsEnabled(value *bool)() {
-    m.recommendationsEnabled = value
+    if m != nil {
+        m.recommendationsEnabled = value
+    }
 }
 // SetRecurrence sets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object. Only weekly and absoluteMonthly on recurrencePattern are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
 func (m *AccessReviewScheduleSettings) SetRecurrence(value *PatternedRecurrence)() {
-    m.recurrence = value
+    if m != nil {
+        m.recurrence = value
+    }
 }
 // SetReminderNotificationsEnabled sets the reminderNotificationsEnabled property value. Indicates whether reminders are enabled or disabled. Default value is false.
 func (m *AccessReviewScheduleSettings) SetReminderNotificationsEnabled(value *bool)() {
-    m.reminderNotificationsEnabled = value
+    if m != nil {
+        m.reminderNotificationsEnabled = value
+    }
 }

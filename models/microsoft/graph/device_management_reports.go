@@ -68,5 +68,7 @@ func (m *DeviceManagementReports) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetExportJobs sets the exportJobs property value. Entity representing a job to export a report
 func (m *DeviceManagementReports) SetExportJobs(value []DeviceManagementExportJob)() {
-    m.exportJobs = value
+    if m != nil {
+        m.exportJobs = value
+    }
 }

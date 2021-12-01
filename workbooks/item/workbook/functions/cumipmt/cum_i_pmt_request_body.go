@@ -20,7 +20,7 @@ type CumIPmtRequestBody struct {
     // 
     startPeriod *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
     // 
-    type_escaped *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
+    type *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json;
 }
 // NewCumIPmtRequestBody instantiates a new cumIPmtRequestBody and sets the default values.
 func NewCumIPmtRequestBody()(*CumIPmtRequestBody) {
@@ -77,12 +77,12 @@ func (m *CumIPmtRequestBody) GetStartPeriod()(*i4a838ef194e4c99e9f2c63ba10dab9cb
         return m.startPeriod
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *CumIPmtRequestBody) GetType_escaped()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
+// GetType gets the type property value. 
+func (m *CumIPmtRequestBody) GetType()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -138,13 +138,13 @@ func (m *CumIPmtRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewJson() })
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+            m.SetType(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
         }
         return nil
     }
@@ -186,7 +186,7 @@ func (m *CumIPmtRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err := writer.WriteObjectValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteObjectValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -201,29 +201,43 @@ func (m *CumIPmtRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CumIPmtRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEndPeriod sets the endPeriod property value. 
 func (m *CumIPmtRequestBody) SetEndPeriod(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.endPeriod = value
+    if m != nil {
+        m.endPeriod = value
+    }
 }
 // SetNper sets the nper property value. 
 func (m *CumIPmtRequestBody) SetNper(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.nper = value
+    if m != nil {
+        m.nper = value
+    }
 }
 // SetPv sets the pv property value. 
 func (m *CumIPmtRequestBody) SetPv(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.pv = value
+    if m != nil {
+        m.pv = value
+    }
 }
 // SetRate sets the rate property value. 
 func (m *CumIPmtRequestBody) SetRate(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.rate = value
+    if m != nil {
+        m.rate = value
+    }
 }
 // SetStartPeriod sets the startPeriod property value. 
 func (m *CumIPmtRequestBody) SetStartPeriod(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.startPeriod = value
+    if m != nil {
+        m.startPeriod = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *CumIPmtRequestBody) SetType_escaped(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.type_escaped = value
+// SetType sets the type property value. 
+func (m *CumIPmtRequestBody) SetType(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
+    if m != nil {
+        m.type = value
+    }
 }

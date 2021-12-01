@@ -97,13 +97,19 @@ func (m *BitandRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BitandRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNumber1 sets the number1 property value. 
 func (m *BitandRequestBody) SetNumber1(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.number1 = value
+    if m != nil {
+        m.number1 = value
+    }
 }
 // SetNumber2 sets the number2 property value. 
 func (m *BitandRequestBody) SetNumber2(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.number2 = value
+    if m != nil {
+        m.number2 = value
+    }
 }

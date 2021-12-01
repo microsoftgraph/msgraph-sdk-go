@@ -1481,217 +1481,325 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetActivationLockBypassCode sets the activationLockBypassCode property value. Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
 func (m *ManagedDevice) SetActivationLockBypassCode(value *string)() {
-    m.activationLockBypassCode = value
+    if m != nil {
+        m.activationLockBypassCode = value
+    }
 }
 // SetAndroidSecurityPatchLevel sets the androidSecurityPatchLevel property value. Android security patch level. This property is read-only.
 func (m *ManagedDevice) SetAndroidSecurityPatchLevel(value *string)() {
-    m.androidSecurityPatchLevel = value
+    if m != nil {
+        m.androidSecurityPatchLevel = value
+    }
 }
 // SetAzureADDeviceId sets the azureADDeviceId property value. The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
 func (m *ManagedDevice) SetAzureADDeviceId(value *string)() {
-    m.azureADDeviceId = value
+    if m != nil {
+        m.azureADDeviceId = value
+    }
 }
 // SetAzureADRegistered sets the azureADRegistered property value. Whether the device is Azure Active Directory registered. This property is read-only.
 func (m *ManagedDevice) SetAzureADRegistered(value *bool)() {
-    m.azureADRegistered = value
+    if m != nil {
+        m.azureADRegistered = value
+    }
 }
 // SetComplianceGracePeriodExpirationDateTime sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires. This property is read-only.
 func (m *ManagedDevice) SetComplianceGracePeriodExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.complianceGracePeriodExpirationDateTime = value
+    if m != nil {
+        m.complianceGracePeriodExpirationDateTime = value
+    }
 }
 // SetComplianceState sets the complianceState property value. Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager.
 func (m *ManagedDevice) SetComplianceState(value *ComplianceState)() {
-    m.complianceState = value
+    if m != nil {
+        m.complianceState = value
+    }
 }
 // SetConfigurationManagerClientEnabledFeatures sets the configurationManagerClientEnabledFeatures property value. ConfigrMgr client enabled features. This property is read-only.
 func (m *ManagedDevice) SetConfigurationManagerClientEnabledFeatures(value *ConfigurationManagerClientEnabledFeatures)() {
-    m.configurationManagerClientEnabledFeatures = value
+    if m != nil {
+        m.configurationManagerClientEnabledFeatures = value
+    }
 }
 // SetDeviceActionResults sets the deviceActionResults property value. List of ComplexType deviceActionResult objects. This property is read-only.
 func (m *ManagedDevice) SetDeviceActionResults(value []DeviceActionResult)() {
-    m.deviceActionResults = value
+    if m != nil {
+        m.deviceActionResults = value
+    }
 }
 // SetDeviceCategory sets the deviceCategory property value. Device category
 func (m *ManagedDevice) SetDeviceCategory(value *DeviceCategory)() {
-    m.deviceCategory = value
+    if m != nil {
+        m.deviceCategory = value
+    }
 }
 // SetDeviceCategoryDisplayName sets the deviceCategoryDisplayName property value. Device category display name. This property is read-only.
 func (m *ManagedDevice) SetDeviceCategoryDisplayName(value *string)() {
-    m.deviceCategoryDisplayName = value
+    if m != nil {
+        m.deviceCategoryDisplayName = value
+    }
 }
 // SetDeviceCompliancePolicyStates sets the deviceCompliancePolicyStates property value. Device compliance policy states for this device.
 func (m *ManagedDevice) SetDeviceCompliancePolicyStates(value []DeviceCompliancePolicyState)() {
-    m.deviceCompliancePolicyStates = value
+    if m != nil {
+        m.deviceCompliancePolicyStates = value
+    }
 }
 // SetDeviceConfigurationStates sets the deviceConfigurationStates property value. Device configuration states for this device.
 func (m *ManagedDevice) SetDeviceConfigurationStates(value []DeviceConfigurationState)() {
-    m.deviceConfigurationStates = value
+    if m != nil {
+        m.deviceConfigurationStates = value
+    }
 }
 // SetDeviceEnrollmentType sets the deviceEnrollmentType property value. Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount.
 func (m *ManagedDevice) SetDeviceEnrollmentType(value *DeviceEnrollmentType)() {
-    m.deviceEnrollmentType = value
+    if m != nil {
+        m.deviceEnrollmentType = value
+    }
 }
 // SetDeviceHealthAttestationState sets the deviceHealthAttestationState property value. The device health attestation state. This property is read-only.
 func (m *ManagedDevice) SetDeviceHealthAttestationState(value *DeviceHealthAttestationState)() {
-    m.deviceHealthAttestationState = value
+    if m != nil {
+        m.deviceHealthAttestationState = value
+    }
 }
 // SetDeviceName sets the deviceName property value. Name of the device. This property is read-only.
 func (m *ManagedDevice) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetDeviceRegistrationState sets the deviceRegistrationState property value. Device registration state. This property is read-only. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
 func (m *ManagedDevice) SetDeviceRegistrationState(value *DeviceRegistrationState)() {
-    m.deviceRegistrationState = value
+    if m != nil {
+        m.deviceRegistrationState = value
+    }
 }
 // SetEasActivated sets the easActivated property value. Whether the device is Exchange ActiveSync activated. This property is read-only.
 func (m *ManagedDevice) SetEasActivated(value *bool)() {
-    m.easActivated = value
+    if m != nil {
+        m.easActivated = value
+    }
 }
 // SetEasActivationDateTime sets the easActivationDateTime property value. Exchange ActivationSync activation time of the device. This property is read-only.
 func (m *ManagedDevice) SetEasActivationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.easActivationDateTime = value
+    if m != nil {
+        m.easActivationDateTime = value
+    }
 }
 // SetEasDeviceId sets the easDeviceId property value. Exchange ActiveSync Id of the device. This property is read-only.
 func (m *ManagedDevice) SetEasDeviceId(value *string)() {
-    m.easDeviceId = value
+    if m != nil {
+        m.easDeviceId = value
+    }
 }
 // SetEmailAddress sets the emailAddress property value. Email(s) for the user associated with the device. This property is read-only.
 func (m *ManagedDevice) SetEmailAddress(value *string)() {
-    m.emailAddress = value
+    if m != nil {
+        m.emailAddress = value
+    }
 }
 // SetEnrolledDateTime sets the enrolledDateTime property value. Enrollment time of the device. This property is read-only.
 func (m *ManagedDevice) SetEnrolledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.enrolledDateTime = value
+    if m != nil {
+        m.enrolledDateTime = value
+    }
 }
 // SetEthernetMacAddress sets the ethernetMacAddress property value. Ethernet MAC. This property is read-only.
 func (m *ManagedDevice) SetEthernetMacAddress(value *string)() {
-    m.ethernetMacAddress = value
+    if m != nil {
+        m.ethernetMacAddress = value
+    }
 }
 // SetExchangeAccessState sets the exchangeAccessState property value. The Access State of the device in Exchange. This property is read-only. Possible values are: none, unknown, allowed, blocked, quarantined.
 func (m *ManagedDevice) SetExchangeAccessState(value *DeviceManagementExchangeAccessState)() {
-    m.exchangeAccessState = value
+    if m != nil {
+        m.exchangeAccessState = value
+    }
 }
 // SetExchangeAccessStateReason sets the exchangeAccessStateReason property value. The reason for the device's access state in Exchange. This property is read-only. Possible values are: none, unknown, exchangeGlobalRule, exchangeIndividualRule, exchangeDeviceRule, exchangeUpgrade, exchangeMailboxPolicy, other, compliant, notCompliant, notEnrolled, unknownLocation, mfaRequired, azureADBlockDueToAccessPolicy, compromisedPassword, deviceNotKnownWithManagedApp.
 func (m *ManagedDevice) SetExchangeAccessStateReason(value *DeviceManagementExchangeAccessStateReason)() {
-    m.exchangeAccessStateReason = value
+    if m != nil {
+        m.exchangeAccessStateReason = value
+    }
 }
 // SetExchangeLastSuccessfulSyncDateTime sets the exchangeLastSuccessfulSyncDateTime property value. Last time the device contacted Exchange. This property is read-only.
 func (m *ManagedDevice) SetExchangeLastSuccessfulSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.exchangeLastSuccessfulSyncDateTime = value
+    if m != nil {
+        m.exchangeLastSuccessfulSyncDateTime = value
+    }
 }
 // SetFreeStorageSpaceInBytes sets the freeStorageSpaceInBytes property value. Free Storage in Bytes. This property is read-only.
 func (m *ManagedDevice) SetFreeStorageSpaceInBytes(value *int64)() {
-    m.freeStorageSpaceInBytes = value
+    if m != nil {
+        m.freeStorageSpaceInBytes = value
+    }
 }
 // SetIccid sets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
 func (m *ManagedDevice) SetIccid(value *string)() {
-    m.iccid = value
+    if m != nil {
+        m.iccid = value
+    }
 }
 // SetImei sets the imei property value. IMEI. This property is read-only.
 func (m *ManagedDevice) SetImei(value *string)() {
-    m.imei = value
+    if m != nil {
+        m.imei = value
+    }
 }
 // SetIsEncrypted sets the isEncrypted property value. Device encryption status. This property is read-only.
 func (m *ManagedDevice) SetIsEncrypted(value *bool)() {
-    m.isEncrypted = value
+    if m != nil {
+        m.isEncrypted = value
+    }
 }
 // SetIsSupervised sets the isSupervised property value. Device supervised status. This property is read-only.
 func (m *ManagedDevice) SetIsSupervised(value *bool)() {
-    m.isSupervised = value
+    if m != nil {
+        m.isSupervised = value
+    }
 }
 // SetJailBroken sets the jailBroken property value. whether the device is jail broken or rooted. This property is read-only.
 func (m *ManagedDevice) SetJailBroken(value *string)() {
-    m.jailBroken = value
+    if m != nil {
+        m.jailBroken = value
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Intune. This property is read-only.
 func (m *ManagedDevice) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    if m != nil {
+        m.lastSyncDateTime = value
+    }
 }
 // SetManagedDeviceName sets the managedDeviceName property value. Automatically generated name to identify a device. Can be overwritten to a user friendly name.
 func (m *ManagedDevice) SetManagedDeviceName(value *string)() {
-    m.managedDeviceName = value
+    if m != nil {
+        m.managedDeviceName = value
+    }
 }
 // SetManagedDeviceOwnerType sets the managedDeviceOwnerType property value. Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.
 func (m *ManagedDevice) SetManagedDeviceOwnerType(value *ManagedDeviceOwnerType)() {
-    m.managedDeviceOwnerType = value
+    if m != nil {
+        m.managedDeviceOwnerType = value
+    }
 }
 // SetManagementAgent sets the managementAgent property value. Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
 func (m *ManagedDevice) SetManagementAgent(value *ManagementAgentType)() {
-    m.managementAgent = value
+    if m != nil {
+        m.managementAgent = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. Manufacturer of the device. This property is read-only.
 func (m *ManagedDevice) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetMeid sets the meid property value. MEID. This property is read-only.
 func (m *ManagedDevice) SetMeid(value *string)() {
-    m.meid = value
+    if m != nil {
+        m.meid = value
+    }
 }
 // SetModel sets the model property value. Model of the device. This property is read-only.
 func (m *ManagedDevice) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }
 // SetNotes sets the notes property value. Notes on the device created by IT Admin
 func (m *ManagedDevice) SetNotes(value *string)() {
-    m.notes = value
+    if m != nil {
+        m.notes = value
+    }
 }
 // SetOperatingSystem sets the operatingSystem property value. Operating system of the device. Windows, iOS, etc. This property is read-only.
 func (m *ManagedDevice) SetOperatingSystem(value *string)() {
-    m.operatingSystem = value
+    if m != nil {
+        m.operatingSystem = value
+    }
 }
 // SetOsVersion sets the osVersion property value. Operating system version of the device. This property is read-only.
 func (m *ManagedDevice) SetOsVersion(value *string)() {
-    m.osVersion = value
+    if m != nil {
+        m.osVersion = value
+    }
 }
 // SetPartnerReportedThreatState sets the partnerReportedThreatState property value. Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. This property is read-only. Possible values are: unknown, activated, deactivated, secured, lowSeverity, mediumSeverity, highSeverity, unresponsive, compromised, misconfigured.
 func (m *ManagedDevice) SetPartnerReportedThreatState(value *ManagedDevicePartnerReportedHealthState)() {
-    m.partnerReportedThreatState = value
+    if m != nil {
+        m.partnerReportedThreatState = value
+    }
 }
 // SetPhoneNumber sets the phoneNumber property value. Phone number of the device. This property is read-only.
 func (m *ManagedDevice) SetPhoneNumber(value *string)() {
-    m.phoneNumber = value
+    if m != nil {
+        m.phoneNumber = value
+    }
 }
 // SetPhysicalMemoryInBytes sets the physicalMemoryInBytes property value. Total Memory in Bytes. This property is read-only.
 func (m *ManagedDevice) SetPhysicalMemoryInBytes(value *int64)() {
-    m.physicalMemoryInBytes = value
+    if m != nil {
+        m.physicalMemoryInBytes = value
+    }
 }
 // SetRemoteAssistanceSessionErrorDetails sets the remoteAssistanceSessionErrorDetails property value. An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
 func (m *ManagedDevice) SetRemoteAssistanceSessionErrorDetails(value *string)() {
-    m.remoteAssistanceSessionErrorDetails = value
+    if m != nil {
+        m.remoteAssistanceSessionErrorDetails = value
+    }
 }
 // SetRemoteAssistanceSessionUrl sets the remoteAssistanceSessionUrl property value. Url that allows a Remote Assistance session to be established with the device. This property is read-only.
 func (m *ManagedDevice) SetRemoteAssistanceSessionUrl(value *string)() {
-    m.remoteAssistanceSessionUrl = value
+    if m != nil {
+        m.remoteAssistanceSessionUrl = value
+    }
 }
 // SetSerialNumber sets the serialNumber property value. SerialNumber. This property is read-only.
 func (m *ManagedDevice) SetSerialNumber(value *string)() {
-    m.serialNumber = value
+    if m != nil {
+        m.serialNumber = value
+    }
 }
 // SetSubscriberCarrier sets the subscriberCarrier property value. Subscriber Carrier. This property is read-only.
 func (m *ManagedDevice) SetSubscriberCarrier(value *string)() {
-    m.subscriberCarrier = value
+    if m != nil {
+        m.subscriberCarrier = value
+    }
 }
 // SetTotalStorageSpaceInBytes sets the totalStorageSpaceInBytes property value. Total Storage in Bytes. This property is read-only.
 func (m *ManagedDevice) SetTotalStorageSpaceInBytes(value *int64)() {
-    m.totalStorageSpaceInBytes = value
+    if m != nil {
+        m.totalStorageSpaceInBytes = value
+    }
 }
 // SetUdid sets the udid property value. Unique Device Identifier for iOS and macOS devices. This property is read-only.
 func (m *ManagedDevice) SetUdid(value *string)() {
-    m.udid = value
+    if m != nil {
+        m.udid = value
+    }
 }
 // SetUserDisplayName sets the userDisplayName property value. User display name. This property is read-only.
 func (m *ManagedDevice) SetUserDisplayName(value *string)() {
-    m.userDisplayName = value
+    if m != nil {
+        m.userDisplayName = value
+    }
 }
 // SetUserId sets the userId property value. Unique Identifier for the user associated with the device. This property is read-only.
 func (m *ManagedDevice) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. Device user principal name. This property is read-only.
 func (m *ManagedDevice) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }
 // SetWiFiMacAddress sets the wiFiMacAddress property value. Wi-Fi MAC. This property is read-only.
 func (m *ManagedDevice) SetWiFiMacAddress(value *string)() {
-    m.wiFiMacAddress = value
+    if m != nil {
+        m.wiFiMacAddress = value
+    }
 }

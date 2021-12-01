@@ -154,21 +154,31 @@ func (m *PrintJobStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintJobStatus) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. A human-readable description of the print job's current processing state. Read-only.
 func (m *PrintJobStatus) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDetails sets the details property value. Additional details for print job state. Valid values are described in the following table. Read-only.
 func (m *PrintJobStatus) SetDetails(value []PrintJobStateDetail)() {
-    m.details = value
+    if m != nil {
+        m.details = value
+    }
 }
 // SetIsAcquiredByPrinter sets the isAcquiredByPrinter property value. True if the job was acknowledged by a printer; false otherwise. Read-only.
 func (m *PrintJobStatus) SetIsAcquiredByPrinter(value *bool)() {
-    m.isAcquiredByPrinter = value
+    if m != nil {
+        m.isAcquiredByPrinter = value
+    }
 }
 // SetState sets the state property value. The print job's current processing state. Valid values are described in the following table. Read-only.
 func (m *PrintJobStatus) SetState(value *PrintJobProcessingState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

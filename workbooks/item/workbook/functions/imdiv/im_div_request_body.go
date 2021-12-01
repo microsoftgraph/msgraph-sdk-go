@@ -97,13 +97,19 @@ func (m *ImDivRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImDivRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetInumber1 sets the inumber1 property value. 
 func (m *ImDivRequestBody) SetInumber1(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.inumber1 = value
+    if m != nil {
+        m.inumber1 = value
+    }
 }
 // SetInumber2 sets the inumber2 property value. 
 func (m *ImDivRequestBody) SetInumber2(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.inumber2 = value
+    if m != nil {
+        m.inumber2 = value
+    }
 }

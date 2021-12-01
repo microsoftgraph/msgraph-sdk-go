@@ -40,7 +40,7 @@ type DeviceManagementTroubleshootingEventRequestBuilderGetQueryParameters struct
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceManagementTroubleshootingEventRequestBuilderPatchOptions options for Patch
 type DeviceManagementTroubleshootingEventRequestBuilderPatchOptions struct {

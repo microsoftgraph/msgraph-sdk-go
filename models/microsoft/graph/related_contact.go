@@ -176,25 +176,37 @@ func (m *RelatedContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAccessConsent sets the accessConsent property value. Indicates whether the user has been consented to access student data.
 func (m *RelatedContact) SetAccessConsent(value *bool)() {
-    m.accessConsent = value
+    if m != nil {
+        m.accessConsent = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RelatedContact) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Name of the contact. Required.
 func (m *RelatedContact) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEmailAddress sets the emailAddress property value. Primary email address of the contact.
 func (m *RelatedContact) SetEmailAddress(value *string)() {
-    m.emailAddress = value
+    if m != nil {
+        m.emailAddress = value
+    }
 }
 // SetMobilePhone sets the mobilePhone property value. Mobile phone number of the contact.
 func (m *RelatedContact) SetMobilePhone(value *string)() {
-    m.mobilePhone = value
+    if m != nil {
+        m.mobilePhone = value
+    }
 }
 // SetRelationship sets the relationship property value. Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
 func (m *RelatedContact) SetRelationship(value *ContactRelationship)() {
-    m.relationship = value
+    if m != nil {
+        m.relationship = value
+    }
 }

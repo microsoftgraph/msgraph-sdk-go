@@ -43,7 +43,7 @@ type TeamsAppInstallationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TeamsAppInstallationRequestBuilderPatchOptions options for Patch
 type TeamsAppInstallationRequestBuilderPatchOptions struct {

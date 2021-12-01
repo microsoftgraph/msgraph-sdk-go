@@ -68,5 +68,7 @@ func (m *Todo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
 }
 // SetLists sets the lists property value. The task lists in the users mailbox.
 func (m *Todo) SetLists(value []TodoTaskList)() {
-    m.lists = value
+    if m != nil {
+        m.lists = value
+    }
 }

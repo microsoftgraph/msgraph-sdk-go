@@ -59,5 +59,7 @@ func (m *DeviceCompliancePolicyAssignment) Serialize(writer i04eb5309aeaafadd283
 }
 // SetTarget sets the target property value. Target for the compliance policy assignment.
 func (m *DeviceCompliancePolicyAssignment) SetTarget(value *DeviceAndAppManagementAssignmentTarget)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

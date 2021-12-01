@@ -21,7 +21,7 @@ type RecurrencePattern struct {
     // The month in which the event occurs.  This is a number from 1 to 12.
     month *int32;
     // The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
-    type_escaped *RecurrencePatternType;
+    type *RecurrencePatternType;
 }
 // NewRecurrencePattern instantiates a new recurrencePattern and sets the default values.
 func NewRecurrencePattern()(*RecurrencePattern) {
@@ -86,12 +86,12 @@ func (m *RecurrencePattern) GetMonth()(*int32) {
         return m.month
     }
 }
-// GetType_escaped gets the type_escaped property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
-func (m *RecurrencePattern) GetType_escaped()(*RecurrencePatternType) {
+// GetType gets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
+func (m *RecurrencePattern) GetType()(*RecurrencePatternType) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -163,14 +163,14 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseRecurrencePatternType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(RecurrencePatternType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -219,9 +219,9 @@ func (m *RecurrencePattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -236,33 +236,49 @@ func (m *RecurrencePattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecurrencePattern) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDayOfMonth sets the dayOfMonth property value. The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
 func (m *RecurrencePattern) SetDayOfMonth(value *int32)() {
-    m.dayOfMonth = value
+    if m != nil {
+        m.dayOfMonth = value
+    }
 }
 // SetDaysOfWeek sets the daysOfWeek property value. A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
 func (m *RecurrencePattern) SetDaysOfWeek(value []DayOfWeek)() {
-    m.daysOfWeek = value
+    if m != nil {
+        m.daysOfWeek = value
+    }
 }
 // SetFirstDayOfWeek sets the firstDayOfWeek property value. The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.
 func (m *RecurrencePattern) SetFirstDayOfWeek(value *DayOfWeek)() {
-    m.firstDayOfWeek = value
+    if m != nil {
+        m.firstDayOfWeek = value
+    }
 }
 // SetIndex sets the index property value. Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.
 func (m *RecurrencePattern) SetIndex(value *WeekIndex)() {
-    m.index = value
+    if m != nil {
+        m.index = value
+    }
 }
 // SetInterval sets the interval property value. The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
 func (m *RecurrencePattern) SetInterval(value *int32)() {
-    m.interval = value
+    if m != nil {
+        m.interval = value
+    }
 }
 // SetMonth sets the month property value. The month in which the event occurs.  This is a number from 1 to 12.
 func (m *RecurrencePattern) SetMonth(value *int32)() {
-    m.month = value
+    if m != nil {
+        m.month = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
-func (m *RecurrencePattern) SetType_escaped(value *RecurrencePatternType)() {
-    m.type_escaped = value
+// SetType sets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
+func (m *RecurrencePattern) SetType(value *RecurrencePatternType)() {
+    if m != nil {
+        m.type = value
+    }
 }

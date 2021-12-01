@@ -45,7 +45,7 @@ type GroupSettingTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // GroupSettingTemplateRequestBuilderPatchOptions options for Patch
 type GroupSettingTemplateRequestBuilderPatchOptions struct {

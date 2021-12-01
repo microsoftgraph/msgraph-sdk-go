@@ -262,33 +262,49 @@ func (m *DocumentSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DocumentSet) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedContentTypes sets the allowedContentTypes property value. Content types allowed in document set.
 func (m *DocumentSet) SetAllowedContentTypes(value []ContentTypeInfo)() {
-    m.allowedContentTypes = value
+    if m != nil {
+        m.allowedContentTypes = value
+    }
 }
 // SetDefaultContents sets the defaultContents property value. Default contents of document set.
 func (m *DocumentSet) SetDefaultContents(value []DocumentSetContent)() {
-    m.defaultContents = value
+    if m != nil {
+        m.defaultContents = value
+    }
 }
 // SetPropagateWelcomePageChanges sets the propagateWelcomePageChanges property value. Specifies whether to push welcome page changes to inherited content types.
 func (m *DocumentSet) SetPropagateWelcomePageChanges(value *bool)() {
-    m.propagateWelcomePageChanges = value
+    if m != nil {
+        m.propagateWelcomePageChanges = value
+    }
 }
 // SetSharedColumns sets the sharedColumns property value. 
 func (m *DocumentSet) SetSharedColumns(value []ColumnDefinition)() {
-    m.sharedColumns = value
+    if m != nil {
+        m.sharedColumns = value
+    }
 }
 // SetShouldPrefixNameToFile sets the shouldPrefixNameToFile property value. Add the name of the document set to each file name.
 func (m *DocumentSet) SetShouldPrefixNameToFile(value *bool)() {
-    m.shouldPrefixNameToFile = value
+    if m != nil {
+        m.shouldPrefixNameToFile = value
+    }
 }
 // SetWelcomePageColumns sets the welcomePageColumns property value. 
 func (m *DocumentSet) SetWelcomePageColumns(value []ColumnDefinition)() {
-    m.welcomePageColumns = value
+    if m != nil {
+        m.welcomePageColumns = value
+    }
 }
 // SetWelcomePageUrl sets the welcomePageUrl property value. Welcome page absolute URL.
 func (m *DocumentSet) SetWelcomePageUrl(value *string)() {
-    m.welcomePageUrl = value
+    if m != nil {
+        m.welcomePageUrl = value
+    }
 }

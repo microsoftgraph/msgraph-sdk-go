@@ -226,33 +226,49 @@ func (m *FileEncryptionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileEncryptionInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEncryptionKey sets the encryptionKey property value. The key used to encrypt the file content.
 func (m *FileEncryptionInfo) SetEncryptionKey(value []byte)() {
-    m.encryptionKey = value
+    if m != nil {
+        m.encryptionKey = value
+    }
 }
 // SetFileDigest sets the fileDigest property value. The file digest prior to encryption.
 func (m *FileEncryptionInfo) SetFileDigest(value []byte)() {
-    m.fileDigest = value
+    if m != nil {
+        m.fileDigest = value
+    }
 }
 // SetFileDigestAlgorithm sets the fileDigestAlgorithm property value. The file digest algorithm.
 func (m *FileEncryptionInfo) SetFileDigestAlgorithm(value *string)() {
-    m.fileDigestAlgorithm = value
+    if m != nil {
+        m.fileDigestAlgorithm = value
+    }
 }
 // SetInitializationVector sets the initializationVector property value. The initialization vector used for the encryption algorithm.
 func (m *FileEncryptionInfo) SetInitializationVector(value []byte)() {
-    m.initializationVector = value
+    if m != nil {
+        m.initializationVector = value
+    }
 }
 // SetMac sets the mac property value. The hash of the encrypted file content + IV (content hash).
 func (m *FileEncryptionInfo) SetMac(value []byte)() {
-    m.mac = value
+    if m != nil {
+        m.mac = value
+    }
 }
 // SetMacKey sets the macKey property value. The key used to get mac.
 func (m *FileEncryptionInfo) SetMacKey(value []byte)() {
-    m.macKey = value
+    if m != nil {
+        m.macKey = value
+    }
 }
 // SetProfileIdentifier sets the profileIdentifier property value. The the profile identifier.
 func (m *FileEncryptionInfo) SetProfileIdentifier(value *string)() {
-    m.profileIdentifier = value
+    if m != nil {
+        m.profileIdentifier = value
+    }
 }

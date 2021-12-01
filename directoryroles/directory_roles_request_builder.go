@@ -43,7 +43,7 @@ type DirectoryRolesRequestBuilderGetQueryParameters struct {
     // Search items by search phrases
     Search *string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
     // Skip the first n items
     Skip *int32;
 }

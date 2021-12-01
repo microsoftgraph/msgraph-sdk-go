@@ -85,9 +85,13 @@ func (m *Attendee) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetProposedNewTime sets the proposedNewTime property value. An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property is not included in a response of a GET event.
 func (m *Attendee) SetProposedNewTime(value *TimeSlot)() {
-    m.proposedNewTime = value
+    if m != nil {
+        m.proposedNewTime = value
+    }
 }
 // SetStatus sets the status property value. The attendee's response (none, accepted, declined, etc.) for the event and date-time that the response was sent.
 func (m *Attendee) SetStatus(value *ResponseStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

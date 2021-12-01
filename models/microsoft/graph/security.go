@@ -138,13 +138,19 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAlerts sets the alerts property value. Read-only. Nullable.
 func (m *Security) SetAlerts(value []Alert)() {
-    m.alerts = value
+    if m != nil {
+        m.alerts = value
+    }
 }
 // SetSecureScoreControlProfiles sets the secureScoreControlProfiles property value. 
 func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfile)() {
-    m.secureScoreControlProfiles = value
+    if m != nil {
+        m.secureScoreControlProfiles = value
+    }
 }
 // SetSecureScores sets the secureScores property value. 
 func (m *Security) SetSecureScores(value []SecureScore)() {
-    m.secureScores = value
+    if m != nil {
+        m.secureScores = value
+    }
 }

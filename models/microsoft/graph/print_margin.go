@@ -148,21 +148,31 @@ func (m *PrintMargin) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrintMargin) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBottom sets the bottom property value. The margin in microns from the bottom edge.
 func (m *PrintMargin) SetBottom(value *int32)() {
-    m.bottom = value
+    if m != nil {
+        m.bottom = value
+    }
 }
 // SetLeft sets the left property value. The margin in microns from the left edge.
 func (m *PrintMargin) SetLeft(value *int32)() {
-    m.left = value
+    if m != nil {
+        m.left = value
+    }
 }
 // SetRight sets the right property value. The margin in microns from the right edge.
 func (m *PrintMargin) SetRight(value *int32)() {
-    m.right = value
+    if m != nil {
+        m.right = value
+    }
 }
 // SetTop sets the top property value. The margin in microns from the top edge.
 func (m *PrintMargin) SetTop(value *int32)() {
-    m.top = value
+    if m != nil {
+        m.top = value
+    }
 }

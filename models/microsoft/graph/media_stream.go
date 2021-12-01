@@ -178,25 +178,37 @@ func (m *MediaStream) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MediaStream) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDirection sets the direction property value. The direction. The possible values are inactive, sendOnly, receiveOnly, sendReceive.
 func (m *MediaStream) SetDirection(value *MediaDirection)() {
-    m.direction = value
+    if m != nil {
+        m.direction = value
+    }
 }
 // SetLabel sets the label property value. The media stream label.
 func (m *MediaStream) SetLabel(value *string)() {
-    m.label = value
+    if m != nil {
+        m.label = value
+    }
 }
 // SetMediaType sets the mediaType property value. The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
 func (m *MediaStream) SetMediaType(value *Modality)() {
-    m.mediaType = value
+    if m != nil {
+        m.mediaType = value
+    }
 }
 // SetServerMuted sets the serverMuted property value. If the media is muted by the server.
 func (m *MediaStream) SetServerMuted(value *bool)() {
-    m.serverMuted = value
+    if m != nil {
+        m.serverMuted = value
+    }
 }
 // SetSourceId sets the sourceId property value. The source ID.
 func (m *MediaStream) SetSourceId(value *string)() {
-    m.sourceId = value
+    if m != nil {
+        m.sourceId = value
+    }
 }

@@ -276,37 +276,55 @@ func (m *PrinterBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetCapabilities sets the capabilities property value. The capabilities of the printer/printerShare.
 func (m *PrinterBase) SetCapabilities(value *PrinterCapabilities)() {
-    m.capabilities = value
+    if m != nil {
+        m.capabilities = value
+    }
 }
 // SetDefaults sets the defaults property value. The default print settings of printer/printerShare.
 func (m *PrinterBase) SetDefaults(value *PrinterDefaults)() {
-    m.defaults = value
+    if m != nil {
+        m.defaults = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the printer/printerShare.
 func (m *PrinterBase) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsAcceptingJobs sets the isAcceptingJobs property value. Whether the printer/printerShare is currently accepting new print jobs.
 func (m *PrinterBase) SetIsAcceptingJobs(value *bool)() {
-    m.isAcceptingJobs = value
+    if m != nil {
+        m.isAcceptingJobs = value
+    }
 }
 // SetJobs sets the jobs property value. The list of jobs that are queued for printing by the printer/printerShare.
 func (m *PrinterBase) SetJobs(value []PrintJob)() {
-    m.jobs = value
+    if m != nil {
+        m.jobs = value
+    }
 }
 // SetLocation sets the location property value. The physical and/or organizational location of the printer/printerShare.
 func (m *PrinterBase) SetLocation(value *PrinterLocation)() {
-    m.location = value
+    if m != nil {
+        m.location = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. The manufacturer of the printer/printerShare.
 func (m *PrinterBase) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetModel sets the model property value. The model name of the printer/printerShare.
 func (m *PrinterBase) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *PrinterBase) SetStatus(value *PrinterStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

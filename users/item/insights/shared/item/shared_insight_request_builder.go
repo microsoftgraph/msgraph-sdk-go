@@ -42,7 +42,7 @@ type SharedInsightRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // SharedInsightRequestBuilderPatchOptions options for Patch
 type SharedInsightRequestBuilderPatchOptions struct {

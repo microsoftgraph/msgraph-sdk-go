@@ -68,5 +68,7 @@ func (m *UserTeamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetInstalledApps sets the installedApps property value. The apps installed in the personal scope of this user.
 func (m *UserTeamwork) SetInstalledApps(value []UserScopeTeamsAppInstallation)() {
-    m.installedApps = value
+    if m != nil {
+        m.installedApps = value
+    }
 }

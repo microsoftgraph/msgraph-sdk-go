@@ -23,7 +23,7 @@ type ResourceVisualization struct {
     // The item's title text.
     title *string;
     // The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
-    type_escaped *string;
+    type *string;
 }
 // NewResourceVisualization instantiates a new resourceVisualization and sets the default values.
 func NewResourceVisualization()(*ResourceVisualization) {
@@ -96,12 +96,12 @@ func (m *ResourceVisualization) GetTitle()(*string) {
         return m.title
     }
 }
-// GetType_escaped gets the type_escaped property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
-func (m *ResourceVisualization) GetType_escaped()(*string) {
+// GetType gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+func (m *ResourceVisualization) GetType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.type
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -177,13 +177,13 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -237,7 +237,7 @@ func (m *ResourceVisualization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -252,37 +252,55 @@ func (m *ResourceVisualization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceVisualization) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContainerDisplayName sets the containerDisplayName property value. A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
 func (m *ResourceVisualization) SetContainerDisplayName(value *string)() {
-    m.containerDisplayName = value
+    if m != nil {
+        m.containerDisplayName = value
+    }
 }
 // SetContainerType sets the containerType property value. Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
 func (m *ResourceVisualization) SetContainerType(value *string)() {
-    m.containerType = value
+    if m != nil {
+        m.containerType = value
+    }
 }
 // SetContainerWebUrl sets the containerWebUrl property value. A path leading to the folder in which the item is stored.
 func (m *ResourceVisualization) SetContainerWebUrl(value *string)() {
-    m.containerWebUrl = value
+    if m != nil {
+        m.containerWebUrl = value
+    }
 }
 // SetMediaType sets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
 func (m *ResourceVisualization) SetMediaType(value *string)() {
-    m.mediaType = value
+    if m != nil {
+        m.mediaType = value
+    }
 }
 // SetPreviewImageUrl sets the previewImageUrl property value. A URL leading to the preview image for the item.
 func (m *ResourceVisualization) SetPreviewImageUrl(value *string)() {
-    m.previewImageUrl = value
+    if m != nil {
+        m.previewImageUrl = value
+    }
 }
 // SetPreviewText sets the previewText property value. A preview text for the item.
 func (m *ResourceVisualization) SetPreviewText(value *string)() {
-    m.previewText = value
+    if m != nil {
+        m.previewText = value
+    }
 }
 // SetTitle sets the title property value. The item's title text.
 func (m *ResourceVisualization) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }
-// SetType_escaped sets the type_escaped property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
-func (m *ResourceVisualization) SetType_escaped(value *string)() {
-    m.type_escaped = value
+// SetType sets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+func (m *ResourceVisualization) SetType(value *string)() {
+    if m != nil {
+        m.type = value
+    }
 }

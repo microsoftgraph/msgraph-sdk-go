@@ -59,5 +59,7 @@ func (m *PlannerBucketTaskBoardTaskFormat) Serialize(writer i04eb5309aeaafadd283
 }
 // SetOrderHint sets the orderHint property value. Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
 func (m *PlannerBucketTaskBoardTaskFormat) SetOrderHint(value *string)() {
-    m.orderHint = value
+    if m != nil {
+        m.orderHint = value
+    }
 }

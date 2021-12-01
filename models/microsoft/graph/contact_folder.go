@@ -225,25 +225,37 @@ func (m *ContactFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetChildFolders sets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
 func (m *ContactFolder) SetChildFolders(value []ContactFolder)() {
-    m.childFolders = value
+    if m != nil {
+        m.childFolders = value
+    }
 }
 // SetContacts sets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
 func (m *ContactFolder) SetContacts(value []Contact)() {
-    m.contacts = value
+    if m != nil {
+        m.contacts = value
+    }
 }
 // SetDisplayName sets the displayName property value. The folder's display name.
 func (m *ContactFolder) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
 func (m *ContactFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedProperty)() {
-    m.multiValueExtendedProperties = value
+    if m != nil {
+        m.multiValueExtendedProperties = value
+    }
 }
 // SetParentFolderId sets the parentFolderId property value. The ID of the folder's parent folder.
 func (m *ContactFolder) SetParentFolderId(value *string)() {
-    m.parentFolderId = value
+    if m != nil {
+        m.parentFolderId = value
+    }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
 func (m *ContactFolder) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedProperty)() {
-    m.singleValueExtendedProperties = value
+    if m != nil {
+        m.singleValueExtendedProperties = value
+    }
 }

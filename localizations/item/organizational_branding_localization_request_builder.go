@@ -40,7 +40,7 @@ type OrganizationalBrandingLocalizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OrganizationalBrandingLocalizationRequestBuilderPatchOptions options for Patch
 type OrganizationalBrandingLocalizationRequestBuilderPatchOptions struct {

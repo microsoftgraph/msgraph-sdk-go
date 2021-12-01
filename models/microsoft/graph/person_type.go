@@ -96,13 +96,19 @@ func (m *PersonType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PersonType) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClass sets the class property value. The type of data source, such as Person.
 func (m *PersonType) SetClass(value *string)() {
-    m.class = value
+    if m != nil {
+        m.class = value
+    }
 }
 // SetSubclass sets the subclass property value. The secondary type of data source, such as OrganizationUser.
 func (m *PersonType) SetSubclass(value *string)() {
-    m.subclass = value
+    if m != nil {
+        m.subclass = value
+    }
 }

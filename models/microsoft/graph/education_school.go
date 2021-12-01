@@ -415,57 +415,85 @@ func (m *EducationSchool) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAddress sets the address property value. Address of the school.
 func (m *EducationSchool) SetAddress(value *PhysicalAddress)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetAdministrativeUnit sets the administrativeUnit property value. The underlying administrativeUnit for this school.
 func (m *EducationSchool) SetAdministrativeUnit(value *AdministrativeUnit)() {
-    m.administrativeUnit = value
+    if m != nil {
+        m.administrativeUnit = value
+    }
 }
 // SetClasses sets the classes property value. Classes taught at the school. Nullable.
 func (m *EducationSchool) SetClasses(value []EducationClass)() {
-    m.classes = value
+    if m != nil {
+        m.classes = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. Entity who created the school.
 func (m *EducationSchool) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetExternalId sets the externalId property value. ID of school in syncing system.
 func (m *EducationSchool) SetExternalId(value *string)() {
-    m.externalId = value
+    if m != nil {
+        m.externalId = value
+    }
 }
 // SetExternalPrincipalId sets the externalPrincipalId property value. ID of principal in syncing system.
 func (m *EducationSchool) SetExternalPrincipalId(value *string)() {
-    m.externalPrincipalId = value
+    if m != nil {
+        m.externalPrincipalId = value
+    }
 }
 // SetFax sets the fax property value. 
 func (m *EducationSchool) SetFax(value *string)() {
-    m.fax = value
+    if m != nil {
+        m.fax = value
+    }
 }
 // SetHighestGrade sets the highestGrade property value. Highest grade taught.
 func (m *EducationSchool) SetHighestGrade(value *string)() {
-    m.highestGrade = value
+    if m != nil {
+        m.highestGrade = value
+    }
 }
 // SetLowestGrade sets the lowestGrade property value. Lowest grade taught.
 func (m *EducationSchool) SetLowestGrade(value *string)() {
-    m.lowestGrade = value
+    if m != nil {
+        m.lowestGrade = value
+    }
 }
 // SetPhone sets the phone property value. Phone number of school.
 func (m *EducationSchool) SetPhone(value *string)() {
-    m.phone = value
+    if m != nil {
+        m.phone = value
+    }
 }
 // SetPrincipalEmail sets the principalEmail property value. Email address of the principal.
 func (m *EducationSchool) SetPrincipalEmail(value *string)() {
-    m.principalEmail = value
+    if m != nil {
+        m.principalEmail = value
+    }
 }
 // SetPrincipalName sets the principalName property value. Name of the principal.
 func (m *EducationSchool) SetPrincipalName(value *string)() {
-    m.principalName = value
+    if m != nil {
+        m.principalName = value
+    }
 }
 // SetSchoolNumber sets the schoolNumber property value. School Number.
 func (m *EducationSchool) SetSchoolNumber(value *string)() {
-    m.schoolNumber = value
+    if m != nil {
+        m.schoolNumber = value
+    }
 }
 // SetUsers sets the users property value. Users in the school. Nullable.
 func (m *EducationSchool) SetUsers(value []EducationUser)() {
-    m.users = value
+    if m != nil {
+        m.users = value
+    }
 }

@@ -224,29 +224,43 @@ func (m *SubscribedSku) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAppliesTo sets the appliesTo property value. For example, 'User' or 'Company'.
 func (m *SubscribedSku) SetAppliesTo(value *string)() {
-    m.appliesTo = value
+    if m != nil {
+        m.appliesTo = value
+    }
 }
 // SetCapabilityStatus sets the capabilityStatus property value. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
 func (m *SubscribedSku) SetCapabilityStatus(value *string)() {
-    m.capabilityStatus = value
+    if m != nil {
+        m.capabilityStatus = value
+    }
 }
 // SetConsumedUnits sets the consumedUnits property value. The number of licenses that have been assigned.
 func (m *SubscribedSku) SetConsumedUnits(value *int32)() {
-    m.consumedUnits = value
+    if m != nil {
+        m.consumedUnits = value
+    }
 }
 // SetPrepaidUnits sets the prepaidUnits property value. Information about the number and status of prepaid licenses.
 func (m *SubscribedSku) SetPrepaidUnits(value *LicenseUnitsDetail)() {
-    m.prepaidUnits = value
+    if m != nil {
+        m.prepaidUnits = value
+    }
 }
 // SetServicePlans sets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable
 func (m *SubscribedSku) SetServicePlans(value []ServicePlanInfo)() {
-    m.servicePlans = value
+    if m != nil {
+        m.servicePlans = value
+    }
 }
 // SetSkuId sets the skuId property value. The unique identifier (GUID) for the service SKU.
 func (m *SubscribedSku) SetSkuId(value *string)() {
-    m.skuId = value
+    if m != nil {
+        m.skuId = value
+    }
 }
 // SetSkuPartNumber sets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
 func (m *SubscribedSku) SetSkuPartNumber(value *string)() {
-    m.skuPartNumber = value
+    if m != nil {
+        m.skuPartNumber = value
+    }
 }

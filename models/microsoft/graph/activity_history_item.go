@@ -270,37 +270,55 @@ func (m *ActivityHistoryItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetActiveDurationSeconds sets the activeDurationSeconds property value. Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
 func (m *ActivityHistoryItem) SetActiveDurationSeconds(value *int32)() {
-    m.activeDurationSeconds = value
+    if m != nil {
+        m.activeDurationSeconds = value
+    }
 }
 // SetActivity sets the activity property value. 
 func (m *ActivityHistoryItem) SetActivity(value *UserActivity)() {
-    m.activity = value
+    if m != nil {
+        m.activity = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Set by the server. DateTime in UTC when the object was created on the server.
 func (m *ActivityHistoryItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
 func (m *ActivityHistoryItem) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.expirationDateTime = value
+    if m != nil {
+        m.expirationDateTime = value
+    }
 }
 // SetLastActiveDateTime sets the lastActiveDateTime property value. Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.
 func (m *ActivityHistoryItem) SetLastActiveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActiveDateTime = value
+    if m != nil {
+        m.lastActiveDateTime = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Set by the server. DateTime in UTC when the object was modified on the server.
 func (m *ActivityHistoryItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetStartedDateTime sets the startedDateTime property value. Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
 func (m *ActivityHistoryItem) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.startedDateTime = value
+    if m != nil {
+        m.startedDateTime = value
+    }
 }
 // SetStatus sets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
 func (m *ActivityHistoryItem) SetStatus(value *Status)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetUserTimezone sets the userTimezone property value. Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
 func (m *ActivityHistoryItem) SetUserTimezone(value *string)() {
-    m.userTimezone = value
+    if m != nil {
+        m.userTimezone = value
+    }
 }

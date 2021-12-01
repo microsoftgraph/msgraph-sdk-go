@@ -43,7 +43,7 @@ type WorkbookChartSeriesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WorkbookChartSeriesRequestBuilderPatchOptions options for Patch
 type WorkbookChartSeriesRequestBuilderPatchOptions struct {

@@ -246,33 +246,49 @@ func (m *ScheduleChangeRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAssignedTo sets the assignedTo property value. 
 func (m *ScheduleChangeRequest) SetAssignedTo(value *ScheduleChangeRequestActor)() {
-    m.assignedTo = value
+    if m != nil {
+        m.assignedTo = value
+    }
 }
 // SetManagerActionDateTime sets the managerActionDateTime property value. 
 func (m *ScheduleChangeRequest) SetManagerActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.managerActionDateTime = value
+    if m != nil {
+        m.managerActionDateTime = value
+    }
 }
 // SetManagerActionMessage sets the managerActionMessage property value. 
 func (m *ScheduleChangeRequest) SetManagerActionMessage(value *string)() {
-    m.managerActionMessage = value
+    if m != nil {
+        m.managerActionMessage = value
+    }
 }
 // SetManagerUserId sets the managerUserId property value. 
 func (m *ScheduleChangeRequest) SetManagerUserId(value *string)() {
-    m.managerUserId = value
+    if m != nil {
+        m.managerUserId = value
+    }
 }
 // SetSenderDateTime sets the senderDateTime property value. 
 func (m *ScheduleChangeRequest) SetSenderDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.senderDateTime = value
+    if m != nil {
+        m.senderDateTime = value
+    }
 }
 // SetSenderMessage sets the senderMessage property value. 
 func (m *ScheduleChangeRequest) SetSenderMessage(value *string)() {
-    m.senderMessage = value
+    if m != nil {
+        m.senderMessage = value
+    }
 }
 // SetSenderUserId sets the senderUserId property value. 
 func (m *ScheduleChangeRequest) SetSenderUserId(value *string)() {
-    m.senderUserId = value
+    if m != nil {
+        m.senderUserId = value
+    }
 }
 // SetState sets the state property value. 
 func (m *ScheduleChangeRequest) SetState(value *ScheduleChangeState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

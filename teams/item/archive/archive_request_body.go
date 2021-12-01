@@ -70,9 +70,13 @@ func (m *ArchiveRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ArchiveRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetShouldSetSpoSiteReadOnlyForMembers sets the shouldSetSpoSiteReadOnlyForMembers property value. 
 func (m *ArchiveRequestBody) SetShouldSetSpoSiteReadOnlyForMembers(value *bool)() {
-    m.shouldSetSpoSiteReadOnlyForMembers = value
+    if m != nil {
+        m.shouldSetSpoSiteReadOnlyForMembers = value
+    }
 }

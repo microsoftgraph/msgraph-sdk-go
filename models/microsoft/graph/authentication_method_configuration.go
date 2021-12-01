@@ -61,5 +61,7 @@ func (m *AuthenticationMethodConfiguration) Serialize(writer i04eb5309aeaafadd28
 }
 // SetState sets the state property value. The state of the policy. Possible values are: enabled, disabled.
 func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethodState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

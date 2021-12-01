@@ -35,7 +35,7 @@ type OperationsRequestBuilderGetQueryParameters struct {
     // Search items by search phrases
     Search *string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // OperationsRequestBuilderPostOptions options for Post
 type OperationsRequestBuilderPostOptions struct {

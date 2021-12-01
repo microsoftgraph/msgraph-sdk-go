@@ -148,21 +148,31 @@ func (m *IdentityGovernance) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAccessReviews sets the accessReviews property value. 
 func (m *IdentityGovernance) SetAccessReviews(value *AccessReviewSet)() {
-    m.accessReviews = value
+    if m != nil {
+        m.accessReviews = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityGovernance) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppConsent sets the appConsent property value. 
 func (m *IdentityGovernance) SetAppConsent(value *AppConsentApprovalRoute)() {
-    m.appConsent = value
+    if m != nil {
+        m.appConsent = value
+    }
 }
 // SetEntitlementManagement sets the entitlementManagement property value. 
 func (m *IdentityGovernance) SetEntitlementManagement(value *EntitlementManagement)() {
-    m.entitlementManagement = value
+    if m != nil {
+        m.entitlementManagement = value
+    }
 }
 // SetTermsOfUse sets the termsOfUse property value. 
 func (m *IdentityGovernance) SetTermsOfUse(value *TermsOfUseContainer)() {
-    m.termsOfUse = value
+    if m != nil {
+        m.termsOfUse = value
+    }
 }

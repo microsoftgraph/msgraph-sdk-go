@@ -99,13 +99,19 @@ func (m *UpdateRecordingStatusRequestBody) Serialize(writer i04eb5309aeaafadd283
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateRecordingStatusRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClientContext sets the clientContext property value. 
 func (m *UpdateRecordingStatusRequestBody) SetClientContext(value *string)() {
-    m.clientContext = value
+    if m != nil {
+        m.clientContext = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *UpdateRecordingStatusRequestBody) SetStatus(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RecordingStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

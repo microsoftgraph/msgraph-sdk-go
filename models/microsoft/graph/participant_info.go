@@ -202,29 +202,43 @@ func (m *ParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParticipantInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCountryCode sets the countryCode property value. The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
 func (m *ParticipantInfo) SetCountryCode(value *string)() {
-    m.countryCode = value
+    if m != nil {
+        m.countryCode = value
+    }
 }
 // SetEndpointType sets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
 func (m *ParticipantInfo) SetEndpointType(value *EndpointType)() {
-    m.endpointType = value
+    if m != nil {
+        m.endpointType = value
+    }
 }
 // SetIdentity sets the identity property value. 
 func (m *ParticipantInfo) SetIdentity(value *IdentitySet)() {
-    m.identity = value
+    if m != nil {
+        m.identity = value
+    }
 }
 // SetLanguageId sets the languageId property value. The language culture string. Read-only.
 func (m *ParticipantInfo) SetLanguageId(value *string)() {
-    m.languageId = value
+    if m != nil {
+        m.languageId = value
+    }
 }
 // SetParticipantId sets the participantId property value. The participant ID of the participant. Read-only.
 func (m *ParticipantInfo) SetParticipantId(value *string)() {
-    m.participantId = value
+    if m != nil {
+        m.participantId = value
+    }
 }
 // SetRegion sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
 func (m *ParticipantInfo) SetRegion(value *string)() {
-    m.region = value
+    if m != nil {
+        m.region = value
+    }
 }

@@ -130,17 +130,25 @@ func (m *UnifiedRolePermission) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedRolePermission) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedResourceActions sets the allowedResourceActions property value. Set of tasks that can be performed on a resource. Required.
 func (m *UnifiedRolePermission) SetAllowedResourceActions(value []string)() {
-    m.allowedResourceActions = value
+    if m != nil {
+        m.allowedResourceActions = value
+    }
 }
 // SetCondition sets the condition property value. Optional constraints that must be met for the permission to be effective.
 func (m *UnifiedRolePermission) SetCondition(value *string)() {
-    m.condition = value
+    if m != nil {
+        m.condition = value
+    }
 }
 // SetExcludedResourceActions sets the excludedResourceActions property value. Set of tasks that may not be performed on a resource. Not yet supported.
 func (m *UnifiedRolePermission) SetExcludedResourceActions(value []string)() {
-    m.excludedResourceActions = value
+    if m != nil {
+        m.excludedResourceActions = value
+    }
 }

@@ -174,25 +174,37 @@ func (m *DeviceExchangeAccessStateSummary) Serialize(writer i04eb5309aeaafadd283
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceExchangeAccessStateSummary) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedDeviceCount sets the allowedDeviceCount property value. Total count of devices with Exchange Access State: Allowed.
 func (m *DeviceExchangeAccessStateSummary) SetAllowedDeviceCount(value *int32)() {
-    m.allowedDeviceCount = value
+    if m != nil {
+        m.allowedDeviceCount = value
+    }
 }
 // SetBlockedDeviceCount sets the blockedDeviceCount property value. Total count of devices with Exchange Access State: Blocked.
 func (m *DeviceExchangeAccessStateSummary) SetBlockedDeviceCount(value *int32)() {
-    m.blockedDeviceCount = value
+    if m != nil {
+        m.blockedDeviceCount = value
+    }
 }
 // SetQuarantinedDeviceCount sets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
 func (m *DeviceExchangeAccessStateSummary) SetQuarantinedDeviceCount(value *int32)() {
-    m.quarantinedDeviceCount = value
+    if m != nil {
+        m.quarantinedDeviceCount = value
+    }
 }
 // SetUnavailableDeviceCount sets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.
 func (m *DeviceExchangeAccessStateSummary) SetUnavailableDeviceCount(value *int32)() {
-    m.unavailableDeviceCount = value
+    if m != nil {
+        m.unavailableDeviceCount = value
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Total count of devices with Exchange Access State: Unknown.
 func (m *DeviceExchangeAccessStateSummary) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    if m != nil {
+        m.unknownDeviceCount = value
+    }
 }

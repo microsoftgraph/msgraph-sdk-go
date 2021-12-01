@@ -68,5 +68,7 @@ func (m *ShiftPreferences) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAvailability sets the availability property value. Availability of the user to be scheduled for work and its recurrence pattern.
 func (m *ShiftPreferences) SetAvailability(value []ShiftAvailability)() {
-    m.availability = value
+    if m != nil {
+        m.availability = value
+    }
 }
