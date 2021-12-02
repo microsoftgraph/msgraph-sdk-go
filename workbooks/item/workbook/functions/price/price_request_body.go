@@ -227,33 +227,49 @@ func (m *PriceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PriceRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBasis sets the basis property value. 
 func (m *PriceRequestBody) SetBasis(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.basis = value
+    if m != nil {
+        m.basis = value
+    }
 }
 // SetFrequency sets the frequency property value. 
 func (m *PriceRequestBody) SetFrequency(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.frequency = value
+    if m != nil {
+        m.frequency = value
+    }
 }
 // SetMaturity sets the maturity property value. 
 func (m *PriceRequestBody) SetMaturity(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.maturity = value
+    if m != nil {
+        m.maturity = value
+    }
 }
 // SetRate sets the rate property value. 
 func (m *PriceRequestBody) SetRate(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.rate = value
+    if m != nil {
+        m.rate = value
+    }
 }
 // SetRedemption sets the redemption property value. 
 func (m *PriceRequestBody) SetRedemption(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.redemption = value
+    if m != nil {
+        m.redemption = value
+    }
 }
 // SetSettlement sets the settlement property value. 
 func (m *PriceRequestBody) SetSettlement(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.settlement = value
+    if m != nil {
+        m.settlement = value
+    }
 }
 // SetYld sets the yld property value. 
 func (m *PriceRequestBody) SetYld(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.yld = value
+    if m != nil {
+        m.yld = value
+    }
 }

@@ -122,17 +122,25 @@ func (m *SignInStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignInStatus) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdditionalDetails sets the additionalDetails property value. Provides additional details on the sign-in activity
 func (m *SignInStatus) SetAdditionalDetails(value *string)() {
-    m.additionalDetails = value
+    if m != nil {
+        m.additionalDetails = value
+    }
 }
 // SetErrorCode sets the errorCode property value. Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
 func (m *SignInStatus) SetErrorCode(value *int32)() {
-    m.errorCode = value
+    if m != nil {
+        m.errorCode = value
+    }
 }
 // SetFailureReason sets the failureReason property value. Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
 func (m *SignInStatus) SetFailureReason(value *string)() {
-    m.failureReason = value
+    if m != nil {
+        m.failureReason = value
+    }
 }

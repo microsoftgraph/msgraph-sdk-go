@@ -176,25 +176,37 @@ func (m *BroadcastMeetingSettings) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BroadcastMeetingSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedAudience sets the allowedAudience property value. Defines who can join the Teams live event. Possible values are listed in the following table.
 func (m *BroadcastMeetingSettings) SetAllowedAudience(value *BroadcastMeetingAudience)() {
-    m.allowedAudience = value
+    if m != nil {
+        m.allowedAudience = value
+    }
 }
 // SetIsAttendeeReportEnabled sets the isAttendeeReportEnabled property value. Indicates whether attendee report is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) SetIsAttendeeReportEnabled(value *bool)() {
-    m.isAttendeeReportEnabled = value
+    if m != nil {
+        m.isAttendeeReportEnabled = value
+    }
 }
 // SetIsQuestionAndAnswerEnabled sets the isQuestionAndAnswerEnabled property value. Indicates whether Q&A is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) SetIsQuestionAndAnswerEnabled(value *bool)() {
-    m.isQuestionAndAnswerEnabled = value
+    if m != nil {
+        m.isQuestionAndAnswerEnabled = value
+    }
 }
 // SetIsRecordingEnabled sets the isRecordingEnabled property value. Indicates whether recording is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) SetIsRecordingEnabled(value *bool)() {
-    m.isRecordingEnabled = value
+    if m != nil {
+        m.isRecordingEnabled = value
+    }
 }
 // SetIsVideoOnDemandEnabled sets the isVideoOnDemandEnabled property value. Indicates whether video on demand is enabled for this Teams live event. Default value is false.
 func (m *BroadcastMeetingSettings) SetIsVideoOnDemandEnabled(value *bool)() {
-    m.isVideoOnDemandEnabled = value
+    if m != nil {
+        m.isVideoOnDemandEnabled = value
+    }
 }

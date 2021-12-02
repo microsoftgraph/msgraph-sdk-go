@@ -70,9 +70,13 @@ func (m *SpecialFolder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SpecialFolder) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetName sets the name property value. The unique identifier for this item in the /drive/special collection
 func (m *SpecialFolder) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

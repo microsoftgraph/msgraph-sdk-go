@@ -175,25 +175,37 @@ func (m *SharingDetail) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharingDetail) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSharedBy sets the sharedBy property value. The user who shared the document.
 func (m *SharingDetail) SetSharedBy(value *InsightIdentity)() {
-    m.sharedBy = value
+    if m != nil {
+        m.sharedBy = value
+    }
 }
 // SetSharedDateTime sets the sharedDateTime property value. The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *SharingDetail) SetSharedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.sharedDateTime = value
+    if m != nil {
+        m.sharedDateTime = value
+    }
 }
 // SetSharingReference sets the sharingReference property value. 
 func (m *SharingDetail) SetSharingReference(value *ResourceReference)() {
-    m.sharingReference = value
+    if m != nil {
+        m.sharingReference = value
+    }
 }
 // SetSharingSubject sets the sharingSubject property value. The subject with which the document was shared.
 func (m *SharingDetail) SetSharingSubject(value *string)() {
-    m.sharingSubject = value
+    if m != nil {
+        m.sharingSubject = value
+    }
 }
 // SetSharingType sets the sharingType property value. Determines the way the document was shared, can be by a 'Link', 'Attachment', 'Group', 'Site'.
 func (m *SharingDetail) SetSharingType(value *string)() {
-    m.sharingType = value
+    if m != nil {
+        m.sharingType = value
+    }
 }

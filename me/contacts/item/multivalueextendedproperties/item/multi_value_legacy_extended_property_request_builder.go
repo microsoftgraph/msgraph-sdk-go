@@ -40,7 +40,7 @@ type MultiValueLegacyExtendedPropertyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // MultiValueLegacyExtendedPropertyRequestBuilderPatchOptions options for Patch
 type MultiValueLegacyExtendedPropertyRequestBuilderPatchOptions struct {

@@ -70,9 +70,13 @@ func (m *AddGroupRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddGroupRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetGroupId sets the groupId property value. 
 func (m *AddGroupRequestBody) SetGroupId(value *string)() {
-    m.groupId = value
+    if m != nil {
+        m.groupId = value
+    }
 }

@@ -149,21 +149,31 @@ func (m *SeriesSumRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SeriesSumRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCoefficients sets the coefficients property value. 
 func (m *SeriesSumRequestBody) SetCoefficients(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.coefficients = value
+    if m != nil {
+        m.coefficients = value
+    }
 }
 // SetM sets the m property value. 
 func (m *SeriesSumRequestBody) SetM(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.m = value
+    if m != nil {
+        m.m = value
+    }
 }
 // SetN sets the n property value. 
 func (m *SeriesSumRequestBody) SetN(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.n = value
+    if m != nil {
+        m.n = value
+    }
 }
 // SetX sets the x property value. 
 func (m *SeriesSumRequestBody) SetX(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.x = value
+    if m != nil {
+        m.x = value
+    }
 }

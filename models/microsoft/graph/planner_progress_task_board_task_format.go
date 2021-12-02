@@ -59,5 +59,7 @@ func (m *PlannerProgressTaskBoardTaskFormat) Serialize(writer i04eb5309aeaafadd2
 }
 // SetOrderHint sets the orderHint property value. Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
 func (m *PlannerProgressTaskBoardTaskFormat) SetOrderHint(value *string)() {
-    m.orderHint = value
+    if m != nil {
+        m.orderHint = value
+    }
 }

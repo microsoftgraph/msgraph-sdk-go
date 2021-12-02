@@ -174,25 +174,37 @@ func (m *WindowsInformationProtectionApp) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionApp) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDenied sets the denied property value. If true, app is denied protection or exemption.
 func (m *WindowsInformationProtectionApp) SetDenied(value *bool)() {
-    m.denied = value
+    if m != nil {
+        m.denied = value
+    }
 }
 // SetDescription sets the description property value. The app's description.
 func (m *WindowsInformationProtectionApp) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. App display name.
 func (m *WindowsInformationProtectionApp) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetProductName sets the productName property value. The product name.
 func (m *WindowsInformationProtectionApp) SetProductName(value *string)() {
-    m.productName = value
+    if m != nil {
+        m.productName = value
+    }
 }
 // SetPublisherName sets the publisherName property value. The publisher name
 func (m *WindowsInformationProtectionApp) SetPublisherName(value *string)() {
-    m.publisherName = value
+    if m != nil {
+        m.publisherName = value
+    }
 }

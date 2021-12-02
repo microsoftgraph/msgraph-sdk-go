@@ -74,9 +74,13 @@ func (m *GetPresencesByUserIdRequestBody) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetPresencesByUserIdRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIds sets the ids property value. 
 func (m *GetPresencesByUserIdRequestBody) SetIds(value []string)() {
-    m.ids = value
+    if m != nil {
+        m.ids = value
+    }
 }

@@ -68,5 +68,7 @@ func (m *CertificateBasedAuthConfiguration) Serialize(writer i04eb5309aeaafadd28
 }
 // SetCertificateAuthorities sets the certificateAuthorities property value. Collection of certificate authorities which creates a trusted certificate chain.
 func (m *CertificateBasedAuthConfiguration) SetCertificateAuthorities(value []CertificateAuthority)() {
-    m.certificateAuthorities = value
+    if m != nil {
+        m.certificateAuthorities = value
+    }
 }

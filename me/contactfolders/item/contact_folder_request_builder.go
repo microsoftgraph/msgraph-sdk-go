@@ -46,7 +46,7 @@ type ContactFolderRequestBuilderGetOptions struct {
 // ContactFolderRequestBuilderGetQueryParameters the user's contacts folders. Read-only. Nullable.
 type ContactFolderRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ContactFolderRequestBuilderPatchOptions options for Patch
 type ContactFolderRequestBuilderPatchOptions struct {

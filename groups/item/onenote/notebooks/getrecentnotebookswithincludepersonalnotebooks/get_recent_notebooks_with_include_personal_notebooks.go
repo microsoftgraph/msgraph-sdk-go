@@ -44,5 +44,7 @@ func (m *GetRecentNotebooksWithIncludePersonalNotebooks) Serialize(writer i04eb5
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetRecentNotebooksWithIncludePersonalNotebooks) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }

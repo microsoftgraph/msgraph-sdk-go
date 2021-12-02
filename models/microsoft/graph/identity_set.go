@@ -122,17 +122,25 @@ func (m *IdentitySet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentitySet) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplication sets the application property value. Optional. The application associated with this action.
 func (m *IdentitySet) SetApplication(value *Identity)() {
-    m.application = value
+    if m != nil {
+        m.application = value
+    }
 }
 // SetDevice sets the device property value. Optional. The device associated with this action.
 func (m *IdentitySet) SetDevice(value *Identity)() {
-    m.device = value
+    if m != nil {
+        m.device = value
+    }
 }
 // SetUser sets the user property value. Optional. The user associated with this action.
 func (m *IdentitySet) SetUser(value *Identity)() {
-    m.user = value
+    if m != nil {
+        m.user = value
+    }
 }

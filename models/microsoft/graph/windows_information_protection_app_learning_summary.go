@@ -113,13 +113,19 @@ func (m *WindowsInformationProtectionAppLearningSummary) Serialize(writer i04eb5
 }
 // SetApplicationName sets the applicationName property value. Application Name
 func (m *WindowsInformationProtectionAppLearningSummary) SetApplicationName(value *string)() {
-    m.applicationName = value
+    if m != nil {
+        m.applicationName = value
+    }
 }
 // SetApplicationType sets the applicationType property value. Application Type. Possible values are: universal, desktop.
 func (m *WindowsInformationProtectionAppLearningSummary) SetApplicationType(value *ApplicationType)() {
-    m.applicationType = value
+    if m != nil {
+        m.applicationType = value
+    }
 }
 // SetDeviceCount sets the deviceCount property value. Device Count
 func (m *WindowsInformationProtectionAppLearningSummary) SetDeviceCount(value *int32)() {
-    m.deviceCount = value
+    if m != nil {
+        m.deviceCount = value
+    }
 }

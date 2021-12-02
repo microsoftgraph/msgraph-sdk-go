@@ -45,7 +45,7 @@ type ContactRequestBuilderGetOptions struct {
 // ContactRequestBuilderGetQueryParameters the user's contacts. Read-only. Nullable.
 type ContactRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ContactRequestBuilderPatchOptions options for Patch
 type ContactRequestBuilderPatchOptions struct {

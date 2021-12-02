@@ -137,17 +137,25 @@ func (m *WorkbookChartLegend) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetFormat sets the format property value. Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
 func (m *WorkbookChartLegend) SetFormat(value *WorkbookChartLegendFormat)() {
-    m.format = value
+    if m != nil {
+        m.format = value
+    }
 }
 // SetOverlay sets the overlay property value. Boolean value for whether the chart legend should overlap with the main body of the chart.
 func (m *WorkbookChartLegend) SetOverlay(value *bool)() {
-    m.overlay = value
+    if m != nil {
+        m.overlay = value
+    }
 }
 // SetPosition sets the position property value. Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.
 func (m *WorkbookChartLegend) SetPosition(value *string)() {
-    m.position = value
+    if m != nil {
+        m.position = value
+    }
 }
 // SetVisible sets the visible property value. A boolean value the represents the visibility of a ChartLegend object.
 func (m *WorkbookChartLegend) SetVisible(value *bool)() {
-    m.visible = value
+    if m != nil {
+        m.visible = value
+    }
 }

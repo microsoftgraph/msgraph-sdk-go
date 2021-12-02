@@ -178,25 +178,37 @@ func (m *ProvisioningStep) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisioningStep) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Summary of what occurred during the step.
 func (m *ProvisioningStep) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDetails sets the details property value. Details of what occurred during the step.
 func (m *ProvisioningStep) SetDetails(value *DetailsInfo)() {
-    m.details = value
+    if m != nil {
+        m.details = value
+    }
 }
 // SetName sets the name property value. Name of the step.
 func (m *ProvisioningStep) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetProvisioningStepType sets the provisioningStepType property value. Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
 func (m *ProvisioningStep) SetProvisioningStepType(value *ProvisioningStepType)() {
-    m.provisioningStepType = value
+    if m != nil {
+        m.provisioningStepType = value
+    }
 }
 // SetStatus sets the status property value. Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
 func (m *ProvisioningStep) SetStatus(value *ProvisioningResult)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

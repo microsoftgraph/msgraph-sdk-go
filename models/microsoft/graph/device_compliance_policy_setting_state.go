@@ -367,53 +367,79 @@ func (m *DeviceCompliancePolicySettingState) Serialize(writer i04eb5309aeaafadd2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceCompliancePolicySettingState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCurrentValue sets the currentValue property value. Current value of setting on device
 func (m *DeviceCompliancePolicySettingState) SetCurrentValue(value *string)() {
-    m.currentValue = value
+    if m != nil {
+        m.currentValue = value
+    }
 }
 // SetErrorCode sets the errorCode property value. Error code for the setting
 func (m *DeviceCompliancePolicySettingState) SetErrorCode(value *int64)() {
-    m.errorCode = value
+    if m != nil {
+        m.errorCode = value
+    }
 }
 // SetErrorDescription sets the errorDescription property value. Error description
 func (m *DeviceCompliancePolicySettingState) SetErrorDescription(value *string)() {
-    m.errorDescription = value
+    if m != nil {
+        m.errorDescription = value
+    }
 }
 // SetInstanceDisplayName sets the instanceDisplayName property value. Name of setting instance that is being reported.
 func (m *DeviceCompliancePolicySettingState) SetInstanceDisplayName(value *string)() {
-    m.instanceDisplayName = value
+    if m != nil {
+        m.instanceDisplayName = value
+    }
 }
 // SetSetting sets the setting property value. The setting that is being reported
 func (m *DeviceCompliancePolicySettingState) SetSetting(value *string)() {
-    m.setting = value
+    if m != nil {
+        m.setting = value
+    }
 }
 // SetSettingName sets the settingName property value. Localized/user friendly setting name that is being reported
 func (m *DeviceCompliancePolicySettingState) SetSettingName(value *string)() {
-    m.settingName = value
+    if m != nil {
+        m.settingName = value
+    }
 }
 // SetSources sets the sources property value. Contributing policies
 func (m *DeviceCompliancePolicySettingState) SetSources(value []SettingSource)() {
-    m.sources = value
+    if m != nil {
+        m.sources = value
+    }
 }
 // SetState sets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *DeviceCompliancePolicySettingState) SetState(value *ComplianceStatus)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetUserEmail sets the userEmail property value. UserEmail
 func (m *DeviceCompliancePolicySettingState) SetUserEmail(value *string)() {
-    m.userEmail = value
+    if m != nil {
+        m.userEmail = value
+    }
 }
 // SetUserId sets the userId property value. UserId
 func (m *DeviceCompliancePolicySettingState) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }
 // SetUserName sets the userName property value. UserName
 func (m *DeviceCompliancePolicySettingState) SetUserName(value *string)() {
-    m.userName = value
+    if m != nil {
+        m.userName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *DeviceCompliancePolicySettingState) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

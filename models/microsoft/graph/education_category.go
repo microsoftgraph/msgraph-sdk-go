@@ -59,5 +59,7 @@ func (m *EducationCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetDisplayName sets the displayName property value. Unique identifier for the category.
 func (m *EducationCategory) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }

@@ -96,13 +96,19 @@ func (m *ChannelIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChannelIdentity) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetChannelId sets the channelId property value. The identity of the channel in which the message was posted.
 func (m *ChannelIdentity) SetChannelId(value *string)() {
-    m.channelId = value
+    if m != nil {
+        m.channelId = value
+    }
 }
 // SetTeamId sets the teamId property value. The identity of the team in which the message was posted.
 func (m *ChannelIdentity) SetTeamId(value *string)() {
-    m.teamId = value
+    if m != nil {
+        m.teamId = value
+    }
 }

@@ -112,13 +112,19 @@ func (m *BaseItemVersion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
 func (m *BaseItemVersion) SetLastModifiedBy(value *IdentitySet)() {
-    m.lastModifiedBy = value
+    if m != nil {
+        m.lastModifiedBy = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time the version was last modified. Read-only.
 func (m *BaseItemVersion) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetPublication sets the publication property value. Indicates the publication status of this particular version. Read-only.
 func (m *BaseItemVersion) SetPublication(value *PublicationFacet)() {
-    m.publication = value
+    if m != nil {
+        m.publication = value
+    }
 }

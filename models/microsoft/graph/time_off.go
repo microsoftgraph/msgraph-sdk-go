@@ -111,13 +111,19 @@ func (m *TimeOff) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetDraftTimeOff sets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
 func (m *TimeOff) SetDraftTimeOff(value *TimeOffItem)() {
-    m.draftTimeOff = value
+    if m != nil {
+        m.draftTimeOff = value
+    }
 }
 // SetSharedTimeOff sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
 func (m *TimeOff) SetSharedTimeOff(value *TimeOffItem)() {
-    m.sharedTimeOff = value
+    if m != nil {
+        m.sharedTimeOff = value
+    }
 }
 // SetUserId sets the userId property value. ID of the user assigned to the timeOff. Required.
 func (m *TimeOff) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }

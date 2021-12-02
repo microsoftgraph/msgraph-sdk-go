@@ -423,61 +423,91 @@ func (m *SoftwareUpdateStatusSummary) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Number of compliant devices.
 func (m *SoftwareUpdateStatusSummary) SetCompliantDeviceCount(value *int32)() {
-    m.compliantDeviceCount = value
+    if m != nil {
+        m.compliantDeviceCount = value
+    }
 }
 // SetCompliantUserCount sets the compliantUserCount property value. Number of compliant users.
 func (m *SoftwareUpdateStatusSummary) SetCompliantUserCount(value *int32)() {
-    m.compliantUserCount = value
+    if m != nil {
+        m.compliantUserCount = value
+    }
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. Number of conflict devices.
 func (m *SoftwareUpdateStatusSummary) SetConflictDeviceCount(value *int32)() {
-    m.conflictDeviceCount = value
+    if m != nil {
+        m.conflictDeviceCount = value
+    }
 }
 // SetConflictUserCount sets the conflictUserCount property value. Number of conflict users.
 func (m *SoftwareUpdateStatusSummary) SetConflictUserCount(value *int32)() {
-    m.conflictUserCount = value
+    if m != nil {
+        m.conflictUserCount = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the policy.
 func (m *SoftwareUpdateStatusSummary) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Number of devices had error.
 func (m *SoftwareUpdateStatusSummary) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    if m != nil {
+        m.errorDeviceCount = value
+    }
 }
 // SetErrorUserCount sets the errorUserCount property value. Number of users had error.
 func (m *SoftwareUpdateStatusSummary) SetErrorUserCount(value *int32)() {
-    m.errorUserCount = value
+    if m != nil {
+        m.errorUserCount = value
+    }
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. Number of non compliant devices.
 func (m *SoftwareUpdateStatusSummary) SetNonCompliantDeviceCount(value *int32)() {
-    m.nonCompliantDeviceCount = value
+    if m != nil {
+        m.nonCompliantDeviceCount = value
+    }
 }
 // SetNonCompliantUserCount sets the nonCompliantUserCount property value. Number of non compliant users.
 func (m *SoftwareUpdateStatusSummary) SetNonCompliantUserCount(value *int32)() {
-    m.nonCompliantUserCount = value
+    if m != nil {
+        m.nonCompliantUserCount = value
+    }
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of not applicable devices.
 func (m *SoftwareUpdateStatusSummary) SetNotApplicableDeviceCount(value *int32)() {
-    m.notApplicableDeviceCount = value
+    if m != nil {
+        m.notApplicableDeviceCount = value
+    }
 }
 // SetNotApplicableUserCount sets the notApplicableUserCount property value. Number of not applicable users.
 func (m *SoftwareUpdateStatusSummary) SetNotApplicableUserCount(value *int32)() {
-    m.notApplicableUserCount = value
+    if m != nil {
+        m.notApplicableUserCount = value
+    }
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Number of remediated devices.
 func (m *SoftwareUpdateStatusSummary) SetRemediatedDeviceCount(value *int32)() {
-    m.remediatedDeviceCount = value
+    if m != nil {
+        m.remediatedDeviceCount = value
+    }
 }
 // SetRemediatedUserCount sets the remediatedUserCount property value. Number of remediated users.
 func (m *SoftwareUpdateStatusSummary) SetRemediatedUserCount(value *int32)() {
-    m.remediatedUserCount = value
+    if m != nil {
+        m.remediatedUserCount = value
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Number of unknown devices.
 func (m *SoftwareUpdateStatusSummary) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    if m != nil {
+        m.unknownDeviceCount = value
+    }
 }
 // SetUnknownUserCount sets the unknownUserCount property value. Number of unknown users.
 func (m *SoftwareUpdateStatusSummary) SetUnknownUserCount(value *int32)() {
-    m.unknownUserCount = value
+    if m != nil {
+        m.unknownUserCount = value
+    }
 }

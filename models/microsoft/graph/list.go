@@ -303,37 +303,55 @@ func (m *List) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
 }
 // SetColumns sets the columns property value. The collection of field definitions for this list.
 func (m *List) SetColumns(value []ColumnDefinition)() {
-    m.columns = value
+    if m != nil {
+        m.columns = value
+    }
 }
 // SetContentTypes sets the contentTypes property value. The collection of content types present in this list.
 func (m *List) SetContentTypes(value []ContentType)() {
-    m.contentTypes = value
+    if m != nil {
+        m.contentTypes = value
+    }
 }
 // SetDisplayName sets the displayName property value. The displayable title of the list.
 func (m *List) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetDrive sets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 func (m *List) SetDrive(value *Drive)() {
-    m.drive = value
+    if m != nil {
+        m.drive = value
+    }
 }
 // SetItems sets the items property value. All items contained in the list.
 func (m *List) SetItems(value []ListItem)() {
-    m.items = value
+    if m != nil {
+        m.items = value
+    }
 }
 // SetList sets the list property value. Provides additional details about the list.
 func (m *List) SetList(value *ListInfo)() {
-    m.list = value
+    if m != nil {
+        m.list = value
+    }
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *List) SetSharepointIds(value *SharepointIds)() {
-    m.sharepointIds = value
+    if m != nil {
+        m.sharepointIds = value
+    }
 }
 // SetSubscriptions sets the subscriptions property value. The set of subscriptions on the list.
 func (m *List) SetSubscriptions(value []Subscription)() {
-    m.subscriptions = value
+    if m != nil {
+        m.subscriptions = value
+    }
 }
 // SetSystem sets the system property value. If present, indicates that this is a system-managed list. Read-only.
 func (m *List) SetSystem(value *SystemFacet)() {
-    m.system = value
+    if m != nil {
+        m.system = value
+    }
 }

@@ -216,25 +216,37 @@ func (m *AdministrativeUnit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetDescription sets the description property value. An optional description for the administrative unit.
 func (m *AdministrativeUnit) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name for the administrative unit.
 func (m *AdministrativeUnit) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for this Administrative Unit. Nullable.
 func (m *AdministrativeUnit) SetExtensions(value []Extension)() {
-    m.extensions = value
+    if m != nil {
+        m.extensions = value
+    }
 }
 // SetMembers sets the members property value. Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
 func (m *AdministrativeUnit) SetMembers(value []DirectoryObject)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }
 // SetScopedRoleMembers sets the scopedRoleMembers property value. Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
 func (m *AdministrativeUnit) SetScopedRoleMembers(value []ScopedRoleMembership)() {
-    m.scopedRoleMembers = value
+    if m != nil {
+        m.scopedRoleMembers = value
+    }
 }
 // SetVisibility sets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 func (m *AdministrativeUnit) SetVisibility(value *string)() {
-    m.visibility = value
+    if m != nil {
+        m.visibility = value
+    }
 }

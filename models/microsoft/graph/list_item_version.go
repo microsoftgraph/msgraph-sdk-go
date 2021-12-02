@@ -59,5 +59,7 @@ func (m *ListItemVersion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetFields sets the fields property value. A collection of the fields and values for this version of the list item.
 func (m *ListItemVersion) SetFields(value *FieldValueSet)() {
-    m.fields = value
+    if m != nil {
+        m.fields = value
+    }
 }

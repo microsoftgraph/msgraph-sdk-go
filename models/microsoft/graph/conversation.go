@@ -203,25 +203,37 @@ func (m *Conversation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetHasAttachments sets the hasAttachments property value. Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
 func (m *Conversation) SetHasAttachments(value *bool)() {
-    m.hasAttachments = value
+    if m != nil {
+        m.hasAttachments = value
+    }
 }
 // SetLastDeliveredDateTime sets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Conversation) SetLastDeliveredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastDeliveredDateTime = value
+    if m != nil {
+        m.lastDeliveredDateTime = value
+    }
 }
 // SetPreview sets the preview property value. A short summary from the body of the latest post in this conversation. Supports $filter (eq, ne, le, ge).
 func (m *Conversation) SetPreview(value *string)() {
-    m.preview = value
+    if m != nil {
+        m.preview = value
+    }
 }
 // SetThreads sets the threads property value. A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
 func (m *Conversation) SetThreads(value []ConversationThread)() {
-    m.threads = value
+    if m != nil {
+        m.threads = value
+    }
 }
 // SetTopic sets the topic property value. The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
 func (m *Conversation) SetTopic(value *string)() {
-    m.topic = value
+    if m != nil {
+        m.topic = value
+    }
 }
 // SetUniqueSenders sets the uniqueSenders property value. All the users that sent a message to this Conversation.
 func (m *Conversation) SetUniqueSenders(value []string)() {
-    m.uniqueSenders = value
+    if m != nil {
+        m.uniqueSenders = value
+    }
 }

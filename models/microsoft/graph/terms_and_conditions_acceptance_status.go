@@ -164,21 +164,31 @@ func (m *TermsAndConditionsAcceptanceStatus) Serialize(writer i04eb5309aeaafadd2
 }
 // SetAcceptedDateTime sets the acceptedDateTime property value. DateTime when the terms were last accepted by the user.
 func (m *TermsAndConditionsAcceptanceStatus) SetAcceptedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.acceptedDateTime = value
+    if m != nil {
+        m.acceptedDateTime = value
+    }
 }
 // SetAcceptedVersion sets the acceptedVersion property value. Most recent version number of the T&C accepted by the user.
 func (m *TermsAndConditionsAcceptanceStatus) SetAcceptedVersion(value *int32)() {
-    m.acceptedVersion = value
+    if m != nil {
+        m.acceptedVersion = value
+    }
 }
 // SetTermsAndConditions sets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
 func (m *TermsAndConditionsAcceptanceStatus) SetTermsAndConditions(value *TermsAndConditions)() {
-    m.termsAndConditions = value
+    if m != nil {
+        m.termsAndConditions = value
+    }
 }
 // SetUserDisplayName sets the userDisplayName property value. Display name of the user whose acceptance the entity represents.
 func (m *TermsAndConditionsAcceptanceStatus) SetUserDisplayName(value *string)() {
-    m.userDisplayName = value
+    if m != nil {
+        m.userDisplayName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName of the User that accepted the term.
 func (m *TermsAndConditionsAcceptanceStatus) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

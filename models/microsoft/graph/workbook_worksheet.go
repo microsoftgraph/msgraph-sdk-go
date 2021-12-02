@@ -277,33 +277,49 @@ func (m *WorkbookWorksheet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetCharts sets the charts property value. Returns collection of charts that are part of the worksheet. Read-only.
 func (m *WorkbookWorksheet) SetCharts(value []WorkbookChart)() {
-    m.charts = value
+    if m != nil {
+        m.charts = value
+    }
 }
 // SetName sets the name property value. The display name of the worksheet.
 func (m *WorkbookWorksheet) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetNames sets the names property value. Returns collection of names that are associated with the worksheet. Read-only.
 func (m *WorkbookWorksheet) SetNames(value []WorkbookNamedItem)() {
-    m.names = value
+    if m != nil {
+        m.names = value
+    }
 }
 // SetPivotTables sets the pivotTables property value. Collection of PivotTables that are part of the worksheet.
 func (m *WorkbookWorksheet) SetPivotTables(value []WorkbookPivotTable)() {
-    m.pivotTables = value
+    if m != nil {
+        m.pivotTables = value
+    }
 }
 // SetPosition sets the position property value. The zero-based position of the worksheet within the workbook.
 func (m *WorkbookWorksheet) SetPosition(value *int32)() {
-    m.position = value
+    if m != nil {
+        m.position = value
+    }
 }
 // SetProtection sets the protection property value. Returns sheet protection object for a worksheet. Read-only.
 func (m *WorkbookWorksheet) SetProtection(value *WorkbookWorksheetProtection)() {
-    m.protection = value
+    if m != nil {
+        m.protection = value
+    }
 }
 // SetTables sets the tables property value. Collection of tables that are part of the worksheet. Read-only.
 func (m *WorkbookWorksheet) SetTables(value []WorkbookTable)() {
-    m.tables = value
+    if m != nil {
+        m.tables = value
+    }
 }
 // SetVisibility sets the visibility property value. The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
 func (m *WorkbookWorksheet) SetVisibility(value *string)() {
-    m.visibility = value
+    if m != nil {
+        m.visibility = value
+    }
 }

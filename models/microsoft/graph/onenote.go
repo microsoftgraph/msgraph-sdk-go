@@ -243,25 +243,37 @@ func (m *Onenote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetNotebooks sets the notebooks property value. The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 func (m *Onenote) SetNotebooks(value []Notebook)() {
-    m.notebooks = value
+    if m != nil {
+        m.notebooks = value
+    }
 }
 // SetOperations sets the operations property value. The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
 func (m *Onenote) SetOperations(value []OnenoteOperation)() {
-    m.operations = value
+    if m != nil {
+        m.operations = value
+    }
 }
 // SetPages sets the pages property value. The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *Onenote) SetPages(value []OnenotePage)() {
-    m.pages = value
+    if m != nil {
+        m.pages = value
+    }
 }
 // SetResources sets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
 func (m *Onenote) SetResources(value []OnenoteResource)() {
-    m.resources = value
+    if m != nil {
+        m.resources = value
+    }
 }
 // SetSectionGroups sets the sectionGroups property value. The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *Onenote) SetSectionGroups(value []SectionGroup)() {
-    m.sectionGroups = value
+    if m != nil {
+        m.sectionGroups = value
+    }
 }
 // SetSections sets the sections property value. The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
 func (m *Onenote) SetSections(value []OnenoteSection)() {
-    m.sections = value
+    if m != nil {
+        m.sections = value
+    }
 }

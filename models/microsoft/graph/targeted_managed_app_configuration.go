@@ -181,21 +181,31 @@ func (m *TargetedManagedAppConfiguration) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
 func (m *TargetedManagedAppConfiguration) SetApps(value []ManagedMobileApp)() {
-    m.apps = value
+    if m != nil {
+        m.apps = value
+    }
 }
 // SetAssignments sets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppConfiguration) SetAssignments(value []TargetedManagedAppPolicyAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetDeployedAppCount sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
 func (m *TargetedManagedAppConfiguration) SetDeployedAppCount(value *int32)() {
-    m.deployedAppCount = value
+    if m != nil {
+        m.deployedAppCount = value
+    }
 }
 // SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
 func (m *TargetedManagedAppConfiguration) SetDeploymentSummary(value *ManagedAppPolicyDeploymentSummary)() {
-    m.deploymentSummary = value
+    if m != nil {
+        m.deploymentSummary = value
+    }
 }
 // SetIsAssigned sets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *TargetedManagedAppConfiguration) SetIsAssigned(value *bool)() {
-    m.isAssigned = value
+    if m != nil {
+        m.isAssigned = value
+    }
 }

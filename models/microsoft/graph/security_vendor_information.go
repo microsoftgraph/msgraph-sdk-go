@@ -148,21 +148,31 @@ func (m *SecurityVendorInformation) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityVendorInformation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetProvider sets the provider property value. Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
 func (m *SecurityVendorInformation) SetProvider(value *string)() {
-    m.provider = value
+    if m != nil {
+        m.provider = value
+    }
 }
 // SetProviderVersion sets the providerVersion property value. Version of the provider or subprovider, if it exists, that generated the alert. Required
 func (m *SecurityVendorInformation) SetProviderVersion(value *string)() {
-    m.providerVersion = value
+    if m != nil {
+        m.providerVersion = value
+    }
 }
 // SetSubProvider sets the subProvider property value. Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
 func (m *SecurityVendorInformation) SetSubProvider(value *string)() {
-    m.subProvider = value
+    if m != nil {
+        m.subProvider = value
+    }
 }
 // SetVendor_escaped sets the vendor_escaped property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 func (m *SecurityVendorInformation) SetVendor_escaped(value *string)() {
-    m.vendor_escaped = value
+    if m != nil {
+        m.vendor_escaped = value
+    }
 }

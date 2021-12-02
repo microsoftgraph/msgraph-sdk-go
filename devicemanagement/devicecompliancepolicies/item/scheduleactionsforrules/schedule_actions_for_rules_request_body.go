@@ -80,9 +80,13 @@ func (m *ScheduleActionsForRulesRequestBody) Serialize(writer i04eb5309aeaafadd2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ScheduleActionsForRulesRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceComplianceScheduledActionForRules sets the deviceComplianceScheduledActionForRules property value. 
 func (m *ScheduleActionsForRulesRequestBody) SetDeviceComplianceScheduledActionForRules(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceScheduledActionForRule)() {
-    m.deviceComplianceScheduledActionForRules = value
+    if m != nil {
+        m.deviceComplianceScheduledActionForRules = value
+    }
 }

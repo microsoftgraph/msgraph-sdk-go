@@ -122,17 +122,25 @@ func (m *AlertTrigger) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlertTrigger) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetName sets the name property value. Name of the property serving as a detection trigger.
 func (m *AlertTrigger) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
 func (m *AlertTrigger) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetValue sets the value property value. Value of the property serving as a detection trigger.
 func (m *AlertTrigger) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

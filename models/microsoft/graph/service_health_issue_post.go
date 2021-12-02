@@ -125,17 +125,25 @@ func (m *ServiceHealthIssuePost) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServiceHealthIssuePost) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The published time of the post.
 func (m *ServiceHealthIssuePost) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. The content of the service issue post.
 func (m *ServiceHealthIssuePost) SetDescription(value *ItemBody)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetPostType sets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
 func (m *ServiceHealthIssuePost) SetPostType(value *PostType)() {
-    m.postType = value
+    if m != nil {
+        m.postType = value
+    }
 }

@@ -68,5 +68,7 @@ func (m *AppCatalogs) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetTeamsApps sets the teamsApps property value. 
 func (m *AppCatalogs) SetTeamsApps(value []TeamsApp)() {
-    m.teamsApps = value
+    if m != nil {
+        m.teamsApps = value
+    }
 }

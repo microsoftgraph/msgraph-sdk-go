@@ -149,21 +149,31 @@ func (m *Shared) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Shared) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOwner sets the owner property value. The identity of the owner of the shared item. Read-only.
 func (m *Shared) SetOwner(value *IdentitySet)() {
-    m.owner = value
+    if m != nil {
+        m.owner = value
+    }
 }
 // SetScope sets the scope property value. Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
 func (m *Shared) SetScope(value *string)() {
-    m.scope = value
+    if m != nil {
+        m.scope = value
+    }
 }
 // SetSharedBy sets the sharedBy property value. The identity of the user who shared the item. Read-only.
 func (m *Shared) SetSharedBy(value *IdentitySet)() {
-    m.sharedBy = value
+    if m != nil {
+        m.sharedBy = value
+    }
 }
 // SetSharedDateTime sets the sharedDateTime property value. The UTC date and time when the item was shared. Read-only.
 func (m *Shared) SetSharedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.sharedDateTime = value
+    if m != nil {
+        m.sharedDateTime = value
+    }
 }

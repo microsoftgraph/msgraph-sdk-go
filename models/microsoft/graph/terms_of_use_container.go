@@ -103,9 +103,13 @@ func (m *TermsOfUseContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAgreementAcceptances sets the agreementAcceptances property value. 
 func (m *TermsOfUseContainer) SetAgreementAcceptances(value []AgreementAcceptance)() {
-    m.agreementAcceptances = value
+    if m != nil {
+        m.agreementAcceptances = value
+    }
 }
 // SetAgreements sets the agreements property value. 
 func (m *TermsOfUseContainer) SetAgreements(value []Agreement)() {
-    m.agreements = value
+    if m != nil {
+        m.agreements = value
+    }
 }

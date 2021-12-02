@@ -122,17 +122,25 @@ func (m *UserAttributeValuesItem) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAttributeValuesItem) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsDefault sets the isDefault property value. Determines whether the value is set as the default.
 func (m *UserAttributeValuesItem) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetName sets the name property value. The display name of the property displayed to the user in the user flow.
 func (m *UserAttributeValuesItem) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetValue sets the value property value. The value that is set when this item is selected.
 func (m *UserAttributeValuesItem) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

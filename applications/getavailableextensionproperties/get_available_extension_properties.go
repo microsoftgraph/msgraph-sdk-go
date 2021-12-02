@@ -168,21 +168,31 @@ func (m *GetAvailableExtensionProperties) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAppDisplayName sets the appDisplayName property value. Display name of the application object on which this extension property is defined. Read-only.
 func (m *GetAvailableExtensionProperties) SetAppDisplayName(value *string)() {
-    m.appDisplayName = value
+    if m != nil {
+        m.appDisplayName = value
+    }
 }
 // SetDataType sets the dataType property value. Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
 func (m *GetAvailableExtensionProperties) SetDataType(value *string)() {
-    m.dataType = value
+    if m != nil {
+        m.dataType = value
+    }
 }
 // SetIsSyncedFromOnPremises sets the isSyncedFromOnPremises property value. Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
 func (m *GetAvailableExtensionProperties) SetIsSyncedFromOnPremises(value *bool)() {
-    m.isSyncedFromOnPremises = value
+    if m != nil {
+        m.isSyncedFromOnPremises = value
+    }
 }
 // SetName sets the name property value. Name of the extension property. Not nullable.
 func (m *GetAvailableExtensionProperties) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetTargetObjects sets the targetObjects property value. Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
 func (m *GetAvailableExtensionProperties) SetTargetObjects(value []string)() {
-    m.targetObjects = value
+    if m != nil {
+        m.targetObjects = value
+    }
 }

@@ -40,7 +40,7 @@ type AuthorizationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AuthorizationPolicyRequestBuilderPatchOptions options for Patch
 type AuthorizationPolicyRequestBuilderPatchOptions struct {

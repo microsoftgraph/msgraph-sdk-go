@@ -54,7 +54,7 @@ type WorkbookWorksheetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WorkbookWorksheetRequestBuilderPatchOptions options for Patch
 type WorkbookWorksheetRequestBuilderPatchOptions struct {

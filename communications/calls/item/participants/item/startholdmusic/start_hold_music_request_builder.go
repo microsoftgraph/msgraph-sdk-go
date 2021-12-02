@@ -92,11 +92,15 @@ func (m *StartHoldMusicResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StartHoldMusicResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetStartHoldMusicOperation sets the startHoldMusicOperation property value. Union type representation for type startHoldMusicOperation
 func (m *StartHoldMusicResponse) SetStartHoldMusicOperation(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.StartHoldMusicOperation)() {
-    m.startHoldMusicOperation = value
+    if m != nil {
+        m.startHoldMusicOperation = value
+    }
 }
 // NewStartHoldMusicRequestBuilderInternal instantiates a new StartHoldMusicRequestBuilder and sets the default values.
 func NewStartHoldMusicRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*StartHoldMusicRequestBuilder) {

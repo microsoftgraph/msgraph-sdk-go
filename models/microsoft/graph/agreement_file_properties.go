@@ -216,29 +216,43 @@ func (m *AgreementFileProperties) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetCreatedDateTime sets the createdDateTime property value. 
 func (m *AgreementFileProperties) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *AgreementFileProperties) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetFileData sets the fileData property value. 
 func (m *AgreementFileProperties) SetFileData(value *AgreementFileData)() {
-    m.fileData = value
+    if m != nil {
+        m.fileData = value
+    }
 }
 // SetFileName sets the fileName property value. 
 func (m *AgreementFileProperties) SetFileName(value *string)() {
-    m.fileName = value
+    if m != nil {
+        m.fileName = value
+    }
 }
 // SetIsDefault sets the isDefault property value. 
 func (m *AgreementFileProperties) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetIsMajorVersion sets the isMajorVersion property value. 
 func (m *AgreementFileProperties) SetIsMajorVersion(value *bool)() {
-    m.isMajorVersion = value
+    if m != nil {
+        m.isMajorVersion = value
+    }
 }
 // SetLanguage sets the language property value. 
 func (m *AgreementFileProperties) SetLanguage(value *string)() {
-    m.language = value
+    if m != nil {
+        m.language = value
+    }
 }

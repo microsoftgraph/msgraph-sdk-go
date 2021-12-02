@@ -123,17 +123,25 @@ func (m *ChatMessageReaction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessageReaction) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *ChatMessageReaction) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetReactionType sets the reactionType property value. Supported values are like, angry, sad, laugh, heart, surprised.
 func (m *ChatMessageReaction) SetReactionType(value *string)() {
-    m.reactionType = value
+    if m != nil {
+        m.reactionType = value
+    }
 }
 // SetUser sets the user property value. 
 func (m *ChatMessageReaction) SetUser(value *ChatMessageReactionIdentitySet)() {
-    m.user = value
+    if m != nil {
+        m.user = value
+    }
 }

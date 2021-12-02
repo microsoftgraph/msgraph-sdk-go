@@ -96,13 +96,19 @@ func (m *BucketAggregationRange) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BucketAggregationRange) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFrom sets the from property value. Defines the lower bound from which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.
 func (m *BucketAggregationRange) SetFrom(value *string)() {
-    m.from = value
+    if m != nil {
+        m.from = value
+    }
 }
 // SetTo sets the to property value. Defines the upper bound up to which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.
 func (m *BucketAggregationRange) SetTo(value *string)() {
-    m.to = value
+    if m != nil {
+        m.to = value
+    }
 }

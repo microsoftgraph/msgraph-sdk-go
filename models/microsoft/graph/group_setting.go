@@ -120,13 +120,19 @@ func (m *GroupSetting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetDisplayName sets the displayName property value. Display name of this group of settings, which comes from the associated template.
 func (m *GroupSetting) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetTemplateId sets the templateId property value. Unique identifier for the template used to create this group of settings. Read-only.
 func (m *GroupSetting) SetTemplateId(value *string)() {
-    m.templateId = value
+    if m != nil {
+        m.templateId = value
+    }
 }
 // SetValues sets the values property value. Collection of name value pairs. Must contain and set all the settings defined in the template.
 func (m *GroupSetting) SetValues(value []SettingValue)() {
-    m.values = value
+    if m != nil {
+        m.values = value
+    }
 }

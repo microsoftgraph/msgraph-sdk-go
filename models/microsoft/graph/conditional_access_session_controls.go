@@ -148,21 +148,31 @@ func (m *ConditionalAccessSessionControls) Serialize(writer i04eb5309aeaafadd283
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessSessionControls) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicationEnforcedRestrictions sets the applicationEnforcedRestrictions property value. Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
 func (m *ConditionalAccessSessionControls) SetApplicationEnforcedRestrictions(value *ApplicationEnforcedRestrictionsSessionControl)() {
-    m.applicationEnforcedRestrictions = value
+    if m != nil {
+        m.applicationEnforcedRestrictions = value
+    }
 }
 // SetCloudAppSecurity sets the cloudAppSecurity property value. Session control to apply cloud app security.
 func (m *ConditionalAccessSessionControls) SetCloudAppSecurity(value *CloudAppSecuritySessionControl)() {
-    m.cloudAppSecurity = value
+    if m != nil {
+        m.cloudAppSecurity = value
+    }
 }
 // SetPersistentBrowser sets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
 func (m *ConditionalAccessSessionControls) SetPersistentBrowser(value *PersistentBrowserSessionControl)() {
-    m.persistentBrowser = value
+    if m != nil {
+        m.persistentBrowser = value
+    }
 }
 // SetSignInFrequency sets the signInFrequency property value. Session control to enforce signin frequency.
 func (m *ConditionalAccessSessionControls) SetSignInFrequency(value *SignInFrequencySessionControl)() {
-    m.signInFrequency = value
+    if m != nil {
+        m.signInFrequency = value
+    }
 }

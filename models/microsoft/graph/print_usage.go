@@ -137,17 +137,25 @@ func (m *PrintUsage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetCompletedBlackAndWhiteJobCount sets the completedBlackAndWhiteJobCount property value. 
 func (m *PrintUsage) SetCompletedBlackAndWhiteJobCount(value *int64)() {
-    m.completedBlackAndWhiteJobCount = value
+    if m != nil {
+        m.completedBlackAndWhiteJobCount = value
+    }
 }
 // SetCompletedColorJobCount sets the completedColorJobCount property value. 
 func (m *PrintUsage) SetCompletedColorJobCount(value *int64)() {
-    m.completedColorJobCount = value
+    if m != nil {
+        m.completedColorJobCount = value
+    }
 }
 // SetIncompleteJobCount sets the incompleteJobCount property value. 
 func (m *PrintUsage) SetIncompleteJobCount(value *int64)() {
-    m.incompleteJobCount = value
+    if m != nil {
+        m.incompleteJobCount = value
+    }
 }
 // SetUsageDate sets the usageDate property value. 
 func (m *PrintUsage) SetUsageDate(value *string)() {
-    m.usageDate = value
+    if m != nil {
+        m.usageDate = value
+    }
 }

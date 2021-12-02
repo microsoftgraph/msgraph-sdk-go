@@ -85,9 +85,13 @@ func (m *WorkbookChartAreaFormat) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetFill sets the fill property value. Represents the fill format of an object, which includes background formatting information. Read-only.
 func (m *WorkbookChartAreaFormat) SetFill(value *WorkbookChartFill)() {
-    m.fill = value
+    if m != nil {
+        m.fill = value
+    }
 }
 // SetFont sets the font property value. Represents the font attributes (font name, font size, color, etc.) for the current object. Read-only.
 func (m *WorkbookChartAreaFormat) SetFont(value *WorkbookChartFont)() {
-    m.font = value
+    if m != nil {
+        m.font = value
+    }
 }

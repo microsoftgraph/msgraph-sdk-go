@@ -149,21 +149,31 @@ func (m *ReplaceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReplaceRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNewText sets the newText property value. 
 func (m *ReplaceRequestBody) SetNewText(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.newText = value
+    if m != nil {
+        m.newText = value
+    }
 }
 // SetNumChars sets the numChars property value. 
 func (m *ReplaceRequestBody) SetNumChars(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.numChars = value
+    if m != nil {
+        m.numChars = value
+    }
 }
 // SetOldText sets the oldText property value. 
 func (m *ReplaceRequestBody) SetOldText(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.oldText = value
+    if m != nil {
+        m.oldText = value
+    }
 }
 // SetStartNum sets the startNum property value. 
 func (m *ReplaceRequestBody) SetStartNum(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.startNum = value
+    if m != nil {
+        m.startNum = value
+    }
 }

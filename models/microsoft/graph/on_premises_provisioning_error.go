@@ -149,21 +149,31 @@ func (m *OnPremisesProvisioningError) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesProvisioningError) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCategory sets the category property value. Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.
 func (m *OnPremisesProvisioningError) SetCategory(value *string)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetOccurredDateTime sets the occurredDateTime property value. The date and time at which the error occurred.
 func (m *OnPremisesProvisioningError) SetOccurredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.occurredDateTime = value
+    if m != nil {
+        m.occurredDateTime = value
+    }
 }
 // SetPropertyCausingError sets the propertyCausingError property value. Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
 func (m *OnPremisesProvisioningError) SetPropertyCausingError(value *string)() {
-    m.propertyCausingError = value
+    if m != nil {
+        m.propertyCausingError = value
+    }
 }
 // SetValue sets the value property value. Value of the property causing the error.
 func (m *OnPremisesProvisioningError) SetValue(value *string)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

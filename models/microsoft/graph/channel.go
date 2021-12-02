@@ -349,45 +349,67 @@ func (m *Channel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetCreatedDateTime sets the createdDateTime property value. Read only. Timestamp at which the channel was created.
 func (m *Channel) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. Optional textual description for the channel.
 func (m *Channel) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Channel name as it will appear to the user in Microsoft Teams.
 func (m *Channel) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEmail sets the email property value. The email address for sending messages to the channel. Read-only.
 func (m *Channel) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetFilesFolder sets the filesFolder property value. Metadata for the location where the channel's files are stored.
 func (m *Channel) SetFilesFolder(value *DriveItem)() {
-    m.filesFolder = value
+    if m != nil {
+        m.filesFolder = value
+    }
 }
 // SetIsFavoriteByDefault sets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
 func (m *Channel) SetIsFavoriteByDefault(value *bool)() {
-    m.isFavoriteByDefault = value
+    if m != nil {
+        m.isFavoriteByDefault = value
+    }
 }
 // SetMembers sets the members property value. A collection of membership records associated with the channel.
 func (m *Channel) SetMembers(value []ConversationMember)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }
 // SetMembershipType sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.
 func (m *Channel) SetMembershipType(value *ChannelMembershipType)() {
-    m.membershipType = value
+    if m != nil {
+        m.membershipType = value
+    }
 }
 // SetMessages sets the messages property value. A collection of all the messages in the channel. A navigation property. Nullable.
 func (m *Channel) SetMessages(value []ChatMessage)() {
-    m.messages = value
+    if m != nil {
+        m.messages = value
+    }
 }
 // SetTabs sets the tabs property value. A collection of all the tabs in the channel. A navigation property.
 func (m *Channel) SetTabs(value []TeamsTab)() {
-    m.tabs = value
+    if m != nil {
+        m.tabs = value
+    }
 }
 // SetWebUrl sets the webUrl property value. A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
 func (m *Channel) SetWebUrl(value *string)() {
-    m.webUrl = value
+    if m != nil {
+        m.webUrl = value
+    }
 }

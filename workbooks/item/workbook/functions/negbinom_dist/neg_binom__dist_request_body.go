@@ -149,21 +149,31 @@ func (m *NegBinom_DistRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NegBinom_DistRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCumulative sets the cumulative property value. 
 func (m *NegBinom_DistRequestBody) SetCumulative(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.cumulative = value
+    if m != nil {
+        m.cumulative = value
+    }
 }
 // SetNumberF sets the numberF property value. 
 func (m *NegBinom_DistRequestBody) SetNumberF(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.numberF = value
+    if m != nil {
+        m.numberF = value
+    }
 }
 // SetNumberS sets the numberS property value. 
 func (m *NegBinom_DistRequestBody) SetNumberS(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.numberS = value
+    if m != nil {
+        m.numberS = value
+    }
 }
 // SetProbabilityS sets the probabilityS property value. 
 func (m *NegBinom_DistRequestBody) SetProbabilityS(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.probabilityS = value
+    if m != nil {
+        m.probabilityS = value
+    }
 }

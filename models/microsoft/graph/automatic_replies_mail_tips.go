@@ -148,21 +148,31 @@ func (m *AutomaticRepliesMailTips) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AutomaticRepliesMailTips) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMessage sets the message property value. The automatic reply message.
 func (m *AutomaticRepliesMailTips) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }
 // SetMessageLanguage sets the messageLanguage property value. The language that the automatic reply message is in.
 func (m *AutomaticRepliesMailTips) SetMessageLanguage(value *LocaleInfo)() {
-    m.messageLanguage = value
+    if m != nil {
+        m.messageLanguage = value
+    }
 }
 // SetScheduledEndTime sets the scheduledEndTime property value. The date and time that automatic replies are set to end.
 func (m *AutomaticRepliesMailTips) SetScheduledEndTime(value *DateTimeTimeZone)() {
-    m.scheduledEndTime = value
+    if m != nil {
+        m.scheduledEndTime = value
+    }
 }
 // SetScheduledStartTime sets the scheduledStartTime property value. The date and time that automatic replies are set to begin.
 func (m *AutomaticRepliesMailTips) SetScheduledStartTime(value *DateTimeTimeZone)() {
-    m.scheduledStartTime = value
+    if m != nil {
+        m.scheduledStartTime = value
+    }
 }

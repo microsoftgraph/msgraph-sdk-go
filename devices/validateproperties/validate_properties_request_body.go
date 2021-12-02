@@ -148,21 +148,31 @@ func (m *ValidatePropertiesRequestBody) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidatePropertiesRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *ValidatePropertiesRequestBody) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEntityType sets the entityType property value. 
 func (m *ValidatePropertiesRequestBody) SetEntityType(value *string)() {
-    m.entityType = value
+    if m != nil {
+        m.entityType = value
+    }
 }
 // SetMailNickname sets the mailNickname property value. 
 func (m *ValidatePropertiesRequestBody) SetMailNickname(value *string)() {
-    m.mailNickname = value
+    if m != nil {
+        m.mailNickname = value
+    }
 }
 // SetOnBehalfOfUserId sets the onBehalfOfUserId property value. 
 func (m *ValidatePropertiesRequestBody) SetOnBehalfOfUserId(value *string)() {
-    m.onBehalfOfUserId = value
+    if m != nil {
+        m.onBehalfOfUserId = value
+    }
 }

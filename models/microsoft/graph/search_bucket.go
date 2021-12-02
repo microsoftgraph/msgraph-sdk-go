@@ -122,17 +122,25 @@ func (m *SearchBucket) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchBucket) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAggregationFilterToken sets the aggregationFilterToken property value. A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/''. See an example.
 func (m *SearchBucket) SetAggregationFilterToken(value *string)() {
-    m.aggregationFilterToken = value
+    if m != nil {
+        m.aggregationFilterToken = value
+    }
 }
 // SetCount sets the count property value. The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
 func (m *SearchBucket) SetCount(value *int32)() {
-    m.count = value
+    if m != nil {
+        m.count = value
+    }
 }
 // SetKey sets the key property value. The discrete value of the field that an aggregation was computed on.
 func (m *SearchBucket) SetKey(value *string)() {
-    m.key = value
+    if m != nil {
+        m.key = value
+    }
 }

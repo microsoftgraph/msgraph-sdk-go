@@ -70,9 +70,13 @@ func (m *ApplyFontColorFilterRequestBody) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyFontColorFilterRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetColor sets the color property value. 
 func (m *ApplyFontColorFilterRequestBody) SetColor(value *string)() {
-    m.color = value
+    if m != nil {
+        m.color = value
+    }
 }

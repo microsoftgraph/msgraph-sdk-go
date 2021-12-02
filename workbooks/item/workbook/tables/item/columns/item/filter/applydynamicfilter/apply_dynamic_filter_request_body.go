@@ -70,9 +70,13 @@ func (m *ApplyDynamicFilterRequestBody) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApplyDynamicFilterRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCriteria sets the criteria property value. 
 func (m *ApplyDynamicFilterRequestBody) SetCriteria(value *string)() {
-    m.criteria = value
+    if m != nil {
+        m.criteria = value
+    }
 }

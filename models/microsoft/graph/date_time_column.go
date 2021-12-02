@@ -96,13 +96,19 @@ func (m *DateTimeColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DateTimeColumn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayAs sets the displayAs property value. How the value should be presented in the UX. Must be one of default, friendly, or standard. See below for more details. If unspecified, treated as default.
 func (m *DateTimeColumn) SetDisplayAs(value *string)() {
-    m.displayAs = value
+    if m != nil {
+        m.displayAs = value
+    }
 }
 // SetFormat sets the format property value. Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
 func (m *DateTimeColumn) SetFormat(value *string)() {
-    m.format = value
+    if m != nil {
+        m.format = value
+    }
 }

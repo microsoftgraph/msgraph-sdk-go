@@ -122,17 +122,25 @@ func (m *ChatMessageMention) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessageMention) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
 func (m *ChatMessageMention) SetId(value *int32)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetMentioned sets the mentioned property value. The entity (user, application, team, or channel) that was @mentioned.
 func (m *ChatMessageMention) SetMentioned(value *ChatMessageMentionedIdentitySet)() {
-    m.mentioned = value
+    if m != nil {
+        m.mentioned = value
+    }
 }
 // SetMentionText sets the mentionText property value. String used to represent the mention. For example, a user's display name, a team name.
 func (m *ChatMessageMention) SetMentionText(value *string)() {
-    m.mentionText = value
+    if m != nil {
+        m.mentionText = value
+    }
 }

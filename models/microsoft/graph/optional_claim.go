@@ -152,21 +152,31 @@ func (m *OptionalClaim) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OptionalClaim) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdditionalProperties sets the additionalProperties property value. Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.
 func (m *OptionalClaim) SetAdditionalProperties(value []string)() {
-    m.additionalProperties = value
+    if m != nil {
+        m.additionalProperties = value
+    }
 }
 // SetEssential sets the essential property value. If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.
 func (m *OptionalClaim) SetEssential(value *bool)() {
-    m.essential = value
+    if m != nil {
+        m.essential = value
+    }
 }
 // SetName sets the name property value. The name of the optional claim.
 func (m *OptionalClaim) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetSource sets the source property value. The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.
 func (m *OptionalClaim) SetSource(value *string)() {
-    m.source = value
+    if m != nil {
+        m.source = value
+    }
 }

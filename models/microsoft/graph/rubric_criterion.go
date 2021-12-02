@@ -70,9 +70,13 @@ func (m *RubricCriterion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RubricCriterion) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. The description of this criterion.
 func (m *RubricCriterion) SetDescription(value *EducationItemBody)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }

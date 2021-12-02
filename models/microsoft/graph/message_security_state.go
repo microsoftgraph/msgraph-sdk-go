@@ -279,41 +279,61 @@ func (m *MessageSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MessageSecurityState) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConnectingIP sets the connectingIP property value. 
 func (m *MessageSecurityState) SetConnectingIP(value *string)() {
-    m.connectingIP = value
+    if m != nil {
+        m.connectingIP = value
+    }
 }
 // SetDeliveryAction sets the deliveryAction property value. 
 func (m *MessageSecurityState) SetDeliveryAction(value *string)() {
-    m.deliveryAction = value
+    if m != nil {
+        m.deliveryAction = value
+    }
 }
 // SetDeliveryLocation sets the deliveryLocation property value. 
 func (m *MessageSecurityState) SetDeliveryLocation(value *string)() {
-    m.deliveryLocation = value
+    if m != nil {
+        m.deliveryLocation = value
+    }
 }
 // SetDirectionality sets the directionality property value. 
 func (m *MessageSecurityState) SetDirectionality(value *string)() {
-    m.directionality = value
+    if m != nil {
+        m.directionality = value
+    }
 }
 // SetInternetMessageId sets the internetMessageId property value. 
 func (m *MessageSecurityState) SetInternetMessageId(value *string)() {
-    m.internetMessageId = value
+    if m != nil {
+        m.internetMessageId = value
+    }
 }
 // SetMessageFingerprint sets the messageFingerprint property value. 
 func (m *MessageSecurityState) SetMessageFingerprint(value *string)() {
-    m.messageFingerprint = value
+    if m != nil {
+        m.messageFingerprint = value
+    }
 }
 // SetMessageReceivedDateTime sets the messageReceivedDateTime property value. 
 func (m *MessageSecurityState) SetMessageReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.messageReceivedDateTime = value
+    if m != nil {
+        m.messageReceivedDateTime = value
+    }
 }
 // SetMessageSubject sets the messageSubject property value. 
 func (m *MessageSecurityState) SetMessageSubject(value *string)() {
-    m.messageSubject = value
+    if m != nil {
+        m.messageSubject = value
+    }
 }
 // SetNetworkMessageId sets the networkMessageId property value. 
 func (m *MessageSecurityState) SetNetworkMessageId(value *string)() {
-    m.networkMessageId = value
+    if m != nil {
+        m.networkMessageId = value
+    }
 }

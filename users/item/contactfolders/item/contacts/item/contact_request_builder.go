@@ -47,7 +47,7 @@ type ContactRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ContactRequestBuilderPatchOptions options for Patch
 type ContactRequestBuilderPatchOptions struct {

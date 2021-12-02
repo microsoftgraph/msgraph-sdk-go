@@ -41,7 +41,7 @@ type UserConsentRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // UserConsentRequestRequestBuilderPatchOptions options for Patch
 type UserConsentRequestRequestBuilderPatchOptions struct {

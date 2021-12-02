@@ -38,7 +38,7 @@ type SchedulingGroupRequestBuilderGetOptions struct {
 // SchedulingGroupRequestBuilderGetQueryParameters the logical grouping of users in the schedule (usually by role).
 type SchedulingGroupRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // SchedulingGroupRequestBuilderPatchOptions options for Patch
 type SchedulingGroupRequestBuilderPatchOptions struct {

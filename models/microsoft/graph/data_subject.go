@@ -148,21 +148,31 @@ func (m *DataSubject) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DataSubject) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEmail sets the email property value. Email of the data subject.
 func (m *DataSubject) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetFirstName sets the firstName property value. First name of the data subject.
 func (m *DataSubject) SetFirstName(value *string)() {
-    m.firstName = value
+    if m != nil {
+        m.firstName = value
+    }
 }
 // SetLastName sets the lastName property value. Last Name of the data subject.
 func (m *DataSubject) SetLastName(value *string)() {
-    m.lastName = value
+    if m != nil {
+        m.lastName = value
+    }
 }
 // SetResidency sets the residency property value. The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
 func (m *DataSubject) SetResidency(value *string)() {
-    m.residency = value
+    if m != nil {
+        m.residency = value
+    }
 }

@@ -85,9 +85,13 @@ func (m *WorkbookChartGridlines) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetFormat sets the format property value. Represents the formatting of chart gridlines. Read-only.
 func (m *WorkbookChartGridlines) SetFormat(value *WorkbookChartGridlinesFormat)() {
-    m.format = value
+    if m != nil {
+        m.format = value
+    }
 }
 // SetVisible sets the visible property value. Boolean value representing if the axis gridlines are visible or not.
 func (m *WorkbookChartGridlines) SetVisible(value *bool)() {
-    m.visible = value
+    if m != nil {
+        m.visible = value
+    }
 }

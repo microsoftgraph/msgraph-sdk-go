@@ -200,29 +200,43 @@ func (m *UpdateWindowsDeviceAccountActionParameter) Serialize(writer i04eb5309ae
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateWindowsDeviceAccountActionParameter) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCalendarSyncEnabled sets the calendarSyncEnabled property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetCalendarSyncEnabled(value *bool)() {
-    m.calendarSyncEnabled = value
+    if m != nil {
+        m.calendarSyncEnabled = value
+    }
 }
 // SetDeviceAccount sets the deviceAccount property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetDeviceAccount(value *WindowsDeviceAccount)() {
-    m.deviceAccount = value
+    if m != nil {
+        m.deviceAccount = value
+    }
 }
 // SetDeviceAccountEmail sets the deviceAccountEmail property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetDeviceAccountEmail(value *string)() {
-    m.deviceAccountEmail = value
+    if m != nil {
+        m.deviceAccountEmail = value
+    }
 }
 // SetExchangeServer sets the exchangeServer property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetExchangeServer(value *string)() {
-    m.exchangeServer = value
+    if m != nil {
+        m.exchangeServer = value
+    }
 }
 // SetPasswordRotationEnabled sets the passwordRotationEnabled property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetPasswordRotationEnabled(value *bool)() {
-    m.passwordRotationEnabled = value
+    if m != nil {
+        m.passwordRotationEnabled = value
+    }
 }
 // SetSessionInitiationProtocalAddress sets the sessionInitiationProtocalAddress property value. Not yet documented
 func (m *UpdateWindowsDeviceAccountActionParameter) SetSessionInitiationProtocalAddress(value *string)() {
-    m.sessionInitiationProtocalAddress = value
+    if m != nil {
+        m.sessionInitiationProtocalAddress = value
+    }
 }

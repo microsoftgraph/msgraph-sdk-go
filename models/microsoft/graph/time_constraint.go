@@ -107,13 +107,19 @@ func (m *TimeConstraint) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetActivityDomain sets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
 func (m *TimeConstraint) SetActivityDomain(value *ActivityDomain)() {
-    m.activityDomain = value
+    if m != nil {
+        m.activityDomain = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeConstraint) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTimeSlots sets the timeSlots property value. 
 func (m *TimeConstraint) SetTimeSlots(value []TimeSlot)() {
-    m.timeSlots = value
+    if m != nil {
+        m.timeSlots = value
+    }
 }

@@ -122,17 +122,25 @@ func (m *AggregationOption) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AggregationOption) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBucketDefinition sets the bucketDefinition property value. 
 func (m *AggregationOption) SetBucketDefinition(value *BucketAggregationDefinition)() {
-    m.bucketDefinition = value
+    if m != nil {
+        m.bucketDefinition = value
+    }
 }
 // SetField sets the field property value. Computes aggregation on the field while the field exists in current entity type. Required.
 func (m *AggregationOption) SetField(value *string)() {
-    m.field = value
+    if m != nil {
+        m.field = value
+    }
 }
 // SetSize sets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
 func (m *AggregationOption) SetSize(value *int32)() {
-    m.size = value
+    if m != nil {
+        m.size = value
+    }
 }

@@ -138,13 +138,19 @@ func (m *Planner) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetBuckets sets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
 func (m *Planner) SetBuckets(value []PlannerBucket)() {
-    m.buckets = value
+    if m != nil {
+        m.buckets = value
+    }
 }
 // SetPlans sets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
 func (m *Planner) SetPlans(value []PlannerPlan)() {
-    m.plans = value
+    if m != nil {
+        m.plans = value
+    }
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
 func (m *Planner) SetTasks(value []PlannerTask)() {
-    m.tasks = value
+    if m != nil {
+        m.tasks = value
+    }
 }

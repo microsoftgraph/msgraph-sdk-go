@@ -261,33 +261,49 @@ func (m *Notebook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetIsDefault sets the isDefault property value. Indicates whether this is the user's default notebook. Read-only.
 func (m *Notebook) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetIsShared sets the isShared property value. Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
 func (m *Notebook) SetIsShared(value *bool)() {
-    m.isShared = value
+    if m != nil {
+        m.isShared = value
+    }
 }
 // SetLinks sets the links property value. Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.
 func (m *Notebook) SetLinks(value *NotebookLinks)() {
-    m.links = value
+    if m != nil {
+        m.links = value
+    }
 }
 // SetSectionGroups sets the sectionGroups property value. The section groups in the notebook. Read-only. Nullable.
 func (m *Notebook) SetSectionGroups(value []SectionGroup)() {
-    m.sectionGroups = value
+    if m != nil {
+        m.sectionGroups = value
+    }
 }
 // SetSectionGroupsUrl sets the sectionGroupsUrl property value. The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
 func (m *Notebook) SetSectionGroupsUrl(value *string)() {
-    m.sectionGroupsUrl = value
+    if m != nil {
+        m.sectionGroupsUrl = value
+    }
 }
 // SetSections sets the sections property value. The sections in the notebook. Read-only. Nullable.
 func (m *Notebook) SetSections(value []OnenoteSection)() {
-    m.sections = value
+    if m != nil {
+        m.sections = value
+    }
 }
 // SetSectionsUrl sets the sectionsUrl property value. The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.
 func (m *Notebook) SetSectionsUrl(value *string)() {
-    m.sectionsUrl = value
+    if m != nil {
+        m.sectionsUrl = value
+    }
 }
 // SetUserRole sets the userRole property value. Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
 func (m *Notebook) SetUserRole(value *OnenoteUserRole)() {
-    m.userRole = value
+    if m != nil {
+        m.userRole = value
+    }
 }

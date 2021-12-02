@@ -40,7 +40,7 @@ type PermissionGrantConditionSetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PermissionGrantConditionSetRequestBuilderPatchOptions options for Patch
 type PermissionGrantConditionSetRequestBuilderPatchOptions struct {

@@ -271,33 +271,49 @@ func (m *ExternalConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetConfiguration sets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) SetConfiguration(value *Configuration)() {
-    m.configuration = value
+    if m != nil {
+        m.configuration = value
+    }
 }
 // SetDescription sets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetGroups sets the groups property value. Read-only. Nullable.
 func (m *ExternalConnection) SetGroups(value []ExternalGroup)() {
-    m.groups = value
+    if m != nil {
+        m.groups = value
+    }
 }
 // SetItems sets the items property value. Read-only. Nullable.
 func (m *ExternalConnection) SetItems(value []ExternalItem)() {
-    m.items = value
+    if m != nil {
+        m.items = value
+    }
 }
 // SetName sets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
 func (m *ExternalConnection) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetOperations sets the operations property value. Read-only. Nullable.
 func (m *ExternalConnection) SetOperations(value []ConnectionOperation)() {
-    m.operations = value
+    if m != nil {
+        m.operations = value
+    }
 }
 // SetSchema sets the schema property value. Read-only. Nullable.
 func (m *ExternalConnection) SetSchema(value *Schema)() {
-    m.schema = value
+    if m != nil {
+        m.schema = value
+    }
 }
 // SetState sets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
 func (m *ExternalConnection) SetState(value *i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

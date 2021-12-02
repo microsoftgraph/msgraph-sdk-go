@@ -97,13 +97,19 @@ func (m *DollarFrRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DollarFrRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDecimalDollar sets the decimalDollar property value. 
 func (m *DollarFrRequestBody) SetDecimalDollar(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.decimalDollar = value
+    if m != nil {
+        m.decimalDollar = value
+    }
 }
 // SetFraction sets the fraction property value. 
 func (m *DollarFrRequestBody) SetFraction(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.fraction = value
+    if m != nil {
+        m.fraction = value
+    }
 }

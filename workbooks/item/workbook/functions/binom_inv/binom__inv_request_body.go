@@ -123,17 +123,25 @@ func (m *Binom_InvRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Binom_InvRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlpha sets the alpha property value. 
 func (m *Binom_InvRequestBody) SetAlpha(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.alpha = value
+    if m != nil {
+        m.alpha = value
+    }
 }
 // SetProbabilityS sets the probabilityS property value. 
 func (m *Binom_InvRequestBody) SetProbabilityS(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.probabilityS = value
+    if m != nil {
+        m.probabilityS = value
+    }
 }
 // SetTrials sets the trials property value. 
 func (m *Binom_InvRequestBody) SetTrials(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.trials = value
+    if m != nil {
+        m.trials = value
+    }
 }

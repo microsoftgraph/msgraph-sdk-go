@@ -85,9 +85,13 @@ func (m *WorkbookChartAxisFormat) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetFont sets the font property value. Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
 func (m *WorkbookChartAxisFormat) SetFont(value *WorkbookChartFont)() {
-    m.font = value
+    if m != nil {
+        m.font = value
+    }
 }
 // SetLine sets the line property value. Represents chart line formatting. Read-only.
 func (m *WorkbookChartAxisFormat) SetLine(value *WorkbookChartLineFormat)() {
-    m.line = value
+    if m != nil {
+        m.line = value
+    }
 }

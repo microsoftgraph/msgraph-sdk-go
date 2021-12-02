@@ -148,21 +148,31 @@ func (m *UpdateDevicePropertiesRequestBody) Serialize(writer i04eb5309aeaafadd28
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateDevicePropertiesRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAddressableUserName sets the addressableUserName property value. 
 func (m *UpdateDevicePropertiesRequestBody) SetAddressableUserName(value *string)() {
-    m.addressableUserName = value
+    if m != nil {
+        m.addressableUserName = value
+    }
 }
 // SetDisplayName sets the displayName property value. 
 func (m *UpdateDevicePropertiesRequestBody) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetGroupTag sets the groupTag property value. 
 func (m *UpdateDevicePropertiesRequestBody) SetGroupTag(value *string)() {
-    m.groupTag = value
+    if m != nil {
+        m.groupTag = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. 
 func (m *UpdateDevicePropertiesRequestBody) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

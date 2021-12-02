@@ -41,7 +41,7 @@ type LineRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // LineRequestBuilderPatchOptions options for Patch
 type LineRequestBuilderPatchOptions struct {

@@ -312,41 +312,61 @@ func (m *TermsAndConditions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAcceptanceStatement sets the acceptanceStatement property value. Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
 func (m *TermsAndConditions) SetAcceptanceStatement(value *string)() {
-    m.acceptanceStatement = value
+    if m != nil {
+        m.acceptanceStatement = value
+    }
 }
 // SetAcceptanceStatuses sets the acceptanceStatuses property value. The list of acceptance statuses for this T&C policy.
 func (m *TermsAndConditions) SetAcceptanceStatuses(value []TermsAndConditionsAcceptanceStatus)() {
-    m.acceptanceStatuses = value
+    if m != nil {
+        m.acceptanceStatuses = value
+    }
 }
 // SetAssignments sets the assignments property value. The list of assignments for this T&C policy.
 func (m *TermsAndConditions) SetAssignments(value []TermsAndConditionsAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetBodyText sets the bodyText property value. Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&C policy.
 func (m *TermsAndConditions) SetBodyText(value *string)() {
-    m.bodyText = value
+    if m != nil {
+        m.bodyText = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. DateTime the object was created.
 func (m *TermsAndConditions) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. Administrator-supplied description of the T&C policy.
 func (m *TermsAndConditions) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. Administrator-supplied name for the T&C policy.
 func (m *TermsAndConditions) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *TermsAndConditions) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetTitle sets the title property value. Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&C policy.
 func (m *TermsAndConditions) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }
 // SetVersion sets the version property value. Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.
 func (m *TermsAndConditions) SetVersion(value *int32)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

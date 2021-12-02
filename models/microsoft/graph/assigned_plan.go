@@ -149,21 +149,31 @@ func (m *AssignedPlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignedPlan) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedDateTime sets the assignedDateTime property value. The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AssignedPlan) SetAssignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.assignedDateTime = value
+    if m != nil {
+        m.assignedDateTime = value
+    }
 }
 // SetCapabilityStatus sets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
 func (m *AssignedPlan) SetCapabilityStatus(value *string)() {
-    m.capabilityStatus = value
+    if m != nil {
+        m.capabilityStatus = value
+    }
 }
 // SetService sets the service property value. The name of the service; for example, 'Exchange'.
 func (m *AssignedPlan) SetService(value *string)() {
-    m.service = value
+    if m != nil {
+        m.service = value
+    }
 }
 // SetServicePlanId sets the servicePlanId property value. A GUID that identifies the service plan.
 func (m *AssignedPlan) SetServicePlanId(value *string)() {
-    m.servicePlanId = value
+    if m != nil {
+        m.servicePlanId = value
+    }
 }

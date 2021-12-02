@@ -70,9 +70,13 @@ func (m *ForceDeleteRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ForceDeleteRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisableUserAccounts sets the disableUserAccounts property value. 
 func (m *ForceDeleteRequestBody) SetDisableUserAccounts(value *bool)() {
-    m.disableUserAccounts = value
+    if m != nil {
+        m.disableUserAccounts = value
+    }
 }

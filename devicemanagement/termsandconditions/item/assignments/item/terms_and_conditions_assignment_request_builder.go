@@ -40,7 +40,7 @@ type TermsAndConditionsAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TermsAndConditionsAssignmentRequestBuilderPatchOptions options for Patch
 type TermsAndConditionsAssignmentRequestBuilderPatchOptions struct {

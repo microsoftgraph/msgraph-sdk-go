@@ -200,29 +200,43 @@ func (m *ConfigurationManagerClientEnabledFeatures) Serialize(writer i04eb5309ae
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientEnabledFeatures) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCompliancePolicy sets the compliancePolicy property value. Whether compliance policy is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetCompliancePolicy(value *bool)() {
-    m.compliancePolicy = value
+    if m != nil {
+        m.compliancePolicy = value
+    }
 }
 // SetDeviceConfiguration sets the deviceConfiguration property value. Whether device configuration is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetDeviceConfiguration(value *bool)() {
-    m.deviceConfiguration = value
+    if m != nil {
+        m.deviceConfiguration = value
+    }
 }
 // SetInventory sets the inventory property value. Whether inventory is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetInventory(value *bool)() {
-    m.inventory = value
+    if m != nil {
+        m.inventory = value
+    }
 }
 // SetModernApps sets the modernApps property value. Whether modern application is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetModernApps(value *bool)() {
-    m.modernApps = value
+    if m != nil {
+        m.modernApps = value
+    }
 }
 // SetResourceAccess sets the resourceAccess property value. Whether resource access is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetResourceAccess(value *bool)() {
-    m.resourceAccess = value
+    if m != nil {
+        m.resourceAccess = value
+    }
 }
 // SetWindowsUpdateForBusiness sets the windowsUpdateForBusiness property value. Whether Windows Update for Business is managed by Intune
 func (m *ConfigurationManagerClientEnabledFeatures) SetWindowsUpdateForBusiness(value *bool)() {
-    m.windowsUpdateForBusiness = value
+    if m != nil {
+        m.windowsUpdateForBusiness = value
+    }
 }

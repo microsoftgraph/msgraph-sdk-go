@@ -68,5 +68,7 @@ func (m *AgreementFile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetLocalizations sets the localizations property value. 
 func (m *AgreementFile) SetLocalizations(value []AgreementFileLocalization)() {
-    m.localizations = value
+    if m != nil {
+        m.localizations = value
+    }
 }

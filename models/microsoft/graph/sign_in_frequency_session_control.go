@@ -87,9 +87,13 @@ func (m *SignInFrequencySessionControl) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetType_escaped sets the type_escaped property value. Possible values are: days, hours.
 func (m *SignInFrequencySessionControl) SetType_escaped(value *SigninFrequencyType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetValue sets the value property value. The number of days or hours.
 func (m *SignInFrequencySessionControl) SetValue(value *int32)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

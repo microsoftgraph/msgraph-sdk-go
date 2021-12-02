@@ -103,9 +103,13 @@ func (m *PlannerUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetPlans sets the plans property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) SetPlans(value []PlannerPlan)() {
-    m.plans = value
+    if m != nil {
+        m.plans = value
+    }
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. Returns the plannerPlans shared with the user.
 func (m *PlannerUser) SetTasks(value []PlannerTask)() {
-    m.tasks = value
+    if m != nil {
+        m.tasks = value
+    }
 }

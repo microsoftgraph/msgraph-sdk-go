@@ -582,73 +582,109 @@ func (m *Site) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
 }
 // SetAnalytics sets the analytics property value. Analytics about the view activities that took place in this site.
 func (m *Site) SetAnalytics(value *ItemAnalytics)() {
-    m.analytics = value
+    if m != nil {
+        m.analytics = value
+    }
 }
 // SetColumns sets the columns property value. The collection of column definitions reusable across lists under this site.
 func (m *Site) SetColumns(value []ColumnDefinition)() {
-    m.columns = value
+    if m != nil {
+        m.columns = value
+    }
 }
 // SetContentTypes sets the contentTypes property value. The collection of content types defined for this site.
 func (m *Site) SetContentTypes(value []ContentType)() {
-    m.contentTypes = value
+    if m != nil {
+        m.contentTypes = value
+    }
 }
 // SetDisplayName sets the displayName property value. The full title for the site. Read-only.
 func (m *Site) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetDrive sets the drive property value. The default drive (document library) for this site.
 func (m *Site) SetDrive(value *Drive)() {
-    m.drive = value
+    if m != nil {
+        m.drive = value
+    }
 }
 // SetDrives sets the drives property value. The collection of drives (document libraries) under this site.
 func (m *Site) SetDrives(value []Drive)() {
-    m.drives = value
+    if m != nil {
+        m.drives = value
+    }
 }
 // SetError sets the error property value. 
 func (m *Site) SetError(value *PublicError)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetExternalColumns sets the externalColumns property value. The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
 func (m *Site) SetExternalColumns(value []ColumnDefinition)() {
-    m.externalColumns = value
+    if m != nil {
+        m.externalColumns = value
+    }
 }
 // SetItems sets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
 func (m *Site) SetItems(value []BaseItem)() {
-    m.items = value
+    if m != nil {
+        m.items = value
+    }
 }
 // SetLists sets the lists property value. The collection of lists under this site.
 func (m *Site) SetLists(value []List)() {
-    m.lists = value
+    if m != nil {
+        m.lists = value
+    }
 }
 // SetOnenote sets the onenote property value. Calls the OneNote service for notebook related operations.
 func (m *Site) SetOnenote(value *Onenote)() {
-    m.onenote = value
+    if m != nil {
+        m.onenote = value
+    }
 }
 // SetPermissions sets the permissions property value. The permissions associated with the site. Nullable.
 func (m *Site) SetPermissions(value []Permission)() {
-    m.permissions = value
+    if m != nil {
+        m.permissions = value
+    }
 }
 // SetRoot sets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
 func (m *Site) SetRoot(value *Root)() {
-    m.root = value
+    if m != nil {
+        m.root = value
+    }
 }
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *Site) SetSharepointIds(value *SharepointIds)() {
-    m.sharepointIds = value
+    if m != nil {
+        m.sharepointIds = value
+    }
 }
 // SetSiteCollection sets the siteCollection property value. Provides details about the site's site collection. Available only on the root site. Read-only.
 func (m *Site) SetSiteCollection(value *SiteCollection)() {
-    m.siteCollection = value
+    if m != nil {
+        m.siteCollection = value
+    }
 }
 // SetSites sets the sites property value. The collection of the sub-sites under this site.
 func (m *Site) SetSites(value []Site)() {
-    m.sites = value
+    if m != nil {
+        m.sites = value
+    }
 }
 // SetTermStore sets the termStore property value. The default termStore under this site.
 func (m *Site) SetTermStore(value *Store)() {
-    m.termStore = value
+    if m != nil {
+        m.termStore = value
+    }
 }
 // SetTermStores sets the termStores property value. The collection of termStores under this site.
 func (m *Site) SetTermStores(value []Store)() {
-    m.termStores = value
+    if m != nil {
+        m.termStores = value
+    }
 }

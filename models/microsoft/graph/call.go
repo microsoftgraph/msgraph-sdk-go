@@ -684,93 +684,139 @@ func (m *Call) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
 }
 // SetAudioRoutingGroups sets the audioRoutingGroups property value. Read-only. Nullable.
 func (m *Call) SetAudioRoutingGroups(value []AudioRoutingGroup)() {
-    m.audioRoutingGroups = value
+    if m != nil {
+        m.audioRoutingGroups = value
+    }
 }
 // SetCallbackUri sets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
 func (m *Call) SetCallbackUri(value *string)() {
-    m.callbackUri = value
+    if m != nil {
+        m.callbackUri = value
+    }
 }
 // SetCallChainId sets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
 func (m *Call) SetCallChainId(value *string)() {
-    m.callChainId = value
+    if m != nil {
+        m.callChainId = value
+    }
 }
 // SetCallOptions sets the callOptions property value. 
 func (m *Call) SetCallOptions(value *CallOptions)() {
-    m.callOptions = value
+    if m != nil {
+        m.callOptions = value
+    }
 }
 // SetCallRoutes sets the callRoutes property value. The routing information on how the call was retargeted. Read-only.
 func (m *Call) SetCallRoutes(value []CallRoute)() {
-    m.callRoutes = value
+    if m != nil {
+        m.callRoutes = value
+    }
 }
 // SetChatInfo sets the chatInfo property value. The chat information. Required information for joining a meeting.
 func (m *Call) SetChatInfo(value *ChatInfo)() {
-    m.chatInfo = value
+    if m != nil {
+        m.chatInfo = value
+    }
 }
 // SetDirection sets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
 func (m *Call) SetDirection(value *CallDirection)() {
-    m.direction = value
+    if m != nil {
+        m.direction = value
+    }
 }
 // SetIncomingContext sets the incomingContext property value. The context associated with an incoming call. Read-only. Server generated.
 func (m *Call) SetIncomingContext(value *IncomingContext)() {
-    m.incomingContext = value
+    if m != nil {
+        m.incomingContext = value
+    }
 }
 // SetMediaConfig sets the mediaConfig property value. The media configuration. Required.
 func (m *Call) SetMediaConfig(value *MediaConfig)() {
-    m.mediaConfig = value
+    if m != nil {
+        m.mediaConfig = value
+    }
 }
 // SetMediaState sets the mediaState property value. Read-only. The call media state.
 func (m *Call) SetMediaState(value *CallMediaState)() {
-    m.mediaState = value
+    if m != nil {
+        m.mediaState = value
+    }
 }
 // SetMeetingInfo sets the meetingInfo property value. The meeting information that's required for joining a meeting.
 func (m *Call) SetMeetingInfo(value *MeetingInfo)() {
-    m.meetingInfo = value
+    if m != nil {
+        m.meetingInfo = value
+    }
 }
 // SetMyParticipantId sets the myParticipantId property value. 
 func (m *Call) SetMyParticipantId(value *string)() {
-    m.myParticipantId = value
+    if m != nil {
+        m.myParticipantId = value
+    }
 }
 // SetOperations sets the operations property value. Read-only. Nullable.
 func (m *Call) SetOperations(value []CommsOperation)() {
-    m.operations = value
+    if m != nil {
+        m.operations = value
+    }
 }
 // SetParticipants sets the participants property value. Read-only. Nullable.
 func (m *Call) SetParticipants(value []Participant)() {
-    m.participants = value
+    if m != nil {
+        m.participants = value
+    }
 }
 // SetRequestedModalities sets the requestedModalities property value. 
 func (m *Call) SetRequestedModalities(value []Modality)() {
-    m.requestedModalities = value
+    if m != nil {
+        m.requestedModalities = value
+    }
 }
 // SetResultInfo sets the resultInfo property value. 
 func (m *Call) SetResultInfo(value *ResultInfo)() {
-    m.resultInfo = value
+    if m != nil {
+        m.resultInfo = value
+    }
 }
 // SetSource sets the source property value. 
 func (m *Call) SetSource(value *ParticipantInfo)() {
-    m.source = value
+    if m != nil {
+        m.source = value
+    }
 }
 // SetState sets the state property value. 
 func (m *Call) SetState(value *CallState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetSubject sets the subject property value. 
 func (m *Call) SetSubject(value *string)() {
-    m.subject = value
+    if m != nil {
+        m.subject = value
+    }
 }
 // SetTargets sets the targets property value. 
 func (m *Call) SetTargets(value []InvitationParticipantInfo)() {
-    m.targets = value
+    if m != nil {
+        m.targets = value
+    }
 }
 // SetTenantId sets the tenantId property value. 
 func (m *Call) SetTenantId(value *string)() {
-    m.tenantId = value
+    if m != nil {
+        m.tenantId = value
+    }
 }
 // SetToneInfo sets the toneInfo property value. 
 func (m *Call) SetToneInfo(value *ToneInfo)() {
-    m.toneInfo = value
+    if m != nil {
+        m.toneInfo = value
+    }
 }
 // SetTranscription sets the transcription property value. The transcription information for the call. Read-only.
 func (m *Call) SetTranscription(value *CallTranscriptionInfo)() {
-    m.transcription = value
+    if m != nil {
+        m.transcription = value
+    }
 }

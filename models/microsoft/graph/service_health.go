@@ -122,13 +122,19 @@ func (m *ServiceHealth) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetIssues sets the issues property value. A collection of issues happened on the service, with detailed information for each issue.
 func (m *ServiceHealth) SetIssues(value []ServiceHealthIssue)() {
-    m.issues = value
+    if m != nil {
+        m.issues = value
+    }
 }
 // SetService sets the service property value. The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
 func (m *ServiceHealth) SetService(value *string)() {
-    m.service = value
+    if m != nil {
+        m.service = value
+    }
 }
 // SetStatus sets the status property value. Show the overral service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue.
 func (m *ServiceHealth) SetStatus(value *ServiceHealthStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

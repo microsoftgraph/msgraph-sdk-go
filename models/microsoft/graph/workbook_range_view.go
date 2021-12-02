@@ -354,49 +354,73 @@ func (m *WorkbookRangeView) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetCellAddresses sets the cellAddresses property value. Represents the cell addresses
 func (m *WorkbookRangeView) SetCellAddresses(value *Json)() {
-    m.cellAddresses = value
+    if m != nil {
+        m.cellAddresses = value
+    }
 }
 // SetColumnCount sets the columnCount property value. Returns the number of visible columns. Read-only.
 func (m *WorkbookRangeView) SetColumnCount(value *int32)() {
-    m.columnCount = value
+    if m != nil {
+        m.columnCount = value
+    }
 }
 // SetFormulas sets the formulas property value. Represents the formula in A1-style notation.
 func (m *WorkbookRangeView) SetFormulas(value *Json)() {
-    m.formulas = value
+    if m != nil {
+        m.formulas = value
+    }
 }
 // SetFormulasLocal sets the formulasLocal property value. Represents the formula in A1-style notation, in the user's language and number-formatting locale. For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
 func (m *WorkbookRangeView) SetFormulasLocal(value *Json)() {
-    m.formulasLocal = value
+    if m != nil {
+        m.formulasLocal = value
+    }
 }
 // SetFormulasR1C1 sets the formulasR1C1 property value. Represents the formula in R1C1-style notation.
 func (m *WorkbookRangeView) SetFormulasR1C1(value *Json)() {
-    m.formulasR1C1 = value
+    if m != nil {
+        m.formulasR1C1 = value
+    }
 }
 // SetIndex sets the index property value. Index of the range.
 func (m *WorkbookRangeView) SetIndex(value *int32)() {
-    m.index = value
+    if m != nil {
+        m.index = value
+    }
 }
 // SetNumberFormat sets the numberFormat property value. Represents Excel's number format code for the given cell. Read-only.
 func (m *WorkbookRangeView) SetNumberFormat(value *Json)() {
-    m.numberFormat = value
+    if m != nil {
+        m.numberFormat = value
+    }
 }
 // SetRowCount sets the rowCount property value. Returns the number of visible rows. Read-only.
 func (m *WorkbookRangeView) SetRowCount(value *int32)() {
-    m.rowCount = value
+    if m != nil {
+        m.rowCount = value
+    }
 }
 // SetRows sets the rows property value. Represents a collection of range views associated with the range. Read-only. Read-only.
 func (m *WorkbookRangeView) SetRows(value []WorkbookRangeView)() {
-    m.rows = value
+    if m != nil {
+        m.rows = value
+    }
 }
 // SetText sets the text property value. Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
 func (m *WorkbookRangeView) SetText(value *Json)() {
-    m.text = value
+    if m != nil {
+        m.text = value
+    }
 }
 // SetValues sets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookRangeView) SetValues(value *Json)() {
-    m.values = value
+    if m != nil {
+        m.values = value
+    }
 }
 // SetValueTypes sets the valueTypes property value. Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
 func (m *WorkbookRangeView) SetValueTypes(value *Json)() {
-    m.valueTypes = value
+    if m != nil {
+        m.valueTypes = value
+    }
 }

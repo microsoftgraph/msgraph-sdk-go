@@ -271,33 +271,49 @@ func (m *ConnectedOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ConnectedOrganization) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDescription sets the description property value. The description of the connected organization.
 func (m *ConnectedOrganization) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the connected organization.
 func (m *ConnectedOrganization) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetExternalSponsors sets the externalSponsors property value. Nullable.
 func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObject)() {
-    m.externalSponsors = value
+    if m != nil {
+        m.externalSponsors = value
+    }
 }
 // SetIdentitySources sets the identitySources property value. 
 func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySource)() {
-    m.identitySources = value
+    if m != nil {
+        m.identitySources = value
+    }
 }
 // SetInternalSponsors sets the internalSponsors property value. Nullable.
 func (m *ConnectedOrganization) SetInternalSponsors(value []DirectoryObject)() {
-    m.internalSponsors = value
+    if m != nil {
+        m.internalSponsors = value
+    }
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ConnectedOrganization) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.modifiedDateTime = value
+    if m != nil {
+        m.modifiedDateTime = value
+    }
 }
 // SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
 func (m *ConnectedOrganization) SetState(value *ConnectedOrganizationState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

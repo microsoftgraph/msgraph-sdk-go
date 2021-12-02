@@ -190,25 +190,37 @@ func (m *Request) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
 }
 // SetApprovalId sets the approvalId property value. The identifier of the approval of the request.
 func (m *Request) SetApprovalId(value *string)() {
-    m.approvalId = value
+    if m != nil {
+        m.approvalId = value
+    }
 }
 // SetCompletedDateTime sets the completedDateTime property value. The request completion date time.
 func (m *Request) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.completedDateTime = value
+    if m != nil {
+        m.completedDateTime = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. The user who created this request.
 func (m *Request) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The request creation date time.
 func (m *Request) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetCustomData sets the customData property value. Free text field to define any custom data for the request. Not used.
 func (m *Request) SetCustomData(value *string)() {
-    m.customData = value
+    if m != nil {
+        m.customData = value
+    }
 }
 // SetStatus sets the status property value. The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.
 func (m *Request) SetStatus(value *string)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

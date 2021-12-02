@@ -68,5 +68,7 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetWorkforceIntegrations sets the workforceIntegrations property value. 
 func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegration)() {
-    m.workforceIntegrations = value
+    if m != nil {
+        m.workforceIntegrations = value
+    }
 }

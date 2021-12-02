@@ -40,7 +40,7 @@ type ActivityBasedTimeoutPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ActivityBasedTimeoutPolicyRequestBuilderPatchOptions options for Patch
 type ActivityBasedTimeoutPolicyRequestBuilderPatchOptions struct {

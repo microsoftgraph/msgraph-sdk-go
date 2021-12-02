@@ -163,21 +163,31 @@ func (m *ManagedDeviceOverview) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetDeviceExchangeAccessStateSummary sets the deviceExchangeAccessStateSummary property value. Distribution of Exchange Access State in Intune
 func (m *ManagedDeviceOverview) SetDeviceExchangeAccessStateSummary(value *DeviceExchangeAccessStateSummary)() {
-    m.deviceExchangeAccessStateSummary = value
+    if m != nil {
+        m.deviceExchangeAccessStateSummary = value
+    }
 }
 // SetDeviceOperatingSystemSummary sets the deviceOperatingSystemSummary property value. Device operating system summary.
 func (m *ManagedDeviceOverview) SetDeviceOperatingSystemSummary(value *DeviceOperatingSystemSummary)() {
-    m.deviceOperatingSystemSummary = value
+    if m != nil {
+        m.deviceOperatingSystemSummary = value
+    }
 }
 // SetDualEnrolledDeviceCount sets the dualEnrolledDeviceCount property value. The number of devices enrolled in both MDM and EAS
 func (m *ManagedDeviceOverview) SetDualEnrolledDeviceCount(value *int32)() {
-    m.dualEnrolledDeviceCount = value
+    if m != nil {
+        m.dualEnrolledDeviceCount = value
+    }
 }
 // SetEnrolledDeviceCount sets the enrolledDeviceCount property value. Total enrolled device count. Does not include PC devices managed via Intune PC Agent
 func (m *ManagedDeviceOverview) SetEnrolledDeviceCount(value *int32)() {
-    m.enrolledDeviceCount = value
+    if m != nil {
+        m.enrolledDeviceCount = value
+    }
 }
 // SetMdmEnrolledCount sets the mdmEnrolledCount property value. The number of devices enrolled in MDM
 func (m *ManagedDeviceOverview) SetMdmEnrolledCount(value *int32)() {
-    m.mdmEnrolledCount = value
+    if m != nil {
+        m.mdmEnrolledCount = value
+    }
 }

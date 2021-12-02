@@ -168,21 +168,31 @@ func (m *AuthenticationMethodsRegistrationCampaign) Serialize(writer i04eb5309ae
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationMethodsRegistrationCampaign) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExcludeTargets sets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
 func (m *AuthenticationMethodsRegistrationCampaign) SetExcludeTargets(value []ExcludeTarget)() {
-    m.excludeTargets = value
+    if m != nil {
+        m.excludeTargets = value
+    }
 }
 // SetIncludeTargets sets the includeTargets property value. Users and groups of users that are prompted to set up the authentication method.
 func (m *AuthenticationMethodsRegistrationCampaign) SetIncludeTargets(value []AuthenticationMethodsRegistrationCampaignIncludeTarget)() {
-    m.includeTargets = value
+    if m != nil {
+        m.includeTargets = value
+    }
 }
 // SetSnoozeDurationInDays sets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
 func (m *AuthenticationMethodsRegistrationCampaign) SetSnoozeDurationInDays(value *int32)() {
-    m.snoozeDurationInDays = value
+    if m != nil {
+        m.snoozeDurationInDays = value
+    }
 }
 // SetState sets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure Active Directory for the setting. The default value is disabled.
 func (m *AuthenticationMethodsRegistrationCampaign) SetState(value *AdvancedConfigState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

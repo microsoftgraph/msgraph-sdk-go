@@ -86,9 +86,13 @@ func (m *PrintOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetCreatedDateTime sets the createdDateTime property value. The DateTimeOffset when the operation was created. Read-only.
 func (m *PrintOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetStatus sets the status property value. 
 func (m *PrintOperation) SetStatus(value *PrintOperationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

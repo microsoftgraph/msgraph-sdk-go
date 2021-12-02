@@ -480,65 +480,97 @@ func (m *Domain) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
 }
 // SetAuthenticationType sets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
 func (m *Domain) SetAuthenticationType(value *string)() {
-    m.authenticationType = value
+    if m != nil {
+        m.authenticationType = value
+    }
 }
 // SetAvailabilityStatus sets the availabilityStatus property value. This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
 func (m *Domain) SetAvailabilityStatus(value *string)() {
-    m.availabilityStatus = value
+    if m != nil {
+        m.availabilityStatus = value
+    }
 }
 // SetDomainNameReferences sets the domainNameReferences property value. Read-only, Nullable
 func (m *Domain) SetDomainNameReferences(value []DirectoryObject)() {
-    m.domainNameReferences = value
+    if m != nil {
+        m.domainNameReferences = value
+    }
 }
 // SetIsAdminManaged sets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
 func (m *Domain) SetIsAdminManaged(value *bool)() {
-    m.isAdminManaged = value
+    if m != nil {
+        m.isAdminManaged = value
+    }
 }
 // SetIsDefault sets the isDefault property value. true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
 func (m *Domain) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetIsInitial sets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
 func (m *Domain) SetIsInitial(value *bool)() {
-    m.isInitial = value
+    if m != nil {
+        m.isInitial = value
+    }
 }
 // SetIsRoot sets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
 func (m *Domain) SetIsRoot(value *bool)() {
-    m.isRoot = value
+    if m != nil {
+        m.isRoot = value
+    }
 }
 // SetIsVerified sets the isVerified property value. true if the domain has completed domain ownership verification. Not nullable
 func (m *Domain) SetIsVerified(value *bool)() {
-    m.isVerified = value
+    if m != nil {
+        m.isVerified = value
+    }
 }
 // SetManufacturer sets the manufacturer property value. 
 func (m *Domain) SetManufacturer(value *string)() {
-    m.manufacturer = value
+    if m != nil {
+        m.manufacturer = value
+    }
 }
 // SetModel sets the model property value. 
 func (m *Domain) SetModel(value *string)() {
-    m.model = value
+    if m != nil {
+        m.model = value
+    }
 }
 // SetPasswordNotificationWindowInDays sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
 func (m *Domain) SetPasswordNotificationWindowInDays(value *int32)() {
-    m.passwordNotificationWindowInDays = value
+    if m != nil {
+        m.passwordNotificationWindowInDays = value
+    }
 }
 // SetPasswordValidityPeriodInDays sets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
 func (m *Domain) SetPasswordValidityPeriodInDays(value *int32)() {
-    m.passwordValidityPeriodInDays = value
+    if m != nil {
+        m.passwordValidityPeriodInDays = value
+    }
 }
 // SetServiceConfigurationRecords sets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable
 func (m *Domain) SetServiceConfigurationRecords(value []DomainDnsRecord)() {
-    m.serviceConfigurationRecords = value
+    if m != nil {
+        m.serviceConfigurationRecords = value
+    }
 }
 // SetState sets the state property value. Status of asynchronous operations scheduled for the domain.
 func (m *Domain) SetState(value *DomainState)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetSupportedServices sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
 func (m *Domain) SetSupportedServices(value []string)() {
-    m.supportedServices = value
+    if m != nil {
+        m.supportedServices = value
+    }
 }
 // SetVerificationDnsRecords sets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
 func (m *Domain) SetVerificationDnsRecords(value []DomainDnsRecord)() {
-    m.verificationDnsRecords = value
+    if m != nil {
+        m.verificationDnsRecords = value
+    }
 }

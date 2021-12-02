@@ -38,7 +38,7 @@ type PersonRequestBuilderGetOptions struct {
 // PersonRequestBuilderGetQueryParameters people that are relevant to the user. Read-only. Nullable.
 type PersonRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // PersonRequestBuilderPatchOptions options for Patch
 type PersonRequestBuilderPatchOptions struct {

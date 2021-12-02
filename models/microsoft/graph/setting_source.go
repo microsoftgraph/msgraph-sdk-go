@@ -124,17 +124,25 @@ func (m *SettingSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SettingSource) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Not yet documented
 func (m *SettingSource) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetId sets the id property value. Not yet documented
 func (m *SettingSource) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetSourceType sets the sourceType property value. Not yet documented. Possible values are: deviceConfiguration, deviceIntent.
 func (m *SettingSource) SetSourceType(value *SettingSourceType)() {
-    m.sourceType = value
+    if m != nil {
+        m.sourceType = value
+    }
 }

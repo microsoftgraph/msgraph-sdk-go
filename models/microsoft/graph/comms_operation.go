@@ -113,13 +113,19 @@ func (m *CommsOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetClientContext sets the clientContext property value. Unique Client Context string. Max limit is 256 chars.
 func (m *CommsOperation) SetClientContext(value *string)() {
-    m.clientContext = value
+    if m != nil {
+        m.clientContext = value
+    }
 }
 // SetResultInfo sets the resultInfo property value. The result information. Read-only.
 func (m *CommsOperation) SetResultInfo(value *ResultInfo)() {
-    m.resultInfo = value
+    if m != nil {
+        m.resultInfo = value
+    }
 }
 // SetStatus sets the status property value. Possible values are: notStarted, running, completed, failed. Read-only.
 func (m *CommsOperation) SetStatus(value *OperationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

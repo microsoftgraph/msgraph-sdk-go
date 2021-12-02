@@ -190,25 +190,37 @@ func (m *PrintConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAppVersion sets the appVersion property value. The connector's version.
 func (m *PrintConnector) SetAppVersion(value *string)() {
-    m.appVersion = value
+    if m != nil {
+        m.appVersion = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the connector.
 func (m *PrintConnector) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetFullyQualifiedDomainName sets the fullyQualifiedDomainName property value. The connector machine's hostname.
 func (m *PrintConnector) SetFullyQualifiedDomainName(value *string)() {
-    m.fullyQualifiedDomainName = value
+    if m != nil {
+        m.fullyQualifiedDomainName = value
+    }
 }
 // SetLocation sets the location property value. The physical and/or organizational location of the connector.
 func (m *PrintConnector) SetLocation(value *PrinterLocation)() {
-    m.location = value
+    if m != nil {
+        m.location = value
+    }
 }
 // SetOperatingSystem sets the operatingSystem property value. The connector machine's operating system version.
 func (m *PrintConnector) SetOperatingSystem(value *string)() {
-    m.operatingSystem = value
+    if m != nil {
+        m.operatingSystem = value
+    }
 }
 // SetRegisteredDateTime sets the registeredDateTime property value. The DateTimeOffset when the connector was registered.
 func (m *PrintConnector) SetRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.registeredDateTime = value
+    if m != nil {
+        m.registeredDateTime = value
+    }
 }

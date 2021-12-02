@@ -272,37 +272,55 @@ func (m *DeviceManagementExchangeConnector) Serialize(writer i04eb5309aeaafadd28
 }
 // SetConnectorServerName sets the connectorServerName property value. The name of the server hosting the Exchange Connector.
 func (m *DeviceManagementExchangeConnector) SetConnectorServerName(value *string)() {
-    m.connectorServerName = value
+    if m != nil {
+        m.connectorServerName = value
+    }
 }
 // SetExchangeAlias sets the exchangeAlias property value. An alias assigned to the Exchange server
 func (m *DeviceManagementExchangeConnector) SetExchangeAlias(value *string)() {
-    m.exchangeAlias = value
+    if m != nil {
+        m.exchangeAlias = value
+    }
 }
 // SetExchangeConnectorType sets the exchangeConnectorType property value. The type of Exchange Connector Configured. Possible values are: onPremises, hosted, serviceToService, dedicated.
 func (m *DeviceManagementExchangeConnector) SetExchangeConnectorType(value *DeviceManagementExchangeConnectorType)() {
-    m.exchangeConnectorType = value
+    if m != nil {
+        m.exchangeConnectorType = value
+    }
 }
 // SetExchangeOrganization sets the exchangeOrganization property value. Exchange Organization to the Exchange server
 func (m *DeviceManagementExchangeConnector) SetExchangeOrganization(value *string)() {
-    m.exchangeOrganization = value
+    if m != nil {
+        m.exchangeOrganization = value
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last sync time for the Exchange Connector
 func (m *DeviceManagementExchangeConnector) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    if m != nil {
+        m.lastSyncDateTime = value
+    }
 }
 // SetPrimarySmtpAddress sets the primarySmtpAddress property value. Email address used to configure the Service To Service Exchange Connector.
 func (m *DeviceManagementExchangeConnector) SetPrimarySmtpAddress(value *string)() {
-    m.primarySmtpAddress = value
+    if m != nil {
+        m.primarySmtpAddress = value
+    }
 }
 // SetServerName sets the serverName property value. The name of the Exchange server.
 func (m *DeviceManagementExchangeConnector) SetServerName(value *string)() {
-    m.serverName = value
+    if m != nil {
+        m.serverName = value
+    }
 }
 // SetStatus sets the status property value. Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.
 func (m *DeviceManagementExchangeConnector) SetStatus(value *DeviceManagementExchangeConnectorStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetVersion sets the version property value. The version of the ExchangeConnectorAgent
 func (m *DeviceManagementExchangeConnector) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

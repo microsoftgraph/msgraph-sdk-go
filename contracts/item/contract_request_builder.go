@@ -45,7 +45,7 @@ type ContractRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ContractRequestBuilderPatchOptions options for Patch
 type ContractRequestBuilderPatchOptions struct {

@@ -114,13 +114,19 @@ func (m *Operation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetCreatedDateTime sets the createdDateTime property value. The start time of the operation.
 func (m *Operation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The time of the last action of the operation.
 func (m *Operation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastActionDateTime = value
+    if m != nil {
+        m.lastActionDateTime = value
+    }
 }
 // SetStatus sets the status property value. The current status of the operation: notStarted, running, completed, failed
 func (m *Operation) SetStatus(value *OperationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

@@ -40,7 +40,7 @@ type DeviceInstallStateRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceInstallStateRequestBuilderPatchOptions options for Patch
 type DeviceInstallStateRequestBuilderPatchOptions struct {

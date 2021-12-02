@@ -148,21 +148,31 @@ func (m *Hashes) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Hashes) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCrc32Hash sets the crc32Hash property value. The CRC32 value of the file in little endian (if available). Read-only.
 func (m *Hashes) SetCrc32Hash(value *string)() {
-    m.crc32Hash = value
+    if m != nil {
+        m.crc32Hash = value
+    }
 }
 // SetQuickXorHash sets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
 func (m *Hashes) SetQuickXorHash(value *string)() {
-    m.quickXorHash = value
+    if m != nil {
+        m.quickXorHash = value
+    }
 }
 // SetSha1Hash sets the sha1Hash property value. SHA1 hash for the contents of the file (if available). Read-only.
 func (m *Hashes) SetSha1Hash(value *string)() {
-    m.sha1Hash = value
+    if m != nil {
+        m.sha1Hash = value
+    }
 }
 // SetSha256Hash sets the sha256Hash property value. SHA256 hash for the contents of the file (if available). Read-only.
 func (m *Hashes) SetSha256Hash(value *string)() {
-    m.sha256Hash = value
+    if m != nil {
+        m.sha256Hash = value
+    }
 }

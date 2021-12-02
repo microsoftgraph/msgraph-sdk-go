@@ -260,29 +260,43 @@ func (m *Workbook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetApplication sets the application property value. 
 func (m *Workbook) SetApplication(value *WorkbookApplication)() {
-    m.application = value
+    if m != nil {
+        m.application = value
+    }
 }
 // SetComments sets the comments property value. 
 func (m *Workbook) SetComments(value []WorkbookComment)() {
-    m.comments = value
+    if m != nil {
+        m.comments = value
+    }
 }
 // SetFunctions sets the functions property value. 
 func (m *Workbook) SetFunctions(value *WorkbookFunctions)() {
-    m.functions = value
+    if m != nil {
+        m.functions = value
+    }
 }
 // SetNames sets the names property value. Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
 func (m *Workbook) SetNames(value []WorkbookNamedItem)() {
-    m.names = value
+    if m != nil {
+        m.names = value
+    }
 }
 // SetOperations sets the operations property value. The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
 func (m *Workbook) SetOperations(value []WorkbookOperation)() {
-    m.operations = value
+    if m != nil {
+        m.operations = value
+    }
 }
 // SetTables sets the tables property value. Represents a collection of tables associated with the workbook. Read-only.
 func (m *Workbook) SetTables(value []WorkbookTable)() {
-    m.tables = value
+    if m != nil {
+        m.tables = value
+    }
 }
 // SetWorksheets sets the worksheets property value. Represents a collection of worksheets associated with the workbook. Read-only.
 func (m *Workbook) SetWorksheets(value []WorkbookWorksheet)() {
-    m.worksheets = value
+    if m != nil {
+        m.worksheets = value
+    }
 }

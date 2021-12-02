@@ -40,7 +40,7 @@ type ManagedAppOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ManagedAppOperationRequestBuilderPatchOptions options for Patch
 type ManagedAppOperationRequestBuilderPatchOptions struct {

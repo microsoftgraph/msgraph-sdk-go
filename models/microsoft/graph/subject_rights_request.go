@@ -565,77 +565,115 @@ func (m *SubjectRightsRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAssignedTo sets the assignedTo property value. Identity that the request is assigned to.
 func (m *SubjectRightsRequest) SetAssignedTo(value *Identity)() {
-    m.assignedTo = value
+    if m != nil {
+        m.assignedTo = value
+    }
 }
 // SetClosedDateTime sets the closedDateTime property value. The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.closedDateTime = value
+    if m != nil {
+        m.closedDateTime = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. Identity information for the entity that created the request.
 func (m *SubjectRightsRequest) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the request was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDataSubject sets the dataSubject property value. Information about the data subject.
 func (m *SubjectRightsRequest) SetDataSubject(value *DataSubject)() {
-    m.dataSubject = value
+    if m != nil {
+        m.dataSubject = value
+    }
 }
 // SetDataSubjectType sets the dataSubjectType property value. The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
 func (m *SubjectRightsRequest) SetDataSubjectType(value *DataSubjectType)() {
-    m.dataSubjectType = value
+    if m != nil {
+        m.dataSubjectType = value
+    }
 }
 // SetDescription sets the description property value. Description for the request.
 func (m *SubjectRightsRequest) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the request.
 func (m *SubjectRightsRequest) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetHistory sets the history property value. Collection of history change events.
 func (m *SubjectRightsRequest) SetHistory(value []SubjectRightsRequestHistory)() {
-    m.history = value
+    if m != nil {
+        m.history = value
+    }
 }
 // SetInsight sets the insight property value. Insight about the request.
 func (m *SubjectRightsRequest) SetInsight(value *SubjectRightsRequestDetail)() {
-    m.insight = value
+    if m != nil {
+        m.insight = value
+    }
 }
 // SetInternalDueDateTime sets the internalDueDateTime property value. The date and time when the request is internally due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetInternalDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.internalDueDateTime = value
+    if m != nil {
+        m.internalDueDateTime = value
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity information for the entity that last modified the request.
 func (m *SubjectRightsRequest) SetLastModifiedBy(value *IdentitySet)() {
-    m.lastModifiedBy = value
+    if m != nil {
+        m.lastModifiedBy = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the request was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }
 // SetNotes sets the notes property value. List of notes associcated with the request.
 func (m *SubjectRightsRequest) SetNotes(value []AuthoredNote)() {
-    m.notes = value
+    if m != nil {
+        m.notes = value
+    }
 }
 // SetRegulations sets the regulations property value. List of regulations that this request will fulfill.
 func (m *SubjectRightsRequest) SetRegulations(value []string)() {
-    m.regulations = value
+    if m != nil {
+        m.regulations = value
+    }
 }
 // SetStages sets the stages property value. Information about the different stages for the request.
 func (m *SubjectRightsRequest) SetStages(value []SubjectRightsRequestStageDetail)() {
-    m.stages = value
+    if m != nil {
+        m.stages = value
+    }
 }
 // SetStatus sets the status property value. The status of the request.. Possible values are: active, closed, unknownFutureValue.
 func (m *SubjectRightsRequest) SetStatus(value *SubjectRightsRequestStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetTeam sets the team property value. Information about the Microsoft Teams team that was created for the request.
 func (m *SubjectRightsRequest) SetTeam(value *Team)() {
-    m.team = value
+    if m != nil {
+        m.team = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
 func (m *SubjectRightsRequest) SetType_escaped(value *SubjectRightsRequestType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

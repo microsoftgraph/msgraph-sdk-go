@@ -59,5 +59,7 @@ func (m *ColumnLink) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetName sets the name property value. The name of the column  in this content type.
 func (m *ColumnLink) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

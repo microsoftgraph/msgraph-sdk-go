@@ -126,17 +126,25 @@ func (m *ChatMessagePolicyViolationPolicyTip) Serialize(writer i04eb5309aeaafadd
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChatMessagePolicyViolationPolicyTip) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetComplianceUrl sets the complianceUrl property value. The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)
 func (m *ChatMessagePolicyViolationPolicyTip) SetComplianceUrl(value *string)() {
-    m.complianceUrl = value
+    if m != nil {
+        m.complianceUrl = value
+    }
 }
 // SetGeneralText sets the generalText property value. Explanatory text shown to the sender of the message.
 func (m *ChatMessagePolicyViolationPolicyTip) SetGeneralText(value *string)() {
-    m.generalText = value
+    if m != nil {
+        m.generalText = value
+    }
 }
 // SetMatchedConditionDescriptions sets the matchedConditionDescriptions property value. The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.
 func (m *ChatMessagePolicyViolationPolicyTip) SetMatchedConditionDescriptions(value []string)() {
-    m.matchedConditionDescriptions = value
+    if m != nil {
+        m.matchedConditionDescriptions = value
+    }
 }

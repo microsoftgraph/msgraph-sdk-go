@@ -43,7 +43,7 @@ type WindowsAutopilotDeviceIdentityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // WindowsAutopilotDeviceIdentityRequestBuilderPatchOptions options for Patch
 type WindowsAutopilotDeviceIdentityRequestBuilderPatchOptions struct {

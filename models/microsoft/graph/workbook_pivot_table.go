@@ -85,9 +85,13 @@ func (m *WorkbookPivotTable) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetName sets the name property value. Name of the PivotTable.
 func (m *WorkbookPivotTable) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }
 // SetWorksheet sets the worksheet property value. The worksheet containing the current PivotTable. Read-only.
 func (m *WorkbookPivotTable) SetWorksheet(value *WorkbookWorksheet)() {
-    m.worksheet = value
+    if m != nil {
+        m.worksheet = value
+    }
 }

@@ -85,9 +85,13 @@ func (m *WorkbookChartSeriesFormat) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetFill sets the fill property value. Represents the fill format of a chart series, which includes background formating information. Read-only.
 func (m *WorkbookChartSeriesFormat) SetFill(value *WorkbookChartFill)() {
-    m.fill = value
+    if m != nil {
+        m.fill = value
+    }
 }
 // SetLine sets the line property value. Represents line formatting. Read-only.
 func (m *WorkbookChartSeriesFormat) SetLine(value *WorkbookChartLineFormat)() {
-    m.line = value
+    if m != nil {
+        m.line = value
+    }
 }

@@ -45,7 +45,7 @@ type NotebookRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // NotebookRequestBuilderPatchOptions options for Patch
 type NotebookRequestBuilderPatchOptions struct {

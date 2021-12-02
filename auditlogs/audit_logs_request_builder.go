@@ -39,7 +39,7 @@ type AuditLogsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AuditLogsRequestBuilderPatchOptions options for Patch
 type AuditLogsRequestBuilderPatchOptions struct {

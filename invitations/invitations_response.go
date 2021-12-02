@@ -106,13 +106,19 @@ func (m *InvitationsResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InvitationsResponse) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetNextLink sets the nextLink property value. 
 func (m *InvitationsResponse) SetNextLink(value *string)() {
-    m.nextLink = value
+    if m != nil {
+        m.nextLink = value
+    }
 }
 // SetValue sets the value property value. 
 func (m *InvitationsResponse) SetValue(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Invitation)() {
-    m.value = value
+    if m != nil {
+        m.value = value
+    }
 }

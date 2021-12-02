@@ -85,9 +85,13 @@ func (m *ManagedAppStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetDisplayName sets the displayName property value. Friendly name of the status report.
 func (m *ManagedAppStatus) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetVersion sets the version property value. Version of the entity.
 func (m *ManagedAppStatus) SetVersion(value *string)() {
-    m.version = value
+    if m != nil {
+        m.version = value
+    }
 }

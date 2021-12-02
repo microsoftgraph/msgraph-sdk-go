@@ -148,21 +148,31 @@ func (m *ImageInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAddImageQuery sets the addImageQuery property value. Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
 func (m *ImageInfo) SetAddImageQuery(value *bool)() {
-    m.addImageQuery = value
+    if m != nil {
+        m.addImageQuery = value
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ImageInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlternateText sets the alternateText property value. Optional; alt-text accessible content for the image
 func (m *ImageInfo) SetAlternateText(value *string)() {
-    m.alternateText = value
+    if m != nil {
+        m.alternateText = value
+    }
 }
 // SetAlternativeText sets the alternativeText property value. 
 func (m *ImageInfo) SetAlternativeText(value *string)() {
-    m.alternativeText = value
+    if m != nil {
+        m.alternativeText = value
+    }
 }
 // SetIconUrl sets the iconUrl property value. Optional; URI that points to an icon which represents the application used to generate the activity
 func (m *ImageInfo) SetIconUrl(value *string)() {
-    m.iconUrl = value
+    if m != nil {
+        m.iconUrl = value
+    }
 }

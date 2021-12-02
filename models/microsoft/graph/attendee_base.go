@@ -61,5 +61,7 @@ func (m *AttendeeBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetType_escaped sets the type_escaped property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
 func (m *AttendeeBase) SetType_escaped(value *AttendeeType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

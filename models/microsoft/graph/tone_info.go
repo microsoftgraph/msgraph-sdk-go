@@ -98,13 +98,19 @@ func (m *ToneInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ToneInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSequenceId sets the sequenceId property value. An incremental identifier used for ordering DTMF events.
 func (m *ToneInfo) SetSequenceId(value *int64)() {
-    m.sequenceId = value
+    if m != nil {
+        m.sequenceId = value
+    }
 }
 // SetTone sets the tone property value. Possible values are: tone0, tone1, tone2, tone3, tone4, tone5, tone6, tone7, tone8, tone9, star, pound, a, b, c, d, flash.
 func (m *ToneInfo) SetTone(value *Tone)() {
-    m.tone = value
+    if m != nil {
+        m.tone = value
+    }
 }

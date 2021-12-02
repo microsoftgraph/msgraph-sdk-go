@@ -614,77 +614,115 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
 }
 // SetEnabled sets the enabled property value. Indicates whether the schedule is enabled for the team. Required.
 func (m *Schedule) SetEnabled(value *bool)() {
-    m.enabled = value
+    if m != nil {
+        m.enabled = value
+    }
 }
 // SetOfferShiftRequests sets the offerShiftRequests property value. 
 func (m *Schedule) SetOfferShiftRequests(value []OfferShiftRequest)() {
-    m.offerShiftRequests = value
+    if m != nil {
+        m.offerShiftRequests = value
+    }
 }
 // SetOfferShiftRequestsEnabled sets the offerShiftRequestsEnabled property value. Indicates whether offer shift requests are enabled for the schedule.
 func (m *Schedule) SetOfferShiftRequestsEnabled(value *bool)() {
-    m.offerShiftRequestsEnabled = value
+    if m != nil {
+        m.offerShiftRequestsEnabled = value
+    }
 }
 // SetOpenShiftChangeRequests sets the openShiftChangeRequests property value. 
 func (m *Schedule) SetOpenShiftChangeRequests(value []OpenShiftChangeRequest)() {
-    m.openShiftChangeRequests = value
+    if m != nil {
+        m.openShiftChangeRequests = value
+    }
 }
 // SetOpenShifts sets the openShifts property value. 
 func (m *Schedule) SetOpenShifts(value []OpenShift)() {
-    m.openShifts = value
+    if m != nil {
+        m.openShifts = value
+    }
 }
 // SetOpenShiftsEnabled sets the openShiftsEnabled property value. Indicates whether open shifts are enabled for the schedule.
 func (m *Schedule) SetOpenShiftsEnabled(value *bool)() {
-    m.openShiftsEnabled = value
+    if m != nil {
+        m.openShiftsEnabled = value
+    }
 }
 // SetProvisionStatus sets the provisionStatus property value. The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
 func (m *Schedule) SetProvisionStatus(value *OperationStatus)() {
-    m.provisionStatus = value
+    if m != nil {
+        m.provisionStatus = value
+    }
 }
 // SetProvisionStatusCode sets the provisionStatusCode property value. Additional information about why schedule provisioning failed.
 func (m *Schedule) SetProvisionStatusCode(value *string)() {
-    m.provisionStatusCode = value
+    if m != nil {
+        m.provisionStatusCode = value
+    }
 }
 // SetSchedulingGroups sets the schedulingGroups property value. The logical grouping of users in the schedule (usually by role).
 func (m *Schedule) SetSchedulingGroups(value []SchedulingGroup)() {
-    m.schedulingGroups = value
+    if m != nil {
+        m.schedulingGroups = value
+    }
 }
 // SetShifts sets the shifts property value. The shifts in the schedule.
 func (m *Schedule) SetShifts(value []Shift)() {
-    m.shifts = value
+    if m != nil {
+        m.shifts = value
+    }
 }
 // SetSwapShiftsChangeRequests sets the swapShiftsChangeRequests property value. 
 func (m *Schedule) SetSwapShiftsChangeRequests(value []SwapShiftsChangeRequest)() {
-    m.swapShiftsChangeRequests = value
+    if m != nil {
+        m.swapShiftsChangeRequests = value
+    }
 }
 // SetSwapShiftsRequestsEnabled sets the swapShiftsRequestsEnabled property value. Indicates whether swap shifts requests are enabled for the schedule.
 func (m *Schedule) SetSwapShiftsRequestsEnabled(value *bool)() {
-    m.swapShiftsRequestsEnabled = value
+    if m != nil {
+        m.swapShiftsRequestsEnabled = value
+    }
 }
 // SetTimeClockEnabled sets the timeClockEnabled property value. Indicates whether time clock is enabled for the schedule.
 func (m *Schedule) SetTimeClockEnabled(value *bool)() {
-    m.timeClockEnabled = value
+    if m != nil {
+        m.timeClockEnabled = value
+    }
 }
 // SetTimeOffReasons sets the timeOffReasons property value. The set of reasons for a time off in the schedule.
 func (m *Schedule) SetTimeOffReasons(value []TimeOffReason)() {
-    m.timeOffReasons = value
+    if m != nil {
+        m.timeOffReasons = value
+    }
 }
 // SetTimeOffRequests sets the timeOffRequests property value. 
 func (m *Schedule) SetTimeOffRequests(value []TimeOffRequest)() {
-    m.timeOffRequests = value
+    if m != nil {
+        m.timeOffRequests = value
+    }
 }
 // SetTimeOffRequestsEnabled sets the timeOffRequestsEnabled property value. Indicates whether time off requests are enabled for the schedule.
 func (m *Schedule) SetTimeOffRequestsEnabled(value *bool)() {
-    m.timeOffRequestsEnabled = value
+    if m != nil {
+        m.timeOffRequestsEnabled = value
+    }
 }
 // SetTimesOff sets the timesOff property value. The instances of times off in the schedule.
 func (m *Schedule) SetTimesOff(value []TimeOff)() {
-    m.timesOff = value
+    if m != nil {
+        m.timesOff = value
+    }
 }
 // SetTimeZone sets the timeZone property value. Indicates the time zone of the schedule team using tz database format. Required.
 func (m *Schedule) SetTimeZone(value *string)() {
-    m.timeZone = value
+    if m != nil {
+        m.timeZone = value
+    }
 }
 // SetWorkforceIntegrationIds sets the workforceIntegrationIds property value. 
 func (m *Schedule) SetWorkforceIntegrationIds(value []string)() {
-    m.workforceIntegrationIds = value
+    if m != nil {
+        m.workforceIntegrationIds = value
+    }
 }

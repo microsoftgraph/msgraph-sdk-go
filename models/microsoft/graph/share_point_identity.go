@@ -59,5 +59,7 @@ func (m *SharePointIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetLoginName sets the loginName property value. 
 func (m *SharePointIdentity) SetLoginName(value *string)() {
-    m.loginName = value
+    if m != nil {
+        m.loginName = value
+    }
 }

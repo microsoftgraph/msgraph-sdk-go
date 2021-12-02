@@ -85,9 +85,13 @@ func (m *PlannerAssignedToTaskBoardTaskFormat) Serialize(writer i04eb5309aeaafad
 }
 // SetOrderHintsByAssignee sets the orderHintsByAssignee property value. Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.
 func (m *PlannerAssignedToTaskBoardTaskFormat) SetOrderHintsByAssignee(value *PlannerOrderHintsByAssignee)() {
-    m.orderHintsByAssignee = value
+    if m != nil {
+        m.orderHintsByAssignee = value
+    }
 }
 // SetUnassignedOrderHint sets the unassignedOrderHint property value. Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.
 func (m *PlannerAssignedToTaskBoardTaskFormat) SetUnassignedOrderHint(value *string)() {
-    m.unassignedOrderHint = value
+    if m != nil {
+        m.unassignedOrderHint = value
+    }
 }

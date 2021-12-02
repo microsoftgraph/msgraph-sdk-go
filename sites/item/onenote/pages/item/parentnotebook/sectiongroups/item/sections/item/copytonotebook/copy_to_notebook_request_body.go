@@ -174,25 +174,37 @@ func (m *CopyToNotebookRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyToNotebookRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetGroupId sets the groupId property value. 
 func (m *CopyToNotebookRequestBody) SetGroupId(value *string)() {
-    m.groupId = value
+    if m != nil {
+        m.groupId = value
+    }
 }
 // SetId sets the id property value. 
 func (m *CopyToNotebookRequestBody) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetRenameAs sets the renameAs property value. 
 func (m *CopyToNotebookRequestBody) SetRenameAs(value *string)() {
-    m.renameAs = value
+    if m != nil {
+        m.renameAs = value
+    }
 }
 // SetSiteCollectionId sets the siteCollectionId property value. 
 func (m *CopyToNotebookRequestBody) SetSiteCollectionId(value *string)() {
-    m.siteCollectionId = value
+    if m != nil {
+        m.siteCollectionId = value
+    }
 }
 // SetSiteId sets the siteId property value. 
 func (m *CopyToNotebookRequestBody) SetSiteId(value *string)() {
-    m.siteId = value
+    if m != nil {
+        m.siteId = value
+    }
 }

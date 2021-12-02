@@ -70,9 +70,13 @@ func (m *GetAvailableExtensionPropertiesRequestBody) Serialize(writer i04eb5309a
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetAvailableExtensionPropertiesRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsSyncedFromOnPremises sets the isSyncedFromOnPremises property value. 
 func (m *GetAvailableExtensionPropertiesRequestBody) SetIsSyncedFromOnPremises(value *bool)() {
-    m.isSyncedFromOnPremises = value
+    if m != nil {
+        m.isSyncedFromOnPremises = value
+    }
 }

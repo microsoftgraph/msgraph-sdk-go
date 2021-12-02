@@ -111,13 +111,19 @@ func (m *IdentityApiConnector) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAuthenticationConfiguration sets the authenticationConfiguration property value. The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
 func (m *IdentityApiConnector) SetAuthenticationConfiguration(value *ApiAuthenticationConfigurationBase)() {
-    m.authenticationConfiguration = value
+    if m != nil {
+        m.authenticationConfiguration = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the API connector.
 func (m *IdentityApiConnector) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetTargetUrl sets the targetUrl property value. The URL of the API endpoint to call.
 func (m *IdentityApiConnector) SetTargetUrl(value *string)() {
-    m.targetUrl = value
+    if m != nil {
+        m.targetUrl = value
+    }
 }

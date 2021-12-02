@@ -59,5 +59,7 @@ func (m *TimeOffItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetTimeOffReasonId sets the timeOffReasonId property value. ID of the timeOffReason for this timeOffItem. Required.
 func (m *TimeOffItem) SetTimeOffReasonId(value *string)() {
-    m.timeOffReasonId = value
+    if m != nil {
+        m.timeOffReasonId = value
+    }
 }

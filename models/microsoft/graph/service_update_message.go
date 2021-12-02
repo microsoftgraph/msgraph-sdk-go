@@ -254,33 +254,49 @@ func (m *ServiceUpdateMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetActionRequiredByDateTime sets the actionRequiredByDateTime property value. The expected deadline of the action for the message.
 func (m *ServiceUpdateMessage) SetActionRequiredByDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.actionRequiredByDateTime = value
+    if m != nil {
+        m.actionRequiredByDateTime = value
+    }
 }
 // SetBody sets the body property value. 
 func (m *ServiceUpdateMessage) SetBody(value *ItemBody)() {
-    m.body = value
+    if m != nil {
+        m.body = value
+    }
 }
 // SetCategory sets the category property value. The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
 func (m *ServiceUpdateMessage) SetCategory(value *ServiceUpdateCategory)() {
-    m.category = value
+    if m != nil {
+        m.category = value
+    }
 }
 // SetIsMajorChange sets the isMajorChange property value. Indicates whether the message describes a major update for the service.
 func (m *ServiceUpdateMessage) SetIsMajorChange(value *bool)() {
-    m.isMajorChange = value
+    if m != nil {
+        m.isMajorChange = value
+    }
 }
 // SetServices sets the services property value. The affected services by the service message.
 func (m *ServiceUpdateMessage) SetServices(value []string)() {
-    m.services = value
+    if m != nil {
+        m.services = value
+    }
 }
 // SetSeverity sets the severity property value. The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
 func (m *ServiceUpdateMessage) SetSeverity(value *ServiceUpdateSeverity)() {
-    m.severity = value
+    if m != nil {
+        m.severity = value
+    }
 }
 // SetTags sets the tags property value. A collection of tags for the service message.
 func (m *ServiceUpdateMessage) SetTags(value []string)() {
-    m.tags = value
+    if m != nil {
+        m.tags = value
+    }
 }
 // SetViewPoint sets the viewPoint property value. Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
 func (m *ServiceUpdateMessage) SetViewPoint(value *ServiceUpdateMessageViewpoint)() {
-    m.viewPoint = value
+    if m != nil {
+        m.viewPoint = value
+    }
 }

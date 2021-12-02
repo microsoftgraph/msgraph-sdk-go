@@ -85,9 +85,13 @@ func (m *RecordOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetRecordingAccessToken sets the recordingAccessToken property value. The access token required to retrieve the recording.
 func (m *RecordOperation) SetRecordingAccessToken(value *string)() {
-    m.recordingAccessToken = value
+    if m != nil {
+        m.recordingAccessToken = value
+    }
 }
 // SetRecordingLocation sets the recordingLocation property value. The location where the recording is located.
 func (m *RecordOperation) SetRecordingLocation(value *string)() {
-    m.recordingLocation = value
+    if m != nil {
+        m.recordingLocation = value
+    }
 }

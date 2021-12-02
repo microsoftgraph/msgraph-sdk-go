@@ -330,45 +330,67 @@ func (m *DeviceCompliancePolicySettingStateSummary) Serialize(writer i04eb5309ae
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetCompliantDeviceCount(value *int32)() {
-    m.compliantDeviceCount = value
+    if m != nil {
+        m.compliantDeviceCount = value
+    }
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. Number of conflict devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetConflictDeviceCount(value *int32)() {
-    m.conflictDeviceCount = value
+    if m != nil {
+        m.conflictDeviceCount = value
+    }
 }
 // SetDeviceComplianceSettingStates sets the deviceComplianceSettingStates property value. Not yet documented
 func (m *DeviceCompliancePolicySettingStateSummary) SetDeviceComplianceSettingStates(value []DeviceComplianceSettingState)() {
-    m.deviceComplianceSettingStates = value
+    if m != nil {
+        m.deviceComplianceSettingStates = value
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Number of error devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    if m != nil {
+        m.errorDeviceCount = value
+    }
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. Number of NonCompliant devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetNonCompliantDeviceCount(value *int32)() {
-    m.nonCompliantDeviceCount = value
+    if m != nil {
+        m.nonCompliantDeviceCount = value
+    }
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of not applicable devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetNotApplicableDeviceCount(value *int32)() {
-    m.notApplicableDeviceCount = value
+    if m != nil {
+        m.notApplicableDeviceCount = value
+    }
 }
 // SetPlatformType sets the platformType property value. Setting platform. Possible values are: android, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, all.
 func (m *DeviceCompliancePolicySettingStateSummary) SetPlatformType(value *PolicyPlatformType)() {
-    m.platformType = value
+    if m != nil {
+        m.platformType = value
+    }
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Number of remediated devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetRemediatedDeviceCount(value *int32)() {
-    m.remediatedDeviceCount = value
+    if m != nil {
+        m.remediatedDeviceCount = value
+    }
 }
 // SetSetting sets the setting property value. The setting class name and property name.
 func (m *DeviceCompliancePolicySettingStateSummary) SetSetting(value *string)() {
-    m.setting = value
+    if m != nil {
+        m.setting = value
+    }
 }
 // SetSettingName sets the settingName property value. Name of the setting.
 func (m *DeviceCompliancePolicySettingStateSummary) SetSettingName(value *string)() {
-    m.settingName = value
+    if m != nil {
+        m.settingName = value
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Number of unknown devices
 func (m *DeviceCompliancePolicySettingStateSummary) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    if m != nil {
+        m.unknownDeviceCount = value
+    }
 }

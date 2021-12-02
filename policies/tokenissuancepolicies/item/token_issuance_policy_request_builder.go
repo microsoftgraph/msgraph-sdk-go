@@ -40,7 +40,7 @@ type TokenIssuancePolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // TokenIssuancePolicyRequestBuilderPatchOptions options for Patch
 type TokenIssuancePolicyRequestBuilderPatchOptions struct {

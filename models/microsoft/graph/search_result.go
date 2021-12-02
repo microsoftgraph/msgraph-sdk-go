@@ -70,9 +70,13 @@ func (m *SearchResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SearchResult) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetOnClickTelemetryUrl sets the onClickTelemetryUrl property value. A callback URL that can be used to record telemetry information. The application should issue a GET on this URL if the user interacts with this item to improve the quality of results.
 func (m *SearchResult) SetOnClickTelemetryUrl(value *string)() {
-    m.onClickTelemetryUrl = value
+    if m != nil {
+        m.onClickTelemetryUrl = value
+    }
 }

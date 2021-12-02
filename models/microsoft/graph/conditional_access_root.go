@@ -103,9 +103,13 @@ func (m *ConditionalAccessRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetNamedLocations sets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
 func (m *ConditionalAccessRoot) SetNamedLocations(value []NamedLocation)() {
-    m.namedLocations = value
+    if m != nil {
+        m.namedLocations = value
+    }
 }
 // SetPolicies sets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 func (m *ConditionalAccessRoot) SetPolicies(value []ConditionalAccessPolicy)() {
-    m.policies = value
+    if m != nil {
+        m.policies = value
+    }
 }

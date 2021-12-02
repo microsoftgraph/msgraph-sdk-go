@@ -122,17 +122,25 @@ func (m *ModifiedProperty) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ModifiedProperty) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Indicates the property name of the target attribute that was changed.
 func (m *ModifiedProperty) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetNewValue sets the newValue property value. Indicates the updated value for the propery.
 func (m *ModifiedProperty) SetNewValue(value *string)() {
-    m.newValue = value
+    if m != nil {
+        m.newValue = value
+    }
 }
 // SetOldValue sets the oldValue property value. Indicates the previous value (before the update) for the property.
 func (m *ModifiedProperty) SetOldValue(value *string)() {
-    m.oldValue = value
+    if m != nil {
+        m.oldValue = value
+    }
 }

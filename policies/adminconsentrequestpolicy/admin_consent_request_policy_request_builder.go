@@ -40,7 +40,7 @@ type AdminConsentRequestPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AdminConsentRequestPolicyRequestBuilderPatchOptions options for Patch
 type AdminConsentRequestPolicyRequestBuilderPatchOptions struct {

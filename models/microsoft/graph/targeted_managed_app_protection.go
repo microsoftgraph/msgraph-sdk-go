@@ -94,9 +94,13 @@ func (m *TargetedManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d7
 }
 // SetAssignments sets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppProtection) SetAssignments(value []TargetedManagedAppPolicyAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetIsAssigned sets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *TargetedManagedAppProtection) SetIsAssigned(value *bool)() {
-    m.isAssigned = value
+    if m != nil {
+        m.isAssigned = value
+    }
 }

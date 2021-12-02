@@ -553,81 +553,121 @@ func (m *WorkbookRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAddress sets the address property value. Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.
 func (m *WorkbookRange) SetAddress(value *string)() {
-    m.address = value
+    if m != nil {
+        m.address = value
+    }
 }
 // SetAddressLocal sets the addressLocal property value. Represents range reference for the specified range in the language of the user. Read-only.
 func (m *WorkbookRange) SetAddressLocal(value *string)() {
-    m.addressLocal = value
+    if m != nil {
+        m.addressLocal = value
+    }
 }
 // SetCellCount sets the cellCount property value. Number of cells in the range. Read-only.
 func (m *WorkbookRange) SetCellCount(value *int32)() {
-    m.cellCount = value
+    if m != nil {
+        m.cellCount = value
+    }
 }
 // SetColumnCount sets the columnCount property value. Represents the total number of columns in the range. Read-only.
 func (m *WorkbookRange) SetColumnCount(value *int32)() {
-    m.columnCount = value
+    if m != nil {
+        m.columnCount = value
+    }
 }
 // SetColumnHidden sets the columnHidden property value. Represents if all columns of the current range are hidden.
 func (m *WorkbookRange) SetColumnHidden(value *bool)() {
-    m.columnHidden = value
+    if m != nil {
+        m.columnHidden = value
+    }
 }
 // SetColumnIndex sets the columnIndex property value. Represents the column number of the first cell in the range. Zero-indexed. Read-only.
 func (m *WorkbookRange) SetColumnIndex(value *int32)() {
-    m.columnIndex = value
+    if m != nil {
+        m.columnIndex = value
+    }
 }
 // SetFormat sets the format property value. Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.
 func (m *WorkbookRange) SetFormat(value *WorkbookRangeFormat)() {
-    m.format = value
+    if m != nil {
+        m.format = value
+    }
 }
 // SetFormulas sets the formulas property value. Represents the formula in A1-style notation.
 func (m *WorkbookRange) SetFormulas(value *Json)() {
-    m.formulas = value
+    if m != nil {
+        m.formulas = value
+    }
 }
 // SetFormulasLocal sets the formulasLocal property value. Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
 func (m *WorkbookRange) SetFormulasLocal(value *Json)() {
-    m.formulasLocal = value
+    if m != nil {
+        m.formulasLocal = value
+    }
 }
 // SetFormulasR1C1 sets the formulasR1C1 property value. Represents the formula in R1C1-style notation.
 func (m *WorkbookRange) SetFormulasR1C1(value *Json)() {
-    m.formulasR1C1 = value
+    if m != nil {
+        m.formulasR1C1 = value
+    }
 }
 // SetHidden sets the hidden property value. Represents if all cells of the current range are hidden. Read-only.
 func (m *WorkbookRange) SetHidden(value *bool)() {
-    m.hidden = value
+    if m != nil {
+        m.hidden = value
+    }
 }
 // SetNumberFormat sets the numberFormat property value. Represents Excel's number format code for the given cell.
 func (m *WorkbookRange) SetNumberFormat(value *Json)() {
-    m.numberFormat = value
+    if m != nil {
+        m.numberFormat = value
+    }
 }
 // SetRowCount sets the rowCount property value. Returns the total number of rows in the range. Read-only.
 func (m *WorkbookRange) SetRowCount(value *int32)() {
-    m.rowCount = value
+    if m != nil {
+        m.rowCount = value
+    }
 }
 // SetRowHidden sets the rowHidden property value. Represents if all rows of the current range are hidden.
 func (m *WorkbookRange) SetRowHidden(value *bool)() {
-    m.rowHidden = value
+    if m != nil {
+        m.rowHidden = value
+    }
 }
 // SetRowIndex sets the rowIndex property value. Returns the row number of the first cell in the range. Zero-indexed. Read-only.
 func (m *WorkbookRange) SetRowIndex(value *int32)() {
-    m.rowIndex = value
+    if m != nil {
+        m.rowIndex = value
+    }
 }
 // SetSort sets the sort property value. The worksheet containing the current range. Read-only.
 func (m *WorkbookRange) SetSort(value *WorkbookRangeSort)() {
-    m.sort = value
+    if m != nil {
+        m.sort = value
+    }
 }
 // SetText sets the text property value. Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
 func (m *WorkbookRange) SetText(value *Json)() {
-    m.text = value
+    if m != nil {
+        m.text = value
+    }
 }
 // SetValues sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
 func (m *WorkbookRange) SetValues(value *Json)() {
-    m.values = value
+    if m != nil {
+        m.values = value
+    }
 }
 // SetValueTypes sets the valueTypes property value. Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
 func (m *WorkbookRange) SetValueTypes(value *Json)() {
-    m.valueTypes = value
+    if m != nil {
+        m.valueTypes = value
+    }
 }
 // SetWorksheet sets the worksheet property value. The worksheet containing the current range. Read-only.
 func (m *WorkbookRange) SetWorksheet(value *WorkbookWorksheet)() {
-    m.worksheet = value
+    if m != nil {
+        m.worksheet = value
+    }
 }

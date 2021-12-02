@@ -406,7 +406,7 @@ type FunctionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // FunctionsRequestBuilderPatchOptions options for Patch
 type FunctionsRequestBuilderPatchOptions struct {

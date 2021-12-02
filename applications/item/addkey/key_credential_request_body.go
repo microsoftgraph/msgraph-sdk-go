@@ -123,17 +123,25 @@ func (m *KeyCredentialRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KeyCredentialRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetKeyCredential sets the keyCredential property value. 
 func (m *KeyCredentialRequestBody) SetKeyCredential(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.KeyCredential)() {
-    m.keyCredential = value
+    if m != nil {
+        m.keyCredential = value
+    }
 }
 // SetPasswordCredential sets the passwordCredential property value. 
 func (m *KeyCredentialRequestBody) SetPasswordCredential(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PasswordCredential)() {
-    m.passwordCredential = value
+    if m != nil {
+        m.passwordCredential = value
+    }
 }
 // SetProof sets the proof property value. 
 func (m *KeyCredentialRequestBody) SetProof(value *string)() {
-    m.proof = value
+    if m != nil {
+        m.proof = value
+    }
 }

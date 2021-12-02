@@ -280,33 +280,49 @@ func (m *Print) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Print) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConnectors sets the connectors property value. The list of available print connectors.
 func (m *Print) SetConnectors(value []PrintConnector)() {
-    m.connectors = value
+    if m != nil {
+        m.connectors = value
+    }
 }
 // SetOperations sets the operations property value. The list of print long running operations.
 func (m *Print) SetOperations(value []PrintOperation)() {
-    m.operations = value
+    if m != nil {
+        m.operations = value
+    }
 }
 // SetPrinters sets the printers property value. The list of printers registered in the tenant.
 func (m *Print) SetPrinters(value []Printer)() {
-    m.printers = value
+    if m != nil {
+        m.printers = value
+    }
 }
 // SetServices sets the services property value. The list of available Universal Print service endpoints.
 func (m *Print) SetServices(value []PrintService)() {
-    m.services = value
+    if m != nil {
+        m.services = value
+    }
 }
 // SetSettings sets the settings property value. Tenant-wide settings for the Universal Print service.
 func (m *Print) SetSettings(value *PrintSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }
 // SetShares sets the shares property value. The list of printer shares registered in the tenant.
 func (m *Print) SetShares(value []PrinterShare)() {
-    m.shares = value
+    if m != nil {
+        m.shares = value
+    }
 }
 // SetTaskDefinitions sets the taskDefinitions property value. List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 func (m *Print) SetTaskDefinitions(value []PrintTaskDefinition)() {
-    m.taskDefinitions = value
+    if m != nil {
+        m.taskDefinitions = value
+    }
 }

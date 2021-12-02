@@ -59,5 +59,7 @@ func (m *WorkbookRangeFill) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetColor sets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange')
 func (m *WorkbookRangeFill) SetColor(value *string)() {
-    m.color = value
+    if m != nil {
+        m.color = value
+    }
 }

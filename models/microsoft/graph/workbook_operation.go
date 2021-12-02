@@ -113,13 +113,19 @@ func (m *WorkbookOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetError sets the error property value. The error returned by the operation.
 func (m *WorkbookOperation) SetError(value *WorkbookOperationError)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetResourceLocation sets the resourceLocation property value. The resource URI for the result.
 func (m *WorkbookOperation) SetResourceLocation(value *string)() {
-    m.resourceLocation = value
+    if m != nil {
+        m.resourceLocation = value
+    }
 }
 // SetStatus sets the status property value. The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
 func (m *WorkbookOperation) SetStatus(value *WorkbookOperationStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

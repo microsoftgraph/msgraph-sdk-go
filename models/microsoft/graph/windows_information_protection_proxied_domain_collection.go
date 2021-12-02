@@ -105,13 +105,19 @@ func (m *WindowsInformationProtectionProxiedDomainCollection) Serialize(writer i
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionProxiedDomainCollection) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name
 func (m *WindowsInformationProtectionProxiedDomainCollection) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetProxiedDomains sets the proxiedDomains property value. Collection of proxied domains
 func (m *WindowsInformationProtectionProxiedDomainCollection) SetProxiedDomains(value []ProxiedDomain)() {
-    m.proxiedDomains = value
+    if m != nil {
+        m.proxiedDomains = value
+    }
 }

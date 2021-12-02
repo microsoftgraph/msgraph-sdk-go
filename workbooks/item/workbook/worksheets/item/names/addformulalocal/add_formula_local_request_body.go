@@ -122,17 +122,25 @@ func (m *AddFormulaLocalRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddFormulaLocalRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetComment sets the comment property value. 
 func (m *AddFormulaLocalRequestBody) SetComment(value *string)() {
-    m.comment = value
+    if m != nil {
+        m.comment = value
+    }
 }
 // SetFormula sets the formula property value. 
 func (m *AddFormulaLocalRequestBody) SetFormula(value *string)() {
-    m.formula = value
+    if m != nil {
+        m.formula = value
+    }
 }
 // SetName sets the name property value. 
 func (m *AddFormulaLocalRequestBody) SetName(value *string)() {
-    m.name = value
+    if m != nil {
+        m.name = value
+    }
 }

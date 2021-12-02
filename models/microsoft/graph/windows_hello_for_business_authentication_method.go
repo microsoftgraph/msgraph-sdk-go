@@ -140,17 +140,25 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) Serialize(writer i04eb5309
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time that this Windows Hello for Business key was registered.
 func (m *WindowsHelloForBusinessAuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDevice sets the device property value. The registered device on which this Windows Hello for Business key resides.
 func (m *WindowsHelloForBusinessAuthenticationMethod) SetDevice(value *Device)() {
-    m.device = value
+    if m != nil {
+        m.device = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the device on which Windows Hello for Business is registered
 func (m *WindowsHelloForBusinessAuthenticationMethod) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetKeyStrength sets the keyStrength property value. Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
 func (m *WindowsHelloForBusinessAuthenticationMethod) SetKeyStrength(value *AuthenticationMethodKeyStrength)() {
-    m.keyStrength = value
+    if m != nil {
+        m.keyStrength = value
+    }
 }

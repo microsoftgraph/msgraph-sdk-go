@@ -40,7 +40,7 @@ type ClaimsMappingPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ClaimsMappingPolicyRequestBuilderPatchOptions options for Patch
 type ClaimsMappingPolicyRequestBuilderPatchOptions struct {

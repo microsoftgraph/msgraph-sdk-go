@@ -85,9 +85,13 @@ func (m *EducationSubmissionResource) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAssignmentResourceUrl sets the assignmentResourceUrl property value. Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
 func (m *EducationSubmissionResource) SetAssignmentResourceUrl(value *string)() {
-    m.assignmentResourceUrl = value
+    if m != nil {
+        m.assignmentResourceUrl = value
+    }
 }
 // SetResource sets the resource property value. Resource object.
 func (m *EducationSubmissionResource) SetResource(value *EducationResource)() {
-    m.resource = value
+    if m != nil {
+        m.resource = value
+    }
 }

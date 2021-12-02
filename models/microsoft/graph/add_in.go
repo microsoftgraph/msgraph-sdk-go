@@ -131,17 +131,25 @@ func (m *AddIn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AddIn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetId sets the id property value. 
 func (m *AddIn) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetProperties sets the properties property value. 
 func (m *AddIn) SetProperties(value []KeyValue)() {
-    m.properties = value
+    if m != nil {
+        m.properties = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. 
 func (m *AddIn) SetType_escaped(value *string)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

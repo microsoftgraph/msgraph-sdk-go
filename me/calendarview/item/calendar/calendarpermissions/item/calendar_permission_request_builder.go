@@ -38,7 +38,7 @@ type CalendarPermissionRequestBuilderGetOptions struct {
 // CalendarPermissionRequestBuilderGetQueryParameters the permissions of the users with whom the calendar is shared.
 type CalendarPermissionRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // CalendarPermissionRequestBuilderPatchOptions options for Patch
 type CalendarPermissionRequestBuilderPatchOptions struct {

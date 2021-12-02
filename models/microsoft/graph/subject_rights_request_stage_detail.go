@@ -126,17 +126,25 @@ func (m *SubjectRightsRequestStageDetail) Serialize(writer i04eb5309aeaafadd2837
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubjectRightsRequestStageDetail) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetError sets the error property value. Describes the error, if any, for the current stage.
 func (m *SubjectRightsRequestStageDetail) SetError(value *PublicError)() {
-    m.error = value
+    if m != nil {
+        m.error = value
+    }
 }
 // SetStage sets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) SetStage(value *SubjectRightsRequestStage)() {
-    m.stage = value
+    if m != nil {
+        m.stage = value
+    }
 }
 // SetStatus sets the status property value. Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
 func (m *SubjectRightsRequestStageDetail) SetStatus(value *SubjectRightsRequestStageStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }

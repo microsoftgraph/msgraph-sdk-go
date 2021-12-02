@@ -408,61 +408,91 @@ func (m *IntuneBrand) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IntuneBrand) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContactITEmailAddress sets the contactITEmailAddress property value. Email address of the person/organization responsible for IT support.
 func (m *IntuneBrand) SetContactITEmailAddress(value *string)() {
-    m.contactITEmailAddress = value
+    if m != nil {
+        m.contactITEmailAddress = value
+    }
 }
 // SetContactITName sets the contactITName property value. Name of the person/organization responsible for IT support.
 func (m *IntuneBrand) SetContactITName(value *string)() {
-    m.contactITName = value
+    if m != nil {
+        m.contactITName = value
+    }
 }
 // SetContactITNotes sets the contactITNotes property value. Text comments regarding the person/organization responsible for IT support.
 func (m *IntuneBrand) SetContactITNotes(value *string)() {
-    m.contactITNotes = value
+    if m != nil {
+        m.contactITNotes = value
+    }
 }
 // SetContactITPhoneNumber sets the contactITPhoneNumber property value. Phone number of the person/organization responsible for IT support.
 func (m *IntuneBrand) SetContactITPhoneNumber(value *string)() {
-    m.contactITPhoneNumber = value
+    if m != nil {
+        m.contactITPhoneNumber = value
+    }
 }
 // SetDarkBackgroundLogo sets the darkBackgroundLogo property value. Logo image displayed in Company Portal apps which have a dark background behind the logo.
 func (m *IntuneBrand) SetDarkBackgroundLogo(value *MimeContent)() {
-    m.darkBackgroundLogo = value
+    if m != nil {
+        m.darkBackgroundLogo = value
+    }
 }
 // SetDisplayName sets the displayName property value. Company/organization name that is displayed to end users.
 func (m *IntuneBrand) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetLightBackgroundLogo sets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo.
 func (m *IntuneBrand) SetLightBackgroundLogo(value *MimeContent)() {
-    m.lightBackgroundLogo = value
+    if m != nil {
+        m.lightBackgroundLogo = value
+    }
 }
 // SetOnlineSupportSiteName sets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site.
 func (m *IntuneBrand) SetOnlineSupportSiteName(value *string)() {
-    m.onlineSupportSiteName = value
+    if m != nil {
+        m.onlineSupportSiteName = value
+    }
 }
 // SetOnlineSupportSiteUrl sets the onlineSupportSiteUrl property value. URL to the company/organization’s IT helpdesk site.
 func (m *IntuneBrand) SetOnlineSupportSiteUrl(value *string)() {
-    m.onlineSupportSiteUrl = value
+    if m != nil {
+        m.onlineSupportSiteUrl = value
+    }
 }
 // SetPrivacyUrl sets the privacyUrl property value. URL to the company/organization’s privacy policy.
 func (m *IntuneBrand) SetPrivacyUrl(value *string)() {
-    m.privacyUrl = value
+    if m != nil {
+        m.privacyUrl = value
+    }
 }
 // SetShowDisplayNameNextToLogo sets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
 func (m *IntuneBrand) SetShowDisplayNameNextToLogo(value *bool)() {
-    m.showDisplayNameNextToLogo = value
+    if m != nil {
+        m.showDisplayNameNextToLogo = value
+    }
 }
 // SetShowLogo sets the showLogo property value. Boolean that represents whether the administrator-supplied logo images are shown or not shown.
 func (m *IntuneBrand) SetShowLogo(value *bool)() {
-    m.showLogo = value
+    if m != nil {
+        m.showLogo = value
+    }
 }
 // SetShowNameNextToLogo sets the showNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
 func (m *IntuneBrand) SetShowNameNextToLogo(value *bool)() {
-    m.showNameNextToLogo = value
+    if m != nil {
+        m.showNameNextToLogo = value
+    }
 }
 // SetThemeColor sets the themeColor property value. Primary theme color used in the Company Portal applications and web portal.
 func (m *IntuneBrand) SetThemeColor(value *RgbColor)() {
-    m.themeColor = value
+    if m != nil {
+        m.themeColor = value
+    }
 }

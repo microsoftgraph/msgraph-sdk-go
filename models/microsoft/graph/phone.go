@@ -150,21 +150,31 @@ func (m *Phone) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Phone) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLanguage sets the language property value. 
 func (m *Phone) SetLanguage(value *string)() {
-    m.language = value
+    if m != nil {
+        m.language = value
+    }
 }
 // SetNumber sets the number property value. The phone number.
 func (m *Phone) SetNumber(value *string)() {
-    m.number = value
+    if m != nil {
+        m.number = value
+    }
 }
 // SetRegion sets the region property value. 
 func (m *Phone) SetRegion(value *string)() {
-    m.region = value
+    if m != nil {
+        m.region = value
+    }
 }
 // SetType_escaped sets the type_escaped property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) SetType_escaped(value *PhoneType)() {
-    m.type_escaped = value
+    if m != nil {
+        m.type_escaped = value
+    }
 }

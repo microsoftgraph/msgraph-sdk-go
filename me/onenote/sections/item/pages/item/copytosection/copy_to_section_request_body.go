@@ -148,21 +148,31 @@ func (m *CopyToSectionRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c84
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CopyToSectionRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetGroupId sets the groupId property value. 
 func (m *CopyToSectionRequestBody) SetGroupId(value *string)() {
-    m.groupId = value
+    if m != nil {
+        m.groupId = value
+    }
 }
 // SetId sets the id property value. 
 func (m *CopyToSectionRequestBody) SetId(value *string)() {
-    m.id = value
+    if m != nil {
+        m.id = value
+    }
 }
 // SetSiteCollectionId sets the siteCollectionId property value. 
 func (m *CopyToSectionRequestBody) SetSiteCollectionId(value *string)() {
-    m.siteCollectionId = value
+    if m != nil {
+        m.siteCollectionId = value
+    }
 }
 // SetSiteId sets the siteId property value. 
 func (m *CopyToSectionRequestBody) SetSiteId(value *string)() {
-    m.siteId = value
+    if m != nil {
+        m.siteId = value
+    }
 }

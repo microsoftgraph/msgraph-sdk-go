@@ -246,33 +246,49 @@ func (m *MeetingTimeSuggestion) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MeetingTimeSuggestion) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttendeeAvailability sets the attendeeAvailability property value. An array that shows the availability status of each attendee for this meeting suggestion.
 func (m *MeetingTimeSuggestion) SetAttendeeAvailability(value []AttendeeAvailability)() {
-    m.attendeeAvailability = value
+    if m != nil {
+        m.attendeeAvailability = value
+    }
 }
 // SetConfidence sets the confidence property value. A percentage that represents the likelhood of all the attendees attending.
 func (m *MeetingTimeSuggestion) SetConfidence(value *float64)() {
-    m.confidence = value
+    if m != nil {
+        m.confidence = value
+    }
 }
 // SetLocations sets the locations property value. An array that specifies the name and geographic location of each meeting location for this meeting suggestion.
 func (m *MeetingTimeSuggestion) SetLocations(value []Location)() {
-    m.locations = value
+    if m != nil {
+        m.locations = value
+    }
 }
 // SetMeetingTimeSlot sets the meetingTimeSlot property value. A time period suggested for the meeting.
 func (m *MeetingTimeSuggestion) SetMeetingTimeSlot(value *TimeSlot)() {
-    m.meetingTimeSlot = value
+    if m != nil {
+        m.meetingTimeSlot = value
+    }
 }
 // SetOrder sets the order property value. Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
 func (m *MeetingTimeSuggestion) SetOrder(value *int32)() {
-    m.order = value
+    if m != nil {
+        m.order = value
+    }
 }
 // SetOrganizerAvailability sets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *MeetingTimeSuggestion) SetOrganizerAvailability(value *FreeBusyStatus)() {
-    m.organizerAvailability = value
+    if m != nil {
+        m.organizerAvailability = value
+    }
 }
 // SetSuggestionReason sets the suggestionReason property value. Reason for suggesting the meeting time.
 func (m *MeetingTimeSuggestion) SetSuggestionReason(value *string)() {
-    m.suggestionReason = value
+    if m != nil {
+        m.suggestionReason = value
+    }
 }

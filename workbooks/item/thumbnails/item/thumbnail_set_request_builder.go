@@ -40,7 +40,7 @@ type ThumbnailSetRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ThumbnailSetRequestBuilderPatchOptions options for Patch
 type ThumbnailSetRequestBuilderPatchOptions struct {

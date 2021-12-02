@@ -267,37 +267,55 @@ func (m *WorkbookChartDataLabels) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetFormat sets the format property value. Represents the format of chart data labels, which includes fill and font formatting. Read-only.
 func (m *WorkbookChartDataLabels) SetFormat(value *WorkbookChartDataLabelFormat)() {
-    m.format = value
+    if m != nil {
+        m.format = value
+    }
 }
 // SetPosition sets the position property value. DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.
 func (m *WorkbookChartDataLabels) SetPosition(value *string)() {
-    m.position = value
+    if m != nil {
+        m.position = value
+    }
 }
 // SetSeparator sets the separator property value. String representing the separator used for the data labels on a chart.
 func (m *WorkbookChartDataLabels) SetSeparator(value *string)() {
-    m.separator = value
+    if m != nil {
+        m.separator = value
+    }
 }
 // SetShowBubbleSize sets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.
 func (m *WorkbookChartDataLabels) SetShowBubbleSize(value *bool)() {
-    m.showBubbleSize = value
+    if m != nil {
+        m.showBubbleSize = value
+    }
 }
 // SetShowCategoryName sets the showCategoryName property value. Boolean value representing if the data label category name is visible or not.
 func (m *WorkbookChartDataLabels) SetShowCategoryName(value *bool)() {
-    m.showCategoryName = value
+    if m != nil {
+        m.showCategoryName = value
+    }
 }
 // SetShowLegendKey sets the showLegendKey property value. Boolean value representing if the data label legend key is visible or not.
 func (m *WorkbookChartDataLabels) SetShowLegendKey(value *bool)() {
-    m.showLegendKey = value
+    if m != nil {
+        m.showLegendKey = value
+    }
 }
 // SetShowPercentage sets the showPercentage property value. Boolean value representing if the data label percentage is visible or not.
 func (m *WorkbookChartDataLabels) SetShowPercentage(value *bool)() {
-    m.showPercentage = value
+    if m != nil {
+        m.showPercentage = value
+    }
 }
 // SetShowSeriesName sets the showSeriesName property value. Boolean value representing if the data label series name is visible or not.
 func (m *WorkbookChartDataLabels) SetShowSeriesName(value *bool)() {
-    m.showSeriesName = value
+    if m != nil {
+        m.showSeriesName = value
+    }
 }
 // SetShowValue sets the showValue property value. Boolean value representing if the data label value is visible or not.
 func (m *WorkbookChartDataLabels) SetShowValue(value *bool)() {
-    m.showValue = value
+    if m != nil {
+        m.showValue = value
+    }
 }

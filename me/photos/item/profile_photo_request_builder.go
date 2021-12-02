@@ -39,7 +39,7 @@ type ProfilePhotoRequestBuilderGetOptions struct {
 // ProfilePhotoRequestBuilderGetQueryParameters read-only. Nullable.
 type ProfilePhotoRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ProfilePhotoRequestBuilderPatchOptions options for Patch
 type ProfilePhotoRequestBuilderPatchOptions struct {

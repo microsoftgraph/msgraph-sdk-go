@@ -200,29 +200,43 @@ func (m *PlannerCategoryDescriptions) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerCategoryDescriptions) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCategory1 sets the category1 property value. The label associated with Category 1
 func (m *PlannerCategoryDescriptions) SetCategory1(value *string)() {
-    m.category1 = value
+    if m != nil {
+        m.category1 = value
+    }
 }
 // SetCategory2 sets the category2 property value. The label associated with Category 2
 func (m *PlannerCategoryDescriptions) SetCategory2(value *string)() {
-    m.category2 = value
+    if m != nil {
+        m.category2 = value
+    }
 }
 // SetCategory3 sets the category3 property value. The label associated with Category 3
 func (m *PlannerCategoryDescriptions) SetCategory3(value *string)() {
-    m.category3 = value
+    if m != nil {
+        m.category3 = value
+    }
 }
 // SetCategory4 sets the category4 property value. The label associated with Category 4
 func (m *PlannerCategoryDescriptions) SetCategory4(value *string)() {
-    m.category4 = value
+    if m != nil {
+        m.category4 = value
+    }
 }
 // SetCategory5 sets the category5 property value. The label associated with Category 5
 func (m *PlannerCategoryDescriptions) SetCategory5(value *string)() {
-    m.category5 = value
+    if m != nil {
+        m.category5 = value
+    }
 }
 // SetCategory6 sets the category6 property value. The label associated with Category 6
 func (m *PlannerCategoryDescriptions) SetCategory6(value *string)() {
-    m.category6 = value
+    if m != nil {
+        m.category6 = value
+    }
 }

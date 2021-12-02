@@ -85,9 +85,13 @@ func (m *DriveItemVersion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetContent sets the content property value. The content stream for this version of the item.
 func (m *DriveItemVersion) SetContent(value []byte)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }
 // SetSize sets the size property value. Indicates the size of the content stream for this version of the item.
 func (m *DriveItemVersion) SetSize(value *int64)() {
-    m.size = value
+    if m != nil {
+        m.size = value
+    }
 }

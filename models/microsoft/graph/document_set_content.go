@@ -122,17 +122,25 @@ func (m *DocumentSetContent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DocumentSetContent) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentType sets the contentType property value. Content type information of the file.
 func (m *DocumentSetContent) SetContentType(value *ContentTypeInfo)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }
 // SetFileName sets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set.
 func (m *DocumentSetContent) SetFileName(value *string)() {
-    m.fileName = value
+    if m != nil {
+        m.fileName = value
+    }
 }
 // SetFolderName sets the folderName property value. Folder name in which the file will be placed when a new document set is created in the library.
 func (m *DocumentSetContent) SetFolderName(value *string)() {
-    m.folderName = value
+    if m != nil {
+        m.folderName = value
+    }
 }

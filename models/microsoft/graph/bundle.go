@@ -96,13 +96,19 @@ func (m *Bundle) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Bundle) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlbum sets the album property value. If the bundle is an [album][], then the album property is included
 func (m *Bundle) SetAlbum(value *Album)() {
-    m.album = value
+    if m != nil {
+        m.album = value
+    }
 }
 // SetChildCount sets the childCount property value. Number of children contained immediately within this container.
 func (m *Bundle) SetChildCount(value *int32)() {
-    m.childCount = value
+    if m != nil {
+        m.childCount = value
+    }
 }

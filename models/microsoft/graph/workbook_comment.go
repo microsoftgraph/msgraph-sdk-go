@@ -120,13 +120,19 @@ func (m *WorkbookComment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetContent sets the content property value. The content of comment.
 func (m *WorkbookComment) SetContent(value *string)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }
 // SetContentType sets the contentType property value. Indicates the type for the comment.
 func (m *WorkbookComment) SetContentType(value *string)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }
 // SetReplies sets the replies property value. Read-only. Nullable.
 func (m *WorkbookComment) SetReplies(value []WorkbookCommentReply)() {
-    m.replies = value
+    if m != nil {
+        m.replies = value
+    }
 }

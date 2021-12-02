@@ -97,13 +97,19 @@ func (m *IncompleteData) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IncompleteData) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMissingDataBeforeDateTime sets the missingDataBeforeDateTime property value. The service does not have source data before the specified time.
 func (m *IncompleteData) SetMissingDataBeforeDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.missingDataBeforeDateTime = value
+    if m != nil {
+        m.missingDataBeforeDateTime = value
+    }
 }
 // SetWasThrottled sets the wasThrottled property value. Some data was not recorded due to excessive activity.
 func (m *IncompleteData) SetWasThrottled(value *bool)() {
-    m.wasThrottled = value
+    if m != nil {
+        m.wasThrottled = value
+    }
 }

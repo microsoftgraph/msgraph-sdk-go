@@ -40,7 +40,7 @@ type DeviceStatusOverviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // DeviceStatusOverviewRequestBuilderPatchOptions options for Patch
 type DeviceStatusOverviewRequestBuilderPatchOptions struct {

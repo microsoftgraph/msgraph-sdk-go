@@ -174,25 +174,37 @@ func (m *TeamMessagingSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamMessagingSettings) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowChannelMentions sets the allowChannelMentions property value. If set to true, @channel mentions are allowed.
 func (m *TeamMessagingSettings) SetAllowChannelMentions(value *bool)() {
-    m.allowChannelMentions = value
+    if m != nil {
+        m.allowChannelMentions = value
+    }
 }
 // SetAllowOwnerDeleteMessages sets the allowOwnerDeleteMessages property value. If set to true, owners can delete any message.
 func (m *TeamMessagingSettings) SetAllowOwnerDeleteMessages(value *bool)() {
-    m.allowOwnerDeleteMessages = value
+    if m != nil {
+        m.allowOwnerDeleteMessages = value
+    }
 }
 // SetAllowTeamMentions sets the allowTeamMentions property value. If set to true, @team mentions are allowed.
 func (m *TeamMessagingSettings) SetAllowTeamMentions(value *bool)() {
-    m.allowTeamMentions = value
+    if m != nil {
+        m.allowTeamMentions = value
+    }
 }
 // SetAllowUserDeleteMessages sets the allowUserDeleteMessages property value. If set to true, users can delete their messages.
 func (m *TeamMessagingSettings) SetAllowUserDeleteMessages(value *bool)() {
-    m.allowUserDeleteMessages = value
+    if m != nil {
+        m.allowUserDeleteMessages = value
+    }
 }
 // SetAllowUserEditMessages sets the allowUserEditMessages property value. If set to true, users can edit their messages.
 func (m *TeamMessagingSettings) SetAllowUserEditMessages(value *bool)() {
-    m.allowUserEditMessages = value
+    if m != nil {
+        m.allowUserEditMessages = value
+    }
 }

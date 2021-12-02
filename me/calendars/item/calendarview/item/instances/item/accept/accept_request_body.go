@@ -96,13 +96,19 @@ func (m *AcceptRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AcceptRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetComment sets the Comment property value. 
 func (m *AcceptRequestBody) SetComment(value *string)() {
-    m.comment = value
+    if m != nil {
+        m.comment = value
+    }
 }
 // SetSendResponse sets the SendResponse property value. 
 func (m *AcceptRequestBody) SetSendResponse(value *bool)() {
-    m.sendResponse = value
+    if m != nil {
+        m.sendResponse = value
+    }
 }

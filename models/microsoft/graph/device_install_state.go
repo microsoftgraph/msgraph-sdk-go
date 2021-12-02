@@ -244,33 +244,49 @@ func (m *DeviceInstallState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetDeviceId sets the deviceId property value. Device Id.
 func (m *DeviceInstallState) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetDeviceName sets the deviceName property value. Device name.
 func (m *DeviceInstallState) SetDeviceName(value *string)() {
-    m.deviceName = value
+    if m != nil {
+        m.deviceName = value
+    }
 }
 // SetErrorCode sets the errorCode property value. The error code for install failures.
 func (m *DeviceInstallState) SetErrorCode(value *string)() {
-    m.errorCode = value
+    if m != nil {
+        m.errorCode = value
+    }
 }
 // SetInstallState sets the installState property value. The install state of the eBook. Possible values are: notApplicable, installed, failed, notInstalled, uninstallFailed, unknown.
 func (m *DeviceInstallState) SetInstallState(value *InstallState)() {
-    m.installState = value
+    if m != nil {
+        m.installState = value
+    }
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last sync date and time.
 func (m *DeviceInstallState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastSyncDateTime = value
+    if m != nil {
+        m.lastSyncDateTime = value
+    }
 }
 // SetOsDescription sets the osDescription property value. OS Description.
 func (m *DeviceInstallState) SetOsDescription(value *string)() {
-    m.osDescription = value
+    if m != nil {
+        m.osDescription = value
+    }
 }
 // SetOsVersion sets the osVersion property value. OS Version.
 func (m *DeviceInstallState) SetOsVersion(value *string)() {
-    m.osVersion = value
+    if m != nil {
+        m.osVersion = value
+    }
 }
 // SetUserName sets the userName property value. Device User Name.
 func (m *DeviceInstallState) SetUserName(value *string)() {
-    m.userName = value
+    if m != nil {
+        m.userName = value
+    }
 }

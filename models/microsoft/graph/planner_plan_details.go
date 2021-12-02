@@ -85,9 +85,13 @@ func (m *PlannerPlanDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetCategoryDescriptions sets the categoryDescriptions property value. An object that specifies the descriptions of the six categories that can be associated with tasks in the plan
 func (m *PlannerPlanDetails) SetCategoryDescriptions(value *PlannerCategoryDescriptions)() {
-    m.categoryDescriptions = value
+    if m != nil {
+        m.categoryDescriptions = value
+    }
 }
 // SetSharedWith sets the sharedWith property value. Set of user ids that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group.
 func (m *PlannerPlanDetails) SetSharedWith(value *PlannerUserIds)() {
-    m.sharedWith = value
+    if m != nil {
+        m.sharedWith = value
+    }
 }

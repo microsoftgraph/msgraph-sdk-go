@@ -148,21 +148,31 @@ func (m *SignInLocation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignInLocation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCity sets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) SetCity(value *string)() {
-    m.city = value
+    if m != nil {
+        m.city = value
+    }
 }
 // SetCountryOrRegion sets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) SetCountryOrRegion(value *string)() {
-    m.countryOrRegion = value
+    if m != nil {
+        m.countryOrRegion = value
+    }
 }
 // SetGeoCoordinates sets the geoCoordinates property value. Provides the latitude, longitude and altitude where the sign-in originated.
 func (m *SignInLocation) SetGeoCoordinates(value *GeoCoordinates)() {
-    m.geoCoordinates = value
+    if m != nil {
+        m.geoCoordinates = value
+    }
 }
 // SetState sets the state property value. Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }

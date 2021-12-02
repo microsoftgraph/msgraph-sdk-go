@@ -139,17 +139,25 @@ func (m *PlannerTaskDetails) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
 }
 // SetChecklist sets the checklist property value. The collection of checklist items on the task.
 func (m *PlannerTaskDetails) SetChecklist(value *PlannerChecklistItems)() {
-    m.checklist = value
+    if m != nil {
+        m.checklist = value
+    }
 }
 // SetDescription sets the description property value. Description of the task
 func (m *PlannerTaskDetails) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
 func (m *PlannerTaskDetails) SetPreviewType(value *PlannerPreviewType)() {
-    m.previewType = value
+    if m != nil {
+        m.previewType = value
+    }
 }
 // SetReferences sets the references property value. The collection of references on the task.
 func (m *PlannerTaskDetails) SetReferences(value *PlannerExternalReferences)() {
-    m.references = value
+    if m != nil {
+        m.references = value
+    }
 }

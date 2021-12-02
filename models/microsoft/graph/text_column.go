@@ -174,25 +174,37 @@ func (m *TextColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TextColumn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowMultipleLines sets the allowMultipleLines property value. Whether to allow multiple lines of text.
 func (m *TextColumn) SetAllowMultipleLines(value *bool)() {
-    m.allowMultipleLines = value
+    if m != nil {
+        m.allowMultipleLines = value
+    }
 }
 // SetAppendChangesToExistingText sets the appendChangesToExistingText property value. Whether updates to this column should replace existing text, or append to it.
 func (m *TextColumn) SetAppendChangesToExistingText(value *bool)() {
-    m.appendChangesToExistingText = value
+    if m != nil {
+        m.appendChangesToExistingText = value
+    }
 }
 // SetLinesForEditing sets the linesForEditing property value. The size of the text box.
 func (m *TextColumn) SetLinesForEditing(value *int32)() {
-    m.linesForEditing = value
+    if m != nil {
+        m.linesForEditing = value
+    }
 }
 // SetMaxLength sets the maxLength property value. The maximum number of characters for the value.
 func (m *TextColumn) SetMaxLength(value *int32)() {
-    m.maxLength = value
+    if m != nil {
+        m.maxLength = value
+    }
 }
 // SetTextType sets the textType property value. The type of text being stored. Must be one of plain or richText
 func (m *TextColumn) SetTextType(value *string)() {
-    m.textType = value
+    if m != nil {
+        m.textType = value
+    }
 }

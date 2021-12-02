@@ -96,13 +96,19 @@ func (m *RemoveKeyRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoveKeyRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetKeyId sets the keyId property value. 
 func (m *RemoveKeyRequestBody) SetKeyId(value *string)() {
-    m.keyId = value
+    if m != nil {
+        m.keyId = value
+    }
 }
 // SetProof sets the proof property value. 
 func (m *RemoveKeyRequestBody) SetProof(value *string)() {
-    m.proof = value
+    if m != nil {
+        m.proof = value
+    }
 }

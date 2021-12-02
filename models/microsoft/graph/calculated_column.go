@@ -122,17 +122,25 @@ func (m *CalculatedColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CalculatedColumn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFormat sets the format property value. For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
 func (m *CalculatedColumn) SetFormat(value *string)() {
-    m.format = value
+    if m != nil {
+        m.format = value
+    }
 }
 // SetFormula sets the formula property value. The formula used to compute the value for this column.
 func (m *CalculatedColumn) SetFormula(value *string)() {
-    m.formula = value
+    if m != nil {
+        m.formula = value
+    }
 }
 // SetOutputType sets the outputType property value. The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
 func (m *CalculatedColumn) SetOutputType(value *string)() {
-    m.outputType = value
+    if m != nil {
+        m.outputType = value
+    }
 }

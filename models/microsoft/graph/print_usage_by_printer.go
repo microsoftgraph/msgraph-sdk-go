@@ -59,5 +59,7 @@ func (m *PrintUsageByPrinter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetPrinterId sets the printerId property value. 
 func (m *PrintUsageByPrinter) SetPrinterId(value *string)() {
-    m.printerId = value
+    if m != nil {
+        m.printerId = value
+    }
 }

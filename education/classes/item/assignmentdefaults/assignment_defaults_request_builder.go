@@ -40,7 +40,7 @@ type AssignmentDefaultsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // AssignmentDefaultsRequestBuilderPatchOptions options for Patch
 type AssignmentDefaultsRequestBuilderPatchOptions struct {

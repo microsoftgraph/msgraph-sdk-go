@@ -74,9 +74,13 @@ func (m *CheckMemberObjectsRequestBody) Serialize(writer i04eb5309aeaafadd28374d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CheckMemberObjectsRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIds sets the ids property value. 
 func (m *CheckMemberObjectsRequestBody) SetIds(value []string)() {
-    m.ids = value
+    if m != nil {
+        m.ids = value
+    }
 }

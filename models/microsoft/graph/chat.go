@@ -280,33 +280,49 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
 }
 // SetChatType sets the chatType property value. Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
 func (m *Chat) SetChatType(value *ChatType)() {
-    m.chatType = value
+    if m != nil {
+        m.chatType = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date and time at which the chat was created. Read-only.
 func (m *Chat) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetInstalledApps sets the installedApps property value. A collection of all the apps in the chat. Nullable.
 func (m *Chat) SetInstalledApps(value []TeamsAppInstallation)() {
-    m.installedApps = value
+    if m != nil {
+        m.installedApps = value
+    }
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
 func (m *Chat) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastUpdatedDateTime = value
+    if m != nil {
+        m.lastUpdatedDateTime = value
+    }
 }
 // SetMembers sets the members property value. A collection of all the members in the chat. Nullable.
 func (m *Chat) SetMembers(value []ConversationMember)() {
-    m.members = value
+    if m != nil {
+        m.members = value
+    }
 }
 // SetMessages sets the messages property value. A collection of all the messages in the chat. Nullable.
 func (m *Chat) SetMessages(value []ChatMessage)() {
-    m.messages = value
+    if m != nil {
+        m.messages = value
+    }
 }
 // SetTabs sets the tabs property value. 
 func (m *Chat) SetTabs(value []TeamsTab)() {
-    m.tabs = value
+    if m != nil {
+        m.tabs = value
+    }
 }
 // SetTopic sets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.
 func (m *Chat) SetTopic(value *string)() {
-    m.topic = value
+    if m != nil {
+        m.topic = value
+    }
 }

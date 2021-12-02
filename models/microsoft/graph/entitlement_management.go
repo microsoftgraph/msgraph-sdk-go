@@ -269,29 +269,43 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. 
 func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Approval)() {
-    m.accessPackageAssignmentApprovals = value
+    if m != nil {
+        m.accessPackageAssignmentApprovals = value
+    }
 }
 // SetAccessPackages sets the accessPackages property value. 
 func (m *EntitlementManagement) SetAccessPackages(value []AccessPackage)() {
-    m.accessPackages = value
+    if m != nil {
+        m.accessPackages = value
+    }
 }
 // SetAssignmentRequests sets the assignmentRequests property value. 
 func (m *EntitlementManagement) SetAssignmentRequests(value []AccessPackageAssignmentRequest)() {
-    m.assignmentRequests = value
+    if m != nil {
+        m.assignmentRequests = value
+    }
 }
 // SetAssignments sets the assignments property value. 
 func (m *EntitlementManagement) SetAssignments(value []AccessPackageAssignment)() {
-    m.assignments = value
+    if m != nil {
+        m.assignments = value
+    }
 }
 // SetCatalogs sets the catalogs property value. 
 func (m *EntitlementManagement) SetCatalogs(value []AccessPackageCatalog)() {
-    m.catalogs = value
+    if m != nil {
+        m.catalogs = value
+    }
 }
 // SetConnectedOrganizations sets the connectedOrganizations property value. 
 func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrganization)() {
-    m.connectedOrganizations = value
+    if m != nil {
+        m.connectedOrganizations = value
+    }
 }
 // SetSettings sets the settings property value. 
 func (m *EntitlementManagement) SetSettings(value *EntitlementManagementSettings)() {
-    m.settings = value
+    if m != nil {
+        m.settings = value
+    }
 }

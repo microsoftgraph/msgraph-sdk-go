@@ -123,17 +123,25 @@ func (m *StandardizeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *StandardizeRequestBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMean sets the mean property value. 
 func (m *StandardizeRequestBody) SetMean(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.mean = value
+    if m != nil {
+        m.mean = value
+    }
 }
 // SetStandardDev sets the standardDev property value. 
 func (m *StandardizeRequestBody) SetStandardDev(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.standardDev = value
+    if m != nil {
+        m.standardDev = value
+    }
 }
 // SetX sets the x property value. 
 func (m *StandardizeRequestBody) SetX(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
-    m.x = value
+    if m != nil {
+        m.x = value
+    }
 }

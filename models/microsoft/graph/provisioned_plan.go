@@ -122,17 +122,25 @@ func (m *ProvisionedPlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ProvisionedPlan) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCapabilityStatus sets the capabilityStatus property value. For example, 'Enabled'.
 func (m *ProvisionedPlan) SetCapabilityStatus(value *string)() {
-    m.capabilityStatus = value
+    if m != nil {
+        m.capabilityStatus = value
+    }
 }
 // SetProvisioningStatus sets the provisioningStatus property value. For example, 'Success'.
 func (m *ProvisionedPlan) SetProvisioningStatus(value *string)() {
-    m.provisioningStatus = value
+    if m != nil {
+        m.provisioningStatus = value
+    }
 }
 // SetService sets the service property value. The name of the service; for example, 'AccessControlS2S'
 func (m *ProvisionedPlan) SetService(value *string)() {
-    m.service = value
+    if m != nil {
+        m.service = value
+    }
 }

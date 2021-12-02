@@ -200,29 +200,43 @@ func (m *PhysicalOfficeAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PhysicalOfficeAddress) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCity sets the city property value. The city.
 func (m *PhysicalOfficeAddress) SetCity(value *string)() {
-    m.city = value
+    if m != nil {
+        m.city = value
+    }
 }
 // SetCountryOrRegion sets the countryOrRegion property value. The country or region. It's a free-format string value, for example, 'United States'.
 func (m *PhysicalOfficeAddress) SetCountryOrRegion(value *string)() {
-    m.countryOrRegion = value
+    if m != nil {
+        m.countryOrRegion = value
+    }
 }
 // SetOfficeLocation sets the officeLocation property value. Office location such as building and office number for an organizational contact.
 func (m *PhysicalOfficeAddress) SetOfficeLocation(value *string)() {
-    m.officeLocation = value
+    if m != nil {
+        m.officeLocation = value
+    }
 }
 // SetPostalCode sets the postalCode property value. The postal code.
 func (m *PhysicalOfficeAddress) SetPostalCode(value *string)() {
-    m.postalCode = value
+    if m != nil {
+        m.postalCode = value
+    }
 }
 // SetState sets the state property value. The state.
 func (m *PhysicalOfficeAddress) SetState(value *string)() {
-    m.state = value
+    if m != nil {
+        m.state = value
+    }
 }
 // SetStreet sets the street property value. The street.
 func (m *PhysicalOfficeAddress) SetStreet(value *string)() {
-    m.street = value
+    if m != nil {
+        m.street = value
+    }
 }

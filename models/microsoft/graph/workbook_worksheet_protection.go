@@ -85,9 +85,13 @@ func (m *WorkbookWorksheetProtection) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetOptions sets the options property value. Sheet protection options. Read-only.
 func (m *WorkbookWorksheetProtection) SetOptions(value *WorkbookWorksheetProtectionOptions)() {
-    m.options = value
+    if m != nil {
+        m.options = value
+    }
 }
 // SetProtected sets the protected property value. Indicates if the worksheet is protected.  Read-only.
 func (m *WorkbookWorksheetProtection) SetProtected(value *bool)() {
-    m.protected = value
+    if m != nil {
+        m.protected = value
+    }
 }

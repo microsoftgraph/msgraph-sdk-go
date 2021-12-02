@@ -198,25 +198,37 @@ func (m *OnenoteSection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetIsDefault sets the isDefault property value. Indicates whether this is the user's default section. Read-only.
 func (m *OnenoteSection) SetIsDefault(value *bool)() {
-    m.isDefault = value
+    if m != nil {
+        m.isDefault = value
+    }
 }
 // SetLinks sets the links property value. Links for opening the section. The oneNoteClientURL link opens the section in the OneNote native client if it's installed. The oneNoteWebURL link opens the section in OneNote on the web.
 func (m *OnenoteSection) SetLinks(value *SectionLinks)() {
-    m.links = value
+    if m != nil {
+        m.links = value
+    }
 }
 // SetPages sets the pages property value. The collection of pages in the section.  Read-only. Nullable.
 func (m *OnenoteSection) SetPages(value []OnenotePage)() {
-    m.pages = value
+    if m != nil {
+        m.pages = value
+    }
 }
 // SetPagesUrl sets the pagesUrl property value. The pages endpoint where you can get details for all the pages in the section. Read-only.
 func (m *OnenoteSection) SetPagesUrl(value *string)() {
-    m.pagesUrl = value
+    if m != nil {
+        m.pagesUrl = value
+    }
 }
 // SetParentNotebook sets the parentNotebook property value. The notebook that contains the section.  Read-only.
 func (m *OnenoteSection) SetParentNotebook(value *Notebook)() {
-    m.parentNotebook = value
+    if m != nil {
+        m.parentNotebook = value
+    }
 }
 // SetParentSectionGroup sets the parentSectionGroup property value. The section group that contains the section.  Read-only.
 func (m *OnenoteSection) SetParentSectionGroup(value *SectionGroup)() {
-    m.parentSectionGroup = value
+    if m != nil {
+        m.parentSectionGroup = value
+    }
 }

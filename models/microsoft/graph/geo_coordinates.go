@@ -122,17 +122,25 @@ func (m *GeoCoordinates) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GeoCoordinates) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAltitude sets the altitude property value. Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
 func (m *GeoCoordinates) SetAltitude(value *float64)() {
-    m.altitude = value
+    if m != nil {
+        m.altitude = value
+    }
 }
 // SetLatitude sets the latitude property value. Optional. The latitude, in decimal, for the item. Read-only.
 func (m *GeoCoordinates) SetLatitude(value *float64)() {
-    m.latitude = value
+    if m != nil {
+        m.latitude = value
+    }
 }
 // SetLongitude sets the longitude property value. Optional. The longitude, in decimal, for the item. Read-only.
 func (m *GeoCoordinates) SetLongitude(value *float64)() {
-    m.longitude = value
+    if m != nil {
+        m.longitude = value
+    }
 }

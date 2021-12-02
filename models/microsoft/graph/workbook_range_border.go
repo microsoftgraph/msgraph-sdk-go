@@ -137,17 +137,25 @@ func (m *WorkbookRangeBorder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 }
 // SetColor sets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').
 func (m *WorkbookRangeBorder) SetColor(value *string)() {
-    m.color = value
+    if m != nil {
+        m.color = value
+    }
 }
 // SetSideIndex sets the sideIndex property value. Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
 func (m *WorkbookRangeBorder) SetSideIndex(value *string)() {
-    m.sideIndex = value
+    if m != nil {
+        m.sideIndex = value
+    }
 }
 // SetStyle sets the style property value. One of the constants of line style specifying the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
 func (m *WorkbookRangeBorder) SetStyle(value *string)() {
-    m.style = value
+    if m != nil {
+        m.style = value
+    }
 }
 // SetWeight sets the weight property value. Specifies the weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.
 func (m *WorkbookRangeBorder) SetWeight(value *string)() {
-    m.weight = value
+    if m != nil {
+        m.weight = value
+    }
 }

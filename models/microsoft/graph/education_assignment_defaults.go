@@ -113,13 +113,19 @@ func (m *EducationAssignmentDefaults) Serialize(writer i04eb5309aeaafadd28374d79
 }
 // SetAddedStudentAction sets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
 func (m *EducationAssignmentDefaults) SetAddedStudentAction(value *EducationAddedStudentAction)() {
-    m.addedStudentAction = value
+    if m != nil {
+        m.addedStudentAction = value
+    }
 }
 // SetDueTime sets the dueTime property value. Class-level default value for due time field. Default value is 23:59:00.
 func (m *EducationAssignmentDefaults) SetDueTime(value *string)() {
-    m.dueTime = value
+    if m != nil {
+        m.dueTime = value
+    }
 }
 // SetNotificationChannelUrl sets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
 func (m *EducationAssignmentDefaults) SetNotificationChannelUrl(value *string)() {
-    m.notificationChannelUrl = value
+    if m != nil {
+        m.notificationChannelUrl = value
+    }
 }

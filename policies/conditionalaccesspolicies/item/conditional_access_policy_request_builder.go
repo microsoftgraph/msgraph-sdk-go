@@ -40,7 +40,7 @@ type ConditionalAccessPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ConditionalAccessPolicyRequestBuilderPatchOptions options for Patch
 type ConditionalAccessPolicyRequestBuilderPatchOptions struct {

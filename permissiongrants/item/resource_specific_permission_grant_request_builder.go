@@ -45,7 +45,7 @@ type ResourceSpecificPermissionGrantRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ResourceSpecificPermissionGrantRequestBuilderPatchOptions options for Patch
 type ResourceSpecificPermissionGrantRequestBuilderPatchOptions struct {

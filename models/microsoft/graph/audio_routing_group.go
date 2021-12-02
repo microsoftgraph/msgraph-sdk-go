@@ -121,13 +121,19 @@ func (m *AudioRoutingGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetReceivers sets the receivers property value. List of receiving participant ids.
 func (m *AudioRoutingGroup) SetReceivers(value []string)() {
-    m.receivers = value
+    if m != nil {
+        m.receivers = value
+    }
 }
 // SetRoutingMode sets the routingMode property value. Routing group mode.  Possible values are: oneToOne, multicast.
 func (m *AudioRoutingGroup) SetRoutingMode(value *RoutingMode)() {
-    m.routingMode = value
+    if m != nil {
+        m.routingMode = value
+    }
 }
 // SetSources sets the sources property value. List of source participant ids.
 func (m *AudioRoutingGroup) SetSources(value []string)() {
-    m.sources = value
+    if m != nil {
+        m.sources = value
+    }
 }

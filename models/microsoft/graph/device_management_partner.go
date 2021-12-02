@@ -246,33 +246,49 @@ func (m *DeviceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79c847
 }
 // SetDisplayName sets the displayName property value. Partner display name
 func (m *DeviceManagementPartner) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsConfigured sets the isConfigured property value. Whether device management partner is configured or not
 func (m *DeviceManagementPartner) SetIsConfigured(value *bool)() {
-    m.isConfigured = value
+    if m != nil {
+        m.isConfigured = value
+    }
 }
 // SetLastHeartbeatDateTime sets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
 func (m *DeviceManagementPartner) SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastHeartbeatDateTime = value
+    if m != nil {
+        m.lastHeartbeatDateTime = value
+    }
 }
 // SetPartnerAppType sets the partnerAppType property value. Partner App type. Possible values are: unknown, singleTenantApp, multiTenantApp.
 func (m *DeviceManagementPartner) SetPartnerAppType(value *DeviceManagementPartnerAppType)() {
-    m.partnerAppType = value
+    if m != nil {
+        m.partnerAppType = value
+    }
 }
 // SetPartnerState sets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
 func (m *DeviceManagementPartner) SetPartnerState(value *DeviceManagementPartnerTenantState)() {
-    m.partnerState = value
+    if m != nil {
+        m.partnerState = value
+    }
 }
 // SetSingleTenantAppId sets the singleTenantAppId property value. Partner Single tenant App id
 func (m *DeviceManagementPartner) SetSingleTenantAppId(value *string)() {
-    m.singleTenantAppId = value
+    if m != nil {
+        m.singleTenantAppId = value
+    }
 }
 // SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime sets the whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant
 func (m *DeviceManagementPartner) SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime = value
+    if m != nil {
+        m.whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime = value
+    }
 }
 // SetWhenPartnerDevicesWillBeRemovedDateTime sets the whenPartnerDevicesWillBeRemovedDateTime property value. DateTime in UTC when PartnerDevices will be removed
 func (m *DeviceManagementPartner) SetWhenPartnerDevicesWillBeRemovedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.whenPartnerDevicesWillBeRemovedDateTime = value
+    if m != nil {
+        m.whenPartnerDevicesWillBeRemovedDateTime = value
+    }
 }

@@ -70,9 +70,13 @@ func (m *CurrencyColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CurrencyColumn) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLocale sets the locale property value. Specifies the locale from which to infer the currency symbol.
 func (m *CurrencyColumn) SetLocale(value *string)() {
-    m.locale = value
+    if m != nil {
+        m.locale = value
+    }
 }

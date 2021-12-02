@@ -148,21 +148,31 @@ func (m *SharingInvitation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharingInvitation) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEmail sets the email property value. The email address provided for the recipient of the sharing invitation. Read-only.
 func (m *SharingInvitation) SetEmail(value *string)() {
-    m.email = value
+    if m != nil {
+        m.email = value
+    }
 }
 // SetInvitedBy sets the invitedBy property value. Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
 func (m *SharingInvitation) SetInvitedBy(value *IdentitySet)() {
-    m.invitedBy = value
+    if m != nil {
+        m.invitedBy = value
+    }
 }
 // SetRedeemedBy sets the redeemedBy property value. 
 func (m *SharingInvitation) SetRedeemedBy(value *string)() {
-    m.redeemedBy = value
+    if m != nil {
+        m.redeemedBy = value
+    }
 }
 // SetSignInRequired sets the signInRequired property value. If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
 func (m *SharingInvitation) SetSignInRequired(value *bool)() {
-    m.signInRequired = value
+    if m != nil {
+        m.signInRequired = value
+    }
 }

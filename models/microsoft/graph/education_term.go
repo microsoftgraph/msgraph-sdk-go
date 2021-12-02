@@ -148,21 +148,31 @@ func (m *EducationTerm) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationTerm) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the term.
 func (m *EducationTerm) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetEndDate sets the endDate property value. End of the term.
 func (m *EducationTerm) SetEndDate(value *string)() {
-    m.endDate = value
+    if m != nil {
+        m.endDate = value
+    }
 }
 // SetExternalId sets the externalId property value. ID of term in the syncing system.
 func (m *EducationTerm) SetExternalId(value *string)() {
-    m.externalId = value
+    if m != nil {
+        m.externalId = value
+    }
 }
 // SetStartDate sets the startDate property value. Start of the term.
 func (m *EducationTerm) SetStartDate(value *string)() {
-    m.startDate = value
+    if m != nil {
+        m.startDate = value
+    }
 }

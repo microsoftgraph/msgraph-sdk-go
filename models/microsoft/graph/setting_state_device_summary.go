@@ -267,37 +267,55 @@ func (m *SettingStateDeviceSummary) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Device Compliant count for the setting
 func (m *SettingStateDeviceSummary) SetCompliantDeviceCount(value *int32)() {
-    m.compliantDeviceCount = value
+    if m != nil {
+        m.compliantDeviceCount = value
+    }
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. Device conflict error count for the setting
 func (m *SettingStateDeviceSummary) SetConflictDeviceCount(value *int32)() {
-    m.conflictDeviceCount = value
+    if m != nil {
+        m.conflictDeviceCount = value
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Device error count for the setting
 func (m *SettingStateDeviceSummary) SetErrorDeviceCount(value *int32)() {
-    m.errorDeviceCount = value
+    if m != nil {
+        m.errorDeviceCount = value
+    }
 }
 // SetInstancePath sets the instancePath property value. Name of the InstancePath for the setting
 func (m *SettingStateDeviceSummary) SetInstancePath(value *string)() {
-    m.instancePath = value
+    if m != nil {
+        m.instancePath = value
+    }
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. Device NonCompliant count for the setting
 func (m *SettingStateDeviceSummary) SetNonCompliantDeviceCount(value *int32)() {
-    m.nonCompliantDeviceCount = value
+    if m != nil {
+        m.nonCompliantDeviceCount = value
+    }
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Device Not Applicable count for the setting
 func (m *SettingStateDeviceSummary) SetNotApplicableDeviceCount(value *int32)() {
-    m.notApplicableDeviceCount = value
+    if m != nil {
+        m.notApplicableDeviceCount = value
+    }
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. Device Compliant count for the setting
 func (m *SettingStateDeviceSummary) SetRemediatedDeviceCount(value *int32)() {
-    m.remediatedDeviceCount = value
+    if m != nil {
+        m.remediatedDeviceCount = value
+    }
 }
 // SetSettingName sets the settingName property value. Name of the setting
 func (m *SettingStateDeviceSummary) SetSettingName(value *string)() {
-    m.settingName = value
+    if m != nil {
+        m.settingName = value
+    }
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Device Unkown count for the setting
 func (m *SettingStateDeviceSummary) SetUnknownDeviceCount(value *int32)() {
-    m.unknownDeviceCount = value
+    if m != nil {
+        m.unknownDeviceCount = value
+    }
 }

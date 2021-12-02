@@ -40,7 +40,7 @@ type ConversationRequestBuilderGetOptions struct {
 // ConversationRequestBuilderGetQueryParameters the group's conversations.
 type ConversationRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
 }
 // ConversationRequestBuilderPatchOptions options for Patch
 type ConversationRequestBuilderPatchOptions struct {

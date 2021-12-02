@@ -234,29 +234,43 @@ func (m *PlannerPlan) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetBuckets sets the buckets property value. Read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerPlan) SetBuckets(value []PlannerBucket)() {
-    m.buckets = value
+    if m != nil {
+        m.buckets = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. Read-only. The user who created the plan.
 func (m *PlannerPlan) SetCreatedBy(value *IdentitySet)() {
-    m.createdBy = value
+    if m != nil {
+        m.createdBy = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerPlan) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetDetails sets the details property value. Read-only. Nullable. Additional details about the plan.
 func (m *PlannerPlan) SetDetails(value *PlannerPlanDetails)() {
-    m.details = value
+    if m != nil {
+        m.details = value
+    }
 }
 // SetOwner sets the owner property value. ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
 func (m *PlannerPlan) SetOwner(value *string)() {
-    m.owner = value
+    if m != nil {
+        m.owner = value
+    }
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. Collection of tasks in the plan.
 func (m *PlannerPlan) SetTasks(value []PlannerTask)() {
-    m.tasks = value
+    if m != nil {
+        m.tasks = value
+    }
 }
 // SetTitle sets the title property value. Required. Title of the plan.
 func (m *PlannerPlan) SetTitle(value *string)() {
-    m.title = value
+    if m != nil {
+        m.title = value
+    }
 }

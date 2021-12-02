@@ -200,29 +200,43 @@ func (m *CertificateAuthority) Serialize(writer i04eb5309aeaafadd28374d79c8471df
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateAuthority) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificate sets the certificate property value. Required. The base64 encoded string representing the public certificate.
 func (m *CertificateAuthority) SetCertificate(value []byte)() {
-    m.certificate = value
+    if m != nil {
+        m.certificate = value
+    }
 }
 // SetCertificateRevocationListUrl sets the certificateRevocationListUrl property value. The URL of the certificate revocation list.
 func (m *CertificateAuthority) SetCertificateRevocationListUrl(value *string)() {
-    m.certificateRevocationListUrl = value
+    if m != nil {
+        m.certificateRevocationListUrl = value
+    }
 }
 // SetDeltaCertificateRevocationListUrl sets the deltaCertificateRevocationListUrl property value. The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
 func (m *CertificateAuthority) SetDeltaCertificateRevocationListUrl(value *string)() {
-    m.deltaCertificateRevocationListUrl = value
+    if m != nil {
+        m.deltaCertificateRevocationListUrl = value
+    }
 }
 // SetIsRootAuthority sets the isRootAuthority property value. Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.
 func (m *CertificateAuthority) SetIsRootAuthority(value *bool)() {
-    m.isRootAuthority = value
+    if m != nil {
+        m.isRootAuthority = value
+    }
 }
 // SetIssuer sets the issuer property value. The issuer of the certificate, calculated from the certificate value. Read-only.
 func (m *CertificateAuthority) SetIssuer(value *string)() {
-    m.issuer = value
+    if m != nil {
+        m.issuer = value
+    }
 }
 // SetIssuerSki sets the issuerSki property value. The subject key identifier of the certificate, calculated from the certificate value. Read-only.
 func (m *CertificateAuthority) SetIssuerSki(value *string)() {
-    m.issuerSki = value
+    if m != nil {
+        m.issuerSki = value
+    }
 }

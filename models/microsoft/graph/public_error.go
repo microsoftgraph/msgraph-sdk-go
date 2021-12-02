@@ -183,25 +183,37 @@ func (m *PublicError) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PublicError) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCode sets the code property value. Represents the error code.
 func (m *PublicError) SetCode(value *string)() {
-    m.code = value
+    if m != nil {
+        m.code = value
+    }
 }
 // SetDetails sets the details property value. Details of the error.
 func (m *PublicError) SetDetails(value []PublicErrorDetail)() {
-    m.details = value
+    if m != nil {
+        m.details = value
+    }
 }
 // SetInnerError sets the innerError property value. Details of the inner error.
 func (m *PublicError) SetInnerError(value *PublicInnerError)() {
-    m.innerError = value
+    if m != nil {
+        m.innerError = value
+    }
 }
 // SetMessage sets the message property value. A non-localized message for the developer.
 func (m *PublicError) SetMessage(value *string)() {
-    m.message = value
+    if m != nil {
+        m.message = value
+    }
 }
 // SetTarget sets the target property value. The target of the error.
 func (m *PublicError) SetTarget(value *string)() {
-    m.target = value
+    if m != nil {
+        m.target = value
+    }
 }

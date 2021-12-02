@@ -94,9 +94,13 @@ func (m *InformationProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetBitlocker sets the bitlocker property value. 
 func (m *InformationProtection) SetBitlocker(value *Bitlocker)() {
-    m.bitlocker = value
+    if m != nil {
+        m.bitlocker = value
+    }
 }
 // SetThreatAssessmentRequests sets the threatAssessmentRequests property value. 
 func (m *InformationProtection) SetThreatAssessmentRequests(value []ThreatAssessmentRequest)() {
-    m.threatAssessmentRequests = value
+    if m != nil {
+        m.threatAssessmentRequests = value
+    }
 }

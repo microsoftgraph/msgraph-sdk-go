@@ -365,45 +365,67 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
 }
 // SetChildFolderCount sets the childFolderCount property value. The number of immediate child mailFolders in the current mailFolder.
 func (m *Delta) SetChildFolderCount(value *int32)() {
-    m.childFolderCount = value
+    if m != nil {
+        m.childFolderCount = value
+    }
 }
 // SetChildFolders sets the childFolders property value. The collection of child folders in the mailFolder.
 func (m *Delta) SetChildFolders(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MailFolder)() {
-    m.childFolders = value
+    if m != nil {
+        m.childFolders = value
+    }
 }
 // SetDisplayName sets the displayName property value. The mailFolder's display name.
 func (m *Delta) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetIsHidden sets the isHidden property value. Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
 func (m *Delta) SetIsHidden(value *bool)() {
-    m.isHidden = value
+    if m != nil {
+        m.isHidden = value
+    }
 }
 // SetMessageRules sets the messageRules property value. The collection of rules that apply to the user's Inbox folder.
 func (m *Delta) SetMessageRules(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MessageRule)() {
-    m.messageRules = value
+    if m != nil {
+        m.messageRules = value
+    }
 }
 // SetMessages sets the messages property value. The collection of messages in the mailFolder.
 func (m *Delta) SetMessages(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message)() {
-    m.messages = value
+    if m != nil {
+        m.messages = value
+    }
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
 func (m *Delta) SetMultiValueExtendedProperties(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.MultiValueLegacyExtendedProperty)() {
-    m.multiValueExtendedProperties = value
+    if m != nil {
+        m.multiValueExtendedProperties = value
+    }
 }
 // SetParentFolderId sets the parentFolderId property value. The unique identifier for the mailFolder's parent mailFolder.
 func (m *Delta) SetParentFolderId(value *string)() {
-    m.parentFolderId = value
+    if m != nil {
+        m.parentFolderId = value
+    }
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
 func (m *Delta) SetSingleValueExtendedProperties(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SingleValueLegacyExtendedProperty)() {
-    m.singleValueExtendedProperties = value
+    if m != nil {
+        m.singleValueExtendedProperties = value
+    }
 }
 // SetTotalItemCount sets the totalItemCount property value. The number of items in the mailFolder.
 func (m *Delta) SetTotalItemCount(value *int32)() {
-    m.totalItemCount = value
+    if m != nil {
+        m.totalItemCount = value
+    }
 }
 // SetUnreadItemCount sets the unreadItemCount property value. The number of items in the mailFolder marked as unread.
 func (m *Delta) SetUnreadItemCount(value *int32)() {
-    m.unreadItemCount = value
+    if m != nil {
+        m.unreadItemCount = value
+    }
 }

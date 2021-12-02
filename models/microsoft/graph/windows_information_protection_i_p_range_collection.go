@@ -105,13 +105,19 @@ func (m *WindowsInformationProtectionIPRangeCollection) Serialize(writer i04eb53
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsInformationProtectionIPRangeCollection) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name
 func (m *WindowsInformationProtectionIPRangeCollection) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetRanges sets the ranges property value. Collection of ip ranges
 func (m *WindowsInformationProtectionIPRangeCollection) SetRanges(value []IpRange)() {
-    m.ranges = value
+    if m != nil {
+        m.ranges = value
+    }
 }

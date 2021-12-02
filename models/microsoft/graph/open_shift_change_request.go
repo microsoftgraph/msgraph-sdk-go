@@ -59,5 +59,7 @@ func (m *OpenShiftChangeRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471
 }
 // SetOpenShiftId sets the openShiftId property value. ID for the open shift.
 func (m *OpenShiftChangeRequest) SetOpenShiftId(value *string)() {
-    m.openShiftId = value
+    if m != nil {
+        m.openShiftId = value
+    }
 }

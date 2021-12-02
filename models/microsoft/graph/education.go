@@ -175,21 +175,31 @@ func (m *Education) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Education) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClasses sets the classes property value. 
 func (m *Education) SetClasses(value []EducationClass)() {
-    m.classes = value
+    if m != nil {
+        m.classes = value
+    }
 }
 // SetMe sets the me property value. 
 func (m *Education) SetMe(value *EducationUser)() {
-    m.me = value
+    if m != nil {
+        m.me = value
+    }
 }
 // SetSchools sets the schools property value. 
 func (m *Education) SetSchools(value []EducationSchool)() {
-    m.schools = value
+    if m != nil {
+        m.schools = value
+    }
 }
 // SetUsers sets the users property value. 
 func (m *Education) SetUsers(value []EducationUser)() {
-    m.users = value
+    if m != nil {
+        m.users = value
+    }
 }

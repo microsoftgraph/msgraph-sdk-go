@@ -174,25 +174,37 @@ func (m *InformationalUrl) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationalUrl) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLogoUrl sets the logoUrl property value. CDN URL to the application's logo, Read-only.
 func (m *InformationalUrl) SetLogoUrl(value *string)() {
-    m.logoUrl = value
+    if m != nil {
+        m.logoUrl = value
+    }
 }
 // SetMarketingUrl sets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
 func (m *InformationalUrl) SetMarketingUrl(value *string)() {
-    m.marketingUrl = value
+    if m != nil {
+        m.marketingUrl = value
+    }
 }
 // SetPrivacyStatementUrl sets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
 func (m *InformationalUrl) SetPrivacyStatementUrl(value *string)() {
-    m.privacyStatementUrl = value
+    if m != nil {
+        m.privacyStatementUrl = value
+    }
 }
 // SetSupportUrl sets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
 func (m *InformationalUrl) SetSupportUrl(value *string)() {
-    m.supportUrl = value
+    if m != nil {
+        m.supportUrl = value
+    }
 }
 // SetTermsOfServiceUrl sets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
 func (m *InformationalUrl) SetTermsOfServiceUrl(value *string)() {
-    m.termsOfServiceUrl = value
+    if m != nil {
+        m.termsOfServiceUrl = value
+    }
 }

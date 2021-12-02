@@ -141,17 +141,25 @@ func (m *IdentityUserFlowAttribute) Serialize(writer i04eb5309aeaafadd28374d79c8
 }
 // SetDataType sets the dataType property value. The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
 func (m *IdentityUserFlowAttribute) SetDataType(value *IdentityUserFlowAttributeDataType)() {
-    m.dataType = value
+    if m != nil {
+        m.dataType = value
+    }
 }
 // SetDescription sets the description property value. The description of the user flow attribute that's shown to the user at the time of sign-up.
 func (m *IdentityUserFlowAttribute) SetDescription(value *string)() {
-    m.description = value
+    if m != nil {
+        m.description = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the user flow attribute.
 func (m *IdentityUserFlowAttribute) SetDisplayName(value *string)() {
-    m.displayName = value
+    if m != nil {
+        m.displayName = value
+    }
 }
 // SetUserFlowAttributeType sets the userFlowAttributeType property value. The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be builtIn, custom, or required.
 func (m *IdentityUserFlowAttribute) SetUserFlowAttributeType(value *IdentityUserFlowAttributeType)() {
-    m.userFlowAttributeType = value
+    if m != nil {
+        m.userFlowAttributeType = value
+    }
 }

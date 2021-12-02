@@ -324,45 +324,67 @@ func (m *IosUpdateDeviceStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471d
 }
 // SetComplianceGracePeriodExpirationDateTime sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
 func (m *IosUpdateDeviceStatus) SetComplianceGracePeriodExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.complianceGracePeriodExpirationDateTime = value
+    if m != nil {
+        m.complianceGracePeriodExpirationDateTime = value
+    }
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. Device name of the DevicePolicyStatus.
 func (m *IosUpdateDeviceStatus) SetDeviceDisplayName(value *string)() {
-    m.deviceDisplayName = value
+    if m != nil {
+        m.deviceDisplayName = value
+    }
 }
 // SetDeviceId sets the deviceId property value. The device id that is being reported.
 func (m *IosUpdateDeviceStatus) SetDeviceId(value *string)() {
-    m.deviceId = value
+    if m != nil {
+        m.deviceId = value
+    }
 }
 // SetDeviceModel sets the deviceModel property value. The device model that is being reported
 func (m *IosUpdateDeviceStatus) SetDeviceModel(value *string)() {
-    m.deviceModel = value
+    if m != nil {
+        m.deviceModel = value
+    }
 }
 // SetInstallStatus sets the installStatus property value. The installation status of the policy report. Possible values are: success, available, idle, unknown, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, deviceOsHigherThanDesiredOsVersion.
 func (m *IosUpdateDeviceStatus) SetInstallStatus(value *IosUpdatesInstallStatus)() {
-    m.installStatus = value
+    if m != nil {
+        m.installStatus = value
+    }
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Last modified date time of the policy report.
 func (m *IosUpdateDeviceStatus) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastReportedDateTime = value
+    if m != nil {
+        m.lastReportedDateTime = value
+    }
 }
 // SetOsVersion sets the osVersion property value. The device version that is being reported.
 func (m *IosUpdateDeviceStatus) SetOsVersion(value *string)() {
-    m.osVersion = value
+    if m != nil {
+        m.osVersion = value
+    }
 }
 // SetStatus sets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
 func (m *IosUpdateDeviceStatus) SetStatus(value *ComplianceStatus)() {
-    m.status = value
+    if m != nil {
+        m.status = value
+    }
 }
 // SetUserId sets the userId property value. The User id that is being reported.
 func (m *IosUpdateDeviceStatus) SetUserId(value *string)() {
-    m.userId = value
+    if m != nil {
+        m.userId = value
+    }
 }
 // SetUserName sets the userName property value. The User Name that is being reported
 func (m *IosUpdateDeviceStatus) SetUserName(value *string)() {
-    m.userName = value
+    if m != nil {
+        m.userName = value
+    }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *IosUpdateDeviceStatus) SetUserPrincipalName(value *string)() {
-    m.userPrincipalName = value
+    if m != nil {
+        m.userPrincipalName = value
+    }
 }

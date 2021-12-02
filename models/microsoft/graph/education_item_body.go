@@ -98,13 +98,19 @@ func (m *EducationItemBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationItemBody) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContent sets the content property value. 
 func (m *EducationItemBody) SetContent(value *string)() {
-    m.content = value
+    if m != nil {
+        m.content = value
+    }
 }
 // SetContentType sets the contentType property value. 
 func (m *EducationItemBody) SetContentType(value *BodyType)() {
-    m.contentType = value
+    if m != nil {
+        m.contentType = value
+    }
 }

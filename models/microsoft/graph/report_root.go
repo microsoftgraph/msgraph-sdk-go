@@ -173,17 +173,25 @@ func (m *ReportRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
 }
 // SetDailyPrintUsageByPrinter sets the dailyPrintUsageByPrinter property value. 
 func (m *ReportRoot) SetDailyPrintUsageByPrinter(value []PrintUsageByPrinter)() {
-    m.dailyPrintUsageByPrinter = value
+    if m != nil {
+        m.dailyPrintUsageByPrinter = value
+    }
 }
 // SetDailyPrintUsageByUser sets the dailyPrintUsageByUser property value. 
 func (m *ReportRoot) SetDailyPrintUsageByUser(value []PrintUsageByUser)() {
-    m.dailyPrintUsageByUser = value
+    if m != nil {
+        m.dailyPrintUsageByUser = value
+    }
 }
 // SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. 
 func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinter)() {
-    m.monthlyPrintUsageByPrinter = value
+    if m != nil {
+        m.monthlyPrintUsageByPrinter = value
+    }
 }
 // SetMonthlyPrintUsageByUser sets the monthlyPrintUsageByUser property value. 
 func (m *ReportRoot) SetMonthlyPrintUsageByUser(value []PrintUsageByUser)() {
-    m.monthlyPrintUsageByUser = value
+    if m != nil {
+        m.monthlyPrintUsageByUser = value
+    }
 }

@@ -123,17 +123,25 @@ func (m *FileSystemInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileSystemInfo) SetAdditionalData(value map[string]interface{})() {
-    m.additionalData = value
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The UTC date and time the file was created on a client.
 func (m *FileSystemInfo) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.createdDateTime = value
+    if m != nil {
+        m.createdDateTime = value
+    }
 }
 // SetLastAccessedDateTime sets the lastAccessedDateTime property value. The UTC date and time the file was last accessed. Available for the recent file list only.
 func (m *FileSystemInfo) SetLastAccessedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastAccessedDateTime = value
+    if m != nil {
+        m.lastAccessedDateTime = value
+    }
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The UTC date and time the file was last modified on a client.
 func (m *FileSystemInfo) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.lastModifiedDateTime = value
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
 }

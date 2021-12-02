@@ -38,7 +38,7 @@ type AttachmentsRequestBuilderGetQueryParameters struct {
     // Order items by property values
     Orderby []string;
     // Select properties to be returned
-    Select_escaped []string;
+    Select []string;
     // Skip the first n items
     Skip *int32;
     // Show only the first n items
