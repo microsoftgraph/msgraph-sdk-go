@@ -14,7 +14,7 @@ type Application struct {
     api *ApiApplication;
     // The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
     appId *string;
-    // Unique identifier of the applicationTemplate.
+    // Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
     applicationTemplateId *string;
     // The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
     appRoles []AppRole;
@@ -22,7 +22,7 @@ type Application struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only.
     createdOnBehalfOf *DirectoryObject;
-    // An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+    // Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string;
     // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
     disabledByMicrosoftStatus *string;
@@ -112,7 +112,7 @@ func (m *Application) GetAppId()(*string) {
         return m.appId
     }
 }
-// GetApplicationTemplateId gets the applicationTemplateId property value. Unique identifier of the applicationTemplate.
+// GetApplicationTemplateId gets the applicationTemplateId property value. Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
 func (m *Application) GetApplicationTemplateId()(*string) {
     if m == nil {
         return nil
@@ -144,7 +144,7 @@ func (m *Application) GetCreatedOnBehalfOf()(*DirectoryObject) {
         return m.createdOnBehalfOf
     }
 }
-// GetDescription gets the description property value. An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// GetDescription gets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -1084,7 +1084,7 @@ func (m *Application) SetAppId(value *string)() {
         m.appId = value
     }
 }
-// SetApplicationTemplateId sets the applicationTemplateId property value. Unique identifier of the applicationTemplate.
+// SetApplicationTemplateId sets the applicationTemplateId property value. Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
 func (m *Application) SetApplicationTemplateId(value *string)() {
     if m != nil {
         m.applicationTemplateId = value
@@ -1108,7 +1108,7 @@ func (m *Application) SetCreatedOnBehalfOf(value *DirectoryObject)() {
         m.createdOnBehalfOf = value
     }
 }
-// SetDescription sets the description property value. An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// SetDescription sets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) SetDescription(value *string)() {
     if m != nil {
         m.description = value

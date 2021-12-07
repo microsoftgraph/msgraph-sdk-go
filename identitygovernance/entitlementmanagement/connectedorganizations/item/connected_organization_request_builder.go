@@ -39,7 +39,7 @@ type ConnectedOrganizationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ConnectedOrganizationRequestBuilderGetQueryParameters get connectedOrganizations from identityGovernance
+// ConnectedOrganizationRequestBuilderGetQueryParameters connected organizations.
 type ConnectedOrganizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -76,7 +76,7 @@ func NewConnectedOrganizationRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams["request-raw-url"] = rawUrl
     return NewConnectedOrganizationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property connectedOrganizations for identityGovernance
+// CreateDeleteRequestInformation connected organizations.
 func (m *ConnectedOrganizationRequestBuilder) CreateDeleteRequestInformation(options *ConnectedOrganizationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,7 +93,7 @@ func (m *ConnectedOrganizationRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get connectedOrganizations from identityGovernance
+// CreateGetRequestInformation connected organizations.
 func (m *ConnectedOrganizationRequestBuilder) CreateGetRequestInformation(options *ConnectedOrganizationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ConnectedOrganizationRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property connectedOrganizations in identityGovernance
+// CreatePatchRequestInformation connected organizations.
 func (m *ConnectedOrganizationRequestBuilder) CreatePatchRequestInformation(options *ConnectedOrganizationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *ConnectedOrganizationRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delete delete navigation property connectedOrganizations for identityGovernance
+// Delete connected organizations.
 func (m *ConnectedOrganizationRequestBuilder) Delete(options *ConnectedOrganizationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -157,7 +157,7 @@ func (m *ConnectedOrganizationRequestBuilder) ExternalSponsorsById(id string)(*i
     }
     return i38c48f98eb917d486190d72c8f1c4ae0a96a04a29df568065e9cdfbc7a1bcc7a.NewDirectoryObjectRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get connectedOrganizations from identityGovernance
+// Get connected organizations.
 func (m *ConnectedOrganizationRequestBuilder) Get(options *ConnectedOrganizationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConnectedOrganization, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -183,7 +183,7 @@ func (m *ConnectedOrganizationRequestBuilder) InternalSponsorsById(id string)(*i
     }
     return i6a8a0317ba69a6948d7f14baa6206d53d8ce7fc2cbce939e0ac4ece8b4a838aa.NewDirectoryObjectRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update the navigation property connectedOrganizations in identityGovernance
+// Patch connected organizations.
 func (m *ConnectedOrganizationRequestBuilder) Patch(options *ConnectedOrganizationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

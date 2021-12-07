@@ -31,7 +31,7 @@ func (m *VerifiedPublisher) GetAddedDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.addedDateTime
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedPublisher) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -127,7 +127,7 @@ func (m *VerifiedPublisher) SetAddedDateTime(value *i336074805fc853987abe6f7fe3a
         m.addedDateTime = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedPublisher) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

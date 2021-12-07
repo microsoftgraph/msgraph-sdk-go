@@ -34,7 +34,7 @@ func NewPermissionScope()(*PermissionScope) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PermissionScope) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -82,8 +82,8 @@ func (m *PermissionScope) GetOrigin()(*string) {
         return m.origin
     }
 }
-// GetType_escaped gets the type_escaped property value. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator should be required for consent to the permissions. This will be the default behavior, but each customer can choose to customize the behavior in their organization (by allowing, restricting or limiting user consent to this delegated permission.)
-func (m *PermissionScope) GetType_escaped()(*string) {
+// GetType gets the type property value. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator should be required for consent to the permissions. This will be the default behavior, but each customer can choose to customize the behavior in their organization (by allowing, restricting or limiting user consent to this delegated permission.)
+func (m *PermissionScope) GetType()(*string) {
     if m == nil {
         return nil
     } else {
@@ -167,13 +167,13 @@ func (m *PermissionScope) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -245,7 +245,7 @@ func (m *PermissionScope) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -276,7 +276,7 @@ func (m *PermissionScope) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PermissionScope) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -312,8 +312,8 @@ func (m *PermissionScope) SetOrigin(value *string)() {
         m.origin = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator should be required for consent to the permissions. This will be the default behavior, but each customer can choose to customize the behavior in their organization (by allowing, restricting or limiting user consent to this delegated permission.)
-func (m *PermissionScope) SetType_escaped(value *string)() {
+// SetType sets the type property value. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator should be required for consent to the permissions. This will be the default behavior, but each customer can choose to customize the behavior in their organization (by allowing, restricting or limiting user consent to this delegated permission.)
+func (m *PermissionScope) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
     }

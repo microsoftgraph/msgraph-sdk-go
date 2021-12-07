@@ -84,8 +84,8 @@ func (m *DeviceManagementExportJob) GetRequestDateTime()(*i336074805fc853987abe6
         return m.requestDateTime
     }
 }
-// GetSelect_escaped gets the select_escaped property value. Columns selected from the report
-func (m *DeviceManagementExportJob) GetSelect_escaped()([]string) {
+// GetSelect gets the select property value. Columns selected from the report
+func (m *DeviceManagementExportJob) GetSelect()([]string) {
     if m == nil {
         return nil
     } else {
@@ -181,7 +181,7 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetSelect_escaped(res)
+            m.SetSelect(res)
         }
         return nil
     }
@@ -276,7 +276,7 @@ func (m *DeviceManagementExportJob) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     {
-        err = writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
+        err = writer.WriteCollectionOfStringValues("select", m.GetSelect())
         if err != nil {
             return err
         }
@@ -338,8 +338,8 @@ func (m *DeviceManagementExportJob) SetRequestDateTime(value *i336074805fc853987
         m.requestDateTime = value
     }
 }
-// SetSelect_escaped sets the select_escaped property value. Columns selected from the report
-func (m *DeviceManagementExportJob) SetSelect_escaped(value []string)() {
+// SetSelect sets the select property value. Columns selected from the report
+func (m *DeviceManagementExportJob) SetSelect(value []string)() {
     if m != nil {
         m.select_escaped = value
     }

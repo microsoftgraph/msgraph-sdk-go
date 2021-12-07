@@ -23,7 +23,7 @@ func NewTentativelyAcceptRequestBody()(*TentativelyAcceptRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TentativelyAcceptRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -31,7 +31,7 @@ func (m *TentativelyAcceptRequestBody) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// GetComment gets the Comment property value. 
+// GetComment gets the comment property value. 
 func (m *TentativelyAcceptRequestBody) GetComment()(*string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *TentativelyAcceptRequestBody) GetComment()(*string) {
         return m.comment
     }
 }
-// GetProposedNewTime gets the ProposedNewTime property value. 
+// GetProposedNewTime gets the proposedNewTime property value. 
 func (m *TentativelyAcceptRequestBody) GetProposedNewTime()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeSlot) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *TentativelyAcceptRequestBody) GetProposedNewTime()(*i4a838ef194e4c99e9f
         return m.proposedNewTime
     }
 }
-// GetSendResponse gets the SendResponse property value. 
+// GetSendResponse gets the sendResponse property value. 
 func (m *TentativelyAcceptRequestBody) GetSendResponse()(*bool) {
     if m == nil {
         return nil
@@ -121,25 +121,25 @@ func (m *TentativelyAcceptRequestBody) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TentativelyAcceptRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetComment sets the Comment property value. 
+// SetComment sets the comment property value. 
 func (m *TentativelyAcceptRequestBody) SetComment(value *string)() {
     if m != nil {
         m.comment = value
     }
 }
-// SetProposedNewTime sets the ProposedNewTime property value. 
+// SetProposedNewTime sets the proposedNewTime property value. 
 func (m *TentativelyAcceptRequestBody) SetProposedNewTime(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TimeSlot)() {
     if m != nil {
         m.proposedNewTime = value
     }
 }
-// SetSendResponse sets the SendResponse property value. 
+// SetSendResponse sets the sendResponse property value. 
 func (m *TentativelyAcceptRequestBody) SetSendResponse(value *bool)() {
     if m != nil {
         m.sendResponse = value

@@ -34,7 +34,7 @@ func NewGetSettingNonComplianceReportRequestBody()(*GetSettingNonComplianceRepor
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetSettingNonComplianceReportRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -82,8 +82,8 @@ func (m *GetSettingNonComplianceReportRequestBody) GetSearch()(*string) {
         return m.search
     }
 }
-// GetSelect_escaped gets the select_escaped property value. 
-func (m *GetSettingNonComplianceReportRequestBody) GetSelect_escaped()([]string) {
+// GetSelect gets the select property value. 
+func (m *GetSettingNonComplianceReportRequestBody) GetSelect()([]string) {
     if m == nil {
         return nil
     } else {
@@ -175,7 +175,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *GetSettingNonComplianceReportRequestBody) GetFieldDeserializers()(map[s
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetSelect_escaped(res)
+            m.SetSelect(res)
         }
         return nil
     }
@@ -257,7 +257,7 @@ func (m *GetSettingNonComplianceReportRequestBody) Serialize(writer i04eb5309aea
         }
     }
     {
-        err := writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
+        err := writer.WriteCollectionOfStringValues("select", m.GetSelect())
         if err != nil {
             return err
         }
@@ -288,7 +288,7 @@ func (m *GetSettingNonComplianceReportRequestBody) Serialize(writer i04eb5309aea
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetSettingNonComplianceReportRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -324,8 +324,8 @@ func (m *GetSettingNonComplianceReportRequestBody) SetSearch(value *string)() {
         m.search = value
     }
 }
-// SetSelect_escaped sets the select_escaped property value. 
-func (m *GetSettingNonComplianceReportRequestBody) SetSelect_escaped(value []string)() {
+// SetSelect sets the select property value. 
+func (m *GetSettingNonComplianceReportRequestBody) SetSelect(value []string)() {
     if m != nil {
         m.select_escaped = value
     }
