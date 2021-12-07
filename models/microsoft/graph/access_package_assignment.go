@@ -10,13 +10,13 @@ type AccessPackageAssignment struct {
     Entity
     // Read-only. Nullable.
     accessPackage *AccessPackage;
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     expiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // When the access assignment is to be in place. Read-only.
     schedule *EntitlementManagementSchedule;
-    // 
+    // The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only.
     state *AccessPackageAssignmentState;
-    // 
+    // More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
     status *string;
     // The subject of the access package assignment. Read-only. Nullable.
     target *AccessPackageSubject;
@@ -36,7 +36,7 @@ func (m *AccessPackageAssignment) GetAccessPackage()(*AccessPackage) {
         return m.accessPackage
     }
 }
-// GetExpiredDateTime gets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetExpiredDateTime gets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AccessPackageAssignment) GetExpiredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -52,7 +52,7 @@ func (m *AccessPackageAssignment) GetSchedule()(*EntitlementManagementSchedule) 
         return m.schedule
     }
 }
-// GetState gets the state property value. 
+// GetState gets the state property value. The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only.
 func (m *AccessPackageAssignment) GetState()(*AccessPackageAssignmentState) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *AccessPackageAssignment) GetState()(*AccessPackageAssignmentState) {
         return m.state
     }
 }
-// GetStatus gets the status property value. 
+// GetStatus gets the status property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
 func (m *AccessPackageAssignment) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -196,7 +196,7 @@ func (m *AccessPackageAssignment) SetAccessPackage(value *AccessPackage)() {
         m.accessPackage = value
     }
 }
-// SetExpiredDateTime sets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetExpiredDateTime sets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AccessPackageAssignment) SetExpiredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.expiredDateTime = value
@@ -208,13 +208,13 @@ func (m *AccessPackageAssignment) SetSchedule(value *EntitlementManagementSchedu
         m.schedule = value
     }
 }
-// SetState sets the state property value. 
+// SetState sets the state property value. The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only.
 func (m *AccessPackageAssignment) SetState(value *AccessPackageAssignmentState)() {
     if m != nil {
         m.state = value
     }
 }
-// SetStatus sets the status property value. 
+// SetStatus sets the status property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
 func (m *AccessPackageAssignment) SetStatus(value *string)() {
     if m != nil {
         m.status = value

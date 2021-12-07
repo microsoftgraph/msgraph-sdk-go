@@ -16,13 +16,13 @@ type ConnectedOrganization struct {
     displayName *string;
     // Nullable.
     externalSponsors []DirectoryObject;
-    // 
+    // The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
     identitySources []IdentitySource;
     // Nullable.
     internalSponsors []DirectoryObject;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
+    // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
     state *ConnectedOrganizationState;
 }
 // NewConnectedOrganization instantiates a new connectedOrganization and sets the default values.
@@ -64,7 +64,7 @@ func (m *ConnectedOrganization) GetExternalSponsors()([]DirectoryObject) {
         return m.externalSponsors
     }
 }
-// GetIdentitySources gets the identitySources property value. 
+// GetIdentitySources gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
 func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySource) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7f
         return m.modifiedDateTime
     }
 }
-// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
+// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
 func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
     if m == nil {
         return nil
@@ -293,7 +293,7 @@ func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObject)() {
         m.externalSponsors = value
     }
 }
-// SetIdentitySources sets the identitySources property value. 
+// SetIdentitySources sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
 func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySource)() {
     if m != nil {
         m.identitySources = value
@@ -311,7 +311,7 @@ func (m *ConnectedOrganization) SetModifiedDateTime(value *i336074805fc853987abe
         m.modifiedDateTime = value
     }
 }
-// SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
+// SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
 func (m *ConnectedOrganization) SetState(value *ConnectedOrganizationState)() {
     if m != nil {
         m.state = value

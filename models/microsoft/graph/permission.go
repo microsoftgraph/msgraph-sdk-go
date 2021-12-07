@@ -10,15 +10,15 @@ type Permission struct {
     Entity
     // A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // For user type permissions, the details of the users & applications for this permission. Read-only.
+    // 
     grantedTo *IdentitySet;
-    // For link type permissions, the details of the users to whom permission was granted. Read-only.
+    // 
     grantedToIdentities []IdentitySet;
-    // 
+    // For link type permissions, the details of the users to whom permission was granted. Read-only.
     grantedToIdentitiesV2 []SharePointIdentitySet;
-    // 
+    // For user type permissions, the details of the users and applications for this permission. Read-only.
     grantedToV2 *SharePointIdentitySet;
-    // This indicates whether password is set for this permission, it's only showing in response. Optional and Read-only and for OneDrive Personal only.
+    // Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
     hasPassword *bool;
     // Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
     inheritedFrom *ItemReference;
@@ -26,7 +26,7 @@ type Permission struct {
     invitation *SharingInvitation;
     // Provides the link details of the current permission, if it is a link type permissions. Read-only.
     link *SharingLink;
-    // The type of permission, e.g. read. See below for the full list of roles. Read-only.
+    // The type of permission, for example, read. See below for the full list of roles. Read-only.
     roles []string;
     // A unique token that can be used to access this shared item via the **shares** API. Read-only.
     shareId *string;
@@ -46,7 +46,7 @@ func (m *Permission) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.expirationDateTime
     }
 }
-// GetGrantedTo gets the grantedTo property value. For user type permissions, the details of the users & applications for this permission. Read-only.
+// GetGrantedTo gets the grantedTo property value. 
 func (m *Permission) GetGrantedTo()(*IdentitySet) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *Permission) GetGrantedTo()(*IdentitySet) {
         return m.grantedTo
     }
 }
-// GetGrantedToIdentities gets the grantedToIdentities property value. For link type permissions, the details of the users to whom permission was granted. Read-only.
+// GetGrantedToIdentities gets the grantedToIdentities property value. 
 func (m *Permission) GetGrantedToIdentities()([]IdentitySet) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *Permission) GetGrantedToIdentities()([]IdentitySet) {
         return m.grantedToIdentities
     }
 }
-// GetGrantedToIdentitiesV2 gets the grantedToIdentitiesV2 property value. 
+// GetGrantedToIdentitiesV2 gets the grantedToIdentitiesV2 property value. For link type permissions, the details of the users to whom permission was granted. Read-only.
 func (m *Permission) GetGrantedToIdentitiesV2()([]SharePointIdentitySet) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *Permission) GetGrantedToIdentitiesV2()([]SharePointIdentitySet) {
         return m.grantedToIdentitiesV2
     }
 }
-// GetGrantedToV2 gets the grantedToV2 property value. 
+// GetGrantedToV2 gets the grantedToV2 property value. For user type permissions, the details of the users and applications for this permission. Read-only.
 func (m *Permission) GetGrantedToV2()(*SharePointIdentitySet) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *Permission) GetGrantedToV2()(*SharePointIdentitySet) {
         return m.grantedToV2
     }
 }
-// GetHasPassword gets the hasPassword property value. This indicates whether password is set for this permission, it's only showing in response. Optional and Read-only and for OneDrive Personal only.
+// GetHasPassword gets the hasPassword property value. Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
 func (m *Permission) GetHasPassword()(*bool) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *Permission) GetLink()(*SharingLink) {
         return m.link
     }
 }
-// GetRoles gets the roles property value. The type of permission, e.g. read. See below for the full list of roles. Read-only.
+// GetRoles gets the roles property value. The type of permission, for example, read. See below for the full list of roles. Read-only.
 func (m *Permission) GetRoles()([]string) {
     if m == nil {
         return nil
@@ -346,31 +346,31 @@ func (m *Permission) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad9
         m.expirationDateTime = value
     }
 }
-// SetGrantedTo sets the grantedTo property value. For user type permissions, the details of the users & applications for this permission. Read-only.
+// SetGrantedTo sets the grantedTo property value. 
 func (m *Permission) SetGrantedTo(value *IdentitySet)() {
     if m != nil {
         m.grantedTo = value
     }
 }
-// SetGrantedToIdentities sets the grantedToIdentities property value. For link type permissions, the details of the users to whom permission was granted. Read-only.
+// SetGrantedToIdentities sets the grantedToIdentities property value. 
 func (m *Permission) SetGrantedToIdentities(value []IdentitySet)() {
     if m != nil {
         m.grantedToIdentities = value
     }
 }
-// SetGrantedToIdentitiesV2 sets the grantedToIdentitiesV2 property value. 
+// SetGrantedToIdentitiesV2 sets the grantedToIdentitiesV2 property value. For link type permissions, the details of the users to whom permission was granted. Read-only.
 func (m *Permission) SetGrantedToIdentitiesV2(value []SharePointIdentitySet)() {
     if m != nil {
         m.grantedToIdentitiesV2 = value
     }
 }
-// SetGrantedToV2 sets the grantedToV2 property value. 
+// SetGrantedToV2 sets the grantedToV2 property value. For user type permissions, the details of the users and applications for this permission. Read-only.
 func (m *Permission) SetGrantedToV2(value *SharePointIdentitySet)() {
     if m != nil {
         m.grantedToV2 = value
     }
 }
-// SetHasPassword sets the hasPassword property value. This indicates whether password is set for this permission, it's only showing in response. Optional and Read-only and for OneDrive Personal only.
+// SetHasPassword sets the hasPassword property value. Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
 func (m *Permission) SetHasPassword(value *bool)() {
     if m != nil {
         m.hasPassword = value
@@ -394,7 +394,7 @@ func (m *Permission) SetLink(value *SharingLink)() {
         m.link = value
     }
 }
-// SetRoles sets the roles property value. The type of permission, e.g. read. See below for the full list of roles. Read-only.
+// SetRoles sets the roles property value. The type of permission, for example, read. See below for the full list of roles. Read-only.
 func (m *Permission) SetRoles(value []string)() {
     if m != nil {
         m.roles = value

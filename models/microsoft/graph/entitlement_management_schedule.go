@@ -9,11 +9,11 @@ import (
 type EntitlementManagementSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // When the access should expire.
     expiration *ExpirationPattern;
-    // 
+    // For recurring access. Not used at present.
     recurrence *PatternedRecurrence;
-    // 
+    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
 // NewEntitlementManagementSchedule instantiates a new entitlementManagementSchedule and sets the default values.
@@ -31,7 +31,7 @@ func (m *EntitlementManagementSchedule) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// GetExpiration gets the expiration property value. 
+// GetExpiration gets the expiration property value. When the access should expire.
 func (m *EntitlementManagementSchedule) GetExpiration()(*ExpirationPattern) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *EntitlementManagementSchedule) GetExpiration()(*ExpirationPattern) {
         return m.expiration
     }
 }
-// GetRecurrence gets the recurrence property value. 
+// GetRecurrence gets the recurrence property value. For recurring access. Not used at present.
 func (m *EntitlementManagementSchedule) GetRecurrence()(*PatternedRecurrence) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *EntitlementManagementSchedule) GetRecurrence()(*PatternedRecurrence) {
         return m.recurrence
     }
 }
-// GetStartDateTime gets the startDateTime property value. 
+// GetStartDateTime gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EntitlementManagementSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -127,19 +127,19 @@ func (m *EntitlementManagementSchedule) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetExpiration sets the expiration property value. 
+// SetExpiration sets the expiration property value. When the access should expire.
 func (m *EntitlementManagementSchedule) SetExpiration(value *ExpirationPattern)() {
     if m != nil {
         m.expiration = value
     }
 }
-// SetRecurrence sets the recurrence property value. 
+// SetRecurrence sets the recurrence property value. For recurring access. Not used at present.
 func (m *EntitlementManagementSchedule) SetRecurrence(value *PatternedRecurrence)() {
     if m != nil {
         m.recurrence = value
     }
 }
-// SetStartDateTime sets the startDateTime property value. 
+// SetStartDateTime sets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EntitlementManagementSchedule) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.startDateTime = value

@@ -7,7 +7,7 @@ import (
 // SharePointIdentity 
 type SharePointIdentity struct {
     Identity
-    // 
+    // The sign in name of the SharePoint identity.
     loginName *string;
 }
 // NewSharePointIdentity instantiates a new sharePointIdentity and sets the default values.
@@ -17,7 +17,7 @@ func NewSharePointIdentity()(*SharePointIdentity) {
     }
     return m
 }
-// GetLoginName gets the loginName property value. 
+// GetLoginName gets the loginName property value. The sign in name of the SharePoint identity.
 func (m *SharePointIdentity) GetLoginName()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *SharePointIdentity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// SetLoginName sets the loginName property value. 
+// SetLoginName sets the loginName property value. The sign in name of the SharePoint identity.
 func (m *SharePointIdentity) SetLoginName(value *string)() {
     if m != nil {
         m.loginName = value

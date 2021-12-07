@@ -10,7 +10,7 @@ type RoleManagement struct {
     additionalData map[string]interface{};
     // Read-only. Nullable.
     directory *RbacApplication;
-    // The RbacApplication for Entitlement Management
+    // Container for all entitlement management resources in Azure AD identity governance.
     entitlementManagement *RbacApplication;
 }
 // NewRoleManagement instantiates a new RoleManagement and sets the default values.
@@ -36,7 +36,7 @@ func (m *RoleManagement) GetDirectory()(*RbacApplication) {
         return m.directory
     }
 }
-// GetEntitlementManagement gets the entitlementManagement property value. The RbacApplication for Entitlement Management
+// GetEntitlementManagement gets the entitlementManagement property value. Container for all entitlement management resources in Azure AD identity governance.
 func (m *RoleManagement) GetEntitlementManagement()(*RbacApplication) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *RoleManagement) SetDirectory(value *RbacApplication)() {
         m.directory = value
     }
 }
-// SetEntitlementManagement sets the entitlementManagement property value. The RbacApplication for Entitlement Management
+// SetEntitlementManagement sets the entitlementManagement property value. Container for all entitlement management resources in Azure AD identity governance.
 func (m *RoleManagement) SetEntitlementManagement(value *RbacApplication)() {
     if m != nil {
         m.entitlementManagement = value

@@ -13,7 +13,7 @@ type ExpirationPattern struct {
     duration *string;
     // Timestamp of date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The requestor's desired expiration pattern type.
+    // The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
     type_escaped *ExpirationPatternType;
 }
 // NewExpirationPattern instantiates a new expirationPattern and sets the default values.
@@ -47,7 +47,7 @@ func (m *ExpirationPattern) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.endDateTime
     }
 }
-// GetType_escaped gets the type_escaped property value. The requestor's desired expiration pattern type.
+// GetType_escaped gets the type_escaped property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
 func (m *ExpirationPattern) GetType_escaped()(*ExpirationPatternType) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *ExpirationPattern) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad9
         m.endDateTime = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The requestor's desired expiration pattern type.
+// SetType_escaped sets the type_escaped property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
 func (m *ExpirationPattern) SetType_escaped(value *ExpirationPatternType)() {
     if m != nil {
         m.type_escaped = value

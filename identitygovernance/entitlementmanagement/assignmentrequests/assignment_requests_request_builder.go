@@ -27,7 +27,7 @@ type AssignmentRequestsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AssignmentRequestsRequestBuilderGetQueryParameters get assignmentRequests from identityGovernance
+// AssignmentRequestsRequestBuilderGetQueryParameters access package assignment requests.
 type AssignmentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -76,7 +76,7 @@ func NewAssignmentRequestsRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get assignmentRequests from identityGovernance
+// CreateGetRequestInformation access package assignment requests.
 func (m *AssignmentRequestsRequestBuilder) CreateGetRequestInformation(options *AssignmentRequestsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,7 +96,7 @@ func (m *AssignmentRequestsRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to assignmentRequests for identityGovernance
+// CreatePostRequestInformation access package assignment requests.
 func (m *AssignmentRequestsRequestBuilder) CreatePostRequestInformation(options *AssignmentRequestsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *AssignmentRequestsRequestBuilder) CreatePostRequestInformation(options 
 func (m *AssignmentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*if9b40be5c02c51541e5e3a4c0caa7d8e2d99360f8e5592a4844ffeec98623cc8.FilterByCurrentUserWithOnRequestBuilder) {
     return if9b40be5c02c51541e5e3a4c0caa7d8e2d99360f8e5592a4844ffeec98623cc8.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get get assignmentRequests from identityGovernance
+// Get access package assignment requests.
 func (m *AssignmentRequestsRequestBuilder) Get(options *AssignmentRequestsRequestBuilderGetOptions)(*AssignmentRequestsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -130,7 +130,7 @@ func (m *AssignmentRequestsRequestBuilder) Get(options *AssignmentRequestsReques
     }
     return res.(*AssignmentRequestsResponse), nil
 }
-// Post create new navigation property to assignmentRequests for identityGovernance
+// Post access package assignment requests.
 func (m *AssignmentRequestsRequestBuilder) Post(options *AssignmentRequestsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageAssignmentRequest, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
