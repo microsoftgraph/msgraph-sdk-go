@@ -21,7 +21,7 @@ func NewQuartile_ExcRequestBody()(*Quartile_ExcRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Quartile_ExcRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *Quartile_ExcRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Quartile_ExcRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

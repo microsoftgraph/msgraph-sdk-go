@@ -25,7 +25,7 @@ func NewGetScheduleRequestBody()(*GetScheduleRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetScheduleRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *GetScheduleRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAvailabilityViewInterval gets the AvailabilityViewInterval property value. 
+// GetAvailabilityViewInterval gets the availabilityViewInterval property value. 
 func (m *GetScheduleRequestBody) GetAvailabilityViewInterval()(*int32) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *GetScheduleRequestBody) GetAvailabilityViewInterval()(*int32) {
         return m.availabilityViewInterval
     }
 }
-// GetEndTime gets the EndTime property value. 
+// GetEndTime gets the endTime property value. 
 func (m *GetScheduleRequestBody) GetEndTime()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *GetScheduleRequestBody) GetEndTime()(*i4a838ef194e4c99e9f2c63ba10dab9cb
         return m.endTime
     }
 }
-// GetSchedules gets the Schedules property value. 
+// GetSchedules gets the schedules property value. 
 func (m *GetScheduleRequestBody) GetSchedules()([]string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *GetScheduleRequestBody) GetSchedules()([]string) {
         return m.schedules
     }
 }
-// GetStartTime gets the StartTime property value. 
+// GetStartTime gets the startTime property value. 
 func (m *GetScheduleRequestBody) GetStartTime()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DateTimeTimeZone) {
     if m == nil {
         return nil
@@ -151,31 +151,31 @@ func (m *GetScheduleRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetScheduleRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetAvailabilityViewInterval sets the AvailabilityViewInterval property value. 
+// SetAvailabilityViewInterval sets the availabilityViewInterval property value. 
 func (m *GetScheduleRequestBody) SetAvailabilityViewInterval(value *int32)() {
     if m != nil {
         m.availabilityViewInterval = value
     }
 }
-// SetEndTime sets the EndTime property value. 
+// SetEndTime sets the endTime property value. 
 func (m *GetScheduleRequestBody) SetEndTime(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DateTimeTimeZone)() {
     if m != nil {
         m.endTime = value
     }
 }
-// SetSchedules sets the Schedules property value. 
+// SetSchedules sets the schedules property value. 
 func (m *GetScheduleRequestBody) SetSchedules(value []string)() {
     if m != nil {
         m.schedules = value
     }
 }
-// SetStartTime sets the StartTime property value. 
+// SetStartTime sets the startTime property value. 
 func (m *GetScheduleRequestBody) SetStartTime(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DateTimeTimeZone)() {
     if m != nil {
         m.startTime = value

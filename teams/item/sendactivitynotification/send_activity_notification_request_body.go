@@ -37,7 +37,7 @@ func (m *SendActivityNotificationRequestBody) GetActivityType()(*string) {
         return m.activityType
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendActivityNotificationRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -214,7 +214,7 @@ func (m *SendActivityNotificationRequestBody) SetActivityType(value *string)() {
         m.activityType = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendActivityNotificationRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

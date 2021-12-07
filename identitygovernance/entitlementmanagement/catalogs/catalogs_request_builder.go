@@ -26,7 +26,7 @@ type CatalogsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// CatalogsRequestBuilderGetQueryParameters get catalogs from identityGovernance
+// CatalogsRequestBuilderGetQueryParameters access package catalogs.
 type CatalogsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewCatalogsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewCatalogsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get catalogs from identityGovernance
+// CreateGetRequestInformation access package catalogs.
 func (m *CatalogsRequestBuilder) CreateGetRequestInformation(options *CatalogsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *CatalogsRequestBuilder) CreateGetRequestInformation(options *CatalogsRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to catalogs for identityGovernance
+// CreatePostRequestInformation access package catalogs.
 func (m *CatalogsRequestBuilder) CreatePostRequestInformation(options *CatalogsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *CatalogsRequestBuilder) CreatePostRequestInformation(options *CatalogsR
     }
     return requestInfo, nil
 }
-// Get get catalogs from identityGovernance
+// Get access package catalogs.
 func (m *CatalogsRequestBuilder) Get(options *CatalogsRequestBuilderGetOptions)(*CatalogsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *CatalogsRequestBuilder) Get(options *CatalogsRequestBuilderGetOptions)(
     }
     return res.(*CatalogsResponse), nil
 }
-// Post create new navigation property to catalogs for identityGovernance
+// Post access package catalogs.
 func (m *CatalogsRequestBuilder) Post(options *CatalogsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageCatalog, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -21,7 +21,7 @@ func NewUserAttributeAssignmentsResponse()(*UserAttributeAssignmentsResponse) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAttributeAssignmentsResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *UserAttributeAssignmentsResponse) GetAdditionalData()(map[string]interf
         return m.additionalData
     }
 }
-// GetNextLink gets the nextLink property value. 
+// GetNextLink gets the @odata.nextLink property value. 
 func (m *UserAttributeAssignmentsResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
@@ -104,13 +104,13 @@ func (m *UserAttributeAssignmentsResponse) Serialize(writer i04eb5309aeaafadd283
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAttributeAssignmentsResponse) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetNextLink sets the nextLink property value. 
+// SetNextLink sets the @odata.nextLink property value. 
 func (m *UserAttributeAssignmentsResponse) SetNextLink(value *string)() {
     if m != nil {
         m.nextLink = value

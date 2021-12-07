@@ -21,7 +21,7 @@ func NewDefaultManagedAppProtectionsResponse()(*DefaultManagedAppProtectionsResp
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DefaultManagedAppProtectionsResponse) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *DefaultManagedAppProtectionsResponse) GetAdditionalData()(map[string]in
         return m.additionalData
     }
 }
-// GetNextLink gets the nextLink property value. 
+// GetNextLink gets the @odata.nextLink property value. 
 func (m *DefaultManagedAppProtectionsResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
@@ -104,13 +104,13 @@ func (m *DefaultManagedAppProtectionsResponse) Serialize(writer i04eb5309aeaafad
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DefaultManagedAppProtectionsResponse) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetNextLink sets the nextLink property value. 
+// SetNextLink sets the @odata.nextLink property value. 
 func (m *DefaultManagedAppProtectionsResponse) SetNextLink(value *string)() {
     if m != nil {
         m.nextLink = value

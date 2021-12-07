@@ -32,7 +32,7 @@ func (m *IdentityGovernance) GetAccessReviews()(*AccessReviewSet) {
         return m.accessReviews
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityGovernance) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -152,7 +152,7 @@ func (m *IdentityGovernance) SetAccessReviews(value *AccessReviewSet)() {
         m.accessReviews = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityGovernance) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
