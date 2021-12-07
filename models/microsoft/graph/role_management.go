@@ -10,7 +10,7 @@ type RoleManagement struct {
     additionalData map[string]interface{};
     // Read-only. Nullable.
     directory *RbacApplication;
-    // The RbacApplication for Entitlement Management
+    // Container for all entitlement management resources in Azure AD identity governance.
     entitlementManagement *RbacApplication;
 }
 // NewRoleManagement instantiates a new RoleManagement and sets the default values.
@@ -20,7 +20,7 @@ func NewRoleManagement()(*RoleManagement) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleManagement) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *RoleManagement) GetDirectory()(*RbacApplication) {
         return m.directory
     }
 }
-// GetEntitlementManagement gets the entitlementManagement property value. The RbacApplication for Entitlement Management
+// GetEntitlementManagement gets the entitlementManagement property value. Container for all entitlement management resources in Azure AD identity governance.
 func (m *RoleManagement) GetEntitlementManagement()(*RbacApplication) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *RoleManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleManagement) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -106,7 +106,7 @@ func (m *RoleManagement) SetDirectory(value *RbacApplication)() {
         m.directory = value
     }
 }
-// SetEntitlementManagement sets the entitlementManagement property value. The RbacApplication for Entitlement Management
+// SetEntitlementManagement sets the entitlementManagement property value. Container for all entitlement management resources in Azure AD identity governance.
 func (m *RoleManagement) SetEntitlementManagement(value *RbacApplication)() {
     if m != nil {
         m.entitlementManagement = value

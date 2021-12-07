@@ -22,7 +22,7 @@ func NewAlertTrigger()(*AlertTrigger) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlertTrigger) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *AlertTrigger) GetName()(*string) {
         return m.name
     }
 }
-// GetType_escaped gets the type_escaped property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
+// GetType_escaped gets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
 func (m *AlertTrigger) GetType_escaped()(*string) {
     if m == nil {
         return nil
@@ -67,13 +67,13 @@ func (m *AlertTrigger) GetFieldDeserializers()(map[string]func(interface{}, i04e
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -101,7 +101,7 @@ func (m *AlertTrigger) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -120,7 +120,7 @@ func (m *AlertTrigger) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AlertTrigger) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -132,7 +132,7 @@ func (m *AlertTrigger) SetName(value *string)() {
         m.name = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
+// SetType_escaped sets the type property value. Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
 func (m *AlertTrigger) SetType_escaped(value *string)() {
     if m != nil {
         m.type_escaped = value

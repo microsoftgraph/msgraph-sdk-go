@@ -32,7 +32,7 @@ func NewResourceVisualization()(*ResourceVisualization) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceVisualization) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *ResourceVisualization) GetTitle()(*string) {
         return m.title
     }
 }
-// GetType_escaped gets the type_escaped property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+// GetType_escaped gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
 func (m *ResourceVisualization) GetType_escaped()(*string) {
     if m == nil {
         return nil
@@ -177,13 +177,13 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -237,7 +237,7 @@ func (m *ResourceVisualization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -250,7 +250,7 @@ func (m *ResourceVisualization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceVisualization) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -298,7 +298,7 @@ func (m *ResourceVisualization) SetTitle(value *string)() {
         m.title = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+// SetType_escaped sets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
 func (m *ResourceVisualization) SetType_escaped(value *string)() {
     if m != nil {
         m.type_escaped = value

@@ -7,11 +7,11 @@ import (
 // SharePointIdentitySet 
 type SharePointIdentitySet struct {
     IdentitySet
-    // 
+    // The group associated with this action. Optional.
     group *Identity;
-    // 
+    // The SharePoint group associated with this action. Optional.
     siteGroup *SharePointIdentity;
-    // 
+    // The SharePoint user associated with this action. Optional.
     siteUser *SharePointIdentity;
 }
 // NewSharePointIdentitySet instantiates a new sharePointIdentitySet and sets the default values.
@@ -21,7 +21,7 @@ func NewSharePointIdentitySet()(*SharePointIdentitySet) {
     }
     return m
 }
-// GetGroup gets the group property value. 
+// GetGroup gets the group property value. The group associated with this action. Optional.
 func (m *SharePointIdentitySet) GetGroup()(*Identity) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *SharePointIdentitySet) GetGroup()(*Identity) {
         return m.group
     }
 }
-// GetSiteGroup gets the siteGroup property value. 
+// GetSiteGroup gets the siteGroup property value. The SharePoint group associated with this action. Optional.
 func (m *SharePointIdentitySet) GetSiteGroup()(*SharePointIdentity) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *SharePointIdentitySet) GetSiteGroup()(*SharePointIdentity) {
         return m.siteGroup
     }
 }
-// GetSiteUser gets the siteUser property value. 
+// GetSiteUser gets the siteUser property value. The SharePoint user associated with this action. Optional.
 func (m *SharePointIdentitySet) GetSiteUser()(*SharePointIdentity) {
     if m == nil {
         return nil
@@ -109,19 +109,19 @@ func (m *SharePointIdentitySet) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// SetGroup sets the group property value. 
+// SetGroup sets the group property value. The group associated with this action. Optional.
 func (m *SharePointIdentitySet) SetGroup(value *Identity)() {
     if m != nil {
         m.group = value
     }
 }
-// SetSiteGroup sets the siteGroup property value. 
+// SetSiteGroup sets the siteGroup property value. The SharePoint group associated with this action. Optional.
 func (m *SharePointIdentitySet) SetSiteGroup(value *SharePointIdentity)() {
     if m != nil {
         m.siteGroup = value
     }
 }
-// SetSiteUser sets the siteUser property value. 
+// SetSiteUser sets the siteUser property value. The SharePoint user associated with this action. Optional.
 func (m *SharePointIdentitySet) SetSiteUser(value *SharePointIdentity)() {
     if m != nil {
         m.siteUser = value

@@ -27,7 +27,7 @@ func (m *AppScope) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetType_escaped gets the type_escaped property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
+// GetType_escaped gets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
 func (m *AppScope) GetType_escaped()(*string) {
     if m == nil {
         return nil
@@ -48,13 +48,13 @@ func (m *AppScope) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -76,7 +76,7 @@ func (m *AppScope) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -89,7 +89,7 @@ func (m *AppScope) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
+// SetType_escaped sets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
 func (m *AppScope) SetType_escaped(value *string)() {
     if m != nil {
         m.type_escaped = value

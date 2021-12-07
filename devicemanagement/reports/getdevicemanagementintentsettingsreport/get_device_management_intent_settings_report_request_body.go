@@ -34,7 +34,7 @@ func NewGetDeviceManagementIntentSettingsReportRequestBody()(*GetDeviceManagemen
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetDeviceManagementIntentSettingsReportRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -82,7 +82,7 @@ func (m *GetDeviceManagementIntentSettingsReportRequestBody) GetSearch()(*string
         return m.search
     }
 }
-// GetSelect_escaped gets the select_escaped property value. 
+// GetSelect_escaped gets the select property value. 
 func (m *GetDeviceManagementIntentSettingsReportRequestBody) GetSelect_escaped()([]string) {
     if m == nil {
         return nil
@@ -175,7 +175,7 @@ func (m *GetDeviceManagementIntentSettingsReportRequestBody) GetFieldDeserialize
         }
         return nil
     }
-    res["select_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["select"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *GetDeviceManagementIntentSettingsReportRequestBody) GetFieldDeserialize
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetSelect_escaped(res)
+            m.SetSelect(res)
         }
         return nil
     }
@@ -257,7 +257,7 @@ func (m *GetDeviceManagementIntentSettingsReportRequestBody) Serialize(writer i0
         }
     }
     {
-        err := writer.WriteCollectionOfStringValues("select_escaped", m.GetSelect_escaped())
+        err := writer.WriteCollectionOfStringValues("select", m.GetSelect())
         if err != nil {
             return err
         }
@@ -288,7 +288,7 @@ func (m *GetDeviceManagementIntentSettingsReportRequestBody) Serialize(writer i0
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetDeviceManagementIntentSettingsReportRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -324,7 +324,7 @@ func (m *GetDeviceManagementIntentSettingsReportRequestBody) SetSearch(value *st
         m.search = value
     }
 }
-// SetSelect_escaped sets the select_escaped property value. 
+// SetSelect_escaped sets the select property value. 
 func (m *GetDeviceManagementIntentSettingsReportRequestBody) SetSelect_escaped(value []string)() {
     if m != nil {
         m.select_escaped = value

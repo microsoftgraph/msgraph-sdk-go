@@ -8,7 +8,7 @@ import (
 // AccessPackage 
 type AccessPackage struct {
     Entity
-    // 
+    // Read-only. Nullable.
     catalog *AccessPackageCatalog;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -28,7 +28,7 @@ func NewAccessPackage()(*AccessPackage) {
     }
     return m
 }
-// GetCatalog gets the catalog property value. 
+// GetCatalog gets the catalog property value. Read-only. Nullable.
 func (m *AccessPackage) GetCatalog()(*AccessPackageCatalog) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *AccessPackage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// SetCatalog sets the catalog property value. 
+// SetCatalog sets the catalog property value. Read-only. Nullable.
 func (m *AccessPackage) SetCatalog(value *AccessPackageCatalog)() {
     if m != nil {
         m.catalog = value

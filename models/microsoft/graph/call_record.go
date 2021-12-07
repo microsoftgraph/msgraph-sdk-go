@@ -101,7 +101,7 @@ func (m *CallRecord) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
         return m.startDateTime
     }
 }
-// GetType_escaped gets the type_escaped property value. Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.
+// GetType_escaped gets the type property value. Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.
 func (m *CallRecord) GetType_escaped()(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CallType) {
     if m == nil {
         return nil
@@ -212,14 +212,14 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.ParseCallType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CallType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -302,9 +302,9 @@ func (m *CallRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -365,7 +365,7 @@ func (m *CallRecord) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
         m.startDateTime = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.
+// SetType_escaped sets the type property value. Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.
 func (m *CallRecord) SetType_escaped(value *i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CallType)() {
     if m != nil {
         m.type_escaped = value

@@ -19,7 +19,7 @@ func NewCreateUploadSessionRequestBody()(*CreateUploadSessionRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateUploadSessionRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *CreateUploadSessionRequestBody) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetAttachmentItem gets the AttachmentItem property value. 
+// GetAttachmentItem gets the attachmentItem property value. 
 func (m *CreateUploadSessionRequestBody) GetAttachmentItem()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AttachmentItem) {
     if m == nil {
         return nil
@@ -69,13 +69,13 @@ func (m *CreateUploadSessionRequestBody) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CreateUploadSessionRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetAttachmentItem sets the AttachmentItem property value. 
+// SetAttachmentItem sets the attachmentItem property value. 
 func (m *CreateUploadSessionRequestBody) SetAttachmentItem(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AttachmentItem)() {
     if m != nil {
         m.attachmentItem = value

@@ -13,7 +13,7 @@ type ExpirationPattern struct {
     duration *string;
     // Timestamp of date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The requestor's desired expiration pattern type.
+    // The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
     type_escaped *ExpirationPatternType;
 }
 // NewExpirationPattern instantiates a new expirationPattern and sets the default values.
@@ -23,7 +23,7 @@ func NewExpirationPattern()(*ExpirationPattern) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpirationPattern) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -47,7 +47,7 @@ func (m *ExpirationPattern) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.endDateTime
     }
 }
-// GetType_escaped gets the type_escaped property value. The requestor's desired expiration pattern type.
+// GetType_escaped gets the type property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
 func (m *ExpirationPattern) GetType_escaped()(*ExpirationPatternType) {
     if m == nil {
         return nil
@@ -78,14 +78,14 @@ func (m *ExpirationPattern) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseExpirationPatternType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(ExpirationPatternType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -108,9 +108,9 @@ func (m *ExpirationPattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -123,7 +123,7 @@ func (m *ExpirationPattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpirationPattern) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -141,7 +141,7 @@ func (m *ExpirationPattern) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad9
         m.endDateTime = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The requestor's desired expiration pattern type.
+// SetType_escaped sets the type property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
 func (m *ExpirationPattern) SetType_escaped(value *ExpirationPatternType)() {
     if m != nil {
         m.type_escaped = value

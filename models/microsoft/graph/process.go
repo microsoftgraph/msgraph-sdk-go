@@ -49,7 +49,7 @@ func (m *Process) GetAccountName()(*string) {
         return m.accountName
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Process) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -363,7 +363,7 @@ func (m *Process) SetAccountName(value *string)() {
         m.accountName = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Process) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

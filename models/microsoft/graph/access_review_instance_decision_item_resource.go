@@ -22,7 +22,7 @@ func NewAccessReviewInstanceDecisionItemResource()(*AccessReviewInstanceDecision
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewInstanceDecisionItemResource) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *AccessReviewInstanceDecisionItemResource) GetId()(*string) {
         return m.id
     }
 }
-// GetType_escaped gets the type_escaped property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
+// GetType_escaped gets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
 func (m *AccessReviewInstanceDecisionItemResource) GetType_escaped()(*string) {
     if m == nil {
         return nil
@@ -77,13 +77,13 @@ func (m *AccessReviewInstanceDecisionItemResource) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -107,7 +107,7 @@ func (m *AccessReviewInstanceDecisionItemResource) Serialize(writer i04eb5309aea
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -120,7 +120,7 @@ func (m *AccessReviewInstanceDecisionItemResource) Serialize(writer i04eb5309aea
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessReviewInstanceDecisionItemResource) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -138,7 +138,7 @@ func (m *AccessReviewInstanceDecisionItemResource) SetId(value *string)() {
         m.id = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
+// SetType_escaped sets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
 func (m *AccessReviewInstanceDecisionItemResource) SetType_escaped(value *string)() {
     if m != nil {
         m.type_escaped = value

@@ -421,7 +421,7 @@ func (m *Delta) GetTransactionId()(*string) {
         return m.transactionId
     }
 }
-// GetType_escaped gets the type_escaped property value. 
+// GetType_escaped gets the type property value. 
 func (m *Delta) GetType_escaped()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EventType) {
     if m == nil {
         return nil
@@ -872,14 +872,14 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ParseEventType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EventType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -1183,9 +1183,9 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -1438,7 +1438,7 @@ func (m *Delta) SetTransactionId(value *string)() {
         m.transactionId = value
     }
 }
-// SetType_escaped sets the type_escaped property value. 
+// SetType_escaped sets the type property value. 
 func (m *Delta) SetType_escaped(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EventType)() {
     if m != nil {
         m.type_escaped = value

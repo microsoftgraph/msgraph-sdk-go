@@ -53,7 +53,7 @@ func (m *WorkbookNamedItem) GetScope()(*string) {
         return m.scope
     }
 }
-// GetType_escaped gets the type_escaped property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
+// GetType_escaped gets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
 func (m *WorkbookNamedItem) GetType_escaped()(*string) {
     if m == nil {
         return nil
@@ -118,13 +118,13 @@ func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -188,7 +188,7 @@ func (m *WorkbookNamedItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     {
-        err = writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err = writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -231,7 +231,7 @@ func (m *WorkbookNamedItem) SetScope(value *string)() {
         m.scope = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
+// SetType_escaped sets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
 func (m *WorkbookNamedItem) SetType_escaped(value *string)() {
     if m != nil {
         m.type_escaped = value

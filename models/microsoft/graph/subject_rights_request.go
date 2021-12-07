@@ -198,7 +198,7 @@ func (m *SubjectRightsRequest) GetTeam()(*Team) {
         return m.team
     }
 }
-// GetType_escaped gets the type_escaped property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
+// GetType_escaped gets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
 func (m *SubjectRightsRequest) GetType_escaped()(*SubjectRightsRequestType) {
     if m == nil {
         return nil
@@ -407,14 +407,14 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseSubjectRightsRequestType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(SubjectRightsRequestType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -554,9 +554,9 @@ func (m *SubjectRightsRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -671,7 +671,7 @@ func (m *SubjectRightsRequest) SetTeam(value *Team)() {
         m.team = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
+// SetType_escaped sets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
 func (m *SubjectRightsRequest) SetType_escaped(value *SubjectRightsRequestType)() {
     if m != nil {
         m.type_escaped = value

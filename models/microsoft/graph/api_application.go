@@ -34,7 +34,7 @@ func (m *ApiApplication) GetAcceptMappedClaims()(*bool) {
         return m.acceptMappedClaims
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApiApplication) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -200,7 +200,7 @@ func (m *ApiApplication) SetAcceptMappedClaims(value *bool)() {
         m.acceptMappedClaims = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApiApplication) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

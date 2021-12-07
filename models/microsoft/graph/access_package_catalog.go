@@ -10,7 +10,7 @@ type AccessPackageCatalog struct {
     Entity
     // The access packages in this catalog. Read-only. Nullable.
     accessPackages []AccessPackage;
-    // One of UserManaged or ServiceDefault.
+    // Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
     catalogType *AccessPackageCatalogType;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -22,7 +22,7 @@ type AccessPackageCatalog struct {
     isExternallyVisible *bool;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
     state *AccessPackageCatalogState;
 }
 // NewAccessPackageCatalog instantiates a new accessPackageCatalog and sets the default values.
@@ -40,7 +40,7 @@ func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackage) {
         return m.accessPackages
     }
 }
-// GetCatalogType gets the catalogType property value. One of UserManaged or ServiceDefault.
+// GetCatalogType gets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
 func (m *AccessPackageCatalog) GetCatalogType()(*AccessPackageCatalogType) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *AccessPackageCatalog) GetModifiedDateTime()(*i336074805fc853987abe6f7fe
         return m.modifiedDateTime
     }
 }
-// GetState gets the state property value. 
+// GetState gets the state property value. Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
 func (m *AccessPackageCatalog) GetState()(*AccessPackageCatalogState) {
     if m == nil {
         return nil
@@ -259,7 +259,7 @@ func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackage)() {
         m.accessPackages = value
     }
 }
-// SetCatalogType sets the catalogType property value. One of UserManaged or ServiceDefault.
+// SetCatalogType sets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
 func (m *AccessPackageCatalog) SetCatalogType(value *AccessPackageCatalogType)() {
     if m != nil {
         m.catalogType = value
@@ -295,7 +295,7 @@ func (m *AccessPackageCatalog) SetModifiedDateTime(value *i336074805fc853987abe6
         m.modifiedDateTime = value
     }
 }
-// SetState sets the state property value. 
+// SetState sets the state property value. Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
 func (m *AccessPackageCatalog) SetState(value *AccessPackageCatalogState)() {
     if m != nil {
         m.state = value

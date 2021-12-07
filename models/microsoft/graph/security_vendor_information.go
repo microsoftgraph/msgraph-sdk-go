@@ -24,7 +24,7 @@ func NewSecurityVendorInformation()(*SecurityVendorInformation) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityVendorInformation) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *SecurityVendorInformation) GetSubProvider()(*string) {
         return m.subProvider
     }
 }
-// GetVendor_escaped gets the vendor_escaped property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+// GetVendor_escaped gets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 func (m *SecurityVendorInformation) GetVendor_escaped()(*string) {
     if m == nil {
         return nil
@@ -97,13 +97,13 @@ func (m *SecurityVendorInformation) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["vendor_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["vendor"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendor_escaped(val)
+            m.SetVendor(val)
         }
         return nil
     }
@@ -133,7 +133,7 @@ func (m *SecurityVendorInformation) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     {
-        err := writer.WriteStringValue("vendor_escaped", m.GetVendor_escaped())
+        err := writer.WriteStringValue("vendor", m.GetVendor())
         if err != nil {
             return err
         }
@@ -146,7 +146,7 @@ func (m *SecurityVendorInformation) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SecurityVendorInformation) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -170,7 +170,7 @@ func (m *SecurityVendorInformation) SetSubProvider(value *string)() {
         m.subProvider = value
     }
 }
-// SetVendor_escaped sets the vendor_escaped property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+// SetVendor_escaped sets the vendor property value. Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 func (m *SecurityVendorInformation) SetVendor_escaped(value *string)() {
     if m != nil {
         m.vendor_escaped = value
