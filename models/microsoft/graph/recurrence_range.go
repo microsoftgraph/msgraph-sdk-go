@@ -26,7 +26,7 @@ func NewRecurrenceRange()(*RecurrenceRange) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecurrenceRange) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -66,8 +66,8 @@ func (m *RecurrenceRange) GetStartDate()(*string) {
         return m.startDate
     }
 }
-// GetType_escaped gets the type_escaped property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-func (m *RecurrenceRange) GetType_escaped()(*RecurrenceRangeType) {
+// GetType gets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
+func (m *RecurrenceRange) GetType()(*RecurrenceRangeType) {
     if m == nil {
         return nil
     } else {
@@ -117,14 +117,14 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseRecurrenceRangeType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(RecurrenceRangeType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -159,9 +159,9 @@ func (m *RecurrenceRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err := writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -174,7 +174,7 @@ func (m *RecurrenceRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecurrenceRange) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -204,8 +204,8 @@ func (m *RecurrenceRange) SetStartDate(value *string)() {
         m.startDate = value
     }
 }
-// SetType_escaped sets the type_escaped property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-func (m *RecurrenceRange) SetType_escaped(value *RecurrenceRangeType)() {
+// SetType sets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
+func (m *RecurrenceRange) SetType(value *RecurrenceRangeType)() {
     if m != nil {
         m.type_escaped = value
     }

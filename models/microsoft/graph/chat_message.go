@@ -22,7 +22,7 @@ type ChatMessage struct {
     deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only. Version number of the chat message.
     etag *string;
-    // Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
+    // Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
     eventDetail *EventMessageDetail;
     // Details of the sender of the chat message. Can only be set during migration.
     from *ChatMessageFromIdentitySet;
@@ -118,7 +118,7 @@ func (m *ChatMessage) GetEtag()(*string) {
         return m.etag
     }
 }
-// GetEventDetail gets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
+// GetEventDetail gets the eventDetail property value. Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
 func (m *ChatMessage) GetEventDetail()(*EventMessageDetail) {
     if m == nil {
         return nil
@@ -721,7 +721,7 @@ func (m *ChatMessage) SetEtag(value *string)() {
         m.etag = value
     }
 }
-// SetEventDetail sets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
+// SetEventDetail sets the eventDetail property value. Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
 func (m *ChatMessage) SetEventDetail(value *EventMessageDetail)() {
     if m != nil {
         m.eventDetail = value

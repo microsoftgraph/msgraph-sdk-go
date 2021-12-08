@@ -65,7 +65,7 @@ func NewNetworkInfo()(*NetworkInfo) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkInfo) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -673,7 +673,7 @@ func (m *NetworkInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkInfo) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

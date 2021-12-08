@@ -17,8 +17,8 @@ func NewAttendeeBase()(*AttendeeBase) {
     }
     return m
 }
-// GetType_escaped gets the type_escaped property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
-func (m *AttendeeBase) GetType_escaped()(*AttendeeType) {
+// GetType gets the type property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
+func (m *AttendeeBase) GetType()(*AttendeeType) {
     if m == nil {
         return nil
     } else {
@@ -28,14 +28,14 @@ func (m *AttendeeBase) GetType_escaped()(*AttendeeType) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttendeeBase) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Recipient.GetFieldDeserializers()
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttendeeType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(AttendeeType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -50,17 +50,17 @@ func (m *AttendeeBase) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if err != nil {
         return err
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
     }
     return nil
 }
-// SetType_escaped sets the type_escaped property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
-func (m *AttendeeBase) SetType_escaped(value *AttendeeType)() {
+// SetType sets the type property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
+func (m *AttendeeBase) SetType(value *AttendeeType)() {
     if m != nil {
         m.type_escaped = value
     }

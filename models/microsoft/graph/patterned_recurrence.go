@@ -20,7 +20,7 @@ func NewPatternedRecurrence()(*PatternedRecurrence) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PatternedRecurrence) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,8 +36,8 @@ func (m *PatternedRecurrence) GetPattern()(*RecurrencePattern) {
         return m.pattern
     }
 }
-// GetRange_escaped gets the range_escaped property value. The duration of an event.
-func (m *PatternedRecurrence) GetRange_escaped()(*RecurrenceRange) {
+// GetRange gets the range property value. The duration of an event.
+func (m *PatternedRecurrence) GetRange()(*RecurrenceRange) {
     if m == nil {
         return nil
     } else {
@@ -57,13 +57,13 @@ func (m *PatternedRecurrence) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["range_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["range"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewRecurrenceRange() })
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRange_escaped(val.(*RecurrenceRange))
+            m.SetRange(val.(*RecurrenceRange))
         }
         return nil
     }
@@ -81,7 +81,7 @@ func (m *PatternedRecurrence) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
-        err := writer.WriteObjectValue("range_escaped", m.GetRange_escaped())
+        err := writer.WriteObjectValue("range", m.GetRange())
         if err != nil {
             return err
         }
@@ -94,7 +94,7 @@ func (m *PatternedRecurrence) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PatternedRecurrence) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -106,8 +106,8 @@ func (m *PatternedRecurrence) SetPattern(value *RecurrencePattern)() {
         m.pattern = value
     }
 }
-// SetRange_escaped sets the range_escaped property value. The duration of an event.
-func (m *PatternedRecurrence) SetRange_escaped(value *RecurrenceRange)() {
+// SetRange sets the range property value. The duration of an event.
+func (m *PatternedRecurrence) SetRange(value *RecurrenceRange)() {
     if m != nil {
         m.range_escaped = value
     }

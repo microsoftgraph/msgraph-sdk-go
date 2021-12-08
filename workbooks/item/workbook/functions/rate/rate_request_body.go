@@ -29,7 +29,7 @@ func NewRateRequestBody()(*RateRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RateRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -77,8 +77,8 @@ func (m *RateRequestBody) GetPv()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d
         return m.pv
     }
 }
-// GetType_escaped gets the type_escaped property value. 
-func (m *RateRequestBody) GetType_escaped()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
+// GetType gets the type property value. 
+func (m *RateRequestBody) GetType()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json) {
     if m == nil {
         return nil
     } else {
@@ -138,13 +138,13 @@ func (m *RateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewJson() })
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
+            m.SetType(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json))
         }
         return nil
     }
@@ -186,7 +186,7 @@ func (m *RateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err := writer.WriteObjectValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteObjectValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -199,7 +199,7 @@ func (m *RateRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RateRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -235,8 +235,8 @@ func (m *RateRequestBody) SetPv(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a8936
         m.pv = value
     }
 }
-// SetType_escaped sets the type_escaped property value. 
-func (m *RateRequestBody) SetType_escaped(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
+// SetType sets the type property value. 
+func (m *RateRequestBody) SetType(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Json)() {
     if m != nil {
         m.type_escaped = value
     }

@@ -15,11 +15,11 @@ type AccessPackageSubject struct {
     email *string;
     // The object identifier of the subject. null if the subject is not yet a user in the tenant.
     objectId *string;
-    // 
+    // A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
     onPremisesSecurityIdentifier *string;
     // The principal name, if known, of the subject.
     principalName *string;
-    // 
+    // The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.
     subjectType *AccessPackageSubjectType;
 }
 // NewAccessPackageSubject instantiates a new accessPackageSubject and sets the default values.
@@ -61,7 +61,7 @@ func (m *AccessPackageSubject) GetObjectId()(*string) {
         return m.objectId
     }
 }
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. 
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
 func (m *AccessPackageSubject) GetOnPremisesSecurityIdentifier()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *AccessPackageSubject) GetPrincipalName()(*string) {
         return m.principalName
     }
 }
-// GetSubjectType gets the subjectType property value. 
+// GetSubjectType gets the subjectType property value. The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.
 func (m *AccessPackageSubject) GetSubjectType()(*AccessPackageSubjectType) {
     if m == nil {
         return nil
@@ -239,7 +239,7 @@ func (m *AccessPackageSubject) SetObjectId(value *string)() {
         m.objectId = value
     }
 }
-// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. 
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
 func (m *AccessPackageSubject) SetOnPremisesSecurityIdentifier(value *string)() {
     if m != nil {
         m.onPremisesSecurityIdentifier = value
@@ -251,7 +251,7 @@ func (m *AccessPackageSubject) SetPrincipalName(value *string)() {
         m.principalName = value
     }
 }
-// SetSubjectType sets the subjectType property value. 
+// SetSubjectType sets the subjectType property value. The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.
 func (m *AccessPackageSubject) SetSubjectType(value *AccessPackageSubjectType)() {
     if m != nil {
         m.subjectType = value

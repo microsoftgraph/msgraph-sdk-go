@@ -34,7 +34,7 @@ func (m *RelatedContact) GetAccessConsent()(*bool) {
         return m.accessConsent
     }
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RelatedContact) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -180,7 +180,7 @@ func (m *RelatedContact) SetAccessConsent(value *bool)() {
         m.accessConsent = value
     }
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RelatedContact) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

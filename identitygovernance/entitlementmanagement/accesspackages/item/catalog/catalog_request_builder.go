@@ -27,7 +27,7 @@ type CatalogRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// CatalogRequestBuilderGetQueryParameters get catalog from identityGovernance
+// CatalogRequestBuilderGetQueryParameters read-only. Nullable.
 type CatalogRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -53,7 +53,7 @@ func NewCatalogRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewCatalogRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get catalog from identityGovernance
+// CreateGetRequestInformation read-only. Nullable.
 func (m *CatalogRequestBuilder) CreateGetRequestInformation(options *CatalogRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -73,7 +73,7 @@ func (m *CatalogRequestBuilder) CreateGetRequestInformation(options *CatalogRequ
     }
     return requestInfo, nil
 }
-// Get get catalog from identityGovernance
+// Get read-only. Nullable.
 func (m *CatalogRequestBuilder) Get(options *CatalogRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageCatalog, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

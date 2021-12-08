@@ -55,7 +55,7 @@ func NewRemoteItem()(*RemoteItem) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoteItem) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -143,8 +143,8 @@ func (m *RemoteItem) GetName()(*string) {
         return m.name
     }
 }
-// GetPackage_escaped gets the package_escaped property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *RemoteItem) GetPackage_escaped()(*Package_escaped) {
+// GetPackage gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
+func (m *RemoteItem) GetPackage()(*Package_escaped) {
     if m == nil {
         return nil
     } else {
@@ -318,13 +318,13 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         }
         return nil
     }
-    res["package_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["package"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewPackage_escaped() })
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPackage_escaped(val.(*Package_escaped))
+            m.SetPackage(val.(*Package_escaped))
         }
         return nil
     }
@@ -476,7 +476,7 @@ func (m *RemoteItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err := writer.WriteObjectValue("package_escaped", m.GetPackage_escaped())
+        err := writer.WriteObjectValue("package", m.GetPackage())
         if err != nil {
             return err
         }
@@ -537,7 +537,7 @@ func (m *RemoteItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RemoteItem) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -603,8 +603,8 @@ func (m *RemoteItem) SetName(value *string)() {
         m.name = value
     }
 }
-// SetPackage_escaped sets the package_escaped property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *RemoteItem) SetPackage_escaped(value *Package_escaped)() {
+// SetPackage sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
+func (m *RemoteItem) SetPackage(value *Package_escaped)() {
     if m != nil {
         m.package_escaped = value
     }

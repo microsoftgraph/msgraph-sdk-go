@@ -21,7 +21,7 @@ func NewSendMailRequestBody()(*SendMailRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendMailRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *SendMailRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetMessage gets the Message property value. 
+// GetMessage gets the message property value. 
 func (m *SendMailRequestBody) GetMessage()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *SendMailRequestBody) GetMessage()(*i4a838ef194e4c99e9f2c63ba10dab9cb120
         return m.message
     }
 }
-// GetSaveToSentItems gets the SaveToSentItems property value. 
+// GetSaveToSentItems gets the saveToSentItems property value. 
 func (m *SendMailRequestBody) GetSaveToSentItems()(*bool) {
     if m == nil {
         return nil
@@ -95,19 +95,19 @@ func (m *SendMailRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendMailRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetMessage sets the Message property value. 
+// SetMessage sets the message property value. 
 func (m *SendMailRequestBody) SetMessage(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message)() {
     if m != nil {
         m.message = value
     }
 }
-// SetSaveToSentItems sets the SaveToSentItems property value. 
+// SetSaveToSentItems sets the saveToSentItems property value. 
 func (m *SendMailRequestBody) SetSaveToSentItems(value *bool)() {
     if m != nil {
         m.saveToSentItems = value

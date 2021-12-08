@@ -21,7 +21,7 @@ func NewForwardRequestBody()(*ForwardRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ForwardRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *ForwardRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetComment gets the Comment property value. 
+// GetComment gets the comment property value. 
 func (m *ForwardRequestBody) GetComment()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *ForwardRequestBody) GetComment()(*string) {
         return m.comment
     }
 }
-// GetToRecipients gets the ToRecipients property value. 
+// GetToRecipients gets the toRecipients property value. 
 func (m *ForwardRequestBody) GetToRecipients()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient) {
     if m == nil {
         return nil
@@ -104,19 +104,19 @@ func (m *ForwardRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ForwardRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetComment sets the Comment property value. 
+// SetComment sets the comment property value. 
 func (m *ForwardRequestBody) SetComment(value *string)() {
     if m != nil {
         m.comment = value
     }
 }
-// SetToRecipients sets the ToRecipients property value. 
+// SetToRecipients sets the toRecipients property value. 
 func (m *ForwardRequestBody) SetToRecipients(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient)() {
     if m != nil {
         m.toRecipients = value

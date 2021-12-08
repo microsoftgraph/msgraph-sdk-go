@@ -20,7 +20,7 @@ func NewResourceAccess()(*ResourceAccess) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceAccess) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -36,8 +36,8 @@ func (m *ResourceAccess) GetId()(*string) {
         return m.id
     }
 }
-// GetType_escaped gets the type_escaped property value. Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).
-func (m *ResourceAccess) GetType_escaped()(*string) {
+// GetType gets the type property value. Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).
+func (m *ResourceAccess) GetType()(*string) {
     if m == nil {
         return nil
     } else {
@@ -57,13 +57,13 @@ func (m *ResourceAccess) GetFieldDeserializers()(map[string]func(interface{}, i0
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType_escaped(val)
+            m.SetType(val)
         }
         return nil
     }
@@ -81,7 +81,7 @@ func (m *ResourceAccess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
-        err := writer.WriteStringValue("type_escaped", m.GetType_escaped())
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -94,7 +94,7 @@ func (m *ResourceAccess) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResourceAccess) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
@@ -106,8 +106,8 @@ func (m *ResourceAccess) SetId(value *string)() {
         m.id = value
     }
 }
-// SetType_escaped sets the type_escaped property value. Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).
-func (m *ResourceAccess) SetType_escaped(value *string)() {
+// SetType sets the type property value. Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).
+func (m *ResourceAccess) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
     }

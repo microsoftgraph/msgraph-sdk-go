@@ -19,7 +19,7 @@ func NewError_TypeRequestBody()(*Error_TypeRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Error_TypeRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *Error_TypeRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Error_TypeRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value

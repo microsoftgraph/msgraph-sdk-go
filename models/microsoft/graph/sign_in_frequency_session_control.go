@@ -19,8 +19,8 @@ func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
     }
     return m
 }
-// GetType_escaped gets the type_escaped property value. Possible values are: days, hours.
-func (m *SignInFrequencySessionControl) GetType_escaped()(*SigninFrequencyType) {
+// GetType gets the type property value. Possible values are: days, hours.
+func (m *SignInFrequencySessionControl) GetType()(*SigninFrequencyType) {
     if m == nil {
         return nil
     } else {
@@ -38,14 +38,14 @@ func (m *SignInFrequencySessionControl) GetValue()(*int32) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.ConditionalAccessSessionControl.GetFieldDeserializers()
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseSigninFrequencyType)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(SigninFrequencyType)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -70,9 +70,9 @@ func (m *SignInFrequencySessionControl) Serialize(writer i04eb5309aeaafadd28374d
     if err != nil {
         return err
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -85,8 +85,8 @@ func (m *SignInFrequencySessionControl) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// SetType_escaped sets the type_escaped property value. Possible values are: days, hours.
-func (m *SignInFrequencySessionControl) SetType_escaped(value *SigninFrequencyType)() {
+// SetType sets the type property value. Possible values are: days, hours.
+func (m *SignInFrequencySessionControl) SetType(value *SigninFrequencyType)() {
     if m != nil {
         m.type_escaped = value
     }

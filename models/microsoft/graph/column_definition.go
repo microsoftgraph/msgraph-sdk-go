@@ -309,8 +309,8 @@ func (m *ColumnDefinition) GetThumbnail()(*ThumbnailColumn) {
         return m.thumbnail
     }
 }
-// GetType_escaped gets the type_escaped property value. For site columns, the type of column. Read-only.
-func (m *ColumnDefinition) GetType_escaped()(*ColumnTypes) {
+// GetType gets the type property value. For site columns, the type of column. Read-only.
+func (m *ColumnDefinition) GetType()(*ColumnTypes) {
     if m == nil {
         return nil
     } else {
@@ -618,14 +618,14 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["type_escaped"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+    res["type"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetEnumValue(ParseColumnTypes)
         if err != nil {
             return err
         }
         if val != nil {
             cast := val.(ColumnTypes)
-            m.SetType_escaped(&cast)
+            m.SetType(&cast)
         }
         return nil
     }
@@ -824,9 +824,9 @@ func (m *ColumnDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    if m.GetType_escaped() != nil {
-        cast := m.GetType_escaped().String()
-        err = writer.WriteStringValue("type_escaped", &cast)
+    if m.GetType() != nil {
+        cast := m.GetType().String()
+        err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -1013,8 +1013,8 @@ func (m *ColumnDefinition) SetThumbnail(value *ThumbnailColumn)() {
         m.thumbnail = value
     }
 }
-// SetType_escaped sets the type_escaped property value. For site columns, the type of column. Read-only.
-func (m *ColumnDefinition) SetType_escaped(value *ColumnTypes)() {
+// SetType sets the type property value. For site columns, the type of column. Read-only.
+func (m *ColumnDefinition) SetType(value *ColumnTypes)() {
     if m != nil {
         m.type_escaped = value
     }

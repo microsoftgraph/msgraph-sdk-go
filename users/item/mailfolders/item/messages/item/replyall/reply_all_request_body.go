@@ -21,7 +21,7 @@ func NewReplyAllRequestBody()(*ReplyAllRequestBody) {
     m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReplyAllRequestBody) GetAdditionalData()(map[string]interface{}) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *ReplyAllRequestBody) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetComment gets the Comment property value. 
+// GetComment gets the comment property value. 
 func (m *ReplyAllRequestBody) GetComment()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *ReplyAllRequestBody) GetComment()(*string) {
         return m.comment
     }
 }
-// GetMessage gets the Message property value. 
+// GetMessage gets the message property value. 
 func (m *ReplyAllRequestBody) GetMessage()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message) {
     if m == nil {
         return nil
@@ -95,19 +95,19 @@ func (m *ReplyAllRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ReplyAllRequestBody) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
     }
 }
-// SetComment sets the Comment property value. 
+// SetComment sets the comment property value. 
 func (m *ReplyAllRequestBody) SetComment(value *string)() {
     if m != nil {
         m.comment = value
     }
 }
-// SetMessage sets the Message property value. 
+// SetMessage sets the message property value. 
 func (m *ReplyAllRequestBody) SetMessage(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Message)() {
     if m != nil {
         m.message = value

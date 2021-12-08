@@ -27,7 +27,7 @@ type AssignmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AssignmentsRequestBuilderGetQueryParameters get assignments from identityGovernance
+// AssignmentsRequestBuilderGetQueryParameters access package assignments.
 type AssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -76,7 +76,7 @@ func NewAssignmentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get assignments from identityGovernance
+// CreateGetRequestInformation access package assignments.
 func (m *AssignmentsRequestBuilder) CreateGetRequestInformation(options *AssignmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -96,7 +96,7 @@ func (m *AssignmentsRequestBuilder) CreateGetRequestInformation(options *Assignm
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to assignments for identityGovernance
+// CreatePostRequestInformation access package assignments.
 func (m *AssignmentsRequestBuilder) CreatePostRequestInformation(options *AssignmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *AssignmentsRequestBuilder) CreatePostRequestInformation(options *Assign
 func (m *AssignmentsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i730df316bf527836f62f151426a18d11f4f8585c1d7354b69a03f2dca3b6f555.FilterByCurrentUserWithOnRequestBuilder) {
     return i730df316bf527836f62f151426a18d11f4f8585c1d7354b69a03f2dca3b6f555.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// Get get assignments from identityGovernance
+// Get access package assignments.
 func (m *AssignmentsRequestBuilder) Get(options *AssignmentsRequestBuilderGetOptions)(*AssignmentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -130,7 +130,7 @@ func (m *AssignmentsRequestBuilder) Get(options *AssignmentsRequestBuilderGetOpt
     }
     return res.(*AssignmentsResponse), nil
 }
-// Post create new navigation property to assignments for identityGovernance
+// Post access package assignments.
 func (m *AssignmentsRequestBuilder) Post(options *AssignmentsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageAssignment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
