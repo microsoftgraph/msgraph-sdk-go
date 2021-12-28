@@ -24,6 +24,8 @@ type Chat struct {
     tabs []TeamsTab;
     // (Optional) Subject or topic for the chat. Only available for group chats.
     topic *string;
+    // A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.
+    webUrl *string;
 }
 // NewChat instantiates a new chat and sets the default values.
 func NewChat()(*Chat) {
@@ -94,6 +96,14 @@ func (m *Chat) GetTopic()(*string) {
         return nil
     } else {
         return m.topic
+    }
+}
+// GetWebUrl gets the webUrl property value. A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.
+func (m *Chat) GetWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.webUrl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -196,6 +206,16 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         return nil
     }
+    res["webUrl"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWebUrl(val)
+        }
+        return nil
+    }
     return res
 }
 func (m *Chat) IsNil()(bool) {
@@ -276,6 +296,12 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("webUrl", m.GetWebUrl())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetChatType sets the chatType property value. Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
@@ -324,5 +350,11 @@ func (m *Chat) SetTabs(value []TeamsTab)() {
 func (m *Chat) SetTopic(value *string)() {
     if m != nil {
         m.topic = value
+    }
+}
+// SetWebUrl sets the webUrl property value. A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.
+func (m *Chat) SetWebUrl(value *string)() {
+    if m != nil {
+        m.webUrl = value
     }
 }
