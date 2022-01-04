@@ -4,7 +4,9 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i265584ac81a3e0ee3fc9ff56af9f755b8532b4ec220618281425507d20d6a545 "github.com/microsoftgraph/msgraph-sdk-go/communications/onlinemeetings/item/attendancereports"
     id31ac97457fb39fa6db717f9666ce3c685f8d4543bf55cbc5a792d02c5012725 "github.com/microsoftgraph/msgraph-sdk-go/communications/onlinemeetings/item/attendeereport"
+    id6cb61e4b955d07f83d38b57a8028302a3e7c874ef433d4f304ca5d37174b56c "github.com/microsoftgraph/msgraph-sdk-go/communications/onlinemeetings/item/attendancereports/item"
 )
 
 // OnlineMeetingRequestBuilder builds and executes requests for operations under \communications\onlineMeetings\{onlineMeeting-id}
@@ -53,6 +55,20 @@ type OnlineMeetingRequestBuilderPatchOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *OnlineMeetingRequestBuilder) AttendanceReports()(*i265584ac81a3e0ee3fc9ff56af9f755b8532b4ec220618281425507d20d6a545.AttendanceReportsRequestBuilder) {
+    return i265584ac81a3e0ee3fc9ff56af9f755b8532b4ec220618281425507d20d6a545.NewAttendanceReportsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AttendanceReportsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.communications.onlineMeetings.item.attendanceReports.item collection
+func (m *OnlineMeetingRequestBuilder) AttendanceReportsById(id string)(*id6cb61e4b955d07f83d38b57a8028302a3e7c874ef433d4f304ca5d37174b56c.MeetingAttendanceReportRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["meetingAttendanceReport_id"] = id
+    }
+    return id6cb61e4b955d07f83d38b57a8028302a3e7c874ef433d4f304ca5d37174b56c.NewMeetingAttendanceReportRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *OnlineMeetingRequestBuilder) AttendeeReport()(*id31ac97457fb39fa6db717f9666ce3c685f8d4543bf55cbc5a792d02c5012725.AttendeeReportRequestBuilder) {
     return id31ac97457fb39fa6db717f9666ce3c685f8d4543bf55cbc5a792d02c5012725.NewAttendeeReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);

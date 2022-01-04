@@ -5,10 +5,12 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4827ba32335285b89a92c436cf648bf167912072becfb2cf9792b7e694bfe68c "github.com/microsoftgraph/msgraph-sdk-go/education/me/taughtclasses"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i75d26f07b5741abbb041934b7ff07c14802e8373402b2fe0175141ce976d99f1 "github.com/microsoftgraph/msgraph-sdk-go/education/me/assignments"
     i8a6dd866ad5ea518840cdc5c8b7348b010903fad7cccc3473ccbc41bd0f2f5c5 "github.com/microsoftgraph/msgraph-sdk-go/education/me/rubrics"
     idc612964c10975ba0294061975f8fd346f82666fc4c4a4245e1b4ea27187f3e0 "github.com/microsoftgraph/msgraph-sdk-go/education/me/classes"
     if174dba299b5249c431f058ba35f021f7837f7d6553d65eaa9c8f39e0c8d2f25 "github.com/microsoftgraph/msgraph-sdk-go/education/me/user"
     if8f2e52b9fa261cdafc93406e1f0deaaa9c3444674bb9bac26886d2161875b88 "github.com/microsoftgraph/msgraph-sdk-go/education/me/schools"
+    i05b947f4d440080ac6b413aae5547627313333329bb760c803e6c27f60db5c06 "github.com/microsoftgraph/msgraph-sdk-go/education/me/assignments/item"
     ic96595483f91910c603469ce138a672deaf059c7a8c295304a9c2acf2ce6134b "github.com/microsoftgraph/msgraph-sdk-go/education/me/rubrics/item"
 )
 
@@ -58,6 +60,20 @@ type MeRequestBuilderPatchOptions struct {
     O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *MeRequestBuilder) Assignments()(*i75d26f07b5741abbb041934b7ff07c14802e8373402b2fe0175141ce976d99f1.AssignmentsRequestBuilder) {
+    return i75d26f07b5741abbb041934b7ff07c14802e8373402b2fe0175141ce976d99f1.NewAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.me.assignments.item collection
+func (m *MeRequestBuilder) AssignmentsById(id string)(*i05b947f4d440080ac6b413aae5547627313333329bb760c803e6c27f60db5c06.EducationAssignmentRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["educationAssignment_id"] = id
+    }
+    return i05b947f4d440080ac6b413aae5547627313333329bb760c803e6c27f60db5c06.NewEducationAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *MeRequestBuilder) Classes()(*idc612964c10975ba0294061975f8fd346f82666fc4c4a4245e1b4ea27187f3e0.ClassesRequestBuilder) {
     return idc612964c10975ba0294061975f8fd346f82666fc4c4a4245e1b4ea27187f3e0.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

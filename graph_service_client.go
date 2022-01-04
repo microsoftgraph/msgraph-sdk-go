@@ -4,6 +4,7 @@ import (
     i009f47bbce65ccdb7303730eed71e6bab3ae2f8e4e918bc9e94341d28624af97 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals"
     i07d47a144340607d6d6dbd93575e531530e4f1cc6091c947ea0766f7951ffd34 "github.com/microsoftgraph/msgraph-sdk-go/shares"
     i088cccaaaff488138f258ec600ca804c5dc9548772ebe52bf3cb7a3eaf4b9fdf "github.com/microsoftgraph/msgraph-sdk-go/workbooks"
+    i0906e75d8a44bf92212e084e1d2f62d03887dcec6a5c8535e92ccc04c1e5fdec "github.com/microsoftgraph/msgraph-sdk-go/solutions"
     i185698f71f6301975f0627ee999e6e91920d8fa9c00bdef3487b9f349e2df04e "github.com/microsoftgraph/msgraph-sdk-go/directoryobjects"
     i1a1369b1521a8ac4885166fd68eae4247248a891006fea464d2eea2a271b2cdb "github.com/microsoftgraph/msgraph-sdk-go/permissiongrants"
     i1b75be7b5675627960b4672ab148be21ff379d5cbc0e62f6bc5b97d54464f8b5 "github.com/microsoftgraph/msgraph-sdk-go/teamstemplates"
@@ -717,6 +718,9 @@ func (m *GraphServiceClient) SitesById(id string)(*i7bd49b9f046ac5c4108447b2999d
         urlTplParams["site_id"] = id
     }
     return i7bd49b9f046ac5c4108447b2999dd223be9f057c9910bdc197bcba51be5ac641.NewSiteRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+func (m *GraphServiceClient) Solutions()(*i0906e75d8a44bf92212e084e1d2f62d03887dcec6a5c8535e92ccc04c1e5fdec.SolutionsRequestBuilder) {
+    return i0906e75d8a44bf92212e084e1d2f62d03887dcec6a5c8535e92ccc04c1e5fdec.NewSolutionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *GraphServiceClient) SubscribedSkus()(*id007bc768abbff1131aab64890cdcd0411159a946e9df27140c5f7cf8f249647.SubscribedSkusRequestBuilder) {
     return id007bc768abbff1131aab64890cdcd0411159a946e9df27140c5f7cf8f249647.NewSubscribedSkusRequestBuilderInternal(m.pathParameters, m.requestAdapter);

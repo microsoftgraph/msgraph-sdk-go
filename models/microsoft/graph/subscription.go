@@ -10,25 +10,25 @@ type Subscription struct {
     Entity
     // Identifier of the application used to create the subscription. Read-only.
     applicationId *string;
-    // Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+    // Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
     changeType *string;
     // Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
     clientState *string;
     // Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
     creatorId *string;
-    // A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional. Required when includeResourceData is true.
+    // A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
     encryptionCertificate *string;
-    // A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.
+    // Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
     encryptionCertificateId *string;
-    // Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.
+    // Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // When set to true, change notifications include resource data (such as content of a chat message). Optional.
+    // Optional. When set to true, change notifications include resource data (such as content of a chat message).
     includeResourceData *bool;
     // Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
     latestSupportedTlsVersion *string;
-    // The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.
+    // Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol.
     lifecycleNotificationUrl *string;
-    // OData Query Options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg  when the print job is completed, when a print job resource isFetchable property value becomes true etc.
+    // OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.
     notificationQueryOptions *string;
     // Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
     notificationUrl *string;
@@ -52,7 +52,7 @@ func (m *Subscription) GetApplicationId()(*string) {
         return m.applicationId
     }
 }
-// GetChangeType gets the changeType property value. Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+// GetChangeType gets the changeType property value. Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
 func (m *Subscription) GetChangeType()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *Subscription) GetCreatorId()(*string) {
         return m.creatorId
     }
 }
-// GetEncryptionCertificate gets the encryptionCertificate property value. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional. Required when includeResourceData is true.
+// GetEncryptionCertificate gets the encryptionCertificate property value. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
 func (m *Subscription) GetEncryptionCertificate()(*string) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *Subscription) GetEncryptionCertificate()(*string) {
         return m.encryptionCertificate
     }
 }
-// GetEncryptionCertificateId gets the encryptionCertificateId property value. A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.
+// GetEncryptionCertificateId gets the encryptionCertificateId property value. Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
 func (m *Subscription) GetEncryptionCertificateId()(*string) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *Subscription) GetEncryptionCertificateId()(*string) {
         return m.encryptionCertificateId
     }
 }
-// GetExpirationDateTime gets the expirationDateTime property value. Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.
+// GetExpirationDateTime gets the expirationDateTime property value. Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.
 func (m *Subscription) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *Subscription) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.expirationDateTime
     }
 }
-// GetIncludeResourceData gets the includeResourceData property value. When set to true, change notifications include resource data (such as content of a chat message). Optional.
+// GetIncludeResourceData gets the includeResourceData property value. Optional. When set to true, change notifications include resource data (such as content of a chat message).
 func (m *Subscription) GetIncludeResourceData()(*bool) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *Subscription) GetLatestSupportedTlsVersion()(*string) {
         return m.latestSupportedTlsVersion
     }
 }
-// GetLifecycleNotificationUrl gets the lifecycleNotificationUrl property value. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.
+// GetLifecycleNotificationUrl gets the lifecycleNotificationUrl property value. Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol.
 func (m *Subscription) GetLifecycleNotificationUrl()(*string) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *Subscription) GetLifecycleNotificationUrl()(*string) {
         return m.lifecycleNotificationUrl
     }
 }
-// GetNotificationQueryOptions gets the notificationQueryOptions property value. OData Query Options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg  when the print job is completed, when a print job resource isFetchable property value becomes true etc.
+// GetNotificationQueryOptions gets the notificationQueryOptions property value. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.
 func (m *Subscription) GetNotificationQueryOptions()(*string) {
     if m == nil {
         return nil
@@ -402,7 +402,7 @@ func (m *Subscription) SetApplicationId(value *string)() {
         m.applicationId = value
     }
 }
-// SetChangeType sets the changeType property value. Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+// SetChangeType sets the changeType property value. Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
 func (m *Subscription) SetChangeType(value *string)() {
     if m != nil {
         m.changeType = value
@@ -420,25 +420,25 @@ func (m *Subscription) SetCreatorId(value *string)() {
         m.creatorId = value
     }
 }
-// SetEncryptionCertificate sets the encryptionCertificate property value. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional. Required when includeResourceData is true.
+// SetEncryptionCertificate sets the encryptionCertificate property value. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
 func (m *Subscription) SetEncryptionCertificate(value *string)() {
     if m != nil {
         m.encryptionCertificate = value
     }
 }
-// SetEncryptionCertificateId sets the encryptionCertificateId property value. A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.
+// SetEncryptionCertificateId sets the encryptionCertificateId property value. Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
 func (m *Subscription) SetEncryptionCertificateId(value *string)() {
     if m != nil {
         m.encryptionCertificateId = value
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.
+// SetExpirationDateTime sets the expirationDateTime property value. Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.
 func (m *Subscription) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.expirationDateTime = value
     }
 }
-// SetIncludeResourceData sets the includeResourceData property value. When set to true, change notifications include resource data (such as content of a chat message). Optional.
+// SetIncludeResourceData sets the includeResourceData property value. Optional. When set to true, change notifications include resource data (such as content of a chat message).
 func (m *Subscription) SetIncludeResourceData(value *bool)() {
     if m != nil {
         m.includeResourceData = value
@@ -450,13 +450,13 @@ func (m *Subscription) SetLatestSupportedTlsVersion(value *string)() {
         m.latestSupportedTlsVersion = value
     }
 }
-// SetLifecycleNotificationUrl sets the lifecycleNotificationUrl property value. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.
+// SetLifecycleNotificationUrl sets the lifecycleNotificationUrl property value. Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol.
 func (m *Subscription) SetLifecycleNotificationUrl(value *string)() {
     if m != nil {
         m.lifecycleNotificationUrl = value
     }
 }
-// SetNotificationQueryOptions sets the notificationQueryOptions property value. OData Query Options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg  when the print job is completed, when a print job resource isFetchable property value becomes true etc.
+// SetNotificationQueryOptions sets the notificationQueryOptions property value. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.
 func (m *Subscription) SetNotificationQueryOptions(value *string)() {
     if m != nil {
         m.notificationQueryOptions = value

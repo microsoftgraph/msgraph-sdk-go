@@ -18,6 +18,8 @@ type OnlineMeeting struct {
     allowMeetingChat *MeetingChatMode;
     // Indicates whether Teams reactions are enabled for the meeting.
     allowTeamworkReactions *bool;
+    // The attendance reports of an online meeting. Read-only.
+    attendanceReports []MeetingAttendanceReport;
     // The content stream of the attendee report of a Microsoft Teams live event. Read-only.
     attendeeReport []byte;
     // The phone access (dial-in) information for an online meeting. Read-only.
@@ -98,6 +100,14 @@ func (m *OnlineMeeting) GetAllowTeamworkReactions()(*bool) {
         return nil
     } else {
         return m.allowTeamworkReactions
+    }
+}
+// GetAttendanceReports gets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
+func (m *OnlineMeeting) GetAttendanceReports()([]MeetingAttendanceReport) {
+    if m == nil {
+        return nil
+    } else {
+        return m.attendanceReports
     }
 }
 // GetAttendeeReport gets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
@@ -288,6 +298,20 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         if val != nil {
             m.SetAllowTeamworkReactions(val)
+        }
+        return nil
+    }
+    res["attendanceReports"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewMeetingAttendanceReport() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MeetingAttendanceReport, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*MeetingAttendanceReport))
+            }
+            m.SetAttendanceReports(res)
         }
         return nil
     }
@@ -505,6 +529,17 @@ func (m *OnlineMeeting) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttendanceReports()))
+        for i, v := range m.GetAttendanceReports() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("attendanceReports", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteByteArrayValue("attendeeReport", m.GetAttendeeReport())
         if err != nil {
             return err
@@ -636,6 +671,12 @@ func (m *OnlineMeeting) SetAllowMeetingChat(value *MeetingChatMode)() {
 func (m *OnlineMeeting) SetAllowTeamworkReactions(value *bool)() {
     if m != nil {
         m.allowTeamworkReactions = value
+    }
+}
+// SetAttendanceReports sets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
+func (m *OnlineMeeting) SetAttendanceReports(value []MeetingAttendanceReport)() {
+    if m != nil {
+        m.attendanceReports = value
     }
 }
 // SetAttendeeReport sets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
