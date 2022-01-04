@@ -10,6 +10,10 @@ type EducationSubmission struct {
     Entity
     // Read-Write. Nullable.
     outcomes []EducationOutcome;
+    // User who moved the status of this submission to reassigned.
+    reassignedBy *IdentitySet;
+    // Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    reassignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Who this submission is assigned to.
     recipient *EducationSubmissionRecipient;
     // Nullable.
@@ -20,7 +24,7 @@ type EducationSubmission struct {
     returnedBy *IdentitySet;
     // Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     returnedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Read-Only. Possible values are: working, submitted, released, returned.
+    // Read-only. Possible values are: working, submitted, released, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
     status *EducationSubmissionStatus;
     // User who moved the resource into the submitted state.
     submittedBy *IdentitySet;
@@ -46,6 +50,22 @@ func (m *EducationSubmission) GetOutcomes()([]EducationOutcome) {
         return nil
     } else {
         return m.outcomes
+    }
+}
+// GetReassignedBy gets the reassignedBy property value. User who moved the status of this submission to reassigned.
+func (m *EducationSubmission) GetReassignedBy()(*IdentitySet) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reassignedBy
+    }
+}
+// GetReassignedDateTime gets the reassignedDateTime property value. Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *EducationSubmission) GetReassignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.reassignedDateTime
     }
 }
 // GetRecipient gets the recipient property value. Who this submission is assigned to.
@@ -88,7 +108,7 @@ func (m *EducationSubmission) GetReturnedDateTime()(*i336074805fc853987abe6f7fe3
         return m.returnedDateTime
     }
 }
-// GetStatus gets the status property value. Read-Only. Possible values are: working, submitted, released, returned.
+// GetStatus gets the status property value. Read-only. Possible values are: working, submitted, released, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
 func (m *EducationSubmission) GetStatus()(*EducationSubmissionStatus) {
     if m == nil {
         return nil
@@ -150,6 +170,26 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(interface{
                 res[i] = *(v.(*EducationOutcome))
             }
             m.SetOutcomes(res)
+        }
+        return nil
+    }
+    res["reassignedBy"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewIdentitySet() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReassignedBy(val.(*IdentitySet))
+        }
+        return nil
+    }
+    res["reassignedDateTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReassignedDateTime(val)
         }
         return nil
     }
@@ -295,6 +335,18 @@ func (m *EducationSubmission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     {
+        err = writer.WriteObjectValue("reassignedBy", m.GetReassignedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("reassignedDateTime", m.GetReassignedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("recipient", m.GetRecipient())
         if err != nil {
             return err
@@ -379,6 +431,18 @@ func (m *EducationSubmission) SetOutcomes(value []EducationOutcome)() {
         m.outcomes = value
     }
 }
+// SetReassignedBy sets the reassignedBy property value. User who moved the status of this submission to reassigned.
+func (m *EducationSubmission) SetReassignedBy(value *IdentitySet)() {
+    if m != nil {
+        m.reassignedBy = value
+    }
+}
+// SetReassignedDateTime sets the reassignedDateTime property value. Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *EducationSubmission) SetReassignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    if m != nil {
+        m.reassignedDateTime = value
+    }
+}
 // SetRecipient sets the recipient property value. Who this submission is assigned to.
 func (m *EducationSubmission) SetRecipient(value *EducationSubmissionRecipient)() {
     if m != nil {
@@ -409,7 +473,7 @@ func (m *EducationSubmission) SetReturnedDateTime(value *i336074805fc853987abe6f
         m.returnedDateTime = value
     }
 }
-// SetStatus sets the status property value. Read-Only. Possible values are: working, submitted, released, returned.
+// SetStatus sets the status property value. Read-only. Possible values are: working, submitted, released, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
 func (m *EducationSubmission) SetStatus(value *EducationSubmissionStatus)() {
     if m != nil {
         m.status = value

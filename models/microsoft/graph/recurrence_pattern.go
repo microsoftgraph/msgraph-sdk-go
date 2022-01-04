@@ -20,7 +20,7 @@ type RecurrencePattern struct {
     interval *int32;
     // The month in which the event occurs.  This is a number from 1 to 12.
     month *int32;
-    // The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
+    // The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
     type_escaped *RecurrencePatternType;
 }
 // NewRecurrencePattern instantiates a new recurrencePattern and sets the default values.
@@ -86,7 +86,7 @@ func (m *RecurrencePattern) GetMonth()(*int32) {
         return m.month
     }
 }
-// GetType gets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
+// GetType gets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
 func (m *RecurrencePattern) GetType()(*RecurrencePatternType) {
     if m == nil {
         return nil
@@ -276,7 +276,7 @@ func (m *RecurrencePattern) SetMonth(value *int32)() {
         m.month = value
     }
 }
-// SetType sets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required.
+// SetType sets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
 func (m *RecurrencePattern) SetType(value *RecurrencePatternType)() {
     if m != nil {
         m.type_escaped = value

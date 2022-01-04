@@ -8,6 +8,8 @@ import (
 // AccessReviewInstance 
 type AccessReviewInstance struct {
     Entity
+    // Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
+    contactedReviewers []AccessReviewReviewer;
     // Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
     decisions []AccessReviewInstanceDecisionItem;
     // DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
@@ -29,6 +31,14 @@ func NewAccessReviewInstance()(*AccessReviewInstance) {
         Entity: *NewEntity(),
     }
     return m
+}
+// GetContactedReviewers gets the contactedReviewers property value. Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
+func (m *AccessReviewInstance) GetContactedReviewers()([]AccessReviewReviewer) {
+    if m == nil {
+        return nil
+    } else {
+        return m.contactedReviewers
+    }
 }
 // GetDecisions gets the decisions property value. Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstance) GetDecisions()([]AccessReviewInstanceDecisionItem) {
@@ -89,6 +99,20 @@ func (m *AccessReviewInstance) GetStatus()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewInstance) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["contactedReviewers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewReviewer() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessReviewReviewer, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*AccessReviewReviewer))
+            }
+            m.SetContactedReviewers(res)
+        }
+        return nil
+    }
     res["decisions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAccessReviewInstanceDecisionItem() })
         if err != nil {
@@ -183,6 +207,17 @@ func (m *AccessReviewInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         return err
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContactedReviewers()))
+        for i, v := range m.GetContactedReviewers() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("contactedReviewers", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDecisions()))
         for i, v := range m.GetDecisions() {
             temp := v
@@ -240,6 +275,12 @@ func (m *AccessReviewInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     return nil
+}
+// SetContactedReviewers sets the contactedReviewers property value. Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
+func (m *AccessReviewInstance) SetContactedReviewers(value []AccessReviewReviewer)() {
+    if m != nil {
+        m.contactedReviewers = value
+    }
 }
 // SetDecisions sets the decisions property value. Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstance) SetDecisions(value []AccessReviewInstanceDecisionItem)() {

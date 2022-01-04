@@ -12,10 +12,11 @@ const (
     RELEASED_EDUCATIONSUBMISSIONSTATUS
     RETURNED_EDUCATIONSUBMISSIONSTATUS
     UNKNOWNFUTUREVALUE_EDUCATIONSUBMISSIONSTATUS
+    REASSIGNED_EDUCATIONSUBMISSIONSTATUS
 )
 
 func (i EducationSubmissionStatus) String() string {
-    return []string{"WORKING", "SUBMITTED", "RELEASED", "RETURNED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"WORKING", "SUBMITTED", "RELEASED", "RETURNED", "UNKNOWNFUTUREVALUE", "REASSIGNED"}[i]
 }
 func ParseEducationSubmissionStatus(v string) (interface{}, error) {
     switch strings.ToUpper(v) {
@@ -29,6 +30,8 @@ func ParseEducationSubmissionStatus(v string) (interface{}, error) {
             return RETURNED_EDUCATIONSUBMISSIONSTATUS, nil
         case "UNKNOWNFUTUREVALUE":
             return UNKNOWNFUTUREVALUE_EDUCATIONSUBMISSIONSTATUS, nil
+        case "REASSIGNED":
+            return REASSIGNED_EDUCATIONSUBMISSIONSTATUS, nil
     }
     return 0, errors.New("Unknown EducationSubmissionStatus value: " + v)
 }

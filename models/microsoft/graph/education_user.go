@@ -14,6 +14,8 @@ type EducationUser struct {
     assignedLicenses []AssignedLicense;
     // The plans that are assigned to the user. Read-only. Not nullable.
     assignedPlans []AssignedPlan;
+    // Assignments belonging to the user.
+    assignments []EducationAssignment;
     // The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.
     businessPhones []string;
     // Classes to which the user belongs. Nullable.
@@ -112,6 +114,14 @@ func (m *EducationUser) GetAssignedPlans()([]AssignedPlan) {
         return nil
     } else {
         return m.assignedPlans
+    }
+}
+// GetAssignments gets the assignments property value. Assignments belonging to the user.
+func (m *EducationUser) GetAssignments()([]EducationAssignment) {
+    if m == nil {
+        return nil
+    } else {
+        return m.assignments
     }
 }
 // GetBusinessPhones gets the businessPhones property value. The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.
@@ -424,6 +434,20 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i04
                 res[i] = *(v.(*AssignedPlan))
             }
             m.SetAssignedPlans(res)
+        }
+        return nil
+    }
+    res["assignments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEducationAssignment() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EducationAssignment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*EducationAssignment))
+            }
+            m.SetAssignments(res)
         }
         return nil
     }
@@ -837,6 +861,17 @@ func (m *EducationUser) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
+        for i, v := range m.GetAssignments() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("assignments", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteCollectionOfStringValues("businessPhones", m.GetBusinessPhones())
         if err != nil {
             return err
@@ -1090,6 +1125,12 @@ func (m *EducationUser) SetAssignedLicenses(value []AssignedLicense)() {
 func (m *EducationUser) SetAssignedPlans(value []AssignedPlan)() {
     if m != nil {
         m.assignedPlans = value
+    }
+}
+// SetAssignments sets the assignments property value. Assignments belonging to the user.
+func (m *EducationUser) SetAssignments(value []EducationAssignment)() {
+    if m != nil {
+        m.assignments = value
     }
 }
 // SetBusinessPhones sets the businessPhones property value. The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.

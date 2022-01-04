@@ -6,6 +6,7 @@ import (
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i3c6015cf8457d8d8ec01d019f3dbc202765651c2130e73641cf6b06caeb2d228 "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignments/item/submissions/item/setupresourcesfolder"
     i4897ecfe261ff150792387d2c4b3c93a4a0c1fa8d17924ec2e00dd6cf21d022d "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignments/item/submissions/item/return_escaped"
+    i6676fa5ab422c72e51792bf14b597f55c25d08008768ede327ecc59a581d7d7c "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignments/item/submissions/item/reassign"
     i685e1486255b2d524092d2de81f1a7d1d38632cbb99a29975e93cc433375ed77 "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignments/item/submissions/item/submit"
     ic9e6f044df077c5c49203af4cbb1cb4bdd990da9a1e6a2c50a189335ae8c62fc "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignments/item/submissions/item/outcomes"
     id25fa828362bc547da297fba40d2cdbe268a1fd50d31a4ead0dd41ffa77fdfc6 "github.com/microsoftgraph/msgraph-sdk-go/education/classes/item/assignments/item/submissions/item/resources"
@@ -186,6 +187,9 @@ func (m *EducationSubmissionRequestBuilder) Patch(options *EducationSubmissionRe
         return err
     }
     return nil
+}
+func (m *EducationSubmissionRequestBuilder) Reassign()(*i6676fa5ab422c72e51792bf14b597f55c25d08008768ede327ecc59a581d7d7c.ReassignRequestBuilder) {
+    return i6676fa5ab422c72e51792bf14b597f55c25d08008768ede327ecc59a581d7d7c.NewReassignRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *EducationSubmissionRequestBuilder) Resources()(*id25fa828362bc547da297fba40d2cdbe268a1fd50d31a4ead0dd41ffa77fdfc6.ResourcesRequestBuilder) {
     return id25fa828362bc547da297fba40d2cdbe268a1fd50d31a4ead0dd41ffa77fdfc6.NewResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

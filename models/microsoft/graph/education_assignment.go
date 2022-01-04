@@ -10,6 +10,8 @@ type EducationAssignment struct {
     Entity
     // Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
     addedStudentAction *EducationAddedStudentAction;
+    // Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
+    addToCalendarAction *EducationAddToCalendarOptions;
     // Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
     allowLateSubmissions *bool;
     // Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.
@@ -70,6 +72,14 @@ func (m *EducationAssignment) GetAddedStudentAction()(*EducationAddedStudentActi
         return nil
     } else {
         return m.addedStudentAction
+    }
+}
+// GetAddToCalendarAction gets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
+func (m *EducationAssignment) GetAddToCalendarAction()(*EducationAddToCalendarOptions) {
+    if m == nil {
+        return nil
+    } else {
+        return m.addToCalendarAction
     }
 }
 // GetAllowLateSubmissions gets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
@@ -267,6 +277,17 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(interface{
         if val != nil {
             cast := val.(EducationAddedStudentAction)
             m.SetAddedStudentAction(&cast)
+        }
+        return nil
+    }
+    res["addToCalendarAction"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetEnumValue(ParseEducationAddToCalendarOptions)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            cast := val.(EducationAddToCalendarOptions)
+            m.SetAddToCalendarAction(&cast)
         }
         return nil
     }
@@ -531,6 +552,13 @@ func (m *EducationAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
+    if m.GetAddToCalendarAction() != nil {
+        cast := m.GetAddToCalendarAction().String()
+        err = writer.WriteStringValue("addToCalendarAction", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("allowLateSubmissions", m.GetAllowLateSubmissions())
         if err != nil {
@@ -691,6 +719,12 @@ func (m *EducationAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
 func (m *EducationAssignment) SetAddedStudentAction(value *EducationAddedStudentAction)() {
     if m != nil {
         m.addedStudentAction = value
+    }
+}
+// SetAddToCalendarAction sets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
+func (m *EducationAssignment) SetAddToCalendarAction(value *EducationAddToCalendarOptions)() {
+    if m != nil {
+        m.addToCalendarAction = value
     }
 }
 // SetAllowLateSubmissions sets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
