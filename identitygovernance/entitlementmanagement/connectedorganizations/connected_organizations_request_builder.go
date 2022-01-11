@@ -26,7 +26,7 @@ type ConnectedOrganizationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ConnectedOrganizationsRequestBuilderGetQueryParameters connected organizations.
+// ConnectedOrganizationsRequestBuilderGetQueryParameters represents references to a directory or domain of another organization whose users can request access.
 type ConnectedOrganizationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewConnectedOrganizationsRequestBuilder(rawUrl string, requestAdapter ida96
     urlParams["request-raw-url"] = rawUrl
     return NewConnectedOrganizationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation connected organizations.
+// CreateGetRequestInformation represents references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationsRequestBuilder) CreateGetRequestInformation(options *ConnectedOrganizationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *ConnectedOrganizationsRequestBuilder) CreateGetRequestInformation(optio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation connected organizations.
+// CreatePostRequestInformation represents references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationsRequestBuilder) CreatePostRequestInformation(options *ConnectedOrganizationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ConnectedOrganizationsRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get connected organizations.
+// Get represents references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationsRequestBuilder) Get(options *ConnectedOrganizationsRequestBuilderGetOptions)(*ConnectedOrganizationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *ConnectedOrganizationsRequestBuilder) Get(options *ConnectedOrganizatio
     }
     return res.(*ConnectedOrganizationsResponse), nil
 }
-// Post connected organizations.
+// Post represents references to a directory or domain of another organization whose users can request access.
 func (m *ConnectedOrganizationsRequestBuilder) Post(options *ConnectedOrganizationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConnectedOrganization, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

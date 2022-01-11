@@ -9,17 +9,17 @@ type EntitlementManagement struct {
     Entity
     // 
     accessPackageAssignmentApprovals []Approval;
-    // Access packages.
+    // Represents access package objects.
     accessPackages []AccessPackage;
-    // Access package assignment requests.
+    // Represents access package assignment requests created by or on behalf of a user.
     assignmentRequests []AccessPackageAssignmentRequest;
-    // Access package assignments.
+    // Represents the grant of an access package to a subject (user or group).
     assignments []AccessPackageAssignment;
-    // Access package catalogs.
+    // Represents a group of access packages.
     catalogs []AccessPackageCatalog;
-    // Connected organizations.
+    // Represents references to a directory or domain of another organization whose users can request access.
     connectedOrganizations []ConnectedOrganization;
-    // Entitlement management settings.
+    // Represents the settings that control the behavior of Azure AD entitlement management.
     settings *EntitlementManagementSettings;
 }
 // NewEntitlementManagement instantiates a new entitlementManagement and sets the default values.
@@ -37,7 +37,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approval
         return m.accessPackageAssignmentApprovals
     }
 }
-// GetAccessPackages gets the accessPackages property value. Access packages.
+// GetAccessPackages gets the accessPackages property value. Represents access package objects.
 func (m *EntitlementManagement) GetAccessPackages()([]AccessPackage) {
     if m == nil {
         return nil
@@ -45,7 +45,7 @@ func (m *EntitlementManagement) GetAccessPackages()([]AccessPackage) {
         return m.accessPackages
     }
 }
-// GetAssignmentRequests gets the assignmentRequests property value. Access package assignment requests.
+// GetAssignmentRequests gets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
 func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmentRequest) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmen
         return m.assignmentRequests
     }
 }
-// GetAssignments gets the assignments property value. Access package assignments.
+// GetAssignments gets the assignments property value. Represents the grant of an access package to a subject (user or group).
 func (m *EntitlementManagement) GetAssignments()([]AccessPackageAssignment) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *EntitlementManagement) GetAssignments()([]AccessPackageAssignment) {
         return m.assignments
     }
 }
-// GetCatalogs gets the catalogs property value. Access package catalogs.
+// GetCatalogs gets the catalogs property value. Represents a group of access packages.
 func (m *EntitlementManagement) GetCatalogs()([]AccessPackageCatalog) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *EntitlementManagement) GetCatalogs()([]AccessPackageCatalog) {
         return m.catalogs
     }
 }
-// GetConnectedOrganizations gets the connectedOrganizations property value. Connected organizations.
+// GetConnectedOrganizations gets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
 func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganization) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizat
         return m.connectedOrganizations
     }
 }
-// GetSettings gets the settings property value. Entitlement management settings.
+// GetSettings gets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
 func (m *EntitlementManagement) GetSettings()(*EntitlementManagementSettings) {
     if m == nil {
         return nil
@@ -273,37 +273,37 @@ func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Appr
         m.accessPackageAssignmentApprovals = value
     }
 }
-// SetAccessPackages sets the accessPackages property value. Access packages.
+// SetAccessPackages sets the accessPackages property value. Represents access package objects.
 func (m *EntitlementManagement) SetAccessPackages(value []AccessPackage)() {
     if m != nil {
         m.accessPackages = value
     }
 }
-// SetAssignmentRequests sets the assignmentRequests property value. Access package assignment requests.
+// SetAssignmentRequests sets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
 func (m *EntitlementManagement) SetAssignmentRequests(value []AccessPackageAssignmentRequest)() {
     if m != nil {
         m.assignmentRequests = value
     }
 }
-// SetAssignments sets the assignments property value. Access package assignments.
+// SetAssignments sets the assignments property value. Represents the grant of an access package to a subject (user or group).
 func (m *EntitlementManagement) SetAssignments(value []AccessPackageAssignment)() {
     if m != nil {
         m.assignments = value
     }
 }
-// SetCatalogs sets the catalogs property value. Access package catalogs.
+// SetCatalogs sets the catalogs property value. Represents a group of access packages.
 func (m *EntitlementManagement) SetCatalogs(value []AccessPackageCatalog)() {
     if m != nil {
         m.catalogs = value
     }
 }
-// SetConnectedOrganizations sets the connectedOrganizations property value. Connected organizations.
+// SetConnectedOrganizations sets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
 func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrganization)() {
     if m != nil {
         m.connectedOrganizations = value
     }
 }
-// SetSettings sets the settings property value. Entitlement management settings.
+// SetSettings sets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
 func (m *EntitlementManagement) SetSettings(value *EntitlementManagementSettings)() {
     if m != nil {
         m.settings = value

@@ -7,7 +7,7 @@ import (
 // AgreementFile 
 type AgreementFile struct {
     AgreementFileProperties
-    // 
+    // The localized version of the terms of use agreement files attached to the agreement.
     localizations []AgreementFileLocalization;
 }
 // NewAgreementFile instantiates a new agreementFile and sets the default values.
@@ -17,7 +17,7 @@ func NewAgreementFile()(*AgreementFile) {
     }
     return m
 }
-// GetLocalizations gets the localizations property value. 
+// GetLocalizations gets the localizations property value. The localized version of the terms of use agreement files attached to the agreement.
 func (m *AgreementFile) GetLocalizations()([]AgreementFileLocalization) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *AgreementFile) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// SetLocalizations sets the localizations property value. 
+// SetLocalizations sets the localizations property value. The localized version of the terms of use agreement files attached to the agreement.
 func (m *AgreementFile) SetLocalizations(value []AgreementFileLocalization)() {
     if m != nil {
         m.localizations = value

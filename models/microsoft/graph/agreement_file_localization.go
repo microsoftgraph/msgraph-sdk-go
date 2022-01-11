@@ -7,7 +7,7 @@ import (
 // AgreementFileLocalization 
 type AgreementFileLocalization struct {
     AgreementFileProperties
-    // 
+    // Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
     versions []AgreementFileVersion;
 }
 // NewAgreementFileLocalization instantiates a new agreementFileLocalization and sets the default values.
@@ -17,7 +17,7 @@ func NewAgreementFileLocalization()(*AgreementFileLocalization) {
     }
     return m
 }
-// GetVersions gets the versions property value. 
+// GetVersions gets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *AgreementFileLocalization) GetVersions()([]AgreementFileVersion) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *AgreementFileLocalization) Serialize(writer i04eb5309aeaafadd28374d79c8
     }
     return nil
 }
-// SetVersions sets the versions property value. 
+// SetVersions sets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *AgreementFileLocalization) SetVersions(value []AgreementFileVersion)() {
     if m != nil {
         m.versions = value
