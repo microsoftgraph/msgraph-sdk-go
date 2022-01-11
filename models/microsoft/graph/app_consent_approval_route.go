@@ -7,7 +7,7 @@ import (
 // AppConsentApprovalRoute 
 type AppConsentApprovalRoute struct {
     Entity
-    // 
+    // A collection of userConsentRequest objects for a specific application.
     appConsentRequests []AppConsentRequest;
 }
 // NewAppConsentApprovalRoute instantiates a new appConsentApprovalRoute and sets the default values.
@@ -17,7 +17,7 @@ func NewAppConsentApprovalRoute()(*AppConsentApprovalRoute) {
     }
     return m
 }
-// GetAppConsentRequests gets the appConsentRequests property value. 
+// GetAppConsentRequests gets the appConsentRequests property value. A collection of userConsentRequest objects for a specific application.
 func (m *AppConsentApprovalRoute) GetAppConsentRequests()([]AppConsentRequest) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *AppConsentApprovalRoute) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// SetAppConsentRequests sets the appConsentRequests property value. 
+// SetAppConsentRequests sets the appConsentRequests property value. A collection of userConsentRequest objects for a specific application.
 func (m *AppConsentApprovalRoute) SetAppConsentRequests(value []AppConsentRequest)() {
     if m != nil {
         m.appConsentRequests = value
