@@ -38,7 +38,7 @@ type AccessReviewScheduleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessReviewScheduleDefinitionRequestBuilderGetQueryParameters get definitions from identityGovernance
+// AccessReviewScheduleDefinitionRequestBuilderGetQueryParameters represents the template and scheduling for an access review.
 type AccessReviewScheduleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -75,7 +75,7 @@ func NewAccessReviewScheduleDefinitionRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewScheduleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property definitions for identityGovernance
+// CreateDeleteRequestInformation represents the template and scheduling for an access review.
 func (m *AccessReviewScheduleDefinitionRequestBuilder) CreateDeleteRequestInformation(options *AccessReviewScheduleDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,7 +92,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get definitions from identityGovernance
+// CreateGetRequestInformation represents the template and scheduling for an access review.
 func (m *AccessReviewScheduleDefinitionRequestBuilder) CreateGetRequestInformation(options *AccessReviewScheduleDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,7 +112,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property definitions in identityGovernance
+// CreatePatchRequestInformation represents the template and scheduling for an access review.
 func (m *AccessReviewScheduleDefinitionRequestBuilder) CreatePatchRequestInformation(options *AccessReviewScheduleDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,7 +130,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// Delete delete navigation property definitions for identityGovernance
+// Delete represents the template and scheduling for an access review.
 func (m *AccessReviewScheduleDefinitionRequestBuilder) Delete(options *AccessReviewScheduleDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -142,7 +142,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) Delete(options *AccessRev
     }
     return nil
 }
-// Get get definitions from identityGovernance
+// Get represents the template and scheduling for an access review.
 func (m *AccessReviewScheduleDefinitionRequestBuilder) Get(options *AccessReviewScheduleDefinitionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewScheduleDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,7 +168,7 @@ func (m *AccessReviewScheduleDefinitionRequestBuilder) InstancesById(id string)(
     }
     return i430970eb1b4b4a416077e3b11ecb887cbb1a66d9913c998c9991f0044691886d.NewAccessReviewInstanceRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update the navigation property definitions in identityGovernance
+// Patch represents the template and scheduling for an access review.
 func (m *AccessReviewScheduleDefinitionRequestBuilder) Patch(options *AccessReviewScheduleDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

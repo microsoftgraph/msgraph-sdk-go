@@ -7,7 +7,7 @@ import (
 // AccessReviewSet 
 type AccessReviewSet struct {
     Entity
-    // 
+    // Represents the template and scheduling for an access review.
     definitions []AccessReviewScheduleDefinition;
 }
 // NewAccessReviewSet instantiates a new accessReviewSet and sets the default values.
@@ -17,7 +17,7 @@ func NewAccessReviewSet()(*AccessReviewSet) {
     }
     return m
 }
-// GetDefinitions gets the definitions property value. 
+// GetDefinitions gets the definitions property value. Represents the template and scheduling for an access review.
 func (m *AccessReviewSet) GetDefinitions()([]AccessReviewScheduleDefinition) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *AccessReviewSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// SetDefinitions sets the definitions property value. 
+// SetDefinitions sets the definitions property value. Represents the template and scheduling for an access review.
 func (m *AccessReviewSet) SetDefinitions(value []AccessReviewScheduleDefinition)() {
     if m != nil {
         m.definitions = value

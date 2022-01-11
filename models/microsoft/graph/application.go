@@ -76,7 +76,7 @@ type Application struct {
     tokenIssuancePolicies []TokenIssuancePolicy;
     // The tokenLifetimePolicies assigned to this application. Supports $expand.
     tokenLifetimePolicies []TokenLifetimePolicy;
-    // Specifies the verified publisher of the application.
+    // Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
     verifiedPublisher *VerifiedPublisher;
     // Specifies settings for a web application.
     web *WebApplication;
@@ -360,7 +360,7 @@ func (m *Application) GetTokenLifetimePolicies()([]TokenLifetimePolicy) {
         return m.tokenLifetimePolicies
     }
 }
-// GetVerifiedPublisher gets the verifiedPublisher property value. Specifies the verified publisher of the application.
+// GetVerifiedPublisher gets the verifiedPublisher property value. Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
 func (m *Application) GetVerifiedPublisher()(*VerifiedPublisher) {
     if m == nil {
         return nil
@@ -1270,7 +1270,7 @@ func (m *Application) SetTokenLifetimePolicies(value []TokenLifetimePolicy)() {
         m.tokenLifetimePolicies = value
     }
 }
-// SetVerifiedPublisher sets the verifiedPublisher property value. Specifies the verified publisher of the application.
+// SetVerifiedPublisher sets the verifiedPublisher property value. Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
 func (m *Application) SetVerifiedPublisher(value *VerifiedPublisher)() {
     if m != nil {
         m.verifiedPublisher = value

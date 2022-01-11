@@ -35,7 +35,7 @@ type SettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// SettingsRequestBuilderGetQueryParameters entitlement management settings.
+// SettingsRequestBuilderGetQueryParameters represents the settings that control the behavior of Azure AD entitlement management.
 type SettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation entitlement management settings.
+// CreateDeleteRequestInformation represents the settings that control the behavior of Azure AD entitlement management.
 func (m *SettingsRequestBuilder) CreateDeleteRequestInformation(options *SettingsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *SettingsRequestBuilder) CreateDeleteRequestInformation(options *Setting
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation entitlement management settings.
+// CreateGetRequestInformation represents the settings that control the behavior of Azure AD entitlement management.
 func (m *SettingsRequestBuilder) CreateGetRequestInformation(options *SettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *SettingsRequestBuilder) CreateGetRequestInformation(options *SettingsRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation entitlement management settings.
+// CreatePatchRequestInformation represents the settings that control the behavior of Azure AD entitlement management.
 func (m *SettingsRequestBuilder) CreatePatchRequestInformation(options *SettingsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *SettingsRequestBuilder) CreatePatchRequestInformation(options *Settings
     }
     return requestInfo, nil
 }
-// Delete entitlement management settings.
+// Delete represents the settings that control the behavior of Azure AD entitlement management.
 func (m *SettingsRequestBuilder) Delete(options *SettingsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *SettingsRequestBuilder) Delete(options *SettingsRequestBuilderDeleteOpt
     }
     return nil
 }
-// Get entitlement management settings.
+// Get represents the settings that control the behavior of Azure AD entitlement management.
 func (m *SettingsRequestBuilder) Get(options *SettingsRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EntitlementManagementSettings, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *SettingsRequestBuilder) Get(options *SettingsRequestBuilderGetOptions)(
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EntitlementManagementSettings), nil
 }
-// Patch entitlement management settings.
+// Patch represents the settings that control the behavior of Azure AD entitlement management.
 func (m *SettingsRequestBuilder) Patch(options *SettingsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
