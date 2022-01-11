@@ -14,7 +14,7 @@ type AccessPackage struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The description of the access package.
     description *string;
-    // The display name of the access package.
+    // The display name of the access package. Supports $filter (eq, contains).
     displayName *string;
     // Whether the access package is hidden from the requestor.
     isHidden *bool;
@@ -52,7 +52,7 @@ func (m *AccessPackage) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name of the access package.
+// GetDisplayName gets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
 func (m *AccessPackage) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -206,7 +206,7 @@ func (m *AccessPackage) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the access package.
+// SetDisplayName sets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
 func (m *AccessPackage) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value

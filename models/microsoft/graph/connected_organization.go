@@ -12,7 +12,7 @@ type ConnectedOrganization struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The description of the connected organization.
     description *string;
-    // The display name of the connected organization.
+    // The display name of the connected organization. Supports $filter (eq).
     displayName *string;
     // Nullable.
     externalSponsors []DirectoryObject;
@@ -48,7 +48,7 @@ func (m *ConnectedOrganization) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name of the connected organization.
+// GetDisplayName gets the displayName property value. The display name of the connected organization. Supports $filter (eq).
 func (m *ConnectedOrganization) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -281,7 +281,7 @@ func (m *ConnectedOrganization) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the connected organization.
+// SetDisplayName sets the displayName property value. The display name of the connected organization. Supports $filter (eq).
 func (m *ConnectedOrganization) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value

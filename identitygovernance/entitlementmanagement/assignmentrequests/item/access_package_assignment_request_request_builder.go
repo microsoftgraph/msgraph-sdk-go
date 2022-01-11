@@ -39,7 +39,7 @@ type AccessPackageAssignmentRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AccessPackageAssignmentRequestRequestBuilderGetQueryParameters access package assignment requests.
+// AccessPackageAssignmentRequestRequestBuilderGetQueryParameters represents access package assignment requests created by or on behalf of a user.
 type AccessPackageAssignmentRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -85,7 +85,7 @@ func NewAccessPackageAssignmentRequestRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation access package assignment requests.
+// CreateDeleteRequestInformation represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageAssignmentRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,7 +102,7 @@ func (m *AccessPackageAssignmentRequestRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation access package assignment requests.
+// CreateGetRequestInformation represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,7 +122,7 @@ func (m *AccessPackageAssignmentRequestRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation access package assignment requests.
+// CreatePatchRequestInformation represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) CreatePatchRequestInformation(options *AccessPackageAssignmentRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,7 +140,7 @@ func (m *AccessPackageAssignmentRequestRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// Delete access package assignment requests.
+// Delete represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) Delete(options *AccessPackageAssignmentRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -152,7 +152,7 @@ func (m *AccessPackageAssignmentRequestRequestBuilder) Delete(options *AccessPac
     }
     return nil
 }
-// Get access package assignment requests.
+// Get represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) Get(options *AccessPackageAssignmentRequestRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageAssignmentRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -164,7 +164,7 @@ func (m *AccessPackageAssignmentRequestRequestBuilder) Get(options *AccessPackag
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageAssignmentRequest), nil
 }
-// Patch access package assignment requests.
+// Patch represents access package assignment requests created by or on behalf of a user.
 func (m *AccessPackageAssignmentRequestRequestBuilder) Patch(options *AccessPackageAssignmentRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

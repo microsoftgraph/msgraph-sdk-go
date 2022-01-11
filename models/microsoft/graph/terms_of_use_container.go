@@ -7,9 +7,9 @@ import (
 // TermsOfUseContainer 
 type TermsOfUseContainer struct {
     Entity
-    // 
+    // Represents the current status of a user's response to a company's customizable terms of use agreement.
     agreementAcceptances []AgreementAcceptance;
-    // 
+    // Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
     agreements []Agreement;
 }
 // NewTermsOfUseContainer instantiates a new termsOfUseContainer and sets the default values.
@@ -19,7 +19,7 @@ func NewTermsOfUseContainer()(*TermsOfUseContainer) {
     }
     return m
 }
-// GetAgreementAcceptances gets the agreementAcceptances property value. 
+// GetAgreementAcceptances gets the agreementAcceptances property value. Represents the current status of a user's response to a company's customizable terms of use agreement.
 func (m *TermsOfUseContainer) GetAgreementAcceptances()([]AgreementAcceptance) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *TermsOfUseContainer) GetAgreementAcceptances()([]AgreementAcceptance) {
         return m.agreementAcceptances
     }
 }
-// GetAgreements gets the agreements property value. 
+// GetAgreements gets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 func (m *TermsOfUseContainer) GetAgreements()([]Agreement) {
     if m == nil {
         return nil
@@ -101,13 +101,13 @@ func (m *TermsOfUseContainer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// SetAgreementAcceptances sets the agreementAcceptances property value. 
+// SetAgreementAcceptances sets the agreementAcceptances property value. Represents the current status of a user's response to a company's customizable terms of use agreement.
 func (m *TermsOfUseContainer) SetAgreementAcceptances(value []AgreementAcceptance)() {
     if m != nil {
         m.agreementAcceptances = value
     }
 }
-// SetAgreements sets the agreements property value. 
+// SetAgreements sets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 func (m *TermsOfUseContainer) SetAgreements(value []Agreement)() {
     if m != nil {
         m.agreements = value

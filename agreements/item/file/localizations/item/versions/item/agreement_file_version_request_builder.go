@@ -35,7 +35,7 @@ type AgreementFileVersionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AgreementFileVersionRequestBuilderGetQueryParameters get versions from agreements
+// AgreementFileVersionRequestBuilderGetQueryParameters read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 type AgreementFileVersionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewAgreementFileVersionRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementFileVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property versions for agreements
+// CreateDeleteRequestInformation read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *AgreementFileVersionRequestBuilder) CreateDeleteRequestInformation(options *AgreementFileVersionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *AgreementFileVersionRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get versions from agreements
+// CreateGetRequestInformation read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *AgreementFileVersionRequestBuilder) CreateGetRequestInformation(options *AgreementFileVersionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *AgreementFileVersionRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property versions in agreements
+// CreatePatchRequestInformation read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *AgreementFileVersionRequestBuilder) CreatePatchRequestInformation(options *AgreementFileVersionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *AgreementFileVersionRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete delete navigation property versions for agreements
+// Delete read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *AgreementFileVersionRequestBuilder) Delete(options *AgreementFileVersionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *AgreementFileVersionRequestBuilder) Delete(options *AgreementFileVersio
     }
     return nil
 }
-// Get get versions from agreements
+// Get read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *AgreementFileVersionRequestBuilder) Get(options *AgreementFileVersionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileVersion, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *AgreementFileVersionRequestBuilder) Get(options *AgreementFileVersionRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileVersion), nil
 }
-// Patch update the navigation property versions in agreements
+// Patch read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *AgreementFileVersionRequestBuilder) Patch(options *AgreementFileVersionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
