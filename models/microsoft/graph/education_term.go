@@ -11,11 +11,11 @@ type EducationTerm struct {
     // Display name of the term.
     displayName *string;
     // End of the term.
-    endDate *string;
+    endDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // ID of term in the syncing system.
     externalId *string;
     // Start of the term.
-    startDate *string;
+    startDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
 }
 // NewEducationTerm instantiates a new educationTerm and sets the default values.
 func NewEducationTerm()(*EducationTerm) {
@@ -41,7 +41,7 @@ func (m *EducationTerm) GetDisplayName()(*string) {
     }
 }
 // GetEndDate gets the endDate property value. End of the term.
-func (m *EducationTerm) GetEndDate()(*string) {
+func (m *EducationTerm) GetEndDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -57,7 +57,7 @@ func (m *EducationTerm) GetExternalId()(*string) {
     }
 }
 // GetStartDate gets the startDate property value. Start of the term.
-func (m *EducationTerm) GetStartDate()(*string) {
+func (m *EducationTerm) GetStartDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -78,7 +78,7 @@ func (m *EducationTerm) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["endDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -98,7 +98,7 @@ func (m *EducationTerm) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["startDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -121,7 +121,7 @@ func (m *EducationTerm) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
-        err := writer.WriteStringValue("endDate", m.GetEndDate())
+        err := writer.WriteDateOnlyValue("endDate", m.GetEndDate())
         if err != nil {
             return err
         }
@@ -133,7 +133,7 @@ func (m *EducationTerm) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
-        err := writer.WriteStringValue("startDate", m.GetStartDate())
+        err := writer.WriteDateOnlyValue("startDate", m.GetStartDate())
         if err != nil {
             return err
         }
@@ -159,7 +159,7 @@ func (m *EducationTerm) SetDisplayName(value *string)() {
     }
 }
 // SetEndDate sets the endDate property value. End of the term.
-func (m *EducationTerm) SetEndDate(value *string)() {
+func (m *EducationTerm) SetEndDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.endDate = value
     }
@@ -171,7 +171,7 @@ func (m *EducationTerm) SetExternalId(value *string)() {
     }
 }
 // SetStartDate sets the startDate property value. Start of the term.
-func (m *EducationTerm) SetStartDate(value *string)() {
+func (m *EducationTerm) SetStartDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.startDate = value
     }

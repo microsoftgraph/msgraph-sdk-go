@@ -9,9 +9,9 @@ type BookingWorkTimeSlot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The time of the day when work stops. For example, 17:00:00.0000000.
-    endTime *string;
+    endTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // The time of the day when work starts. For example, 08:00:00.0000000.
-    startTime *string;
+    startTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
 }
 // NewBookingWorkTimeSlot instantiates a new bookingWorkTimeSlot and sets the default values.
 func NewBookingWorkTimeSlot()(*BookingWorkTimeSlot) {
@@ -29,7 +29,7 @@ func (m *BookingWorkTimeSlot) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetEndTime gets the endTime property value. The time of the day when work stops. For example, 17:00:00.0000000.
-func (m *BookingWorkTimeSlot) GetEndTime()(*string) {
+func (m *BookingWorkTimeSlot) GetEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -37,7 +37,7 @@ func (m *BookingWorkTimeSlot) GetEndTime()(*string) {
     }
 }
 // GetStartTime gets the startTime property value. The time of the day when work starts. For example, 08:00:00.0000000.
-func (m *BookingWorkTimeSlot) GetStartTime()(*string) {
+func (m *BookingWorkTimeSlot) GetStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -48,7 +48,7 @@ func (m *BookingWorkTimeSlot) GetStartTime()(*string) {
 func (m *BookingWorkTimeSlot) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["endTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -58,7 +58,7 @@ func (m *BookingWorkTimeSlot) GetFieldDeserializers()(map[string]func(interface{
         return nil
     }
     res["startTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -75,13 +75,13 @@ func (m *BookingWorkTimeSlot) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *BookingWorkTimeSlot) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("endTime", m.GetEndTime())
+        err := writer.WriteTimeOnlyValue("endTime", m.GetEndTime())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("startTime", m.GetStartTime())
+        err := writer.WriteTimeOnlyValue("startTime", m.GetStartTime())
         if err != nil {
             return err
         }
@@ -101,13 +101,13 @@ func (m *BookingWorkTimeSlot) SetAdditionalData(value map[string]interface{})() 
     }
 }
 // SetEndTime sets the endTime property value. The time of the day when work stops. For example, 17:00:00.0000000.
-func (m *BookingWorkTimeSlot) SetEndTime(value *string)() {
+func (m *BookingWorkTimeSlot) SetEndTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.endTime = value
     }
 }
 // SetStartTime sets the startTime property value. The time of the day when work starts. For example, 08:00:00.0000000.
-func (m *BookingWorkTimeSlot) SetStartTime(value *string)() {
+func (m *BookingWorkTimeSlot) SetStartTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.startTime = value
     }
