@@ -24,7 +24,7 @@ type DeviceCompliancePolicy struct {
     displayName *string;
     // DateTime the object was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+    // The list of scheduled action for this rule
     scheduledActionsForRule []DeviceComplianceScheduledActionForRule;
     // List of DeviceComplianceUserStatus.
     userStatuses []DeviceComplianceUserStatus;
@@ -104,7 +104,7 @@ func (m *DeviceCompliancePolicy) GetLastModifiedDateTime()(*i336074805fc853987ab
         return m.lastModifiedDateTime
     }
 }
-// GetScheduledActionsForRule gets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+// GetScheduledActionsForRule gets the scheduledActionsForRule property value. The list of scheduled action for this rule
 func (m *DeviceCompliancePolicy) GetScheduledActionsForRule()([]DeviceComplianceScheduledActionForRule) {
     if m == nil {
         return nil
@@ -437,7 +437,7 @@ func (m *DeviceCompliancePolicy) SetLastModifiedDateTime(value *i336074805fc8539
         m.lastModifiedDateTime = value
     }
 }
-// SetScheduledActionsForRule sets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+// SetScheduledActionsForRule sets the scheduledActionsForRule property value. The list of scheduled action for this rule
 func (m *DeviceCompliancePolicy) SetScheduledActionsForRule(value []DeviceComplianceScheduledActionForRule)() {
     if m != nil {
         m.scheduledActionsForRule = value

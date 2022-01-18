@@ -7,7 +7,7 @@ import (
 // TeamworkConversationIdentity 
 type TeamworkConversationIdentity struct {
     Identity
-    // Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
+    // Type of conversation. Possible values are: team, channel, and chat.
     conversationIdentityType *TeamworkConversationIdentityType;
 }
 // NewTeamworkConversationIdentity instantiates a new teamworkConversationIdentity and sets the default values.
@@ -17,7 +17,7 @@ func NewTeamworkConversationIdentity()(*TeamworkConversationIdentity) {
     }
     return m
 }
-// GetConversationIdentityType gets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
+// GetConversationIdentityType gets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, and chat.
 func (m *TeamworkConversationIdentity) GetConversationIdentityType()(*TeamworkConversationIdentityType) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *TeamworkConversationIdentity) Serialize(writer i04eb5309aeaafadd28374d7
     }
     return nil
 }
-// SetConversationIdentityType sets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
+// SetConversationIdentityType sets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, and chat.
 func (m *TeamworkConversationIdentity) SetConversationIdentityType(value *TeamworkConversationIdentityType)() {
     if m != nil {
         m.conversationIdentityType = value

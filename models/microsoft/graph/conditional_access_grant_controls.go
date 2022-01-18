@@ -10,7 +10,7 @@ type ConditionalAccessGrantControls struct {
     additionalData map[string]interface{};
     // List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
     builtInControls []ConditionalAccessGrantControl;
-    // List of custom controls IDs required by the policy. For more information, see Custom controls.
+    // List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).
     customAuthenticationFactors []string;
     // Defines the relationship of the grant controls. Possible values: AND, OR.
     operator *string;
@@ -40,7 +40,7 @@ func (m *ConditionalAccessGrantControls) GetBuiltInControls()([]ConditionalAcces
         return m.builtInControls
     }
 }
-// GetCustomAuthenticationFactors gets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. For more information, see Custom controls.
+// GetCustomAuthenticationFactors gets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).
 func (m *ConditionalAccessGrantControls) GetCustomAuthenticationFactors()([]string) {
     if m == nil {
         return nil
@@ -170,7 +170,7 @@ func (m *ConditionalAccessGrantControls) SetBuiltInControls(value []ConditionalA
         m.builtInControls = value
     }
 }
-// SetCustomAuthenticationFactors sets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. For more information, see Custom controls.
+// SetCustomAuthenticationFactors sets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).
 func (m *ConditionalAccessGrantControls) SetCustomAuthenticationFactors(value []string)() {
     if m != nil {
         m.customAuthenticationFactors = value

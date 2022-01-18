@@ -15,7 +15,7 @@ type Workbook struct {
     functions *WorkbookFunctions;
     // Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
     names []WorkbookNamedItem;
-    // The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
+    // The status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
     operations []WorkbookOperation;
     // Represents a collection of tables associated with the workbook. Read-only.
     tables []WorkbookTable;
@@ -61,7 +61,7 @@ func (m *Workbook) GetNames()([]WorkbookNamedItem) {
         return m.names
     }
 }
-// GetOperations gets the operations property value. The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
+// GetOperations gets the operations property value. The status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
 func (m *Workbook) GetOperations()([]WorkbookOperation) {
     if m == nil {
         return nil
@@ -282,7 +282,7 @@ func (m *Workbook) SetNames(value []WorkbookNamedItem)() {
         m.names = value
     }
 }
-// SetOperations sets the operations property value. The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
+// SetOperations sets the operations property value. The status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
 func (m *Workbook) SetOperations(value []WorkbookOperation)() {
     if m != nil {
         m.operations = value

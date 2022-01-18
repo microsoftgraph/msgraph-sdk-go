@@ -12,7 +12,7 @@ type BookingReminder struct {
     message *string;
     // The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
     offset *string;
-    // The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.
+    // The persons who should receive the reminder. Possible values are: allAttendees, staff, customer and unknownFutureValue.
     recipients *BookingReminderRecipients;
 }
 // NewBookingReminder instantiates a new bookingReminder and sets the default values.
@@ -46,7 +46,7 @@ func (m *BookingReminder) GetOffset()(*string) {
         return m.offset
     }
 }
-// GetRecipients gets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.
+// GetRecipients gets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer and unknownFutureValue.
 func (m *BookingReminder) GetRecipients()(*BookingReminderRecipients) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *BookingReminder) SetOffset(value *string)() {
         m.offset = value
     }
 }
-// SetRecipients sets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.
+// SetRecipients sets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer and unknownFutureValue.
 func (m *BookingReminder) SetRecipients(value *BookingReminderRecipients)() {
     if m != nil {
         m.recipients = value

@@ -26,7 +26,7 @@ type SharedRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// SharedRequestBuilderGetQueryParameters calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
+// SharedRequestBuilderGetQueryParameters access this property from the derived type itemInsights.
 type SharedRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewSharedRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams["request-raw-url"] = rawUrl
     return NewSharedRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
+// CreateGetRequestInformation access this property from the derived type itemInsights.
 func (m *SharedRequestBuilder) CreateGetRequestInformation(options *SharedRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *SharedRequestBuilder) CreateGetRequestInformation(options *SharedReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
+// CreatePostRequestInformation access this property from the derived type itemInsights.
 func (m *SharedRequestBuilder) CreatePostRequestInformation(options *SharedRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SharedRequestBuilder) CreatePostRequestInformation(options *SharedReque
     }
     return requestInfo, nil
 }
-// Get calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
+// Get access this property from the derived type itemInsights.
 func (m *SharedRequestBuilder) Get(options *SharedRequestBuilderGetOptions)(*SharedResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *SharedRequestBuilder) Get(options *SharedRequestBuilderGetOptions)(*Sha
     }
     return res.(*SharedResponse), nil
 }
-// Post calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
+// Post access this property from the derived type itemInsights.
 func (m *SharedRequestBuilder) Post(options *SharedRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SharedInsight, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -26,7 +26,7 @@ type AlertsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AlertsRequestBuilderGetQueryParameters read-only. Nullable.
+// AlertsRequestBuilderGetQueryParameters notifications for suspicious or potential security issues in a customer’s tenant.
 type AlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAlertsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams["request-raw-url"] = rawUrl
     return NewAlertsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *AlertsRequestBuilder) CreateGetRequestInformation(options *AlertsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AlertsRequestBuilder) CreateGetRequestInformation(options *AlertsReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only. Nullable.
+// CreatePostRequestInformation notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *AlertsRequestBuilder) CreatePostRequestInformation(options *AlertsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AlertsRequestBuilder) CreatePostRequestInformation(options *AlertsReque
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *AlertsRequestBuilder) Get(options *AlertsRequestBuilderGetOptions)(*AlertsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AlertsRequestBuilder) Get(options *AlertsRequestBuilderGetOptions)(*Ale
     }
     return res.(*AlertsResponse), nil
 }
-// Post read-only. Nullable.
+// Post notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *AlertsRequestBuilder) Post(options *AlertsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Alert, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

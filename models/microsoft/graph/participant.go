@@ -17,7 +17,7 @@ type Participant struct {
     mediaStreams []MediaStream;
     // A blob of data provided by the participant in the roster.
     metadata *string;
-    // Information about whether the participant has recording capability.
+    // Information on whether the participant has recording capability.
     recordingInfo *RecordingInfo;
 }
 // NewParticipant instantiates a new participant and sets the default values.
@@ -67,7 +67,7 @@ func (m *Participant) GetMetadata()(*string) {
         return m.metadata
     }
 }
-// GetRecordingInfo gets the recordingInfo property value. Information about whether the participant has recording capability.
+// GetRecordingInfo gets the recordingInfo property value. Information on whether the participant has recording capability.
 func (m *Participant) GetRecordingInfo()(*RecordingInfo) {
     if m == nil {
         return nil
@@ -226,7 +226,7 @@ func (m *Participant) SetMetadata(value *string)() {
         m.metadata = value
     }
 }
-// SetRecordingInfo sets the recordingInfo property value. Information about whether the participant has recording capability.
+// SetRecordingInfo sets the recordingInfo property value. Information on whether the participant has recording capability.
 func (m *Participant) SetRecordingInfo(value *RecordingInfo)() {
     if m != nil {
         m.recordingInfo = value

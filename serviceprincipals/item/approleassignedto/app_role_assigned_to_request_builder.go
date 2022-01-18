@@ -26,7 +26,7 @@ type AppRoleAssignedToRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AppRoleAssignedToRequestBuilderGetQueryParameters app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// AppRoleAssignedToRequestBuilderGetQueryParameters app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 type AppRoleAssignedToRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAppRoleAssignedToRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams["request-raw-url"] = rawUrl
     return NewAppRoleAssignedToRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// CreateGetRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 func (m *AppRoleAssignedToRequestBuilder) CreateGetRequestInformation(options *AppRoleAssignedToRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AppRoleAssignedToRequestBuilder) CreateGetRequestInformation(options *A
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// CreatePostRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 func (m *AppRoleAssignedToRequestBuilder) CreatePostRequestInformation(options *AppRoleAssignedToRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AppRoleAssignedToRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// Get app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 func (m *AppRoleAssignedToRequestBuilder) Get(options *AppRoleAssignedToRequestBuilderGetOptions)(*AppRoleAssignedToResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AppRoleAssignedToRequestBuilder) Get(options *AppRoleAssignedToRequestB
     }
     return res.(*AppRoleAssignedToResponse), nil
 }
-// Post app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// Post app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 func (m *AppRoleAssignedToRequestBuilder) Post(options *AppRoleAssignedToRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppRoleAssignment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

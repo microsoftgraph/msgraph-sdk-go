@@ -10,7 +10,7 @@ type ConditionalAccessFilter struct {
     additionalData map[string]interface{};
     // Mode to use for the filter. Possible values are include or exclude.
     mode *FilterMode;
-    // Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
+    // Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
     rule *string;
 }
 // NewConditionalAccessFilter instantiates a new conditionalAccessFilter and sets the default values.
@@ -36,7 +36,7 @@ func (m *ConditionalAccessFilter) GetMode()(*FilterMode) {
         return m.mode
     }
 }
-// GetRule gets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
+// GetRule gets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
 func (m *ConditionalAccessFilter) GetRule()(*string) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *ConditionalAccessFilter) SetMode(value *FilterMode)() {
         m.mode = value
     }
 }
-// SetRule sets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
+// SetRule sets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
 func (m *ConditionalAccessFilter) SetRule(value *string)() {
     if m != nil {
         m.rule = value

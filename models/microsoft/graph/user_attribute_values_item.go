@@ -8,9 +8,9 @@ import (
 type UserAttributeValuesItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Determines whether the value is set as the default.
+    // Used to set the value as the default.
     isDefault *bool;
-    // The display name of the property displayed to the user in the user flow.
+    // The display name of the property displayed to the end user in the user flow.
     name *string;
     // The value that is set when this item is selected.
     value *string;
@@ -30,7 +30,7 @@ func (m *UserAttributeValuesItem) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetIsDefault gets the isDefault property value. Determines whether the value is set as the default.
+// GetIsDefault gets the isDefault property value. Used to set the value as the default.
 func (m *UserAttributeValuesItem) GetIsDefault()(*bool) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *UserAttributeValuesItem) GetIsDefault()(*bool) {
         return m.isDefault
     }
 }
-// GetName gets the name property value. The display name of the property displayed to the user in the user flow.
+// GetName gets the name property value. The display name of the property displayed to the end user in the user flow.
 func (m *UserAttributeValuesItem) GetName()(*string) {
     if m == nil {
         return nil
@@ -126,13 +126,13 @@ func (m *UserAttributeValuesItem) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetIsDefault sets the isDefault property value. Determines whether the value is set as the default.
+// SetIsDefault sets the isDefault property value. Used to set the value as the default.
 func (m *UserAttributeValuesItem) SetIsDefault(value *bool)() {
     if m != nil {
         m.isDefault = value
     }
 }
-// SetName sets the name property value. The display name of the property displayed to the user in the user flow.
+// SetName sets the name property value. The display name of the property displayed to the end user in the user flow.
 func (m *UserAttributeValuesItem) SetName(value *string)() {
     if m != nil {
         m.name = value

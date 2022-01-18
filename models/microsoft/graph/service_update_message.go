@@ -11,9 +11,15 @@ type ServiceUpdateMessage struct {
     // The expected deadline of the action for the message.
     actionRequiredByDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // 
+    attachments []ServiceAnnouncementAttachment;
+    // 
+    attachmentsArchive []byte;
+    // 
     body *ItemBody;
     // The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
     category *ServiceUpdateCategory;
+    // 
+    hasAttachments *bool;
     // Indicates whether the message describes a major update for the service.
     isMajorChange *bool;
     // The affected services by the service message.
@@ -40,6 +46,22 @@ func (m *ServiceUpdateMessage) GetActionRequiredByDateTime()(*i336074805fc853987
         return m.actionRequiredByDateTime
     }
 }
+// GetAttachments gets the attachments property value. 
+func (m *ServiceUpdateMessage) GetAttachments()([]ServiceAnnouncementAttachment) {
+    if m == nil {
+        return nil
+    } else {
+        return m.attachments
+    }
+}
+// GetAttachmentsArchive gets the attachmentsArchive property value. 
+func (m *ServiceUpdateMessage) GetAttachmentsArchive()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.attachmentsArchive
+    }
+}
 // GetBody gets the body property value. 
 func (m *ServiceUpdateMessage) GetBody()(*ItemBody) {
     if m == nil {
@@ -54,6 +76,14 @@ func (m *ServiceUpdateMessage) GetCategory()(*ServiceUpdateCategory) {
         return nil
     } else {
         return m.category
+    }
+}
+// GetHasAttachments gets the hasAttachments property value. 
+func (m *ServiceUpdateMessage) GetHasAttachments()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasAttachments
     }
 }
 // GetIsMajorChange gets the isMajorChange property value. Indicates whether the message describes a major update for the service.
@@ -109,6 +139,30 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
+    res["attachments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewServiceAnnouncementAttachment() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ServiceAnnouncementAttachment, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*ServiceAnnouncementAttachment))
+            }
+            m.SetAttachments(res)
+        }
+        return nil
+    }
+    res["attachmentsArchive"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAttachmentsArchive(val)
+        }
+        return nil
+    }
     res["body"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewItemBody() })
         if err != nil {
@@ -127,6 +181,16 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         if val != nil {
             cast := val.(ServiceUpdateCategory)
             m.SetCategory(&cast)
+        }
+        return nil
+    }
+    res["hasAttachments"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHasAttachments(val)
         }
         return nil
     }
@@ -207,6 +271,23 @@ func (m *ServiceUpdateMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     {
+        cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttachments()))
+        for i, v := range m.GetAttachments() {
+            temp := v
+            cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
+        }
+        err = writer.WriteCollectionOfObjectValues("attachments", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteByteArrayValue("attachmentsArchive", m.GetAttachmentsArchive())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("body", m.GetBody())
         if err != nil {
             return err
@@ -215,6 +296,12 @@ func (m *ServiceUpdateMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if m.GetCategory() != nil {
         cast := m.GetCategory().String()
         err = writer.WriteStringValue("category", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("hasAttachments", m.GetHasAttachments())
         if err != nil {
             return err
         }
@@ -258,6 +345,18 @@ func (m *ServiceUpdateMessage) SetActionRequiredByDateTime(value *i336074805fc85
         m.actionRequiredByDateTime = value
     }
 }
+// SetAttachments sets the attachments property value. 
+func (m *ServiceUpdateMessage) SetAttachments(value []ServiceAnnouncementAttachment)() {
+    if m != nil {
+        m.attachments = value
+    }
+}
+// SetAttachmentsArchive sets the attachmentsArchive property value. 
+func (m *ServiceUpdateMessage) SetAttachmentsArchive(value []byte)() {
+    if m != nil {
+        m.attachmentsArchive = value
+    }
+}
 // SetBody sets the body property value. 
 func (m *ServiceUpdateMessage) SetBody(value *ItemBody)() {
     if m != nil {
@@ -268,6 +367,12 @@ func (m *ServiceUpdateMessage) SetBody(value *ItemBody)() {
 func (m *ServiceUpdateMessage) SetCategory(value *ServiceUpdateCategory)() {
     if m != nil {
         m.category = value
+    }
+}
+// SetHasAttachments sets the hasAttachments property value. 
+func (m *ServiceUpdateMessage) SetHasAttachments(value *bool)() {
+    if m != nil {
+        m.hasAttachments = value
     }
 }
 // SetIsMajorChange sets the isMajorChange property value. Indicates whether the message describes a major update for the service.

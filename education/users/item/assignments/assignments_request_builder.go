@@ -26,7 +26,7 @@ type AssignmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AssignmentsRequestBuilderGetQueryParameters assignments belonging to the user.
+// AssignmentsRequestBuilderGetQueryParameters list of assignments for the user. Nullable.
 type AssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewAssignmentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation assignments belonging to the user.
+// CreateGetRequestInformation list of assignments for the user. Nullable.
 func (m *AssignmentsRequestBuilder) CreateGetRequestInformation(options *AssignmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *AssignmentsRequestBuilder) CreateGetRequestInformation(options *Assignm
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation assignments belonging to the user.
+// CreatePostRequestInformation list of assignments for the user. Nullable.
 func (m *AssignmentsRequestBuilder) CreatePostRequestInformation(options *AssignmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *AssignmentsRequestBuilder) CreatePostRequestInformation(options *Assign
     }
     return requestInfo, nil
 }
-// Get assignments belonging to the user.
+// Get list of assignments for the user. Nullable.
 func (m *AssignmentsRequestBuilder) Get(options *AssignmentsRequestBuilderGetOptions)(*AssignmentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AssignmentsRequestBuilder) Get(options *AssignmentsRequestBuilderGetOpt
     }
     return res.(*AssignmentsResponse), nil
 }
-// Post assignments belonging to the user.
+// Post list of assignments for the user. Nullable.
 func (m *AssignmentsRequestBuilder) Post(options *AssignmentsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

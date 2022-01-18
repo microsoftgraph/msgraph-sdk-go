@@ -16,7 +16,7 @@ type DocumentSet struct {
     propagateWelcomePageChanges *bool;
     // 
     sharedColumns []ColumnDefinition;
-    // Add the name of the document set to each file name.
+    // Add the name of the Document Set to each file name.
     shouldPrefixNameToFile *bool;
     // 
     welcomePageColumns []ColumnDefinition;
@@ -70,7 +70,7 @@ func (m *DocumentSet) GetSharedColumns()([]ColumnDefinition) {
         return m.sharedColumns
     }
 }
-// GetShouldPrefixNameToFile gets the shouldPrefixNameToFile property value. Add the name of the document set to each file name.
+// GetShouldPrefixNameToFile gets the shouldPrefixNameToFile property value. Add the name of the Document Set to each file name.
 func (m *DocumentSet) GetShouldPrefixNameToFile()(*bool) {
     if m == nil {
         return nil
@@ -290,7 +290,7 @@ func (m *DocumentSet) SetSharedColumns(value []ColumnDefinition)() {
         m.sharedColumns = value
     }
 }
-// SetShouldPrefixNameToFile sets the shouldPrefixNameToFile property value. Add the name of the document set to each file name.
+// SetShouldPrefixNameToFile sets the shouldPrefixNameToFile property value. Add the name of the Document Set to each file name.
 func (m *DocumentSet) SetShouldPrefixNameToFile(value *bool)() {
     if m != nil {
         m.shouldPrefixNameToFile = value

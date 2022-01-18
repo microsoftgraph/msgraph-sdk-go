@@ -26,7 +26,7 @@ type BucketsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// BucketsRequestBuilderGetQueryParameters read-only. Nullable. Collection of buckets in the plan.
+// BucketsRequestBuilderGetQueryParameters collection of buckets in the plan. Read-only. Nullable.
 type BucketsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewBucketsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewBucketsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation read-only. Nullable. Collection of buckets in the plan.
+// CreateGetRequestInformation collection of buckets in the plan. Read-only. Nullable.
 func (m *BucketsRequestBuilder) CreateGetRequestInformation(options *BucketsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *BucketsRequestBuilder) CreateGetRequestInformation(options *BucketsRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only. Nullable. Collection of buckets in the plan.
+// CreatePostRequestInformation collection of buckets in the plan. Read-only. Nullable.
 func (m *BucketsRequestBuilder) CreatePostRequestInformation(options *BucketsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *BucketsRequestBuilder) CreatePostRequestInformation(options *BucketsReq
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable. Collection of buckets in the plan.
+// Get collection of buckets in the plan. Read-only. Nullable.
 func (m *BucketsRequestBuilder) Get(options *BucketsRequestBuilderGetOptions)(*BucketsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *BucketsRequestBuilder) Get(options *BucketsRequestBuilderGetOptions)(*B
     }
     return res.(*BucketsResponse), nil
 }
-// Post read-only. Nullable. Collection of buckets in the plan.
+// Post collection of buckets in the plan. Read-only. Nullable.
 func (m *BucketsRequestBuilder) Post(options *BucketsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucket, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

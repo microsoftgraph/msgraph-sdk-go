@@ -35,7 +35,7 @@ type ColumnDefinition struct {
     hidden *bool;
     // This column stores hyperlink or picture values.
     hyperlinkOrPicture *HyperlinkOrPictureColumn;
-    // Specifies whether the column values can be used for sorting and searching.
+    // Specifies whether the column values can used for sorting and searching.
     indexed *bool;
     // Indicates whether this column can be deleted.
     isDeletable *bool;
@@ -51,13 +51,13 @@ type ColumnDefinition struct {
     number *NumberColumn;
     // This column stores Person or Group values.
     personOrGroup *PersonOrGroupColumn;
-    // If 'true', changes to this column will be propagated to lists that implement the column.
+    // If true, changes to this column will be propagated to lists that implement the column.
     propagateChanges *bool;
     // Specifies whether the column values can be modified.
     readOnly *bool;
     // Specifies whether the column value isn't optional.
     required *bool;
-    // The source column for the content type column.
+    // The source column for content type column.
     sourceColumn *ColumnDefinition;
     // This column stores taxonomy terms.
     term *TermColumn;
@@ -189,7 +189,7 @@ func (m *ColumnDefinition) GetHyperlinkOrPicture()(*HyperlinkOrPictureColumn) {
         return m.hyperlinkOrPicture
     }
 }
-// GetIndexed gets the indexed property value. Specifies whether the column values can be used for sorting and searching.
+// GetIndexed gets the indexed property value. Specifies whether the column values can used for sorting and searching.
 func (m *ColumnDefinition) GetIndexed()(*bool) {
     if m == nil {
         return nil
@@ -253,7 +253,7 @@ func (m *ColumnDefinition) GetPersonOrGroup()(*PersonOrGroupColumn) {
         return m.personOrGroup
     }
 }
-// GetPropagateChanges gets the propagateChanges property value. If 'true', changes to this column will be propagated to lists that implement the column.
+// GetPropagateChanges gets the propagateChanges property value. If true, changes to this column will be propagated to lists that implement the column.
 func (m *ColumnDefinition) GetPropagateChanges()(*bool) {
     if m == nil {
         return nil
@@ -277,7 +277,7 @@ func (m *ColumnDefinition) GetRequired()(*bool) {
         return m.required
     }
 }
-// GetSourceColumn gets the sourceColumn property value. The source column for the content type column.
+// GetSourceColumn gets the sourceColumn property value. The source column for content type column.
 func (m *ColumnDefinition) GetSourceColumn()(*ColumnDefinition) {
     if m == nil {
         return nil
@@ -923,7 +923,7 @@ func (m *ColumnDefinition) SetHyperlinkOrPicture(value *HyperlinkOrPictureColumn
         m.hyperlinkOrPicture = value
     }
 }
-// SetIndexed sets the indexed property value. Specifies whether the column values can be used for sorting and searching.
+// SetIndexed sets the indexed property value. Specifies whether the column values can used for sorting and searching.
 func (m *ColumnDefinition) SetIndexed(value *bool)() {
     if m != nil {
         m.indexed = value
@@ -971,7 +971,7 @@ func (m *ColumnDefinition) SetPersonOrGroup(value *PersonOrGroupColumn)() {
         m.personOrGroup = value
     }
 }
-// SetPropagateChanges sets the propagateChanges property value. If 'true', changes to this column will be propagated to lists that implement the column.
+// SetPropagateChanges sets the propagateChanges property value. If true, changes to this column will be propagated to lists that implement the column.
 func (m *ColumnDefinition) SetPropagateChanges(value *bool)() {
     if m != nil {
         m.propagateChanges = value
@@ -989,7 +989,7 @@ func (m *ColumnDefinition) SetRequired(value *bool)() {
         m.required = value
     }
 }
-// SetSourceColumn sets the sourceColumn property value. The source column for the content type column.
+// SetSourceColumn sets the sourceColumn property value. The source column for content type column.
 func (m *ColumnDefinition) SetSourceColumn(value *ColumnDefinition)() {
     if m != nil {
         m.sourceColumn = value

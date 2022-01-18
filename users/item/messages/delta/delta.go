@@ -15,7 +15,7 @@ type Delta struct {
     bccRecipients []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient;
     // The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
     body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ItemBody;
-    // The first 255 characters of the message body. It is in text format.
+    // The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
     bodyPreview *string;
     // The Cc: recipients for the message.
     ccRecipients []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Recipient;
@@ -101,7 +101,7 @@ func (m *Delta) GetBody()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa6
         return m.body
     }
 }
-// GetBodyPreview gets the bodyPreview property value. The first 255 characters of the message body. It is in text format.
+// GetBodyPreview gets the bodyPreview property value. The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
 func (m *Delta) GetBodyPreview()(*string) {
     if m == nil {
         return nil
@@ -916,7 +916,7 @@ func (m *Delta) SetBody(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0
         m.body = value
     }
 }
-// SetBodyPreview sets the bodyPreview property value. The first 255 characters of the message body. It is in text format.
+// SetBodyPreview sets the bodyPreview property value. The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
 func (m *Delta) SetBodyPreview(value *string)() {
     if m != nil {
         m.bodyPreview = value
