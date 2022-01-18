@@ -10,7 +10,7 @@ type AttachmentItem struct {
     additionalData map[string]interface{};
     // The type of attachment. Possible values are: file, item, reference. Required.
     attachmentType *AttachmentType;
-    // 
+    // The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
     contentId *string;
     // The nature of the data in the attachment. Optional.
     contentType *string;
@@ -44,7 +44,7 @@ func (m *AttachmentItem) GetAttachmentType()(*AttachmentType) {
         return m.attachmentType
     }
 }
-// GetContentId gets the contentId property value. 
+// GetContentId gets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
 func (m *AttachmentItem) GetContentId()(*string) {
     if m == nil {
         return nil
@@ -212,7 +212,7 @@ func (m *AttachmentItem) SetAttachmentType(value *AttachmentType)() {
         m.attachmentType = value
     }
 }
-// SetContentId sets the contentId property value. 
+// SetContentId sets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
 func (m *AttachmentItem) SetContentId(value *string)() {
     if m != nil {
         m.contentId = value

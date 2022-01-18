@@ -8,13 +8,13 @@ import (
 type MailboxSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Folder ID of an archive folder for the user.
+    // Folder ID of an archive folder for the user. Read only.
     archiveFolder *string;
     // Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
     automaticRepliesSetting *AutomaticRepliesSetting;
     // The date format for the user's mailbox.
     dateFormat *string;
-    // If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
+    // If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.
     delegateMeetingMessageDeliveryOptions *DelegateMeetingMessageDeliveryOptions;
     // The locale information for the user, including the preferred language and country/region.
     language *LocaleInfo;
@@ -40,7 +40,7 @@ func (m *MailboxSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetArchiveFolder gets the archiveFolder property value. Folder ID of an archive folder for the user.
+// GetArchiveFolder gets the archiveFolder property value. Folder ID of an archive folder for the user. Read only.
 func (m *MailboxSettings) GetArchiveFolder()(*string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *MailboxSettings) GetDateFormat()(*string) {
         return m.dateFormat
     }
 }
-// GetDelegateMeetingMessageDeliveryOptions gets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
+// GetDelegateMeetingMessageDeliveryOptions gets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.
 func (m *MailboxSettings) GetDelegateMeetingMessageDeliveryOptions()(*DelegateMeetingMessageDeliveryOptions) {
     if m == nil {
         return nil
@@ -258,7 +258,7 @@ func (m *MailboxSettings) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetArchiveFolder sets the archiveFolder property value. Folder ID of an archive folder for the user.
+// SetArchiveFolder sets the archiveFolder property value. Folder ID of an archive folder for the user. Read only.
 func (m *MailboxSettings) SetArchiveFolder(value *string)() {
     if m != nil {
         m.archiveFolder = value
@@ -276,7 +276,7 @@ func (m *MailboxSettings) SetDateFormat(value *string)() {
         m.dateFormat = value
     }
 }
-// SetDelegateMeetingMessageDeliveryOptions sets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
+// SetDelegateMeetingMessageDeliveryOptions sets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.
 func (m *MailboxSettings) SetDelegateMeetingMessageDeliveryOptions(value *DelegateMeetingMessageDeliveryOptions)() {
     if m != nil {
         m.delegateMeetingMessageDeliveryOptions = value

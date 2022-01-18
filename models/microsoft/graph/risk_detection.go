@@ -8,41 +8,41 @@ import (
 // RiskDetection 
 type RiskDetection struct {
     Entity
-    // Indicates the activity type the detected risk is linked to. . Possible values are: signin, user, unknownFutureValue.
+    // Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.
     activity *ActivityType;
-    // Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
+    // Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Additional information associated with the risk detection in JSON format.
     additionalInfo *string;
     // Correlation ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
     correlationId *string;
-    // Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
+    // Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     detectedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
+    // Timing of the detected risk (real-time/offline). The possible values are notDefined, realtime, nearRealtime, offline, unknownFutureValue.
     detectionTimingType *RiskDetectionTimingType;
     // Provides the IP address of the client from where the risk occurred.
     ipAddress *string;
-    // Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
+    // Date and time that the risk detection was last updated.
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Location of the sign-in.
     location *SignInLocation;
     // Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
     requestId *string;
-    // Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
+    // Details of the detected risk. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
     riskDetail *RiskDetail;
-    // The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue. If the risk detection is a premium detection, will show generic
+    // The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue.
     riskEventType *string;
-    // Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+    // Level of the detected risk. The possible values are low, medium, high, hidden, none, unknownFutureValue. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
     riskLevel *RiskLevel;
-    // The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+    // The state of a detected risky user or sign-in. The possible values are none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, and unknownFutureValue.
     riskState *RiskState;
     // Source of the risk detection. For example, activeDirectory.
     source *string;
-    // Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
+    // Indicates the type of token issuer for the detected sign-in risk. The possible values are AzureAD, ADFederationServices, and unknownFutureValue.
     tokenIssuerType *TokenIssuerType;
-    // The user principal name (UPN) of the user.
+    // Name of the user.
     userDisplayName *string;
-    // Unique ID of the user.
+    // Unique ID of the user.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     userId *string;
     // The user principal name (UPN) of the user.
     userPrincipalName *string;
@@ -54,7 +54,7 @@ func NewRiskDetection()(*RiskDetection) {
     }
     return m
 }
-// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to. . Possible values are: signin, user, unknownFutureValue.
+// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.
 func (m *RiskDetection) GetActivity()(*ActivityType) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *RiskDetection) GetActivity()(*ActivityType) {
         return m.activity
     }
 }
-// GetActivityDateTime gets the activityDateTime property value. Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
+// GetActivityDateTime gets the activityDateTime property value. Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *RiskDetection) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -86,7 +86,7 @@ func (m *RiskDetection) GetCorrelationId()(*string) {
         return m.correlationId
     }
 }
-// GetDetectedDateTime gets the detectedDateTime property value. Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
+// GetDetectedDateTime gets the detectedDateTime property value. Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *RiskDetection) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -94,7 +94,7 @@ func (m *RiskDetection) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return m.detectedDateTime
     }
 }
-// GetDetectionTimingType gets the detectionTimingType property value. Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
+// GetDetectionTimingType gets the detectionTimingType property value. Timing of the detected risk (real-time/offline). The possible values are notDefined, realtime, nearRealtime, offline, unknownFutureValue.
 func (m *RiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *RiskDetection) GetIpAddress()(*string) {
         return m.ipAddress
     }
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time that the risk detection was last updated.
 func (m *RiskDetection) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *RiskDetection) GetRequestId()(*string) {
         return m.requestId
     }
 }
-// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
+// GetRiskDetail gets the riskDetail property value. Details of the detected risk. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
 func (m *RiskDetection) GetRiskDetail()(*RiskDetail) {
     if m == nil {
         return nil
@@ -142,7 +142,7 @@ func (m *RiskDetection) GetRiskDetail()(*RiskDetail) {
         return m.riskDetail
     }
 }
-// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue. If the risk detection is a premium detection, will show generic
+// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue.
 func (m *RiskDetection) GetRiskEventType()(*string) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *RiskDetection) GetRiskEventType()(*string) {
         return m.riskEventType
     }
 }
-// GetRiskLevel gets the riskLevel property value. Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+// GetRiskLevel gets the riskLevel property value. Level of the detected risk. The possible values are low, medium, high, hidden, none, unknownFutureValue. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
 func (m *RiskDetection) GetRiskLevel()(*RiskLevel) {
     if m == nil {
         return nil
@@ -158,7 +158,7 @@ func (m *RiskDetection) GetRiskLevel()(*RiskLevel) {
         return m.riskLevel
     }
 }
-// GetRiskState gets the riskState property value. The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// GetRiskState gets the riskState property value. The state of a detected risky user or sign-in. The possible values are none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, and unknownFutureValue.
 func (m *RiskDetection) GetRiskState()(*RiskState) {
     if m == nil {
         return nil
@@ -174,7 +174,7 @@ func (m *RiskDetection) GetSource()(*string) {
         return m.source
     }
 }
-// GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
+// GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are AzureAD, ADFederationServices, and unknownFutureValue.
 func (m *RiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
     if m == nil {
         return nil
@@ -182,7 +182,7 @@ func (m *RiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
         return m.tokenIssuerType
     }
 }
-// GetUserDisplayName gets the userDisplayName property value. The user principal name (UPN) of the user.
+// GetUserDisplayName gets the userDisplayName property value. Name of the user.
 func (m *RiskDetection) GetUserDisplayName()(*string) {
     if m == nil {
         return nil
@@ -190,7 +190,7 @@ func (m *RiskDetection) GetUserDisplayName()(*string) {
         return m.userDisplayName
     }
 }
-// GetUserId gets the userId property value. Unique ID of the user.
+// GetUserId gets the userId property value. Unique ID of the user.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *RiskDetection) GetUserId()(*string) {
     if m == nil {
         return nil
@@ -538,13 +538,13 @@ func (m *RiskDetection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to. . Possible values are: signin, user, unknownFutureValue.
+// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.
 func (m *RiskDetection) SetActivity(value *ActivityType)() {
     if m != nil {
         m.activity = value
     }
 }
-// SetActivityDateTime sets the activityDateTime property value. Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
+// SetActivityDateTime sets the activityDateTime property value. Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *RiskDetection) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.activityDateTime = value
@@ -562,13 +562,13 @@ func (m *RiskDetection) SetCorrelationId(value *string)() {
         m.correlationId = value
     }
 }
-// SetDetectedDateTime sets the detectedDateTime property value. Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
+// SetDetectedDateTime sets the detectedDateTime property value. Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *RiskDetection) SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.detectedDateTime = value
     }
 }
-// SetDetectionTimingType sets the detectionTimingType property value. Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
+// SetDetectionTimingType sets the detectionTimingType property value. Timing of the detected risk (real-time/offline). The possible values are notDefined, realtime, nearRealtime, offline, unknownFutureValue.
 func (m *RiskDetection) SetDetectionTimingType(value *RiskDetectionTimingType)() {
     if m != nil {
         m.detectionTimingType = value
@@ -580,7 +580,7 @@ func (m *RiskDetection) SetIpAddress(value *string)() {
         m.ipAddress = value
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time that the risk detection was last updated.
 func (m *RiskDetection) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastUpdatedDateTime = value
@@ -598,25 +598,25 @@ func (m *RiskDetection) SetRequestId(value *string)() {
         m.requestId = value
     }
 }
-// SetRiskDetail sets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
+// SetRiskDetail sets the riskDetail property value. Details of the detected risk. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
 func (m *RiskDetection) SetRiskDetail(value *RiskDetail)() {
     if m != nil {
         m.riskDetail = value
     }
 }
-// SetRiskEventType sets the riskEventType property value. The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue. If the risk detection is a premium detection, will show generic
+// SetRiskEventType sets the riskEventType property value. The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue.
 func (m *RiskDetection) SetRiskEventType(value *string)() {
     if m != nil {
         m.riskEventType = value
     }
 }
-// SetRiskLevel sets the riskLevel property value. Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+// SetRiskLevel sets the riskLevel property value. Level of the detected risk. The possible values are low, medium, high, hidden, none, unknownFutureValue. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden.
 func (m *RiskDetection) SetRiskLevel(value *RiskLevel)() {
     if m != nil {
         m.riskLevel = value
     }
 }
-// SetRiskState sets the riskState property value. The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// SetRiskState sets the riskState property value. The state of a detected risky user or sign-in. The possible values are none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, and unknownFutureValue.
 func (m *RiskDetection) SetRiskState(value *RiskState)() {
     if m != nil {
         m.riskState = value
@@ -628,19 +628,19 @@ func (m *RiskDetection) SetSource(value *string)() {
         m.source = value
     }
 }
-// SetTokenIssuerType sets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
+// SetTokenIssuerType sets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are AzureAD, ADFederationServices, and unknownFutureValue.
 func (m *RiskDetection) SetTokenIssuerType(value *TokenIssuerType)() {
     if m != nil {
         m.tokenIssuerType = value
     }
 }
-// SetUserDisplayName sets the userDisplayName property value. The user principal name (UPN) of the user.
+// SetUserDisplayName sets the userDisplayName property value. Name of the user.
 func (m *RiskDetection) SetUserDisplayName(value *string)() {
     if m != nil {
         m.userDisplayName = value
     }
 }
-// SetUserId sets the userId property value. Unique ID of the user.
+// SetUserId sets the userId property value. Unique ID of the user.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *RiskDetection) SetUserId(value *string)() {
     if m != nil {
         m.userId = value

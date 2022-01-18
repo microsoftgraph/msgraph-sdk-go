@@ -27,7 +27,7 @@ type Person struct {
     officeLocation *string;
     // Free-form notes that the user has taken about this person.
     personNotes *string;
-    // The type of person.
+    // The type of person, for example distribution list.
     personType *PersonType;
     // The person's phone numbers.
     phones []Phone;
@@ -133,7 +133,7 @@ func (m *Person) GetPersonNotes()(*string) {
         return m.personNotes
     }
 }
-// GetPersonType gets the personType property value. The type of person.
+// GetPersonType gets the personType property value. The type of person, for example distribution list.
 func (m *Person) GetPersonType()(*PersonType) {
     if m == nil {
         return nil
@@ -621,7 +621,7 @@ func (m *Person) SetPersonNotes(value *string)() {
         m.personNotes = value
     }
 }
-// SetPersonType sets the personType property value. The type of person.
+// SetPersonType sets the personType property value. The type of person, for example distribution list.
 func (m *Person) SetPersonType(value *PersonType)() {
     if m != nil {
         m.personType = value

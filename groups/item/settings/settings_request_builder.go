@@ -26,7 +26,7 @@ type SettingsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// SettingsRequestBuilderGetQueryParameters read-only. Nullable.
+// SettingsRequestBuilderGetQueryParameters settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 type SettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewSettingsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 func (m *SettingsRequestBuilder) CreateGetRequestInformation(options *SettingsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *SettingsRequestBuilder) CreateGetRequestInformation(options *SettingsRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only. Nullable.
+// CreatePostRequestInformation settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 func (m *SettingsRequestBuilder) CreatePostRequestInformation(options *SettingsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *SettingsRequestBuilder) CreatePostRequestInformation(options *SettingsR
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 func (m *SettingsRequestBuilder) Get(options *SettingsRequestBuilderGetOptions)(*SettingsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *SettingsRequestBuilder) Get(options *SettingsRequestBuilderGetOptions)(
     }
     return res.(*SettingsResponse), nil
 }
-// Post read-only. Nullable.
+// Post settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 func (m *SettingsRequestBuilder) Post(options *SettingsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupSetting, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

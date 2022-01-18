@@ -26,7 +26,7 @@ type PoliciesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PoliciesRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
+// PoliciesRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 type PoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewPoliciesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
+// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *PoliciesRequestBuilder) CreateGetRequestInformation(options *PoliciesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *PoliciesRequestBuilder) CreateGetRequestInformation(options *PoliciesRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
+// CreatePostRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *PoliciesRequestBuilder) CreatePostRequestInformation(options *PoliciesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *PoliciesRequestBuilder) CreatePostRequestInformation(options *PoliciesR
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
+// Get read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *PoliciesRequestBuilder) Get(options *PoliciesRequestBuilderGetOptions)(*PoliciesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *PoliciesRequestBuilder) Get(options *PoliciesRequestBuilderGetOptions)(
     }
     return res.(*PoliciesResponse), nil
 }
-// Post read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
+// Post read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *PoliciesRequestBuilder) Post(options *PoliciesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicy, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

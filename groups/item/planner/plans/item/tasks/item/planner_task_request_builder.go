@@ -39,7 +39,7 @@ type PlannerTaskRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PlannerTaskRequestBuilderGetQueryParameters read-only. Nullable. Collection of tasks in the plan.
+// PlannerTaskRequestBuilderGetQueryParameters collection of tasks in the plan. Read-only. Nullable.
 type PlannerTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -82,7 +82,7 @@ func NewPlannerTaskRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerTaskRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation read-only. Nullable. Collection of tasks in the plan.
+// CreateDeleteRequestInformation collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerTaskRequestBuilder) CreateDeleteRequestInformation(options *PlannerTaskRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,7 +99,7 @@ func (m *PlannerTaskRequestBuilder) CreateDeleteRequestInformation(options *Plan
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable. Collection of tasks in the plan.
+// CreateGetRequestInformation collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerTaskRequestBuilder) CreateGetRequestInformation(options *PlannerTaskRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,7 +119,7 @@ func (m *PlannerTaskRequestBuilder) CreateGetRequestInformation(options *Planner
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only. Nullable. Collection of tasks in the plan.
+// CreatePatchRequestInformation collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerTaskRequestBuilder) CreatePatchRequestInformation(options *PlannerTaskRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,7 +137,7 @@ func (m *PlannerTaskRequestBuilder) CreatePatchRequestInformation(options *Plann
     }
     return requestInfo, nil
 }
-// Delete read-only. Nullable. Collection of tasks in the plan.
+// Delete collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerTaskRequestBuilder) Delete(options *PlannerTaskRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -152,7 +152,7 @@ func (m *PlannerTaskRequestBuilder) Delete(options *PlannerTaskRequestBuilderDel
 func (m *PlannerTaskRequestBuilder) Details()(*i495f9972695d085e0bdac47e8ae4c30b326357a034263710344f12b65e49fcdd.DetailsRequestBuilder) {
     return i495f9972695d085e0bdac47e8ae4c30b326357a034263710344f12b65e49fcdd.NewDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get read-only. Nullable. Collection of tasks in the plan.
+// Get collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerTaskRequestBuilder) Get(options *PlannerTaskRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTask, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -164,7 +164,7 @@ func (m *PlannerTaskRequestBuilder) Get(options *PlannerTaskRequestBuilderGetOpt
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTask), nil
 }
-// Patch read-only. Nullable. Collection of tasks in the plan.
+// Patch collection of tasks in the plan. Read-only. Nullable.
 func (m *PlannerTaskRequestBuilder) Patch(options *PlannerTaskRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

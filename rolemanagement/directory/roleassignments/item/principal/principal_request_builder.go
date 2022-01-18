@@ -27,7 +27,7 @@ type PrincipalRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PrincipalRequestBuilderGetQueryParameters referencing the assigned principal. Read-only. Supports $expand.
+// PrincipalRequestBuilderGetQueryParameters the assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
 type PrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -53,7 +53,7 @@ func NewPrincipalRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewPrincipalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation referencing the assigned principal. Read-only. Supports $expand.
+// CreateGetRequestInformation the assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
 func (m *PrincipalRequestBuilder) CreateGetRequestInformation(options *PrincipalRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -73,7 +73,7 @@ func (m *PrincipalRequestBuilder) CreateGetRequestInformation(options *Principal
     }
     return requestInfo, nil
 }
-// Get referencing the assigned principal. Read-only. Supports $expand.
+// Get the assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
 func (m *PrincipalRequestBuilder) Get(options *PrincipalRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

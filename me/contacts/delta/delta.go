@@ -29,7 +29,7 @@ type Delta struct {
     displayName *string;
     // The contact's email addresses.
     emailAddresses []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EmailAddress;
-    // The collection of open extensions defined for the contact. Read-only. Nullable.
+    // The collection of open extensions defined for the contact. Nullable.
     extensions []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension;
     // The name the contact is filed under.
     fileAs *string;
@@ -171,7 +171,7 @@ func (m *Delta) GetEmailAddresses()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.emailAddresses
     }
 }
-// GetExtensions gets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
+// GetExtensions gets the extensions property value. The collection of open extensions defined for the contact. Nullable.
 func (m *Delta) GetExtensions()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension) {
     if m == nil {
         return nil
@@ -1107,7 +1107,7 @@ func (m *Delta) SetEmailAddresses(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a8
         m.emailAddresses = value
     }
 }
-// SetExtensions sets the extensions property value. The collection of open extensions defined for the contact. Read-only. Nullable.
+// SetExtensions sets the extensions property value. The collection of open extensions defined for the contact. Nullable.
 func (m *Delta) SetExtensions(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension)() {
     if m != nil {
         m.extensions = value

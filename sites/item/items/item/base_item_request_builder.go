@@ -35,7 +35,7 @@ type BaseItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// BaseItemRequestBuilderGetQueryParameters used to address any item contained in this site. This collection can't be enumerated.
+// BaseItemRequestBuilderGetQueryParameters used to address any item contained in this site. This collection cannot be enumerated.
 type BaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewBaseItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation used to address any item contained in this site. This collection can't be enumerated.
+// CreateDeleteRequestInformation used to address any item contained in this site. This collection cannot be enumerated.
 func (m *BaseItemRequestBuilder) CreateDeleteRequestInformation(options *BaseItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *BaseItemRequestBuilder) CreateDeleteRequestInformation(options *BaseIte
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation used to address any item contained in this site. This collection can't be enumerated.
+// CreateGetRequestInformation used to address any item contained in this site. This collection cannot be enumerated.
 func (m *BaseItemRequestBuilder) CreateGetRequestInformation(options *BaseItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *BaseItemRequestBuilder) CreateGetRequestInformation(options *BaseItemRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation used to address any item contained in this site. This collection can't be enumerated.
+// CreatePatchRequestInformation used to address any item contained in this site. This collection cannot be enumerated.
 func (m *BaseItemRequestBuilder) CreatePatchRequestInformation(options *BaseItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *BaseItemRequestBuilder) CreatePatchRequestInformation(options *BaseItem
     }
     return requestInfo, nil
 }
-// Delete used to address any item contained in this site. This collection can't be enumerated.
+// Delete used to address any item contained in this site. This collection cannot be enumerated.
 func (m *BaseItemRequestBuilder) Delete(options *BaseItemRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *BaseItemRequestBuilder) Delete(options *BaseItemRequestBuilderDeleteOpt
     }
     return nil
 }
-// Get used to address any item contained in this site. This collection can't be enumerated.
+// Get used to address any item contained in this site. This collection cannot be enumerated.
 func (m *BaseItemRequestBuilder) Get(options *BaseItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BaseItem, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *BaseItemRequestBuilder) Get(options *BaseItemRequestBuilderGetOptions)(
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BaseItem), nil
 }
-// Patch used to address any item contained in this site. This collection can't be enumerated.
+// Patch used to address any item contained in this site. This collection cannot be enumerated.
 func (m *BaseItemRequestBuilder) Patch(options *BaseItemRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

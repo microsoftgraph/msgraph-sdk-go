@@ -24,7 +24,7 @@ type VppToken struct {
     lastSyncStatus *VppTokenSyncStatus;
     // The organization associated with the Apple Volume Purchase Program Token
     organizationName *string;
-    // Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
+    // Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
     state *VppTokenState;
     // The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.
     token *string;
@@ -102,7 +102,7 @@ func (m *VppToken) GetOrganizationName()(*string) {
         return m.organizationName
     }
 }
-// GetState gets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
+// GetState gets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
 func (m *VppToken) GetState()(*VppTokenState) {
     if m == nil {
         return nil
@@ -372,7 +372,7 @@ func (m *VppToken) SetOrganizationName(value *string)() {
         m.organizationName = value
     }
 }
-// SetState sets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
+// SetState sets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
 func (m *VppToken) SetState(value *VppTokenState)() {
     if m != nil {
         m.state = value

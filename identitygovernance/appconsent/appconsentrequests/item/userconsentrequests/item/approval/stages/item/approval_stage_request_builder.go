@@ -35,7 +35,7 @@ type ApprovalStageRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ApprovalStageRequestBuilderGetQueryParameters a collection of stages in the approval decision.
+// ApprovalStageRequestBuilderGetQueryParameters used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 type ApprovalStageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewApprovalStageRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalStageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation a collection of stages in the approval decision.
+// CreateDeleteRequestInformation used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 func (m *ApprovalStageRequestBuilder) CreateDeleteRequestInformation(options *ApprovalStageRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *ApprovalStageRequestBuilder) CreateDeleteRequestInformation(options *Ap
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation a collection of stages in the approval decision.
+// CreateGetRequestInformation used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 func (m *ApprovalStageRequestBuilder) CreateGetRequestInformation(options *ApprovalStageRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *ApprovalStageRequestBuilder) CreateGetRequestInformation(options *Appro
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation a collection of stages in the approval decision.
+// CreatePatchRequestInformation used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 func (m *ApprovalStageRequestBuilder) CreatePatchRequestInformation(options *ApprovalStageRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *ApprovalStageRequestBuilder) CreatePatchRequestInformation(options *App
     }
     return requestInfo, nil
 }
-// Delete a collection of stages in the approval decision.
+// Delete used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 func (m *ApprovalStageRequestBuilder) Delete(options *ApprovalStageRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *ApprovalStageRequestBuilder) Delete(options *ApprovalStageRequestBuilde
     }
     return nil
 }
-// Get a collection of stages in the approval decision.
+// Get used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 func (m *ApprovalStageRequestBuilder) Get(options *ApprovalStageRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApprovalStage, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *ApprovalStageRequestBuilder) Get(options *ApprovalStageRequestBuilderGe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApprovalStage), nil
 }
-// Patch a collection of stages in the approval decision.
+// Patch used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 func (m *ApprovalStageRequestBuilder) Patch(options *ApprovalStageRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

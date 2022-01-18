@@ -26,7 +26,7 @@ type StagesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// StagesRequestBuilderGetQueryParameters a collection of stages in the approval decision.
+// StagesRequestBuilderGetQueryParameters used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 type StagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewStagesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams["request-raw-url"] = rawUrl
     return NewStagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation a collection of stages in the approval decision.
+// CreateGetRequestInformation used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 func (m *StagesRequestBuilder) CreateGetRequestInformation(options *StagesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *StagesRequestBuilder) CreateGetRequestInformation(options *StagesReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation a collection of stages in the approval decision.
+// CreatePostRequestInformation used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 func (m *StagesRequestBuilder) CreatePostRequestInformation(options *StagesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *StagesRequestBuilder) CreatePostRequestInformation(options *StagesReque
     }
     return requestInfo, nil
 }
-// Get a collection of stages in the approval decision.
+// Get used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 func (m *StagesRequestBuilder) Get(options *StagesRequestBuilderGetOptions)(*StagesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *StagesRequestBuilder) Get(options *StagesRequestBuilderGetOptions)(*Sta
     }
     return res.(*StagesResponse), nil
 }
-// Post a collection of stages in the approval decision.
+// Post used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.
 func (m *StagesRequestBuilder) Post(options *StagesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ApprovalStage, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

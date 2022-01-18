@@ -8,7 +8,7 @@ import (
 // NotificationMessageTemplate 
 type NotificationMessageTemplate struct {
     Entity
-    // The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
+    // The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.
     brandingOptions *NotificationTemplateBrandingOptions;
     // The default locale to fallback onto when the requested locale is not available.
     defaultLocale *string;
@@ -26,7 +26,7 @@ func NewNotificationMessageTemplate()(*NotificationMessageTemplate) {
     }
     return m
 }
-// GetBrandingOptions gets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
+// GetBrandingOptions gets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.
 func (m *NotificationMessageTemplate) GetBrandingOptions()(*NotificationTemplateBrandingOptions) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *NotificationMessageTemplate) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// SetBrandingOptions sets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation.
+// SetBrandingOptions sets the brandingOptions property value. The Message Template Branding Options. Branding is defined in the Intune Admin Console. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink.
 func (m *NotificationMessageTemplate) SetBrandingOptions(value *NotificationTemplateBrandingOptions)() {
     if m != nil {
         m.brandingOptions = value

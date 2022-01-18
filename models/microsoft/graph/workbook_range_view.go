@@ -29,7 +29,7 @@ type WorkbookRangeView struct {
     text *Json;
     // Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
     values *Json;
-    // Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
+    // Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
     valueTypes *Json;
 }
 // NewWorkbookRangeView instantiates a new workbookRangeView and sets the default values.
@@ -127,7 +127,7 @@ func (m *WorkbookRangeView) GetValues()(*Json) {
         return m.values
     }
 }
-// GetValueTypes gets the valueTypes property value. Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
+// GetValueTypes gets the valueTypes property value. Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
 func (m *WorkbookRangeView) GetValueTypes()(*Json) {
     if m == nil {
         return nil
@@ -418,7 +418,7 @@ func (m *WorkbookRangeView) SetValues(value *Json)() {
         m.values = value
     }
 }
-// SetValueTypes sets the valueTypes property value. Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
+// SetValueTypes sets the valueTypes property value. Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
 func (m *WorkbookRangeView) SetValueTypes(value *Json)() {
     if m != nil {
         m.valueTypes = value

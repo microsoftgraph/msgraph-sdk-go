@@ -35,7 +35,7 @@ type AlertRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AlertRequestBuilderGetQueryParameters read-only. Nullable.
+// AlertRequestBuilderGetQueryParameters notifications for suspicious or potential security issues in a customer’s tenant.
 type AlertRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewAlertRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams["request-raw-url"] = rawUrl
     return NewAlertRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation read-only. Nullable.
+// CreateDeleteRequestInformation notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *AlertRequestBuilder) CreateDeleteRequestInformation(options *AlertRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *AlertRequestBuilder) CreateDeleteRequestInformation(options *AlertReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *AlertRequestBuilder) CreateGetRequestInformation(options *AlertRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *AlertRequestBuilder) CreateGetRequestInformation(options *AlertRequestB
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only. Nullable.
+// CreatePatchRequestInformation notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *AlertRequestBuilder) CreatePatchRequestInformation(options *AlertRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *AlertRequestBuilder) CreatePatchRequestInformation(options *AlertReques
     }
     return requestInfo, nil
 }
-// Delete read-only. Nullable.
+// Delete notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *AlertRequestBuilder) Delete(options *AlertRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *AlertRequestBuilder) Delete(options *AlertRequestBuilderDeleteOptions)(
     }
     return nil
 }
-// Get read-only. Nullable.
+// Get notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *AlertRequestBuilder) Get(options *AlertRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Alert, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *AlertRequestBuilder) Get(options *AlertRequestBuilderGetOptions)(*i4a83
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Alert), nil
 }
-// Patch read-only. Nullable.
+// Patch notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *AlertRequestBuilder) Patch(options *AlertRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

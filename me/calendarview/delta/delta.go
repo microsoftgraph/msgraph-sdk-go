@@ -9,7 +9,7 @@ import (
 // Delta 
 type Delta struct {
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OutlookItem
-    // true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
+    // true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
     allowNewTimeProposals *bool;
     // The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
     attachments []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment;
@@ -101,7 +101,7 @@ func NewDelta()(*Delta) {
     }
     return m
 }
-// GetAllowNewTimeProposals gets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
+// GetAllowNewTimeProposals gets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
 func (m *Delta) GetAllowNewTimeProposals()(*bool) {
     if m == nil {
         return nil
@@ -1198,7 +1198,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
-// SetAllowNewTimeProposals sets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
+// SetAllowNewTimeProposals sets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
 func (m *Delta) SetAllowNewTimeProposals(value *bool)() {
     if m != nil {
         m.allowNewTimeProposals = value

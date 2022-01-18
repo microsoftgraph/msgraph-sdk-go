@@ -8,7 +8,7 @@ import (
 type ExtensionSchemaProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The name of the strongly-typed property defined as part of a schema extension.
+    // The name of the strongly typed property defined as part of a schema extension.
     name *string;
     // The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.
     type_escaped *string;
@@ -28,7 +28,7 @@ func (m *ExtensionSchemaProperty) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetName gets the name property value. The name of the strongly-typed property defined as part of a schema extension.
+// GetName gets the name property value. The name of the strongly typed property defined as part of a schema extension.
 func (m *ExtensionSchemaProperty) GetName()(*string) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *ExtensionSchemaProperty) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetName sets the name property value. The name of the strongly-typed property defined as part of a schema extension.
+// SetName sets the name property value. The name of the strongly typed property defined as part of a schema extension.
 func (m *ExtensionSchemaProperty) SetName(value *string)() {
     if m != nil {
         m.name = value

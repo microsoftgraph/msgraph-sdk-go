@@ -17,7 +17,7 @@ type WorkbookRangeFont struct {
     name *string;
     // Font size.
     size *float64;
-    // Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+    // Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
     underline *string;
 }
 // NewWorkbookRangeFont instantiates a new workbookRangeFont and sets the default values.
@@ -67,7 +67,7 @@ func (m *WorkbookRangeFont) GetSize()(*float64) {
         return m.size
     }
 }
-// GetUnderline gets the underline property value. Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+// GetUnderline gets the underline property value. Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
 func (m *WorkbookRangeFont) GetUnderline()(*string) {
     if m == nil {
         return nil
@@ -217,7 +217,7 @@ func (m *WorkbookRangeFont) SetSize(value *float64)() {
         m.size = value
     }
 }
-// SetUnderline sets the underline property value. Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+// SetUnderline sets the underline property value. Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
 func (m *WorkbookRangeFont) SetUnderline(value *string)() {
     if m != nil {
         m.underline = value

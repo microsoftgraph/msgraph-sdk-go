@@ -26,7 +26,7 @@ type MessageRuleActions struct {
     moveToFolder *string;
     // Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
     permanentDelete *bool;
-    // The email addresses to which a message should be redirected.
+    // The email address to which a message should be redirected.
     redirectTo []Recipient;
     // Indicates whether subsequent rules should be evaluated.
     stopProcessingRules *bool;
@@ -118,7 +118,7 @@ func (m *MessageRuleActions) GetPermanentDelete()(*bool) {
         return m.permanentDelete
     }
 }
-// GetRedirectTo gets the redirectTo property value. The email addresses to which a message should be redirected.
+// GetRedirectTo gets the redirectTo property value. The email address to which a message should be redirected.
 func (m *MessageRuleActions) GetRedirectTo()([]Recipient) {
     if m == nil {
         return nil
@@ -421,7 +421,7 @@ func (m *MessageRuleActions) SetPermanentDelete(value *bool)() {
         m.permanentDelete = value
     }
 }
-// SetRedirectTo sets the redirectTo property value. The email addresses to which a message should be redirected.
+// SetRedirectTo sets the redirectTo property value. The email address to which a message should be redirected.
 func (m *MessageRuleActions) SetRedirectTo(value []Recipient)() {
     if m != nil {
         m.redirectTo = value

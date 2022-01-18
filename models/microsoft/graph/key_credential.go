@@ -15,9 +15,9 @@ type KeyCredential struct {
     displayName *string;
     // The date and time at which the credential expires.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The certificate's raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).
+    // Value for the key credential. Should be a base 64 encoded value.
     key []byte;
-    // The unique identifier (GUID) for the key.
+    // The unique identifier for the key.
     keyId *string;
     // The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -65,7 +65,7 @@ func (m *KeyCredential) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.endDateTime
     }
 }
-// GetKey gets the key property value. The certificate's raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).
+// GetKey gets the key property value. Value for the key credential. Should be a base 64 encoded value.
 func (m *KeyCredential) GetKey()([]byte) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *KeyCredential) GetKey()([]byte) {
         return m.key
     }
 }
-// GetKeyId gets the keyId property value. The unique identifier (GUID) for the key.
+// GetKeyId gets the keyId property value. The unique identifier for the key.
 func (m *KeyCredential) GetKeyId()(*string) {
     if m == nil {
         return nil
@@ -275,13 +275,13 @@ func (m *KeyCredential) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
         m.endDateTime = value
     }
 }
-// SetKey sets the key property value. The certificate's raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).
+// SetKey sets the key property value. Value for the key credential. Should be a base 64 encoded value.
 func (m *KeyCredential) SetKey(value []byte)() {
     if m != nil {
         m.key = value
     }
 }
-// SetKeyId sets the keyId property value. The unique identifier (GUID) for the key.
+// SetKeyId sets the keyId property value. The unique identifier for the key.
 func (m *KeyCredential) SetKeyId(value *string)() {
     if m != nil {
         m.keyId = value

@@ -22,7 +22,7 @@ type ExternalConnection struct {
     operations []ConnectionOperation;
     // Read-only. Nullable.
     schema *Schema;
-    // Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
+    // Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
     state *i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionState;
 }
 // NewExternalConnection instantiates a new externalConnection and sets the default values.
@@ -88,7 +88,7 @@ func (m *ExternalConnection) GetSchema()(*Schema) {
         return m.schema
     }
 }
-// GetState gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
+// GetState gets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
 func (m *ExternalConnection) GetState()(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionState) {
     if m == nil {
         return nil
@@ -311,7 +311,7 @@ func (m *ExternalConnection) SetSchema(value *Schema)() {
         m.schema = value
     }
 }
-// SetState sets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
+// SetState sets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
 func (m *ExternalConnection) SetState(value *i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionState)() {
     if m != nil {
         m.state = value

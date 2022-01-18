@@ -12,7 +12,7 @@ type Application struct {
     addIns []AddIn;
     // Specifies settings for an application that implements a web API.
     api *ApiApplication;
-    // The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
+    // The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
     appId *string;
     // Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
     applicationTemplateId *string;
@@ -22,7 +22,7 @@ type Application struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Read-only.
     createdOnBehalfOf *DirectoryObject;
-    // Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+    // Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string;
     // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
     disabledByMicrosoftStatus *string;
@@ -30,17 +30,17 @@ type Application struct {
     displayName *string;
     // Read-only. Nullable.
     extensionProperties []ExtensionProperty;
-    // Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
+    // Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
     groupMembershipClaims *string;
     // 
     homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicy;
     // Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
     identifierUris []string;
-    // Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+    // Basic profile information of the application, such as it's marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more information, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
     info *InformationalUrl;
     // Specifies whether this application supports device authentication without a user. The default is false.
     isDeviceOnlyAuthSupported *bool;
-    // Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
+    // Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
     isFallbackPublicClient *bool;
     // The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
     keyCredentials []KeyCredential;
@@ -60,7 +60,7 @@ type Application struct {
     passwordCredentials []PasswordCredential;
     // Specifies settings for installed clients such as desktop or mobile devices.
     publicClient *PublicClientApplication;
-    // The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
+    // The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).
     publisherDomain *string;
     // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
     requiredResourceAccess []RequiredResourceAccess;
@@ -68,7 +68,7 @@ type Application struct {
     signInAudience *string;
     // Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
     spa *SpaApplication;
-    // Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+    // Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).
     tags []string;
     // Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
     tokenEncryptionKeyId *string;
@@ -104,7 +104,7 @@ func (m *Application) GetApi()(*ApiApplication) {
         return m.api
     }
 }
-// GetAppId gets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
+// GetAppId gets the appId property value. The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
 func (m *Application) GetAppId()(*string) {
     if m == nil {
         return nil
@@ -144,7 +144,7 @@ func (m *Application) GetCreatedOnBehalfOf()(*DirectoryObject) {
         return m.createdOnBehalfOf
     }
 }
-// GetDescription gets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// GetDescription gets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *Application) GetExtensionProperties()([]ExtensionProperty) {
         return m.extensionProperties
     }
 }
-// GetGroupMembershipClaims gets the groupMembershipClaims property value. Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
+// GetGroupMembershipClaims gets the groupMembershipClaims property value. Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
 func (m *Application) GetGroupMembershipClaims()(*string) {
     if m == nil {
         return nil
@@ -200,7 +200,7 @@ func (m *Application) GetIdentifierUris()([]string) {
         return m.identifierUris
     }
 }
-// GetInfo gets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+// GetInfo gets the info property value. Basic profile information of the application, such as it's marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more information, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *Application) GetInfo()(*InformationalUrl) {
     if m == nil {
         return nil
@@ -216,7 +216,7 @@ func (m *Application) GetIsDeviceOnlyAuthSupported()(*bool) {
         return m.isDeviceOnlyAuthSupported
     }
 }
-// GetIsFallbackPublicClient gets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
+// GetIsFallbackPublicClient gets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
 func (m *Application) GetIsFallbackPublicClient()(*bool) {
     if m == nil {
         return nil
@@ -296,7 +296,7 @@ func (m *Application) GetPublicClient()(*PublicClientApplication) {
         return m.publicClient
     }
 }
-// GetPublisherDomain gets the publisherDomain property value. The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
+// GetPublisherDomain gets the publisherDomain property value. The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).
 func (m *Application) GetPublisherDomain()(*string) {
     if m == nil {
         return nil
@@ -328,7 +328,7 @@ func (m *Application) GetSpa()(*SpaApplication) {
         return m.spa
     }
 }
-// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).
 func (m *Application) GetTags()([]string) {
     if m == nil {
         return nil
@@ -1078,7 +1078,7 @@ func (m *Application) SetApi(value *ApiApplication)() {
         m.api = value
     }
 }
-// SetAppId sets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
+// SetAppId sets the appId property value. The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
 func (m *Application) SetAppId(value *string)() {
     if m != nil {
         m.appId = value
@@ -1108,7 +1108,7 @@ func (m *Application) SetCreatedOnBehalfOf(value *DirectoryObject)() {
         m.createdOnBehalfOf = value
     }
 }
-// SetDescription sets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// SetDescription sets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) SetDescription(value *string)() {
     if m != nil {
         m.description = value
@@ -1132,7 +1132,7 @@ func (m *Application) SetExtensionProperties(value []ExtensionProperty)() {
         m.extensionProperties = value
     }
 }
-// SetGroupMembershipClaims sets the groupMembershipClaims property value. Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
+// SetGroupMembershipClaims sets the groupMembershipClaims property value. Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
 func (m *Application) SetGroupMembershipClaims(value *string)() {
     if m != nil {
         m.groupMembershipClaims = value
@@ -1150,7 +1150,7 @@ func (m *Application) SetIdentifierUris(value []string)() {
         m.identifierUris = value
     }
 }
-// SetInfo sets the info property value. Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+// SetInfo sets the info property value. Basic profile information of the application, such as it's marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more information, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *Application) SetInfo(value *InformationalUrl)() {
     if m != nil {
         m.info = value
@@ -1162,7 +1162,7 @@ func (m *Application) SetIsDeviceOnlyAuthSupported(value *bool)() {
         m.isDeviceOnlyAuthSupported = value
     }
 }
-// SetIsFallbackPublicClient sets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
+// SetIsFallbackPublicClient sets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
 func (m *Application) SetIsFallbackPublicClient(value *bool)() {
     if m != nil {
         m.isFallbackPublicClient = value
@@ -1222,7 +1222,7 @@ func (m *Application) SetPublicClient(value *PublicClientApplication)() {
         m.publicClient = value
     }
 }
-// SetPublisherDomain sets the publisherDomain property value. The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
+// SetPublisherDomain sets the publisherDomain property value. The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).
 func (m *Application) SetPublisherDomain(value *string)() {
     if m != nil {
         m.publisherDomain = value
@@ -1246,7 +1246,7 @@ func (m *Application) SetSpa(value *SpaApplication)() {
         m.spa = value
     }
 }
-// SetTags sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+// SetTags sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).
 func (m *Application) SetTags(value []string)() {
     if m != nil {
         m.tags = value

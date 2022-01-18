@@ -7,7 +7,7 @@ import (
 // WorkbookComment 
 type WorkbookComment struct {
     Entity
-    // The content of comment.
+    // The content of the comment.
     content *string;
     // Indicates the type for the comment.
     contentType *string;
@@ -21,7 +21,7 @@ func NewWorkbookComment()(*WorkbookComment) {
     }
     return m
 }
-// GetContent gets the content property value. The content of comment.
+// GetContent gets the content property value. The content of the comment.
 func (m *WorkbookComment) GetContent()(*string) {
     if m == nil {
         return nil
@@ -118,7 +118,7 @@ func (m *WorkbookComment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// SetContent sets the content property value. The content of comment.
+// SetContent sets the content property value. The content of the comment.
 func (m *WorkbookComment) SetContent(value *string)() {
     if m != nil {
         m.content = value

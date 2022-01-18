@@ -13,9 +13,9 @@ type Agreement struct {
     displayName *string;
     // Default PDF linked to this agreement.
     file *AgreementFile;
-    // PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+    // PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
     files []AgreementFileLocalization;
-    // Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
+    // This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so.
     isPerDeviceAcceptanceRequired *bool;
     // Indicates whether the user has to expand the agreement before accepting.
     isViewingBeforeAcceptanceRequired *bool;
@@ -55,7 +55,7 @@ func (m *Agreement) GetFile()(*AgreementFile) {
         return m.file
     }
 }
-// GetFiles gets the files property value. PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// GetFiles gets the files property value. PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
 func (m *Agreement) GetFiles()([]AgreementFileLocalization) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *Agreement) GetFiles()([]AgreementFileLocalization) {
         return m.files
     }
 }
-// GetIsPerDeviceAcceptanceRequired gets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
+// GetIsPerDeviceAcceptanceRequired gets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so.
 func (m *Agreement) GetIsPerDeviceAcceptanceRequired()(*bool) {
     if m == nil {
         return nil
@@ -275,13 +275,13 @@ func (m *Agreement) SetFile(value *AgreementFile)() {
         m.file = value
     }
 }
-// SetFiles sets the files property value. PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// SetFiles sets the files property value. PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
 func (m *Agreement) SetFiles(value []AgreementFileLocalization)() {
     if m != nil {
         m.files = value
     }
 }
-// SetIsPerDeviceAcceptanceRequired sets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
+// SetIsPerDeviceAcceptanceRequired sets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so.
 func (m *Agreement) SetIsPerDeviceAcceptanceRequired(value *bool)() {
     if m != nil {
         m.isPerDeviceAcceptanceRequired = value

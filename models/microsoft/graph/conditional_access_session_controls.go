@@ -12,6 +12,8 @@ type ConditionalAccessSessionControls struct {
     applicationEnforcedRestrictions *ApplicationEnforcedRestrictionsSessionControl;
     // Session control to apply cloud app security.
     cloudAppSecurity *CloudAppSecuritySessionControl;
+    // Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+    disableResilienceDefaults *bool;
     // Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
     persistentBrowser *PersistentBrowserSessionControl;
     // Session control to enforce signin frequency.
@@ -46,6 +48,14 @@ func (m *ConditionalAccessSessionControls) GetCloudAppSecurity()(*CloudAppSecuri
         return nil
     } else {
         return m.cloudAppSecurity
+    }
+}
+// GetDisableResilienceDefaults gets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+func (m *ConditionalAccessSessionControls) GetDisableResilienceDefaults()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.disableResilienceDefaults
     }
 }
 // GetPersistentBrowser gets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
@@ -84,6 +94,16 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         }
         if val != nil {
             m.SetCloudAppSecurity(val.(*CloudAppSecuritySessionControl))
+        }
+        return nil
+    }
+    res["disableResilienceDefaults"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisableResilienceDefaults(val)
         }
         return nil
     }
@@ -127,6 +147,12 @@ func (m *ConditionalAccessSessionControls) Serialize(writer i04eb5309aeaafadd283
         }
     }
     {
+        err := writer.WriteBoolValue("disableResilienceDefaults", m.GetDisableResilienceDefaults())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("persistentBrowser", m.GetPersistentBrowser())
         if err != nil {
             return err
@@ -162,6 +188,12 @@ func (m *ConditionalAccessSessionControls) SetApplicationEnforcedRestrictions(va
 func (m *ConditionalAccessSessionControls) SetCloudAppSecurity(value *CloudAppSecuritySessionControl)() {
     if m != nil {
         m.cloudAppSecurity = value
+    }
+}
+// SetDisableResilienceDefaults sets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+func (m *ConditionalAccessSessionControls) SetDisableResilienceDefaults(value *bool)() {
+    if m != nil {
+        m.disableResilienceDefaults = value
     }
 }
 // SetPersistentBrowser sets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.

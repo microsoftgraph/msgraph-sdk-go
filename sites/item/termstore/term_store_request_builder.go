@@ -39,7 +39,7 @@ type TermStoreRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// TermStoreRequestBuilderGetQueryParameters the default termStore under this site.
+// TermStoreRequestBuilderGetQueryParameters the termStore under this site.
 type TermStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -76,7 +76,7 @@ func NewTermStoreRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewTermStoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the default termStore under this site.
+// CreateDeleteRequestInformation the termStore under this site.
 func (m *TermStoreRequestBuilder) CreateDeleteRequestInformation(options *TermStoreRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,7 +93,7 @@ func (m *TermStoreRequestBuilder) CreateDeleteRequestInformation(options *TermSt
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the default termStore under this site.
+// CreateGetRequestInformation the termStore under this site.
 func (m *TermStoreRequestBuilder) CreateGetRequestInformation(options *TermStoreRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *TermStoreRequestBuilder) CreateGetRequestInformation(options *TermStore
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the default termStore under this site.
+// CreatePatchRequestInformation the termStore under this site.
 func (m *TermStoreRequestBuilder) CreatePatchRequestInformation(options *TermStoreRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *TermStoreRequestBuilder) CreatePatchRequestInformation(options *TermSto
     }
     return requestInfo, nil
 }
-// Delete the default termStore under this site.
+// Delete the termStore under this site.
 func (m *TermStoreRequestBuilder) Delete(options *TermStoreRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *TermStoreRequestBuilder) Delete(options *TermStoreRequestBuilderDeleteO
     }
     return nil
 }
-// Get the default termStore under this site.
+// Get the termStore under this site.
 func (m *TermStoreRequestBuilder) Get(options *TermStoreRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Store, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -169,7 +169,7 @@ func (m *TermStoreRequestBuilder) GroupsById(id string)(*i48733a2ec09122d42c9462
     }
     return i48733a2ec09122d42c9462e7a9f1da6b9e730ecb166ca81ee7b3abc4aa6dda9d.NewGroupRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch the default termStore under this site.
+// Patch the termStore under this site.
 func (m *TermStoreRequestBuilder) Patch(options *TermStoreRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

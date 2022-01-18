@@ -7,9 +7,9 @@ import (
 // WorkbookCommentReply 
 type WorkbookCommentReply struct {
     Entity
-    // The content of a comment reply.
+    // The content of replied comment.
     content *string;
-    // Indicates the type for the comment reply.
+    // Indicates the type for the replied comment.
     contentType *string;
 }
 // NewWorkbookCommentReply instantiates a new workbookCommentReply and sets the default values.
@@ -19,7 +19,7 @@ func NewWorkbookCommentReply()(*WorkbookCommentReply) {
     }
     return m
 }
-// GetContent gets the content property value. The content of a comment reply.
+// GetContent gets the content property value. The content of replied comment.
 func (m *WorkbookCommentReply) GetContent()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *WorkbookCommentReply) GetContent()(*string) {
         return m.content
     }
 }
-// GetContentType gets the contentType property value. Indicates the type for the comment reply.
+// GetContentType gets the contentType property value. Indicates the type for the replied comment.
 func (m *WorkbookCommentReply) GetContentType()(*string) {
     if m == nil {
         return nil
@@ -83,13 +83,13 @@ func (m *WorkbookCommentReply) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// SetContent sets the content property value. The content of a comment reply.
+// SetContent sets the content property value. The content of replied comment.
 func (m *WorkbookCommentReply) SetContent(value *string)() {
     if m != nil {
         m.content = value
     }
 }
-// SetContentType sets the contentType property value. Indicates the type for the comment reply.
+// SetContentType sets the contentType property value. Indicates the type for the replied comment.
 func (m *WorkbookCommentReply) SetContentType(value *string)() {
     if m != nil {
         m.contentType = value

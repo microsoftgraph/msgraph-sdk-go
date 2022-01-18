@@ -35,7 +35,7 @@ type UnifiedRoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// UnifiedRoleDefinitionRequestBuilderGetQueryParameters read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+// UnifiedRoleDefinitionRequestBuilderGetQueryParameters read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
 type UnifiedRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewUnifiedRoleDefinitionRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+// CreateDeleteRequestInformation read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
 func (m *UnifiedRoleDefinitionRequestBuilder) CreateDeleteRequestInformation(options *UnifiedRoleDefinitionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) CreateDeleteRequestInformation(opt
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+// CreateGetRequestInformation read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
 func (m *UnifiedRoleDefinitionRequestBuilder) CreateGetRequestInformation(options *UnifiedRoleDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+// CreatePatchRequestInformation read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
 func (m *UnifiedRoleDefinitionRequestBuilder) CreatePatchRequestInformation(options *UnifiedRoleDefinitionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) CreatePatchRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Delete read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+// Delete read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
 func (m *UnifiedRoleDefinitionRequestBuilder) Delete(options *UnifiedRoleDefinitionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) Delete(options *UnifiedRoleDefinit
     }
     return nil
 }
-// Get read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+// Get read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
 func (m *UnifiedRoleDefinitionRequestBuilder) Get(options *UnifiedRoleDefinitionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *UnifiedRoleDefinitionRequestBuilder) Get(options *UnifiedRoleDefinition
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition), nil
 }
-// Patch read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+// Patch read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
 func (m *UnifiedRoleDefinitionRequestBuilder) Patch(options *UnifiedRoleDefinitionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
