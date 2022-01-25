@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.7.0] - 2022-01-25
+
+### Changed
+
+- Weekly generation
+- Breaking: added types for Date-only, time-only and duration instead of using string.
+
 ## [0.6.0] - 2022-01-18
 
 ### Changed
