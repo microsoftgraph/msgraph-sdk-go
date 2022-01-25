@@ -7,13 +7,13 @@ import (
 // DirectoryRole 
 type DirectoryRole struct {
     DirectoryObject
-    // The description for the directory role. Read-only.
+    // The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
     description *string;
-    // The display name for the directory role. Read-only.
+    // The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
     displayName *string;
-    // Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
+    // Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
     members []DirectoryObject;
-    // The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only.
+    // The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
     roleTemplateId *string;
     // Members of this directory role that are scoped to administrative units. Read-only. Nullable.
     scopedMembers []ScopedRoleMembership;
@@ -25,7 +25,7 @@ func NewDirectoryRole()(*DirectoryRole) {
     }
     return m
 }
-// GetDescription gets the description property value. The description for the directory role. Read-only.
+// GetDescription gets the description property value. The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *DirectoryRole) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name for the directory role. Read-only.
+// GetDisplayName gets the displayName property value. The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *DirectoryRole) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetMembers gets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
+// GetMembers gets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
 func (m *DirectoryRole) GetMembers()([]DirectoryObject) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *DirectoryRole) GetMembers()([]DirectoryObject) {
         return m.members
     }
 }
-// GetRoleTemplateId gets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only.
+// GetRoleTemplateId gets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
 func (m *DirectoryRole) GetRoleTemplateId()(*string) {
     if m == nil {
         return nil
@@ -179,25 +179,25 @@ func (m *DirectoryRole) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// SetDescription sets the description property value. The description for the directory role. Read-only.
+// SetDescription sets the description property value. The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) SetDescription(value *string)() {
     if m != nil {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name for the directory role. Read-only.
+// SetDisplayName sets the displayName property value. The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
 func (m *DirectoryRole) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetMembers sets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
+// SetMembers sets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
 func (m *DirectoryRole) SetMembers(value []DirectoryObject)() {
     if m != nil {
         m.members = value
     }
 }
-// SetRoleTemplateId sets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only.
+// SetRoleTemplateId sets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
 func (m *DirectoryRole) SetRoleTemplateId(value *string)() {
     if m != nil {
         m.roleTemplateId = value

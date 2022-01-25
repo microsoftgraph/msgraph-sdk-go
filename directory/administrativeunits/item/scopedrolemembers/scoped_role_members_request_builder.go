@@ -26,7 +26,7 @@ type ScopedRoleMembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ScopedRoleMembersRequestBuilderGetQueryParameters scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
+// ScopedRoleMembersRequestBuilderGetQueryParameters scoped-role members of this administrative unit.
 type ScopedRoleMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewScopedRoleMembersRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams["request-raw-url"] = rawUrl
     return NewScopedRoleMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
+// CreateGetRequestInformation scoped-role members of this administrative unit.
 func (m *ScopedRoleMembersRequestBuilder) CreateGetRequestInformation(options *ScopedRoleMembersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *ScopedRoleMembersRequestBuilder) CreateGetRequestInformation(options *S
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
+// CreatePostRequestInformation scoped-role members of this administrative unit.
 func (m *ScopedRoleMembersRequestBuilder) CreatePostRequestInformation(options *ScopedRoleMembersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ScopedRoleMembersRequestBuilder) CreatePostRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
+// Get scoped-role members of this administrative unit.
 func (m *ScopedRoleMembersRequestBuilder) Get(options *ScopedRoleMembersRequestBuilderGetOptions)(*ScopedRoleMembersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *ScopedRoleMembersRequestBuilder) Get(options *ScopedRoleMembersRequestB
     }
     return res.(*ScopedRoleMembersResponse), nil
 }
-// Post scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
+// Post scoped-role members of this administrative unit.
 func (m *ScopedRoleMembersRequestBuilder) Post(options *ScopedRoleMembersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ScopedRoleMembership, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

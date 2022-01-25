@@ -8,7 +8,7 @@ import (
 // ServiceAnnouncementAttachment 
 type ServiceAnnouncementAttachment struct {
     Entity
-    // 
+    // The attachment content.
     content []byte;
     // 
     contentType *string;
@@ -26,7 +26,7 @@ func NewServiceAnnouncementAttachment()(*ServiceAnnouncementAttachment) {
     }
     return m
 }
-// GetContent gets the content property value. 
+// GetContent gets the content property value. The attachment content.
 func (m *ServiceAnnouncementAttachment) GetContent()([]byte) {
     if m == nil {
         return nil
@@ -162,7 +162,7 @@ func (m *ServiceAnnouncementAttachment) Serialize(writer i04eb5309aeaafadd28374d
     }
     return nil
 }
-// SetContent sets the content property value. 
+// SetContent sets the content property value. The attachment content.
 func (m *ServiceAnnouncementAttachment) SetContent(value []byte)() {
     if m != nil {
         m.content = value

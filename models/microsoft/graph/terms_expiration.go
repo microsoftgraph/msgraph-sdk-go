@@ -10,7 +10,7 @@ type TermsExpiration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of 1 month.
-    frequency *string;
+    frequency *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The DateTime when the agreement is set to expire for all users. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
@@ -30,7 +30,7 @@ func (m *TermsExpiration) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFrequency gets the frequency property value. Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of 1 month.
-func (m *TermsExpiration) GetFrequency()(*string) {
+func (m *TermsExpiration) GetFrequency()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -49,7 +49,7 @@ func (m *TermsExpiration) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
 func (m *TermsExpiration) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["frequency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -76,7 +76,7 @@ func (m *TermsExpiration) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *TermsExpiration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("frequency", m.GetFrequency())
+        err := writer.WriteISODurationValue("frequency", m.GetFrequency())
         if err != nil {
             return err
         }
@@ -102,7 +102,7 @@ func (m *TermsExpiration) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetFrequency sets the frequency property value. Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of 1 month.
-func (m *TermsExpiration) SetFrequency(value *string)() {
+func (m *TermsExpiration) SetFrequency(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.frequency = value
     }

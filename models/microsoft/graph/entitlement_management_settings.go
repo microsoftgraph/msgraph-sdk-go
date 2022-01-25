@@ -8,7 +8,7 @@ import (
 type EntitlementManagementSettings struct {
     Entity
     // If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
-    durationUntilExternalUserDeletedAfterBlocked *string;
+    durationUntilExternalUserDeletedAfterBlocked *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // One of None, BlockSignIn, or BlockSignInAndDelete.
     externalUserLifecycleAction *AccessPackageExternalUserLifecycleAction;
 }
@@ -20,7 +20,7 @@ func NewEntitlementManagementSettings()(*EntitlementManagementSettings) {
     return m
 }
 // GetDurationUntilExternalUserDeletedAfterBlocked gets the durationUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
-func (m *EntitlementManagementSettings) GetDurationUntilExternalUserDeletedAfterBlocked()(*string) {
+func (m *EntitlementManagementSettings) GetDurationUntilExternalUserDeletedAfterBlocked()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -39,7 +39,7 @@ func (m *EntitlementManagementSettings) GetExternalUserLifecycleAction()(*Access
 func (m *EntitlementManagementSettings) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["durationUntilExternalUserDeletedAfterBlocked"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -71,7 +71,7 @@ func (m *EntitlementManagementSettings) Serialize(writer i04eb5309aeaafadd28374d
         return err
     }
     {
-        err = writer.WriteStringValue("durationUntilExternalUserDeletedAfterBlocked", m.GetDurationUntilExternalUserDeletedAfterBlocked())
+        err = writer.WriteISODurationValue("durationUntilExternalUserDeletedAfterBlocked", m.GetDurationUntilExternalUserDeletedAfterBlocked())
         if err != nil {
             return err
         }
@@ -86,7 +86,7 @@ func (m *EntitlementManagementSettings) Serialize(writer i04eb5309aeaafadd28374d
     return nil
 }
 // SetDurationUntilExternalUserDeletedAfterBlocked sets the durationUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
-func (m *EntitlementManagementSettings) SetDurationUntilExternalUserDeletedAfterBlocked(value *string)() {
+func (m *EntitlementManagementSettings) SetDurationUntilExternalUserDeletedAfterBlocked(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.durationUntilExternalUserDeletedAfterBlocked = value
     }

@@ -20,6 +20,8 @@ type InviteRequestBody struct {
     // 
     requireSignIn *bool;
     // 
+    retainInheritedPermissions *bool;
+    // 
     roles []string;
     // 
     sendInvitation *bool;
@@ -77,6 +79,14 @@ func (m *InviteRequestBody) GetRequireSignIn()(*bool) {
         return nil
     } else {
         return m.requireSignIn
+    }
+}
+// GetRetainInheritedPermissions gets the retainInheritedPermissions property value. 
+func (m *InviteRequestBody) GetRetainInheritedPermissions()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.retainInheritedPermissions
     }
 }
 // GetRoles gets the roles property value. 
@@ -152,6 +162,16 @@ func (m *InviteRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
+    res["retainInheritedPermissions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRetainInheritedPermissions(val)
+        }
+        return nil
+    }
     res["roles"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -219,6 +239,12 @@ func (m *InviteRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     {
+        err := writer.WriteBoolValue("retainInheritedPermissions", m.GetRetainInheritedPermissions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteCollectionOfStringValues("roles", m.GetRoles())
         if err != nil {
             return err
@@ -272,6 +298,12 @@ func (m *InviteRequestBody) SetRecipients(value []i4a838ef194e4c99e9f2c63ba10dab
 func (m *InviteRequestBody) SetRequireSignIn(value *bool)() {
     if m != nil {
         m.requireSignIn = value
+    }
+}
+// SetRetainInheritedPermissions sets the retainInheritedPermissions property value. 
+func (m *InviteRequestBody) SetRetainInheritedPermissions(value *bool)() {
+    if m != nil {
+        m.retainInheritedPermissions = value
     }
 }
 // SetRoles sets the roles property value. 

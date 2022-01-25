@@ -10,15 +10,15 @@ type ServiceUpdateMessage struct {
     ServiceAnnouncementBase
     // The expected deadline of the action for the message.
     actionRequiredByDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // 
+    // A collection of serviceAnnouncementAttachments.
     attachments []ServiceAnnouncementAttachment;
-    // 
+    // The zip file of all attachments for a message.
     attachmentsArchive []byte;
     // 
     body *ItemBody;
     // The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
     category *ServiceUpdateCategory;
-    // 
+    // Indicates whether the message has any attachment.
     hasAttachments *bool;
     // Indicates whether the message describes a major update for the service.
     isMajorChange *bool;
@@ -26,9 +26,9 @@ type ServiceUpdateMessage struct {
     services []string;
     // The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
     severity *ServiceUpdateSeverity;
-    // A collection of tags for the service message.
+    // A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
     tags []string;
-    // Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
+    // Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
     viewPoint *ServiceUpdateMessageViewpoint;
 }
 // NewServiceUpdateMessage instantiates a new serviceUpdateMessage and sets the default values.
@@ -46,7 +46,7 @@ func (m *ServiceUpdateMessage) GetActionRequiredByDateTime()(*i336074805fc853987
         return m.actionRequiredByDateTime
     }
 }
-// GetAttachments gets the attachments property value. 
+// GetAttachments gets the attachments property value. A collection of serviceAnnouncementAttachments.
 func (m *ServiceUpdateMessage) GetAttachments()([]ServiceAnnouncementAttachment) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *ServiceUpdateMessage) GetAttachments()([]ServiceAnnouncementAttachment)
         return m.attachments
     }
 }
-// GetAttachmentsArchive gets the attachmentsArchive property value. 
+// GetAttachmentsArchive gets the attachmentsArchive property value. The zip file of all attachments for a message.
 func (m *ServiceUpdateMessage) GetAttachmentsArchive()([]byte) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *ServiceUpdateMessage) GetCategory()(*ServiceUpdateCategory) {
         return m.category
     }
 }
-// GetHasAttachments gets the hasAttachments property value. 
+// GetHasAttachments gets the hasAttachments property value. Indicates whether the message has any attachment.
 func (m *ServiceUpdateMessage) GetHasAttachments()(*bool) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *ServiceUpdateMessage) GetSeverity()(*ServiceUpdateSeverity) {
         return m.severity
     }
 }
-// GetTags gets the tags property value. A collection of tags for the service message.
+// GetTags gets the tags property value. A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
 func (m *ServiceUpdateMessage) GetTags()([]string) {
     if m == nil {
         return nil
@@ -118,7 +118,7 @@ func (m *ServiceUpdateMessage) GetTags()([]string) {
         return m.tags
     }
 }
-// GetViewPoint gets the viewPoint property value. Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
+// GetViewPoint gets the viewPoint property value. Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
 func (m *ServiceUpdateMessage) GetViewPoint()(*ServiceUpdateMessageViewpoint) {
     if m == nil {
         return nil
@@ -345,13 +345,13 @@ func (m *ServiceUpdateMessage) SetActionRequiredByDateTime(value *i336074805fc85
         m.actionRequiredByDateTime = value
     }
 }
-// SetAttachments sets the attachments property value. 
+// SetAttachments sets the attachments property value. A collection of serviceAnnouncementAttachments.
 func (m *ServiceUpdateMessage) SetAttachments(value []ServiceAnnouncementAttachment)() {
     if m != nil {
         m.attachments = value
     }
 }
-// SetAttachmentsArchive sets the attachmentsArchive property value. 
+// SetAttachmentsArchive sets the attachmentsArchive property value. The zip file of all attachments for a message.
 func (m *ServiceUpdateMessage) SetAttachmentsArchive(value []byte)() {
     if m != nil {
         m.attachmentsArchive = value
@@ -369,7 +369,7 @@ func (m *ServiceUpdateMessage) SetCategory(value *ServiceUpdateCategory)() {
         m.category = value
     }
 }
-// SetHasAttachments sets the hasAttachments property value. 
+// SetHasAttachments sets the hasAttachments property value. Indicates whether the message has any attachment.
 func (m *ServiceUpdateMessage) SetHasAttachments(value *bool)() {
     if m != nil {
         m.hasAttachments = value
@@ -393,13 +393,13 @@ func (m *ServiceUpdateMessage) SetSeverity(value *ServiceUpdateSeverity)() {
         m.severity = value
     }
 }
-// SetTags sets the tags property value. A collection of tags for the service message.
+// SetTags sets the tags property value. A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
 func (m *ServiceUpdateMessage) SetTags(value []string)() {
     if m != nil {
         m.tags = value
     }
 }
-// SetViewPoint sets the viewPoint property value. Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
+// SetViewPoint sets the viewPoint property value. Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
 func (m *ServiceUpdateMessage) SetViewPoint(value *ServiceUpdateMessageViewpoint)() {
     if m != nil {
         m.viewPoint = value

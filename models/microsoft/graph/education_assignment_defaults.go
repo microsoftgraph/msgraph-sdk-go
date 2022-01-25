@@ -12,7 +12,7 @@ type EducationAssignmentDefaults struct {
     // Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
     addToCalendarAction *EducationAddToCalendarOptions;
     // Class-level default value for due time field. Default value is 23:59:00.
-    dueTime *string;
+    dueTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // Default Teams channel to which notifications will be sent. Default value is null.
     notificationChannelUrl *string;
 }
@@ -40,7 +40,7 @@ func (m *EducationAssignmentDefaults) GetAddToCalendarAction()(*EducationAddToCa
     }
 }
 // GetDueTime gets the dueTime property value. Class-level default value for due time field. Default value is 23:59:00.
-func (m *EducationAssignmentDefaults) GetDueTime()(*string) {
+func (m *EducationAssignmentDefaults) GetDueTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -81,7 +81,7 @@ func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["dueTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -126,7 +126,7 @@ func (m *EducationAssignmentDefaults) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     {
-        err = writer.WriteStringValue("dueTime", m.GetDueTime())
+        err = writer.WriteTimeOnlyValue("dueTime", m.GetDueTime())
         if err != nil {
             return err
         }
@@ -152,7 +152,7 @@ func (m *EducationAssignmentDefaults) SetAddToCalendarAction(value *EducationAdd
     }
 }
 // SetDueTime sets the dueTime property value. Class-level default value for due time field. Default value is 23:59:00.
-func (m *EducationAssignmentDefaults) SetDueTime(value *string)() {
+func (m *EducationAssignmentDefaults) SetDueTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.dueTime = value
     }

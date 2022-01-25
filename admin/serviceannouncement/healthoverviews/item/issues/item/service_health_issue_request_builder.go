@@ -36,7 +36,7 @@ type ServiceHealthIssueRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ServiceHealthIssueRequestBuilderGetQueryParameters a collection of issues happened on the service, with detailed information for each issue.
+// ServiceHealthIssueRequestBuilderGetQueryParameters a collection of issues that happened on the service, with detailed information for each issue.
 type ServiceHealthIssueRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -73,7 +73,7 @@ func NewServiceHealthIssueRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams["request-raw-url"] = rawUrl
     return NewServiceHealthIssueRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation a collection of issues happened on the service, with detailed information for each issue.
+// CreateDeleteRequestInformation a collection of issues that happened on the service, with detailed information for each issue.
 func (m *ServiceHealthIssueRequestBuilder) CreateDeleteRequestInformation(options *ServiceHealthIssueRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -90,7 +90,7 @@ func (m *ServiceHealthIssueRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation a collection of issues happened on the service, with detailed information for each issue.
+// CreateGetRequestInformation a collection of issues that happened on the service, with detailed information for each issue.
 func (m *ServiceHealthIssueRequestBuilder) CreateGetRequestInformation(options *ServiceHealthIssueRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,7 +110,7 @@ func (m *ServiceHealthIssueRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation a collection of issues happened on the service, with detailed information for each issue.
+// CreatePatchRequestInformation a collection of issues that happened on the service, with detailed information for each issue.
 func (m *ServiceHealthIssueRequestBuilder) CreatePatchRequestInformation(options *ServiceHealthIssueRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,7 +128,7 @@ func (m *ServiceHealthIssueRequestBuilder) CreatePatchRequestInformation(options
     }
     return requestInfo, nil
 }
-// Delete a collection of issues happened on the service, with detailed information for each issue.
+// Delete a collection of issues that happened on the service, with detailed information for each issue.
 func (m *ServiceHealthIssueRequestBuilder) Delete(options *ServiceHealthIssueRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -140,7 +140,7 @@ func (m *ServiceHealthIssueRequestBuilder) Delete(options *ServiceHealthIssueReq
     }
     return nil
 }
-// Get a collection of issues happened on the service, with detailed information for each issue.
+// Get a collection of issues that happened on the service, with detailed information for each issue.
 func (m *ServiceHealthIssueRequestBuilder) Get(options *ServiceHealthIssueRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssue, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -156,7 +156,7 @@ func (m *ServiceHealthIssueRequestBuilder) Get(options *ServiceHealthIssueReques
 func (m *ServiceHealthIssueRequestBuilder) IncidentReport()(*i78a9033db96dc69b5d275333f0875d10b1fbeae23f94ea43ec62f99a9aa1a952.IncidentReportRequestBuilder) {
     return i78a9033db96dc69b5d275333f0875d10b1fbeae23f94ea43ec62f99a9aa1a952.NewIncidentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch a collection of issues happened on the service, with detailed information for each issue.
+// Patch a collection of issues that happened on the service, with detailed information for each issue.
 func (m *ServiceHealthIssueRequestBuilder) Patch(options *ServiceHealthIssueRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

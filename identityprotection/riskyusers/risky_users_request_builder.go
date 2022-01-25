@@ -28,7 +28,7 @@ type RiskyUsersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// RiskyUsersRequestBuilderGetQueryParameters get riskyUsers from identityProtection
+// RiskyUsersRequestBuilderGetQueryParameters users that are flagged as at-risk by Azure AD Identity Protection.
 type RiskyUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -80,7 +80,7 @@ func NewRiskyUsersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get riskyUsers from identityProtection
+// CreateGetRequestInformation users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *RiskyUsersRequestBuilder) CreateGetRequestInformation(options *RiskyUsersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -100,7 +100,7 @@ func (m *RiskyUsersRequestBuilder) CreateGetRequestInformation(options *RiskyUse
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to riskyUsers for identityProtection
+// CreatePostRequestInformation users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *RiskyUsersRequestBuilder) CreatePostRequestInformation(options *RiskyUsersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -121,7 +121,7 @@ func (m *RiskyUsersRequestBuilder) CreatePostRequestInformation(options *RiskyUs
 func (m *RiskyUsersRequestBuilder) Dismiss()(*i5a8d5869e42d3c9c54ea08a341c5297a0b0865928dbe0569fabaee2c8e65008e.DismissRequestBuilder) {
     return i5a8d5869e42d3c9c54ea08a341c5297a0b0865928dbe0569fabaee2c8e65008e.NewDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get riskyUsers from identityProtection
+// Get users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *RiskyUsersRequestBuilder) Get(options *RiskyUsersRequestBuilderGetOptions)(*RiskyUsersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -133,7 +133,7 @@ func (m *RiskyUsersRequestBuilder) Get(options *RiskyUsersRequestBuilderGetOptio
     }
     return res.(*RiskyUsersResponse), nil
 }
-// Post create new navigation property to riskyUsers for identityProtection
+// Post users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *RiskyUsersRequestBuilder) Post(options *RiskyUsersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RiskyUser, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

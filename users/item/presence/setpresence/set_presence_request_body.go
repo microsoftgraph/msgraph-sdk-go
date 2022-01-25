@@ -13,7 +13,7 @@ type SetPresenceRequestBody struct {
     // 
     availability *string;
     // 
-    expirationDuration *string;
+    expirationDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // 
     sessionId *string;
 }
@@ -49,7 +49,7 @@ func (m *SetPresenceRequestBody) GetAvailability()(*string) {
     }
 }
 // GetExpirationDuration gets the expirationDuration property value. 
-func (m *SetPresenceRequestBody) GetExpirationDuration()(*string) {
+func (m *SetPresenceRequestBody) GetExpirationDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -88,7 +88,7 @@ func (m *SetPresenceRequestBody) GetFieldDeserializers()(map[string]func(interfa
         return nil
     }
     res["expirationDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -127,7 +127,7 @@ func (m *SetPresenceRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     {
-        err := writer.WriteStringValue("expirationDuration", m.GetExpirationDuration())
+        err := writer.WriteISODurationValue("expirationDuration", m.GetExpirationDuration())
         if err != nil {
             return err
         }
@@ -165,7 +165,7 @@ func (m *SetPresenceRequestBody) SetAvailability(value *string)() {
     }
 }
 // SetExpirationDuration sets the expirationDuration property value. 
-func (m *SetPresenceRequestBody) SetExpirationDuration(value *string)() {
+func (m *SetPresenceRequestBody) SetExpirationDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.expirationDuration = value
     }
