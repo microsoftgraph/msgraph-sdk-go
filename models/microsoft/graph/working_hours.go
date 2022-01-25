@@ -11,9 +11,9 @@ type WorkingHours struct {
     // The days of the week on which the user works.
     daysOfWeek []DayOfWeek;
     // The time of the day that the user stops working.
-    endTime *string;
+    endTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // The time of the day that the user starts working.
-    startTime *string;
+    startTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // The time zone to which the working hours apply.
     timeZone *TimeZoneBase;
 }
@@ -41,7 +41,7 @@ func (m *WorkingHours) GetDaysOfWeek()([]DayOfWeek) {
     }
 }
 // GetEndTime gets the endTime property value. The time of the day that the user stops working.
-func (m *WorkingHours) GetEndTime()(*string) {
+func (m *WorkingHours) GetEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -49,7 +49,7 @@ func (m *WorkingHours) GetEndTime()(*string) {
     }
 }
 // GetStartTime gets the startTime property value. The time of the day that the user starts working.
-func (m *WorkingHours) GetStartTime()(*string) {
+func (m *WorkingHours) GetStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -82,7 +82,7 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["endTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -92,7 +92,7 @@ func (m *WorkingHours) GetFieldDeserializers()(map[string]func(interface{}, i04e
         return nil
     }
     res["startTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -125,13 +125,13 @@ func (m *WorkingHours) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     {
-        err := writer.WriteStringValue("endTime", m.GetEndTime())
+        err := writer.WriteTimeOnlyValue("endTime", m.GetEndTime())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("startTime", m.GetStartTime())
+        err := writer.WriteTimeOnlyValue("startTime", m.GetStartTime())
         if err != nil {
             return err
         }
@@ -163,13 +163,13 @@ func (m *WorkingHours) SetDaysOfWeek(value []DayOfWeek)() {
     }
 }
 // SetEndTime sets the endTime property value. The time of the day that the user stops working.
-func (m *WorkingHours) SetEndTime(value *string)() {
+func (m *WorkingHours) SetEndTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.endTime = value
     }
 }
 // SetStartTime sets the startTime property value. The time of the day that the user starts working.
-func (m *WorkingHours) SetStartTime(value *string)() {
+func (m *WorkingHours) SetStartTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.startTime = value
     }

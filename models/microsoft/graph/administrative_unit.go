@@ -7,15 +7,15 @@ import (
 // AdministrativeUnit 
 type AdministrativeUnit struct {
     DirectoryObject
-    // An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith).
+    // An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
     description *string;
     // Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string;
     // The collection of open extensions defined for this administrative unit. Nullable.
     extensions []Extension;
-    // Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
+    // Users and groups that are members of this administrative unit. Supports $expand.
     members []DirectoryObject;
-    // Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
+    // Scoped-role members of this administrative unit.
     scopedRoleMembers []ScopedRoleMembership;
     // Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
     visibility *string;
@@ -27,7 +27,7 @@ func NewAdministrativeUnit()(*AdministrativeUnit) {
     }
     return m
 }
-// GetDescription gets the description property value. An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith).
+// GetDescription gets the description property value. An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
 func (m *AdministrativeUnit) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *AdministrativeUnit) GetExtensions()([]Extension) {
         return m.extensions
     }
 }
-// GetMembers gets the members property value. Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
+// GetMembers gets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
 func (m *AdministrativeUnit) GetMembers()([]DirectoryObject) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *AdministrativeUnit) GetMembers()([]DirectoryObject) {
         return m.members
     }
 }
-// GetScopedRoleMembers gets the scopedRoleMembers property value. Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
+// GetScopedRoleMembers gets the scopedRoleMembers property value. Scoped-role members of this administrative unit.
 func (m *AdministrativeUnit) GetScopedRoleMembers()([]ScopedRoleMembership) {
     if m == nil {
         return nil
@@ -214,7 +214,7 @@ func (m *AdministrativeUnit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     }
     return nil
 }
-// SetDescription sets the description property value. An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith).
+// SetDescription sets the description property value. An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
 func (m *AdministrativeUnit) SetDescription(value *string)() {
     if m != nil {
         m.description = value
@@ -232,13 +232,13 @@ func (m *AdministrativeUnit) SetExtensions(value []Extension)() {
         m.extensions = value
     }
 }
-// SetMembers sets the members property value. Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
+// SetMembers sets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
 func (m *AdministrativeUnit) SetMembers(value []DirectoryObject)() {
     if m != nil {
         m.members = value
     }
 }
-// SetScopedRoleMembers sets the scopedRoleMembers property value. Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
+// SetScopedRoleMembers sets the scopedRoleMembers property value. Scoped-role members of this administrative unit.
 func (m *AdministrativeUnit) SetScopedRoleMembers(value []ScopedRoleMembership)() {
     if m != nil {
         m.scopedRoleMembers = value

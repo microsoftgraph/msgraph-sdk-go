@@ -18,7 +18,7 @@ type FindMeetingTimesRequestBody struct {
     // 
     maxCandidates *int32;
     // 
-    meetingDuration *string;
+    meetingDuration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // 
     minimumAttendeePercentage *float64;
     // 
@@ -74,7 +74,7 @@ func (m *FindMeetingTimesRequestBody) GetMaxCandidates()(*int32) {
     }
 }
 // GetMeetingDuration gets the meetingDuration property value. 
-func (m *FindMeetingTimesRequestBody) GetMeetingDuration()(*string) {
+func (m *FindMeetingTimesRequestBody) GetMeetingDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -153,7 +153,7 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         return nil
     }
     res["meetingDuration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -229,7 +229,7 @@ func (m *FindMeetingTimesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     {
-        err := writer.WriteStringValue("meetingDuration", m.GetMeetingDuration())
+        err := writer.WriteISODurationValue("meetingDuration", m.GetMeetingDuration())
         if err != nil {
             return err
         }
@@ -291,7 +291,7 @@ func (m *FindMeetingTimesRequestBody) SetMaxCandidates(value *int32)() {
     }
 }
 // SetMeetingDuration sets the meetingDuration property value. 
-func (m *FindMeetingTimesRequestBody) SetMeetingDuration(value *string)() {
+func (m *FindMeetingTimesRequestBody) SetMeetingDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.meetingDuration = value
     }

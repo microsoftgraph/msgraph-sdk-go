@@ -14,7 +14,7 @@ type BookingAppointment struct {
     // The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
     customerTimeZone *string;
     // The length of the appointment, denoted in ISO8601 format.
-    duration *string;
+    duration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // 
     endDateTime *DateTimeTimeZone;
     // The current number of customers in the appointment.
@@ -28,9 +28,9 @@ type BookingAppointment struct {
     // True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
     optOutOfCustomerEmail *bool;
     // The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
-    postBuffer *string;
+    postBuffer *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
-    preBuffer *string;
+    preBuffer *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The regular price for an appointment for the specified bookingService.
     price *float64;
     // A setting to provide flexibility for the pricing structure of services. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
@@ -86,7 +86,7 @@ func (m *BookingAppointment) GetCustomerTimeZone()(*string) {
     }
 }
 // GetDuration gets the duration property value. The length of the appointment, denoted in ISO8601 format.
-func (m *BookingAppointment) GetDuration()(*string) {
+func (m *BookingAppointment) GetDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -142,7 +142,7 @@ func (m *BookingAppointment) GetOptOutOfCustomerEmail()(*bool) {
     }
 }
 // GetPostBuffer gets the postBuffer property value. The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
-func (m *BookingAppointment) GetPostBuffer()(*string) {
+func (m *BookingAppointment) GetPostBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -150,7 +150,7 @@ func (m *BookingAppointment) GetPostBuffer()(*string) {
     }
 }
 // GetPreBuffer gets the preBuffer property value. The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
-func (m *BookingAppointment) GetPreBuffer()(*string) {
+func (m *BookingAppointment) GetPreBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -283,7 +283,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["duration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -353,7 +353,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["postBuffer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -363,7 +363,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["preBuffer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -526,7 +526,7 @@ func (m *BookingAppointment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err = writer.WriteStringValue("duration", m.GetDuration())
+        err = writer.WriteISODurationValue("duration", m.GetDuration())
         if err != nil {
             return err
         }
@@ -568,13 +568,13 @@ func (m *BookingAppointment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err = writer.WriteStringValue("postBuffer", m.GetPostBuffer())
+        err = writer.WriteISODurationValue("postBuffer", m.GetPostBuffer())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("preBuffer", m.GetPreBuffer())
+        err = writer.WriteISODurationValue("preBuffer", m.GetPreBuffer())
         if err != nil {
             return err
         }
@@ -672,7 +672,7 @@ func (m *BookingAppointment) SetCustomerTimeZone(value *string)() {
     }
 }
 // SetDuration sets the duration property value. The length of the appointment, denoted in ISO8601 format.
-func (m *BookingAppointment) SetDuration(value *string)() {
+func (m *BookingAppointment) SetDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.duration = value
     }
@@ -714,13 +714,13 @@ func (m *BookingAppointment) SetOptOutOfCustomerEmail(value *bool)() {
     }
 }
 // SetPostBuffer sets the postBuffer property value. The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
-func (m *BookingAppointment) SetPostBuffer(value *string)() {
+func (m *BookingAppointment) SetPostBuffer(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.postBuffer = value
     }
 }
 // SetPreBuffer sets the preBuffer property value. The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
-func (m *BookingAppointment) SetPreBuffer(value *string)() {
+func (m *BookingAppointment) SetPreBuffer(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.preBuffer = value
     }

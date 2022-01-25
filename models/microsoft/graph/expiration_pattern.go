@@ -10,7 +10,7 @@ type ExpirationPattern struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // The requestor's desired duration of access represented in ISO 8601 format for durations. For example, PT3H refers to three hours.  If specified in a request, endDateTime should not be present and the type property should be set to afterDuration.
-    duration *string;
+    duration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Timestamp of date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The requestor's desired expiration pattern type.
@@ -32,7 +32,7 @@ func (m *ExpirationPattern) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDuration gets the duration property value. The requestor's desired duration of access represented in ISO 8601 format for durations. For example, PT3H refers to three hours.  If specified in a request, endDateTime should not be present and the type property should be set to afterDuration.
-func (m *ExpirationPattern) GetDuration()(*string) {
+func (m *ExpirationPattern) GetDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -59,7 +59,7 @@ func (m *ExpirationPattern) GetType()(*ExpirationPatternType) {
 func (m *ExpirationPattern) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["duration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -97,7 +97,7 @@ func (m *ExpirationPattern) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ExpirationPattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("duration", m.GetDuration())
+        err := writer.WriteISODurationValue("duration", m.GetDuration())
         if err != nil {
             return err
         }
@@ -130,7 +130,7 @@ func (m *ExpirationPattern) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetDuration sets the duration property value. The requestor's desired duration of access represented in ISO 8601 format for durations. For example, PT3H refers to three hours.  If specified in a request, endDateTime should not be present and the type property should be set to afterDuration.
-func (m *ExpirationPattern) SetDuration(value *string)() {
+func (m *ExpirationPattern) SetDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.duration = value
     }

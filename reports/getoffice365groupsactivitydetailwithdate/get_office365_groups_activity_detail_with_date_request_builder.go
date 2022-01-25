@@ -25,7 +25,7 @@ type GetOffice365GroupsActivityDetailWithDateRequestBuilderGetOptions struct {
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal instantiates a new GetOffice365GroupsActivityDetailWithDateRequestBuilder and sets the default values.
-func NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *string)(*GetOffice365GroupsActivityDetailWithDateRequestBuilder) {
+func NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*GetOffice365GroupsActivityDetailWithDateRequestBuilder) {
     m := &GetOffice365GroupsActivityDetailWithDateRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getOffice365GroupsActivityDetail(date={date})";
@@ -34,7 +34,7 @@ func NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(pathParam
         urlTplParams[idx] = item
     }
     if date != nil {
-        urlTplParams["date"] = *date
+        urlTplParams["date"] = (*date).String()
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

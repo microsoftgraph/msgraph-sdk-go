@@ -8,9 +8,9 @@ import (
 type IdentityProtectionRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // 
+    // Risk detection in Azure AD Identity Protection and the associated information about the detection.
     riskDetections []RiskDetection;
-    // 
+    // Users that are flagged as at-risk by Azure AD Identity Protection.
     riskyUsers []RiskyUser;
 }
 // NewIdentityProtectionRoot instantiates a new IdentityProtectionRoot and sets the default values.
@@ -28,7 +28,7 @@ func (m *IdentityProtectionRoot) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetRiskDetections gets the riskDetections property value. 
+// GetRiskDetections gets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *IdentityProtectionRoot) GetRiskDetections()([]RiskDetection) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *IdentityProtectionRoot) GetRiskDetections()([]RiskDetection) {
         return m.riskDetections
     }
 }
-// GetRiskyUsers gets the riskyUsers property value. 
+// GetRiskyUsers gets the riskyUsers property value. Users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *IdentityProtectionRoot) GetRiskyUsers()([]RiskyUser) {
     if m == nil {
         return nil
@@ -118,13 +118,13 @@ func (m *IdentityProtectionRoot) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetRiskDetections sets the riskDetections property value. 
+// SetRiskDetections sets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *IdentityProtectionRoot) SetRiskDetections(value []RiskDetection)() {
     if m != nil {
         m.riskDetections = value
     }
 }
-// SetRiskyUsers sets the riskyUsers property value. 
+// SetRiskyUsers sets the riskyUsers property value. Users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *IdentityProtectionRoot) SetRiskyUsers(value []RiskyUser)() {
     if m != nil {
         m.riskyUsers = value

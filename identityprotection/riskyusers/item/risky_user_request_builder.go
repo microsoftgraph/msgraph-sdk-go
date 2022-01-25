@@ -37,7 +37,7 @@ type RiskyUserRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// RiskyUserRequestBuilderGetQueryParameters get riskyUsers from identityProtection
+// RiskyUserRequestBuilderGetQueryParameters users that are flagged as at-risk by Azure AD Identity Protection.
 type RiskyUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -74,7 +74,7 @@ func NewRiskyUserRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property riskyUsers for identityProtection
+// CreateDeleteRequestInformation users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *RiskyUserRequestBuilder) CreateDeleteRequestInformation(options *RiskyUserRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *RiskyUserRequestBuilder) CreateDeleteRequestInformation(options *RiskyU
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get riskyUsers from identityProtection
+// CreateGetRequestInformation users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *RiskyUserRequestBuilder) CreateGetRequestInformation(options *RiskyUserRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *RiskyUserRequestBuilder) CreateGetRequestInformation(options *RiskyUser
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property riskyUsers in identityProtection
+// CreatePatchRequestInformation users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *RiskyUserRequestBuilder) CreatePatchRequestInformation(options *RiskyUserRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,7 +129,7 @@ func (m *RiskyUserRequestBuilder) CreatePatchRequestInformation(options *RiskyUs
     }
     return requestInfo, nil
 }
-// Delete delete navigation property riskyUsers for identityProtection
+// Delete users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *RiskyUserRequestBuilder) Delete(options *RiskyUserRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *RiskyUserRequestBuilder) Delete(options *RiskyUserRequestBuilderDeleteO
     }
     return nil
 }
-// Get get riskyUsers from identityProtection
+// Get users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *RiskyUserRequestBuilder) Get(options *RiskyUserRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RiskyUser, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -167,7 +167,7 @@ func (m *RiskyUserRequestBuilder) HistoryById(id string)(*ibab4d69cc173d2d5537e2
     }
     return ibab4d69cc173d2d5537e2f7f752b3b1830737eb656e2025616be95afe72a46f1.NewRiskyUserHistoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update the navigation property riskyUsers in identityProtection
+// Patch users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *RiskyUserRequestBuilder) Patch(options *RiskyUserRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

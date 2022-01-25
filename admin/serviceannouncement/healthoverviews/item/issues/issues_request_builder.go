@@ -26,7 +26,7 @@ type IssuesRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// IssuesRequestBuilderGetQueryParameters a collection of issues happened on the service, with detailed information for each issue.
+// IssuesRequestBuilderGetQueryParameters a collection of issues that happened on the service, with detailed information for each issue.
 type IssuesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewIssuesRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams["request-raw-url"] = rawUrl
     return NewIssuesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation a collection of issues happened on the service, with detailed information for each issue.
+// CreateGetRequestInformation a collection of issues that happened on the service, with detailed information for each issue.
 func (m *IssuesRequestBuilder) CreateGetRequestInformation(options *IssuesRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *IssuesRequestBuilder) CreateGetRequestInformation(options *IssuesReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation a collection of issues happened on the service, with detailed information for each issue.
+// CreatePostRequestInformation a collection of issues that happened on the service, with detailed information for each issue.
 func (m *IssuesRequestBuilder) CreatePostRequestInformation(options *IssuesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *IssuesRequestBuilder) CreatePostRequestInformation(options *IssuesReque
     }
     return requestInfo, nil
 }
-// Get a collection of issues happened on the service, with detailed information for each issue.
+// Get a collection of issues that happened on the service, with detailed information for each issue.
 func (m *IssuesRequestBuilder) Get(options *IssuesRequestBuilderGetOptions)(*IssuesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *IssuesRequestBuilder) Get(options *IssuesRequestBuilderGetOptions)(*Iss
     }
     return res.(*IssuesResponse), nil
 }
-// Post a collection of issues happened on the service, with detailed information for each issue.
+// Post a collection of issues that happened on the service, with detailed information for each issue.
 func (m *IssuesRequestBuilder) Post(options *IssuesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceHealthIssue, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

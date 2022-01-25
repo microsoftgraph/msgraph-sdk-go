@@ -36,7 +36,7 @@ type ServiceAnnouncementAttachmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ServiceAnnouncementAttachmentRequestBuilderGetQueryParameters get attachments from admin
+// ServiceAnnouncementAttachmentRequestBuilderGetQueryParameters a collection of serviceAnnouncementAttachments.
 type ServiceAnnouncementAttachmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -76,7 +76,7 @@ func NewServiceAnnouncementAttachmentRequestBuilder(rawUrl string, requestAdapte
 func (m *ServiceAnnouncementAttachmentRequestBuilder) Content()(*ifc74ad0cb302a2f1acf1a510cb281c247c725b47385f29106fd4d5b70b371cfa.ContentRequestBuilder) {
     return ifc74ad0cb302a2f1acf1a510cb281c247c725b47385f29106fd4d5b70b371cfa.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation delete navigation property attachments for admin
+// CreateDeleteRequestInformation a collection of serviceAnnouncementAttachments.
 func (m *ServiceAnnouncementAttachmentRequestBuilder) CreateDeleteRequestInformation(options *ServiceAnnouncementAttachmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,7 +93,7 @@ func (m *ServiceAnnouncementAttachmentRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get attachments from admin
+// CreateGetRequestInformation a collection of serviceAnnouncementAttachments.
 func (m *ServiceAnnouncementAttachmentRequestBuilder) CreateGetRequestInformation(options *ServiceAnnouncementAttachmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ServiceAnnouncementAttachmentRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property attachments in admin
+// CreatePatchRequestInformation a collection of serviceAnnouncementAttachments.
 func (m *ServiceAnnouncementAttachmentRequestBuilder) CreatePatchRequestInformation(options *ServiceAnnouncementAttachmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -131,7 +131,7 @@ func (m *ServiceAnnouncementAttachmentRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// Delete delete navigation property attachments for admin
+// Delete a collection of serviceAnnouncementAttachments.
 func (m *ServiceAnnouncementAttachmentRequestBuilder) Delete(options *ServiceAnnouncementAttachmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *ServiceAnnouncementAttachmentRequestBuilder) Delete(options *ServiceAnn
     }
     return nil
 }
-// Get get attachments from admin
+// Get a collection of serviceAnnouncementAttachments.
 func (m *ServiceAnnouncementAttachmentRequestBuilder) Get(options *ServiceAnnouncementAttachmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceAnnouncementAttachment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -155,7 +155,7 @@ func (m *ServiceAnnouncementAttachmentRequestBuilder) Get(options *ServiceAnnoun
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ServiceAnnouncementAttachment), nil
 }
-// Patch update the navigation property attachments in admin
+// Patch a collection of serviceAnnouncementAttachments.
 func (m *ServiceAnnouncementAttachmentRequestBuilder) Patch(options *ServiceAnnouncementAttachmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

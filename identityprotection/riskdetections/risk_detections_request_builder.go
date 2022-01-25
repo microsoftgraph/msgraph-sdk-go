@@ -26,7 +26,7 @@ type RiskDetectionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// RiskDetectionsRequestBuilderGetQueryParameters get riskDetections from identityProtection
+// RiskDetectionsRequestBuilderGetQueryParameters risk detection in Azure AD Identity Protection and the associated information about the detection.
 type RiskDetectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewRiskDetectionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams["request-raw-url"] = rawUrl
     return NewRiskDetectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get riskDetections from identityProtection
+// CreateGetRequestInformation risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformation(options *RiskDetectionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformation(options *Risk
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to riskDetections for identityProtection
+// CreatePostRequestInformation risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *RiskDetectionsRequestBuilder) CreatePostRequestInformation(options *RiskDetectionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *RiskDetectionsRequestBuilder) CreatePostRequestInformation(options *Ris
     }
     return requestInfo, nil
 }
-// Get get riskDetections from identityProtection
+// Get risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *RiskDetectionsRequestBuilder) Get(options *RiskDetectionsRequestBuilderGetOptions)(*RiskDetectionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *RiskDetectionsRequestBuilder) Get(options *RiskDetectionsRequestBuilder
     }
     return res.(*RiskDetectionsResponse), nil
 }
-// Post create new navigation property to riskDetections for identityProtection
+// Post risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *RiskDetectionsRequestBuilder) Post(options *RiskDetectionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RiskDetection, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

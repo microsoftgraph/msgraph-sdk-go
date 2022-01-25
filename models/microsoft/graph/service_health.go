@@ -7,11 +7,11 @@ import (
 // ServiceHealth 
 type ServiceHealth struct {
     Entity
-    // A collection of issues happened on the service, with detailed information for each issue.
+    // A collection of issues that happened on the service, with detailed information for each issue.
     issues []ServiceHealthIssue;
     // The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
     service *string;
-    // Show the overral service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue.
+    // Show the overall service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
     status *ServiceHealthStatus;
 }
 // NewServiceHealth instantiates a new serviceHealth and sets the default values.
@@ -21,7 +21,7 @@ func NewServiceHealth()(*ServiceHealth) {
     }
     return m
 }
-// GetIssues gets the issues property value. A collection of issues happened on the service, with detailed information for each issue.
+// GetIssues gets the issues property value. A collection of issues that happened on the service, with detailed information for each issue.
 func (m *ServiceHealth) GetIssues()([]ServiceHealthIssue) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *ServiceHealth) GetService()(*string) {
         return m.service
     }
 }
-// GetStatus gets the status property value. Show the overral service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue.
+// GetStatus gets the status property value. Show the overall service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
 func (m *ServiceHealth) GetStatus()(*ServiceHealthStatus) {
     if m == nil {
         return nil
@@ -120,7 +120,7 @@ func (m *ServiceHealth) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
     }
     return nil
 }
-// SetIssues sets the issues property value. A collection of issues happened on the service, with detailed information for each issue.
+// SetIssues sets the issues property value. A collection of issues that happened on the service, with detailed information for each issue.
 func (m *ServiceHealth) SetIssues(value []ServiceHealthIssue)() {
     if m != nil {
         m.issues = value
@@ -132,7 +132,7 @@ func (m *ServiceHealth) SetService(value *string)() {
         m.service = value
     }
 }
-// SetStatus sets the status property value. Show the overral service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue.
+// SetStatus sets the status property value. Show the overall service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
 func (m *ServiceHealth) SetStatus(value *ServiceHealthStatus)() {
     if m != nil {
         m.status = value

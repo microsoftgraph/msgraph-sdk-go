@@ -1,6 +1,8 @@
 github.com/Azure/azure-sdk-for-go/sdk/azcore v0.20.0/go.mod h1:ZPW/Z0kLCTdDZaDbYTetxc9Cxl/2lNqxYHYNOF2bti0=
 github.com/Azure/azure-sdk-for-go/sdk/internal v0.8.1/go.mod h1:KLF4gFr6DcKFZwSuH8w8yEK6DpFl3LP5rhdvAb7Yz5I=
 github.com/Azure/azure-sdk-for-go/sdk/internal v0.8.2/go.mod h1:KLF4gFr6DcKFZwSuH8w8yEK6DpFl3LP5rhdvAb7Yz5I=
+github.com/cjlapao/common-go v0.0.16 h1:3CCMidbHuc+nvKHb1mX/rflMPrpeGQvoVk30b9CC/00=
+github.com/cjlapao/common-go v0.0.16/go.mod h1:zGdh2KmXnH4HTRfT7vPpY41cws776KULk44f09OPJgs=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -11,11 +13,15 @@ github.com/microsoft/kiota/abstractions/go v0.0.0-20211101171910-f479920da5ba/go
 github.com/microsoft/kiota/abstractions/go v0.0.0-20211129093841-858bd540489b/go.mod h1:pIT6aBVb0aHisY52bSbYvb0nyxe+TqdZ8lkpKB7pLIo=
 github.com/microsoft/kiota/abstractions/go v0.0.0-20211202082735-099f3c37853a h1:c2vBeXjRwGJUL7aG1gHFwB+LpdDL20XKIOKQWKUoNQk=
 github.com/microsoft/kiota/abstractions/go v0.0.0-20211202082735-099f3c37853a/go.mod h1:m37MbLdeSZ7DBzKtGI+GmlDSIybJBkKhsvLMqkYosb8=
+github.com/microsoft/kiota/abstractions/go v0.0.0-20220125101815-87c13b40a6fb h1:htw2atX7wtSmLpVYX4hybMU+tp6PPvYvi3YNLjDKOdA=
+github.com/microsoft/kiota/abstractions/go v0.0.0-20220125101815-87c13b40a6fb/go.mod h1:kY3tlHIUgSjgTfTIb1D1pfV5ytuRWWeBohRou/JNCSw=
 github.com/microsoft/kiota/authentication/go/azure v0.0.0-20211201125630-3501743a5dc5/go.mod h1:bmdumwBCIHlVdafcpHNNGzySN/v2mImqWTPgV1adBmA=
 github.com/microsoft/kiota/http/go/nethttp v0.0.0-20211203130928-8449c9e67101 h1:kTG9Tg52O2gNm8LzwyiPyjFendknhU4iqnylDjKQgNU=
 github.com/microsoft/kiota/http/go/nethttp v0.0.0-20211203130928-8449c9e67101/go.mod h1:GHdBYJaaiuZKz78KcLSrjcin5FGXUK3e0wlX69NJMwE=
 github.com/microsoft/kiota/serialization/go/json v0.0.0-20211112084539-17ac73ffdc7c h1:9ZBo0/aKvkoMvWQw1UwQtO/lHA5vIF1VvwlxuwQr7E4=
 github.com/microsoft/kiota/serialization/go/json v0.0.0-20211112084539-17ac73ffdc7c/go.mod h1:edr20sXHBVGx5B4Y2sQoXzJqMRIpsCmqT3Fbq1NRiR0=
+github.com/microsoft/kiota/serialization/go/json v0.0.0-20220125101815-87c13b40a6fb h1:joG6t+MReJL6MQdCjr0rO95YefJPUmLHBX0d6jwAMV4=
+github.com/microsoft/kiota/serialization/go/json v0.0.0-20220125101815-87c13b40a6fb/go.mod h1:34nL++mVbjJJc2VHzEJu+syX3Mcyg0GysEYruAv4FqM=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.0.5 h1:TOvlb6AKhauMOSsuzKzMoGlOtAXkOX1pkZkzkEgDPBA=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.0.5/go.mod h1:nYdjnZVd5dsHumrF4bz+IJeozvcOsoUObmdAIa0rKQE=
 github.com/modocache/gover v0.0.0-20171022184752-b58185e213c5/go.mod h1:caMODM3PzxT8aQXRPkAt8xlV/e7d7w8GM5g0fa5F0D8=

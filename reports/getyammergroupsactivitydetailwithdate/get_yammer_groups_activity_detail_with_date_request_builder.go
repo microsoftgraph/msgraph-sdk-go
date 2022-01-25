@@ -25,7 +25,7 @@ type GetYammerGroupsActivityDetailWithDateRequestBuilderGetOptions struct {
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewGetYammerGroupsActivityDetailWithDateRequestBuilderInternal instantiates a new GetYammerGroupsActivityDetailWithDateRequestBuilder and sets the default values.
-func NewGetYammerGroupsActivityDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *string)(*GetYammerGroupsActivityDetailWithDateRequestBuilder) {
+func NewGetYammerGroupsActivityDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*GetYammerGroupsActivityDetailWithDateRequestBuilder) {
     m := &GetYammerGroupsActivityDetailWithDateRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getYammerGroupsActivityDetail(date={date})";
@@ -34,7 +34,7 @@ func NewGetYammerGroupsActivityDetailWithDateRequestBuilderInternal(pathParamete
         urlTplParams[idx] = item
     }
     if date != nil {
-        urlTplParams["date"] = *date
+        urlTplParams["date"] = (*date).String()
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;

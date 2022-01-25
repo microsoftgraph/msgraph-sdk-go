@@ -22,7 +22,7 @@ type Agreement struct {
     // Expiration schedule and frequency of agreement for all users.
     termsExpiration *TermsExpiration;
     // The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
-    userReacceptRequiredFrequency *string;
+    userReacceptRequiredFrequency *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
 }
 // NewAgreement instantiates a new agreement and sets the default values.
 func NewAgreement()(*Agreement) {
@@ -88,7 +88,7 @@ func (m *Agreement) GetTermsExpiration()(*TermsExpiration) {
     }
 }
 // GetUserReacceptRequiredFrequency gets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
-func (m *Agreement) GetUserReacceptRequiredFrequency()(*string) {
+func (m *Agreement) GetUserReacceptRequiredFrequency()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -177,7 +177,7 @@ func (m *Agreement) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["userReacceptRequiredFrequency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -250,7 +250,7 @@ func (m *Agreement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     {
-        err = writer.WriteStringValue("userReacceptRequiredFrequency", m.GetUserReacceptRequiredFrequency())
+        err = writer.WriteISODurationValue("userReacceptRequiredFrequency", m.GetUserReacceptRequiredFrequency())
         if err != nil {
             return err
         }
@@ -300,7 +300,7 @@ func (m *Agreement) SetTermsExpiration(value *TermsExpiration)() {
     }
 }
 // SetUserReacceptRequiredFrequency sets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
-func (m *Agreement) SetUserReacceptRequiredFrequency(value *string)() {
+func (m *Agreement) SetUserReacceptRequiredFrequency(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.userReacceptRequiredFrequency = value
     }

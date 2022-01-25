@@ -35,7 +35,7 @@ type RiskDetectionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// RiskDetectionRequestBuilderGetQueryParameters get riskDetections from identityProtection
+// RiskDetectionRequestBuilderGetQueryParameters risk detection in Azure AD Identity Protection and the associated information about the detection.
 type RiskDetectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewRiskDetectionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams["request-raw-url"] = rawUrl
     return NewRiskDetectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property riskDetections for identityProtection
+// CreateDeleteRequestInformation risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *RiskDetectionRequestBuilder) CreateDeleteRequestInformation(options *RiskDetectionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *RiskDetectionRequestBuilder) CreateDeleteRequestInformation(options *Ri
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get riskDetections from identityProtection
+// CreateGetRequestInformation risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *RiskDetectionRequestBuilder) CreateGetRequestInformation(options *RiskDetectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *RiskDetectionRequestBuilder) CreateGetRequestInformation(options *RiskD
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property riskDetections in identityProtection
+// CreatePatchRequestInformation risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *RiskDetectionRequestBuilder) CreatePatchRequestInformation(options *RiskDetectionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *RiskDetectionRequestBuilder) CreatePatchRequestInformation(options *Ris
     }
     return requestInfo, nil
 }
-// Delete delete navigation property riskDetections for identityProtection
+// Delete risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *RiskDetectionRequestBuilder) Delete(options *RiskDetectionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *RiskDetectionRequestBuilder) Delete(options *RiskDetectionRequestBuilde
     }
     return nil
 }
-// Get get riskDetections from identityProtection
+// Get risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *RiskDetectionRequestBuilder) Get(options *RiskDetectionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RiskDetection, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *RiskDetectionRequestBuilder) Get(options *RiskDetectionRequestBuilderGe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RiskDetection), nil
 }
-// Patch update the navigation property riskDetections in identityProtection
+// Patch risk detection in Azure AD Identity Protection and the associated information about the detection.
 func (m *RiskDetectionRequestBuilder) Patch(options *RiskDetectionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

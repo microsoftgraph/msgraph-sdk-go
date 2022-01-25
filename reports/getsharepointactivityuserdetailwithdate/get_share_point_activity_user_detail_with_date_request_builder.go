@@ -25,7 +25,7 @@ type GetSharePointActivityUserDetailWithDateRequestBuilderGetOptions struct {
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewGetSharePointActivityUserDetailWithDateRequestBuilderInternal instantiates a new GetSharePointActivityUserDetailWithDateRequestBuilder and sets the default values.
-func NewGetSharePointActivityUserDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *string)(*GetSharePointActivityUserDetailWithDateRequestBuilder) {
+func NewGetSharePointActivityUserDetailWithDateRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, date *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)(*GetSharePointActivityUserDetailWithDateRequestBuilder) {
     m := &GetSharePointActivityUserDetailWithDateRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getSharePointActivityUserDetail(date={date})";
@@ -34,7 +34,7 @@ func NewGetSharePointActivityUserDetailWithDateRequestBuilderInternal(pathParame
         urlTplParams[idx] = item
     }
     if date != nil {
-        urlTplParams["date"] = *date
+        urlTplParams["date"] = (*date).String()
     }
     m.pathParameters = pathParameters;
     m.requestAdapter = requestAdapter;
