@@ -52,7 +52,7 @@ func NewContentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the group's profile photo
+// CreateGetRequestInformation the group's profile photo.
 func (m *ContentRequestBuilder) CreateGetRequestInformation(options *ContentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,7 +69,7 @@ func (m *ContentRequestBuilder) CreateGetRequestInformation(options *ContentRequ
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformation the group's profile photo
+// CreatePutRequestInformation the group's profile photo.
 func (m *ContentRequestBuilder) CreatePutRequestInformation(options *ContentRequestBuilderPutOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -87,7 +87,7 @@ func (m *ContentRequestBuilder) CreatePutRequestInformation(options *ContentRequ
     }
     return requestInfo, nil
 }
-// Get the group's profile photo
+// Get the group's profile photo.
 func (m *ContentRequestBuilder) Get(options *ContentRequestBuilderGetOptions)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ContentRequestBuilder) Get(options *ContentRequestBuilderGetOptions)([]
     }
     return res.([]byte), nil
 }
-// Put the group's profile photo
+// Put the group's profile photo.
 func (m *ContentRequestBuilder) Put(options *ContentRequestBuilderPutOptions)(error) {
     requestInfo, err := m.CreatePutRequestInformation(options);
     if err != nil {

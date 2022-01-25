@@ -7,11 +7,11 @@ import (
 // B2xIdentityUserFlow 
 type B2xIdentityUserFlow struct {
     IdentityUserFlow
-    // Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+    // Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
     apiConnectorConfiguration *UserFlowApiConnectorConfiguration;
     // The identity providers included in the user flow.
     identityProviders []IdentityProvider;
-    // The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+    // The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
     languages []UserFlowLanguageConfiguration;
     // The user attribute assignments included in the user flow.
     userAttributeAssignments []IdentityUserFlowAttributeAssignment;
@@ -25,7 +25,7 @@ func NewB2xIdentityUserFlow()(*B2xIdentityUserFlow) {
     }
     return m
 }
-// GetApiConnectorConfiguration gets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+// GetApiConnectorConfiguration gets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 func (m *B2xIdentityUserFlow) GetApiConnectorConfiguration()(*UserFlowApiConnectorConfiguration) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *B2xIdentityUserFlow) GetIdentityProviders()([]IdentityProvider) {
         return m.identityProviders
     }
 }
-// GetLanguages gets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+// GetLanguages gets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
 func (m *B2xIdentityUserFlow) GetLanguages()([]UserFlowLanguageConfiguration) {
     if m == nil {
         return nil
@@ -197,7 +197,7 @@ func (m *B2xIdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// SetApiConnectorConfiguration sets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+// SetApiConnectorConfiguration sets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 func (m *B2xIdentityUserFlow) SetApiConnectorConfiguration(value *UserFlowApiConnectorConfiguration)() {
     if m != nil {
         m.apiConnectorConfiguration = value
@@ -209,7 +209,7 @@ func (m *B2xIdentityUserFlow) SetIdentityProviders(value []IdentityProvider)() {
         m.identityProviders = value
     }
 }
-// SetLanguages sets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+// SetLanguages sets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
 func (m *B2xIdentityUserFlow) SetLanguages(value []UserFlowLanguageConfiguration)() {
     if m != nil {
         m.languages = value

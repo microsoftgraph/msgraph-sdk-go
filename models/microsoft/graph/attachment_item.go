@@ -10,6 +10,8 @@ type AttachmentItem struct {
     additionalData map[string]interface{};
     // The type of attachment. Possible values are: file, item, reference. Required.
     attachmentType *AttachmentType;
+    // The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
+    contentId *string;
     // The nature of the data in the attachment. Optional.
     contentType *string;
     // true if the attachment is an inline attachment; otherwise, false. Optional.
@@ -40,6 +42,14 @@ func (m *AttachmentItem) GetAttachmentType()(*AttachmentType) {
         return nil
     } else {
         return m.attachmentType
+    }
+}
+// GetContentId gets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
+func (m *AttachmentItem) GetContentId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.contentId
     }
 }
 // GetContentType gets the contentType property value. The nature of the data in the attachment. Optional.
@@ -85,6 +95,16 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(interface{}, i0
         if val != nil {
             cast := val.(AttachmentType)
             m.SetAttachmentType(&cast)
+        }
+        return nil
+    }
+    res["contentId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentId(val)
         }
         return nil
     }
@@ -143,6 +163,12 @@ func (m *AttachmentItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     {
+        err := writer.WriteStringValue("contentId", m.GetContentId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("contentType", m.GetContentType())
         if err != nil {
             return err
@@ -184,6 +210,12 @@ func (m *AttachmentItem) SetAdditionalData(value map[string]interface{})() {
 func (m *AttachmentItem) SetAttachmentType(value *AttachmentType)() {
     if m != nil {
         m.attachmentType = value
+    }
+}
+// SetContentId sets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
+func (m *AttachmentItem) SetContentId(value *string)() {
+    if m != nil {
+        m.contentId = value
     }
 }
 // SetContentType sets the contentType property value. The nature of the data in the attachment. Optional.

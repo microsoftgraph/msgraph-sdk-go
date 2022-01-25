@@ -37,7 +37,7 @@ type AgreementFileLocalizationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AgreementFileLocalizationRequestBuilderGetQueryParameters get localizations from agreements
+// AgreementFileLocalizationRequestBuilderGetQueryParameters the localized version of the terms of use agreement files attached to the agreement.
 type AgreementFileLocalizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -74,7 +74,7 @@ func NewAgreementFileLocalizationRequestBuilder(rawUrl string, requestAdapter id
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementFileLocalizationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property localizations for agreements
+// CreateDeleteRequestInformation the localized version of the terms of use agreement files attached to the agreement.
 func (m *AgreementFileLocalizationRequestBuilder) CreateDeleteRequestInformation(options *AgreementFileLocalizationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *AgreementFileLocalizationRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get localizations from agreements
+// CreateGetRequestInformation the localized version of the terms of use agreement files attached to the agreement.
 func (m *AgreementFileLocalizationRequestBuilder) CreateGetRequestInformation(options *AgreementFileLocalizationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *AgreementFileLocalizationRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property localizations in agreements
+// CreatePatchRequestInformation the localized version of the terms of use agreement files attached to the agreement.
 func (m *AgreementFileLocalizationRequestBuilder) CreatePatchRequestInformation(options *AgreementFileLocalizationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,7 +129,7 @@ func (m *AgreementFileLocalizationRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Delete delete navigation property localizations for agreements
+// Delete the localized version of the terms of use agreement files attached to the agreement.
 func (m *AgreementFileLocalizationRequestBuilder) Delete(options *AgreementFileLocalizationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *AgreementFileLocalizationRequestBuilder) Delete(options *AgreementFileL
     }
     return nil
 }
-// Get get localizations from agreements
+// Get the localized version of the terms of use agreement files attached to the agreement.
 func (m *AgreementFileLocalizationRequestBuilder) Get(options *AgreementFileLocalizationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalization, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -153,7 +153,7 @@ func (m *AgreementFileLocalizationRequestBuilder) Get(options *AgreementFileLoca
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalization), nil
 }
-// Patch update the navigation property localizations in agreements
+// Patch the localized version of the terms of use agreement files attached to the agreement.
 func (m *AgreementFileLocalizationRequestBuilder) Patch(options *AgreementFileLocalizationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

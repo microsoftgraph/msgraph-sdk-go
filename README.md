@@ -85,7 +85,7 @@ result, err := client.Me().Drive().Get(nil)
 if err != nil {
     fmt.Printf("Error getting the drive: %v\n", err)
 }
-fmt.Printf("Found Drive : %v\n", result.GetId())
+fmt.Printf("Found Drive : %v\n", *result.GetId())
 ```
 
 ## 4. Getting results that span across multiple pages

@@ -13,16 +13,16 @@ type Agreement struct {
     displayName *string;
     // Default PDF linked to this agreement.
     file *AgreementFile;
-    // PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+    // PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
     files []AgreementFileLocalization;
-    // Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
+    // This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so.
     isPerDeviceAcceptanceRequired *bool;
     // Indicates whether the user has to expand the agreement before accepting.
     isViewingBeforeAcceptanceRequired *bool;
     // Expiration schedule and frequency of agreement for all users.
     termsExpiration *TermsExpiration;
     // The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
-    userReacceptRequiredFrequency *string;
+    userReacceptRequiredFrequency *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
 }
 // NewAgreement instantiates a new agreement and sets the default values.
 func NewAgreement()(*Agreement) {
@@ -55,7 +55,7 @@ func (m *Agreement) GetFile()(*AgreementFile) {
         return m.file
     }
 }
-// GetFiles gets the files property value. PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// GetFiles gets the files property value. PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
 func (m *Agreement) GetFiles()([]AgreementFileLocalization) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *Agreement) GetFiles()([]AgreementFileLocalization) {
         return m.files
     }
 }
-// GetIsPerDeviceAcceptanceRequired gets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
+// GetIsPerDeviceAcceptanceRequired gets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so.
 func (m *Agreement) GetIsPerDeviceAcceptanceRequired()(*bool) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *Agreement) GetTermsExpiration()(*TermsExpiration) {
     }
 }
 // GetUserReacceptRequiredFrequency gets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
-func (m *Agreement) GetUserReacceptRequiredFrequency()(*string) {
+func (m *Agreement) GetUserReacceptRequiredFrequency()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -177,7 +177,7 @@ func (m *Agreement) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["userReacceptRequiredFrequency"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -250,7 +250,7 @@ func (m *Agreement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     {
-        err = writer.WriteStringValue("userReacceptRequiredFrequency", m.GetUserReacceptRequiredFrequency())
+        err = writer.WriteISODurationValue("userReacceptRequiredFrequency", m.GetUserReacceptRequiredFrequency())
         if err != nil {
             return err
         }
@@ -275,13 +275,13 @@ func (m *Agreement) SetFile(value *AgreementFile)() {
         m.file = value
     }
 }
-// SetFiles sets the files property value. PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+// SetFiles sets the files property value. PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
 func (m *Agreement) SetFiles(value []AgreementFileLocalization)() {
     if m != nil {
         m.files = value
     }
 }
-// SetIsPerDeviceAcceptanceRequired sets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
+// SetIsPerDeviceAcceptanceRequired sets the isPerDeviceAcceptanceRequired property value. This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so.
 func (m *Agreement) SetIsPerDeviceAcceptanceRequired(value *bool)() {
     if m != nil {
         m.isPerDeviceAcceptanceRequired = value
@@ -300,7 +300,7 @@ func (m *Agreement) SetTermsExpiration(value *TermsExpiration)() {
     }
 }
 // SetUserReacceptRequiredFrequency sets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.
-func (m *Agreement) SetUserReacceptRequiredFrequency(value *string)() {
+func (m *Agreement) SetUserReacceptRequiredFrequency(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.userReacceptRequiredFrequency = value
     }

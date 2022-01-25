@@ -14,9 +14,9 @@ type Group struct {
     allowExternalSenders *bool;
     // Represents the app roles a group has been granted for an application. Supports $expand.
     appRoleAssignments []AppRoleAssignment;
-    // The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+    // The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
     assignedLabels []AssignedLabel;
-    // The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
+    // The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
     assignedLicenses []AssignedLicense;
     // Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     autoSubscribeNewMembers *bool;
@@ -30,17 +30,17 @@ type Group struct {
     conversations []Conversation;
     // Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
+    // The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
     createdOnBehalfOf *DirectoryObject;
     // An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string;
-    // The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+    // The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string;
     // The group's default drive. Read-only.
     drive *Drive;
     // The group's drives. Read-only.
     drives []Drive;
-    // The group's calendar events.
+    // The group's events.
     events []Event;
     // Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -50,29 +50,29 @@ type Group struct {
     groupLifecyclePolicies []GroupLifecyclePolicy;
     // Specifies the group type and its membership.  If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter (eq, not).
     groupTypes []string;
-    // Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).
+    // Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).  Supports $filter (eq).
     hasMembersWithLicenseErrors *bool;
-    // True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    // true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     hideFromAddressLists *bool;
-    // True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    // true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     hideFromOutlookClients *bool;
     // 
     isArchived *bool;
-    // Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).
+    // Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).
     isAssignableToRole *bool;
     // Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     isSubscribedByMail *bool;
-    // Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
+    // Indicates status of the group license assignment to all members of the group. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.
     licenseProcessingState *LicenseProcessingState;
     // The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     mail *string;
-    // Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not).
+    // Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
     mailEnabled *bool;
-    // The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    // The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     mailNickname *string;
-    // Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
+    // Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
     memberOf []DirectoryObject;
-    // Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable. Supports $expand.
+    // Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
     members []DirectoryObject;
     // The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
     membershipRule *string;
@@ -96,31 +96,31 @@ type Group struct {
     onPremisesSecurityIdentifier *string;
     // true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
     onPremisesSyncEnabled *bool;
-    // The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand.
+    // The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
     owners []DirectoryObject;
-    // The permission that has been granted for a group to a specific application. Supports $expand.
+    // The permissions that have been granted for a group to a specific application. Supports $expand.
     permissionGrants []ResourceSpecificPermissionGrant;
-    // The group's profile photo
+    // The group's profile photo.
     photo *ProfilePhoto;
     // The profile photos owned by the group. Read-only. Nullable.
     photos []ProfilePhoto;
-    // Entry-point to Planner resource that might exist for a Unified Group.
+    // Selective Planner services available to the group. Read-only. Nullable.
     planner *PlannerGroup;
     // The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see  OneDrive Online Multi-Geo. Nullable. Returned by default.
     preferredDataLocation *string;
     // The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     preferredLanguage *string;
-    // Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+    // Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
     proxyAddresses []string;
     // The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
     rejectedSenders []DirectoryObject;
     // Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     renewedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).
+    // Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
     securityEnabled *bool;
     // Security identifier of the group, used in Windows scenarios. Returned by default.
     securityIdentifier *string;
-    // Read-only. Nullable.
+    // Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
     settings []GroupSetting;
     // The list of SharePoint sites in this group. Access the default site with /sites/root.
     sites []Site;
@@ -134,9 +134,9 @@ type Group struct {
     transitiveMemberOf []DirectoryObject;
     // 
     transitiveMembers []DirectoryObject;
-    // Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+    // Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     unseenCount *int32;
-    // Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+    // Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public.  Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
     visibility *string;
 }
 // NewGroup instantiates a new group and sets the default values.
@@ -170,7 +170,7 @@ func (m *Group) GetAppRoleAssignments()([]AppRoleAssignment) {
         return m.appRoleAssignments
     }
 }
-// GetAssignedLabels gets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+// GetAssignedLabels gets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
 func (m *Group) GetAssignedLabels()([]AssignedLabel) {
     if m == nil {
         return nil
@@ -178,7 +178,7 @@ func (m *Group) GetAssignedLabels()([]AssignedLabel) {
         return m.assignedLabels
     }
 }
-// GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
+// GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
 func (m *Group) GetAssignedLicenses()([]AssignedLicense) {
     if m == nil {
         return nil
@@ -234,7 +234,7 @@ func (m *Group) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
         return m.createdDateTime
     }
 }
-// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
+// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
 func (m *Group) GetCreatedOnBehalfOf()(*DirectoryObject) {
     if m == nil {
         return nil
@@ -250,7 +250,7 @@ func (m *Group) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// GetDisplayName gets the displayName property value. The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Group) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -274,7 +274,7 @@ func (m *Group) GetDrives()([]Drive) {
         return m.drives
     }
 }
-// GetEvents gets the events property value. The group's calendar events.
+// GetEvents gets the events property value. The group's events.
 func (m *Group) GetEvents()([]Event) {
     if m == nil {
         return nil
@@ -314,7 +314,7 @@ func (m *Group) GetGroupTypes()([]string) {
         return m.groupTypes
     }
 }
-// GetHasMembersWithLicenseErrors gets the hasMembersWithLicenseErrors property value. Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).
+// GetHasMembersWithLicenseErrors gets the hasMembersWithLicenseErrors property value. Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).  Supports $filter (eq).
 func (m *Group) GetHasMembersWithLicenseErrors()(*bool) {
     if m == nil {
         return nil
@@ -322,7 +322,7 @@ func (m *Group) GetHasMembersWithLicenseErrors()(*bool) {
         return m.hasMembersWithLicenseErrors
     }
 }
-// GetHideFromAddressLists gets the hideFromAddressLists property value. True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetHideFromAddressLists gets the hideFromAddressLists property value. true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) GetHideFromAddressLists()(*bool) {
     if m == nil {
         return nil
@@ -330,7 +330,7 @@ func (m *Group) GetHideFromAddressLists()(*bool) {
         return m.hideFromAddressLists
     }
 }
-// GetHideFromOutlookClients gets the hideFromOutlookClients property value. True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetHideFromOutlookClients gets the hideFromOutlookClients property value. true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) GetHideFromOutlookClients()(*bool) {
     if m == nil {
         return nil
@@ -346,7 +346,7 @@ func (m *Group) GetIsArchived()(*bool) {
         return m.isArchived
     }
 }
-// GetIsAssignableToRole gets the isAssignableToRole property value. Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).
+// GetIsAssignableToRole gets the isAssignableToRole property value. Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).
 func (m *Group) GetIsAssignableToRole()(*bool) {
     if m == nil {
         return nil
@@ -362,7 +362,7 @@ func (m *Group) GetIsSubscribedByMail()(*bool) {
         return m.isSubscribedByMail
     }
 }
-// GetLicenseProcessingState gets the licenseProcessingState property value. Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
+// GetLicenseProcessingState gets the licenseProcessingState property value. Indicates status of the group license assignment to all members of the group. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.
 func (m *Group) GetLicenseProcessingState()(*LicenseProcessingState) {
     if m == nil {
         return nil
@@ -378,7 +378,7 @@ func (m *Group) GetMail()(*string) {
         return m.mail
     }
 }
-// GetMailEnabled gets the mailEnabled property value. Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not).
+// GetMailEnabled gets the mailEnabled property value. Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
 func (m *Group) GetMailEnabled()(*bool) {
     if m == nil {
         return nil
@@ -386,7 +386,7 @@ func (m *Group) GetMailEnabled()(*bool) {
         return m.mailEnabled
     }
 }
-// GetMailNickname gets the mailNickname property value. The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetMailNickname gets the mailNickname property value. The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
 func (m *Group) GetMailNickname()(*string) {
     if m == nil {
         return nil
@@ -394,7 +394,7 @@ func (m *Group) GetMailNickname()(*string) {
         return m.mailNickname
     }
 }
-// GetMemberOf gets the memberOf property value. Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
+// GetMemberOf gets the memberOf property value. Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 func (m *Group) GetMemberOf()([]DirectoryObject) {
     if m == nil {
         return nil
@@ -402,7 +402,7 @@ func (m *Group) GetMemberOf()([]DirectoryObject) {
         return m.memberOf
     }
 }
-// GetMembers gets the members property value. Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable. Supports $expand.
+// GetMembers gets the members property value. Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 func (m *Group) GetMembers()([]DirectoryObject) {
     if m == nil {
         return nil
@@ -498,7 +498,7 @@ func (m *Group) GetOnPremisesSyncEnabled()(*bool) {
         return m.onPremisesSyncEnabled
     }
 }
-// GetOwners gets the owners property value. The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand.
+// GetOwners gets the owners property value. The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 func (m *Group) GetOwners()([]DirectoryObject) {
     if m == nil {
         return nil
@@ -506,7 +506,7 @@ func (m *Group) GetOwners()([]DirectoryObject) {
         return m.owners
     }
 }
-// GetPermissionGrants gets the permissionGrants property value. The permission that has been granted for a group to a specific application. Supports $expand.
+// GetPermissionGrants gets the permissionGrants property value. The permissions that have been granted for a group to a specific application. Supports $expand.
 func (m *Group) GetPermissionGrants()([]ResourceSpecificPermissionGrant) {
     if m == nil {
         return nil
@@ -514,7 +514,7 @@ func (m *Group) GetPermissionGrants()([]ResourceSpecificPermissionGrant) {
         return m.permissionGrants
     }
 }
-// GetPhoto gets the photo property value. The group's profile photo
+// GetPhoto gets the photo property value. The group's profile photo.
 func (m *Group) GetPhoto()(*ProfilePhoto) {
     if m == nil {
         return nil
@@ -530,7 +530,7 @@ func (m *Group) GetPhotos()([]ProfilePhoto) {
         return m.photos
     }
 }
-// GetPlanner gets the planner property value. Entry-point to Planner resource that might exist for a Unified Group.
+// GetPlanner gets the planner property value. Selective Planner services available to the group. Read-only. Nullable.
 func (m *Group) GetPlanner()(*PlannerGroup) {
     if m == nil {
         return nil
@@ -554,7 +554,7 @@ func (m *Group) GetPreferredLanguage()(*string) {
         return m.preferredLanguage
     }
 }
-// GetProxyAddresses gets the proxyAddresses property value. Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+// GetProxyAddresses gets the proxyAddresses property value. Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
 func (m *Group) GetProxyAddresses()([]string) {
     if m == nil {
         return nil
@@ -578,7 +578,7 @@ func (m *Group) GetRenewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
         return m.renewedDateTime
     }
 }
-// GetSecurityEnabled gets the securityEnabled property value. Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).
+// GetSecurityEnabled gets the securityEnabled property value. Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
 func (m *Group) GetSecurityEnabled()(*bool) {
     if m == nil {
         return nil
@@ -594,7 +594,7 @@ func (m *Group) GetSecurityIdentifier()(*string) {
         return m.securityIdentifier
     }
 }
-// GetSettings gets the settings property value. Read-only. Nullable.
+// GetSettings gets the settings property value. Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 func (m *Group) GetSettings()([]GroupSetting) {
     if m == nil {
         return nil
@@ -650,7 +650,7 @@ func (m *Group) GetTransitiveMembers()([]DirectoryObject) {
         return m.transitiveMembers
     }
 }
-// GetUnseenCount gets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetUnseenCount gets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) GetUnseenCount()(*int32) {
     if m == nil {
         return nil
@@ -658,7 +658,7 @@ func (m *Group) GetUnseenCount()(*int32) {
         return m.unseenCount
     }
 }
-// GetVisibility gets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+// GetVisibility gets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public.  Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
 func (m *Group) GetVisibility()(*string) {
     if m == nil {
         return nil
@@ -1955,13 +1955,13 @@ func (m *Group) SetAppRoleAssignments(value []AppRoleAssignment)() {
         m.appRoleAssignments = value
     }
 }
-// SetAssignedLabels sets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+// SetAssignedLabels sets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
 func (m *Group) SetAssignedLabels(value []AssignedLabel)() {
     if m != nil {
         m.assignedLabels = value
     }
 }
-// SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
+// SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
 func (m *Group) SetAssignedLicenses(value []AssignedLicense)() {
     if m != nil {
         m.assignedLicenses = value
@@ -2003,7 +2003,7 @@ func (m *Group) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f30
         m.createdDateTime = value
     }
 }
-// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
+// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
 func (m *Group) SetCreatedOnBehalfOf(value *DirectoryObject)() {
     if m != nil {
         m.createdOnBehalfOf = value
@@ -2015,7 +2015,7 @@ func (m *Group) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+// SetDisplayName sets the displayName property value. The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Group) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
@@ -2033,7 +2033,7 @@ func (m *Group) SetDrives(value []Drive)() {
         m.drives = value
     }
 }
-// SetEvents sets the events property value. The group's calendar events.
+// SetEvents sets the events property value. The group's events.
 func (m *Group) SetEvents(value []Event)() {
     if m != nil {
         m.events = value
@@ -2063,19 +2063,19 @@ func (m *Group) SetGroupTypes(value []string)() {
         m.groupTypes = value
     }
 }
-// SetHasMembersWithLicenseErrors sets the hasMembersWithLicenseErrors property value. Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).
+// SetHasMembersWithLicenseErrors sets the hasMembersWithLicenseErrors property value. Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).  Supports $filter (eq).
 func (m *Group) SetHasMembersWithLicenseErrors(value *bool)() {
     if m != nil {
         m.hasMembersWithLicenseErrors = value
     }
 }
-// SetHideFromAddressLists sets the hideFromAddressLists property value. True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetHideFromAddressLists sets the hideFromAddressLists property value. true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetHideFromAddressLists(value *bool)() {
     if m != nil {
         m.hideFromAddressLists = value
     }
 }
-// SetHideFromOutlookClients sets the hideFromOutlookClients property value. True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetHideFromOutlookClients sets the hideFromOutlookClients property value. true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetHideFromOutlookClients(value *bool)() {
     if m != nil {
         m.hideFromOutlookClients = value
@@ -2087,7 +2087,7 @@ func (m *Group) SetIsArchived(value *bool)() {
         m.isArchived = value
     }
 }
-// SetIsAssignableToRole sets the isAssignableToRole property value. Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).
+// SetIsAssignableToRole sets the isAssignableToRole property value. Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).
 func (m *Group) SetIsAssignableToRole(value *bool)() {
     if m != nil {
         m.isAssignableToRole = value
@@ -2099,7 +2099,7 @@ func (m *Group) SetIsSubscribedByMail(value *bool)() {
         m.isSubscribedByMail = value
     }
 }
-// SetLicenseProcessingState sets the licenseProcessingState property value. Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
+// SetLicenseProcessingState sets the licenseProcessingState property value. Indicates status of the group license assignment to all members of the group. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.
 func (m *Group) SetLicenseProcessingState(value *LicenseProcessingState)() {
     if m != nil {
         m.licenseProcessingState = value
@@ -2111,25 +2111,25 @@ func (m *Group) SetMail(value *string)() {
         m.mail = value
     }
 }
-// SetMailEnabled sets the mailEnabled property value. Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not).
+// SetMailEnabled sets the mailEnabled property value. Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
 func (m *Group) SetMailEnabled(value *bool)() {
     if m != nil {
         m.mailEnabled = value
     }
 }
-// SetMailNickname sets the mailNickname property value. The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetMailNickname sets the mailNickname property value. The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
 func (m *Group) SetMailNickname(value *string)() {
     if m != nil {
         m.mailNickname = value
     }
 }
-// SetMemberOf sets the memberOf property value. Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
+// SetMemberOf sets the memberOf property value. Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 func (m *Group) SetMemberOf(value []DirectoryObject)() {
     if m != nil {
         m.memberOf = value
     }
 }
-// SetMembers sets the members property value. Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable. Supports $expand.
+// SetMembers sets the members property value. Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 func (m *Group) SetMembers(value []DirectoryObject)() {
     if m != nil {
         m.members = value
@@ -2201,19 +2201,19 @@ func (m *Group) SetOnPremisesSyncEnabled(value *bool)() {
         m.onPremisesSyncEnabled = value
     }
 }
-// SetOwners sets the owners property value. The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand.
+// SetOwners sets the owners property value. The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 func (m *Group) SetOwners(value []DirectoryObject)() {
     if m != nil {
         m.owners = value
     }
 }
-// SetPermissionGrants sets the permissionGrants property value. The permission that has been granted for a group to a specific application. Supports $expand.
+// SetPermissionGrants sets the permissionGrants property value. The permissions that have been granted for a group to a specific application. Supports $expand.
 func (m *Group) SetPermissionGrants(value []ResourceSpecificPermissionGrant)() {
     if m != nil {
         m.permissionGrants = value
     }
 }
-// SetPhoto sets the photo property value. The group's profile photo
+// SetPhoto sets the photo property value. The group's profile photo.
 func (m *Group) SetPhoto(value *ProfilePhoto)() {
     if m != nil {
         m.photo = value
@@ -2225,7 +2225,7 @@ func (m *Group) SetPhotos(value []ProfilePhoto)() {
         m.photos = value
     }
 }
-// SetPlanner sets the planner property value. Entry-point to Planner resource that might exist for a Unified Group.
+// SetPlanner sets the planner property value. Selective Planner services available to the group. Read-only. Nullable.
 func (m *Group) SetPlanner(value *PlannerGroup)() {
     if m != nil {
         m.planner = value
@@ -2243,7 +2243,7 @@ func (m *Group) SetPreferredLanguage(value *string)() {
         m.preferredLanguage = value
     }
 }
-// SetProxyAddresses sets the proxyAddresses property value. Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+// SetProxyAddresses sets the proxyAddresses property value. Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
 func (m *Group) SetProxyAddresses(value []string)() {
     if m != nil {
         m.proxyAddresses = value
@@ -2261,7 +2261,7 @@ func (m *Group) SetRenewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f30
         m.renewedDateTime = value
     }
 }
-// SetSecurityEnabled sets the securityEnabled property value. Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).
+// SetSecurityEnabled sets the securityEnabled property value. Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
 func (m *Group) SetSecurityEnabled(value *bool)() {
     if m != nil {
         m.securityEnabled = value
@@ -2273,7 +2273,7 @@ func (m *Group) SetSecurityIdentifier(value *string)() {
         m.securityIdentifier = value
     }
 }
-// SetSettings sets the settings property value. Read-only. Nullable.
+// SetSettings sets the settings property value. Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 func (m *Group) SetSettings(value []GroupSetting)() {
     if m != nil {
         m.settings = value
@@ -2315,13 +2315,13 @@ func (m *Group) SetTransitiveMembers(value []DirectoryObject)() {
         m.transitiveMembers = value
     }
 }
-// SetUnseenCount sets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetUnseenCount sets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetUnseenCount(value *int32)() {
     if m != nil {
         m.unseenCount = value
     }
 }
-// SetVisibility sets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+// SetVisibility sets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public.  Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
 func (m *Group) SetVisibility(value *string)() {
     if m != nil {
         m.visibility = value

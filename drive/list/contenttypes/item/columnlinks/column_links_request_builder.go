@@ -26,7 +26,7 @@ type ColumnLinksRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ColumnLinksRequestBuilderGetQueryParameters the collection of columns that are required by this content type.
+// ColumnLinksRequestBuilderGetQueryParameters the collection of columns that are required by this content type
 type ColumnLinksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewColumnLinksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams["request-raw-url"] = rawUrl
     return NewColumnLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the collection of columns that are required by this content type.
+// CreateGetRequestInformation the collection of columns that are required by this content type
 func (m *ColumnLinksRequestBuilder) CreateGetRequestInformation(options *ColumnLinksRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *ColumnLinksRequestBuilder) CreateGetRequestInformation(options *ColumnL
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of columns that are required by this content type.
+// CreatePostRequestInformation the collection of columns that are required by this content type
 func (m *ColumnLinksRequestBuilder) CreatePostRequestInformation(options *ColumnLinksRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ColumnLinksRequestBuilder) CreatePostRequestInformation(options *Column
     }
     return requestInfo, nil
 }
-// Get the collection of columns that are required by this content type.
+// Get the collection of columns that are required by this content type
 func (m *ColumnLinksRequestBuilder) Get(options *ColumnLinksRequestBuilderGetOptions)(*ColumnLinksResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *ColumnLinksRequestBuilder) Get(options *ColumnLinksRequestBuilderGetOpt
     }
     return res.(*ColumnLinksResponse), nil
 }
-// Post the collection of columns that are required by this content type.
+// Post the collection of columns that are required by this content type
 func (m *ColumnLinksRequestBuilder) Post(options *ColumnLinksRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ColumnLink, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

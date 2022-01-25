@@ -11,7 +11,7 @@ type TeamsTab struct {
     configuration *TeamsTabConfiguration;
     // Name of the tab.
     displayName *string;
-    // The application that is linked to the tab. This cannot be changed after tab creation.
+    // The application that is linked to the tab.
     teamsApp *TeamsApp;
     // Deep link URL of the tab instance. Read only.
     webUrl *string;
@@ -39,7 +39,7 @@ func (m *TeamsTab) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetTeamsApp gets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.
+// GetTeamsApp gets the teamsApp property value. The application that is linked to the tab.
 func (m *TeamsTab) GetTeamsApp()(*TeamsApp) {
     if m == nil {
         return nil
@@ -147,7 +147,7 @@ func (m *TeamsTab) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetTeamsApp sets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.
+// SetTeamsApp sets the teamsApp property value. The application that is linked to the tab.
 func (m *TeamsTab) SetTeamsApp(value *TeamsApp)() {
     if m != nil {
         m.teamsApp = value

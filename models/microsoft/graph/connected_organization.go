@@ -12,7 +12,7 @@ type ConnectedOrganization struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The description of the connected organization.
     description *string;
-    // The display name of the connected organization.
+    // The display name of the connected organization. Supports $filter (eq).
     displayName *string;
     // Nullable.
     externalSponsors []DirectoryObject;
@@ -22,7 +22,7 @@ type ConnectedOrganization struct {
     internalSponsors []DirectoryObject;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
+    // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
     state *ConnectedOrganizationState;
 }
 // NewConnectedOrganization instantiates a new connectedOrganization and sets the default values.
@@ -48,7 +48,7 @@ func (m *ConnectedOrganization) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name of the connected organization.
+// GetDisplayName gets the displayName property value. The display name of the connected organization. Supports $filter (eq).
 func (m *ConnectedOrganization) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7f
         return m.modifiedDateTime
     }
 }
-// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
+// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
 func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
     if m == nil {
         return nil
@@ -281,7 +281,7 @@ func (m *ConnectedOrganization) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the connected organization.
+// SetDisplayName sets the displayName property value. The display name of the connected organization. Supports $filter (eq).
 func (m *ConnectedOrganization) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
@@ -311,7 +311,7 @@ func (m *ConnectedOrganization) SetModifiedDateTime(value *i336074805fc853987abe
         m.modifiedDateTime = value
     }
 }
-// SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
+// SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
 func (m *ConnectedOrganization) SetState(value *ConnectedOrganizationState)() {
     if m != nil {
         m.state = value

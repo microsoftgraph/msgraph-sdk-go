@@ -14,30 +14,30 @@ type BookingAppointment struct {
     // The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
     customerTimeZone *string;
     // The length of the appointment, denoted in ISO8601 format.
-    duration *string;
+    duration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // 
     endDateTime *DateTimeTimeZone;
-    // The current number of customers in the appointment
+    // The current number of customers in the appointment.
     filledAttendeesCount *int32;
-    // If true, indicates that the appointment will be held online. Default value is false.
+    // True indicates that the appointment will be held online. Default value is false.
     isLocationOnline *bool;
     // The URL of the online meeting for the appointment.
     joinWebUrl *string;
     // The maximum number of customers allowed in an appointment.
     maximumAttendeesCount *int32;
-    // If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+    // True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
     optOutOfCustomerEmail *bool;
     // The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
-    postBuffer *string;
+    postBuffer *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
-    preBuffer *string;
+    preBuffer *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The regular price for an appointment for the specified bookingService.
     price *float64;
     // A setting to provide flexibility for the pricing structure of services. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
     priceType *BookingPriceType;
     // The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
     reminders []BookingReminder;
-    // An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
+    // An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
     selfServiceAppointmentId *string;
     // The ID of the bookingService associated with this appointment.
     serviceId *string;
@@ -47,7 +47,7 @@ type BookingAppointment struct {
     serviceName *string;
     // Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
     serviceNotes *string;
-    // If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+    // True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
     smsNotificationsEnabled *bool;
     // The ID of each bookingStaffMember who is scheduled in this appointment.
     staffMemberIds []string;
@@ -86,7 +86,7 @@ func (m *BookingAppointment) GetCustomerTimeZone()(*string) {
     }
 }
 // GetDuration gets the duration property value. The length of the appointment, denoted in ISO8601 format.
-func (m *BookingAppointment) GetDuration()(*string) {
+func (m *BookingAppointment) GetDuration()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -101,7 +101,7 @@ func (m *BookingAppointment) GetEndDateTime()(*DateTimeTimeZone) {
         return m.endDateTime
     }
 }
-// GetFilledAttendeesCount gets the filledAttendeesCount property value. The current number of customers in the appointment
+// GetFilledAttendeesCount gets the filledAttendeesCount property value. The current number of customers in the appointment.
 func (m *BookingAppointment) GetFilledAttendeesCount()(*int32) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *BookingAppointment) GetFilledAttendeesCount()(*int32) {
         return m.filledAttendeesCount
     }
 }
-// GetIsLocationOnline gets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
+// GetIsLocationOnline gets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
 func (m *BookingAppointment) GetIsLocationOnline()(*bool) {
     if m == nil {
         return nil
@@ -133,7 +133,7 @@ func (m *BookingAppointment) GetMaximumAttendeesCount()(*int32) {
         return m.maximumAttendeesCount
     }
 }
-// GetOptOutOfCustomerEmail gets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+// GetOptOutOfCustomerEmail gets the optOutOfCustomerEmail property value. True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
 func (m *BookingAppointment) GetOptOutOfCustomerEmail()(*bool) {
     if m == nil {
         return nil
@@ -142,7 +142,7 @@ func (m *BookingAppointment) GetOptOutOfCustomerEmail()(*bool) {
     }
 }
 // GetPostBuffer gets the postBuffer property value. The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
-func (m *BookingAppointment) GetPostBuffer()(*string) {
+func (m *BookingAppointment) GetPostBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -150,7 +150,7 @@ func (m *BookingAppointment) GetPostBuffer()(*string) {
     }
 }
 // GetPreBuffer gets the preBuffer property value. The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
-func (m *BookingAppointment) GetPreBuffer()(*string) {
+func (m *BookingAppointment) GetPreBuffer()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -181,7 +181,7 @@ func (m *BookingAppointment) GetReminders()([]BookingReminder) {
         return m.reminders
     }
 }
-// GetSelfServiceAppointmentId gets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
+// GetSelfServiceAppointmentId gets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
 func (m *BookingAppointment) GetSelfServiceAppointmentId()(*string) {
     if m == nil {
         return nil
@@ -221,7 +221,7 @@ func (m *BookingAppointment) GetServiceNotes()(*string) {
         return m.serviceNotes
     }
 }
-// GetSmsNotificationsEnabled gets the smsNotificationsEnabled property value. If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+// GetSmsNotificationsEnabled gets the smsNotificationsEnabled property value. True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
 func (m *BookingAppointment) GetSmsNotificationsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -283,7 +283,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["duration"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -353,7 +353,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["postBuffer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -363,7 +363,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["preBuffer"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -526,7 +526,7 @@ func (m *BookingAppointment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err = writer.WriteStringValue("duration", m.GetDuration())
+        err = writer.WriteISODurationValue("duration", m.GetDuration())
         if err != nil {
             return err
         }
@@ -568,13 +568,13 @@ func (m *BookingAppointment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     {
-        err = writer.WriteStringValue("postBuffer", m.GetPostBuffer())
+        err = writer.WriteISODurationValue("postBuffer", m.GetPostBuffer())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("preBuffer", m.GetPreBuffer())
+        err = writer.WriteISODurationValue("preBuffer", m.GetPreBuffer())
         if err != nil {
             return err
         }
@@ -672,7 +672,7 @@ func (m *BookingAppointment) SetCustomerTimeZone(value *string)() {
     }
 }
 // SetDuration sets the duration property value. The length of the appointment, denoted in ISO8601 format.
-func (m *BookingAppointment) SetDuration(value *string)() {
+func (m *BookingAppointment) SetDuration(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.duration = value
     }
@@ -683,13 +683,13 @@ func (m *BookingAppointment) SetEndDateTime(value *DateTimeTimeZone)() {
         m.endDateTime = value
     }
 }
-// SetFilledAttendeesCount sets the filledAttendeesCount property value. The current number of customers in the appointment
+// SetFilledAttendeesCount sets the filledAttendeesCount property value. The current number of customers in the appointment.
 func (m *BookingAppointment) SetFilledAttendeesCount(value *int32)() {
     if m != nil {
         m.filledAttendeesCount = value
     }
 }
-// SetIsLocationOnline sets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
+// SetIsLocationOnline sets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
 func (m *BookingAppointment) SetIsLocationOnline(value *bool)() {
     if m != nil {
         m.isLocationOnline = value
@@ -707,20 +707,20 @@ func (m *BookingAppointment) SetMaximumAttendeesCount(value *int32)() {
         m.maximumAttendeesCount = value
     }
 }
-// SetOptOutOfCustomerEmail sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+// SetOptOutOfCustomerEmail sets the optOutOfCustomerEmail property value. True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
 func (m *BookingAppointment) SetOptOutOfCustomerEmail(value *bool)() {
     if m != nil {
         m.optOutOfCustomerEmail = value
     }
 }
 // SetPostBuffer sets the postBuffer property value. The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
-func (m *BookingAppointment) SetPostBuffer(value *string)() {
+func (m *BookingAppointment) SetPostBuffer(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.postBuffer = value
     }
 }
 // SetPreBuffer sets the preBuffer property value. The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
-func (m *BookingAppointment) SetPreBuffer(value *string)() {
+func (m *BookingAppointment) SetPreBuffer(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.preBuffer = value
     }
@@ -743,7 +743,7 @@ func (m *BookingAppointment) SetReminders(value []BookingReminder)() {
         m.reminders = value
     }
 }
-// SetSelfServiceAppointmentId sets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
+// SetSelfServiceAppointmentId sets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
 func (m *BookingAppointment) SetSelfServiceAppointmentId(value *string)() {
     if m != nil {
         m.selfServiceAppointmentId = value
@@ -773,7 +773,7 @@ func (m *BookingAppointment) SetServiceNotes(value *string)() {
         m.serviceNotes = value
     }
 }
-// SetSmsNotificationsEnabled sets the smsNotificationsEnabled property value. If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+// SetSmsNotificationsEnabled sets the smsNotificationsEnabled property value. True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
 func (m *BookingAppointment) SetSmsNotificationsEnabled(value *bool)() {
     if m != nil {
         m.smsNotificationsEnabled = value

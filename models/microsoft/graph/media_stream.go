@@ -14,7 +14,7 @@ type MediaStream struct {
     label *string;
     // The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
     mediaType *Modality;
-    // If the media is muted by the server.
+    // Indicates whether the media is muted by the server.
     serverMuted *bool;
     // The source ID.
     sourceId *string;
@@ -58,7 +58,7 @@ func (m *MediaStream) GetMediaType()(*Modality) {
         return m.mediaType
     }
 }
-// GetServerMuted gets the serverMuted property value. If the media is muted by the server.
+// GetServerMuted gets the serverMuted property value. Indicates whether the media is muted by the server.
 func (m *MediaStream) GetServerMuted()(*bool) {
     if m == nil {
         return nil
@@ -200,7 +200,7 @@ func (m *MediaStream) SetMediaType(value *Modality)() {
         m.mediaType = value
     }
 }
-// SetServerMuted sets the serverMuted property value. If the media is muted by the server.
+// SetServerMuted sets the serverMuted property value. Indicates whether the media is muted by the server.
 func (m *MediaStream) SetServerMuted(value *bool)() {
     if m != nil {
         m.serverMuted = value

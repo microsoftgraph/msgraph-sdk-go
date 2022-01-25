@@ -11,13 +11,13 @@ type BookingSchedulingPolicy struct {
     // True if to allow customers to choose a specific person for the booking.
     allowStaffSelection *bool;
     // Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
-    maximumAdvance *string;
+    maximumAdvance *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
-    minimumLeadTime *string;
+    minimumLeadTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
     sendConfirmationsToOwner *bool;
     // Duration of each time slot, denoted in ISO 8601 format.
-    timeSlotInterval *string;
+    timeSlotInterval *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
 }
 // NewBookingSchedulingPolicy instantiates a new bookingSchedulingPolicy and sets the default values.
 func NewBookingSchedulingPolicy()(*BookingSchedulingPolicy) {
@@ -43,7 +43,7 @@ func (m *BookingSchedulingPolicy) GetAllowStaffSelection()(*bool) {
     }
 }
 // GetMaximumAdvance gets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
-func (m *BookingSchedulingPolicy) GetMaximumAdvance()(*string) {
+func (m *BookingSchedulingPolicy) GetMaximumAdvance()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -51,7 +51,7 @@ func (m *BookingSchedulingPolicy) GetMaximumAdvance()(*string) {
     }
 }
 // GetMinimumLeadTime gets the minimumLeadTime property value. The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
-func (m *BookingSchedulingPolicy) GetMinimumLeadTime()(*string) {
+func (m *BookingSchedulingPolicy) GetMinimumLeadTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -67,7 +67,7 @@ func (m *BookingSchedulingPolicy) GetSendConfirmationsToOwner()(*bool) {
     }
 }
 // GetTimeSlotInterval gets the timeSlotInterval property value. Duration of each time slot, denoted in ISO 8601 format.
-func (m *BookingSchedulingPolicy) GetTimeSlotInterval()(*string) {
+func (m *BookingSchedulingPolicy) GetTimeSlotInterval()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -88,7 +88,7 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["maximumAdvance"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -98,7 +98,7 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["minimumLeadTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -118,7 +118,7 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         return nil
     }
     res["timeSlotInterval"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -141,13 +141,13 @@ func (m *BookingSchedulingPolicy) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     {
-        err := writer.WriteStringValue("maximumAdvance", m.GetMaximumAdvance())
+        err := writer.WriteISODurationValue("maximumAdvance", m.GetMaximumAdvance())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("minimumLeadTime", m.GetMinimumLeadTime())
+        err := writer.WriteISODurationValue("minimumLeadTime", m.GetMinimumLeadTime())
         if err != nil {
             return err
         }
@@ -159,7 +159,7 @@ func (m *BookingSchedulingPolicy) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     {
-        err := writer.WriteStringValue("timeSlotInterval", m.GetTimeSlotInterval())
+        err := writer.WriteISODurationValue("timeSlotInterval", m.GetTimeSlotInterval())
         if err != nil {
             return err
         }
@@ -185,13 +185,13 @@ func (m *BookingSchedulingPolicy) SetAllowStaffSelection(value *bool)() {
     }
 }
 // SetMaximumAdvance sets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
-func (m *BookingSchedulingPolicy) SetMaximumAdvance(value *string)() {
+func (m *BookingSchedulingPolicy) SetMaximumAdvance(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.maximumAdvance = value
     }
 }
 // SetMinimumLeadTime sets the minimumLeadTime property value. The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
-func (m *BookingSchedulingPolicy) SetMinimumLeadTime(value *string)() {
+func (m *BookingSchedulingPolicy) SetMinimumLeadTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.minimumLeadTime = value
     }
@@ -203,7 +203,7 @@ func (m *BookingSchedulingPolicy) SetSendConfirmationsToOwner(value *bool)() {
     }
 }
 // SetTimeSlotInterval sets the timeSlotInterval property value. Duration of each time slot, denoted in ISO 8601 format.
-func (m *BookingSchedulingPolicy) SetTimeSlotInterval(value *string)() {
+func (m *BookingSchedulingPolicy) SetTimeSlotInterval(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.timeSlotInterval = value
     }

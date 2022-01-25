@@ -44,13 +44,13 @@ type ManagedAppProtection struct {
     // Indicates whether organizational credentials are required for app use.
     organizationalCredentialsRequired *bool;
     // TimePeriod before the all-level pin must be reset if PinRequired is set to True.
-    periodBeforePinReset *string;
+    periodBeforePinReset *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The period after which access is checked when the device is not connected to the internet.
-    periodOfflineBeforeAccessCheck *string;
+    periodOfflineBeforeAccessCheck *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
-    periodOfflineBeforeWipeIsEnforced *string;
+    periodOfflineBeforeWipeIsEnforced *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // The period after which access is checked when the device is connected to the internet.
-    periodOnlineBeforeAccessCheck *string;
+    periodOnlineBeforeAccessCheck *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Character set which may be used for an app-level pin if PinRequired is set to True. Possible values are: numeric, alphanumericAndSymbol.
     pinCharacterSet *ManagedAppPinCharacterSet;
     // Indicates whether an app-level pin is required.
@@ -214,7 +214,7 @@ func (m *ManagedAppProtection) GetOrganizationalCredentialsRequired()(*bool) {
     }
 }
 // GetPeriodBeforePinReset gets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
-func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*string) {
+func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -222,7 +222,7 @@ func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*string) {
     }
 }
 // GetPeriodOfflineBeforeAccessCheck gets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
-func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*string) {
+func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -230,7 +230,7 @@ func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*string) {
     }
 }
 // GetPeriodOfflineBeforeWipeIsEnforced gets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
-func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*string) {
+func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -238,7 +238,7 @@ func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*string) {
     }
 }
 // GetPeriodOnlineBeforeAccessCheck gets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
-func (m *ManagedAppProtection) GetPeriodOnlineBeforeAccessCheck()(*string) {
+func (m *ManagedAppProtection) GetPeriodOnlineBeforeAccessCheck()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
@@ -477,7 +477,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["periodBeforePinReset"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -487,7 +487,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["periodOfflineBeforeAccessCheck"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -497,7 +497,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["periodOfflineBeforeWipeIsEnforced"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -507,7 +507,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
         return nil
     }
     res["periodOnlineBeforeAccessCheck"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -691,25 +691,25 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     {
-        err = writer.WriteStringValue("periodBeforePinReset", m.GetPeriodBeforePinReset())
+        err = writer.WriteISODurationValue("periodBeforePinReset", m.GetPeriodBeforePinReset())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("periodOfflineBeforeAccessCheck", m.GetPeriodOfflineBeforeAccessCheck())
+        err = writer.WriteISODurationValue("periodOfflineBeforeAccessCheck", m.GetPeriodOfflineBeforeAccessCheck())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("periodOfflineBeforeWipeIsEnforced", m.GetPeriodOfflineBeforeWipeIsEnforced())
+        err = writer.WriteISODurationValue("periodOfflineBeforeWipeIsEnforced", m.GetPeriodOfflineBeforeWipeIsEnforced())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("periodOnlineBeforeAccessCheck", m.GetPeriodOnlineBeforeAccessCheck())
+        err = writer.WriteISODurationValue("periodOnlineBeforeAccessCheck", m.GetPeriodOnlineBeforeAccessCheck())
         if err != nil {
             return err
         }
@@ -856,25 +856,25 @@ func (m *ManagedAppProtection) SetOrganizationalCredentialsRequired(value *bool)
     }
 }
 // SetPeriodBeforePinReset sets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
-func (m *ManagedAppProtection) SetPeriodBeforePinReset(value *string)() {
+func (m *ManagedAppProtection) SetPeriodBeforePinReset(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.periodBeforePinReset = value
     }
 }
 // SetPeriodOfflineBeforeAccessCheck sets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
-func (m *ManagedAppProtection) SetPeriodOfflineBeforeAccessCheck(value *string)() {
+func (m *ManagedAppProtection) SetPeriodOfflineBeforeAccessCheck(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.periodOfflineBeforeAccessCheck = value
     }
 }
 // SetPeriodOfflineBeforeWipeIsEnforced sets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
-func (m *ManagedAppProtection) SetPeriodOfflineBeforeWipeIsEnforced(value *string)() {
+func (m *ManagedAppProtection) SetPeriodOfflineBeforeWipeIsEnforced(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.periodOfflineBeforeWipeIsEnforced = value
     }
 }
 // SetPeriodOnlineBeforeAccessCheck sets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
-func (m *ManagedAppProtection) SetPeriodOnlineBeforeAccessCheck(value *string)() {
+func (m *ManagedAppProtection) SetPeriodOnlineBeforeAccessCheck(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.periodOnlineBeforeAccessCheck = value
     }

@@ -8,7 +8,7 @@ import (
 type AutomaticRepliesSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
+    // The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. Possible values are: none, contactsOnly, all.
     externalAudience *ExternalAudienceScope;
     // The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
     externalReplyMessage *string;
@@ -18,7 +18,7 @@ type AutomaticRepliesSetting struct {
     scheduledEndDateTime *DateTimeTimeZone;
     // The date and time that automatic replies are set to begin, if Status is set to Scheduled.
     scheduledStartDateTime *DateTimeTimeZone;
-    // Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
+    // Configurations status for automatic replies. Possible values are: disabled, alwaysEnabled, scheduled.
     status *AutomaticRepliesStatus;
 }
 // NewAutomaticRepliesSetting instantiates a new automaticRepliesSetting and sets the default values.
@@ -36,7 +36,7 @@ func (m *AutomaticRepliesSetting) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetExternalAudience gets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
+// GetExternalAudience gets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. Possible values are: none, contactsOnly, all.
 func (m *AutomaticRepliesSetting) GetExternalAudience()(*ExternalAudienceScope) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *AutomaticRepliesSetting) GetScheduledStartDateTime()(*DateTimeTimeZone)
         return m.scheduledStartDateTime
     }
 }
-// GetStatus gets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
+// GetStatus gets the status property value. Configurations status for automatic replies. Possible values are: disabled, alwaysEnabled, scheduled.
 func (m *AutomaticRepliesSetting) GetStatus()(*AutomaticRepliesStatus) {
     if m == nil {
         return nil
@@ -208,7 +208,7 @@ func (m *AutomaticRepliesSetting) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetExternalAudience sets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
+// SetExternalAudience sets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. Possible values are: none, contactsOnly, all.
 func (m *AutomaticRepliesSetting) SetExternalAudience(value *ExternalAudienceScope)() {
     if m != nil {
         m.externalAudience = value
@@ -238,7 +238,7 @@ func (m *AutomaticRepliesSetting) SetScheduledStartDateTime(value *DateTimeTimeZ
         m.scheduledStartDateTime = value
     }
 }
-// SetStatus sets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
+// SetStatus sets the status property value. Configurations status for automatic replies. Possible values are: disabled, alwaysEnabled, scheduled.
 func (m *AutomaticRepliesSetting) SetStatus(value *AutomaticRepliesStatus)() {
     if m != nil {
         m.status = value

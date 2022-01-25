@@ -11,8 +11,8 @@ type BookingReminder struct {
     // The message in the reminder.
     message *string;
     // The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
-    offset *string;
-    // The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.
+    offset *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
+    // The persons who should receive the reminder. Possible values are: allAttendees, staff, customer and unknownFutureValue.
     recipients *BookingReminderRecipients;
 }
 // NewBookingReminder instantiates a new bookingReminder and sets the default values.
@@ -39,14 +39,14 @@ func (m *BookingReminder) GetMessage()(*string) {
     }
 }
 // GetOffset gets the offset property value. The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
-func (m *BookingReminder) GetOffset()(*string) {
+func (m *BookingReminder) GetOffset()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration) {
     if m == nil {
         return nil
     } else {
         return m.offset
     }
 }
-// GetRecipients gets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.
+// GetRecipients gets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer and unknownFutureValue.
 func (m *BookingReminder) GetRecipients()(*BookingReminderRecipients) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *BookingReminder) GetFieldDeserializers()(map[string]func(interface{}, i
         return nil
     }
     res["offset"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetISODurationValue()
         if err != nil {
             return err
         }
@@ -102,7 +102,7 @@ func (m *BookingReminder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     {
-        err := writer.WriteStringValue("offset", m.GetOffset())
+        err := writer.WriteISODurationValue("offset", m.GetOffset())
         if err != nil {
             return err
         }
@@ -135,12 +135,12 @@ func (m *BookingReminder) SetMessage(value *string)() {
     }
 }
 // SetOffset sets the offset property value. The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
-func (m *BookingReminder) SetOffset(value *string)() {
+func (m *BookingReminder) SetOffset(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration)() {
     if m != nil {
         m.offset = value
     }
 }
-// SetRecipients sets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.
+// SetRecipients sets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer and unknownFutureValue.
 func (m *BookingReminder) SetRecipients(value *BookingReminderRecipients)() {
     if m != nil {
         m.recipients = value

@@ -10,9 +10,9 @@ type GeoCoordinates struct {
     additionalData map[string]interface{};
     // Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
     altitude *float64;
-    // Optional. The latitude, in decimal, for the item. Read-only.
+    // Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
     latitude *float64;
-    // Optional. The longitude, in decimal, for the item. Read-only.
+    // Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
     longitude *float64;
 }
 // NewGeoCoordinates instantiates a new geoCoordinates and sets the default values.
@@ -38,7 +38,7 @@ func (m *GeoCoordinates) GetAltitude()(*float64) {
         return m.altitude
     }
 }
-// GetLatitude gets the latitude property value. Optional. The latitude, in decimal, for the item. Read-only.
+// GetLatitude gets the latitude property value. Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
 func (m *GeoCoordinates) GetLatitude()(*float64) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *GeoCoordinates) GetLatitude()(*float64) {
         return m.latitude
     }
 }
-// GetLongitude gets the longitude property value. Optional. The longitude, in decimal, for the item. Read-only.
+// GetLongitude gets the longitude property value. Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
 func (m *GeoCoordinates) GetLongitude()(*float64) {
     if m == nil {
         return nil
@@ -132,13 +132,13 @@ func (m *GeoCoordinates) SetAltitude(value *float64)() {
         m.altitude = value
     }
 }
-// SetLatitude sets the latitude property value. Optional. The latitude, in decimal, for the item. Read-only.
+// SetLatitude sets the latitude property value. Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
 func (m *GeoCoordinates) SetLatitude(value *float64)() {
     if m != nil {
         m.latitude = value
     }
 }
-// SetLongitude sets the longitude property value. Optional. The longitude, in decimal, for the item. Read-only.
+// SetLongitude sets the longitude property value. Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
 func (m *GeoCoordinates) SetLongitude(value *float64)() {
     if m != nil {
         m.longitude = value

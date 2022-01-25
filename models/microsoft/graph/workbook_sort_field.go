@@ -12,13 +12,13 @@ type WorkbookSortField struct {
     ascending *bool;
     // Represents the color that is the target of the condition if the sorting is on font or cell color.
     color *string;
-    // Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
+    // Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.
     dataOption *string;
     // Represents the icon that is the target of the condition if the sorting is on the cell's icon.
     icon *WorkbookIcon;
     // Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
     key *int32;
-    // Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
+    // Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.
     sortOn *string;
 }
 // NewWorkbookSortField instantiates a new workbookSortField and sets the default values.
@@ -52,7 +52,7 @@ func (m *WorkbookSortField) GetColor()(*string) {
         return m.color
     }
 }
-// GetDataOption gets the dataOption property value. Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
+// GetDataOption gets the dataOption property value. Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.
 func (m *WorkbookSortField) GetDataOption()(*string) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *WorkbookSortField) GetKey()(*int32) {
         return m.key
     }
 }
-// GetSortOn gets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
+// GetSortOn gets the sortOn property value. Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.
 func (m *WorkbookSortField) GetSortOn()(*string) {
     if m == nil {
         return nil
@@ -216,7 +216,7 @@ func (m *WorkbookSortField) SetColor(value *string)() {
         m.color = value
     }
 }
-// SetDataOption sets the dataOption property value. Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
+// SetDataOption sets the dataOption property value. Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.
 func (m *WorkbookSortField) SetDataOption(value *string)() {
     if m != nil {
         m.dataOption = value
@@ -234,7 +234,7 @@ func (m *WorkbookSortField) SetKey(value *int32)() {
         m.key = value
     }
 }
-// SetSortOn sets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
+// SetSortOn sets the sortOn property value. Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.
 func (m *WorkbookSortField) SetSortOn(value *string)() {
     if m != nil {
         m.sortOn = value

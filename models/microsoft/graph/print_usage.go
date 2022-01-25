@@ -14,7 +14,7 @@ type PrintUsage struct {
     // 
     incompleteJobCount *int64;
     // 
-    usageDate *string;
+    usageDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
 }
 // NewPrintUsage instantiates a new printUsage and sets the default values.
 func NewPrintUsage()(*PrintUsage) {
@@ -48,7 +48,7 @@ func (m *PrintUsage) GetIncompleteJobCount()(*int64) {
     }
 }
 // GetUsageDate gets the usageDate property value. 
-func (m *PrintUsage) GetUsageDate()(*string) {
+func (m *PrintUsage) GetUsageDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -89,7 +89,7 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["usageDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -128,7 +128,7 @@ func (m *PrintUsage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     {
-        err = writer.WriteStringValue("usageDate", m.GetUsageDate())
+        err = writer.WriteDateOnlyValue("usageDate", m.GetUsageDate())
         if err != nil {
             return err
         }
@@ -154,7 +154,7 @@ func (m *PrintUsage) SetIncompleteJobCount(value *int64)() {
     }
 }
 // SetUsageDate sets the usageDate property value. 
-func (m *PrintUsage) SetUsageDate(value *string)() {
+func (m *PrintUsage) SetUsageDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.usageDate = value
     }

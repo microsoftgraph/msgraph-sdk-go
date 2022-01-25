@@ -9,9 +9,9 @@ type TimeRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // End time for the time range.
-    endTime *string;
+    endTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
     // Start time for the time range.
-    startTime *string;
+    startTime *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly;
 }
 // NewTimeRange instantiates a new timeRange and sets the default values.
 func NewTimeRange()(*TimeRange) {
@@ -29,7 +29,7 @@ func (m *TimeRange) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetEndTime gets the endTime property value. End time for the time range.
-func (m *TimeRange) GetEndTime()(*string) {
+func (m *TimeRange) GetEndTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -37,7 +37,7 @@ func (m *TimeRange) GetEndTime()(*string) {
     }
 }
 // GetStartTime gets the startTime property value. Start time for the time range.
-func (m *TimeRange) GetStartTime()(*string) {
+func (m *TimeRange) GetStartTime()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly) {
     if m == nil {
         return nil
     } else {
@@ -48,7 +48,7 @@ func (m *TimeRange) GetStartTime()(*string) {
 func (m *TimeRange) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["endTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -58,7 +58,7 @@ func (m *TimeRange) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["startTime"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
         }
@@ -75,13 +75,13 @@ func (m *TimeRange) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *TimeRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("endTime", m.GetEndTime())
+        err := writer.WriteTimeOnlyValue("endTime", m.GetEndTime())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("startTime", m.GetStartTime())
+        err := writer.WriteTimeOnlyValue("startTime", m.GetStartTime())
         if err != nil {
             return err
         }
@@ -101,13 +101,13 @@ func (m *TimeRange) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetEndTime sets the endTime property value. End time for the time range.
-func (m *TimeRange) SetEndTime(value *string)() {
+func (m *TimeRange) SetEndTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.endTime = value
     }
 }
 // SetStartTime sets the startTime property value. Start time for the time range.
-func (m *TimeRange) SetStartTime(value *string)() {
+func (m *TimeRange) SetStartTime(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.TimeOnly)() {
     if m != nil {
         m.startTime = value
     }

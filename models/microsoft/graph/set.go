@@ -12,7 +12,7 @@ type Set struct {
     children []Term;
     // Date and time of set creation. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Description that gives details on the term usage.
+    // Description giving details on the term usage.
     description *string;
     // Name of the set for each languageTag.
     localizedNames []LocalizedName;
@@ -48,7 +48,7 @@ func (m *Set) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
         return m.createdDateTime
     }
 }
-// GetDescription gets the description property value. Description that gives details on the term usage.
+// GetDescription gets the description property value. Description giving details on the term usage.
 func (m *Set) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -297,7 +297,7 @@ func (m *Set) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077
         m.createdDateTime = value
     }
 }
-// SetDescription sets the description property value. Description that gives details on the term usage.
+// SetDescription sets the description property value. Description giving details on the term usage.
 func (m *Set) SetDescription(value *string)() {
     if m != nil {
         m.description = value

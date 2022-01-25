@@ -8,13 +8,13 @@ import (
 type SettingTemplateValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Default value for the setting.
+    // Default value for the setting. Read-only.
     defaultValue *string;
-    // Description of the setting.
+    // Description of the setting. Read-only.
     description *string;
-    // Name of the setting.
+    // Name of the setting. Read-only.
     name *string;
-    // Type of the setting.
+    // Type of the setting. Read-only.
     type_escaped *string;
 }
 // NewSettingTemplateValue instantiates a new settingTemplateValue and sets the default values.
@@ -32,7 +32,7 @@ func (m *SettingTemplateValue) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDefaultValue gets the defaultValue property value. Default value for the setting.
+// GetDefaultValue gets the defaultValue property value. Default value for the setting. Read-only.
 func (m *SettingTemplateValue) GetDefaultValue()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *SettingTemplateValue) GetDefaultValue()(*string) {
         return m.defaultValue
     }
 }
-// GetDescription gets the description property value. Description of the setting.
+// GetDescription gets the description property value. Description of the setting. Read-only.
 func (m *SettingTemplateValue) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *SettingTemplateValue) GetDescription()(*string) {
         return m.description
     }
 }
-// GetName gets the name property value. Name of the setting.
+// GetName gets the name property value. Name of the setting. Read-only.
 func (m *SettingTemplateValue) GetName()(*string) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *SettingTemplateValue) GetName()(*string) {
         return m.name
     }
 }
-// GetType gets the type property value. Type of the setting.
+// GetType gets the type property value. Type of the setting. Read-only.
 func (m *SettingTemplateValue) GetType()(*string) {
     if m == nil {
         return nil
@@ -152,25 +152,25 @@ func (m *SettingTemplateValue) SetAdditionalData(value map[string]interface{})()
         m.additionalData = value
     }
 }
-// SetDefaultValue sets the defaultValue property value. Default value for the setting.
+// SetDefaultValue sets the defaultValue property value. Default value for the setting. Read-only.
 func (m *SettingTemplateValue) SetDefaultValue(value *string)() {
     if m != nil {
         m.defaultValue = value
     }
 }
-// SetDescription sets the description property value. Description of the setting.
+// SetDescription sets the description property value. Description of the setting. Read-only.
 func (m *SettingTemplateValue) SetDescription(value *string)() {
     if m != nil {
         m.description = value
     }
 }
-// SetName sets the name property value. Name of the setting.
+// SetName sets the name property value. Name of the setting. Read-only.
 func (m *SettingTemplateValue) SetName(value *string)() {
     if m != nil {
         m.name = value
     }
 }
-// SetType sets the type property value. Type of the setting.
+// SetType sets the type property value. Type of the setting. Read-only.
 func (m *SettingTemplateValue) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

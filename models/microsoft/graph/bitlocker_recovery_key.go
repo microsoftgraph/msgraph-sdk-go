@@ -8,13 +8,13 @@ import (
 // BitlockerRecoveryKey 
 type BitlockerRecoveryKey struct {
     Entity
-    // The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
+    // The date and time when the key was originally backed up to Azure Active Directory.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
+    // ID of the device the BitLocker key is originally backed up from.
     deviceId *string;
-    // The BitLocker recovery key. Returned only on $select. Not nullable.
+    // The BitLocker recovery key.
     key *string;
-    // Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
+    // Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
     volumeType *VolumeType;
 }
 // NewBitlockerRecoveryKey instantiates a new bitlockerRecoveryKey and sets the default values.
@@ -24,7 +24,7 @@ func NewBitlockerRecoveryKey()(*BitlockerRecoveryKey) {
     }
     return m
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory.
 func (m *BitlockerRecoveryKey) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -32,7 +32,7 @@ func (m *BitlockerRecoveryKey) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
         return m.createdDateTime
     }
 }
-// GetDeviceId gets the deviceId property value. Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
+// GetDeviceId gets the deviceId property value. ID of the device the BitLocker key is originally backed up from.
 func (m *BitlockerRecoveryKey) GetDeviceId()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *BitlockerRecoveryKey) GetDeviceId()(*string) {
         return m.deviceId
     }
 }
-// GetKey gets the key property value. The BitLocker recovery key. Returned only on $select. Not nullable.
+// GetKey gets the key property value. The BitLocker recovery key.
 func (m *BitlockerRecoveryKey) GetKey()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *BitlockerRecoveryKey) GetKey()(*string) {
         return m.key
     }
 }
-// GetVolumeType gets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
+// GetVolumeType gets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
 func (m *BitlockerRecoveryKey) GetVolumeType()(*VolumeType) {
     if m == nil {
         return nil
@@ -138,25 +138,25 @@ func (m *BitlockerRecoveryKey) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory.
 func (m *BitlockerRecoveryKey) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
     }
 }
-// SetDeviceId sets the deviceId property value. Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
+// SetDeviceId sets the deviceId property value. ID of the device the BitLocker key is originally backed up from.
 func (m *BitlockerRecoveryKey) SetDeviceId(value *string)() {
     if m != nil {
         m.deviceId = value
     }
 }
-// SetKey sets the key property value. The BitLocker recovery key. Returned only on $select. Not nullable.
+// SetKey sets the key property value. The BitLocker recovery key.
 func (m *BitlockerRecoveryKey) SetKey(value *string)() {
     if m != nil {
         m.key = value
     }
 }
-// SetVolumeType sets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
+// SetVolumeType sets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
 func (m *BitlockerRecoveryKey) SetVolumeType(value *VolumeType)() {
     if m != nil {
         m.volumeType = value

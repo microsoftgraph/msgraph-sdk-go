@@ -14,7 +14,7 @@ type Message struct {
     bccRecipients []Recipient;
     // The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
     body *ItemBody;
-    // The first 255 characters of the message body. It is in text format.
+    // The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
     bodyPreview *string;
     // The Cc: recipients for the message.
     ccRecipients []Recipient;
@@ -100,7 +100,7 @@ func (m *Message) GetBody()(*ItemBody) {
         return m.body
     }
 }
-// GetBodyPreview gets the bodyPreview property value. The first 255 characters of the message body. It is in text format.
+// GetBodyPreview gets the bodyPreview property value. The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
 func (m *Message) GetBodyPreview()(*string) {
     if m == nil {
         return nil
@@ -915,7 +915,7 @@ func (m *Message) SetBody(value *ItemBody)() {
         m.body = value
     }
 }
-// SetBodyPreview sets the bodyPreview property value. The first 255 characters of the message body. It is in text format.
+// SetBodyPreview sets the bodyPreview property value. The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
 func (m *Message) SetBodyPreview(value *string)() {
     if m != nil {
         m.bodyPreview = value

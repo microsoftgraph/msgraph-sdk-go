@@ -35,7 +35,7 @@ type AppRoleAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AppRoleAssignmentRequestBuilderGetQueryParameters app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// AppRoleAssignmentRequestBuilderGetQueryParameters app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 type AppRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewAppRoleAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams["request-raw-url"] = rawUrl
     return NewAppRoleAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// CreateDeleteRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) CreateDeleteRequestInformation(options *AppRoleAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *AppRoleAssignmentRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// CreateGetRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) CreateGetRequestInformation(options *AppRoleAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *AppRoleAssignmentRequestBuilder) CreateGetRequestInformation(options *A
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// CreatePatchRequestInformation app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) CreatePatchRequestInformation(options *AppRoleAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *AppRoleAssignmentRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Delete app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// Delete app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) Delete(options *AppRoleAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *AppRoleAssignmentRequestBuilder) Delete(options *AppRoleAssignmentReque
     }
     return nil
 }
-// Get app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// Get app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) Get(options *AppRoleAssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppRoleAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *AppRoleAssignmentRequestBuilder) Get(options *AppRoleAssignmentRequestB
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppRoleAssignment), nil
 }
-// Patch app role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+// Patch app role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
 func (m *AppRoleAssignmentRequestBuilder) Patch(options *AppRoleAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

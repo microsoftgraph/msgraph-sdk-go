@@ -26,7 +26,7 @@ type VersionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// VersionsRequestBuilderGetQueryParameters get versions from agreements
+// VersionsRequestBuilderGetQueryParameters read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 type VersionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewVersionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewVersionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get versions from agreements
+// CreateGetRequestInformation read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *VersionsRequestBuilder) CreateGetRequestInformation(options *VersionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *VersionsRequestBuilder) CreateGetRequestInformation(options *VersionsRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to versions for agreements
+// CreatePostRequestInformation read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *VersionsRequestBuilder) CreatePostRequestInformation(options *VersionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *VersionsRequestBuilder) CreatePostRequestInformation(options *VersionsR
     }
     return requestInfo, nil
 }
-// Get get versions from agreements
+// Get read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *VersionsRequestBuilder) Get(options *VersionsRequestBuilderGetOptions)(*VersionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *VersionsRequestBuilder) Get(options *VersionsRequestBuilderGetOptions)(
     }
     return res.(*VersionsResponse), nil
 }
-// Post create new navigation property to versions for agreements
+// Post read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
 func (m *VersionsRequestBuilder) Post(options *VersionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileVersion, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

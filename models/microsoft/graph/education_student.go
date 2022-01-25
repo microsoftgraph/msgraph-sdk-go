@@ -9,10 +9,10 @@ type EducationStudent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
     // Birth date of the student.
-    birthDate *string;
+    birthDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // ID of the student in the source system.
     externalId *string;
-    // The possible values are: female, male, other, unknownFutureValue.
+    // Possible values are: female, male, other.
     gender *EducationGender;
     // Current grade level of the student.
     grade *string;
@@ -37,7 +37,7 @@ func (m *EducationStudent) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetBirthDate gets the birthDate property value. Birth date of the student.
-func (m *EducationStudent) GetBirthDate()(*string) {
+func (m *EducationStudent) GetBirthDate()(*i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly) {
     if m == nil {
         return nil
     } else {
@@ -52,7 +52,7 @@ func (m *EducationStudent) GetExternalId()(*string) {
         return m.externalId
     }
 }
-// GetGender gets the gender property value. The possible values are: female, male, other, unknownFutureValue.
+// GetGender gets the gender property value. Possible values are: female, male, other.
 func (m *EducationStudent) GetGender()(*EducationGender) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *EducationStudent) GetStudentNumber()(*string) {
 func (m *EducationStudent) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := make(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error))
     res["birthDate"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
         }
@@ -156,7 +156,7 @@ func (m *EducationStudent) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *EducationStudent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("birthDate", m.GetBirthDate())
+        err := writer.WriteDateOnlyValue("birthDate", m.GetBirthDate())
         if err != nil {
             return err
         }
@@ -207,7 +207,7 @@ func (m *EducationStudent) SetAdditionalData(value map[string]interface{})() {
     }
 }
 // SetBirthDate sets the birthDate property value. Birth date of the student.
-func (m *EducationStudent) SetBirthDate(value *string)() {
+func (m *EducationStudent) SetBirthDate(value *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly)() {
     if m != nil {
         m.birthDate = value
     }
@@ -218,7 +218,7 @@ func (m *EducationStudent) SetExternalId(value *string)() {
         m.externalId = value
     }
 }
-// SetGender sets the gender property value. The possible values are: female, male, other, unknownFutureValue.
+// SetGender sets the gender property value. Possible values are: female, male, other.
 func (m *EducationStudent) SetGender(value *EducationGender)() {
     if m != nil {
         m.gender = value

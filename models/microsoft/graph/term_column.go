@@ -8,7 +8,7 @@ import (
 type TermColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Specifies whether the column will allow more than one value.
+    // Specifies whether the column will allow more than one value
     allowMultipleValues *bool;
     // 
     parentTerm *Term;
@@ -32,7 +32,7 @@ func (m *TermColumn) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAllowMultipleValues gets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
+// GetAllowMultipleValues gets the allowMultipleValues property value. Specifies whether the column will allow more than one value
 func (m *TermColumn) GetAllowMultipleValues()(*bool) {
     if m == nil {
         return nil
@@ -152,7 +152,7 @@ func (m *TermColumn) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAllowMultipleValues sets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
+// SetAllowMultipleValues sets the allowMultipleValues property value. Specifies whether the column will allow more than one value
 func (m *TermColumn) SetAllowMultipleValues(value *bool)() {
     if m != nil {
         m.allowMultipleValues = value

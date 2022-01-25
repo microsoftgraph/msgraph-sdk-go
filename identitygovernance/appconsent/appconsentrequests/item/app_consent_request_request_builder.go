@@ -37,7 +37,7 @@ type AppConsentRequestRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AppConsentRequestRequestBuilderGetQueryParameters get appConsentRequests from identityGovernance
+// AppConsentRequestRequestBuilderGetQueryParameters a collection of userConsentRequest objects for a specific application.
 type AppConsentRequestRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -74,7 +74,7 @@ func NewAppConsentRequestRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams["request-raw-url"] = rawUrl
     return NewAppConsentRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property appConsentRequests for identityGovernance
+// CreateDeleteRequestInformation a collection of userConsentRequest objects for a specific application.
 func (m *AppConsentRequestRequestBuilder) CreateDeleteRequestInformation(options *AppConsentRequestRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *AppConsentRequestRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get appConsentRequests from identityGovernance
+// CreateGetRequestInformation a collection of userConsentRequest objects for a specific application.
 func (m *AppConsentRequestRequestBuilder) CreateGetRequestInformation(options *AppConsentRequestRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *AppConsentRequestRequestBuilder) CreateGetRequestInformation(options *A
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property appConsentRequests in identityGovernance
+// CreatePatchRequestInformation a collection of userConsentRequest objects for a specific application.
 func (m *AppConsentRequestRequestBuilder) CreatePatchRequestInformation(options *AppConsentRequestRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,7 +129,7 @@ func (m *AppConsentRequestRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Delete delete navigation property appConsentRequests for identityGovernance
+// Delete a collection of userConsentRequest objects for a specific application.
 func (m *AppConsentRequestRequestBuilder) Delete(options *AppConsentRequestRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *AppConsentRequestRequestBuilder) Delete(options *AppConsentRequestReque
     }
     return nil
 }
-// Get get appConsentRequests from identityGovernance
+// Get a collection of userConsentRequest objects for a specific application.
 func (m *AppConsentRequestRequestBuilder) Get(options *AppConsentRequestRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppConsentRequest, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -153,7 +153,7 @@ func (m *AppConsentRequestRequestBuilder) Get(options *AppConsentRequestRequestB
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AppConsentRequest), nil
 }
-// Patch update the navigation property appConsentRequests in identityGovernance
+// Patch a collection of userConsentRequest objects for a specific application.
 func (m *AppConsentRequestRequestBuilder) Patch(options *AppConsentRequestRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

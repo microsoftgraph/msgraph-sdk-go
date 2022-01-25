@@ -10,7 +10,7 @@ type AccessReviewInstance struct {
     Entity
     // Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
     contactedReviewers []AccessReviewReviewer;
-    // Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+    // Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
     decisions []AccessReviewInstanceDecisionItem;
     // DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -40,7 +40,7 @@ func (m *AccessReviewInstance) GetContactedReviewers()([]AccessReviewReviewer) {
         return m.contactedReviewers
     }
 }
-// GetDecisions gets the decisions property value. Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+// GetDecisions gets the decisions property value. Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstance) GetDecisions()([]AccessReviewInstanceDecisionItem) {
     if m == nil {
         return nil
@@ -282,7 +282,7 @@ func (m *AccessReviewInstance) SetContactedReviewers(value []AccessReviewReviewe
         m.contactedReviewers = value
     }
 }
-// SetDecisions sets the decisions property value. Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+// SetDecisions sets the decisions property value. Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewInstance) SetDecisions(value []AccessReviewInstanceDecisionItem)() {
     if m != nil {
         m.decisions = value

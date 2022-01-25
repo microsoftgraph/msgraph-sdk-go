@@ -11,7 +11,7 @@ type AppConsentRequest struct {
     appDisplayName *string;
     // The identifier of the application. Required. Supports $filter (eq only) and $orderby.
     appId *string;
-    // A list of pending scopes waiting for approval. Required.
+    // A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
     pendingScopes []AppConsentRequestScope;
     // A list of pending user consent requests.
     userConsentRequests []UserConsentRequest;
@@ -39,7 +39,7 @@ func (m *AppConsentRequest) GetAppId()(*string) {
         return m.appId
     }
 }
-// GetPendingScopes gets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
+// GetPendingScopes gets the pendingScopes property value. A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
 func (m *AppConsentRequest) GetPendingScopes()([]AppConsentRequestScope) {
     if m == nil {
         return nil
@@ -165,7 +165,7 @@ func (m *AppConsentRequest) SetAppId(value *string)() {
         m.appId = value
     }
 }
-// SetPendingScopes sets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
+// SetPendingScopes sets the pendingScopes property value. A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
 func (m *AppConsentRequest) SetPendingScopes(value []AppConsentRequestScope)() {
     if m != nil {
         m.pendingScopes = value
