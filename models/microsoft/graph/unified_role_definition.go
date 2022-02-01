@@ -233,7 +233,7 @@ func (m *UnifiedRoleDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetInheritsPermissionsFrom() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInheritsPermissionsFrom()))
         for i, v := range m.GetInheritsPermissionsFrom() {
             temp := v
@@ -256,13 +256,13 @@ func (m *UnifiedRoleDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetResourceScopes() != nil {
         err = writer.WriteCollectionOfStringValues("resourceScopes", m.GetResourceScopes())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetRolePermissions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRolePermissions()))
         for i, v := range m.GetRolePermissions() {
             temp := v

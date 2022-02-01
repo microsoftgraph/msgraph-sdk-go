@@ -415,13 +415,13 @@ func (m *Calendar) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if err != nil {
         return err
     }
-    {
+    if m.GetAllowedOnlineMeetingProviders() != nil {
         err = writer.WriteCollectionOfStringValues("allowedOnlineMeetingProviders", SerializeOnlineMeetingProviderType(m.GetAllowedOnlineMeetingProviders()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetCalendarPermissions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendarPermissions()))
         for i, v := range m.GetCalendarPermissions() {
             temp := v
@@ -432,7 +432,7 @@ func (m *Calendar) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetCalendarView() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendarView()))
         for i, v := range m.GetCalendarView() {
             temp := v
@@ -481,7 +481,7 @@ func (m *Calendar) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEvents()))
         for i, v := range m.GetEvents() {
             temp := v
@@ -516,7 +516,7 @@ func (m *Calendar) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
             temp := v
@@ -539,7 +539,7 @@ func (m *Calendar) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
             temp := v

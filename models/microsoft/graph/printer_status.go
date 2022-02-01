@@ -105,7 +105,7 @@ func (m *PrinterStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetDetails() != nil {
         err := writer.WriteCollectionOfStringValues("details", SerializePrinterProcessingStateDetail(m.GetDetails()))
         if err != nil {
             return err

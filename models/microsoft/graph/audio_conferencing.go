@@ -180,7 +180,7 @@ func (m *AudioConferencing) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetTollFreeNumbers() != nil {
         err := writer.WriteCollectionOfStringValues("tollFreeNumbers", m.GetTollFreeNumbers())
         if err != nil {
             return err
@@ -192,7 +192,7 @@ func (m *AudioConferencing) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetTollNumbers() != nil {
         err := writer.WriteCollectionOfStringValues("tollNumbers", m.GetTollNumbers())
         if err != nil {
             return err

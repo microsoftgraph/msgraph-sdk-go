@@ -210,7 +210,7 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
     if err != nil {
         return err
     }
-    {
+    if m.GetChildren() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChildren()))
         for i, v := range m.GetChildren() {
             temp := v
@@ -233,7 +233,7 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
             return err
         }
     }
-    {
+    if m.GetLocalizedNames() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLocalizedNames()))
         for i, v := range m.GetLocalizedNames() {
             temp := v
@@ -250,7 +250,7 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
             return err
         }
     }
-    {
+    if m.GetProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProperties()))
         for i, v := range m.GetProperties() {
             temp := v
@@ -261,7 +261,7 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
             return err
         }
     }
-    {
+    if m.GetRelations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRelations()))
         for i, v := range m.GetRelations() {
             temp := v
@@ -272,7 +272,7 @@ func (m *Set) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e314
             return err
         }
     }
-    {
+    if m.GetTerms() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTerms()))
         for i, v := range m.GetTerms() {
             temp := v

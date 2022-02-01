@@ -206,7 +206,7 @@ func (m *AccessReviewInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if err != nil {
         return err
     }
-    {
+    if m.GetContactedReviewers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContactedReviewers()))
         for i, v := range m.GetContactedReviewers() {
             temp := v
@@ -217,7 +217,7 @@ func (m *AccessReviewInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetDecisions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDecisions()))
         for i, v := range m.GetDecisions() {
             temp := v
@@ -234,7 +234,7 @@ func (m *AccessReviewInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetFallbackReviewers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFallbackReviewers()))
         for i, v := range m.GetFallbackReviewers() {
             temp := v
@@ -245,7 +245,7 @@ func (m *AccessReviewInstance) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetReviewers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReviewers()))
         for i, v := range m.GetReviewers() {
             temp := v

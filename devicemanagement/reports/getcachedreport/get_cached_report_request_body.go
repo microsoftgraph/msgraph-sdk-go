@@ -186,7 +186,7 @@ func (m *GetCachedReportRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *GetCachedReportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetGroupBy() != nil {
         err := writer.WriteCollectionOfStringValues("groupBy", m.GetGroupBy())
         if err != nil {
             return err
@@ -198,7 +198,7 @@ func (m *GetCachedReportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
             return err
         }
     }
-    {
+    if m.GetOrderBy() != nil {
         err := writer.WriteCollectionOfStringValues("orderBy", m.GetOrderBy())
         if err != nil {
             return err
@@ -210,7 +210,7 @@ func (m *GetCachedReportRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c
             return err
         }
     }
-    {
+    if m.GetSelect() != nil {
         err := writer.WriteCollectionOfStringValues("select", m.GetSelect())
         if err != nil {
             return err

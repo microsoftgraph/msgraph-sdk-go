@@ -58,7 +58,7 @@ func (m *Configuration) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *Configuration) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetAuthorizedAppIds() != nil {
         err := writer.WriteCollectionOfStringValues("authorizedAppIds", m.GetAuthorizedAppIds())
         if err != nil {
             return err

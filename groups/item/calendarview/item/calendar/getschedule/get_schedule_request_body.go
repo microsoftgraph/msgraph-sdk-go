@@ -131,7 +131,7 @@ func (m *GetScheduleRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    {
+    if m.GetSchedules() != nil {
         err := writer.WriteCollectionOfStringValues("schedules", m.GetSchedules())
         if err != nil {
             return err

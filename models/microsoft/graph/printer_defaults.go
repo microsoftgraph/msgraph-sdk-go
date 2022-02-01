@@ -416,7 +416,7 @@ func (m *PrinterDefaults) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetFinishings() != nil {
         err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
         if err != nil {
             return err

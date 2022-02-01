@@ -84,7 +84,7 @@ func (m *PreAuthorizedApplication) Serialize(writer i04eb5309aeaafadd28374d79c84
             return err
         }
     }
-    {
+    if m.GetDelegatedPermissionIds() != nil {
         err := writer.WriteCollectionOfStringValues("delegatedPermissionIds", m.GetDelegatedPermissionIds())
         if err != nil {
             return err

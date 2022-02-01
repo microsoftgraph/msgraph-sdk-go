@@ -125,7 +125,7 @@ func (m *RoleAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetResourceScopes() != nil {
         err = writer.WriteCollectionOfStringValues("resourceScopes", m.GetResourceScopes())
         if err != nil {
             return err

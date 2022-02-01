@@ -429,7 +429,7 @@ func (m *ContentType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if err != nil {
         return err
     }
-    {
+    if m.GetAssociatedHubsUrls() != nil {
         err = writer.WriteCollectionOfStringValues("associatedHubsUrls", m.GetAssociatedHubsUrls())
         if err != nil {
             return err
@@ -441,7 +441,7 @@ func (m *ContentType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetBaseTypes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBaseTypes()))
         for i, v := range m.GetBaseTypes() {
             temp := v
@@ -452,7 +452,7 @@ func (m *ContentType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetColumnLinks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetColumnLinks()))
         for i, v := range m.GetColumnLinks() {
             temp := v
@@ -463,7 +463,7 @@ func (m *ContentType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetColumnPositions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetColumnPositions()))
         for i, v := range m.GetColumnPositions() {
             temp := v
@@ -474,7 +474,7 @@ func (m *ContentType) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetColumns() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetColumns()))
         for i, v := range m.GetColumns() {
             temp := v

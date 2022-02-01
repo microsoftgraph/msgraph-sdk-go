@@ -83,7 +83,7 @@ func (m *Query) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *Query) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetHitsContainers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHitsContainers()))
         for i, v := range m.GetHitsContainers() {
             temp := v
@@ -94,7 +94,7 @@ func (m *Query) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetSearchTerms() != nil {
         err := writer.WriteCollectionOfStringValues("searchTerms", m.GetSearchTerms())
         if err != nil {
             return err

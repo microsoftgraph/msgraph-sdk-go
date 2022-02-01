@@ -101,7 +101,7 @@ func (m *OfficeGraphInsights) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if err != nil {
         return err
     }
-    {
+    if m.GetShared() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetShared()))
         for i, v := range m.GetShared() {
             temp := v
@@ -112,7 +112,7 @@ func (m *OfficeGraphInsights) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetTrending() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTrending()))
         for i, v := range m.GetTrending() {
             temp := v
@@ -123,7 +123,7 @@ func (m *OfficeGraphInsights) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetUsed() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUsed()))
         for i, v := range m.GetUsed() {
             temp := v

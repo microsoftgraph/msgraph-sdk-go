@@ -59,7 +59,7 @@ func (m *ScheduleActionsForRulesRequestBody) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *ScheduleActionsForRulesRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetDeviceComplianceScheduledActionForRules() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceComplianceScheduledActionForRules()))
         for i, v := range m.GetDeviceComplianceScheduledActionForRules() {
             temp := v

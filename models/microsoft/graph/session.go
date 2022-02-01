@@ -202,13 +202,13 @@ func (m *Session) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetModalities() != nil {
         err = writer.WriteCollectionOfStringValues("modalities", SerializeModality(m.GetModalities()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSegments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSegments()))
         for i, v := range m.GetSegments() {
             temp := v

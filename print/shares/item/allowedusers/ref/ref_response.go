@@ -84,7 +84,7 @@ func (m *RefResponse) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetValue() != nil {
         err := writer.WriteCollectionOfStringValues("value", m.GetValue())
         if err != nil {
             return err

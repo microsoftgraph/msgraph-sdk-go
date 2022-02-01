@@ -53,7 +53,7 @@ func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i04eb5309aeaafad
     if err != nil {
         return err
     }
-    {
+    if m.GetMembers() != nil {
         err = writer.WriteCollectionOfStringValues("members", m.GetMembers())
         if err != nil {
             return err

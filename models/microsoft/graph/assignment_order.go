@@ -58,7 +58,7 @@ func (m *AssignmentOrder) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *AssignmentOrder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetOrder() != nil {
         err := writer.WriteCollectionOfStringValues("order", m.GetOrder())
         if err != nil {
             return err

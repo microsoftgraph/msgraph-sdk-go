@@ -274,7 +274,7 @@ func (m *Permission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetGrantedToIdentities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGrantedToIdentities()))
         for i, v := range m.GetGrantedToIdentities() {
             temp := v
@@ -285,7 +285,7 @@ func (m *Permission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetGrantedToIdentitiesV2() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGrantedToIdentitiesV2()))
         for i, v := range m.GetGrantedToIdentitiesV2() {
             temp := v
@@ -326,7 +326,7 @@ func (m *Permission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetRoles() != nil {
         err = writer.WriteCollectionOfStringValues("roles", m.GetRoles())
         if err != nil {
             return err

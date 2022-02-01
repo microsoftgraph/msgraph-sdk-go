@@ -165,7 +165,7 @@ func (m *LicenseAssignmentState) Serialize(writer i04eb5309aeaafadd28374d79c8471
             return err
         }
     }
-    {
+    if m.GetDisabledPlans() != nil {
         err := writer.WriteCollectionOfStringValues("disabledPlans", m.GetDisabledPlans())
         if err != nil {
             return err

@@ -123,13 +123,13 @@ func (m *OnPremisesConditionalAccessSettings) Serialize(writer i04eb5309aeaafadd
             return err
         }
     }
-    {
+    if m.GetExcludedGroups() != nil {
         err = writer.WriteCollectionOfStringValues("excludedGroups", m.GetExcludedGroups())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetIncludedGroups() != nil {
         err = writer.WriteCollectionOfStringValues("includedGroups", m.GetIncludedGroups())
         if err != nil {
             return err

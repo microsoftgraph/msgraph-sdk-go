@@ -578,7 +578,7 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     if err != nil {
         return err
     }
-    {
+    if m.GetAllowedDataStorageLocations() != nil {
         err = writer.WriteCollectionOfStringValues("allowedDataStorageLocations", SerializeManagedAppDataStorageLocation(m.GetAllowedDataStorageLocations()))
         if err != nil {
             return err

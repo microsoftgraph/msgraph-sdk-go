@@ -182,7 +182,7 @@ func (m *Printer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if err != nil {
         return err
     }
-    {
+    if m.GetConnectors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConnectors()))
         for i, v := range m.GetConnectors() {
             temp := v
@@ -217,7 +217,7 @@ func (m *Printer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetShares() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetShares()))
         for i, v := range m.GetShares() {
             temp := v
@@ -228,7 +228,7 @@ func (m *Printer) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetTaskTriggers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTaskTriggers()))
         for i, v := range m.GetTaskTriggers() {
             temp := v

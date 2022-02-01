@@ -582,7 +582,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
     if err != nil {
         return err
     }
-    {
+    if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
             temp := v
@@ -618,7 +618,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetEnterpriseInternalProxyServers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEnterpriseInternalProxyServers()))
         for i, v := range m.GetEnterpriseInternalProxyServers() {
             temp := v
@@ -629,7 +629,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetEnterpriseIPRanges() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEnterpriseIPRanges()))
         for i, v := range m.GetEnterpriseIPRanges() {
             temp := v
@@ -646,7 +646,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetEnterpriseNetworkDomainNames() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEnterpriseNetworkDomainNames()))
         for i, v := range m.GetEnterpriseNetworkDomainNames() {
             temp := v
@@ -657,7 +657,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetEnterpriseProtectedDomainNames() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEnterpriseProtectedDomainNames()))
         for i, v := range m.GetEnterpriseProtectedDomainNames() {
             temp := v
@@ -668,7 +668,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetEnterpriseProxiedDomains() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEnterpriseProxiedDomains()))
         for i, v := range m.GetEnterpriseProxiedDomains() {
             temp := v
@@ -679,7 +679,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetEnterpriseProxyServers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEnterpriseProxyServers()))
         for i, v := range m.GetEnterpriseProxyServers() {
             temp := v
@@ -696,7 +696,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetExemptAppLockerFiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExemptAppLockerFiles()))
         for i, v := range m.GetExemptAppLockerFiles() {
             temp := v
@@ -707,7 +707,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetExemptApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExemptApps()))
         for i, v := range m.GetExemptApps() {
             temp := v
@@ -736,7 +736,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetNeutralDomainResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNeutralDomainResources()))
         for i, v := range m.GetNeutralDomainResources() {
             temp := v
@@ -747,7 +747,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetProtectedAppLockerFiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProtectedAppLockerFiles()))
         for i, v := range m.GetProtectedAppLockerFiles() {
             temp := v
@@ -758,7 +758,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetProtectedApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProtectedApps()))
         for i, v := range m.GetProtectedApps() {
             temp := v
@@ -787,7 +787,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
             return err
         }
     }
-    {
+    if m.GetSmbAutoEncryptedFileExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSmbAutoEncryptedFileExtensions()))
         for i, v := range m.GetSmbAutoEncryptedFileExtensions() {
             temp := v

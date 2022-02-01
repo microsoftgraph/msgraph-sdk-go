@@ -106,7 +106,7 @@ func (m *OptionalClaims) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *OptionalClaims) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetAccessToken() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessToken()))
         for i, v := range m.GetAccessToken() {
             temp := v
@@ -117,7 +117,7 @@ func (m *OptionalClaims) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetIdToken() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIdToken()))
         for i, v := range m.GetIdToken() {
             temp := v
@@ -128,7 +128,7 @@ func (m *OptionalClaims) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetSaml2Token() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSaml2Token()))
         for i, v := range m.GetSaml2Token() {
             temp := v

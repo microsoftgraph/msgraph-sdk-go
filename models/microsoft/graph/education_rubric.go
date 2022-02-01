@@ -260,7 +260,7 @@ func (m *EducationRubric) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetLevels() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLevels()))
         for i, v := range m.GetLevels() {
             temp := v
@@ -271,7 +271,7 @@ func (m *EducationRubric) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetQualities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetQualities()))
         for i, v := range m.GetQualities() {
             temp := v

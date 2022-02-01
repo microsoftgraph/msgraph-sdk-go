@@ -8,7 +8,7 @@ import (
 // AuthenticationMethodsPolicy 
 type AuthenticationMethodsPolicy struct {
     Entity
-    // Represents the settings for each authentication method.
+    // Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
     authenticationMethodConfigurations []AuthenticationMethodConfiguration;
     // A description of the policy.
     description *string;
@@ -30,7 +30,7 @@ func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {
     }
     return m
 }
-// GetAuthenticationMethodConfigurations gets the authenticationMethodConfigurations property value. Represents the settings for each authentication method.
+// GetAuthenticationMethodConfigurations gets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 func (m *AuthenticationMethodsPolicy) GetAuthenticationMethodConfigurations()([]AuthenticationMethodConfiguration) {
     if m == nil {
         return nil
@@ -174,7 +174,7 @@ func (m *AuthenticationMethodsPolicy) Serialize(writer i04eb5309aeaafadd28374d79
     if err != nil {
         return err
     }
-    {
+    if m.GetAuthenticationMethodConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAuthenticationMethodConfigurations()))
         for i, v := range m.GetAuthenticationMethodConfigurations() {
             temp := v
@@ -223,7 +223,7 @@ func (m *AuthenticationMethodsPolicy) Serialize(writer i04eb5309aeaafadd28374d79
     }
     return nil
 }
-// SetAuthenticationMethodConfigurations sets the authenticationMethodConfigurations property value. Represents the settings for each authentication method.
+// SetAuthenticationMethodConfigurations sets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 func (m *AuthenticationMethodsPolicy) SetAuthenticationMethodConfigurations(value []AuthenticationMethodConfiguration)() {
     if m != nil {
         m.authenticationMethodConfigurations = value

@@ -82,7 +82,7 @@ func (m *Solutions) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *Solutions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetBookingBusinesses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBookingBusinesses()))
         for i, v := range m.GetBookingBusinesses() {
             temp := v
@@ -93,7 +93,7 @@ func (m *Solutions) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetBookingCurrencies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBookingCurrencies()))
         for i, v := range m.GetBookingCurrencies() {
             temp := v

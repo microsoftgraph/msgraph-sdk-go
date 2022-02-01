@@ -144,7 +144,7 @@ func (m *PrinterShare) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetAllowedGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAllowedGroups()))
         for i, v := range m.GetAllowedGroups() {
             temp := v
@@ -155,7 +155,7 @@ func (m *PrinterShare) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetAllowedUsers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAllowedUsers()))
         for i, v := range m.GetAllowedUsers() {
             temp := v

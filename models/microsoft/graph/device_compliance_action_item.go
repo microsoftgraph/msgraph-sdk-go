@@ -127,7 +127,7 @@ func (m *DeviceComplianceActionItem) Serialize(writer i04eb5309aeaafadd28374d79c
             return err
         }
     }
-    {
+    if m.GetNotificationMessageCCList() != nil {
         err = writer.WriteCollectionOfStringValues("notificationMessageCCList", m.GetNotificationMessageCCList())
         if err != nil {
             return err

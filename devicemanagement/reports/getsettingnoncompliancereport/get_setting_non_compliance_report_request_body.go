@@ -232,7 +232,7 @@ func (m *GetSettingNonComplianceReportRequestBody) Serialize(writer i04eb5309aea
             return err
         }
     }
-    {
+    if m.GetGroupBy() != nil {
         err := writer.WriteCollectionOfStringValues("groupBy", m.GetGroupBy())
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *GetSettingNonComplianceReportRequestBody) Serialize(writer i04eb5309aea
             return err
         }
     }
-    {
+    if m.GetOrderBy() != nil {
         err := writer.WriteCollectionOfStringValues("orderBy", m.GetOrderBy())
         if err != nil {
             return err
@@ -256,7 +256,7 @@ func (m *GetSettingNonComplianceReportRequestBody) Serialize(writer i04eb5309aea
             return err
         }
     }
-    {
+    if m.GetSelect() != nil {
         err := writer.WriteCollectionOfStringValues("select", m.GetSelect())
         if err != nil {
             return err

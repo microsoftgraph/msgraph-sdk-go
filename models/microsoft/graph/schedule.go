@@ -456,7 +456,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetOfferShiftRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOfferShiftRequests()))
         for i, v := range m.GetOfferShiftRequests() {
             temp := v
@@ -473,7 +473,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetOpenShiftChangeRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOpenShiftChangeRequests()))
         for i, v := range m.GetOpenShiftChangeRequests() {
             temp := v
@@ -484,7 +484,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetOpenShifts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOpenShifts()))
         for i, v := range m.GetOpenShifts() {
             temp := v
@@ -514,7 +514,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetSchedulingGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSchedulingGroups()))
         for i, v := range m.GetSchedulingGroups() {
             temp := v
@@ -525,7 +525,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetShifts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetShifts()))
         for i, v := range m.GetShifts() {
             temp := v
@@ -536,7 +536,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetSwapShiftsChangeRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSwapShiftsChangeRequests()))
         for i, v := range m.GetSwapShiftsChangeRequests() {
             temp := v
@@ -559,7 +559,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetTimeOffReasons() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTimeOffReasons()))
         for i, v := range m.GetTimeOffReasons() {
             temp := v
@@ -570,7 +570,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetTimeOffRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTimeOffRequests()))
         for i, v := range m.GetTimeOffRequests() {
             temp := v
@@ -587,7 +587,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetTimesOff() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTimesOff()))
         for i, v := range m.GetTimesOff() {
             temp := v
@@ -604,7 +604,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetWorkforceIntegrationIds() != nil {
         err = writer.WriteCollectionOfStringValues("workforceIntegrationIds", m.GetWorkforceIntegrationIds())
         if err != nil {
             return err

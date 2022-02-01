@@ -152,13 +152,13 @@ func (m *ApiApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetKnownClientApplications() != nil {
         err := writer.WriteCollectionOfStringValues("knownClientApplications", m.GetKnownClientApplications())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetOauth2PermissionScopes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOauth2PermissionScopes()))
         for i, v := range m.GetOauth2PermissionScopes() {
             temp := v
@@ -169,7 +169,7 @@ func (m *ApiApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetPreAuthorizedApplications() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPreAuthorizedApplications()))
         for i, v := range m.GetPreAuthorizedApplications() {
             temp := v

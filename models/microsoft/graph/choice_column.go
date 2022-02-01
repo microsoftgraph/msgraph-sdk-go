@@ -104,7 +104,7 @@ func (m *ChoiceColumn) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetChoices() != nil {
         err := writer.WriteCollectionOfStringValues("choices", m.GetChoices())
         if err != nil {
             return err

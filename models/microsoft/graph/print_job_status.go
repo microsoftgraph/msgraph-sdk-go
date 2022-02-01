@@ -125,7 +125,7 @@ func (m *PrintJobStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetDetails() != nil {
         err := writer.WriteCollectionOfStringValues("details", SerializePrintJobStateDetail(m.GetDetails()))
         if err != nil {
             return err

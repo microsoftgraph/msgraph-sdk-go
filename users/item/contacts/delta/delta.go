@@ -827,13 +827,13 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetBusinessPhones() != nil {
         err = writer.WriteCollectionOfStringValues("businessPhones", m.GetBusinessPhones())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetChildren() != nil {
         err = writer.WriteCollectionOfStringValues("children", m.GetChildren())
         if err != nil {
             return err
@@ -857,7 +857,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetEmailAddresses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEmailAddresses()))
         for i, v := range m.GetEmailAddresses() {
             temp := v
@@ -868,7 +868,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
             temp := v
@@ -903,13 +903,13 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetHomePhones() != nil {
         err = writer.WriteCollectionOfStringValues("homePhones", m.GetHomePhones())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetImAddresses() != nil {
         err = writer.WriteCollectionOfStringValues("imAddresses", m.GetImAddresses())
         if err != nil {
             return err
@@ -945,7 +945,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
             temp := v
@@ -998,7 +998,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetSingleValueExtendedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSingleValueExtendedProperties()))
         for i, v := range m.GetSingleValueExtendedProperties() {
             temp := v

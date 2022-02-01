@@ -832,7 +832,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetComplianceManagementPartners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetComplianceManagementPartners()))
         for i, v := range m.GetComplianceManagementPartners() {
             temp := v
@@ -849,7 +849,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetDetectedApps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDetectedApps()))
         for i, v := range m.GetDetectedApps() {
             temp := v
@@ -860,7 +860,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetDeviceCategories() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceCategories()))
         for i, v := range m.GetDeviceCategories() {
             temp := v
@@ -871,7 +871,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetDeviceCompliancePolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceCompliancePolicies()))
         for i, v := range m.GetDeviceCompliancePolicies() {
             temp := v
@@ -888,7 +888,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetDeviceCompliancePolicySettingStateSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceCompliancePolicySettingStateSummaries()))
         for i, v := range m.GetDeviceCompliancePolicySettingStateSummaries() {
             temp := v
@@ -905,7 +905,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetDeviceConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceConfigurations()))
         for i, v := range m.GetDeviceConfigurations() {
             temp := v
@@ -916,7 +916,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetDeviceEnrollmentConfigurations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceEnrollmentConfigurations()))
         for i, v := range m.GetDeviceEnrollmentConfigurations() {
             temp := v
@@ -927,7 +927,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetDeviceManagementPartners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceManagementPartners()))
         for i, v := range m.GetDeviceManagementPartners() {
             temp := v
@@ -938,7 +938,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetExchangeConnectors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExchangeConnectors()))
         for i, v := range m.GetExchangeConnectors() {
             temp := v
@@ -949,7 +949,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetImportedWindowsAutopilotDeviceIdentities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetImportedWindowsAutopilotDeviceIdentities()))
         for i, v := range m.GetImportedWindowsAutopilotDeviceIdentities() {
             temp := v
@@ -972,7 +972,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetIosUpdateStatuses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIosUpdateStatuses()))
         for i, v := range m.GetIosUpdateStatuses() {
             temp := v
@@ -989,7 +989,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetManagedDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagedDevices()))
         for i, v := range m.GetManagedDevices() {
             temp := v
@@ -1000,7 +1000,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetMobileThreatDefenseConnectors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMobileThreatDefenseConnectors()))
         for i, v := range m.GetMobileThreatDefenseConnectors() {
             temp := v
@@ -1011,7 +1011,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetNotificationMessageTemplates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNotificationMessageTemplates()))
         for i, v := range m.GetNotificationMessageTemplates() {
             temp := v
@@ -1022,7 +1022,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetRemoteAssistancePartners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRemoteAssistancePartners()))
         for i, v := range m.GetRemoteAssistancePartners() {
             temp := v
@@ -1039,7 +1039,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetResourceOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResourceOperations()))
         for i, v := range m.GetResourceOperations() {
             temp := v
@@ -1050,7 +1050,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetRoleAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleAssignments()))
         for i, v := range m.GetRoleAssignments() {
             temp := v
@@ -1061,7 +1061,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetRoleDefinitions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRoleDefinitions()))
         for i, v := range m.GetRoleDefinitions() {
             temp := v
@@ -1091,7 +1091,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetTelecomExpenseManagementPartners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTelecomExpenseManagementPartners()))
         for i, v := range m.GetTelecomExpenseManagementPartners() {
             temp := v
@@ -1102,7 +1102,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetTermsAndConditions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTermsAndConditions()))
         for i, v := range m.GetTermsAndConditions() {
             temp := v
@@ -1113,7 +1113,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetTroubleshootingEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTroubleshootingEvents()))
         for i, v := range m.GetTroubleshootingEvents() {
             temp := v
@@ -1124,7 +1124,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetWindowsAutopilotDeviceIdentities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWindowsAutopilotDeviceIdentities()))
         for i, v := range m.GetWindowsAutopilotDeviceIdentities() {
             temp := v
@@ -1135,7 +1135,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetWindowsInformationProtectionAppLearningSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWindowsInformationProtectionAppLearningSummaries()))
         for i, v := range m.GetWindowsInformationProtectionAppLearningSummaries() {
             temp := v
@@ -1146,7 +1146,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetWindowsInformationProtectionNetworkLearningSummaries() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWindowsInformationProtectionNetworkLearningSummaries()))
         for i, v := range m.GetWindowsInformationProtectionNetworkLearningSummaries() {
             temp := v

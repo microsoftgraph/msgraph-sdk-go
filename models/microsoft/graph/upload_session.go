@@ -105,7 +105,7 @@ func (m *UploadSession) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetNextExpectedRanges() != nil {
         err := writer.WriteCollectionOfStringValues("nextExpectedRanges", m.GetNextExpectedRanges())
         if err != nil {
             return err

@@ -212,7 +212,7 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i04eb5309aeaafadd28374d
             return err
         }
     }
-    {
+    if m.GetClientAppTypes() != nil {
         err := writer.WriteCollectionOfStringValues("clientAppTypes", SerializeConditionalAccessClientApp(m.GetClientAppTypes()))
         if err != nil {
             return err
@@ -236,13 +236,13 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i04eb5309aeaafadd28374d
             return err
         }
     }
-    {
+    if m.GetSignInRiskLevels() != nil {
         err := writer.WriteCollectionOfStringValues("signInRiskLevels", SerializeRiskLevel(m.GetSignInRiskLevels()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetUserRiskLevels() != nil {
         err := writer.WriteCollectionOfStringValues("userRiskLevels", SerializeRiskLevel(m.GetUserRiskLevels()))
         if err != nil {
             return err

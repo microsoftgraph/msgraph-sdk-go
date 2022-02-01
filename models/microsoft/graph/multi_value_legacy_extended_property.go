@@ -53,7 +53,7 @@ func (m *MultiValueLegacyExtendedProperty) Serialize(writer i04eb5309aeaafadd283
     if err != nil {
         return err
     }
-    {
+    if m.GetValue() != nil {
         err = writer.WriteCollectionOfStringValues("value", m.GetValue())
         if err != nil {
             return err

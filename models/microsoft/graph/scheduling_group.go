@@ -105,7 +105,7 @@ func (m *SchedulingGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetUserIds() != nil {
         err = writer.WriteCollectionOfStringValues("userIds", m.GetUserIds())
         if err != nil {
             return err

@@ -548,7 +548,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetAlternativeSecurityIds() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAlternativeSecurityIds()))
         for i, v := range m.GetAlternativeSecurityIds() {
             temp := v
@@ -595,7 +595,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
             temp := v
@@ -624,7 +624,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMemberOf()))
         for i, v := range m.GetMemberOf() {
             temp := v
@@ -659,7 +659,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetPhysicalIds() != nil {
         err = writer.WriteCollectionOfStringValues("physicalIds", m.GetPhysicalIds())
         if err != nil {
             return err
@@ -671,7 +671,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetRegisteredOwners() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRegisteredOwners()))
         for i, v := range m.GetRegisteredOwners() {
             temp := v
@@ -682,7 +682,7 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetRegisteredUsers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRegisteredUsers()))
         for i, v := range m.GetRegisteredUsers() {
             temp := v
@@ -693,13 +693,13 @@ func (m *Device) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
             return err
         }
     }
-    {
+    if m.GetSystemLabels() != nil {
         err = writer.WriteCollectionOfStringValues("systemLabels", m.GetSystemLabels())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetTransitiveMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTransitiveMemberOf()))
         for i, v := range m.GetTransitiveMemberOf() {
             temp := v

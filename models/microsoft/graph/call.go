@@ -515,7 +515,7 @@ func (m *Call) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     if err != nil {
         return err
     }
-    {
+    if m.GetAudioRoutingGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAudioRoutingGroups()))
         for i, v := range m.GetAudioRoutingGroups() {
             temp := v
@@ -544,7 +544,7 @@ func (m *Call) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetCallRoutes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCallRoutes()))
         for i, v := range m.GetCallRoutes() {
             temp := v
@@ -598,7 +598,7 @@ func (m *Call) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
             temp := v
@@ -609,7 +609,7 @@ func (m *Call) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetParticipants() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetParticipants()))
         for i, v := range m.GetParticipants() {
             temp := v
@@ -620,7 +620,7 @@ func (m *Call) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetRequestedModalities() != nil {
         err = writer.WriteCollectionOfStringValues("requestedModalities", SerializeModality(m.GetRequestedModalities()))
         if err != nil {
             return err
@@ -651,7 +651,7 @@ func (m *Call) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetTargets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTargets()))
         for i, v := range m.GetTargets() {
             temp := v

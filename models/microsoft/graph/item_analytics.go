@@ -99,7 +99,7 @@ func (m *ItemAnalytics) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetItemActivityStats() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetItemActivityStats()))
         for i, v := range m.GetItemActivityStats() {
             temp := v

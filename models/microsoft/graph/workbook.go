@@ -195,7 +195,7 @@ func (m *Workbook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetComments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetComments()))
         for i, v := range m.GetComments() {
             temp := v
@@ -212,7 +212,7 @@ func (m *Workbook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetNames() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNames()))
         for i, v := range m.GetNames() {
             temp := v
@@ -223,7 +223,7 @@ func (m *Workbook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
             temp := v
@@ -234,7 +234,7 @@ func (m *Workbook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetTables() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTables()))
         for i, v := range m.GetTables() {
             temp := v
@@ -245,7 +245,7 @@ func (m *Workbook) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetWorksheets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWorksheets()))
         for i, v := range m.GetWorksheets() {
             temp := v

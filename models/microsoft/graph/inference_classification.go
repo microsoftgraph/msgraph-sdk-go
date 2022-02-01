@@ -53,7 +53,7 @@ func (m *InferenceClassification) Serialize(writer i04eb5309aeaafadd28374d79c847
     if err != nil {
         return err
     }
-    {
+    if m.GetOverrides() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOverrides()))
         for i, v := range m.GetOverrides() {
             temp := v

@@ -77,7 +77,7 @@ func (m *ConditionalAccessRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if err != nil {
         return err
     }
-    {
+    if m.GetNamedLocations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNamedLocations()))
         for i, v := range m.GetNamedLocations() {
             temp := v
@@ -88,7 +88,7 @@ func (m *ConditionalAccessRoot) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetPolicies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPolicies()))
         for i, v := range m.GetPolicies() {
             temp := v

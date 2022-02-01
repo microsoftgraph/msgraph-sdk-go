@@ -78,7 +78,7 @@ func (m *AssignedLicense) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *AssignedLicense) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetDisabledPlans() != nil {
         err := writer.WriteCollectionOfStringValues("disabledPlans", m.GetDisabledPlans())
         if err != nil {
             return err

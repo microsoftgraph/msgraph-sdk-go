@@ -512,7 +512,7 @@ func (m *ChatMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
     if err != nil {
         return err
     }
-    {
+    if m.GetAttachments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttachments()))
         for i, v := range m.GetAttachments() {
             temp := v
@@ -571,7 +571,7 @@ func (m *ChatMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetHostedContents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHostedContents()))
         for i, v := range m.GetHostedContents() {
             temp := v
@@ -607,7 +607,7 @@ func (m *ChatMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetMentions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMentions()))
         for i, v := range m.GetMentions() {
             temp := v
@@ -631,7 +631,7 @@ func (m *ChatMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetReactions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReactions()))
         for i, v := range m.GetReactions() {
             temp := v
@@ -642,7 +642,7 @@ func (m *ChatMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetReplies() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetReplies()))
         for i, v := range m.GetReplies() {
             temp := v

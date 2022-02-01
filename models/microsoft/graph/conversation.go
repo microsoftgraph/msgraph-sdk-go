@@ -176,7 +176,7 @@ func (m *Conversation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetThreads() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetThreads()))
         for i, v := range m.GetThreads() {
             temp := v
@@ -193,7 +193,7 @@ func (m *Conversation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetUniqueSenders() != nil {
         err = writer.WriteCollectionOfStringValues("uniqueSenders", m.GetUniqueSenders())
         if err != nil {
             return err

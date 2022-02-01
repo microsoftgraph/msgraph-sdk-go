@@ -53,7 +53,7 @@ func (m *AppConsentApprovalRoute) Serialize(writer i04eb5309aeaafadd28374d79c847
     if err != nil {
         return err
     }
-    {
+    if m.GetAppConsentRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppConsentRequests()))
         for i, v := range m.GetAppConsentRequests() {
             temp := v

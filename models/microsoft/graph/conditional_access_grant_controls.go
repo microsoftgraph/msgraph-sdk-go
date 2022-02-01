@@ -126,13 +126,13 @@ func (m *ConditionalAccessGrantControls) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessGrantControls) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetBuiltInControls() != nil {
         err := writer.WriteCollectionOfStringValues("builtInControls", SerializeConditionalAccessGrantControl(m.GetBuiltInControls()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetCustomAuthenticationFactors() != nil {
         err := writer.WriteCollectionOfStringValues("customAuthenticationFactors", m.GetCustomAuthenticationFactors())
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *ConditionalAccessGrantControls) Serialize(writer i04eb5309aeaafadd28374
             return err
         }
     }
-    {
+    if m.GetTermsOfUse() != nil {
         err := writer.WriteCollectionOfStringValues("termsOfUse", m.GetTermsOfUse())
         if err != nil {
             return err

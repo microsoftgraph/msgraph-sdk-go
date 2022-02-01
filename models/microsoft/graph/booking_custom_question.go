@@ -101,7 +101,7 @@ func (m *BookingCustomQuestion) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAnswerOptions() != nil {
         err = writer.WriteCollectionOfStringValues("answerOptions", m.GetAnswerOptions())
         if err != nil {
             return err

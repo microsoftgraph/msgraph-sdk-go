@@ -193,7 +193,7 @@ func (m *AlertHistoryState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetComments() != nil {
         err := writer.WriteCollectionOfStringValues("comments", m.GetComments())
         if err != nil {
             return err
