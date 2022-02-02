@@ -314,7 +314,7 @@ func (m *OnenotePage) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetUserTags() != nil {
         err = writer.WriteCollectionOfStringValues("userTags", m.GetUserTags())
         if err != nil {
             return err

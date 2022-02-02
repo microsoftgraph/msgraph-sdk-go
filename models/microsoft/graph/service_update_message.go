@@ -270,7 +270,7 @@ func (m *ServiceUpdateMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetAttachments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAttachments()))
         for i, v := range m.GetAttachments() {
             temp := v
@@ -312,7 +312,7 @@ func (m *ServiceUpdateMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetServices() != nil {
         err = writer.WriteCollectionOfStringValues("services", m.GetServices())
         if err != nil {
             return err
@@ -325,7 +325,7 @@ func (m *ServiceUpdateMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df
             return err
         }
     }
-    {
+    if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
             return err

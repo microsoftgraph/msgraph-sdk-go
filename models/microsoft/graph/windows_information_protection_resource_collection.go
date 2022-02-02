@@ -84,7 +84,7 @@ func (m *WindowsInformationProtectionResourceCollection) Serialize(writer i04eb5
             return err
         }
     }
-    {
+    if m.GetResources() != nil {
         err := writer.WriteCollectionOfStringValues("resources", m.GetResources())
         if err != nil {
             return err

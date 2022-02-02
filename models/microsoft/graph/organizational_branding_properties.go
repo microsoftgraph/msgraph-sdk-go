@@ -263,7 +263,7 @@ func (m *OrganizationalBrandingProperties) Serialize(writer i04eb5309aeaafadd283
             return err
         }
     }
-    {
+    if m.GetCdnList() != nil {
         err = writer.WriteCollectionOfStringValues("cdnList", m.GetCdnList())
         if err != nil {
             return err

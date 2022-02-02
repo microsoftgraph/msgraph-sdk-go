@@ -127,7 +127,7 @@ func (m *Store) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetGroups()))
         for i, v := range m.GetGroups() {
             temp := v
@@ -138,13 +138,13 @@ func (m *Store) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetLanguageTags() != nil {
         err = writer.WriteCollectionOfStringValues("languageTags", m.GetLanguageTags())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSets() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSets()))
         for i, v := range m.GetSets() {
             temp := v

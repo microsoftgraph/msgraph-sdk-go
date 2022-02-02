@@ -223,7 +223,7 @@ func (m *ComplianceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79
     if err != nil {
         return err
     }
-    {
+    if m.GetAndroidEnrollmentAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAndroidEnrollmentAssignments()))
         for i, v := range m.GetAndroidEnrollmentAssignments() {
             temp := v
@@ -246,7 +246,7 @@ func (m *ComplianceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    {
+    if m.GetIosEnrollmentAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIosEnrollmentAssignments()))
         for i, v := range m.GetIosEnrollmentAssignments() {
             temp := v
@@ -269,7 +269,7 @@ func (m *ComplianceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79
             return err
         }
     }
-    {
+    if m.GetMacOsEnrollmentAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMacOsEnrollmentAssignments()))
         for i, v := range m.GetMacOsEnrollmentAssignments() {
             temp := v

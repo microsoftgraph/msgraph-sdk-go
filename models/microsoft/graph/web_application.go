@@ -136,7 +136,7 @@ func (m *WebApplication) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
             return err
         }
     }
-    {
+    if m.GetRedirectUris() != nil {
         err := writer.WriteCollectionOfStringValues("redirectUris", m.GetRedirectUris())
         if err != nil {
             return err

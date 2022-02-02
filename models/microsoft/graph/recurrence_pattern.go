@@ -187,7 +187,7 @@ func (m *RecurrencePattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetDaysOfWeek() != nil {
         err := writer.WriteCollectionOfStringValues("daysOfWeek", SerializeDayOfWeek(m.GetDaysOfWeek()))
         if err != nil {
             return err

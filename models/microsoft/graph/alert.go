@@ -907,7 +907,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetAlertDetections() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAlertDetections()))
         for i, v := range m.GetAlertDetections() {
             temp := v
@@ -948,7 +948,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetCloudAppStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCloudAppStates()))
         for i, v := range m.GetCloudAppStates() {
             temp := v
@@ -959,7 +959,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetComments() != nil {
         err = writer.WriteCollectionOfStringValues("comments", m.GetComments())
         if err != nil {
             return err
@@ -983,7 +983,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetDetectionIds() != nil {
         err = writer.WriteCollectionOfStringValues("detectionIds", m.GetDetectionIds())
         if err != nil {
             return err
@@ -1002,7 +1002,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetFileStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFileStates()))
         for i, v := range m.GetFileStates() {
             temp := v
@@ -1013,7 +1013,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetHistoryStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHistoryStates()))
         for i, v := range m.GetHistoryStates() {
             temp := v
@@ -1024,7 +1024,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetHostStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHostStates()))
         for i, v := range m.GetHostStates() {
             temp := v
@@ -1035,13 +1035,13 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetIncidentIds() != nil {
         err = writer.WriteCollectionOfStringValues("incidentIds", m.GetIncidentIds())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetInvestigationSecurityStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInvestigationSecurityStates()))
         for i, v := range m.GetInvestigationSecurityStates() {
             temp := v
@@ -1064,7 +1064,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetMalwareStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMalwareStates()))
         for i, v := range m.GetMalwareStates() {
             temp := v
@@ -1075,7 +1075,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetMessageSecurityStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMessageSecurityStates()))
         for i, v := range m.GetMessageSecurityStates() {
             temp := v
@@ -1086,7 +1086,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetNetworkConnections() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNetworkConnections()))
         for i, v := range m.GetNetworkConnections() {
             temp := v
@@ -1097,7 +1097,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetProcesses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProcesses()))
         for i, v := range m.GetProcesses() {
             temp := v
@@ -1108,13 +1108,13 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetRecommendedActions() != nil {
         err = writer.WriteCollectionOfStringValues("recommendedActions", m.GetRecommendedActions())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetRegistryKeyStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRegistryKeyStates()))
         for i, v := range m.GetRegistryKeyStates() {
             temp := v
@@ -1125,7 +1125,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetSecurityResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSecurityResources()))
         for i, v := range m.GetSecurityResources() {
             temp := v
@@ -1143,7 +1143,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetSourceMaterials() != nil {
         err = writer.WriteCollectionOfStringValues("sourceMaterials", m.GetSourceMaterials())
         if err != nil {
             return err
@@ -1156,7 +1156,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
             return err
@@ -1168,7 +1168,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetTriggers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTriggers()))
         for i, v := range m.GetTriggers() {
             temp := v
@@ -1179,7 +1179,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetUriClickSecurityStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUriClickSecurityStates()))
         for i, v := range m.GetUriClickSecurityStates() {
             temp := v
@@ -1190,7 +1190,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetUserStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetUserStates()))
         for i, v := range m.GetUserStates() {
             temp := v
@@ -1207,7 +1207,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
-    {
+    if m.GetVulnerabilityStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVulnerabilityStates()))
         for i, v := range m.GetVulnerabilityStates() {
             temp := v

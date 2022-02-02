@@ -188,7 +188,7 @@ func (m *SubjectRightsRequestDetail) Serialize(writer i04eb5309aeaafadd28374d79c
             return err
         }
     }
-    {
+    if m.GetInsightCounts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInsightCounts()))
         for i, v := range m.GetInsightCounts() {
             temp := v
@@ -211,7 +211,7 @@ func (m *SubjectRightsRequestDetail) Serialize(writer i04eb5309aeaafadd28374d79c
             return err
         }
     }
-    {
+    if m.GetProductItemCounts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProductItemCounts()))
         for i, v := range m.GetProductItemCounts() {
             temp := v

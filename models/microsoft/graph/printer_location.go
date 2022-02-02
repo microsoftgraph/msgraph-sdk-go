@@ -434,7 +434,7 @@ func (m *PrinterLocation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetOrganization() != nil {
         err := writer.WriteCollectionOfStringValues("organization", m.GetOrganization())
         if err != nil {
             return err
@@ -476,13 +476,13 @@ func (m *PrinterLocation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetSubdivision() != nil {
         err := writer.WriteCollectionOfStringValues("subdivision", m.GetSubdivision())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSubunit() != nil {
         err := writer.WriteCollectionOfStringValues("subunit", m.GetSubunit())
         if err != nil {
             return err

@@ -98,7 +98,7 @@ func (m *AudioRoutingGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if err != nil {
         return err
     }
-    {
+    if m.GetReceivers() != nil {
         err = writer.WriteCollectionOfStringValues("receivers", m.GetReceivers())
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *AudioRoutingGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetSources() != nil {
         err = writer.WriteCollectionOfStringValues("sources", m.GetSources())
         if err != nil {
             return err

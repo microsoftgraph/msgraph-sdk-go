@@ -190,7 +190,7 @@ func (m *DocumentSet) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *DocumentSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetAllowedContentTypes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAllowedContentTypes()))
         for i, v := range m.GetAllowedContentTypes() {
             temp := v
@@ -201,7 +201,7 @@ func (m *DocumentSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetDefaultContents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDefaultContents()))
         for i, v := range m.GetDefaultContents() {
             temp := v
@@ -218,7 +218,7 @@ func (m *DocumentSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetSharedColumns() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSharedColumns()))
         for i, v := range m.GetSharedColumns() {
             temp := v
@@ -235,7 +235,7 @@ func (m *DocumentSet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetWelcomePageColumns() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWelcomePageColumns()))
         for i, v := range m.GetWelcomePageColumns() {
             temp := v

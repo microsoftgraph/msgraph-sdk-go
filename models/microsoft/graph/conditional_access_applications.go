@@ -130,25 +130,25 @@ func (m *ConditionalAccessApplications) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessApplications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetExcludeApplications() != nil {
         err := writer.WriteCollectionOfStringValues("excludeApplications", m.GetExcludeApplications())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetIncludeApplications() != nil {
         err := writer.WriteCollectionOfStringValues("includeApplications", m.GetIncludeApplications())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetIncludeAuthenticationContextClassReferences() != nil {
         err := writer.WriteCollectionOfStringValues("includeAuthenticationContextClassReferences", m.GetIncludeAuthenticationContextClassReferences())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetIncludeUserActions() != nil {
         err := writer.WriteCollectionOfStringValues("includeUserActions", m.GetIncludeUserActions())
         if err != nil {
             return err

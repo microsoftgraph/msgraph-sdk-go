@@ -101,7 +101,7 @@ func (m *ServiceAnnouncement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if err != nil {
         return err
     }
-    {
+    if m.GetHealthOverviews() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetHealthOverviews()))
         for i, v := range m.GetHealthOverviews() {
             temp := v
@@ -112,7 +112,7 @@ func (m *ServiceAnnouncement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetIssues() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIssues()))
         for i, v := range m.GetIssues() {
             temp := v
@@ -123,7 +123,7 @@ func (m *ServiceAnnouncement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetMessages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMessages()))
         for i, v := range m.GetMessages() {
             temp := v

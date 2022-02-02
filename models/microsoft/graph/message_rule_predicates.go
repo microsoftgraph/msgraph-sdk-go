@@ -673,25 +673,25 @@ func (m *MessageRulePredicates) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *MessageRulePredicates) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetBodyContains() != nil {
         err := writer.WriteCollectionOfStringValues("bodyContains", m.GetBodyContains())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetBodyOrSubjectContains() != nil {
         err := writer.WriteCollectionOfStringValues("bodyOrSubjectContains", m.GetBodyOrSubjectContains())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetCategories() != nil {
         err := writer.WriteCollectionOfStringValues("categories", m.GetCategories())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetFromAddresses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFromAddresses()))
         for i, v := range m.GetFromAddresses() {
             temp := v
@@ -708,7 +708,7 @@ func (m *MessageRulePredicates) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetHeaderContains() != nil {
         err := writer.WriteCollectionOfStringValues("headerContains", m.GetHeaderContains())
         if err != nil {
             return err
@@ -800,13 +800,13 @@ func (m *MessageRulePredicates) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetRecipientContains() != nil {
         err := writer.WriteCollectionOfStringValues("recipientContains", m.GetRecipientContains())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSenderContains() != nil {
         err := writer.WriteCollectionOfStringValues("senderContains", m.GetSenderContains())
         if err != nil {
             return err
@@ -831,7 +831,7 @@ func (m *MessageRulePredicates) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetSentToAddresses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSentToAddresses()))
         for i, v := range m.GetSentToAddresses() {
             temp := v
@@ -854,7 +854,7 @@ func (m *MessageRulePredicates) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetSubjectContains() != nil {
         err := writer.WriteCollectionOfStringValues("subjectContains", m.GetSubjectContains())
         if err != nil {
             return err

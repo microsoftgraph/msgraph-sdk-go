@@ -82,13 +82,13 @@ func (m *ResourceAction) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *ResourceAction) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetAllowedResourceActions() != nil {
         err := writer.WriteCollectionOfStringValues("allowedResourceActions", m.GetAllowedResourceActions())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetNotAllowedResourceActions() != nil {
         err := writer.WriteCollectionOfStringValues("notAllowedResourceActions", m.GetNotAllowedResourceActions())
         if err != nil {
             return err

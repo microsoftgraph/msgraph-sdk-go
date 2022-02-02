@@ -110,7 +110,7 @@ func (m *ChatMessagePolicyViolationPolicyTip) Serialize(writer i04eb5309aeaafadd
             return err
         }
     }
-    {
+    if m.GetMatchedConditionDescriptions() != nil {
         err := writer.WriteCollectionOfStringValues("matchedConditionDescriptions", m.GetMatchedConditionDescriptions())
         if err != nil {
             return err

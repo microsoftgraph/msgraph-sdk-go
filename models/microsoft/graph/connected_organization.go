@@ -221,7 +221,7 @@ func (m *ConnectedOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetExternalSponsors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExternalSponsors()))
         for i, v := range m.GetExternalSponsors() {
             temp := v
@@ -232,7 +232,7 @@ func (m *ConnectedOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetIdentitySources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIdentitySources()))
         for i, v := range m.GetIdentitySources() {
             temp := v
@@ -243,7 +243,7 @@ func (m *ConnectedOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetInternalSponsors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetInternalSponsors()))
         for i, v := range m.GetInternalSponsors() {
             temp := v

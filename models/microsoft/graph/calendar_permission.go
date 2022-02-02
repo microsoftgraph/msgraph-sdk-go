@@ -134,7 +134,7 @@ func (m *CalendarPermission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
     if err != nil {
         return err
     }
-    {
+    if m.GetAllowedRoles() != nil {
         err = writer.WriteCollectionOfStringValues("allowedRoles", SerializeCalendarRoleType(m.GetAllowedRoles()))
         if err != nil {
             return err

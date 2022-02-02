@@ -205,7 +205,7 @@ func (m *WorkbookWorksheet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
     if err != nil {
         return err
     }
-    {
+    if m.GetCharts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCharts()))
         for i, v := range m.GetCharts() {
             temp := v
@@ -222,7 +222,7 @@ func (m *WorkbookWorksheet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetNames() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNames()))
         for i, v := range m.GetNames() {
             temp := v
@@ -233,7 +233,7 @@ func (m *WorkbookWorksheet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetPivotTables() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPivotTables()))
         for i, v := range m.GetPivotTables() {
             temp := v
@@ -256,7 +256,7 @@ func (m *WorkbookWorksheet) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetTables() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTables()))
         for i, v := range m.GetTables() {
             temp := v

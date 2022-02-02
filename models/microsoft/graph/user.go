@@ -2530,7 +2530,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetActivities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
             temp := v
@@ -2547,7 +2547,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetAgreementAcceptances() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAgreementAcceptances()))
         for i, v := range m.GetAgreementAcceptances() {
             temp := v
@@ -2558,7 +2558,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetAppRoleAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppRoleAssignments()))
         for i, v := range m.GetAppRoleAssignments() {
             temp := v
@@ -2569,7 +2569,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetAssignedLicenses() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignedLicenses()))
         for i, v := range m.GetAssignedLicenses() {
             temp := v
@@ -2580,7 +2580,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetAssignedPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignedPlans()))
         for i, v := range m.GetAssignedPlans() {
             temp := v
@@ -2603,7 +2603,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetBusinessPhones() != nil {
         err = writer.WriteCollectionOfStringValues("businessPhones", m.GetBusinessPhones())
         if err != nil {
             return err
@@ -2615,7 +2615,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetCalendarGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendarGroups()))
         for i, v := range m.GetCalendarGroups() {
             temp := v
@@ -2626,7 +2626,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetCalendars() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendars()))
         for i, v := range m.GetCalendars() {
             temp := v
@@ -2637,7 +2637,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetCalendarView() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendarView()))
         for i, v := range m.GetCalendarView() {
             temp := v
@@ -2648,7 +2648,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetChats() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetChats()))
         for i, v := range m.GetChats() {
             temp := v
@@ -2677,7 +2677,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetContactFolders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContactFolders()))
         for i, v := range m.GetContactFolders() {
             temp := v
@@ -2688,7 +2688,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetContacts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetContacts()))
         for i, v := range m.GetContacts() {
             temp := v
@@ -2711,7 +2711,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetCreatedObjects() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCreatedObjects()))
         for i, v := range m.GetCreatedObjects() {
             temp := v
@@ -2740,7 +2740,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetDeviceManagementTroubleshootingEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceManagementTroubleshootingEvents()))
         for i, v := range m.GetDeviceManagementTroubleshootingEvents() {
             temp := v
@@ -2751,7 +2751,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetDirectReports() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDirectReports()))
         for i, v := range m.GetDirectReports() {
             temp := v
@@ -2774,7 +2774,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetDrives() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDrives()))
         for i, v := range m.GetDrives() {
             temp := v
@@ -2809,7 +2809,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetEvents() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetEvents()))
         for i, v := range m.GetEvents() {
             temp := v
@@ -2820,7 +2820,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
             temp := v
@@ -2849,7 +2849,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetFollowedSites() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetFollowedSites()))
         for i, v := range m.GetFollowedSites() {
             temp := v
@@ -2872,7 +2872,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetIdentities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetIdentities()))
         for i, v := range m.GetIdentities() {
             temp := v
@@ -2883,7 +2883,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetImAddresses() != nil {
         err = writer.WriteCollectionOfStringValues("imAddresses", m.GetImAddresses())
         if err != nil {
             return err
@@ -2901,7 +2901,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetInterests() != nil {
         err = writer.WriteCollectionOfStringValues("interests", m.GetInterests())
         if err != nil {
             return err
@@ -2919,7 +2919,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetJoinedTeams() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetJoinedTeams()))
         for i, v := range m.GetJoinedTeams() {
             temp := v
@@ -2942,7 +2942,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetLicenseAssignmentStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLicenseAssignmentStates()))
         for i, v := range m.GetLicenseAssignmentStates() {
             temp := v
@@ -2953,7 +2953,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetLicenseDetails() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetLicenseDetails()))
         for i, v := range m.GetLicenseDetails() {
             temp := v
@@ -2976,7 +2976,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetMailFolders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMailFolders()))
         for i, v := range m.GetMailFolders() {
             temp := v
@@ -2993,7 +2993,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetManagedAppRegistrations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagedAppRegistrations()))
         for i, v := range m.GetManagedAppRegistrations() {
             temp := v
@@ -3004,7 +3004,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetManagedDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetManagedDevices()))
         for i, v := range m.GetManagedDevices() {
             temp := v
@@ -3021,7 +3021,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMemberOf()))
         for i, v := range m.GetMemberOf() {
             temp := v
@@ -3032,7 +3032,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetMessages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetMessages()))
         for i, v := range m.GetMessages() {
             temp := v
@@ -3055,7 +3055,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetOauth2PermissionGrants() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOauth2PermissionGrants()))
         for i, v := range m.GetOauth2PermissionGrants() {
             temp := v
@@ -3078,7 +3078,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetOnlineMeetings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOnlineMeetings()))
         for i, v := range m.GetOnlineMeetings() {
             temp := v
@@ -3119,7 +3119,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetOnPremisesProvisioningErrors() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOnPremisesProvisioningErrors()))
         for i, v := range m.GetOnPremisesProvisioningErrors() {
             temp := v
@@ -3154,7 +3154,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetOtherMails() != nil {
         err = writer.WriteCollectionOfStringValues("otherMails", m.GetOtherMails())
         if err != nil {
             return err
@@ -3166,7 +3166,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetOwnedDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOwnedDevices()))
         for i, v := range m.GetOwnedDevices() {
             temp := v
@@ -3177,7 +3177,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetOwnedObjects() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOwnedObjects()))
         for i, v := range m.GetOwnedObjects() {
             temp := v
@@ -3200,13 +3200,13 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetPastProjects() != nil {
         err = writer.WriteCollectionOfStringValues("pastProjects", m.GetPastProjects())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetPeople() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPeople()))
         for i, v := range m.GetPeople() {
             temp := v
@@ -3223,7 +3223,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetPhotos() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPhotos()))
         for i, v := range m.GetPhotos() {
             temp := v
@@ -3264,7 +3264,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetProvisionedPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProvisionedPlans()))
         for i, v := range m.GetProvisionedPlans() {
             temp := v
@@ -3275,13 +3275,13 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetProxyAddresses() != nil {
         err = writer.WriteCollectionOfStringValues("proxyAddresses", m.GetProxyAddresses())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetRegisteredDevices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetRegisteredDevices()))
         for i, v := range m.GetRegisteredDevices() {
             temp := v
@@ -3292,19 +3292,19 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetResponsibilities() != nil {
         err = writer.WriteCollectionOfStringValues("responsibilities", m.GetResponsibilities())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSchools() != nil {
         err = writer.WriteCollectionOfStringValues("schools", m.GetSchools())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetScopedRoleMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetScopedRoleMemberOf()))
         for i, v := range m.GetScopedRoleMemberOf() {
             temp := v
@@ -3333,7 +3333,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetSkills() != nil {
         err = writer.WriteCollectionOfStringValues("skills", m.GetSkills())
         if err != nil {
             return err
@@ -3369,7 +3369,7 @@ func (m *User) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
-    {
+    if m.GetTransitiveMemberOf() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTransitiveMemberOf()))
         for i, v := range m.GetTransitiveMemberOf() {
             temp := v

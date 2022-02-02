@@ -26,7 +26,7 @@ type WorkforceIntegrationsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// WorkforceIntegrationsRequestBuilderGetQueryParameters get workforceIntegrations from teamwork
+// WorkforceIntegrationsRequestBuilderGetQueryParameters a workforce integration with shifts.
 type WorkforceIntegrationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewWorkforceIntegrationsRequestBuilder(rawUrl string, requestAdapter ida96a
     urlParams["request-raw-url"] = rawUrl
     return NewWorkforceIntegrationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get workforceIntegrations from teamwork
+// CreateGetRequestInformation a workforce integration with shifts.
 func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformation(options *WorkforceIntegrationsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *WorkforceIntegrationsRequestBuilder) CreateGetRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to workforceIntegrations for teamwork
+// CreatePostRequestInformation a workforce integration with shifts.
 func (m *WorkforceIntegrationsRequestBuilder) CreatePostRequestInformation(options *WorkforceIntegrationsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *WorkforceIntegrationsRequestBuilder) CreatePostRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Get get workforceIntegrations from teamwork
+// Get a workforce integration with shifts.
 func (m *WorkforceIntegrationsRequestBuilder) Get(options *WorkforceIntegrationsRequestBuilderGetOptions)(*WorkforceIntegrationsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *WorkforceIntegrationsRequestBuilder) Get(options *WorkforceIntegrations
     }
     return res.(*WorkforceIntegrationsResponse), nil
 }
-// Post create new navigation property to workforceIntegrations for teamwork
+// Post a workforce integration with shifts.
 func (m *WorkforceIntegrationsRequestBuilder) Post(options *WorkforceIntegrationsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkforceIntegration, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

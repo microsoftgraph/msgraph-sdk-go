@@ -77,7 +77,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if err != nil {
         return err
     }
-    {
+    if m.GetAdministrativeUnits() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAdministrativeUnits()))
         for i, v := range m.GetAdministrativeUnits() {
             temp := v
@@ -88,7 +88,7 @@ func (m *Directory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetDeletedItems() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeletedItems()))
         for i, v := range m.GetDeletedItems() {
             temp := v

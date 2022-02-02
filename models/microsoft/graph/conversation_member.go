@@ -100,7 +100,7 @@ func (m *ConversationMember) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
             return err
         }
     }
-    {
+    if m.GetRoles() != nil {
         err = writer.WriteCollectionOfStringValues("roles", m.GetRoles())
         if err != nil {
             return err

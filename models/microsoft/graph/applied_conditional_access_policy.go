@@ -149,13 +149,13 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374
             return err
         }
     }
-    {
+    if m.GetEnforcedGrantControls() != nil {
         err := writer.WriteCollectionOfStringValues("enforcedGrantControls", m.GetEnforcedGrantControls())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetEnforcedSessionControls() != nil {
         err := writer.WriteCollectionOfStringValues("enforcedSessionControls", m.GetEnforcedSessionControls())
         if err != nil {
             return err

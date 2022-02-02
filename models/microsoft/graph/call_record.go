@@ -262,7 +262,7 @@ func (m *CallRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetModalities() != nil {
         err = writer.WriteCollectionOfStringValues("modalities", SerializeModality(m.GetModalities()))
         if err != nil {
             return err
@@ -274,7 +274,7 @@ func (m *CallRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetParticipants() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetParticipants()))
         for i, v := range m.GetParticipants() {
             temp := v
@@ -285,7 +285,7 @@ func (m *CallRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
             return err
         }
     }
-    {
+    if m.GetSessions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSessions()))
         for i, v := range m.GetSessions() {
             temp := v

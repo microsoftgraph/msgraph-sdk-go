@@ -174,7 +174,7 @@ func (m *OnlineMeetingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetPhones() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPhones()))
         for i, v := range m.GetPhones() {
             temp := v
@@ -191,7 +191,7 @@ func (m *OnlineMeetingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetTollFreeNumbers() != nil {
         err := writer.WriteCollectionOfStringValues("tollFreeNumbers", m.GetTollFreeNumbers())
         if err != nil {
             return err

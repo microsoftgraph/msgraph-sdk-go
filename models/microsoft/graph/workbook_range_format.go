@@ -213,7 +213,7 @@ func (m *WorkbookRangeFormat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if err != nil {
         return err
     }
-    {
+    if m.GetBorders() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBorders()))
         for i, v := range m.GetBorders() {
             temp := v

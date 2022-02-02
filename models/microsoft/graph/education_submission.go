@@ -323,7 +323,7 @@ func (m *EducationSubmission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if err != nil {
         return err
     }
-    {
+    if m.GetOutcomes() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOutcomes()))
         for i, v := range m.GetOutcomes() {
             temp := v
@@ -352,7 +352,7 @@ func (m *EducationSubmission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
             temp := v
@@ -400,7 +400,7 @@ func (m *EducationSubmission) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetSubmittedResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSubmittedResources()))
         for i, v := range m.GetSubmittedResources() {
             temp := v

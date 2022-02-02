@@ -136,7 +136,7 @@ func (m *DefaultUserRolePermissions) Serialize(writer i04eb5309aeaafadd28374d79c
             return err
         }
     }
-    {
+    if m.GetPermissionGrantPoliciesAssigned() != nil {
         err := writer.WriteCollectionOfStringValues("permissionGrantPoliciesAssigned", m.GetPermissionGrantPoliciesAssigned())
         if err != nil {
             return err

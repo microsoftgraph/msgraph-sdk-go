@@ -403,7 +403,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetAppointments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppointments()))
         for i, v := range m.GetAppointments() {
             temp := v
@@ -414,7 +414,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetBusinessHours() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetBusinessHours()))
         for i, v := range m.GetBusinessHours() {
             temp := v
@@ -431,7 +431,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetCalendarView() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalendarView()))
         for i, v := range m.GetCalendarView() {
             temp := v
@@ -442,7 +442,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetCustomers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomers()))
         for i, v := range m.GetCustomers() {
             temp := v
@@ -453,7 +453,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetCustomQuestions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCustomQuestions()))
         for i, v := range m.GetCustomQuestions() {
             temp := v
@@ -506,7 +506,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetServices() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetServices()))
         for i, v := range m.GetServices() {
             temp := v
@@ -517,7 +517,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
             return err
         }
     }
-    {
+    if m.GetStaffMembers() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetStaffMembers()))
         for i, v := range m.GetStaffMembers() {
             temp := v

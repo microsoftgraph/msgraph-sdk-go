@@ -571,7 +571,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
     if err != nil {
         return err
     }
-    {
+    if m.GetAssignedPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignedPlans()))
         for i, v := range m.GetAssignedPlans() {
             temp := v
@@ -588,13 +588,13 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetBusinessPhones() != nil {
         err = writer.WriteCollectionOfStringValues("businessPhones", m.GetBusinessPhones())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetCertificateBasedAuthConfiguration() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCertificateBasedAuthConfiguration()))
         for i, v := range m.GetCertificateBasedAuthConfiguration() {
             temp := v
@@ -635,7 +635,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetExtensions() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
             temp := v
@@ -646,7 +646,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetMarketingNotificationEmails() != nil {
         err = writer.WriteCollectionOfStringValues("marketingNotificationEmails", m.GetMarketingNotificationEmails())
         if err != nil {
             return err
@@ -689,7 +689,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetProvisionedPlans() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProvisionedPlans()))
         for i, v := range m.GetProvisionedPlans() {
             temp := v
@@ -700,13 +700,13 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetSecurityComplianceNotificationMails() != nil {
         err = writer.WriteCollectionOfStringValues("securityComplianceNotificationMails", m.GetSecurityComplianceNotificationMails())
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetSecurityComplianceNotificationPhones() != nil {
         err = writer.WriteCollectionOfStringValues("securityComplianceNotificationPhones", m.GetSecurityComplianceNotificationPhones())
         if err != nil {
             return err
@@ -724,7 +724,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetTechnicalNotificationMails() != nil {
         err = writer.WriteCollectionOfStringValues("technicalNotificationMails", m.GetTechnicalNotificationMails())
         if err != nil {
             return err
@@ -736,7 +736,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
             return err
         }
     }
-    {
+    if m.GetVerifiedDomains() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetVerifiedDomains()))
         for i, v := range m.GetVerifiedDomains() {
             temp := v

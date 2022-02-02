@@ -173,7 +173,7 @@ func (m *Onenote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
     if err != nil {
         return err
     }
-    {
+    if m.GetNotebooks() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetNotebooks()))
         for i, v := range m.GetNotebooks() {
             temp := v
@@ -184,7 +184,7 @@ func (m *Onenote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetOperations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOperations()))
         for i, v := range m.GetOperations() {
             temp := v
@@ -195,7 +195,7 @@ func (m *Onenote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetPages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPages()))
         for i, v := range m.GetPages() {
             temp := v
@@ -206,7 +206,7 @@ func (m *Onenote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetResources() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
             temp := v
@@ -217,7 +217,7 @@ func (m *Onenote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetSectionGroups() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSectionGroups()))
         for i, v := range m.GetSectionGroups() {
             temp := v
@@ -228,7 +228,7 @@ func (m *Onenote) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
             return err
         }
     }
-    {
+    if m.GetSections() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSections()))
         for i, v := range m.GetSections() {
             temp := v

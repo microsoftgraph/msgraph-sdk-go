@@ -157,7 +157,7 @@ func (m *ExtensionProperty) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
             return err
         }
     }
-    {
+    if m.GetTargetObjects() != nil {
         err = writer.WriteCollectionOfStringValues("targetObjects", m.GetTargetObjects())
         if err != nil {
             return err

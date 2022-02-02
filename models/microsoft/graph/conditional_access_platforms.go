@@ -82,13 +82,13 @@ func (m *ConditionalAccessPlatforms) IsNil()(bool) {
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessPlatforms) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
-    {
+    if m.GetExcludePlatforms() != nil {
         err := writer.WriteCollectionOfStringValues("excludePlatforms", SerializeConditionalAccessDevicePlatform(m.GetExcludePlatforms()))
         if err != nil {
             return err
         }
     }
-    {
+    if m.GetIncludePlatforms() != nil {
         err := writer.WriteCollectionOfStringValues("includePlatforms", SerializeConditionalAccessDevicePlatform(m.GetIncludePlatforms()))
         if err != nil {
             return err

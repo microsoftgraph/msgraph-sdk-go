@@ -35,7 +35,7 @@ type WorkforceIntegrationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// WorkforceIntegrationRequestBuilderGetQueryParameters get workforceIntegrations from teamwork
+// WorkforceIntegrationRequestBuilderGetQueryParameters a workforce integration with shifts.
 type WorkforceIntegrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewWorkforceIntegrationRequestBuilder(rawUrl string, requestAdapter ida96af
     urlParams["request-raw-url"] = rawUrl
     return NewWorkforceIntegrationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete navigation property workforceIntegrations for teamwork
+// CreateDeleteRequestInformation a workforce integration with shifts.
 func (m *WorkforceIntegrationRequestBuilder) CreateDeleteRequestInformation(options *WorkforceIntegrationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *WorkforceIntegrationRequestBuilder) CreateDeleteRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get workforceIntegrations from teamwork
+// CreateGetRequestInformation a workforce integration with shifts.
 func (m *WorkforceIntegrationRequestBuilder) CreateGetRequestInformation(options *WorkforceIntegrationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *WorkforceIntegrationRequestBuilder) CreateGetRequestInformation(options
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property workforceIntegrations in teamwork
+// CreatePatchRequestInformation a workforce integration with shifts.
 func (m *WorkforceIntegrationRequestBuilder) CreatePatchRequestInformation(options *WorkforceIntegrationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *WorkforceIntegrationRequestBuilder) CreatePatchRequestInformation(optio
     }
     return requestInfo, nil
 }
-// Delete delete navigation property workforceIntegrations for teamwork
+// Delete a workforce integration with shifts.
 func (m *WorkforceIntegrationRequestBuilder) Delete(options *WorkforceIntegrationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *WorkforceIntegrationRequestBuilder) Delete(options *WorkforceIntegratio
     }
     return nil
 }
-// Get get workforceIntegrations from teamwork
+// Get a workforce integration with shifts.
 func (m *WorkforceIntegrationRequestBuilder) Get(options *WorkforceIntegrationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkforceIntegration, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *WorkforceIntegrationRequestBuilder) Get(options *WorkforceIntegrationRe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkforceIntegration), nil
 }
-// Patch update the navigation property workforceIntegrations in teamwork
+// Patch a workforce integration with shifts.
 func (m *WorkforceIntegrationRequestBuilder) Patch(options *WorkforceIntegrationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

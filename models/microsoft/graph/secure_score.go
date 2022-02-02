@@ -248,7 +248,7 @@ func (m *SecureScore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetAverageComparativeScores() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAverageComparativeScores()))
         for i, v := range m.GetAverageComparativeScores() {
             temp := v
@@ -265,7 +265,7 @@ func (m *SecureScore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetControlScores() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetControlScores()))
         for i, v := range m.GetControlScores() {
             temp := v
@@ -288,7 +288,7 @@ func (m *SecureScore) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
             return err
         }
     }
-    {
+    if m.GetEnabledServices() != nil {
         err = writer.WriteCollectionOfStringValues("enabledServices", m.GetEnabledServices())
         if err != nil {
             return err

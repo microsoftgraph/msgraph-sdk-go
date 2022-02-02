@@ -7,7 +7,7 @@ import (
 // Teamwork 
 type Teamwork struct {
     Entity
-    // 
+    // A workforce integration with shifts.
     workforceIntegrations []WorkforceIntegration;
 }
 // NewTeamwork instantiates a new teamwork and sets the default values.
@@ -17,7 +17,7 @@ func NewTeamwork()(*Teamwork) {
     }
     return m
 }
-// GetWorkforceIntegrations gets the workforceIntegrations property value. 
+// GetWorkforceIntegrations gets the workforceIntegrations property value. A workforce integration with shifts.
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegration) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if err != nil {
         return err
     }
-    {
+    if m.GetWorkforceIntegrations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetWorkforceIntegrations()))
         for i, v := range m.GetWorkforceIntegrations() {
             temp := v
@@ -66,7 +66,7 @@ func (m *Teamwork) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// SetWorkforceIntegrations sets the workforceIntegrations property value. 
+// SetWorkforceIntegrations sets the workforceIntegrations property value. A workforce integration with shifts.
 func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegration)() {
     if m != nil {
         m.workforceIntegrations = value

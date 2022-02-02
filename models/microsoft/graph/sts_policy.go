@@ -97,7 +97,7 @@ func (m *StsPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if err != nil {
         return err
     }
-    {
+    if m.GetAppliesTo() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAppliesTo()))
         for i, v := range m.GetAppliesTo() {
             temp := v
@@ -108,7 +108,7 @@ func (m *StsPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
             return err
         }
     }
-    {
+    if m.GetDefinition() != nil {
         err = writer.WriteCollectionOfStringValues("definition", m.GetDefinition())
         if err != nil {
             return err

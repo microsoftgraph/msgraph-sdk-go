@@ -125,7 +125,7 @@ func (m *CloudCommunications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     if err != nil {
         return err
     }
-    {
+    if m.GetCallRecords() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCallRecords()))
         for i, v := range m.GetCallRecords() {
             temp := v
@@ -136,7 +136,7 @@ func (m *CloudCommunications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetCalls() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCalls()))
         for i, v := range m.GetCalls() {
             temp := v
@@ -147,7 +147,7 @@ func (m *CloudCommunications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetOnlineMeetings() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetOnlineMeetings()))
         for i, v := range m.GetOnlineMeetings() {
             temp := v
@@ -158,7 +158,7 @@ func (m *CloudCommunications) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
             return err
         }
     }
-    {
+    if m.GetPresences() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetPresences()))
         for i, v := range m.GetPresences() {
             temp := v

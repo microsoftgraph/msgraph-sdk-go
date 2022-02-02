@@ -395,7 +395,7 @@ func (m *ProvisioningObjectSummary) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetModifiedProperties() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetModifiedProperties()))
         for i, v := range m.GetModifiedProperties() {
             temp := v
@@ -419,7 +419,7 @@ func (m *ProvisioningObjectSummary) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetProvisioningSteps() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetProvisioningSteps()))
         for i, v := range m.GetProvisioningSteps() {
             temp := v

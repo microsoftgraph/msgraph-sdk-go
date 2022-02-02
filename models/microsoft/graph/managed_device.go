@@ -1173,7 +1173,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetDeviceActionResults() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceActionResults()))
         for i, v := range m.GetDeviceActionResults() {
             temp := v
@@ -1196,7 +1196,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetDeviceCompliancePolicyStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceCompliancePolicyStates()))
         for i, v := range m.GetDeviceCompliancePolicyStates() {
             temp := v
@@ -1207,7 +1207,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
             return err
         }
     }
-    {
+    if m.GetDeviceConfigurationStates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetDeviceConfigurationStates()))
         for i, v := range m.GetDeviceConfigurationStates() {
             temp := v

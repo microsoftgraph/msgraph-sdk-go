@@ -86,7 +86,7 @@ func (m *RiskUserActivity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
             return err
         }
     }
-    {
+    if m.GetRiskEventTypes() != nil {
         err := writer.WriteCollectionOfStringValues("riskEventTypes", m.GetRiskEventTypes())
         if err != nil {
             return err

@@ -193,7 +193,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
     if err != nil {
         return err
     }
-    {
+    if m.GetAccessPackageAssignmentApprovals() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackageAssignmentApprovals()))
         for i, v := range m.GetAccessPackageAssignmentApprovals() {
             temp := v
@@ -204,7 +204,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAccessPackages() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAccessPackages()))
         for i, v := range m.GetAccessPackages() {
             temp := v
@@ -215,7 +215,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAssignmentRequests() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignmentRequests()))
         for i, v := range m.GetAssignmentRequests() {
             temp := v
@@ -226,7 +226,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetAssignments() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
             temp := v
@@ -237,7 +237,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetCatalogs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetCatalogs()))
         for i, v := range m.GetCatalogs() {
             temp := v
@@ -248,7 +248,7 @@ func (m *EntitlementManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471d
             return err
         }
     }
-    {
+    if m.GetConnectedOrganizations() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetConnectedOrganizations()))
         for i, v := range m.GetConnectedOrganizations() {
             temp := v

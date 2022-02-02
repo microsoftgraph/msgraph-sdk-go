@@ -93,7 +93,7 @@ func (m *ShiftItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     if err != nil {
         return err
     }
-    {
+    if m.GetActivities() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetActivities()))
         for i, v := range m.GetActivities() {
             temp := v

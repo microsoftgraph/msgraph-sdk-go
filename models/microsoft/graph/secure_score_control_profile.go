@@ -440,7 +440,7 @@ func (m *SecureScoreControlProfile) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetComplianceInformation() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetComplianceInformation()))
         for i, v := range m.GetComplianceInformation() {
             temp := v
@@ -457,7 +457,7 @@ func (m *SecureScoreControlProfile) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetControlStateUpdates() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetControlStateUpdates()))
         for i, v := range m.GetControlStateUpdates() {
             temp := v
@@ -516,7 +516,7 @@ func (m *SecureScoreControlProfile) Serialize(writer i04eb5309aeaafadd28374d79c8
             return err
         }
     }
-    {
+    if m.GetThreats() != nil {
         err = writer.WriteCollectionOfStringValues("threats", m.GetThreats())
         if err != nil {
             return err

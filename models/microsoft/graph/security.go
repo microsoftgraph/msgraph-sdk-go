@@ -101,7 +101,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     if err != nil {
         return err
     }
-    {
+    if m.GetAlerts() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetAlerts()))
         for i, v := range m.GetAlerts() {
             temp := v
@@ -112,7 +112,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetSecureScoreControlProfiles() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSecureScoreControlProfiles()))
         for i, v := range m.GetSecureScoreControlProfiles() {
             temp := v
@@ -123,7 +123,7 @@ func (m *Security) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
             return err
         }
     }
-    {
+    if m.GetSecureScores() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetSecureScores()))
         for i, v := range m.GetSecureScores() {
             temp := v
