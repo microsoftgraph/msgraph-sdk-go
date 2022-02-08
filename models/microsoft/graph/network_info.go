@@ -294,8 +294,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.NetworkConnectionType)
-            m.SetConnectionType(&cast)
+            m.SetConnectionType(val.(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.NetworkConnectionType))
         }
         return nil
     }
@@ -425,8 +424,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiBand)
-            m.SetWifiBand(&cast)
+            m.SetWifiBand(val.(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiBand))
         }
         return nil
     }
@@ -476,8 +474,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiRadioType)
-            m.SetWifiRadioType(&cast)
+            m.SetWifiRadioType(val.(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.WifiRadioType))
         }
         return nil
     }
@@ -531,7 +528,7 @@ func (m *NetworkInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetConnectionType() != nil {
-        cast := m.GetConnectionType().String()
+        cast := (*m.GetConnectionType()).String()
         err := writer.WriteStringValue("connectionType", &cast)
         if err != nil {
             return err
@@ -610,7 +607,7 @@ func (m *NetworkInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetWifiBand() != nil {
-        cast := m.GetWifiBand().String()
+        cast := (*m.GetWifiBand()).String()
         err := writer.WriteStringValue("wifiBand", &cast)
         if err != nil {
             return err
@@ -641,7 +638,7 @@ func (m *NetworkInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetWifiRadioType() != nil {
-        cast := m.GetWifiRadioType().String()
+        cast := (*m.GetWifiRadioType()).String()
         err := writer.WriteStringValue("wifiRadioType", &cast)
         if err != nil {
             return err

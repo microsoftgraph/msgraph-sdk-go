@@ -15,13 +15,16 @@ func (i TeamworkActivityTopicSource) String() string {
     return []string{"ENTITYURL", "TEXT"}[i]
 }
 func ParseTeamworkActivityTopicSource(v string) (interface{}, error) {
+    result := ENTITYURL_TEAMWORKACTIVITYTOPICSOURCE
     switch strings.ToUpper(v) {
         case "ENTITYURL":
-            return ENTITYURL_TEAMWORKACTIVITYTOPICSOURCE, nil
+            result = ENTITYURL_TEAMWORKACTIVITYTOPICSOURCE
         case "TEXT":
-            return TEXT_TEAMWORKACTIVITYTOPICSOURCE, nil
+            result = TEXT_TEAMWORKACTIVITYTOPICSOURCE
+        default:
+            return 0, errors.New("Unknown TeamworkActivityTopicSource value: " + v)
     }
-    return 0, errors.New("Unknown TeamworkActivityTopicSource value: " + v)
+    return &result, nil
 }
 func SerializeTeamworkActivityTopicSource(values []TeamworkActivityTopicSource) []string {
     result := make([]string, len(values))

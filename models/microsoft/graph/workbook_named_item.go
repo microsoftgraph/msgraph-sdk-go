@@ -13,7 +13,7 @@ type WorkbookNamedItem struct {
     name *string;
     // Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
     scope *string;
-    // Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
+    // Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
     type_escaped *string;
     // Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
     value *Json;
@@ -53,7 +53,7 @@ func (m *WorkbookNamedItem) GetScope()(*string) {
         return m.scope
     }
 }
-// GetType gets the type property value. Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
+// GetType gets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
 func (m *WorkbookNamedItem) GetType()(*string) {
     if m == nil {
         return nil
@@ -231,7 +231,7 @@ func (m *WorkbookNamedItem) SetScope(value *string)() {
         m.scope = value
     }
 }
-// SetType sets the type property value. Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
+// SetType sets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
 func (m *WorkbookNamedItem) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

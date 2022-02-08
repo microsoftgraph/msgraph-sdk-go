@@ -26,7 +26,7 @@ type MembersRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// MembersRequestBuilderGetQueryParameters a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// MembersRequestBuilderGetQueryParameters a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 type MembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewMembersRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// CreateGetRequestInformation a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *MembersRequestBuilder) CreateGetRequestInformation(options *MembersRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *MembersRequestBuilder) CreateGetRequestInformation(options *MembersRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// CreatePostRequestInformation a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *MembersRequestBuilder) CreatePostRequestInformation(options *MembersRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *MembersRequestBuilder) CreatePostRequestInformation(options *MembersReq
     }
     return requestInfo, nil
 }
-// Get a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// Get a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *MembersRequestBuilder) Get(options *MembersRequestBuilderGetOptions)(*MembersResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *MembersRequestBuilder) Get(options *MembersRequestBuilderGetOptions)(*M
     }
     return res.(*MembersResponse), nil
 }
-// Post a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// Post a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *MembersRequestBuilder) Post(options *MembersRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Identity, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

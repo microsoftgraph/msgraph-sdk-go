@@ -133,8 +133,7 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(RegistryHive)
-            m.SetHive(&cast)
+            m.SetHive(val.(*RegistryHive))
         }
         return nil
     }
@@ -184,8 +183,7 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(RegistryOperation)
-            m.SetOperation(&cast)
+            m.SetOperation(val.(*RegistryOperation))
         }
         return nil
     }
@@ -225,8 +223,7 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(RegistryValueType)
-            m.SetValueType(&cast)
+            m.SetValueType(val.(*RegistryValueType))
         }
         return nil
     }
@@ -238,7 +235,7 @@ func (m *RegistryKeyState) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *RegistryKeyState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetHive() != nil {
-        cast := m.GetHive().String()
+        cast := (*m.GetHive()).String()
         err := writer.WriteStringValue("hive", &cast)
         if err != nil {
             return err
@@ -269,7 +266,7 @@ func (m *RegistryKeyState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetOperation() != nil {
-        cast := m.GetOperation().String()
+        cast := (*m.GetOperation()).String()
         err := writer.WriteStringValue("operation", &cast)
         if err != nil {
             return err
@@ -294,7 +291,7 @@ func (m *RegistryKeyState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetValueType() != nil {
-        cast := m.GetValueType().String()
+        cast := (*m.GetValueType()).String()
         err := writer.WriteStringValue("valueType", &cast)
         if err != nil {
             return err

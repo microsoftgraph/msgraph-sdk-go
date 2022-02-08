@@ -324,8 +324,7 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(OnenoteUserRole)
-            m.SetUserRole(&cast)
+            m.SetUserRole(val.(*OnenoteUserRole))
         }
         return nil
     }
@@ -421,7 +420,7 @@ func (m *CopyNotebookModel) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetUserRole() != nil {
-        cast := m.GetUserRole().String()
+        cast := (*m.GetUserRole()).String()
         err := writer.WriteStringValue("userRole", &cast)
         if err != nil {
             return err

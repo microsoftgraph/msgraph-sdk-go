@@ -9,15 +9,15 @@ import (
 type EducationResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Who created the resource.
+    // The individual who created the resource.
     createdBy *IdentitySet;
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    // Moment in time when the resource was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Display name of resource.
     displayName *string;
-    // Who was the last user to modify the resource.
+    // The last user to modify the resource.
     lastModifiedBy *IdentitySet;
-    // Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    // Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
 }
 // NewEducationResource instantiates a new educationResource and sets the default values.
@@ -35,7 +35,7 @@ func (m *EducationResource) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetCreatedBy gets the createdBy property value. Who created the resource.
+// GetCreatedBy gets the createdBy property value. The individual who created the resource.
 func (m *EducationResource) GetCreatedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *EducationResource) GetCreatedBy()(*IdentitySet) {
         return m.createdBy
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetCreatedDateTime gets the createdDateTime property value. Moment in time when the resource was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationResource) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *EducationResource) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. Who was the last user to modify the resource.
+// GetLastModifiedBy gets the lastModifiedBy property value. The last user to modify the resource.
 func (m *EducationResource) GetLastModifiedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *EducationResource) GetLastModifiedBy()(*IdentitySet) {
         return m.lastModifiedBy
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EducationResource) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -179,13 +179,13 @@ func (m *EducationResource) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetCreatedBy sets the createdBy property value. Who created the resource.
+// SetCreatedBy sets the createdBy property value. The individual who created the resource.
 func (m *EducationResource) SetCreatedBy(value *IdentitySet)() {
     if m != nil {
         m.createdBy = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetCreatedDateTime sets the createdDateTime property value. Moment in time when the resource was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationResource) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
@@ -197,13 +197,13 @@ func (m *EducationResource) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. Who was the last user to modify the resource.
+// SetLastModifiedBy sets the lastModifiedBy property value. The last user to modify the resource.
 func (m *EducationResource) SetLastModifiedBy(value *IdentitySet)() {
     if m != nil {
         m.lastModifiedBy = value
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EducationResource) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value

@@ -16,15 +16,18 @@ func (i ServiceHealthClassificationType) String() string {
     return []string{"ADVISORY", "INCIDENT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseServiceHealthClassificationType(v string) (interface{}, error) {
+    result := ADVISORY_SERVICEHEALTHCLASSIFICATIONTYPE
     switch strings.ToUpper(v) {
         case "ADVISORY":
-            return ADVISORY_SERVICEHEALTHCLASSIFICATIONTYPE, nil
+            result = ADVISORY_SERVICEHEALTHCLASSIFICATIONTYPE
         case "INCIDENT":
-            return INCIDENT_SERVICEHEALTHCLASSIFICATIONTYPE, nil
+            result = INCIDENT_SERVICEHEALTHCLASSIFICATIONTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SERVICEHEALTHCLASSIFICATIONTYPE, nil
+            result = UNKNOWNFUTUREVALUE_SERVICEHEALTHCLASSIFICATIONTYPE
+        default:
+            return 0, errors.New("Unknown ServiceHealthClassificationType value: " + v)
     }
-    return 0, errors.New("Unknown ServiceHealthClassificationType value: " + v)
+    return &result, nil
 }
 func SerializeServiceHealthClassificationType(values []ServiceHealthClassificationType) []string {
     result := make([]string, len(values))

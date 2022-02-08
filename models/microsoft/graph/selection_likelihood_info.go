@@ -15,13 +15,16 @@ func (i SelectionLikelihoodInfo) String() string {
     return []string{"NOTSPECIFIED", "HIGH"}[i]
 }
 func ParseSelectionLikelihoodInfo(v string) (interface{}, error) {
+    result := NOTSPECIFIED_SELECTIONLIKELIHOODINFO
     switch strings.ToUpper(v) {
         case "NOTSPECIFIED":
-            return NOTSPECIFIED_SELECTIONLIKELIHOODINFO, nil
+            result = NOTSPECIFIED_SELECTIONLIKELIHOODINFO
         case "HIGH":
-            return HIGH_SELECTIONLIKELIHOODINFO, nil
+            result = HIGH_SELECTIONLIKELIHOODINFO
+        default:
+            return 0, errors.New("Unknown SelectionLikelihoodInfo value: " + v)
     }
-    return 0, errors.New("Unknown SelectionLikelihoodInfo value: " + v)
+    return &result, nil
 }
 func SerializeSelectionLikelihoodInfo(values []SelectionLikelihoodInfo) []string {
     result := make([]string, len(values))

@@ -20,23 +20,26 @@ func (i ConditionalAccessDevicePlatform) String() string {
     return []string{"ANDROID", "IOS", "WINDOWS", "WINDOWSPHONE", "MACOS", "ALL", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseConditionalAccessDevicePlatform(v string) (interface{}, error) {
+    result := ANDROID_CONDITIONALACCESSDEVICEPLATFORM
     switch strings.ToUpper(v) {
         case "ANDROID":
-            return ANDROID_CONDITIONALACCESSDEVICEPLATFORM, nil
+            result = ANDROID_CONDITIONALACCESSDEVICEPLATFORM
         case "IOS":
-            return IOS_CONDITIONALACCESSDEVICEPLATFORM, nil
+            result = IOS_CONDITIONALACCESSDEVICEPLATFORM
         case "WINDOWS":
-            return WINDOWS_CONDITIONALACCESSDEVICEPLATFORM, nil
+            result = WINDOWS_CONDITIONALACCESSDEVICEPLATFORM
         case "WINDOWSPHONE":
-            return WINDOWSPHONE_CONDITIONALACCESSDEVICEPLATFORM, nil
+            result = WINDOWSPHONE_CONDITIONALACCESSDEVICEPLATFORM
         case "MACOS":
-            return MACOS_CONDITIONALACCESSDEVICEPLATFORM, nil
+            result = MACOS_CONDITIONALACCESSDEVICEPLATFORM
         case "ALL":
-            return ALL_CONDITIONALACCESSDEVICEPLATFORM, nil
+            result = ALL_CONDITIONALACCESSDEVICEPLATFORM
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONDITIONALACCESSDEVICEPLATFORM, nil
+            result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSDEVICEPLATFORM
+        default:
+            return 0, errors.New("Unknown ConditionalAccessDevicePlatform value: " + v)
     }
-    return 0, errors.New("Unknown ConditionalAccessDevicePlatform value: " + v)
+    return &result, nil
 }
 func SerializeConditionalAccessDevicePlatform(values []ConditionalAccessDevicePlatform) []string {
     result := make([]string, len(values))

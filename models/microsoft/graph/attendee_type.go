@@ -16,15 +16,18 @@ func (i AttendeeType) String() string {
     return []string{"REQUIRED", "OPTIONAL", "RESOURCE"}[i]
 }
 func ParseAttendeeType(v string) (interface{}, error) {
+    result := REQUIRED_ATTENDEETYPE
     switch strings.ToUpper(v) {
         case "REQUIRED":
-            return REQUIRED_ATTENDEETYPE, nil
+            result = REQUIRED_ATTENDEETYPE
         case "OPTIONAL":
-            return OPTIONAL_ATTENDEETYPE, nil
+            result = OPTIONAL_ATTENDEETYPE
         case "RESOURCE":
-            return RESOURCE_ATTENDEETYPE, nil
+            result = RESOURCE_ATTENDEETYPE
+        default:
+            return 0, errors.New("Unknown AttendeeType value: " + v)
     }
-    return 0, errors.New("Unknown AttendeeType value: " + v)
+    return &result, nil
 }
 func SerializeAttendeeType(values []AttendeeType) []string {
     result := make([]string, len(values))

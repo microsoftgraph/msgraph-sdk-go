@@ -26,7 +26,7 @@ type TasksRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// TasksRequestBuilderGetQueryParameters collection of tasks in the plan. Read-only. Nullable.
+// TasksRequestBuilderGetQueryParameters read-only. Nullable. Collection of tasks in the plan.
 type TasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewTasksRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams["request-raw-url"] = rawUrl
     return NewTasksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation collection of tasks in the plan. Read-only. Nullable.
+// CreateGetRequestInformation read-only. Nullable. Collection of tasks in the plan.
 func (m *TasksRequestBuilder) CreateGetRequestInformation(options *TasksRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *TasksRequestBuilder) CreateGetRequestInformation(options *TasksRequestB
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation collection of tasks in the plan. Read-only. Nullable.
+// CreatePostRequestInformation read-only. Nullable. Collection of tasks in the plan.
 func (m *TasksRequestBuilder) CreatePostRequestInformation(options *TasksRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *TasksRequestBuilder) CreatePostRequestInformation(options *TasksRequest
     }
     return requestInfo, nil
 }
-// Get collection of tasks in the plan. Read-only. Nullable.
+// Get read-only. Nullable. Collection of tasks in the plan.
 func (m *TasksRequestBuilder) Get(options *TasksRequestBuilderGetOptions)(*TasksResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *TasksRequestBuilder) Get(options *TasksRequestBuilderGetOptions)(*Tasks
     }
     return res.(*TasksResponse), nil
 }
-// Post collection of tasks in the plan. Read-only. Nullable.
+// Post read-only. Nullable. Collection of tasks in the plan.
 func (m *TasksRequestBuilder) Post(options *TasksRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerTask, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

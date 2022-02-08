@@ -43,8 +43,7 @@ func (m *CallMediaState) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(MediaState)
-            m.SetAudio(&cast)
+            m.SetAudio(val.(*MediaState))
         }
         return nil
     }
@@ -56,7 +55,7 @@ func (m *CallMediaState) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *CallMediaState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAudio() != nil {
-        cast := m.GetAudio().String()
+        cast := (*m.GetAudio()).String()
         err := writer.WriteStringValue("audio", &cast)
         if err != nil {
             return err

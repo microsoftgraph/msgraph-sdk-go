@@ -68,8 +68,7 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(RoutingMode)
-            m.SetRoutingMode(&cast)
+            m.SetRoutingMode(val.(*RoutingMode))
         }
         return nil
     }
@@ -105,7 +104,7 @@ func (m *AudioRoutingGroup) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetRoutingMode() != nil {
-        cast := m.GetRoutingMode().String()
+        cast := (*m.GetRoutingMode()).String()
         err = writer.WriteStringValue("routingMode", &cast)
         if err != nil {
             return err

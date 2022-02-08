@@ -17,17 +17,20 @@ func (i OnlineMeetingRole) String() string {
     return []string{"ATTENDEE", "PRESENTER", "UNKNOWNFUTUREVALUE", "PRODUCER"}[i]
 }
 func ParseOnlineMeetingRole(v string) (interface{}, error) {
+    result := ATTENDEE_ONLINEMEETINGROLE
     switch strings.ToUpper(v) {
         case "ATTENDEE":
-            return ATTENDEE_ONLINEMEETINGROLE, nil
+            result = ATTENDEE_ONLINEMEETINGROLE
         case "PRESENTER":
-            return PRESENTER_ONLINEMEETINGROLE, nil
+            result = PRESENTER_ONLINEMEETINGROLE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ONLINEMEETINGROLE, nil
+            result = UNKNOWNFUTUREVALUE_ONLINEMEETINGROLE
         case "PRODUCER":
-            return PRODUCER_ONLINEMEETINGROLE, nil
+            result = PRODUCER_ONLINEMEETINGROLE
+        default:
+            return 0, errors.New("Unknown OnlineMeetingRole value: " + v)
     }
-    return 0, errors.New("Unknown OnlineMeetingRole value: " + v)
+    return &result, nil
 }
 func SerializeOnlineMeetingRole(values []OnlineMeetingRole) []string {
     result := make([]string, len(values))

@@ -16,15 +16,18 @@ func (i DeviceManagementPartnerAppType) String() string {
     return []string{"UNKNOWN", "SINGLETENANTAPP", "MULTITENANTAPP"}[i]
 }
 func ParseDeviceManagementPartnerAppType(v string) (interface{}, error) {
+    result := UNKNOWN_DEVICEMANAGEMENTPARTNERAPPTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_DEVICEMANAGEMENTPARTNERAPPTYPE, nil
+            result = UNKNOWN_DEVICEMANAGEMENTPARTNERAPPTYPE
         case "SINGLETENANTAPP":
-            return SINGLETENANTAPP_DEVICEMANAGEMENTPARTNERAPPTYPE, nil
+            result = SINGLETENANTAPP_DEVICEMANAGEMENTPARTNERAPPTYPE
         case "MULTITENANTAPP":
-            return MULTITENANTAPP_DEVICEMANAGEMENTPARTNERAPPTYPE, nil
+            result = MULTITENANTAPP_DEVICEMANAGEMENTPARTNERAPPTYPE
+        default:
+            return 0, errors.New("Unknown DeviceManagementPartnerAppType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementPartnerAppType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementPartnerAppType(values []DeviceManagementPartnerAppType) []string {
     result := make([]string, len(values))

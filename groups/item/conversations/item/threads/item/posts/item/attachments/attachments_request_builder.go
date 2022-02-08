@@ -27,7 +27,7 @@ type AttachmentsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AttachmentsRequestBuilderGetQueryParameters the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// AttachmentsRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type AttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -74,7 +74,7 @@ func NewAttachmentsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams["request-raw-url"] = rawUrl
     return NewAttachmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation read-only. Nullable. Supports $expand.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformation(options *AttachmentsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -94,7 +94,7 @@ func (m *AttachmentsRequestBuilder) CreateGetRequestInformation(options *Attachm
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// CreatePostRequestInformation read-only. Nullable. Supports $expand.
 func (m *AttachmentsRequestBuilder) CreatePostRequestInformation(options *AttachmentsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,7 +115,7 @@ func (m *AttachmentsRequestBuilder) CreatePostRequestInformation(options *Attach
 func (m *AttachmentsRequestBuilder) CreateUploadSession()(*i7b8d852dcc88526ec1543bc4d4f553673878b1d434b82a42a5e0bf78caad5d8c.CreateUploadSessionRequestBuilder) {
     return i7b8d852dcc88526ec1543bc4d4f553673878b1d434b82a42a5e0bf78caad5d8c.NewCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// Get read-only. Nullable. Supports $expand.
 func (m *AttachmentsRequestBuilder) Get(options *AttachmentsRequestBuilderGetOptions)(*AttachmentsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *AttachmentsRequestBuilder) Get(options *AttachmentsRequestBuilderGetOpt
     }
     return res.(*AttachmentsResponse), nil
 }
-// Post the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// Post read-only. Nullable. Supports $expand.
 func (m *AttachmentsRequestBuilder) Post(options *AttachmentsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

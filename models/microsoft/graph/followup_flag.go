@@ -93,8 +93,7 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(interface{}, i04e
             return err
         }
         if val != nil {
-            cast := val.(FollowupFlagStatus)
-            m.SetFlagStatus(&cast)
+            m.SetFlagStatus(val.(*FollowupFlagStatus))
         }
         return nil
     }
@@ -128,7 +127,7 @@ func (m *FollowupFlag) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     if m.GetFlagStatus() != nil {
-        cast := m.GetFlagStatus().String()
+        cast := (*m.GetFlagStatus()).String()
         err := writer.WriteStringValue("flagStatus", &cast)
         if err != nil {
             return err

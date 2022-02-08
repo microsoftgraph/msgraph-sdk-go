@@ -24,6 +24,10 @@ type SearchRequest struct {
     from *int32;
     // 
     query *SearchQuery;
+    // Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
+    queryAlterationOptions *SearchAlterationOptions;
+    // Provides the search result templates options for rendering connectors search results.
+    resultTemplateOptions *ResultTemplateOption;
     // The size of the page to be retrieved. Optional.
     size *int32;
     // Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
@@ -106,6 +110,22 @@ func (m *SearchRequest) GetQuery()(*SearchQuery) {
         return nil
     } else {
         return m.query
+    }
+}
+// GetQueryAlterationOptions gets the queryAlterationOptions property value. Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
+func (m *SearchRequest) GetQueryAlterationOptions()(*SearchAlterationOptions) {
+    if m == nil {
+        return nil
+    } else {
+        return m.queryAlterationOptions
+    }
+}
+// GetResultTemplateOptions gets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
+func (m *SearchRequest) GetResultTemplateOptions()(*ResultTemplateOption) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resultTemplateOptions
     }
 }
 // GetSize gets the size property value. The size of the page to be retrieved. Optional.
@@ -227,6 +247,26 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i04
         }
         return nil
     }
+    res["queryAlterationOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSearchAlterationOptions() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQueryAlterationOptions(val.(*SearchAlterationOptions))
+        }
+        return nil
+    }
+    res["resultTemplateOptions"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewResultTemplateOption() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResultTemplateOptions(val.(*ResultTemplateOption))
+        }
+        return nil
+    }
     res["size"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -312,6 +352,18 @@ func (m *SearchRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     {
+        err := writer.WriteObjectValue("queryAlterationOptions", m.GetQueryAlterationOptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("resultTemplateOptions", m.GetResultTemplateOptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("size", m.GetSize())
         if err != nil {
             return err
@@ -388,6 +440,18 @@ func (m *SearchRequest) SetFrom(value *int32)() {
 func (m *SearchRequest) SetQuery(value *SearchQuery)() {
     if m != nil {
         m.query = value
+    }
+}
+// SetQueryAlterationOptions sets the queryAlterationOptions property value. Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
+func (m *SearchRequest) SetQueryAlterationOptions(value *SearchAlterationOptions)() {
+    if m != nil {
+        m.queryAlterationOptions = value
+    }
+}
+// SetResultTemplateOptions sets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
+func (m *SearchRequest) SetResultTemplateOptions(value *ResultTemplateOption)() {
+    if m != nil {
+        m.resultTemplateOptions = value
     }
 }
 // SetSize sets the size property value. The size of the page to be retrieved. Optional.

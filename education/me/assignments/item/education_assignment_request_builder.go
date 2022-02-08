@@ -44,7 +44,7 @@ type EducationAssignmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// EducationAssignmentRequestBuilderGetQueryParameters list of assignments for the user. Nullable.
+// EducationAssignmentRequestBuilderGetQueryParameters assignments belonging to the user.
 type EducationAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -95,7 +95,7 @@ func NewEducationAssignmentRequestBuilder(rawUrl string, requestAdapter ida96af0
     urlParams["request-raw-url"] = rawUrl
     return NewEducationAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation list of assignments for the user. Nullable.
+// CreateDeleteRequestInformation assignments belonging to the user.
 func (m *EducationAssignmentRequestBuilder) CreateDeleteRequestInformation(options *EducationAssignmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,7 +112,7 @@ func (m *EducationAssignmentRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation list of assignments for the user. Nullable.
+// CreateGetRequestInformation assignments belonging to the user.
 func (m *EducationAssignmentRequestBuilder) CreateGetRequestInformation(options *EducationAssignmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -132,7 +132,7 @@ func (m *EducationAssignmentRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation list of assignments for the user. Nullable.
+// CreatePatchRequestInformation assignments belonging to the user.
 func (m *EducationAssignmentRequestBuilder) CreatePatchRequestInformation(options *EducationAssignmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -150,7 +150,7 @@ func (m *EducationAssignmentRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete list of assignments for the user. Nullable.
+// Delete assignments belonging to the user.
 func (m *EducationAssignmentRequestBuilder) Delete(options *EducationAssignmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -162,7 +162,7 @@ func (m *EducationAssignmentRequestBuilder) Delete(options *EducationAssignmentR
     }
     return nil
 }
-// Get list of assignments for the user. Nullable.
+// Get assignments belonging to the user.
 func (m *EducationAssignmentRequestBuilder) Get(options *EducationAssignmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -174,7 +174,7 @@ func (m *EducationAssignmentRequestBuilder) Get(options *EducationAssignmentRequ
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EducationAssignment), nil
 }
-// Patch list of assignments for the user. Nullable.
+// Patch assignments belonging to the user.
 func (m *EducationAssignmentRequestBuilder) Patch(options *EducationAssignmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

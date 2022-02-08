@@ -15,13 +15,16 @@ func (i InferenceClassificationType) String() string {
     return []string{"FOCUSED", "OTHER"}[i]
 }
 func ParseInferenceClassificationType(v string) (interface{}, error) {
+    result := FOCUSED_INFERENCECLASSIFICATIONTYPE
     switch strings.ToUpper(v) {
         case "FOCUSED":
-            return FOCUSED_INFERENCECLASSIFICATIONTYPE, nil
+            result = FOCUSED_INFERENCECLASSIFICATIONTYPE
         case "OTHER":
-            return OTHER_INFERENCECLASSIFICATIONTYPE, nil
+            result = OTHER_INFERENCECLASSIFICATIONTYPE
+        default:
+            return 0, errors.New("Unknown InferenceClassificationType value: " + v)
     }
-    return 0, errors.New("Unknown InferenceClassificationType value: " + v)
+    return &result, nil
 }
 func SerializeInferenceClassificationType(values []InferenceClassificationType) []string {
     result := make([]string, len(values))

@@ -413,8 +413,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(Importance)
-            m.SetImportance(&cast)
+            m.SetImportance(val.(*Importance))
         }
         return nil
     }
@@ -534,8 +533,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(MessageActionFlag)
-            m.SetMessageActionFlag(&cast)
+            m.SetMessageActionFlag(val.(*MessageActionFlag))
         }
         return nil
     }
@@ -583,8 +581,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(Sensitivity)
-            m.SetSensitivity(&cast)
+            m.SetSensitivity(val.(*Sensitivity))
         }
         return nil
     }
@@ -715,7 +712,7 @@ func (m *MessageRulePredicates) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetImportance() != nil {
-        cast := m.GetImportance().String()
+        cast := (*m.GetImportance()).String()
         err := writer.WriteStringValue("importance", &cast)
         if err != nil {
             return err
@@ -788,7 +785,7 @@ func (m *MessageRulePredicates) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetMessageActionFlag() != nil {
-        cast := m.GetMessageActionFlag().String()
+        cast := (*m.GetMessageActionFlag()).String()
         err := writer.WriteStringValue("messageActionFlag", &cast)
         if err != nil {
             return err
@@ -813,7 +810,7 @@ func (m *MessageRulePredicates) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetSensitivity() != nil {
-        cast := m.GetSensitivity().String()
+        cast := (*m.GetSensitivity()).String()
         err := writer.WriteStringValue("sensitivity", &cast)
         if err != nil {
             return err

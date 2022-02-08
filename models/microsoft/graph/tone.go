@@ -30,43 +30,46 @@ func (i Tone) String() string {
     return []string{"TONE0", "TONE1", "TONE2", "TONE3", "TONE4", "TONE5", "TONE6", "TONE7", "TONE8", "TONE9", "STAR", "POUND", "A", "B", "C", "D", "FLASH"}[i]
 }
 func ParseTone(v string) (interface{}, error) {
+    result := TONE0_TONE
     switch strings.ToUpper(v) {
         case "TONE0":
-            return TONE0_TONE, nil
+            result = TONE0_TONE
         case "TONE1":
-            return TONE1_TONE, nil
+            result = TONE1_TONE
         case "TONE2":
-            return TONE2_TONE, nil
+            result = TONE2_TONE
         case "TONE3":
-            return TONE3_TONE, nil
+            result = TONE3_TONE
         case "TONE4":
-            return TONE4_TONE, nil
+            result = TONE4_TONE
         case "TONE5":
-            return TONE5_TONE, nil
+            result = TONE5_TONE
         case "TONE6":
-            return TONE6_TONE, nil
+            result = TONE6_TONE
         case "TONE7":
-            return TONE7_TONE, nil
+            result = TONE7_TONE
         case "TONE8":
-            return TONE8_TONE, nil
+            result = TONE8_TONE
         case "TONE9":
-            return TONE9_TONE, nil
+            result = TONE9_TONE
         case "STAR":
-            return STAR_TONE, nil
+            result = STAR_TONE
         case "POUND":
-            return POUND_TONE, nil
+            result = POUND_TONE
         case "A":
-            return A_TONE, nil
+            result = A_TONE
         case "B":
-            return B_TONE, nil
+            result = B_TONE
         case "C":
-            return C_TONE, nil
+            result = C_TONE
         case "D":
-            return D_TONE, nil
+            result = D_TONE
         case "FLASH":
-            return FLASH_TONE, nil
+            result = FLASH_TONE
+        default:
+            return 0, errors.New("Unknown Tone value: " + v)
     }
-    return 0, errors.New("Unknown Tone value: " + v)
+    return &result, nil
 }
 func SerializeTone(values []Tone) []string {
     result := make([]string, len(values))

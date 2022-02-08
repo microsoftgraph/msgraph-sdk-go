@@ -12,7 +12,7 @@ type AccessReviewReviewer struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Name of reviewer.
     displayName *string;
-    // User principal name of the user.
+    // User principal name of the reviewer.
     userPrincipalName *string;
 }
 // NewAccessReviewReviewer instantiates a new accessReviewReviewer and sets the default values.
@@ -38,7 +38,7 @@ func (m *AccessReviewReviewer) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetUserPrincipalName gets the userPrincipalName property value. User principal name of the user.
+// GetUserPrincipalName gets the userPrincipalName property value. User principal name of the reviewer.
 func (m *AccessReviewReviewer) GetUserPrincipalName()(*string) {
     if m == nil {
         return nil
@@ -122,7 +122,7 @@ func (m *AccessReviewReviewer) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. User principal name of the user.
+// SetUserPrincipalName sets the userPrincipalName property value. User principal name of the reviewer.
 func (m *AccessReviewReviewer) SetUserPrincipalName(value *string)() {
     if m != nil {
         m.userPrincipalName = value

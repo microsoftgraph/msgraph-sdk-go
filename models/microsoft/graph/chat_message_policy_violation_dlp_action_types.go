@@ -17,17 +17,20 @@ func (i ChatMessagePolicyViolationDlpActionTypes) String() string {
     return []string{"NONE", "NOTIFYSENDER", "BLOCKACCESS", "BLOCKACCESSEXTERNAL"}[i]
 }
 func ParseChatMessagePolicyViolationDlpActionTypes(v string) (interface{}, error) {
+    result := NONE_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES, nil
+            result = NONE_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
         case "NOTIFYSENDER":
-            return NOTIFYSENDER_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES, nil
+            result = NOTIFYSENDER_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
         case "BLOCKACCESS":
-            return BLOCKACCESS_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES, nil
+            result = BLOCKACCESS_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
         case "BLOCKACCESSEXTERNAL":
-            return BLOCKACCESSEXTERNAL_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES, nil
+            result = BLOCKACCESSEXTERNAL_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
+        default:
+            return 0, errors.New("Unknown ChatMessagePolicyViolationDlpActionTypes value: " + v)
     }
-    return 0, errors.New("Unknown ChatMessagePolicyViolationDlpActionTypes value: " + v)
+    return &result, nil
 }
 func SerializeChatMessagePolicyViolationDlpActionTypes(values []ChatMessagePolicyViolationDlpActionTypes) []string {
     result := make([]string, len(values))

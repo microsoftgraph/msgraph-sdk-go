@@ -16,15 +16,18 @@ func (i PermissionType) String() string {
     return []string{"APPLICATION", "DELEGATED", "DELEGATEDUSERCONSENTABLE"}[i]
 }
 func ParsePermissionType(v string) (interface{}, error) {
+    result := APPLICATION_PERMISSIONTYPE
     switch strings.ToUpper(v) {
         case "APPLICATION":
-            return APPLICATION_PERMISSIONTYPE, nil
+            result = APPLICATION_PERMISSIONTYPE
         case "DELEGATED":
-            return DELEGATED_PERMISSIONTYPE, nil
+            result = DELEGATED_PERMISSIONTYPE
         case "DELEGATEDUSERCONSENTABLE":
-            return DELEGATEDUSERCONSENTABLE_PERMISSIONTYPE, nil
+            result = DELEGATEDUSERCONSENTABLE_PERMISSIONTYPE
+        default:
+            return 0, errors.New("Unknown PermissionType value: " + v)
     }
-    return 0, errors.New("Unknown PermissionType value: " + v)
+    return &result, nil
 }
 func SerializePermissionType(values []PermissionType) []string {
     result := make([]string, len(values))

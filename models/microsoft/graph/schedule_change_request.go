@@ -105,8 +105,7 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(ScheduleChangeRequestActor)
-            m.SetAssignedTo(&cast)
+            m.SetAssignedTo(val.(*ScheduleChangeRequestActor))
         }
         return nil
     }
@@ -176,8 +175,7 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(ScheduleChangeState)
-            m.SetState(&cast)
+            m.SetState(val.(*ScheduleChangeState))
         }
         return nil
     }
@@ -193,7 +191,7 @@ func (m *ScheduleChangeRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         return err
     }
     if m.GetAssignedTo() != nil {
-        cast := m.GetAssignedTo().String()
+        cast := (*m.GetAssignedTo()).String()
         err = writer.WriteStringValue("assignedTo", &cast)
         if err != nil {
             return err
@@ -236,7 +234,7 @@ func (m *ScheduleChangeRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

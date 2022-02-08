@@ -16,7 +16,7 @@ type IosUpdateDeviceStatus struct {
     deviceId *string;
     // The device model that is being reported
     deviceModel *string;
-    // The installation status of the policy report. Possible values are: success, available, idle, unknown, mdmClientCrashed, timeout, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, updateError, deviceOsHigherThanDesiredOsVersion, updateScanFailed.
+    // The installation status of the policy report. Possible values are: success, available, idle, unknown, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, deviceOsHigherThanDesiredOsVersion.
     installStatus *IosUpdatesInstallStatus;
     // Last modified date time of the policy report.
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -70,7 +70,7 @@ func (m *IosUpdateDeviceStatus) GetDeviceModel()(*string) {
         return m.deviceModel
     }
 }
-// GetInstallStatus gets the installStatus property value. The installation status of the policy report. Possible values are: success, available, idle, unknown, mdmClientCrashed, timeout, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, updateError, deviceOsHigherThanDesiredOsVersion, updateScanFailed.
+// GetInstallStatus gets the installStatus property value. The installation status of the policy report. Possible values are: success, available, idle, unknown, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, deviceOsHigherThanDesiredOsVersion.
 func (m *IosUpdateDeviceStatus) GetInstallStatus()(*IosUpdatesInstallStatus) {
     if m == nil {
         return nil
@@ -175,8 +175,7 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(IosUpdatesInstallStatus)
-            m.SetInstallStatus(&cast)
+            m.SetInstallStatus(val.(*IosUpdatesInstallStatus))
         }
         return nil
     }
@@ -206,8 +205,7 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(ComplianceStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*ComplianceStatus))
         }
         return nil
     }
@@ -277,7 +275,7 @@ func (m *IosUpdateDeviceStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetInstallStatus() != nil {
-        cast := m.GetInstallStatus().String()
+        cast := (*m.GetInstallStatus()).String()
         err = writer.WriteStringValue("installStatus", &cast)
         if err != nil {
             return err
@@ -296,7 +294,7 @@ func (m *IosUpdateDeviceStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
@@ -346,7 +344,7 @@ func (m *IosUpdateDeviceStatus) SetDeviceModel(value *string)() {
         m.deviceModel = value
     }
 }
-// SetInstallStatus sets the installStatus property value. The installation status of the policy report. Possible values are: success, available, idle, unknown, mdmClientCrashed, timeout, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, updateError, deviceOsHigherThanDesiredOsVersion, updateScanFailed.
+// SetInstallStatus sets the installStatus property value. The installation status of the policy report. Possible values are: success, available, idle, unknown, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, deviceOsHigherThanDesiredOsVersion.
 func (m *IosUpdateDeviceStatus) SetInstallStatus(value *IosUpdatesInstallStatus)() {
     if m != nil {
         m.installStatus = value

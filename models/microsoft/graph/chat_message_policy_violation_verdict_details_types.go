@@ -17,17 +17,20 @@ func (i ChatMessagePolicyViolationVerdictDetailsTypes) String() string {
     return []string{"NONE", "ALLOWFALSEPOSITIVEOVERRIDE", "ALLOWOVERRIDEWITHOUTJUSTIFICATION", "ALLOWOVERRIDEWITHJUSTIFICATION"}[i]
 }
 func ParseChatMessagePolicyViolationVerdictDetailsTypes(v string) (interface{}, error) {
+    result := NONE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES, nil
+            result = NONE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
         case "ALLOWFALSEPOSITIVEOVERRIDE":
-            return ALLOWFALSEPOSITIVEOVERRIDE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES, nil
+            result = ALLOWFALSEPOSITIVEOVERRIDE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
         case "ALLOWOVERRIDEWITHOUTJUSTIFICATION":
-            return ALLOWOVERRIDEWITHOUTJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES, nil
+            result = ALLOWOVERRIDEWITHOUTJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
         case "ALLOWOVERRIDEWITHJUSTIFICATION":
-            return ALLOWOVERRIDEWITHJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES, nil
+            result = ALLOWOVERRIDEWITHJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
+        default:
+            return 0, errors.New("Unknown ChatMessagePolicyViolationVerdictDetailsTypes value: " + v)
     }
-    return 0, errors.New("Unknown ChatMessagePolicyViolationVerdictDetailsTypes value: " + v)
+    return &result, nil
 }
 func SerializeChatMessagePolicyViolationVerdictDetailsTypes(values []ChatMessagePolicyViolationVerdictDetailsTypes) []string {
     result := make([]string, len(values))

@@ -17,17 +17,20 @@ func (i PostType) String() string {
     return []string{"REGULAR", "QUICK", "STRATEGIC", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePostType(v string) (interface{}, error) {
+    result := REGULAR_POSTTYPE
     switch strings.ToUpper(v) {
         case "REGULAR":
-            return REGULAR_POSTTYPE, nil
+            result = REGULAR_POSTTYPE
         case "QUICK":
-            return QUICK_POSTTYPE, nil
+            result = QUICK_POSTTYPE
         case "STRATEGIC":
-            return STRATEGIC_POSTTYPE, nil
+            result = STRATEGIC_POSTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_POSTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_POSTTYPE
+        default:
+            return 0, errors.New("Unknown PostType value: " + v)
     }
-    return 0, errors.New("Unknown PostType value: " + v)
+    return &result, nil
 }
 func SerializePostType(values []PostType) []string {
     result := make([]string, len(values))

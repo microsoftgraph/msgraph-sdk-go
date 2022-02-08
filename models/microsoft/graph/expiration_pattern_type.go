@@ -17,17 +17,20 @@ func (i ExpirationPatternType) String() string {
     return []string{"NOTSPECIFIED", "NOEXPIRATION", "AFTERDATETIME", "AFTERDURATION"}[i]
 }
 func ParseExpirationPatternType(v string) (interface{}, error) {
+    result := NOTSPECIFIED_EXPIRATIONPATTERNTYPE
     switch strings.ToUpper(v) {
         case "NOTSPECIFIED":
-            return NOTSPECIFIED_EXPIRATIONPATTERNTYPE, nil
+            result = NOTSPECIFIED_EXPIRATIONPATTERNTYPE
         case "NOEXPIRATION":
-            return NOEXPIRATION_EXPIRATIONPATTERNTYPE, nil
+            result = NOEXPIRATION_EXPIRATIONPATTERNTYPE
         case "AFTERDATETIME":
-            return AFTERDATETIME_EXPIRATIONPATTERNTYPE, nil
+            result = AFTERDATETIME_EXPIRATIONPATTERNTYPE
         case "AFTERDURATION":
-            return AFTERDURATION_EXPIRATIONPATTERNTYPE, nil
+            result = AFTERDURATION_EXPIRATIONPATTERNTYPE
+        default:
+            return 0, errors.New("Unknown ExpirationPatternType value: " + v)
     }
-    return 0, errors.New("Unknown ExpirationPatternType value: " + v)
+    return &result, nil
 }
 func SerializeExpirationPatternType(values []ExpirationPatternType) []string {
     result := make([]string, len(values))

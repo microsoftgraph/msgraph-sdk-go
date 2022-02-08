@@ -421,8 +421,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
             return err
         }
         if val != nil {
-            cast := val.(TeamSpecialization)
-            m.SetSpecialization(&cast)
+            m.SetSpecialization(val.(*TeamSpecialization))
         }
         return nil
     }
@@ -442,8 +441,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
             return err
         }
         if val != nil {
-            cast := val.(TeamVisibilityType)
-            m.SetVisibility(&cast)
+            m.SetVisibility(val.(*TeamVisibilityType))
         }
         return nil
     }
@@ -591,7 +589,7 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     if m.GetSpecialization() != nil {
-        cast := m.GetSpecialization().String()
+        cast := (*m.GetSpecialization()).String()
         err = writer.WriteStringValue("specialization", &cast)
         if err != nil {
             return err
@@ -604,7 +602,7 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         }
     }
     if m.GetVisibility() != nil {
-        cast := m.GetVisibility().String()
+        cast := (*m.GetVisibility()).String()
         err = writer.WriteStringValue("visibility", &cast)
         if err != nil {
             return err

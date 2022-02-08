@@ -203,8 +203,7 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(PrintColorMode)
-            m.SetColorMode(&cast)
+            m.SetColorMode(val.(*PrintColorMode))
         }
         return nil
     }
@@ -244,8 +243,7 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(PrintDuplexMode)
-            m.SetDuplexMode(&cast)
+            m.SetDuplexMode(val.(*PrintDuplexMode))
         }
         return nil
     }
@@ -319,8 +317,7 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(PrintMultipageLayout)
-            m.SetMultipageLayout(&cast)
+            m.SetMultipageLayout(val.(*PrintMultipageLayout))
         }
         return nil
     }
@@ -330,8 +327,7 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(PrintOrientation)
-            m.SetOrientation(&cast)
+            m.SetOrientation(val.(*PrintOrientation))
         }
         return nil
     }
@@ -361,8 +357,7 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(PrintQuality)
-            m.SetQuality(&cast)
+            m.SetQuality(val.(*PrintQuality))
         }
         return nil
     }
@@ -372,8 +367,7 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(PrintScaling)
-            m.SetScaling(&cast)
+            m.SetScaling(val.(*PrintScaling))
         }
         return nil
     }
@@ -385,7 +379,7 @@ func (m *PrinterDefaults) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *PrinterDefaults) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetColorMode() != nil {
-        cast := m.GetColorMode().String()
+        cast := (*m.GetColorMode()).String()
         err := writer.WriteStringValue("colorMode", &cast)
         if err != nil {
             return err
@@ -410,7 +404,7 @@ func (m *PrinterDefaults) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetDuplexMode() != nil {
-        cast := m.GetDuplexMode().String()
+        cast := (*m.GetDuplexMode()).String()
         err := writer.WriteStringValue("duplexMode", &cast)
         if err != nil {
             return err
@@ -453,14 +447,14 @@ func (m *PrinterDefaults) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetMultipageLayout() != nil {
-        cast := m.GetMultipageLayout().String()
+        cast := (*m.GetMultipageLayout()).String()
         err := writer.WriteStringValue("multipageLayout", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetOrientation() != nil {
-        cast := m.GetOrientation().String()
+        cast := (*m.GetOrientation()).String()
         err := writer.WriteStringValue("orientation", &cast)
         if err != nil {
             return err
@@ -479,14 +473,14 @@ func (m *PrinterDefaults) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetQuality() != nil {
-        cast := m.GetQuality().String()
+        cast := (*m.GetQuality()).String()
         err := writer.WriteStringValue("quality", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetScaling() != nil {
-        cast := m.GetScaling().String()
+        cast := (*m.GetScaling()).String()
         err := writer.WriteStringValue("scaling", &cast)
         if err != nil {
             return err

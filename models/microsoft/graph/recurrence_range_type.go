@@ -16,15 +16,18 @@ func (i RecurrenceRangeType) String() string {
     return []string{"ENDDATE", "NOEND", "NUMBERED"}[i]
 }
 func ParseRecurrenceRangeType(v string) (interface{}, error) {
+    result := ENDDATE_RECURRENCERANGETYPE
     switch strings.ToUpper(v) {
         case "ENDDATE":
-            return ENDDATE_RECURRENCERANGETYPE, nil
+            result = ENDDATE_RECURRENCERANGETYPE
         case "NOEND":
-            return NOEND_RECURRENCERANGETYPE, nil
+            result = NOEND_RECURRENCERANGETYPE
         case "NUMBERED":
-            return NUMBERED_RECURRENCERANGETYPE, nil
+            result = NUMBERED_RECURRENCERANGETYPE
+        default:
+            return 0, errors.New("Unknown RecurrenceRangeType value: " + v)
     }
-    return 0, errors.New("Unknown RecurrenceRangeType value: " + v)
+    return &result, nil
 }
 func SerializeRecurrenceRangeType(values []RecurrenceRangeType) []string {
     result := make([]string, len(values))

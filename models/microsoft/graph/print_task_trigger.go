@@ -54,8 +54,7 @@ func (m *PrintTaskTrigger) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(PrintEvent)
-            m.SetEvent(&cast)
+            m.SetEvent(val.(*PrintEvent))
         }
         return nil
     }
@@ -77,7 +76,7 @@ func (m *PrintTaskTrigger) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetEvent() != nil {
-        cast := m.GetEvent().String()
+        cast := (*m.GetEvent()).String()
         err = writer.WriteStringValue("event", &cast)
         if err != nil {
             return err

@@ -18,19 +18,22 @@ func (i DeviceManagementExchangeAccessState) String() string {
     return []string{"NONE", "UNKNOWN", "ALLOWED", "BLOCKED", "QUARANTINED"}[i]
 }
 func ParseDeviceManagementExchangeAccessState(v string) (interface{}, error) {
+    result := NONE_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEMANAGEMENTEXCHANGEACCESSSTATE, nil
+            result = NONE_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
         case "UNKNOWN":
-            return UNKNOWN_DEVICEMANAGEMENTEXCHANGEACCESSSTATE, nil
+            result = UNKNOWN_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
         case "ALLOWED":
-            return ALLOWED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE, nil
+            result = ALLOWED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
         case "BLOCKED":
-            return BLOCKED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE, nil
+            result = BLOCKED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
         case "QUARANTINED":
-            return QUARANTINED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE, nil
+            result = QUARANTINED_DEVICEMANAGEMENTEXCHANGEACCESSSTATE
+        default:
+            return 0, errors.New("Unknown DeviceManagementExchangeAccessState value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementExchangeAccessState value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementExchangeAccessState(values []DeviceManagementExchangeAccessState) []string {
     result := make([]string, len(values))

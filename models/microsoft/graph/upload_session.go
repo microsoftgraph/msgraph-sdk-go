@@ -11,7 +11,7 @@ type UploadSession struct {
     additionalData map[string]interface{};
     // The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, '{start}-{end}' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
+    // A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
     nextExpectedRanges []string;
     // The URL endpoint that accepts PUT requests for byte ranges of the file.
     uploadUrl *string;
@@ -39,7 +39,7 @@ func (m *UploadSession) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97
         return m.expirationDateTime
     }
 }
-// GetNextExpectedRanges gets the nextExpectedRanges property value. When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, '{start}-{end}' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
+// GetNextExpectedRanges gets the nextExpectedRanges property value. A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
 func (m *UploadSession) GetNextExpectedRanges()([]string) {
     if m == nil {
         return nil
@@ -137,7 +137,7 @@ func (m *UploadSession) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3
         m.expirationDateTime = value
     }
 }
-// SetNextExpectedRanges sets the nextExpectedRanges property value. When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, '{start}-{end}' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
+// SetNextExpectedRanges sets the nextExpectedRanges property value. A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
 func (m *UploadSession) SetNextExpectedRanges(value []string)() {
     if m != nil {
         m.nextExpectedRanges = value

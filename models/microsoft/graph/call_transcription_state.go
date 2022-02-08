@@ -17,17 +17,20 @@ func (i CallTranscriptionState) String() string {
     return []string{"NOTSTARTED", "ACTIVE", "INACTIVE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCallTranscriptionState(v string) (interface{}, error) {
+    result := NOTSTARTED_CALLTRANSCRIPTIONSTATE
     switch strings.ToUpper(v) {
         case "NOTSTARTED":
-            return NOTSTARTED_CALLTRANSCRIPTIONSTATE, nil
+            result = NOTSTARTED_CALLTRANSCRIPTIONSTATE
         case "ACTIVE":
-            return ACTIVE_CALLTRANSCRIPTIONSTATE, nil
+            result = ACTIVE_CALLTRANSCRIPTIONSTATE
         case "INACTIVE":
-            return INACTIVE_CALLTRANSCRIPTIONSTATE, nil
+            result = INACTIVE_CALLTRANSCRIPTIONSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CALLTRANSCRIPTIONSTATE, nil
+            result = UNKNOWNFUTUREVALUE_CALLTRANSCRIPTIONSTATE
+        default:
+            return 0, errors.New("Unknown CallTranscriptionState value: " + v)
     }
-    return 0, errors.New("Unknown CallTranscriptionState value: " + v)
+    return &result, nil
 }
 func SerializeCallTranscriptionState(values []CallTranscriptionState) []string {
     result := make([]string, len(values))

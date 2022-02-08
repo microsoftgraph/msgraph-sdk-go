@@ -17,17 +17,20 @@ func (i ChatMessageImportance) String() string {
     return []string{"NORMAL", "HIGH", "URGENT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseChatMessageImportance(v string) (interface{}, error) {
+    result := NORMAL_CHATMESSAGEIMPORTANCE
     switch strings.ToUpper(v) {
         case "NORMAL":
-            return NORMAL_CHATMESSAGEIMPORTANCE, nil
+            result = NORMAL_CHATMESSAGEIMPORTANCE
         case "HIGH":
-            return HIGH_CHATMESSAGEIMPORTANCE, nil
+            result = HIGH_CHATMESSAGEIMPORTANCE
         case "URGENT":
-            return URGENT_CHATMESSAGEIMPORTANCE, nil
+            result = URGENT_CHATMESSAGEIMPORTANCE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CHATMESSAGEIMPORTANCE, nil
+            result = UNKNOWNFUTUREVALUE_CHATMESSAGEIMPORTANCE
+        default:
+            return 0, errors.New("Unknown ChatMessageImportance value: " + v)
     }
-    return 0, errors.New("Unknown ChatMessageImportance value: " + v)
+    return &result, nil
 }
 func SerializeChatMessageImportance(values []ChatMessageImportance) []string {
     result := make([]string, len(values))

@@ -44,8 +44,7 @@ func (m *SyncRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementExchangeConnectorSyncType)
-            m.SetSyncType(&cast)
+            m.SetSyncType(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementExchangeConnectorSyncType))
         }
         return nil
     }
@@ -57,7 +56,7 @@ func (m *SyncRequestBody) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *SyncRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetSyncType() != nil {
-        cast := m.GetSyncType().String()
+        cast := (*m.GetSyncType()).String()
         err := writer.WriteStringValue("syncType", &cast)
         if err != nil {
             return err

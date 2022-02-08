@@ -16,15 +16,18 @@ func (i ConditionalAccessPolicyState) String() string {
     return []string{"ENABLED", "DISABLED", "ENABLEDFORREPORTINGBUTNOTENFORCED"}[i]
 }
 func ParseConditionalAccessPolicyState(v string) (interface{}, error) {
+    result := ENABLED_CONDITIONALACCESSPOLICYSTATE
     switch strings.ToUpper(v) {
         case "ENABLED":
-            return ENABLED_CONDITIONALACCESSPOLICYSTATE, nil
+            result = ENABLED_CONDITIONALACCESSPOLICYSTATE
         case "DISABLED":
-            return DISABLED_CONDITIONALACCESSPOLICYSTATE, nil
+            result = DISABLED_CONDITIONALACCESSPOLICYSTATE
         case "ENABLEDFORREPORTINGBUTNOTENFORCED":
-            return ENABLEDFORREPORTINGBUTNOTENFORCED_CONDITIONALACCESSPOLICYSTATE, nil
+            result = ENABLEDFORREPORTINGBUTNOTENFORCED_CONDITIONALACCESSPOLICYSTATE
+        default:
+            return 0, errors.New("Unknown ConditionalAccessPolicyState value: " + v)
     }
-    return 0, errors.New("Unknown ConditionalAccessPolicyState value: " + v)
+    return &result, nil
 }
 func SerializeConditionalAccessPolicyState(values []ConditionalAccessPolicyState) []string {
     result := make([]string, len(values))

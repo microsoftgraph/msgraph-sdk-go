@@ -16,15 +16,18 @@ func (i EducationAddedStudentAction) String() string {
     return []string{"NONE", "ASSIGNIFOPEN", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseEducationAddedStudentAction(v string) (interface{}, error) {
+    result := NONE_EDUCATIONADDEDSTUDENTACTION
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_EDUCATIONADDEDSTUDENTACTION, nil
+            result = NONE_EDUCATIONADDEDSTUDENTACTION
         case "ASSIGNIFOPEN":
-            return ASSIGNIFOPEN_EDUCATIONADDEDSTUDENTACTION, nil
+            result = ASSIGNIFOPEN_EDUCATIONADDEDSTUDENTACTION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EDUCATIONADDEDSTUDENTACTION, nil
+            result = UNKNOWNFUTUREVALUE_EDUCATIONADDEDSTUDENTACTION
+        default:
+            return 0, errors.New("Unknown EducationAddedStudentAction value: " + v)
     }
-    return 0, errors.New("Unknown EducationAddedStudentAction value: " + v)
+    return &result, nil
 }
 func SerializeEducationAddedStudentAction(values []EducationAddedStudentAction) []string {
     result := make([]string, len(values))

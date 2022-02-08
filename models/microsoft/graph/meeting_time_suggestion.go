@@ -18,7 +18,7 @@ type MeetingTimeSuggestion struct {
     meetingTimeSlot *TimeSlot;
     // Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
     order *int32;
-    // Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+    // Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
     organizerAvailability *FreeBusyStatus;
     // Reason for suggesting the meeting time.
     suggestionReason *string;
@@ -78,7 +78,7 @@ func (m *MeetingTimeSuggestion) GetOrder()(*int32) {
         return m.order
     }
 }
-// GetOrganizerAvailability gets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// GetOrganizerAvailability gets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *MeetingTimeSuggestion) GetOrganizerAvailability()(*FreeBusyStatus) {
     if m == nil {
         return nil
@@ -161,8 +161,7 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(FreeBusyStatus)
-            m.SetOrganizerAvailability(&cast)
+            m.SetOrganizerAvailability(val.(*FreeBusyStatus))
         }
         return nil
     }
@@ -224,7 +223,7 @@ func (m *MeetingTimeSuggestion) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetOrganizerAvailability() != nil {
-        cast := m.GetOrganizerAvailability().String()
+        cast := (*m.GetOrganizerAvailability()).String()
         err := writer.WriteStringValue("organizerAvailability", &cast)
         if err != nil {
             return err
@@ -280,7 +279,7 @@ func (m *MeetingTimeSuggestion) SetOrder(value *int32)() {
         m.order = value
     }
 }
-// SetOrganizerAvailability sets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// SetOrganizerAvailability sets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *MeetingTimeSuggestion) SetOrganizerAvailability(value *FreeBusyStatus)() {
     if m != nil {
         m.organizerAvailability = value

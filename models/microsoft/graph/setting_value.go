@@ -8,7 +8,7 @@ import (
 type SettingValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Name of the setting (as defined by the directorySettingTemplate).
+    // Name of the setting (as defined by the groupSettingTemplate).
     name *string;
     // Value of the setting.
     value *string;
@@ -28,7 +28,7 @@ func (m *SettingValue) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetName gets the name property value. Name of the setting (as defined by the directorySettingTemplate).
+// GetName gets the name property value. Name of the setting (as defined by the groupSettingTemplate).
 func (m *SettingValue) GetName()(*string) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *SettingValue) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetName sets the name property value. Name of the setting (as defined by the directorySettingTemplate).
+// SetName sets the name property value. Name of the setting (as defined by the groupSettingTemplate).
 func (m *SettingValue) SetName(value *string)() {
     if m != nil {
         m.name = value

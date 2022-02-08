@@ -19,21 +19,24 @@ func (i RecurrencePatternType) String() string {
     return []string{"DAILY", "WEEKLY", "ABSOLUTEMONTHLY", "RELATIVEMONTHLY", "ABSOLUTEYEARLY", "RELATIVEYEARLY"}[i]
 }
 func ParseRecurrencePatternType(v string) (interface{}, error) {
+    result := DAILY_RECURRENCEPATTERNTYPE
     switch strings.ToUpper(v) {
         case "DAILY":
-            return DAILY_RECURRENCEPATTERNTYPE, nil
+            result = DAILY_RECURRENCEPATTERNTYPE
         case "WEEKLY":
-            return WEEKLY_RECURRENCEPATTERNTYPE, nil
+            result = WEEKLY_RECURRENCEPATTERNTYPE
         case "ABSOLUTEMONTHLY":
-            return ABSOLUTEMONTHLY_RECURRENCEPATTERNTYPE, nil
+            result = ABSOLUTEMONTHLY_RECURRENCEPATTERNTYPE
         case "RELATIVEMONTHLY":
-            return RELATIVEMONTHLY_RECURRENCEPATTERNTYPE, nil
+            result = RELATIVEMONTHLY_RECURRENCEPATTERNTYPE
         case "ABSOLUTEYEARLY":
-            return ABSOLUTEYEARLY_RECURRENCEPATTERNTYPE, nil
+            result = ABSOLUTEYEARLY_RECURRENCEPATTERNTYPE
         case "RELATIVEYEARLY":
-            return RELATIVEYEARLY_RECURRENCEPATTERNTYPE, nil
+            result = RELATIVEYEARLY_RECURRENCEPATTERNTYPE
+        default:
+            return 0, errors.New("Unknown RecurrencePatternType value: " + v)
     }
-    return 0, errors.New("Unknown RecurrencePatternType value: " + v)
+    return &result, nil
 }
 func SerializeRecurrencePatternType(values []RecurrencePatternType) []string {
     result := make([]string, len(values))

@@ -53,8 +53,7 @@ func (m *FileHash) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(FileHashType)
-            m.SetHashType(&cast)
+            m.SetHashType(val.(*FileHashType))
         }
         return nil
     }
@@ -76,7 +75,7 @@ func (m *FileHash) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *FileHash) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetHashType() != nil {
-        cast := m.GetHashType().String()
+        cast := (*m.GetHashType()).String()
         err := writer.WriteStringValue("hashType", &cast)
         if err != nil {
             return err

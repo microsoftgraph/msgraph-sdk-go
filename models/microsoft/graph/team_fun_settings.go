@@ -103,8 +103,7 @@ func (m *TeamFunSettings) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(GiphyRatingType)
-            m.SetGiphyContentRating(&cast)
+            m.SetGiphyContentRating(val.(*GiphyRatingType))
         }
         return nil
     }
@@ -134,7 +133,7 @@ func (m *TeamFunSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetGiphyContentRating() != nil {
-        cast := m.GetGiphyContentRating().String()
+        cast := (*m.GetGiphyContentRating()).String()
         err := writer.WriteStringValue("giphyContentRating", &cast)
         if err != nil {
             return err

@@ -308,8 +308,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(WindowsInformationProtectionEnforcementLevel)
-            m.SetEnforcementLevel(&cast)
+            m.SetEnforcementLevel(val.(*WindowsInformationProtectionEnforcementLevel))
         }
         return nil
     }
@@ -606,7 +605,7 @@ func (m *WindowsInformationProtection) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     if m.GetEnforcementLevel() != nil {
-        cast := m.GetEnforcementLevel().String()
+        cast := (*m.GetEnforcementLevel()).String()
         err = writer.WriteStringValue("enforcementLevel", &cast)
         if err != nil {
             return err

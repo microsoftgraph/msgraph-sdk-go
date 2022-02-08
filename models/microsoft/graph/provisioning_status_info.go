@@ -63,8 +63,7 @@ func (m *ProvisioningStatusInfo) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(ProvisioningResult)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*ProvisioningResult))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *ProvisioningStatusInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err := writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

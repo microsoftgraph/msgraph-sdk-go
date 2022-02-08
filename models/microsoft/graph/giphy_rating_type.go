@@ -16,15 +16,18 @@ func (i GiphyRatingType) String() string {
     return []string{"STRICT", "MODERATE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseGiphyRatingType(v string) (interface{}, error) {
+    result := STRICT_GIPHYRATINGTYPE
     switch strings.ToUpper(v) {
         case "STRICT":
-            return STRICT_GIPHYRATINGTYPE, nil
+            result = STRICT_GIPHYRATINGTYPE
         case "MODERATE":
-            return MODERATE_GIPHYRATINGTYPE, nil
+            result = MODERATE_GIPHYRATINGTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_GIPHYRATINGTYPE, nil
+            result = UNKNOWNFUTUREVALUE_GIPHYRATINGTYPE
+        default:
+            return 0, errors.New("Unknown GiphyRatingType value: " + v)
     }
-    return 0, errors.New("Unknown GiphyRatingType value: " + v)
+    return &result, nil
 }
 func SerializeGiphyRatingType(values []GiphyRatingType) []string {
     result := make([]string, len(values))

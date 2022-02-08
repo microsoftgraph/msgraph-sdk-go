@@ -12,9 +12,9 @@ type OfferShiftRequest struct {
     recipientActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Custom message sent by recipient of the offer shift request.
     recipientActionMessage *string;
-    // User id of the recipient of the offer shift request.
+    // User ID of the recipient of the offer shift request.
     recipientUserId *string;
-    // User id of the sender of the offer shift request.
+    // User ID of the sender of the offer shift request.
     senderShiftId *string;
 }
 // NewOfferShiftRequest instantiates a new offerShiftRequest and sets the default values.
@@ -40,7 +40,7 @@ func (m *OfferShiftRequest) GetRecipientActionMessage()(*string) {
         return m.recipientActionMessage
     }
 }
-// GetRecipientUserId gets the recipientUserId property value. User id of the recipient of the offer shift request.
+// GetRecipientUserId gets the recipientUserId property value. User ID of the recipient of the offer shift request.
 func (m *OfferShiftRequest) GetRecipientUserId()(*string) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *OfferShiftRequest) GetRecipientUserId()(*string) {
         return m.recipientUserId
     }
 }
-// GetSenderShiftId gets the senderShiftId property value. User id of the sender of the offer shift request.
+// GetSenderShiftId gets the senderShiftId property value. User ID of the sender of the offer shift request.
 func (m *OfferShiftRequest) GetSenderShiftId()(*string) {
     if m == nil {
         return nil
@@ -148,13 +148,13 @@ func (m *OfferShiftRequest) SetRecipientActionMessage(value *string)() {
         m.recipientActionMessage = value
     }
 }
-// SetRecipientUserId sets the recipientUserId property value. User id of the recipient of the offer shift request.
+// SetRecipientUserId sets the recipientUserId property value. User ID of the recipient of the offer shift request.
 func (m *OfferShiftRequest) SetRecipientUserId(value *string)() {
     if m != nil {
         m.recipientUserId = value
     }
 }
-// SetSenderShiftId sets the senderShiftId property value. User id of the sender of the offer shift request.
+// SetSenderShiftId sets the senderShiftId property value. User ID of the sender of the offer shift request.
 func (m *OfferShiftRequest) SetSenderShiftId(value *string)() {
     if m != nil {
         m.senderShiftId = value

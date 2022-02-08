@@ -17,17 +17,20 @@ func (i ServiceUpdateSeverity) String() string {
     return []string{"NORMAL", "HIGH", "CRITICAL", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseServiceUpdateSeverity(v string) (interface{}, error) {
+    result := NORMAL_SERVICEUPDATESEVERITY
     switch strings.ToUpper(v) {
         case "NORMAL":
-            return NORMAL_SERVICEUPDATESEVERITY, nil
+            result = NORMAL_SERVICEUPDATESEVERITY
         case "HIGH":
-            return HIGH_SERVICEUPDATESEVERITY, nil
+            result = HIGH_SERVICEUPDATESEVERITY
         case "CRITICAL":
-            return CRITICAL_SERVICEUPDATESEVERITY, nil
+            result = CRITICAL_SERVICEUPDATESEVERITY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SERVICEUPDATESEVERITY, nil
+            result = UNKNOWNFUTUREVALUE_SERVICEUPDATESEVERITY
+        default:
+            return 0, errors.New("Unknown ServiceUpdateSeverity value: " + v)
     }
-    return 0, errors.New("Unknown ServiceUpdateSeverity value: " + v)
+    return &result, nil
 }
 func SerializeServiceUpdateSeverity(values []ServiceUpdateSeverity) []string {
     result := make([]string, len(values))

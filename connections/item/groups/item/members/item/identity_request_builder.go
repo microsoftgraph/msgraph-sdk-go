@@ -35,7 +35,7 @@ type IdentityRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// IdentityRequestBuilderGetQueryParameters a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// IdentityRequestBuilderGetQueryParameters a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 type IdentityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewIdentityRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// CreateDeleteRequestInformation a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *IdentityRequestBuilder) CreateDeleteRequestInformation(options *IdentityRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *IdentityRequestBuilder) CreateDeleteRequestInformation(options *Identit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// CreateGetRequestInformation a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *IdentityRequestBuilder) CreateGetRequestInformation(options *IdentityRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *IdentityRequestBuilder) CreateGetRequestInformation(options *IdentityRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// CreatePatchRequestInformation a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *IdentityRequestBuilder) CreatePatchRequestInformation(options *IdentityRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *IdentityRequestBuilder) CreatePatchRequestInformation(options *Identity
     }
     return requestInfo, nil
 }
-// Delete a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// Delete a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *IdentityRequestBuilder) Delete(options *IdentityRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *IdentityRequestBuilder) Delete(options *IdentityRequestBuilderDeleteOpt
     }
     return nil
 }
-// Get a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// Get a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *IdentityRequestBuilder) Get(options *IdentityRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Identity, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *IdentityRequestBuilder) Get(options *IdentityRequestBuilderGetOptions)(
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Identity), nil
 }
-// Patch a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
+// Patch a member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
 func (m *IdentityRequestBuilder) Patch(options *IdentityRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

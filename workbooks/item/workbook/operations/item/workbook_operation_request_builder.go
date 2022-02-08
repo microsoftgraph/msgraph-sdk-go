@@ -35,7 +35,7 @@ type WorkbookOperationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// WorkbookOperationRequestBuilderGetQueryParameters the status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
+// WorkbookOperationRequestBuilderGetQueryParameters the status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
 type WorkbookOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewWorkbookOperationRequestBuilder(rawUrl string, requestAdapter ida96af0f1
     urlParams["request-raw-url"] = rawUrl
     return NewWorkbookOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
+// CreateDeleteRequestInformation the status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
 func (m *WorkbookOperationRequestBuilder) CreateDeleteRequestInformation(options *WorkbookOperationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *WorkbookOperationRequestBuilder) CreateDeleteRequestInformation(options
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
+// CreateGetRequestInformation the status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
 func (m *WorkbookOperationRequestBuilder) CreateGetRequestInformation(options *WorkbookOperationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *WorkbookOperationRequestBuilder) CreateGetRequestInformation(options *W
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
+// CreatePatchRequestInformation the status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
 func (m *WorkbookOperationRequestBuilder) CreatePatchRequestInformation(options *WorkbookOperationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *WorkbookOperationRequestBuilder) CreatePatchRequestInformation(options 
     }
     return requestInfo, nil
 }
-// Delete the status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
+// Delete the status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
 func (m *WorkbookOperationRequestBuilder) Delete(options *WorkbookOperationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *WorkbookOperationRequestBuilder) Delete(options *WorkbookOperationReque
     }
     return nil
 }
-// Get the status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
+// Get the status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
 func (m *WorkbookOperationRequestBuilder) Get(options *WorkbookOperationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookOperation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *WorkbookOperationRequestBuilder) Get(options *WorkbookOperationRequestB
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.WorkbookOperation), nil
 }
-// Patch the status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.
+// Patch the status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
 func (m *WorkbookOperationRequestBuilder) Patch(options *WorkbookOperationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

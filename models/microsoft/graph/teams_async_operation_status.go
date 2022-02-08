@@ -19,21 +19,24 @@ func (i TeamsAsyncOperationStatus) String() string {
     return []string{"INVALID", "NOTSTARTED", "INPROGRESS", "SUCCEEDED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamsAsyncOperationStatus(v string) (interface{}, error) {
+    result := INVALID_TEAMSASYNCOPERATIONSTATUS
     switch strings.ToUpper(v) {
         case "INVALID":
-            return INVALID_TEAMSASYNCOPERATIONSTATUS, nil
+            result = INVALID_TEAMSASYNCOPERATIONSTATUS
         case "NOTSTARTED":
-            return NOTSTARTED_TEAMSASYNCOPERATIONSTATUS, nil
+            result = NOTSTARTED_TEAMSASYNCOPERATIONSTATUS
         case "INPROGRESS":
-            return INPROGRESS_TEAMSASYNCOPERATIONSTATUS, nil
+            result = INPROGRESS_TEAMSASYNCOPERATIONSTATUS
         case "SUCCEEDED":
-            return SUCCEEDED_TEAMSASYNCOPERATIONSTATUS, nil
+            result = SUCCEEDED_TEAMSASYNCOPERATIONSTATUS
         case "FAILED":
-            return FAILED_TEAMSASYNCOPERATIONSTATUS, nil
+            result = FAILED_TEAMSASYNCOPERATIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMSASYNCOPERATIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_TEAMSASYNCOPERATIONSTATUS
+        default:
+            return 0, errors.New("Unknown TeamsAsyncOperationStatus value: " + v)
     }
-    return 0, errors.New("Unknown TeamsAsyncOperationStatus value: " + v)
+    return &result, nil
 }
 func SerializeTeamsAsyncOperationStatus(values []TeamsAsyncOperationStatus) []string {
     result := make([]string, len(values))

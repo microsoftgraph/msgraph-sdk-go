@@ -20,23 +20,26 @@ func (i ConditionalAccessClientApp) String() string {
     return []string{"ALL", "BROWSER", "MOBILEAPPSANDDESKTOPCLIENTS", "EXCHANGEACTIVESYNC", "EASSUPPORTED", "OTHER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseConditionalAccessClientApp(v string) (interface{}, error) {
+    result := ALL_CONDITIONALACCESSCLIENTAPP
     switch strings.ToUpper(v) {
         case "ALL":
-            return ALL_CONDITIONALACCESSCLIENTAPP, nil
+            result = ALL_CONDITIONALACCESSCLIENTAPP
         case "BROWSER":
-            return BROWSER_CONDITIONALACCESSCLIENTAPP, nil
+            result = BROWSER_CONDITIONALACCESSCLIENTAPP
         case "MOBILEAPPSANDDESKTOPCLIENTS":
-            return MOBILEAPPSANDDESKTOPCLIENTS_CONDITIONALACCESSCLIENTAPP, nil
+            result = MOBILEAPPSANDDESKTOPCLIENTS_CONDITIONALACCESSCLIENTAPP
         case "EXCHANGEACTIVESYNC":
-            return EXCHANGEACTIVESYNC_CONDITIONALACCESSCLIENTAPP, nil
+            result = EXCHANGEACTIVESYNC_CONDITIONALACCESSCLIENTAPP
         case "EASSUPPORTED":
-            return EASSUPPORTED_CONDITIONALACCESSCLIENTAPP, nil
+            result = EASSUPPORTED_CONDITIONALACCESSCLIENTAPP
         case "OTHER":
-            return OTHER_CONDITIONALACCESSCLIENTAPP, nil
+            result = OTHER_CONDITIONALACCESSCLIENTAPP
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONDITIONALACCESSCLIENTAPP, nil
+            result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSCLIENTAPP
+        default:
+            return 0, errors.New("Unknown ConditionalAccessClientApp value: " + v)
     }
-    return 0, errors.New("Unknown ConditionalAccessClientApp value: " + v)
+    return &result, nil
 }
 func SerializeConditionalAccessClientApp(values []ConditionalAccessClientApp) []string {
     result := make([]string, len(values))

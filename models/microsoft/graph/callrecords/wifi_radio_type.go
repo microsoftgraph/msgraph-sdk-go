@@ -21,25 +21,28 @@ func (i WifiRadioType) String() string {
     return []string{"UNKNOWN", "WIFI80211A", "WIFI80211B", "WIFI80211G", "WIFI80211N", "WIFI80211AC", "WIFI80211AX", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseWifiRadioType(v string) (interface{}, error) {
+    result := UNKNOWN_WIFIRADIOTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_WIFIRADIOTYPE, nil
+            result = UNKNOWN_WIFIRADIOTYPE
         case "WIFI80211A":
-            return WIFI80211A_WIFIRADIOTYPE, nil
+            result = WIFI80211A_WIFIRADIOTYPE
         case "WIFI80211B":
-            return WIFI80211B_WIFIRADIOTYPE, nil
+            result = WIFI80211B_WIFIRADIOTYPE
         case "WIFI80211G":
-            return WIFI80211G_WIFIRADIOTYPE, nil
+            result = WIFI80211G_WIFIRADIOTYPE
         case "WIFI80211N":
-            return WIFI80211N_WIFIRADIOTYPE, nil
+            result = WIFI80211N_WIFIRADIOTYPE
         case "WIFI80211AC":
-            return WIFI80211AC_WIFIRADIOTYPE, nil
+            result = WIFI80211AC_WIFIRADIOTYPE
         case "WIFI80211AX":
-            return WIFI80211AX_WIFIRADIOTYPE, nil
+            result = WIFI80211AX_WIFIRADIOTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_WIFIRADIOTYPE, nil
+            result = UNKNOWNFUTUREVALUE_WIFIRADIOTYPE
+        default:
+            return 0, errors.New("Unknown WifiRadioType value: " + v)
     }
-    return 0, errors.New("Unknown WifiRadioType value: " + v)
+    return &result, nil
 }
 func SerializeWifiRadioType(values []WifiRadioType) []string {
     result := make([]string, len(values))

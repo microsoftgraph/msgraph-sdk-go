@@ -16,15 +16,18 @@ func (i WindowsInformationProtectionPinCharacterRequirements) String() string {
     return []string{"NOTALLOW", "REQUIREATLEASTONE", "ALLOW"}[i]
 }
 func ParseWindowsInformationProtectionPinCharacterRequirements(v string) (interface{}, error) {
+    result := NOTALLOW_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS
     switch strings.ToUpper(v) {
         case "NOTALLOW":
-            return NOTALLOW_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS, nil
+            result = NOTALLOW_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS
         case "REQUIREATLEASTONE":
-            return REQUIREATLEASTONE_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS, nil
+            result = REQUIREATLEASTONE_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS
         case "ALLOW":
-            return ALLOW_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS, nil
+            result = ALLOW_WINDOWSINFORMATIONPROTECTIONPINCHARACTERREQUIREMENTS
+        default:
+            return 0, errors.New("Unknown WindowsInformationProtectionPinCharacterRequirements value: " + v)
     }
-    return 0, errors.New("Unknown WindowsInformationProtectionPinCharacterRequirements value: " + v)
+    return &result, nil
 }
 func SerializeWindowsInformationProtectionPinCharacterRequirements(values []WindowsInformationProtectionPinCharacterRequirements) []string {
     result := make([]string, len(values))

@@ -11,7 +11,7 @@ type IosManagedAppProtection struct {
     appDataEncryptionType *ManagedAppDataEncryptionType;
     // List of apps to which the policy is deployed.
     apps []ManagedMobileApp;
-    // A custom browser protocol to open weblink on iOS.
+    // A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
     customBrowserProtocol *string;
     // Count of apps to which the current policy is deployed.
     deployedAppCount *int32;
@@ -45,7 +45,7 @@ func (m *IosManagedAppProtection) GetApps()([]ManagedMobileApp) {
         return m.apps
     }
 }
-// GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS.
+// GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *IosManagedAppProtection) GetCustomBrowserProtocol()(*string) {
     if m == nil {
         return nil
@@ -94,8 +94,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppDataEncryptionType)
-            m.SetAppDataEncryptionType(&cast)
+            m.SetAppDataEncryptionType(val.(*ManagedAppDataEncryptionType))
         }
         return nil
     }
@@ -175,7 +174,7 @@ func (m *IosManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c847
         return err
     }
     if m.GetAppDataEncryptionType() != nil {
-        cast := m.GetAppDataEncryptionType().String()
+        cast := (*m.GetAppDataEncryptionType()).String()
         err = writer.WriteStringValue("appDataEncryptionType", &cast)
         if err != nil {
             return err
@@ -236,7 +235,7 @@ func (m *IosManagedAppProtection) SetApps(value []ManagedMobileApp)() {
         m.apps = value
     }
 }
-// SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS.
+// SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *IosManagedAppProtection) SetCustomBrowserProtocol(value *string)() {
     if m != nil {
         m.customBrowserProtocol = value

@@ -9,7 +9,7 @@ import (
 type NetworkConnection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
+    // Name of the application managing the network connection (for example, Facebook or SMTP).
     applicationName *string;
     // Destination IP address (of the network connection).
     destinationAddress *string;
@@ -65,7 +65,7 @@ func (m *NetworkConnection) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetApplicationName gets the applicationName property value. Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
+// GetApplicationName gets the applicationName property value. Name of the application managing the network connection (for example, Facebook or SMTP).
 func (m *NetworkConnection) GetApplicationName()(*string) {
     if m == nil {
         return nil
@@ -294,8 +294,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(ConnectionDirection)
-            m.SetDirection(&cast)
+            m.SetDirection(val.(*ConnectionDirection))
         }
         return nil
     }
@@ -365,8 +364,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(SecurityNetworkProtocol)
-            m.SetProtocol(&cast)
+            m.SetProtocol(val.(*SecurityNetworkProtocol))
         }
         return nil
     }
@@ -416,8 +414,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(ConnectionStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*ConnectionStatus))
         }
         return nil
     }
@@ -475,7 +472,7 @@ func (m *NetworkConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetDirection() != nil {
-        cast := m.GetDirection().String()
+        cast := (*m.GetDirection()).String()
         err := writer.WriteStringValue("direction", &cast)
         if err != nil {
             return err
@@ -518,7 +515,7 @@ func (m *NetworkConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetProtocol() != nil {
-        cast := m.GetProtocol().String()
+        cast := (*m.GetProtocol()).String()
         err := writer.WriteStringValue("protocol", &cast)
         if err != nil {
             return err
@@ -549,7 +546,7 @@ func (m *NetworkConnection) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err := writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
@@ -575,7 +572,7 @@ func (m *NetworkConnection) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetApplicationName sets the applicationName property value. Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
+// SetApplicationName sets the applicationName property value. Name of the application managing the network connection (for example, Facebook or SMTP).
 func (m *NetworkConnection) SetApplicationName(value *string)() {
     if m != nil {
         m.applicationName = value

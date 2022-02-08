@@ -54,8 +54,7 @@ func (m *ResponseStatus) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(ResponseType)
-            m.SetResponse(&cast)
+            m.SetResponse(val.(*ResponseType))
         }
         return nil
     }
@@ -77,7 +76,7 @@ func (m *ResponseStatus) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ResponseStatus) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetResponse() != nil {
-        cast := m.GetResponse().String()
+        cast := (*m.GetResponse()).String()
         err := writer.WriteStringValue("response", &cast)
         if err != nil {
             return err

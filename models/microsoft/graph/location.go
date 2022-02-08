@@ -16,7 +16,7 @@ type Location struct {
     displayName *string;
     // Optional email address of the location.
     locationEmailAddress *string;
-    // The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
+    // The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
     locationType *LocationType;
     // Optional URI representing the location.
     locationUri *string;
@@ -72,7 +72,7 @@ func (m *Location) GetLocationEmailAddress()(*string) {
         return m.locationEmailAddress
     }
 }
-// GetLocationType gets the locationType property value. The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
+// GetLocationType gets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
 func (m *Location) GetLocationType()(*LocationType) {
     if m == nil {
         return nil
@@ -153,8 +153,7 @@ func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(LocationType)
-            m.SetLocationType(&cast)
+            m.SetLocationType(val.(*LocationType))
         }
         return nil
     }
@@ -184,8 +183,7 @@ func (m *Location) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(LocationUniqueIdType)
-            m.SetUniqueIdType(&cast)
+            m.SetUniqueIdType(val.(*LocationUniqueIdType))
         }
         return nil
     }
@@ -221,7 +219,7 @@ func (m *Location) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetLocationType() != nil {
-        cast := m.GetLocationType().String()
+        cast := (*m.GetLocationType()).String()
         err := writer.WriteStringValue("locationType", &cast)
         if err != nil {
             return err
@@ -240,7 +238,7 @@ func (m *Location) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetUniqueIdType() != nil {
-        cast := m.GetUniqueIdType().String()
+        cast := (*m.GetUniqueIdType()).String()
         err := writer.WriteStringValue("uniqueIdType", &cast)
         if err != nil {
             return err
@@ -284,7 +282,7 @@ func (m *Location) SetLocationEmailAddress(value *string)() {
         m.locationEmailAddress = value
     }
 }
-// SetLocationType sets the locationType property value. The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
+// SetLocationType sets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
 func (m *Location) SetLocationType(value *LocationType)() {
     if m != nil {
         m.locationType = value

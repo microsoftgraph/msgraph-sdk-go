@@ -18,19 +18,22 @@ func (i PrintColorMode) String() string {
     return []string{"BLACKANDWHITE", "GRAYSCALE", "COLOR", "AUTO", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePrintColorMode(v string) (interface{}, error) {
+    result := BLACKANDWHITE_PRINTCOLORMODE
     switch strings.ToUpper(v) {
         case "BLACKANDWHITE":
-            return BLACKANDWHITE_PRINTCOLORMODE, nil
+            result = BLACKANDWHITE_PRINTCOLORMODE
         case "GRAYSCALE":
-            return GRAYSCALE_PRINTCOLORMODE, nil
+            result = GRAYSCALE_PRINTCOLORMODE
         case "COLOR":
-            return COLOR_PRINTCOLORMODE, nil
+            result = COLOR_PRINTCOLORMODE
         case "AUTO":
-            return AUTO_PRINTCOLORMODE, nil
+            result = AUTO_PRINTCOLORMODE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PRINTCOLORMODE, nil
+            result = UNKNOWNFUTUREVALUE_PRINTCOLORMODE
+        default:
+            return 0, errors.New("Unknown PrintColorMode value: " + v)
     }
-    return 0, errors.New("Unknown PrintColorMode value: " + v)
+    return &result, nil
 }
 func SerializePrintColorMode(values []PrintColorMode) []string {
     result := make([]string, len(values))

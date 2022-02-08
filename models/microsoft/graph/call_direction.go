@@ -15,13 +15,16 @@ func (i CallDirection) String() string {
     return []string{"INCOMING", "OUTGOING"}[i]
 }
 func ParseCallDirection(v string) (interface{}, error) {
+    result := INCOMING_CALLDIRECTION
     switch strings.ToUpper(v) {
         case "INCOMING":
-            return INCOMING_CALLDIRECTION, nil
+            result = INCOMING_CALLDIRECTION
         case "OUTGOING":
-            return OUTGOING_CALLDIRECTION, nil
+            result = OUTGOING_CALLDIRECTION
+        default:
+            return 0, errors.New("Unknown CallDirection value: " + v)
     }
-    return 0, errors.New("Unknown CallDirection value: " + v)
+    return &result, nil
 }
 func SerializeCallDirection(values []CallDirection) []string {
     result := make([]string, len(values))

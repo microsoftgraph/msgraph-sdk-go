@@ -16,6 +16,8 @@ type SearchHit struct {
     rank *int32;
     // 
     resource *Entity;
+    // ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.
+    resultTemplateId *string;
     // A summary of the result, if a summary is available.
     summary *string;
 }
@@ -64,6 +66,14 @@ func (m *SearchHit) GetResource()(*Entity) {
         return nil
     } else {
         return m.resource
+    }
+}
+// GetResultTemplateId gets the resultTemplateId property value. ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.
+func (m *SearchHit) GetResultTemplateId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resultTemplateId
     }
 }
 // GetSummary gets the summary property value. A summary of the result, if a summary is available.
@@ -117,6 +127,16 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         }
         return nil
     }
+    res["resultTemplateId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResultTemplateId(val)
+        }
+        return nil
+    }
     res["summary"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -154,6 +174,12 @@ func (m *SearchHit) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
     }
     {
         err := writer.WriteObjectValue("resource", m.GetResource())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("resultTemplateId", m.GetResultTemplateId())
         if err != nil {
             return err
         }
@@ -200,6 +226,12 @@ func (m *SearchHit) SetRank(value *int32)() {
 func (m *SearchHit) SetResource(value *Entity)() {
     if m != nil {
         m.resource = value
+    }
+}
+// SetResultTemplateId sets the resultTemplateId property value. ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.
+func (m *SearchHit) SetResultTemplateId(value *string)() {
+    if m != nil {
+        m.resultTemplateId = value
     }
 }
 // SetSummary sets the summary property value. A summary of the result, if a summary is available.

@@ -23,29 +23,32 @@ func (i CallState) String() string {
     return []string{"INCOMING", "ESTABLISHING", "ESTABLISHED", "HOLD", "TRANSFERRING", "TRANSFERACCEPTED", "REDIRECTING", "TERMINATING", "TERMINATED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCallState(v string) (interface{}, error) {
+    result := INCOMING_CALLSTATE
     switch strings.ToUpper(v) {
         case "INCOMING":
-            return INCOMING_CALLSTATE, nil
+            result = INCOMING_CALLSTATE
         case "ESTABLISHING":
-            return ESTABLISHING_CALLSTATE, nil
+            result = ESTABLISHING_CALLSTATE
         case "ESTABLISHED":
-            return ESTABLISHED_CALLSTATE, nil
+            result = ESTABLISHED_CALLSTATE
         case "HOLD":
-            return HOLD_CALLSTATE, nil
+            result = HOLD_CALLSTATE
         case "TRANSFERRING":
-            return TRANSFERRING_CALLSTATE, nil
+            result = TRANSFERRING_CALLSTATE
         case "TRANSFERACCEPTED":
-            return TRANSFERACCEPTED_CALLSTATE, nil
+            result = TRANSFERACCEPTED_CALLSTATE
         case "REDIRECTING":
-            return REDIRECTING_CALLSTATE, nil
+            result = REDIRECTING_CALLSTATE
         case "TERMINATING":
-            return TERMINATING_CALLSTATE, nil
+            result = TERMINATING_CALLSTATE
         case "TERMINATED":
-            return TERMINATED_CALLSTATE, nil
+            result = TERMINATED_CALLSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CALLSTATE, nil
+            result = UNKNOWNFUTUREVALUE_CALLSTATE
+        default:
+            return 0, errors.New("Unknown CallState value: " + v)
     }
-    return 0, errors.New("Unknown CallState value: " + v)
+    return &result, nil
 }
 func SerializeCallState(values []CallState) []string {
     result := make([]string, len(values))

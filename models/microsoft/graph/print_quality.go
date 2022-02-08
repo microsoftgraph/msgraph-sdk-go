@@ -17,17 +17,20 @@ func (i PrintQuality) String() string {
     return []string{"LOW", "MEDIUM", "HIGH", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePrintQuality(v string) (interface{}, error) {
+    result := LOW_PRINTQUALITY
     switch strings.ToUpper(v) {
         case "LOW":
-            return LOW_PRINTQUALITY, nil
+            result = LOW_PRINTQUALITY
         case "MEDIUM":
-            return MEDIUM_PRINTQUALITY, nil
+            result = MEDIUM_PRINTQUALITY
         case "HIGH":
-            return HIGH_PRINTQUALITY, nil
+            result = HIGH_PRINTQUALITY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PRINTQUALITY, nil
+            result = UNKNOWNFUTUREVALUE_PRINTQUALITY
+        default:
+            return 0, errors.New("Unknown PrintQuality value: " + v)
     }
-    return 0, errors.New("Unknown PrintQuality value: " + v)
+    return &result, nil
 }
 func SerializePrintQuality(values []PrintQuality) []string {
     result := make([]string, len(values))

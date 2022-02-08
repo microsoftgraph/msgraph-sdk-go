@@ -18,19 +18,22 @@ func (i RecipientScopeType) String() string {
     return []string{"NONE", "INTERNAL", "EXTERNAL", "EXTERNALPARTNER", "EXTERNALNONPARTNER"}[i]
 }
 func ParseRecipientScopeType(v string) (interface{}, error) {
+    result := NONE_RECIPIENTSCOPETYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_RECIPIENTSCOPETYPE, nil
+            result = NONE_RECIPIENTSCOPETYPE
         case "INTERNAL":
-            return INTERNAL_RECIPIENTSCOPETYPE, nil
+            result = INTERNAL_RECIPIENTSCOPETYPE
         case "EXTERNAL":
-            return EXTERNAL_RECIPIENTSCOPETYPE, nil
+            result = EXTERNAL_RECIPIENTSCOPETYPE
         case "EXTERNALPARTNER":
-            return EXTERNALPARTNER_RECIPIENTSCOPETYPE, nil
+            result = EXTERNALPARTNER_RECIPIENTSCOPETYPE
         case "EXTERNALNONPARTNER":
-            return EXTERNALNONPARTNER_RECIPIENTSCOPETYPE, nil
+            result = EXTERNALNONPARTNER_RECIPIENTSCOPETYPE
+        default:
+            return 0, errors.New("Unknown RecipientScopeType value: " + v)
     }
-    return 0, errors.New("Unknown RecipientScopeType value: " + v)
+    return &result, nil
 }
 func SerializeRecipientScopeType(values []RecipientScopeType) []string {
     result := make([]string, len(values))

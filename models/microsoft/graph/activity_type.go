@@ -16,15 +16,18 @@ func (i ActivityType) String() string {
     return []string{"SIGNIN", "USER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseActivityType(v string) (interface{}, error) {
+    result := SIGNIN_ACTIVITYTYPE
     switch strings.ToUpper(v) {
         case "SIGNIN":
-            return SIGNIN_ACTIVITYTYPE, nil
+            result = SIGNIN_ACTIVITYTYPE
         case "USER":
-            return USER_ACTIVITYTYPE, nil
+            result = USER_ACTIVITYTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACTIVITYTYPE, nil
+            result = UNKNOWNFUTUREVALUE_ACTIVITYTYPE
+        default:
+            return 0, errors.New("Unknown ActivityType value: " + v)
     }
-    return 0, errors.New("Unknown ActivityType value: " + v)
+    return &result, nil
 }
 func SerializeActivityType(values []ActivityType) []string {
     result := make([]string, len(values))

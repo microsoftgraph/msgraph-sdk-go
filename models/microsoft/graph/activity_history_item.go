@@ -185,8 +185,7 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(Status)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*Status))
         }
         return nil
     }
@@ -254,7 +253,7 @@ func (m *ActivityHistoryItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

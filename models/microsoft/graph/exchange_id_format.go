@@ -18,19 +18,22 @@ func (i ExchangeIdFormat) String() string {
     return []string{"ENTRYID", "EWSID", "IMMUTABLEENTRYID", "RESTID", "RESTIMMUTABLEENTRYID"}[i]
 }
 func ParseExchangeIdFormat(v string) (interface{}, error) {
+    result := ENTRYID_EXCHANGEIDFORMAT
     switch strings.ToUpper(v) {
         case "ENTRYID":
-            return ENTRYID_EXCHANGEIDFORMAT, nil
+            result = ENTRYID_EXCHANGEIDFORMAT
         case "EWSID":
-            return EWSID_EXCHANGEIDFORMAT, nil
+            result = EWSID_EXCHANGEIDFORMAT
         case "IMMUTABLEENTRYID":
-            return IMMUTABLEENTRYID_EXCHANGEIDFORMAT, nil
+            result = IMMUTABLEENTRYID_EXCHANGEIDFORMAT
         case "RESTID":
-            return RESTID_EXCHANGEIDFORMAT, nil
+            result = RESTID_EXCHANGEIDFORMAT
         case "RESTIMMUTABLEENTRYID":
-            return RESTIMMUTABLEENTRYID_EXCHANGEIDFORMAT, nil
+            result = RESTIMMUTABLEENTRYID_EXCHANGEIDFORMAT
+        default:
+            return 0, errors.New("Unknown ExchangeIdFormat value: " + v)
     }
-    return 0, errors.New("Unknown ExchangeIdFormat value: " + v)
+    return &result, nil
 }
 func SerializeExchangeIdFormat(values []ExchangeIdFormat) []string {
     result := make([]string, len(values))

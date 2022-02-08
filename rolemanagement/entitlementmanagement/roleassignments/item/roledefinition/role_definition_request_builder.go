@@ -27,7 +27,7 @@ type RoleDefinitionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// RoleDefinitionRequestBuilderGetQueryParameters the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+// RoleDefinitionRequestBuilderGetQueryParameters the roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
 type RoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -53,7 +53,7 @@ func NewRoleDefinitionRequestBuilder(rawUrl string, requestAdapter ida96af0f171b
     urlParams["request-raw-url"] = rawUrl
     return NewRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+// CreateGetRequestInformation the roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
 func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformation(options *RoleDefinitionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -73,7 +73,7 @@ func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformation(options *Role
     }
     return requestInfo, nil
 }
-// Get the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+// Get the roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
 func (m *RoleDefinitionRequestBuilder) Get(options *RoleDefinitionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UnifiedRoleDefinition, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

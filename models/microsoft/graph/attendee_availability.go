@@ -10,7 +10,7 @@ type AttendeeAvailability struct {
     additionalData map[string]interface{};
     // The email address and type of attendee - whether it's a person or a resource, and whether required or optional if it's a person.
     attendee *AttendeeBase;
-    // The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+    // The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
     availability *FreeBusyStatus;
 }
 // NewAttendeeAvailability instantiates a new attendeeAvailability and sets the default values.
@@ -36,7 +36,7 @@ func (m *AttendeeAvailability) GetAttendee()(*AttendeeBase) {
         return m.attendee
     }
 }
-// GetAvailability gets the availability property value. The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// GetAvailability gets the availability property value. The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *AttendeeAvailability) GetAvailability()(*FreeBusyStatus) {
     if m == nil {
         return nil
@@ -63,8 +63,7 @@ func (m *AttendeeAvailability) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(FreeBusyStatus)
-            m.SetAvailability(&cast)
+            m.SetAvailability(val.(*FreeBusyStatus))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *AttendeeAvailability) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetAvailability() != nil {
-        cast := m.GetAvailability().String()
+        cast := (*m.GetAvailability()).String()
         err := writer.WriteStringValue("availability", &cast)
         if err != nil {
             return err
@@ -108,7 +107,7 @@ func (m *AttendeeAvailability) SetAttendee(value *AttendeeBase)() {
         m.attendee = value
     }
 }
-// SetAvailability sets the availability property value. The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// SetAvailability sets the availability property value. The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *AttendeeAvailability) SetAvailability(value *FreeBusyStatus)() {
     if m != nil {
         m.availability = value

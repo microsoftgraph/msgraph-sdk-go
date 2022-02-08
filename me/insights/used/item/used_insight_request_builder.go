@@ -36,7 +36,7 @@ type UsedInsightRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// UsedInsightRequestBuilderGetQueryParameters access this property from the derived type itemInsights.
+// UsedInsightRequestBuilderGetQueryParameters calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 type UsedInsightRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -73,7 +73,7 @@ func NewUsedInsightRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75
     urlParams["request-raw-url"] = rawUrl
     return NewUsedInsightRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation access this property from the derived type itemInsights.
+// CreateDeleteRequestInformation calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *UsedInsightRequestBuilder) CreateDeleteRequestInformation(options *UsedInsightRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -90,7 +90,7 @@ func (m *UsedInsightRequestBuilder) CreateDeleteRequestInformation(options *Used
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation access this property from the derived type itemInsights.
+// CreateGetRequestInformation calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *UsedInsightRequestBuilder) CreateGetRequestInformation(options *UsedInsightRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,7 +110,7 @@ func (m *UsedInsightRequestBuilder) CreateGetRequestInformation(options *UsedIns
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation access this property from the derived type itemInsights.
+// CreatePatchRequestInformation calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *UsedInsightRequestBuilder) CreatePatchRequestInformation(options *UsedInsightRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,7 +128,7 @@ func (m *UsedInsightRequestBuilder) CreatePatchRequestInformation(options *UsedI
     }
     return requestInfo, nil
 }
-// Delete access this property from the derived type itemInsights.
+// Delete calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *UsedInsightRequestBuilder) Delete(options *UsedInsightRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -140,7 +140,7 @@ func (m *UsedInsightRequestBuilder) Delete(options *UsedInsightRequestBuilderDel
     }
     return nil
 }
-// Get access this property from the derived type itemInsights.
+// Get calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *UsedInsightRequestBuilder) Get(options *UsedInsightRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UsedInsight, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -152,7 +152,7 @@ func (m *UsedInsightRequestBuilder) Get(options *UsedInsightRequestBuilderGetOpt
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UsedInsight), nil
 }
-// Patch access this property from the derived type itemInsights.
+// Patch calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *UsedInsightRequestBuilder) Patch(options *UsedInsightRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

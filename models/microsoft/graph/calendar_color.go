@@ -24,31 +24,34 @@ func (i CalendarColor) String() string {
     return []string{"AUTO", "LIGHTBLUE", "LIGHTGREEN", "LIGHTORANGE", "LIGHTGRAY", "LIGHTYELLOW", "LIGHTTEAL", "LIGHTPINK", "LIGHTBROWN", "LIGHTRED", "MAXCOLOR"}[i]
 }
 func ParseCalendarColor(v string) (interface{}, error) {
+    result := AUTO_CALENDARCOLOR
     switch strings.ToUpper(v) {
         case "AUTO":
-            return AUTO_CALENDARCOLOR, nil
+            result = AUTO_CALENDARCOLOR
         case "LIGHTBLUE":
-            return LIGHTBLUE_CALENDARCOLOR, nil
+            result = LIGHTBLUE_CALENDARCOLOR
         case "LIGHTGREEN":
-            return LIGHTGREEN_CALENDARCOLOR, nil
+            result = LIGHTGREEN_CALENDARCOLOR
         case "LIGHTORANGE":
-            return LIGHTORANGE_CALENDARCOLOR, nil
+            result = LIGHTORANGE_CALENDARCOLOR
         case "LIGHTGRAY":
-            return LIGHTGRAY_CALENDARCOLOR, nil
+            result = LIGHTGRAY_CALENDARCOLOR
         case "LIGHTYELLOW":
-            return LIGHTYELLOW_CALENDARCOLOR, nil
+            result = LIGHTYELLOW_CALENDARCOLOR
         case "LIGHTTEAL":
-            return LIGHTTEAL_CALENDARCOLOR, nil
+            result = LIGHTTEAL_CALENDARCOLOR
         case "LIGHTPINK":
-            return LIGHTPINK_CALENDARCOLOR, nil
+            result = LIGHTPINK_CALENDARCOLOR
         case "LIGHTBROWN":
-            return LIGHTBROWN_CALENDARCOLOR, nil
+            result = LIGHTBROWN_CALENDARCOLOR
         case "LIGHTRED":
-            return LIGHTRED_CALENDARCOLOR, nil
+            result = LIGHTRED_CALENDARCOLOR
         case "MAXCOLOR":
-            return MAXCOLOR_CALENDARCOLOR, nil
+            result = MAXCOLOR_CALENDARCOLOR
+        default:
+            return 0, errors.New("Unknown CalendarColor value: " + v)
     }
-    return 0, errors.New("Unknown CalendarColor value: " + v)
+    return &result, nil
 }
 func SerializeCalendarColor(values []CalendarColor) []string {
     result := make([]string, len(values))

@@ -7,7 +7,7 @@ import (
 // DriveItemVersion 
 type DriveItemVersion struct {
     BaseItemVersion
-    // 
+    // The content stream for this version of the item.
     content []byte;
     // Indicates the size of the content stream for this version of the item.
     size *int64;
@@ -19,7 +19,7 @@ func NewDriveItemVersion()(*DriveItemVersion) {
     }
     return m
 }
-// GetContent gets the content property value. 
+// GetContent gets the content property value. The content stream for this version of the item.
 func (m *DriveItemVersion) GetContent()([]byte) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *DriveItemVersion) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
     }
     return nil
 }
-// SetContent sets the content property value. 
+// SetContent sets the content property value. The content stream for this version of the item.
 func (m *DriveItemVersion) SetContent(value []byte)() {
     if m != nil {
         m.content = value

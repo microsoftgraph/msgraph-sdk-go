@@ -17,17 +17,20 @@ func (i DeviceManagementExchangeConnectorType) String() string {
     return []string{"ONPREMISES", "HOSTED", "SERVICETOSERVICE", "DEDICATED"}[i]
 }
 func ParseDeviceManagementExchangeConnectorType(v string) (interface{}, error) {
+    result := ONPREMISES_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
     switch strings.ToUpper(v) {
         case "ONPREMISES":
-            return ONPREMISES_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE, nil
+            result = ONPREMISES_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
         case "HOSTED":
-            return HOSTED_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE, nil
+            result = HOSTED_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
         case "SERVICETOSERVICE":
-            return SERVICETOSERVICE_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE, nil
+            result = SERVICETOSERVICE_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
         case "DEDICATED":
-            return DEDICATED_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE, nil
+            result = DEDICATED_DEVICEMANAGEMENTEXCHANGECONNECTORTYPE
+        default:
+            return 0, errors.New("Unknown DeviceManagementExchangeConnectorType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementExchangeConnectorType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementExchangeConnectorType(values []DeviceManagementExchangeConnectorType) []string {
     result := make([]string, len(values))

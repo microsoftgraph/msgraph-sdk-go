@@ -16,15 +16,18 @@ func (i ExternalItemContentType) String() string {
     return []string{"TEXT", "HTML", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseExternalItemContentType(v string) (interface{}, error) {
+    result := TEXT_EXTERNALITEMCONTENTTYPE
     switch strings.ToUpper(v) {
         case "TEXT":
-            return TEXT_EXTERNALITEMCONTENTTYPE, nil
+            result = TEXT_EXTERNALITEMCONTENTTYPE
         case "HTML":
-            return HTML_EXTERNALITEMCONTENTTYPE, nil
+            result = HTML_EXTERNALITEMCONTENTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EXTERNALITEMCONTENTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_EXTERNALITEMCONTENTTYPE
+        default:
+            return 0, errors.New("Unknown ExternalItemContentType value: " + v)
     }
-    return 0, errors.New("Unknown ExternalItemContentType value: " + v)
+    return &result, nil
 }
 func SerializeExternalItemContentType(values []ExternalItemContentType) []string {
     result := make([]string, len(values))

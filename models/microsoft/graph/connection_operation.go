@@ -10,7 +10,7 @@ type ConnectionOperation struct {
     Entity
     // If status is failed, provides more information about the error that caused the failure.
     error *PublicError;
-    // Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
+    // Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
     status *i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionOperationStatus;
 }
 // NewConnectionOperation instantiates a new connectionOperation and sets the default values.
@@ -28,7 +28,7 @@ func (m *ConnectionOperation) GetError()(*PublicError) {
         return m.error
     }
 }
-// GetStatus gets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
+// GetStatus gets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
 func (m *ConnectionOperation) GetStatus()(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionOperationStatus) {
     if m == nil {
         return nil
@@ -55,8 +55,7 @@ func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionOperationStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionOperationStatus))
         }
         return nil
     }
@@ -78,7 +77,7 @@ func (m *ConnectionOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
@@ -92,7 +91,7 @@ func (m *ConnectionOperation) SetError(value *PublicError)() {
         m.error = value
     }
 }
-// SetStatus sets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
+// SetStatus sets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
 func (m *ConnectionOperation) SetStatus(value *i611946aca48221be342488e87b2af0987834716d9bc5792c53f59b5e10e9f8f8.ConnectionOperationStatus)() {
     if m != nil {
         m.status = value

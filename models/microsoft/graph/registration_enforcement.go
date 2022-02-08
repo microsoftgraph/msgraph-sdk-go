@@ -8,7 +8,7 @@ import (
 type RegistrationEnforcement struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Run campaigns to remind users to setup targeted authentication methods.
+    // Run campaigns to remind users to set up targeted authentication methods.
     authenticationMethodsRegistrationCampaign *AuthenticationMethodsRegistrationCampaign;
 }
 // NewRegistrationEnforcement instantiates a new registrationEnforcement and sets the default values.
@@ -26,7 +26,7 @@ func (m *RegistrationEnforcement) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAuthenticationMethodsRegistrationCampaign gets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to setup targeted authentication methods.
+// GetAuthenticationMethodsRegistrationCampaign gets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to set up targeted authentication methods.
 func (m *RegistrationEnforcement) GetAuthenticationMethodsRegistrationCampaign()(*AuthenticationMethodsRegistrationCampaign) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *RegistrationEnforcement) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetAuthenticationMethodsRegistrationCampaign sets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to setup targeted authentication methods.
+// SetAuthenticationMethodsRegistrationCampaign sets the authenticationMethodsRegistrationCampaign property value. Run campaigns to remind users to set up targeted authentication methods.
 func (m *RegistrationEnforcement) SetAuthenticationMethodsRegistrationCampaign(value *AuthenticationMethodsRegistrationCampaign)() {
     if m != nil {
         m.authenticationMethodsRegistrationCampaign = value

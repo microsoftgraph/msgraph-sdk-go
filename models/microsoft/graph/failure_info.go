@@ -64,8 +64,7 @@ func (m *FailureInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.FailureStage)
-            m.SetStage(&cast)
+            m.SetStage(val.(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.FailureStage))
         }
         return nil
     }
@@ -83,7 +82,7 @@ func (m *FailureInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetStage() != nil {
-        cast := m.GetStage().String()
+        cast := (*m.GetStage()).String()
         err := writer.WriteStringValue("stage", &cast)
         if err != nil {
             return err

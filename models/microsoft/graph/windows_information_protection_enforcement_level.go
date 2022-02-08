@@ -17,17 +17,20 @@ func (i WindowsInformationProtectionEnforcementLevel) String() string {
     return []string{"NOPROTECTION", "ENCRYPTANDAUDITONLY", "ENCRYPTAUDITANDPROMPT", "ENCRYPTAUDITANDBLOCK"}[i]
 }
 func ParseWindowsInformationProtectionEnforcementLevel(v string) (interface{}, error) {
+    result := NOPROTECTION_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
     switch strings.ToUpper(v) {
         case "NOPROTECTION":
-            return NOPROTECTION_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL, nil
+            result = NOPROTECTION_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
         case "ENCRYPTANDAUDITONLY":
-            return ENCRYPTANDAUDITONLY_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL, nil
+            result = ENCRYPTANDAUDITONLY_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
         case "ENCRYPTAUDITANDPROMPT":
-            return ENCRYPTAUDITANDPROMPT_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL, nil
+            result = ENCRYPTAUDITANDPROMPT_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
         case "ENCRYPTAUDITANDBLOCK":
-            return ENCRYPTAUDITANDBLOCK_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL, nil
+            result = ENCRYPTAUDITANDBLOCK_WINDOWSINFORMATIONPROTECTIONENFORCEMENTLEVEL
+        default:
+            return 0, errors.New("Unknown WindowsInformationProtectionEnforcementLevel value: " + v)
     }
-    return 0, errors.New("Unknown WindowsInformationProtectionEnforcementLevel value: " + v)
+    return &result, nil
 }
 func SerializeWindowsInformationProtectionEnforcementLevel(values []WindowsInformationProtectionEnforcementLevel) []string {
     result := make([]string, len(values))

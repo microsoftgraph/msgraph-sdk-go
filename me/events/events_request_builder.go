@@ -27,7 +27,7 @@ type EventsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// EventsRequestBuilderGetQueryParameters the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// EventsRequestBuilderGetQueryParameters the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 type EventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -72,7 +72,7 @@ func NewEventsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams["request-raw-url"] = rawUrl
     return NewEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// CreateGetRequestInformation the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventsRequestBuilder) CreateGetRequestInformation(options *EventsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,7 +92,7 @@ func (m *EventsRequestBuilder) CreateGetRequestInformation(options *EventsReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// CreatePostRequestInformation the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventsRequestBuilder) CreatePostRequestInformation(options *EventsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,7 +114,7 @@ func (m *EventsRequestBuilder) CreatePostRequestInformation(options *EventsReque
 func (m *EventsRequestBuilder) Delta()(*ie15d874b5bcea33f7d9bcad18e2db2fe525af2c6393359a2b909ba2d2a99585a.DeltaRequestBuilder) {
     return ie15d874b5bcea33f7d9bcad18e2db2fe525af2c6393359a2b909ba2d2a99585a.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// Get the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventsRequestBuilder) Get(options *EventsRequestBuilderGetOptions)(*EventsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -126,7 +126,7 @@ func (m *EventsRequestBuilder) Get(options *EventsRequestBuilderGetOptions)(*Eve
     }
     return res.(*EventsResponse), nil
 }
-// Post the user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+// Post the user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
 func (m *EventsRequestBuilder) Post(options *EventsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

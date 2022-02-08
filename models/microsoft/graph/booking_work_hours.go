@@ -53,8 +53,7 @@ func (m *BookingWorkHours) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(DayOfWeek)
-            m.SetDay(&cast)
+            m.SetDay(val.(*DayOfWeek))
         }
         return nil
     }
@@ -80,7 +79,7 @@ func (m *BookingWorkHours) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *BookingWorkHours) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDay() != nil {
-        cast := m.GetDay().String()
+        cast := (*m.GetDay()).String()
         err := writer.WriteStringValue("day", &cast)
         if err != nil {
             return err

@@ -93,8 +93,7 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(ProvisioningStatusErrorCategory)
-            m.SetErrorCategory(&cast)
+            m.SetErrorCategory(val.(*ProvisioningStatusErrorCategory))
         }
         return nil
     }
@@ -142,7 +141,7 @@ func (m *ProvisioningErrorInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetErrorCategory() != nil {
-        cast := m.GetErrorCategory().String()
+        cast := (*m.GetErrorCategory()).String()
         err := writer.WriteStringValue("errorCategory", &cast)
         if err != nil {
             return err

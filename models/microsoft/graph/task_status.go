@@ -18,19 +18,22 @@ func (i TaskStatus) String() string {
     return []string{"NOTSTARTED", "INPROGRESS", "COMPLETED", "WAITINGONOTHERS", "DEFERRED"}[i]
 }
 func ParseTaskStatus(v string) (interface{}, error) {
+    result := NOTSTARTED_TASKSTATUS
     switch strings.ToUpper(v) {
         case "NOTSTARTED":
-            return NOTSTARTED_TASKSTATUS, nil
+            result = NOTSTARTED_TASKSTATUS
         case "INPROGRESS":
-            return INPROGRESS_TASKSTATUS, nil
+            result = INPROGRESS_TASKSTATUS
         case "COMPLETED":
-            return COMPLETED_TASKSTATUS, nil
+            result = COMPLETED_TASKSTATUS
         case "WAITINGONOTHERS":
-            return WAITINGONOTHERS_TASKSTATUS, nil
+            result = WAITINGONOTHERS_TASKSTATUS
         case "DEFERRED":
-            return DEFERRED_TASKSTATUS, nil
+            result = DEFERRED_TASKSTATUS
+        default:
+            return 0, errors.New("Unknown TaskStatus value: " + v)
     }
-    return 0, errors.New("Unknown TaskStatus value: " + v)
+    return &result, nil
 }
 func SerializeTaskStatus(values []TaskStatus) []string {
     result := make([]string, len(values))

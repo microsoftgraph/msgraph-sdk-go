@@ -26,35 +26,38 @@ func (i ManagementAgentType) String() string {
     return []string{"EAS", "MDM", "EASMDM", "INTUNECLIENT", "EASINTUNECLIENT", "CONFIGURATIONMANAGERCLIENT", "CONFIGURATIONMANAGERCLIENTMDM", "CONFIGURATIONMANAGERCLIENTMDMEAS", "UNKNOWN", "JAMF", "GOOGLECLOUDDEVICEPOLICYCONTROLLER", "MICROSOFT365MANAGEDMDM", "MSSENSE"}[i]
 }
 func ParseManagementAgentType(v string) (interface{}, error) {
+    result := EAS_MANAGEMENTAGENTTYPE
     switch strings.ToUpper(v) {
         case "EAS":
-            return EAS_MANAGEMENTAGENTTYPE, nil
+            result = EAS_MANAGEMENTAGENTTYPE
         case "MDM":
-            return MDM_MANAGEMENTAGENTTYPE, nil
+            result = MDM_MANAGEMENTAGENTTYPE
         case "EASMDM":
-            return EASMDM_MANAGEMENTAGENTTYPE, nil
+            result = EASMDM_MANAGEMENTAGENTTYPE
         case "INTUNECLIENT":
-            return INTUNECLIENT_MANAGEMENTAGENTTYPE, nil
+            result = INTUNECLIENT_MANAGEMENTAGENTTYPE
         case "EASINTUNECLIENT":
-            return EASINTUNECLIENT_MANAGEMENTAGENTTYPE, nil
+            result = EASINTUNECLIENT_MANAGEMENTAGENTTYPE
         case "CONFIGURATIONMANAGERCLIENT":
-            return CONFIGURATIONMANAGERCLIENT_MANAGEMENTAGENTTYPE, nil
+            result = CONFIGURATIONMANAGERCLIENT_MANAGEMENTAGENTTYPE
         case "CONFIGURATIONMANAGERCLIENTMDM":
-            return CONFIGURATIONMANAGERCLIENTMDM_MANAGEMENTAGENTTYPE, nil
+            result = CONFIGURATIONMANAGERCLIENTMDM_MANAGEMENTAGENTTYPE
         case "CONFIGURATIONMANAGERCLIENTMDMEAS":
-            return CONFIGURATIONMANAGERCLIENTMDMEAS_MANAGEMENTAGENTTYPE, nil
+            result = CONFIGURATIONMANAGERCLIENTMDMEAS_MANAGEMENTAGENTTYPE
         case "UNKNOWN":
-            return UNKNOWN_MANAGEMENTAGENTTYPE, nil
+            result = UNKNOWN_MANAGEMENTAGENTTYPE
         case "JAMF":
-            return JAMF_MANAGEMENTAGENTTYPE, nil
+            result = JAMF_MANAGEMENTAGENTTYPE
         case "GOOGLECLOUDDEVICEPOLICYCONTROLLER":
-            return GOOGLECLOUDDEVICEPOLICYCONTROLLER_MANAGEMENTAGENTTYPE, nil
+            result = GOOGLECLOUDDEVICEPOLICYCONTROLLER_MANAGEMENTAGENTTYPE
         case "MICROSOFT365MANAGEDMDM":
-            return MICROSOFT365MANAGEDMDM_MANAGEMENTAGENTTYPE, nil
+            result = MICROSOFT365MANAGEDMDM_MANAGEMENTAGENTTYPE
         case "MSSENSE":
-            return MSSENSE_MANAGEMENTAGENTTYPE, nil
+            result = MSSENSE_MANAGEMENTAGENTTYPE
+        default:
+            return 0, errors.New("Unknown ManagementAgentType value: " + v)
     }
-    return 0, errors.New("Unknown ManagementAgentType value: " + v)
+    return &result, nil
 }
 func SerializeManagementAgentType(values []ManagementAgentType) []string {
     result := make([]string, len(values))

@@ -21,25 +21,28 @@ func (i DeviceRegistrationState) String() string {
     return []string{"NOTREGISTERED", "REGISTERED", "REVOKED", "KEYCONFLICT", "APPROVALPENDING", "CERTIFICATERESET", "NOTREGISTEREDPENDINGENROLLMENT", "UNKNOWN"}[i]
 }
 func ParseDeviceRegistrationState(v string) (interface{}, error) {
+    result := NOTREGISTERED_DEVICEREGISTRATIONSTATE
     switch strings.ToUpper(v) {
         case "NOTREGISTERED":
-            return NOTREGISTERED_DEVICEREGISTRATIONSTATE, nil
+            result = NOTREGISTERED_DEVICEREGISTRATIONSTATE
         case "REGISTERED":
-            return REGISTERED_DEVICEREGISTRATIONSTATE, nil
+            result = REGISTERED_DEVICEREGISTRATIONSTATE
         case "REVOKED":
-            return REVOKED_DEVICEREGISTRATIONSTATE, nil
+            result = REVOKED_DEVICEREGISTRATIONSTATE
         case "KEYCONFLICT":
-            return KEYCONFLICT_DEVICEREGISTRATIONSTATE, nil
+            result = KEYCONFLICT_DEVICEREGISTRATIONSTATE
         case "APPROVALPENDING":
-            return APPROVALPENDING_DEVICEREGISTRATIONSTATE, nil
+            result = APPROVALPENDING_DEVICEREGISTRATIONSTATE
         case "CERTIFICATERESET":
-            return CERTIFICATERESET_DEVICEREGISTRATIONSTATE, nil
+            result = CERTIFICATERESET_DEVICEREGISTRATIONSTATE
         case "NOTREGISTEREDPENDINGENROLLMENT":
-            return NOTREGISTEREDPENDINGENROLLMENT_DEVICEREGISTRATIONSTATE, nil
+            result = NOTREGISTEREDPENDINGENROLLMENT_DEVICEREGISTRATIONSTATE
         case "UNKNOWN":
-            return UNKNOWN_DEVICEREGISTRATIONSTATE, nil
+            result = UNKNOWN_DEVICEREGISTRATIONSTATE
+        default:
+            return 0, errors.New("Unknown DeviceRegistrationState value: " + v)
     }
-    return 0, errors.New("Unknown DeviceRegistrationState value: " + v)
+    return &result, nil
 }
 func SerializeDeviceRegistrationState(values []DeviceRegistrationState) []string {
     result := make([]string, len(values))

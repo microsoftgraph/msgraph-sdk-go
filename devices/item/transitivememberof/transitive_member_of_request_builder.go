@@ -26,7 +26,7 @@ type TransitiveMemberOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// TransitiveMemberOfRequestBuilderGetQueryParameters groups that this device is a member of. This operation is transitive. Supports $expand.
+// TransitiveMemberOfRequestBuilderGetQueryParameters groups that the device is a member of. This operation is transitive. Supports $expand.
 type TransitiveMemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -64,7 +64,7 @@ func NewTransitiveMemberOfRequestBuilder(rawUrl string, requestAdapter ida96af0f
     urlParams["request-raw-url"] = rawUrl
     return NewTransitiveMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation groups that this device is a member of. This operation is transitive. Supports $expand.
+// CreateGetRequestInformation groups that the device is a member of. This operation is transitive. Supports $expand.
 func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformation(options *TransitiveMemberOfRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -84,7 +84,7 @@ func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformation(options *
     }
     return requestInfo, nil
 }
-// Get groups that this device is a member of. This operation is transitive. Supports $expand.
+// Get groups that the device is a member of. This operation is transitive. Supports $expand.
 func (m *TransitiveMemberOfRequestBuilder) Get(options *TransitiveMemberOfRequestBuilderGetOptions)(*TransitiveMemberOfResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

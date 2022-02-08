@@ -26,35 +26,38 @@ func (i RegistryValueType) String() string {
     return []string{"UNKNOWN", "BINARY", "DWORD", "DWORDLITTLEENDIAN", "DWORDBIGENDIAN", "EXPANDSZ", "LINK", "MULTISZ", "NONE", "QWORD", "QWORDLITTLEENDIAN", "SZ", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRegistryValueType(v string) (interface{}, error) {
+    result := UNKNOWN_REGISTRYVALUETYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_REGISTRYVALUETYPE, nil
+            result = UNKNOWN_REGISTRYVALUETYPE
         case "BINARY":
-            return BINARY_REGISTRYVALUETYPE, nil
+            result = BINARY_REGISTRYVALUETYPE
         case "DWORD":
-            return DWORD_REGISTRYVALUETYPE, nil
+            result = DWORD_REGISTRYVALUETYPE
         case "DWORDLITTLEENDIAN":
-            return DWORDLITTLEENDIAN_REGISTRYVALUETYPE, nil
+            result = DWORDLITTLEENDIAN_REGISTRYVALUETYPE
         case "DWORDBIGENDIAN":
-            return DWORDBIGENDIAN_REGISTRYVALUETYPE, nil
+            result = DWORDBIGENDIAN_REGISTRYVALUETYPE
         case "EXPANDSZ":
-            return EXPANDSZ_REGISTRYVALUETYPE, nil
+            result = EXPANDSZ_REGISTRYVALUETYPE
         case "LINK":
-            return LINK_REGISTRYVALUETYPE, nil
+            result = LINK_REGISTRYVALUETYPE
         case "MULTISZ":
-            return MULTISZ_REGISTRYVALUETYPE, nil
+            result = MULTISZ_REGISTRYVALUETYPE
         case "NONE":
-            return NONE_REGISTRYVALUETYPE, nil
+            result = NONE_REGISTRYVALUETYPE
         case "QWORD":
-            return QWORD_REGISTRYVALUETYPE, nil
+            result = QWORD_REGISTRYVALUETYPE
         case "QWORDLITTLEENDIAN":
-            return QWORDLITTLEENDIAN_REGISTRYVALUETYPE, nil
+            result = QWORDLITTLEENDIAN_REGISTRYVALUETYPE
         case "SZ":
-            return SZ_REGISTRYVALUETYPE, nil
+            result = SZ_REGISTRYVALUETYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_REGISTRYVALUETYPE, nil
+            result = UNKNOWNFUTUREVALUE_REGISTRYVALUETYPE
+        default:
+            return 0, errors.New("Unknown RegistryValueType value: " + v)
     }
-    return 0, errors.New("Unknown RegistryValueType value: " + v)
+    return &result, nil
 }
 func SerializeRegistryValueType(values []RegistryValueType) []string {
     result := make([]string, len(values))

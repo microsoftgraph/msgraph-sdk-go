@@ -12,7 +12,7 @@ type AccessReviewScheduleDefinition struct {
     additionalNotificationRecipients []AccessReviewNotificationRecipientItem;
     // User who created this review. Read-only.
     createdBy *UserIdentity;
-    // Timestamp when the access review series was created. Supports $select. Read-only.
+    // Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Description provided by review creators to provide more context of the review to admins. Supports $select.
     descriptionForAdmins *string;
@@ -24,13 +24,13 @@ type AccessReviewScheduleDefinition struct {
     fallbackReviewers []AccessReviewReviewerScope;
     // This property is required when scoping a review to guest users' access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope. Supports $select. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.
     instanceEnumerationScope *AccessReviewScope;
-    // Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.
+    // If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
     instances []AccessReviewInstance;
     // Timestamp when the access review series was last modified. Supports $select. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // This collection of access review scopes is used to define who are the reviewers. The reviewers property is only updatable if individual users are assigned as reviewers. Required on create. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
     reviewers []AccessReviewReviewerScope;
-    // Defines the entities whose access is reviewed. For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
+    // Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
     scope *AccessReviewScope;
     // The settings for an access review series, see type definition below. Supports $select. Required on create.
     settings *AccessReviewScheduleSettings;
@@ -60,7 +60,7 @@ func (m *AccessReviewScheduleDefinition) GetCreatedBy()(*UserIdentity) {
         return m.createdBy
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. Timestamp when the access review series was created. Supports $select. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
 func (m *AccessReviewScheduleDefinition) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *AccessReviewScheduleDefinition) GetInstanceEnumerationScope()(*AccessRe
         return m.instanceEnumerationScope
     }
 }
-// GetInstances gets the instances property value. Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.
+// GetInstances gets the instances property value. If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
 func (m *AccessReviewScheduleDefinition) GetInstances()([]AccessReviewInstance) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *AccessReviewScheduleDefinition) GetReviewers()([]AccessReviewReviewerSc
         return m.reviewers
     }
 }
-// GetScope gets the scope property value. Defines the entities whose access is reviewed. For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
+// GetScope gets the scope property value. Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
 func (m *AccessReviewScheduleDefinition) GetScope()(*AccessReviewScope) {
     if m == nil {
         return nil
@@ -444,7 +444,7 @@ func (m *AccessReviewScheduleDefinition) SetCreatedBy(value *UserIdentity)() {
         m.createdBy = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Timestamp when the access review series was created. Supports $select. Read-only.
+// SetCreatedDateTime sets the createdDateTime property value. Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
 func (m *AccessReviewScheduleDefinition) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
@@ -480,7 +480,7 @@ func (m *AccessReviewScheduleDefinition) SetInstanceEnumerationScope(value *Acce
         m.instanceEnumerationScope = value
     }
 }
-// SetInstances sets the instances property value. Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.
+// SetInstances sets the instances property value. If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
 func (m *AccessReviewScheduleDefinition) SetInstances(value []AccessReviewInstance)() {
     if m != nil {
         m.instances = value
@@ -498,7 +498,7 @@ func (m *AccessReviewScheduleDefinition) SetReviewers(value []AccessReviewReview
         m.reviewers = value
     }
 }
-// SetScope sets the scope property value. Defines the entities whose access is reviewed. For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
+// SetScope sets the scope property value. Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
 func (m *AccessReviewScheduleDefinition) SetScope(value *AccessReviewScope)() {
     if m != nil {
         m.scope = value

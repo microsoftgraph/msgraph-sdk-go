@@ -18,19 +18,22 @@ func (i PrintTaskProcessingState) String() string {
     return []string{"PENDING", "PROCESSING", "COMPLETED", "ABORTED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePrintTaskProcessingState(v string) (interface{}, error) {
+    result := PENDING_PRINTTASKPROCESSINGSTATE
     switch strings.ToUpper(v) {
         case "PENDING":
-            return PENDING_PRINTTASKPROCESSINGSTATE, nil
+            result = PENDING_PRINTTASKPROCESSINGSTATE
         case "PROCESSING":
-            return PROCESSING_PRINTTASKPROCESSINGSTATE, nil
+            result = PROCESSING_PRINTTASKPROCESSINGSTATE
         case "COMPLETED":
-            return COMPLETED_PRINTTASKPROCESSINGSTATE, nil
+            result = COMPLETED_PRINTTASKPROCESSINGSTATE
         case "ABORTED":
-            return ABORTED_PRINTTASKPROCESSINGSTATE, nil
+            result = ABORTED_PRINTTASKPROCESSINGSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PRINTTASKPROCESSINGSTATE, nil
+            result = UNKNOWNFUTUREVALUE_PRINTTASKPROCESSINGSTATE
+        default:
+            return 0, errors.New("Unknown PrintTaskProcessingState value: " + v)
     }
-    return 0, errors.New("Unknown PrintTaskProcessingState value: " + v)
+    return &result, nil
 }
 func SerializePrintTaskProcessingState(values []PrintTaskProcessingState) []string {
     result := make([]string, len(values))

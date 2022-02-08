@@ -19,21 +19,24 @@ func (i AlertStatus) String() string {
     return []string{"UNKNOWN", "NEWALERT", "INPROGRESS", "RESOLVED", "DISMISSED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAlertStatus(v string) (interface{}, error) {
+    result := UNKNOWN_ALERTSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_ALERTSTATUS, nil
+            result = UNKNOWN_ALERTSTATUS
         case "NEWALERT":
-            return NEWALERT_ALERTSTATUS, nil
+            result = NEWALERT_ALERTSTATUS
         case "INPROGRESS":
-            return INPROGRESS_ALERTSTATUS, nil
+            result = INPROGRESS_ALERTSTATUS
         case "RESOLVED":
-            return RESOLVED_ALERTSTATUS, nil
+            result = RESOLVED_ALERTSTATUS
         case "DISMISSED":
-            return DISMISSED_ALERTSTATUS, nil
+            result = DISMISSED_ALERTSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ALERTSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_ALERTSTATUS
+        default:
+            return 0, errors.New("Unknown AlertStatus value: " + v)
     }
-    return 0, errors.New("Unknown AlertStatus value: " + v)
+    return &result, nil
 }
 func SerializeAlertStatus(values []AlertStatus) []string {
     result := make([]string, len(values))

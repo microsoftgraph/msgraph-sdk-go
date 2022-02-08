@@ -127,8 +127,7 @@ func (m *BucketAggregationDefinition) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(BucketAggregationSortProperty)
-            m.SetSortBy(&cast)
+            m.SetSortBy(val.(*BucketAggregationSortProperty))
         }
         return nil
     }
@@ -169,7 +168,7 @@ func (m *BucketAggregationDefinition) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     if m.GetSortBy() != nil {
-        cast := m.GetSortBy().String()
+        cast := (*m.GetSortBy()).String()
         err := writer.WriteStringValue("sortBy", &cast)
         if err != nil {
             return err

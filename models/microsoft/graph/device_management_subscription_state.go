@@ -20,23 +20,26 @@ func (i DeviceManagementSubscriptionState) String() string {
     return []string{"PENDING", "ACTIVE", "WARNING", "DISABLED", "DELETED", "BLOCKED", "LOCKEDOUT"}[i]
 }
 func ParseDeviceManagementSubscriptionState(v string) (interface{}, error) {
+    result := PENDING_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
     switch strings.ToUpper(v) {
         case "PENDING":
-            return PENDING_DEVICEMANAGEMENTSUBSCRIPTIONSTATE, nil
+            result = PENDING_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
         case "ACTIVE":
-            return ACTIVE_DEVICEMANAGEMENTSUBSCRIPTIONSTATE, nil
+            result = ACTIVE_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
         case "WARNING":
-            return WARNING_DEVICEMANAGEMENTSUBSCRIPTIONSTATE, nil
+            result = WARNING_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
         case "DISABLED":
-            return DISABLED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE, nil
+            result = DISABLED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
         case "DELETED":
-            return DELETED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE, nil
+            result = DELETED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
         case "BLOCKED":
-            return BLOCKED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE, nil
+            result = BLOCKED_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
         case "LOCKEDOUT":
-            return LOCKEDOUT_DEVICEMANAGEMENTSUBSCRIPTIONSTATE, nil
+            result = LOCKEDOUT_DEVICEMANAGEMENTSUBSCRIPTIONSTATE
+        default:
+            return 0, errors.New("Unknown DeviceManagementSubscriptionState value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementSubscriptionState value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementSubscriptionState(values []DeviceManagementSubscriptionState) []string {
     result := make([]string, len(values))

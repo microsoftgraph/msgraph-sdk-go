@@ -63,8 +63,7 @@ func (m *ToneInfo) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(Tone)
-            m.SetTone(&cast)
+            m.SetTone(val.(*Tone))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *ToneInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetTone() != nil {
-        cast := m.GetTone().String()
+        cast := (*m.GetTone()).String()
         err := writer.WriteStringValue("tone", &cast)
         if err != nil {
             return err

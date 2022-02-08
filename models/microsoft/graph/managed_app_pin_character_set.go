@@ -15,13 +15,16 @@ func (i ManagedAppPinCharacterSet) String() string {
     return []string{"NUMERIC", "ALPHANUMERICANDSYMBOL"}[i]
 }
 func ParseManagedAppPinCharacterSet(v string) (interface{}, error) {
+    result := NUMERIC_MANAGEDAPPPINCHARACTERSET
     switch strings.ToUpper(v) {
         case "NUMERIC":
-            return NUMERIC_MANAGEDAPPPINCHARACTERSET, nil
+            result = NUMERIC_MANAGEDAPPPINCHARACTERSET
         case "ALPHANUMERICANDSYMBOL":
-            return ALPHANUMERICANDSYMBOL_MANAGEDAPPPINCHARACTERSET, nil
+            result = ALPHANUMERICANDSYMBOL_MANAGEDAPPPINCHARACTERSET
+        default:
+            return 0, errors.New("Unknown ManagedAppPinCharacterSet value: " + v)
     }
-    return 0, errors.New("Unknown ManagedAppPinCharacterSet value: " + v)
+    return &result, nil
 }
 func SerializeManagedAppPinCharacterSet(values []ManagedAppPinCharacterSet) []string {
     result := make([]string, len(values))

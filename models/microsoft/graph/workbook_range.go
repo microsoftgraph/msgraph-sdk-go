@@ -43,7 +43,7 @@ type WorkbookRange struct {
     text *Json;
     // Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
     values *Json;
-    // Represents the type of data of each cell. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
+    // Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
     valueTypes *Json;
     // The worksheet containing the current range. Read-only.
     worksheet *WorkbookWorksheet;
@@ -199,7 +199,7 @@ func (m *WorkbookRange) GetValues()(*Json) {
         return m.values
     }
 }
-// GetValueTypes gets the valueTypes property value. Represents the type of data of each cell. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
+// GetValueTypes gets the valueTypes property value. Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
 func (m *WorkbookRange) GetValueTypes()(*Json) {
     if m == nil {
         return nil
@@ -659,7 +659,7 @@ func (m *WorkbookRange) SetValues(value *Json)() {
         m.values = value
     }
 }
-// SetValueTypes sets the valueTypes property value. Represents the type of data of each cell. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
+// SetValueTypes sets the valueTypes property value. Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
 func (m *WorkbookRange) SetValueTypes(value *Json)() {
     if m != nil {
         m.valueTypes = value

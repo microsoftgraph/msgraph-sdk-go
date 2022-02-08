@@ -26,7 +26,7 @@ type ExtensionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ExtensionsRequestBuilderGetQueryParameters the collection of open extensions defined for the user. Nullable.
+// ExtensionsRequestBuilderGetQueryParameters the collection of open extensions defined for the user. Read-only. Nullable.
 type ExtensionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewExtensionsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams["request-raw-url"] = rawUrl
     return NewExtensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the collection of open extensions defined for the user. Nullable.
+// CreateGetRequestInformation the collection of open extensions defined for the user. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) CreateGetRequestInformation(options *ExtensionsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *ExtensionsRequestBuilder) CreateGetRequestInformation(options *Extensio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of open extensions defined for the user. Nullable.
+// CreatePostRequestInformation the collection of open extensions defined for the user. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) CreatePostRequestInformation(options *ExtensionsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ExtensionsRequestBuilder) CreatePostRequestInformation(options *Extensi
     }
     return requestInfo, nil
 }
-// Get the collection of open extensions defined for the user. Nullable.
+// Get the collection of open extensions defined for the user. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) Get(options *ExtensionsRequestBuilderGetOptions)(*ExtensionsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *ExtensionsRequestBuilder) Get(options *ExtensionsRequestBuilderGetOptio
     }
     return res.(*ExtensionsResponse), nil
 }
-// Post the collection of open extensions defined for the user. Nullable.
+// Post the collection of open extensions defined for the user. Read-only. Nullable.
 func (m *ExtensionsRequestBuilder) Post(options *ExtensionsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -19,21 +19,24 @@ func (i DeviceManagementPartnerTenantState) String() string {
     return []string{"UNKNOWN", "UNAVAILABLE", "ENABLED", "TERMINATED", "REJECTED", "UNRESPONSIVE"}[i]
 }
 func ParseDeviceManagementPartnerTenantState(v string) (interface{}, error) {
+    result := UNKNOWN_DEVICEMANAGEMENTPARTNERTENANTSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_DEVICEMANAGEMENTPARTNERTENANTSTATE, nil
+            result = UNKNOWN_DEVICEMANAGEMENTPARTNERTENANTSTATE
         case "UNAVAILABLE":
-            return UNAVAILABLE_DEVICEMANAGEMENTPARTNERTENANTSTATE, nil
+            result = UNAVAILABLE_DEVICEMANAGEMENTPARTNERTENANTSTATE
         case "ENABLED":
-            return ENABLED_DEVICEMANAGEMENTPARTNERTENANTSTATE, nil
+            result = ENABLED_DEVICEMANAGEMENTPARTNERTENANTSTATE
         case "TERMINATED":
-            return TERMINATED_DEVICEMANAGEMENTPARTNERTENANTSTATE, nil
+            result = TERMINATED_DEVICEMANAGEMENTPARTNERTENANTSTATE
         case "REJECTED":
-            return REJECTED_DEVICEMANAGEMENTPARTNERTENANTSTATE, nil
+            result = REJECTED_DEVICEMANAGEMENTPARTNERTENANTSTATE
         case "UNRESPONSIVE":
-            return UNRESPONSIVE_DEVICEMANAGEMENTPARTNERTENANTSTATE, nil
+            result = UNRESPONSIVE_DEVICEMANAGEMENTPARTNERTENANTSTATE
+        default:
+            return 0, errors.New("Unknown DeviceManagementPartnerTenantState value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementPartnerTenantState value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementPartnerTenantState(values []DeviceManagementPartnerTenantState) []string {
     result := make([]string, len(values))

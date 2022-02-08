@@ -18,19 +18,22 @@ func (i PlannerPreviewType) String() string {
     return []string{"AUTOMATIC", "NOPREVIEW", "CHECKLIST", "DESCRIPTION", "REFERENCE"}[i]
 }
 func ParsePlannerPreviewType(v string) (interface{}, error) {
+    result := AUTOMATIC_PLANNERPREVIEWTYPE
     switch strings.ToUpper(v) {
         case "AUTOMATIC":
-            return AUTOMATIC_PLANNERPREVIEWTYPE, nil
+            result = AUTOMATIC_PLANNERPREVIEWTYPE
         case "NOPREVIEW":
-            return NOPREVIEW_PLANNERPREVIEWTYPE, nil
+            result = NOPREVIEW_PLANNERPREVIEWTYPE
         case "CHECKLIST":
-            return CHECKLIST_PLANNERPREVIEWTYPE, nil
+            result = CHECKLIST_PLANNERPREVIEWTYPE
         case "DESCRIPTION":
-            return DESCRIPTION_PLANNERPREVIEWTYPE, nil
+            result = DESCRIPTION_PLANNERPREVIEWTYPE
         case "REFERENCE":
-            return REFERENCE_PLANNERPREVIEWTYPE, nil
+            result = REFERENCE_PLANNERPREVIEWTYPE
+        default:
+            return 0, errors.New("Unknown PlannerPreviewType value: " + v)
     }
-    return 0, errors.New("Unknown PlannerPreviewType value: " + v)
+    return &result, nil
 }
 func SerializePlannerPreviewType(values []PlannerPreviewType) []string {
     result := make([]string, len(values))

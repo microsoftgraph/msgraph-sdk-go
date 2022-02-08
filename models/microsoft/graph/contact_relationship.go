@@ -21,25 +21,28 @@ func (i ContactRelationship) String() string {
     return []string{"PARENT", "RELATIVE", "AIDE", "DOCTOR", "GUARDIAN", "CHILD", "OTHER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseContactRelationship(v string) (interface{}, error) {
+    result := PARENT_CONTACTRELATIONSHIP
     switch strings.ToUpper(v) {
         case "PARENT":
-            return PARENT_CONTACTRELATIONSHIP, nil
+            result = PARENT_CONTACTRELATIONSHIP
         case "RELATIVE":
-            return RELATIVE_CONTACTRELATIONSHIP, nil
+            result = RELATIVE_CONTACTRELATIONSHIP
         case "AIDE":
-            return AIDE_CONTACTRELATIONSHIP, nil
+            result = AIDE_CONTACTRELATIONSHIP
         case "DOCTOR":
-            return DOCTOR_CONTACTRELATIONSHIP, nil
+            result = DOCTOR_CONTACTRELATIONSHIP
         case "GUARDIAN":
-            return GUARDIAN_CONTACTRELATIONSHIP, nil
+            result = GUARDIAN_CONTACTRELATIONSHIP
         case "CHILD":
-            return CHILD_CONTACTRELATIONSHIP, nil
+            result = CHILD_CONTACTRELATIONSHIP
         case "OTHER":
-            return OTHER_CONTACTRELATIONSHIP, nil
+            result = OTHER_CONTACTRELATIONSHIP
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONTACTRELATIONSHIP, nil
+            result = UNKNOWNFUTUREVALUE_CONTACTRELATIONSHIP
+        default:
+            return 0, errors.New("Unknown ContactRelationship value: " + v)
     }
-    return 0, errors.New("Unknown ContactRelationship value: " + v)
+    return &result, nil
 }
 func SerializeContactRelationship(values []ContactRelationship) []string {
     result := make([]string, len(values))

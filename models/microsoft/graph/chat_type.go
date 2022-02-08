@@ -17,17 +17,20 @@ func (i ChatType) String() string {
     return []string{"ONEONONE", "GROUP", "MEETING", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseChatType(v string) (interface{}, error) {
+    result := ONEONONE_CHATTYPE
     switch strings.ToUpper(v) {
         case "ONEONONE":
-            return ONEONONE_CHATTYPE, nil
+            result = ONEONONE_CHATTYPE
         case "GROUP":
-            return GROUP_CHATTYPE, nil
+            result = GROUP_CHATTYPE
         case "MEETING":
-            return MEETING_CHATTYPE, nil
+            result = MEETING_CHATTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CHATTYPE, nil
+            result = UNKNOWNFUTUREVALUE_CHATTYPE
+        default:
+            return 0, errors.New("Unknown ChatType value: " + v)
     }
-    return 0, errors.New("Unknown ChatType value: " + v)
+    return &result, nil
 }
 func SerializeChatType(values []ChatType) []string {
     result := make([]string, len(values))

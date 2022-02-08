@@ -138,8 +138,7 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(AlertFeedback)
-            m.SetFeedback(&cast)
+            m.SetFeedback(val.(*AlertFeedback))
         }
         return nil
     }
@@ -149,8 +148,7 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(AlertStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*AlertStatus))
         }
         return nil
     }
@@ -200,14 +198,14 @@ func (m *AlertHistoryState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetFeedback() != nil {
-        cast := m.GetFeedback().String()
+        cast := (*m.GetFeedback()).String()
         err := writer.WriteStringValue("feedback", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err := writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

@@ -7,7 +7,7 @@ import (
 // DeviceComplianceActionItem 
 type DeviceComplianceActionItem struct {
     Entity
-    // What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
+    // What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification.
     actionType *DeviceComplianceActionType;
     // Number of hours to wait till the action will be enforced. Valid values 0 to 8760
     gracePeriodHours *int32;
@@ -23,7 +23,7 @@ func NewDeviceComplianceActionItem()(*DeviceComplianceActionItem) {
     }
     return m
 }
-// GetActionType gets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
+// GetActionType gets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification.
 func (m *DeviceComplianceActionItem) GetActionType()(*DeviceComplianceActionType) {
     if m == nil {
         return nil
@@ -64,8 +64,7 @@ func (m *DeviceComplianceActionItem) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(DeviceComplianceActionType)
-            m.SetActionType(&cast)
+            m.SetActionType(val.(*DeviceComplianceActionType))
         }
         return nil
     }
@@ -115,7 +114,7 @@ func (m *DeviceComplianceActionItem) Serialize(writer i04eb5309aeaafadd28374d79c
         return err
     }
     if m.GetActionType() != nil {
-        cast := m.GetActionType().String()
+        cast := (*m.GetActionType()).String()
         err = writer.WriteStringValue("actionType", &cast)
         if err != nil {
             return err
@@ -141,7 +140,7 @@ func (m *DeviceComplianceActionItem) Serialize(writer i04eb5309aeaafadd28374d79c
     }
     return nil
 }
-// SetActionType sets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
+// SetActionType sets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification.
 func (m *DeviceComplianceActionItem) SetActionType(value *DeviceComplianceActionType)() {
     if m != nil {
         m.actionType = value

@@ -17,17 +17,20 @@ func (i VolumeType) String() string {
     return []string{"OPERATINGSYSTEMVOLUME", "FIXEDDATAVOLUME", "REMOVABLEDATAVOLUME", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseVolumeType(v string) (interface{}, error) {
+    result := OPERATINGSYSTEMVOLUME_VOLUMETYPE
     switch strings.ToUpper(v) {
         case "OPERATINGSYSTEMVOLUME":
-            return OPERATINGSYSTEMVOLUME_VOLUMETYPE, nil
+            result = OPERATINGSYSTEMVOLUME_VOLUMETYPE
         case "FIXEDDATAVOLUME":
-            return FIXEDDATAVOLUME_VOLUMETYPE, nil
+            result = FIXEDDATAVOLUME_VOLUMETYPE
         case "REMOVABLEDATAVOLUME":
-            return REMOVABLEDATAVOLUME_VOLUMETYPE, nil
+            result = REMOVABLEDATAVOLUME_VOLUMETYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_VOLUMETYPE, nil
+            result = UNKNOWNFUTUREVALUE_VOLUMETYPE
+        default:
+            return 0, errors.New("Unknown VolumeType value: " + v)
     }
-    return 0, errors.New("Unknown VolumeType value: " + v)
+    return &result, nil
 }
 func SerializeVolumeType(values []VolumeType) []string {
     result := make([]string, len(values))

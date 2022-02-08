@@ -84,8 +84,7 @@ func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(PostType)
-            m.SetPostType(&cast)
+            m.SetPostType(val.(*PostType))
         }
         return nil
     }
@@ -109,7 +108,7 @@ func (m *ServiceHealthIssuePost) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetPostType() != nil {
-        cast := m.GetPostType().String()
+        cast := (*m.GetPostType()).String()
         err := writer.WriteStringValue("postType", &cast)
         if err != nil {
             return err

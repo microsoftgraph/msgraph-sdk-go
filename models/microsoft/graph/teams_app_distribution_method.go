@@ -17,17 +17,20 @@ func (i TeamsAppDistributionMethod) String() string {
     return []string{"STORE", "ORGANIZATION", "SIDELOADED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamsAppDistributionMethod(v string) (interface{}, error) {
+    result := STORE_TEAMSAPPDISTRIBUTIONMETHOD
     switch strings.ToUpper(v) {
         case "STORE":
-            return STORE_TEAMSAPPDISTRIBUTIONMETHOD, nil
+            result = STORE_TEAMSAPPDISTRIBUTIONMETHOD
         case "ORGANIZATION":
-            return ORGANIZATION_TEAMSAPPDISTRIBUTIONMETHOD, nil
+            result = ORGANIZATION_TEAMSAPPDISTRIBUTIONMETHOD
         case "SIDELOADED":
-            return SIDELOADED_TEAMSAPPDISTRIBUTIONMETHOD, nil
+            result = SIDELOADED_TEAMSAPPDISTRIBUTIONMETHOD
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMSAPPDISTRIBUTIONMETHOD, nil
+            result = UNKNOWNFUTUREVALUE_TEAMSAPPDISTRIBUTIONMETHOD
+        default:
+            return 0, errors.New("Unknown TeamsAppDistributionMethod value: " + v)
     }
-    return 0, errors.New("Unknown TeamsAppDistributionMethod value: " + v)
+    return &result, nil
 }
 func SerializeTeamsAppDistributionMethod(values []TeamsAppDistributionMethod) []string {
     result := make([]string, len(values))

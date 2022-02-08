@@ -41,7 +41,7 @@ type B2xIdentityUserFlowRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// B2xIdentityUserFlowRequestBuilderGetQueryParameters represents entry point for B2X and self-service sign-up identity userflows.
+// B2xIdentityUserFlowRequestBuilderGetQueryParameters represents entry point for B2X/self-service sign-up identity userflows.
 type B2xIdentityUserFlowRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -78,7 +78,7 @@ func NewB2xIdentityUserFlowRequestBuilder(rawUrl string, requestAdapter ida96af0
     urlParams["request-raw-url"] = rawUrl
     return NewB2xIdentityUserFlowRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation represents entry point for B2X and self-service sign-up identity userflows.
+// CreateDeleteRequestInformation represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) CreateDeleteRequestInformation(options *B2xIdentityUserFlowRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) CreateDeleteRequestInformation(optio
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation represents entry point for B2X and self-service sign-up identity userflows.
+// CreateGetRequestInformation represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) CreateGetRequestInformation(options *B2xIdentityUserFlowRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,7 +115,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) CreateGetRequestInformation(options 
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation represents entry point for B2X and self-service sign-up identity userflows.
+// CreatePatchRequestInformation represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) CreatePatchRequestInformation(options *B2xIdentityUserFlowRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,7 +133,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) CreatePatchRequestInformation(option
     }
     return requestInfo, nil
 }
-// Delete represents entry point for B2X and self-service sign-up identity userflows.
+// Delete represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) Delete(options *B2xIdentityUserFlowRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -145,7 +145,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) Delete(options *B2xIdentityUserFlowR
     }
     return nil
 }
-// Get represents entry point for B2X and self-service sign-up identity userflows.
+// Get represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) Get(options *B2xIdentityUserFlowRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.B2xIdentityUserFlow, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -174,7 +174,7 @@ func (m *B2xIdentityUserFlowRequestBuilder) LanguagesById(id string)(*iffeb8fd68
     }
     return iffeb8fd6812998e372f8b86fce623d5b4b055347b27a5e10d253ff43d246f33d.NewUserFlowLanguageConfigurationRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch represents entry point for B2X and self-service sign-up identity userflows.
+// Patch represents entry point for B2X/self-service sign-up identity userflows.
 func (m *B2xIdentityUserFlowRequestBuilder) Patch(options *B2xIdentityUserFlowRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

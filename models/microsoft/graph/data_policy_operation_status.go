@@ -18,19 +18,22 @@ func (i DataPolicyOperationStatus) String() string {
     return []string{"NOTSTARTED", "RUNNING", "COMPLETE", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDataPolicyOperationStatus(v string) (interface{}, error) {
+    result := NOTSTARTED_DATAPOLICYOPERATIONSTATUS
     switch strings.ToUpper(v) {
         case "NOTSTARTED":
-            return NOTSTARTED_DATAPOLICYOPERATIONSTATUS, nil
+            result = NOTSTARTED_DATAPOLICYOPERATIONSTATUS
         case "RUNNING":
-            return RUNNING_DATAPOLICYOPERATIONSTATUS, nil
+            result = RUNNING_DATAPOLICYOPERATIONSTATUS
         case "COMPLETE":
-            return COMPLETE_DATAPOLICYOPERATIONSTATUS, nil
+            result = COMPLETE_DATAPOLICYOPERATIONSTATUS
         case "FAILED":
-            return FAILED_DATAPOLICYOPERATIONSTATUS, nil
+            result = FAILED_DATAPOLICYOPERATIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DATAPOLICYOPERATIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_DATAPOLICYOPERATIONSTATUS
+        default:
+            return 0, errors.New("Unknown DataPolicyOperationStatus value: " + v)
     }
-    return 0, errors.New("Unknown DataPolicyOperationStatus value: " + v)
+    return &result, nil
 }
 func SerializeDataPolicyOperationStatus(values []DataPolicyOperationStatus) []string {
     result := make([]string, len(values))

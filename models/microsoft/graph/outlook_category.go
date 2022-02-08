@@ -44,8 +44,7 @@ func (m *OutlookCategory) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(CategoryColor)
-            m.SetColor(&cast)
+            m.SetColor(val.(*CategoryColor))
         }
         return nil
     }
@@ -71,7 +70,7 @@ func (m *OutlookCategory) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         return err
     }
     if m.GetColor() != nil {
-        cast := m.GetColor().String()
+        cast := (*m.GetColor()).String()
         err = writer.WriteStringValue("color", &cast)
         if err != nil {
             return err

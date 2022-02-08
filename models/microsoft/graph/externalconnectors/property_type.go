@@ -23,29 +23,32 @@ func (i PropertyType) String() string {
     return []string{"STRING", "INT64", "DOUBLE", "DATETIME", "BOOLEAN", "STRINGCOLLECTION", "INT64COLLECTION", "DOUBLECOLLECTION", "DATETIMECOLLECTION", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePropertyType(v string) (interface{}, error) {
+    result := STRING_PROPERTYTYPE
     switch strings.ToUpper(v) {
         case "STRING":
-            return STRING_PROPERTYTYPE, nil
+            result = STRING_PROPERTYTYPE
         case "INT64":
-            return INT64_PROPERTYTYPE, nil
+            result = INT64_PROPERTYTYPE
         case "DOUBLE":
-            return DOUBLE_PROPERTYTYPE, nil
+            result = DOUBLE_PROPERTYTYPE
         case "DATETIME":
-            return DATETIME_PROPERTYTYPE, nil
+            result = DATETIME_PROPERTYTYPE
         case "BOOLEAN":
-            return BOOLEAN_PROPERTYTYPE, nil
+            result = BOOLEAN_PROPERTYTYPE
         case "STRINGCOLLECTION":
-            return STRINGCOLLECTION_PROPERTYTYPE, nil
+            result = STRINGCOLLECTION_PROPERTYTYPE
         case "INT64COLLECTION":
-            return INT64COLLECTION_PROPERTYTYPE, nil
+            result = INT64COLLECTION_PROPERTYTYPE
         case "DOUBLECOLLECTION":
-            return DOUBLECOLLECTION_PROPERTYTYPE, nil
+            result = DOUBLECOLLECTION_PROPERTYTYPE
         case "DATETIMECOLLECTION":
-            return DATETIMECOLLECTION_PROPERTYTYPE, nil
+            result = DATETIMECOLLECTION_PROPERTYTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PROPERTYTYPE, nil
+            result = UNKNOWNFUTUREVALUE_PROPERTYTYPE
+        default:
+            return 0, errors.New("Unknown PropertyType value: " + v)
     }
-    return 0, errors.New("Unknown PropertyType value: " + v)
+    return &result, nil
 }
 func SerializePropertyType(values []PropertyType) []string {
     result := make([]string, len(values))

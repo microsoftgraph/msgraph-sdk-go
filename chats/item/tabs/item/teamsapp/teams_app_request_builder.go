@@ -27,7 +27,7 @@ type TeamsAppRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// TeamsAppRequestBuilderGetQueryParameters the application that is linked to the tab.
+// TeamsAppRequestBuilderGetQueryParameters the application that is linked to the tab. This cannot be changed after tab creation.
 type TeamsAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -53,7 +53,7 @@ func NewTeamsAppRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the application that is linked to the tab.
+// CreateGetRequestInformation the application that is linked to the tab. This cannot be changed after tab creation.
 func (m *TeamsAppRequestBuilder) CreateGetRequestInformation(options *TeamsAppRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -73,7 +73,7 @@ func (m *TeamsAppRequestBuilder) CreateGetRequestInformation(options *TeamsAppRe
     }
     return requestInfo, nil
 }
-// Get the application that is linked to the tab.
+// Get the application that is linked to the tab. This cannot be changed after tab creation.
 func (m *TeamsAppRequestBuilder) Get(options *TeamsAppRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TeamsApp, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

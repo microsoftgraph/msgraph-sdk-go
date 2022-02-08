@@ -17,17 +17,20 @@ func (i MediaDirection) String() string {
     return []string{"INACTIVE", "SENDONLY", "RECEIVEONLY", "SENDRECEIVE"}[i]
 }
 func ParseMediaDirection(v string) (interface{}, error) {
+    result := INACTIVE_MEDIADIRECTION
     switch strings.ToUpper(v) {
         case "INACTIVE":
-            return INACTIVE_MEDIADIRECTION, nil
+            result = INACTIVE_MEDIADIRECTION
         case "SENDONLY":
-            return SENDONLY_MEDIADIRECTION, nil
+            result = SENDONLY_MEDIADIRECTION
         case "RECEIVEONLY":
-            return RECEIVEONLY_MEDIADIRECTION, nil
+            result = RECEIVEONLY_MEDIADIRECTION
         case "SENDRECEIVE":
-            return SENDRECEIVE_MEDIADIRECTION, nil
+            result = SENDRECEIVE_MEDIADIRECTION
+        default:
+            return 0, errors.New("Unknown MediaDirection value: " + v)
     }
-    return 0, errors.New("Unknown MediaDirection value: " + v)
+    return &result, nil
 }
 func SerializeMediaDirection(values []MediaDirection) []string {
     result := make([]string, len(values))

@@ -64,8 +64,7 @@ func (m *TimeOffReason) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(TimeOffReasonIconType)
-            m.SetIconType(&cast)
+            m.SetIconType(val.(*TimeOffReasonIconType))
         }
         return nil
     }
@@ -97,7 +96,7 @@ func (m *TimeOffReason) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetIconType() != nil {
-        cast := m.GetIconType().String()
+        cast := (*m.GetIconType()).String()
         err = writer.WriteStringValue("iconType", &cast)
         if err != nil {
             return err

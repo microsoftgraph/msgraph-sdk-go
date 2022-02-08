@@ -19,6 +19,7 @@ import (
     ia329fbf2e4e7682fe90bdfc6bf4cc749c189487202d60eefa0fdec3b62b0b7c3 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/ownedobjects"
     ia47ff52d5020404c6eaea0bc5dbd4bbafaa1e0c73dbc6d4dcfee263b2245b53e "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/tokenlifetimepolicies"
     iaa2be345892fc1350e44205c5f24bef008513f89d2497eabd4c16620df674828 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/getmembergroups"
+    ib8feba2d910c8485220ccc6a35f2363ef36da3466e5a53c33911b796b751a405 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/addtokensigningcertificate"
     ic2b775c554f6f0689bed0deb6e610608281614f70275cada61da8274360068d0 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/endpoints"
     icc1091ecf66b1de7080efaeb2e59cdf1074f3b116fba7066b71a0d6cd9c57a53 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/claimsmappingpolicies"
     id692483c2e6fa4444b9d250ecaa7a6bea16dbc3cd7fa20c05fb69b2f7b69ad46 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipals/item/approleassignedto"
@@ -85,6 +86,9 @@ func (m *ServicePrincipalRequestBuilder) AddKey()(*i3f559eeb0a32c852d52064d33f87
 }
 func (m *ServicePrincipalRequestBuilder) AddPassword()(*i495446d97cfd23af0607d58fb1c29e62eeec78e42cbd747f401374edf193b049.AddPasswordRequestBuilder) {
     return i495446d97cfd23af0607d58fb1c29e62eeec78e42cbd747f401374edf193b049.NewAddPasswordRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *ServicePrincipalRequestBuilder) AddTokenSigningCertificate()(*ib8feba2d910c8485220ccc6a35f2363ef36da3466e5a53c33911b796b751a405.AddTokenSigningCertificateRequestBuilder) {
+    return ib8feba2d910c8485220ccc6a35f2363ef36da3466e5a53c33911b796b751a405.NewAddTokenSigningCertificateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 func (m *ServicePrincipalRequestBuilder) AppRoleAssignedTo()(*id692483c2e6fa4444b9d250ecaa7a6bea16dbc3cd7fa20c05fb69b2f7b69ad46.AppRoleAssignedToRequestBuilder) {
     return id692483c2e6fa4444b9d250ecaa7a6bea16dbc3cd7fa20c05fb69b2f7b69ad46.NewAppRoleAssignedToRequestBuilderInternal(m.pathParameters, m.requestAdapter);

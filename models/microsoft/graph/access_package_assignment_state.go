@@ -19,21 +19,24 @@ func (i AccessPackageAssignmentState) String() string {
     return []string{"DELIVERING", "PARTIALLYDELIVERED", "DELIVERED", "EXPIRED", "DELIVERYFAILED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAccessPackageAssignmentState(v string) (interface{}, error) {
+    result := DELIVERING_ACCESSPACKAGEASSIGNMENTSTATE
     switch strings.ToUpper(v) {
         case "DELIVERING":
-            return DELIVERING_ACCESSPACKAGEASSIGNMENTSTATE, nil
+            result = DELIVERING_ACCESSPACKAGEASSIGNMENTSTATE
         case "PARTIALLYDELIVERED":
-            return PARTIALLYDELIVERED_ACCESSPACKAGEASSIGNMENTSTATE, nil
+            result = PARTIALLYDELIVERED_ACCESSPACKAGEASSIGNMENTSTATE
         case "DELIVERED":
-            return DELIVERED_ACCESSPACKAGEASSIGNMENTSTATE, nil
+            result = DELIVERED_ACCESSPACKAGEASSIGNMENTSTATE
         case "EXPIRED":
-            return EXPIRED_ACCESSPACKAGEASSIGNMENTSTATE, nil
+            result = EXPIRED_ACCESSPACKAGEASSIGNMENTSTATE
         case "DELIVERYFAILED":
-            return DELIVERYFAILED_ACCESSPACKAGEASSIGNMENTSTATE, nil
+            result = DELIVERYFAILED_ACCESSPACKAGEASSIGNMENTSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACCESSPACKAGEASSIGNMENTSTATE, nil
+            result = UNKNOWNFUTUREVALUE_ACCESSPACKAGEASSIGNMENTSTATE
+        default:
+            return 0, errors.New("Unknown AccessPackageAssignmentState value: " + v)
     }
-    return 0, errors.New("Unknown AccessPackageAssignmentState value: " + v)
+    return &result, nil
 }
 func SerializeAccessPackageAssignmentState(values []AccessPackageAssignmentState) []string {
     result := make([]string, len(values))

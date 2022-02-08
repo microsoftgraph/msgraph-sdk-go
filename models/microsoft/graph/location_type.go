@@ -23,29 +23,32 @@ func (i LocationType) String() string {
     return []string{"DEFAULT", "CONFERENCEROOM", "HOMEADDRESS", "BUSINESSADDRESS", "GEOCOORDINATES", "STREETADDRESS", "HOTEL", "RESTAURANT", "LOCALBUSINESS", "POSTALADDRESS"}[i]
 }
 func ParseLocationType(v string) (interface{}, error) {
+    result := DEFAULT_LOCATIONTYPE
     switch strings.ToUpper(v) {
         case "DEFAULT":
-            return DEFAULT_LOCATIONTYPE, nil
+            result = DEFAULT_LOCATIONTYPE
         case "CONFERENCEROOM":
-            return CONFERENCEROOM_LOCATIONTYPE, nil
+            result = CONFERENCEROOM_LOCATIONTYPE
         case "HOMEADDRESS":
-            return HOMEADDRESS_LOCATIONTYPE, nil
+            result = HOMEADDRESS_LOCATIONTYPE
         case "BUSINESSADDRESS":
-            return BUSINESSADDRESS_LOCATIONTYPE, nil
+            result = BUSINESSADDRESS_LOCATIONTYPE
         case "GEOCOORDINATES":
-            return GEOCOORDINATES_LOCATIONTYPE, nil
+            result = GEOCOORDINATES_LOCATIONTYPE
         case "STREETADDRESS":
-            return STREETADDRESS_LOCATIONTYPE, nil
+            result = STREETADDRESS_LOCATIONTYPE
         case "HOTEL":
-            return HOTEL_LOCATIONTYPE, nil
+            result = HOTEL_LOCATIONTYPE
         case "RESTAURANT":
-            return RESTAURANT_LOCATIONTYPE, nil
+            result = RESTAURANT_LOCATIONTYPE
         case "LOCALBUSINESS":
-            return LOCALBUSINESS_LOCATIONTYPE, nil
+            result = LOCALBUSINESS_LOCATIONTYPE
         case "POSTALADDRESS":
-            return POSTALADDRESS_LOCATIONTYPE, nil
+            result = POSTALADDRESS_LOCATIONTYPE
+        default:
+            return 0, errors.New("Unknown LocationType value: " + v)
     }
-    return 0, errors.New("Unknown LocationType value: " + v)
+    return &result, nil
 }
 func SerializeLocationType(values []LocationType) []string {
     result := make([]string, len(values))

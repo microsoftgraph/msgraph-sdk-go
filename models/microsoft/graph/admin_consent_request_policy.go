@@ -15,7 +15,7 @@ type AdminConsentRequestPolicy struct {
     remindersEnabled *bool;
     // Specifies the duration the request is active before it automatically expires if no decision is applied.
     requestDurationInDays *int32;
-    // Required.
+    // The list of reviewers for the admin consent. Required.
     reviewers []AccessReviewReviewerScope;
     // Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
     version *int32;
@@ -59,7 +59,7 @@ func (m *AdminConsentRequestPolicy) GetRequestDurationInDays()(*int32) {
         return m.requestDurationInDays
     }
 }
-// GetReviewers gets the reviewers property value. Required.
+// GetReviewers gets the reviewers property value. The list of reviewers for the admin consent. Required.
 func (m *AdminConsentRequestPolicy) GetReviewers()([]AccessReviewReviewerScope) {
     if m == nil {
         return nil
@@ -220,7 +220,7 @@ func (m *AdminConsentRequestPolicy) SetRequestDurationInDays(value *int32)() {
         m.requestDurationInDays = value
     }
 }
-// SetReviewers sets the reviewers property value. Required.
+// SetReviewers sets the reviewers property value. The list of reviewers for the admin consent. Required.
 func (m *AdminConsentRequestPolicy) SetReviewers(value []AccessReviewReviewerScope)() {
     if m != nil {
         m.reviewers = value

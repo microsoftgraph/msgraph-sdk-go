@@ -23,29 +23,32 @@ func (i MailTipsType) String() string {
     return []string{"AUTOMATICREPLIES", "MAILBOXFULLSTATUS", "CUSTOMMAILTIP", "EXTERNALMEMBERCOUNT", "TOTALMEMBERCOUNT", "MAXMESSAGESIZE", "DELIVERYRESTRICTION", "MODERATIONSTATUS", "RECIPIENTSCOPE", "RECIPIENTSUGGESTIONS"}[i]
 }
 func ParseMailTipsType(v string) (interface{}, error) {
+    result := AUTOMATICREPLIES_MAILTIPSTYPE
     switch strings.ToUpper(v) {
         case "AUTOMATICREPLIES":
-            return AUTOMATICREPLIES_MAILTIPSTYPE, nil
+            result = AUTOMATICREPLIES_MAILTIPSTYPE
         case "MAILBOXFULLSTATUS":
-            return MAILBOXFULLSTATUS_MAILTIPSTYPE, nil
+            result = MAILBOXFULLSTATUS_MAILTIPSTYPE
         case "CUSTOMMAILTIP":
-            return CUSTOMMAILTIP_MAILTIPSTYPE, nil
+            result = CUSTOMMAILTIP_MAILTIPSTYPE
         case "EXTERNALMEMBERCOUNT":
-            return EXTERNALMEMBERCOUNT_MAILTIPSTYPE, nil
+            result = EXTERNALMEMBERCOUNT_MAILTIPSTYPE
         case "TOTALMEMBERCOUNT":
-            return TOTALMEMBERCOUNT_MAILTIPSTYPE, nil
+            result = TOTALMEMBERCOUNT_MAILTIPSTYPE
         case "MAXMESSAGESIZE":
-            return MAXMESSAGESIZE_MAILTIPSTYPE, nil
+            result = MAXMESSAGESIZE_MAILTIPSTYPE
         case "DELIVERYRESTRICTION":
-            return DELIVERYRESTRICTION_MAILTIPSTYPE, nil
+            result = DELIVERYRESTRICTION_MAILTIPSTYPE
         case "MODERATIONSTATUS":
-            return MODERATIONSTATUS_MAILTIPSTYPE, nil
+            result = MODERATIONSTATUS_MAILTIPSTYPE
         case "RECIPIENTSCOPE":
-            return RECIPIENTSCOPE_MAILTIPSTYPE, nil
+            result = RECIPIENTSCOPE_MAILTIPSTYPE
         case "RECIPIENTSUGGESTIONS":
-            return RECIPIENTSUGGESTIONS_MAILTIPSTYPE, nil
+            result = RECIPIENTSUGGESTIONS_MAILTIPSTYPE
+        default:
+            return 0, errors.New("Unknown MailTipsType value: " + v)
     }
-    return 0, errors.New("Unknown MailTipsType value: " + v)
+    return &result, nil
 }
 func SerializeMailTipsType(values []MailTipsType) []string {
     result := make([]string, len(values))

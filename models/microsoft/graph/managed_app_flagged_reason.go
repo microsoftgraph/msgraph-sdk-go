@@ -15,13 +15,16 @@ func (i ManagedAppFlaggedReason) String() string {
     return []string{"NONE", "ROOTEDDEVICE"}[i]
 }
 func ParseManagedAppFlaggedReason(v string) (interface{}, error) {
+    result := NONE_MANAGEDAPPFLAGGEDREASON
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_MANAGEDAPPFLAGGEDREASON, nil
+            result = NONE_MANAGEDAPPFLAGGEDREASON
         case "ROOTEDDEVICE":
-            return ROOTEDDEVICE_MANAGEDAPPFLAGGEDREASON, nil
+            result = ROOTEDDEVICE_MANAGEDAPPFLAGGEDREASON
+        default:
+            return 0, errors.New("Unknown ManagedAppFlaggedReason value: " + v)
     }
-    return 0, errors.New("Unknown ManagedAppFlaggedReason value: " + v)
+    return &result, nil
 }
 func SerializeManagedAppFlaggedReason(values []ManagedAppFlaggedReason) []string {
     result := make([]string, len(values))

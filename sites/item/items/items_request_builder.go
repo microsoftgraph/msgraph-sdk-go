@@ -26,7 +26,7 @@ type ItemsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ItemsRequestBuilderGetQueryParameters used to address any item contained in this site. This collection cannot be enumerated.
+// ItemsRequestBuilderGetQueryParameters used to address any item contained in this site. This collection can't be enumerated.
 type ItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewItemsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
     urlParams["request-raw-url"] = rawUrl
     return NewItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation used to address any item contained in this site. This collection cannot be enumerated.
+// CreateGetRequestInformation used to address any item contained in this site. This collection can't be enumerated.
 func (m *ItemsRequestBuilder) CreateGetRequestInformation(options *ItemsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *ItemsRequestBuilder) CreateGetRequestInformation(options *ItemsRequestB
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation used to address any item contained in this site. This collection cannot be enumerated.
+// CreatePostRequestInformation used to address any item contained in this site. This collection can't be enumerated.
 func (m *ItemsRequestBuilder) CreatePostRequestInformation(options *ItemsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ItemsRequestBuilder) CreatePostRequestInformation(options *ItemsRequest
     }
     return requestInfo, nil
 }
-// Get used to address any item contained in this site. This collection cannot be enumerated.
+// Get used to address any item contained in this site. This collection can't be enumerated.
 func (m *ItemsRequestBuilder) Get(options *ItemsRequestBuilderGetOptions)(*ItemsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *ItemsRequestBuilder) Get(options *ItemsRequestBuilderGetOptions)(*Items
     }
     return res.(*ItemsResponse), nil
 }
-// Post used to address any item contained in this site. This collection cannot be enumerated.
+// Post used to address any item contained in this site. This collection can't be enumerated.
 func (m *ItemsRequestBuilder) Post(options *ItemsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.BaseItem, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

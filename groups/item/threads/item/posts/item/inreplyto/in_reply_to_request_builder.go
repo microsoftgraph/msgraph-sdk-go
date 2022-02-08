@@ -37,7 +37,7 @@ type InReplyToRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// InReplyToRequestBuilderGetQueryParameters the earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
+// InReplyToRequestBuilderGetQueryParameters read-only. Supports $expand.
 type InReplyToRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -74,7 +74,7 @@ func NewInReplyToRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewInReplyToRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
+// CreateDeleteRequestInformation read-only. Supports $expand.
 func (m *InReplyToRequestBuilder) CreateDeleteRequestInformation(options *InReplyToRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *InReplyToRequestBuilder) CreateDeleteRequestInformation(options *InRepl
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
+// CreateGetRequestInformation read-only. Supports $expand.
 func (m *InReplyToRequestBuilder) CreateGetRequestInformation(options *InReplyToRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *InReplyToRequestBuilder) CreateGetRequestInformation(options *InReplyTo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
+// CreatePatchRequestInformation read-only. Supports $expand.
 func (m *InReplyToRequestBuilder) CreatePatchRequestInformation(options *InReplyToRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,7 +129,7 @@ func (m *InReplyToRequestBuilder) CreatePatchRequestInformation(options *InReply
     }
     return requestInfo, nil
 }
-// Delete the earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
+// Delete read-only. Supports $expand.
 func (m *InReplyToRequestBuilder) Delete(options *InReplyToRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -144,7 +144,7 @@ func (m *InReplyToRequestBuilder) Delete(options *InReplyToRequestBuilderDeleteO
 func (m *InReplyToRequestBuilder) Forward()(*ic06046cc8c7f87f655d91876ca77d67f798d85de5c44c9e4974ce552215dfb8b.ForwardRequestBuilder) {
     return ic06046cc8c7f87f655d91876ca77d67f798d85de5c44c9e4974ce552215dfb8b.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
+// Get read-only. Supports $expand.
 func (m *InReplyToRequestBuilder) Get(options *InReplyToRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Post, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -156,7 +156,7 @@ func (m *InReplyToRequestBuilder) Get(options *InReplyToRequestBuilderGetOptions
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Post), nil
 }
-// Patch the earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
+// Patch read-only. Supports $expand.
 func (m *InReplyToRequestBuilder) Patch(options *InReplyToRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

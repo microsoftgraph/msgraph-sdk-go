@@ -18,19 +18,22 @@ func (i EnrollmentState) String() string {
     return []string{"UNKNOWN", "ENROLLED", "PENDINGRESET", "FAILED", "NOTCONTACTED"}[i]
 }
 func ParseEnrollmentState(v string) (interface{}, error) {
+    result := UNKNOWN_ENROLLMENTSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_ENROLLMENTSTATE, nil
+            result = UNKNOWN_ENROLLMENTSTATE
         case "ENROLLED":
-            return ENROLLED_ENROLLMENTSTATE, nil
+            result = ENROLLED_ENROLLMENTSTATE
         case "PENDINGRESET":
-            return PENDINGRESET_ENROLLMENTSTATE, nil
+            result = PENDINGRESET_ENROLLMENTSTATE
         case "FAILED":
-            return FAILED_ENROLLMENTSTATE, nil
+            result = FAILED_ENROLLMENTSTATE
         case "NOTCONTACTED":
-            return NOTCONTACTED_ENROLLMENTSTATE, nil
+            result = NOTCONTACTED_ENROLLMENTSTATE
+        default:
+            return 0, errors.New("Unknown EnrollmentState value: " + v)
     }
-    return 0, errors.New("Unknown EnrollmentState value: " + v)
+    return &result, nil
 }
 func SerializeEnrollmentState(values []EnrollmentState) []string {
     result := make([]string, len(values))

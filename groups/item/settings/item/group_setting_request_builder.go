@@ -35,7 +35,7 @@ type GroupSettingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// GroupSettingRequestBuilderGetQueryParameters settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// GroupSettingRequestBuilderGetQueryParameters read-only. Nullable.
 type GroupSettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewGroupSettingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb7
     urlParams["request-raw-url"] = rawUrl
     return NewGroupSettingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// CreateDeleteRequestInformation read-only. Nullable.
 func (m *GroupSettingRequestBuilder) CreateDeleteRequestInformation(options *GroupSettingRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *GroupSettingRequestBuilder) CreateDeleteRequestInformation(options *Gro
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// CreateGetRequestInformation read-only. Nullable.
 func (m *GroupSettingRequestBuilder) CreateGetRequestInformation(options *GroupSettingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *GroupSettingRequestBuilder) CreateGetRequestInformation(options *GroupS
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// CreatePatchRequestInformation read-only. Nullable.
 func (m *GroupSettingRequestBuilder) CreatePatchRequestInformation(options *GroupSettingRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *GroupSettingRequestBuilder) CreatePatchRequestInformation(options *Grou
     }
     return requestInfo, nil
 }
-// Delete settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// Delete read-only. Nullable.
 func (m *GroupSettingRequestBuilder) Delete(options *GroupSettingRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *GroupSettingRequestBuilder) Delete(options *GroupSettingRequestBuilderD
     }
     return nil
 }
-// Get settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// Get read-only. Nullable.
 func (m *GroupSettingRequestBuilder) Get(options *GroupSettingRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupSetting, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *GroupSettingRequestBuilder) Get(options *GroupSettingRequestBuilderGetO
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.GroupSetting), nil
 }
-// Patch settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+// Patch read-only. Nullable.
 func (m *GroupSettingRequestBuilder) Patch(options *GroupSettingRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -19,21 +19,24 @@ func (i FreeBusyStatus) String() string {
     return []string{"UNKNOWN", "FREE", "TENTATIVE", "BUSY", "OOF", "WORKINGELSEWHERE"}[i]
 }
 func ParseFreeBusyStatus(v string) (interface{}, error) {
+    result := UNKNOWN_FREEBUSYSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_FREEBUSYSTATUS, nil
+            result = UNKNOWN_FREEBUSYSTATUS
         case "FREE":
-            return FREE_FREEBUSYSTATUS, nil
+            result = FREE_FREEBUSYSTATUS
         case "TENTATIVE":
-            return TENTATIVE_FREEBUSYSTATUS, nil
+            result = TENTATIVE_FREEBUSYSTATUS
         case "BUSY":
-            return BUSY_FREEBUSYSTATUS, nil
+            result = BUSY_FREEBUSYSTATUS
         case "OOF":
-            return OOF_FREEBUSYSTATUS, nil
+            result = OOF_FREEBUSYSTATUS
         case "WORKINGELSEWHERE":
-            return WORKINGELSEWHERE_FREEBUSYSTATUS, nil
+            result = WORKINGELSEWHERE_FREEBUSYSTATUS
+        default:
+            return 0, errors.New("Unknown FreeBusyStatus value: " + v)
     }
-    return 0, errors.New("Unknown FreeBusyStatus value: " + v)
+    return &result, nil
 }
 func SerializeFreeBusyStatus(values []FreeBusyStatus) []string {
     result := make([]string, len(values))

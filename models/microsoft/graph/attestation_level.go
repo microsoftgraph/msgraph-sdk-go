@@ -16,15 +16,18 @@ func (i AttestationLevel) String() string {
     return []string{"ATTESTED", "NOTATTESTED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAttestationLevel(v string) (interface{}, error) {
+    result := ATTESTED_ATTESTATIONLEVEL
     switch strings.ToUpper(v) {
         case "ATTESTED":
-            return ATTESTED_ATTESTATIONLEVEL, nil
+            result = ATTESTED_ATTESTATIONLEVEL
         case "NOTATTESTED":
-            return NOTATTESTED_ATTESTATIONLEVEL, nil
+            result = NOTATTESTED_ATTESTATIONLEVEL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ATTESTATIONLEVEL, nil
+            result = UNKNOWNFUTUREVALUE_ATTESTATIONLEVEL
+        default:
+            return 0, errors.New("Unknown AttestationLevel value: " + v)
     }
-    return 0, errors.New("Unknown AttestationLevel value: " + v)
+    return &result, nil
 }
 func SerializeAttestationLevel(values []AttestationLevel) []string {
     result := make([]string, len(values))

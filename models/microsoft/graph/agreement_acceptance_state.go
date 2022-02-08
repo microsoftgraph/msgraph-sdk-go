@@ -16,15 +16,18 @@ func (i AgreementAcceptanceState) String() string {
     return []string{"ACCEPTED", "DECLINED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAgreementAcceptanceState(v string) (interface{}, error) {
+    result := ACCEPTED_AGREEMENTACCEPTANCESTATE
     switch strings.ToUpper(v) {
         case "ACCEPTED":
-            return ACCEPTED_AGREEMENTACCEPTANCESTATE, nil
+            result = ACCEPTED_AGREEMENTACCEPTANCESTATE
         case "DECLINED":
-            return DECLINED_AGREEMENTACCEPTANCESTATE, nil
+            result = DECLINED_AGREEMENTACCEPTANCESTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_AGREEMENTACCEPTANCESTATE, nil
+            result = UNKNOWNFUTUREVALUE_AGREEMENTACCEPTANCESTATE
+        default:
+            return 0, errors.New("Unknown AgreementAcceptanceState value: " + v)
     }
-    return 0, errors.New("Unknown AgreementAcceptanceState value: " + v)
+    return &result, nil
 }
 func SerializeAgreementAcceptanceState(values []AgreementAcceptanceState) []string {
     result := make([]string, len(values))

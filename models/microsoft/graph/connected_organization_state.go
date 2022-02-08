@@ -16,15 +16,18 @@ func (i ConnectedOrganizationState) String() string {
     return []string{"CONFIGURED", "PROPOSED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseConnectedOrganizationState(v string) (interface{}, error) {
+    result := CONFIGURED_CONNECTEDORGANIZATIONSTATE
     switch strings.ToUpper(v) {
         case "CONFIGURED":
-            return CONFIGURED_CONNECTEDORGANIZATIONSTATE, nil
+            result = CONFIGURED_CONNECTEDORGANIZATIONSTATE
         case "PROPOSED":
-            return PROPOSED_CONNECTEDORGANIZATIONSTATE, nil
+            result = PROPOSED_CONNECTEDORGANIZATIONSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONNECTEDORGANIZATIONSTATE, nil
+            result = UNKNOWNFUTUREVALUE_CONNECTEDORGANIZATIONSTATE
+        default:
+            return 0, errors.New("Unknown ConnectedOrganizationState value: " + v)
     }
-    return 0, errors.New("Unknown ConnectedOrganizationState value: " + v)
+    return &result, nil
 }
 func SerializeConnectedOrganizationState(values []ConnectedOrganizationState) []string {
     result := make([]string, len(values))

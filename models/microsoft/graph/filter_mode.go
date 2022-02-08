@@ -15,13 +15,16 @@ func (i FilterMode) String() string {
     return []string{"INCLUDE", "EXCLUDE"}[i]
 }
 func ParseFilterMode(v string) (interface{}, error) {
+    result := INCLUDE_FILTERMODE
     switch strings.ToUpper(v) {
         case "INCLUDE":
-            return INCLUDE_FILTERMODE, nil
+            result = INCLUDE_FILTERMODE
         case "EXCLUDE":
-            return EXCLUDE_FILTERMODE, nil
+            result = EXCLUDE_FILTERMODE
+        default:
+            return 0, errors.New("Unknown FilterMode value: " + v)
     }
-    return 0, errors.New("Unknown FilterMode value: " + v)
+    return &result, nil
 }
 func SerializeFilterMode(values []FilterMode) []string {
     result := make([]string, len(values))

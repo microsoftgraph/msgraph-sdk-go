@@ -18,19 +18,22 @@ func (i AlertFeedback) String() string {
     return []string{"UNKNOWN", "TRUEPOSITIVE", "FALSEPOSITIVE", "BENIGNPOSITIVE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAlertFeedback(v string) (interface{}, error) {
+    result := UNKNOWN_ALERTFEEDBACK
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_ALERTFEEDBACK, nil
+            result = UNKNOWN_ALERTFEEDBACK
         case "TRUEPOSITIVE":
-            return TRUEPOSITIVE_ALERTFEEDBACK, nil
+            result = TRUEPOSITIVE_ALERTFEEDBACK
         case "FALSEPOSITIVE":
-            return FALSEPOSITIVE_ALERTFEEDBACK, nil
+            result = FALSEPOSITIVE_ALERTFEEDBACK
         case "BENIGNPOSITIVE":
-            return BENIGNPOSITIVE_ALERTFEEDBACK, nil
+            result = BENIGNPOSITIVE_ALERTFEEDBACK
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ALERTFEEDBACK, nil
+            result = UNKNOWNFUTUREVALUE_ALERTFEEDBACK
+        default:
+            return 0, errors.New("Unknown AlertFeedback value: " + v)
     }
-    return 0, errors.New("Unknown AlertFeedback value: " + v)
+    return &result, nil
 }
 func SerializeAlertFeedback(values []AlertFeedback) []string {
     result := make([]string, len(values))

@@ -75,8 +75,7 @@ func (m *Relation) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.RelationType)
-            m.SetRelationship(&cast)
+            m.SetRelationship(val.(*id62b8df0892707d421d6e0a5aefa589248c11f95794bf4122483a0ef812fad7d.RelationType))
         }
         return nil
     }
@@ -118,7 +117,7 @@ func (m *Relation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetRelationship() != nil {
-        cast := m.GetRelationship().String()
+        cast := (*m.GetRelationship()).String()
         err = writer.WriteStringValue("relationship", &cast)
         if err != nil {
             return err

@@ -8,7 +8,7 @@ import (
 type ExcludeTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The object identifier of an Azure AD user or group.
+    // The object identifier of an Azure Active Directory user or group.
     id *string;
     // The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
     targetType *AuthenticationMethodTargetType;
@@ -28,7 +28,7 @@ func (m *ExcludeTarget) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetId gets the id property value. The object identifier of an Azure AD user or group.
+// GetId gets the id property value. The object identifier of an Azure Active Directory user or group.
 func (m *ExcludeTarget) GetId()(*string) {
     if m == nil {
         return nil
@@ -63,8 +63,7 @@ func (m *ExcludeTarget) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(AuthenticationMethodTargetType)
-            m.SetTargetType(&cast)
+            m.SetTargetType(val.(*AuthenticationMethodTargetType))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *ExcludeTarget) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetTargetType() != nil {
-        cast := m.GetTargetType().String()
+        cast := (*m.GetTargetType()).String()
         err := writer.WriteStringValue("targetType", &cast)
         if err != nil {
             return err
@@ -102,7 +101,7 @@ func (m *ExcludeTarget) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetId sets the id property value. The object identifier of an Azure AD user or group.
+// SetId sets the id property value. The object identifier of an Azure Active Directory user or group.
 func (m *ExcludeTarget) SetId(value *string)() {
     if m != nil {
         m.id = value

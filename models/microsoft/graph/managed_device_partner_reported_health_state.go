@@ -23,29 +23,32 @@ func (i ManagedDevicePartnerReportedHealthState) String() string {
     return []string{"UNKNOWN", "ACTIVATED", "DEACTIVATED", "SECURED", "LOWSEVERITY", "MEDIUMSEVERITY", "HIGHSEVERITY", "UNRESPONSIVE", "COMPROMISED", "MISCONFIGURED"}[i]
 }
 func ParseManagedDevicePartnerReportedHealthState(v string) (interface{}, error) {
+    result := UNKNOWN_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE, nil
+            result = UNKNOWN_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
         case "ACTIVATED":
-            return ACTIVATED_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE, nil
+            result = ACTIVATED_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
         case "DEACTIVATED":
-            return DEACTIVATED_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE, nil
+            result = DEACTIVATED_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
         case "SECURED":
-            return SECURED_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE, nil
+            result = SECURED_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
         case "LOWSEVERITY":
-            return LOWSEVERITY_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE, nil
+            result = LOWSEVERITY_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
         case "MEDIUMSEVERITY":
-            return MEDIUMSEVERITY_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE, nil
+            result = MEDIUMSEVERITY_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
         case "HIGHSEVERITY":
-            return HIGHSEVERITY_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE, nil
+            result = HIGHSEVERITY_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
         case "UNRESPONSIVE":
-            return UNRESPONSIVE_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE, nil
+            result = UNRESPONSIVE_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
         case "COMPROMISED":
-            return COMPROMISED_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE, nil
+            result = COMPROMISED_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
         case "MISCONFIGURED":
-            return MISCONFIGURED_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE, nil
+            result = MISCONFIGURED_MANAGEDDEVICEPARTNERREPORTEDHEALTHSTATE
+        default:
+            return 0, errors.New("Unknown ManagedDevicePartnerReportedHealthState value: " + v)
     }
-    return 0, errors.New("Unknown ManagedDevicePartnerReportedHealthState value: " + v)
+    return &result, nil
 }
 func SerializeManagedDevicePartnerReportedHealthState(values []ManagedDevicePartnerReportedHealthState) []string {
     result := make([]string, len(values))

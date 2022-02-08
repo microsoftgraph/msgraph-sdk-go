@@ -44,8 +44,7 @@ func (m *ManagedEBookAssignment) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(InstallIntent)
-            m.SetInstallIntent(&cast)
+            m.SetInstallIntent(val.(*InstallIntent))
         }
         return nil
     }
@@ -71,7 +70,7 @@ func (m *ManagedEBookAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471
         return err
     }
     if m.GetInstallIntent() != nil {
-        cast := m.GetInstallIntent().String()
+        cast := (*m.GetInstallIntent()).String()
         err = writer.WriteStringValue("installIntent", &cast)
         if err != nil {
             return err

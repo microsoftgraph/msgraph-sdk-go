@@ -13,13 +13,13 @@ type LicenseAssignmentState struct {
     assignedByGroup *string;
     // The service plans that are disabled in this assignment. Read-Only.
     disabledPlans []string;
-    // License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.
+    // License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
     error *string;
     // The timestamp when the state of the license assignment was last updated.
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The unique identifier for the SKU. Read-Only.
     skuId *string;
-    // Indicate the current state of this assignment. Read-Only. Possible values: Active, ActiveWithError, Disabled and Error.
+    // Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
     state *string;
 }
 // NewLicenseAssignmentState instantiates a new licenseAssignmentState and sets the default values.
@@ -53,7 +53,7 @@ func (m *LicenseAssignmentState) GetDisabledPlans()([]string) {
         return m.disabledPlans
     }
 }
-// GetError gets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.
+// GetError gets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
 func (m *LicenseAssignmentState) GetError()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *LicenseAssignmentState) GetSkuId()(*string) {
         return m.skuId
     }
 }
-// GetState gets the state property value. Indicate the current state of this assignment. Read-Only. Possible values: Active, ActiveWithError, Disabled and Error.
+// GetState gets the state property value. Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
 func (m *LicenseAssignmentState) GetState()(*string) {
     if m == nil {
         return nil
@@ -221,7 +221,7 @@ func (m *LicenseAssignmentState) SetDisabledPlans(value []string)() {
         m.disabledPlans = value
     }
 }
-// SetError sets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.
+// SetError sets the error property value. License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
 func (m *LicenseAssignmentState) SetError(value *string)() {
     if m != nil {
         m.error = value
@@ -239,7 +239,7 @@ func (m *LicenseAssignmentState) SetSkuId(value *string)() {
         m.skuId = value
     }
 }
-// SetState sets the state property value. Indicate the current state of this assignment. Read-Only. Possible values: Active, ActiveWithError, Disabled and Error.
+// SetState sets the state property value. Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
 func (m *LicenseAssignmentState) SetState(value *string)() {
     if m != nil {
         m.state = value

@@ -15,13 +15,16 @@ func (i ApplicationType) String() string {
     return []string{"UNIVERSAL", "DESKTOP"}[i]
 }
 func ParseApplicationType(v string) (interface{}, error) {
+    result := UNIVERSAL_APPLICATIONTYPE
     switch strings.ToUpper(v) {
         case "UNIVERSAL":
-            return UNIVERSAL_APPLICATIONTYPE, nil
+            result = UNIVERSAL_APPLICATIONTYPE
         case "DESKTOP":
-            return DESKTOP_APPLICATIONTYPE, nil
+            result = DESKTOP_APPLICATIONTYPE
+        default:
+            return 0, errors.New("Unknown ApplicationType value: " + v)
     }
-    return 0, errors.New("Unknown ApplicationType value: " + v)
+    return &result, nil
 }
 func SerializeApplicationType(values []ApplicationType) []string {
     result := make([]string, len(values))

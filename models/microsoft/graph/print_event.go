@@ -15,13 +15,16 @@ func (i PrintEvent) String() string {
     return []string{"JOBSTARTED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePrintEvent(v string) (interface{}, error) {
+    result := JOBSTARTED_PRINTEVENT
     switch strings.ToUpper(v) {
         case "JOBSTARTED":
-            return JOBSTARTED_PRINTEVENT, nil
+            result = JOBSTARTED_PRINTEVENT
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PRINTEVENT, nil
+            result = UNKNOWNFUTUREVALUE_PRINTEVENT
+        default:
+            return 0, errors.New("Unknown PrintEvent value: " + v)
     }
-    return 0, errors.New("Unknown PrintEvent value: " + v)
+    return &result, nil
 }
 func SerializePrintEvent(values []PrintEvent) []string {
     result := make([]string, len(values))

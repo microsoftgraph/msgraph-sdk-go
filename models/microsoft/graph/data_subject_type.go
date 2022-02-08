@@ -22,27 +22,30 @@ func (i DataSubjectType) String() string {
     return []string{"CUSTOMER", "CURRENTEMPLOYEE", "FORMEREMPLOYEE", "PROSPECTIVEEMPLOYEE", "STUDENT", "TEACHER", "FACULTY", "OTHER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseDataSubjectType(v string) (interface{}, error) {
+    result := CUSTOMER_DATASUBJECTTYPE
     switch strings.ToUpper(v) {
         case "CUSTOMER":
-            return CUSTOMER_DATASUBJECTTYPE, nil
+            result = CUSTOMER_DATASUBJECTTYPE
         case "CURRENTEMPLOYEE":
-            return CURRENTEMPLOYEE_DATASUBJECTTYPE, nil
+            result = CURRENTEMPLOYEE_DATASUBJECTTYPE
         case "FORMEREMPLOYEE":
-            return FORMEREMPLOYEE_DATASUBJECTTYPE, nil
+            result = FORMEREMPLOYEE_DATASUBJECTTYPE
         case "PROSPECTIVEEMPLOYEE":
-            return PROSPECTIVEEMPLOYEE_DATASUBJECTTYPE, nil
+            result = PROSPECTIVEEMPLOYEE_DATASUBJECTTYPE
         case "STUDENT":
-            return STUDENT_DATASUBJECTTYPE, nil
+            result = STUDENT_DATASUBJECTTYPE
         case "TEACHER":
-            return TEACHER_DATASUBJECTTYPE, nil
+            result = TEACHER_DATASUBJECTTYPE
         case "FACULTY":
-            return FACULTY_DATASUBJECTTYPE, nil
+            result = FACULTY_DATASUBJECTTYPE
         case "OTHER":
-            return OTHER_DATASUBJECTTYPE, nil
+            result = OTHER_DATASUBJECTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_DATASUBJECTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_DATASUBJECTTYPE
+        default:
+            return 0, errors.New("Unknown DataSubjectType value: " + v)
     }
-    return 0, errors.New("Unknown DataSubjectType value: " + v)
+    return &result, nil
 }
 func SerializeDataSubjectType(values []DataSubjectType) []string {
     result := make([]string, len(values))

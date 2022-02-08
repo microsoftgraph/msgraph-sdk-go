@@ -17,17 +17,20 @@ func (i RoutingType) String() string {
     return []string{"FORWARDED", "LOOKUP", "SELFFORK", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRoutingType(v string) (interface{}, error) {
+    result := FORWARDED_ROUTINGTYPE
     switch strings.ToUpper(v) {
         case "FORWARDED":
-            return FORWARDED_ROUTINGTYPE, nil
+            result = FORWARDED_ROUTINGTYPE
         case "LOOKUP":
-            return LOOKUP_ROUTINGTYPE, nil
+            result = LOOKUP_ROUTINGTYPE
         case "SELFFORK":
-            return SELFFORK_ROUTINGTYPE, nil
+            result = SELFFORK_ROUTINGTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ROUTINGTYPE, nil
+            result = UNKNOWNFUTUREVALUE_ROUTINGTYPE
+        default:
+            return 0, errors.New("Unknown RoutingType value: " + v)
     }
-    return 0, errors.New("Unknown RoutingType value: " + v)
+    return &result, nil
 }
 func SerializeRoutingType(values []RoutingType) []string {
     result := make([]string, len(values))

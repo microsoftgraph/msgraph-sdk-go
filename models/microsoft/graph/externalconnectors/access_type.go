@@ -16,15 +16,18 @@ func (i AccessType) String() string {
     return []string{"GRANT", "DENY", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAccessType(v string) (interface{}, error) {
+    result := GRANT_ACCESSTYPE
     switch strings.ToUpper(v) {
         case "GRANT":
-            return GRANT_ACCESSTYPE, nil
+            result = GRANT_ACCESSTYPE
         case "DENY":
-            return DENY_ACCESSTYPE, nil
+            result = DENY_ACCESSTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACCESSTYPE, nil
+            result = UNKNOWNFUTUREVALUE_ACCESSTYPE
+        default:
+            return 0, errors.New("Unknown AccessType value: " + v)
     }
-    return 0, errors.New("Unknown AccessType value: " + v)
+    return &result, nil
 }
 func SerializeAccessType(values []AccessType) []string {
     result := make([]string, len(values))

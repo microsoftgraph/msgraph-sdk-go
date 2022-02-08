@@ -19,7 +19,7 @@ type EducationClass struct {
     classCode *string;
     // Course information for the class.
     course *EducationCourse;
-    // Entity who created the class.
+    // Entity who created the class
     createdBy *IdentitySet;
     // Description of the class.
     description *string;
@@ -29,7 +29,7 @@ type EducationClass struct {
     externalId *string;
     // Name of the class in the syncing system.
     externalName *string;
-    // The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
+    // How this class was created. Possible values are: sis, manual.
     externalSource *EducationExternalSource;
     // The name of the external source this resources was generated from.
     externalSourceDetail *string;
@@ -45,7 +45,7 @@ type EducationClass struct {
     schools []EducationSchool;
     // All teachers in the class. Nullable.
     teachers []EducationUser;
-    // Term for the class.
+    // Term for this class.
     term *EducationTerm;
 }
 // NewEducationClass instantiates a new educationClass and sets the default values.
@@ -103,7 +103,7 @@ func (m *EducationClass) GetCourse()(*EducationCourse) {
         return m.course
     }
 }
-// GetCreatedBy gets the createdBy property value. Entity who created the class.
+// GetCreatedBy gets the createdBy property value. Entity who created the class
 func (m *EducationClass) GetCreatedBy()(*IdentitySet) {
     if m == nil {
         return nil
@@ -143,7 +143,7 @@ func (m *EducationClass) GetExternalName()(*string) {
         return m.externalName
     }
 }
-// GetExternalSource gets the externalSource property value. The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
+// GetExternalSource gets the externalSource property value. How this class was created. Possible values are: sis, manual.
 func (m *EducationClass) GetExternalSource()(*EducationExternalSource) {
     if m == nil {
         return nil
@@ -207,7 +207,7 @@ func (m *EducationClass) GetTeachers()([]EducationUser) {
         return m.teachers
     }
 }
-// GetTerm gets the term property value. Term for the class.
+// GetTerm gets the term property value. Term for this class.
 func (m *EducationClass) GetTerm()(*EducationTerm) {
     if m == nil {
         return nil
@@ -342,8 +342,7 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(EducationExternalSource)
-            m.SetExternalSource(&cast)
+            m.SetExternalSource(val.(*EducationExternalSource))
         }
         return nil
     }
@@ -527,7 +526,7 @@ func (m *EducationClass) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetExternalSource() != nil {
-        cast := m.GetExternalSource().String()
+        cast := (*m.GetExternalSource()).String()
         err = writer.WriteStringValue("externalSource", &cast)
         if err != nil {
             return err
@@ -634,7 +633,7 @@ func (m *EducationClass) SetCourse(value *EducationCourse)() {
         m.course = value
     }
 }
-// SetCreatedBy sets the createdBy property value. Entity who created the class.
+// SetCreatedBy sets the createdBy property value. Entity who created the class
 func (m *EducationClass) SetCreatedBy(value *IdentitySet)() {
     if m != nil {
         m.createdBy = value
@@ -664,7 +663,7 @@ func (m *EducationClass) SetExternalName(value *string)() {
         m.externalName = value
     }
 }
-// SetExternalSource sets the externalSource property value. The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
+// SetExternalSource sets the externalSource property value. How this class was created. Possible values are: sis, manual.
 func (m *EducationClass) SetExternalSource(value *EducationExternalSource)() {
     if m != nil {
         m.externalSource = value
@@ -712,7 +711,7 @@ func (m *EducationClass) SetTeachers(value []EducationUser)() {
         m.teachers = value
     }
 }
-// SetTerm sets the term property value. Term for the class.
+// SetTerm sets the term property value. Term for this class.
 func (m *EducationClass) SetTerm(value *EducationTerm)() {
     if m != nil {
         m.term = value

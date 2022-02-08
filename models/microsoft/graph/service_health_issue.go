@@ -23,7 +23,7 @@ type ServiceHealthIssue struct {
     posts []ServiceHealthIssuePost;
     // Indicates the service affected by the issue.
     service *string;
-    // The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+    // The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. See more in the table below.
     status *ServiceHealthStatus;
 }
 // NewServiceHealthIssue instantiates a new serviceHealthIssue and sets the default values.
@@ -97,7 +97,7 @@ func (m *ServiceHealthIssue) GetService()(*string) {
         return m.service
     }
 }
-// GetStatus gets the status property value. The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+// GetStatus gets the status property value. The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. See more in the table below.
 func (m *ServiceHealthIssue) GetStatus()(*ServiceHealthStatus) {
     if m == nil {
         return nil
@@ -114,8 +114,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(ServiceHealthClassificationType)
-            m.SetClassification(&cast)
+            m.SetClassification(val.(*ServiceHealthClassificationType))
         }
         return nil
     }
@@ -165,8 +164,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(ServiceHealthOrigin)
-            m.SetOrigin(&cast)
+            m.SetOrigin(val.(*ServiceHealthOrigin))
         }
         return nil
     }
@@ -200,8 +198,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(ServiceHealthStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*ServiceHealthStatus))
         }
         return nil
     }
@@ -217,7 +214,7 @@ func (m *ServiceHealthIssue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         return err
     }
     if m.GetClassification() != nil {
-        cast := m.GetClassification().String()
+        cast := (*m.GetClassification()).String()
         err = writer.WriteStringValue("classification", &cast)
         if err != nil {
             return err
@@ -248,7 +245,7 @@ func (m *ServiceHealthIssue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetOrigin() != nil {
-        cast := m.GetOrigin().String()
+        cast := (*m.GetOrigin()).String()
         err = writer.WriteStringValue("origin", &cast)
         if err != nil {
             return err
@@ -272,7 +269,7 @@ func (m *ServiceHealthIssue) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
@@ -328,7 +325,7 @@ func (m *ServiceHealthIssue) SetService(value *string)() {
         m.service = value
     }
 }
-// SetStatus sets the status property value. The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+// SetStatus sets the status property value. The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. See more in the table below.
 func (m *ServiceHealthIssue) SetStatus(value *ServiceHealthStatus)() {
     if m != nil {
         m.status = value

@@ -135,8 +135,7 @@ func (m *DeviceInstallState) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(InstallState)
-            m.SetInstallState(&cast)
+            m.SetInstallState(val.(*InstallState))
         }
         return nil
     }
@@ -210,7 +209,7 @@ func (m *DeviceInstallState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetInstallState() != nil {
-        cast := m.GetInstallState().String()
+        cast := (*m.GetInstallState()).String()
         err = writer.WriteStringValue("installState", &cast)
         if err != nil {
             return err

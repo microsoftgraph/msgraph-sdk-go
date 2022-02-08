@@ -35,53 +35,56 @@ func (i TimeOffReasonIconType) String() string {
     return []string{"NONE", "CAR", "CALENDAR", "RUNNING", "PLANE", "FIRSTAID", "DOCTOR", "NOTWORKING", "CLOCK", "JURYDUTY", "GLOBE", "CUP", "PHONE", "WEATHER", "UMBRELLA", "PIGGYBANK", "DOG", "CAKE", "TRAFFICCONE", "PIN", "SUNNY", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTimeOffReasonIconType(v string) (interface{}, error) {
+    result := NONE_TIMEOFFREASONICONTYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_TIMEOFFREASONICONTYPE, nil
+            result = NONE_TIMEOFFREASONICONTYPE
         case "CAR":
-            return CAR_TIMEOFFREASONICONTYPE, nil
+            result = CAR_TIMEOFFREASONICONTYPE
         case "CALENDAR":
-            return CALENDAR_TIMEOFFREASONICONTYPE, nil
+            result = CALENDAR_TIMEOFFREASONICONTYPE
         case "RUNNING":
-            return RUNNING_TIMEOFFREASONICONTYPE, nil
+            result = RUNNING_TIMEOFFREASONICONTYPE
         case "PLANE":
-            return PLANE_TIMEOFFREASONICONTYPE, nil
+            result = PLANE_TIMEOFFREASONICONTYPE
         case "FIRSTAID":
-            return FIRSTAID_TIMEOFFREASONICONTYPE, nil
+            result = FIRSTAID_TIMEOFFREASONICONTYPE
         case "DOCTOR":
-            return DOCTOR_TIMEOFFREASONICONTYPE, nil
+            result = DOCTOR_TIMEOFFREASONICONTYPE
         case "NOTWORKING":
-            return NOTWORKING_TIMEOFFREASONICONTYPE, nil
+            result = NOTWORKING_TIMEOFFREASONICONTYPE
         case "CLOCK":
-            return CLOCK_TIMEOFFREASONICONTYPE, nil
+            result = CLOCK_TIMEOFFREASONICONTYPE
         case "JURYDUTY":
-            return JURYDUTY_TIMEOFFREASONICONTYPE, nil
+            result = JURYDUTY_TIMEOFFREASONICONTYPE
         case "GLOBE":
-            return GLOBE_TIMEOFFREASONICONTYPE, nil
+            result = GLOBE_TIMEOFFREASONICONTYPE
         case "CUP":
-            return CUP_TIMEOFFREASONICONTYPE, nil
+            result = CUP_TIMEOFFREASONICONTYPE
         case "PHONE":
-            return PHONE_TIMEOFFREASONICONTYPE, nil
+            result = PHONE_TIMEOFFREASONICONTYPE
         case "WEATHER":
-            return WEATHER_TIMEOFFREASONICONTYPE, nil
+            result = WEATHER_TIMEOFFREASONICONTYPE
         case "UMBRELLA":
-            return UMBRELLA_TIMEOFFREASONICONTYPE, nil
+            result = UMBRELLA_TIMEOFFREASONICONTYPE
         case "PIGGYBANK":
-            return PIGGYBANK_TIMEOFFREASONICONTYPE, nil
+            result = PIGGYBANK_TIMEOFFREASONICONTYPE
         case "DOG":
-            return DOG_TIMEOFFREASONICONTYPE, nil
+            result = DOG_TIMEOFFREASONICONTYPE
         case "CAKE":
-            return CAKE_TIMEOFFREASONICONTYPE, nil
+            result = CAKE_TIMEOFFREASONICONTYPE
         case "TRAFFICCONE":
-            return TRAFFICCONE_TIMEOFFREASONICONTYPE, nil
+            result = TRAFFICCONE_TIMEOFFREASONICONTYPE
         case "PIN":
-            return PIN_TIMEOFFREASONICONTYPE, nil
+            result = PIN_TIMEOFFREASONICONTYPE
         case "SUNNY":
-            return SUNNY_TIMEOFFREASONICONTYPE, nil
+            result = SUNNY_TIMEOFFREASONICONTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TIMEOFFREASONICONTYPE, nil
+            result = UNKNOWNFUTUREVALUE_TIMEOFFREASONICONTYPE
+        default:
+            return 0, errors.New("Unknown TimeOffReasonIconType value: " + v)
     }
-    return 0, errors.New("Unknown TimeOffReasonIconType value: " + v)
+    return &result, nil
 }
 func SerializeTimeOffReasonIconType(values []TimeOffReasonIconType) []string {
     result := make([]string, len(values))

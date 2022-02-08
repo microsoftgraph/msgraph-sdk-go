@@ -9,9 +9,9 @@ type AndroidManagedAppProtection struct {
     TargetedManagedAppProtection
     // List of apps to which the policy is deployed.
     apps []ManagedMobileApp;
-    // Friendly name of the preferred custom browser to open weblink on Android.
+    // Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
     customBrowserDisplayName *string;
-    // Unique identifier of a custom browser to open weblink on Android.
+    // Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
     customBrowserPackageId *string;
     // Count of apps to which the current policy is deployed.
     deployedAppCount *int32;
@@ -43,7 +43,7 @@ func (m *AndroidManagedAppProtection) GetApps()([]ManagedMobileApp) {
         return m.apps
     }
 }
-// GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
+// GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
         return m.customBrowserDisplayName
     }
 }
-// GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
+// GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *AndroidManagedAppProtection) GetCustomBrowserPackageId()(*string) {
     if m == nil {
         return nil
@@ -306,13 +306,13 @@ func (m *AndroidManagedAppProtection) SetApps(value []ManagedMobileApp)() {
         m.apps = value
     }
 }
-// SetCustomBrowserDisplayName sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
+// SetCustomBrowserDisplayName sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *AndroidManagedAppProtection) SetCustomBrowserDisplayName(value *string)() {
     if m != nil {
         m.customBrowserDisplayName = value
     }
 }
-// SetCustomBrowserPackageId sets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
+// SetCustomBrowserPackageId sets the customBrowserPackageId property value. Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *AndroidManagedAppProtection) SetCustomBrowserPackageId(value *string)() {
     if m != nil {
         m.customBrowserPackageId = value

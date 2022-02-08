@@ -135,8 +135,7 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementExchangeConnectorType)
-            m.SetExchangeConnectorType(&cast)
+            m.SetExchangeConnectorType(val.(*DeviceManagementExchangeConnectorType))
         }
         return nil
     }
@@ -186,8 +185,7 @@ func (m *DeviceManagementExchangeConnector) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementExchangeConnectorStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*DeviceManagementExchangeConnectorStatus))
         }
         return nil
     }
@@ -225,7 +223,7 @@ func (m *DeviceManagementExchangeConnector) Serialize(writer i04eb5309aeaafadd28
         }
     }
     if m.GetExchangeConnectorType() != nil {
-        cast := m.GetExchangeConnectorType().String()
+        cast := (*m.GetExchangeConnectorType()).String()
         err = writer.WriteStringValue("exchangeConnectorType", &cast)
         if err != nil {
             return err
@@ -256,7 +254,7 @@ func (m *DeviceManagementExchangeConnector) Serialize(writer i04eb5309aeaafadd28
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

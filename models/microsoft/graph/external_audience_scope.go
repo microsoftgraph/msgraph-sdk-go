@@ -16,15 +16,18 @@ func (i ExternalAudienceScope) String() string {
     return []string{"NONE", "CONTACTSONLY", "ALL"}[i]
 }
 func ParseExternalAudienceScope(v string) (interface{}, error) {
+    result := NONE_EXTERNALAUDIENCESCOPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_EXTERNALAUDIENCESCOPE, nil
+            result = NONE_EXTERNALAUDIENCESCOPE
         case "CONTACTSONLY":
-            return CONTACTSONLY_EXTERNALAUDIENCESCOPE, nil
+            result = CONTACTSONLY_EXTERNALAUDIENCESCOPE
         case "ALL":
-            return ALL_EXTERNALAUDIENCESCOPE, nil
+            result = ALL_EXTERNALAUDIENCESCOPE
+        default:
+            return 0, errors.New("Unknown ExternalAudienceScope value: " + v)
     }
-    return 0, errors.New("Unknown ExternalAudienceScope value: " + v)
+    return &result, nil
 }
 func SerializeExternalAudienceScope(values []ExternalAudienceScope) []string {
     result := make([]string, len(values))

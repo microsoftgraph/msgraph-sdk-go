@@ -18,19 +18,22 @@ func (i SubjectRightsRequestType) String() string {
     return []string{"EXPORT", "DELETE", "ACCESS", "TAGFORACTION", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSubjectRightsRequestType(v string) (interface{}, error) {
+    result := EXPORT_SUBJECTRIGHTSREQUESTTYPE
     switch strings.ToUpper(v) {
         case "EXPORT":
-            return EXPORT_SUBJECTRIGHTSREQUESTTYPE, nil
+            result = EXPORT_SUBJECTRIGHTSREQUESTTYPE
         case "DELETE":
-            return DELETE_SUBJECTRIGHTSREQUESTTYPE, nil
+            result = DELETE_SUBJECTRIGHTSREQUESTTYPE
         case "ACCESS":
-            return ACCESS_SUBJECTRIGHTSREQUESTTYPE, nil
+            result = ACCESS_SUBJECTRIGHTSREQUESTTYPE
         case "TAGFORACTION":
-            return TAGFORACTION_SUBJECTRIGHTSREQUESTTYPE, nil
+            result = TAGFORACTION_SUBJECTRIGHTSREQUESTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTTYPE
+        default:
+            return 0, errors.New("Unknown SubjectRightsRequestType value: " + v)
     }
-    return 0, errors.New("Unknown SubjectRightsRequestType value: " + v)
+    return &result, nil
 }
 func SerializeSubjectRightsRequestType(values []SubjectRightsRequestType) []string {
     result := make([]string, len(values))

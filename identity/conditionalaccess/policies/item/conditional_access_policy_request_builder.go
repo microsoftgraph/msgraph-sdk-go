@@ -35,7 +35,7 @@ type ConditionalAccessPolicyRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ConditionalAccessPolicyRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified Conditional Access policies.
+// ConditionalAccessPolicyRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 type ConditionalAccessPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewConditionalAccessPolicyRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access policies.
+// CreateDeleteRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 func (m *ConditionalAccessPolicyRequestBuilder) CreateDeleteRequestInformation(options *ConditionalAccessPolicyRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *ConditionalAccessPolicyRequestBuilder) CreateDeleteRequestInformation(o
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access policies.
+// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 func (m *ConditionalAccessPolicyRequestBuilder) CreateGetRequestInformation(options *ConditionalAccessPolicyRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *ConditionalAccessPolicyRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access policies.
+// CreatePatchRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 func (m *ConditionalAccessPolicyRequestBuilder) CreatePatchRequestInformation(options *ConditionalAccessPolicyRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *ConditionalAccessPolicyRequestBuilder) CreatePatchRequestInformation(op
     }
     return requestInfo, nil
 }
-// Delete read-only. Nullable. Returns a collection of the specified Conditional Access policies.
+// Delete read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 func (m *ConditionalAccessPolicyRequestBuilder) Delete(options *ConditionalAccessPolicyRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *ConditionalAccessPolicyRequestBuilder) Delete(options *ConditionalAcces
     }
     return nil
 }
-// Get read-only. Nullable. Returns a collection of the specified Conditional Access policies.
+// Get read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 func (m *ConditionalAccessPolicyRequestBuilder) Get(options *ConditionalAccessPolicyRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicy, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *ConditionalAccessPolicyRequestBuilder) Get(options *ConditionalAccessPo
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ConditionalAccessPolicy), nil
 }
-// Patch read-only. Nullable. Returns a collection of the specified Conditional Access policies.
+// Patch read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 func (m *ConditionalAccessPolicyRequestBuilder) Patch(options *ConditionalAccessPolicyRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

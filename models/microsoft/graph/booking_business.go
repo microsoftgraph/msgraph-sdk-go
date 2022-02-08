@@ -7,7 +7,7 @@ import (
 // BookingBusiness 
 type BookingBusiness struct {
     Entity
-    // The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
+    // The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
     address *PhysicalAddress;
     // All the appointments of this business. Read-only. Nullable.
     appointments []BookingAppointment;
@@ -49,7 +49,7 @@ func NewBookingBusiness()(*BookingBusiness) {
     }
     return m
 }
-// GetAddress gets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
+// GetAddress gets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
 func (m *BookingBusiness) GetAddress()(*PhysicalAddress) {
     if m == nil {
         return nil
@@ -536,7 +536,7 @@ func (m *BookingBusiness) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
     }
     return nil
 }
-// SetAddress sets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
+// SetAddress sets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
 func (m *BookingBusiness) SetAddress(value *PhysicalAddress)() {
     if m != nil {
         m.address = value

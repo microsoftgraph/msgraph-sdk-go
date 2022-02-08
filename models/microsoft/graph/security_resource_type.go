@@ -17,17 +17,20 @@ func (i SecurityResourceType) String() string {
     return []string{"UNKNOWN", "ATTACKED", "RELATED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSecurityResourceType(v string) (interface{}, error) {
+    result := UNKNOWN_SECURITYRESOURCETYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_SECURITYRESOURCETYPE, nil
+            result = UNKNOWN_SECURITYRESOURCETYPE
         case "ATTACKED":
-            return ATTACKED_SECURITYRESOURCETYPE, nil
+            result = ATTACKED_SECURITYRESOURCETYPE
         case "RELATED":
-            return RELATED_SECURITYRESOURCETYPE, nil
+            result = RELATED_SECURITYRESOURCETYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SECURITYRESOURCETYPE, nil
+            result = UNKNOWNFUTUREVALUE_SECURITYRESOURCETYPE
+        default:
+            return 0, errors.New("Unknown SecurityResourceType value: " + v)
     }
-    return 0, errors.New("Unknown SecurityResourceType value: " + v)
+    return &result, nil
 }
 func SerializeSecurityResourceType(values []SecurityResourceType) []string {
     result := make([]string, len(values))

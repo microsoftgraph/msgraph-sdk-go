@@ -20,23 +20,26 @@ func (i LogonType) String() string {
     return []string{"UNKNOWN", "INTERACTIVE", "REMOTEINTERACTIVE", "NETWORK", "BATCH", "SERVICE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseLogonType(v string) (interface{}, error) {
+    result := UNKNOWN_LOGONTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_LOGONTYPE, nil
+            result = UNKNOWN_LOGONTYPE
         case "INTERACTIVE":
-            return INTERACTIVE_LOGONTYPE, nil
+            result = INTERACTIVE_LOGONTYPE
         case "REMOTEINTERACTIVE":
-            return REMOTEINTERACTIVE_LOGONTYPE, nil
+            result = REMOTEINTERACTIVE_LOGONTYPE
         case "NETWORK":
-            return NETWORK_LOGONTYPE, nil
+            result = NETWORK_LOGONTYPE
         case "BATCH":
-            return BATCH_LOGONTYPE, nil
+            result = BATCH_LOGONTYPE
         case "SERVICE":
-            return SERVICE_LOGONTYPE, nil
+            result = SERVICE_LOGONTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_LOGONTYPE, nil
+            result = UNKNOWNFUTUREVALUE_LOGONTYPE
+        default:
+            return 0, errors.New("Unknown LogonType value: " + v)
     }
-    return 0, errors.New("Unknown LogonType value: " + v)
+    return &result, nil
 }
 func SerializeLogonType(values []LogonType) []string {
     result := make([]string, len(values))

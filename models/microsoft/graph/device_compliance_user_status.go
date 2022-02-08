@@ -95,8 +95,7 @@ func (m *DeviceComplianceUserStatus) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(ComplianceStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*ComplianceStatus))
         }
         return nil
     }
@@ -144,7 +143,7 @@ func (m *DeviceComplianceUserStatus) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

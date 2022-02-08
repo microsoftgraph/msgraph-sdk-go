@@ -22,27 +22,30 @@ func (i RegistryHive) String() string {
     return []string{"UNKNOWN", "CURRENTCONFIG", "CURRENTUSER", "LOCALMACHINESAM", "LOCALMACHINESECURITY", "LOCALMACHINESOFTWARE", "LOCALMACHINESYSTEM", "USERSDEFAULT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRegistryHive(v string) (interface{}, error) {
+    result := UNKNOWN_REGISTRYHIVE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_REGISTRYHIVE, nil
+            result = UNKNOWN_REGISTRYHIVE
         case "CURRENTCONFIG":
-            return CURRENTCONFIG_REGISTRYHIVE, nil
+            result = CURRENTCONFIG_REGISTRYHIVE
         case "CURRENTUSER":
-            return CURRENTUSER_REGISTRYHIVE, nil
+            result = CURRENTUSER_REGISTRYHIVE
         case "LOCALMACHINESAM":
-            return LOCALMACHINESAM_REGISTRYHIVE, nil
+            result = LOCALMACHINESAM_REGISTRYHIVE
         case "LOCALMACHINESECURITY":
-            return LOCALMACHINESECURITY_REGISTRYHIVE, nil
+            result = LOCALMACHINESECURITY_REGISTRYHIVE
         case "LOCALMACHINESOFTWARE":
-            return LOCALMACHINESOFTWARE_REGISTRYHIVE, nil
+            result = LOCALMACHINESOFTWARE_REGISTRYHIVE
         case "LOCALMACHINESYSTEM":
-            return LOCALMACHINESYSTEM_REGISTRYHIVE, nil
+            result = LOCALMACHINESYSTEM_REGISTRYHIVE
         case "USERSDEFAULT":
-            return USERSDEFAULT_REGISTRYHIVE, nil
+            result = USERSDEFAULT_REGISTRYHIVE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_REGISTRYHIVE, nil
+            result = UNKNOWNFUTUREVALUE_REGISTRYHIVE
+        default:
+            return 0, errors.New("Unknown RegistryHive value: " + v)
     }
-    return 0, errors.New("Unknown RegistryHive value: " + v)
+    return &result, nil
 }
 func SerializeRegistryHive(values []RegistryHive) []string {
     result := make([]string, len(values))

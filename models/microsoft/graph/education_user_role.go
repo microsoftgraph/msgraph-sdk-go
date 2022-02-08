@@ -17,17 +17,20 @@ func (i EducationUserRole) String() string {
     return []string{"STUDENT", "TEACHER", "NONE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseEducationUserRole(v string) (interface{}, error) {
+    result := STUDENT_EDUCATIONUSERROLE
     switch strings.ToUpper(v) {
         case "STUDENT":
-            return STUDENT_EDUCATIONUSERROLE, nil
+            result = STUDENT_EDUCATIONUSERROLE
         case "TEACHER":
-            return TEACHER_EDUCATIONUSERROLE, nil
+            result = TEACHER_EDUCATIONUSERROLE
         case "NONE":
-            return NONE_EDUCATIONUSERROLE, nil
+            result = NONE_EDUCATIONUSERROLE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EDUCATIONUSERROLE, nil
+            result = UNKNOWNFUTUREVALUE_EDUCATIONUSERROLE
+        default:
+            return 0, errors.New("Unknown EducationUserRole value: " + v)
     }
-    return 0, errors.New("Unknown EducationUserRole value: " + v)
+    return &result, nil
 }
 func SerializeEducationUserRole(values []EducationUserRole) []string {
     result := make([]string, len(values))

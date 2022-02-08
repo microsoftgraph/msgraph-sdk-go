@@ -17,17 +17,20 @@ func (i WorkbookOperationStatus) String() string {
     return []string{"NOTSTARTED", "RUNNING", "SUCCEEDED", "FAILED"}[i]
 }
 func ParseWorkbookOperationStatus(v string) (interface{}, error) {
+    result := NOTSTARTED_WORKBOOKOPERATIONSTATUS
     switch strings.ToUpper(v) {
         case "NOTSTARTED":
-            return NOTSTARTED_WORKBOOKOPERATIONSTATUS, nil
+            result = NOTSTARTED_WORKBOOKOPERATIONSTATUS
         case "RUNNING":
-            return RUNNING_WORKBOOKOPERATIONSTATUS, nil
+            result = RUNNING_WORKBOOKOPERATIONSTATUS
         case "SUCCEEDED":
-            return SUCCEEDED_WORKBOOKOPERATIONSTATUS, nil
+            result = SUCCEEDED_WORKBOOKOPERATIONSTATUS
         case "FAILED":
-            return FAILED_WORKBOOKOPERATIONSTATUS, nil
+            result = FAILED_WORKBOOKOPERATIONSTATUS
+        default:
+            return 0, errors.New("Unknown WorkbookOperationStatus value: " + v)
     }
-    return 0, errors.New("Unknown WorkbookOperationStatus value: " + v)
+    return &result, nil
 }
 func SerializeWorkbookOperationStatus(values []WorkbookOperationStatus) []string {
     result := make([]string, len(values))

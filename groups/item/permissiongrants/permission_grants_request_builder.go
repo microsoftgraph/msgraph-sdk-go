@@ -26,7 +26,7 @@ type PermissionGrantsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PermissionGrantsRequestBuilderGetQueryParameters the permissions that have been granted for a group to a specific application. Supports $expand.
+// PermissionGrantsRequestBuilderGetQueryParameters the permission that has been granted for a group to a specific application. Supports $expand.
 type PermissionGrantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewPermissionGrantsRequestBuilder(rawUrl string, requestAdapter ida96af0f17
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the permissions that have been granted for a group to a specific application. Supports $expand.
+// CreateGetRequestInformation the permission that has been granted for a group to a specific application. Supports $expand.
 func (m *PermissionGrantsRequestBuilder) CreateGetRequestInformation(options *PermissionGrantsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *PermissionGrantsRequestBuilder) CreateGetRequestInformation(options *Pe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the permissions that have been granted for a group to a specific application. Supports $expand.
+// CreatePostRequestInformation the permission that has been granted for a group to a specific application. Supports $expand.
 func (m *PermissionGrantsRequestBuilder) CreatePostRequestInformation(options *PermissionGrantsRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *PermissionGrantsRequestBuilder) CreatePostRequestInformation(options *P
     }
     return requestInfo, nil
 }
-// Get the permissions that have been granted for a group to a specific application. Supports $expand.
+// Get the permission that has been granted for a group to a specific application. Supports $expand.
 func (m *PermissionGrantsRequestBuilder) Get(options *PermissionGrantsRequestBuilderGetOptions)(*PermissionGrantsResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *PermissionGrantsRequestBuilder) Get(options *PermissionGrantsRequestBui
     }
     return res.(*PermissionGrantsResponse), nil
 }
-// Post the permissions that have been granted for a group to a specific application. Supports $expand.
+// Post the permission that has been granted for a group to a specific application. Supports $expand.
 func (m *PermissionGrantsRequestBuilder) Post(options *PermissionGrantsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ResourceSpecificPermissionGrant, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

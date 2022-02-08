@@ -3,8 +3,10 @@ package accessreviews
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i3ed202ff0cbdf2b2edbf6f858dd5dd49845b59ab278423c07797fe43a9ccd40f "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/historydefinitions"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i9a0fc83be8a156b608969476f16987d6f0c56857cc62f3dec40c0a7819428e17 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions"
+    i0fca5fbe98a7c54d24af60b510c16cbc28027514fdcbe3896a60732f5c572e2b "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/historydefinitions/item"
     idcb18c7708e010766ed0434cebbaf8978d559fd3ae0bed76f0413cdd312a9c3f "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/accessreviews/definitions/item"
 )
 
@@ -166,6 +168,20 @@ func (m *AccessReviewsRequestBuilder) Get(options *AccessReviewsRequestBuilderGe
         return nil, err
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessReviewSet), nil
+}
+func (m *AccessReviewsRequestBuilder) HistoryDefinitions()(*i3ed202ff0cbdf2b2edbf6f858dd5dd49845b59ab278423c07797fe43a9ccd40f.HistoryDefinitionsRequestBuilder) {
+    return i3ed202ff0cbdf2b2edbf6f858dd5dd49845b59ab278423c07797fe43a9ccd40f.NewHistoryDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// HistoryDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.historyDefinitions.item collection
+func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*i0fca5fbe98a7c54d24af60b510c16cbc28027514fdcbe3896a60732f5c572e2b.AccessReviewHistoryDefinitionRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["accessReviewHistoryDefinition_id"] = id
+    }
+    return i0fca5fbe98a7c54d24af60b510c16cbc28027514fdcbe3896a60732f5c572e2b.NewAccessReviewHistoryDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property accessReviews in identityGovernance
 func (m *AccessReviewsRequestBuilder) Patch(options *AccessReviewsRequestBuilderPatchOptions)(error) {

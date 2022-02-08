@@ -20,23 +20,26 @@ func (i DeviceComplianceActionType) String() string {
     return []string{"NOACTION", "NOTIFICATION", "BLOCK", "RETIRE", "WIPE", "REMOVERESOURCEACCESSPROFILES", "PUSHNOTIFICATION"}[i]
 }
 func ParseDeviceComplianceActionType(v string) (interface{}, error) {
+    result := NOACTION_DEVICECOMPLIANCEACTIONTYPE
     switch strings.ToUpper(v) {
         case "NOACTION":
-            return NOACTION_DEVICECOMPLIANCEACTIONTYPE, nil
+            result = NOACTION_DEVICECOMPLIANCEACTIONTYPE
         case "NOTIFICATION":
-            return NOTIFICATION_DEVICECOMPLIANCEACTIONTYPE, nil
+            result = NOTIFICATION_DEVICECOMPLIANCEACTIONTYPE
         case "BLOCK":
-            return BLOCK_DEVICECOMPLIANCEACTIONTYPE, nil
+            result = BLOCK_DEVICECOMPLIANCEACTIONTYPE
         case "RETIRE":
-            return RETIRE_DEVICECOMPLIANCEACTIONTYPE, nil
+            result = RETIRE_DEVICECOMPLIANCEACTIONTYPE
         case "WIPE":
-            return WIPE_DEVICECOMPLIANCEACTIONTYPE, nil
+            result = WIPE_DEVICECOMPLIANCEACTIONTYPE
         case "REMOVERESOURCEACCESSPROFILES":
-            return REMOVERESOURCEACCESSPROFILES_DEVICECOMPLIANCEACTIONTYPE, nil
+            result = REMOVERESOURCEACCESSPROFILES_DEVICECOMPLIANCEACTIONTYPE
         case "PUSHNOTIFICATION":
-            return PUSHNOTIFICATION_DEVICECOMPLIANCEACTIONTYPE, nil
+            result = PUSHNOTIFICATION_DEVICECOMPLIANCEACTIONTYPE
+        default:
+            return 0, errors.New("Unknown DeviceComplianceActionType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceComplianceActionType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceComplianceActionType(values []DeviceComplianceActionType) []string {
     result := make([]string, len(values))

@@ -63,8 +63,7 @@ func (m *ItemBody) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(BodyType)
-            m.SetContentType(&cast)
+            m.SetContentType(val.(*BodyType))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *ItemBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetContentType() != nil {
-        cast := m.GetContentType().String()
+        cast := (*m.GetContentType()).String()
         err := writer.WriteStringValue("contentType", &cast)
         if err != nil {
             return err

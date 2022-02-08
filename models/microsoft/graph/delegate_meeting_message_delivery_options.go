@@ -16,15 +16,18 @@ func (i DelegateMeetingMessageDeliveryOptions) String() string {
     return []string{"SENDTODELEGATEANDINFORMATIONTOPRINCIPAL", "SENDTODELEGATEANDPRINCIPAL", "SENDTODELEGATEONLY"}[i]
 }
 func ParseDelegateMeetingMessageDeliveryOptions(v string) (interface{}, error) {
+    result := SENDTODELEGATEANDINFORMATIONTOPRINCIPAL_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS
     switch strings.ToUpper(v) {
         case "SENDTODELEGATEANDINFORMATIONTOPRINCIPAL":
-            return SENDTODELEGATEANDINFORMATIONTOPRINCIPAL_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS, nil
+            result = SENDTODELEGATEANDINFORMATIONTOPRINCIPAL_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS
         case "SENDTODELEGATEANDPRINCIPAL":
-            return SENDTODELEGATEANDPRINCIPAL_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS, nil
+            result = SENDTODELEGATEANDPRINCIPAL_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS
         case "SENDTODELEGATEONLY":
-            return SENDTODELEGATEONLY_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS, nil
+            result = SENDTODELEGATEONLY_DELEGATEMEETINGMESSAGEDELIVERYOPTIONS
+        default:
+            return 0, errors.New("Unknown DelegateMeetingMessageDeliveryOptions value: " + v)
     }
-    return 0, errors.New("Unknown DelegateMeetingMessageDeliveryOptions value: " + v)
+    return &result, nil
 }
 func SerializeDelegateMeetingMessageDeliveryOptions(values []DelegateMeetingMessageDeliveryOptions) []string {
     result := make([]string, len(values))

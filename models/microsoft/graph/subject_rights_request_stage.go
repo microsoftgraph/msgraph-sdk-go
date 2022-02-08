@@ -20,23 +20,26 @@ func (i SubjectRightsRequestStage) String() string {
     return []string{"CONTENTRETRIEVAL", "CONTENTREVIEW", "GENERATEREPORT", "CONTENTDELETION", "CASERESOLVED", "CONTENTESTIMATE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSubjectRightsRequestStage(v string) (interface{}, error) {
+    result := CONTENTRETRIEVAL_SUBJECTRIGHTSREQUESTSTAGE
     switch strings.ToUpper(v) {
         case "CONTENTRETRIEVAL":
-            return CONTENTRETRIEVAL_SUBJECTRIGHTSREQUESTSTAGE, nil
+            result = CONTENTRETRIEVAL_SUBJECTRIGHTSREQUESTSTAGE
         case "CONTENTREVIEW":
-            return CONTENTREVIEW_SUBJECTRIGHTSREQUESTSTAGE, nil
+            result = CONTENTREVIEW_SUBJECTRIGHTSREQUESTSTAGE
         case "GENERATEREPORT":
-            return GENERATEREPORT_SUBJECTRIGHTSREQUESTSTAGE, nil
+            result = GENERATEREPORT_SUBJECTRIGHTSREQUESTSTAGE
         case "CONTENTDELETION":
-            return CONTENTDELETION_SUBJECTRIGHTSREQUESTSTAGE, nil
+            result = CONTENTDELETION_SUBJECTRIGHTSREQUESTSTAGE
         case "CASERESOLVED":
-            return CASERESOLVED_SUBJECTRIGHTSREQUESTSTAGE, nil
+            result = CASERESOLVED_SUBJECTRIGHTSREQUESTSTAGE
         case "CONTENTESTIMATE":
-            return CONTENTESTIMATE_SUBJECTRIGHTSREQUESTSTAGE, nil
+            result = CONTENTESTIMATE_SUBJECTRIGHTSREQUESTSTAGE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTSTAGE, nil
+            result = UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTSTAGE
+        default:
+            return 0, errors.New("Unknown SubjectRightsRequestStage value: " + v)
     }
-    return 0, errors.New("Unknown SubjectRightsRequestStage value: " + v)
+    return &result, nil
 }
 func SerializeSubjectRightsRequestStage(values []SubjectRightsRequestStage) []string {
     result := make([]string, len(values))

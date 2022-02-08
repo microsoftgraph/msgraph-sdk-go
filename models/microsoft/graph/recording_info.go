@@ -8,7 +8,7 @@ import (
 type RecordingInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The identities of recording initiator.
+    // The identities of the recording initiator.
     initiator *IdentitySet;
     // Possible values are: unknown, notRecording, recording, or failed.
     recordingStatus *RecordingStatus;
@@ -28,7 +28,7 @@ func (m *RecordingInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetInitiator gets the initiator property value. The identities of recording initiator.
+// GetInitiator gets the initiator property value. The identities of the recording initiator.
 func (m *RecordingInfo) GetInitiator()(*IdentitySet) {
     if m == nil {
         return nil
@@ -63,8 +63,7 @@ func (m *RecordingInfo) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(RecordingStatus)
-            m.SetRecordingStatus(&cast)
+            m.SetRecordingStatus(val.(*RecordingStatus))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *RecordingInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetRecordingStatus() != nil {
-        cast := m.GetRecordingStatus().String()
+        cast := (*m.GetRecordingStatus()).String()
         err := writer.WriteStringValue("recordingStatus", &cast)
         if err != nil {
             return err
@@ -102,7 +101,7 @@ func (m *RecordingInfo) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetInitiator sets the initiator property value. The identities of recording initiator.
+// SetInitiator sets the initiator property value. The identities of the recording initiator.
 func (m *RecordingInfo) SetInitiator(value *IdentitySet)() {
     if m != nil {
         m.initiator = value

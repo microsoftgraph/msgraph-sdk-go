@@ -12,7 +12,7 @@ type Fido2AuthenticationMethod struct {
     aaGuid *string;
     // The attestation certificate(s) attached to this security key.
     attestationCertificates []string;
-    // The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
+    // The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
     attestationLevel *AttestationLevel;
     // The timestamp when this key was registered to the user.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
@@ -44,7 +44,7 @@ func (m *Fido2AuthenticationMethod) GetAttestationCertificates()([]string) {
         return m.attestationCertificates
     }
 }
-// GetAttestationLevel gets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
+// GetAttestationLevel gets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
 func (m *Fido2AuthenticationMethod) GetAttestationLevel()(*AttestationLevel) {
     if m == nil {
         return nil
@@ -109,8 +109,7 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(AttestationLevel)
-            m.SetAttestationLevel(&cast)
+            m.SetAttestationLevel(val.(*AttestationLevel))
         }
         return nil
     }
@@ -168,7 +167,7 @@ func (m *Fido2AuthenticationMethod) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     if m.GetAttestationLevel() != nil {
-        cast := m.GetAttestationLevel().String()
+        cast := (*m.GetAttestationLevel()).String()
         err = writer.WriteStringValue("attestationLevel", &cast)
         if err != nil {
             return err
@@ -206,7 +205,7 @@ func (m *Fido2AuthenticationMethod) SetAttestationCertificates(value []string)()
         m.attestationCertificates = value
     }
 }
-// SetAttestationLevel sets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
+// SetAttestationLevel sets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
 func (m *Fido2AuthenticationMethod) SetAttestationLevel(value *AttestationLevel)() {
     if m != nil {
         m.attestationLevel = value

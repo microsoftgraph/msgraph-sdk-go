@@ -25,33 +25,36 @@ func (i AccessPackageRequestType) String() string {
     return []string{"NOTSPECIFIED", "USERADD", "USERUPDATE", "USERREMOVE", "ADMINADD", "ADMINUPDATE", "ADMINREMOVE", "SYSTEMADD", "SYSTEMUPDATE", "SYSTEMREMOVE", "ONBEHALFADD", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAccessPackageRequestType(v string) (interface{}, error) {
+    result := NOTSPECIFIED_ACCESSPACKAGEREQUESTTYPE
     switch strings.ToUpper(v) {
         case "NOTSPECIFIED":
-            return NOTSPECIFIED_ACCESSPACKAGEREQUESTTYPE, nil
+            result = NOTSPECIFIED_ACCESSPACKAGEREQUESTTYPE
         case "USERADD":
-            return USERADD_ACCESSPACKAGEREQUESTTYPE, nil
+            result = USERADD_ACCESSPACKAGEREQUESTTYPE
         case "USERUPDATE":
-            return USERUPDATE_ACCESSPACKAGEREQUESTTYPE, nil
+            result = USERUPDATE_ACCESSPACKAGEREQUESTTYPE
         case "USERREMOVE":
-            return USERREMOVE_ACCESSPACKAGEREQUESTTYPE, nil
+            result = USERREMOVE_ACCESSPACKAGEREQUESTTYPE
         case "ADMINADD":
-            return ADMINADD_ACCESSPACKAGEREQUESTTYPE, nil
+            result = ADMINADD_ACCESSPACKAGEREQUESTTYPE
         case "ADMINUPDATE":
-            return ADMINUPDATE_ACCESSPACKAGEREQUESTTYPE, nil
+            result = ADMINUPDATE_ACCESSPACKAGEREQUESTTYPE
         case "ADMINREMOVE":
-            return ADMINREMOVE_ACCESSPACKAGEREQUESTTYPE, nil
+            result = ADMINREMOVE_ACCESSPACKAGEREQUESTTYPE
         case "SYSTEMADD":
-            return SYSTEMADD_ACCESSPACKAGEREQUESTTYPE, nil
+            result = SYSTEMADD_ACCESSPACKAGEREQUESTTYPE
         case "SYSTEMUPDATE":
-            return SYSTEMUPDATE_ACCESSPACKAGEREQUESTTYPE, nil
+            result = SYSTEMUPDATE_ACCESSPACKAGEREQUESTTYPE
         case "SYSTEMREMOVE":
-            return SYSTEMREMOVE_ACCESSPACKAGEREQUESTTYPE, nil
+            result = SYSTEMREMOVE_ACCESSPACKAGEREQUESTTYPE
         case "ONBEHALFADD":
-            return ONBEHALFADD_ACCESSPACKAGEREQUESTTYPE, nil
+            result = ONBEHALFADD_ACCESSPACKAGEREQUESTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACCESSPACKAGEREQUESTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_ACCESSPACKAGEREQUESTTYPE
+        default:
+            return 0, errors.New("Unknown AccessPackageRequestType value: " + v)
     }
-    return 0, errors.New("Unknown AccessPackageRequestType value: " + v)
+    return &result, nil
 }
 func SerializeAccessPackageRequestType(values []AccessPackageRequestType) []string {
     result := make([]string, len(values))

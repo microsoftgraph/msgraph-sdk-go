@@ -265,8 +265,7 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(DataSubjectType)
-            m.SetDataSubjectType(&cast)
+            m.SetDataSubjectType(val.(*DataSubjectType))
         }
         return nil
     }
@@ -392,8 +391,7 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(SubjectRightsRequestStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*SubjectRightsRequestStatus))
         }
         return nil
     }
@@ -413,8 +411,7 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(SubjectRightsRequestType)
-            m.SetType(&cast)
+            m.SetType(val.(*SubjectRightsRequestType))
         }
         return nil
     }
@@ -460,7 +457,7 @@ func (m *SubjectRightsRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetDataSubjectType() != nil {
-        cast := m.GetDataSubjectType().String()
+        cast := (*m.GetDataSubjectType()).String()
         err = writer.WriteStringValue("dataSubjectType", &cast)
         if err != nil {
             return err
@@ -542,7 +539,7 @@ func (m *SubjectRightsRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
@@ -555,7 +552,7 @@ func (m *SubjectRightsRequest) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

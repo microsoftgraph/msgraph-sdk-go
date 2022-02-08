@@ -37,7 +37,7 @@ type AgreementFileLocalizationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AgreementFileLocalizationRequestBuilderGetQueryParameters pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
+// AgreementFileLocalizationRequestBuilderGetQueryParameters pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
 type AgreementFileLocalizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -74,7 +74,7 @@ func NewAgreementFileLocalizationRequestBuilder(rawUrl string, requestAdapter id
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementFileLocalizationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
+// CreateDeleteRequestInformation pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
 func (m *AgreementFileLocalizationRequestBuilder) CreateDeleteRequestInformation(options *AgreementFileLocalizationRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *AgreementFileLocalizationRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
+// CreateGetRequestInformation pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
 func (m *AgreementFileLocalizationRequestBuilder) CreateGetRequestInformation(options *AgreementFileLocalizationRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *AgreementFileLocalizationRequestBuilder) CreateGetRequestInformation(op
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
+// CreatePatchRequestInformation pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
 func (m *AgreementFileLocalizationRequestBuilder) CreatePatchRequestInformation(options *AgreementFileLocalizationRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,7 +129,7 @@ func (m *AgreementFileLocalizationRequestBuilder) CreatePatchRequestInformation(
     }
     return requestInfo, nil
 }
-// Delete pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
+// Delete pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
 func (m *AgreementFileLocalizationRequestBuilder) Delete(options *AgreementFileLocalizationRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *AgreementFileLocalizationRequestBuilder) Delete(options *AgreementFileL
     }
     return nil
 }
-// Get pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
+// Get pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
 func (m *AgreementFileLocalizationRequestBuilder) Get(options *AgreementFileLocalizationRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalization, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -153,7 +153,7 @@ func (m *AgreementFileLocalizationRequestBuilder) Get(options *AgreementFileLoca
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AgreementFileLocalization), nil
 }
-// Patch pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
+// Patch pDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
 func (m *AgreementFileLocalizationRequestBuilder) Patch(options *AgreementFileLocalizationRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

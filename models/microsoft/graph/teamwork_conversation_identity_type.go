@@ -17,17 +17,20 @@ func (i TeamworkConversationIdentityType) String() string {
     return []string{"TEAM", "CHANNEL", "CHAT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamworkConversationIdentityType(v string) (interface{}, error) {
+    result := TEAM_TEAMWORKCONVERSATIONIDENTITYTYPE
     switch strings.ToUpper(v) {
         case "TEAM":
-            return TEAM_TEAMWORKCONVERSATIONIDENTITYTYPE, nil
+            result = TEAM_TEAMWORKCONVERSATIONIDENTITYTYPE
         case "CHANNEL":
-            return CHANNEL_TEAMWORKCONVERSATIONIDENTITYTYPE, nil
+            result = CHANNEL_TEAMWORKCONVERSATIONIDENTITYTYPE
         case "CHAT":
-            return CHAT_TEAMWORKCONVERSATIONIDENTITYTYPE, nil
+            result = CHAT_TEAMWORKCONVERSATIONIDENTITYTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMWORKCONVERSATIONIDENTITYTYPE, nil
+            result = UNKNOWNFUTUREVALUE_TEAMWORKCONVERSATIONIDENTITYTYPE
+        default:
+            return 0, errors.New("Unknown TeamworkConversationIdentityType value: " + v)
     }
-    return 0, errors.New("Unknown TeamworkConversationIdentityType value: " + v)
+    return &result, nil
 }
 func SerializeTeamworkConversationIdentityType(values []TeamworkConversationIdentityType) []string {
     result := make([]string, len(values))

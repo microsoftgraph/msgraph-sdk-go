@@ -20,23 +20,26 @@ func (i ProcessIntegrityLevel) String() string {
     return []string{"UNKNOWN", "UNTRUSTED", "LOW", "MEDIUM", "HIGH", "SYSTEM", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseProcessIntegrityLevel(v string) (interface{}, error) {
+    result := UNKNOWN_PROCESSINTEGRITYLEVEL
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_PROCESSINTEGRITYLEVEL, nil
+            result = UNKNOWN_PROCESSINTEGRITYLEVEL
         case "UNTRUSTED":
-            return UNTRUSTED_PROCESSINTEGRITYLEVEL, nil
+            result = UNTRUSTED_PROCESSINTEGRITYLEVEL
         case "LOW":
-            return LOW_PROCESSINTEGRITYLEVEL, nil
+            result = LOW_PROCESSINTEGRITYLEVEL
         case "MEDIUM":
-            return MEDIUM_PROCESSINTEGRITYLEVEL, nil
+            result = MEDIUM_PROCESSINTEGRITYLEVEL
         case "HIGH":
-            return HIGH_PROCESSINTEGRITYLEVEL, nil
+            result = HIGH_PROCESSINTEGRITYLEVEL
         case "SYSTEM":
-            return SYSTEM_PROCESSINTEGRITYLEVEL, nil
+            result = SYSTEM_PROCESSINTEGRITYLEVEL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PROCESSINTEGRITYLEVEL, nil
+            result = UNKNOWNFUTUREVALUE_PROCESSINTEGRITYLEVEL
+        default:
+            return 0, errors.New("Unknown ProcessIntegrityLevel value: " + v)
     }
-    return 0, errors.New("Unknown ProcessIntegrityLevel value: " + v)
+    return &result, nil
 }
 func SerializeProcessIntegrityLevel(values []ProcessIntegrityLevel) []string {
     result := make([]string, len(values))

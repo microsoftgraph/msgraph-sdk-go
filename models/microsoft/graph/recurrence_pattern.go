@@ -127,8 +127,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(DayOfWeek)
-            m.SetFirstDayOfWeek(&cast)
+            m.SetFirstDayOfWeek(val.(*DayOfWeek))
         }
         return nil
     }
@@ -138,8 +137,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(WeekIndex)
-            m.SetIndex(&cast)
+            m.SetIndex(val.(*WeekIndex))
         }
         return nil
     }
@@ -169,8 +167,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(RecurrencePatternType)
-            m.SetType(&cast)
+            m.SetType(val.(*RecurrencePatternType))
         }
         return nil
     }
@@ -194,14 +191,14 @@ func (m *RecurrencePattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetFirstDayOfWeek() != nil {
-        cast := m.GetFirstDayOfWeek().String()
+        cast := (*m.GetFirstDayOfWeek()).String()
         err := writer.WriteStringValue("firstDayOfWeek", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetIndex() != nil {
-        cast := m.GetIndex().String()
+        cast := (*m.GetIndex()).String()
         err := writer.WriteStringValue("index", &cast)
         if err != nil {
             return err
@@ -220,7 +217,7 @@ func (m *RecurrencePattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

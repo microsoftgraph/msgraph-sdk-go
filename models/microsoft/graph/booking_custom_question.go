@@ -54,8 +54,7 @@ func (m *BookingCustomQuestion) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(AnswerInputType)
-            m.SetAnswerInputType(&cast)
+            m.SetAnswerInputType(val.(*AnswerInputType))
         }
         return nil
     }
@@ -95,7 +94,7 @@ func (m *BookingCustomQuestion) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         return err
     }
     if m.GetAnswerInputType() != nil {
-        cast := m.GetAnswerInputType().String()
+        cast := (*m.GetAnswerInputType()).String()
         err = writer.WriteStringValue("answerInputType", &cast)
         if err != nil {
             return err

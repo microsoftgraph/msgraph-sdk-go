@@ -19,7 +19,7 @@ type AuthorizationPolicy struct {
     blockMsolPowerShell *bool;
     // 
     defaultUserRolePermissions *DefaultUserRolePermissions;
-    // Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
+    // Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
     guestUserRoleId *string;
 }
 // NewAuthorizationPolicy instantiates a new authorizationPolicy and sets the default values.
@@ -77,7 +77,7 @@ func (m *AuthorizationPolicy) GetDefaultUserRolePermissions()(*DefaultUserRolePe
         return m.defaultUserRolePermissions
     }
 }
-// GetGuestUserRoleId gets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
+// GetGuestUserRoleId gets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 func (m *AuthorizationPolicy) GetGuestUserRoleId()(*string) {
     if m == nil {
         return nil
@@ -124,8 +124,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(AllowInvitesFrom)
-            m.SetAllowInvitesFrom(&cast)
+            m.SetAllowInvitesFrom(val.(*AllowInvitesFrom))
         }
         return nil
     }
@@ -189,7 +188,7 @@ func (m *AuthorizationPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetAllowInvitesFrom() != nil {
-        cast := m.GetAllowInvitesFrom().String()
+        cast := (*m.GetAllowInvitesFrom()).String()
         err = writer.WriteStringValue("allowInvitesFrom", &cast)
         if err != nil {
             return err
@@ -251,7 +250,7 @@ func (m *AuthorizationPolicy) SetDefaultUserRolePermissions(value *DefaultUserRo
         m.defaultUserRolePermissions = value
     }
 }
-// SetGuestUserRoleId sets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
+// SetGuestUserRoleId sets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 func (m *AuthorizationPolicy) SetGuestUserRoleId(value *string)() {
     if m != nil {
         m.guestUserRoleId = value

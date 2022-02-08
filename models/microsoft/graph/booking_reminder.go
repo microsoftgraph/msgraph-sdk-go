@@ -12,7 +12,7 @@ type BookingReminder struct {
     message *string;
     // The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
     offset *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
-    // The persons who should receive the reminder. Possible values are: allAttendees, staff, customer and unknownFutureValue.
+    // The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.
     recipients *BookingReminderRecipients;
 }
 // NewBookingReminder instantiates a new bookingReminder and sets the default values.
@@ -46,7 +46,7 @@ func (m *BookingReminder) GetOffset()(*i04eb5309aeaafadd28374d79c8471df9b267510b
         return m.offset
     }
 }
-// GetRecipients gets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer and unknownFutureValue.
+// GetRecipients gets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.
 func (m *BookingReminder) GetRecipients()(*BookingReminderRecipients) {
     if m == nil {
         return nil
@@ -83,8 +83,7 @@ func (m *BookingReminder) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(BookingReminderRecipients)
-            m.SetRecipients(&cast)
+            m.SetRecipients(val.(*BookingReminderRecipients))
         }
         return nil
     }
@@ -108,7 +107,7 @@ func (m *BookingReminder) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetRecipients() != nil {
-        cast := m.GetRecipients().String()
+        cast := (*m.GetRecipients()).String()
         err := writer.WriteStringValue("recipients", &cast)
         if err != nil {
             return err
@@ -140,7 +139,7 @@ func (m *BookingReminder) SetOffset(value *i04eb5309aeaafadd28374d79c8471df9b267
         m.offset = value
     }
 }
-// SetRecipients sets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer and unknownFutureValue.
+// SetRecipients sets the recipients property value. The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.
 func (m *BookingReminder) SetRecipients(value *BookingReminderRecipients)() {
     if m != nil {
         m.recipients = value

@@ -18,19 +18,22 @@ func (i OnenotePatchActionType) String() string {
     return []string{"REPLACE", "APPEND", "DELETE", "INSERT", "PREPEND"}[i]
 }
 func ParseOnenotePatchActionType(v string) (interface{}, error) {
+    result := REPLACE_ONENOTEPATCHACTIONTYPE
     switch strings.ToUpper(v) {
         case "REPLACE":
-            return REPLACE_ONENOTEPATCHACTIONTYPE, nil
+            result = REPLACE_ONENOTEPATCHACTIONTYPE
         case "APPEND":
-            return APPEND_ONENOTEPATCHACTIONTYPE, nil
+            result = APPEND_ONENOTEPATCHACTIONTYPE
         case "DELETE":
-            return DELETE_ONENOTEPATCHACTIONTYPE, nil
+            result = DELETE_ONENOTEPATCHACTIONTYPE
         case "INSERT":
-            return INSERT_ONENOTEPATCHACTIONTYPE, nil
+            result = INSERT_ONENOTEPATCHACTIONTYPE
         case "PREPEND":
-            return PREPEND_ONENOTEPATCHACTIONTYPE, nil
+            result = PREPEND_ONENOTEPATCHACTIONTYPE
+        default:
+            return 0, errors.New("Unknown OnenotePatchActionType value: " + v)
     }
-    return 0, errors.New("Unknown OnenotePatchActionType value: " + v)
+    return &result, nil
 }
 func SerializeOnenotePatchActionType(values []OnenotePatchActionType) []string {
     result := make([]string, len(values))

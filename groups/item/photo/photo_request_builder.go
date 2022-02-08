@@ -36,7 +36,7 @@ type PhotoRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PhotoRequestBuilderGetQueryParameters the group's profile photo.
+// PhotoRequestBuilderGetQueryParameters the group's profile photo
 type PhotoRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string;
@@ -74,7 +74,7 @@ func NewPhotoRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4
 func (m *PhotoRequestBuilder) Content()(*icc5a0ad8f08ee5e84e646aee242f74452466f74e4dafdd0c34ae3ced97fff639.ContentRequestBuilder) {
     return icc5a0ad8f08ee5e84e646aee242f74452466f74e4dafdd0c34ae3ced97fff639.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation the group's profile photo.
+// CreateDeleteRequestInformation the group's profile photo
 func (m *PhotoRequestBuilder) CreateDeleteRequestInformation(options *PhotoRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *PhotoRequestBuilder) CreateDeleteRequestInformation(options *PhotoReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the group's profile photo.
+// CreateGetRequestInformation the group's profile photo
 func (m *PhotoRequestBuilder) CreateGetRequestInformation(options *PhotoRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *PhotoRequestBuilder) CreateGetRequestInformation(options *PhotoRequestB
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the group's profile photo.
+// CreatePatchRequestInformation the group's profile photo
 func (m *PhotoRequestBuilder) CreatePatchRequestInformation(options *PhotoRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,7 +129,7 @@ func (m *PhotoRequestBuilder) CreatePatchRequestInformation(options *PhotoReques
     }
     return requestInfo, nil
 }
-// Delete the group's profile photo.
+// Delete the group's profile photo
 func (m *PhotoRequestBuilder) Delete(options *PhotoRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *PhotoRequestBuilder) Delete(options *PhotoRequestBuilderDeleteOptions)(
     }
     return nil
 }
-// Get the group's profile photo.
+// Get the group's profile photo
 func (m *PhotoRequestBuilder) Get(options *PhotoRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -153,7 +153,7 @@ func (m *PhotoRequestBuilder) Get(options *PhotoRequestBuilderGetOptions)(*i4a83
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ProfilePhoto), nil
 }
-// Patch the group's profile photo.
+// Patch the group's profile photo
 func (m *PhotoRequestBuilder) Patch(options *PhotoRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -17,17 +17,20 @@ func (i ActivityDomain) String() string {
     return []string{"UNKNOWN", "WORK", "PERSONAL", "UNRESTRICTED"}[i]
 }
 func ParseActivityDomain(v string) (interface{}, error) {
+    result := UNKNOWN_ACTIVITYDOMAIN
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_ACTIVITYDOMAIN, nil
+            result = UNKNOWN_ACTIVITYDOMAIN
         case "WORK":
-            return WORK_ACTIVITYDOMAIN, nil
+            result = WORK_ACTIVITYDOMAIN
         case "PERSONAL":
-            return PERSONAL_ACTIVITYDOMAIN, nil
+            result = PERSONAL_ACTIVITYDOMAIN
         case "UNRESTRICTED":
-            return UNRESTRICTED_ACTIVITYDOMAIN, nil
+            result = UNRESTRICTED_ACTIVITYDOMAIN
+        default:
+            return 0, errors.New("Unknown ActivityDomain value: " + v)
     }
-    return 0, errors.New("Unknown ActivityDomain value: " + v)
+    return &result, nil
 }
 func SerializeActivityDomain(values []ActivityDomain) []string {
     result := make([]string, len(values))

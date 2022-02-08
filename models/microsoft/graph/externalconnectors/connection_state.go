@@ -18,19 +18,22 @@ func (i ConnectionState) String() string {
     return []string{"DRAFT", "READY", "OBSOLETE", "LIMITEXCEEDED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseConnectionState(v string) (interface{}, error) {
+    result := DRAFT_CONNECTIONSTATE
     switch strings.ToUpper(v) {
         case "DRAFT":
-            return DRAFT_CONNECTIONSTATE, nil
+            result = DRAFT_CONNECTIONSTATE
         case "READY":
-            return READY_CONNECTIONSTATE, nil
+            result = READY_CONNECTIONSTATE
         case "OBSOLETE":
-            return OBSOLETE_CONNECTIONSTATE, nil
+            result = OBSOLETE_CONNECTIONSTATE
         case "LIMITEXCEEDED":
-            return LIMITEXCEEDED_CONNECTIONSTATE, nil
+            result = LIMITEXCEEDED_CONNECTIONSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONNECTIONSTATE, nil
+            result = UNKNOWNFUTUREVALUE_CONNECTIONSTATE
+        default:
+            return 0, errors.New("Unknown ConnectionState value: " + v)
     }
-    return 0, errors.New("Unknown ConnectionState value: " + v)
+    return &result, nil
 }
 func SerializeConnectionState(values []ConnectionState) []string {
     result := make([]string, len(values))

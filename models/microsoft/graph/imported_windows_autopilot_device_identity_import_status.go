@@ -18,19 +18,22 @@ func (i ImportedWindowsAutopilotDeviceIdentityImportStatus) String() string {
     return []string{"UNKNOWN", "PENDING", "PARTIAL", "COMPLETE", "ERROR"}[i]
 }
 func ParseImportedWindowsAutopilotDeviceIdentityImportStatus(v string) (interface{}, error) {
+    result := UNKNOWN_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS, nil
+            result = UNKNOWN_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
         case "PENDING":
-            return PENDING_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS, nil
+            result = PENDING_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
         case "PARTIAL":
-            return PARTIAL_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS, nil
+            result = PARTIAL_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
         case "COMPLETE":
-            return COMPLETE_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS, nil
+            result = COMPLETE_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
         case "ERROR":
-            return ERROR_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS, nil
+            result = ERROR_IMPORTEDWINDOWSAUTOPILOTDEVICEIDENTITYIMPORTSTATUS
+        default:
+            return 0, errors.New("Unknown ImportedWindowsAutopilotDeviceIdentityImportStatus value: " + v)
     }
-    return 0, errors.New("Unknown ImportedWindowsAutopilotDeviceIdentityImportStatus value: " + v)
+    return &result, nil
 }
 func SerializeImportedWindowsAutopilotDeviceIdentityImportStatus(values []ImportedWindowsAutopilotDeviceIdentityImportStatus) []string {
     result := make([]string, len(values))

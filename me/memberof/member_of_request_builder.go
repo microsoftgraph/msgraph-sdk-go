@@ -26,7 +26,7 @@ type MemberOfRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// MemberOfRequestBuilderGetQueryParameters the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+// MemberOfRequestBuilderGetQueryParameters the groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
 type MemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -64,7 +64,7 @@ func NewMemberOfRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation the groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
 func (m *MemberOfRequestBuilder) CreateGetRequestInformation(options *MemberOfRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -84,7 +84,7 @@ func (m *MemberOfRequestBuilder) CreateGetRequestInformation(options *MemberOfRe
     }
     return requestInfo, nil
 }
-// Get the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+// Get the groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
 func (m *MemberOfRequestBuilder) Get(options *MemberOfRequestBuilderGetOptions)(*MemberOfResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

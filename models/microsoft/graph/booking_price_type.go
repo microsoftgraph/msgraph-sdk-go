@@ -22,27 +22,30 @@ func (i BookingPriceType) String() string {
     return []string{"UNDEFINED", "FIXEDPRICE", "STARTINGAT", "HOURLY", "FREE", "PRICEVARIES", "CALLUS", "NOTSET", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseBookingPriceType(v string) (interface{}, error) {
+    result := UNDEFINED_BOOKINGPRICETYPE
     switch strings.ToUpper(v) {
         case "UNDEFINED":
-            return UNDEFINED_BOOKINGPRICETYPE, nil
+            result = UNDEFINED_BOOKINGPRICETYPE
         case "FIXEDPRICE":
-            return FIXEDPRICE_BOOKINGPRICETYPE, nil
+            result = FIXEDPRICE_BOOKINGPRICETYPE
         case "STARTINGAT":
-            return STARTINGAT_BOOKINGPRICETYPE, nil
+            result = STARTINGAT_BOOKINGPRICETYPE
         case "HOURLY":
-            return HOURLY_BOOKINGPRICETYPE, nil
+            result = HOURLY_BOOKINGPRICETYPE
         case "FREE":
-            return FREE_BOOKINGPRICETYPE, nil
+            result = FREE_BOOKINGPRICETYPE
         case "PRICEVARIES":
-            return PRICEVARIES_BOOKINGPRICETYPE, nil
+            result = PRICEVARIES_BOOKINGPRICETYPE
         case "CALLUS":
-            return CALLUS_BOOKINGPRICETYPE, nil
+            result = CALLUS_BOOKINGPRICETYPE
         case "NOTSET":
-            return NOTSET_BOOKINGPRICETYPE, nil
+            result = NOTSET_BOOKINGPRICETYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_BOOKINGPRICETYPE, nil
+            result = UNKNOWNFUTUREVALUE_BOOKINGPRICETYPE
+        default:
+            return 0, errors.New("Unknown BookingPriceType value: " + v)
     }
-    return 0, errors.New("Unknown BookingPriceType value: " + v)
+    return &result, nil
 }
 func SerializeBookingPriceType(values []BookingPriceType) []string {
     result := make([]string, len(values))

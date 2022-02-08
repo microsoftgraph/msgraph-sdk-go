@@ -93,8 +93,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(ma
             return err
         }
         if val != nil {
-            cast := val.(ImportedWindowsAutopilotDeviceIdentityImportStatus)
-            m.SetDeviceImportStatus(&cast)
+            m.SetDeviceImportStatus(val.(*ImportedWindowsAutopilotDeviceIdentityImportStatus))
         }
         return nil
     }
@@ -128,7 +127,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) Serialize(writer i04eb5309
         }
     }
     if m.GetDeviceImportStatus() != nil {
-        cast := m.GetDeviceImportStatus().String()
+        cast := (*m.GetDeviceImportStatus()).String()
         err := writer.WriteStringValue("deviceImportStatus", &cast)
         if err != nil {
             return err

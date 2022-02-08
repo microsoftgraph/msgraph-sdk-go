@@ -20,23 +20,26 @@ func (i UserFlowType) String() string {
     return []string{"SIGNUP", "SIGNIN", "SIGNUPORSIGNIN", "PASSWORDRESET", "PROFILEUPDATE", "RESOURCEOWNER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseUserFlowType(v string) (interface{}, error) {
+    result := SIGNUP_USERFLOWTYPE
     switch strings.ToUpper(v) {
         case "SIGNUP":
-            return SIGNUP_USERFLOWTYPE, nil
+            result = SIGNUP_USERFLOWTYPE
         case "SIGNIN":
-            return SIGNIN_USERFLOWTYPE, nil
+            result = SIGNIN_USERFLOWTYPE
         case "SIGNUPORSIGNIN":
-            return SIGNUPORSIGNIN_USERFLOWTYPE, nil
+            result = SIGNUPORSIGNIN_USERFLOWTYPE
         case "PASSWORDRESET":
-            return PASSWORDRESET_USERFLOWTYPE, nil
+            result = PASSWORDRESET_USERFLOWTYPE
         case "PROFILEUPDATE":
-            return PROFILEUPDATE_USERFLOWTYPE, nil
+            result = PROFILEUPDATE_USERFLOWTYPE
         case "RESOURCEOWNER":
-            return RESOURCEOWNER_USERFLOWTYPE, nil
+            result = RESOURCEOWNER_USERFLOWTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_USERFLOWTYPE, nil
+            result = UNKNOWNFUTUREVALUE_USERFLOWTYPE
+        default:
+            return 0, errors.New("Unknown UserFlowType value: " + v)
     }
-    return 0, errors.New("Unknown UserFlowType value: " + v)
+    return &result, nil
 }
 func SerializeUserFlowType(values []UserFlowType) []string {
     result := make([]string, len(values))

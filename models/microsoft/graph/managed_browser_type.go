@@ -15,13 +15,16 @@ func (i ManagedBrowserType) String() string {
     return []string{"NOTCONFIGURED", "MICROSOFTEDGE"}[i]
 }
 func ParseManagedBrowserType(v string) (interface{}, error) {
+    result := NOTCONFIGURED_MANAGEDBROWSERTYPE
     switch strings.ToUpper(v) {
         case "NOTCONFIGURED":
-            return NOTCONFIGURED_MANAGEDBROWSERTYPE, nil
+            result = NOTCONFIGURED_MANAGEDBROWSERTYPE
         case "MICROSOFTEDGE":
-            return MICROSOFTEDGE_MANAGEDBROWSERTYPE, nil
+            result = MICROSOFTEDGE_MANAGEDBROWSERTYPE
+        default:
+            return 0, errors.New("Unknown ManagedBrowserType value: " + v)
     }
-    return 0, errors.New("Unknown ManagedBrowserType value: " + v)
+    return &result, nil
 }
 func SerializeManagedBrowserType(values []ManagedBrowserType) []string {
     result := make([]string, len(values))

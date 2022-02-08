@@ -15,13 +15,16 @@ func (i ThreatAssessmentStatus) String() string {
     return []string{"PENDING", "COMPLETED"}[i]
 }
 func ParseThreatAssessmentStatus(v string) (interface{}, error) {
+    result := PENDING_THREATASSESSMENTSTATUS
     switch strings.ToUpper(v) {
         case "PENDING":
-            return PENDING_THREATASSESSMENTSTATUS, nil
+            result = PENDING_THREATASSESSMENTSTATUS
         case "COMPLETED":
-            return COMPLETED_THREATASSESSMENTSTATUS, nil
+            result = COMPLETED_THREATASSESSMENTSTATUS
+        default:
+            return 0, errors.New("Unknown ThreatAssessmentStatus value: " + v)
     }
-    return 0, errors.New("Unknown ThreatAssessmentStatus value: " + v)
+    return &result, nil
 }
 func SerializeThreatAssessmentStatus(values []ThreatAssessmentStatus) []string {
     result := make([]string, len(values))

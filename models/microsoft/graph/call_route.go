@@ -83,8 +83,7 @@ func (m *CallRoute) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
             return err
         }
         if val != nil {
-            cast := val.(RoutingType)
-            m.SetRoutingType(&cast)
+            m.SetRoutingType(val.(*RoutingType))
         }
         return nil
     }
@@ -108,7 +107,7 @@ func (m *CallRoute) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         }
     }
     if m.GetRoutingType() != nil {
-        cast := m.GetRoutingType().String()
+        cast := (*m.GetRoutingType()).String()
         err := writer.WriteStringValue("routingType", &cast)
         if err != nil {
             return err

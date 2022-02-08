@@ -17,17 +17,20 @@ func (i Sensitivity) String() string {
     return []string{"NORMAL", "PERSONAL", "PRIVATE", "CONFIDENTIAL"}[i]
 }
 func ParseSensitivity(v string) (interface{}, error) {
+    result := NORMAL_SENSITIVITY
     switch strings.ToUpper(v) {
         case "NORMAL":
-            return NORMAL_SENSITIVITY, nil
+            result = NORMAL_SENSITIVITY
         case "PERSONAL":
-            return PERSONAL_SENSITIVITY, nil
+            result = PERSONAL_SENSITIVITY
         case "PRIVATE":
-            return PRIVATE_SENSITIVITY, nil
+            result = PRIVATE_SENSITIVITY
         case "CONFIDENTIAL":
-            return CONFIDENTIAL_SENSITIVITY, nil
+            result = CONFIDENTIAL_SENSITIVITY
+        default:
+            return 0, errors.New("Unknown Sensitivity value: " + v)
     }
-    return 0, errors.New("Unknown Sensitivity value: " + v)
+    return &result, nil
 }
 func SerializeSensitivity(values []Sensitivity) []string {
     result := make([]string, len(values))

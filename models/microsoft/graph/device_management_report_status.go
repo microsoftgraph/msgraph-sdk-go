@@ -18,19 +18,22 @@ func (i DeviceManagementReportStatus) String() string {
     return []string{"UNKNOWN", "NOTSTARTED", "INPROGRESS", "COMPLETED", "FAILED"}[i]
 }
 func ParseDeviceManagementReportStatus(v string) (interface{}, error) {
+    result := UNKNOWN_DEVICEMANAGEMENTREPORTSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_DEVICEMANAGEMENTREPORTSTATUS, nil
+            result = UNKNOWN_DEVICEMANAGEMENTREPORTSTATUS
         case "NOTSTARTED":
-            return NOTSTARTED_DEVICEMANAGEMENTREPORTSTATUS, nil
+            result = NOTSTARTED_DEVICEMANAGEMENTREPORTSTATUS
         case "INPROGRESS":
-            return INPROGRESS_DEVICEMANAGEMENTREPORTSTATUS, nil
+            result = INPROGRESS_DEVICEMANAGEMENTREPORTSTATUS
         case "COMPLETED":
-            return COMPLETED_DEVICEMANAGEMENTREPORTSTATUS, nil
+            result = COMPLETED_DEVICEMANAGEMENTREPORTSTATUS
         case "FAILED":
-            return FAILED_DEVICEMANAGEMENTREPORTSTATUS, nil
+            result = FAILED_DEVICEMANAGEMENTREPORTSTATUS
+        default:
+            return 0, errors.New("Unknown DeviceManagementReportStatus value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementReportStatus value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementReportStatus(values []DeviceManagementReportStatus) []string {
     result := make([]string, len(values))

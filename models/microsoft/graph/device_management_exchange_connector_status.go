@@ -17,17 +17,20 @@ func (i DeviceManagementExchangeConnectorStatus) String() string {
     return []string{"NONE", "CONNECTIONPENDING", "CONNECTED", "DISCONNECTED"}[i]
 }
 func ParseDeviceManagementExchangeConnectorStatus(v string) (interface{}, error) {
+    result := NONE_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS, nil
+            result = NONE_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
         case "CONNECTIONPENDING":
-            return CONNECTIONPENDING_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS, nil
+            result = CONNECTIONPENDING_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
         case "CONNECTED":
-            return CONNECTED_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS, nil
+            result = CONNECTED_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
         case "DISCONNECTED":
-            return DISCONNECTED_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS, nil
+            result = DISCONNECTED_DEVICEMANAGEMENTEXCHANGECONNECTORSTATUS
+        default:
+            return 0, errors.New("Unknown DeviceManagementExchangeConnectorStatus value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementExchangeConnectorStatus value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementExchangeConnectorStatus(values []DeviceManagementExchangeConnectorStatus) []string {
     result := make([]string, len(values))

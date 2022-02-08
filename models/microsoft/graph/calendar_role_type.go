@@ -21,25 +21,28 @@ func (i CalendarRoleType) String() string {
     return []string{"NONE", "FREEBUSYREAD", "LIMITEDREAD", "READ", "WRITE", "DELEGATEWITHOUTPRIVATEEVENTACCESS", "DELEGATEWITHPRIVATEEVENTACCESS", "CUSTOM"}[i]
 }
 func ParseCalendarRoleType(v string) (interface{}, error) {
+    result := NONE_CALENDARROLETYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_CALENDARROLETYPE, nil
+            result = NONE_CALENDARROLETYPE
         case "FREEBUSYREAD":
-            return FREEBUSYREAD_CALENDARROLETYPE, nil
+            result = FREEBUSYREAD_CALENDARROLETYPE
         case "LIMITEDREAD":
-            return LIMITEDREAD_CALENDARROLETYPE, nil
+            result = LIMITEDREAD_CALENDARROLETYPE
         case "READ":
-            return READ_CALENDARROLETYPE, nil
+            result = READ_CALENDARROLETYPE
         case "WRITE":
-            return WRITE_CALENDARROLETYPE, nil
+            result = WRITE_CALENDARROLETYPE
         case "DELEGATEWITHOUTPRIVATEEVENTACCESS":
-            return DELEGATEWITHOUTPRIVATEEVENTACCESS_CALENDARROLETYPE, nil
+            result = DELEGATEWITHOUTPRIVATEEVENTACCESS_CALENDARROLETYPE
         case "DELEGATEWITHPRIVATEEVENTACCESS":
-            return DELEGATEWITHPRIVATEEVENTACCESS_CALENDARROLETYPE, nil
+            result = DELEGATEWITHPRIVATEEVENTACCESS_CALENDARROLETYPE
         case "CUSTOM":
-            return CUSTOM_CALENDARROLETYPE, nil
+            result = CUSTOM_CALENDARROLETYPE
+        default:
+            return 0, errors.New("Unknown CalendarRoleType value: " + v)
     }
-    return 0, errors.New("Unknown CalendarRoleType value: " + v)
+    return &result, nil
 }
 func SerializeCalendarRoleType(values []CalendarRoleType) []string {
     result := make([]string, len(values))

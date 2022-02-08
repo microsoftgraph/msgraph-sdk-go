@@ -17,17 +17,20 @@ func (i MobileThreatPartnerTenantState) String() string {
     return []string{"UNAVAILABLE", "AVAILABLE", "ENABLED", "UNRESPONSIVE"}[i]
 }
 func ParseMobileThreatPartnerTenantState(v string) (interface{}, error) {
+    result := UNAVAILABLE_MOBILETHREATPARTNERTENANTSTATE
     switch strings.ToUpper(v) {
         case "UNAVAILABLE":
-            return UNAVAILABLE_MOBILETHREATPARTNERTENANTSTATE, nil
+            result = UNAVAILABLE_MOBILETHREATPARTNERTENANTSTATE
         case "AVAILABLE":
-            return AVAILABLE_MOBILETHREATPARTNERTENANTSTATE, nil
+            result = AVAILABLE_MOBILETHREATPARTNERTENANTSTATE
         case "ENABLED":
-            return ENABLED_MOBILETHREATPARTNERTENANTSTATE, nil
+            result = ENABLED_MOBILETHREATPARTNERTENANTSTATE
         case "UNRESPONSIVE":
-            return UNRESPONSIVE_MOBILETHREATPARTNERTENANTSTATE, nil
+            result = UNRESPONSIVE_MOBILETHREATPARTNERTENANTSTATE
+        default:
+            return 0, errors.New("Unknown MobileThreatPartnerTenantState value: " + v)
     }
-    return 0, errors.New("Unknown MobileThreatPartnerTenantState value: " + v)
+    return &result, nil
 }
 func SerializeMobileThreatPartnerTenantState(values []MobileThreatPartnerTenantState) []string {
     result := make([]string, len(values))

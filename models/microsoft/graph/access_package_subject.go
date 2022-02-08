@@ -154,8 +154,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(AccessPackageSubjectType)
-            m.SetSubjectType(&cast)
+            m.SetSubjectType(val.(*AccessPackageSubjectType))
         }
         return nil
     }
@@ -207,7 +206,7 @@ func (m *AccessPackageSubject) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetSubjectType() != nil {
-        cast := m.GetSubjectType().String()
+        cast := (*m.GetSubjectType()).String()
         err = writer.WriteStringValue("subjectType", &cast)
         if err != nil {
             return err

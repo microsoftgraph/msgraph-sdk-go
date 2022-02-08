@@ -18,19 +18,22 @@ func (i RegistryOperation) String() string {
     return []string{"UNKNOWN", "CREATE", "MODIFY", "DELETE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRegistryOperation(v string) (interface{}, error) {
+    result := UNKNOWN_REGISTRYOPERATION
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_REGISTRYOPERATION, nil
+            result = UNKNOWN_REGISTRYOPERATION
         case "CREATE":
-            return CREATE_REGISTRYOPERATION, nil
+            result = CREATE_REGISTRYOPERATION
         case "MODIFY":
-            return MODIFY_REGISTRYOPERATION, nil
+            result = MODIFY_REGISTRYOPERATION
         case "DELETE":
-            return DELETE_REGISTRYOPERATION, nil
+            result = DELETE_REGISTRYOPERATION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_REGISTRYOPERATION, nil
+            result = UNKNOWNFUTUREVALUE_REGISTRYOPERATION
+        default:
+            return 0, errors.New("Unknown RegistryOperation value: " + v)
     }
-    return 0, errors.New("Unknown RegistryOperation value: " + v)
+    return &result, nil
 }
 func SerializeRegistryOperation(values []RegistryOperation) []string {
     result := make([]string, len(values))

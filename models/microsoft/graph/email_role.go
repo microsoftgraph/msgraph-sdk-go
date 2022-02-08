@@ -17,17 +17,20 @@ func (i EmailRole) String() string {
     return []string{"UNKNOWN", "SENDER", "RECIPIENT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseEmailRole(v string) (interface{}, error) {
+    result := UNKNOWN_EMAILROLE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_EMAILROLE, nil
+            result = UNKNOWN_EMAILROLE
         case "SENDER":
-            return SENDER_EMAILROLE, nil
+            result = SENDER_EMAILROLE
         case "RECIPIENT":
-            return RECIPIENT_EMAILROLE, nil
+            result = RECIPIENT_EMAILROLE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EMAILROLE, nil
+            result = UNKNOWNFUTUREVALUE_EMAILROLE
+        default:
+            return 0, errors.New("Unknown EmailRole value: " + v)
     }
-    return 0, errors.New("Unknown EmailRole value: " + v)
+    return &result, nil
 }
 func SerializeEmailRole(values []EmailRole) []string {
     result := make([]string, len(values))

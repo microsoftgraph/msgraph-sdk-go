@@ -19,21 +19,24 @@ func (i RiskLevel) String() string {
     return []string{"LOW", "MEDIUM", "HIGH", "HIDDEN", "NONE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRiskLevel(v string) (interface{}, error) {
+    result := LOW_RISKLEVEL
     switch strings.ToUpper(v) {
         case "LOW":
-            return LOW_RISKLEVEL, nil
+            result = LOW_RISKLEVEL
         case "MEDIUM":
-            return MEDIUM_RISKLEVEL, nil
+            result = MEDIUM_RISKLEVEL
         case "HIGH":
-            return HIGH_RISKLEVEL, nil
+            result = HIGH_RISKLEVEL
         case "HIDDEN":
-            return HIDDEN_RISKLEVEL, nil
+            result = HIDDEN_RISKLEVEL
         case "NONE":
-            return NONE_RISKLEVEL, nil
+            result = NONE_RISKLEVEL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_RISKLEVEL, nil
+            result = UNKNOWNFUTUREVALUE_RISKLEVEL
+        default:
+            return 0, errors.New("Unknown RiskLevel value: " + v)
     }
-    return 0, errors.New("Unknown RiskLevel value: " + v)
+    return &result, nil
 }
 func SerializeRiskLevel(values []RiskLevel) []string {
     result := make([]string, len(values))

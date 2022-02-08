@@ -18,19 +18,22 @@ func (i EducationAddToCalendarOptions) String() string {
     return []string{"NONE", "STUDENTSANDPUBLISHER", "STUDENTSANDTEAMOWNERS", "UNKNOWNFUTUREVALUE", "STUDENTSONLY"}[i]
 }
 func ParseEducationAddToCalendarOptions(v string) (interface{}, error) {
+    result := NONE_EDUCATIONADDTOCALENDAROPTIONS
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_EDUCATIONADDTOCALENDAROPTIONS, nil
+            result = NONE_EDUCATIONADDTOCALENDAROPTIONS
         case "STUDENTSANDPUBLISHER":
-            return STUDENTSANDPUBLISHER_EDUCATIONADDTOCALENDAROPTIONS, nil
+            result = STUDENTSANDPUBLISHER_EDUCATIONADDTOCALENDAROPTIONS
         case "STUDENTSANDTEAMOWNERS":
-            return STUDENTSANDTEAMOWNERS_EDUCATIONADDTOCALENDAROPTIONS, nil
+            result = STUDENTSANDTEAMOWNERS_EDUCATIONADDTOCALENDAROPTIONS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EDUCATIONADDTOCALENDAROPTIONS, nil
+            result = UNKNOWNFUTUREVALUE_EDUCATIONADDTOCALENDAROPTIONS
         case "STUDENTSONLY":
-            return STUDENTSONLY_EDUCATIONADDTOCALENDAROPTIONS, nil
+            result = STUDENTSONLY_EDUCATIONADDTOCALENDAROPTIONS
+        default:
+            return 0, errors.New("Unknown EducationAddToCalendarOptions value: " + v)
     }
-    return 0, errors.New("Unknown EducationAddToCalendarOptions value: " + v)
+    return &result, nil
 }
 func SerializeEducationAddToCalendarOptions(values []EducationAddToCalendarOptions) []string {
     result := make([]string, len(values))

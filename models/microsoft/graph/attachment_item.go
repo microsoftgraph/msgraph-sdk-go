@@ -93,8 +93,7 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(AttachmentType)
-            m.SetAttachmentType(&cast)
+            m.SetAttachmentType(val.(*AttachmentType))
         }
         return nil
     }
@@ -156,7 +155,7 @@ func (m *AttachmentItem) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *AttachmentItem) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAttachmentType() != nil {
-        cast := m.GetAttachmentType().String()
+        cast := (*m.GetAttachmentType()).String()
         err := writer.WriteStringValue("attachmentType", &cast)
         if err != nil {
             return err

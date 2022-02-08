@@ -26,7 +26,7 @@ type ScheduledActionsForRuleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ScheduledActionsForRuleRequestBuilderGetQueryParameters the list of scheduled action for this rule
+// ScheduledActionsForRuleRequestBuilderGetQueryParameters the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 type ScheduledActionsForRuleRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewScheduledActionsForRuleRequestBuilder(rawUrl string, requestAdapter ida9
     urlParams["request-raw-url"] = rawUrl
     return NewScheduledActionsForRuleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation the list of scheduled action for this rule
+// CreateGetRequestInformation the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *ScheduledActionsForRuleRequestBuilder) CreateGetRequestInformation(options *ScheduledActionsForRuleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *ScheduledActionsForRuleRequestBuilder) CreateGetRequestInformation(opti
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the list of scheduled action for this rule
+// CreatePostRequestInformation the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *ScheduledActionsForRuleRequestBuilder) CreatePostRequestInformation(options *ScheduledActionsForRuleRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *ScheduledActionsForRuleRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Get the list of scheduled action for this rule
+// Get the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *ScheduledActionsForRuleRequestBuilder) Get(options *ScheduledActionsForRuleRequestBuilderGetOptions)(*ScheduledActionsForRuleResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *ScheduledActionsForRuleRequestBuilder) Get(options *ScheduledActionsFor
     }
     return res.(*ScheduledActionsForRuleResponse), nil
 }
-// Post the list of scheduled action for this rule
+// Post the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
 func (m *ScheduledActionsForRuleRequestBuilder) Post(options *ScheduledActionsForRuleRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceComplianceScheduledActionForRule, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

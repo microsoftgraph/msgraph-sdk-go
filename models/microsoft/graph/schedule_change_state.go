@@ -17,17 +17,20 @@ func (i ScheduleChangeState) String() string {
     return []string{"PENDING", "APPROVED", "DECLINED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseScheduleChangeState(v string) (interface{}, error) {
+    result := PENDING_SCHEDULECHANGESTATE
     switch strings.ToUpper(v) {
         case "PENDING":
-            return PENDING_SCHEDULECHANGESTATE, nil
+            result = PENDING_SCHEDULECHANGESTATE
         case "APPROVED":
-            return APPROVED_SCHEDULECHANGESTATE, nil
+            result = APPROVED_SCHEDULECHANGESTATE
         case "DECLINED":
-            return DECLINED_SCHEDULECHANGESTATE, nil
+            result = DECLINED_SCHEDULECHANGESTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SCHEDULECHANGESTATE, nil
+            result = UNKNOWNFUTUREVALUE_SCHEDULECHANGESTATE
+        default:
+            return 0, errors.New("Unknown ScheduleChangeState value: " + v)
     }
-    return 0, errors.New("Unknown ScheduleChangeState value: " + v)
+    return &result, nil
 }
 func SerializeScheduleChangeState(values []ScheduleChangeState) []string {
     result := make([]string, len(values))

@@ -20,23 +20,26 @@ func (i ComplianceState) String() string {
     return []string{"UNKNOWN", "COMPLIANT", "NONCOMPLIANT", "CONFLICT", "ERROR", "INGRACEPERIOD", "CONFIGMANAGER"}[i]
 }
 func ParseComplianceState(v string) (interface{}, error) {
+    result := UNKNOWN_COMPLIANCESTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_COMPLIANCESTATE, nil
+            result = UNKNOWN_COMPLIANCESTATE
         case "COMPLIANT":
-            return COMPLIANT_COMPLIANCESTATE, nil
+            result = COMPLIANT_COMPLIANCESTATE
         case "NONCOMPLIANT":
-            return NONCOMPLIANT_COMPLIANCESTATE, nil
+            result = NONCOMPLIANT_COMPLIANCESTATE
         case "CONFLICT":
-            return CONFLICT_COMPLIANCESTATE, nil
+            result = CONFLICT_COMPLIANCESTATE
         case "ERROR":
-            return ERROR_COMPLIANCESTATE, nil
+            result = ERROR_COMPLIANCESTATE
         case "INGRACEPERIOD":
-            return INGRACEPERIOD_COMPLIANCESTATE, nil
+            result = INGRACEPERIOD_COMPLIANCESTATE
         case "CONFIGMANAGER":
-            return CONFIGMANAGER_COMPLIANCESTATE, nil
+            result = CONFIGMANAGER_COMPLIANCESTATE
+        default:
+            return 0, errors.New("Unknown ComplianceState value: " + v)
     }
-    return 0, errors.New("Unknown ComplianceState value: " + v)
+    return &result, nil
 }
 func SerializeComplianceState(values []ComplianceState) []string {
     result := make([]string, len(values))

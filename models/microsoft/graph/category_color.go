@@ -39,61 +39,64 @@ func (i CategoryColor) String() string {
     return []string{"NONE", "PRESET0", "PRESET1", "PRESET2", "PRESET3", "PRESET4", "PRESET5", "PRESET6", "PRESET7", "PRESET8", "PRESET9", "PRESET10", "PRESET11", "PRESET12", "PRESET13", "PRESET14", "PRESET15", "PRESET16", "PRESET17", "PRESET18", "PRESET19", "PRESET20", "PRESET21", "PRESET22", "PRESET23", "PRESET24"}[i]
 }
 func ParseCategoryColor(v string) (interface{}, error) {
+    result := NONE_CATEGORYCOLOR
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_CATEGORYCOLOR, nil
+            result = NONE_CATEGORYCOLOR
         case "PRESET0":
-            return PRESET0_CATEGORYCOLOR, nil
+            result = PRESET0_CATEGORYCOLOR
         case "PRESET1":
-            return PRESET1_CATEGORYCOLOR, nil
+            result = PRESET1_CATEGORYCOLOR
         case "PRESET2":
-            return PRESET2_CATEGORYCOLOR, nil
+            result = PRESET2_CATEGORYCOLOR
         case "PRESET3":
-            return PRESET3_CATEGORYCOLOR, nil
+            result = PRESET3_CATEGORYCOLOR
         case "PRESET4":
-            return PRESET4_CATEGORYCOLOR, nil
+            result = PRESET4_CATEGORYCOLOR
         case "PRESET5":
-            return PRESET5_CATEGORYCOLOR, nil
+            result = PRESET5_CATEGORYCOLOR
         case "PRESET6":
-            return PRESET6_CATEGORYCOLOR, nil
+            result = PRESET6_CATEGORYCOLOR
         case "PRESET7":
-            return PRESET7_CATEGORYCOLOR, nil
+            result = PRESET7_CATEGORYCOLOR
         case "PRESET8":
-            return PRESET8_CATEGORYCOLOR, nil
+            result = PRESET8_CATEGORYCOLOR
         case "PRESET9":
-            return PRESET9_CATEGORYCOLOR, nil
+            result = PRESET9_CATEGORYCOLOR
         case "PRESET10":
-            return PRESET10_CATEGORYCOLOR, nil
+            result = PRESET10_CATEGORYCOLOR
         case "PRESET11":
-            return PRESET11_CATEGORYCOLOR, nil
+            result = PRESET11_CATEGORYCOLOR
         case "PRESET12":
-            return PRESET12_CATEGORYCOLOR, nil
+            result = PRESET12_CATEGORYCOLOR
         case "PRESET13":
-            return PRESET13_CATEGORYCOLOR, nil
+            result = PRESET13_CATEGORYCOLOR
         case "PRESET14":
-            return PRESET14_CATEGORYCOLOR, nil
+            result = PRESET14_CATEGORYCOLOR
         case "PRESET15":
-            return PRESET15_CATEGORYCOLOR, nil
+            result = PRESET15_CATEGORYCOLOR
         case "PRESET16":
-            return PRESET16_CATEGORYCOLOR, nil
+            result = PRESET16_CATEGORYCOLOR
         case "PRESET17":
-            return PRESET17_CATEGORYCOLOR, nil
+            result = PRESET17_CATEGORYCOLOR
         case "PRESET18":
-            return PRESET18_CATEGORYCOLOR, nil
+            result = PRESET18_CATEGORYCOLOR
         case "PRESET19":
-            return PRESET19_CATEGORYCOLOR, nil
+            result = PRESET19_CATEGORYCOLOR
         case "PRESET20":
-            return PRESET20_CATEGORYCOLOR, nil
+            result = PRESET20_CATEGORYCOLOR
         case "PRESET21":
-            return PRESET21_CATEGORYCOLOR, nil
+            result = PRESET21_CATEGORYCOLOR
         case "PRESET22":
-            return PRESET22_CATEGORYCOLOR, nil
+            result = PRESET22_CATEGORYCOLOR
         case "PRESET23":
-            return PRESET23_CATEGORYCOLOR, nil
+            result = PRESET23_CATEGORYCOLOR
         case "PRESET24":
-            return PRESET24_CATEGORYCOLOR, nil
+            result = PRESET24_CATEGORYCOLOR
+        default:
+            return 0, errors.New("Unknown CategoryColor value: " + v)
     }
-    return 0, errors.New("Unknown CategoryColor value: " + v)
+    return &result, nil
 }
 func SerializeCategoryColor(values []CategoryColor) []string {
     result := make([]string, len(values))

@@ -17,17 +17,20 @@ func (i OperationResult) String() string {
     return []string{"SUCCESS", "FAILURE", "TIMEOUT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseOperationResult(v string) (interface{}, error) {
+    result := SUCCESS_OPERATIONRESULT
     switch strings.ToUpper(v) {
         case "SUCCESS":
-            return SUCCESS_OPERATIONRESULT, nil
+            result = SUCCESS_OPERATIONRESULT
         case "FAILURE":
-            return FAILURE_OPERATIONRESULT, nil
+            result = FAILURE_OPERATIONRESULT
         case "TIMEOUT":
-            return TIMEOUT_OPERATIONRESULT, nil
+            result = TIMEOUT_OPERATIONRESULT
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_OPERATIONRESULT, nil
+            result = UNKNOWNFUTUREVALUE_OPERATIONRESULT
+        default:
+            return 0, errors.New("Unknown OperationResult value: " + v)
     }
-    return 0, errors.New("Unknown OperationResult value: " + v)
+    return &result, nil
 }
 func SerializeOperationResult(values []OperationResult) []string {
     result := make([]string, len(values))

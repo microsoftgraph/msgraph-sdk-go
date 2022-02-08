@@ -16,15 +16,18 @@ func (i Importance) String() string {
     return []string{"LOW", "NORMAL", "HIGH"}[i]
 }
 func ParseImportance(v string) (interface{}, error) {
+    result := LOW_IMPORTANCE
     switch strings.ToUpper(v) {
         case "LOW":
-            return LOW_IMPORTANCE, nil
+            result = LOW_IMPORTANCE
         case "NORMAL":
-            return NORMAL_IMPORTANCE, nil
+            result = NORMAL_IMPORTANCE
         case "HIGH":
-            return HIGH_IMPORTANCE, nil
+            result = HIGH_IMPORTANCE
+        default:
+            return 0, errors.New("Unknown Importance value: " + v)
     }
-    return 0, errors.New("Unknown Importance value: " + v)
+    return &result, nil
 }
 func SerializeImportance(values []Importance) []string {
     result := make([]string, len(values))

@@ -35,7 +35,7 @@ type AttachmentRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// AttachmentRequestBuilderGetQueryParameters the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// AttachmentRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand.
 type AttachmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewAttachmentRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f
     urlParams["request-raw-url"] = rawUrl
     return NewAttachmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// CreateDeleteRequestInformation read-only. Nullable. Supports $expand.
 func (m *AttachmentRequestBuilder) CreateDeleteRequestInformation(options *AttachmentRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *AttachmentRequestBuilder) CreateDeleteRequestInformation(options *Attac
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation read-only. Nullable. Supports $expand.
 func (m *AttachmentRequestBuilder) CreateGetRequestInformation(options *AttachmentRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *AttachmentRequestBuilder) CreateGetRequestInformation(options *Attachme
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// CreatePatchRequestInformation read-only. Nullable. Supports $expand.
 func (m *AttachmentRequestBuilder) CreatePatchRequestInformation(options *AttachmentRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *AttachmentRequestBuilder) CreatePatchRequestInformation(options *Attach
     }
     return requestInfo, nil
 }
-// Delete the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// Delete read-only. Nullable. Supports $expand.
 func (m *AttachmentRequestBuilder) Delete(options *AttachmentRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *AttachmentRequestBuilder) Delete(options *AttachmentRequestBuilderDelet
     }
     return nil
 }
-// Get the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// Get read-only. Nullable. Supports $expand.
 func (m *AttachmentRequestBuilder) Get(options *AttachmentRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *AttachmentRequestBuilder) Get(options *AttachmentRequestBuilderGetOptio
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment), nil
 }
-// Patch the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
+// Patch read-only. Nullable. Supports $expand.
 func (m *AttachmentRequestBuilder) Patch(options *AttachmentRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -11,7 +11,7 @@ type WorkbookOperation struct {
     error *WorkbookOperationError;
     // The resource URI for the result.
     resourceLocation *string;
-    // The current status of the operation. Possible values are: notStarted, running, succeeded, failed.
+    // The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
     status *WorkbookOperationStatus;
 }
 // NewWorkbookOperation instantiates a new workbookOperation and sets the default values.
@@ -37,7 +37,7 @@ func (m *WorkbookOperation) GetResourceLocation()(*string) {
         return m.resourceLocation
     }
 }
-// GetStatus gets the status property value. The current status of the operation. Possible values are: notStarted, running, succeeded, failed.
+// GetStatus gets the status property value. The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
 func (m *WorkbookOperation) GetStatus()(*WorkbookOperationStatus) {
     if m == nil {
         return nil
@@ -74,8 +74,7 @@ func (m *WorkbookOperation) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(WorkbookOperationStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*WorkbookOperationStatus))
         }
         return nil
     }
@@ -103,7 +102,7 @@ func (m *WorkbookOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
@@ -123,7 +122,7 @@ func (m *WorkbookOperation) SetResourceLocation(value *string)() {
         m.resourceLocation = value
     }
 }
-// SetStatus sets the status property value. The current status of the operation. Possible values are: notStarted, running, succeeded, failed.
+// SetStatus sets the status property value. The current status of the operation. Possible values are: NotStarted, Running, Completed, Failed.
 func (m *WorkbookOperation) SetStatus(value *WorkbookOperationStatus)() {
     if m != nil {
         m.status = value

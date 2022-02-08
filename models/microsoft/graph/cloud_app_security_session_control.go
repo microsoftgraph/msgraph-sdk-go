@@ -7,7 +7,7 @@ import (
 // CloudAppSecuritySessionControl 
 type CloudAppSecuritySessionControl struct {
     ConditionalAccessSessionControl
-    // Possible values are: mcasConfigured, monitorOnly, blockDownloads. To learn more about these values, Deploy Conditional Access App Control for featured apps.
+    // Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
     cloudAppSecurityType *CloudAppSecuritySessionControlType;
 }
 // NewCloudAppSecuritySessionControl instantiates a new cloudAppSecuritySessionControl and sets the default values.
@@ -17,7 +17,7 @@ func NewCloudAppSecuritySessionControl()(*CloudAppSecuritySessionControl) {
     }
     return m
 }
-// GetCloudAppSecurityType gets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads. To learn more about these values, Deploy Conditional Access App Control for featured apps.
+// GetCloudAppSecurityType gets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
 func (m *CloudAppSecuritySessionControl) GetCloudAppSecurityType()(*CloudAppSecuritySessionControlType) {
     if m == nil {
         return nil
@@ -34,8 +34,7 @@ func (m *CloudAppSecuritySessionControl) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(CloudAppSecuritySessionControlType)
-            m.SetCloudAppSecurityType(&cast)
+            m.SetCloudAppSecurityType(val.(*CloudAppSecuritySessionControlType))
         }
         return nil
     }
@@ -51,7 +50,7 @@ func (m *CloudAppSecuritySessionControl) Serialize(writer i04eb5309aeaafadd28374
         return err
     }
     if m.GetCloudAppSecurityType() != nil {
-        cast := m.GetCloudAppSecurityType().String()
+        cast := (*m.GetCloudAppSecurityType()).String()
         err = writer.WriteStringValue("cloudAppSecurityType", &cast)
         if err != nil {
             return err
@@ -59,7 +58,7 @@ func (m *CloudAppSecuritySessionControl) Serialize(writer i04eb5309aeaafadd28374
     }
     return nil
 }
-// SetCloudAppSecurityType sets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads. To learn more about these values, Deploy Conditional Access App Control for featured apps.
+// SetCloudAppSecurityType sets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
 func (m *CloudAppSecuritySessionControl) SetCloudAppSecurityType(value *CloudAppSecuritySessionControlType)() {
     if m != nil {
         m.cloudAppSecurityType = value

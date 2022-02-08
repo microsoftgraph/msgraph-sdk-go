@@ -16,15 +16,18 @@ func (i AttachmentType) String() string {
     return []string{"FILE", "ITEM", "REFERENCE"}[i]
 }
 func ParseAttachmentType(v string) (interface{}, error) {
+    result := FILE_ATTACHMENTTYPE
     switch strings.ToUpper(v) {
         case "FILE":
-            return FILE_ATTACHMENTTYPE, nil
+            result = FILE_ATTACHMENTTYPE
         case "ITEM":
-            return ITEM_ATTACHMENTTYPE, nil
+            result = ITEM_ATTACHMENTTYPE
         case "REFERENCE":
-            return REFERENCE_ATTACHMENTTYPE, nil
+            result = REFERENCE_ATTACHMENTTYPE
+        default:
+            return 0, errors.New("Unknown AttachmentType value: " + v)
     }
-    return 0, errors.New("Unknown AttachmentType value: " + v)
+    return &result, nil
 }
 func SerializeAttachmentType(values []AttachmentType) []string {
     result := make([]string, len(values))

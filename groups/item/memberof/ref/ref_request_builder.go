@@ -25,7 +25,7 @@ type RefRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// RefRequestBuilderGetQueryParameters groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
+// RefRequestBuilderGetQueryParameters groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 type RefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -70,7 +70,7 @@ func NewRefRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a401
     urlParams["request-raw-url"] = rawUrl
     return NewRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
+// CreateGetRequestInformation groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 func (m *RefRequestBuilder) CreateGetRequestInformation(options *RefRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -90,7 +90,7 @@ func (m *RefRequestBuilder) CreateGetRequestInformation(options *RefRequestBuild
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
+// CreatePostRequestInformation groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 func (m *RefRequestBuilder) CreatePostRequestInformation(options *RefRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,7 +108,7 @@ func (m *RefRequestBuilder) CreatePostRequestInformation(options *RefRequestBuil
     }
     return requestInfo, nil
 }
-// Get groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
+// Get groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 func (m *RefRequestBuilder) Get(options *RefRequestBuilderGetOptions)(*RefResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -120,7 +120,7 @@ func (m *RefRequestBuilder) Get(options *RefRequestBuilderGetOptions)(*RefRespon
     }
     return res.(*RefResponse), nil
 }
-// Post groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
+// Post groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
 func (m *RefRequestBuilder) Post(options *RefRequestBuilderPostOptions)(*Ref, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

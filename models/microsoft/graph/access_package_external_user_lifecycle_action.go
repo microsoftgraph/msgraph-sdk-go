@@ -17,17 +17,20 @@ func (i AccessPackageExternalUserLifecycleAction) String() string {
     return []string{"NONE", "BLOCKSIGNIN", "BLOCKSIGNINANDDELETE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAccessPackageExternalUserLifecycleAction(v string) (interface{}, error) {
+    result := NONE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION, nil
+            result = NONE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
         case "BLOCKSIGNIN":
-            return BLOCKSIGNIN_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION, nil
+            result = BLOCKSIGNIN_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
         case "BLOCKSIGNINANDDELETE":
-            return BLOCKSIGNINANDDELETE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION, nil
+            result = BLOCKSIGNINANDDELETE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION, nil
+            result = UNKNOWNFUTUREVALUE_ACCESSPACKAGEEXTERNALUSERLIFECYCLEACTION
+        default:
+            return 0, errors.New("Unknown AccessPackageExternalUserLifecycleAction value: " + v)
     }
-    return 0, errors.New("Unknown AccessPackageExternalUserLifecycleAction value: " + v)
+    return &result, nil
 }
 func SerializeAccessPackageExternalUserLifecycleAction(values []AccessPackageExternalUserLifecycleAction) []string {
     result := make([]string, len(values))

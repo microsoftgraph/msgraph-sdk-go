@@ -15,13 +15,16 @@ func (i BodyType) String() string {
     return []string{"TEXT", "HTML"}[i]
 }
 func ParseBodyType(v string) (interface{}, error) {
+    result := TEXT_BODYTYPE
     switch strings.ToUpper(v) {
         case "TEXT":
-            return TEXT_BODYTYPE, nil
+            result = TEXT_BODYTYPE
         case "HTML":
-            return HTML_BODYTYPE, nil
+            result = HTML_BODYTYPE
+        default:
+            return 0, errors.New("Unknown BodyType value: " + v)
     }
-    return 0, errors.New("Unknown BodyType value: " + v)
+    return &result, nil
 }
 func SerializeBodyType(values []BodyType) []string {
     result := make([]string, len(values))

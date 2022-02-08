@@ -16,15 +16,18 @@ func (i ThreatAssessmentResultType) String() string {
     return []string{"CHECKPOLICY", "RESCAN", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseThreatAssessmentResultType(v string) (interface{}, error) {
+    result := CHECKPOLICY_THREATASSESSMENTRESULTTYPE
     switch strings.ToUpper(v) {
         case "CHECKPOLICY":
-            return CHECKPOLICY_THREATASSESSMENTRESULTTYPE, nil
+            result = CHECKPOLICY_THREATASSESSMENTRESULTTYPE
         case "RESCAN":
-            return RESCAN_THREATASSESSMENTRESULTTYPE, nil
+            result = RESCAN_THREATASSESSMENTRESULTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_THREATASSESSMENTRESULTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_THREATASSESSMENTRESULTTYPE
+        default:
+            return 0, errors.New("Unknown ThreatAssessmentResultType value: " + v)
     }
-    return 0, errors.New("Unknown ThreatAssessmentResultType value: " + v)
+    return &result, nil
 }
 func SerializeThreatAssessmentResultType(values []ThreatAssessmentResultType) []string {
     result := make([]string, len(values))

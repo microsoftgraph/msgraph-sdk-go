@@ -20,23 +20,26 @@ func (i ProvisioningStepType) String() string {
     return []string{"IMPORT", "SCOPING", "MATCHING", "PROCESSING", "REFERENCERESOLUTION", "EXPORT", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseProvisioningStepType(v string) (interface{}, error) {
+    result := IMPORT_PROVISIONINGSTEPTYPE
     switch strings.ToUpper(v) {
         case "IMPORT":
-            return IMPORT_PROVISIONINGSTEPTYPE, nil
+            result = IMPORT_PROVISIONINGSTEPTYPE
         case "SCOPING":
-            return SCOPING_PROVISIONINGSTEPTYPE, nil
+            result = SCOPING_PROVISIONINGSTEPTYPE
         case "MATCHING":
-            return MATCHING_PROVISIONINGSTEPTYPE, nil
+            result = MATCHING_PROVISIONINGSTEPTYPE
         case "PROCESSING":
-            return PROCESSING_PROVISIONINGSTEPTYPE, nil
+            result = PROCESSING_PROVISIONINGSTEPTYPE
         case "REFERENCERESOLUTION":
-            return REFERENCERESOLUTION_PROVISIONINGSTEPTYPE, nil
+            result = REFERENCERESOLUTION_PROVISIONINGSTEPTYPE
         case "EXPORT":
-            return EXPORT_PROVISIONINGSTEPTYPE, nil
+            result = EXPORT_PROVISIONINGSTEPTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PROVISIONINGSTEPTYPE, nil
+            result = UNKNOWNFUTUREVALUE_PROVISIONINGSTEPTYPE
+        default:
+            return 0, errors.New("Unknown ProvisioningStepType value: " + v)
     }
-    return 0, errors.New("Unknown ProvisioningStepType value: " + v)
+    return &result, nil
 }
 func SerializeProvisioningStepType(values []ProvisioningStepType) []string {
     result := make([]string, len(values))

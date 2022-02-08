@@ -12,7 +12,7 @@ type ServiceUpdateMessage struct {
     actionRequiredByDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // A collection of serviceAnnouncementAttachments.
     attachments []ServiceAnnouncementAttachment;
-    // The zip file of all attachments for a message.
+    // The zip file that contains all attachments for a message.
     attachmentsArchive []byte;
     // 
     body *ItemBody;
@@ -54,7 +54,7 @@ func (m *ServiceUpdateMessage) GetAttachments()([]ServiceAnnouncementAttachment)
         return m.attachments
     }
 }
-// GetAttachmentsArchive gets the attachmentsArchive property value. The zip file of all attachments for a message.
+// GetAttachmentsArchive gets the attachmentsArchive property value. The zip file that contains all attachments for a message.
 func (m *ServiceUpdateMessage) GetAttachmentsArchive()([]byte) {
     if m == nil {
         return nil
@@ -179,8 +179,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ServiceUpdateCategory)
-            m.SetCategory(&cast)
+            m.SetCategory(val.(*ServiceUpdateCategory))
         }
         return nil
     }
@@ -224,8 +223,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ServiceUpdateSeverity)
-            m.SetSeverity(&cast)
+            m.SetSeverity(val.(*ServiceUpdateSeverity))
         }
         return nil
     }
@@ -294,7 +292,7 @@ func (m *ServiceUpdateMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetCategory() != nil {
-        cast := m.GetCategory().String()
+        cast := (*m.GetCategory()).String()
         err = writer.WriteStringValue("category", &cast)
         if err != nil {
             return err
@@ -319,7 +317,7 @@ func (m *ServiceUpdateMessage) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetSeverity() != nil {
-        cast := m.GetSeverity().String()
+        cast := (*m.GetSeverity()).String()
         err = writer.WriteStringValue("severity", &cast)
         if err != nil {
             return err
@@ -351,7 +349,7 @@ func (m *ServiceUpdateMessage) SetAttachments(value []ServiceAnnouncementAttachm
         m.attachments = value
     }
 }
-// SetAttachmentsArchive sets the attachmentsArchive property value. The zip file of all attachments for a message.
+// SetAttachmentsArchive sets the attachmentsArchive property value. The zip file that contains all attachments for a message.
 func (m *ServiceUpdateMessage) SetAttachmentsArchive(value []byte)() {
     if m != nil {
         m.attachmentsArchive = value

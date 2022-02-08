@@ -17,17 +17,20 @@ func (i TargetedManagedAppGroupType) String() string {
     return []string{"SELECTEDPUBLICAPPS", "ALLCOREMICROSOFTAPPS", "ALLMICROSOFTAPPS", "ALLAPPS"}[i]
 }
 func ParseTargetedManagedAppGroupType(v string) (interface{}, error) {
+    result := SELECTEDPUBLICAPPS_TARGETEDMANAGEDAPPGROUPTYPE
     switch strings.ToUpper(v) {
         case "SELECTEDPUBLICAPPS":
-            return SELECTEDPUBLICAPPS_TARGETEDMANAGEDAPPGROUPTYPE, nil
+            result = SELECTEDPUBLICAPPS_TARGETEDMANAGEDAPPGROUPTYPE
         case "ALLCOREMICROSOFTAPPS":
-            return ALLCOREMICROSOFTAPPS_TARGETEDMANAGEDAPPGROUPTYPE, nil
+            result = ALLCOREMICROSOFTAPPS_TARGETEDMANAGEDAPPGROUPTYPE
         case "ALLMICROSOFTAPPS":
-            return ALLMICROSOFTAPPS_TARGETEDMANAGEDAPPGROUPTYPE, nil
+            result = ALLMICROSOFTAPPS_TARGETEDMANAGEDAPPGROUPTYPE
         case "ALLAPPS":
-            return ALLAPPS_TARGETEDMANAGEDAPPGROUPTYPE, nil
+            result = ALLAPPS_TARGETEDMANAGEDAPPGROUPTYPE
+        default:
+            return 0, errors.New("Unknown TargetedManagedAppGroupType value: " + v)
     }
-    return 0, errors.New("Unknown TargetedManagedAppGroupType value: " + v)
+    return &result, nil
 }
 func SerializeTargetedManagedAppGroupType(values []TargetedManagedAppGroupType) []string {
     result := make([]string, len(values))

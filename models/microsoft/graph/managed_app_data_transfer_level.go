@@ -16,15 +16,18 @@ func (i ManagedAppDataTransferLevel) String() string {
     return []string{"ALLAPPS", "MANAGEDAPPS", "NONE"}[i]
 }
 func ParseManagedAppDataTransferLevel(v string) (interface{}, error) {
+    result := ALLAPPS_MANAGEDAPPDATATRANSFERLEVEL
     switch strings.ToUpper(v) {
         case "ALLAPPS":
-            return ALLAPPS_MANAGEDAPPDATATRANSFERLEVEL, nil
+            result = ALLAPPS_MANAGEDAPPDATATRANSFERLEVEL
         case "MANAGEDAPPS":
-            return MANAGEDAPPS_MANAGEDAPPDATATRANSFERLEVEL, nil
+            result = MANAGEDAPPS_MANAGEDAPPDATATRANSFERLEVEL
         case "NONE":
-            return NONE_MANAGEDAPPDATATRANSFERLEVEL, nil
+            result = NONE_MANAGEDAPPDATATRANSFERLEVEL
+        default:
+            return 0, errors.New("Unknown ManagedAppDataTransferLevel value: " + v)
     }
-    return 0, errors.New("Unknown ManagedAppDataTransferLevel value: " + v)
+    return &result, nil
 }
 func SerializeManagedAppDataTransferLevel(values []ManagedAppDataTransferLevel) []string {
     result := make([]string, len(values))

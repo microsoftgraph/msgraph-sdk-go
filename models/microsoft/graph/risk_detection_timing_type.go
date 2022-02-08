@@ -18,19 +18,22 @@ func (i RiskDetectionTimingType) String() string {
     return []string{"NOTDEFINED", "REALTIME", "NEARREALTIME", "OFFLINE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRiskDetectionTimingType(v string) (interface{}, error) {
+    result := NOTDEFINED_RISKDETECTIONTIMINGTYPE
     switch strings.ToUpper(v) {
         case "NOTDEFINED":
-            return NOTDEFINED_RISKDETECTIONTIMINGTYPE, nil
+            result = NOTDEFINED_RISKDETECTIONTIMINGTYPE
         case "REALTIME":
-            return REALTIME_RISKDETECTIONTIMINGTYPE, nil
+            result = REALTIME_RISKDETECTIONTIMINGTYPE
         case "NEARREALTIME":
-            return NEARREALTIME_RISKDETECTIONTIMINGTYPE, nil
+            result = NEARREALTIME_RISKDETECTIONTIMINGTYPE
         case "OFFLINE":
-            return OFFLINE_RISKDETECTIONTIMINGTYPE, nil
+            result = OFFLINE_RISKDETECTIONTIMINGTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_RISKDETECTIONTIMINGTYPE, nil
+            result = UNKNOWNFUTUREVALUE_RISKDETECTIONTIMINGTYPE
+        default:
+            return 0, errors.New("Unknown RiskDetectionTimingType value: " + v)
     }
-    return 0, errors.New("Unknown RiskDetectionTimingType value: " + v)
+    return &result, nil
 }
 func SerializeRiskDetectionTimingType(values []RiskDetectionTimingType) []string {
     result := make([]string, len(values))

@@ -17,17 +17,20 @@ func (i MdmAuthority) String() string {
     return []string{"UNKNOWN", "INTUNE", "SCCM", "OFFICE365"}[i]
 }
 func ParseMdmAuthority(v string) (interface{}, error) {
+    result := UNKNOWN_MDMAUTHORITY
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_MDMAUTHORITY, nil
+            result = UNKNOWN_MDMAUTHORITY
         case "INTUNE":
-            return INTUNE_MDMAUTHORITY, nil
+            result = INTUNE_MDMAUTHORITY
         case "SCCM":
-            return SCCM_MDMAUTHORITY, nil
+            result = SCCM_MDMAUTHORITY
         case "OFFICE365":
-            return OFFICE365_MDMAUTHORITY, nil
+            result = OFFICE365_MDMAUTHORITY
+        default:
+            return 0, errors.New("Unknown MdmAuthority value: " + v)
     }
-    return 0, errors.New("Unknown MdmAuthority value: " + v)
+    return &result, nil
 }
 func SerializeMdmAuthority(values []MdmAuthority) []string {
     result := make([]string, len(values))

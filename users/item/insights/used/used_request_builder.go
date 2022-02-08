@@ -26,7 +26,7 @@ type UsedRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// UsedRequestBuilderGetQueryParameters access this property from the derived type itemInsights.
+// UsedRequestBuilderGetQueryParameters calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 type UsedRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewUsedRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a40
     urlParams["request-raw-url"] = rawUrl
     return NewUsedRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation access this property from the derived type itemInsights.
+// CreateGetRequestInformation calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *UsedRequestBuilder) CreateGetRequestInformation(options *UsedRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *UsedRequestBuilder) CreateGetRequestInformation(options *UsedRequestBui
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation access this property from the derived type itemInsights.
+// CreatePostRequestInformation calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *UsedRequestBuilder) CreatePostRequestInformation(options *UsedRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *UsedRequestBuilder) CreatePostRequestInformation(options *UsedRequestBu
     }
     return requestInfo, nil
 }
-// Get access this property from the derived type itemInsights.
+// Get calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *UsedRequestBuilder) Get(options *UsedRequestBuilderGetOptions)(*UsedResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *UsedRequestBuilder) Get(options *UsedRequestBuilderGetOptions)(*UsedRes
     }
     return res.(*UsedResponse), nil
 }
-// Post access this property from the derived type itemInsights.
+// Post calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *UsedRequestBuilder) Post(options *UsedRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.UsedInsight, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
