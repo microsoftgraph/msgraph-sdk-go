@@ -16,15 +16,18 @@ func (i ChannelMembershipType) String() string {
     return []string{"STANDARD", "PRIVATE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseChannelMembershipType(v string) (interface{}, error) {
+    result := STANDARD_CHANNELMEMBERSHIPTYPE
     switch strings.ToUpper(v) {
         case "STANDARD":
-            return STANDARD_CHANNELMEMBERSHIPTYPE, nil
+            result = STANDARD_CHANNELMEMBERSHIPTYPE
         case "PRIVATE":
-            return PRIVATE_CHANNELMEMBERSHIPTYPE, nil
+            result = PRIVATE_CHANNELMEMBERSHIPTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CHANNELMEMBERSHIPTYPE, nil
+            result = UNKNOWNFUTUREVALUE_CHANNELMEMBERSHIPTYPE
+        default:
+            return 0, errors.New("Unknown ChannelMembershipType value: " + v)
     }
-    return 0, errors.New("Unknown ChannelMembershipType value: " + v)
+    return &result, nil
 }
 func SerializeChannelMembershipType(values []ChannelMembershipType) []string {
     result := make([]string, len(values))

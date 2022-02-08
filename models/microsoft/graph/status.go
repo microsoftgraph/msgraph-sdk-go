@@ -18,19 +18,22 @@ func (i Status) String() string {
     return []string{"ACTIVE", "UPDATED", "DELETED", "IGNORED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseStatus(v string) (interface{}, error) {
+    result := ACTIVE_STATUS
     switch strings.ToUpper(v) {
         case "ACTIVE":
-            return ACTIVE_STATUS, nil
+            result = ACTIVE_STATUS
         case "UPDATED":
-            return UPDATED_STATUS, nil
+            result = UPDATED_STATUS
         case "DELETED":
-            return DELETED_STATUS, nil
+            result = DELETED_STATUS
         case "IGNORED":
-            return IGNORED_STATUS, nil
+            result = IGNORED_STATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_STATUS, nil
+            result = UNKNOWNFUTUREVALUE_STATUS
+        default:
+            return 0, errors.New("Unknown Status value: " + v)
     }
-    return 0, errors.New("Unknown Status value: " + v)
+    return &result, nil
 }
 func SerializeStatus(values []Status) []string {
     result := make([]string, len(values))

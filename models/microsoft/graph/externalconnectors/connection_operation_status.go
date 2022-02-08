@@ -18,19 +18,22 @@ func (i ConnectionOperationStatus) String() string {
     return []string{"UNSPECIFIED", "INPROGRESS", "COMPLETED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseConnectionOperationStatus(v string) (interface{}, error) {
+    result := UNSPECIFIED_CONNECTIONOPERATIONSTATUS
     switch strings.ToUpper(v) {
         case "UNSPECIFIED":
-            return UNSPECIFIED_CONNECTIONOPERATIONSTATUS, nil
+            result = UNSPECIFIED_CONNECTIONOPERATIONSTATUS
         case "INPROGRESS":
-            return INPROGRESS_CONNECTIONOPERATIONSTATUS, nil
+            result = INPROGRESS_CONNECTIONOPERATIONSTATUS
         case "COMPLETED":
-            return COMPLETED_CONNECTIONOPERATIONSTATUS, nil
+            result = COMPLETED_CONNECTIONOPERATIONSTATUS
         case "FAILED":
-            return FAILED_CONNECTIONOPERATIONSTATUS, nil
+            result = FAILED_CONNECTIONOPERATIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONNECTIONOPERATIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_CONNECTIONOPERATIONSTATUS
+        default:
+            return 0, errors.New("Unknown ConnectionOperationStatus value: " + v)
     }
-    return 0, errors.New("Unknown ConnectionOperationStatus value: " + v)
+    return &result, nil
 }
 func SerializeConnectionOperationStatus(values []ConnectionOperationStatus) []string {
     result := make([]string, len(values))

@@ -54,8 +54,7 @@ func (m *MobileAppAssignment) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(InstallIntent)
-            m.SetIntent(&cast)
+            m.SetIntent(val.(*InstallIntent))
         }
         return nil
     }
@@ -91,7 +90,7 @@ func (m *MobileAppAssignment) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         return err
     }
     if m.GetIntent() != nil {
-        cast := m.GetIntent().String()
+        cast := (*m.GetIntent()).String()
         err = writer.WriteStringValue("intent", &cast)
         if err != nil {
             return err

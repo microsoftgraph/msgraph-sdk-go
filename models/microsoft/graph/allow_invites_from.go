@@ -18,19 +18,22 @@ func (i AllowInvitesFrom) String() string {
     return []string{"NONE", "ADMINSANDGUESTINVITERS", "ADMINSGUESTINVITERSANDALLMEMBERS", "EVERYONE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAllowInvitesFrom(v string) (interface{}, error) {
+    result := NONE_ALLOWINVITESFROM
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_ALLOWINVITESFROM, nil
+            result = NONE_ALLOWINVITESFROM
         case "ADMINSANDGUESTINVITERS":
-            return ADMINSANDGUESTINVITERS_ALLOWINVITESFROM, nil
+            result = ADMINSANDGUESTINVITERS_ALLOWINVITESFROM
         case "ADMINSGUESTINVITERSANDALLMEMBERS":
-            return ADMINSGUESTINVITERSANDALLMEMBERS_ALLOWINVITESFROM, nil
+            result = ADMINSGUESTINVITERSANDALLMEMBERS_ALLOWINVITESFROM
         case "EVERYONE":
-            return EVERYONE_ALLOWINVITESFROM, nil
+            result = EVERYONE_ALLOWINVITESFROM
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ALLOWINVITESFROM, nil
+            result = UNKNOWNFUTUREVALUE_ALLOWINVITESFROM
+        default:
+            return 0, errors.New("Unknown AllowInvitesFrom value: " + v)
     }
-    return 0, errors.New("Unknown AllowInvitesFrom value: " + v)
+    return &result, nil
 }
 func SerializeAllowInvitesFrom(values []AllowInvitesFrom) []string {
     result := make([]string, len(values))

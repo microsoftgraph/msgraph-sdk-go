@@ -26,19 +26,19 @@ type Organization struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The display name for the tenant.
     displayName *string;
-    // The collection of open extensions defined for the organization resource. Nullable.
+    // The collection of open extensions defined for the organization. Read-only. Nullable.
     extensions []Extension;
     // Not nullable.
     marketingNotificationEmails []string;
     // Mobile device management authority. Possible values are: unknown, intune, sccm, office365.
     mobileDeviceManagementAuthority *MdmAuthority;
-    // The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    // The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+    // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
     onPremisesSyncEnabled *bool;
     // Postal code of the address for the organization.
     postalCode *string;
-    // The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
+    // The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
     preferredLanguage *string;
     // The privacy profile of an organization.
     privacyProfile *PrivacyProfile;
@@ -138,7 +138,7 @@ func (m *Organization) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetExtensions gets the extensions property value. The collection of open extensions defined for the organization resource. Nullable.
+// GetExtensions gets the extensions property value. The collection of open extensions defined for the organization. Read-only. Nullable.
 func (m *Organization) GetExtensions()([]Extension) {
     if m == nil {
         return nil
@@ -162,7 +162,7 @@ func (m *Organization) GetMobileDeviceManagementAuthority()(*MdmAuthority) {
         return m.mobileDeviceManagementAuthority
     }
 }
-// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Organization) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -170,7 +170,7 @@ func (m *Organization) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7
         return m.onPremisesLastSyncDateTime
     }
 }
-// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
 func (m *Organization) GetOnPremisesSyncEnabled()(*bool) {
     if m == nil {
         return nil
@@ -186,7 +186,7 @@ func (m *Organization) GetPostalCode()(*string) {
         return m.postalCode
     }
 }
-// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
+// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
 func (m *Organization) GetPreferredLanguage()(*string) {
     if m == nil {
         return nil
@@ -405,8 +405,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i04e
             return err
         }
         if val != nil {
-            cast := val.(MdmAuthority)
-            m.SetMobileDeviceManagementAuthority(&cast)
+            m.SetMobileDeviceManagementAuthority(val.(*MdmAuthority))
         }
         return nil
     }
@@ -653,7 +652,7 @@ func (m *Organization) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     if m.GetMobileDeviceManagementAuthority() != nil {
-        cast := m.GetMobileDeviceManagementAuthority().String()
+        cast := (*m.GetMobileDeviceManagementAuthority()).String()
         err = writer.WriteStringValue("mobileDeviceManagementAuthority", &cast)
         if err != nil {
             return err
@@ -803,7 +802,7 @@ func (m *Organization) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetExtensions sets the extensions property value. The collection of open extensions defined for the organization resource. Nullable.
+// SetExtensions sets the extensions property value. The collection of open extensions defined for the organization. Read-only. Nullable.
 func (m *Organization) SetExtensions(value []Extension)() {
     if m != nil {
         m.extensions = value
@@ -821,13 +820,13 @@ func (m *Organization) SetMobileDeviceManagementAuthority(value *MdmAuthority)()
         m.mobileDeviceManagementAuthority = value
     }
 }
-// SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Organization) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.onPremisesLastSyncDateTime = value
     }
 }
-// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
 func (m *Organization) SetOnPremisesSyncEnabled(value *bool)() {
     if m != nil {
         m.onPremisesSyncEnabled = value
@@ -839,7 +838,7 @@ func (m *Organization) SetPostalCode(value *string)() {
         m.postalCode = value
     }
 }
-// SetPreferredLanguage sets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
+// SetPreferredLanguage sets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
 func (m *Organization) SetPreferredLanguage(value *string)() {
     if m != nil {
         m.preferredLanguage = value

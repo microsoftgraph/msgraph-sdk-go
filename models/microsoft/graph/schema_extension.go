@@ -15,7 +15,7 @@ type SchemaExtension struct {
     properties []ExtensionSchemaProperty;
     // The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors. Supports $filter (eq).
     status *string;
-    // Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.
+    // Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
     targetTypes []string;
 }
 // NewSchemaExtension instantiates a new schemaExtension and sets the default values.
@@ -57,7 +57,7 @@ func (m *SchemaExtension) GetStatus()(*string) {
         return m.status
     }
 }
-// GetTargetTypes gets the targetTypes property value. Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.
+// GetTargetTypes gets the targetTypes property value. Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
 func (m *SchemaExtension) GetTargetTypes()([]string) {
     if m == nil {
         return nil
@@ -198,7 +198,7 @@ func (m *SchemaExtension) SetStatus(value *string)() {
         m.status = value
     }
 }
-// SetTargetTypes sets the targetTypes property value. Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.
+// SetTargetTypes sets the targetTypes property value. Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
 func (m *SchemaExtension) SetTargetTypes(value []string)() {
     if m != nil {
         m.targetTypes = value

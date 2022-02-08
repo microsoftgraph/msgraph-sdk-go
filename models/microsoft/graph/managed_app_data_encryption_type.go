@@ -17,17 +17,20 @@ func (i ManagedAppDataEncryptionType) String() string {
     return []string{"USEDEVICESETTINGS", "AFTERDEVICERESTART", "WHENDEVICELOCKEDEXCEPTOPENFILES", "WHENDEVICELOCKED"}[i]
 }
 func ParseManagedAppDataEncryptionType(v string) (interface{}, error) {
+    result := USEDEVICESETTINGS_MANAGEDAPPDATAENCRYPTIONTYPE
     switch strings.ToUpper(v) {
         case "USEDEVICESETTINGS":
-            return USEDEVICESETTINGS_MANAGEDAPPDATAENCRYPTIONTYPE, nil
+            result = USEDEVICESETTINGS_MANAGEDAPPDATAENCRYPTIONTYPE
         case "AFTERDEVICERESTART":
-            return AFTERDEVICERESTART_MANAGEDAPPDATAENCRYPTIONTYPE, nil
+            result = AFTERDEVICERESTART_MANAGEDAPPDATAENCRYPTIONTYPE
         case "WHENDEVICELOCKEDEXCEPTOPENFILES":
-            return WHENDEVICELOCKEDEXCEPTOPENFILES_MANAGEDAPPDATAENCRYPTIONTYPE, nil
+            result = WHENDEVICELOCKEDEXCEPTOPENFILES_MANAGEDAPPDATAENCRYPTIONTYPE
         case "WHENDEVICELOCKED":
-            return WHENDEVICELOCKED_MANAGEDAPPDATAENCRYPTIONTYPE, nil
+            result = WHENDEVICELOCKED_MANAGEDAPPDATAENCRYPTIONTYPE
+        default:
+            return 0, errors.New("Unknown ManagedAppDataEncryptionType value: " + v)
     }
-    return 0, errors.New("Unknown ManagedAppDataEncryptionType value: " + v)
+    return &result, nil
 }
 func SerializeManagedAppDataEncryptionType(values []ManagedAppDataEncryptionType) []string {
     result := make([]string, len(values))

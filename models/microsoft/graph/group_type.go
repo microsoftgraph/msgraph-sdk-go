@@ -16,15 +16,18 @@ func (i GroupType) String() string {
     return []string{"UNIFIEDGROUPS", "AZUREAD", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseGroupType(v string) (interface{}, error) {
+    result := UNIFIEDGROUPS_GROUPTYPE
     switch strings.ToUpper(v) {
         case "UNIFIEDGROUPS":
-            return UNIFIEDGROUPS_GROUPTYPE, nil
+            result = UNIFIEDGROUPS_GROUPTYPE
         case "AZUREAD":
-            return AZUREAD_GROUPTYPE, nil
+            result = AZUREAD_GROUPTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_GROUPTYPE, nil
+            result = UNKNOWNFUTUREVALUE_GROUPTYPE
+        default:
+            return 0, errors.New("Unknown GroupType value: " + v)
     }
-    return 0, errors.New("Unknown GroupType value: " + v)
+    return &result, nil
 }
 func SerializeGroupType(values []GroupType) []string {
     result := make([]string, len(values))

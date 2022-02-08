@@ -16,15 +16,18 @@ func (i AuthenticationMethodTargetType) String() string {
     return []string{"USER", "GROUP", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAuthenticationMethodTargetType(v string) (interface{}, error) {
+    result := USER_AUTHENTICATIONMETHODTARGETTYPE
     switch strings.ToUpper(v) {
         case "USER":
-            return USER_AUTHENTICATIONMETHODTARGETTYPE, nil
+            result = USER_AUTHENTICATIONMETHODTARGETTYPE
         case "GROUP":
-            return GROUP_AUTHENTICATIONMETHODTARGETTYPE, nil
+            result = GROUP_AUTHENTICATIONMETHODTARGETTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODTARGETTYPE, nil
+            result = UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODTARGETTYPE
+        default:
+            return 0, errors.New("Unknown AuthenticationMethodTargetType value: " + v)
     }
-    return 0, errors.New("Unknown AuthenticationMethodTargetType value: " + v)
+    return &result, nil
 }
 func SerializeAuthenticationMethodTargetType(values []AuthenticationMethodTargetType) []string {
     result := make([]string, len(values))

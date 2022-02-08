@@ -20,23 +20,26 @@ func (i ActionState) String() string {
     return []string{"NONE", "PENDING", "CANCELED", "ACTIVE", "DONE", "FAILED", "NOTSUPPORTED"}[i]
 }
 func ParseActionState(v string) (interface{}, error) {
+    result := NONE_ACTIONSTATE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_ACTIONSTATE, nil
+            result = NONE_ACTIONSTATE
         case "PENDING":
-            return PENDING_ACTIONSTATE, nil
+            result = PENDING_ACTIONSTATE
         case "CANCELED":
-            return CANCELED_ACTIONSTATE, nil
+            result = CANCELED_ACTIONSTATE
         case "ACTIVE":
-            return ACTIVE_ACTIONSTATE, nil
+            result = ACTIVE_ACTIONSTATE
         case "DONE":
-            return DONE_ACTIONSTATE, nil
+            result = DONE_ACTIONSTATE
         case "FAILED":
-            return FAILED_ACTIONSTATE, nil
+            result = FAILED_ACTIONSTATE
         case "NOTSUPPORTED":
-            return NOTSUPPORTED_ACTIONSTATE, nil
+            result = NOTSUPPORTED_ACTIONSTATE
+        default:
+            return 0, errors.New("Unknown ActionState value: " + v)
     }
-    return 0, errors.New("Unknown ActionState value: " + v)
+    return &result, nil
 }
 func SerializeActionState(values []ActionState) []string {
     result := make([]string, len(values))

@@ -64,8 +64,7 @@ func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(EducationAddedStudentAction)
-            m.SetAddedStudentAction(&cast)
+            m.SetAddedStudentAction(val.(*EducationAddedStudentAction))
         }
         return nil
     }
@@ -75,8 +74,7 @@ func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(EducationAddToCalendarOptions)
-            m.SetAddToCalendarAction(&cast)
+            m.SetAddToCalendarAction(val.(*EducationAddToCalendarOptions))
         }
         return nil
     }
@@ -112,14 +110,14 @@ func (m *EducationAssignmentDefaults) Serialize(writer i04eb5309aeaafadd28374d79
         return err
     }
     if m.GetAddedStudentAction() != nil {
-        cast := m.GetAddedStudentAction().String()
+        cast := (*m.GetAddedStudentAction()).String()
         err = writer.WriteStringValue("addedStudentAction", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAddToCalendarAction() != nil {
-        cast := m.GetAddToCalendarAction().String()
+        cast := (*m.GetAddToCalendarAction()).String()
         err = writer.WriteStringValue("addToCalendarAction", &cast)
         if err != nil {
             return err

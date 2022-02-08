@@ -20,23 +20,26 @@ func (i StagedFeatureName) String() string {
     return []string{"PASSTHROUGHAUTHENTICATION", "SEAMLESSSSO", "PASSWORDHASHSYNC", "EMAILASALTERNATEID", "UNKNOWNFUTUREVALUE", "CERTIFICATEBASEDAUTHENTICATION", "MULTIFACTORAUTHENTICATION"}[i]
 }
 func ParseStagedFeatureName(v string) (interface{}, error) {
+    result := PASSTHROUGHAUTHENTICATION_STAGEDFEATURENAME
     switch strings.ToUpper(v) {
         case "PASSTHROUGHAUTHENTICATION":
-            return PASSTHROUGHAUTHENTICATION_STAGEDFEATURENAME, nil
+            result = PASSTHROUGHAUTHENTICATION_STAGEDFEATURENAME
         case "SEAMLESSSSO":
-            return SEAMLESSSSO_STAGEDFEATURENAME, nil
+            result = SEAMLESSSSO_STAGEDFEATURENAME
         case "PASSWORDHASHSYNC":
-            return PASSWORDHASHSYNC_STAGEDFEATURENAME, nil
+            result = PASSWORDHASHSYNC_STAGEDFEATURENAME
         case "EMAILASALTERNATEID":
-            return EMAILASALTERNATEID_STAGEDFEATURENAME, nil
+            result = EMAILASALTERNATEID_STAGEDFEATURENAME
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_STAGEDFEATURENAME, nil
+            result = UNKNOWNFUTUREVALUE_STAGEDFEATURENAME
         case "CERTIFICATEBASEDAUTHENTICATION":
-            return CERTIFICATEBASEDAUTHENTICATION_STAGEDFEATURENAME, nil
+            result = CERTIFICATEBASEDAUTHENTICATION_STAGEDFEATURENAME
         case "MULTIFACTORAUTHENTICATION":
-            return MULTIFACTORAUTHENTICATION_STAGEDFEATURENAME, nil
+            result = MULTIFACTORAUTHENTICATION_STAGEDFEATURENAME
+        default:
+            return 0, errors.New("Unknown StagedFeatureName value: " + v)
     }
-    return 0, errors.New("Unknown StagedFeatureName value: " + v)
+    return &result, nil
 }
 func SerializeStagedFeatureName(values []StagedFeatureName) []string {
     result := make([]string, len(values))

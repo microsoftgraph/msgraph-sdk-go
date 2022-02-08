@@ -17,17 +17,20 @@ func (i OnlineMeetingProviderType) String() string {
     return []string{"UNKNOWN", "SKYPEFORBUSINESS", "SKYPEFORCONSUMER", "TEAMSFORBUSINESS"}[i]
 }
 func ParseOnlineMeetingProviderType(v string) (interface{}, error) {
+    result := UNKNOWN_ONLINEMEETINGPROVIDERTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_ONLINEMEETINGPROVIDERTYPE, nil
+            result = UNKNOWN_ONLINEMEETINGPROVIDERTYPE
         case "SKYPEFORBUSINESS":
-            return SKYPEFORBUSINESS_ONLINEMEETINGPROVIDERTYPE, nil
+            result = SKYPEFORBUSINESS_ONLINEMEETINGPROVIDERTYPE
         case "SKYPEFORCONSUMER":
-            return SKYPEFORCONSUMER_ONLINEMEETINGPROVIDERTYPE, nil
+            result = SKYPEFORCONSUMER_ONLINEMEETINGPROVIDERTYPE
         case "TEAMSFORBUSINESS":
-            return TEAMSFORBUSINESS_ONLINEMEETINGPROVIDERTYPE, nil
+            result = TEAMSFORBUSINESS_ONLINEMEETINGPROVIDERTYPE
+        default:
+            return 0, errors.New("Unknown OnlineMeetingProviderType value: " + v)
     }
-    return 0, errors.New("Unknown OnlineMeetingProviderType value: " + v)
+    return &result, nil
 }
 func SerializeOnlineMeetingProviderType(values []OnlineMeetingProviderType) []string {
     result := make([]string, len(values))

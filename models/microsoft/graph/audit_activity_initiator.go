@@ -8,9 +8,9 @@ import (
 type AuditActivityInitiator struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.
+    // If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
     app *AppIdentity;
-    // If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.
+    // If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
     user *UserIdentity;
 }
 // NewAuditActivityInitiator instantiates a new auditActivityInitiator and sets the default values.
@@ -28,7 +28,7 @@ func (m *AuditActivityInitiator) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetApp gets the app property value. If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.
+// GetApp gets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
 func (m *AuditActivityInitiator) GetApp()(*AppIdentity) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *AuditActivityInitiator) GetApp()(*AppIdentity) {
         return m.app
     }
 }
-// GetUser gets the user property value. If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.
+// GetUser gets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
 func (m *AuditActivityInitiator) GetUser()(*UserIdentity) {
     if m == nil {
         return nil
@@ -100,13 +100,13 @@ func (m *AuditActivityInitiator) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetApp sets the app property value. If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.
+// SetApp sets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
 func (m *AuditActivityInitiator) SetApp(value *AppIdentity)() {
     if m != nil {
         m.app = value
     }
 }
-// SetUser sets the user property value. If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.
+// SetUser sets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
 func (m *AuditActivityInitiator) SetUser(value *UserIdentity)() {
     if m != nil {
         m.user = value

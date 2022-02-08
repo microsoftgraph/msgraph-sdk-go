@@ -21,25 +21,28 @@ func (i ComplianceStatus) String() string {
     return []string{"UNKNOWN", "NOTAPPLICABLE", "COMPLIANT", "REMEDIATED", "NONCOMPLIANT", "ERROR", "CONFLICT", "NOTASSIGNED"}[i]
 }
 func ParseComplianceStatus(v string) (interface{}, error) {
+    result := UNKNOWN_COMPLIANCESTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_COMPLIANCESTATUS, nil
+            result = UNKNOWN_COMPLIANCESTATUS
         case "NOTAPPLICABLE":
-            return NOTAPPLICABLE_COMPLIANCESTATUS, nil
+            result = NOTAPPLICABLE_COMPLIANCESTATUS
         case "COMPLIANT":
-            return COMPLIANT_COMPLIANCESTATUS, nil
+            result = COMPLIANT_COMPLIANCESTATUS
         case "REMEDIATED":
-            return REMEDIATED_COMPLIANCESTATUS, nil
+            result = REMEDIATED_COMPLIANCESTATUS
         case "NONCOMPLIANT":
-            return NONCOMPLIANT_COMPLIANCESTATUS, nil
+            result = NONCOMPLIANT_COMPLIANCESTATUS
         case "ERROR":
-            return ERROR_COMPLIANCESTATUS, nil
+            result = ERROR_COMPLIANCESTATUS
         case "CONFLICT":
-            return CONFLICT_COMPLIANCESTATUS, nil
+            result = CONFLICT_COMPLIANCESTATUS
         case "NOTASSIGNED":
-            return NOTASSIGNED_COMPLIANCESTATUS, nil
+            result = NOTASSIGNED_COMPLIANCESTATUS
+        default:
+            return 0, errors.New("Unknown ComplianceStatus value: " + v)
     }
-    return 0, errors.New("Unknown ComplianceStatus value: " + v)
+    return &result, nil
 }
 func SerializeComplianceStatus(values []ComplianceStatus) []string {
     result := make([]string, len(values))

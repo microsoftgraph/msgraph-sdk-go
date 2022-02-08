@@ -12,11 +12,11 @@ type RelatedContact struct {
     additionalData map[string]interface{};
     // Name of the contact. Required.
     displayName *string;
-    // Email address of the contact.
+    // Primary email address of the contact.
     emailAddress *string;
     // Mobile phone number of the contact.
     mobilePhone *string;
-    // Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
+    // Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
     relationship *ContactRelationship;
 }
 // NewRelatedContact instantiates a new relatedContact and sets the default values.
@@ -50,7 +50,7 @@ func (m *RelatedContact) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEmailAddress gets the emailAddress property value. Email address of the contact.
+// GetEmailAddress gets the emailAddress property value. Primary email address of the contact.
 func (m *RelatedContact) GetEmailAddress()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *RelatedContact) GetMobilePhone()(*string) {
         return m.mobilePhone
     }
 }
-// GetRelationship gets the relationship property value. Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
+// GetRelationship gets the relationship property value. Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
 func (m *RelatedContact) GetRelationship()(*ContactRelationship) {
     if m == nil {
         return nil
@@ -123,8 +123,7 @@ func (m *RelatedContact) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(ContactRelationship)
-            m.SetRelationship(&cast)
+            m.SetRelationship(val.(*ContactRelationship))
         }
         return nil
     }
@@ -160,7 +159,7 @@ func (m *RelatedContact) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetRelationship() != nil {
-        cast := m.GetRelationship().String()
+        cast := (*m.GetRelationship()).String()
         err := writer.WriteStringValue("relationship", &cast)
         if err != nil {
             return err
@@ -192,7 +191,7 @@ func (m *RelatedContact) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetEmailAddress sets the emailAddress property value. Email address of the contact.
+// SetEmailAddress sets the emailAddress property value. Primary email address of the contact.
 func (m *RelatedContact) SetEmailAddress(value *string)() {
     if m != nil {
         m.emailAddress = value
@@ -204,7 +203,7 @@ func (m *RelatedContact) SetMobilePhone(value *string)() {
         m.mobilePhone = value
     }
 }
-// SetRelationship sets the relationship property value. Relationship to the user. Possible values are: parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
+// SetRelationship sets the relationship property value. Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
 func (m *RelatedContact) SetRelationship(value *ContactRelationship)() {
     if m != nil {
         m.relationship = value

@@ -17,17 +17,20 @@ func (i ProvisioningStatusErrorCategory) String() string {
     return []string{"FAILURE", "NONSERVICEFAILURE", "SUCCESS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseProvisioningStatusErrorCategory(v string) (interface{}, error) {
+    result := FAILURE_PROVISIONINGSTATUSERRORCATEGORY
     switch strings.ToUpper(v) {
         case "FAILURE":
-            return FAILURE_PROVISIONINGSTATUSERRORCATEGORY, nil
+            result = FAILURE_PROVISIONINGSTATUSERRORCATEGORY
         case "NONSERVICEFAILURE":
-            return NONSERVICEFAILURE_PROVISIONINGSTATUSERRORCATEGORY, nil
+            result = NONSERVICEFAILURE_PROVISIONINGSTATUSERRORCATEGORY
         case "SUCCESS":
-            return SUCCESS_PROVISIONINGSTATUSERRORCATEGORY, nil
+            result = SUCCESS_PROVISIONINGSTATUSERRORCATEGORY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PROVISIONINGSTATUSERRORCATEGORY, nil
+            result = UNKNOWNFUTUREVALUE_PROVISIONINGSTATUSERRORCATEGORY
+        default:
+            return 0, errors.New("Unknown ProvisioningStatusErrorCategory value: " + v)
     }
-    return 0, errors.New("Unknown ProvisioningStatusErrorCategory value: " + v)
+    return &result, nil
 }
 func SerializeProvisioningStatusErrorCategory(values []ProvisioningStatusErrorCategory) []string {
     result := make([]string, len(values))

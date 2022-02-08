@@ -63,8 +63,7 @@ func (m *LobbyBypassSettings) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(LobbyBypassScope)
-            m.SetScope(&cast)
+            m.SetScope(val.(*LobbyBypassScope))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *LobbyBypassSettings) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetScope() != nil {
-        cast := m.GetScope().String()
+        cast := (*m.GetScope()).String()
         err := writer.WriteStringValue("scope", &cast)
         if err != nil {
             return err

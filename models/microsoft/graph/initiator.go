@@ -34,8 +34,7 @@ func (m *Initiator) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
             return err
         }
         if val != nil {
-            cast := val.(InitiatorType)
-            m.SetInitiatorType(&cast)
+            m.SetInitiatorType(val.(*InitiatorType))
         }
         return nil
     }
@@ -51,7 +50,7 @@ func (m *Initiator) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4d
         return err
     }
     if m.GetInitiatorType() != nil {
-        cast := m.GetInitiatorType().String()
+        cast := (*m.GetInitiatorType()).String()
         err = writer.WriteStringValue("initiatorType", &cast)
         if err != nil {
             return err

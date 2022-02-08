@@ -15,13 +15,16 @@ func (i DeviceManagementExchangeConnectorSyncType) String() string {
     return []string{"FULLSYNC", "DELTASYNC"}[i]
 }
 func ParseDeviceManagementExchangeConnectorSyncType(v string) (interface{}, error) {
+    result := FULLSYNC_DEVICEMANAGEMENTEXCHANGECONNECTORSYNCTYPE
     switch strings.ToUpper(v) {
         case "FULLSYNC":
-            return FULLSYNC_DEVICEMANAGEMENTEXCHANGECONNECTORSYNCTYPE, nil
+            result = FULLSYNC_DEVICEMANAGEMENTEXCHANGECONNECTORSYNCTYPE
         case "DELTASYNC":
-            return DELTASYNC_DEVICEMANAGEMENTEXCHANGECONNECTORSYNCTYPE, nil
+            result = DELTASYNC_DEVICEMANAGEMENTEXCHANGECONNECTORSYNCTYPE
+        default:
+            return 0, errors.New("Unknown DeviceManagementExchangeConnectorSyncType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementExchangeConnectorSyncType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementExchangeConnectorSyncType(values []DeviceManagementExchangeConnectorSyncType) []string {
     result := make([]string, len(values))

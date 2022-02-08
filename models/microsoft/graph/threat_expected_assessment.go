@@ -15,13 +15,16 @@ func (i ThreatExpectedAssessment) String() string {
     return []string{"BLOCK", "UNBLOCK"}[i]
 }
 func ParseThreatExpectedAssessment(v string) (interface{}, error) {
+    result := BLOCK_THREATEXPECTEDASSESSMENT
     switch strings.ToUpper(v) {
         case "BLOCK":
-            return BLOCK_THREATEXPECTEDASSESSMENT, nil
+            result = BLOCK_THREATEXPECTEDASSESSMENT
         case "UNBLOCK":
-            return UNBLOCK_THREATEXPECTEDASSESSMENT, nil
+            result = UNBLOCK_THREATEXPECTEDASSESSMENT
+        default:
+            return 0, errors.New("Unknown ThreatExpectedAssessment value: " + v)
     }
-    return 0, errors.New("Unknown ThreatExpectedAssessment value: " + v)
+    return &result, nil
 }
 func SerializeThreatExpectedAssessment(values []ThreatExpectedAssessment) []string {
     result := make([]string, len(values))

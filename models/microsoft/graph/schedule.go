@@ -286,8 +286,7 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(OperationStatus)
-            m.SetProvisionStatus(&cast)
+            m.SetProvisionStatus(val.(*OperationStatus))
         }
         return nil
     }
@@ -502,7 +501,7 @@ func (m *Schedule) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetProvisionStatus() != nil {
-        cast := m.GetProvisionStatus().String()
+        cast := (*m.GetProvisionStatus()).String()
         err = writer.WriteStringValue("provisionStatus", &cast)
         if err != nil {
             return err

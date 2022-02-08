@@ -19,21 +19,24 @@ func (i IdentityUserFlowAttributeDataType) String() string {
     return []string{"STRING", "BOOLEAN", "INT64", "STRINGCOLLECTION", "DATETIME", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseIdentityUserFlowAttributeDataType(v string) (interface{}, error) {
+    result := STRING_IDENTITYUSERFLOWATTRIBUTEDATATYPE
     switch strings.ToUpper(v) {
         case "STRING":
-            return STRING_IDENTITYUSERFLOWATTRIBUTEDATATYPE, nil
+            result = STRING_IDENTITYUSERFLOWATTRIBUTEDATATYPE
         case "BOOLEAN":
-            return BOOLEAN_IDENTITYUSERFLOWATTRIBUTEDATATYPE, nil
+            result = BOOLEAN_IDENTITYUSERFLOWATTRIBUTEDATATYPE
         case "INT64":
-            return INT64_IDENTITYUSERFLOWATTRIBUTEDATATYPE, nil
+            result = INT64_IDENTITYUSERFLOWATTRIBUTEDATATYPE
         case "STRINGCOLLECTION":
-            return STRINGCOLLECTION_IDENTITYUSERFLOWATTRIBUTEDATATYPE, nil
+            result = STRINGCOLLECTION_IDENTITYUSERFLOWATTRIBUTEDATATYPE
         case "DATETIME":
-            return DATETIME_IDENTITYUSERFLOWATTRIBUTEDATATYPE, nil
+            result = DATETIME_IDENTITYUSERFLOWATTRIBUTEDATATYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_IDENTITYUSERFLOWATTRIBUTEDATATYPE, nil
+            result = UNKNOWNFUTUREVALUE_IDENTITYUSERFLOWATTRIBUTEDATATYPE
+        default:
+            return 0, errors.New("Unknown IdentityUserFlowAttributeDataType value: " + v)
     }
-    return 0, errors.New("Unknown IdentityUserFlowAttributeDataType value: " + v)
+    return &result, nil
 }
 func SerializeIdentityUserFlowAttributeDataType(values []IdentityUserFlowAttributeDataType) []string {
     result := make([]string, len(values))

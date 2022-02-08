@@ -17,7 +17,7 @@ type PermissionGrantConditionSet struct {
     clientApplicationTenantIds []string;
     // The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
     permissionClassification *string;
-    // The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the publishedPermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
+    // The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
     permissions []string;
     // The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
     permissionType *PermissionType;
@@ -71,7 +71,7 @@ func (m *PermissionGrantConditionSet) GetPermissionClassification()(*string) {
         return m.permissionClassification
     }
 }
-// GetPermissions gets the permissions property value. The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the publishedPermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
+// GetPermissions gets the permissions property value. The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
 func (m *PermissionGrantConditionSet) GetPermissions()([]string) {
     if m == nil {
         return nil
@@ -180,8 +180,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(PermissionType)
-            m.SetPermissionType(&cast)
+            m.SetPermissionType(val.(*PermissionType))
         }
         return nil
     }
@@ -243,7 +242,7 @@ func (m *PermissionGrantConditionSet) Serialize(writer i04eb5309aeaafadd28374d79
         }
     }
     if m.GetPermissionType() != nil {
-        cast := m.GetPermissionType().String()
+        cast := (*m.GetPermissionType()).String()
         err = writer.WriteStringValue("permissionType", &cast)
         if err != nil {
             return err
@@ -287,7 +286,7 @@ func (m *PermissionGrantConditionSet) SetPermissionClassification(value *string)
         m.permissionClassification = value
     }
 }
-// SetPermissions sets the permissions property value. The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the publishedPermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
+// SetPermissions sets the permissions property value. The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
 func (m *PermissionGrantConditionSet) SetPermissions(value []string)() {
     if m != nil {
         m.permissions = value

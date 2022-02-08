@@ -37,7 +37,7 @@ type PlannerRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PlannerRequestBuilderGetQueryParameters selective Planner services available to the group. Read-only. Nullable.
+// PlannerRequestBuilderGetQueryParameters entry-point to Planner resource that might exist for a Unified Group.
 type PlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -74,7 +74,7 @@ func NewPlannerRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation selective Planner services available to the group. Read-only. Nullable.
+// CreateDeleteRequestInformation entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) CreateDeleteRequestInformation(options *PlannerRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *PlannerRequestBuilder) CreateDeleteRequestInformation(options *PlannerR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation selective Planner services available to the group. Read-only. Nullable.
+// CreateGetRequestInformation entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) CreateGetRequestInformation(options *PlannerRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *PlannerRequestBuilder) CreateGetRequestInformation(options *PlannerRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation selective Planner services available to the group. Read-only. Nullable.
+// CreatePatchRequestInformation entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) CreatePatchRequestInformation(options *PlannerRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,7 +129,7 @@ func (m *PlannerRequestBuilder) CreatePatchRequestInformation(options *PlannerRe
     }
     return requestInfo, nil
 }
-// Delete selective Planner services available to the group. Read-only. Nullable.
+// Delete entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) Delete(options *PlannerRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *PlannerRequestBuilder) Delete(options *PlannerRequestBuilderDeleteOptio
     }
     return nil
 }
-// Get selective Planner services available to the group. Read-only. Nullable.
+// Get entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) Get(options *PlannerRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerGroup, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -153,7 +153,7 @@ func (m *PlannerRequestBuilder) Get(options *PlannerRequestBuilderGetOptions)(*i
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerGroup), nil
 }
-// Patch selective Planner services available to the group. Read-only. Nullable.
+// Patch entry-point to Planner resource that might exist for a Unified Group.
 func (m *PlannerRequestBuilder) Patch(options *PlannerRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

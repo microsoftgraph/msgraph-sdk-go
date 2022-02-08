@@ -20,23 +20,26 @@ func (i LobbyBypassScope) String() string {
     return []string{"ORGANIZER", "ORGANIZATION", "ORGANIZATIONANDFEDERATED", "EVERYONE", "UNKNOWNFUTUREVALUE", "INVITED", "ORGANIZATIONEXCLUDINGGUESTS"}[i]
 }
 func ParseLobbyBypassScope(v string) (interface{}, error) {
+    result := ORGANIZER_LOBBYBYPASSSCOPE
     switch strings.ToUpper(v) {
         case "ORGANIZER":
-            return ORGANIZER_LOBBYBYPASSSCOPE, nil
+            result = ORGANIZER_LOBBYBYPASSSCOPE
         case "ORGANIZATION":
-            return ORGANIZATION_LOBBYBYPASSSCOPE, nil
+            result = ORGANIZATION_LOBBYBYPASSSCOPE
         case "ORGANIZATIONANDFEDERATED":
-            return ORGANIZATIONANDFEDERATED_LOBBYBYPASSSCOPE, nil
+            result = ORGANIZATIONANDFEDERATED_LOBBYBYPASSSCOPE
         case "EVERYONE":
-            return EVERYONE_LOBBYBYPASSSCOPE, nil
+            result = EVERYONE_LOBBYBYPASSSCOPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_LOBBYBYPASSSCOPE, nil
+            result = UNKNOWNFUTUREVALUE_LOBBYBYPASSSCOPE
         case "INVITED":
-            return INVITED_LOBBYBYPASSSCOPE, nil
+            result = INVITED_LOBBYBYPASSSCOPE
         case "ORGANIZATIONEXCLUDINGGUESTS":
-            return ORGANIZATIONEXCLUDINGGUESTS_LOBBYBYPASSSCOPE, nil
+            result = ORGANIZATIONEXCLUDINGGUESTS_LOBBYBYPASSSCOPE
+        default:
+            return 0, errors.New("Unknown LobbyBypassScope value: " + v)
     }
-    return 0, errors.New("Unknown LobbyBypassScope value: " + v)
+    return &result, nil
 }
 func SerializeLobbyBypassScope(values []LobbyBypassScope) []string {
     result := make([]string, len(values))

@@ -21,25 +21,28 @@ func (i TeamSpecialization) String() string {
     return []string{"NONE", "EDUCATIONSTANDARD", "EDUCATIONCLASS", "EDUCATIONPROFESSIONALLEARNINGCOMMUNITY", "EDUCATIONSTAFF", "HEALTHCARESTANDARD", "HEALTHCARECARECOORDINATION", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamSpecialization(v string) (interface{}, error) {
+    result := NONE_TEAMSPECIALIZATION
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_TEAMSPECIALIZATION, nil
+            result = NONE_TEAMSPECIALIZATION
         case "EDUCATIONSTANDARD":
-            return EDUCATIONSTANDARD_TEAMSPECIALIZATION, nil
+            result = EDUCATIONSTANDARD_TEAMSPECIALIZATION
         case "EDUCATIONCLASS":
-            return EDUCATIONCLASS_TEAMSPECIALIZATION, nil
+            result = EDUCATIONCLASS_TEAMSPECIALIZATION
         case "EDUCATIONPROFESSIONALLEARNINGCOMMUNITY":
-            return EDUCATIONPROFESSIONALLEARNINGCOMMUNITY_TEAMSPECIALIZATION, nil
+            result = EDUCATIONPROFESSIONALLEARNINGCOMMUNITY_TEAMSPECIALIZATION
         case "EDUCATIONSTAFF":
-            return EDUCATIONSTAFF_TEAMSPECIALIZATION, nil
+            result = EDUCATIONSTAFF_TEAMSPECIALIZATION
         case "HEALTHCARESTANDARD":
-            return HEALTHCARESTANDARD_TEAMSPECIALIZATION, nil
+            result = HEALTHCARESTANDARD_TEAMSPECIALIZATION
         case "HEALTHCARECARECOORDINATION":
-            return HEALTHCARECARECOORDINATION_TEAMSPECIALIZATION, nil
+            result = HEALTHCARECARECOORDINATION_TEAMSPECIALIZATION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMSPECIALIZATION, nil
+            result = UNKNOWNFUTUREVALUE_TEAMSPECIALIZATION
+        default:
+            return 0, errors.New("Unknown TeamSpecialization value: " + v)
     }
-    return 0, errors.New("Unknown TeamSpecialization value: " + v)
+    return &result, nil
 }
 func SerializeTeamSpecialization(values []TeamSpecialization) []string {
     result := make([]string, len(values))

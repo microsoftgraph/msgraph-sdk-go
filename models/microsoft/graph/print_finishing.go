@@ -33,49 +33,52 @@ func (i PrintFinishing) String() string {
     return []string{"NONE", "STAPLE", "PUNCH", "COVER", "BIND", "SADDLESTITCH", "STITCHEDGE", "STAPLETOPLEFT", "STAPLEBOTTOMLEFT", "STAPLETOPRIGHT", "STAPLEBOTTOMRIGHT", "STITCHLEFTEDGE", "STITCHTOPEDGE", "STITCHRIGHTEDGE", "STITCHBOTTOMEDGE", "STAPLEDUALLEFT", "STAPLEDUALTOP", "STAPLEDUALRIGHT", "STAPLEDUALBOTTOM", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePrintFinishing(v string) (interface{}, error) {
+    result := NONE_PRINTFINISHING
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_PRINTFINISHING, nil
+            result = NONE_PRINTFINISHING
         case "STAPLE":
-            return STAPLE_PRINTFINISHING, nil
+            result = STAPLE_PRINTFINISHING
         case "PUNCH":
-            return PUNCH_PRINTFINISHING, nil
+            result = PUNCH_PRINTFINISHING
         case "COVER":
-            return COVER_PRINTFINISHING, nil
+            result = COVER_PRINTFINISHING
         case "BIND":
-            return BIND_PRINTFINISHING, nil
+            result = BIND_PRINTFINISHING
         case "SADDLESTITCH":
-            return SADDLESTITCH_PRINTFINISHING, nil
+            result = SADDLESTITCH_PRINTFINISHING
         case "STITCHEDGE":
-            return STITCHEDGE_PRINTFINISHING, nil
+            result = STITCHEDGE_PRINTFINISHING
         case "STAPLETOPLEFT":
-            return STAPLETOPLEFT_PRINTFINISHING, nil
+            result = STAPLETOPLEFT_PRINTFINISHING
         case "STAPLEBOTTOMLEFT":
-            return STAPLEBOTTOMLEFT_PRINTFINISHING, nil
+            result = STAPLEBOTTOMLEFT_PRINTFINISHING
         case "STAPLETOPRIGHT":
-            return STAPLETOPRIGHT_PRINTFINISHING, nil
+            result = STAPLETOPRIGHT_PRINTFINISHING
         case "STAPLEBOTTOMRIGHT":
-            return STAPLEBOTTOMRIGHT_PRINTFINISHING, nil
+            result = STAPLEBOTTOMRIGHT_PRINTFINISHING
         case "STITCHLEFTEDGE":
-            return STITCHLEFTEDGE_PRINTFINISHING, nil
+            result = STITCHLEFTEDGE_PRINTFINISHING
         case "STITCHTOPEDGE":
-            return STITCHTOPEDGE_PRINTFINISHING, nil
+            result = STITCHTOPEDGE_PRINTFINISHING
         case "STITCHRIGHTEDGE":
-            return STITCHRIGHTEDGE_PRINTFINISHING, nil
+            result = STITCHRIGHTEDGE_PRINTFINISHING
         case "STITCHBOTTOMEDGE":
-            return STITCHBOTTOMEDGE_PRINTFINISHING, nil
+            result = STITCHBOTTOMEDGE_PRINTFINISHING
         case "STAPLEDUALLEFT":
-            return STAPLEDUALLEFT_PRINTFINISHING, nil
+            result = STAPLEDUALLEFT_PRINTFINISHING
         case "STAPLEDUALTOP":
-            return STAPLEDUALTOP_PRINTFINISHING, nil
+            result = STAPLEDUALTOP_PRINTFINISHING
         case "STAPLEDUALRIGHT":
-            return STAPLEDUALRIGHT_PRINTFINISHING, nil
+            result = STAPLEDUALRIGHT_PRINTFINISHING
         case "STAPLEDUALBOTTOM":
-            return STAPLEDUALBOTTOM_PRINTFINISHING, nil
+            result = STAPLEDUALBOTTOM_PRINTFINISHING
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PRINTFINISHING, nil
+            result = UNKNOWNFUTUREVALUE_PRINTFINISHING
+        default:
+            return 0, errors.New("Unknown PrintFinishing value: " + v)
     }
-    return 0, errors.New("Unknown PrintFinishing value: " + v)
+    return &result, nil
 }
 func SerializePrintFinishing(values []PrintFinishing) []string {
     result := make([]string, len(values))

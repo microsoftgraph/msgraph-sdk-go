@@ -12,7 +12,7 @@ type EducationStudent struct {
     birthDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
     // ID of the student in the source system.
     externalId *string;
-    // Possible values are: female, male, other.
+    // The possible values are: female, male, other, unknownFutureValue.
     gender *EducationGender;
     // Current grade level of the student.
     grade *string;
@@ -52,7 +52,7 @@ func (m *EducationStudent) GetExternalId()(*string) {
         return m.externalId
     }
 }
-// GetGender gets the gender property value. Possible values are: female, male, other.
+// GetGender gets the gender property value. The possible values are: female, male, other, unknownFutureValue.
 func (m *EducationStudent) GetGender()(*EducationGender) {
     if m == nil {
         return nil
@@ -113,8 +113,7 @@ func (m *EducationStudent) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(EducationGender)
-            m.SetGender(&cast)
+            m.SetGender(val.(*EducationGender))
         }
         return nil
     }
@@ -168,7 +167,7 @@ func (m *EducationStudent) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetGender() != nil {
-        cast := m.GetGender().String()
+        cast := (*m.GetGender()).String()
         err := writer.WriteStringValue("gender", &cast)
         if err != nil {
             return err
@@ -218,7 +217,7 @@ func (m *EducationStudent) SetExternalId(value *string)() {
         m.externalId = value
     }
 }
-// SetGender sets the gender property value. Possible values are: female, male, other.
+// SetGender sets the gender property value. The possible values are: female, male, other, unknownFutureValue.
 func (m *EducationStudent) SetGender(value *EducationGender)() {
     if m != nil {
         m.gender = value

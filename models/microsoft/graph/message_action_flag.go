@@ -24,31 +24,34 @@ func (i MessageActionFlag) String() string {
     return []string{"ANY", "CALL", "DONOTFORWARD", "FOLLOWUP", "FYI", "FORWARD", "NORESPONSENECESSARY", "READ", "REPLY", "REPLYTOALL", "REVIEW"}[i]
 }
 func ParseMessageActionFlag(v string) (interface{}, error) {
+    result := ANY_MESSAGEACTIONFLAG
     switch strings.ToUpper(v) {
         case "ANY":
-            return ANY_MESSAGEACTIONFLAG, nil
+            result = ANY_MESSAGEACTIONFLAG
         case "CALL":
-            return CALL_MESSAGEACTIONFLAG, nil
+            result = CALL_MESSAGEACTIONFLAG
         case "DONOTFORWARD":
-            return DONOTFORWARD_MESSAGEACTIONFLAG, nil
+            result = DONOTFORWARD_MESSAGEACTIONFLAG
         case "FOLLOWUP":
-            return FOLLOWUP_MESSAGEACTIONFLAG, nil
+            result = FOLLOWUP_MESSAGEACTIONFLAG
         case "FYI":
-            return FYI_MESSAGEACTIONFLAG, nil
+            result = FYI_MESSAGEACTIONFLAG
         case "FORWARD":
-            return FORWARD_MESSAGEACTIONFLAG, nil
+            result = FORWARD_MESSAGEACTIONFLAG
         case "NORESPONSENECESSARY":
-            return NORESPONSENECESSARY_MESSAGEACTIONFLAG, nil
+            result = NORESPONSENECESSARY_MESSAGEACTIONFLAG
         case "READ":
-            return READ_MESSAGEACTIONFLAG, nil
+            result = READ_MESSAGEACTIONFLAG
         case "REPLY":
-            return REPLY_MESSAGEACTIONFLAG, nil
+            result = REPLY_MESSAGEACTIONFLAG
         case "REPLYTOALL":
-            return REPLYTOALL_MESSAGEACTIONFLAG, nil
+            result = REPLYTOALL_MESSAGEACTIONFLAG
         case "REVIEW":
-            return REVIEW_MESSAGEACTIONFLAG, nil
+            result = REVIEW_MESSAGEACTIONFLAG
+        default:
+            return 0, errors.New("Unknown MessageActionFlag value: " + v)
     }
-    return 0, errors.New("Unknown MessageActionFlag value: " + v)
+    return &result, nil
 }
 func SerializeMessageActionFlag(values []MessageActionFlag) []string {
     result := make([]string, len(values))

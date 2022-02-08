@@ -18,19 +18,22 @@ func (i WebsiteType) String() string {
     return []string{"OTHER", "HOME", "WORK", "BLOG", "PROFILE"}[i]
 }
 func ParseWebsiteType(v string) (interface{}, error) {
+    result := OTHER_WEBSITETYPE
     switch strings.ToUpper(v) {
         case "OTHER":
-            return OTHER_WEBSITETYPE, nil
+            result = OTHER_WEBSITETYPE
         case "HOME":
-            return HOME_WEBSITETYPE, nil
+            result = HOME_WEBSITETYPE
         case "WORK":
-            return WORK_WEBSITETYPE, nil
+            result = WORK_WEBSITETYPE
         case "BLOG":
-            return BLOG_WEBSITETYPE, nil
+            result = BLOG_WEBSITETYPE
         case "PROFILE":
-            return PROFILE_WEBSITETYPE, nil
+            result = PROFILE_WEBSITETYPE
+        default:
+            return 0, errors.New("Unknown WebsiteType value: " + v)
     }
-    return 0, errors.New("Unknown WebsiteType value: " + v)
+    return &result, nil
 }
 func SerializeWebsiteType(values []WebsiteType) []string {
     result := make([]string, len(values))

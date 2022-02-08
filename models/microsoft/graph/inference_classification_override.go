@@ -7,7 +7,7 @@ import (
 // InferenceClassificationOverride 
 type InferenceClassificationOverride struct {
     Entity
-    // Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.
+    // Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.
     classifyAs *InferenceClassificationType;
     // The email address information of the sender for whom the override is created.
     senderEmailAddress *EmailAddress;
@@ -19,7 +19,7 @@ func NewInferenceClassificationOverride()(*InferenceClassificationOverride) {
     }
     return m
 }
-// GetClassifyAs gets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.
+// GetClassifyAs gets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.
 func (m *InferenceClassificationOverride) GetClassifyAs()(*InferenceClassificationType) {
     if m == nil {
         return nil
@@ -44,8 +44,7 @@ func (m *InferenceClassificationOverride) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(InferenceClassificationType)
-            m.SetClassifyAs(&cast)
+            m.SetClassifyAs(val.(*InferenceClassificationType))
         }
         return nil
     }
@@ -71,7 +70,7 @@ func (m *InferenceClassificationOverride) Serialize(writer i04eb5309aeaafadd2837
         return err
     }
     if m.GetClassifyAs() != nil {
-        cast := m.GetClassifyAs().String()
+        cast := (*m.GetClassifyAs()).String()
         err = writer.WriteStringValue("classifyAs", &cast)
         if err != nil {
             return err
@@ -85,7 +84,7 @@ func (m *InferenceClassificationOverride) Serialize(writer i04eb5309aeaafadd2837
     }
     return nil
 }
-// SetClassifyAs sets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.
+// SetClassifyAs sets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.
 func (m *InferenceClassificationOverride) SetClassifyAs(value *InferenceClassificationType)() {
     if m != nil {
         m.classifyAs = value

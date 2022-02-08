@@ -64,8 +64,7 @@ func (m *RejectRequestBody) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RejectReason)
-            m.SetReason(&cast)
+            m.SetReason(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.RejectReason))
         }
         return nil
     }
@@ -83,7 +82,7 @@ func (m *RejectRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetReason() != nil {
-        cast := m.GetReason().String()
+        cast := (*m.GetReason()).String()
         err := writer.WriteStringValue("reason", &cast)
         if err != nil {
             return err

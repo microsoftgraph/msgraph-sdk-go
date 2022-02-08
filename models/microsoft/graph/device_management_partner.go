@@ -135,8 +135,7 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementPartnerAppType)
-            m.SetPartnerAppType(&cast)
+            m.SetPartnerAppType(val.(*DeviceManagementPartnerAppType))
         }
         return nil
     }
@@ -146,8 +145,7 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementPartnerTenantState)
-            m.SetPartnerState(&cast)
+            m.SetPartnerState(val.(*DeviceManagementPartnerTenantState))
         }
         return nil
     }
@@ -211,14 +209,14 @@ func (m *DeviceManagementPartner) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetPartnerAppType() != nil {
-        cast := m.GetPartnerAppType().String()
+        cast := (*m.GetPartnerAppType()).String()
         err = writer.WriteStringValue("partnerAppType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetPartnerState() != nil {
-        cast := m.GetPartnerState().String()
+        cast := (*m.GetPartnerState()).String()
         err = writer.WriteStringValue("partnerState", &cast)
         if err != nil {
             return err

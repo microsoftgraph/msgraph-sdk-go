@@ -21,25 +21,28 @@ func (i WorkforceIntegrationSupportedEntities) String() string {
     return []string{"NONE", "SHIFT", "SWAPREQUEST", "USERSHIFTPREFERENCES", "OPENSHIFT", "OPENSHIFTREQUEST", "OFFERSHIFTREQUEST", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseWorkforceIntegrationSupportedEntities(v string) (interface{}, error) {
+    result := NONE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES, nil
+            result = NONE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
         case "SHIFT":
-            return SHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES, nil
+            result = SHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
         case "SWAPREQUEST":
-            return SWAPREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES, nil
+            result = SWAPREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
         case "USERSHIFTPREFERENCES":
-            return USERSHIFTPREFERENCES_WORKFORCEINTEGRATIONSUPPORTEDENTITIES, nil
+            result = USERSHIFTPREFERENCES_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
         case "OPENSHIFT":
-            return OPENSHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES, nil
+            result = OPENSHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
         case "OPENSHIFTREQUEST":
-            return OPENSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES, nil
+            result = OPENSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
         case "OFFERSHIFTREQUEST":
-            return OFFERSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES, nil
+            result = OFFERSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES, nil
+            result = UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
+        default:
+            return 0, errors.New("Unknown WorkforceIntegrationSupportedEntities value: " + v)
     }
-    return 0, errors.New("Unknown WorkforceIntegrationSupportedEntities value: " + v)
+    return &result, nil
 }
 func SerializeWorkforceIntegrationSupportedEntities(values []WorkforceIntegrationSupportedEntities) []string {
     result := make([]string, len(values))

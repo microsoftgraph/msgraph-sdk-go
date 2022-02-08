@@ -21,25 +21,28 @@ func (i PrintJobStateDetail) String() string {
     return []string{"UPLOADPENDING", "TRANSFORMING", "COMPLETEDSUCCESSFULLY", "COMPLETEDWITHWARNINGS", "COMPLETEDWITHERRORS", "RELEASEWAIT", "INTERPRETING", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePrintJobStateDetail(v string) (interface{}, error) {
+    result := UPLOADPENDING_PRINTJOBSTATEDETAIL
     switch strings.ToUpper(v) {
         case "UPLOADPENDING":
-            return UPLOADPENDING_PRINTJOBSTATEDETAIL, nil
+            result = UPLOADPENDING_PRINTJOBSTATEDETAIL
         case "TRANSFORMING":
-            return TRANSFORMING_PRINTJOBSTATEDETAIL, nil
+            result = TRANSFORMING_PRINTJOBSTATEDETAIL
         case "COMPLETEDSUCCESSFULLY":
-            return COMPLETEDSUCCESSFULLY_PRINTJOBSTATEDETAIL, nil
+            result = COMPLETEDSUCCESSFULLY_PRINTJOBSTATEDETAIL
         case "COMPLETEDWITHWARNINGS":
-            return COMPLETEDWITHWARNINGS_PRINTJOBSTATEDETAIL, nil
+            result = COMPLETEDWITHWARNINGS_PRINTJOBSTATEDETAIL
         case "COMPLETEDWITHERRORS":
-            return COMPLETEDWITHERRORS_PRINTJOBSTATEDETAIL, nil
+            result = COMPLETEDWITHERRORS_PRINTJOBSTATEDETAIL
         case "RELEASEWAIT":
-            return RELEASEWAIT_PRINTJOBSTATEDETAIL, nil
+            result = RELEASEWAIT_PRINTJOBSTATEDETAIL
         case "INTERPRETING":
-            return INTERPRETING_PRINTJOBSTATEDETAIL, nil
+            result = INTERPRETING_PRINTJOBSTATEDETAIL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PRINTJOBSTATEDETAIL, nil
+            result = UNKNOWNFUTUREVALUE_PRINTJOBSTATEDETAIL
+        default:
+            return 0, errors.New("Unknown PrintJobStateDetail value: " + v)
     }
-    return 0, errors.New("Unknown PrintJobStateDetail value: " + v)
+    return &result, nil
 }
 func SerializePrintJobStateDetail(values []PrintJobStateDetail) []string {
     result := make([]string, len(values))

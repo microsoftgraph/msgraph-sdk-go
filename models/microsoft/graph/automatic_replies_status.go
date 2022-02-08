@@ -16,15 +16,18 @@ func (i AutomaticRepliesStatus) String() string {
     return []string{"DISABLED", "ALWAYSENABLED", "SCHEDULED"}[i]
 }
 func ParseAutomaticRepliesStatus(v string) (interface{}, error) {
+    result := DISABLED_AUTOMATICREPLIESSTATUS
     switch strings.ToUpper(v) {
         case "DISABLED":
-            return DISABLED_AUTOMATICREPLIESSTATUS, nil
+            result = DISABLED_AUTOMATICREPLIESSTATUS
         case "ALWAYSENABLED":
-            return ALWAYSENABLED_AUTOMATICREPLIESSTATUS, nil
+            result = ALWAYSENABLED_AUTOMATICREPLIESSTATUS
         case "SCHEDULED":
-            return SCHEDULED_AUTOMATICREPLIESSTATUS, nil
+            result = SCHEDULED_AUTOMATICREPLIESSTATUS
+        default:
+            return 0, errors.New("Unknown AutomaticRepliesStatus value: " + v)
     }
-    return 0, errors.New("Unknown AutomaticRepliesStatus value: " + v)
+    return &result, nil
 }
 func SerializeAutomaticRepliesStatus(values []AutomaticRepliesStatus) []string {
     result := make([]string, len(values))

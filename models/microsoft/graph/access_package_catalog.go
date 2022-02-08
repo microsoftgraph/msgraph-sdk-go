@@ -8,15 +8,15 @@ import (
 // AccessPackageCatalog 
 type AccessPackageCatalog struct {
     Entity
-    // The access packages in this catalog. Read-only. Nullable. Supports $expand.
+    // The access packages in this catalog. Read-only. Nullable.
     accessPackages []AccessPackage;
-    // One of UserManaged or ServiceDefault.
+    // Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
     catalogType *AccessPackageCatalogType;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The description of the access package catalog.
     description *string;
-    // The display name of the access package catalog. Supports $filter (eq, contains).
+    // The display name of the access package catalog.
     displayName *string;
     // Whether the access packages in this catalog can be requested by users outside of the tenant.
     isExternallyVisible *bool;
@@ -32,7 +32,7 @@ func NewAccessPackageCatalog()(*AccessPackageCatalog) {
     }
     return m
 }
-// GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable. Supports $expand.
+// GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackage) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackage) {
         return m.accessPackages
     }
 }
-// GetCatalogType gets the catalogType property value. One of UserManaged or ServiceDefault.
+// GetCatalogType gets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
 func (m *AccessPackageCatalog) GetCatalogType()(*AccessPackageCatalogType) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *AccessPackageCatalog) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name of the access package catalog. Supports $filter (eq, contains).
+// GetDisplayName gets the displayName property value. The display name of the access package catalog.
 func (m *AccessPackageCatalog) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -119,8 +119,7 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(AccessPackageCatalogType)
-            m.SetCatalogType(&cast)
+            m.SetCatalogType(val.(*AccessPackageCatalogType))
         }
         return nil
     }
@@ -180,8 +179,7 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(AccessPackageCatalogState)
-            m.SetState(&cast)
+            m.SetState(val.(*AccessPackageCatalogState))
         }
         return nil
     }
@@ -208,7 +206,7 @@ func (m *AccessPackageCatalog) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetCatalogType() != nil {
-        cast := m.GetCatalogType().String()
+        cast := (*m.GetCatalogType()).String()
         err = writer.WriteStringValue("catalogType", &cast)
         if err != nil {
             return err
@@ -245,7 +243,7 @@ func (m *AccessPackageCatalog) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err
@@ -253,13 +251,13 @@ func (m *AccessPackageCatalog) Serialize(writer i04eb5309aeaafadd28374d79c8471df
     }
     return nil
 }
-// SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable. Supports $expand.
+// SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
 func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackage)() {
     if m != nil {
         m.accessPackages = value
     }
 }
-// SetCatalogType sets the catalogType property value. One of UserManaged or ServiceDefault.
+// SetCatalogType sets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
 func (m *AccessPackageCatalog) SetCatalogType(value *AccessPackageCatalogType)() {
     if m != nil {
         m.catalogType = value
@@ -277,7 +275,7 @@ func (m *AccessPackageCatalog) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the access package catalog. Supports $filter (eq, contains).
+// SetDisplayName sets the displayName property value. The display name of the access package catalog.
 func (m *AccessPackageCatalog) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value

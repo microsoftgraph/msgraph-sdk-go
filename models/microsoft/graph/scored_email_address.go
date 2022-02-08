@@ -103,8 +103,7 @@ func (m *ScoredEmailAddress) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(SelectionLikelihoodInfo)
-            m.SetSelectionLikelihood(&cast)
+            m.SetSelectionLikelihood(val.(*SelectionLikelihoodInfo))
         }
         return nil
     }
@@ -134,7 +133,7 @@ func (m *ScoredEmailAddress) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetSelectionLikelihood() != nil {
-        cast := m.GetSelectionLikelihood().String()
+        cast := (*m.GetSelectionLikelihood()).String()
         err := writer.WriteStringValue("selectionLikelihood", &cast)
         if err != nil {
             return err

@@ -17,17 +17,20 @@ func (i PermissionClassificationType) String() string {
     return []string{"LOW", "MEDIUM", "HIGH", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePermissionClassificationType(v string) (interface{}, error) {
+    result := LOW_PERMISSIONCLASSIFICATIONTYPE
     switch strings.ToUpper(v) {
         case "LOW":
-            return LOW_PERMISSIONCLASSIFICATIONTYPE, nil
+            result = LOW_PERMISSIONCLASSIFICATIONTYPE
         case "MEDIUM":
-            return MEDIUM_PERMISSIONCLASSIFICATIONTYPE, nil
+            result = MEDIUM_PERMISSIONCLASSIFICATIONTYPE
         case "HIGH":
-            return HIGH_PERMISSIONCLASSIFICATIONTYPE, nil
+            result = HIGH_PERMISSIONCLASSIFICATIONTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PERMISSIONCLASSIFICATIONTYPE, nil
+            result = UNKNOWNFUTUREVALUE_PERMISSIONCLASSIFICATIONTYPE
+        default:
+            return 0, errors.New("Unknown PermissionClassificationType value: " + v)
     }
-    return 0, errors.New("Unknown PermissionClassificationType value: " + v)
+    return &result, nil
 }
 func SerializePermissionClassificationType(values []PermissionClassificationType) []string {
     result := make([]string, len(values))

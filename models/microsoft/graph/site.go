@@ -23,7 +23,7 @@ type Site struct {
     error *PublicError;
     // The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
     externalColumns []ColumnDefinition;
-    // Used to address any item contained in this site. This collection cannot be enumerated.
+    // Used to address any item contained in this site. This collection can't be enumerated.
     items []BaseItem;
     // The collection of lists under this site.
     lists []List;
@@ -39,7 +39,7 @@ type Site struct {
     siteCollection *SiteCollection;
     // The collection of the sub-sites under this site.
     sites []Site;
-    // The termStore under this site.
+    // The default termStore under this site.
     termStore *Store;
     // The collection of termStores under this site.
     termStores []Store;
@@ -115,7 +115,7 @@ func (m *Site) GetExternalColumns()([]ColumnDefinition) {
         return m.externalColumns
     }
 }
-// GetItems gets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
+// GetItems gets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
 func (m *Site) GetItems()([]BaseItem) {
     if m == nil {
         return nil
@@ -179,7 +179,7 @@ func (m *Site) GetSites()([]Site) {
         return m.sites
     }
 }
-// GetTermStore gets the termStore property value. The termStore under this site.
+// GetTermStore gets the termStore property value. The default termStore under this site.
 func (m *Site) GetTermStore()(*Store) {
     if m == nil {
         return nil
@@ -628,7 +628,7 @@ func (m *Site) SetExternalColumns(value []ColumnDefinition)() {
         m.externalColumns = value
     }
 }
-// SetItems sets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
+// SetItems sets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
 func (m *Site) SetItems(value []BaseItem)() {
     if m != nil {
         m.items = value
@@ -676,7 +676,7 @@ func (m *Site) SetSites(value []Site)() {
         m.sites = value
     }
 }
-// SetTermStore sets the termStore property value. The termStore under this site.
+// SetTermStore sets the termStore property value. The default termStore under this site.
 func (m *Site) SetTermStore(value *Store)() {
     if m != nil {
         m.termStore = value

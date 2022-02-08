@@ -10,13 +10,13 @@ type AuthenticationMethodsPolicy struct {
     Entity
     // Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
     authenticationMethodConfigurations []AuthenticationMethodConfiguration;
-    // A description of the policy.
+    // A description of the policy. Read-only.
     description *string;
-    // The name of the policy.
+    // The name of the policy. Read-only.
     displayName *string;
-    // The date and time of the last update to the policy.
+    // The date and time of the last update to the policy. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The version of the policy in use.
+    // The version of the policy in use. Read-only.
     policyVersion *string;
     // 
     reconfirmationInDays *int32;
@@ -38,7 +38,7 @@ func (m *AuthenticationMethodsPolicy) GetAuthenticationMethodConfigurations()([]
         return m.authenticationMethodConfigurations
     }
 }
-// GetDescription gets the description property value. A description of the policy.
+// GetDescription gets the description property value. A description of the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *AuthenticationMethodsPolicy) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The name of the policy.
+// GetDisplayName gets the displayName property value. The name of the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *AuthenticationMethodsPolicy) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time of the last update to the policy.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time of the last update to the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *AuthenticationMethodsPolicy) GetLastModifiedDateTime()(*i336074805fc853
         return m.lastModifiedDateTime
     }
 }
-// GetPolicyVersion gets the policyVersion property value. The version of the policy in use.
+// GetPolicyVersion gets the policyVersion property value. The version of the policy in use. Read-only.
 func (m *AuthenticationMethodsPolicy) GetPolicyVersion()(*string) {
     if m == nil {
         return nil
@@ -229,25 +229,25 @@ func (m *AuthenticationMethodsPolicy) SetAuthenticationMethodConfigurations(valu
         m.authenticationMethodConfigurations = value
     }
 }
-// SetDescription sets the description property value. A description of the policy.
+// SetDescription sets the description property value. A description of the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) SetDescription(value *string)() {
     if m != nil {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The name of the policy.
+// SetDisplayName sets the displayName property value. The name of the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time of the last update to the policy.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time of the last update to the policy. Read-only.
 func (m *AuthenticationMethodsPolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
     }
 }
-// SetPolicyVersion sets the policyVersion property value. The version of the policy in use.
+// SetPolicyVersion sets the policyVersion property value. The version of the policy in use. Read-only.
 func (m *AuthenticationMethodsPolicy) SetPolicyVersion(value *string)() {
     if m != nil {
         m.policyVersion = value

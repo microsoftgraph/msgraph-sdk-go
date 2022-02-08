@@ -44,8 +44,7 @@ func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            cast := val.(SigninFrequencyType)
-            m.SetType(&cast)
+            m.SetType(val.(*SigninFrequencyType))
         }
         return nil
     }
@@ -71,7 +70,7 @@ func (m *SignInFrequencySessionControl) Serialize(writer i04eb5309aeaafadd28374d
         return err
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

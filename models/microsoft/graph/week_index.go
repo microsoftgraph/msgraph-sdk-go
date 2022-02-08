@@ -18,19 +18,22 @@ func (i WeekIndex) String() string {
     return []string{"FIRST", "SECOND", "THIRD", "FOURTH", "LAST"}[i]
 }
 func ParseWeekIndex(v string) (interface{}, error) {
+    result := FIRST_WEEKINDEX
     switch strings.ToUpper(v) {
         case "FIRST":
-            return FIRST_WEEKINDEX, nil
+            result = FIRST_WEEKINDEX
         case "SECOND":
-            return SECOND_WEEKINDEX, nil
+            result = SECOND_WEEKINDEX
         case "THIRD":
-            return THIRD_WEEKINDEX, nil
+            result = THIRD_WEEKINDEX
         case "FOURTH":
-            return FOURTH_WEEKINDEX, nil
+            result = FOURTH_WEEKINDEX
         case "LAST":
-            return LAST_WEEKINDEX, nil
+            result = LAST_WEEKINDEX
+        default:
+            return 0, errors.New("Unknown WeekIndex value: " + v)
     }
-    return 0, errors.New("Unknown WeekIndex value: " + v)
+    return &result, nil
 }
 func SerializeWeekIndex(values []WeekIndex) []string {
     result := make([]string, len(values))

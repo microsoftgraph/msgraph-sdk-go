@@ -10,7 +10,7 @@ type AccessReviewInstanceDecisionItemResource struct {
     additionalData map[string]interface{};
     // Display name of the resource
     displayName *string;
-    // Resource ID
+    // Identifier of the resource
     id *string;
     // Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy.
     type_escaped *string;
@@ -38,7 +38,7 @@ func (m *AccessReviewInstanceDecisionItemResource) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetId gets the id property value. Resource ID
+// GetId gets the id property value. Identifier of the resource
 func (m *AccessReviewInstanceDecisionItemResource) GetId()(*string) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *AccessReviewInstanceDecisionItemResource) SetDisplayName(value *string)
         m.displayName = value
     }
 }
-// SetId sets the id property value. Resource ID
+// SetId sets the id property value. Identifier of the resource
 func (m *AccessReviewInstanceDecisionItemResource) SetId(value *string)() {
     if m != nil {
         m.id = value

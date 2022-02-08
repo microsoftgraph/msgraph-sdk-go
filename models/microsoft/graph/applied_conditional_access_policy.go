@@ -8,15 +8,15 @@ import (
 type AppliedConditionalAccessPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Name of the conditional access policy.
+    // Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
     displayName *string;
     // Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
     enforcedGrantControls []string;
     // Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
     enforcedSessionControls []string;
-    // Identifier of the conditional access policy.
+    // An identifier of the conditional access policy.
     id *string;
-    // Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
+    // Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
     result *AppliedConditionalAccessPolicyResult;
 }
 // NewAppliedConditionalAccessPolicy instantiates a new appliedConditionalAccessPolicy and sets the default values.
@@ -34,7 +34,7 @@ func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetDisplayName gets the displayName property value. Name of the conditional access policy.
+// GetDisplayName gets the displayName property value. Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
 func (m *AppliedConditionalAccessPolicy) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *AppliedConditionalAccessPolicy) GetEnforcedSessionControls()([]string) 
         return m.enforcedSessionControls
     }
 }
-// GetId gets the id property value. Identifier of the conditional access policy.
+// GetId gets the id property value. An identifier of the conditional access policy.
 func (m *AppliedConditionalAccessPolicy) GetId()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *AppliedConditionalAccessPolicy) GetId()(*string) {
         return m.id
     }
 }
-// GetResult gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
+// GetResult gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
 func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPolicyResult) {
     if m == nil {
         return nil
@@ -131,8 +131,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
             return err
         }
         if val != nil {
-            cast := val.(AppliedConditionalAccessPolicyResult)
-            m.SetResult(&cast)
+            m.SetResult(val.(*AppliedConditionalAccessPolicyResult))
         }
         return nil
     }
@@ -168,7 +167,7 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374
         }
     }
     if m.GetResult() != nil {
-        cast := m.GetResult().String()
+        cast := (*m.GetResult()).String()
         err := writer.WriteStringValue("result", &cast)
         if err != nil {
             return err
@@ -188,7 +187,7 @@ func (m *AppliedConditionalAccessPolicy) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetDisplayName sets the displayName property value. Name of the conditional access policy.
+// SetDisplayName sets the displayName property value. Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
 func (m *AppliedConditionalAccessPolicy) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
@@ -206,13 +205,13 @@ func (m *AppliedConditionalAccessPolicy) SetEnforcedSessionControls(value []stri
         m.enforcedSessionControls = value
     }
 }
-// SetId sets the id property value. Identifier of the conditional access policy.
+// SetId sets the id property value. An identifier of the conditional access policy.
 func (m *AppliedConditionalAccessPolicy) SetId(value *string)() {
     if m != nil {
         m.id = value
     }
 }
-// SetResult sets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
+// SetResult sets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
 func (m *AppliedConditionalAccessPolicy) SetResult(value *AppliedConditionalAccessPolicyResult)() {
     if m != nil {
         m.result = value

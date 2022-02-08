@@ -17,17 +17,20 @@ func (i WellknownListName) String() string {
     return []string{"NONE", "DEFAULTLIST", "FLAGGEDEMAILS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseWellknownListName(v string) (interface{}, error) {
+    result := NONE_WELLKNOWNLISTNAME
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_WELLKNOWNLISTNAME, nil
+            result = NONE_WELLKNOWNLISTNAME
         case "DEFAULTLIST":
-            return DEFAULTLIST_WELLKNOWNLISTNAME, nil
+            result = DEFAULTLIST_WELLKNOWNLISTNAME
         case "FLAGGEDEMAILS":
-            return FLAGGEDEMAILS_WELLKNOWNLISTNAME, nil
+            result = FLAGGEDEMAILS_WELLKNOWNLISTNAME
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_WELLKNOWNLISTNAME, nil
+            result = UNKNOWNFUTUREVALUE_WELLKNOWNLISTNAME
+        default:
+            return 0, errors.New("Unknown WellknownListName value: " + v)
     }
-    return 0, errors.New("Unknown WellknownListName value: " + v)
+    return &result, nil
 }
 func SerializeWellknownListName(values []WellknownListName) []string {
     result := make([]string, len(values))

@@ -26,7 +26,7 @@ type TrendingRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// TrendingRequestBuilderGetQueryParameters access this property from the derived type itemInsights.
+// TrendingRequestBuilderGetQueryParameters calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 type TrendingRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -75,7 +75,7 @@ func NewTrendingRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f89
     urlParams["request-raw-url"] = rawUrl
     return NewTrendingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation access this property from the derived type itemInsights.
+// CreateGetRequestInformation calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 func (m *TrendingRequestBuilder) CreateGetRequestInformation(options *TrendingRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -95,7 +95,7 @@ func (m *TrendingRequestBuilder) CreateGetRequestInformation(options *TrendingRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation access this property from the derived type itemInsights.
+// CreatePostRequestInformation calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 func (m *TrendingRequestBuilder) CreatePostRequestInformation(options *TrendingRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *TrendingRequestBuilder) CreatePostRequestInformation(options *TrendingR
     }
     return requestInfo, nil
 }
-// Get access this property from the derived type itemInsights.
+// Get calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 func (m *TrendingRequestBuilder) Get(options *TrendingRequestBuilderGetOptions)(*TrendingResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *TrendingRequestBuilder) Get(options *TrendingRequestBuilderGetOptions)(
     }
     return res.(*TrendingResponse), nil
 }
-// Post access this property from the derived type itemInsights.
+// Post calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 func (m *TrendingRequestBuilder) Post(options *TrendingRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Trending, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -105,8 +105,7 @@ func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(interface{
             return err
         }
         if val != nil {
-            cast := val.(DataPolicyOperationStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*DataPolicyOperationStatus))
         }
         return nil
     }
@@ -164,7 +163,7 @@ func (m *DataPolicyOperation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

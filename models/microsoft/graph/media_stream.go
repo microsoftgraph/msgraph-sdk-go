@@ -14,7 +14,7 @@ type MediaStream struct {
     label *string;
     // The media type. The possible value are unknown, audio, video, videoBasedScreenSharing, data.
     mediaType *Modality;
-    // Indicates whether the media is muted by the server.
+    // If the media is muted by the server.
     serverMuted *bool;
     // The source ID.
     sourceId *string;
@@ -58,7 +58,7 @@ func (m *MediaStream) GetMediaType()(*Modality) {
         return m.mediaType
     }
 }
-// GetServerMuted gets the serverMuted property value. Indicates whether the media is muted by the server.
+// GetServerMuted gets the serverMuted property value. If the media is muted by the server.
 func (m *MediaStream) GetServerMuted()(*bool) {
     if m == nil {
         return nil
@@ -83,8 +83,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(MediaDirection)
-            m.SetDirection(&cast)
+            m.SetDirection(val.(*MediaDirection))
         }
         return nil
     }
@@ -104,8 +103,7 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(interface{}, i04eb
             return err
         }
         if val != nil {
-            cast := val.(Modality)
-            m.SetMediaType(&cast)
+            m.SetMediaType(val.(*Modality))
         }
         return nil
     }
@@ -137,7 +135,7 @@ func (m *MediaStream) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *MediaStream) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDirection() != nil {
-        cast := m.GetDirection().String()
+        cast := (*m.GetDirection()).String()
         err := writer.WriteStringValue("direction", &cast)
         if err != nil {
             return err
@@ -150,7 +148,7 @@ func (m *MediaStream) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b
         }
     }
     if m.GetMediaType() != nil {
-        cast := m.GetMediaType().String()
+        cast := (*m.GetMediaType()).String()
         err := writer.WriteStringValue("mediaType", &cast)
         if err != nil {
             return err
@@ -200,7 +198,7 @@ func (m *MediaStream) SetMediaType(value *Modality)() {
         m.mediaType = value
     }
 }
-// SetServerMuted sets the serverMuted property value. Indicates whether the media is muted by the server.
+// SetServerMuted sets the serverMuted property value. If the media is muted by the server.
 func (m *MediaStream) SetServerMuted(value *bool)() {
     if m != nil {
         m.serverMuted = value

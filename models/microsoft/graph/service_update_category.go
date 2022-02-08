@@ -17,17 +17,20 @@ func (i ServiceUpdateCategory) String() string {
     return []string{"PREVENTORFIXISSUE", "PLANFORCHANGE", "STAYINFORMED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseServiceUpdateCategory(v string) (interface{}, error) {
+    result := PREVENTORFIXISSUE_SERVICEUPDATECATEGORY
     switch strings.ToUpper(v) {
         case "PREVENTORFIXISSUE":
-            return PREVENTORFIXISSUE_SERVICEUPDATECATEGORY, nil
+            result = PREVENTORFIXISSUE_SERVICEUPDATECATEGORY
         case "PLANFORCHANGE":
-            return PLANFORCHANGE_SERVICEUPDATECATEGORY, nil
+            result = PLANFORCHANGE_SERVICEUPDATECATEGORY
         case "STAYINFORMED":
-            return STAYINFORMED_SERVICEUPDATECATEGORY, nil
+            result = STAYINFORMED_SERVICEUPDATECATEGORY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SERVICEUPDATECATEGORY, nil
+            result = UNKNOWNFUTUREVALUE_SERVICEUPDATECATEGORY
+        default:
+            return 0, errors.New("Unknown ServiceUpdateCategory value: " + v)
     }
-    return 0, errors.New("Unknown ServiceUpdateCategory value: " + v)
+    return &result, nil
 }
 func SerializeServiceUpdateCategory(values []ServiceUpdateCategory) []string {
     result := make([]string, len(values))

@@ -7,9 +7,9 @@ import (
 // AppScope 
 type AppScope struct {
     Entity
-    // Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.
+    // Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.
     displayName *string;
-    // Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+    // Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
     type_escaped *string;
 }
 // NewAppScope instantiates a new appScope and sets the default values.
@@ -19,7 +19,7 @@ func NewAppScope()(*AppScope) {
     }
     return m
 }
-// GetDisplayName gets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.
+// GetDisplayName gets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.
 func (m *AppScope) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -27,7 +27,7 @@ func (m *AppScope) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetType gets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+// GetType gets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
 func (m *AppScope) GetType()(*string) {
     if m == nil {
         return nil
@@ -83,13 +83,13 @@ func (m *AppScope) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.
+// SetDisplayName sets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.
 func (m *AppScope) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetType sets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.
+// SetType sets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
 func (m *AppScope) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

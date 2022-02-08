@@ -17,17 +17,20 @@ func (i ServiceHealthOrigin) String() string {
     return []string{"MICROSOFT", "THIRDPARTY", "CUSTOMER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseServiceHealthOrigin(v string) (interface{}, error) {
+    result := MICROSOFT_SERVICEHEALTHORIGIN
     switch strings.ToUpper(v) {
         case "MICROSOFT":
-            return MICROSOFT_SERVICEHEALTHORIGIN, nil
+            result = MICROSOFT_SERVICEHEALTHORIGIN
         case "THIRDPARTY":
-            return THIRDPARTY_SERVICEHEALTHORIGIN, nil
+            result = THIRDPARTY_SERVICEHEALTHORIGIN
         case "CUSTOMER":
-            return CUSTOMER_SERVICEHEALTHORIGIN, nil
+            result = CUSTOMER_SERVICEHEALTHORIGIN
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SERVICEHEALTHORIGIN, nil
+            result = UNKNOWNFUTUREVALUE_SERVICEHEALTHORIGIN
+        default:
+            return 0, errors.New("Unknown ServiceHealthOrigin value: " + v)
     }
-    return 0, errors.New("Unknown ServiceHealthOrigin value: " + v)
+    return &result, nil
 }
 func SerializeServiceHealthOrigin(values []ServiceHealthOrigin) []string {
     result := make([]string, len(values))

@@ -17,17 +17,20 @@ func (i CallType) String() string {
     return []string{"UNKNOWN", "GROUPCALL", "PEERTOPEER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCallType(v string) (interface{}, error) {
+    result := UNKNOWN_CALLTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_CALLTYPE, nil
+            result = UNKNOWN_CALLTYPE
         case "GROUPCALL":
-            return GROUPCALL_CALLTYPE, nil
+            result = GROUPCALL_CALLTYPE
         case "PEERTOPEER":
-            return PEERTOPEER_CALLTYPE, nil
+            result = PEERTOPEER_CALLTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CALLTYPE, nil
+            result = UNKNOWNFUTUREVALUE_CALLTYPE
+        default:
+            return 0, errors.New("Unknown CallType value: " + v)
     }
-    return 0, errors.New("Unknown CallType value: " + v)
+    return &result, nil
 }
 func SerializeCallType(values []CallType) []string {
     result := make([]string, len(values))

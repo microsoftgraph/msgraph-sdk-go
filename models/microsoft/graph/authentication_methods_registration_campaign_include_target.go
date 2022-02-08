@@ -8,7 +8,7 @@ import (
 type AuthenticationMethodsRegistrationCampaignIncludeTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The object identifier of an Azure AD user or group.
+    // The object identifier of an Azure Active Directory user or group.
     id *string;
     // The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
     targetedAuthenticationMethod *string;
@@ -30,7 +30,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetAdditionalDa
         return m.additionalData
     }
 }
-// GetId gets the id property value. The object identifier of an Azure AD user or group.
+// GetId gets the id property value. The object identifier of an Azure Active Directory user or group.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetId()(*string) {
     if m == nil {
         return nil
@@ -83,8 +83,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeseria
             return err
         }
         if val != nil {
-            cast := val.(AuthenticationMethodTargetType)
-            m.SetTargetType(&cast)
+            m.SetTargetType(val.(*AuthenticationMethodTargetType))
         }
         return nil
     }
@@ -108,7 +107,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) Serialize(write
         }
     }
     if m.GetTargetType() != nil {
-        cast := m.GetTargetType().String()
+        cast := (*m.GetTargetType()).String()
         err := writer.WriteStringValue("targetType", &cast)
         if err != nil {
             return err
@@ -128,7 +127,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetAdditionalDa
         m.additionalData = value
     }
 }
-// SetId sets the id property value. The object identifier of an Azure AD user or group.
+// SetId sets the id property value. The object identifier of an Azure Active Directory user or group.
 func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) SetId(value *string)() {
     if m != nil {
         m.id = value

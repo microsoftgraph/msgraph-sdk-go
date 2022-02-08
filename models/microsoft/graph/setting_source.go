@@ -83,8 +83,7 @@ func (m *SettingSource) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(SettingSourceType)
-            m.SetSourceType(&cast)
+            m.SetSourceType(val.(*SettingSourceType))
         }
         return nil
     }
@@ -108,7 +107,7 @@ func (m *SettingSource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetSourceType() != nil {
-        cast := m.GetSourceType().String()
+        cast := (*m.GetSourceType()).String()
         err := writer.WriteStringValue("sourceType", &cast)
         if err != nil {
             return err

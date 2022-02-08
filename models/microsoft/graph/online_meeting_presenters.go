@@ -18,19 +18,22 @@ func (i OnlineMeetingPresenters) String() string {
     return []string{"EVERYONE", "ORGANIZATION", "ROLEISPRESENTER", "ORGANIZER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseOnlineMeetingPresenters(v string) (interface{}, error) {
+    result := EVERYONE_ONLINEMEETINGPRESENTERS
     switch strings.ToUpper(v) {
         case "EVERYONE":
-            return EVERYONE_ONLINEMEETINGPRESENTERS, nil
+            result = EVERYONE_ONLINEMEETINGPRESENTERS
         case "ORGANIZATION":
-            return ORGANIZATION_ONLINEMEETINGPRESENTERS, nil
+            result = ORGANIZATION_ONLINEMEETINGPRESENTERS
         case "ROLEISPRESENTER":
-            return ROLEISPRESENTER_ONLINEMEETINGPRESENTERS, nil
+            result = ROLEISPRESENTER_ONLINEMEETINGPRESENTERS
         case "ORGANIZER":
-            return ORGANIZER_ONLINEMEETINGPRESENTERS, nil
+            result = ORGANIZER_ONLINEMEETINGPRESENTERS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ONLINEMEETINGPRESENTERS, nil
+            result = UNKNOWNFUTUREVALUE_ONLINEMEETINGPRESENTERS
+        default:
+            return 0, errors.New("Unknown OnlineMeetingPresenters value: " + v)
     }
-    return 0, errors.New("Unknown OnlineMeetingPresenters value: " + v)
+    return &result, nil
 }
 func SerializeOnlineMeetingPresenters(values []OnlineMeetingPresenters) []string {
     result := make([]string, len(values))

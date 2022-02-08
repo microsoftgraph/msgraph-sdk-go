@@ -17,17 +17,20 @@ func (i BucketAggregationSortProperty) String() string {
     return []string{"COUNT", "KEYASSTRING", "KEYASNUMBER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseBucketAggregationSortProperty(v string) (interface{}, error) {
+    result := COUNT_BUCKETAGGREGATIONSORTPROPERTY
     switch strings.ToUpper(v) {
         case "COUNT":
-            return COUNT_BUCKETAGGREGATIONSORTPROPERTY, nil
+            result = COUNT_BUCKETAGGREGATIONSORTPROPERTY
         case "KEYASSTRING":
-            return KEYASSTRING_BUCKETAGGREGATIONSORTPROPERTY, nil
+            result = KEYASSTRING_BUCKETAGGREGATIONSORTPROPERTY
         case "KEYASNUMBER":
-            return KEYASNUMBER_BUCKETAGGREGATIONSORTPROPERTY, nil
+            result = KEYASNUMBER_BUCKETAGGREGATIONSORTPROPERTY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_BUCKETAGGREGATIONSORTPROPERTY, nil
+            result = UNKNOWNFUTUREVALUE_BUCKETAGGREGATIONSORTPROPERTY
+        default:
+            return 0, errors.New("Unknown BucketAggregationSortProperty value: " + v)
     }
-    return 0, errors.New("Unknown BucketAggregationSortProperty value: " + v)
+    return &result, nil
 }
 func SerializeBucketAggregationSortProperty(values []BucketAggregationSortProperty) []string {
     result := make([]string, len(values))

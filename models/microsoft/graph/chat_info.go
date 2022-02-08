@@ -8,7 +8,7 @@ import (
 type ChatInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The unique identifier for a message in a Microsoft Teams channel.
+    // The unique identifier of a message in a Microsoft Teams channel.
     messageId *string;
     // The ID of the reply message.
     replyChainMessageId *string;
@@ -30,7 +30,7 @@ func (m *ChatInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetMessageId gets the messageId property value. The unique identifier for a message in a Microsoft Teams channel.
+// GetMessageId gets the messageId property value. The unique identifier of a message in a Microsoft Teams channel.
 func (m *ChatInfo) GetMessageId()(*string) {
     if m == nil {
         return nil
@@ -126,7 +126,7 @@ func (m *ChatInfo) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetMessageId sets the messageId property value. The unique identifier for a message in a Microsoft Teams channel.
+// SetMessageId sets the messageId property value. The unique identifier of a message in a Microsoft Teams channel.
 func (m *ChatInfo) SetMessageId(value *string)() {
     if m != nil {
         m.messageId = value

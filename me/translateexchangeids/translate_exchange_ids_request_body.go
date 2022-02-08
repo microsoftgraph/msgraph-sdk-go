@@ -78,8 +78,7 @@ func (m *TranslateExchangeIdsRequestBody) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat)
-            m.SetSourceIdType(&cast)
+            m.SetSourceIdType(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat))
         }
         return nil
     }
@@ -89,8 +88,7 @@ func (m *TranslateExchangeIdsRequestBody) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat)
-            m.SetTargetIdType(&cast)
+            m.SetTargetIdType(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ExchangeIdFormat))
         }
         return nil
     }
@@ -108,14 +106,14 @@ func (m *TranslateExchangeIdsRequestBody) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     if m.GetSourceIdType() != nil {
-        cast := m.GetSourceIdType().String()
+        cast := (*m.GetSourceIdType()).String()
         err := writer.WriteStringValue("sourceIdType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetTargetIdType() != nil {
-        cast := m.GetTargetIdType().String()
+        cast := (*m.GetTargetIdType()).String()
         err := writer.WriteStringValue("targetIdType", &cast)
         if err != nil {
             return err

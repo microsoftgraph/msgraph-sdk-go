@@ -17,17 +17,20 @@ func (i AccessPackageCatalogType) String() string {
     return []string{"USERMANAGED", "SERVICEDEFAULT", "SERVICEMANAGED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAccessPackageCatalogType(v string) (interface{}, error) {
+    result := USERMANAGED_ACCESSPACKAGECATALOGTYPE
     switch strings.ToUpper(v) {
         case "USERMANAGED":
-            return USERMANAGED_ACCESSPACKAGECATALOGTYPE, nil
+            result = USERMANAGED_ACCESSPACKAGECATALOGTYPE
         case "SERVICEDEFAULT":
-            return SERVICEDEFAULT_ACCESSPACKAGECATALOGTYPE, nil
+            result = SERVICEDEFAULT_ACCESSPACKAGECATALOGTYPE
         case "SERVICEMANAGED":
-            return SERVICEMANAGED_ACCESSPACKAGECATALOGTYPE, nil
+            result = SERVICEMANAGED_ACCESSPACKAGECATALOGTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACCESSPACKAGECATALOGTYPE, nil
+            result = UNKNOWNFUTUREVALUE_ACCESSPACKAGECATALOGTYPE
+        default:
+            return 0, errors.New("Unknown AccessPackageCatalogType value: " + v)
     }
-    return 0, errors.New("Unknown AccessPackageCatalogType value: " + v)
+    return &result, nil
 }
 func SerializeAccessPackageCatalogType(values []AccessPackageCatalogType) []string {
     result := make([]string, len(values))

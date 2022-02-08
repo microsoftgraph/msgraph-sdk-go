@@ -34,8 +34,7 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
             return err
         }
         if val != nil {
-            cast := val.(AuthenticationMethodState)
-            m.SetState(&cast)
+            m.SetState(val.(*AuthenticationMethodState))
         }
         return nil
     }
@@ -51,7 +50,7 @@ func (m *AuthenticationMethodConfiguration) Serialize(writer i04eb5309aeaafadd28
         return err
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

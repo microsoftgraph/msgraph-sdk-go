@@ -308,8 +308,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppDataTransferLevel)
-            m.SetAllowedInboundDataTransferSources(&cast)
+            m.SetAllowedInboundDataTransferSources(val.(*ManagedAppDataTransferLevel))
         }
         return nil
     }
@@ -319,8 +318,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppClipboardSharingLevel)
-            m.SetAllowedOutboundClipboardSharingLevel(&cast)
+            m.SetAllowedOutboundClipboardSharingLevel(val.(*ManagedAppClipboardSharingLevel))
         }
         return nil
     }
@@ -330,8 +328,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppDataTransferLevel)
-            m.SetAllowedOutboundDataTransferDestinations(&cast)
+            m.SetAllowedOutboundDataTransferDestinations(val.(*ManagedAppDataTransferLevel))
         }
         return nil
     }
@@ -391,8 +388,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedBrowserType)
-            m.SetManagedBrowser(&cast)
+            m.SetManagedBrowser(val.(*ManagedBrowserType))
         }
         return nil
     }
@@ -522,8 +518,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppPinCharacterSet)
-            m.SetPinCharacterSet(&cast)
+            m.SetPinCharacterSet(val.(*ManagedAppPinCharacterSet))
         }
         return nil
     }
@@ -585,21 +580,21 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetAllowedInboundDataTransferSources() != nil {
-        cast := m.GetAllowedInboundDataTransferSources().String()
+        cast := (*m.GetAllowedInboundDataTransferSources()).String()
         err = writer.WriteStringValue("allowedInboundDataTransferSources", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAllowedOutboundClipboardSharingLevel() != nil {
-        cast := m.GetAllowedOutboundClipboardSharingLevel().String()
+        cast := (*m.GetAllowedOutboundClipboardSharingLevel()).String()
         err = writer.WriteStringValue("allowedOutboundClipboardSharingLevel", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetAllowedOutboundDataTransferDestinations() != nil {
-        cast := m.GetAllowedOutboundDataTransferDestinations().String()
+        cast := (*m.GetAllowedOutboundDataTransferDestinations()).String()
         err = writer.WriteStringValue("allowedOutboundDataTransferDestinations", &cast)
         if err != nil {
             return err
@@ -636,7 +631,7 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetManagedBrowser() != nil {
-        cast := m.GetManagedBrowser().String()
+        cast := (*m.GetManagedBrowser()).String()
         err = writer.WriteStringValue("managedBrowser", &cast)
         if err != nil {
             return err
@@ -715,7 +710,7 @@ func (m *ManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetPinCharacterSet() != nil {
-        cast := m.GetPinCharacterSet().String()
+        cast := (*m.GetPinCharacterSet()).String()
         err = writer.WriteStringValue("pinCharacterSet", &cast)
         if err != nil {
             return err

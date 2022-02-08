@@ -18,19 +18,22 @@ func (i LocationUniqueIdType) String() string {
     return []string{"UNKNOWN", "LOCATIONSTORE", "DIRECTORY", "PRIVATE", "BING"}[i]
 }
 func ParseLocationUniqueIdType(v string) (interface{}, error) {
+    result := UNKNOWN_LOCATIONUNIQUEIDTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_LOCATIONUNIQUEIDTYPE, nil
+            result = UNKNOWN_LOCATIONUNIQUEIDTYPE
         case "LOCATIONSTORE":
-            return LOCATIONSTORE_LOCATIONUNIQUEIDTYPE, nil
+            result = LOCATIONSTORE_LOCATIONUNIQUEIDTYPE
         case "DIRECTORY":
-            return DIRECTORY_LOCATIONUNIQUEIDTYPE, nil
+            result = DIRECTORY_LOCATIONUNIQUEIDTYPE
         case "PRIVATE":
-            return PRIVATE_LOCATIONUNIQUEIDTYPE, nil
+            result = PRIVATE_LOCATIONUNIQUEIDTYPE
         case "BING":
-            return BING_LOCATIONUNIQUEIDTYPE, nil
+            result = BING_LOCATIONUNIQUEIDTYPE
+        default:
+            return 0, errors.New("Unknown LocationUniqueIdType value: " + v)
     }
-    return 0, errors.New("Unknown LocationUniqueIdType value: " + v)
+    return &result, nil
 }
 func SerializeLocationUniqueIdType(values []LocationUniqueIdType) []string {
     result := make([]string, len(values))

@@ -17,17 +17,20 @@ func (i BookingReminderRecipients) String() string {
     return []string{"ALLATTENDEES", "STAFF", "CUSTOMER", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseBookingReminderRecipients(v string) (interface{}, error) {
+    result := ALLATTENDEES_BOOKINGREMINDERRECIPIENTS
     switch strings.ToUpper(v) {
         case "ALLATTENDEES":
-            return ALLATTENDEES_BOOKINGREMINDERRECIPIENTS, nil
+            result = ALLATTENDEES_BOOKINGREMINDERRECIPIENTS
         case "STAFF":
-            return STAFF_BOOKINGREMINDERRECIPIENTS, nil
+            result = STAFF_BOOKINGREMINDERRECIPIENTS
         case "CUSTOMER":
-            return CUSTOMER_BOOKINGREMINDERRECIPIENTS, nil
+            result = CUSTOMER_BOOKINGREMINDERRECIPIENTS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_BOOKINGREMINDERRECIPIENTS, nil
+            result = UNKNOWNFUTUREVALUE_BOOKINGREMINDERRECIPIENTS
+        default:
+            return 0, errors.New("Unknown BookingReminderRecipients value: " + v)
     }
-    return 0, errors.New("Unknown BookingReminderRecipients value: " + v)
+    return &result, nil
 }
 func SerializeBookingReminderRecipients(values []BookingReminderRecipients) []string {
     result := make([]string, len(values))

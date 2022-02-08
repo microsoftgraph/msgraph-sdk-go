@@ -19,21 +19,24 @@ func (i IdentityUserFlowAttributeInputType) String() string {
     return []string{"TEXTBOX", "DATETIMEDROPDOWN", "RADIOSINGLESELECT", "DROPDOWNSINGLESELECT", "EMAILBOX", "CHECKBOXMULTISELECT"}[i]
 }
 func ParseIdentityUserFlowAttributeInputType(v string) (interface{}, error) {
+    result := TEXTBOX_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
     switch strings.ToUpper(v) {
         case "TEXTBOX":
-            return TEXTBOX_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE, nil
+            result = TEXTBOX_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
         case "DATETIMEDROPDOWN":
-            return DATETIMEDROPDOWN_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE, nil
+            result = DATETIMEDROPDOWN_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
         case "RADIOSINGLESELECT":
-            return RADIOSINGLESELECT_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE, nil
+            result = RADIOSINGLESELECT_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
         case "DROPDOWNSINGLESELECT":
-            return DROPDOWNSINGLESELECT_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE, nil
+            result = DROPDOWNSINGLESELECT_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
         case "EMAILBOX":
-            return EMAILBOX_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE, nil
+            result = EMAILBOX_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
         case "CHECKBOXMULTISELECT":
-            return CHECKBOXMULTISELECT_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE, nil
+            result = CHECKBOXMULTISELECT_IDENTITYUSERFLOWATTRIBUTEINPUTTYPE
+        default:
+            return 0, errors.New("Unknown IdentityUserFlowAttributeInputType value: " + v)
     }
-    return 0, errors.New("Unknown IdentityUserFlowAttributeInputType value: " + v)
+    return &result, nil
 }
 func SerializeIdentityUserFlowAttributeInputType(values []IdentityUserFlowAttributeInputType) []string {
     result := make([]string, len(values))

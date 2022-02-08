@@ -20,23 +20,26 @@ func (i RiskState) String() string {
     return []string{"NONE", "CONFIRMEDSAFE", "REMEDIATED", "DISMISSED", "ATRISK", "CONFIRMEDCOMPROMISED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRiskState(v string) (interface{}, error) {
+    result := NONE_RISKSTATE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_RISKSTATE, nil
+            result = NONE_RISKSTATE
         case "CONFIRMEDSAFE":
-            return CONFIRMEDSAFE_RISKSTATE, nil
+            result = CONFIRMEDSAFE_RISKSTATE
         case "REMEDIATED":
-            return REMEDIATED_RISKSTATE, nil
+            result = REMEDIATED_RISKSTATE
         case "DISMISSED":
-            return DISMISSED_RISKSTATE, nil
+            result = DISMISSED_RISKSTATE
         case "ATRISK":
-            return ATRISK_RISKSTATE, nil
+            result = ATRISK_RISKSTATE
         case "CONFIRMEDCOMPROMISED":
-            return CONFIRMEDCOMPROMISED_RISKSTATE, nil
+            result = CONFIRMEDCOMPROMISED_RISKSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_RISKSTATE, nil
+            result = UNKNOWNFUTUREVALUE_RISKSTATE
+        default:
+            return 0, errors.New("Unknown RiskState value: " + v)
     }
-    return 0, errors.New("Unknown RiskState value: " + v)
+    return &result, nil
 }
 func SerializeRiskState(values []RiskState) []string {
     result := make([]string, len(values))

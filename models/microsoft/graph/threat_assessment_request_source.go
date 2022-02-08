@@ -16,15 +16,18 @@ func (i ThreatAssessmentRequestSource) String() string {
     return []string{"UNDEFINED", "USER", "ADMINISTRATOR"}[i]
 }
 func ParseThreatAssessmentRequestSource(v string) (interface{}, error) {
+    result := UNDEFINED_THREATASSESSMENTREQUESTSOURCE
     switch strings.ToUpper(v) {
         case "UNDEFINED":
-            return UNDEFINED_THREATASSESSMENTREQUESTSOURCE, nil
+            result = UNDEFINED_THREATASSESSMENTREQUESTSOURCE
         case "USER":
-            return USER_THREATASSESSMENTREQUESTSOURCE, nil
+            result = USER_THREATASSESSMENTREQUESTSOURCE
         case "ADMINISTRATOR":
-            return ADMINISTRATOR_THREATASSESSMENTREQUESTSOURCE, nil
+            result = ADMINISTRATOR_THREATASSESSMENTREQUESTSOURCE
+        default:
+            return 0, errors.New("Unknown ThreatAssessmentRequestSource value: " + v)
     }
-    return 0, errors.New("Unknown ThreatAssessmentRequestSource value: " + v)
+    return &result, nil
 }
 func SerializeThreatAssessmentRequestSource(values []ThreatAssessmentRequestSource) []string {
     result := make([]string, len(values))

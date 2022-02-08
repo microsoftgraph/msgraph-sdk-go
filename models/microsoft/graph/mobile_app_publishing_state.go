@@ -16,15 +16,18 @@ func (i MobileAppPublishingState) String() string {
     return []string{"NOTPUBLISHED", "PROCESSING", "PUBLISHED"}[i]
 }
 func ParseMobileAppPublishingState(v string) (interface{}, error) {
+    result := NOTPUBLISHED_MOBILEAPPPUBLISHINGSTATE
     switch strings.ToUpper(v) {
         case "NOTPUBLISHED":
-            return NOTPUBLISHED_MOBILEAPPPUBLISHINGSTATE, nil
+            result = NOTPUBLISHED_MOBILEAPPPUBLISHINGSTATE
         case "PROCESSING":
-            return PROCESSING_MOBILEAPPPUBLISHINGSTATE, nil
+            result = PROCESSING_MOBILEAPPPUBLISHINGSTATE
         case "PUBLISHED":
-            return PUBLISHED_MOBILEAPPPUBLISHINGSTATE, nil
+            result = PUBLISHED_MOBILEAPPPUBLISHINGSTATE
+        default:
+            return 0, errors.New("Unknown MobileAppPublishingState value: " + v)
     }
-    return 0, errors.New("Unknown MobileAppPublishingState value: " + v)
+    return &result, nil
 }
 func SerializeMobileAppPublishingState(values []MobileAppPublishingState) []string {
     result := make([]string, len(values))

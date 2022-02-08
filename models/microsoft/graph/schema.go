@@ -7,7 +7,7 @@ import (
 // Schema 
 type Schema struct {
     Entity
-    // Must be set to microsoft.graph.externalItem. Required.
+    // Must be set to microsoft.graph.externalConnector.externalItem. Required.
     baseType *string;
     // The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
     properties []Property;
@@ -19,7 +19,7 @@ func NewSchema()(*Schema) {
     }
     return m
 }
-// GetBaseType gets the baseType property value. Must be set to microsoft.graph.externalItem. Required.
+// GetBaseType gets the baseType property value. Must be set to microsoft.graph.externalConnector.externalItem. Required.
 func (m *Schema) GetBaseType()(*string) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *Schema) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e
     }
     return nil
 }
-// SetBaseType sets the baseType property value. Must be set to microsoft.graph.externalItem. Required.
+// SetBaseType sets the baseType property value. Must be set to microsoft.graph.externalConnector.externalItem. Required.
 func (m *Schema) SetBaseType(value *string)() {
     if m != nil {
         m.baseType = value

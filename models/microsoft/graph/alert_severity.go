@@ -19,21 +19,24 @@ func (i AlertSeverity) String() string {
     return []string{"UNKNOWN", "INFORMATIONAL", "LOW", "MEDIUM", "HIGH", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAlertSeverity(v string) (interface{}, error) {
+    result := UNKNOWN_ALERTSEVERITY
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_ALERTSEVERITY, nil
+            result = UNKNOWN_ALERTSEVERITY
         case "INFORMATIONAL":
-            return INFORMATIONAL_ALERTSEVERITY, nil
+            result = INFORMATIONAL_ALERTSEVERITY
         case "LOW":
-            return LOW_ALERTSEVERITY, nil
+            result = LOW_ALERTSEVERITY
         case "MEDIUM":
-            return MEDIUM_ALERTSEVERITY, nil
+            result = MEDIUM_ALERTSEVERITY
         case "HIGH":
-            return HIGH_ALERTSEVERITY, nil
+            result = HIGH_ALERTSEVERITY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ALERTSEVERITY, nil
+            result = UNKNOWNFUTUREVALUE_ALERTSEVERITY
+        default:
+            return 0, errors.New("Unknown AlertSeverity value: " + v)
     }
-    return 0, errors.New("Unknown AlertSeverity value: " + v)
+    return &result, nil
 }
 func SerializeAlertSeverity(values []AlertSeverity) []string {
     result := make([]string, len(values))

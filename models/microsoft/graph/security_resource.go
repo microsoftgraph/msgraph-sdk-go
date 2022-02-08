@@ -63,8 +63,7 @@ func (m *SecurityResource) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(SecurityResourceType)
-            m.SetResourceType(&cast)
+            m.SetResourceType(val.(*SecurityResourceType))
         }
         return nil
     }
@@ -82,7 +81,7 @@ func (m *SecurityResource) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetResourceType() != nil {
-        cast := m.GetResourceType().String()
+        cast := (*m.GetResourceType()).String()
         err := writer.WriteStringValue("resourceType", &cast)
         if err != nil {
             return err

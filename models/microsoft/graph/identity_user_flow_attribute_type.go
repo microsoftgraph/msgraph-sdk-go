@@ -17,17 +17,20 @@ func (i IdentityUserFlowAttributeType) String() string {
     return []string{"BUILTIN", "CUSTOM", "REQUIRED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseIdentityUserFlowAttributeType(v string) (interface{}, error) {
+    result := BUILTIN_IDENTITYUSERFLOWATTRIBUTETYPE
     switch strings.ToUpper(v) {
         case "BUILTIN":
-            return BUILTIN_IDENTITYUSERFLOWATTRIBUTETYPE, nil
+            result = BUILTIN_IDENTITYUSERFLOWATTRIBUTETYPE
         case "CUSTOM":
-            return CUSTOM_IDENTITYUSERFLOWATTRIBUTETYPE, nil
+            result = CUSTOM_IDENTITYUSERFLOWATTRIBUTETYPE
         case "REQUIRED":
-            return REQUIRED_IDENTITYUSERFLOWATTRIBUTETYPE, nil
+            result = REQUIRED_IDENTITYUSERFLOWATTRIBUTETYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_IDENTITYUSERFLOWATTRIBUTETYPE, nil
+            result = UNKNOWNFUTUREVALUE_IDENTITYUSERFLOWATTRIBUTETYPE
+        default:
+            return 0, errors.New("Unknown IdentityUserFlowAttributeType value: " + v)
     }
-    return 0, errors.New("Unknown IdentityUserFlowAttributeType value: " + v)
+    return &result, nil
 }
 func SerializeIdentityUserFlowAttributeType(values []IdentityUserFlowAttributeType) []string {
     result := make([]string, len(values))

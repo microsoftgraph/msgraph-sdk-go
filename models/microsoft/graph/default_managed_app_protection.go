@@ -144,8 +144,7 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(in
             return err
         }
         if val != nil {
-            cast := val.(ManagedAppDataEncryptionType)
-            m.SetAppDataEncryptionType(&cast)
+            m.SetAppDataEncryptionType(val.(*ManagedAppDataEncryptionType))
         }
         return nil
     }
@@ -279,7 +278,7 @@ func (m *DefaultManagedAppProtection) Serialize(writer i04eb5309aeaafadd28374d79
         return err
     }
     if m.GetAppDataEncryptionType() != nil {
-        cast := m.GetAppDataEncryptionType().String()
+        cast := (*m.GetAppDataEncryptionType()).String()
         err = writer.WriteStringValue("appDataEncryptionType", &cast)
         if err != nil {
             return err

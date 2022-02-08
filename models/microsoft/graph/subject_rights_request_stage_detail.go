@@ -73,8 +73,7 @@ func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(SubjectRightsRequestStage)
-            m.SetStage(&cast)
+            m.SetStage(val.(*SubjectRightsRequestStage))
         }
         return nil
     }
@@ -84,8 +83,7 @@ func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(SubjectRightsRequestStageStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*SubjectRightsRequestStageStatus))
         }
         return nil
     }
@@ -103,14 +101,14 @@ func (m *SubjectRightsRequestStageDetail) Serialize(writer i04eb5309aeaafadd2837
         }
     }
     if m.GetStage() != nil {
-        cast := m.GetStage().String()
+        cast := (*m.GetStage()).String()
         err := writer.WriteStringValue("stage", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err := writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

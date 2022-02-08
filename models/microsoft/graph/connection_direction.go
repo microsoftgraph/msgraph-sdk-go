@@ -17,17 +17,20 @@ func (i ConnectionDirection) String() string {
     return []string{"UNKNOWN", "INBOUND", "OUTBOUND", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseConnectionDirection(v string) (interface{}, error) {
+    result := UNKNOWN_CONNECTIONDIRECTION
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_CONNECTIONDIRECTION, nil
+            result = UNKNOWN_CONNECTIONDIRECTION
         case "INBOUND":
-            return INBOUND_CONNECTIONDIRECTION, nil
+            result = INBOUND_CONNECTIONDIRECTION
         case "OUTBOUND":
-            return OUTBOUND_CONNECTIONDIRECTION, nil
+            result = OUTBOUND_CONNECTIONDIRECTION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONNECTIONDIRECTION, nil
+            result = UNKNOWNFUTUREVALUE_CONNECTIONDIRECTION
+        default:
+            return 0, errors.New("Unknown ConnectionDirection value: " + v)
     }
-    return 0, errors.New("Unknown ConnectionDirection value: " + v)
+    return &result, nil
 }
 func SerializeConnectionDirection(values []ConnectionDirection) []string {
     result := make([]string, len(values))

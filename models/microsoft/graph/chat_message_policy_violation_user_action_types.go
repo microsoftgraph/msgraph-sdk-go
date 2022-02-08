@@ -16,15 +16,18 @@ func (i ChatMessagePolicyViolationUserActionTypes) String() string {
     return []string{"NONE", "OVERRIDE", "REPORTFALSEPOSITIVE"}[i]
 }
 func ParseChatMessagePolicyViolationUserActionTypes(v string) (interface{}, error) {
+    result := NONE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES, nil
+            result = NONE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES
         case "OVERRIDE":
-            return OVERRIDE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES, nil
+            result = OVERRIDE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES
         case "REPORTFALSEPOSITIVE":
-            return REPORTFALSEPOSITIVE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES, nil
+            result = REPORTFALSEPOSITIVE_CHATMESSAGEPOLICYVIOLATIONUSERACTIONTYPES
+        default:
+            return 0, errors.New("Unknown ChatMessagePolicyViolationUserActionTypes value: " + v)
     }
-    return 0, errors.New("Unknown ChatMessagePolicyViolationUserActionTypes value: " + v)
+    return &result, nil
 }
 func SerializeChatMessagePolicyViolationUserActionTypes(values []ChatMessagePolicyViolationUserActionTypes) []string {
     result := make([]string, len(values))

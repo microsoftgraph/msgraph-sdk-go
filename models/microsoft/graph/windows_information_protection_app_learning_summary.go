@@ -64,8 +64,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetFieldDeserializers()
             return err
         }
         if val != nil {
-            cast := val.(ApplicationType)
-            m.SetApplicationType(&cast)
+            m.SetApplicationType(val.(*ApplicationType))
         }
         return nil
     }
@@ -97,7 +96,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) Serialize(writer i04eb5
         }
     }
     if m.GetApplicationType() != nil {
-        cast := m.GetApplicationType().String()
+        cast := (*m.GetApplicationType()).String()
         err = writer.WriteStringValue("applicationType", &cast)
         if err != nil {
             return err

@@ -16,15 +16,18 @@ func (i ManagedDeviceOwnerType) String() string {
     return []string{"UNKNOWN", "COMPANY", "PERSONAL"}[i]
 }
 func ParseManagedDeviceOwnerType(v string) (interface{}, error) {
+    result := UNKNOWN_MANAGEDDEVICEOWNERTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_MANAGEDDEVICEOWNERTYPE, nil
+            result = UNKNOWN_MANAGEDDEVICEOWNERTYPE
         case "COMPANY":
-            return COMPANY_MANAGEDDEVICEOWNERTYPE, nil
+            result = COMPANY_MANAGEDDEVICEOWNERTYPE
         case "PERSONAL":
-            return PERSONAL_MANAGEDDEVICEOWNERTYPE, nil
+            result = PERSONAL_MANAGEDDEVICEOWNERTYPE
+        default:
+            return 0, errors.New("Unknown ManagedDeviceOwnerType value: " + v)
     }
-    return 0, errors.New("Unknown ManagedDeviceOwnerType value: " + v)
+    return &result, nil
 }
 func SerializeManagedDeviceOwnerType(values []ManagedDeviceOwnerType) []string {
     result := make([]string, len(values))

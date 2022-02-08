@@ -44,8 +44,7 @@ func (m *IdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(UserFlowType)
-            m.SetUserFlowType(&cast)
+            m.SetUserFlowType(val.(*UserFlowType))
         }
         return nil
     }
@@ -71,7 +70,7 @@ func (m *IdentityUserFlow) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         return err
     }
     if m.GetUserFlowType() != nil {
-        cast := m.GetUserFlowType().String()
+        cast := (*m.GetUserFlowType()).String()
         err = writer.WriteStringValue("userFlowType", &cast)
         if err != nil {
             return err

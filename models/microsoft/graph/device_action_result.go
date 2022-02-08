@@ -84,8 +84,7 @@ func (m *DeviceActionResult) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(ActionState)
-            m.SetActionState(&cast)
+            m.SetActionState(val.(*ActionState))
         }
         return nil
     }
@@ -123,7 +122,7 @@ func (m *DeviceActionResult) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetActionState() != nil {
-        cast := m.GetActionState().String()
+        cast := (*m.GetActionState()).String()
         err := writer.WriteStringValue("actionState", &cast)
         if err != nil {
             return err

@@ -37,7 +37,7 @@ type PlannerBucketRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PlannerBucketRequestBuilderGetQueryParameters collection of buckets in the plan. Read-only. Nullable.
+// PlannerBucketRequestBuilderGetQueryParameters read-only. Nullable. Collection of buckets in the plan.
 type PlannerBucketRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -74,7 +74,7 @@ func NewPlannerBucketRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams["request-raw-url"] = rawUrl
     return NewPlannerBucketRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation collection of buckets in the plan. Read-only. Nullable.
+// CreateDeleteRequestInformation read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerBucketRequestBuilder) CreateDeleteRequestInformation(options *PlannerBucketRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *PlannerBucketRequestBuilder) CreateDeleteRequestInformation(options *Pl
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation collection of buckets in the plan. Read-only. Nullable.
+// CreateGetRequestInformation read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerBucketRequestBuilder) CreateGetRequestInformation(options *PlannerBucketRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *PlannerBucketRequestBuilder) CreateGetRequestInformation(options *Plann
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation collection of buckets in the plan. Read-only. Nullable.
+// CreatePatchRequestInformation read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerBucketRequestBuilder) CreatePatchRequestInformation(options *PlannerBucketRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,7 +129,7 @@ func (m *PlannerBucketRequestBuilder) CreatePatchRequestInformation(options *Pla
     }
     return requestInfo, nil
 }
-// Delete collection of buckets in the plan. Read-only. Nullable.
+// Delete read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerBucketRequestBuilder) Delete(options *PlannerBucketRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *PlannerBucketRequestBuilder) Delete(options *PlannerBucketRequestBuilde
     }
     return nil
 }
-// Get collection of buckets in the plan. Read-only. Nullable.
+// Get read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerBucketRequestBuilder) Get(options *PlannerBucketRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucket, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -153,7 +153,7 @@ func (m *PlannerBucketRequestBuilder) Get(options *PlannerBucketRequestBuilderGe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerBucket), nil
 }
-// Patch collection of buckets in the plan. Read-only. Nullable.
+// Patch read-only. Nullable. Collection of buckets in the plan.
 func (m *PlannerBucketRequestBuilder) Patch(options *PlannerBucketRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

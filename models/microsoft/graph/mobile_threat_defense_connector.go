@@ -155,8 +155,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
             return err
         }
         if val != nil {
-            cast := val.(MobileThreatPartnerTenantState)
-            m.SetPartnerState(&cast)
+            m.SetPartnerState(val.(*MobileThreatPartnerTenantState))
         }
         return nil
     }
@@ -222,7 +221,7 @@ func (m *MobileThreatDefenseConnector) Serialize(writer i04eb5309aeaafadd28374d7
         }
     }
     if m.GetPartnerState() != nil {
-        cast := m.GetPartnerState().String()
+        cast := (*m.GetPartnerState()).String()
         err = writer.WriteStringValue("partnerState", &cast)
         if err != nil {
             return err

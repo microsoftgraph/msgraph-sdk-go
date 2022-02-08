@@ -19,21 +19,24 @@ func (i AppliedConditionalAccessPolicyResult) String() string {
     return []string{"SUCCESS", "FAILURE", "NOTAPPLIED", "NOTENABLED", "UNKNOWN", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAppliedConditionalAccessPolicyResult(v string) (interface{}, error) {
+    result := SUCCESS_APPLIEDCONDITIONALACCESSPOLICYRESULT
     switch strings.ToUpper(v) {
         case "SUCCESS":
-            return SUCCESS_APPLIEDCONDITIONALACCESSPOLICYRESULT, nil
+            result = SUCCESS_APPLIEDCONDITIONALACCESSPOLICYRESULT
         case "FAILURE":
-            return FAILURE_APPLIEDCONDITIONALACCESSPOLICYRESULT, nil
+            result = FAILURE_APPLIEDCONDITIONALACCESSPOLICYRESULT
         case "NOTAPPLIED":
-            return NOTAPPLIED_APPLIEDCONDITIONALACCESSPOLICYRESULT, nil
+            result = NOTAPPLIED_APPLIEDCONDITIONALACCESSPOLICYRESULT
         case "NOTENABLED":
-            return NOTENABLED_APPLIEDCONDITIONALACCESSPOLICYRESULT, nil
+            result = NOTENABLED_APPLIEDCONDITIONALACCESSPOLICYRESULT
         case "UNKNOWN":
-            return UNKNOWN_APPLIEDCONDITIONALACCESSPOLICYRESULT, nil
+            result = UNKNOWN_APPLIEDCONDITIONALACCESSPOLICYRESULT
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_APPLIEDCONDITIONALACCESSPOLICYRESULT, nil
+            result = UNKNOWNFUTUREVALUE_APPLIEDCONDITIONALACCESSPOLICYRESULT
+        default:
+            return 0, errors.New("Unknown AppliedConditionalAccessPolicyResult value: " + v)
     }
-    return 0, errors.New("Unknown AppliedConditionalAccessPolicyResult value: " + v)
+    return &result, nil
 }
 func SerializeAppliedConditionalAccessPolicyResult(values []AppliedConditionalAccessPolicyResult) []string {
     result := make([]string, len(values))

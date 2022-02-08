@@ -17,17 +17,20 @@ func (i NotificationTemplateBrandingOptions) String() string {
     return []string{"NONE", "INCLUDECOMPANYLOGO", "INCLUDECOMPANYNAME", "INCLUDECONTACTINFORMATION"}[i]
 }
 func ParseNotificationTemplateBrandingOptions(v string) (interface{}, error) {
+    result := NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS, nil
+            result = NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
         case "INCLUDECOMPANYLOGO":
-            return INCLUDECOMPANYLOGO_NOTIFICATIONTEMPLATEBRANDINGOPTIONS, nil
+            result = INCLUDECOMPANYLOGO_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
         case "INCLUDECOMPANYNAME":
-            return INCLUDECOMPANYNAME_NOTIFICATIONTEMPLATEBRANDINGOPTIONS, nil
+            result = INCLUDECOMPANYNAME_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
         case "INCLUDECONTACTINFORMATION":
-            return INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS, nil
+            result = INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+        default:
+            return 0, errors.New("Unknown NotificationTemplateBrandingOptions value: " + v)
     }
-    return 0, errors.New("Unknown NotificationTemplateBrandingOptions value: " + v)
+    return &result, nil
 }
 func SerializeNotificationTemplateBrandingOptions(values []NotificationTemplateBrandingOptions) []string {
     result := make([]string, len(values))

@@ -7,11 +7,11 @@ import (
 // OfficeGraphInsights 
 type OfficeGraphInsights struct {
     Entity
-    // Access this property from the derived type itemInsights.
+    // Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
     shared []SharedInsight;
-    // Access this property from the derived type itemInsights.
+    // Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
     trending []Trending;
-    // Access this property from the derived type itemInsights.
+    // Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
     used []UsedInsight;
 }
 // NewOfficeGraphInsights instantiates a new officeGraphInsights and sets the default values.
@@ -21,7 +21,7 @@ func NewOfficeGraphInsights()(*OfficeGraphInsights) {
     }
     return m
 }
-// GetShared gets the shared property value. Access this property from the derived type itemInsights.
+// GetShared gets the shared property value. Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 func (m *OfficeGraphInsights) GetShared()([]SharedInsight) {
     if m == nil {
         return nil
@@ -29,7 +29,7 @@ func (m *OfficeGraphInsights) GetShared()([]SharedInsight) {
         return m.shared
     }
 }
-// GetTrending gets the trending property value. Access this property from the derived type itemInsights.
+// GetTrending gets the trending property value. Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 func (m *OfficeGraphInsights) GetTrending()([]Trending) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *OfficeGraphInsights) GetTrending()([]Trending) {
         return m.trending
     }
 }
-// GetUsed gets the used property value. Access this property from the derived type itemInsights.
+// GetUsed gets the used property value. Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *OfficeGraphInsights) GetUsed()([]UsedInsight) {
     if m == nil {
         return nil
@@ -136,19 +136,19 @@ func (m *OfficeGraphInsights) Serialize(writer i04eb5309aeaafadd28374d79c8471df9
     }
     return nil
 }
-// SetShared sets the shared property value. Access this property from the derived type itemInsights.
+// SetShared sets the shared property value. Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 func (m *OfficeGraphInsights) SetShared(value []SharedInsight)() {
     if m != nil {
         m.shared = value
     }
 }
-// SetTrending sets the trending property value. Access this property from the derived type itemInsights.
+// SetTrending sets the trending property value. Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 func (m *OfficeGraphInsights) SetTrending(value []Trending)() {
     if m != nil {
         m.trending = value
     }
 }
-// SetUsed sets the used property value. Access this property from the derived type itemInsights.
+// SetUsed sets the used property value. Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 func (m *OfficeGraphInsights) SetUsed(value []UsedInsight)() {
     if m != nil {
         m.used = value

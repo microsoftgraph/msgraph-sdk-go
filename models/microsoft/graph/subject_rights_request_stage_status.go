@@ -18,19 +18,22 @@ func (i SubjectRightsRequestStageStatus) String() string {
     return []string{"NOTSTARTED", "CURRENT", "COMPLETED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSubjectRightsRequestStageStatus(v string) (interface{}, error) {
+    result := NOTSTARTED_SUBJECTRIGHTSREQUESTSTAGESTATUS
     switch strings.ToUpper(v) {
         case "NOTSTARTED":
-            return NOTSTARTED_SUBJECTRIGHTSREQUESTSTAGESTATUS, nil
+            result = NOTSTARTED_SUBJECTRIGHTSREQUESTSTAGESTATUS
         case "CURRENT":
-            return CURRENT_SUBJECTRIGHTSREQUESTSTAGESTATUS, nil
+            result = CURRENT_SUBJECTRIGHTSREQUESTSTAGESTATUS
         case "COMPLETED":
-            return COMPLETED_SUBJECTRIGHTSREQUESTSTAGESTATUS, nil
+            result = COMPLETED_SUBJECTRIGHTSREQUESTSTAGESTATUS
         case "FAILED":
-            return FAILED_SUBJECTRIGHTSREQUESTSTAGESTATUS, nil
+            result = FAILED_SUBJECTRIGHTSREQUESTSTAGESTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTSTAGESTATUS, nil
+            result = UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTSTAGESTATUS
+        default:
+            return 0, errors.New("Unknown SubjectRightsRequestStageStatus value: " + v)
     }
-    return 0, errors.New("Unknown SubjectRightsRequestStageStatus value: " + v)
+    return &result, nil
 }
 func SerializeSubjectRightsRequestStageStatus(values []SubjectRightsRequestStageStatus) []string {
     result := make([]string, len(values))

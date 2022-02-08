@@ -18,7 +18,7 @@ type ThreatAssessmentRequest struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The expected assessment from submitter. Possible values are: block, unblock.
     expectedAssessment *ThreatExpectedAssessment;
-    // The source of the threat assessment request. Possible values are: user, administrator.
+    // The source of the threat assessment request. Possible values are: administrator.
     requestSource *ThreatAssessmentRequestSource;
     // A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
     results []ThreatAssessmentResult;
@@ -72,7 +72,7 @@ func (m *ThreatAssessmentRequest) GetExpectedAssessment()(*ThreatExpectedAssessm
         return m.expectedAssessment
     }
 }
-// GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: user, administrator.
+// GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
 func (m *ThreatAssessmentRequest) GetRequestSource()(*ThreatAssessmentRequestSource) {
     if m == nil {
         return nil
@@ -105,8 +105,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(ThreatCategory)
-            m.SetCategory(&cast)
+            m.SetCategory(val.(*ThreatCategory))
         }
         return nil
     }
@@ -116,8 +115,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(ThreatAssessmentContentType)
-            m.SetContentType(&cast)
+            m.SetContentType(val.(*ThreatAssessmentContentType))
         }
         return nil
     }
@@ -147,8 +145,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(ThreatExpectedAssessment)
-            m.SetExpectedAssessment(&cast)
+            m.SetExpectedAssessment(val.(*ThreatExpectedAssessment))
         }
         return nil
     }
@@ -158,8 +155,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(ThreatAssessmentRequestSource)
-            m.SetRequestSource(&cast)
+            m.SetRequestSource(val.(*ThreatAssessmentRequestSource))
         }
         return nil
     }
@@ -183,8 +179,7 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(ThreatAssessmentStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*ThreatAssessmentStatus))
         }
         return nil
     }
@@ -200,14 +195,14 @@ func (m *ThreatAssessmentRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
         return err
     }
     if m.GetCategory() != nil {
-        cast := m.GetCategory().String()
+        cast := (*m.GetCategory()).String()
         err = writer.WriteStringValue("category", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetContentType() != nil {
-        cast := m.GetContentType().String()
+        cast := (*m.GetContentType()).String()
         err = writer.WriteStringValue("contentType", &cast)
         if err != nil {
             return err
@@ -226,14 +221,14 @@ func (m *ThreatAssessmentRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetExpectedAssessment() != nil {
-        cast := m.GetExpectedAssessment().String()
+        cast := (*m.GetExpectedAssessment()).String()
         err = writer.WriteStringValue("expectedAssessment", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetRequestSource() != nil {
-        cast := m.GetRequestSource().String()
+        cast := (*m.GetRequestSource()).String()
         err = writer.WriteStringValue("requestSource", &cast)
         if err != nil {
             return err
@@ -251,7 +246,7 @@ func (m *ThreatAssessmentRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
@@ -289,7 +284,7 @@ func (m *ThreatAssessmentRequest) SetExpectedAssessment(value *ThreatExpectedAss
         m.expectedAssessment = value
     }
 }
-// SetRequestSource sets the requestSource property value. The source of the threat assessment request. Possible values are: user, administrator.
+// SetRequestSource sets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
 func (m *ThreatAssessmentRequest) SetRequestSource(value *ThreatAssessmentRequestSource)() {
     if m != nil {
         m.requestSource = value

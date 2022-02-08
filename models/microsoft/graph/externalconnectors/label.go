@@ -23,29 +23,32 @@ func (i Label) String() string {
     return []string{"TITLE", "URL", "CREATEDBY", "LASTMODIFIEDBY", "AUTHORS", "CREATEDDATETIME", "LASTMODIFIEDDATETIME", "FILENAME", "FILEEXTENSION", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseLabel(v string) (interface{}, error) {
+    result := TITLE_LABEL
     switch strings.ToUpper(v) {
         case "TITLE":
-            return TITLE_LABEL, nil
+            result = TITLE_LABEL
         case "URL":
-            return URL_LABEL, nil
+            result = URL_LABEL
         case "CREATEDBY":
-            return CREATEDBY_LABEL, nil
+            result = CREATEDBY_LABEL
         case "LASTMODIFIEDBY":
-            return LASTMODIFIEDBY_LABEL, nil
+            result = LASTMODIFIEDBY_LABEL
         case "AUTHORS":
-            return AUTHORS_LABEL, nil
+            result = AUTHORS_LABEL
         case "CREATEDDATETIME":
-            return CREATEDDATETIME_LABEL, nil
+            result = CREATEDDATETIME_LABEL
         case "LASTMODIFIEDDATETIME":
-            return LASTMODIFIEDDATETIME_LABEL, nil
+            result = LASTMODIFIEDDATETIME_LABEL
         case "FILENAME":
-            return FILENAME_LABEL, nil
+            result = FILENAME_LABEL
         case "FILEEXTENSION":
-            return FILEEXTENSION_LABEL, nil
+            result = FILEEXTENSION_LABEL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_LABEL, nil
+            result = UNKNOWNFUTUREVALUE_LABEL
+        default:
+            return 0, errors.New("Unknown Label value: " + v)
     }
-    return 0, errors.New("Unknown Label value: " + v)
+    return &result, nil
 }
 func SerializeLabel(values []Label) []string {
     result := make([]string, len(values))

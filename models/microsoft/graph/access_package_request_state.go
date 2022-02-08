@@ -23,29 +23,32 @@ func (i AccessPackageRequestState) String() string {
     return []string{"SUBMITTED", "PENDINGAPPROVAL", "DELIVERING", "DELIVERED", "DELIVERYFAILED", "DENIED", "SCHEDULED", "CANCELED", "PARTIALLYDELIVERED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAccessPackageRequestState(v string) (interface{}, error) {
+    result := SUBMITTED_ACCESSPACKAGEREQUESTSTATE
     switch strings.ToUpper(v) {
         case "SUBMITTED":
-            return SUBMITTED_ACCESSPACKAGEREQUESTSTATE, nil
+            result = SUBMITTED_ACCESSPACKAGEREQUESTSTATE
         case "PENDINGAPPROVAL":
-            return PENDINGAPPROVAL_ACCESSPACKAGEREQUESTSTATE, nil
+            result = PENDINGAPPROVAL_ACCESSPACKAGEREQUESTSTATE
         case "DELIVERING":
-            return DELIVERING_ACCESSPACKAGEREQUESTSTATE, nil
+            result = DELIVERING_ACCESSPACKAGEREQUESTSTATE
         case "DELIVERED":
-            return DELIVERED_ACCESSPACKAGEREQUESTSTATE, nil
+            result = DELIVERED_ACCESSPACKAGEREQUESTSTATE
         case "DELIVERYFAILED":
-            return DELIVERYFAILED_ACCESSPACKAGEREQUESTSTATE, nil
+            result = DELIVERYFAILED_ACCESSPACKAGEREQUESTSTATE
         case "DENIED":
-            return DENIED_ACCESSPACKAGEREQUESTSTATE, nil
+            result = DENIED_ACCESSPACKAGEREQUESTSTATE
         case "SCHEDULED":
-            return SCHEDULED_ACCESSPACKAGEREQUESTSTATE, nil
+            result = SCHEDULED_ACCESSPACKAGEREQUESTSTATE
         case "CANCELED":
-            return CANCELED_ACCESSPACKAGEREQUESTSTATE, nil
+            result = CANCELED_ACCESSPACKAGEREQUESTSTATE
         case "PARTIALLYDELIVERED":
-            return PARTIALLYDELIVERED_ACCESSPACKAGEREQUESTSTATE, nil
+            result = PARTIALLYDELIVERED_ACCESSPACKAGEREQUESTSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACCESSPACKAGEREQUESTSTATE, nil
+            result = UNKNOWNFUTUREVALUE_ACCESSPACKAGEREQUESTSTATE
+        default:
+            return 0, errors.New("Unknown AccessPackageRequestState value: " + v)
     }
-    return 0, errors.New("Unknown AccessPackageRequestState value: " + v)
+    return &result, nil
 }
 func SerializeAccessPackageRequestState(values []AccessPackageRequestState) []string {
     result := make([]string, len(values))

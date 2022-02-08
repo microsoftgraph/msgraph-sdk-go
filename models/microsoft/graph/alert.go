@@ -571,8 +571,7 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
             return err
         }
         if val != nil {
-            cast := val.(AlertFeedback)
-            m.SetFeedback(&cast)
+            m.SetFeedback(val.(*AlertFeedback))
         }
         return nil
     }
@@ -770,8 +769,7 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
             return err
         }
         if val != nil {
-            cast := val.(AlertSeverity)
-            m.SetSeverity(&cast)
+            m.SetSeverity(val.(*AlertSeverity))
         }
         return nil
     }
@@ -795,8 +793,7 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
             return err
         }
         if val != nil {
-            cast := val.(AlertStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*AlertStatus))
         }
         return nil
     }
@@ -996,7 +993,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     if m.GetFeedback() != nil {
-        cast := m.GetFeedback().String()
+        cast := (*m.GetFeedback()).String()
         err = writer.WriteStringValue("feedback", &cast)
         if err != nil {
             return err
@@ -1137,7 +1134,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     if m.GetSeverity() != nil {
-        cast := m.GetSeverity().String()
+        cast := (*m.GetSeverity()).String()
         err = writer.WriteStringValue("severity", &cast)
         if err != nil {
             return err
@@ -1150,7 +1147,7 @@ func (m *Alert) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

@@ -142,8 +142,7 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i04e
             return err
         }
         if val != nil {
-            cast := val.(WellknownListName)
-            m.SetWellknownListName(&cast)
+            m.SetWellknownListName(val.(*WellknownListName))
         }
         return nil
     }
@@ -199,7 +198,7 @@ func (m *TodoTaskList) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510
         }
     }
     if m.GetWellknownListName() != nil {
-        cast := m.GetWellknownListName().String()
+        cast := (*m.GetWellknownListName()).String()
         err = writer.WriteStringValue("wellknownListName", &cast)
         if err != nil {
             return err

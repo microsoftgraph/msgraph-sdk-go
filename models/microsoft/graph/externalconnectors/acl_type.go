@@ -19,21 +19,24 @@ func (i AclType) String() string {
     return []string{"USER", "GROUP", "EVERYONE", "EVERYONEEXCEPTGUESTS", "EXTERNALGROUP", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAclType(v string) (interface{}, error) {
+    result := USER_ACLTYPE
     switch strings.ToUpper(v) {
         case "USER":
-            return USER_ACLTYPE, nil
+            result = USER_ACLTYPE
         case "GROUP":
-            return GROUP_ACLTYPE, nil
+            result = GROUP_ACLTYPE
         case "EVERYONE":
-            return EVERYONE_ACLTYPE, nil
+            result = EVERYONE_ACLTYPE
         case "EVERYONEEXCEPTGUESTS":
-            return EVERYONEEXCEPTGUESTS_ACLTYPE, nil
+            result = EVERYONEEXCEPTGUESTS_ACLTYPE
         case "EXTERNALGROUP":
-            return EXTERNALGROUP_ACLTYPE, nil
+            result = EXTERNALGROUP_ACLTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACLTYPE, nil
+            result = UNKNOWNFUTUREVALUE_ACLTYPE
+        default:
+            return 0, errors.New("Unknown AclType value: " + v)
     }
-    return 0, errors.New("Unknown AclType value: " + v)
+    return &result, nil
 }
 func SerializeAclType(values []AclType) []string {
     result := make([]string, len(values))

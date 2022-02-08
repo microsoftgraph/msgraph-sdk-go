@@ -12,7 +12,7 @@ type ThreatAssessmentResult struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The result message for each threat assessment.
     message *string;
-    // The threat assessment result type. Possible values are: checkPolicy (only for mail assessment), rescan.
+    // The threat assessment result type. Possible values are: checkPolicy, rescan.
     resultType *ThreatAssessmentResultType;
 }
 // NewThreatAssessmentResult instantiates a new threatAssessmentResult and sets the default values.
@@ -38,7 +38,7 @@ func (m *ThreatAssessmentResult) GetMessage()(*string) {
         return m.message
     }
 }
-// GetResultType gets the resultType property value. The threat assessment result type. Possible values are: checkPolicy (only for mail assessment), rescan.
+// GetResultType gets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
 func (m *ThreatAssessmentResult) GetResultType()(*ThreatAssessmentResultType) {
     if m == nil {
         return nil
@@ -75,8 +75,7 @@ func (m *ThreatAssessmentResult) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(ThreatAssessmentResultType)
-            m.SetResultType(&cast)
+            m.SetResultType(val.(*ThreatAssessmentResultType))
         }
         return nil
     }
@@ -104,7 +103,7 @@ func (m *ThreatAssessmentResult) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetResultType() != nil {
-        cast := m.GetResultType().String()
+        cast := (*m.GetResultType()).String()
         err = writer.WriteStringValue("resultType", &cast)
         if err != nil {
             return err
@@ -124,7 +123,7 @@ func (m *ThreatAssessmentResult) SetMessage(value *string)() {
         m.message = value
     }
 }
-// SetResultType sets the resultType property value. The threat assessment result type. Possible values are: checkPolicy (only for mail assessment), rescan.
+// SetResultType sets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
 func (m *ThreatAssessmentResult) SetResultType(value *ThreatAssessmentResultType)() {
     if m != nil {
         m.resultType = value

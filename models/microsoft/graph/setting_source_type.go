@@ -15,13 +15,16 @@ func (i SettingSourceType) String() string {
     return []string{"DEVICECONFIGURATION", "DEVICEINTENT"}[i]
 }
 func ParseSettingSourceType(v string) (interface{}, error) {
+    result := DEVICECONFIGURATION_SETTINGSOURCETYPE
     switch strings.ToUpper(v) {
         case "DEVICECONFIGURATION":
-            return DEVICECONFIGURATION_SETTINGSOURCETYPE, nil
+            result = DEVICECONFIGURATION_SETTINGSOURCETYPE
         case "DEVICEINTENT":
-            return DEVICEINTENT_SETTINGSOURCETYPE, nil
+            result = DEVICEINTENT_SETTINGSOURCETYPE
+        default:
+            return 0, errors.New("Unknown SettingSourceType value: " + v)
     }
-    return 0, errors.New("Unknown SettingSourceType value: " + v)
+    return &result, nil
 }
 func SerializeSettingSourceType(values []SettingSourceType) []string {
     result := make([]string, len(values))

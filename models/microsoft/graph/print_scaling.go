@@ -19,21 +19,24 @@ func (i PrintScaling) String() string {
     return []string{"AUTO", "SHRINKTOFIT", "FILL", "FIT", "NONE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePrintScaling(v string) (interface{}, error) {
+    result := AUTO_PRINTSCALING
     switch strings.ToUpper(v) {
         case "AUTO":
-            return AUTO_PRINTSCALING, nil
+            result = AUTO_PRINTSCALING
         case "SHRINKTOFIT":
-            return SHRINKTOFIT_PRINTSCALING, nil
+            result = SHRINKTOFIT_PRINTSCALING
         case "FILL":
-            return FILL_PRINTSCALING, nil
+            result = FILL_PRINTSCALING
         case "FIT":
-            return FIT_PRINTSCALING, nil
+            result = FIT_PRINTSCALING
         case "NONE":
-            return NONE_PRINTSCALING, nil
+            result = NONE_PRINTSCALING
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PRINTSCALING, nil
+            result = UNKNOWNFUTUREVALUE_PRINTSCALING
+        default:
+            return 0, errors.New("Unknown PrintScaling value: " + v)
     }
-    return 0, errors.New("Unknown PrintScaling value: " + v)
+    return &result, nil
 }
 func SerializePrintScaling(values []PrintScaling) []string {
     result := make([]string, len(values))

@@ -32,47 +32,50 @@ func (i ColumnTypes) String() string {
     return []string{"NOTE", "TEXT", "CHOICE", "MULTICHOICE", "NUMBER", "CURRENCY", "DATETIME", "LOOKUP", "BOOLEAN", "USER", "URL", "CALCULATED", "LOCATION", "GEOLOCATION", "TERM", "MULTITERM", "THUMBNAIL", "APPROVALSTATUS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseColumnTypes(v string) (interface{}, error) {
+    result := NOTE_COLUMNTYPES
     switch strings.ToUpper(v) {
         case "NOTE":
-            return NOTE_COLUMNTYPES, nil
+            result = NOTE_COLUMNTYPES
         case "TEXT":
-            return TEXT_COLUMNTYPES, nil
+            result = TEXT_COLUMNTYPES
         case "CHOICE":
-            return CHOICE_COLUMNTYPES, nil
+            result = CHOICE_COLUMNTYPES
         case "MULTICHOICE":
-            return MULTICHOICE_COLUMNTYPES, nil
+            result = MULTICHOICE_COLUMNTYPES
         case "NUMBER":
-            return NUMBER_COLUMNTYPES, nil
+            result = NUMBER_COLUMNTYPES
         case "CURRENCY":
-            return CURRENCY_COLUMNTYPES, nil
+            result = CURRENCY_COLUMNTYPES
         case "DATETIME":
-            return DATETIME_COLUMNTYPES, nil
+            result = DATETIME_COLUMNTYPES
         case "LOOKUP":
-            return LOOKUP_COLUMNTYPES, nil
+            result = LOOKUP_COLUMNTYPES
         case "BOOLEAN":
-            return BOOLEAN_COLUMNTYPES, nil
+            result = BOOLEAN_COLUMNTYPES
         case "USER":
-            return USER_COLUMNTYPES, nil
+            result = USER_COLUMNTYPES
         case "URL":
-            return URL_COLUMNTYPES, nil
+            result = URL_COLUMNTYPES
         case "CALCULATED":
-            return CALCULATED_COLUMNTYPES, nil
+            result = CALCULATED_COLUMNTYPES
         case "LOCATION":
-            return LOCATION_COLUMNTYPES, nil
+            result = LOCATION_COLUMNTYPES
         case "GEOLOCATION":
-            return GEOLOCATION_COLUMNTYPES, nil
+            result = GEOLOCATION_COLUMNTYPES
         case "TERM":
-            return TERM_COLUMNTYPES, nil
+            result = TERM_COLUMNTYPES
         case "MULTITERM":
-            return MULTITERM_COLUMNTYPES, nil
+            result = MULTITERM_COLUMNTYPES
         case "THUMBNAIL":
-            return THUMBNAIL_COLUMNTYPES, nil
+            result = THUMBNAIL_COLUMNTYPES
         case "APPROVALSTATUS":
-            return APPROVALSTATUS_COLUMNTYPES, nil
+            result = APPROVALSTATUS_COLUMNTYPES
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_COLUMNTYPES, nil
+            result = UNKNOWNFUTUREVALUE_COLUMNTYPES
+        default:
+            return 0, errors.New("Unknown ColumnTypes value: " + v)
     }
-    return 0, errors.New("Unknown ColumnTypes value: " + v)
+    return &result, nil
 }
 func SerializeColumnTypes(values []ColumnTypes) []string {
     result := make([]string, len(values))

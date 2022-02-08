@@ -35,7 +35,7 @@ type DeviceManagement struct {
     exchangeConnectors []DeviceManagementExchangeConnector;
     // Collection of imported Windows autopilot devices.
     importedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentity;
-    // Intune Account ID for given tenant
+    // Intune Account Id for given tenant
     intuneAccountId *string;
     // intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
     intuneBrand *IntuneBrand;
@@ -197,7 +197,7 @@ func (m *DeviceManagement) GetImportedWindowsAutopilotDeviceIdentities()([]Impor
         return m.importedWindowsAutopilotDeviceIdentities
     }
 }
-// GetIntuneAccountId gets the intuneAccountId property value. Intune Account ID for given tenant
+// GetIntuneAccountId gets the intuneAccountId property value. Intune Account Id for given tenant
 func (m *DeviceManagement) GetIntuneAccountId()(*string) {
     if m == nil {
         return nil
@@ -726,8 +726,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementSubscriptionState)
-            m.SetSubscriptionState(&cast)
+            m.SetSubscriptionState(val.(*DeviceManagementSubscriptionState))
         }
         return nil
     }
@@ -1085,7 +1084,7 @@ func (m *DeviceManagement) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetSubscriptionState() != nil {
-        cast := m.GetSubscriptionState().String()
+        cast := (*m.GetSubscriptionState()).String()
         err = writer.WriteStringValue("subscriptionState", &cast)
         if err != nil {
             return err
@@ -1243,7 +1242,7 @@ func (m *DeviceManagement) SetImportedWindowsAutopilotDeviceIdentities(value []I
         m.importedWindowsAutopilotDeviceIdentities = value
     }
 }
-// SetIntuneAccountId sets the intuneAccountId property value. Intune Account ID for given tenant
+// SetIntuneAccountId sets the intuneAccountId property value. Intune Account Id for given tenant
 func (m *DeviceManagement) SetIntuneAccountId(value *string)() {
     if m != nil {
         m.intuneAccountId = value

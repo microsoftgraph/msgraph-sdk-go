@@ -21,25 +21,28 @@ func (i ConditionalAccessGrantControl) String() string {
     return []string{"BLOCK", "MFA", "COMPLIANTDEVICE", "DOMAINJOINEDDEVICE", "APPROVEDAPPLICATION", "COMPLIANTAPPLICATION", "PASSWORDCHANGE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseConditionalAccessGrantControl(v string) (interface{}, error) {
+    result := BLOCK_CONDITIONALACCESSGRANTCONTROL
     switch strings.ToUpper(v) {
         case "BLOCK":
-            return BLOCK_CONDITIONALACCESSGRANTCONTROL, nil
+            result = BLOCK_CONDITIONALACCESSGRANTCONTROL
         case "MFA":
-            return MFA_CONDITIONALACCESSGRANTCONTROL, nil
+            result = MFA_CONDITIONALACCESSGRANTCONTROL
         case "COMPLIANTDEVICE":
-            return COMPLIANTDEVICE_CONDITIONALACCESSGRANTCONTROL, nil
+            result = COMPLIANTDEVICE_CONDITIONALACCESSGRANTCONTROL
         case "DOMAINJOINEDDEVICE":
-            return DOMAINJOINEDDEVICE_CONDITIONALACCESSGRANTCONTROL, nil
+            result = DOMAINJOINEDDEVICE_CONDITIONALACCESSGRANTCONTROL
         case "APPROVEDAPPLICATION":
-            return APPROVEDAPPLICATION_CONDITIONALACCESSGRANTCONTROL, nil
+            result = APPROVEDAPPLICATION_CONDITIONALACCESSGRANTCONTROL
         case "COMPLIANTAPPLICATION":
-            return COMPLIANTAPPLICATION_CONDITIONALACCESSGRANTCONTROL, nil
+            result = COMPLIANTAPPLICATION_CONDITIONALACCESSGRANTCONTROL
         case "PASSWORDCHANGE":
-            return PASSWORDCHANGE_CONDITIONALACCESSGRANTCONTROL, nil
+            result = PASSWORDCHANGE_CONDITIONALACCESSGRANTCONTROL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONDITIONALACCESSGRANTCONTROL, nil
+            result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSGRANTCONTROL
+        default:
+            return 0, errors.New("Unknown ConditionalAccessGrantControl value: " + v)
     }
-    return 0, errors.New("Unknown ConditionalAccessGrantControl value: " + v)
+    return &result, nil
 }
 func SerializeConditionalAccessGrantControl(values []ConditionalAccessGrantControl) []string {
     result := make([]string, len(values))

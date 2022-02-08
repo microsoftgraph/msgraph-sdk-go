@@ -11,6 +11,10 @@ type Query struct {
     additionalData map[string]interface{};
     // A collection of search results.
     hitsContainers []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchHitsContainer;
+    // Provides details of query alteration response for spelling correction.
+    queryAlterationResponse *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AlterationResponse;
+    // A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
+    resultTemplates *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ResultTemplateDictionary;
     // Contains the search terms sent in the initial search query.
     searchTerms []string;
 }
@@ -37,6 +41,22 @@ func (m *Query) GetHitsContainers()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367
         return m.hitsContainers
     }
 }
+// GetQueryAlterationResponse gets the queryAlterationResponse property value. Provides details of query alteration response for spelling correction.
+func (m *Query) GetQueryAlterationResponse()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AlterationResponse) {
+    if m == nil {
+        return nil
+    } else {
+        return m.queryAlterationResponse
+    }
+}
+// GetResultTemplates gets the resultTemplates property value. A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
+func (m *Query) GetResultTemplates()(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ResultTemplateDictionary) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resultTemplates
+    }
+}
 // GetSearchTerms gets the searchTerms property value. Contains the search terms sent in the initial search query.
 func (m *Query) GetSearchTerms()([]string) {
     if m == nil {
@@ -59,6 +79,26 @@ func (m *Query) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
                 res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchHitsContainer))
             }
             m.SetHitsContainers(res)
+        }
+        return nil
+    }
+    res["queryAlterationResponse"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewAlterationResponse() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQueryAlterationResponse(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AlterationResponse))
+        }
+        return nil
+    }
+    res["resultTemplates"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewResultTemplateDictionary() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResultTemplates(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ResultTemplateDictionary))
         }
         return nil
     }
@@ -94,6 +134,18 @@ func (m *Query) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("queryAlterationResponse", m.GetQueryAlterationResponse())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("resultTemplates", m.GetResultTemplates())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSearchTerms() != nil {
         err := writer.WriteCollectionOfStringValues("searchTerms", m.GetSearchTerms())
         if err != nil {
@@ -118,6 +170,18 @@ func (m *Query) SetAdditionalData(value map[string]interface{})() {
 func (m *Query) SetHitsContainers(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SearchHitsContainer)() {
     if m != nil {
         m.hitsContainers = value
+    }
+}
+// SetQueryAlterationResponse sets the queryAlterationResponse property value. Provides details of query alteration response for spelling correction.
+func (m *Query) SetQueryAlterationResponse(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AlterationResponse)() {
+    if m != nil {
+        m.queryAlterationResponse = value
+    }
+}
+// SetResultTemplates sets the resultTemplates property value. A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
+func (m *Query) SetResultTemplates(value *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ResultTemplateDictionary)() {
+    if m != nil {
+        m.resultTemplates = value
     }
 }
 // SetSearchTerms sets the searchTerms property value. Contains the search terms sent in the initial search query.

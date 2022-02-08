@@ -16,7 +16,7 @@ type RecurrenceRange struct {
     recurrenceTimeZone *string;
     // The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
     startDate *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.DateOnly;
-    // The recurrence range. Possible values are: endDate, noEnd, numbered. Required.
+    // The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
     type_escaped *RecurrenceRangeType;
 }
 // NewRecurrenceRange instantiates a new recurrenceRange and sets the default values.
@@ -66,7 +66,7 @@ func (m *RecurrenceRange) GetStartDate()(*i04eb5309aeaafadd28374d79c8471df9b2675
         return m.startDate
     }
 }
-// GetType gets the type property value. The recurrence range. Possible values are: endDate, noEnd, numbered. Required.
+// GetType gets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
 func (m *RecurrenceRange) GetType()(*RecurrenceRangeType) {
     if m == nil {
         return nil
@@ -123,8 +123,7 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(interface{}, i
             return err
         }
         if val != nil {
-            cast := val.(RecurrenceRangeType)
-            m.SetType(&cast)
+            m.SetType(val.(*RecurrenceRangeType))
         }
         return nil
     }
@@ -160,7 +159,7 @@ func (m *RecurrenceRange) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -204,7 +203,7 @@ func (m *RecurrenceRange) SetStartDate(value *i04eb5309aeaafadd28374d79c8471df9b
         m.startDate = value
     }
 }
-// SetType sets the type property value. The recurrence range. Possible values are: endDate, noEnd, numbered. Required.
+// SetType sets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
 func (m *RecurrenceRange) SetType(value *RecurrenceRangeType)() {
     if m != nil {
         m.type_escaped = value

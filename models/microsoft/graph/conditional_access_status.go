@@ -17,17 +17,20 @@ func (i ConditionalAccessStatus) String() string {
     return []string{"SUCCESS", "FAILURE", "NOTAPPLIED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseConditionalAccessStatus(v string) (interface{}, error) {
+    result := SUCCESS_CONDITIONALACCESSSTATUS
     switch strings.ToUpper(v) {
         case "SUCCESS":
-            return SUCCESS_CONDITIONALACCESSSTATUS, nil
+            result = SUCCESS_CONDITIONALACCESSSTATUS
         case "FAILURE":
-            return FAILURE_CONDITIONALACCESSSTATUS, nil
+            result = FAILURE_CONDITIONALACCESSSTATUS
         case "NOTAPPLIED":
-            return NOTAPPLIED_CONDITIONALACCESSSTATUS, nil
+            result = NOTAPPLIED_CONDITIONALACCESSSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONDITIONALACCESSSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSSTATUS
+        default:
+            return 0, errors.New("Unknown ConditionalAccessStatus value: " + v)
     }
-    return 0, errors.New("Unknown ConditionalAccessStatus value: " + v)
+    return &result, nil
 }
 func SerializeConditionalAccessStatus(values []ConditionalAccessStatus) []string {
     result := make([]string, len(values))

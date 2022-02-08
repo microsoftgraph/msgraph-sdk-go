@@ -145,8 +145,7 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementReportFileFormat)
-            m.SetFormat(&cast)
+            m.SetFormat(val.(*DeviceManagementReportFileFormat))
         }
         return nil
     }
@@ -156,8 +155,7 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementExportJobLocalizationType)
-            m.SetLocalizationType(&cast)
+            m.SetLocalizationType(val.(*DeviceManagementExportJobLocalizationType))
         }
         return nil
     }
@@ -211,8 +209,7 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(inte
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementReportStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*DeviceManagementReportStatus))
         }
         return nil
     }
@@ -250,14 +247,14 @@ func (m *DeviceManagementExportJob) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     if m.GetFormat() != nil {
-        cast := m.GetFormat().String()
+        cast := (*m.GetFormat()).String()
         err = writer.WriteStringValue("format", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetLocalizationType() != nil {
-        cast := m.GetLocalizationType().String()
+        cast := (*m.GetLocalizationType()).String()
         err = writer.WriteStringValue("localizationType", &cast)
         if err != nil {
             return err
@@ -288,7 +285,7 @@ func (m *DeviceManagementExportJob) Serialize(writer i04eb5309aeaafadd28374d79c8
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

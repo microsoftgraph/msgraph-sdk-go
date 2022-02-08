@@ -16,15 +16,18 @@ func (i FollowupFlagStatus) String() string {
     return []string{"NOTFLAGGED", "COMPLETE", "FLAGGED"}[i]
 }
 func ParseFollowupFlagStatus(v string) (interface{}, error) {
+    result := NOTFLAGGED_FOLLOWUPFLAGSTATUS
     switch strings.ToUpper(v) {
         case "NOTFLAGGED":
-            return NOTFLAGGED_FOLLOWUPFLAGSTATUS, nil
+            result = NOTFLAGGED_FOLLOWUPFLAGSTATUS
         case "COMPLETE":
-            return COMPLETE_FOLLOWUPFLAGSTATUS, nil
+            result = COMPLETE_FOLLOWUPFLAGSTATUS
         case "FLAGGED":
-            return FLAGGED_FOLLOWUPFLAGSTATUS, nil
+            result = FLAGGED_FOLLOWUPFLAGSTATUS
+        default:
+            return 0, errors.New("Unknown FollowupFlagStatus value: " + v)
     }
-    return 0, errors.New("Unknown FollowupFlagStatus value: " + v)
+    return &result, nil
 }
 func SerializeFollowupFlagStatus(values []FollowupFlagStatus) []string {
     result := make([]string, len(values))

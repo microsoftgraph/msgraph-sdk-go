@@ -229,8 +229,7 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(Importance)
-            m.SetImportance(&cast)
+            m.SetImportance(val.(*Importance))
         }
         return nil
     }
@@ -294,8 +293,7 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(TaskStatus)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*TaskStatus))
         }
         return nil
     }
@@ -362,7 +360,7 @@ func (m *TodoTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetImportance() != nil {
-        cast := m.GetImportance().String()
+        cast := (*m.GetImportance()).String()
         err = writer.WriteStringValue("importance", &cast)
         if err != nil {
             return err
@@ -404,7 +402,7 @@ func (m *TodoTask) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

@@ -8,9 +8,9 @@ import (
 type EmailAddress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The email address of an entity instance.
+    // The email address of the person or entity.
     address *string;
-    // The display name of an entity instance.
+    // The display name of the person or entity.
     name *string;
 }
 // NewEmailAddress instantiates a new emailAddress and sets the default values.
@@ -28,7 +28,7 @@ func (m *EmailAddress) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAddress gets the address property value. The email address of an entity instance.
+// GetAddress gets the address property value. The email address of the person or entity.
 func (m *EmailAddress) GetAddress()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *EmailAddress) GetAddress()(*string) {
         return m.address
     }
 }
-// GetName gets the name property value. The display name of an entity instance.
+// GetName gets the name property value. The display name of the person or entity.
 func (m *EmailAddress) GetName()(*string) {
     if m == nil {
         return nil
@@ -100,13 +100,13 @@ func (m *EmailAddress) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAddress sets the address property value. The email address of an entity instance.
+// SetAddress sets the address property value. The email address of the person or entity.
 func (m *EmailAddress) SetAddress(value *string)() {
     if m != nil {
         m.address = value
     }
 }
-// SetName sets the name property value. The display name of an entity instance.
+// SetName sets the name property value. The display name of the person or entity.
 func (m *EmailAddress) SetName(value *string)() {
     if m != nil {
         m.name = value

@@ -165,8 +165,7 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(interface{}
             return err
         }
         if val != nil {
-            cast := val.(TeamsAppPublishingState)
-            m.SetPublishingState(&cast)
+            m.SetPublishingState(val.(*TeamsAppPublishingState))
         }
         return nil
     }
@@ -242,7 +241,7 @@ func (m *TeamsAppDefinition) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b
         }
     }
     if m.GetPublishingState() != nil {
-        cast := m.GetPublishingState().String()
+        cast := (*m.GetPublishingState()).String()
         err = writer.WriteStringValue("publishingState", &cast)
         if err != nil {
             return err

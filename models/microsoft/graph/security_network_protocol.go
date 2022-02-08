@@ -37,57 +37,60 @@ func (i SecurityNetworkProtocol) String() string {
     return []string{"UNKNOWN", "IP", "ICMP", "IGMP", "GGP", "IPV4", "TCP", "PUP", "UDP", "IDP", "IPV6", "IPV6ROUTINGHEADER", "IPV6FRAGMENTHEADER", "IPSECENCAPSULATINGSECURITYPAYLOAD", "IPSECAUTHENTICATIONHEADER", "ICMPV6", "IPV6NONEXTHEADER", "IPV6DESTINATIONOPTIONS", "ND", "RAW", "IPX", "SPX", "SPXII", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSecurityNetworkProtocol(v string) (interface{}, error) {
+    result := UNKNOWN_SECURITYNETWORKPROTOCOL
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_SECURITYNETWORKPROTOCOL, nil
+            result = UNKNOWN_SECURITYNETWORKPROTOCOL
         case "IP":
-            return IP_SECURITYNETWORKPROTOCOL, nil
+            result = IP_SECURITYNETWORKPROTOCOL
         case "ICMP":
-            return ICMP_SECURITYNETWORKPROTOCOL, nil
+            result = ICMP_SECURITYNETWORKPROTOCOL
         case "IGMP":
-            return IGMP_SECURITYNETWORKPROTOCOL, nil
+            result = IGMP_SECURITYNETWORKPROTOCOL
         case "GGP":
-            return GGP_SECURITYNETWORKPROTOCOL, nil
+            result = GGP_SECURITYNETWORKPROTOCOL
         case "IPV4":
-            return IPV4_SECURITYNETWORKPROTOCOL, nil
+            result = IPV4_SECURITYNETWORKPROTOCOL
         case "TCP":
-            return TCP_SECURITYNETWORKPROTOCOL, nil
+            result = TCP_SECURITYNETWORKPROTOCOL
         case "PUP":
-            return PUP_SECURITYNETWORKPROTOCOL, nil
+            result = PUP_SECURITYNETWORKPROTOCOL
         case "UDP":
-            return UDP_SECURITYNETWORKPROTOCOL, nil
+            result = UDP_SECURITYNETWORKPROTOCOL
         case "IDP":
-            return IDP_SECURITYNETWORKPROTOCOL, nil
+            result = IDP_SECURITYNETWORKPROTOCOL
         case "IPV6":
-            return IPV6_SECURITYNETWORKPROTOCOL, nil
+            result = IPV6_SECURITYNETWORKPROTOCOL
         case "IPV6ROUTINGHEADER":
-            return IPV6ROUTINGHEADER_SECURITYNETWORKPROTOCOL, nil
+            result = IPV6ROUTINGHEADER_SECURITYNETWORKPROTOCOL
         case "IPV6FRAGMENTHEADER":
-            return IPV6FRAGMENTHEADER_SECURITYNETWORKPROTOCOL, nil
+            result = IPV6FRAGMENTHEADER_SECURITYNETWORKPROTOCOL
         case "IPSECENCAPSULATINGSECURITYPAYLOAD":
-            return IPSECENCAPSULATINGSECURITYPAYLOAD_SECURITYNETWORKPROTOCOL, nil
+            result = IPSECENCAPSULATINGSECURITYPAYLOAD_SECURITYNETWORKPROTOCOL
         case "IPSECAUTHENTICATIONHEADER":
-            return IPSECAUTHENTICATIONHEADER_SECURITYNETWORKPROTOCOL, nil
+            result = IPSECAUTHENTICATIONHEADER_SECURITYNETWORKPROTOCOL
         case "ICMPV6":
-            return ICMPV6_SECURITYNETWORKPROTOCOL, nil
+            result = ICMPV6_SECURITYNETWORKPROTOCOL
         case "IPV6NONEXTHEADER":
-            return IPV6NONEXTHEADER_SECURITYNETWORKPROTOCOL, nil
+            result = IPV6NONEXTHEADER_SECURITYNETWORKPROTOCOL
         case "IPV6DESTINATIONOPTIONS":
-            return IPV6DESTINATIONOPTIONS_SECURITYNETWORKPROTOCOL, nil
+            result = IPV6DESTINATIONOPTIONS_SECURITYNETWORKPROTOCOL
         case "ND":
-            return ND_SECURITYNETWORKPROTOCOL, nil
+            result = ND_SECURITYNETWORKPROTOCOL
         case "RAW":
-            return RAW_SECURITYNETWORKPROTOCOL, nil
+            result = RAW_SECURITYNETWORKPROTOCOL
         case "IPX":
-            return IPX_SECURITYNETWORKPROTOCOL, nil
+            result = IPX_SECURITYNETWORKPROTOCOL
         case "SPX":
-            return SPX_SECURITYNETWORKPROTOCOL, nil
+            result = SPX_SECURITYNETWORKPROTOCOL
         case "SPXII":
-            return SPXII_SECURITYNETWORKPROTOCOL, nil
+            result = SPXII_SECURITYNETWORKPROTOCOL
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SECURITYNETWORKPROTOCOL, nil
+            result = UNKNOWNFUTUREVALUE_SECURITYNETWORKPROTOCOL
+        default:
+            return 0, errors.New("Unknown SecurityNetworkProtocol value: " + v)
     }
-    return 0, errors.New("Unknown SecurityNetworkProtocol value: " + v)
+    return &result, nil
 }
 func SerializeSecurityNetworkProtocol(values []SecurityNetworkProtocol) []string {
     result := make([]string, len(values))

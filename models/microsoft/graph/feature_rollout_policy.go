@@ -118,8 +118,7 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(interface
             return err
         }
         if val != nil {
-            cast := val.(StagedFeatureName)
-            m.SetFeature(&cast)
+            m.SetFeature(val.(*StagedFeatureName))
         }
         return nil
     }
@@ -178,7 +177,7 @@ func (m *FeatureRolloutPolicy) Serialize(writer i04eb5309aeaafadd28374d79c8471df
         }
     }
     if m.GetFeature() != nil {
-        cast := m.GetFeature().String()
+        cast := (*m.GetFeature()).String()
         err = writer.WriteStringValue("feature", &cast)
         if err != nil {
             return err

@@ -17,17 +17,20 @@ func (i ManagedAppClipboardSharingLevel) String() string {
     return []string{"ALLAPPS", "MANAGEDAPPSWITHPASTEIN", "MANAGEDAPPS", "BLOCKED"}[i]
 }
 func ParseManagedAppClipboardSharingLevel(v string) (interface{}, error) {
+    result := ALLAPPS_MANAGEDAPPCLIPBOARDSHARINGLEVEL
     switch strings.ToUpper(v) {
         case "ALLAPPS":
-            return ALLAPPS_MANAGEDAPPCLIPBOARDSHARINGLEVEL, nil
+            result = ALLAPPS_MANAGEDAPPCLIPBOARDSHARINGLEVEL
         case "MANAGEDAPPSWITHPASTEIN":
-            return MANAGEDAPPSWITHPASTEIN_MANAGEDAPPCLIPBOARDSHARINGLEVEL, nil
+            result = MANAGEDAPPSWITHPASTEIN_MANAGEDAPPCLIPBOARDSHARINGLEVEL
         case "MANAGEDAPPS":
-            return MANAGEDAPPS_MANAGEDAPPCLIPBOARDSHARINGLEVEL, nil
+            result = MANAGEDAPPS_MANAGEDAPPCLIPBOARDSHARINGLEVEL
         case "BLOCKED":
-            return BLOCKED_MANAGEDAPPCLIPBOARDSHARINGLEVEL, nil
+            result = BLOCKED_MANAGEDAPPCLIPBOARDSHARINGLEVEL
+        default:
+            return 0, errors.New("Unknown ManagedAppClipboardSharingLevel value: " + v)
     }
-    return 0, errors.New("Unknown ManagedAppClipboardSharingLevel value: " + v)
+    return &result, nil
 }
 func SerializeManagedAppClipboardSharingLevel(values []ManagedAppClipboardSharingLevel) []string {
     result := make([]string, len(values))

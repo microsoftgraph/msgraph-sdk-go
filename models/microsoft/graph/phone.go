@@ -14,7 +14,7 @@ type Phone struct {
     number *string;
     // 
     region *string;
-    // The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+    // The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
     type_escaped *PhoneType;
 }
 // NewPhone instantiates a new phone and sets the default values.
@@ -56,7 +56,7 @@ func (m *Phone) GetRegion()(*string) {
         return m.region
     }
 }
-// GetType gets the type property value. The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+// GetType gets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) GetType()(*PhoneType) {
     if m == nil {
         return nil
@@ -103,8 +103,7 @@ func (m *Phone) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
             return err
         }
         if val != nil {
-            cast := val.(PhoneType)
-            m.SetType(&cast)
+            m.SetType(val.(*PhoneType))
         }
         return nil
     }
@@ -134,7 +133,7 @@ func (m *Phone) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -172,7 +171,7 @@ func (m *Phone) SetRegion(value *string)() {
         m.region = value
     }
 }
-// SetType sets the type property value. The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+// SetType sets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) SetType(value *PhoneType)() {
     if m != nil {
         m.type_escaped = value

@@ -35,7 +35,7 @@ type DetailsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// DetailsRequestBuilderGetQueryParameters additional details about the plan. Read-only. Nullable.
+// DetailsRequestBuilderGetQueryParameters read-only. Nullable. Additional details about the plan.
 type DetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewDetailsRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation additional details about the plan. Read-only. Nullable.
+// CreateDeleteRequestInformation read-only. Nullable. Additional details about the plan.
 func (m *DetailsRequestBuilder) CreateDeleteRequestInformation(options *DetailsRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *DetailsRequestBuilder) CreateDeleteRequestInformation(options *DetailsR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation additional details about the plan. Read-only. Nullable.
+// CreateGetRequestInformation read-only. Nullable. Additional details about the plan.
 func (m *DetailsRequestBuilder) CreateGetRequestInformation(options *DetailsRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *DetailsRequestBuilder) CreateGetRequestInformation(options *DetailsRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation additional details about the plan. Read-only. Nullable.
+// CreatePatchRequestInformation read-only. Nullable. Additional details about the plan.
 func (m *DetailsRequestBuilder) CreatePatchRequestInformation(options *DetailsRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *DetailsRequestBuilder) CreatePatchRequestInformation(options *DetailsRe
     }
     return requestInfo, nil
 }
-// Delete additional details about the plan. Read-only. Nullable.
+// Delete read-only. Nullable. Additional details about the plan.
 func (m *DetailsRequestBuilder) Delete(options *DetailsRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *DetailsRequestBuilder) Delete(options *DetailsRequestBuilderDeleteOptio
     }
     return nil
 }
-// Get additional details about the plan. Read-only. Nullable.
+// Get read-only. Nullable. Additional details about the plan.
 func (m *DetailsRequestBuilder) Get(options *DetailsRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerPlanDetails, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *DetailsRequestBuilder) Get(options *DetailsRequestBuilderGetOptions)(*i
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.PlannerPlanDetails), nil
 }
-// Patch additional details about the plan. Read-only. Nullable.
+// Patch read-only. Nullable. Additional details about the plan.
 func (m *DetailsRequestBuilder) Patch(options *DetailsRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

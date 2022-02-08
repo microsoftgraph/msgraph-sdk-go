@@ -16,15 +16,18 @@ func (i AccessPackageCatalogState) String() string {
     return []string{"UNPUBLISHED", "PUBLISHED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAccessPackageCatalogState(v string) (interface{}, error) {
+    result := UNPUBLISHED_ACCESSPACKAGECATALOGSTATE
     switch strings.ToUpper(v) {
         case "UNPUBLISHED":
-            return UNPUBLISHED_ACCESSPACKAGECATALOGSTATE, nil
+            result = UNPUBLISHED_ACCESSPACKAGECATALOGSTATE
         case "PUBLISHED":
-            return PUBLISHED_ACCESSPACKAGECATALOGSTATE, nil
+            result = PUBLISHED_ACCESSPACKAGECATALOGSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACCESSPACKAGECATALOGSTATE, nil
+            result = UNKNOWNFUTUREVALUE_ACCESSPACKAGECATALOGSTATE
+        default:
+            return 0, errors.New("Unknown AccessPackageCatalogState value: " + v)
     }
-    return 0, errors.New("Unknown AccessPackageCatalogState value: " + v)
+    return &result, nil
 }
 func SerializeAccessPackageCatalogState(values []AccessPackageCatalogState) []string {
     result := make([]string, len(values))

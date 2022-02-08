@@ -18,19 +18,22 @@ func (i ThreatCategory) String() string {
     return []string{"UNDEFINED", "SPAM", "PHISHING", "MALWARE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseThreatCategory(v string) (interface{}, error) {
+    result := UNDEFINED_THREATCATEGORY
     switch strings.ToUpper(v) {
         case "UNDEFINED":
-            return UNDEFINED_THREATCATEGORY, nil
+            result = UNDEFINED_THREATCATEGORY
         case "SPAM":
-            return SPAM_THREATCATEGORY, nil
+            result = SPAM_THREATCATEGORY
         case "PHISHING":
-            return PHISHING_THREATCATEGORY, nil
+            result = PHISHING_THREATCATEGORY
         case "MALWARE":
-            return MALWARE_THREATCATEGORY, nil
+            result = MALWARE_THREATCATEGORY
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_THREATCATEGORY, nil
+            result = UNKNOWNFUTUREVALUE_THREATCATEGORY
+        default:
+            return 0, errors.New("Unknown ThreatCategory value: " + v)
     }
-    return 0, errors.New("Unknown ThreatCategory value: " + v)
+    return &result, nil
 }
 func SerializeThreatCategory(values []ThreatCategory) []string {
     result := make([]string, len(values))

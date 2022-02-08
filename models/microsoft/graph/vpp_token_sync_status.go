@@ -17,17 +17,20 @@ func (i VppTokenSyncStatus) String() string {
     return []string{"NONE", "INPROGRESS", "COMPLETED", "FAILED"}[i]
 }
 func ParseVppTokenSyncStatus(v string) (interface{}, error) {
+    result := NONE_VPPTOKENSYNCSTATUS
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_VPPTOKENSYNCSTATUS, nil
+            result = NONE_VPPTOKENSYNCSTATUS
         case "INPROGRESS":
-            return INPROGRESS_VPPTOKENSYNCSTATUS, nil
+            result = INPROGRESS_VPPTOKENSYNCSTATUS
         case "COMPLETED":
-            return COMPLETED_VPPTOKENSYNCSTATUS, nil
+            result = COMPLETED_VPPTOKENSYNCSTATUS
         case "FAILED":
-            return FAILED_VPPTOKENSYNCSTATUS, nil
+            result = FAILED_VPPTOKENSYNCSTATUS
+        default:
+            return 0, errors.New("Unknown VppTokenSyncStatus value: " + v)
     }
-    return 0, errors.New("Unknown VppTokenSyncStatus value: " + v)
+    return &result, nil
 }
 func SerializeVppTokenSyncStatus(values []VppTokenSyncStatus) []string {
     result := make([]string, len(values))

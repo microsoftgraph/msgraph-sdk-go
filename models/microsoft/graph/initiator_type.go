@@ -17,17 +17,20 @@ func (i InitiatorType) String() string {
     return []string{"USER", "APPLICATION", "SYSTEM", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseInitiatorType(v string) (interface{}, error) {
+    result := USER_INITIATORTYPE
     switch strings.ToUpper(v) {
         case "USER":
-            return USER_INITIATORTYPE, nil
+            result = USER_INITIATORTYPE
         case "APPLICATION":
-            return APPLICATION_INITIATORTYPE, nil
+            result = APPLICATION_INITIATORTYPE
         case "SYSTEM":
-            return SYSTEM_INITIATORTYPE, nil
+            result = SYSTEM_INITIATORTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_INITIATORTYPE, nil
+            result = UNKNOWNFUTUREVALUE_INITIATORTYPE
+        default:
+            return 0, errors.New("Unknown InitiatorType value: " + v)
     }
-    return 0, errors.New("Unknown InitiatorType value: " + v)
+    return &result, nil
 }
 func SerializeInitiatorType(values []InitiatorType) []string {
     result := make([]string, len(values))

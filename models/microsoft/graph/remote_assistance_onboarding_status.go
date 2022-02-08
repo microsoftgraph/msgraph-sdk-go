@@ -16,15 +16,18 @@ func (i RemoteAssistanceOnboardingStatus) String() string {
     return []string{"NOTONBOARDED", "ONBOARDING", "ONBOARDED"}[i]
 }
 func ParseRemoteAssistanceOnboardingStatus(v string) (interface{}, error) {
+    result := NOTONBOARDED_REMOTEASSISTANCEONBOARDINGSTATUS
     switch strings.ToUpper(v) {
         case "NOTONBOARDED":
-            return NOTONBOARDED_REMOTEASSISTANCEONBOARDINGSTATUS, nil
+            result = NOTONBOARDED_REMOTEASSISTANCEONBOARDINGSTATUS
         case "ONBOARDING":
-            return ONBOARDING_REMOTEASSISTANCEONBOARDINGSTATUS, nil
+            result = ONBOARDING_REMOTEASSISTANCEONBOARDINGSTATUS
         case "ONBOARDED":
-            return ONBOARDED_REMOTEASSISTANCEONBOARDINGSTATUS, nil
+            result = ONBOARDED_REMOTEASSISTANCEONBOARDINGSTATUS
+        default:
+            return 0, errors.New("Unknown RemoteAssistanceOnboardingStatus value: " + v)
     }
-    return 0, errors.New("Unknown RemoteAssistanceOnboardingStatus value: " + v)
+    return &result, nil
 }
 func SerializeRemoteAssistanceOnboardingStatus(values []RemoteAssistanceOnboardingStatus) []string {
     result := make([]string, len(values))

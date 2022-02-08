@@ -12,7 +12,7 @@ type Website struct {
     address *string;
     // The display name of the web site.
     displayName *string;
-    // Possible values are: other, home, work, blog, profile.
+    // The possible values are: other, home, work, blog, profile.
     type_escaped *WebsiteType;
 }
 // NewWebsite instantiates a new website and sets the default values.
@@ -46,7 +46,7 @@ func (m *Website) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetType gets the type property value. Possible values are: other, home, work, blog, profile.
+// GetType gets the type property value. The possible values are: other, home, work, blog, profile.
 func (m *Website) GetType()(*WebsiteType) {
     if m == nil {
         return nil
@@ -83,8 +83,7 @@ func (m *Website) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
             return err
         }
         if val != nil {
-            cast := val.(WebsiteType)
-            m.SetType(&cast)
+            m.SetType(val.(*WebsiteType))
         }
         return nil
     }
@@ -108,7 +107,7 @@ func (m *Website) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -140,7 +139,7 @@ func (m *Website) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetType sets the type property value. Possible values are: other, home, work, blog, profile.
+// SetType sets the type property value. The possible values are: other, home, work, blog, profile.
 func (m *Website) SetType(value *WebsiteType)() {
     if m != nil {
         m.type_escaped = value

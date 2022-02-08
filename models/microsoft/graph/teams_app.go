@@ -88,8 +88,7 @@ func (m *TeamsApp) GetFieldDeserializers()(map[string]func(interface{}, i04eb530
             return err
         }
         if val != nil {
-            cast := val.(TeamsAppDistributionMethod)
-            m.SetDistributionMethod(&cast)
+            m.SetDistributionMethod(val.(*TeamsAppDistributionMethod))
         }
         return nil
     }
@@ -132,7 +131,7 @@ func (m *TeamsApp) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc
         }
     }
     if m.GetDistributionMethod() != nil {
-        cast := m.GetDistributionMethod().String()
+        cast := (*m.GetDistributionMethod()).String()
         err = writer.WriteStringValue("distributionMethod", &cast)
         if err != nil {
             return err

@@ -15,13 +15,16 @@ func (i DeviceManagementExportJobLocalizationType) String() string {
     return []string{"LOCALIZEDVALUESASADDITIONALCOLUMN", "REPLACELOCALIZABLEVALUES"}[i]
 }
 func ParseDeviceManagementExportJobLocalizationType(v string) (interface{}, error) {
+    result := LOCALIZEDVALUESASADDITIONALCOLUMN_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE
     switch strings.ToUpper(v) {
         case "LOCALIZEDVALUESASADDITIONALCOLUMN":
-            return LOCALIZEDVALUESASADDITIONALCOLUMN_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE, nil
+            result = LOCALIZEDVALUESASADDITIONALCOLUMN_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE
         case "REPLACELOCALIZABLEVALUES":
-            return REPLACELOCALIZABLEVALUES_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE, nil
+            result = REPLACELOCALIZABLEVALUES_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE
+        default:
+            return 0, errors.New("Unknown DeviceManagementExportJobLocalizationType value: " + v)
     }
-    return 0, errors.New("Unknown DeviceManagementExportJobLocalizationType value: " + v)
+    return &result, nil
 }
 func SerializeDeviceManagementExportJobLocalizationType(values []DeviceManagementExportJobLocalizationType) []string {
     result := make([]string, len(values))

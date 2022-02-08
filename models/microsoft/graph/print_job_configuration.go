@@ -28,7 +28,7 @@ type PrintJobConfiguration struct {
     inputBin *string;
     // The margin settings to use when printing.
     margin *PrintMargin;
-    // The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+    // The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
     mediaSize *string;
     // The default media (such as paper) type to print the document on.
     mediaType *string;
@@ -142,7 +142,7 @@ func (m *PrintJobConfiguration) GetMargin()(*PrintMargin) {
         return m.margin
     }
 }
-// GetMediaSize gets the mediaSize property value. The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+// GetMediaSize gets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
 func (m *PrintJobConfiguration) GetMediaSize()(*string) {
     if m == nil {
         return nil
@@ -233,8 +233,7 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(PrintColorMode)
-            m.SetColorMode(&cast)
+            m.SetColorMode(val.(*PrintColorMode))
         }
         return nil
     }
@@ -264,8 +263,7 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(PrintDuplexMode)
-            m.SetDuplexMode(&cast)
+            m.SetDuplexMode(val.(*PrintDuplexMode))
         }
         return nil
     }
@@ -275,8 +273,7 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(PrinterFeedOrientation)
-            m.SetFeedOrientation(&cast)
+            m.SetFeedOrientation(val.(*PrinterFeedOrientation))
         }
         return nil
     }
@@ -350,8 +347,7 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(PrintMultipageLayout)
-            m.SetMultipageLayout(&cast)
+            m.SetMultipageLayout(val.(*PrintMultipageLayout))
         }
         return nil
     }
@@ -361,8 +357,7 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(PrintOrientation)
-            m.SetOrientation(&cast)
+            m.SetOrientation(val.(*PrintOrientation))
         }
         return nil
     }
@@ -406,8 +401,7 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(PrintQuality)
-            m.SetQuality(&cast)
+            m.SetQuality(val.(*PrintQuality))
         }
         return nil
     }
@@ -417,8 +411,7 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(PrintScaling)
-            m.SetScaling(&cast)
+            m.SetScaling(val.(*PrintScaling))
         }
         return nil
     }
@@ -436,7 +429,7 @@ func (m *PrintJobConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetColorMode() != nil {
-        cast := m.GetColorMode().String()
+        cast := (*m.GetColorMode()).String()
         err := writer.WriteStringValue("colorMode", &cast)
         if err != nil {
             return err
@@ -455,14 +448,14 @@ func (m *PrintJobConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetDuplexMode() != nil {
-        cast := m.GetDuplexMode().String()
+        cast := (*m.GetDuplexMode()).String()
         err := writer.WriteStringValue("duplexMode", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetFeedOrientation() != nil {
-        cast := m.GetFeedOrientation().String()
+        cast := (*m.GetFeedOrientation()).String()
         err := writer.WriteStringValue("feedOrientation", &cast)
         if err != nil {
             return err
@@ -505,14 +498,14 @@ func (m *PrintJobConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetMultipageLayout() != nil {
-        cast := m.GetMultipageLayout().String()
+        cast := (*m.GetMultipageLayout()).String()
         err := writer.WriteStringValue("multipageLayout", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetOrientation() != nil {
-        cast := m.GetOrientation().String()
+        cast := (*m.GetOrientation()).String()
         err := writer.WriteStringValue("orientation", &cast)
         if err != nil {
             return err
@@ -542,14 +535,14 @@ func (m *PrintJobConfiguration) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetQuality() != nil {
-        cast := m.GetQuality().String()
+        cast := (*m.GetQuality()).String()
         err := writer.WriteStringValue("quality", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetScaling() != nil {
-        cast := m.GetScaling().String()
+        cast := (*m.GetScaling()).String()
         err := writer.WriteStringValue("scaling", &cast)
         if err != nil {
             return err
@@ -629,7 +622,7 @@ func (m *PrintJobConfiguration) SetMargin(value *PrintMargin)() {
         m.margin = value
     }
 }
-// SetMediaSize sets the mediaSize property value. The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+// SetMediaSize sets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
 func (m *PrintJobConfiguration) SetMediaSize(value *string)() {
     if m != nil {
         m.mediaSize = value

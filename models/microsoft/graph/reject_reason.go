@@ -17,17 +17,20 @@ func (i RejectReason) String() string {
     return []string{"NONE", "BUSY", "FORBIDDEN", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRejectReason(v string) (interface{}, error) {
+    result := NONE_REJECTREASON
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_REJECTREASON, nil
+            result = NONE_REJECTREASON
         case "BUSY":
-            return BUSY_REJECTREASON, nil
+            result = BUSY_REJECTREASON
         case "FORBIDDEN":
-            return FORBIDDEN_REJECTREASON, nil
+            result = FORBIDDEN_REJECTREASON
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_REJECTREASON, nil
+            result = UNKNOWNFUTUREVALUE_REJECTREASON
+        default:
+            return 0, errors.New("Unknown RejectReason value: " + v)
     }
-    return 0, errors.New("Unknown RejectReason value: " + v)
+    return &result, nil
 }
 func SerializeRejectReason(values []RejectReason) []string {
     result := make([]string, len(values))

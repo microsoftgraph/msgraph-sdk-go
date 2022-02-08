@@ -83,8 +83,7 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(ChatMessagePolicyViolationDlpActionTypes)
-            m.SetDlpAction(&cast)
+            m.SetDlpAction(val.(*ChatMessagePolicyViolationDlpActionTypes))
         }
         return nil
     }
@@ -114,8 +113,7 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(ChatMessagePolicyViolationUserActionTypes)
-            m.SetUserAction(&cast)
+            m.SetUserAction(val.(*ChatMessagePolicyViolationUserActionTypes))
         }
         return nil
     }
@@ -125,8 +123,7 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
             return err
         }
         if val != nil {
-            cast := val.(ChatMessagePolicyViolationVerdictDetailsTypes)
-            m.SetVerdictDetails(&cast)
+            m.SetVerdictDetails(val.(*ChatMessagePolicyViolationVerdictDetailsTypes))
         }
         return nil
     }
@@ -138,7 +135,7 @@ func (m *ChatMessagePolicyViolation) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ChatMessagePolicyViolation) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetDlpAction() != nil {
-        cast := m.GetDlpAction().String()
+        cast := (*m.GetDlpAction()).String()
         err := writer.WriteStringValue("dlpAction", &cast)
         if err != nil {
             return err
@@ -157,14 +154,14 @@ func (m *ChatMessagePolicyViolation) Serialize(writer i04eb5309aeaafadd28374d79c
         }
     }
     if m.GetUserAction() != nil {
-        cast := m.GetUserAction().String()
+        cast := (*m.GetUserAction()).String()
         err := writer.WriteStringValue("userAction", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetVerdictDetails() != nil {
-        cast := m.GetVerdictDetails().String()
+        cast := (*m.GetVerdictDetails()).String()
         err := writer.WriteStringValue("verdictDetails", &cast)
         if err != nil {
             return err

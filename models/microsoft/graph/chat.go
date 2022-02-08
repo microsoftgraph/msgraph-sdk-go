@@ -20,8 +20,12 @@ type Chat struct {
     members []ConversationMember;
     // A collection of all the messages in the chat. Nullable.
     messages []ChatMessage;
+    // Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
+    onlineMeetingInfo *TeamworkOnlineMeetingInfo;
     // 
     tabs []TeamsTab;
+    // The identifier of the tenant in which the chat was created. Read-only.
+    tenantId *string;
     // (Optional) Subject or topic for the chat. Only available for group chats.
     topic *string;
     // The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
@@ -82,12 +86,28 @@ func (m *Chat) GetMessages()([]ChatMessage) {
         return m.messages
     }
 }
+// GetOnlineMeetingInfo gets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
+func (m *Chat) GetOnlineMeetingInfo()(*TeamworkOnlineMeetingInfo) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onlineMeetingInfo
+    }
+}
 // GetTabs gets the tabs property value. 
 func (m *Chat) GetTabs()([]TeamsTab) {
     if m == nil {
         return nil
     } else {
         return m.tabs
+    }
+}
+// GetTenantId gets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
+func (m *Chat) GetTenantId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.tenantId
     }
 }
 // GetTopic gets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.
@@ -115,8 +135,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
             return err
         }
         if val != nil {
-            cast := val.(ChatType)
-            m.SetChatType(&cast)
+            m.SetChatType(val.(*ChatType))
         }
         return nil
     }
@@ -182,6 +201,16 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
         }
         return nil
     }
+    res["onlineMeetingInfo"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamworkOnlineMeetingInfo() })
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnlineMeetingInfo(val.(*TeamworkOnlineMeetingInfo))
+        }
+        return nil
+    }
     res["tabs"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTeamsTab() })
         if err != nil {
@@ -193,6 +222,16 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aea
                 res[i] = *(v.(*TeamsTab))
             }
             m.SetTabs(res)
+        }
+        return nil
+    }
+    res["tenantId"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantId(val)
         }
         return nil
     }
@@ -228,7 +267,7 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
         return err
     }
     if m.GetChatType() != nil {
-        cast := m.GetChatType().String()
+        cast := (*m.GetChatType()).String()
         err = writer.WriteStringValue("chatType", &cast)
         if err != nil {
             return err
@@ -279,6 +318,12 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("onlineMeetingInfo", m.GetOnlineMeetingInfo())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTabs() != nil {
         cast := make([]i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable, len(m.GetTabs()))
         for i, v := range m.GetTabs() {
@@ -286,6 +331,12 @@ func (m *Chat) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
             cast[i] = i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable(&temp)
         }
         err = writer.WriteCollectionOfObjectValues("tabs", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
             return err
         }
@@ -340,10 +391,22 @@ func (m *Chat) SetMessages(value []ChatMessage)() {
         m.messages = value
     }
 }
+// SetOnlineMeetingInfo sets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
+func (m *Chat) SetOnlineMeetingInfo(value *TeamworkOnlineMeetingInfo)() {
+    if m != nil {
+        m.onlineMeetingInfo = value
+    }
+}
 // SetTabs sets the tabs property value. 
 func (m *Chat) SetTabs(value []TeamsTab)() {
     if m != nil {
         m.tabs = value
+    }
+}
+// SetTenantId sets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
+func (m *Chat) SetTenantId(value *string)() {
+    if m != nil {
+        m.tenantId = value
     }
 }
 // SetTopic sets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.

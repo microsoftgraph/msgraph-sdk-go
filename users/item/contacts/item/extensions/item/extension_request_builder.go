@@ -35,7 +35,7 @@ type ExtensionRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ExtensionRequestBuilderGetQueryParameters the collection of open extensions defined for the contact. Nullable.
+// ExtensionRequestBuilderGetQueryParameters the collection of open extensions defined for the contact. Read-only. Nullable.
 type ExtensionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewExtensionRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f8
     urlParams["request-raw-url"] = rawUrl
     return NewExtensionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the collection of open extensions defined for the contact. Nullable.
+// CreateDeleteRequestInformation the collection of open extensions defined for the contact. Read-only. Nullable.
 func (m *ExtensionRequestBuilder) CreateDeleteRequestInformation(options *ExtensionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *ExtensionRequestBuilder) CreateDeleteRequestInformation(options *Extens
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the collection of open extensions defined for the contact. Nullable.
+// CreateGetRequestInformation the collection of open extensions defined for the contact. Read-only. Nullable.
 func (m *ExtensionRequestBuilder) CreateGetRequestInformation(options *ExtensionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *ExtensionRequestBuilder) CreateGetRequestInformation(options *Extension
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the collection of open extensions defined for the contact. Nullable.
+// CreatePatchRequestInformation the collection of open extensions defined for the contact. Read-only. Nullable.
 func (m *ExtensionRequestBuilder) CreatePatchRequestInformation(options *ExtensionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *ExtensionRequestBuilder) CreatePatchRequestInformation(options *Extensi
     }
     return requestInfo, nil
 }
-// Delete the collection of open extensions defined for the contact. Nullable.
+// Delete the collection of open extensions defined for the contact. Read-only. Nullable.
 func (m *ExtensionRequestBuilder) Delete(options *ExtensionRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *ExtensionRequestBuilder) Delete(options *ExtensionRequestBuilderDeleteO
     }
     return nil
 }
-// Get the collection of open extensions defined for the contact. Nullable.
+// Get the collection of open extensions defined for the contact. Read-only. Nullable.
 func (m *ExtensionRequestBuilder) Get(options *ExtensionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *ExtensionRequestBuilder) Get(options *ExtensionRequestBuilderGetOptions
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Extension), nil
 }
-// Patch the collection of open extensions defined for the contact. Nullable.
+// Patch the collection of open extensions defined for the contact. Read-only. Nullable.
 func (m *ExtensionRequestBuilder) Patch(options *ExtensionRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

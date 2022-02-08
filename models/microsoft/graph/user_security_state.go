@@ -204,8 +204,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(EmailRole)
-            m.SetEmailRole(&cast)
+            m.SetEmailRole(val.(*EmailRole))
         }
         return nil
     }
@@ -265,8 +264,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(LogonType)
-            m.SetLogonType(&cast)
+            m.SetLogonType(val.(*LogonType))
         }
         return nil
     }
@@ -296,8 +294,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(UserAccountSecurityType)
-            m.SetUserAccountType(&cast)
+            m.SetUserAccountType(val.(*UserAccountSecurityType))
         }
         return nil
     }
@@ -337,7 +334,7 @@ func (m *UserSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetEmailRole() != nil {
-        cast := m.GetEmailRole().String()
+        cast := (*m.GetEmailRole()).String()
         err := writer.WriteStringValue("emailRole", &cast)
         if err != nil {
             return err
@@ -374,7 +371,7 @@ func (m *UserSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetLogonType() != nil {
-        cast := m.GetLogonType().String()
+        cast := (*m.GetLogonType()).String()
         err := writer.WriteStringValue("logonType", &cast)
         if err != nil {
             return err
@@ -393,7 +390,7 @@ func (m *UserSecurityState) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetUserAccountType() != nil {
-        cast := m.GetUserAccountType().String()
+        cast := (*m.GetUserAccountType()).String()
         err := writer.WriteStringValue("userAccountType", &cast)
         if err != nil {
             return err

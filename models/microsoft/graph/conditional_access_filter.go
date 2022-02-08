@@ -10,7 +10,7 @@ type ConditionalAccessFilter struct {
     additionalData map[string]interface{};
     // Mode to use for the filter. Possible values are include or exclude.
     mode *FilterMode;
-    // Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
+    // Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
     rule *string;
 }
 // NewConditionalAccessFilter instantiates a new conditionalAccessFilter and sets the default values.
@@ -36,7 +36,7 @@ func (m *ConditionalAccessFilter) GetMode()(*FilterMode) {
         return m.mode
     }
 }
-// GetRule gets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
+// GetRule gets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
 func (m *ConditionalAccessFilter) GetRule()(*string) {
     if m == nil {
         return nil
@@ -53,8 +53,7 @@ func (m *ConditionalAccessFilter) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(FilterMode)
-            m.SetMode(&cast)
+            m.SetMode(val.(*FilterMode))
         }
         return nil
     }
@@ -76,7 +75,7 @@ func (m *ConditionalAccessFilter) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *ConditionalAccessFilter) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetMode() != nil {
-        cast := m.GetMode().String()
+        cast := (*m.GetMode()).String()
         err := writer.WriteStringValue("mode", &cast)
         if err != nil {
             return err
@@ -108,7 +107,7 @@ func (m *ConditionalAccessFilter) SetMode(value *FilterMode)() {
         m.mode = value
     }
 }
-// SetRule sets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
+// SetRule sets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
 func (m *ConditionalAccessFilter) SetRule(value *string)() {
     if m != nil {
         m.rule = value

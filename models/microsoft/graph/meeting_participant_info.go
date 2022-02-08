@@ -73,8 +73,7 @@ func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(interfa
             return err
         }
         if val != nil {
-            cast := val.(OnlineMeetingRole)
-            m.SetRole(&cast)
+            m.SetRole(val.(*OnlineMeetingRole))
         }
         return nil
     }
@@ -102,7 +101,7 @@ func (m *MeetingParticipantInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471
         }
     }
     if m.GetRole() != nil {
-        cast := m.GetRole().String()
+        cast := (*m.GetRole()).String()
         err := writer.WriteStringValue("role", &cast)
         if err != nil {
             return err

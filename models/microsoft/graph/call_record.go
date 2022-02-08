@@ -23,11 +23,11 @@ type CallRecord struct {
     participants []IdentitySet;
     // List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
     sessions []Session;
-    // UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    // UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Indicates the type of the call. Possible values are: unknown, groupCall, peerToPeer, unknownFutureValue.
     type_escaped *i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CallType;
-    // Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+    // Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
     version *int64;
 }
 // NewCallRecord instantiates a new callRecord and sets the default values.
@@ -93,7 +93,7 @@ func (m *CallRecord) GetSessions()([]Session) {
         return m.sessions
     }
 }
-// GetStartDateTime gets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetStartDateTime gets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CallRecord) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *CallRecord) GetType()(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91
         return m.type_escaped
     }
 }
-// GetVersion gets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+// GetVersion gets the version property value. Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
 func (m *CallRecord) GetVersion()(*int64) {
     if m == nil {
         return nil
@@ -218,8 +218,7 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
             return err
         }
         if val != nil {
-            cast := val.(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CallType)
-            m.SetType(&cast)
+            m.SetType(val.(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.CallType))
         }
         return nil
     }
@@ -303,7 +302,7 @@ func (m *CallRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -359,7 +358,7 @@ func (m *CallRecord) SetSessions(value []Session)() {
         m.sessions = value
     }
 }
-// SetStartDateTime sets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetStartDateTime sets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CallRecord) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.startDateTime = value
@@ -371,7 +370,7 @@ func (m *CallRecord) SetType(value *i6afae973b07adf053fd7fc51b2f43be439d7fa83efb
         m.type_escaped = value
     }
 }
-// SetVersion sets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+// SetVersion sets the version property value. Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
 func (m *CallRecord) SetVersion(value *int64)() {
     if m != nil {
         m.version = value

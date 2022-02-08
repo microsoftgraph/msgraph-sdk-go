@@ -95,8 +95,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) GetFieldDeserializers()(ma
             return err
         }
         if val != nil {
-            cast := val.(AuthenticationMethodKeyStrength)
-            m.SetKeyStrength(&cast)
+            m.SetKeyStrength(val.(*AuthenticationMethodKeyStrength))
         }
         return nil
     }
@@ -130,7 +129,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) Serialize(writer i04eb5309
         }
     }
     if m.GetKeyStrength() != nil {
-        cast := m.GetKeyStrength().String()
+        cast := (*m.GetKeyStrength()).String()
         err = writer.WriteStringValue("keyStrength", &cast)
         if err != nil {
             return err

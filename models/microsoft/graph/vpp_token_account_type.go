@@ -15,13 +15,16 @@ func (i VppTokenAccountType) String() string {
     return []string{"BUSINESS", "EDUCATION"}[i]
 }
 func ParseVppTokenAccountType(v string) (interface{}, error) {
+    result := BUSINESS_VPPTOKENACCOUNTTYPE
     switch strings.ToUpper(v) {
         case "BUSINESS":
-            return BUSINESS_VPPTOKENACCOUNTTYPE, nil
+            result = BUSINESS_VPPTOKENACCOUNTTYPE
         case "EDUCATION":
-            return EDUCATION_VPPTOKENACCOUNTTYPE, nil
+            result = EDUCATION_VPPTOKENACCOUNTTYPE
+        default:
+            return 0, errors.New("Unknown VppTokenAccountType value: " + v)
     }
-    return 0, errors.New("Unknown VppTokenAccountType value: " + v)
+    return &result, nil
 }
 func SerializeVppTokenAccountType(values []VppTokenAccountType) []string {
     result := make([]string, len(values))

@@ -26,35 +26,38 @@ func (i ScheduleEntityTheme) String() string {
     return []string{"WHITE", "BLUE", "GREEN", "PURPLE", "PINK", "YELLOW", "GRAY", "DARKBLUE", "DARKGREEN", "DARKPURPLE", "DARKPINK", "DARKYELLOW", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseScheduleEntityTheme(v string) (interface{}, error) {
+    result := WHITE_SCHEDULEENTITYTHEME
     switch strings.ToUpper(v) {
         case "WHITE":
-            return WHITE_SCHEDULEENTITYTHEME, nil
+            result = WHITE_SCHEDULEENTITYTHEME
         case "BLUE":
-            return BLUE_SCHEDULEENTITYTHEME, nil
+            result = BLUE_SCHEDULEENTITYTHEME
         case "GREEN":
-            return GREEN_SCHEDULEENTITYTHEME, nil
+            result = GREEN_SCHEDULEENTITYTHEME
         case "PURPLE":
-            return PURPLE_SCHEDULEENTITYTHEME, nil
+            result = PURPLE_SCHEDULEENTITYTHEME
         case "PINK":
-            return PINK_SCHEDULEENTITYTHEME, nil
+            result = PINK_SCHEDULEENTITYTHEME
         case "YELLOW":
-            return YELLOW_SCHEDULEENTITYTHEME, nil
+            result = YELLOW_SCHEDULEENTITYTHEME
         case "GRAY":
-            return GRAY_SCHEDULEENTITYTHEME, nil
+            result = GRAY_SCHEDULEENTITYTHEME
         case "DARKBLUE":
-            return DARKBLUE_SCHEDULEENTITYTHEME, nil
+            result = DARKBLUE_SCHEDULEENTITYTHEME
         case "DARKGREEN":
-            return DARKGREEN_SCHEDULEENTITYTHEME, nil
+            result = DARKGREEN_SCHEDULEENTITYTHEME
         case "DARKPURPLE":
-            return DARKPURPLE_SCHEDULEENTITYTHEME, nil
+            result = DARKPURPLE_SCHEDULEENTITYTHEME
         case "DARKPINK":
-            return DARKPINK_SCHEDULEENTITYTHEME, nil
+            result = DARKPINK_SCHEDULEENTITYTHEME
         case "DARKYELLOW":
-            return DARKYELLOW_SCHEDULEENTITYTHEME, nil
+            result = DARKYELLOW_SCHEDULEENTITYTHEME
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SCHEDULEENTITYTHEME, nil
+            result = UNKNOWNFUTUREVALUE_SCHEDULEENTITYTHEME
+        default:
+            return 0, errors.New("Unknown ScheduleEntityTheme value: " + v)
     }
-    return 0, errors.New("Unknown ScheduleEntityTheme value: " + v)
+    return &result, nil
 }
 func SerializeScheduleEntityTheme(values []ScheduleEntityTheme) []string {
     result := make([]string, len(values))

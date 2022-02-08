@@ -16,15 +16,18 @@ func (i RelationType) String() string {
     return []string{"PIN", "REUSE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRelationType(v string) (interface{}, error) {
+    result := PIN_RELATIONTYPE
     switch strings.ToUpper(v) {
         case "PIN":
-            return PIN_RELATIONTYPE, nil
+            result = PIN_RELATIONTYPE
         case "REUSE":
-            return REUSE_RELATIONTYPE, nil
+            result = REUSE_RELATIONTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_RELATIONTYPE, nil
+            result = UNKNOWNFUTUREVALUE_RELATIONTYPE
+        default:
+            return 0, errors.New("Unknown RelationType value: " + v)
     }
-    return 0, errors.New("Unknown RelationType value: " + v)
+    return &result, nil
 }
 func SerializeRelationType(values []RelationType) []string {
     result := make([]string, len(values))

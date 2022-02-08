@@ -16,15 +16,18 @@ func (i AuthenticationMethodKeyStrength) String() string {
     return []string{"NORMAL", "WEAK", "UNKNOWN"}[i]
 }
 func ParseAuthenticationMethodKeyStrength(v string) (interface{}, error) {
+    result := NORMAL_AUTHENTICATIONMETHODKEYSTRENGTH
     switch strings.ToUpper(v) {
         case "NORMAL":
-            return NORMAL_AUTHENTICATIONMETHODKEYSTRENGTH, nil
+            result = NORMAL_AUTHENTICATIONMETHODKEYSTRENGTH
         case "WEAK":
-            return WEAK_AUTHENTICATIONMETHODKEYSTRENGTH, nil
+            result = WEAK_AUTHENTICATIONMETHODKEYSTRENGTH
         case "UNKNOWN":
-            return UNKNOWN_AUTHENTICATIONMETHODKEYSTRENGTH, nil
+            result = UNKNOWN_AUTHENTICATIONMETHODKEYSTRENGTH
+        default:
+            return 0, errors.New("Unknown AuthenticationMethodKeyStrength value: " + v)
     }
-    return 0, errors.New("Unknown AuthenticationMethodKeyStrength value: " + v)
+    return &result, nil
 }
 func SerializeAuthenticationMethodKeyStrength(values []AuthenticationMethodKeyStrength) []string {
     result := make([]string, len(values))

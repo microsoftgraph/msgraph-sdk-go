@@ -8,7 +8,7 @@ import (
 type AssignmentOrder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.
+    // A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
     order []string;
 }
 // NewAssignmentOrder instantiates a new assignmentOrder and sets the default values.
@@ -26,7 +26,7 @@ func (m *AssignmentOrder) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetOrder gets the order property value. A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.
+// GetOrder gets the order property value. A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
 func (m *AssignmentOrder) GetOrder()([]string) {
     if m == nil {
         return nil
@@ -78,7 +78,7 @@ func (m *AssignmentOrder) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetOrder sets the order property value. A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.
+// SetOrder sets the order property value. A list of identityUserFlowAttribute object identifiers that determine the order in which attributes should be collected within a user flow.
 func (m *AssignmentOrder) SetOrder(value []string)() {
     if m != nil {
         m.order = value

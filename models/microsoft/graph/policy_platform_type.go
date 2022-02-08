@@ -21,25 +21,28 @@ func (i PolicyPlatformType) String() string {
     return []string{"ANDROID", "ANDROIDFORWORK", "IOS", "MACOS", "WINDOWSPHONE81", "WINDOWS81ANDLATER", "WINDOWS10ANDLATER", "ALL"}[i]
 }
 func ParsePolicyPlatformType(v string) (interface{}, error) {
+    result := ANDROID_POLICYPLATFORMTYPE
     switch strings.ToUpper(v) {
         case "ANDROID":
-            return ANDROID_POLICYPLATFORMTYPE, nil
+            result = ANDROID_POLICYPLATFORMTYPE
         case "ANDROIDFORWORK":
-            return ANDROIDFORWORK_POLICYPLATFORMTYPE, nil
+            result = ANDROIDFORWORK_POLICYPLATFORMTYPE
         case "IOS":
-            return IOS_POLICYPLATFORMTYPE, nil
+            result = IOS_POLICYPLATFORMTYPE
         case "MACOS":
-            return MACOS_POLICYPLATFORMTYPE, nil
+            result = MACOS_POLICYPLATFORMTYPE
         case "WINDOWSPHONE81":
-            return WINDOWSPHONE81_POLICYPLATFORMTYPE, nil
+            result = WINDOWSPHONE81_POLICYPLATFORMTYPE
         case "WINDOWS81ANDLATER":
-            return WINDOWS81ANDLATER_POLICYPLATFORMTYPE, nil
+            result = WINDOWS81ANDLATER_POLICYPLATFORMTYPE
         case "WINDOWS10ANDLATER":
-            return WINDOWS10ANDLATER_POLICYPLATFORMTYPE, nil
+            result = WINDOWS10ANDLATER_POLICYPLATFORMTYPE
         case "ALL":
-            return ALL_POLICYPLATFORMTYPE, nil
+            result = ALL_POLICYPLATFORMTYPE
+        default:
+            return 0, errors.New("Unknown PolicyPlatformType value: " + v)
     }
-    return 0, errors.New("Unknown PolicyPlatformType value: " + v)
+    return &result, nil
 }
 func SerializePolicyPlatformType(values []PolicyPlatformType) []string {
     result := make([]string, len(values))

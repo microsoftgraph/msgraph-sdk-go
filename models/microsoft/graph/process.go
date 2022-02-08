@@ -194,8 +194,7 @@ func (m *Process) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
             return err
         }
         if val != nil {
-            cast := val.(ProcessIntegrityLevel)
-            m.SetIntegrityLevel(&cast)
+            m.SetIntegrityLevel(val.(*ProcessIntegrityLevel))
         }
         return nil
     }
@@ -301,7 +300,7 @@ func (m *Process) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     if m.GetIntegrityLevel() != nil {
-        cast := m.GetIntegrityLevel().String()
+        cast := (*m.GetIntegrityLevel()).String()
         err := writer.WriteStringValue("integrityLevel", &cast)
         if err != nil {
             return err

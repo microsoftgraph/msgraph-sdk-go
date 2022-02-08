@@ -18,19 +18,22 @@ func (i VppTokenState) String() string {
     return []string{"UNKNOWN", "VALID", "EXPIRED", "INVALID", "ASSIGNEDTOEXTERNALMDM"}[i]
 }
 func ParseVppTokenState(v string) (interface{}, error) {
+    result := UNKNOWN_VPPTOKENSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_VPPTOKENSTATE, nil
+            result = UNKNOWN_VPPTOKENSTATE
         case "VALID":
-            return VALID_VPPTOKENSTATE, nil
+            result = VALID_VPPTOKENSTATE
         case "EXPIRED":
-            return EXPIRED_VPPTOKENSTATE, nil
+            result = EXPIRED_VPPTOKENSTATE
         case "INVALID":
-            return INVALID_VPPTOKENSTATE, nil
+            result = INVALID_VPPTOKENSTATE
         case "ASSIGNEDTOEXTERNALMDM":
-            return ASSIGNEDTOEXTERNALMDM_VPPTOKENSTATE, nil
+            result = ASSIGNEDTOEXTERNALMDM_VPPTOKENSTATE
+        default:
+            return 0, errors.New("Unknown VppTokenState value: " + v)
     }
-    return 0, errors.New("Unknown VppTokenState value: " + v)
+    return &result, nil
 }
 func SerializeVppTokenState(values []VppTokenState) []string {
     result := make([]string, len(values))

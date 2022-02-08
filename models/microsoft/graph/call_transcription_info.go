@@ -64,8 +64,7 @@ func (m *CallTranscriptionInfo) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(CallTranscriptionState)
-            m.SetState(&cast)
+            m.SetState(val.(*CallTranscriptionState))
         }
         return nil
     }
@@ -83,7 +82,7 @@ func (m *CallTranscriptionInfo) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err := writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

@@ -26,7 +26,7 @@ type PeopleRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// PeopleRequestBuilderGetQueryParameters read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+// PeopleRequestBuilderGetQueryParameters people that are relevant to the user. Read-only. Nullable.
 type PeopleRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool;
@@ -73,7 +73,7 @@ func NewPeopleRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a
     urlParams["request-raw-url"] = rawUrl
     return NewPeopleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+// CreateGetRequestInformation people that are relevant to the user. Read-only. Nullable.
 func (m *PeopleRequestBuilder) CreateGetRequestInformation(options *PeopleRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,7 +93,7 @@ func (m *PeopleRequestBuilder) CreateGetRequestInformation(options *PeopleReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+// CreatePostRequestInformation people that are relevant to the user. Read-only. Nullable.
 func (m *PeopleRequestBuilder) CreatePostRequestInformation(options *PeopleRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *PeopleRequestBuilder) CreatePostRequestInformation(options *PeopleReque
     }
     return requestInfo, nil
 }
-// Get read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+// Get people that are relevant to the user. Read-only. Nullable.
 func (m *PeopleRequestBuilder) Get(options *PeopleRequestBuilderGetOptions)(*PeopleResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -123,7 +123,7 @@ func (m *PeopleRequestBuilder) Get(options *PeopleRequestBuilderGetOptions)(*Peo
     }
     return res.(*PeopleResponse), nil
 }
-// Post read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+// Post people that are relevant to the user. Read-only. Nullable.
 func (m *PeopleRequestBuilder) Post(options *PeopleRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Person, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {

@@ -11,7 +11,7 @@ type EducationOrganization struct {
     description *string;
     // Organization display name.
     displayName *string;
-    // Where this user was created from. Possible values are: sis, lms, or manual.
+    // Source where this organization was created from. Possible values are: sis, manual.
     externalSource *EducationExternalSource;
     // The name of the external source this resources was generated from.
     externalSourceDetail *string;
@@ -39,7 +39,7 @@ func (m *EducationOrganization) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetExternalSource gets the externalSource property value. Where this user was created from. Possible values are: sis, lms, or manual.
+// GetExternalSource gets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
 func (m *EducationOrganization) GetExternalSource()(*EducationExternalSource) {
     if m == nil {
         return nil
@@ -84,8 +84,7 @@ func (m *EducationOrganization) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(EducationExternalSource)
-            m.SetExternalSource(&cast)
+            m.SetExternalSource(val.(*EducationExternalSource))
         }
         return nil
     }
@@ -123,7 +122,7 @@ func (m *EducationOrganization) Serialize(writer i04eb5309aeaafadd28374d79c8471d
         }
     }
     if m.GetExternalSource() != nil {
-        cast := m.GetExternalSource().String()
+        cast := (*m.GetExternalSource()).String()
         err = writer.WriteStringValue("externalSource", &cast)
         if err != nil {
             return err
@@ -149,7 +148,7 @@ func (m *EducationOrganization) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetExternalSource sets the externalSource property value. Where this user was created from. Possible values are: sis, lms, or manual.
+// SetExternalSource sets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
 func (m *EducationOrganization) SetExternalSource(value *EducationExternalSource)() {
     if m != nil {
         m.externalSource = value

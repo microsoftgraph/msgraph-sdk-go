@@ -35,7 +35,7 @@ type ResourceSpecificPermissionGrantRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ResourceSpecificPermissionGrantRequestBuilderGetQueryParameters the permissions that have been granted for a group to a specific application. Supports $expand.
+// ResourceSpecificPermissionGrantRequestBuilderGetQueryParameters the permission that has been granted for a group to a specific application. Supports $expand.
 type ResourceSpecificPermissionGrantRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -72,7 +72,7 @@ func NewResourceSpecificPermissionGrantRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewResourceSpecificPermissionGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the permissions that have been granted for a group to a specific application. Supports $expand.
+// CreateDeleteRequestInformation the permission that has been granted for a group to a specific application. Supports $expand.
 func (m *ResourceSpecificPermissionGrantRequestBuilder) CreateDeleteRequestInformation(options *ResourceSpecificPermissionGrantRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -89,7 +89,7 @@ func (m *ResourceSpecificPermissionGrantRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the permissions that have been granted for a group to a specific application. Supports $expand.
+// CreateGetRequestInformation the permission that has been granted for a group to a specific application. Supports $expand.
 func (m *ResourceSpecificPermissionGrantRequestBuilder) CreateGetRequestInformation(options *ResourceSpecificPermissionGrantRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -109,7 +109,7 @@ func (m *ResourceSpecificPermissionGrantRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the permissions that have been granted for a group to a specific application. Supports $expand.
+// CreatePatchRequestInformation the permission that has been granted for a group to a specific application. Supports $expand.
 func (m *ResourceSpecificPermissionGrantRequestBuilder) CreatePatchRequestInformation(options *ResourceSpecificPermissionGrantRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -127,7 +127,7 @@ func (m *ResourceSpecificPermissionGrantRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// Delete the permissions that have been granted for a group to a specific application. Supports $expand.
+// Delete the permission that has been granted for a group to a specific application. Supports $expand.
 func (m *ResourceSpecificPermissionGrantRequestBuilder) Delete(options *ResourceSpecificPermissionGrantRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *ResourceSpecificPermissionGrantRequestBuilder) Delete(options *Resource
     }
     return nil
 }
-// Get the permissions that have been granted for a group to a specific application. Supports $expand.
+// Get the permission that has been granted for a group to a specific application. Supports $expand.
 func (m *ResourceSpecificPermissionGrantRequestBuilder) Get(options *ResourceSpecificPermissionGrantRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ResourceSpecificPermissionGrant, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -151,7 +151,7 @@ func (m *ResourceSpecificPermissionGrantRequestBuilder) Get(options *ResourceSpe
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.ResourceSpecificPermissionGrant), nil
 }
-// Patch the permissions that have been granted for a group to a specific application. Supports $expand.
+// Patch the permission that has been granted for a group to a specific application. Supports $expand.
 func (m *ResourceSpecificPermissionGrantRequestBuilder) Patch(options *ResourceSpecificPermissionGrantRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

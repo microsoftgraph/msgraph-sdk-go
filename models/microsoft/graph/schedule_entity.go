@@ -84,8 +84,7 @@ func (m *ScheduleEntity) GetFieldDeserializers()(map[string]func(interface{}, i0
             return err
         }
         if val != nil {
-            cast := val.(ScheduleEntityTheme)
-            m.SetTheme(&cast)
+            m.SetTheme(val.(*ScheduleEntityTheme))
         }
         return nil
     }
@@ -109,7 +108,7 @@ func (m *ScheduleEntity) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2675
         }
     }
     if m.GetTheme() != nil {
-        cast := m.GetTheme().String()
+        cast := (*m.GetTheme()).String()
         err := writer.WriteStringValue("theme", &cast)
         if err != nil {
             return err

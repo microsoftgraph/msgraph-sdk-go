@@ -15,13 +15,16 @@ func (i AuthenticationMethodState) String() string {
     return []string{"ENABLED", "DISABLED"}[i]
 }
 func ParseAuthenticationMethodState(v string) (interface{}, error) {
+    result := ENABLED_AUTHENTICATIONMETHODSTATE
     switch strings.ToUpper(v) {
         case "ENABLED":
-            return ENABLED_AUTHENTICATIONMETHODSTATE, nil
+            result = ENABLED_AUTHENTICATIONMETHODSTATE
         case "DISABLED":
-            return DISABLED_AUTHENTICATIONMETHODSTATE, nil
+            result = DISABLED_AUTHENTICATIONMETHODSTATE
+        default:
+            return 0, errors.New("Unknown AuthenticationMethodState value: " + v)
     }
-    return 0, errors.New("Unknown AuthenticationMethodState value: " + v)
+    return &result, nil
 }
 func SerializeAuthenticationMethodState(values []AuthenticationMethodState) []string {
     result := make([]string, len(values))

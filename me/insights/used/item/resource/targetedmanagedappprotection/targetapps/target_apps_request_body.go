@@ -54,8 +54,7 @@ func (m *TargetAppsRequestBody) GetFieldDeserializers()(map[string]func(interfac
             return err
         }
         if val != nil {
-            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppGroupType)
-            m.SetAppGroupType(&cast)
+            m.SetAppGroupType(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.TargetedManagedAppGroupType))
         }
         return nil
     }
@@ -81,7 +80,7 @@ func (m *TargetAppsRequestBody) IsNil()(bool) {
 // Serialize serializes information the current object
 func (m *TargetAppsRequestBody) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.SerializationWriter)(error) {
     if m.GetAppGroupType() != nil {
-        cast := m.GetAppGroupType().String()
+        cast := (*m.GetAppGroupType()).String()
         err := writer.WriteStringValue("appGroupType", &cast)
         if err != nil {
             return err

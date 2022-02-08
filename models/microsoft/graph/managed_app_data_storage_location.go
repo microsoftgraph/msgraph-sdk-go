@@ -17,17 +17,20 @@ func (i ManagedAppDataStorageLocation) String() string {
     return []string{"ONEDRIVEFORBUSINESS", "SHAREPOINT", "BOX", "LOCALSTORAGE"}[i]
 }
 func ParseManagedAppDataStorageLocation(v string) (interface{}, error) {
+    result := ONEDRIVEFORBUSINESS_MANAGEDAPPDATASTORAGELOCATION
     switch strings.ToUpper(v) {
         case "ONEDRIVEFORBUSINESS":
-            return ONEDRIVEFORBUSINESS_MANAGEDAPPDATASTORAGELOCATION, nil
+            result = ONEDRIVEFORBUSINESS_MANAGEDAPPDATASTORAGELOCATION
         case "SHAREPOINT":
-            return SHAREPOINT_MANAGEDAPPDATASTORAGELOCATION, nil
+            result = SHAREPOINT_MANAGEDAPPDATASTORAGELOCATION
         case "BOX":
-            return BOX_MANAGEDAPPDATASTORAGELOCATION, nil
+            result = BOX_MANAGEDAPPDATASTORAGELOCATION
         case "LOCALSTORAGE":
-            return LOCALSTORAGE_MANAGEDAPPDATASTORAGELOCATION, nil
+            result = LOCALSTORAGE_MANAGEDAPPDATASTORAGELOCATION
+        default:
+            return 0, errors.New("Unknown ManagedAppDataStorageLocation value: " + v)
     }
-    return 0, errors.New("Unknown ManagedAppDataStorageLocation value: " + v)
+    return &result, nil
 }
 func SerializeManagedAppDataStorageLocation(values []ManagedAppDataStorageLocation) []string {
     result := make([]string, len(values))

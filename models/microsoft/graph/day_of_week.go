@@ -20,23 +20,26 @@ func (i DayOfWeek) String() string {
     return []string{"SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"}[i]
 }
 func ParseDayOfWeek(v string) (interface{}, error) {
+    result := SUNDAY_DAYOFWEEK
     switch strings.ToUpper(v) {
         case "SUNDAY":
-            return SUNDAY_DAYOFWEEK, nil
+            result = SUNDAY_DAYOFWEEK
         case "MONDAY":
-            return MONDAY_DAYOFWEEK, nil
+            result = MONDAY_DAYOFWEEK
         case "TUESDAY":
-            return TUESDAY_DAYOFWEEK, nil
+            result = TUESDAY_DAYOFWEEK
         case "WEDNESDAY":
-            return WEDNESDAY_DAYOFWEEK, nil
+            result = WEDNESDAY_DAYOFWEEK
         case "THURSDAY":
-            return THURSDAY_DAYOFWEEK, nil
+            result = THURSDAY_DAYOFWEEK
         case "FRIDAY":
-            return FRIDAY_DAYOFWEEK, nil
+            result = FRIDAY_DAYOFWEEK
         case "SATURDAY":
-            return SATURDAY_DAYOFWEEK, nil
+            result = SATURDAY_DAYOFWEEK
+        default:
+            return 0, errors.New("Unknown DayOfWeek value: " + v)
     }
-    return 0, errors.New("Unknown DayOfWeek value: " + v)
+    return &result, nil
 }
 func SerializeDayOfWeek(values []DayOfWeek) []string {
     result := make([]string, len(values))

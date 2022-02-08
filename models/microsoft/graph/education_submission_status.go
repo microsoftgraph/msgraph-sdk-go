@@ -19,21 +19,24 @@ func (i EducationSubmissionStatus) String() string {
     return []string{"WORKING", "SUBMITTED", "RELEASED", "RETURNED", "UNKNOWNFUTUREVALUE", "REASSIGNED"}[i]
 }
 func ParseEducationSubmissionStatus(v string) (interface{}, error) {
+    result := WORKING_EDUCATIONSUBMISSIONSTATUS
     switch strings.ToUpper(v) {
         case "WORKING":
-            return WORKING_EDUCATIONSUBMISSIONSTATUS, nil
+            result = WORKING_EDUCATIONSUBMISSIONSTATUS
         case "SUBMITTED":
-            return SUBMITTED_EDUCATIONSUBMISSIONSTATUS, nil
+            result = SUBMITTED_EDUCATIONSUBMISSIONSTATUS
         case "RELEASED":
-            return RELEASED_EDUCATIONSUBMISSIONSTATUS, nil
+            result = RELEASED_EDUCATIONSUBMISSIONSTATUS
         case "RETURNED":
-            return RETURNED_EDUCATIONSUBMISSIONSTATUS, nil
+            result = RETURNED_EDUCATIONSUBMISSIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EDUCATIONSUBMISSIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_EDUCATIONSUBMISSIONSTATUS
         case "REASSIGNED":
-            return REASSIGNED_EDUCATIONSUBMISSIONSTATUS, nil
+            result = REASSIGNED_EDUCATIONSUBMISSIONSTATUS
+        default:
+            return 0, errors.New("Unknown EducationSubmissionStatus value: " + v)
     }
-    return 0, errors.New("Unknown EducationSubmissionStatus value: " + v)
+    return &result, nil
 }
 func SerializeEducationSubmissionStatus(values []EducationSubmissionStatus) []string {
     result := make([]string, len(values))

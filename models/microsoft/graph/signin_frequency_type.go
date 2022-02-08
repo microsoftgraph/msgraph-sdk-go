@@ -15,13 +15,16 @@ func (i SigninFrequencyType) String() string {
     return []string{"DAYS", "HOURS"}[i]
 }
 func ParseSigninFrequencyType(v string) (interface{}, error) {
+    result := DAYS_SIGNINFREQUENCYTYPE
     switch strings.ToUpper(v) {
         case "DAYS":
-            return DAYS_SIGNINFREQUENCYTYPE, nil
+            result = DAYS_SIGNINFREQUENCYTYPE
         case "HOURS":
-            return HOURS_SIGNINFREQUENCYTYPE, nil
+            result = HOURS_SIGNINFREQUENCYTYPE
+        default:
+            return 0, errors.New("Unknown SigninFrequencyType value: " + v)
     }
-    return 0, errors.New("Unknown SigninFrequencyType value: " + v)
+    return &result, nil
 }
 func SerializeSigninFrequencyType(values []SigninFrequencyType) []string {
     result := make([]string, len(values))

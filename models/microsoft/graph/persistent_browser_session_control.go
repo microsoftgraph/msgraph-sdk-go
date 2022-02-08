@@ -34,8 +34,7 @@ func (m *PersistentBrowserSessionControl) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            cast := val.(PersistentBrowserSessionMode)
-            m.SetMode(&cast)
+            m.SetMode(val.(*PersistentBrowserSessionMode))
         }
         return nil
     }
@@ -51,7 +50,7 @@ func (m *PersistentBrowserSessionControl) Serialize(writer i04eb5309aeaafadd2837
         return err
     }
     if m.GetMode() != nil {
-        cast := m.GetMode().String()
+        cast := (*m.GetMode()).String()
         err = writer.WriteStringValue("mode", &cast)
         if err != nil {
             return err

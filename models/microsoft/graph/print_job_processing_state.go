@@ -22,27 +22,30 @@ func (i PrintJobProcessingState) String() string {
     return []string{"UNKNOWN", "PENDING", "PROCESSING", "PAUSED", "STOPPED", "COMPLETED", "CANCELED", "ABORTED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePrintJobProcessingState(v string) (interface{}, error) {
+    result := UNKNOWN_PRINTJOBPROCESSINGSTATE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_PRINTJOBPROCESSINGSTATE, nil
+            result = UNKNOWN_PRINTJOBPROCESSINGSTATE
         case "PENDING":
-            return PENDING_PRINTJOBPROCESSINGSTATE, nil
+            result = PENDING_PRINTJOBPROCESSINGSTATE
         case "PROCESSING":
-            return PROCESSING_PRINTJOBPROCESSINGSTATE, nil
+            result = PROCESSING_PRINTJOBPROCESSINGSTATE
         case "PAUSED":
-            return PAUSED_PRINTJOBPROCESSINGSTATE, nil
+            result = PAUSED_PRINTJOBPROCESSINGSTATE
         case "STOPPED":
-            return STOPPED_PRINTJOBPROCESSINGSTATE, nil
+            result = STOPPED_PRINTJOBPROCESSINGSTATE
         case "COMPLETED":
-            return COMPLETED_PRINTJOBPROCESSINGSTATE, nil
+            result = COMPLETED_PRINTJOBPROCESSINGSTATE
         case "CANCELED":
-            return CANCELED_PRINTJOBPROCESSINGSTATE, nil
+            result = CANCELED_PRINTJOBPROCESSINGSTATE
         case "ABORTED":
-            return ABORTED_PRINTJOBPROCESSINGSTATE, nil
+            result = ABORTED_PRINTJOBPROCESSINGSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PRINTJOBPROCESSINGSTATE, nil
+            result = UNKNOWNFUTUREVALUE_PRINTJOBPROCESSINGSTATE
+        default:
+            return 0, errors.New("Unknown PrintJobProcessingState value: " + v)
     }
-    return 0, errors.New("Unknown PrintJobProcessingState value: " + v)
+    return &result, nil
 }
 func SerializePrintJobProcessingState(values []PrintJobProcessingState) []string {
     result := make([]string, len(values))

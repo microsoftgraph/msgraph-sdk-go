@@ -21,25 +21,28 @@ func (i FileHashType) String() string {
     return []string{"UNKNOWN", "SHA1", "SHA256", "MD5", "AUTHENTICODEHASH256", "LSHASH", "CTPH", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseFileHashType(v string) (interface{}, error) {
+    result := UNKNOWN_FILEHASHTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_FILEHASHTYPE, nil
+            result = UNKNOWN_FILEHASHTYPE
         case "SHA1":
-            return SHA1_FILEHASHTYPE, nil
+            result = SHA1_FILEHASHTYPE
         case "SHA256":
-            return SHA256_FILEHASHTYPE, nil
+            result = SHA256_FILEHASHTYPE
         case "MD5":
-            return MD5_FILEHASHTYPE, nil
+            result = MD5_FILEHASHTYPE
         case "AUTHENTICODEHASH256":
-            return AUTHENTICODEHASH256_FILEHASHTYPE, nil
+            result = AUTHENTICODEHASH256_FILEHASHTYPE
         case "LSHASH":
-            return LSHASH_FILEHASHTYPE, nil
+            result = LSHASH_FILEHASHTYPE
         case "CTPH":
-            return CTPH_FILEHASHTYPE, nil
+            result = CTPH_FILEHASHTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_FILEHASHTYPE, nil
+            result = UNKNOWNFUTUREVALUE_FILEHASHTYPE
+        default:
+            return 0, errors.New("Unknown FileHashType value: " + v)
     }
-    return 0, errors.New("Unknown FileHashType value: " + v)
+    return &result, nil
 }
 func SerializeFileHashType(values []FileHashType) []string {
     result := make([]string, len(values))

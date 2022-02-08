@@ -17,17 +17,20 @@ func (i CloudAppSecuritySessionControlType) String() string {
     return []string{"MCASCONFIGURED", "MONITORONLY", "BLOCKDOWNLOADS", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseCloudAppSecuritySessionControlType(v string) (interface{}, error) {
+    result := MCASCONFIGURED_CLOUDAPPSECURITYSESSIONCONTROLTYPE
     switch strings.ToUpper(v) {
         case "MCASCONFIGURED":
-            return MCASCONFIGURED_CLOUDAPPSECURITYSESSIONCONTROLTYPE, nil
+            result = MCASCONFIGURED_CLOUDAPPSECURITYSESSIONCONTROLTYPE
         case "MONITORONLY":
-            return MONITORONLY_CLOUDAPPSECURITYSESSIONCONTROLTYPE, nil
+            result = MONITORONLY_CLOUDAPPSECURITYSESSIONCONTROLTYPE
         case "BLOCKDOWNLOADS":
-            return BLOCKDOWNLOADS_CLOUDAPPSECURITYSESSIONCONTROLTYPE, nil
+            result = BLOCKDOWNLOADS_CLOUDAPPSECURITYSESSIONCONTROLTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CLOUDAPPSECURITYSESSIONCONTROLTYPE, nil
+            result = UNKNOWNFUTUREVALUE_CLOUDAPPSECURITYSESSIONCONTROLTYPE
+        default:
+            return 0, errors.New("Unknown CloudAppSecuritySessionControlType value: " + v)
     }
-    return 0, errors.New("Unknown CloudAppSecuritySessionControlType value: " + v)
+    return &result, nil
 }
 func SerializeCloudAppSecuritySessionControlType(values []CloudAppSecuritySessionControlType) []string {
     result := make([]string, len(values))

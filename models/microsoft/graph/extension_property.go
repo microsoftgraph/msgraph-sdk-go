@@ -11,7 +11,7 @@ type ExtensionProperty struct {
     appDisplayName *string;
     // Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
     dataType *string;
-    // Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+    // Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
     isSyncedFromOnPremises *bool;
     // Name of the extension property. Not nullable.
     name *string;
@@ -41,7 +41,7 @@ func (m *ExtensionProperty) GetDataType()(*string) {
         return m.dataType
     }
 }
-// GetIsSyncedFromOnPremises gets the isSyncedFromOnPremises property value. Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+// GetIsSyncedFromOnPremises gets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
 func (m *ExtensionProperty) GetIsSyncedFromOnPremises()(*bool) {
     if m == nil {
         return nil
@@ -177,7 +177,7 @@ func (m *ExtensionProperty) SetDataType(value *string)() {
         m.dataType = value
     }
 }
-// SetIsSyncedFromOnPremises sets the isSyncedFromOnPremises property value. Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+// SetIsSyncedFromOnPremises sets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
 func (m *ExtensionProperty) SetIsSyncedFromOnPremises(value *bool)() {
     if m != nil {
         m.isSyncedFromOnPremises = value

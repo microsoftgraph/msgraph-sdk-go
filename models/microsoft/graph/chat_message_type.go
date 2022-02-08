@@ -18,19 +18,22 @@ func (i ChatMessageType) String() string {
     return []string{"MESSAGE", "CHATEVENT", "TYPING", "UNKNOWNFUTUREVALUE", "SYSTEMEVENTMESSAGE"}[i]
 }
 func ParseChatMessageType(v string) (interface{}, error) {
+    result := MESSAGE_CHATMESSAGETYPE
     switch strings.ToUpper(v) {
         case "MESSAGE":
-            return MESSAGE_CHATMESSAGETYPE, nil
+            result = MESSAGE_CHATMESSAGETYPE
         case "CHATEVENT":
-            return CHATEVENT_CHATMESSAGETYPE, nil
+            result = CHATEVENT_CHATMESSAGETYPE
         case "TYPING":
-            return TYPING_CHATMESSAGETYPE, nil
+            result = TYPING_CHATMESSAGETYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CHATMESSAGETYPE, nil
+            result = UNKNOWNFUTUREVALUE_CHATMESSAGETYPE
         case "SYSTEMEVENTMESSAGE":
-            return SYSTEMEVENTMESSAGE_CHATMESSAGETYPE, nil
+            result = SYSTEMEVENTMESSAGE_CHATMESSAGETYPE
+        default:
+            return 0, errors.New("Unknown ChatMessageType value: " + v)
     }
-    return 0, errors.New("Unknown ChatMessageType value: " + v)
+    return &result, nil
 }
 func SerializeChatMessageType(values []ChatMessageType) []string {
     result := make([]string, len(values))

@@ -18,19 +18,22 @@ func (i ScheduleChangeRequestActor) String() string {
     return []string{"SENDER", "RECIPIENT", "MANAGER", "SYSTEM", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseScheduleChangeRequestActor(v string) (interface{}, error) {
+    result := SENDER_SCHEDULECHANGEREQUESTACTOR
     switch strings.ToUpper(v) {
         case "SENDER":
-            return SENDER_SCHEDULECHANGEREQUESTACTOR, nil
+            result = SENDER_SCHEDULECHANGEREQUESTACTOR
         case "RECIPIENT":
-            return RECIPIENT_SCHEDULECHANGEREQUESTACTOR, nil
+            result = RECIPIENT_SCHEDULECHANGEREQUESTACTOR
         case "MANAGER":
-            return MANAGER_SCHEDULECHANGEREQUESTACTOR, nil
+            result = MANAGER_SCHEDULECHANGEREQUESTACTOR
         case "SYSTEM":
-            return SYSTEM_SCHEDULECHANGEREQUESTACTOR, nil
+            result = SYSTEM_SCHEDULECHANGEREQUESTACTOR
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SCHEDULECHANGEREQUESTACTOR, nil
+            result = UNKNOWNFUTUREVALUE_SCHEDULECHANGEREQUESTACTOR
+        default:
+            return 0, errors.New("Unknown ScheduleChangeRequestActor value: " + v)
     }
-    return 0, errors.New("Unknown ScheduleChangeRequestActor value: " + v)
+    return &result, nil
 }
 func SerializeScheduleChangeRequestActor(values []ScheduleChangeRequestActor) []string {
     result := make([]string, len(values))

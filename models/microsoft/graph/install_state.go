@@ -19,21 +19,24 @@ func (i InstallState) String() string {
     return []string{"NOTAPPLICABLE", "INSTALLED", "FAILED", "NOTINSTALLED", "UNINSTALLFAILED", "UNKNOWN"}[i]
 }
 func ParseInstallState(v string) (interface{}, error) {
+    result := NOTAPPLICABLE_INSTALLSTATE
     switch strings.ToUpper(v) {
         case "NOTAPPLICABLE":
-            return NOTAPPLICABLE_INSTALLSTATE, nil
+            result = NOTAPPLICABLE_INSTALLSTATE
         case "INSTALLED":
-            return INSTALLED_INSTALLSTATE, nil
+            result = INSTALLED_INSTALLSTATE
         case "FAILED":
-            return FAILED_INSTALLSTATE, nil
+            result = FAILED_INSTALLSTATE
         case "NOTINSTALLED":
-            return NOTINSTALLED_INSTALLSTATE, nil
+            result = NOTINSTALLED_INSTALLSTATE
         case "UNINSTALLFAILED":
-            return UNINSTALLFAILED_INSTALLSTATE, nil
+            result = UNINSTALLFAILED_INSTALLSTATE
         case "UNKNOWN":
-            return UNKNOWN_INSTALLSTATE, nil
+            result = UNKNOWN_INSTALLSTATE
+        default:
+            return 0, errors.New("Unknown InstallState value: " + v)
     }
-    return 0, errors.New("Unknown InstallState value: " + v)
+    return &result, nil
 }
 func SerializeInstallState(values []InstallState) []string {
     result := make([]string, len(values))

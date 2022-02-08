@@ -17,17 +17,20 @@ func (i FailureStage) String() string {
     return []string{"UNKNOWN", "CALLSETUP", "MIDCALL", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseFailureStage(v string) (interface{}, error) {
+    result := UNKNOWN_FAILURESTAGE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_FAILURESTAGE, nil
+            result = UNKNOWN_FAILURESTAGE
         case "CALLSETUP":
-            return CALLSETUP_FAILURESTAGE, nil
+            result = CALLSETUP_FAILURESTAGE
         case "MIDCALL":
-            return MIDCALL_FAILURESTAGE, nil
+            result = MIDCALL_FAILURESTAGE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_FAILURESTAGE, nil
+            result = UNKNOWNFUTUREVALUE_FAILURESTAGE
+        default:
+            return 0, errors.New("Unknown FailureStage value: " + v)
     }
-    return 0, errors.New("Unknown FailureStage value: " + v)
+    return &result, nil
 }
 func SerializeFailureStage(values []FailureStage) []string {
     result := make([]string, len(values))

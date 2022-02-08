@@ -16,15 +16,18 @@ func (i SubjectRightsRequestStatus) String() string {
     return []string{"ACTIVE", "CLOSED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseSubjectRightsRequestStatus(v string) (interface{}, error) {
+    result := ACTIVE_SUBJECTRIGHTSREQUESTSTATUS
     switch strings.ToUpper(v) {
         case "ACTIVE":
-            return ACTIVE_SUBJECTRIGHTSREQUESTSTATUS, nil
+            result = ACTIVE_SUBJECTRIGHTSREQUESTSTATUS
         case "CLOSED":
-            return CLOSED_SUBJECTRIGHTSREQUESTSTATUS, nil
+            result = CLOSED_SUBJECTRIGHTSREQUESTSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_SUBJECTRIGHTSREQUESTSTATUS
+        default:
+            return 0, errors.New("Unknown SubjectRightsRequestStatus value: " + v)
     }
-    return 0, errors.New("Unknown SubjectRightsRequestStatus value: " + v)
+    return &result, nil
 }
 func SerializeSubjectRightsRequestStatus(values []SubjectRightsRequestStatus) []string {
     result := make([]string, len(values))

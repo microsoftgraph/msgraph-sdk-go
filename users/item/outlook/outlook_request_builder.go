@@ -40,7 +40,7 @@ type OutlookRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// OutlookRequestBuilderGetQueryParameters selective Outlook services available to the user. Read-only. Nullable.
+// OutlookRequestBuilderGetQueryParameters read-only.
 type OutlookRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string;
@@ -75,7 +75,7 @@ func NewOutlookRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewOutlookRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation selective Outlook services available to the user. Read-only. Nullable.
+// CreateDeleteRequestInformation read-only.
 func (m *OutlookRequestBuilder) CreateDeleteRequestInformation(options *OutlookRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,7 +92,7 @@ func (m *OutlookRequestBuilder) CreateDeleteRequestInformation(options *OutlookR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation selective Outlook services available to the user. Read-only. Nullable.
+// CreateGetRequestInformation read-only.
 func (m *OutlookRequestBuilder) CreateGetRequestInformation(options *OutlookRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,7 +112,7 @@ func (m *OutlookRequestBuilder) CreateGetRequestInformation(options *OutlookRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation selective Outlook services available to the user. Read-only. Nullable.
+// CreatePatchRequestInformation read-only.
 func (m *OutlookRequestBuilder) CreatePatchRequestInformation(options *OutlookRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -130,7 +130,7 @@ func (m *OutlookRequestBuilder) CreatePatchRequestInformation(options *OutlookRe
     }
     return requestInfo, nil
 }
-// Delete selective Outlook services available to the user. Read-only. Nullable.
+// Delete read-only.
 func (m *OutlookRequestBuilder) Delete(options *OutlookRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -142,7 +142,7 @@ func (m *OutlookRequestBuilder) Delete(options *OutlookRequestBuilderDeleteOptio
     }
     return nil
 }
-// Get selective Outlook services available to the user. Read-only. Nullable.
+// Get read-only.
 func (m *OutlookRequestBuilder) Get(options *OutlookRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OutlookUser, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -168,7 +168,7 @@ func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*i9c16ff1de59760
     }
     return i9c16ff1de59760cb207932c94d7e5b162ef9fa5d4907f338c86fe76159e2fd2e.NewOutlookCategoryRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch selective Outlook services available to the user. Read-only. Nullable.
+// Patch read-only.
 func (m *OutlookRequestBuilder) Patch(options *OutlookRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

@@ -18,19 +18,22 @@ func (i EndpointType) String() string {
     return []string{"DEFAULT", "VOICEMAIL", "SKYPEFORBUSINESS", "SKYPEFORBUSINESSVOIPPHONE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseEndpointType(v string) (interface{}, error) {
+    result := DEFAULT_ENDPOINTTYPE
     switch strings.ToUpper(v) {
         case "DEFAULT":
-            return DEFAULT_ENDPOINTTYPE, nil
+            result = DEFAULT_ENDPOINTTYPE
         case "VOICEMAIL":
-            return VOICEMAIL_ENDPOINTTYPE, nil
+            result = VOICEMAIL_ENDPOINTTYPE
         case "SKYPEFORBUSINESS":
-            return SKYPEFORBUSINESS_ENDPOINTTYPE, nil
+            result = SKYPEFORBUSINESS_ENDPOINTTYPE
         case "SKYPEFORBUSINESSVOIPPHONE":
-            return SKYPEFORBUSINESSVOIPPHONE_ENDPOINTTYPE, nil
+            result = SKYPEFORBUSINESSVOIPPHONE_ENDPOINTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ENDPOINTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_ENDPOINTTYPE
+        default:
+            return 0, errors.New("Unknown EndpointType value: " + v)
     }
-    return 0, errors.New("Unknown EndpointType value: " + v)
+    return &result, nil
 }
 func SerializeEndpointType(values []EndpointType) []string {
     result := make([]string, len(values))

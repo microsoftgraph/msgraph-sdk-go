@@ -175,8 +175,7 @@ func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(interf
             return err
         }
         if val != nil {
-            cast := val.(ConditionalAccessPolicyState)
-            m.SetState(&cast)
+            m.SetState(val.(*ConditionalAccessPolicyState))
         }
         return nil
     }
@@ -234,7 +233,7 @@ func (m *ConditionalAccessPolicy) Serialize(writer i04eb5309aeaafadd28374d79c847
         }
     }
     if m.GetState() != nil {
-        cast := m.GetState().String()
+        cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
         if err != nil {
             return err

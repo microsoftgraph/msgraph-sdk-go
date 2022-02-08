@@ -16,15 +16,18 @@ func (i MediaState) String() string {
     return []string{"ACTIVE", "INACTIVE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseMediaState(v string) (interface{}, error) {
+    result := ACTIVE_MEDIASTATE
     switch strings.ToUpper(v) {
         case "ACTIVE":
-            return ACTIVE_MEDIASTATE, nil
+            result = ACTIVE_MEDIASTATE
         case "INACTIVE":
-            return INACTIVE_MEDIASTATE, nil
+            result = INACTIVE_MEDIASTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_MEDIASTATE, nil
+            result = UNKNOWNFUTUREVALUE_MEDIASTATE
+        default:
+            return 0, errors.New("Unknown MediaState value: " + v)
     }
-    return 0, errors.New("Unknown MediaState value: " + v)
+    return &result, nil
 }
 func SerializeMediaState(values []MediaState) []string {
     result := make([]string, len(values))

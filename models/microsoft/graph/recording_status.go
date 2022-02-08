@@ -18,19 +18,22 @@ func (i RecordingStatus) String() string {
     return []string{"UNKNOWN", "NOTRECORDING", "RECORDING", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseRecordingStatus(v string) (interface{}, error) {
+    result := UNKNOWN_RECORDINGSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_RECORDINGSTATUS, nil
+            result = UNKNOWN_RECORDINGSTATUS
         case "NOTRECORDING":
-            return NOTRECORDING_RECORDINGSTATUS, nil
+            result = NOTRECORDING_RECORDINGSTATUS
         case "RECORDING":
-            return RECORDING_RECORDINGSTATUS, nil
+            result = RECORDING_RECORDINGSTATUS
         case "FAILED":
-            return FAILED_RECORDINGSTATUS, nil
+            result = FAILED_RECORDINGSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_RECORDINGSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_RECORDINGSTATUS
+        default:
+            return 0, errors.New("Unknown RecordingStatus value: " + v)
     }
-    return 0, errors.New("Unknown RecordingStatus value: " + v)
+    return &result, nil
 }
 func SerializeRecordingStatus(values []RecordingStatus) []string {
     result := make([]string, len(values))

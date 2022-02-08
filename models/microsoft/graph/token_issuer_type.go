@@ -19,21 +19,24 @@ func (i TokenIssuerType) String() string {
     return []string{"AZUREAD", "ADFEDERATIONSERVICES", "UNKNOWNFUTUREVALUE", "AZUREADBACKUPAUTH", "ADFEDERATIONSERVICESMFAADAPTER", "NPSEXTENSION"}[i]
 }
 func ParseTokenIssuerType(v string) (interface{}, error) {
+    result := AZUREAD_TOKENISSUERTYPE
     switch strings.ToUpper(v) {
         case "AZUREAD":
-            return AZUREAD_TOKENISSUERTYPE, nil
+            result = AZUREAD_TOKENISSUERTYPE
         case "ADFEDERATIONSERVICES":
-            return ADFEDERATIONSERVICES_TOKENISSUERTYPE, nil
+            result = ADFEDERATIONSERVICES_TOKENISSUERTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TOKENISSUERTYPE, nil
+            result = UNKNOWNFUTUREVALUE_TOKENISSUERTYPE
         case "AZUREADBACKUPAUTH":
-            return AZUREADBACKUPAUTH_TOKENISSUERTYPE, nil
+            result = AZUREADBACKUPAUTH_TOKENISSUERTYPE
         case "ADFEDERATIONSERVICESMFAADAPTER":
-            return ADFEDERATIONSERVICESMFAADAPTER_TOKENISSUERTYPE, nil
+            result = ADFEDERATIONSERVICESMFAADAPTER_TOKENISSUERTYPE
         case "NPSEXTENSION":
-            return NPSEXTENSION_TOKENISSUERTYPE, nil
+            result = NPSEXTENSION_TOKENISSUERTYPE
+        default:
+            return 0, errors.New("Unknown TokenIssuerType value: " + v)
     }
-    return 0, errors.New("Unknown TokenIssuerType value: " + v)
+    return &result, nil
 }
 func SerializeTokenIssuerType(values []TokenIssuerType) []string {
     result := make([]string, len(values))

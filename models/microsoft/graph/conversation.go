@@ -10,9 +10,9 @@ type Conversation struct {
     Entity
     // Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
     hasAttachments *bool;
-    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
+    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     lastDeliveredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // A short summary from the body of the latest post in this conversation.
+    // A short summary from the body of the latest post in this conversation. Supports $filter (eq, ne, le, ge).
     preview *string;
     // A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
     threads []ConversationThread;
@@ -36,7 +36,7 @@ func (m *Conversation) GetHasAttachments()(*bool) {
         return m.hasAttachments
     }
 }
-// GetLastDeliveredDateTime gets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
+// GetLastDeliveredDateTime gets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Conversation) GetLastDeliveredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *Conversation) GetLastDeliveredDateTime()(*i336074805fc853987abe6f7fe3ad
         return m.lastDeliveredDateTime
     }
 }
-// GetPreview gets the preview property value. A short summary from the body of the latest post in this conversation.
+// GetPreview gets the preview property value. A short summary from the body of the latest post in this conversation. Supports $filter (eq, ne, le, ge).
 func (m *Conversation) GetPreview()(*string) {
     if m == nil {
         return nil
@@ -207,13 +207,13 @@ func (m *Conversation) SetHasAttachments(value *bool)() {
         m.hasAttachments = value
     }
 }
-// SetLastDeliveredDateTime sets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
+// SetLastDeliveredDateTime sets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Conversation) SetLastDeliveredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastDeliveredDateTime = value
     }
 }
-// SetPreview sets the preview property value. A short summary from the body of the latest post in this conversation.
+// SetPreview sets the preview property value. A short summary from the body of the latest post in this conversation. Supports $filter (eq, ne, le, ge).
 func (m *Conversation) SetPreview(value *string)() {
     if m != nil {
         m.preview = value

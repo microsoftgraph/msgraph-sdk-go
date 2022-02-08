@@ -18,19 +18,22 @@ func (i WifiBand) String() string {
     return []string{"UNKNOWN", "FREQUENCY24GHZ", "FREQUENCY50GHZ", "FREQUENCY60GHZ", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseWifiBand(v string) (interface{}, error) {
+    result := UNKNOWN_WIFIBAND
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_WIFIBAND, nil
+            result = UNKNOWN_WIFIBAND
         case "FREQUENCY24GHZ":
-            return FREQUENCY24GHZ_WIFIBAND, nil
+            result = FREQUENCY24GHZ_WIFIBAND
         case "FREQUENCY50GHZ":
-            return FREQUENCY50GHZ_WIFIBAND, nil
+            result = FREQUENCY50GHZ_WIFIBAND
         case "FREQUENCY60GHZ":
-            return FREQUENCY60GHZ_WIFIBAND, nil
+            result = FREQUENCY60GHZ_WIFIBAND
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_WIFIBAND, nil
+            result = UNKNOWNFUTUREVALUE_WIFIBAND
+        default:
+            return 0, errors.New("Unknown WifiBand value: " + v)
     }
-    return 0, errors.New("Unknown WifiBand value: " + v)
+    return &result, nil
 }
 func SerializeWifiBand(values []WifiBand) []string {
     result := make([]string, len(values))

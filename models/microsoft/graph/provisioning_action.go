@@ -20,23 +20,26 @@ func (i ProvisioningAction) String() string {
     return []string{"OTHER", "CREATE", "DELETE", "DISABLE", "UPDATE", "STAGEDDELETE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseProvisioningAction(v string) (interface{}, error) {
+    result := OTHER_PROVISIONINGACTION
     switch strings.ToUpper(v) {
         case "OTHER":
-            return OTHER_PROVISIONINGACTION, nil
+            result = OTHER_PROVISIONINGACTION
         case "CREATE":
-            return CREATE_PROVISIONINGACTION, nil
+            result = CREATE_PROVISIONINGACTION
         case "DELETE":
-            return DELETE_PROVISIONINGACTION, nil
+            result = DELETE_PROVISIONINGACTION
         case "DISABLE":
-            return DISABLE_PROVISIONINGACTION, nil
+            result = DISABLE_PROVISIONINGACTION
         case "UPDATE":
-            return UPDATE_PROVISIONINGACTION, nil
+            result = UPDATE_PROVISIONINGACTION
         case "STAGEDDELETE":
-            return STAGEDDELETE_PROVISIONINGACTION, nil
+            result = STAGEDDELETE_PROVISIONINGACTION
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PROVISIONINGACTION, nil
+            result = UNKNOWNFUTUREVALUE_PROVISIONINGACTION
+        default:
+            return 0, errors.New("Unknown ProvisioningAction value: " + v)
     }
-    return 0, errors.New("Unknown ProvisioningAction value: " + v)
+    return &result, nil
 }
 func SerializeProvisioningAction(values []ProvisioningAction) []string {
     result := make([]string, len(values))

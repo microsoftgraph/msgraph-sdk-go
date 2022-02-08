@@ -17,17 +17,20 @@ func (i EducationAssignmentStatus) String() string {
     return []string{"DRAFT", "PUBLISHED", "ASSIGNED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseEducationAssignmentStatus(v string) (interface{}, error) {
+    result := DRAFT_EDUCATIONASSIGNMENTSTATUS
     switch strings.ToUpper(v) {
         case "DRAFT":
-            return DRAFT_EDUCATIONASSIGNMENTSTATUS, nil
+            result = DRAFT_EDUCATIONASSIGNMENTSTATUS
         case "PUBLISHED":
-            return PUBLISHED_EDUCATIONASSIGNMENTSTATUS, nil
+            result = PUBLISHED_EDUCATIONASSIGNMENTSTATUS
         case "ASSIGNED":
-            return ASSIGNED_EDUCATIONASSIGNMENTSTATUS, nil
+            result = ASSIGNED_EDUCATIONASSIGNMENTSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_EDUCATIONASSIGNMENTSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_EDUCATIONASSIGNMENTSTATUS
+        default:
+            return 0, errors.New("Unknown EducationAssignmentStatus value: " + v)
     }
-    return 0, errors.New("Unknown EducationAssignmentStatus value: " + v)
+    return &result, nil
 }
 func SerializeEducationAssignmentStatus(values []EducationAssignmentStatus) []string {
     result := make([]string, len(values))

@@ -18,19 +18,22 @@ func (i UserAccountSecurityType) String() string {
     return []string{"UNKNOWN", "STANDARD", "POWER", "ADMINISTRATOR", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseUserAccountSecurityType(v string) (interface{}, error) {
+    result := UNKNOWN_USERACCOUNTSECURITYTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_USERACCOUNTSECURITYTYPE, nil
+            result = UNKNOWN_USERACCOUNTSECURITYTYPE
         case "STANDARD":
-            return STANDARD_USERACCOUNTSECURITYTYPE, nil
+            result = STANDARD_USERACCOUNTSECURITYTYPE
         case "POWER":
-            return POWER_USERACCOUNTSECURITYTYPE, nil
+            result = POWER_USERACCOUNTSECURITYTYPE
         case "ADMINISTRATOR":
-            return ADMINISTRATOR_USERACCOUNTSECURITYTYPE, nil
+            result = ADMINISTRATOR_USERACCOUNTSECURITYTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_USERACCOUNTSECURITYTYPE, nil
+            result = UNKNOWNFUTUREVALUE_USERACCOUNTSECURITYTYPE
+        default:
+            return 0, errors.New("Unknown UserAccountSecurityType value: " + v)
     }
-    return 0, errors.New("Unknown UserAccountSecurityType value: " + v)
+    return &result, nil
 }
 func SerializeUserAccountSecurityType(values []UserAccountSecurityType) []string {
     result := make([]string, len(values))

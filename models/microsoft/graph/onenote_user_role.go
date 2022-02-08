@@ -17,17 +17,20 @@ func (i OnenoteUserRole) String() string {
     return []string{"NONE", "OWNER", "CONTRIBUTOR", "READER"}[i]
 }
 func ParseOnenoteUserRole(v string) (interface{}, error) {
+    result := NONE_ONENOTEUSERROLE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_ONENOTEUSERROLE, nil
+            result = NONE_ONENOTEUSERROLE
         case "OWNER":
-            return OWNER_ONENOTEUSERROLE, nil
+            result = OWNER_ONENOTEUSERROLE
         case "CONTRIBUTOR":
-            return CONTRIBUTOR_ONENOTEUSERROLE, nil
+            result = CONTRIBUTOR_ONENOTEUSERROLE
         case "READER":
-            return READER_ONENOTEUSERROLE, nil
+            result = READER_ONENOTEUSERROLE
+        default:
+            return 0, errors.New("Unknown OnenoteUserRole value: " + v)
     }
-    return 0, errors.New("Unknown OnenoteUserRole value: " + v)
+    return &result, nil
 }
 func SerializeOnenoteUserRole(values []OnenoteUserRole) []string {
     result := make([]string, len(values))

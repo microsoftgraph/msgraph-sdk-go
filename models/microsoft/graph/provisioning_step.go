@@ -113,8 +113,7 @@ func (m *ProvisioningStep) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(ProvisioningStepType)
-            m.SetProvisioningStepType(&cast)
+            m.SetProvisioningStepType(val.(*ProvisioningStepType))
         }
         return nil
     }
@@ -124,8 +123,7 @@ func (m *ProvisioningStep) GetFieldDeserializers()(map[string]func(interface{}, 
             return err
         }
         if val != nil {
-            cast := val.(ProvisioningResult)
-            m.SetStatus(&cast)
+            m.SetStatus(val.(*ProvisioningResult))
         }
         return nil
     }
@@ -155,14 +153,14 @@ func (m *ProvisioningStep) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26
         }
     }
     if m.GetProvisioningStepType() != nil {
-        cast := m.GetProvisioningStepType().String()
+        cast := (*m.GetProvisioningStepType()).String()
         err := writer.WriteStringValue("provisioningStepType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetStatus() != nil {
-        cast := m.GetStatus().String()
+        cast := (*m.GetStatus()).String()
         err := writer.WriteStringValue("status", &cast)
         if err != nil {
             return err

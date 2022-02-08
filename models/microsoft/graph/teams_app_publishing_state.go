@@ -17,17 +17,20 @@ func (i TeamsAppPublishingState) String() string {
     return []string{"SUBMITTED", "REJECTED", "PUBLISHED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseTeamsAppPublishingState(v string) (interface{}, error) {
+    result := SUBMITTED_TEAMSAPPPUBLISHINGSTATE
     switch strings.ToUpper(v) {
         case "SUBMITTED":
-            return SUBMITTED_TEAMSAPPPUBLISHINGSTATE, nil
+            result = SUBMITTED_TEAMSAPPPUBLISHINGSTATE
         case "REJECTED":
-            return REJECTED_TEAMSAPPPUBLISHINGSTATE, nil
+            result = REJECTED_TEAMSAPPPUBLISHINGSTATE
         case "PUBLISHED":
-            return PUBLISHED_TEAMSAPPPUBLISHINGSTATE, nil
+            result = PUBLISHED_TEAMSAPPPUBLISHINGSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_TEAMSAPPPUBLISHINGSTATE, nil
+            result = UNKNOWNFUTUREVALUE_TEAMSAPPPUBLISHINGSTATE
+        default:
+            return 0, errors.New("Unknown TeamsAppPublishingState value: " + v)
     }
-    return 0, errors.New("Unknown TeamsAppPublishingState value: " + v)
+    return &result, nil
 }
 func SerializeTeamsAppPublishingState(values []TeamsAppPublishingState) []string {
     result := make([]string, len(values))

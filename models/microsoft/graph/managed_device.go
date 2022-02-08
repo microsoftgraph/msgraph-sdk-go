@@ -32,7 +32,7 @@ type ManagedDevice struct {
     deviceCompliancePolicyStates []DeviceCompliancePolicyState;
     // Device configuration states for this device.
     deviceConfigurationStates []DeviceConfigurationState;
-    // Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.
+    // Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount.
     deviceEnrollmentType *DeviceEnrollmentType;
     // The device health attestation state. This property is read-only.
     deviceHealthAttestationState *DeviceHealthAttestationState;
@@ -76,7 +76,7 @@ type ManagedDevice struct {
     managedDeviceName *string;
     // Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.
     managedDeviceOwnerType *ManagedDeviceOwnerType;
-    // Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
+    // Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
     managementAgent *ManagementAgentType;
     // Manufacturer of the device. This property is read-only.
     manufacturer *string;
@@ -220,7 +220,7 @@ func (m *ManagedDevice) GetDeviceConfigurationStates()([]DeviceConfigurationStat
         return m.deviceConfigurationStates
     }
 }
-// GetDeviceEnrollmentType gets the deviceEnrollmentType property value. Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.
+// GetDeviceEnrollmentType gets the deviceEnrollmentType property value. Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount.
 func (m *ManagedDevice) GetDeviceEnrollmentType()(*DeviceEnrollmentType) {
     if m == nil {
         return nil
@@ -396,7 +396,7 @@ func (m *ManagedDevice) GetManagedDeviceOwnerType()(*ManagedDeviceOwnerType) {
         return m.managedDeviceOwnerType
     }
 }
-// GetManagementAgent gets the managementAgent property value. Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
+// GetManagementAgent gets the managementAgent property value. Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
 func (m *ManagedDevice) GetManagementAgent()(*ManagementAgentType) {
     if m == nil {
         return nil
@@ -615,8 +615,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(ComplianceState)
-            m.SetComplianceState(&cast)
+            m.SetComplianceState(val.(*ComplianceState))
         }
         return nil
     }
@@ -698,8 +697,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(DeviceEnrollmentType)
-            m.SetDeviceEnrollmentType(&cast)
+            m.SetDeviceEnrollmentType(val.(*DeviceEnrollmentType))
         }
         return nil
     }
@@ -729,8 +727,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(DeviceRegistrationState)
-            m.SetDeviceRegistrationState(&cast)
+            m.SetDeviceRegistrationState(val.(*DeviceRegistrationState))
         }
         return nil
     }
@@ -800,8 +797,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementExchangeAccessState)
-            m.SetExchangeAccessState(&cast)
+            m.SetExchangeAccessState(val.(*DeviceManagementExchangeAccessState))
         }
         return nil
     }
@@ -811,8 +807,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(DeviceManagementExchangeAccessStateReason)
-            m.SetExchangeAccessStateReason(&cast)
+            m.SetExchangeAccessStateReason(val.(*DeviceManagementExchangeAccessStateReason))
         }
         return nil
     }
@@ -912,8 +907,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(ManagedDeviceOwnerType)
-            m.SetManagedDeviceOwnerType(&cast)
+            m.SetManagedDeviceOwnerType(val.(*ManagedDeviceOwnerType))
         }
         return nil
     }
@@ -923,8 +917,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(ManagementAgentType)
-            m.SetManagementAgent(&cast)
+            m.SetManagementAgent(val.(*ManagementAgentType))
         }
         return nil
     }
@@ -994,8 +987,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i04
             return err
         }
         if val != nil {
-            cast := val.(ManagedDevicePartnerReportedHealthState)
-            m.SetPartnerReportedThreatState(&cast)
+            m.SetPartnerReportedThreatState(val.(*ManagedDevicePartnerReportedHealthState))
         }
         return nil
     }
@@ -1161,7 +1153,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetComplianceState() != nil {
-        cast := m.GetComplianceState().String()
+        cast := (*m.GetComplianceState()).String()
         err = writer.WriteStringValue("complianceState", &cast)
         if err != nil {
             return err
@@ -1219,7 +1211,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetDeviceEnrollmentType() != nil {
-        cast := m.GetDeviceEnrollmentType().String()
+        cast := (*m.GetDeviceEnrollmentType()).String()
         err = writer.WriteStringValue("deviceEnrollmentType", &cast)
         if err != nil {
             return err
@@ -1238,7 +1230,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetDeviceRegistrationState() != nil {
-        cast := m.GetDeviceRegistrationState().String()
+        cast := (*m.GetDeviceRegistrationState()).String()
         err = writer.WriteStringValue("deviceRegistrationState", &cast)
         if err != nil {
             return err
@@ -1281,14 +1273,14 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetExchangeAccessState() != nil {
-        cast := m.GetExchangeAccessState().String()
+        cast := (*m.GetExchangeAccessState()).String()
         err = writer.WriteStringValue("exchangeAccessState", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetExchangeAccessStateReason() != nil {
-        cast := m.GetExchangeAccessStateReason().String()
+        cast := (*m.GetExchangeAccessStateReason()).String()
         err = writer.WriteStringValue("exchangeAccessStateReason", &cast)
         if err != nil {
             return err
@@ -1349,14 +1341,14 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetManagedDeviceOwnerType() != nil {
-        cast := m.GetManagedDeviceOwnerType().String()
+        cast := (*m.GetManagedDeviceOwnerType()).String()
         err = writer.WriteStringValue("managedDeviceOwnerType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetManagementAgent() != nil {
-        cast := m.GetManagementAgent().String()
+        cast := (*m.GetManagementAgent()).String()
         err = writer.WriteStringValue("managementAgent", &cast)
         if err != nil {
             return err
@@ -1399,7 +1391,7 @@ func (m *ManagedDevice) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b26751
         }
     }
     if m.GetPartnerReportedThreatState() != nil {
-        cast := m.GetPartnerReportedThreatState().String()
+        cast := (*m.GetPartnerReportedThreatState()).String()
         err = writer.WriteStringValue("partnerReportedThreatState", &cast)
         if err != nil {
             return err
@@ -1551,7 +1543,7 @@ func (m *ManagedDevice) SetDeviceConfigurationStates(value []DeviceConfiguration
         m.deviceConfigurationStates = value
     }
 }
-// SetDeviceEnrollmentType sets the deviceEnrollmentType property value. Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.
+// SetDeviceEnrollmentType sets the deviceEnrollmentType property value. Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount.
 func (m *ManagedDevice) SetDeviceEnrollmentType(value *DeviceEnrollmentType)() {
     if m != nil {
         m.deviceEnrollmentType = value
@@ -1683,7 +1675,7 @@ func (m *ManagedDevice) SetManagedDeviceOwnerType(value *ManagedDeviceOwnerType)
         m.managedDeviceOwnerType = value
     }
 }
-// SetManagementAgent sets the managementAgent property value. Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
+// SetManagementAgent sets the managementAgent property value. Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
 func (m *ManagedDevice) SetManagementAgent(value *ManagementAgentType)() {
     if m != nil {
         m.managementAgent = value

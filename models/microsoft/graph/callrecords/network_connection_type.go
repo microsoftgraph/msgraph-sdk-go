@@ -19,21 +19,24 @@ func (i NetworkConnectionType) String() string {
     return []string{"UNKNOWN", "WIRED", "WIFI", "MOBILE", "TUNNEL", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseNetworkConnectionType(v string) (interface{}, error) {
+    result := UNKNOWN_NETWORKCONNECTIONTYPE
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_NETWORKCONNECTIONTYPE, nil
+            result = UNKNOWN_NETWORKCONNECTIONTYPE
         case "WIRED":
-            return WIRED_NETWORKCONNECTIONTYPE, nil
+            result = WIRED_NETWORKCONNECTIONTYPE
         case "WIFI":
-            return WIFI_NETWORKCONNECTIONTYPE, nil
+            result = WIFI_NETWORKCONNECTIONTYPE
         case "MOBILE":
-            return MOBILE_NETWORKCONNECTIONTYPE, nil
+            result = MOBILE_NETWORKCONNECTIONTYPE
         case "TUNNEL":
-            return TUNNEL_NETWORKCONNECTIONTYPE, nil
+            result = TUNNEL_NETWORKCONNECTIONTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_NETWORKCONNECTIONTYPE, nil
+            result = UNKNOWNFUTUREVALUE_NETWORKCONNECTIONTYPE
+        default:
+            return 0, errors.New("Unknown NetworkConnectionType value: " + v)
     }
-    return 0, errors.New("Unknown NetworkConnectionType value: " + v)
+    return &result, nil
 }
 func SerializeNetworkConnectionType(values []NetworkConnectionType) []string {
     result := make([]string, len(values))

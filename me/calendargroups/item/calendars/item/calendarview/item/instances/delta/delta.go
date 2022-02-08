@@ -9,7 +9,7 @@ import (
 // Delta 
 type Delta struct {
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OutlookItem
-    // true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
+    // true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
     allowNewTimeProposals *bool;
     // The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
     attachments []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Attachment;
@@ -101,7 +101,7 @@ func NewDelta()(*Delta) {
     }
     return m
 }
-// GetAllowNewTimeProposals gets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
+// GetAllowNewTimeProposals gets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
 func (m *Delta) GetAllowNewTimeProposals()(*bool) {
     if m == nil {
         return nil
@@ -568,8 +568,7 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
             return err
         }
         if val != nil {
-            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Importance)
-            m.SetImportance(&cast)
+            m.SetImportance(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Importance))
         }
         return nil
     }
@@ -701,8 +700,7 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
             return err
         }
         if val != nil {
-            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnlineMeetingProviderType)
-            m.SetOnlineMeetingProvider(&cast)
+            m.SetOnlineMeetingProvider(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnlineMeetingProviderType))
         }
         return nil
     }
@@ -802,8 +800,7 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
             return err
         }
         if val != nil {
-            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Sensitivity)
-            m.SetSensitivity(&cast)
+            m.SetSensitivity(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Sensitivity))
         }
         return nil
     }
@@ -823,8 +820,7 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
             return err
         }
         if val != nil {
-            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FreeBusyStatus)
-            m.SetShowAs(&cast)
+            m.SetShowAs(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.FreeBusyStatus))
         }
         return nil
     }
@@ -878,8 +874,7 @@ func (m *Delta) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
             return err
         }
         if val != nil {
-            cast := val.(i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EventType)
-            m.SetType(&cast)
+            m.SetType(val.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.EventType))
         }
         return nil
     }
@@ -986,7 +981,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     if m.GetImportance() != nil {
-        cast := m.GetImportance().String()
+        cast := (*m.GetImportance()).String()
         err = writer.WriteStringValue("importance", &cast)
         if err != nil {
             return err
@@ -1074,7 +1069,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     if m.GetOnlineMeetingProvider() != nil {
-        cast := m.GetOnlineMeetingProvider().String()
+        cast := (*m.GetOnlineMeetingProvider()).String()
         err = writer.WriteStringValue("onlineMeetingProvider", &cast)
         if err != nil {
             return err
@@ -1135,7 +1130,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     if m.GetSensitivity() != nil {
-        cast := m.GetSensitivity().String()
+        cast := (*m.GetSensitivity()).String()
         err = writer.WriteStringValue("sensitivity", &cast)
         if err != nil {
             return err
@@ -1148,7 +1143,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     if m.GetShowAs() != nil {
-        cast := m.GetShowAs().String()
+        cast := (*m.GetShowAs()).String()
         err = writer.WriteStringValue("showAs", &cast)
         if err != nil {
             return err
@@ -1184,7 +1179,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -1198,7 +1193,7 @@ func (m *Delta) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     }
     return nil
 }
-// SetAllowNewTimeProposals sets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
+// SetAllowNewTimeProposals sets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
 func (m *Delta) SetAllowNewTimeProposals(value *bool)() {
     if m != nil {
         m.allowNewTimeProposals = value

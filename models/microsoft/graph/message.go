@@ -14,7 +14,7 @@ type Message struct {
     bccRecipients []Recipient;
     // The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.
     body *ItemBody;
-    // The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+    // The first 255 characters of the message body. It is in text format.
     bodyPreview *string;
     // The Cc: recipients for the message.
     ccRecipients []Recipient;
@@ -100,7 +100,7 @@ func (m *Message) GetBody()(*ItemBody) {
         return m.body
     }
 }
-// GetBodyPreview gets the bodyPreview property value. The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+// GetBodyPreview gets the bodyPreview property value. The first 255 characters of the message body. It is in text format.
 func (m *Message) GetBodyPreview()(*string) {
     if m == nil {
         return nil
@@ -451,8 +451,7 @@ func (m *Message) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
             return err
         }
         if val != nil {
-            cast := val.(Importance)
-            m.SetImportance(&cast)
+            m.SetImportance(val.(*Importance))
         }
         return nil
     }
@@ -462,8 +461,7 @@ func (m *Message) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
             return err
         }
         if val != nil {
-            cast := val.(InferenceClassificationType)
-            m.SetInferenceClassification(&cast)
+            m.SetInferenceClassification(val.(*InferenceClassificationType))
         }
         return nil
     }
@@ -755,14 +753,14 @@ func (m *Message) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     if m.GetImportance() != nil {
-        cast := m.GetImportance().String()
+        cast := (*m.GetImportance()).String()
         err = writer.WriteStringValue("importance", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetInferenceClassification() != nil {
-        cast := m.GetInferenceClassification().String()
+        cast := (*m.GetInferenceClassification()).String()
         err = writer.WriteStringValue("inferenceClassification", &cast)
         if err != nil {
             return err
@@ -915,7 +913,7 @@ func (m *Message) SetBody(value *ItemBody)() {
         m.body = value
     }
 }
-// SetBodyPreview sets the bodyPreview property value. The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
+// SetBodyPreview sets the bodyPreview property value. The first 255 characters of the message body. It is in text format.
 func (m *Message) SetBodyPreview(value *string)() {
     if m != nil {
         m.bodyPreview = value

@@ -15,13 +15,13 @@ type WorkbookRangeFormat struct {
     fill *WorkbookRangeFill;
     // Returns the font object defined on the overall range selected Read-only.
     font *WorkbookRangeFont;
-    // Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+    // Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
     horizontalAlignment *string;
     // Returns the format protection object for a range. Read-only.
     protection *WorkbookFormatProtection;
     // Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
     rowHeight *float64;
-    // Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
+    // Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
     verticalAlignment *string;
     // Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
     wrapText *bool;
@@ -65,7 +65,7 @@ func (m *WorkbookRangeFormat) GetFont()(*WorkbookRangeFont) {
         return m.font
     }
 }
-// GetHorizontalAlignment gets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+// GetHorizontalAlignment gets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
 func (m *WorkbookRangeFormat) GetHorizontalAlignment()(*string) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *WorkbookRangeFormat) GetRowHeight()(*float64) {
         return m.rowHeight
     }
 }
-// GetVerticalAlignment gets the verticalAlignment property value. Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
+// GetVerticalAlignment gets the verticalAlignment property value. Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
 func (m *WorkbookRangeFormat) GetVerticalAlignment()(*string) {
     if m == nil {
         return nil
@@ -298,7 +298,7 @@ func (m *WorkbookRangeFormat) SetFont(value *WorkbookRangeFont)() {
         m.font = value
     }
 }
-// SetHorizontalAlignment sets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+// SetHorizontalAlignment sets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
 func (m *WorkbookRangeFormat) SetHorizontalAlignment(value *string)() {
     if m != nil {
         m.horizontalAlignment = value
@@ -316,7 +316,7 @@ func (m *WorkbookRangeFormat) SetRowHeight(value *float64)() {
         m.rowHeight = value
     }
 }
-// SetVerticalAlignment sets the verticalAlignment property value. Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
+// SetVerticalAlignment sets the verticalAlignment property value. Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
 func (m *WorkbookRangeFormat) SetVerticalAlignment(value *string)() {
     if m != nil {
         m.verticalAlignment = value

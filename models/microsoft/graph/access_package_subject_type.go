@@ -17,17 +17,20 @@ func (i AccessPackageSubjectType) String() string {
     return []string{"NOTSPECIFIED", "USER", "SERVICEPRINCIPAL", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAccessPackageSubjectType(v string) (interface{}, error) {
+    result := NOTSPECIFIED_ACCESSPACKAGESUBJECTTYPE
     switch strings.ToUpper(v) {
         case "NOTSPECIFIED":
-            return NOTSPECIFIED_ACCESSPACKAGESUBJECTTYPE, nil
+            result = NOTSPECIFIED_ACCESSPACKAGESUBJECTTYPE
         case "USER":
-            return USER_ACCESSPACKAGESUBJECTTYPE, nil
+            result = USER_ACCESSPACKAGESUBJECTTYPE
         case "SERVICEPRINCIPAL":
-            return SERVICEPRINCIPAL_ACCESSPACKAGESUBJECTTYPE, nil
+            result = SERVICEPRINCIPAL_ACCESSPACKAGESUBJECTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ACCESSPACKAGESUBJECTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_ACCESSPACKAGESUBJECTTYPE
+        default:
+            return 0, errors.New("Unknown AccessPackageSubjectType value: " + v)
     }
-    return 0, errors.New("Unknown AccessPackageSubjectType value: " + v)
+    return &result, nil
 }
 func SerializeAccessPackageSubjectType(values []AccessPackageSubjectType) []string {
     result := make([]string, len(values))

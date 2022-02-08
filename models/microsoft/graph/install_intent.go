@@ -17,17 +17,20 @@ func (i InstallIntent) String() string {
     return []string{"AVAILABLE", "REQUIRED", "UNINSTALL", "AVAILABLEWITHOUTENROLLMENT"}[i]
 }
 func ParseInstallIntent(v string) (interface{}, error) {
+    result := AVAILABLE_INSTALLINTENT
     switch strings.ToUpper(v) {
         case "AVAILABLE":
-            return AVAILABLE_INSTALLINTENT, nil
+            result = AVAILABLE_INSTALLINTENT
         case "REQUIRED":
-            return REQUIRED_INSTALLINTENT, nil
+            result = REQUIRED_INSTALLINTENT
         case "UNINSTALL":
-            return UNINSTALL_INSTALLINTENT, nil
+            result = UNINSTALL_INSTALLINTENT
         case "AVAILABLEWITHOUTENROLLMENT":
-            return AVAILABLEWITHOUTENROLLMENT_INSTALLINTENT, nil
+            result = AVAILABLEWITHOUTENROLLMENT_INSTALLINTENT
+        default:
+            return 0, errors.New("Unknown InstallIntent value: " + v)
     }
-    return 0, errors.New("Unknown InstallIntent value: " + v)
+    return &result, nil
 }
 func SerializeInstallIntent(values []InstallIntent) []string {
     result := make([]string, len(values))

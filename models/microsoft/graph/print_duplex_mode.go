@@ -17,17 +17,20 @@ func (i PrintDuplexMode) String() string {
     return []string{"FLIPONLONGEDGE", "FLIPONSHORTEDGE", "ONESIDED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePrintDuplexMode(v string) (interface{}, error) {
+    result := FLIPONLONGEDGE_PRINTDUPLEXMODE
     switch strings.ToUpper(v) {
         case "FLIPONLONGEDGE":
-            return FLIPONLONGEDGE_PRINTDUPLEXMODE, nil
+            result = FLIPONLONGEDGE_PRINTDUPLEXMODE
         case "FLIPONSHORTEDGE":
-            return FLIPONSHORTEDGE_PRINTDUPLEXMODE, nil
+            result = FLIPONSHORTEDGE_PRINTDUPLEXMODE
         case "ONESIDED":
-            return ONESIDED_PRINTDUPLEXMODE, nil
+            result = ONESIDED_PRINTDUPLEXMODE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PRINTDUPLEXMODE, nil
+            result = UNKNOWNFUTUREVALUE_PRINTDUPLEXMODE
+        default:
+            return 0, errors.New("Unknown PrintDuplexMode value: " + v)
     }
-    return 0, errors.New("Unknown PrintDuplexMode value: " + v)
+    return &result, nil
 }
 func SerializePrintDuplexMode(values []PrintDuplexMode) []string {
     result := make([]string, len(values))

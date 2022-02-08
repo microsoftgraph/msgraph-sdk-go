@@ -8,9 +8,9 @@ import (
 type ResourceAccess struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
+    // The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.
     id *string;
-    // Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).
+    // Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).
     type_escaped *string;
 }
 // NewResourceAccess instantiates a new resourceAccess and sets the default values.
@@ -28,7 +28,7 @@ func (m *ResourceAccess) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetId gets the id property value. The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
+// GetId gets the id property value. The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.
 func (m *ResourceAccess) GetId()(*string) {
     if m == nil {
         return nil
@@ -36,7 +36,7 @@ func (m *ResourceAccess) GetId()(*string) {
         return m.id
     }
 }
-// GetType gets the type property value. Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).
+// GetType gets the type property value. Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).
 func (m *ResourceAccess) GetType()(*string) {
     if m == nil {
         return nil
@@ -100,13 +100,13 @@ func (m *ResourceAccess) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetId sets the id property value. The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
+// SetId sets the id property value. The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.
 func (m *ResourceAccess) SetId(value *string)() {
     if m != nil {
         m.id = value
     }
 }
-// SetType sets the type property value. Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).
+// SetType sets the type property value. Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).
 func (m *ResourceAccess) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

@@ -22,27 +22,30 @@ func (i EntityType) String() string {
     return []string{"EVENT", "MESSAGE", "DRIVEITEM", "EXTERNALITEM", "SITE", "LIST", "LISTITEM", "DRIVE", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseEntityType(v string) (interface{}, error) {
+    result := EVENT_ENTITYTYPE
     switch strings.ToUpper(v) {
         case "EVENT":
-            return EVENT_ENTITYTYPE, nil
+            result = EVENT_ENTITYTYPE
         case "MESSAGE":
-            return MESSAGE_ENTITYTYPE, nil
+            result = MESSAGE_ENTITYTYPE
         case "DRIVEITEM":
-            return DRIVEITEM_ENTITYTYPE, nil
+            result = DRIVEITEM_ENTITYTYPE
         case "EXTERNALITEM":
-            return EXTERNALITEM_ENTITYTYPE, nil
+            result = EXTERNALITEM_ENTITYTYPE
         case "SITE":
-            return SITE_ENTITYTYPE, nil
+            result = SITE_ENTITYTYPE
         case "LIST":
-            return LIST_ENTITYTYPE, nil
+            result = LIST_ENTITYTYPE
         case "LISTITEM":
-            return LISTITEM_ENTITYTYPE, nil
+            result = LISTITEM_ENTITYTYPE
         case "DRIVE":
-            return DRIVE_ENTITYTYPE, nil
+            result = DRIVE_ENTITYTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ENTITYTYPE, nil
+            result = UNKNOWNFUTUREVALUE_ENTITYTYPE
+        default:
+            return 0, errors.New("Unknown EntityType value: " + v)
     }
-    return 0, errors.New("Unknown EntityType value: " + v)
+    return &result, nil
 }
 func SerializeEntityType(values []EntityType) []string {
     result := make([]string, len(values))

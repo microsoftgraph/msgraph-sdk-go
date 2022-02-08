@@ -12,7 +12,7 @@ type ColumnValidation struct {
     defaultLanguage *string;
     // Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
     descriptions []DisplayNameLocalization;
-    // The formula to validate column value. For examples, see Examples of common formulas in lists
+    // The formula to validate column value. For examples, see Examples of common formulas in lists.
     formula *string;
 }
 // NewColumnValidation instantiates a new columnValidation and sets the default values.
@@ -46,7 +46,7 @@ func (m *ColumnValidation) GetDescriptions()([]DisplayNameLocalization) {
         return m.descriptions
     }
 }
-// GetFormula gets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists
+// GetFormula gets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists.
 func (m *ColumnValidation) GetFormula()(*string) {
     if m == nil {
         return nil
@@ -147,7 +147,7 @@ func (m *ColumnValidation) SetDescriptions(value []DisplayNameLocalization)() {
         m.descriptions = value
     }
 }
-// SetFormula sets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists
+// SetFormula sets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists.
 func (m *ColumnValidation) SetFormula(value *string)() {
     if m != nil {
         m.formula = value

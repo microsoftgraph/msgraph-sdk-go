@@ -204,8 +204,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
             return err
         }
         if val != nil {
-            cast := val.(WindowsInformationProtectionPinCharacterRequirements)
-            m.SetPinLowercaseLetters(&cast)
+            m.SetPinLowercaseLetters(val.(*WindowsInformationProtectionPinCharacterRequirements))
         }
         return nil
     }
@@ -225,8 +224,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
             return err
         }
         if val != nil {
-            cast := val.(WindowsInformationProtectionPinCharacterRequirements)
-            m.SetPinSpecialCharacters(&cast)
+            m.SetPinSpecialCharacters(val.(*WindowsInformationProtectionPinCharacterRequirements))
         }
         return nil
     }
@@ -236,8 +234,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
             return err
         }
         if val != nil {
-            cast := val.(WindowsInformationProtectionPinCharacterRequirements)
-            m.SetPinUppercaseLetters(&cast)
+            m.SetPinUppercaseLetters(val.(*WindowsInformationProtectionPinCharacterRequirements))
         }
         return nil
     }
@@ -309,7 +306,7 @@ func (m *WindowsInformationProtectionPolicy) Serialize(writer i04eb5309aeaafadd2
         }
     }
     if m.GetPinLowercaseLetters() != nil {
-        cast := m.GetPinLowercaseLetters().String()
+        cast := (*m.GetPinLowercaseLetters()).String()
         err = writer.WriteStringValue("pinLowercaseLetters", &cast)
         if err != nil {
             return err
@@ -322,14 +319,14 @@ func (m *WindowsInformationProtectionPolicy) Serialize(writer i04eb5309aeaafadd2
         }
     }
     if m.GetPinSpecialCharacters() != nil {
-        cast := m.GetPinSpecialCharacters().String()
+        cast := (*m.GetPinSpecialCharacters()).String()
         err = writer.WriteStringValue("pinSpecialCharacters", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetPinUppercaseLetters() != nil {
-        cast := m.GetPinUppercaseLetters().String()
+        cast := (*m.GetPinUppercaseLetters()).String()
         err = writer.WriteStringValue("pinUppercaseLetters", &cast)
         if err != nil {
             return err

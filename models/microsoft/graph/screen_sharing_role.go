@@ -15,13 +15,16 @@ func (i ScreenSharingRole) String() string {
     return []string{"VIEWER", "SHARER"}[i]
 }
 func ParseScreenSharingRole(v string) (interface{}, error) {
+    result := VIEWER_SCREENSHARINGROLE
     switch strings.ToUpper(v) {
         case "VIEWER":
-            return VIEWER_SCREENSHARINGROLE, nil
+            result = VIEWER_SCREENSHARINGROLE
         case "SHARER":
-            return SHARER_SCREENSHARINGROLE, nil
+            result = SHARER_SCREENSHARINGROLE
+        default:
+            return 0, errors.New("Unknown ScreenSharingRole value: " + v)
     }
-    return 0, errors.New("Unknown ScreenSharingRole value: " + v)
+    return &result, nil
 }
 func SerializeScreenSharingRole(values []ScreenSharingRole) []string {
     result := make([]string, len(values))

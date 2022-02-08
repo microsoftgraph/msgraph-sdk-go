@@ -16,15 +16,18 @@ func (i AnswerInputType) String() string {
     return []string{"TEXT", "RADIOBUTTON", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseAnswerInputType(v string) (interface{}, error) {
+    result := TEXT_ANSWERINPUTTYPE
     switch strings.ToUpper(v) {
         case "TEXT":
-            return TEXT_ANSWERINPUTTYPE, nil
+            result = TEXT_ANSWERINPUTTYPE
         case "RADIOBUTTON":
-            return RADIOBUTTON_ANSWERINPUTTYPE, nil
+            result = RADIOBUTTON_ANSWERINPUTTYPE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_ANSWERINPUTTYPE, nil
+            result = UNKNOWNFUTUREVALUE_ANSWERINPUTTYPE
+        default:
+            return 0, errors.New("Unknown AnswerInputType value: " + v)
     }
-    return 0, errors.New("Unknown AnswerInputType value: " + v)
+    return &result, nil
 }
 func SerializeAnswerInputType(values []AnswerInputType) []string {
     result := make([]string, len(values))

@@ -19,21 +19,24 @@ func (i ResponseType) String() string {
     return []string{"NONE", "ORGANIZER", "TENTATIVELYACCEPTED", "ACCEPTED", "DECLINED", "NOTRESPONDED"}[i]
 }
 func ParseResponseType(v string) (interface{}, error) {
+    result := NONE_RESPONSETYPE
     switch strings.ToUpper(v) {
         case "NONE":
-            return NONE_RESPONSETYPE, nil
+            result = NONE_RESPONSETYPE
         case "ORGANIZER":
-            return ORGANIZER_RESPONSETYPE, nil
+            result = ORGANIZER_RESPONSETYPE
         case "TENTATIVELYACCEPTED":
-            return TENTATIVELYACCEPTED_RESPONSETYPE, nil
+            result = TENTATIVELYACCEPTED_RESPONSETYPE
         case "ACCEPTED":
-            return ACCEPTED_RESPONSETYPE, nil
+            result = ACCEPTED_RESPONSETYPE
         case "DECLINED":
-            return DECLINED_RESPONSETYPE, nil
+            result = DECLINED_RESPONSETYPE
         case "NOTRESPONDED":
-            return NOTRESPONDED_RESPONSETYPE, nil
+            result = NOTRESPONDED_RESPONSETYPE
+        default:
+            return 0, errors.New("Unknown ResponseType value: " + v)
     }
-    return 0, errors.New("Unknown ResponseType value: " + v)
+    return &result, nil
 }
 func SerializeResponseType(values []ResponseType) []string {
     result := make([]string, len(values))

@@ -37,7 +37,7 @@ type SharedInsightRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// SharedInsightRequestBuilderGetQueryParameters access this property from the derived type itemInsights.
+// SharedInsightRequestBuilderGetQueryParameters calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 type SharedInsightRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -74,7 +74,7 @@ func NewSharedInsightRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb
     urlParams["request-raw-url"] = rawUrl
     return NewSharedInsightRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation access this property from the derived type itemInsights.
+// CreateDeleteRequestInformation calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 func (m *SharedInsightRequestBuilder) CreateDeleteRequestInformation(options *SharedInsightRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -91,7 +91,7 @@ func (m *SharedInsightRequestBuilder) CreateDeleteRequestInformation(options *Sh
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation access this property from the derived type itemInsights.
+// CreateGetRequestInformation calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 func (m *SharedInsightRequestBuilder) CreateGetRequestInformation(options *SharedInsightRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,7 +111,7 @@ func (m *SharedInsightRequestBuilder) CreateGetRequestInformation(options *Share
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation access this property from the derived type itemInsights.
+// CreatePatchRequestInformation calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 func (m *SharedInsightRequestBuilder) CreatePatchRequestInformation(options *SharedInsightRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,7 +129,7 @@ func (m *SharedInsightRequestBuilder) CreatePatchRequestInformation(options *Sha
     }
     return requestInfo, nil
 }
-// Delete access this property from the derived type itemInsights.
+// Delete calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 func (m *SharedInsightRequestBuilder) Delete(options *SharedInsightRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *SharedInsightRequestBuilder) Delete(options *SharedInsightRequestBuilde
     }
     return nil
 }
-// Get access this property from the derived type itemInsights.
+// Get calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 func (m *SharedInsightRequestBuilder) Get(options *SharedInsightRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.SharedInsight, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
@@ -156,7 +156,7 @@ func (m *SharedInsightRequestBuilder) Get(options *SharedInsightRequestBuilderGe
 func (m *SharedInsightRequestBuilder) LastSharedMethod()(*i842917ab59524927fdc4f7a1948e2eb89d752e56a2d7a853caff95ff7c1ac1fa.LastSharedMethodRequestBuilder) {
     return i842917ab59524927fdc4f7a1948e2eb89d752e56a2d7a853caff95ff7c1ac1fa.NewLastSharedMethodRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Patch access this property from the derived type itemInsights.
+// Patch calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
 func (m *SharedInsightRequestBuilder) Patch(options *SharedInsightRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {

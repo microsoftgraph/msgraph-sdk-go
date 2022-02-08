@@ -17,17 +17,20 @@ func (i EventType) String() string {
     return []string{"SINGLEINSTANCE", "OCCURRENCE", "EXCEPTION", "SERIESMASTER"}[i]
 }
 func ParseEventType(v string) (interface{}, error) {
+    result := SINGLEINSTANCE_EVENTTYPE
     switch strings.ToUpper(v) {
         case "SINGLEINSTANCE":
-            return SINGLEINSTANCE_EVENTTYPE, nil
+            result = SINGLEINSTANCE_EVENTTYPE
         case "OCCURRENCE":
-            return OCCURRENCE_EVENTTYPE, nil
+            result = OCCURRENCE_EVENTTYPE
         case "EXCEPTION":
-            return EXCEPTION_EVENTTYPE, nil
+            result = EXCEPTION_EVENTTYPE
         case "SERIESMASTER":
-            return SERIESMASTER_EVENTTYPE, nil
+            result = SERIESMASTER_EVENTTYPE
+        default:
+            return 0, errors.New("Unknown EventType value: " + v)
     }
-    return 0, errors.New("Unknown EventType value: " + v)
+    return &result, nil
 }
 func SerializeEventType(values []EventType) []string {
     result := make([]string, len(values))

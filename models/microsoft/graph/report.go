@@ -8,7 +8,7 @@ import (
 type Report struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{};
-    // Report content; details vary by report type.
+    // Not yet documented
     content []byte;
 }
 // NewReport instantiates a new report and sets the default values.
@@ -26,7 +26,7 @@ func (m *Report) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetContent gets the content property value. Report content; details vary by report type.
+// GetContent gets the content property value. Not yet documented
 func (m *Report) GetContent()([]byte) {
     if m == nil {
         return nil
@@ -74,7 +74,7 @@ func (m *Report) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetContent sets the content property value. Report content; details vary by report type.
+// SetContent sets the content property value. Not yet documented
 func (m *Report) SetContent(value []byte)() {
     if m != nil {
         m.content = value

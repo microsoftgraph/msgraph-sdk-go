@@ -23,29 +23,32 @@ func (i PhoneType) String() string {
     return []string{"HOME", "BUSINESS", "MOBILE", "OTHER", "ASSISTANT", "HOMEFAX", "BUSINESSFAX", "OTHERFAX", "PAGER", "RADIO"}[i]
 }
 func ParsePhoneType(v string) (interface{}, error) {
+    result := HOME_PHONETYPE
     switch strings.ToUpper(v) {
         case "HOME":
-            return HOME_PHONETYPE, nil
+            result = HOME_PHONETYPE
         case "BUSINESS":
-            return BUSINESS_PHONETYPE, nil
+            result = BUSINESS_PHONETYPE
         case "MOBILE":
-            return MOBILE_PHONETYPE, nil
+            result = MOBILE_PHONETYPE
         case "OTHER":
-            return OTHER_PHONETYPE, nil
+            result = OTHER_PHONETYPE
         case "ASSISTANT":
-            return ASSISTANT_PHONETYPE, nil
+            result = ASSISTANT_PHONETYPE
         case "HOMEFAX":
-            return HOMEFAX_PHONETYPE, nil
+            result = HOMEFAX_PHONETYPE
         case "BUSINESSFAX":
-            return BUSINESSFAX_PHONETYPE, nil
+            result = BUSINESSFAX_PHONETYPE
         case "OTHERFAX":
-            return OTHERFAX_PHONETYPE, nil
+            result = OTHERFAX_PHONETYPE
         case "PAGER":
-            return PAGER_PHONETYPE, nil
+            result = PAGER_PHONETYPE
         case "RADIO":
-            return RADIO_PHONETYPE, nil
+            result = RADIO_PHONETYPE
+        default:
+            return 0, errors.New("Unknown PhoneType value: " + v)
     }
-    return 0, errors.New("Unknown PhoneType value: " + v)
+    return &result, nil
 }
 func SerializePhoneType(values []PhoneType) []string {
     result := make([]string, len(values))

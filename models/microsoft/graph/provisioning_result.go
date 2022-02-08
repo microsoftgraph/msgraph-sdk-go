@@ -18,19 +18,22 @@ func (i ProvisioningResult) String() string {
     return []string{"SUCCESS", "FAILURE", "SKIPPED", "WARNING", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseProvisioningResult(v string) (interface{}, error) {
+    result := SUCCESS_PROVISIONINGRESULT
     switch strings.ToUpper(v) {
         case "SUCCESS":
-            return SUCCESS_PROVISIONINGRESULT, nil
+            result = SUCCESS_PROVISIONINGRESULT
         case "FAILURE":
-            return FAILURE_PROVISIONINGRESULT, nil
+            result = FAILURE_PROVISIONINGRESULT
         case "SKIPPED":
-            return SKIPPED_PROVISIONINGRESULT, nil
+            result = SKIPPED_PROVISIONINGRESULT
         case "WARNING":
-            return WARNING_PROVISIONINGRESULT, nil
+            result = WARNING_PROVISIONINGRESULT
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PROVISIONINGRESULT, nil
+            result = UNKNOWNFUTUREVALUE_PROVISIONINGRESULT
+        default:
+            return 0, errors.New("Unknown ProvisioningResult value: " + v)
     }
-    return 0, errors.New("Unknown ProvisioningResult value: " + v)
+    return &result, nil
 }
 func SerializeProvisioningResult(values []ProvisioningResult) []string {
     result := make([]string, len(values))

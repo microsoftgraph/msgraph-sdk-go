@@ -18,19 +18,22 @@ func (i ClonableTeamParts) String() string {
     return []string{"APPS", "TABS", "SETTINGS", "CHANNELS", "MEMBERS"}[i]
 }
 func ParseClonableTeamParts(v string) (interface{}, error) {
+    result := APPS_CLONABLETEAMPARTS
     switch strings.ToUpper(v) {
         case "APPS":
-            return APPS_CLONABLETEAMPARTS, nil
+            result = APPS_CLONABLETEAMPARTS
         case "TABS":
-            return TABS_CLONABLETEAMPARTS, nil
+            result = TABS_CLONABLETEAMPARTS
         case "SETTINGS":
-            return SETTINGS_CLONABLETEAMPARTS, nil
+            result = SETTINGS_CLONABLETEAMPARTS
         case "CHANNELS":
-            return CHANNELS_CLONABLETEAMPARTS, nil
+            result = CHANNELS_CLONABLETEAMPARTS
         case "MEMBERS":
-            return MEMBERS_CLONABLETEAMPARTS, nil
+            result = MEMBERS_CLONABLETEAMPARTS
+        default:
+            return 0, errors.New("Unknown ClonableTeamParts value: " + v)
     }
-    return 0, errors.New("Unknown ClonableTeamParts value: " + v)
+    return &result, nil
 }
 func SerializeClonableTeamParts(values []ClonableTeamParts) []string {
     result := make([]string, len(values))

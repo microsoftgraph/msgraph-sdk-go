@@ -17,17 +17,20 @@ func (i OperationStatus) String() string {
     return []string{"NOTSTARTED", "RUNNING", "COMPLETED", "FAILED"}[i]
 }
 func ParseOperationStatus(v string) (interface{}, error) {
+    result := NOTSTARTED_OPERATIONSTATUS
     switch strings.ToUpper(v) {
         case "NOTSTARTED":
-            return NOTSTARTED_OPERATIONSTATUS, nil
+            result = NOTSTARTED_OPERATIONSTATUS
         case "RUNNING":
-            return RUNNING_OPERATIONSTATUS, nil
+            result = RUNNING_OPERATIONSTATUS
         case "COMPLETED":
-            return COMPLETED_OPERATIONSTATUS, nil
+            result = COMPLETED_OPERATIONSTATUS
         case "FAILED":
-            return FAILED_OPERATIONSTATUS, nil
+            result = FAILED_OPERATIONSTATUS
+        default:
+            return 0, errors.New("Unknown OperationStatus value: " + v)
     }
-    return 0, errors.New("Unknown OperationStatus value: " + v)
+    return &result, nil
 }
 func SerializeOperationStatus(values []OperationStatus) []string {
     result := make([]string, len(values))

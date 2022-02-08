@@ -19,21 +19,24 @@ func (i ConnectionStatus) String() string {
     return []string{"UNKNOWN", "ATTEMPTED", "SUCCEEDED", "BLOCKED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParseConnectionStatus(v string) (interface{}, error) {
+    result := UNKNOWN_CONNECTIONSTATUS
     switch strings.ToUpper(v) {
         case "UNKNOWN":
-            return UNKNOWN_CONNECTIONSTATUS, nil
+            result = UNKNOWN_CONNECTIONSTATUS
         case "ATTEMPTED":
-            return ATTEMPTED_CONNECTIONSTATUS, nil
+            result = ATTEMPTED_CONNECTIONSTATUS
         case "SUCCEEDED":
-            return SUCCEEDED_CONNECTIONSTATUS, nil
+            result = SUCCEEDED_CONNECTIONSTATUS
         case "BLOCKED":
-            return BLOCKED_CONNECTIONSTATUS, nil
+            result = BLOCKED_CONNECTIONSTATUS
         case "FAILED":
-            return FAILED_CONNECTIONSTATUS, nil
+            result = FAILED_CONNECTIONSTATUS
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_CONNECTIONSTATUS, nil
+            result = UNKNOWNFUTUREVALUE_CONNECTIONSTATUS
+        default:
+            return 0, errors.New("Unknown ConnectionStatus value: " + v)
     }
-    return 0, errors.New("Unknown ConnectionStatus value: " + v)
+    return &result, nil
 }
 func SerializeConnectionStatus(values []ConnectionStatus) []string {
     result := make([]string, len(values))

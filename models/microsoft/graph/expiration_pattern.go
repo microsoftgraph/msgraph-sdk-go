@@ -13,7 +13,7 @@ type ExpirationPattern struct {
     duration *i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ISODuration;
     // Timestamp of date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The requestor's desired expiration pattern type.
+    // The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
     type_escaped *ExpirationPatternType;
 }
 // NewExpirationPattern instantiates a new expirationPattern and sets the default values.
@@ -47,7 +47,7 @@ func (m *ExpirationPattern) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.endDateTime
     }
 }
-// GetType gets the type property value. The requestor's desired expiration pattern type.
+// GetType gets the type property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
 func (m *ExpirationPattern) GetType()(*ExpirationPatternType) {
     if m == nil {
         return nil
@@ -84,8 +84,7 @@ func (m *ExpirationPattern) GetFieldDeserializers()(map[string]func(interface{},
             return err
         }
         if val != nil {
-            cast := val.(ExpirationPatternType)
-            m.SetType(&cast)
+            m.SetType(val.(*ExpirationPatternType))
         }
         return nil
     }
@@ -109,7 +108,7 @@ func (m *ExpirationPattern) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b2
         }
     }
     if m.GetType() != nil {
-        cast := m.GetType().String()
+        cast := (*m.GetType()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -141,7 +140,7 @@ func (m *ExpirationPattern) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad9
         m.endDateTime = value
     }
 }
-// SetType sets the type property value. The requestor's desired expiration pattern type.
+// SetType sets the type property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
 func (m *ExpirationPattern) SetType(value *ExpirationPatternType)() {
     if m != nil {
         m.type_escaped = value

@@ -7,7 +7,7 @@ import (
 // SwapShiftsChangeRequest 
 type SwapShiftsChangeRequest struct {
     OfferShiftRequest
-    // Shift ID for the recipient user with whom the request is to swap.
+    // ShiftId for the recipient user with whom the request is to swap.
     recipientShiftId *string;
 }
 // NewSwapShiftsChangeRequest instantiates a new swapShiftsChangeRequest and sets the default values.
@@ -17,7 +17,7 @@ func NewSwapShiftsChangeRequest()(*SwapShiftsChangeRequest) {
     }
     return m
 }
-// GetRecipientShiftId gets the recipientShiftId property value. Shift ID for the recipient user with whom the request is to swap.
+// GetRecipientShiftId gets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
 func (m *SwapShiftsChangeRequest) GetRecipientShiftId()(*string) {
     if m == nil {
         return nil
@@ -57,7 +57,7 @@ func (m *SwapShiftsChangeRequest) Serialize(writer i04eb5309aeaafadd28374d79c847
     }
     return nil
 }
-// SetRecipientShiftId sets the recipientShiftId property value. Shift ID for the recipient user with whom the request is to swap.
+// SetRecipientShiftId sets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
 func (m *SwapShiftsChangeRequest) SetRecipientShiftId(value *string)() {
     if m != nil {
         m.recipientShiftId = value

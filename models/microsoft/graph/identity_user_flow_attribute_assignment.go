@@ -138,8 +138,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
             return err
         }
         if val != nil {
-            cast := val.(IdentityUserFlowAttributeInputType)
-            m.SetUserInputType(&cast)
+            m.SetUserInputType(val.(*IdentityUserFlowAttributeInputType))
         }
         return nil
     }
@@ -190,7 +189,7 @@ func (m *IdentityUserFlowAttributeAssignment) Serialize(writer i04eb5309aeaafadd
         }
     }
     if m.GetUserInputType() != nil {
-        cast := m.GetUserInputType().String()
+        cast := (*m.GetUserInputType()).String()
         err = writer.WriteStringValue("userInputType", &cast)
         if err != nil {
             return err

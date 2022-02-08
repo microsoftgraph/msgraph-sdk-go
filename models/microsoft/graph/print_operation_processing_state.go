@@ -18,19 +18,22 @@ func (i PrintOperationProcessingState) String() string {
     return []string{"NOTSTARTED", "RUNNING", "SUCCEEDED", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
 }
 func ParsePrintOperationProcessingState(v string) (interface{}, error) {
+    result := NOTSTARTED_PRINTOPERATIONPROCESSINGSTATE
     switch strings.ToUpper(v) {
         case "NOTSTARTED":
-            return NOTSTARTED_PRINTOPERATIONPROCESSINGSTATE, nil
+            result = NOTSTARTED_PRINTOPERATIONPROCESSINGSTATE
         case "RUNNING":
-            return RUNNING_PRINTOPERATIONPROCESSINGSTATE, nil
+            result = RUNNING_PRINTOPERATIONPROCESSINGSTATE
         case "SUCCEEDED":
-            return SUCCEEDED_PRINTOPERATIONPROCESSINGSTATE, nil
+            result = SUCCEEDED_PRINTOPERATIONPROCESSINGSTATE
         case "FAILED":
-            return FAILED_PRINTOPERATIONPROCESSINGSTATE, nil
+            result = FAILED_PRINTOPERATIONPROCESSINGSTATE
         case "UNKNOWNFUTUREVALUE":
-            return UNKNOWNFUTUREVALUE_PRINTOPERATIONPROCESSINGSTATE, nil
+            result = UNKNOWNFUTUREVALUE_PRINTOPERATIONPROCESSINGSTATE
+        default:
+            return 0, errors.New("Unknown PrintOperationProcessingState value: " + v)
     }
-    return 0, errors.New("Unknown PrintOperationProcessingState value: " + v)
+    return &result, nil
 }
 func SerializePrintOperationProcessingState(values []PrintOperationProcessingState) []string {
     result := make([]string, len(values))
