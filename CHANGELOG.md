@@ -11,6 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.9.0] - 2022-02-08
+
+### Changed
+
+- Fixed a deserialization issue with arrays of enums #73
+- Updated to core 0.0.8 (request body compression, response body decompression, page iterator)
+- Weekly generation
+
 ## [0.8.0] - 2022-02-01
 
 ### Changed
