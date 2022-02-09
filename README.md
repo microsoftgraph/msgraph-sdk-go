@@ -97,23 +97,30 @@ Items in a collection response can span across multiple pages. To get the comple
 To retrieve the users:
 
 ```Golang
+import (
+    msgraphcore "github.com/microsoftgraph/msgraph-sdk-go-core"
+    "github.com/microsoftgraph/msgraph-sdk-go/users"
+    "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+)
+
 result, err := client.Users().Get(nil)
 if err != nil {
     fmt.Printf("Error getting users: %v\n", err)
     return err
 }
 
-for {
-    if result.GetNextLink() == nil {
-        break
-    }
+// Use PageIterator to iterate through all users
+pageIterator, err := msgraphcore.NewPageIterator(result, adapter.GraphRequestAdapterBase,
+    func() serialization.Parsable {
+        return users.NewUsersResponse()
+    })
 
-    result, err = users.NewUsersRequestBuilder(*result.GetNextLink(), adapter).Get(nil)
-    if err != nil {
-        fmt.Printf("Error getting users: %v\n", err)
-        break
-    }
-}
+err = pageIterator.Iterate(func(pageItem interface{}) bool {
+    user := pageItem.(graph.User)
+    fmt.Printf("%s\n", *user.GetDisplayName())
+    // Return true to continue the iteration
+    return true
+})
 ```
 
 ## 5. Documentation
