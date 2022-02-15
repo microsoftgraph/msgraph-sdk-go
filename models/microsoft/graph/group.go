@@ -2,14 +2,16 @@ package graph
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50 "github.com/microsoftgraph/msgraph-sdk-go/devices/getbyids"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec "github.com/microsoftgraph/msgraph-sdk-go/groups/item/calendar/calendarview/item/instances/delta"
 )
 
 // Group 
 type Group struct {
-    DirectoryObject
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject
     // The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-    acceptedSenders []DirectoryObject;
+    acceptedSenders []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     allowExternalSenders *bool;
     // Represents the app roles a group has been granted for an application. Supports $expand.
@@ -23,7 +25,7 @@ type Group struct {
     // The group's calendar. Read-only.
     calendar *Calendar;
     // The calendar view for the calendar. Read-only.
-    calendarView []Event;
+    calendarView []ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event;
     // Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
     classification *string;
     // The group's conversations.
@@ -31,7 +33,7 @@ type Group struct {
     // Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
-    createdOnBehalfOf *DirectoryObject;
+    createdOnBehalfOf *id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
     description *string;
     // The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -41,7 +43,7 @@ type Group struct {
     // The group's drives. Read-only.
     drives []Drive;
     // The group's calendar events.
-    events []Event;
+    events []ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event;
     // Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The collection of open extensions defined for the group. Read-only. Nullable.
@@ -71,15 +73,15 @@ type Group struct {
     // The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     mailNickname *string;
     // Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
-    memberOf []DirectoryObject;
+    memberOf []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // UMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
-    members []DirectoryObject;
+    members []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
     membershipRule *string;
     // Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, not, in).
     membershipRuleProcessingState *string;
     // A list of group members with license errors from this group-based license assignment. Read-only.
-    membersWithLicenseErrors []DirectoryObject;
+    membersWithLicenseErrors []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // Read-only.
     onenote *Onenote;
     // Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
@@ -97,7 +99,7 @@ type Group struct {
     // true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
     onPremisesSyncEnabled *bool;
     // The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
-    owners []DirectoryObject;
+    owners []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // The permission that has been granted for a group to a specific application. Supports $expand.
     permissionGrants []ResourceSpecificPermissionGrant;
     // The group's profile photo
@@ -113,7 +115,7 @@ type Group struct {
     // Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
     proxyAddresses []string;
     // The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-    rejectedSenders []DirectoryObject;
+    rejectedSenders []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     renewedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).
@@ -131,9 +133,9 @@ type Group struct {
     // The group's conversation threads. Nullable.
     threads []ConversationThread;
     // 
-    transitiveMemberOf []DirectoryObject;
+    transitiveMemberOf []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // 
-    transitiveMembers []DirectoryObject;
+    transitiveMembers []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     unseenCount *int32;
     // Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
@@ -142,12 +144,12 @@ type Group struct {
 // NewGroup instantiates a new group and sets the default values.
 func NewGroup()(*Group) {
     m := &Group{
-        DirectoryObject: *NewDirectoryObject(),
+        DirectoryObject: *id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject(),
     }
     return m
 }
 // GetAcceptedSenders gets the acceptedSenders property value. The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-func (m *Group) GetAcceptedSenders()([]DirectoryObject) {
+func (m *Group) GetAcceptedSenders()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -203,7 +205,7 @@ func (m *Group) GetCalendar()(*Calendar) {
     }
 }
 // GetCalendarView gets the calendarView property value. The calendar view for the calendar. Read-only.
-func (m *Group) GetCalendarView()([]Event) {
+func (m *Group) GetCalendarView()([]ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event) {
     if m == nil {
         return nil
     } else {
@@ -235,7 +237,7 @@ func (m *Group) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     }
 }
 // GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
-func (m *Group) GetCreatedOnBehalfOf()(*DirectoryObject) {
+func (m *Group) GetCreatedOnBehalfOf()(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -275,7 +277,7 @@ func (m *Group) GetDrives()([]Drive) {
     }
 }
 // GetEvents gets the events property value. The group's calendar events.
-func (m *Group) GetEvents()([]Event) {
+func (m *Group) GetEvents()([]ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event) {
     if m == nil {
         return nil
     } else {
@@ -395,7 +397,7 @@ func (m *Group) GetMailNickname()(*string) {
     }
 }
 // GetMemberOf gets the memberOf property value. Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
-func (m *Group) GetMemberOf()([]DirectoryObject) {
+func (m *Group) GetMemberOf()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -403,7 +405,7 @@ func (m *Group) GetMemberOf()([]DirectoryObject) {
     }
 }
 // GetMembers gets the members property value. UMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
-func (m *Group) GetMembers()([]DirectoryObject) {
+func (m *Group) GetMembers()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -427,7 +429,7 @@ func (m *Group) GetMembershipRuleProcessingState()(*string) {
     }
 }
 // GetMembersWithLicenseErrors gets the membersWithLicenseErrors property value. A list of group members with license errors from this group-based license assignment. Read-only.
-func (m *Group) GetMembersWithLicenseErrors()([]DirectoryObject) {
+func (m *Group) GetMembersWithLicenseErrors()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -499,7 +501,7 @@ func (m *Group) GetOnPremisesSyncEnabled()(*bool) {
     }
 }
 // GetOwners gets the owners property value. The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
-func (m *Group) GetOwners()([]DirectoryObject) {
+func (m *Group) GetOwners()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -563,7 +565,7 @@ func (m *Group) GetProxyAddresses()([]string) {
     }
 }
 // GetRejectedSenders gets the rejectedSenders property value. The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-func (m *Group) GetRejectedSenders()([]DirectoryObject) {
+func (m *Group) GetRejectedSenders()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -635,7 +637,7 @@ func (m *Group) GetThreads()([]ConversationThread) {
     }
 }
 // GetTransitiveMemberOf gets the transitiveMemberOf property value. 
-func (m *Group) GetTransitiveMemberOf()([]DirectoryObject) {
+func (m *Group) GetTransitiveMemberOf()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -643,7 +645,7 @@ func (m *Group) GetTransitiveMemberOf()([]DirectoryObject) {
     }
 }
 // GetTransitiveMembers gets the transitiveMembers property value. 
-func (m *Group) GetTransitiveMembers()([]DirectoryObject) {
+func (m *Group) GetTransitiveMembers()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -670,14 +672,14 @@ func (m *Group) GetVisibility()(*string) {
 func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["acceptedSenders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetAcceptedSenders(res)
         }
@@ -756,14 +758,14 @@ func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["calendarView"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvent() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.NewEvent() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Event, len(val))
+            res := make([]ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Event))
+                res[i] = *(v.(*ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event))
             }
             m.SetCalendarView(res)
         }
@@ -804,12 +806,12 @@ func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["createdOnBehalfOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetObjectValue(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCreatedOnBehalfOf(val.(*DirectoryObject))
+            m.SetCreatedOnBehalfOf(val.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
         }
         return nil
     }
@@ -858,14 +860,14 @@ func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["events"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvent() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.NewEvent() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Event, len(val))
+            res := make([]ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Event))
+                res[i] = *(v.(*ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event))
             }
             m.SetEvents(res)
         }
@@ -1024,28 +1026,28 @@ func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["memberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetMemberOf(res)
         }
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetMembers(res)
         }
@@ -1072,14 +1074,14 @@ func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["membersWithLicenseErrors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetMembersWithLicenseErrors(res)
         }
@@ -1170,14 +1172,14 @@ func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["owners"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetOwners(res)
         }
@@ -1266,14 +1268,14 @@ func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["rejectedSenders"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetRejectedSenders(res)
         }
@@ -1372,28 +1374,28 @@ func (m *Group) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309ae
         return nil
     }
     res["transitiveMemberOf"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetTransitiveMemberOf(res)
         }
         return nil
     }
     res["transitiveMembers"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetTransitiveMembers(res)
         }
@@ -1938,7 +1940,7 @@ func (m *Group) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3
     return nil
 }
 // SetAcceptedSenders sets the acceptedSenders property value. The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-func (m *Group) SetAcceptedSenders(value []DirectoryObject)() {
+func (m *Group) SetAcceptedSenders(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.acceptedSenders = value
     }
@@ -1980,7 +1982,7 @@ func (m *Group) SetCalendar(value *Calendar)() {
     }
 }
 // SetCalendarView sets the calendarView property value. The calendar view for the calendar. Read-only.
-func (m *Group) SetCalendarView(value []Event)() {
+func (m *Group) SetCalendarView(value []ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event)() {
     if m != nil {
         m.calendarView = value
     }
@@ -2004,7 +2006,7 @@ func (m *Group) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f30
     }
 }
 // SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
-func (m *Group) SetCreatedOnBehalfOf(value *DirectoryObject)() {
+func (m *Group) SetCreatedOnBehalfOf(value *id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.createdOnBehalfOf = value
     }
@@ -2034,7 +2036,7 @@ func (m *Group) SetDrives(value []Drive)() {
     }
 }
 // SetEvents sets the events property value. The group's calendar events.
-func (m *Group) SetEvents(value []Event)() {
+func (m *Group) SetEvents(value []ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event)() {
     if m != nil {
         m.events = value
     }
@@ -2124,13 +2126,13 @@ func (m *Group) SetMailNickname(value *string)() {
     }
 }
 // SetMemberOf sets the memberOf property value. Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
-func (m *Group) SetMemberOf(value []DirectoryObject)() {
+func (m *Group) SetMemberOf(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.memberOf = value
     }
 }
 // SetMembers sets the members property value. UMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
-func (m *Group) SetMembers(value []DirectoryObject)() {
+func (m *Group) SetMembers(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.members = value
     }
@@ -2148,7 +2150,7 @@ func (m *Group) SetMembershipRuleProcessingState(value *string)() {
     }
 }
 // SetMembersWithLicenseErrors sets the membersWithLicenseErrors property value. A list of group members with license errors from this group-based license assignment. Read-only.
-func (m *Group) SetMembersWithLicenseErrors(value []DirectoryObject)() {
+func (m *Group) SetMembersWithLicenseErrors(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.membersWithLicenseErrors = value
     }
@@ -2202,7 +2204,7 @@ func (m *Group) SetOnPremisesSyncEnabled(value *bool)() {
     }
 }
 // SetOwners sets the owners property value. The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
-func (m *Group) SetOwners(value []DirectoryObject)() {
+func (m *Group) SetOwners(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.owners = value
     }
@@ -2250,7 +2252,7 @@ func (m *Group) SetProxyAddresses(value []string)() {
     }
 }
 // SetRejectedSenders sets the rejectedSenders property value. The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-func (m *Group) SetRejectedSenders(value []DirectoryObject)() {
+func (m *Group) SetRejectedSenders(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.rejectedSenders = value
     }
@@ -2304,13 +2306,13 @@ func (m *Group) SetThreads(value []ConversationThread)() {
     }
 }
 // SetTransitiveMemberOf sets the transitiveMemberOf property value. 
-func (m *Group) SetTransitiveMemberOf(value []DirectoryObject)() {
+func (m *Group) SetTransitiveMemberOf(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.transitiveMemberOf = value
     }
 }
 // SetTransitiveMembers sets the transitiveMembers property value. 
-func (m *Group) SetTransitiveMembers(value []DirectoryObject)() {
+func (m *Group) SetTransitiveMembers(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.transitiveMembers = value
     }

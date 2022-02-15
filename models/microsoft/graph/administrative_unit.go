@@ -1,12 +1,13 @@
 package graph
 
 import (
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50 "github.com/microsoftgraph/msgraph-sdk-go/devices/getbyids"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
 // AdministrativeUnit 
 type AdministrativeUnit struct {
-    DirectoryObject
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject
     // An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
     description *string;
     // Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -14,7 +15,7 @@ type AdministrativeUnit struct {
     // The collection of open extensions defined for this administrative unit. Nullable.
     extensions []Extension;
     // Users and groups that are members of this administrative unit. Supports $expand.
-    members []DirectoryObject;
+    members []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // Scoped-role members of this administrative unit.
     scopedRoleMembers []ScopedRoleMembership;
     // Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
@@ -23,7 +24,7 @@ type AdministrativeUnit struct {
 // NewAdministrativeUnit instantiates a new administrativeUnit and sets the default values.
 func NewAdministrativeUnit()(*AdministrativeUnit) {
     m := &AdministrativeUnit{
-        DirectoryObject: *NewDirectoryObject(),
+        DirectoryObject: *id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject(),
     }
     return m
 }
@@ -52,7 +53,7 @@ func (m *AdministrativeUnit) GetExtensions()([]Extension) {
     }
 }
 // GetMembers gets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
-func (m *AdministrativeUnit) GetMembers()([]DirectoryObject) {
+func (m *AdministrativeUnit) GetMembers()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -113,14 +114,14 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(interface{}
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetMembers(res)
         }
@@ -233,7 +234,7 @@ func (m *AdministrativeUnit) SetExtensions(value []Extension)() {
     }
 }
 // SetMembers sets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
-func (m *AdministrativeUnit) SetMembers(value []DirectoryObject)() {
+func (m *AdministrativeUnit) SetMembers(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.members = value
     }

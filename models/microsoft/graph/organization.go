@@ -2,12 +2,13 @@ package graph
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50 "github.com/microsoftgraph/msgraph-sdk-go/devices/getbyids"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
 // Organization 
 type Organization struct {
-    DirectoryObject
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject
     // The collection of service plans associated with the tenant. Not nullable.
     assignedPlans []AssignedPlan;
     // 
@@ -62,7 +63,7 @@ type Organization struct {
 // NewOrganization instantiates a new organization and sets the default values.
 func NewOrganization()(*Organization) {
     m := &Organization{
-        DirectoryObject: *NewDirectoryObject(),
+        DirectoryObject: *id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject(),
     }
     return m
 }

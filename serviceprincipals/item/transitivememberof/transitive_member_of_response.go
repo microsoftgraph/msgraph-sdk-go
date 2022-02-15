@@ -1,8 +1,8 @@
 package transitivememberof
 
 import (
+    if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19 "github.com/microsoftgraph/msgraph-sdk-go/contracts/getbyids"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
 // TransitiveMemberOfResponse 
@@ -12,7 +12,7 @@ type TransitiveMemberOfResponse struct {
     // 
     nextLink *string;
     // 
-    value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject;
+    value []if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.DirectoryObject;
 }
 // NewTransitiveMemberOfResponse instantiates a new transitiveMemberOfResponse and sets the default values.
 func NewTransitiveMemberOfResponse()(*TransitiveMemberOfResponse) {
@@ -38,7 +38,7 @@ func (m *TransitiveMemberOfResponse) GetNextLink()(*string) {
     }
 }
 // GetValue gets the value property value. 
-func (m *TransitiveMemberOfResponse) GetValue()([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject) {
+func (m *TransitiveMemberOfResponse) GetValue()([]if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -59,14 +59,14 @@ func (m *TransitiveMemberOfResponse) GetFieldDeserializers()(map[string]func(int
         return nil
     }
     res["value"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject, len(val))
+            res := make([]if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject))
+                res[i] = *(v.(*if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.DirectoryObject))
             }
             m.SetValue(res)
         }
@@ -117,7 +117,7 @@ func (m *TransitiveMemberOfResponse) SetNextLink(value *string)() {
     }
 }
 // SetValue sets the value property value. 
-func (m *TransitiveMemberOfResponse) SetValue(value []i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject)() {
+func (m *TransitiveMemberOfResponse) SetValue(value []if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.DirectoryObject)() {
     if m != nil {
         m.value = value
     }

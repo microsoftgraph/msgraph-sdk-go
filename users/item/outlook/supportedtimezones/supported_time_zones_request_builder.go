@@ -60,18 +60,18 @@ func (m *SupportedTimeZonesRequestBuilder) CreateGetRequestInformation(options *
     return requestInfo, nil
 }
 // Get invoke function supportedTimeZones
-func (m *SupportedTimeZonesRequestBuilder) Get(options *SupportedTimeZonesRequestBuilderGetOptions)([]SupportedTimeZones, error) {
+func (m *SupportedTimeZonesRequestBuilder) Get(options *SupportedTimeZonesRequestBuilderGetOptions)([]TimeZoneInformation, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSupportedTimeZones() }, nil)
+    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewTimeZoneInformation() }, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]SupportedTimeZones, len(res))
+    val := make([]TimeZoneInformation, len(res))
     for i, v := range res {
-        val[i] = *(v.(*SupportedTimeZones))
+        val[i] = *(v.(*TimeZoneInformation))
     }
     return val, nil
 }

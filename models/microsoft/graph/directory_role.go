@@ -1,18 +1,19 @@
 package graph
 
 import (
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50 "github.com/microsoftgraph/msgraph-sdk-go/devices/getbyids"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
 // DirectoryRole 
 type DirectoryRole struct {
-    DirectoryObject
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject
     // The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
     description *string;
     // The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
     displayName *string;
     // Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
-    members []DirectoryObject;
+    members []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
     roleTemplateId *string;
     // Members of this directory role that are scoped to administrative units. Read-only. Nullable.
@@ -21,7 +22,7 @@ type DirectoryRole struct {
 // NewDirectoryRole instantiates a new directoryRole and sets the default values.
 func NewDirectoryRole()(*DirectoryRole) {
     m := &DirectoryRole{
-        DirectoryObject: *NewDirectoryObject(),
+        DirectoryObject: *id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject(),
     }
     return m
 }
@@ -42,7 +43,7 @@ func (m *DirectoryRole) GetDisplayName()(*string) {
     }
 }
 // GetMembers gets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
-func (m *DirectoryRole) GetMembers()([]DirectoryObject) {
+func (m *DirectoryRole) GetMembers()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -89,14 +90,14 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(interface{}, i04
         return nil
     }
     res["members"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetMembers(res)
         }
@@ -192,7 +193,7 @@ func (m *DirectoryRole) SetDisplayName(value *string)() {
     }
 }
 // SetMembers sets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
-func (m *DirectoryRole) SetMembers(value []DirectoryObject)() {
+func (m *DirectoryRole) SetMembers(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.members = value
     }

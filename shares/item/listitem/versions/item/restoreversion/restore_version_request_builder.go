@@ -64,7 +64,7 @@ func (m *RestoreVersionRequestBuilder) Post(options *RestoreVersionRequestBuilde
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

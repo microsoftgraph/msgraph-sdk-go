@@ -60,18 +60,18 @@ func (m *SupportedLanguagesRequestBuilder) CreateGetRequestInformation(options *
     return requestInfo, nil
 }
 // Get invoke function supportedLanguages
-func (m *SupportedLanguagesRequestBuilder) Get(options *SupportedLanguagesRequestBuilderGetOptions)([]SupportedLanguages, error) {
+func (m *SupportedLanguagesRequestBuilder) Get(options *SupportedLanguagesRequestBuilderGetOptions)([]LocaleInfo, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSupportedLanguages() }, nil)
+    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewLocaleInfo() }, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]SupportedLanguages, len(res))
+    val := make([]LocaleInfo, len(res))
     for i, v := range res {
-        val[i] = *(v.(*SupportedLanguages))
+        val[i] = *(v.(*LocaleInfo))
     }
     return val, nil
 }

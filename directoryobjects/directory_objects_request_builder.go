@@ -3,10 +3,10 @@ package directoryobjects
 import (
     i4e32c69eb0781ba00301b7881eaffc86307a431dad4cb4b131d227f662210091 "github.com/microsoftgraph/msgraph-sdk-go/directoryobjects/getbyids"
     i9727e1e2847598e4e14a228da4393d7740547c451b9e58df0e82dd81a5ff82bf "github.com/microsoftgraph/msgraph-sdk-go/directoryobjects/getavailableextensionproperties"
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50 "github.com/microsoftgraph/msgraph-sdk-go/devices/getbyids"
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     if6c1d96eb675fbef9136f79b5bca6096fe5466cfa751ae9f3724d3fd3e9e9d11 "github.com/microsoftgraph/msgraph-sdk-go/directoryobjects/validateproperties"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
 // DirectoryObjectsRequestBuilder builds and executes requests for operations under \directoryObjects
@@ -51,7 +51,7 @@ type DirectoryObjectsRequestBuilderGetQueryParameters struct {
 // DirectoryObjectsRequestBuilderPostOptions options for Post
 type DirectoryObjectsRequestBuilderPostOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject;
+    Body *id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // Request headers
     H map[string]string;
     // Request options
@@ -122,7 +122,7 @@ func (m *DirectoryObjectsRequestBuilder) Get(options *DirectoryObjectsRequestBui
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObjectsResponse() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObjectsResponse() }, nil, nil)
     if err != nil {
         return nil, err
     }
@@ -135,16 +135,16 @@ func (m *DirectoryObjectsRequestBuilder) GetByIds()(*i4e32c69eb0781ba00301b7881e
     return i4e32c69eb0781ba00301b7881eaffc86307a431dad4cb4b131d227f662210091.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Post add new entity to directoryObjects
-func (m *DirectoryObjectsRequestBuilder) Post(options *DirectoryObjectsRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject, error) {
+func (m *DirectoryObjectsRequestBuilder) Post(options *DirectoryObjectsRequestBuilderPostOptions)(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, error) {
     requestInfo, err := m.CreatePostRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDirectoryObject() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() }, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject), nil
+    return res.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject), nil
 }
 func (m *DirectoryObjectsRequestBuilder) ValidateProperties()(*if6c1d96eb675fbef9136f79b5bca6096fe5466cfa751ae9f3724d3fd3e9e9d11.ValidatePropertiesRequestBuilder) {
     return if6c1d96eb675fbef9136f79b5bca6096fe5466cfa751ae9f3724d3fd3e9e9d11.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);

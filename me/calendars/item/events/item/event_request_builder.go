@@ -3,7 +3,6 @@ package item
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i09aae1c2c441b5461fcc90aa35dcd1c4c2ca0552f429aa68c3db1c56bf0d2153 "github.com/microsoftgraph/msgraph-sdk-go/me/calendars/item/events/item/cancel"
     i27c7643dce2bb6c7a69be2cdf3257e7c4a990cf16f691aac9ce3596d45aad48f "github.com/microsoftgraph/msgraph-sdk-go/me/calendars/item/events/item/forward"
     i383bbe46697a339b06b5bafed4a3590534909db04af55c794a8faec30e41ca1a "github.com/microsoftgraph/msgraph-sdk-go/me/calendars/item/events/item/snoozereminder"
@@ -21,6 +20,7 @@ import (
     i157450aaee9c55248f9ba5ffbbf66bf16cc3d8d3d2bd8c9cfd4a765ad8bae272 "github.com/microsoftgraph/msgraph-sdk-go/me/calendars/item/events/item/multivalueextendedproperties/item"
     i4b79cd0561a1ab0685360c4682018160dedd8ecad4d5fd7dd32992b4017c80fd "github.com/microsoftgraph/msgraph-sdk-go/me/calendars/item/events/item/instances/item"
     i5b791a9e8a95f008bb13124c648ebdef495fb58e993ff30cf6006693ece7f80a "github.com/microsoftgraph/msgraph-sdk-go/me/calendars/item/events/item/singlevalueextendedproperties/item"
+    ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec "github.com/microsoftgraph/msgraph-sdk-go/groups/item/calendar/calendarview/item/instances/delta"
     ifd72b733fd36497510451fbda93ed7a025d727b889c80b685dc6fcdf606233c6 "github.com/microsoftgraph/msgraph-sdk-go/me/calendars/item/events/item/extensions/item"
 )
 
@@ -61,7 +61,7 @@ type EventRequestBuilderGetQueryParameters struct {
 // EventRequestBuilderPatchOptions options for Patch
 type EventRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event;
+    Body *ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event;
     // Request headers
     H map[string]string;
     // Request options
@@ -175,7 +175,7 @@ func (m *EventRequestBuilder) Delete(options *EventRequestBuilderDeleteOptions)(
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
@@ -202,16 +202,16 @@ func (m *EventRequestBuilder) Forward()(*i27c7643dce2bb6c7a69be2cdf3257e7c4a990c
     return i27c7643dce2bb6c7a69be2cdf3257e7c4a990cf16f691aac9ce3596d45aad48f.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the events in the calendar. Navigation property. Read-only.
-func (m *EventRequestBuilder) Get(options *EventRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event, error) {
+func (m *EventRequestBuilder) Get(options *EventRequestBuilderGetOptions)(*ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewEvent() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.NewEvent() }, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event), nil
+    return res.(*ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event), nil
 }
 func (m *EventRequestBuilder) Instances()(*iac14f0c5ccb2a5f3b9bafd14cee7eed24b0f2d2d6879f08fbd6269784857e360.InstancesRequestBuilder) {
     return iac14f0c5ccb2a5f3b9bafd14cee7eed24b0f2d2d6879f08fbd6269784857e360.NewInstancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -247,7 +247,7 @@ func (m *EventRequestBuilder) Patch(options *EventRequestBuilderPatchOptions)(er
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

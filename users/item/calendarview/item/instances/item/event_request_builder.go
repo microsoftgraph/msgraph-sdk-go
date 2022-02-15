@@ -3,13 +3,13 @@ package item
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
     i0608c7e63daed1d8c25dae69476d30ed0865692d2083143f0218ba545bd1e6fe "github.com/microsoftgraph/msgraph-sdk-go/users/item/calendarview/item/instances/item/forward"
     i600ccf8ecb63c2306bea2313987324f661d6a99b86ce8c4d346b598ccb947723 "github.com/microsoftgraph/msgraph-sdk-go/users/item/calendarview/item/instances/item/accept"
     i80f3a65475ab0b52025d7da02f157b571a71ec1653a35767a6445d3396413731 "github.com/microsoftgraph/msgraph-sdk-go/users/item/calendarview/item/instances/item/cancel"
     i90956c2f657489b41c77cca666d102dea0bdf9d73b17f4a49c73f6e2ed3271e9 "github.com/microsoftgraph/msgraph-sdk-go/users/item/calendarview/item/instances/item/decline"
     ia39929ce6cbf360020596a4720c2bdc855842e132ab54471ed8c11ddcf661102 "github.com/microsoftgraph/msgraph-sdk-go/users/item/calendarview/item/instances/item/dismissreminder"
     iac5a3fc9fdba162b0d168cefc298dc8c085d69c261727fb186025595df5972f8 "github.com/microsoftgraph/msgraph-sdk-go/users/item/calendarview/item/instances/item/tentativelyaccept"
+    ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec "github.com/microsoftgraph/msgraph-sdk-go/groups/item/calendar/calendarview/item/instances/delta"
     if29ba39feb86bf644a6ce867550b8dc648df46f2908d6b2ac6dcd043bc00fb6e "github.com/microsoftgraph/msgraph-sdk-go/users/item/calendarview/item/instances/item/snoozereminder"
 )
 
@@ -50,7 +50,7 @@ type EventRequestBuilderGetQueryParameters struct {
 // EventRequestBuilderPatchOptions options for Patch
 type EventRequestBuilderPatchOptions struct {
     // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event;
+    Body *ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event;
     // Request headers
     H map[string]string;
     // Request options
@@ -147,7 +147,7 @@ func (m *EventRequestBuilder) Delete(options *EventRequestBuilderDeleteOptions)(
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
@@ -160,16 +160,16 @@ func (m *EventRequestBuilder) Forward()(*i0608c7e63daed1d8c25dae69476d30ed086569
     return i0608c7e63daed1d8c25dae69476d30ed0865692d2083143f0218ba545bd1e6fe.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
-func (m *EventRequestBuilder) Get(options *EventRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event, error) {
+func (m *EventRequestBuilder) Get(options *EventRequestBuilderGetOptions)(*ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewEvent() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.NewEvent() }, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event), nil
+    return res.(*ica42cd38493faf35d7bf41e56bd3d77d5273039e1066c2dae628f21ac8349eec.Event), nil
 }
 // Patch the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
 func (m *EventRequestBuilder) Patch(options *EventRequestBuilderPatchOptions)(error) {
@@ -177,7 +177,7 @@ func (m *EventRequestBuilder) Patch(options *EventRequestBuilderPatchOptions)(er
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

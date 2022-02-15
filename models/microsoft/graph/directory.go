@@ -1,6 +1,7 @@
 package graph
 
 import (
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50 "github.com/microsoftgraph/msgraph-sdk-go/devices/getbyids"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
@@ -10,7 +11,7 @@ type Directory struct {
     // Conceptual container for user and group directory objects.
     administrativeUnits []AdministrativeUnit;
     // Recently deleted items. Read-only. Nullable.
-    deletedItems []DirectoryObject;
+    deletedItems []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
 }
 // NewDirectory instantiates a new directory and sets the default values.
 func NewDirectory()(*Directory) {
@@ -28,7 +29,7 @@ func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnit) {
     }
 }
 // GetDeletedItems gets the deletedItems property value. Recently deleted items. Read-only. Nullable.
-func (m *Directory) GetDeletedItems()([]DirectoryObject) {
+func (m *Directory) GetDeletedItems()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -53,14 +54,14 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i04eb53
         return nil
     }
     res["deletedItems"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetDeletedItems(res)
         }
@@ -108,7 +109,7 @@ func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnit)() {
     }
 }
 // SetDeletedItems sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
-func (m *Directory) SetDeletedItems(value []DirectoryObject)() {
+func (m *Directory) SetDeletedItems(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.deletedItems = value
     }

@@ -60,18 +60,18 @@ func (m *DeltaRequestBuilder) CreateGetRequestInformation(options *DeltaRequestB
     return requestInfo, nil
 }
 // Get invoke function delta
-func (m *DeltaRequestBuilder) Get(options *DeltaRequestBuilderGetOptions)([]Delta, error) {
+func (m *DeltaRequestBuilder) Get(options *DeltaRequestBuilderGetOptions)([]Event, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDelta() }, nil)
+    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewEvent() }, nil, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]Delta, len(res))
+    val := make([]Event, len(res))
     for i, v := range res {
-        val[i] = *(v.(*Delta))
+        val[i] = *(v.(*Event))
     }
     return val, nil
 }

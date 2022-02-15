@@ -1,12 +1,13 @@
 package graph
 
 import (
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50 "github.com/microsoftgraph/msgraph-sdk-go/devices/getbyids"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
 // DirectoryRoleTemplate 
 type DirectoryRoleTemplate struct {
-    DirectoryObject
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject
     // The description to set for the directory role. Read-only.
     description *string;
     // The display name to set for the directory role. Read-only.
@@ -15,7 +16,7 @@ type DirectoryRoleTemplate struct {
 // NewDirectoryRoleTemplate instantiates a new directoryRoleTemplate and sets the default values.
 func NewDirectoryRoleTemplate()(*DirectoryRoleTemplate) {
     m := &DirectoryRoleTemplate{
-        DirectoryObject: *NewDirectoryObject(),
+        DirectoryObject: *id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject(),
     }
     return m
 }

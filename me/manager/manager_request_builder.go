@@ -2,9 +2,9 @@ package manager
 
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19 "github.com/microsoftgraph/msgraph-sdk-go/contracts/getbyids"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i394eba5aaab363168091f29758854ac179599524e2675d36e01fb901cec8d9d3 "github.com/microsoftgraph/msgraph-sdk-go/me/manager/ref"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
 )
 
 // ManagerRequestBuilder builds and executes requests for operations under \me\manager
@@ -74,16 +74,16 @@ func (m *ManagerRequestBuilder) CreateGetRequestInformation(options *ManagerRequ
     return requestInfo, nil
 }
 // Get the user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
-func (m *ManagerRequestBuilder) Get(options *ManagerRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject, error) {
+func (m *ManagerRequestBuilder) Get(options *ManagerRequestBuilderGetOptions)(*if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.DirectoryObject, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDirectoryObject() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.NewDirectoryObject() }, nil, nil)
     if err != nil {
         return nil, err
     }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DirectoryObject), nil
+    return res.(*if299d9ef56e2af8df97202321de61e2aee15552ebb21beaaf1dc86170d772b19.DirectoryObject), nil
 }
 func (m *ManagerRequestBuilder) Ref()(*i394eba5aaab363168091f29758854ac179599524e2675d36e01fb901cec8d9d3.RefRequestBuilder) {
     return i394eba5aaab363168091f29758854ac179599524e2675d36e01fb901cec8d9d3.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);

@@ -1,6 +1,7 @@
 package graph
 
 import (
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50 "github.com/microsoftgraph/msgraph-sdk-go/devices/getbyids"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
@@ -12,7 +13,7 @@ type Domain struct {
     // This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
     availabilityStatus *string;
     // Read-only, Nullable
-    domainNameReferences []DirectoryObject;
+    domainNameReferences []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
     isAdminManaged *bool;
     // true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
@@ -64,7 +65,7 @@ func (m *Domain) GetAvailabilityStatus()(*string) {
     }
 }
 // GetDomainNameReferences gets the domainNameReferences property value. Read-only, Nullable
-func (m *Domain) GetDomainNameReferences()([]DirectoryObject) {
+func (m *Domain) GetDomainNameReferences()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -199,14 +200,14 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309a
         return nil
     }
     res["domainNameReferences"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetDomainNameReferences(res)
         }
@@ -491,7 +492,7 @@ func (m *Domain) SetAvailabilityStatus(value *string)() {
     }
 }
 // SetDomainNameReferences sets the domainNameReferences property value. Read-only, Nullable
-func (m *Domain) SetDomainNameReferences(value []DirectoryObject)() {
+func (m *Domain) SetDomainNameReferences(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.domainNameReferences = value
     }

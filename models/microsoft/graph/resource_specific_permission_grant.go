@@ -1,12 +1,13 @@
 package graph
 
 import (
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50 "github.com/microsoftgraph/msgraph-sdk-go/devices/getbyids"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
 // ResourceSpecificPermissionGrant 
 type ResourceSpecificPermissionGrant struct {
-    DirectoryObject
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject
     // ID of the service principal of the Azure AD app that has been granted access. Read-only.
     clientAppId *string;
     // ID of the Azure AD app that has been granted access. Read-only.
@@ -21,7 +22,7 @@ type ResourceSpecificPermissionGrant struct {
 // NewResourceSpecificPermissionGrant instantiates a new resourceSpecificPermissionGrant and sets the default values.
 func NewResourceSpecificPermissionGrant()(*ResourceSpecificPermissionGrant) {
     m := &ResourceSpecificPermissionGrant{
-        DirectoryObject: *NewDirectoryObject(),
+        DirectoryObject: *id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject(),
     }
     return m
 }

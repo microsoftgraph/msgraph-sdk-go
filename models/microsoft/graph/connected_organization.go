@@ -2,6 +2,7 @@ package graph
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50 "github.com/microsoftgraph/msgraph-sdk-go/devices/getbyids"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
@@ -15,11 +16,11 @@ type ConnectedOrganization struct {
     // The display name of the connected organization. Supports $filter (eq).
     displayName *string;
     // Nullable.
-    externalSponsors []DirectoryObject;
+    externalSponsors []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
     identitySources []IdentitySource;
     // Nullable.
-    internalSponsors []DirectoryObject;
+    internalSponsors []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject;
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
@@ -57,7 +58,7 @@ func (m *ConnectedOrganization) GetDisplayName()(*string) {
     }
 }
 // GetExternalSponsors gets the externalSponsors property value. Nullable.
-func (m *ConnectedOrganization) GetExternalSponsors()([]DirectoryObject) {
+func (m *ConnectedOrganization) GetExternalSponsors()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -73,7 +74,7 @@ func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySource) {
     }
 }
 // GetInternalSponsors gets the internalSponsors property value. Nullable.
-func (m *ConnectedOrganization) GetInternalSponsors()([]DirectoryObject) {
+func (m *ConnectedOrganization) GetInternalSponsors()([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject) {
     if m == nil {
         return nil
     } else {
@@ -130,14 +131,14 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["externalSponsors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetExternalSponsors(res)
         }
@@ -158,14 +159,14 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(interfac
         return nil
     }
     res["internalSponsors"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewDirectoryObject() })
+        val, err := n.GetCollectionOfObjectValues(func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.NewDirectoryObject() })
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DirectoryObject, len(val))
+            res := make([]id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject, len(val))
             for i, v := range val {
-                res[i] = *(v.(*DirectoryObject))
+                res[i] = *(v.(*id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject))
             }
             m.SetInternalSponsors(res)
         }
@@ -287,7 +288,7 @@ func (m *ConnectedOrganization) SetDisplayName(value *string)() {
     }
 }
 // SetExternalSponsors sets the externalSponsors property value. Nullable.
-func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObject)() {
+func (m *ConnectedOrganization) SetExternalSponsors(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.externalSponsors = value
     }
@@ -299,7 +300,7 @@ func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySource)() {
     }
 }
 // SetInternalSponsors sets the internalSponsors property value. Nullable.
-func (m *ConnectedOrganization) SetInternalSponsors(value []DirectoryObject)() {
+func (m *ConnectedOrganization) SetInternalSponsors(value []id548309b7f062162722aee435eac927347015bc798cf5b757340af2dc3770b50.DirectoryObject)() {
     if m != nil {
         m.internalSponsors = value
     }

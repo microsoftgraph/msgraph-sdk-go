@@ -67,7 +67,7 @@ func (m *UpdateDevicePropertiesRequestBuilder) Post(options *UpdateDevicePropert
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
