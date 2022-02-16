@@ -67,7 +67,7 @@ func (m *SetOrderRequestBuilder) Post(options *SetOrderRequestBuilderPostOptions
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

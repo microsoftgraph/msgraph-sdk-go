@@ -3,7 +3,7 @@ package sites
 import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
-    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i1d98f85ec140573df2e926037d8f97380724bbfceb1709389ddf14f8098c834c "github.com/microsoftgraph/msgraph-sdk-go/sites/item/sites/ref"
 )
 
 // SitesRequestBuilder builds and executes requests for operations under \sites\{site-id}\sites
@@ -45,17 +45,6 @@ type SitesRequestBuilderGetQueryParameters struct {
     // Show only the first n items
     Top *int32;
 }
-// SitesRequestBuilderPostOptions options for Post
-type SitesRequestBuilderPostOptions struct {
-    // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site;
-    // Request headers
-    H map[string]string;
-    // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
-}
 // NewSitesRequestBuilderInternal instantiates a new SitesRequestBuilder and sets the default values.
 func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SitesRequestBuilder) {
     m := &SitesRequestBuilder{
@@ -95,45 +84,18 @@ func (m *SitesRequestBuilder) CreateGetRequestInformation(options *SitesRequestB
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation the collection of the sub-sites under this site.
-func (m *SitesRequestBuilder) CreatePostRequestInformation(options *SitesRequestBuilderPostOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
-    }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
-        if err != nil {
-            return nil, err
-        }
-    }
-    return requestInfo, nil
-}
 // Get the collection of the sub-sites under this site.
 func (m *SitesRequestBuilder) Get(options *SitesRequestBuilderGetOptions)(*SitesResponse, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSitesResponse() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewSitesResponse() }, nil, nil)
     if err != nil {
         return nil, err
     }
     return res.(*SitesResponse), nil
 }
-// Post the collection of the sub-sites under this site.
-func (m *SitesRequestBuilder) Post(options *SitesRequestBuilderPostOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSite() }, nil)
-    if err != nil {
-        return nil, err
-    }
-    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Site), nil
+func (m *SitesRequestBuilder) Ref()(*i1d98f85ec140573df2e926037d8f97380724bbfceb1709389ddf14f8098c834c.RefRequestBuilder) {
+    return i1d98f85ec140573df2e926037d8f97380724bbfceb1709389ddf14f8098c834c.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

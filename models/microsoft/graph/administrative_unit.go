@@ -17,7 +17,7 @@ type AdministrativeUnit struct {
     members []DirectoryObject;
     // Scoped-role members of this administrative unit.
     scopedRoleMembers []ScopedRoleMembership;
-    // Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+    // Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
     visibility *string;
 }
 // NewAdministrativeUnit instantiates a new administrativeUnit and sets the default values.
@@ -67,7 +67,7 @@ func (m *AdministrativeUnit) GetScopedRoleMembers()([]ScopedRoleMembership) {
         return m.scopedRoleMembers
     }
 }
-// GetVisibility gets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+// GetVisibility gets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 func (m *AdministrativeUnit) GetVisibility()(*string) {
     if m == nil {
         return nil
@@ -244,7 +244,7 @@ func (m *AdministrativeUnit) SetScopedRoleMembers(value []ScopedRoleMembership)(
         m.scopedRoleMembers = value
     }
 }
-// SetVisibility sets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+// SetVisibility sets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 func (m *AdministrativeUnit) SetVisibility(value *string)() {
     if m != nil {
         m.visibility = value

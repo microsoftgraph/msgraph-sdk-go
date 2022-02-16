@@ -145,7 +145,7 @@ func (m *T_Inv_2TRequestBuilder) Post(options *T_Inv_2TRequestBuilderPostOptions
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewT_Inv_2TResponse() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewT_Inv_2TResponse() }, nil, nil)
     if err != nil {
         return nil, err
     }

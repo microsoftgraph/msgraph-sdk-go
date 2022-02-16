@@ -16,7 +16,7 @@ type CallRecord struct {
     // UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
     // List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-    modalities []Modality;
+    modalities []i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality;
     // The organizing party's identity.
     organizer *IdentitySet;
     // List of distinct identities involved in the call.
@@ -62,7 +62,7 @@ func (m *CallRecord) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
 }
 // GetModalities gets the modalities property value. List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-func (m *CallRecord) GetModalities()([]Modality) {
+func (m *CallRecord) GetModalities()([]i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality) {
     if m == nil {
         return nil
     } else {
@@ -151,14 +151,14 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(interface{}, i04eb5
         return nil
     }
     res["modalities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseModality)
+        val, err := n.GetCollectionOfEnumValues(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Modality, len(val))
+            res := make([]i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Modality))
+                res[i] = *(v.(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality))
             }
             m.SetModalities(res)
         }
@@ -262,7 +262,7 @@ func (m *CallRecord) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4
         }
     }
     if m.GetModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("modalities", SerializeModality(m.GetModalities()))
+        err = writer.WriteCollectionOfStringValues("modalities", i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.SerializeModality(m.GetModalities()))
         if err != nil {
             return err
         }
@@ -335,7 +335,7 @@ func (m *CallRecord) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
     }
 }
 // SetModalities sets the modalities property value. List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-func (m *CallRecord) SetModalities(value []Modality)() {
+func (m *CallRecord) SetModalities(value []i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality)() {
     if m != nil {
         m.modalities = value
     }

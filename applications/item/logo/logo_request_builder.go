@@ -93,7 +93,7 @@ func (m *LogoRequestBuilder) Get(options *LogoRequestBuilderGetOptions)([]byte, 
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "byte", nil, nil)
     if err != nil {
         return nil, err
     }
@@ -105,7 +105,7 @@ func (m *LogoRequestBuilder) Put(options *LogoRequestBuilderPutOptions)(error) {
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

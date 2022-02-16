@@ -145,7 +145,7 @@ func (m *Binom_InvRequestBuilder) Post(options *Binom_InvRequestBuilderPostOptio
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBinom_InvResponse() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewBinom_InvResponse() }, nil, nil)
     if err != nil {
         return nil, err
     }

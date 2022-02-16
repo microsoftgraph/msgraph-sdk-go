@@ -3,6 +3,7 @@ package graph
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph/callrecords"
 )
 
 // Session 
@@ -17,7 +18,7 @@ type Session struct {
     // Failure information associated with the session if the session failed.
     failureInfo *FailureInfo;
     // List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-    modalities []Modality;
+    modalities []i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality;
     // The list of segments involved in the session. Read-only. Nullable.
     segments []Segment;
     // UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -63,7 +64,7 @@ func (m *Session) GetFailureInfo()(*FailureInfo) {
     }
 }
 // GetModalities gets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-func (m *Session) GetModalities()([]Modality) {
+func (m *Session) GetModalities()([]i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality) {
     if m == nil {
         return nil
     } else {
@@ -130,14 +131,14 @@ func (m *Session) GetFieldDeserializers()(map[string]func(interface{}, i04eb5309
         return nil
     }
     res["modalities"] = func (o interface{}, n i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseModality)
+        val, err := n.GetCollectionOfEnumValues(i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Modality, len(val))
+            res := make([]i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Modality))
+                res[i] = *(v.(*i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality))
             }
             m.SetModalities(res)
         }
@@ -203,7 +204,7 @@ func (m *Session) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2
         }
     }
     if m.GetModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("modalities", SerializeModality(m.GetModalities()))
+        err = writer.WriteCollectionOfStringValues("modalities", i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.SerializeModality(m.GetModalities()))
         if err != nil {
             return err
         }
@@ -252,7 +253,7 @@ func (m *Session) SetFailureInfo(value *FailureInfo)() {
     }
 }
 // SetModalities sets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
-func (m *Session) SetModalities(value []Modality)() {
+func (m *Session) SetModalities(value []i6afae973b07adf053fd7fc51b2f43be439d7fa83efb2b91811395e1128338557.Modality)() {
     if m != nil {
         m.modalities = value
     }

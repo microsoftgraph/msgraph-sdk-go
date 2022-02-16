@@ -119,7 +119,7 @@ func (m *RefRequestBuilder) Delete(options *RefRequestBuilderDeleteOptions)(erro
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
@@ -131,7 +131,7 @@ func (m *RefRequestBuilder) Get(options *RefRequestBuilderGetOptions)(*string, e
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "string", nil, nil)
     if err != nil {
         return nil, err
     }
@@ -143,7 +143,7 @@ func (m *RefRequestBuilder) Put(options *RefRequestBuilderPutOptions)(error) {
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

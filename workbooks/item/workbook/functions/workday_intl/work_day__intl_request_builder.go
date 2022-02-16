@@ -145,7 +145,7 @@ func (m *WorkDay_IntlRequestBuilder) Post(options *WorkDay_IntlRequestBuilderPos
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkDay_IntlResponse() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewWorkDay_IntlResponse() }, nil, nil)
     if err != nil {
         return nil, err
     }

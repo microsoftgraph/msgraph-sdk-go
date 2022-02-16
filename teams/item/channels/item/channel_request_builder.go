@@ -45,7 +45,7 @@ type ChannelRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
-// ChannelRequestBuilderGetQueryParameters the collection of channels & messages associated with the team.
+// ChannelRequestBuilderGetQueryParameters the collection of channels and messages associated with the team.
 type ChannelRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string;
@@ -85,7 +85,7 @@ func NewChannelRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894
     urlParams["request-raw-url"] = rawUrl
     return NewChannelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation the collection of channels & messages associated with the team.
+// CreateDeleteRequestInformation the collection of channels and messages associated with the team.
 func (m *ChannelRequestBuilder) CreateDeleteRequestInformation(options *ChannelRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -102,7 +102,7 @@ func (m *ChannelRequestBuilder) CreateDeleteRequestInformation(options *ChannelR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the collection of channels & messages associated with the team.
+// CreateGetRequestInformation the collection of channels and messages associated with the team.
 func (m *ChannelRequestBuilder) CreateGetRequestInformation(options *ChannelRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,7 +122,7 @@ func (m *ChannelRequestBuilder) CreateGetRequestInformation(options *ChannelRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the collection of channels & messages associated with the team.
+// CreatePatchRequestInformation the collection of channels and messages associated with the team.
 func (m *ChannelRequestBuilder) CreatePatchRequestInformation(options *ChannelRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,13 +140,13 @@ func (m *ChannelRequestBuilder) CreatePatchRequestInformation(options *ChannelRe
     }
     return requestInfo, nil
 }
-// Delete the collection of channels & messages associated with the team.
+// Delete the collection of channels and messages associated with the team.
 func (m *ChannelRequestBuilder) Delete(options *ChannelRequestBuilderDeleteOptions)(error) {
     requestInfo, err := m.CreateDeleteRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
@@ -155,13 +155,13 @@ func (m *ChannelRequestBuilder) Delete(options *ChannelRequestBuilderDeleteOptio
 func (m *ChannelRequestBuilder) FilesFolder()(*i9d35966f1cf1d79964b04fc579a16ad9d6fde5d5b6ea86ce1147f94ab0e92ab7.FilesFolderRequestBuilder) {
     return i9d35966f1cf1d79964b04fc579a16ad9d6fde5d5b6ea86ce1147f94ab0e92ab7.NewFilesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get the collection of channels & messages associated with the team.
+// Get the collection of channels and messages associated with the team.
 func (m *ChannelRequestBuilder) Get(options *ChannelRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Channel, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewChannel() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewChannel() }, nil, nil)
     if err != nil {
         return nil, err
     }
@@ -195,13 +195,13 @@ func (m *ChannelRequestBuilder) MessagesById(id string)(*if5725a60ca0d27f7ade8f6
     }
     return if5725a60ca0d27f7ade8f6fcec0dcfe3a4c988fdc95238d1b2bc5148c05df6f3.NewChatMessageRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch the collection of channels & messages associated with the team.
+// Patch the collection of channels and messages associated with the team.
 func (m *ChannelRequestBuilder) Patch(options *ChannelRequestBuilderPatchOptions)(error) {
     requestInfo, err := m.CreatePatchRequestInformation(options);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
