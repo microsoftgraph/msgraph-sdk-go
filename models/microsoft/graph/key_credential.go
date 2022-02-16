@@ -13,15 +13,15 @@ type KeyCredential struct {
     customKeyIdentifier []byte;
     // Friendly name for the key. Optional.
     displayName *string;
-    // The date and time at which the credential expires.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    // The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The certificate's raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).
+    // The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
     key []byte;
     // The unique identifier (GUID) for the key.
     keyId *string;
     // The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
-    // The type of key credential; for example, Symmetric.
+    // The type of key credential; for example, Symmetric, AsymmetricX509Cert.
     type_escaped *string;
     // A string that describes the purpose for which the key can be used; for example, Verify.
     usage *string;
@@ -57,7 +57,7 @@ func (m *KeyCredential) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEndDateTime gets the endDateTime property value. The date and time at which the credential expires.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetEndDateTime gets the endDateTime property value. The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *KeyCredential) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *KeyCredential) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.endDateTime
     }
 }
-// GetKey gets the key property value. The certificate's raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).
+// GetKey gets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
 func (m *KeyCredential) GetKey()([]byte) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *KeyCredential) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.startDateTime
     }
 }
-// GetType gets the type property value. The type of key credential; for example, Symmetric.
+// GetType gets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
 func (m *KeyCredential) GetType()(*string) {
     if m == nil {
         return nil
@@ -269,13 +269,13 @@ func (m *KeyCredential) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetEndDateTime sets the endDateTime property value. The date and time at which the credential expires.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetEndDateTime sets the endDateTime property value. The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *KeyCredential) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.endDateTime = value
     }
 }
-// SetKey sets the key property value. The certificate's raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).
+// SetKey sets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
 func (m *KeyCredential) SetKey(value []byte)() {
     if m != nil {
         m.key = value
@@ -293,7 +293,7 @@ func (m *KeyCredential) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a
         m.startDateTime = value
     }
 }
-// SetType sets the type property value. The type of key credential; for example, Symmetric.
+// SetType sets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
 func (m *KeyCredential) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

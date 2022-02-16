@@ -29,7 +29,6 @@ import (
     id47f3cd96ac62060cd4706158e84ca804380b00ffa0deb0c987cbd9861fdc941 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/follow"
     id98738fe99e7cee62a1c2f7c738811ddbbda251bc9a20b42fbba36e7cd90b957 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/permissions"
     ifbb48734282372c41bb9bbc447d9984c550ba21aaa310f937681aa66356ddde6 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/getactivitiesbyinterval"
-    i1045b039fef62d5ef72566ac302564d7a39c35320f7d3ed85a713473dd79ecc3 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/children/item"
     i1e600c52f111ed567ffcb9cd01fe8720b9c93c7af81196af4ce1b46a2dfac925 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/thumbnails/item"
     i273f6427d4e6aa2bb741a8d68e377c20d8b7a98bf0a4c581769ace831a969301 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/versions/item"
     ia90ca1da21635979709e703dc27c0bd00834adebaad1df486f890c40213d08d4 "github.com/microsoftgraph/msgraph-sdk-go/workbooks/item/subscriptions/item"
@@ -94,17 +93,6 @@ func (m *DriveItemRequestBuilder) Checkout()(*i52b5cab9e6301cea985fb5afcd313f4e0
 }
 func (m *DriveItemRequestBuilder) Children()(*ia597af73a896059b6e28f8af56e903ffd69180dae0086fb241c206ac9158e73f.ChildrenRequestBuilder) {
     return ia597af73a896059b6e28f8af56e903ffd69180dae0086fb241c206ac9158e73f.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ChildrenById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.children.item collection
-func (m *DriveItemRequestBuilder) ChildrenById(id string)(*i1045b039fef62d5ef72566ac302564d7a39c35320f7d3ed85a713473dd79ecc3.DriveItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem_id1"] = id
-    }
-    return i1045b039fef62d5ef72566ac302564d7a39c35320f7d3ed85a713473dd79ecc3.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDriveItemRequestBuilderInternal instantiates a new DriveItemRequestBuilder and sets the default values.
 func NewDriveItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveItemRequestBuilder) {
@@ -198,7 +186,7 @@ func (m *DriveItemRequestBuilder) Delete(options *DriveItemRequestBuilderDeleteO
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
@@ -221,7 +209,7 @@ func (m *DriveItemRequestBuilder) Get(options *DriveItemRequestBuilderGetOptions
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDriveItem() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewDriveItem() }, nil, nil)
     if err != nil {
         return nil, err
     }
@@ -247,7 +235,7 @@ func (m *DriveItemRequestBuilder) Patch(options *DriveItemRequestBuilderPatchOpt
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

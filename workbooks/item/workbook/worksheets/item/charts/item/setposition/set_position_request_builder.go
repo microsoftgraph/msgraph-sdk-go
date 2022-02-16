@@ -67,7 +67,7 @@ func (m *SetPositionRequestBuilder) Post(options *SetPositionRequestBuilderPostO
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

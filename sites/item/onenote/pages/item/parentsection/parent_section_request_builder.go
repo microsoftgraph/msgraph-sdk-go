@@ -4,12 +4,9 @@ import (
     ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
     i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
-    i27b5ce8e3d5ccd754c59c5e53f83108ad49b67de1fb59505fab6b167c9aa1b92 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/pages/item/parentsection/pages"
     i70efb0b6c0cb5cd9d61464740feca3cf80b411b2ecb7b8f1ffd62e0a5c731231 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/pages/item/parentsection/copytosectiongroup"
-    ia6f06eead351d266814f8ab7de42974e24e84676ab12ed584a198578540a8451 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/pages/item/parentsection/parentnotebook"
-    ida7d6aaa7398bec6015dbf60ff0b886471c733d56778be6ba839e3600f527c4f "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/pages/item/parentsection/parentsectiongroup"
     if7a7b0e089096540f897f16bc90cf9c3db087b1dab1283afe2e59b057a3e1ee9 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/pages/item/parentsection/copytonotebook"
-    iecb005258b435242c1720a83b01c52a239c6bb2181e5f005b69445d830f93215 "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/pages/item/parentsection/pages/item"
+    ifb56cc5c3fba258b254ad8209817add9b884536335f98cc9a99f2fefc68d964d "github.com/microsoftgraph/msgraph-sdk-go/sites/item/onenote/pages/item/parentsection/ref"
 )
 
 // ParentSectionRequestBuilder builds and executes requests for operations under \sites\{site-id}\onenote\pages\{onenotePage-id}\parentSection
@@ -20,15 +17,6 @@ type ParentSectionRequestBuilder struct {
     requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
     // Url template to use to build the URL for the current request builder
     urlTemplate string;
-}
-// ParentSectionRequestBuilderDeleteOptions options for Delete
-type ParentSectionRequestBuilderDeleteOptions struct {
-    // Request headers
-    H map[string]string;
-    // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // ParentSectionRequestBuilderGetOptions options for Get
 type ParentSectionRequestBuilderGetOptions struct {
@@ -47,17 +35,6 @@ type ParentSectionRequestBuilderGetQueryParameters struct {
     Expand []string;
     // Select properties to be returned
     Select []string;
-}
-// ParentSectionRequestBuilderPatchOptions options for Patch
-type ParentSectionRequestBuilderPatchOptions struct {
-    // 
-    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteSection;
-    // Request headers
-    H map[string]string;
-    // Request options
-    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewParentSectionRequestBuilderInternal instantiates a new ParentSectionRequestBuilder and sets the default values.
 func NewParentSectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ParentSectionRequestBuilder) {
@@ -84,23 +61,6 @@ func (m *ParentSectionRequestBuilder) CopyToNotebook()(*if7a7b0e089096540f897f16
 func (m *ParentSectionRequestBuilder) CopyToSectionGroup()(*i70efb0b6c0cb5cd9d61464740feca3cf80b411b2ecb7b8f1ffd62e0a5c731231.CopyToSectionGroupRequestBuilder) {
     return i70efb0b6c0cb5cd9d61464740feca3cf80b411b2ecb7b8f1ffd62e0a5c731231.NewCopyToSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformation the section that contains the page. Read-only.
-func (m *ParentSectionRequestBuilder) CreateDeleteRequestInformation(options *ParentSectionRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
-    }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
-        if err != nil {
-            return nil, err
-        }
-    }
-    return requestInfo, nil
-}
 // CreateGetRequestInformation the section that contains the page. Read-only.
 func (m *ParentSectionRequestBuilder) CreateGetRequestInformation(options *ParentSectionRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
     requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
@@ -121,77 +81,18 @@ func (m *ParentSectionRequestBuilder) CreateGetRequestInformation(options *Paren
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation the section that contains the page. Read-only.
-func (m *ParentSectionRequestBuilder) CreatePatchRequestInformation(options *ParentSectionRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
-    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.H != nil {
-        requestInfo.Headers = options.H
-    }
-    if options != nil && len(options.O) != 0 {
-        err := requestInfo.AddRequestOptions(options.O...)
-        if err != nil {
-            return nil, err
-        }
-    }
-    return requestInfo, nil
-}
-// Delete the section that contains the page. Read-only.
-func (m *ParentSectionRequestBuilder) Delete(options *ParentSectionRequestBuilderDeleteOptions)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformation(options);
-    if err != nil {
-        return err
-    }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
-    if err != nil {
-        return err
-    }
-    return nil
-}
 // Get the section that contains the page. Read-only.
 func (m *ParentSectionRequestBuilder) Get(options *ParentSectionRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteSection, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewOnenoteSection() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewOnenoteSection() }, nil, nil)
     if err != nil {
         return nil, err
     }
     return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.OnenoteSection), nil
 }
-func (m *ParentSectionRequestBuilder) Pages()(*i27b5ce8e3d5ccd754c59c5e53f83108ad49b67de1fb59505fab6b167c9aa1b92.PagesRequestBuilder) {
-    return i27b5ce8e3d5ccd754c59c5e53f83108ad49b67de1fb59505fab6b167c9aa1b92.NewPagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// PagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.onenote.pages.item.parentSection.pages.item collection
-func (m *ParentSectionRequestBuilder) PagesById(id string)(*iecb005258b435242c1720a83b01c52a239c6bb2181e5f005b69445d830f93215.OnenotePageRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["onenotePage_id1"] = id
-    }
-    return iecb005258b435242c1720a83b01c52a239c6bb2181e5f005b69445d830f93215.NewOnenotePageRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-func (m *ParentSectionRequestBuilder) ParentNotebook()(*ia6f06eead351d266814f8ab7de42974e24e84676ab12ed584a198578540a8451.ParentNotebookRequestBuilder) {
-    return ia6f06eead351d266814f8ab7de42974e24e84676ab12ed584a198578540a8451.NewParentNotebookRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-func (m *ParentSectionRequestBuilder) ParentSectionGroup()(*ida7d6aaa7398bec6015dbf60ff0b886471c733d56778be6ba839e3600f527c4f.ParentSectionGroupRequestBuilder) {
-    return ida7d6aaa7398bec6015dbf60ff0b886471c733d56778be6ba839e3600f527c4f.NewParentSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Patch the section that contains the page. Read-only.
-func (m *ParentSectionRequestBuilder) Patch(options *ParentSectionRequestBuilderPatchOptions)(error) {
-    requestInfo, err := m.CreatePatchRequestInformation(options);
-    if err != nil {
-        return err
-    }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *ParentSectionRequestBuilder) Ref()(*ifb56cc5c3fba258b254ad8209817add9b884536335f98cc9a99f2fefc68d964d.RefRequestBuilder) {
+    return ifb56cc5c3fba258b254ad8209817add9b884536335f98cc9a99f2fefc68d964d.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -64,7 +64,7 @@ func (m *SetMobileDeviceManagementAuthorityRequestBuilder) Post(options *SetMobi
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "int32", nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "int32", nil, nil)
     if err != nil {
         return nil, err
     }

@@ -68,7 +68,7 @@ func (m *AddRequestBuilder) Post(options *AddRequestBuilderPostOptions)([]Add, e
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAdd() }, nil)
+    res, err := m.requestAdapter.SendCollectionAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return NewAdd() }, nil, nil)
     if err != nil {
         return nil, err
     }

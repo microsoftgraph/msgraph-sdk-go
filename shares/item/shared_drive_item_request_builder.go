@@ -11,7 +11,6 @@ import (
     i8c15d6975df59e7bff68ceaff8e2e7e5fb860064ce0c3fe87881dfa452f8d0f3 "github.com/microsoftgraph/msgraph-sdk-go/shares/item/site"
     ia21810eb35790209720396d6baefa7bad436f4af7de39d51a975ac8ed17d9b90 "github.com/microsoftgraph/msgraph-sdk-go/shares/item/permission"
     ic21e3d9f3eaf63bbdce62fd14ebed43e30e12830422fa068b6c26780d7bb64a6 "github.com/microsoftgraph/msgraph-sdk-go/shares/item/driveitem"
-    i645f1e1a516727ccf24f1ba68b8f4137ee52e397b6e58438bccce4f0cb3d74b5 "github.com/microsoftgraph/msgraph-sdk-go/shares/item/items/item"
 )
 
 // SharedDriveItemRequestBuilder builds and executes requests for operations under \shares\{sharedDriveItem-id}
@@ -141,7 +140,7 @@ func (m *SharedDriveItemRequestBuilder) Delete(options *SharedDriveItemRequestBu
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }
@@ -156,7 +155,7 @@ func (m *SharedDriveItemRequestBuilder) Get(options *SharedDriveItemRequestBuild
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSharedDriveItem() }, nil)
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewSharedDriveItem() }, nil, nil)
     if err != nil {
         return nil, err
     }
@@ -164,17 +163,6 @@ func (m *SharedDriveItemRequestBuilder) Get(options *SharedDriveItemRequestBuild
 }
 func (m *SharedDriveItemRequestBuilder) Items()(*i05fb43f9021a0913de359c2cfdf1fcad6b4de0310980145d3c6276c460270205.ItemsRequestBuilder) {
     return i05fb43f9021a0913de359c2cfdf1fcad6b4de0310980145d3c6276c460270205.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// ItemsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.shares.item.items.item collection
-func (m *SharedDriveItemRequestBuilder) ItemsById(id string)(*i645f1e1a516727ccf24f1ba68b8f4137ee52e397b6e58438bccce4f0cb3d74b5.DriveItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["driveItem_id"] = id
-    }
-    return i645f1e1a516727ccf24f1ba68b8f4137ee52e397b6e58438bccce4f0cb3d74b5.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *SharedDriveItemRequestBuilder) List()(*i00b23f7f86a982af8a15ee36120329e64b13d88be4f288d635f6ae65ae966124.ListRequestBuilder) {
     return i00b23f7f86a982af8a15ee36120329e64b13d88be4f288d635f6ae65ae966124.NewListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -188,7 +176,7 @@ func (m *SharedDriveItemRequestBuilder) Patch(options *SharedDriveItemRequestBui
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

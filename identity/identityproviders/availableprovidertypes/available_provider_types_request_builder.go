@@ -64,7 +64,7 @@ func (m *AvailableProviderTypesRequestBuilder) Get(options *AvailableProviderTyp
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveCollectionAsync(*requestInfo, "string", nil)
+    res, err := m.requestAdapter.SendPrimitiveCollectionAsync(*requestInfo, "string", nil, nil)
     if err != nil {
         return nil, err
     }

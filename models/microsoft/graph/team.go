@@ -8,7 +8,7 @@ import (
 // Team 
 type Team struct {
     Entity
-    // The collection of channels & messages associated with the team.
+    // The collection of channels and messages associated with the team.
     channels []Channel;
     // An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
     classification *string;
@@ -58,7 +58,7 @@ func NewTeam()(*Team) {
     }
     return m
 }
-// GetChannels gets the channels property value. The collection of channels & messages associated with the team.
+// GetChannels gets the channels property value. The collection of channels and messages associated with the team.
 func (m *Team) GetChannels()([]Channel) {
     if m == nil {
         return nil
@@ -616,7 +616,7 @@ func (m *Team) Serialize(writer i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e31
     }
     return nil
 }
-// SetChannels sets the channels property value. The collection of channels & messages associated with the team.
+// SetChannels sets the channels property value. The collection of channels and messages associated with the team.
 func (m *Team) SetChannels(value []Channel)() {
     if m != nil {
         m.channels = value

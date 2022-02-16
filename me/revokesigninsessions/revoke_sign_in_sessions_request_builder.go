@@ -64,7 +64,7 @@ func (m *RevokeSignInSessionsRequestBuilder) Post(options *RevokeSignInSessionsR
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(*requestInfo, "bool", nil, nil)
     if err != nil {
         return nil, err
     }

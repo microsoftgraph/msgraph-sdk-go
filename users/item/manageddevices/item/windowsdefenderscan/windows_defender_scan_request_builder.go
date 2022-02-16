@@ -67,7 +67,7 @@ func (m *WindowsDefenderScanRequestBuilder) Post(options *WindowsDefenderScanReq
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil)
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
     if err != nil {
         return err
     }

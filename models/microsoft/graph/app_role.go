@@ -14,7 +14,7 @@ type AppRole struct {
     description *string;
     // Display name for the permission that appears in the app role assignment and consent experiences.
     displayName *string;
-    // Unique role identifier inside the appRoles collection. When creating a new app role, a new Guid identifier must be provided.
+    // Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.
     id *string;
     // When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
     isEnabled *bool;
@@ -62,7 +62,7 @@ func (m *AppRole) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetId gets the id property value. Unique role identifier inside the appRoles collection. When creating a new app role, a new Guid identifier must be provided.
+// GetId gets the id property value. Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.
 func (m *AppRole) GetId()(*string) {
     if m == nil {
         return nil
@@ -252,7 +252,7 @@ func (m *AppRole) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetId sets the id property value. Unique role identifier inside the appRoles collection. When creating a new app role, a new Guid identifier must be provided.
+// SetId sets the id property value. Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.
 func (m *AppRole) SetId(value *string)() {
     if m != nil {
         m.id = value
