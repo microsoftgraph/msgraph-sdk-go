@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.10.0] - 2022-02-16
+
+### Changed
+
+- Updated to code 0.0.9 (fixed request body compression, added error deserialization)
+- Weekly generation
+
 ## [0.9.0] - 2022-02-08
 
 ### Changed
