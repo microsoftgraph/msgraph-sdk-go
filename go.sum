@@ -33,11 +33,15 @@ github.com/microsoft/kiota/abstractions/go v0.0.0-20220208140201-eb59c2593f0e h1
 github.com/microsoft/kiota/abstractions/go v0.0.0-20220208140201-eb59c2593f0e/go.mod h1:BUv5PFNuBLFXQlDtarjdgqdqDjee3FgfjrNkfZlA5us=
 github.com/microsoft/kiota/abstractions/go v0.0.0-20220216133321-1457eed0a802 h1:ndIBoqpOI/O26O3iJZ4X5bPJeofTUWgQ0xtfOORqlEU=
 github.com/microsoft/kiota/abstractions/go v0.0.0-20220216133321-1457eed0a802/go.mod h1:BUv5PFNuBLFXQlDtarjdgqdqDjee3FgfjrNkfZlA5us=
+github.com/microsoft/kiota/abstractions/go v0.0.0-20220228172739-49f23b2c1c13 h1:8N4EJU1zO9ReL+3NzvHuJ/w4WWwhAlsH9L/UVuX9SdI=
+github.com/microsoft/kiota/abstractions/go v0.0.0-20220228172739-49f23b2c1c13/go.mod h1:BUv5PFNuBLFXQlDtarjdgqdqDjee3FgfjrNkfZlA5us=
 github.com/microsoft/kiota/authentication/go/azure v0.0.0-20220203083330-462603bf370f/go.mod h1:k6kEqvKMm/0DnT0Est+NyKZj5sajJAmCn0emeXpwQ8k=
 github.com/microsoft/kiota/http/go/nethttp v0.0.0-20220208140201-eb59c2593f0e h1:JLLJxjAXVob8Q1auQBtB+O0rYI0JRWZFLUGVD2Pwbdg=
 github.com/microsoft/kiota/http/go/nethttp v0.0.0-20220208140201-eb59c2593f0e/go.mod h1:A8H8Nm4YWsF76WIYez0Vlu8ZOoOab60W3K5OY7eg68Y=
 github.com/microsoft/kiota/http/go/nethttp v0.0.0-20220216133321-1457eed0a802 h1:TKNPSA4apl073syl23ok3aH1kc2mTvPcGRbcTgCYMm0=
 github.com/microsoft/kiota/http/go/nethttp v0.0.0-20220216133321-1457eed0a802/go.mod h1:IQATbMP2my2SOmeqixr0zobVo8wFJNR4BfBjAaKlOPo=
+github.com/microsoft/kiota/http/go/nethttp v0.0.0-20220228172739-49f23b2c1c13 h1:LmBzjiIdr5y99D8PWb9CfwgkOKchmOkz0cmd/tdutHk=
+github.com/microsoft/kiota/http/go/nethttp v0.0.0-20220228172739-49f23b2c1c13/go.mod h1:IQATbMP2my2SOmeqixr0zobVo8wFJNR4BfBjAaKlOPo=
 github.com/microsoft/kiota/serialization/go/json v0.0.0-20220202150655-0505f19ca2d1/go.mod h1:34nL++mVbjJJc2VHzEJu+syX3Mcyg0GysEYruAv4FqM=
 github.com/microsoft/kiota/serialization/go/json v0.0.0-20220208140201-eb59c2593f0e h1:W1fMXgpK8G00QlTc56EdyM5fdFQ791kEFsI7YWZxBw0=
 github.com/microsoft/kiota/serialization/go/json v0.0.0-20220208140201-eb59c2593f0e/go.mod h1:46EJNZJOdDBpgDHCQ8xDM4QXJLUCjGCRdljZvwuMEvc=
@@ -45,6 +49,8 @@ github.com/microsoftgraph/msgraph-sdk-go-core v0.0.8 h1:F3EO1RuZv3QtXxYhgv1L6lNm
 github.com/microsoftgraph/msgraph-sdk-go-core v0.0.8/go.mod h1:3SPSw1B20aZUohL2XHs2CJ+GfA1N8nkALxNc/cF6j/8=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.0.9 h1:Abz7bKggHANLMhXoepqSuw/vMQw0cMF2OQlzn+QuHac=
 github.com/microsoftgraph/msgraph-sdk-go-core v0.0.9/go.mod h1:5fkqfvTXVAhm8dvsFNTnV1rhiywhKDDpUnK/MGW/9cU=
+github.com/microsoftgraph/msgraph-sdk-go-core v0.0.10 h1:sw9/EVcOdm7UvrqPqF3oA8blkdopfKyfee9qIFky3Aw=
+github.com/microsoftgraph/msgraph-sdk-go-core v0.0.10/go.mod h1:FNVOI3PMa6gFGdbs9QXDD6XBJKGqXJ1pFDyrMWFUpQk=
 github.com/modocache/gover v0.0.0-20171022184752-b58185e213c5/go.mod h1:caMODM3PzxT8aQXRPkAt8xlV/e7d7w8GM5g0fa5F0D8=
 github.com/montanaflynn/stats v0.0.0-20171201202039-1bf9dbcd8cbe/go.mod h1:wL8QJuTMNUDYhXwkmfOly8iTdp5TEcJFWZD2D7SIkUc=
 github.com/pascaldekloe/jwt v1.10.0/go.mod h1:TKhllgThT7TOP5rGr2zMLKEDZRAgJfBbtKyVeRsNB9A=
