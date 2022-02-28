@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.11.1] - 2022-02-28
+
+### Changed
+
+- Fixed a bug where http client configuration would impact the default client configuration for other usages.
+
 ## [0.11.0] - 2022-02-23
 
 ### Changed
