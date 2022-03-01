@@ -171,7 +171,7 @@ func (m *PlannerRequestBuilder) Plans()(*ide436bca6a0014f1e8463ce231040a062d9646
     return ide436bca6a0014f1e8463ce231040a062d96469a6a6b92f961d38b0a2d4b2bf1.NewPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PlansById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.planner.plans.item collection
-func (m *PlannerRequestBuilder) PlansById(id string)(*i09ed9ccc0320249b1764746f5c1dbced9fa6a8a7b293b69a712afdbe654212d0.PlannerPlanRequestBuilder) {
+func (m *PlannerRequestBuilder) PlansById(id string)(*i09ed9ccc0320249b1764746f5c1dbced9fa6a8a7b293b69a712afdbe654212d0.PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -179,13 +179,13 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*i09ed9ccc0320249b1764746f5
     if id != "" {
         urlTplParams["plannerPlan_id"] = id
     }
-    return i09ed9ccc0320249b1764746f5c1dbced9fa6a8a7b293b69a712afdbe654212d0.NewPlannerPlanRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i09ed9ccc0320249b1764746f5c1dbced9fa6a8a7b293b69a712afdbe654212d0.NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *PlannerRequestBuilder) Tasks()(*i68290d40f854f2d796e65478dd54331bdac5b70dbaa7c80912be69d3a851fc09.TasksRequestBuilder) {
     return i68290d40f854f2d796e65478dd54331bdac5b70dbaa7c80912be69d3a851fc09.NewTasksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TasksById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.planner.tasks.item collection
-func (m *PlannerRequestBuilder) TasksById(id string)(*i133dbf344946b005db2fa935e3b979b7d90ed153346c8fcd12459100b937f3ff.PlannerTaskRequestBuilder) {
+func (m *PlannerRequestBuilder) TasksById(id string)(*i133dbf344946b005db2fa935e3b979b7d90ed153346c8fcd12459100b937f3ff.PlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,5 +193,5 @@ func (m *PlannerRequestBuilder) TasksById(id string)(*i133dbf344946b005db2fa935e
     if id != "" {
         urlTplParams["plannerTask_id"] = id
     }
-    return i133dbf344946b005db2fa935e3b979b7d90ed153346c8fcd12459100b937f3ff.NewPlannerTaskRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i133dbf344946b005db2fa935e3b979b7d90ed153346c8fcd12459100b937f3ff.NewPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

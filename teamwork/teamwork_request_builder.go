@@ -131,7 +131,7 @@ func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*iddcac2568dd554d7be34d
     return iddcac2568dd554d7be34ddc7c2ac2e4fbb78d101317aac3fb089b697445cbfed.NewWorkforceIntegrationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WorkforceIntegrationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teamwork.workforceIntegrations.item collection
-func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*i295aba9e44cb402c499d2a80cfc1debd716eaecddf1f4ebc306a69d2b3c53bc8.WorkforceIntegrationRequestBuilder) {
+func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*i295aba9e44cb402c499d2a80cfc1debd716eaecddf1f4ebc306a69d2b3c53bc8.WorkforceIntegrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -139,5 +139,5 @@ func (m *TeamworkRequestBuilder) WorkforceIntegrationsById(id string)(*i295aba9e
     if id != "" {
         urlTplParams["workforceIntegration_id"] = id
     }
-    return i295aba9e44cb402c499d2a80cfc1debd716eaecddf1f4ebc306a69d2b3c53bc8.NewWorkforceIntegrationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i295aba9e44cb402c499d2a80cfc1debd716eaecddf1f4ebc306a69d2b3c53bc8.NewWorkforceIntegrationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

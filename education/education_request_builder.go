@@ -55,7 +55,7 @@ func (m *EducationRequestBuilder) Classes()(*if6b46a923414b614133630b614b404c300
     return if6b46a923414b614133630b614b404c3005a11daa1e05f10bb834755518d40dd.NewClassesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ClassesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item collection
-func (m *EducationRequestBuilder) ClassesById(id string)(*i31a8a42bc05cb93b0a8b6dc7e28fb5a481e3934df6dc18de8217d0fe268d617c.EducationClassRequestBuilder) {
+func (m *EducationRequestBuilder) ClassesById(id string)(*i31a8a42bc05cb93b0a8b6dc7e28fb5a481e3934df6dc18de8217d0fe268d617c.EducationClassItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -63,7 +63,7 @@ func (m *EducationRequestBuilder) ClassesById(id string)(*i31a8a42bc05cb93b0a8b6
     if id != "" {
         urlTplParams["educationClass_id"] = id
     }
-    return i31a8a42bc05cb93b0a8b6dc7e28fb5a481e3934df6dc18de8217d0fe268d617c.NewEducationClassRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i31a8a42bc05cb93b0a8b6dc7e28fb5a481e3934df6dc18de8217d0fe268d617c.NewEducationClassItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewEducationRequestBuilderInternal instantiates a new EducationRequestBuilder and sets the default values.
 func NewEducationRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EducationRequestBuilder) {
@@ -153,7 +153,7 @@ func (m *EducationRequestBuilder) Schools()(*i8803b2d448091478d216c51910e6ed01bb
     return i8803b2d448091478d216c51910e6ed01bbc8c76e5b76968b633118267314ebe9.NewSchoolsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SchoolsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item collection
-func (m *EducationRequestBuilder) SchoolsById(id string)(*ibcc84b6252b9c075d39d4d8641ef3cf01a04613a5da305d7d48d21c122395065.EducationSchoolRequestBuilder) {
+func (m *EducationRequestBuilder) SchoolsById(id string)(*ibcc84b6252b9c075d39d4d8641ef3cf01a04613a5da305d7d48d21c122395065.EducationSchoolItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -161,13 +161,13 @@ func (m *EducationRequestBuilder) SchoolsById(id string)(*ibcc84b6252b9c075d39d4
     if id != "" {
         urlTplParams["educationSchool_id"] = id
     }
-    return ibcc84b6252b9c075d39d4d8641ef3cf01a04613a5da305d7d48d21c122395065.NewEducationSchoolRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ibcc84b6252b9c075d39d4d8641ef3cf01a04613a5da305d7d48d21c122395065.NewEducationSchoolItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *EducationRequestBuilder) Users()(*i82d352ad9c3de7536dcc103a1a2a276e7beba1b35548191dda9e846d8c21e897.UsersRequestBuilder) {
     return i82d352ad9c3de7536dcc103a1a2a276e7beba1b35548191dda9e846d8c21e897.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.users.item collection
-func (m *EducationRequestBuilder) UsersById(id string)(*i6fc2718a806c86250bd9f9aaba5418413286c98ed345a7dbe988c558836bde8e.EducationUserRequestBuilder) {
+func (m *EducationRequestBuilder) UsersById(id string)(*i6fc2718a806c86250bd9f9aaba5418413286c98ed345a7dbe988c558836bde8e.EducationUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -175,5 +175,5 @@ func (m *EducationRequestBuilder) UsersById(id string)(*i6fc2718a806c86250bd9f9a
     if id != "" {
         urlTplParams["educationUser_id"] = id
     }
-    return i6fc2718a806c86250bd9f9aaba5418413286c98ed345a7dbe988c558836bde8e.NewEducationUserRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i6fc2718a806c86250bd9f9aaba5418413286c98ed345a7dbe988c558836bde8e.NewEducationUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

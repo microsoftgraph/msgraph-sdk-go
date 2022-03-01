@@ -8,6 +8,7 @@ import (
     i8893ecb7e9d38ec8961e185f29391303f74779021473d1c37caeafd1abebef9a "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending"
     i99fad623e5b2b4a7ae85326fa692745befba2f6b4fb179d4572c3e7219fbf3ac "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used"
     i7eb746d3d91c620af79236bba2af4b708c6b65d5f4ec8f9cc42e5d4305f1c396 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/shared/item"
+    ibf98f8f6ecbe2d059f97c4d3970656db9710f9bafa095bf25ac791007a80e997 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/trending/item"
     ic47fb69b7ecc13ce7f81973ffdde08efe7b70445311d1e83964064ef79497098 "github.com/microsoftgraph/msgraph-sdk-go/me/insights/used/item"
 )
 
@@ -172,7 +173,7 @@ func (m *InsightsRequestBuilder) Shared()(*i29d2c155f681081063d0b2c0ab92796f0e2b
     return i29d2c155f681081063d0b2c0ab92796f0e2b78c469f71af45a16d8240b348ebf.NewSharedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SharedById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.insights.shared.item collection
-func (m *InsightsRequestBuilder) SharedById(id string)(*i7eb746d3d91c620af79236bba2af4b708c6b65d5f4ec8f9cc42e5d4305f1c396.SharedInsightRequestBuilder) {
+func (m *InsightsRequestBuilder) SharedById(id string)(*i7eb746d3d91c620af79236bba2af4b708c6b65d5f4ec8f9cc42e5d4305f1c396.SharedInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -180,13 +181,13 @@ func (m *InsightsRequestBuilder) SharedById(id string)(*i7eb746d3d91c620af79236b
     if id != "" {
         urlTplParams["sharedInsight_id"] = id
     }
-    return i7eb746d3d91c620af79236bba2af4b708c6b65d5f4ec8f9cc42e5d4305f1c396.NewSharedInsightRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i7eb746d3d91c620af79236bba2af4b708c6b65d5f4ec8f9cc42e5d4305f1c396.NewSharedInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *InsightsRequestBuilder) Trending()(*i8893ecb7e9d38ec8961e185f29391303f74779021473d1c37caeafd1abebef9a.TrendingRequestBuilder) {
     return i8893ecb7e9d38ec8961e185f29391303f74779021473d1c37caeafd1abebef9a.NewTrendingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TrendingById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.insights.trending.item collection
-func (m *InsightsRequestBuilder) TrendingById(id string)(*i8893ecb7e9d38ec8961e185f29391303f74779021473d1c37caeafd1abebef9a.TrendingRequestBuilder) {
+func (m *InsightsRequestBuilder) TrendingById(id string)(*ibf98f8f6ecbe2d059f97c4d3970656db9710f9bafa095bf25ac791007a80e997.TrendingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -194,13 +195,13 @@ func (m *InsightsRequestBuilder) TrendingById(id string)(*i8893ecb7e9d38ec8961e1
     if id != "" {
         urlTplParams["trending_id"] = id
     }
-    return i8893ecb7e9d38ec8961e185f29391303f74779021473d1c37caeafd1abebef9a.NewTrendingRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ibf98f8f6ecbe2d059f97c4d3970656db9710f9bafa095bf25ac791007a80e997.NewTrendingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *InsightsRequestBuilder) Used()(*i99fad623e5b2b4a7ae85326fa692745befba2f6b4fb179d4572c3e7219fbf3ac.UsedRequestBuilder) {
     return i99fad623e5b2b4a7ae85326fa692745befba2f6b4fb179d4572c3e7219fbf3ac.NewUsedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UsedById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.insights.used.item collection
-func (m *InsightsRequestBuilder) UsedById(id string)(*ic47fb69b7ecc13ce7f81973ffdde08efe7b70445311d1e83964064ef79497098.UsedInsightRequestBuilder) {
+func (m *InsightsRequestBuilder) UsedById(id string)(*ic47fb69b7ecc13ce7f81973ffdde08efe7b70445311d1e83964064ef79497098.UsedInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -208,5 +209,5 @@ func (m *InsightsRequestBuilder) UsedById(id string)(*ic47fb69b7ecc13ce7f81973ff
     if id != "" {
         urlTplParams["usedInsight_id"] = id
     }
-    return ic47fb69b7ecc13ce7f81973ffdde08efe7b70445311d1e83964064ef79497098.NewUsedInsightRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ic47fb69b7ecc13ce7f81973ffdde08efe7b70445311d1e83964064ef79497098.NewUsedInsightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

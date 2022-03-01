@@ -1,0 +1,181 @@
+package item
+
+import (
+    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i748dee09a8f1f14c9b723a15a9da9cdd5b2b3bca36dcdaaf8cbca1ebda06a99a "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignmentrequests/item/requestor"
+    ib498f7ef8ff5f910a4aa1ac1da3f19d7068012349151e82a66f3b85b4ee5c843 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignmentrequests/item/assignment"
+    if6c1379b58039723b5baf775bd869822006180e1ec4a8ed31e699e042488794e "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignmentrequests/item/accesspackage"
+    if98f644e25be228d6e957c4164f416b338a91937249fd745a801630f4c1beb41 "github.com/microsoftgraph/msgraph-sdk-go/identitygovernance/entitlementmanagement/assignmentrequests/item/cancel"
+)
+
+// AccessPackageAssignmentRequestItemRequestBuilder builds and executes requests for operations under \identityGovernance\entitlementManagement\assignmentRequests\{accessPackageAssignmentRequest-id}
+type AccessPackageAssignmentRequestItemRequestBuilder struct {
+    // Path parameters for the request
+    pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
+    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
+    urlTemplate string;
+}
+// AccessPackageAssignmentRequestItemRequestBuilderDeleteOptions options for Delete
+type AccessPackageAssignmentRequestItemRequestBuilderDeleteOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// AccessPackageAssignmentRequestItemRequestBuilderGetOptions options for Get
+type AccessPackageAssignmentRequestItemRequestBuilderGetOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Request query parameters
+    Q *AccessPackageAssignmentRequestItemRequestBuilderGetQueryParameters;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// AccessPackageAssignmentRequestItemRequestBuilderGetQueryParameters represents access package assignment requests created by or on behalf of a user.
+type AccessPackageAssignmentRequestItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string;
+    // Select properties to be returned
+    Select []string;
+}
+// AccessPackageAssignmentRequestItemRequestBuilderPatchOptions options for Patch
+type AccessPackageAssignmentRequestItemRequestBuilderPatchOptions struct {
+    // 
+    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageAssignmentRequest;
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *AccessPackageAssignmentRequestItemRequestBuilder) AccessPackage()(*if6c1379b58039723b5baf775bd869822006180e1ec4a8ed31e699e042488794e.AccessPackageRequestBuilder) {
+    return if6c1379b58039723b5baf775bd869822006180e1ec4a8ed31e699e042488794e.NewAccessPackageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *AccessPackageAssignmentRequestItemRequestBuilder) Assignment()(*ib498f7ef8ff5f910a4aa1ac1da3f19d7068012349151e82a66f3b85b4ee5c843.AssignmentRequestBuilder) {
+    return ib498f7ef8ff5f910a4aa1ac1da3f19d7068012349151e82a66f3b85b4ee5c843.NewAssignmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *AccessPackageAssignmentRequestItemRequestBuilder) Cancel()(*if98f644e25be228d6e957c4164f416b338a91937249fd745a801630f4c1beb41.CancelRequestBuilder) {
+    return if98f644e25be228d6e957c4164f416b338a91937249fd745a801630f4c1beb41.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// NewAccessPackageAssignmentRequestItemRequestBuilderInternal instantiates a new AccessPackageAssignmentRequestItemRequestBuilder and sets the default values.
+func NewAccessPackageAssignmentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageAssignmentRequestItemRequestBuilder) {
+    m := &AccessPackageAssignmentRequestItemRequestBuilder{
+    }
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest_id}{?select,expand}";
+    urlTplParams := make(map[string]string)
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
+    }
+    m.pathParameters = pathParameters;
+    m.requestAdapter = requestAdapter;
+    return m
+}
+// NewAccessPackageAssignmentRequestItemRequestBuilder instantiates a new AccessPackageAssignmentRequestItemRequestBuilder and sets the default values.
+func NewAccessPackageAssignmentRequestItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AccessPackageAssignmentRequestItemRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewAccessPackageAssignmentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// CreateDeleteRequestInformation represents access package assignment requests created by or on behalf of a user.
+func (m *AccessPackageAssignmentRequestItemRequestBuilder) CreateDeleteRequestInformation(options *AccessPackageAssignmentRequestItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
+    }
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+// CreateGetRequestInformation represents access package assignment requests created by or on behalf of a user.
+func (m *AccessPackageAssignmentRequestItemRequestBuilder) CreateGetRequestInformation(options *AccessPackageAssignmentRequestItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
+    if options != nil && options.Q != nil {
+        requestInfo.AddQueryParameters(*(options.Q))
+    }
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
+    }
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+// CreatePatchRequestInformation represents access package assignment requests created by or on behalf of a user.
+func (m *AccessPackageAssignmentRequestItemRequestBuilder) CreatePatchRequestInformation(options *AccessPackageAssignmentRequestItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
+    }
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+// Delete represents access package assignment requests created by or on behalf of a user.
+func (m *AccessPackageAssignmentRequestItemRequestBuilder) Delete(options *AccessPackageAssignmentRequestItemRequestBuilderDeleteOptions)(error) {
+    requestInfo, err := m.CreateDeleteRequestInformation(options);
+    if err != nil {
+        return err
+    }
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Get represents access package assignment requests created by or on behalf of a user.
+func (m *AccessPackageAssignmentRequestItemRequestBuilder) Get(options *AccessPackageAssignmentRequestItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageAssignmentRequest, error) {
+    requestInfo, err := m.CreateGetRequestInformation(options);
+    if err != nil {
+        return nil, err
+    }
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewAccessPackageAssignmentRequest() }, nil, nil)
+    if err != nil {
+        return nil, err
+    }
+    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.AccessPackageAssignmentRequest), nil
+}
+// Patch represents access package assignment requests created by or on behalf of a user.
+func (m *AccessPackageAssignmentRequestItemRequestBuilder) Patch(options *AccessPackageAssignmentRequestItemRequestBuilderPatchOptions)(error) {
+    requestInfo, err := m.CreatePatchRequestInformation(options);
+    if err != nil {
+        return err
+    }
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+func (m *AccessPackageAssignmentRequestItemRequestBuilder) Requestor()(*i748dee09a8f1f14c9b723a15a9da9cdd5b2b3bca36dcdaaf8cbca1ebda06a99a.RequestorRequestBuilder) {
+    return i748dee09a8f1f14c9b723a15a9da9cdd5b2b3bca36dcdaaf8cbca1ebda06a99a.NewRequestorRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}

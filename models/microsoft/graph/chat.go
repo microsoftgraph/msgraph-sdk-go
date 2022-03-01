@@ -22,7 +22,7 @@ type Chat struct {
     messages []ChatMessage;
     // Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
     onlineMeetingInfo *TeamworkOnlineMeetingInfo;
-    // 
+    // A collection of all the tabs in the chat. Nullable.
     tabs []TeamsTab;
     // The identifier of the tenant in which the chat was created. Read-only.
     tenantId *string;
@@ -94,7 +94,7 @@ func (m *Chat) GetOnlineMeetingInfo()(*TeamworkOnlineMeetingInfo) {
         return m.onlineMeetingInfo
     }
 }
-// GetTabs gets the tabs property value. 
+// GetTabs gets the tabs property value. A collection of all the tabs in the chat. Nullable.
 func (m *Chat) GetTabs()([]TeamsTab) {
     if m == nil {
         return nil
@@ -397,7 +397,7 @@ func (m *Chat) SetOnlineMeetingInfo(value *TeamworkOnlineMeetingInfo)() {
         m.onlineMeetingInfo = value
     }
 }
-// SetTabs sets the tabs property value. 
+// SetTabs sets the tabs property value. A collection of all the tabs in the chat. Nullable.
 func (m *Chat) SetTabs(value []TeamsTab)() {
     if m != nil {
         m.tabs = value

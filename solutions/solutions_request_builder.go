@@ -52,7 +52,7 @@ func (m *SolutionsRequestBuilder) BookingBusinesses()(*ic2077c84f4cea40593f46a09
     return ic2077c84f4cea40593f46a097344f757e71b10d42626a06348d8a6856a4a6408.NewBookingBusinessesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BookingBusinessesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.solutions.bookingBusinesses.item collection
-func (m *SolutionsRequestBuilder) BookingBusinessesById(id string)(*i98532a0d43958ac46a84969d106d7877583a8e83cd026d67fbc826e462b1e8c7.BookingBusinessRequestBuilder) {
+func (m *SolutionsRequestBuilder) BookingBusinessesById(id string)(*i98532a0d43958ac46a84969d106d7877583a8e83cd026d67fbc826e462b1e8c7.BookingBusinessItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -60,13 +60,13 @@ func (m *SolutionsRequestBuilder) BookingBusinessesById(id string)(*i98532a0d439
     if id != "" {
         urlTplParams["bookingBusiness_id"] = id
     }
-    return i98532a0d43958ac46a84969d106d7877583a8e83cd026d67fbc826e462b1e8c7.NewBookingBusinessRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i98532a0d43958ac46a84969d106d7877583a8e83cd026d67fbc826e462b1e8c7.NewBookingBusinessItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *SolutionsRequestBuilder) BookingCurrencies()(*i6d5b6940d5e24f8aee3eb7eef5499c5a97c9c71485b644e5b94efadbc56609b0.BookingCurrenciesRequestBuilder) {
     return i6d5b6940d5e24f8aee3eb7eef5499c5a97c9c71485b644e5b94efadbc56609b0.NewBookingCurrenciesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BookingCurrenciesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.solutions.bookingCurrencies.item collection
-func (m *SolutionsRequestBuilder) BookingCurrenciesById(id string)(*i30929f1a7f5c848dd5ee1e9d3e9b1dc2926ba5d92f9f5ca889f41edee949d39a.BookingCurrencyRequestBuilder) {
+func (m *SolutionsRequestBuilder) BookingCurrenciesById(id string)(*i30929f1a7f5c848dd5ee1e9d3e9b1dc2926ba5d92f9f5ca889f41edee949d39a.BookingCurrencyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func (m *SolutionsRequestBuilder) BookingCurrenciesById(id string)(*i30929f1a7f5
     if id != "" {
         urlTplParams["bookingCurrency_id"] = id
     }
-    return i30929f1a7f5c848dd5ee1e9d3e9b1dc2926ba5d92f9f5ca889f41edee949d39a.NewBookingCurrencyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i30929f1a7f5c848dd5ee1e9d3e9b1dc2926ba5d92f9f5ca889f41edee949d39a.NewBookingCurrencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewSolutionsRequestBuilderInternal instantiates a new SolutionsRequestBuilder and sets the default values.
 func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SolutionsRequestBuilder) {

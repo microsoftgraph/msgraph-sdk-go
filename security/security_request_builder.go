@@ -54,7 +54,7 @@ func (m *SecurityRequestBuilder) Alerts()(*ic55f4c3693b3458d37f169972d41697131ec
     return ic55f4c3693b3458d37f169972d41697131ecfdb31a625c4fae6e024f02167222.NewAlertsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AlertsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.alerts.item collection
-func (m *SecurityRequestBuilder) AlertsById(id string)(*i9f4cc7fe9832e758c23f51e8095ff0946d511066f5a7d110c1662df7efadb000.AlertRequestBuilder) {
+func (m *SecurityRequestBuilder) AlertsById(id string)(*i9f4cc7fe9832e758c23f51e8095ff0946d511066f5a7d110c1662df7efadb000.AlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -62,7 +62,7 @@ func (m *SecurityRequestBuilder) AlertsById(id string)(*i9f4cc7fe9832e758c23f51e
     if id != "" {
         urlTplParams["alert_id"] = id
     }
-    return i9f4cc7fe9832e758c23f51e8095ff0946d511066f5a7d110c1662df7efadb000.NewAlertRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i9f4cc7fe9832e758c23f51e8095ff0946d511066f5a7d110c1662df7efadb000.NewAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewSecurityRequestBuilderInternal instantiates a new SecurityRequestBuilder and sets the default values.
 func NewSecurityRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*SecurityRequestBuilder) {
@@ -149,7 +149,7 @@ func (m *SecurityRequestBuilder) SecureScoreControlProfiles()(*ie4328a6e5437e25d
     return ie4328a6e5437e25d06c50bee3076698796ad30481e9e114d704c631aad9b6f5b.NewSecureScoreControlProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SecureScoreControlProfilesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.secureScoreControlProfiles.item collection
-func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*i341438a13fe09ad4284380c5f498c991d5debd415f26d3ad4445315402edc168.SecureScoreControlProfileRequestBuilder) {
+func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*i341438a13fe09ad4284380c5f498c991d5debd415f26d3ad4445315402edc168.SecureScoreControlProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -157,13 +157,13 @@ func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*i341
     if id != "" {
         urlTplParams["secureScoreControlProfile_id"] = id
     }
-    return i341438a13fe09ad4284380c5f498c991d5debd415f26d3ad4445315402edc168.NewSecureScoreControlProfileRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i341438a13fe09ad4284380c5f498c991d5debd415f26d3ad4445315402edc168.NewSecureScoreControlProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *SecurityRequestBuilder) SecureScores()(*i13bd20348dd8380732465deeb248cdc3f18bf1b888ea708c2518379965331b7d.SecureScoresRequestBuilder) {
     return i13bd20348dd8380732465deeb248cdc3f18bf1b888ea708c2518379965331b7d.NewSecureScoresRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SecureScoresById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.security.secureScores.item collection
-func (m *SecurityRequestBuilder) SecureScoresById(id string)(*i935eca4ee55c30c68a1ba6558e201935fcaf58fd82c8f8076c82de8f806aac5b.SecureScoreRequestBuilder) {
+func (m *SecurityRequestBuilder) SecureScoresById(id string)(*i935eca4ee55c30c68a1ba6558e201935fcaf58fd82c8f8076c82de8f806aac5b.SecureScoreItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -171,5 +171,5 @@ func (m *SecurityRequestBuilder) SecureScoresById(id string)(*i935eca4ee55c30c68
     if id != "" {
         urlTplParams["secureScore_id"] = id
     }
-    return i935eca4ee55c30c68a1ba6558e201935fcaf58fd82c8f8076c82de8f806aac5b.NewSecureScoreRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i935eca4ee55c30c68a1ba6558e201935fcaf58fd82c8f8076c82de8f806aac5b.NewSecureScoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

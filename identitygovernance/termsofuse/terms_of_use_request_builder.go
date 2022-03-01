@@ -61,7 +61,7 @@ func (m *TermsOfUseRequestBuilder) AgreementAcceptances()(*i1ce056d01800dfdf0c63
     return i1ce056d01800dfdf0c63c27efbc64f7896ea760db3ba778ace708aeddd054d0f.NewAgreementAcceptancesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AgreementAcceptancesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.termsOfUse.agreementAcceptances.item collection
-func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*if58558aaf7d3a571a2b7b154eaf42dbeae3dfda757c15665c189420b3fc2cc8f.AgreementAcceptanceRequestBuilder) {
+func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*if58558aaf7d3a571a2b7b154eaf42dbeae3dfda757c15665c189420b3fc2cc8f.AgreementAcceptanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -69,13 +69,13 @@ func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*if58558a
     if id != "" {
         urlTplParams["agreementAcceptance_id"] = id
     }
-    return if58558aaf7d3a571a2b7b154eaf42dbeae3dfda757c15665c189420b3fc2cc8f.NewAgreementAcceptanceRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return if58558aaf7d3a571a2b7b154eaf42dbeae3dfda757c15665c189420b3fc2cc8f.NewAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *TermsOfUseRequestBuilder) Agreements()(*iacf793fb78f5c5f75bf9b848a21075f45ec242f4bcf7744ebdca694da4a5802c.AgreementsRequestBuilder) {
     return iacf793fb78f5c5f75bf9b848a21075f45ec242f4bcf7744ebdca694da4a5802c.NewAgreementsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AgreementsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.termsOfUse.agreements.item collection
-func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*ied57f20b5e5c3beb8344ef3753e6a67a240318854397236c0cd83ef4d9597226.AgreementRequestBuilder) {
+func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*ied57f20b5e5c3beb8344ef3753e6a67a240318854397236c0cd83ef4d9597226.AgreementItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -83,7 +83,7 @@ func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*ied57f20b5e5c3beb8
     if id != "" {
         urlTplParams["agreement_id"] = id
     }
-    return ied57f20b5e5c3beb8344ef3753e6a67a240318854397236c0cd83ef4d9597226.NewAgreementRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ied57f20b5e5c3beb8344ef3753e6a67a240318854397236c0cd83ef4d9597226.NewAgreementItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewTermsOfUseRequestBuilderInternal instantiates a new TermsOfUseRequestBuilder and sets the default values.
 func NewTermsOfUseRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*TermsOfUseRequestBuilder) {

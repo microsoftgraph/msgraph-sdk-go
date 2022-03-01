@@ -59,7 +59,7 @@ func (m *AppConsentRequestBuilder) AppConsentRequests()(*id4ae8fd7e17c27b3ca8f7e
     return id4ae8fd7e17c27b3ca8f7e9fef7622e9371afca56e135d14db5f2b9eaa120706.NewAppConsentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AppConsentRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.appConsent.appConsentRequests.item collection
-func (m *AppConsentRequestBuilder) AppConsentRequestsById(id string)(*i14c154ec7f87196523e6871f4753542ba473a41bf9fae51234d6eb39e8b23566.AppConsentRequestRequestBuilder) {
+func (m *AppConsentRequestBuilder) AppConsentRequestsById(id string)(*i14c154ec7f87196523e6871f4753542ba473a41bf9fae51234d6eb39e8b23566.AppConsentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -67,7 +67,7 @@ func (m *AppConsentRequestBuilder) AppConsentRequestsById(id string)(*i14c154ec7
     if id != "" {
         urlTplParams["appConsentRequest_id"] = id
     }
-    return i14c154ec7f87196523e6871f4753542ba473a41bf9fae51234d6eb39e8b23566.NewAppConsentRequestRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i14c154ec7f87196523e6871f4753542ba473a41bf9fae51234d6eb39e8b23566.NewAppConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewAppConsentRequestBuilderInternal instantiates a new AppConsentRequestBuilder and sets the default values.
 func NewAppConsentRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AppConsentRequestBuilder) {

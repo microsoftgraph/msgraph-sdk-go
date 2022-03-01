@@ -9,7 +9,7 @@ type PlannerTaskDetails struct {
     Entity
     // The collection of checklist items on the task.
     checklist *PlannerChecklistItems;
-    // Description of the task
+    // Description of the task.
     description *string;
     // This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
     previewType *PlannerPreviewType;
@@ -31,7 +31,7 @@ func (m *PlannerTaskDetails) GetChecklist()(*PlannerChecklistItems) {
         return m.checklist
     }
 }
-// GetDescription gets the description property value. Description of the task
+// GetDescription gets the description property value. Description of the task.
 func (m *PlannerTaskDetails) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -142,7 +142,7 @@ func (m *PlannerTaskDetails) SetChecklist(value *PlannerChecklistItems)() {
         m.checklist = value
     }
 }
-// SetDescription sets the description property value. Description of the task
+// SetDescription sets the description property value. Description of the task.
 func (m *PlannerTaskDetails) SetDescription(value *string)() {
     if m != nil {
         m.description = value

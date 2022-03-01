@@ -61,7 +61,7 @@ func (m *DriveRequestBuilder) Bundles()(*i62e01495b26c3ef220d18dd4a2ec05f79ddb93
     return i62e01495b26c3ef220d18dd4a2ec05f79ddb93094e7d5a328fdfc46f27cef7b6.NewBundlesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // BundlesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.bundles.item collection
-func (m *DriveRequestBuilder) BundlesById(id string)(*i196a6eae213268ad21678594954acf3ccd7f039d9e67578273af389beab82ac2.DriveItemRequestBuilder) {
+func (m *DriveRequestBuilder) BundlesById(id string)(*i196a6eae213268ad21678594954acf3ccd7f039d9e67578273af389beab82ac2.DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -69,7 +69,7 @@ func (m *DriveRequestBuilder) BundlesById(id string)(*i196a6eae213268ad216785949
     if id != "" {
         urlTplParams["driveItem_id"] = id
     }
-    return i196a6eae213268ad21678594954acf3ccd7f039d9e67578273af389beab82ac2.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i196a6eae213268ad21678594954acf3ccd7f039d9e67578273af389beab82ac2.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDriveRequestBuilderInternal instantiates a new DriveRequestBuilder and sets the default values.
 func NewDriveRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DriveRequestBuilder) {
@@ -132,7 +132,7 @@ func (m *DriveRequestBuilder) Following()(*i9316c3bd03b4192d3d91a742a5f05f6406c0
     return i9316c3bd03b4192d3d91a742a5f05f6406c00c15b3b5de33a8e843dac77d53ad.NewFollowingRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FollowingById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.following.item collection
-func (m *DriveRequestBuilder) FollowingById(id string)(*i442efb2ad5fc2ef8bc831b0f78ab7125b2330176f4baf9ac638a842e8b683dc9.DriveItemRequestBuilder) {
+func (m *DriveRequestBuilder) FollowingById(id string)(*i442efb2ad5fc2ef8bc831b0f78ab7125b2330176f4baf9ac638a842e8b683dc9.DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -140,7 +140,7 @@ func (m *DriveRequestBuilder) FollowingById(id string)(*i442efb2ad5fc2ef8bc831b0
     if id != "" {
         urlTplParams["driveItem_id"] = id
     }
-    return i442efb2ad5fc2ef8bc831b0f78ab7125b2330176f4baf9ac638a842e8b683dc9.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i442efb2ad5fc2ef8bc831b0f78ab7125b2330176f4baf9ac638a842e8b683dc9.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get drive
 func (m *DriveRequestBuilder) Get(options *DriveRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Drive, error) {
@@ -158,7 +158,7 @@ func (m *DriveRequestBuilder) Items()(*i33074db2b8fa9be0b6a9d94cf471e252f008c27a
     return i33074db2b8fa9be0b6a9d94cf471e252f008c27ab9bb5a8e0ca53ac0f0210cf7.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ItemsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.items.item collection
-func (m *DriveRequestBuilder) ItemsById(id string)(*ibd7a7a1ce01856c78689c5524ff307585d4847757b7dc445f97bff4e3fdb5a1b.DriveItemRequestBuilder) {
+func (m *DriveRequestBuilder) ItemsById(id string)(*ibd7a7a1ce01856c78689c5524ff307585d4847757b7dc445f97bff4e3fdb5a1b.DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -166,7 +166,7 @@ func (m *DriveRequestBuilder) ItemsById(id string)(*ibd7a7a1ce01856c78689c5524ff
     if id != "" {
         urlTplParams["driveItem_id"] = id
     }
-    return ibd7a7a1ce01856c78689c5524ff307585d4847757b7dc445f97bff4e3fdb5a1b.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ibd7a7a1ce01856c78689c5524ff307585d4847757b7dc445f97bff4e3fdb5a1b.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *DriveRequestBuilder) List()(*i6540397555b3c095b7c6c5d4fcae5bef89c2baee0dcf1f8bba0233611b3d3f95.ListRequestBuilder) {
     return i6540397555b3c095b7c6c5d4fcae5bef89c2baee0dcf1f8bba0233611b3d3f95.NewListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -202,7 +202,7 @@ func (m *DriveRequestBuilder) Special()(*ia82c9355f6f8d356282e506ef46bfccb28fc44
     return ia82c9355f6f8d356282e506ef46bfccb28fc443731e9a05eab283791a6de8220.NewSpecialRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SpecialById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.drive.special.item collection
-func (m *DriveRequestBuilder) SpecialById(id string)(*i3087ffea8c433c599359b8347be323c02e65364584d9de678689a61cc31d9d68.DriveItemRequestBuilder) {
+func (m *DriveRequestBuilder) SpecialById(id string)(*i3087ffea8c433c599359b8347be323c02e65364584d9de678689a61cc31d9d68.DriveItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -210,5 +210,5 @@ func (m *DriveRequestBuilder) SpecialById(id string)(*i3087ffea8c433c599359b8347
     if id != "" {
         urlTplParams["driveItem_id"] = id
     }
-    return i3087ffea8c433c599359b8347be323c02e65364584d9de678689a61cc31d9d68.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i3087ffea8c433c599359b8347be323c02e65364584d9de678689a61cc31d9d68.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

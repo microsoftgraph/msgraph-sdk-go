@@ -71,7 +71,7 @@ func (m *CalendarRequestBuilder) CalendarPermissions()(*ic4fbedba8b71c96a8c1cc23
     return ic4fbedba8b71c96a8c1cc23f5f68b98bdb74a545c81a35239a1ae6a4bddc6749.NewCalendarPermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CalendarPermissionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.calendar.calendarPermissions.item collection
-func (m *CalendarRequestBuilder) CalendarPermissionsById(id string)(*i2133c4e03374cde57e17f2aa66857c6ba629b1bbfa7b89e0585f17c88b3470d0.CalendarPermissionRequestBuilder) {
+func (m *CalendarRequestBuilder) CalendarPermissionsById(id string)(*i2133c4e03374cde57e17f2aa66857c6ba629b1bbfa7b89e0585f17c88b3470d0.CalendarPermissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -79,13 +79,13 @@ func (m *CalendarRequestBuilder) CalendarPermissionsById(id string)(*i2133c4e033
     if id != "" {
         urlTplParams["calendarPermission_id"] = id
     }
-    return i2133c4e03374cde57e17f2aa66857c6ba629b1bbfa7b89e0585f17c88b3470d0.NewCalendarPermissionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i2133c4e03374cde57e17f2aa66857c6ba629b1bbfa7b89e0585f17c88b3470d0.NewCalendarPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *CalendarRequestBuilder) CalendarView()(*if44e7d37c091c522009df8d2b8b30d67287c1346420ed710b1f9997ffa334461.CalendarViewRequestBuilder) {
     return if44e7d37c091c522009df8d2b8b30d67287c1346420ed710b1f9997ffa334461.NewCalendarViewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CalendarViewById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.calendar.calendarView.item collection
-func (m *CalendarRequestBuilder) CalendarViewById(id string)(*i7da62e1f0e8b5076b925f58a24cd8bcdf2c18c876c5e3fac9e0cce1708c8d669.EventRequestBuilder) {
+func (m *CalendarRequestBuilder) CalendarViewById(id string)(*i7da62e1f0e8b5076b925f58a24cd8bcdf2c18c876c5e3fac9e0cce1708c8d669.EventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -93,7 +93,7 @@ func (m *CalendarRequestBuilder) CalendarViewById(id string)(*i7da62e1f0e8b5076b
     if id != "" {
         urlTplParams["event_id"] = id
     }
-    return i7da62e1f0e8b5076b925f58a24cd8bcdf2c18c876c5e3fac9e0cce1708c8d669.NewEventRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i7da62e1f0e8b5076b925f58a24cd8bcdf2c18c876c5e3fac9e0cce1708c8d669.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewCalendarRequestBuilderInternal instantiates a new CalendarRequestBuilder and sets the default values.
 func NewCalendarRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*CalendarRequestBuilder) {
@@ -185,7 +185,7 @@ func (m *CalendarRequestBuilder) Events()(*idffc983be1e870a2a4117185ece24daafd49
     return idffc983be1e870a2a4117185ece24daafd4929a0264366c338f3760c1423b076.NewEventsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // EventsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.calendar.events.item collection
-func (m *CalendarRequestBuilder) EventsById(id string)(*iad6ec6cb8dcd07c8cb3bd03b2bc97831694f469367bb8b0cf70c13010c71fe91.EventRequestBuilder) {
+func (m *CalendarRequestBuilder) EventsById(id string)(*iad6ec6cb8dcd07c8cb3bd03b2bc97831694f469367bb8b0cf70c13010c71fe91.EventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,7 +193,7 @@ func (m *CalendarRequestBuilder) EventsById(id string)(*iad6ec6cb8dcd07c8cb3bd03
     if id != "" {
         urlTplParams["event_id"] = id
     }
-    return iad6ec6cb8dcd07c8cb3bd03b2bc97831694f469367bb8b0cf70c13010c71fe91.NewEventRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return iad6ec6cb8dcd07c8cb3bd03b2bc97831694f469367bb8b0cf70c13010c71fe91.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get the user's primary calendar. Read-only.
 func (m *CalendarRequestBuilder) Get(options *CalendarRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Calendar, error) {
@@ -214,7 +214,7 @@ func (m *CalendarRequestBuilder) MultiValueExtendedProperties()(*i520ec78d0b8b77
     return i520ec78d0b8b7722563a2934d91014ff877091dfa7315c9686d8905e132ae5b3.NewMultiValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MultiValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.calendar.multiValueExtendedProperties.item collection
-func (m *CalendarRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i5db0ccf3677a8d13461e0b10ef2980107c6cb5223fecf31a0484b6d4eac391d7.MultiValueLegacyExtendedPropertyRequestBuilder) {
+func (m *CalendarRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i5db0ccf3677a8d13461e0b10ef2980107c6cb5223fecf31a0484b6d4eac391d7.MultiValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -222,7 +222,7 @@ func (m *CalendarRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i5
     if id != "" {
         urlTplParams["multiValueLegacyExtendedProperty_id"] = id
     }
-    return i5db0ccf3677a8d13461e0b10ef2980107c6cb5223fecf31a0484b6d4eac391d7.NewMultiValueLegacyExtendedPropertyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i5db0ccf3677a8d13461e0b10ef2980107c6cb5223fecf31a0484b6d4eac391d7.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch the user's primary calendar. Read-only.
 func (m *CalendarRequestBuilder) Patch(options *CalendarRequestBuilderPatchOptions)(error) {
@@ -240,7 +240,7 @@ func (m *CalendarRequestBuilder) SingleValueExtendedProperties()(*ib399bd7a52c22
     return ib399bd7a52c229f4262ed1659c9cfbc736f51e55f5b34d90bd5973e1cd56e052.NewSingleValueExtendedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SingleValueExtendedPropertiesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.users.item.calendar.singleValueExtendedProperties.item collection
-func (m *CalendarRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i631cbd9bc2cfc12ac467e801a8ff1de1f272c89e5691913fac02728b1daca8e7.SingleValueLegacyExtendedPropertyRequestBuilder) {
+func (m *CalendarRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i631cbd9bc2cfc12ac467e801a8ff1de1f272c89e5691913fac02728b1daca8e7.SingleValueLegacyExtendedPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -248,5 +248,5 @@ func (m *CalendarRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i
     if id != "" {
         urlTplParams["singleValueLegacyExtendedProperty_id"] = id
     }
-    return i631cbd9bc2cfc12ac467e801a8ff1de1f272c89e5691913fac02728b1daca8e7.NewSingleValueLegacyExtendedPropertyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i631cbd9bc2cfc12ac467e801a8ff1de1f272c89e5691913fac02728b1daca8e7.NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

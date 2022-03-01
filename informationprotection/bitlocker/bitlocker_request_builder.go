@@ -169,7 +169,7 @@ func (m *BitlockerRequestBuilder) RecoveryKeys()(*i5dc93f982e4ecf9567e43c10c4133
     return i5dc93f982e4ecf9567e43c10c4133c7c4df8d34016db35ea82573ec8759ce43d.NewRecoveryKeysRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RecoveryKeysById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.informationProtection.bitlocker.recoveryKeys.item collection
-func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*i53a72d4c5b633ebaf2e92a3eae90f203f023e1af23ceaaa7b670a43df7cb21ed.BitlockerRecoveryKeyRequestBuilder) {
+func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*i53a72d4c5b633ebaf2e92a3eae90f203f023e1af23ceaaa7b670a43df7cb21ed.BitlockerRecoveryKeyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -177,5 +177,5 @@ func (m *BitlockerRequestBuilder) RecoveryKeysById(id string)(*i53a72d4c5b633eba
     if id != "" {
         urlTplParams["bitlockerRecoveryKey_id"] = id
     }
-    return i53a72d4c5b633ebaf2e92a3eae90f203f023e1af23ceaaa7b670a43df7cb21ed.NewBitlockerRecoveryKeyRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i53a72d4c5b633ebaf2e92a3eae90f203f023e1af23ceaaa7b670a43df7cb21ed.NewBitlockerRecoveryKeyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -131,7 +131,7 @@ func (m *AppCatalogsRequestBuilder) TeamsApps()(*i60b4144747afcc2877fe98b77f31eb
     return i60b4144747afcc2877fe98b77f31eb5f795af4ce3b56c13dadc3c81a149664c5.NewTeamsAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TeamsAppsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.appCatalogs.teamsApps.item collection
-func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*i0ff9d493a3baa51f602d43222cbde17af6238f7fde139b7afe7c7123654b865b.TeamsAppRequestBuilder) {
+func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*i0ff9d493a3baa51f602d43222cbde17af6238f7fde139b7afe7c7123654b865b.TeamsAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -139,5 +139,5 @@ func (m *AppCatalogsRequestBuilder) TeamsAppsById(id string)(*i0ff9d493a3baa51f6
     if id != "" {
         urlTplParams["teamsApp_id"] = id
     }
-    return i0ff9d493a3baa51f602d43222cbde17af6238f7fde139b7afe7c7123654b865b.NewTeamsAppRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i0ff9d493a3baa51f602d43222cbde17af6238f7fde139b7afe7c7123654b865b.NewTeamsAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

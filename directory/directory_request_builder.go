@@ -52,7 +52,7 @@ func (m *DirectoryRequestBuilder) AdministrativeUnits()(*i47420a6f1d93f934067d08
     return i47420a6f1d93f934067d08aecf791436625344c23db8a5ebf8ac8c6aa35228f5.NewAdministrativeUnitsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AdministrativeUnitsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.administrativeUnits.item collection
-func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*ib6eef29306489af3d4867139be6f8c0d2f07e27cc972bbe619040834fd6bc53c.AdministrativeUnitRequestBuilder) {
+func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*ib6eef29306489af3d4867139be6f8c0d2f07e27cc972bbe619040834fd6bc53c.AdministrativeUnitItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -60,7 +60,7 @@ func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*ib6eef2930
     if id != "" {
         urlTplParams["administrativeUnit_id"] = id
     }
-    return ib6eef29306489af3d4867139be6f8c0d2f07e27cc972bbe619040834fd6bc53c.NewAdministrativeUnitRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ib6eef29306489af3d4867139be6f8c0d2f07e27cc972bbe619040834fd6bc53c.NewAdministrativeUnitItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewDirectoryRequestBuilderInternal instantiates a new DirectoryRequestBuilder and sets the default values.
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*DirectoryRequestBuilder) {
@@ -123,7 +123,7 @@ func (m *DirectoryRequestBuilder) DeletedItems()(*i608270f0d53df54d261f336ae5290
     return i608270f0d53df54d261f336ae52901ae79654f5ed54338f92dab3b2188e27aeb.NewDeletedItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DeletedItemsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.directory.deletedItems.item collection
-func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*ic11656dccc6289d407b8e6129a339cd67d5b4802e9850fa2b7197192054f419c.DirectoryObjectRequestBuilder) {
+func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*ic11656dccc6289d407b8e6129a339cd67d5b4802e9850fa2b7197192054f419c.DirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -131,7 +131,7 @@ func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*ic11656dccc6289d4
     if id != "" {
         urlTplParams["directoryObject_id"] = id
     }
-    return ic11656dccc6289d407b8e6129a339cd67d5b4802e9850fa2b7197192054f419c.NewDirectoryObjectRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ic11656dccc6289d407b8e6129a339cd67d5b4802e9850fa2b7197192054f419c.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get get directory
 func (m *DirectoryRequestBuilder) Get(options *DirectoryRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Directory, error) {

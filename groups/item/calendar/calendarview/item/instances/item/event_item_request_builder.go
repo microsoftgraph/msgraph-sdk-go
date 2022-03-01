@@ -1,0 +1,191 @@
+package item
+
+import (
+    ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9 "github.com/microsoft/kiota/abstractions/go"
+    i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
+    i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87 "github.com/microsoftgraph/msgraph-sdk-go/models/microsoft/graph"
+    i03c20b721830723f54831b527e543a48a7f2b60c82d93c7553533911faae7e29 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/calendar/calendarview/item/instances/item/snoozereminder"
+    i1e1d28a4880b32cd9d34077dc20d66555410bcfcabf9311cec9f18123f1588ab "github.com/microsoftgraph/msgraph-sdk-go/groups/item/calendar/calendarview/item/instances/item/accept"
+    i2f0049ed9e28dc8a66f0ab5d8707aff93da3fc33ffb842844bcae2f4d6ca6f55 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/calendar/calendarview/item/instances/item/forward"
+    i2f3e2c7bce3122084bdbd424284896f3f64c302860793a13f5739a38e581d314 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/calendar/calendarview/item/instances/item/tentativelyaccept"
+    i63bc1490c8416695403ed8eafd481600f0e6ce32e1eae3b1f3e951e850218e72 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/calendar/calendarview/item/instances/item/dismissreminder"
+    i808301d66b9dde5df1b7969261fd7bf2b2a03cfabf17e0668ee80f17c80d607a "github.com/microsoftgraph/msgraph-sdk-go/groups/item/calendar/calendarview/item/instances/item/cancel"
+    i864ee5009750acc8b6512348fcc02020df2716cd4135ea453d4901fe578b0880 "github.com/microsoftgraph/msgraph-sdk-go/groups/item/calendar/calendarview/item/instances/item/decline"
+)
+
+// EventItemRequestBuilder builds and executes requests for operations under \groups\{group-id}\calendar\calendarView\{event-id}\instances\{event-id1}
+type EventItemRequestBuilder struct {
+    // Path parameters for the request
+    pathParameters map[string]string;
+    // The request adapter to use to execute the requests.
+    requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter;
+    // Url template to use to build the URL for the current request builder
+    urlTemplate string;
+}
+// EventItemRequestBuilderDeleteOptions options for Delete
+type EventItemRequestBuilderDeleteOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// EventItemRequestBuilderGetOptions options for Get
+type EventItemRequestBuilderGetOptions struct {
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Request query parameters
+    Q *EventItemRequestBuilderGetQueryParameters;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+// EventItemRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+type EventItemRequestBuilderGetQueryParameters struct {
+    // Select properties to be returned
+    Select []string;
+}
+// EventItemRequestBuilderPatchOptions options for Patch
+type EventItemRequestBuilderPatchOptions struct {
+    // 
+    Body *i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event;
+    // Request headers
+    H map[string]string;
+    // Request options
+    O []ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestOption;
+    // Response handler to use in place of the default response handling provided by the core service
+    ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
+}
+func (m *EventItemRequestBuilder) Accept()(*i1e1d28a4880b32cd9d34077dc20d66555410bcfcabf9311cec9f18123f1588ab.AcceptRequestBuilder) {
+    return i1e1d28a4880b32cd9d34077dc20d66555410bcfcabf9311cec9f18123f1588ab.NewAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *EventItemRequestBuilder) Cancel()(*i808301d66b9dde5df1b7969261fd7bf2b2a03cfabf17e0668ee80f17c80d607a.CancelRequestBuilder) {
+    return i808301d66b9dde5df1b7969261fd7bf2b2a03cfabf17e0668ee80f17c80d607a.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// NewEventItemRequestBuilderInternal instantiates a new EventItemRequestBuilder and sets the default values.
+func NewEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventItemRequestBuilder) {
+    m := &EventItemRequestBuilder{
+    }
+    m.urlTemplate = "{+baseurl}/groups/{group_id}/calendar/calendarView/{event_id}/instances/{event_id1}{?select}";
+    urlTplParams := make(map[string]string)
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
+    }
+    m.pathParameters = pathParameters;
+    m.requestAdapter = requestAdapter;
+    return m
+}
+// NewEventItemRequestBuilder instantiates a new EventItemRequestBuilder and sets the default values.
+func NewEventItemRequestBuilder(rawUrl string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*EventItemRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewEventItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// CreateDeleteRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+func (m *EventItemRequestBuilder) CreateDeleteRequestInformation(options *EventItemRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.DELETE
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
+    }
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+// CreateGetRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+func (m *EventItemRequestBuilder) CreateGetRequestInformation(options *EventItemRequestBuilderGetOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.GET
+    if options != nil && options.Q != nil {
+        requestInfo.AddQueryParameters(*(options.Q))
+    }
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
+    }
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+// CreatePatchRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+func (m *EventItemRequestBuilder) CreatePatchRequestInformation(options *EventItemRequestBuilderPatchOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
+    requestInfo := ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.PATCH
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
+    if options != nil && options.H != nil {
+        requestInfo.Headers = options.H
+    }
+    if options != nil && len(options.O) != 0 {
+        err := requestInfo.AddRequestOptions(options.O...)
+        if err != nil {
+            return nil, err
+        }
+    }
+    return requestInfo, nil
+}
+func (m *EventItemRequestBuilder) Decline()(*i864ee5009750acc8b6512348fcc02020df2716cd4135ea453d4901fe578b0880.DeclineRequestBuilder) {
+    return i864ee5009750acc8b6512348fcc02020df2716cd4135ea453d4901fe578b0880.NewDeclineRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Delete the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+func (m *EventItemRequestBuilder) Delete(options *EventItemRequestBuilderDeleteOptions)(error) {
+    requestInfo, err := m.CreateDeleteRequestInformation(options);
+    if err != nil {
+        return err
+    }
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+func (m *EventItemRequestBuilder) DismissReminder()(*i63bc1490c8416695403ed8eafd481600f0e6ce32e1eae3b1f3e951e850218e72.DismissReminderRequestBuilder) {
+    return i63bc1490c8416695403ed8eafd481600f0e6ce32e1eae3b1f3e951e850218e72.NewDismissReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *EventItemRequestBuilder) Forward()(*i2f0049ed9e28dc8a66f0ab5d8707aff93da3fc33ffb842844bcae2f4d6ca6f55.ForwardRequestBuilder) {
+    return i2f0049ed9e28dc8a66f0ab5d8707aff93da3fc33ffb842844bcae2f4d6ca6f55.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Get the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+func (m *EventItemRequestBuilder) Get(options *EventItemRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event, error) {
+    requestInfo, err := m.CreateGetRequestInformation(options);
+    if err != nil {
+        return nil, err
+    }
+    res, err := m.requestAdapter.SendAsync(*requestInfo, func () i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55.Parsable { return i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.NewEvent() }, nil, nil)
+    if err != nil {
+        return nil, err
+    }
+    return res.(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.Event), nil
+}
+// Patch the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+func (m *EventItemRequestBuilder) Patch(options *EventItemRequestBuilderPatchOptions)(error) {
+    requestInfo, err := m.CreatePatchRequestInformation(options);
+    if err != nil {
+        return err
+    }
+    err = m.requestAdapter.SendNoContentAsync(*requestInfo, nil, nil)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+func (m *EventItemRequestBuilder) SnoozeReminder()(*i03c20b721830723f54831b527e543a48a7f2b60c82d93c7553533911faae7e29.SnoozeReminderRequestBuilder) {
+    return i03c20b721830723f54831b527e543a48a7f2b60c82d93c7553533911faae7e29.NewSnoozeReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+func (m *EventItemRequestBuilder) TentativelyAccept()(*i2f3e2c7bce3122084bdbd424284896f3f64c302860793a13f5739a38e581d314.TentativelyAcceptRequestBuilder) {
+    return i2f3e2c7bce3122084bdbd424284896f3f64c302860793a13f5739a38e581d314.NewTentativelyAcceptRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}

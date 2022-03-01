@@ -171,7 +171,7 @@ func (m *PrimaryChannelRequestBuilder) Members()(*i977f2dd26da5a2e1880df87bd5372
     return i977f2dd26da5a2e1880df87bd5372aa7a19a14868a426678151d974f360c2a01.NewMembersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MembersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.primaryChannel.members.item collection
-func (m *PrimaryChannelRequestBuilder) MembersById(id string)(*ie734300e5bedd84acd036f8be309a4094f66ee9a58c5ec5b270079e8efc64674.ConversationMemberRequestBuilder) {
+func (m *PrimaryChannelRequestBuilder) MembersById(id string)(*ie734300e5bedd84acd036f8be309a4094f66ee9a58c5ec5b270079e8efc64674.ConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -179,13 +179,13 @@ func (m *PrimaryChannelRequestBuilder) MembersById(id string)(*ie734300e5bedd84a
     if id != "" {
         urlTplParams["conversationMember_id"] = id
     }
-    return ie734300e5bedd84acd036f8be309a4094f66ee9a58c5ec5b270079e8efc64674.NewConversationMemberRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ie734300e5bedd84acd036f8be309a4094f66ee9a58c5ec5b270079e8efc64674.NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *PrimaryChannelRequestBuilder) Messages()(*i4785692a9d61d4a8638d06fe97e1daa4feb18f7b743e7ae34ff3f07f3d9425b4.MessagesRequestBuilder) {
     return i4785692a9d61d4a8638d06fe97e1daa4feb18f7b743e7ae34ff3f07f3d9425b4.NewMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MessagesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.primaryChannel.messages.item collection
-func (m *PrimaryChannelRequestBuilder) MessagesById(id string)(*ib00fe6f5242d43b4e0cf713930bcfb1828c83941d27088c19568b60fa6e113d8.ChatMessageRequestBuilder) {
+func (m *PrimaryChannelRequestBuilder) MessagesById(id string)(*ib00fe6f5242d43b4e0cf713930bcfb1828c83941d27088c19568b60fa6e113d8.ChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,7 +193,7 @@ func (m *PrimaryChannelRequestBuilder) MessagesById(id string)(*ib00fe6f5242d43b
     if id != "" {
         urlTplParams["chatMessage_id"] = id
     }
-    return ib00fe6f5242d43b4e0cf713930bcfb1828c83941d27088c19568b60fa6e113d8.NewChatMessageRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ib00fe6f5242d43b4e0cf713930bcfb1828c83941d27088c19568b60fa6e113d8.NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch the general channel for the team.
 func (m *PrimaryChannelRequestBuilder) Patch(options *PrimaryChannelRequestBuilderPatchOptions)(error) {
@@ -217,7 +217,7 @@ func (m *PrimaryChannelRequestBuilder) Tabs()(*ib05faad6285a5d11c891d13f0450d43d
     return ib05faad6285a5d11c891d13f0450d43dfbe0ddb57be2fa94177f219559ef0527.NewTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TabsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.teams.item.primaryChannel.tabs.item collection
-func (m *PrimaryChannelRequestBuilder) TabsById(id string)(*i0193f7b86687af396beaaecb295b77e66ded553cf49127c0d06bc79b38a4d93f.TeamsTabRequestBuilder) {
+func (m *PrimaryChannelRequestBuilder) TabsById(id string)(*i0193f7b86687af396beaaecb295b77e66ded553cf49127c0d06bc79b38a4d93f.TeamsTabItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -225,5 +225,5 @@ func (m *PrimaryChannelRequestBuilder) TabsById(id string)(*i0193f7b86687af396be
     if id != "" {
         urlTplParams["teamsTab_id"] = id
     }
-    return i0193f7b86687af396beaaecb295b77e66ded553cf49127c0d06bc79b38a4d93f.NewTeamsTabRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i0193f7b86687af396beaaecb295b77e66ded553cf49127c0d06bc79b38a4d93f.NewTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
