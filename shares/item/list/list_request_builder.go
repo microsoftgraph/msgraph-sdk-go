@@ -66,7 +66,7 @@ func (m *ListRequestBuilder) Columns()(*i6cc54c104a1f556165cc44589ee14207379ed8c
     return i6cc54c104a1f556165cc44589ee14207379ed8c37fa85729d5c314e13f2214d7.NewColumnsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ColumnsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.shares.item.list.columns.item collection
-func (m *ListRequestBuilder) ColumnsById(id string)(*ifd1fbca74ca99c59f8151a23008189eb5fa814dfb2bdb94e0592368b94d84ebe.ColumnDefinitionRequestBuilder) {
+func (m *ListRequestBuilder) ColumnsById(id string)(*ifd1fbca74ca99c59f8151a23008189eb5fa814dfb2bdb94e0592368b94d84ebe.ColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -74,7 +74,7 @@ func (m *ListRequestBuilder) ColumnsById(id string)(*ifd1fbca74ca99c59f8151a2300
     if id != "" {
         urlTplParams["columnDefinition_id"] = id
     }
-    return ifd1fbca74ca99c59f8151a23008189eb5fa814dfb2bdb94e0592368b94d84ebe.NewColumnDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ifd1fbca74ca99c59f8151a23008189eb5fa814dfb2bdb94e0592368b94d84ebe.NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewListRequestBuilderInternal instantiates a new ListRequestBuilder and sets the default values.
 func NewListRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*ListRequestBuilder) {
@@ -99,7 +99,7 @@ func (m *ListRequestBuilder) ContentTypes()(*i8b1352d9ad171bd1e78c354f011b512c0f
     return i8b1352d9ad171bd1e78c354f011b512c0faed7a8b44a2d0af7a87499c0e9f548.NewContentTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ContentTypesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.shares.item.list.contentTypes.item collection
-func (m *ListRequestBuilder) ContentTypesById(id string)(*i6f7c6ed0403d181f0f9df70f035fc911fc0235b004fca66648da29a67534a2e2.ContentTypeRequestBuilder) {
+func (m *ListRequestBuilder) ContentTypesById(id string)(*i6f7c6ed0403d181f0f9df70f035fc911fc0235b004fca66648da29a67534a2e2.ContentTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -107,7 +107,7 @@ func (m *ListRequestBuilder) ContentTypesById(id string)(*i6f7c6ed0403d181f0f9df
     if id != "" {
         urlTplParams["contentType_id"] = id
     }
-    return i6f7c6ed0403d181f0f9df70f035fc911fc0235b004fca66648da29a67534a2e2.NewContentTypeRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i6f7c6ed0403d181f0f9df70f035fc911fc0235b004fca66648da29a67534a2e2.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // CreateDeleteRequestInformation used to access the underlying list
 func (m *ListRequestBuilder) CreateDeleteRequestInformation(options *ListRequestBuilderDeleteOptions)(*ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestInformation, error) {
@@ -195,7 +195,7 @@ func (m *ListRequestBuilder) Items()(*i7a0c6962c8b1589339031c077d13646778071c443
     return i7a0c6962c8b1589339031c077d13646778071c443927dc1046bc04df31627bf6.NewItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ItemsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.shares.item.list.items.item collection
-func (m *ListRequestBuilder) ItemsById(id string)(*ia5941405950ea17199c6d656adb76e8bf88f3f605415a64747a31ce95e0c07b7.ListItemRequestBuilder) {
+func (m *ListRequestBuilder) ItemsById(id string)(*ia5941405950ea17199c6d656adb76e8bf88f3f605415a64747a31ce95e0c07b7.ListItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -203,7 +203,7 @@ func (m *ListRequestBuilder) ItemsById(id string)(*ia5941405950ea17199c6d656adb7
     if id != "" {
         urlTplParams["listItem_id"] = id
     }
-    return ia5941405950ea17199c6d656adb76e8bf88f3f605415a64747a31ce95e0c07b7.NewListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ia5941405950ea17199c6d656adb76e8bf88f3f605415a64747a31ce95e0c07b7.NewListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch used to access the underlying list
 func (m *ListRequestBuilder) Patch(options *ListRequestBuilderPatchOptions)(error) {
@@ -221,7 +221,7 @@ func (m *ListRequestBuilder) Subscriptions()(*iaad175a704d2fb8c88af7ffd0f8ebd7bf
     return iaad175a704d2fb8c88af7ffd0f8ebd7bfd4f12f115e3413d8b3c39946957d581.NewSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SubscriptionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.shares.item.list.subscriptions.item collection
-func (m *ListRequestBuilder) SubscriptionsById(id string)(*ia2c40a1ff086507585f951d28494158116a4fcb5951ee49a77ded46131865f37.SubscriptionRequestBuilder) {
+func (m *ListRequestBuilder) SubscriptionsById(id string)(*ia2c40a1ff086507585f951d28494158116a4fcb5951ee49a77ded46131865f37.SubscriptionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -229,5 +229,5 @@ func (m *ListRequestBuilder) SubscriptionsById(id string)(*ia2c40a1ff086507585f9
     if id != "" {
         urlTplParams["subscription_id"] = id
     }
-    return ia2c40a1ff086507585f951d28494158116a4fcb5951ee49a77ded46131865f37.NewSubscriptionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ia2c40a1ff086507585f951d28494158116a4fcb5951ee49a77ded46131865f37.NewSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -50,7 +50,7 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigur
     return i3e1a5562edfffe5e226bf012be5c2c5a4d9397890b97d1165af87107fe553217.NewAuthenticationMethodConfigurationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AuthenticationMethodConfigurationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.authenticationMethodsPolicy.authenticationMethodConfigurations.item collection
-func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurationsById(id string)(*i64f858c8627e84ac3553655f2bc7b8c678e19238c74dba447be61b60e81acf4a.AuthenticationMethodConfigurationRequestBuilder) {
+func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurationsById(id string)(*i64f858c8627e84ac3553655f2bc7b8c678e19238c74dba447be61b60e81acf4a.AuthenticationMethodConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -58,7 +58,7 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigur
     if id != "" {
         urlTplParams["authenticationMethodConfiguration_id"] = id
     }
-    return i64f858c8627e84ac3553655f2bc7b8c678e19238c74dba447be61b60e81acf4a.NewAuthenticationMethodConfigurationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i64f858c8627e84ac3553655f2bc7b8c678e19238c74dba447be61b60e81acf4a.NewAuthenticationMethodConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewAuthenticationMethodsPolicyRequestBuilderInternal instantiates a new AuthenticationMethodsPolicyRequestBuilder and sets the default values.
 func NewAuthenticationMethodsPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*AuthenticationMethodsPolicyRequestBuilder) {

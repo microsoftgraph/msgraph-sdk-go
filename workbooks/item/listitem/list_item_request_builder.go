@@ -191,7 +191,7 @@ func (m *ListItemRequestBuilder) Versions()(*i23928885e968269c974925e6845e4eeda1
     return i23928885e968269c974925e6845e4eeda1eabcba9ed90e8a19cbe4956c6bd0c4.NewVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // VersionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.workbooks.item.listItem.versions.item collection
-func (m *ListItemRequestBuilder) VersionsById(id string)(*ib939ff408fde6d3763a478a2106c5bbbd3445e21dc809ff36372b9df300dd03d.ListItemVersionRequestBuilder) {
+func (m *ListItemRequestBuilder) VersionsById(id string)(*ib939ff408fde6d3763a478a2106c5bbbd3445e21dc809ff36372b9df300dd03d.ListItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -199,5 +199,5 @@ func (m *ListItemRequestBuilder) VersionsById(id string)(*ib939ff408fde6d3763a47
     if id != "" {
         urlTplParams["listItemVersion_id"] = id
     }
-    return ib939ff408fde6d3763a478a2106c5bbbd3445e21dc809ff36372b9df300dd03d.NewListItemVersionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ib939ff408fde6d3763a478a2106c5bbbd3445e21dc809ff36372b9df300dd03d.NewListItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

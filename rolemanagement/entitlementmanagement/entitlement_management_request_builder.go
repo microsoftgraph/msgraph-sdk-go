@@ -171,7 +171,7 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignments()(*iab5b1a7cf75112
     return iab5b1a7cf751122475647c02429db57a9207d8d85016b356d65e7aeb3a05d352.NewRoleAssignmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleAssignmentsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleAssignments.item collection
-func (m *EntitlementManagementRequestBuilder) RoleAssignmentsById(id string)(*i02dcd7ccbb395e0de15ed121c8c0a0de1ce9b7389ee22ee420b13b1115a5b1d4.UnifiedRoleAssignmentRequestBuilder) {
+func (m *EntitlementManagementRequestBuilder) RoleAssignmentsById(id string)(*i02dcd7ccbb395e0de15ed121c8c0a0de1ce9b7389ee22ee420b13b1115a5b1d4.UnifiedRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -179,13 +179,13 @@ func (m *EntitlementManagementRequestBuilder) RoleAssignmentsById(id string)(*i0
     if id != "" {
         urlTplParams["unifiedRoleAssignment_id"] = id
     }
-    return i02dcd7ccbb395e0de15ed121c8c0a0de1ce9b7389ee22ee420b13b1115a5b1d4.NewUnifiedRoleAssignmentRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i02dcd7ccbb395e0de15ed121c8c0a0de1ce9b7389ee22ee420b13b1115a5b1d4.NewUnifiedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *EntitlementManagementRequestBuilder) RoleDefinitions()(*i235730479c1a6cf49ab5074a2df5fee811eeaf00c02b8796d08bae7d0b1ac121.RoleDefinitionsRequestBuilder) {
     return i235730479c1a6cf49ab5074a2df5fee811eeaf00c02b8796d08bae7d0b1ac121.NewRoleDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RoleDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.roleManagement.entitlementManagement.roleDefinitions.item collection
-func (m *EntitlementManagementRequestBuilder) RoleDefinitionsById(id string)(*i450e6fa82c54d6f54b7abb6a155c2b0b0cb9aced086261fdf11e3d7d814c6286.UnifiedRoleDefinitionRequestBuilder) {
+func (m *EntitlementManagementRequestBuilder) RoleDefinitionsById(id string)(*i450e6fa82c54d6f54b7abb6a155c2b0b0cb9aced086261fdf11e3d7d814c6286.UnifiedRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -193,5 +193,5 @@ func (m *EntitlementManagementRequestBuilder) RoleDefinitionsById(id string)(*i4
     if id != "" {
         urlTplParams["unifiedRoleDefinition_id"] = id
     }
-    return i450e6fa82c54d6f54b7abb6a155c2b0b0cb9aced086261fdf11e3d7d814c6286.NewUnifiedRoleDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i450e6fa82c54d6f54b7abb6a155c2b0b0cb9aced086261fdf11e3d7d814c6286.NewUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

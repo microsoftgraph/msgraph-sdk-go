@@ -131,7 +131,7 @@ func (m *PrivacyRequestBuilder) SubjectRightsRequests()(*ic3012732ccd21e3ff6a41d
     return ic3012732ccd21e3ff6a41d4e20000f4750e4877616c1357343148115ac491fa5.NewSubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SubjectRightsRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.privacy.subjectRightsRequests.item collection
-func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*ib411193b5003bbb51d5dee7dd6a2064bf24b4e5e2d93bd42bbe0364186744db3.SubjectRightsRequestRequestBuilder) {
+func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*ib411193b5003bbb51d5dee7dd6a2064bf24b4e5e2d93bd42bbe0364186744db3.SubjectRightsRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -139,5 +139,5 @@ func (m *PrivacyRequestBuilder) SubjectRightsRequestsById(id string)(*ib411193b5
     if id != "" {
         urlTplParams["subjectRightsRequest_id"] = id
     }
-    return ib411193b5003bbb51d5dee7dd6a2064bf24b4e5e2d93bd42bbe0364186744db3.NewSubjectRightsRequestRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ib411193b5003bbb51d5dee7dd6a2064bf24b4e5e2d93bd42bbe0364186744db3.NewSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

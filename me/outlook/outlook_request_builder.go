@@ -158,7 +158,7 @@ func (m *OutlookRequestBuilder) MasterCategories()(*icc3e92b7111767420ec0be83650
     return icc3e92b7111767420ec0be836502793f8a368fa468daf7fdf8e65cc66f0e087f.NewMasterCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MasterCategoriesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.me.outlook.masterCategories.item collection
-func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*ifa2143032fa73c15f7bf7cc659bb2bb69f28a378f9584ec6f7ccf4d2b3d29868.OutlookCategoryRequestBuilder) {
+func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*ifa2143032fa73c15f7bf7cc659bb2bb69f28a378f9584ec6f7ccf4d2b3d29868.OutlookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -166,7 +166,7 @@ func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*ifa2143032fa73c
     if id != "" {
         urlTplParams["outlookCategory_id"] = id
     }
-    return ifa2143032fa73c15f7bf7cc659bb2bb69f28a378f9584ec6f7ccf4d2b3d29868.NewOutlookCategoryRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ifa2143032fa73c15f7bf7cc659bb2bb69f28a378f9584ec6f7ccf4d2b3d29868.NewOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch read-only.
 func (m *OutlookRequestBuilder) Patch(options *OutlookRequestBuilderPatchOptions)(error) {

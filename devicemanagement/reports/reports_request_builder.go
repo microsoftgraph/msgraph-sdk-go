@@ -161,7 +161,7 @@ func (m *ReportsRequestBuilder) ExportJobs()(*i062d4a86380aad1b2a18fcdf2ae3039af
     return i062d4a86380aad1b2a18fcdf2ae3039afe4fb3340e8c61cd8a0118f64e2961f4.NewExportJobsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExportJobsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.deviceManagement.reports.exportJobs.item collection
-func (m *ReportsRequestBuilder) ExportJobsById(id string)(*i485f9fd192f0985070e6776ebbebebbeab22aaa9df64be7131a3e622b77e1c4e.DeviceManagementExportJobRequestBuilder) {
+func (m *ReportsRequestBuilder) ExportJobsById(id string)(*i485f9fd192f0985070e6776ebbebebbeab22aaa9df64be7131a3e622b77e1c4e.DeviceManagementExportJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -169,7 +169,7 @@ func (m *ReportsRequestBuilder) ExportJobsById(id string)(*i485f9fd192f0985070e6
     if id != "" {
         urlTplParams["deviceManagementExportJob_id"] = id
     }
-    return i485f9fd192f0985070e6776ebbebebbeab22aaa9df64be7131a3e622b77e1c4e.NewDeviceManagementExportJobRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i485f9fd192f0985070e6776ebbebebbeab22aaa9df64be7131a3e622b77e1c4e.NewDeviceManagementExportJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Get reports singleton
 func (m *ReportsRequestBuilder) Get(options *ReportsRequestBuilderGetOptions)(*i4a838ef194e4c99e9f2c63ba10dab9cb120a89367c1d4ab0daa63bb424e20d87.DeviceManagementReports, error) {

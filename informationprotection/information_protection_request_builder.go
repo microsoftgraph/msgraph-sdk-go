@@ -135,7 +135,7 @@ func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*i0b394
     return i0b394b575452727fce48499d7162d9223046fb4ae501d85ca144b249ae2268bc.NewThreatAssessmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ThreatAssessmentRequestsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.informationProtection.threatAssessmentRequests.item collection
-func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*i14f47ed6c183afcd5e8bac6ad435c240ca6e8149d693e8188c8d94d2105fbc38.ThreatAssessmentRequestRequestBuilder) {
+func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id string)(*i14f47ed6c183afcd5e8bac6ad435c240ca6e8149d693e8188c8d94d2105fbc38.ThreatAssessmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -143,5 +143,5 @@ func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id st
     if id != "" {
         urlTplParams["threatAssessmentRequest_id"] = id
     }
-    return i14f47ed6c183afcd5e8bac6ad435c240ca6e8149d693e8188c8d94d2105fbc38.NewThreatAssessmentRequestRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i14f47ed6c183afcd5e8bac6ad435c240ca6e8149d693e8188c8d94d2105fbc38.NewThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

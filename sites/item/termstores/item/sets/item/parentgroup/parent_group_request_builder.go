@@ -169,7 +169,7 @@ func (m *ParentGroupRequestBuilder) Sets()(*i1b22221daf5d71c689d74c5f118bf32a4c5
     return i1b22221daf5d71c689d74c5f118bf32a4c52d4f22fa871212b4a6b1ecabc75cf.NewSetsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SetsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.sites.item.termStores.item.sets.item.parentGroup.sets.item collection
-func (m *ParentGroupRequestBuilder) SetsById(id string)(*ic389f4ad4d53493e3ee1508e4f5796c6f3953359c16a4829723801bd5ce5895a.SetRequestBuilder) {
+func (m *ParentGroupRequestBuilder) SetsById(id string)(*ic389f4ad4d53493e3ee1508e4f5796c6f3953359c16a4829723801bd5ce5895a.SetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -177,5 +177,5 @@ func (m *ParentGroupRequestBuilder) SetsById(id string)(*ic389f4ad4d53493e3ee150
     if id != "" {
         urlTplParams["set_id1"] = id
     }
-    return ic389f4ad4d53493e3ee1508e4f5796c6f3953359c16a4829723801bd5ce5895a.NewSetRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ic389f4ad4d53493e3ee1508e4f5796c6f3953359c16a4829723801bd5ce5895a.NewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

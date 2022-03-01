@@ -135,7 +135,7 @@ func (m *AccessReviewsRequestBuilder) Definitions()(*i9a0fc83be8a156b608969476f1
     return i9a0fc83be8a156b608969476f16987d6f0c56857cc62f3dec40c0a7819428e17.NewDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DefinitionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.definitions.item collection
-func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*idcb18c7708e010766ed0434cebbaf8978d559fd3ae0bed76f0413cdd312a9c3f.AccessReviewScheduleDefinitionRequestBuilder) {
+func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*idcb18c7708e010766ed0434cebbaf8978d559fd3ae0bed76f0413cdd312a9c3f.AccessReviewScheduleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -143,7 +143,7 @@ func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*idcb18c7708e01
     if id != "" {
         urlTplParams["accessReviewScheduleDefinition_id"] = id
     }
-    return idcb18c7708e010766ed0434cebbaf8978d559fd3ae0bed76f0413cdd312a9c3f.NewAccessReviewScheduleDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return idcb18c7708e010766ed0434cebbaf8978d559fd3ae0bed76f0413cdd312a9c3f.NewAccessReviewScheduleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Delete delete navigation property accessReviews for identityGovernance
 func (m *AccessReviewsRequestBuilder) Delete(options *AccessReviewsRequestBuilderDeleteOptions)(error) {
@@ -173,7 +173,7 @@ func (m *AccessReviewsRequestBuilder) HistoryDefinitions()(*i3ed202ff0cbdf2b2edb
     return i3ed202ff0cbdf2b2edbf6f858dd5dd49845b59ab278423c07797fe43a9ccd40f.NewHistoryDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // HistoryDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.accessReviews.historyDefinitions.item collection
-func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*i0fca5fbe98a7c54d24af60b510c16cbc28027514fdcbe3896a60732f5c572e2b.AccessReviewHistoryDefinitionRequestBuilder) {
+func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*i0fca5fbe98a7c54d24af60b510c16cbc28027514fdcbe3896a60732f5c572e2b.AccessReviewHistoryDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -181,7 +181,7 @@ func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*i0fca5f
     if id != "" {
         urlTplParams["accessReviewHistoryDefinition_id"] = id
     }
-    return i0fca5fbe98a7c54d24af60b510c16cbc28027514fdcbe3896a60732f5c572e2b.NewAccessReviewHistoryDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i0fca5fbe98a7c54d24af60b510c16cbc28027514fdcbe3896a60732f5c572e2b.NewAccessReviewHistoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property accessReviews in identityGovernance
 func (m *AccessReviewsRequestBuilder) Patch(options *AccessReviewsRequestBuilderPatchOptions)(error) {

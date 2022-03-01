@@ -169,7 +169,7 @@ func (m *PlannerRequestBuilder) Plans()(*icffde7ab20afb870cc9b77013c660b5a60f1de
     return icffde7ab20afb870cc9b77013c660b5a60f1decad39740b28a0f1b5f4d318d32.NewPlansRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PlansById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.groups.item.planner.plans.item collection
-func (m *PlannerRequestBuilder) PlansById(id string)(*i8a69353b1b005763a981538691afe90300b184d370fe56031baad3f85ccdae01.PlannerPlanRequestBuilder) {
+func (m *PlannerRequestBuilder) PlansById(id string)(*i8a69353b1b005763a981538691afe90300b184d370fe56031baad3f85ccdae01.PlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -177,5 +177,5 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*i8a69353b1b005763a98153869
     if id != "" {
         urlTplParams["plannerPlan_id"] = id
     }
-    return i8a69353b1b005763a981538691afe90300b184d370fe56031baad3f85ccdae01.NewPlannerPlanRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i8a69353b1b005763a981538691afe90300b184d370fe56031baad3f85ccdae01.NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

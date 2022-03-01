@@ -60,7 +60,7 @@ func (m *PrintRequestBuilder) Connectors()(*i0f704d64ae3c276c8ff23cafb44315ef406
     return i0f704d64ae3c276c8ff23cafb44315ef4067a668629360d124bdabfea38afdd3.NewConnectorsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ConnectorsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.connectors.item collection
-func (m *PrintRequestBuilder) ConnectorsById(id string)(*iebd42d165d4ff6aca1eec85e8351f67b97a4208ea00a5bc8ac67f4f1f191b677.PrintConnectorRequestBuilder) {
+func (m *PrintRequestBuilder) ConnectorsById(id string)(*iebd42d165d4ff6aca1eec85e8351f67b97a4208ea00a5bc8ac67f4f1f191b677.PrintConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -68,7 +68,7 @@ func (m *PrintRequestBuilder) ConnectorsById(id string)(*iebd42d165d4ff6aca1eec8
     if id != "" {
         urlTplParams["printConnector_id"] = id
     }
-    return iebd42d165d4ff6aca1eec85e8351f67b97a4208ea00a5bc8ac67f4f1f191b677.NewPrintConnectorRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return iebd42d165d4ff6aca1eec85e8351f67b97a4208ea00a5bc8ac67f4f1f191b677.NewPrintConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewPrintRequestBuilderInternal instantiates a new PrintRequestBuilder and sets the default values.
 func NewPrintRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter)(*PrintRequestBuilder) {
@@ -143,7 +143,7 @@ func (m *PrintRequestBuilder) Operations()(*ib24f76d25d0e8f20d062be56f8b94808153
     return ib24f76d25d0e8f20d062be56f8b94808153dc20498d344b76af7867075ea8ad9.NewOperationsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OperationsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.operations.item collection
-func (m *PrintRequestBuilder) OperationsById(id string)(*id0e61828b4320e56c027152ab07b04414264a89aa169cd832394397ada28defd.PrintOperationRequestBuilder) {
+func (m *PrintRequestBuilder) OperationsById(id string)(*id0e61828b4320e56c027152ab07b04414264a89aa169cd832394397ada28defd.PrintOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -151,7 +151,7 @@ func (m *PrintRequestBuilder) OperationsById(id string)(*id0e61828b4320e56c02715
     if id != "" {
         urlTplParams["printOperation_id"] = id
     }
-    return id0e61828b4320e56c027152ab07b04414264a89aa169cd832394397ada28defd.NewPrintOperationRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return id0e61828b4320e56c027152ab07b04414264a89aa169cd832394397ada28defd.NewPrintOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update print
 func (m *PrintRequestBuilder) Patch(options *PrintRequestBuilderPatchOptions)(error) {
@@ -169,7 +169,7 @@ func (m *PrintRequestBuilder) Printers()(*i0bda270a8db970823b8449367f0a1b6167aeb
     return i0bda270a8db970823b8449367f0a1b6167aeb67bb1a0b116061e10c72e9e8d5d.NewPrintersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PrintersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.printers.item collection
-func (m *PrintRequestBuilder) PrintersById(id string)(*i7b3d94bc34459d3d2fa55e5dc4096ab7096e743ffc216c2d05b8f451f231fde1.PrinterRequestBuilder) {
+func (m *PrintRequestBuilder) PrintersById(id string)(*i7b3d94bc34459d3d2fa55e5dc4096ab7096e743ffc216c2d05b8f451f231fde1.PrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -177,13 +177,13 @@ func (m *PrintRequestBuilder) PrintersById(id string)(*i7b3d94bc34459d3d2fa55e5d
     if id != "" {
         urlTplParams["printer_id"] = id
     }
-    return i7b3d94bc34459d3d2fa55e5dc4096ab7096e743ffc216c2d05b8f451f231fde1.NewPrinterRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i7b3d94bc34459d3d2fa55e5dc4096ab7096e743ffc216c2d05b8f451f231fde1.NewPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *PrintRequestBuilder) Services()(*i802e345f3915c26a53a0e538ad96acb01b0ad515a9510581f00bcedb2e2d1266.ServicesRequestBuilder) {
     return i802e345f3915c26a53a0e538ad96acb01b0ad515a9510581f00bcedb2e2d1266.NewServicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ServicesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.services.item collection
-func (m *PrintRequestBuilder) ServicesById(id string)(*i0b3afc35ae08ae48e886b1ea1ae2fe47da46f82bd161cb48f9ff550676f78301.PrintServiceRequestBuilder) {
+func (m *PrintRequestBuilder) ServicesById(id string)(*i0b3afc35ae08ae48e886b1ea1ae2fe47da46f82bd161cb48f9ff550676f78301.PrintServiceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -191,13 +191,13 @@ func (m *PrintRequestBuilder) ServicesById(id string)(*i0b3afc35ae08ae48e886b1ea
     if id != "" {
         urlTplParams["printService_id"] = id
     }
-    return i0b3afc35ae08ae48e886b1ea1ae2fe47da46f82bd161cb48f9ff550676f78301.NewPrintServiceRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i0b3afc35ae08ae48e886b1ea1ae2fe47da46f82bd161cb48f9ff550676f78301.NewPrintServiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *PrintRequestBuilder) Shares()(*i54feb3a1bee5e2d3891bf4b38d7ad46df95f464ec5502fc27ce12645532dcf04.SharesRequestBuilder) {
     return i54feb3a1bee5e2d3891bf4b38d7ad46df95f464ec5502fc27ce12645532dcf04.NewSharesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SharesById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item collection
-func (m *PrintRequestBuilder) SharesById(id string)(*i8e18f5c596955d2371ff489e959f3488755280f5b7014ba5a0f5b95b7dc44bf2.PrinterShareRequestBuilder) {
+func (m *PrintRequestBuilder) SharesById(id string)(*i8e18f5c596955d2371ff489e959f3488755280f5b7014ba5a0f5b95b7dc44bf2.PrinterShareItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -205,13 +205,13 @@ func (m *PrintRequestBuilder) SharesById(id string)(*i8e18f5c596955d2371ff489e95
     if id != "" {
         urlTplParams["printerShare_id"] = id
     }
-    return i8e18f5c596955d2371ff489e959f3488755280f5b7014ba5a0f5b95b7dc44bf2.NewPrinterShareRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i8e18f5c596955d2371ff489e959f3488755280f5b7014ba5a0f5b95b7dc44bf2.NewPrinterShareItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *PrintRequestBuilder) TaskDefinitions()(*ied8956e290d0c898cb2abe2b85d9373567ead7ae2e05a776597718dd3f1709e8.TaskDefinitionsRequestBuilder) {
     return ied8956e290d0c898cb2abe2b85d9373567ead7ae2e05a776597718dd3f1709e8.NewTaskDefinitionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TaskDefinitionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.taskDefinitions.item collection
-func (m *PrintRequestBuilder) TaskDefinitionsById(id string)(*i827522a32e9dfc8181a7f7793aec64fdf0814658430464c0b64af19c8e4e9a96.PrintTaskDefinitionRequestBuilder) {
+func (m *PrintRequestBuilder) TaskDefinitionsById(id string)(*i827522a32e9dfc8181a7f7793aec64fdf0814658430464c0b64af19c8e4e9a96.PrintTaskDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -219,5 +219,5 @@ func (m *PrintRequestBuilder) TaskDefinitionsById(id string)(*i827522a32e9dfc818
     if id != "" {
         urlTplParams["printTaskDefinition_id"] = id
     }
-    return i827522a32e9dfc8181a7f7793aec64fdf0814658430464c0b64af19c8e4e9a96.NewPrintTaskDefinitionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i827522a32e9dfc8181a7f7793aec64fdf0814658430464c0b64af19c8e4e9a96.NewPrintTaskDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

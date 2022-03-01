@@ -206,7 +206,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByPrinter()(*ic78e2d968f685321daf
     return ic78e2d968f685321dafd3ca273401e484836d7ca84e4da07ae045edca4ca55a2.NewDailyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DailyPrintUsageByPrinterById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.dailyPrintUsageByPrinter.item collection
-func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*i48adffda977c4642ea9d1490fef3ceaa45cfab2defb01a97672b497f12eee0bc.PrintUsageByPrinterRequestBuilder) {
+func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*i48adffda977c4642ea9d1490fef3ceaa45cfab2defb01a97672b497f12eee0bc.PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -214,13 +214,13 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*i48adff
     if id != "" {
         urlTplParams["printUsageByPrinter_id"] = id
     }
-    return i48adffda977c4642ea9d1490fef3ceaa45cfab2defb01a97672b497f12eee0bc.NewPrintUsageByPrinterRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i48adffda977c4642ea9d1490fef3ceaa45cfab2defb01a97672b497f12eee0bc.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *ReportsRequestBuilder) DailyPrintUsageByUser()(*i1d9fef6f0fe1efedede6850168705608b3b5be81427b11c9c3d64b7dc8c126ed.DailyPrintUsageByUserRequestBuilder) {
     return i1d9fef6f0fe1efedede6850168705608b3b5be81427b11c9c3d64b7dc8c126ed.NewDailyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DailyPrintUsageByUserById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.dailyPrintUsageByUser.item collection
-func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i80d61621ea489f37484a66bdee6bdaa9bbb8a0b83a1cc326a225bedfc4c6dd91.PrintUsageByUserRequestBuilder) {
+func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i80d61621ea489f37484a66bdee6bdaa9bbb8a0b83a1cc326a225bedfc4c6dd91.PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -228,7 +228,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i80d61621e
     if id != "" {
         urlTplParams["printUsageByUser_id"] = id
     }
-    return i80d61621ea489f37484a66bdee6bdaa9bbb8a0b83a1cc326a225bedfc4c6dd91.NewPrintUsageByUserRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i80d61621ea489f37484a66bdee6bdaa9bbb8a0b83a1cc326a225bedfc4c6dd91.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // DeviceConfigurationDeviceActivity builds and executes requests for operations under \reports\microsoft.graph.deviceConfigurationDeviceActivity()
 func (m *ReportsRequestBuilder) DeviceConfigurationDeviceActivity()(*i39d4923038966e0aa0bf413db480c947e66bb5fa71c83d893fbfb4aaacc6cfe9.DeviceConfigurationDeviceActivityRequestBuilder) {
@@ -614,7 +614,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinter()(*if1205fb6649361278
     return if1205fb664936127831759fefe4c2c43852474a3fc0419f51e89975f0f281d32.NewMonthlyPrintUsageByPrinterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MonthlyPrintUsageByPrinterById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.monthlyPrintUsageByPrinter.item collection
-func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i0fbd1879eec3f09756dabd53c9de402f839fcf5ed7e8be0da0d3e4135b124b0a.PrintUsageByPrinterRequestBuilder) {
+func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i0fbd1879eec3f09756dabd53c9de402f839fcf5ed7e8be0da0d3e4135b124b0a.PrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -622,13 +622,13 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i0fbd
     if id != "" {
         urlTplParams["printUsageByPrinter_id"] = id
     }
-    return i0fbd1879eec3f09756dabd53c9de402f839fcf5ed7e8be0da0d3e4135b124b0a.NewPrintUsageByPrinterRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i0fbd1879eec3f09756dabd53c9de402f839fcf5ed7e8be0da0d3e4135b124b0a.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *ReportsRequestBuilder) MonthlyPrintUsageByUser()(*i3f12902a7f7457a60f97014c6db3b2bd89dac8cabe4d467b766677db3d6029d0.MonthlyPrintUsageByUserRequestBuilder) {
     return i3f12902a7f7457a60f97014c6db3b2bd89dac8cabe4d467b766677db3d6029d0.NewMonthlyPrintUsageByUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MonthlyPrintUsageByUserById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.reports.monthlyPrintUsageByUser.item collection
-func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*if4346a9921b148666613b317b233f49301e4eef2f130f6b9e02414250e5a2294.PrintUsageByUserRequestBuilder) {
+func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*if4346a9921b148666613b317b233f49301e4eef2f130f6b9e02414250e5a2294.PrintUsageByUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -636,7 +636,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*if4346a9
     if id != "" {
         urlTplParams["printUsageByUser_id"] = id
     }
-    return if4346a9921b148666613b317b233f49301e4eef2f130f6b9e02414250e5a2294.NewPrintUsageByUserRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return if4346a9921b148666613b317b233f49301e4eef2f130f6b9e02414250e5a2294.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update reports
 func (m *ReportsRequestBuilder) Patch(options *ReportsRequestBuilderPatchOptions)(error) {

@@ -133,7 +133,7 @@ func (m *IdentityProtectionRequestBuilder) RiskDetections()(*i734828c35d0209cc42
     return i734828c35d0209cc42d94bd3da5e79564f27866a2e7dd505cec26e26172ddd00.NewRiskDetectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RiskDetectionsById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityProtection.riskDetections.item collection
-func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*i919d73984bc501fa850d0ae7fc63eed2d0af650bd7a764d682b904e3619f0c40.RiskDetectionRequestBuilder) {
+func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*i919d73984bc501fa850d0ae7fc63eed2d0af650bd7a764d682b904e3619f0c40.RiskDetectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -141,13 +141,13 @@ func (m *IdentityProtectionRequestBuilder) RiskDetectionsById(id string)(*i919d7
     if id != "" {
         urlTplParams["riskDetection_id"] = id
     }
-    return i919d73984bc501fa850d0ae7fc63eed2d0af650bd7a764d682b904e3619f0c40.NewRiskDetectionRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i919d73984bc501fa850d0ae7fc63eed2d0af650bd7a764d682b904e3619f0c40.NewRiskDetectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 func (m *IdentityProtectionRequestBuilder) RiskyUsers()(*if659cd8a8fa7e51b07cf2aa293599e63216814779670d31cfb9fa4a2facb3f81.RiskyUsersRequestBuilder) {
     return if659cd8a8fa7e51b07cf2aa293599e63216814779670d31cfb9fa4a2facb3f81.NewRiskyUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // RiskyUsersById gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityProtection.riskyUsers.item collection
-func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*i4fd6061886571b3d64bdb991095eb35ae40fd05f187e9565e0e84610c3889be0.RiskyUserRequestBuilder) {
+func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*i4fd6061886571b3d64bdb991095eb35ae40fd05f187e9565e0e84610c3889be0.RiskyUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -155,5 +155,5 @@ func (m *IdentityProtectionRequestBuilder) RiskyUsersById(id string)(*i4fd606188
     if id != "" {
         urlTplParams["riskyUser_id"] = id
     }
-    return i4fd6061886571b3d64bdb991095eb35ae40fd05f187e9565e0e84610c3889be0.NewRiskyUserRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i4fd6061886571b3d64bdb991095eb35ae40fd05f187e9565e0e84610c3889be0.NewRiskyUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
