@@ -11,6 +11,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.13.0] - 2022-03-08
+
+### Changed
+
+- Weekly generation, based of the new OpenAPI conversion, lots of new endpoints available.
+- Fixed an issue with collections responses for OData functions.
+- Breaking: Fixed a bug where using the raw request URL would result in invalid requests.
+- Breaking: Splat Parsable interface to AdditionalPropertiesHolder.
+
 ## [0.12.0] - 2022-03-01
 
 ### Changed
