@@ -24,7 +24,7 @@ type GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBu
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal instantiates a new GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.
-func NewGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, userId *string)(*GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+func NewGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, userId *string, endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
     m := &GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')";
@@ -32,14 +32,14 @@ func NewGetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeReques
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    if endDateTime != nil {
-        urlTplParams["endDateTime"] = (*endDateTime).String()
-    }
     if startDateTime != nil {
         urlTplParams["startDateTime"] = (*startDateTime).String()
     }
     if userId != nil {
         urlTplParams["userId"] = *userId
+    }
+    if endDateTime != nil {
+        urlTplParams["endDateTime"] = (*endDateTime).String()
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

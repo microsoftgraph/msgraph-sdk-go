@@ -179,8 +179,8 @@ func (m *ListItemRequestBuilder) GetActivitiesByInterval()(*i42e3849049056d14b23
     return i42e3849049056d14b231f5beb4cab62ae2e624800ca585717a8c2a93d22cbf69.NewGetActivitiesByIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
-func (m *ListItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(interval *string, endDateTime *string, startDateTime *string)(*i1eb27f11598bc995a5a5f8a75ffcad11832ee8fc8033445fbfc123d239175c56.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
-    return i1eb27f11598bc995a5a5f8a75ffcad11832ee8fc8033445fbfc123d239175c56.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, interval, endDateTime, startDateTime);
+func (m *ListItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(interval *string, startDateTime *string, endDateTime *string)(*i1eb27f11598bc995a5a5f8a75ffcad11832ee8fc8033445fbfc123d239175c56.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return i1eb27f11598bc995a5a5f8a75ffcad11832ee8fc8033445fbfc123d239175c56.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, interval, startDateTime, endDateTime);
 }
 // Patch update the navigation property listItem in users
 func (m *ListItemRequestBuilder) Patch(options *ListItemRequestBuilderPatchOptions)(error) {

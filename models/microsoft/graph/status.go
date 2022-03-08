@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the activities property of the microsoft.graph.user entity.
+// Provides operations to manage the collection of drive entities.
 type Status int
 
 const (

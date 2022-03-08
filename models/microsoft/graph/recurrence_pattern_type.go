@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the identityGovernance singleton.
+// Provides operations to manage the collection of drive entities.
 type RecurrencePatternType int
 
 const (

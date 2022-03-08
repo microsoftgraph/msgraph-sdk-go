@@ -24,7 +24,7 @@ type GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeReq
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal instantiates a new GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.
-func NewGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, printerId *string, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+func NewGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, printerId *string, endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
     m := &GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')";
@@ -32,14 +32,14 @@ func NewGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
     }
-    if endDateTime != nil {
-        urlTplParams["endDateTime"] = (*endDateTime).String()
+    if startDateTime != nil {
+        urlTplParams["startDateTime"] = (*startDateTime).String()
     }
     if printerId != nil {
         urlTplParams["printerId"] = *printerId
     }
-    if startDateTime != nil {
-        urlTplParams["startDateTime"] = (*startDateTime).String()
+    if endDateTime != nil {
+        urlTplParams["endDateTime"] = (*endDateTime).String()
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

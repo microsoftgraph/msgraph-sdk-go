@@ -23,7 +23,7 @@ type GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestB
     ResponseHandler ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.ResponseHandler;
 }
 // NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal instantiates a new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder and sets the default values.
-func NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, interval *string, endDateTime *string, startDateTime *string)(*GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+func NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(pathParameters map[string]string, requestAdapter ida96af0f171bb75f894a4013a6b3146a4397c58f11adb81a2b7cbea9314783a9.RequestAdapter, interval *string, startDateTime *string, endDateTime *string)(*GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
     m := &GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder{
     }
     m.urlTemplate = "{+baseurl}/drives/{drive_id}/following/{driveItem_id}/listItem/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')";
@@ -34,11 +34,11 @@ func NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalReque
     if interval != nil {
         urlTplParams["interval"] = *interval
     }
-    if endDateTime != nil {
-        urlTplParams["endDateTime"] = *endDateTime
-    }
     if startDateTime != nil {
         urlTplParams["startDateTime"] = *startDateTime
+    }
+    if endDateTime != nil {
+        urlTplParams["endDateTime"] = *endDateTime
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

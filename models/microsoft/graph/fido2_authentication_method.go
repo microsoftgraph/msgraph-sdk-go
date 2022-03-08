@@ -5,7 +5,7 @@ import (
     i04eb5309aeaafadd28374d79c8471df9b267510b4dc2e3144c378c50f6fd7b55 "github.com/microsoft/kiota/abstractions/go/serialization"
 )
 
-// Fido2AuthenticationMethod provides operations to manage the authentication property of the microsoft.graph.user entity.
+// Fido2AuthenticationMethod provides operations to manage the collection of drive entities.
 type Fido2AuthenticationMethod struct {
     AuthenticationMethod
     // Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
